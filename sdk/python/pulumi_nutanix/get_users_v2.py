@@ -124,6 +124,7 @@ def get_users_v2(filter: Optional[_builtins.str] = None,
 
     list_users = nutanix.get_users_v2()
     filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
+    list_service_account = nutanix.get_users_v2(filter="userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
     ```
 
     ## Argument Reference
@@ -213,6 +214,7 @@ def get_users_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] 
 
     list_users = nutanix.get_users_v2()
     filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
+    list_service_account = nutanix.get_users_v2(filter="userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
     ```
 
     ## Argument Reference

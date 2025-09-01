@@ -29211,6 +29211,2307 @@ func (o NgtUpgradeV2RebootPreferenceSchedulePtrOutput) StartTime() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
+type ObjectStoreCertificateV2AlternateFqdn struct {
+	Value *string `pulumi:"value"`
+}
+
+// ObjectStoreCertificateV2AlternateFqdnInput is an input type that accepts ObjectStoreCertificateV2AlternateFqdnArgs and ObjectStoreCertificateV2AlternateFqdnOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2AlternateFqdnInput` via:
+//
+//	ObjectStoreCertificateV2AlternateFqdnArgs{...}
+type ObjectStoreCertificateV2AlternateFqdnInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2AlternateFqdnOutput() ObjectStoreCertificateV2AlternateFqdnOutput
+	ToObjectStoreCertificateV2AlternateFqdnOutputWithContext(context.Context) ObjectStoreCertificateV2AlternateFqdnOutput
+}
+
+type ObjectStoreCertificateV2AlternateFqdnArgs struct {
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ObjectStoreCertificateV2AlternateFqdnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2AlternateFqdn)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2AlternateFqdnArgs) ToObjectStoreCertificateV2AlternateFqdnOutput() ObjectStoreCertificateV2AlternateFqdnOutput {
+	return i.ToObjectStoreCertificateV2AlternateFqdnOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2AlternateFqdnArgs) ToObjectStoreCertificateV2AlternateFqdnOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateFqdnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateFqdnOutput)
+}
+
+// ObjectStoreCertificateV2AlternateFqdnArrayInput is an input type that accepts ObjectStoreCertificateV2AlternateFqdnArray and ObjectStoreCertificateV2AlternateFqdnArrayOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2AlternateFqdnArrayInput` via:
+//
+//	ObjectStoreCertificateV2AlternateFqdnArray{ ObjectStoreCertificateV2AlternateFqdnArgs{...} }
+type ObjectStoreCertificateV2AlternateFqdnArrayInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2AlternateFqdnArrayOutput() ObjectStoreCertificateV2AlternateFqdnArrayOutput
+	ToObjectStoreCertificateV2AlternateFqdnArrayOutputWithContext(context.Context) ObjectStoreCertificateV2AlternateFqdnArrayOutput
+}
+
+type ObjectStoreCertificateV2AlternateFqdnArray []ObjectStoreCertificateV2AlternateFqdnInput
+
+func (ObjectStoreCertificateV2AlternateFqdnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreCertificateV2AlternateFqdn)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2AlternateFqdnArray) ToObjectStoreCertificateV2AlternateFqdnArrayOutput() ObjectStoreCertificateV2AlternateFqdnArrayOutput {
+	return i.ToObjectStoreCertificateV2AlternateFqdnArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2AlternateFqdnArray) ToObjectStoreCertificateV2AlternateFqdnArrayOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateFqdnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateFqdnArrayOutput)
+}
+
+type ObjectStoreCertificateV2AlternateFqdnOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2AlternateFqdnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2AlternateFqdn)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2AlternateFqdnOutput) ToObjectStoreCertificateV2AlternateFqdnOutput() ObjectStoreCertificateV2AlternateFqdnOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateFqdnOutput) ToObjectStoreCertificateV2AlternateFqdnOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateFqdnOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateFqdnOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2AlternateFqdn) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreCertificateV2AlternateFqdnArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2AlternateFqdnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreCertificateV2AlternateFqdn)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2AlternateFqdnArrayOutput) ToObjectStoreCertificateV2AlternateFqdnArrayOutput() ObjectStoreCertificateV2AlternateFqdnArrayOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateFqdnArrayOutput) ToObjectStoreCertificateV2AlternateFqdnArrayOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateFqdnArrayOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateFqdnArrayOutput) Index(i pulumi.IntInput) ObjectStoreCertificateV2AlternateFqdnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectStoreCertificateV2AlternateFqdn {
+		return vs[0].([]ObjectStoreCertificateV2AlternateFqdn)[vs[1].(int)]
+	}).(ObjectStoreCertificateV2AlternateFqdnOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIp struct {
+	Ipv4 *ObjectStoreCertificateV2AlternateIpIpv4 `pulumi:"ipv4"`
+	Ipv6 *ObjectStoreCertificateV2AlternateIpIpv6 `pulumi:"ipv6"`
+}
+
+// ObjectStoreCertificateV2AlternateIpInput is an input type that accepts ObjectStoreCertificateV2AlternateIpArgs and ObjectStoreCertificateV2AlternateIpOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2AlternateIpInput` via:
+//
+//	ObjectStoreCertificateV2AlternateIpArgs{...}
+type ObjectStoreCertificateV2AlternateIpInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2AlternateIpOutput() ObjectStoreCertificateV2AlternateIpOutput
+	ToObjectStoreCertificateV2AlternateIpOutputWithContext(context.Context) ObjectStoreCertificateV2AlternateIpOutput
+}
+
+type ObjectStoreCertificateV2AlternateIpArgs struct {
+	Ipv4 ObjectStoreCertificateV2AlternateIpIpv4PtrInput `pulumi:"ipv4"`
+	Ipv6 ObjectStoreCertificateV2AlternateIpIpv6PtrInput `pulumi:"ipv6"`
+}
+
+func (ObjectStoreCertificateV2AlternateIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2AlternateIp)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2AlternateIpArgs) ToObjectStoreCertificateV2AlternateIpOutput() ObjectStoreCertificateV2AlternateIpOutput {
+	return i.ToObjectStoreCertificateV2AlternateIpOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2AlternateIpArgs) ToObjectStoreCertificateV2AlternateIpOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateIpOutput)
+}
+
+// ObjectStoreCertificateV2AlternateIpArrayInput is an input type that accepts ObjectStoreCertificateV2AlternateIpArray and ObjectStoreCertificateV2AlternateIpArrayOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2AlternateIpArrayInput` via:
+//
+//	ObjectStoreCertificateV2AlternateIpArray{ ObjectStoreCertificateV2AlternateIpArgs{...} }
+type ObjectStoreCertificateV2AlternateIpArrayInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2AlternateIpArrayOutput() ObjectStoreCertificateV2AlternateIpArrayOutput
+	ToObjectStoreCertificateV2AlternateIpArrayOutputWithContext(context.Context) ObjectStoreCertificateV2AlternateIpArrayOutput
+}
+
+type ObjectStoreCertificateV2AlternateIpArray []ObjectStoreCertificateV2AlternateIpInput
+
+func (ObjectStoreCertificateV2AlternateIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreCertificateV2AlternateIp)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2AlternateIpArray) ToObjectStoreCertificateV2AlternateIpArrayOutput() ObjectStoreCertificateV2AlternateIpArrayOutput {
+	return i.ToObjectStoreCertificateV2AlternateIpArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2AlternateIpArray) ToObjectStoreCertificateV2AlternateIpArrayOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateIpArrayOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIpOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2AlternateIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2AlternateIp)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2AlternateIpOutput) ToObjectStoreCertificateV2AlternateIpOutput() ObjectStoreCertificateV2AlternateIpOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpOutput) ToObjectStoreCertificateV2AlternateIpOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpOutput) Ipv4() ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2AlternateIp) *ObjectStoreCertificateV2AlternateIpIpv4 { return v.Ipv4 }).(ObjectStoreCertificateV2AlternateIpIpv4PtrOutput)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpOutput) Ipv6() ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2AlternateIp) *ObjectStoreCertificateV2AlternateIpIpv6 { return v.Ipv6 }).(ObjectStoreCertificateV2AlternateIpIpv6PtrOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIpArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2AlternateIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreCertificateV2AlternateIp)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2AlternateIpArrayOutput) ToObjectStoreCertificateV2AlternateIpArrayOutput() ObjectStoreCertificateV2AlternateIpArrayOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpArrayOutput) ToObjectStoreCertificateV2AlternateIpArrayOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpArrayOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpArrayOutput) Index(i pulumi.IntInput) ObjectStoreCertificateV2AlternateIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectStoreCertificateV2AlternateIp {
+		return vs[0].([]ObjectStoreCertificateV2AlternateIp)[vs[1].(int)]
+	}).(ObjectStoreCertificateV2AlternateIpOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIpIpv4 struct {
+	PrefixLength *int   `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// ObjectStoreCertificateV2AlternateIpIpv4Input is an input type that accepts ObjectStoreCertificateV2AlternateIpIpv4Args and ObjectStoreCertificateV2AlternateIpIpv4Output values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2AlternateIpIpv4Input` via:
+//
+//	ObjectStoreCertificateV2AlternateIpIpv4Args{...}
+type ObjectStoreCertificateV2AlternateIpIpv4Input interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2AlternateIpIpv4Output() ObjectStoreCertificateV2AlternateIpIpv4Output
+	ToObjectStoreCertificateV2AlternateIpIpv4OutputWithContext(context.Context) ObjectStoreCertificateV2AlternateIpIpv4Output
+}
+
+type ObjectStoreCertificateV2AlternateIpIpv4Args struct {
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (ObjectStoreCertificateV2AlternateIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpIpv4)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2AlternateIpIpv4Args) ToObjectStoreCertificateV2AlternateIpIpv4Output() ObjectStoreCertificateV2AlternateIpIpv4Output {
+	return i.ToObjectStoreCertificateV2AlternateIpIpv4OutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2AlternateIpIpv4Args) ToObjectStoreCertificateV2AlternateIpIpv4OutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateIpIpv4Output)
+}
+
+func (i ObjectStoreCertificateV2AlternateIpIpv4Args) ToObjectStoreCertificateV2AlternateIpIpv4PtrOutput() ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return i.ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2AlternateIpIpv4Args) ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateIpIpv4Output).ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(ctx)
+}
+
+// ObjectStoreCertificateV2AlternateIpIpv4PtrInput is an input type that accepts ObjectStoreCertificateV2AlternateIpIpv4Args, ObjectStoreCertificateV2AlternateIpIpv4Ptr and ObjectStoreCertificateV2AlternateIpIpv4PtrOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2AlternateIpIpv4PtrInput` via:
+//
+//	        ObjectStoreCertificateV2AlternateIpIpv4Args{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreCertificateV2AlternateIpIpv4PtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2AlternateIpIpv4PtrOutput() ObjectStoreCertificateV2AlternateIpIpv4PtrOutput
+	ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(context.Context) ObjectStoreCertificateV2AlternateIpIpv4PtrOutput
+}
+
+type objectStoreCertificateV2AlternateIpIpv4PtrType ObjectStoreCertificateV2AlternateIpIpv4Args
+
+func ObjectStoreCertificateV2AlternateIpIpv4Ptr(v *ObjectStoreCertificateV2AlternateIpIpv4Args) ObjectStoreCertificateV2AlternateIpIpv4PtrInput {
+	return (*objectStoreCertificateV2AlternateIpIpv4PtrType)(v)
+}
+
+func (*objectStoreCertificateV2AlternateIpIpv4PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreCertificateV2AlternateIpIpv4)(nil)).Elem()
+}
+
+func (i *objectStoreCertificateV2AlternateIpIpv4PtrType) ToObjectStoreCertificateV2AlternateIpIpv4PtrOutput() ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return i.ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreCertificateV2AlternateIpIpv4PtrType) ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateIpIpv4PtrOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIpIpv4Output struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2AlternateIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpIpv4)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4Output) ToObjectStoreCertificateV2AlternateIpIpv4Output() ObjectStoreCertificateV2AlternateIpIpv4Output {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4Output) ToObjectStoreCertificateV2AlternateIpIpv4OutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv4Output {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4Output) ToObjectStoreCertificateV2AlternateIpIpv4PtrOutput() ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return o.ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4Output) ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreCertificateV2AlternateIpIpv4) *ObjectStoreCertificateV2AlternateIpIpv4 {
+		return &v
+	}).(ObjectStoreCertificateV2AlternateIpIpv4PtrOutput)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2AlternateIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2AlternateIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIpIpv4PtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2AlternateIpIpv4PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreCertificateV2AlternateIpIpv4)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4PtrOutput) ToObjectStoreCertificateV2AlternateIpIpv4PtrOutput() ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4PtrOutput) ToObjectStoreCertificateV2AlternateIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv4PtrOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4PtrOutput) Elem() ObjectStoreCertificateV2AlternateIpIpv4Output {
+	return o.ApplyT(func(v *ObjectStoreCertificateV2AlternateIpIpv4) ObjectStoreCertificateV2AlternateIpIpv4 {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreCertificateV2AlternateIpIpv4
+		return ret
+	}).(ObjectStoreCertificateV2AlternateIpIpv4Output)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4PtrOutput) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreCertificateV2AlternateIpIpv4) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PrefixLength
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv4PtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreCertificateV2AlternateIpIpv4) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIpIpv6 struct {
+	PrefixLength *int   `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// ObjectStoreCertificateV2AlternateIpIpv6Input is an input type that accepts ObjectStoreCertificateV2AlternateIpIpv6Args and ObjectStoreCertificateV2AlternateIpIpv6Output values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2AlternateIpIpv6Input` via:
+//
+//	ObjectStoreCertificateV2AlternateIpIpv6Args{...}
+type ObjectStoreCertificateV2AlternateIpIpv6Input interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2AlternateIpIpv6Output() ObjectStoreCertificateV2AlternateIpIpv6Output
+	ToObjectStoreCertificateV2AlternateIpIpv6OutputWithContext(context.Context) ObjectStoreCertificateV2AlternateIpIpv6Output
+}
+
+type ObjectStoreCertificateV2AlternateIpIpv6Args struct {
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (ObjectStoreCertificateV2AlternateIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpIpv6)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2AlternateIpIpv6Args) ToObjectStoreCertificateV2AlternateIpIpv6Output() ObjectStoreCertificateV2AlternateIpIpv6Output {
+	return i.ToObjectStoreCertificateV2AlternateIpIpv6OutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2AlternateIpIpv6Args) ToObjectStoreCertificateV2AlternateIpIpv6OutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateIpIpv6Output)
+}
+
+func (i ObjectStoreCertificateV2AlternateIpIpv6Args) ToObjectStoreCertificateV2AlternateIpIpv6PtrOutput() ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return i.ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2AlternateIpIpv6Args) ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateIpIpv6Output).ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(ctx)
+}
+
+// ObjectStoreCertificateV2AlternateIpIpv6PtrInput is an input type that accepts ObjectStoreCertificateV2AlternateIpIpv6Args, ObjectStoreCertificateV2AlternateIpIpv6Ptr and ObjectStoreCertificateV2AlternateIpIpv6PtrOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2AlternateIpIpv6PtrInput` via:
+//
+//	        ObjectStoreCertificateV2AlternateIpIpv6Args{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreCertificateV2AlternateIpIpv6PtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2AlternateIpIpv6PtrOutput() ObjectStoreCertificateV2AlternateIpIpv6PtrOutput
+	ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(context.Context) ObjectStoreCertificateV2AlternateIpIpv6PtrOutput
+}
+
+type objectStoreCertificateV2AlternateIpIpv6PtrType ObjectStoreCertificateV2AlternateIpIpv6Args
+
+func ObjectStoreCertificateV2AlternateIpIpv6Ptr(v *ObjectStoreCertificateV2AlternateIpIpv6Args) ObjectStoreCertificateV2AlternateIpIpv6PtrInput {
+	return (*objectStoreCertificateV2AlternateIpIpv6PtrType)(v)
+}
+
+func (*objectStoreCertificateV2AlternateIpIpv6PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreCertificateV2AlternateIpIpv6)(nil)).Elem()
+}
+
+func (i *objectStoreCertificateV2AlternateIpIpv6PtrType) ToObjectStoreCertificateV2AlternateIpIpv6PtrOutput() ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return i.ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreCertificateV2AlternateIpIpv6PtrType) ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2AlternateIpIpv6PtrOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIpIpv6Output struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2AlternateIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpIpv6)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6Output) ToObjectStoreCertificateV2AlternateIpIpv6Output() ObjectStoreCertificateV2AlternateIpIpv6Output {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6Output) ToObjectStoreCertificateV2AlternateIpIpv6OutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv6Output {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6Output) ToObjectStoreCertificateV2AlternateIpIpv6PtrOutput() ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return o.ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6Output) ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreCertificateV2AlternateIpIpv6) *ObjectStoreCertificateV2AlternateIpIpv6 {
+		return &v
+	}).(ObjectStoreCertificateV2AlternateIpIpv6PtrOutput)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2AlternateIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2AlternateIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ObjectStoreCertificateV2AlternateIpIpv6PtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2AlternateIpIpv6PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreCertificateV2AlternateIpIpv6)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6PtrOutput) ToObjectStoreCertificateV2AlternateIpIpv6PtrOutput() ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6PtrOutput) ToObjectStoreCertificateV2AlternateIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreCertificateV2AlternateIpIpv6PtrOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6PtrOutput) Elem() ObjectStoreCertificateV2AlternateIpIpv6Output {
+	return o.ApplyT(func(v *ObjectStoreCertificateV2AlternateIpIpv6) ObjectStoreCertificateV2AlternateIpIpv6 {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreCertificateV2AlternateIpIpv6
+		return ret
+	}).(ObjectStoreCertificateV2AlternateIpIpv6Output)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6PtrOutput) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreCertificateV2AlternateIpIpv6) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PrefixLength
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o ObjectStoreCertificateV2AlternateIpIpv6PtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreCertificateV2AlternateIpIpv6) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreCertificateV2Link struct {
+	Href *string `pulumi:"href"`
+	Rel  *string `pulumi:"rel"`
+}
+
+// ObjectStoreCertificateV2LinkInput is an input type that accepts ObjectStoreCertificateV2LinkArgs and ObjectStoreCertificateV2LinkOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2LinkInput` via:
+//
+//	ObjectStoreCertificateV2LinkArgs{...}
+type ObjectStoreCertificateV2LinkInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2LinkOutput() ObjectStoreCertificateV2LinkOutput
+	ToObjectStoreCertificateV2LinkOutputWithContext(context.Context) ObjectStoreCertificateV2LinkOutput
+}
+
+type ObjectStoreCertificateV2LinkArgs struct {
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	Rel  pulumi.StringPtrInput `pulumi:"rel"`
+}
+
+func (ObjectStoreCertificateV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2Link)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2LinkArgs) ToObjectStoreCertificateV2LinkOutput() ObjectStoreCertificateV2LinkOutput {
+	return i.ToObjectStoreCertificateV2LinkOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2LinkArgs) ToObjectStoreCertificateV2LinkOutputWithContext(ctx context.Context) ObjectStoreCertificateV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2LinkOutput)
+}
+
+// ObjectStoreCertificateV2LinkArrayInput is an input type that accepts ObjectStoreCertificateV2LinkArray and ObjectStoreCertificateV2LinkArrayOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2LinkArrayInput` via:
+//
+//	ObjectStoreCertificateV2LinkArray{ ObjectStoreCertificateV2LinkArgs{...} }
+type ObjectStoreCertificateV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2LinkArrayOutput() ObjectStoreCertificateV2LinkArrayOutput
+	ToObjectStoreCertificateV2LinkArrayOutputWithContext(context.Context) ObjectStoreCertificateV2LinkArrayOutput
+}
+
+type ObjectStoreCertificateV2LinkArray []ObjectStoreCertificateV2LinkInput
+
+func (ObjectStoreCertificateV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreCertificateV2Link)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2LinkArray) ToObjectStoreCertificateV2LinkArrayOutput() ObjectStoreCertificateV2LinkArrayOutput {
+	return i.ToObjectStoreCertificateV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2LinkArray) ToObjectStoreCertificateV2LinkArrayOutputWithContext(ctx context.Context) ObjectStoreCertificateV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2LinkArrayOutput)
+}
+
+type ObjectStoreCertificateV2LinkOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2Link)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2LinkOutput) ToObjectStoreCertificateV2LinkOutput() ObjectStoreCertificateV2LinkOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2LinkOutput) ToObjectStoreCertificateV2LinkOutputWithContext(ctx context.Context) ObjectStoreCertificateV2LinkOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2LinkOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2Link) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+func (o ObjectStoreCertificateV2LinkOutput) Rel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2Link) *string { return v.Rel }).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreCertificateV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreCertificateV2Link)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2LinkArrayOutput) ToObjectStoreCertificateV2LinkArrayOutput() ObjectStoreCertificateV2LinkArrayOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2LinkArrayOutput) ToObjectStoreCertificateV2LinkArrayOutputWithContext(ctx context.Context) ObjectStoreCertificateV2LinkArrayOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2LinkArrayOutput) Index(i pulumi.IntInput) ObjectStoreCertificateV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectStoreCertificateV2Link {
+		return vs[0].([]ObjectStoreCertificateV2Link)[vs[1].(int)]
+	}).(ObjectStoreCertificateV2LinkOutput)
+}
+
+type ObjectStoreCertificateV2Metadata struct {
+	CategoryIds        []string `pulumi:"categoryIds"`
+	OwnerReferenceId   *string  `pulumi:"ownerReferenceId"`
+	OwnerUserName      *string  `pulumi:"ownerUserName"`
+	ProjectName        *string  `pulumi:"projectName"`
+	ProjectReferenceId *string  `pulumi:"projectReferenceId"`
+}
+
+// ObjectStoreCertificateV2MetadataInput is an input type that accepts ObjectStoreCertificateV2MetadataArgs and ObjectStoreCertificateV2MetadataOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2MetadataInput` via:
+//
+//	ObjectStoreCertificateV2MetadataArgs{...}
+type ObjectStoreCertificateV2MetadataInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2MetadataOutput() ObjectStoreCertificateV2MetadataOutput
+	ToObjectStoreCertificateV2MetadataOutputWithContext(context.Context) ObjectStoreCertificateV2MetadataOutput
+}
+
+type ObjectStoreCertificateV2MetadataArgs struct {
+	CategoryIds        pulumi.StringArrayInput `pulumi:"categoryIds"`
+	OwnerReferenceId   pulumi.StringPtrInput   `pulumi:"ownerReferenceId"`
+	OwnerUserName      pulumi.StringPtrInput   `pulumi:"ownerUserName"`
+	ProjectName        pulumi.StringPtrInput   `pulumi:"projectName"`
+	ProjectReferenceId pulumi.StringPtrInput   `pulumi:"projectReferenceId"`
+}
+
+func (ObjectStoreCertificateV2MetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2Metadata)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2MetadataArgs) ToObjectStoreCertificateV2MetadataOutput() ObjectStoreCertificateV2MetadataOutput {
+	return i.ToObjectStoreCertificateV2MetadataOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2MetadataArgs) ToObjectStoreCertificateV2MetadataOutputWithContext(ctx context.Context) ObjectStoreCertificateV2MetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2MetadataOutput)
+}
+
+// ObjectStoreCertificateV2MetadataArrayInput is an input type that accepts ObjectStoreCertificateV2MetadataArray and ObjectStoreCertificateV2MetadataArrayOutput values.
+// You can construct a concrete instance of `ObjectStoreCertificateV2MetadataArrayInput` via:
+//
+//	ObjectStoreCertificateV2MetadataArray{ ObjectStoreCertificateV2MetadataArgs{...} }
+type ObjectStoreCertificateV2MetadataArrayInput interface {
+	pulumi.Input
+
+	ToObjectStoreCertificateV2MetadataArrayOutput() ObjectStoreCertificateV2MetadataArrayOutput
+	ToObjectStoreCertificateV2MetadataArrayOutputWithContext(context.Context) ObjectStoreCertificateV2MetadataArrayOutput
+}
+
+type ObjectStoreCertificateV2MetadataArray []ObjectStoreCertificateV2MetadataInput
+
+func (ObjectStoreCertificateV2MetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreCertificateV2Metadata)(nil)).Elem()
+}
+
+func (i ObjectStoreCertificateV2MetadataArray) ToObjectStoreCertificateV2MetadataArrayOutput() ObjectStoreCertificateV2MetadataArrayOutput {
+	return i.ToObjectStoreCertificateV2MetadataArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreCertificateV2MetadataArray) ToObjectStoreCertificateV2MetadataArrayOutputWithContext(ctx context.Context) ObjectStoreCertificateV2MetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreCertificateV2MetadataArrayOutput)
+}
+
+type ObjectStoreCertificateV2MetadataOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2MetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreCertificateV2Metadata)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2MetadataOutput) ToObjectStoreCertificateV2MetadataOutput() ObjectStoreCertificateV2MetadataOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2MetadataOutput) ToObjectStoreCertificateV2MetadataOutputWithContext(ctx context.Context) ObjectStoreCertificateV2MetadataOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2MetadataOutput) CategoryIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2Metadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
+}
+
+func (o ObjectStoreCertificateV2MetadataOutput) OwnerReferenceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2Metadata) *string { return v.OwnerReferenceId }).(pulumi.StringPtrOutput)
+}
+
+func (o ObjectStoreCertificateV2MetadataOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2Metadata) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
+}
+
+func (o ObjectStoreCertificateV2MetadataOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2Metadata) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+func (o ObjectStoreCertificateV2MetadataOutput) ProjectReferenceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreCertificateV2Metadata) *string { return v.ProjectReferenceId }).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreCertificateV2MetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreCertificateV2MetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreCertificateV2Metadata)(nil)).Elem()
+}
+
+func (o ObjectStoreCertificateV2MetadataArrayOutput) ToObjectStoreCertificateV2MetadataArrayOutput() ObjectStoreCertificateV2MetadataArrayOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2MetadataArrayOutput) ToObjectStoreCertificateV2MetadataArrayOutputWithContext(ctx context.Context) ObjectStoreCertificateV2MetadataArrayOutput {
+	return o
+}
+
+func (o ObjectStoreCertificateV2MetadataArrayOutput) Index(i pulumi.IntInput) ObjectStoreCertificateV2MetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectStoreCertificateV2Metadata {
+		return vs[0].([]ObjectStoreCertificateV2Metadata)[vs[1].(int)]
+	}).(ObjectStoreCertificateV2MetadataOutput)
+}
+
+type ObjectStoreV2Link struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href *string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel *string `pulumi:"rel"`
+}
+
+// ObjectStoreV2LinkInput is an input type that accepts ObjectStoreV2LinkArgs and ObjectStoreV2LinkOutput values.
+// You can construct a concrete instance of `ObjectStoreV2LinkInput` via:
+//
+//	ObjectStoreV2LinkArgs{...}
+type ObjectStoreV2LinkInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2LinkOutput() ObjectStoreV2LinkOutput
+	ToObjectStoreV2LinkOutputWithContext(context.Context) ObjectStoreV2LinkOutput
+}
+
+type ObjectStoreV2LinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringPtrInput `pulumi:"rel"`
+}
+
+func (ObjectStoreV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2Link)(nil)).Elem()
+}
+
+func (i ObjectStoreV2LinkArgs) ToObjectStoreV2LinkOutput() ObjectStoreV2LinkOutput {
+	return i.ToObjectStoreV2LinkOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2LinkArgs) ToObjectStoreV2LinkOutputWithContext(ctx context.Context) ObjectStoreV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2LinkOutput)
+}
+
+// ObjectStoreV2LinkArrayInput is an input type that accepts ObjectStoreV2LinkArray and ObjectStoreV2LinkArrayOutput values.
+// You can construct a concrete instance of `ObjectStoreV2LinkArrayInput` via:
+//
+//	ObjectStoreV2LinkArray{ ObjectStoreV2LinkArgs{...} }
+type ObjectStoreV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2LinkArrayOutput() ObjectStoreV2LinkArrayOutput
+	ToObjectStoreV2LinkArrayOutputWithContext(context.Context) ObjectStoreV2LinkArrayOutput
+}
+
+type ObjectStoreV2LinkArray []ObjectStoreV2LinkInput
+
+func (ObjectStoreV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreV2Link)(nil)).Elem()
+}
+
+func (i ObjectStoreV2LinkArray) ToObjectStoreV2LinkArrayOutput() ObjectStoreV2LinkArrayOutput {
+	return i.ToObjectStoreV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2LinkArray) ToObjectStoreV2LinkArrayOutputWithContext(ctx context.Context) ObjectStoreV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2LinkArrayOutput)
+}
+
+type ObjectStoreV2LinkOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2Link)(nil)).Elem()
+}
+
+func (o ObjectStoreV2LinkOutput) ToObjectStoreV2LinkOutput() ObjectStoreV2LinkOutput {
+	return o
+}
+
+func (o ObjectStoreV2LinkOutput) ToObjectStoreV2LinkOutputWithContext(ctx context.Context) ObjectStoreV2LinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o ObjectStoreV2LinkOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2Link) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o ObjectStoreV2LinkOutput) Rel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2Link) *string { return v.Rel }).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreV2Link)(nil)).Elem()
+}
+
+func (o ObjectStoreV2LinkArrayOutput) ToObjectStoreV2LinkArrayOutput() ObjectStoreV2LinkArrayOutput {
+	return o
+}
+
+func (o ObjectStoreV2LinkArrayOutput) ToObjectStoreV2LinkArrayOutputWithContext(ctx context.Context) ObjectStoreV2LinkArrayOutput {
+	return o
+}
+
+func (o ObjectStoreV2LinkArrayOutput) Index(i pulumi.IntInput) ObjectStoreV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectStoreV2Link {
+		return vs[0].([]ObjectStoreV2Link)[vs[1].(int)]
+	}).(ObjectStoreV2LinkOutput)
+}
+
+type ObjectStoreV2Metadata struct {
+	// -(Optional) A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds []string `pulumi:"categoryIds"`
+	// -(Optional) A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId *string `pulumi:"ownerReferenceId"`
+	// -(Optional) The userName of the owner of this resource.
+	OwnerUserName *string `pulumi:"ownerUserName"`
+	// -(Optional) The name of the project this resource belongs to.
+	ProjectName *string `pulumi:"projectName"`
+	// -(Optional) A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId *string `pulumi:"projectReferenceId"`
+}
+
+// ObjectStoreV2MetadataInput is an input type that accepts ObjectStoreV2MetadataArgs and ObjectStoreV2MetadataOutput values.
+// You can construct a concrete instance of `ObjectStoreV2MetadataInput` via:
+//
+//	ObjectStoreV2MetadataArgs{...}
+type ObjectStoreV2MetadataInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2MetadataOutput() ObjectStoreV2MetadataOutput
+	ToObjectStoreV2MetadataOutputWithContext(context.Context) ObjectStoreV2MetadataOutput
+}
+
+type ObjectStoreV2MetadataArgs struct {
+	// -(Optional) A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds pulumi.StringArrayInput `pulumi:"categoryIds"`
+	// -(Optional) A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId pulumi.StringPtrInput `pulumi:"ownerReferenceId"`
+	// -(Optional) The userName of the owner of this resource.
+	OwnerUserName pulumi.StringPtrInput `pulumi:"ownerUserName"`
+	// -(Optional) The name of the project this resource belongs to.
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// -(Optional) A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId pulumi.StringPtrInput `pulumi:"projectReferenceId"`
+}
+
+func (ObjectStoreV2MetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2Metadata)(nil)).Elem()
+}
+
+func (i ObjectStoreV2MetadataArgs) ToObjectStoreV2MetadataOutput() ObjectStoreV2MetadataOutput {
+	return i.ToObjectStoreV2MetadataOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2MetadataArgs) ToObjectStoreV2MetadataOutputWithContext(ctx context.Context) ObjectStoreV2MetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2MetadataOutput)
+}
+
+// ObjectStoreV2MetadataArrayInput is an input type that accepts ObjectStoreV2MetadataArray and ObjectStoreV2MetadataArrayOutput values.
+// You can construct a concrete instance of `ObjectStoreV2MetadataArrayInput` via:
+//
+//	ObjectStoreV2MetadataArray{ ObjectStoreV2MetadataArgs{...} }
+type ObjectStoreV2MetadataArrayInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2MetadataArrayOutput() ObjectStoreV2MetadataArrayOutput
+	ToObjectStoreV2MetadataArrayOutputWithContext(context.Context) ObjectStoreV2MetadataArrayOutput
+}
+
+type ObjectStoreV2MetadataArray []ObjectStoreV2MetadataInput
+
+func (ObjectStoreV2MetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreV2Metadata)(nil)).Elem()
+}
+
+func (i ObjectStoreV2MetadataArray) ToObjectStoreV2MetadataArrayOutput() ObjectStoreV2MetadataArrayOutput {
+	return i.ToObjectStoreV2MetadataArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2MetadataArray) ToObjectStoreV2MetadataArrayOutputWithContext(ctx context.Context) ObjectStoreV2MetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2MetadataArrayOutput)
+}
+
+type ObjectStoreV2MetadataOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2MetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2Metadata)(nil)).Elem()
+}
+
+func (o ObjectStoreV2MetadataOutput) ToObjectStoreV2MetadataOutput() ObjectStoreV2MetadataOutput {
+	return o
+}
+
+func (o ObjectStoreV2MetadataOutput) ToObjectStoreV2MetadataOutputWithContext(ctx context.Context) ObjectStoreV2MetadataOutput {
+	return o
+}
+
+// -(Optional) A list of globally unique identifiers that represent all the categories the resource is associated with.
+func (o ObjectStoreV2MetadataOutput) CategoryIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ObjectStoreV2Metadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
+}
+
+// -(Optional) A globally unique identifier that represents the owner of this resource.
+func (o ObjectStoreV2MetadataOutput) OwnerReferenceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2Metadata) *string { return v.OwnerReferenceId }).(pulumi.StringPtrOutput)
+}
+
+// -(Optional) The userName of the owner of this resource.
+func (o ObjectStoreV2MetadataOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2Metadata) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
+}
+
+// -(Optional) The name of the project this resource belongs to.
+func (o ObjectStoreV2MetadataOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2Metadata) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// -(Optional) A globally unique identifier that represents the project this resource belongs to.
+func (o ObjectStoreV2MetadataOutput) ProjectReferenceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2Metadata) *string { return v.ProjectReferenceId }).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreV2MetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2MetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreV2Metadata)(nil)).Elem()
+}
+
+func (o ObjectStoreV2MetadataArrayOutput) ToObjectStoreV2MetadataArrayOutput() ObjectStoreV2MetadataArrayOutput {
+	return o
+}
+
+func (o ObjectStoreV2MetadataArrayOutput) ToObjectStoreV2MetadataArrayOutputWithContext(ctx context.Context) ObjectStoreV2MetadataArrayOutput {
+	return o
+}
+
+func (o ObjectStoreV2MetadataArrayOutput) Index(i pulumi.IntInput) ObjectStoreV2MetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectStoreV2Metadata {
+		return vs[0].([]ObjectStoreV2Metadata)[vs[1].(int)]
+	}).(ObjectStoreV2MetadataOutput)
+}
+
+type ObjectStoreV2PublicNetworkIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 *ObjectStoreV2PublicNetworkIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 *ObjectStoreV2PublicNetworkIpIpv6 `pulumi:"ipv6"`
+}
+
+// ObjectStoreV2PublicNetworkIpInput is an input type that accepts ObjectStoreV2PublicNetworkIpArgs and ObjectStoreV2PublicNetworkIpOutput values.
+// You can construct a concrete instance of `ObjectStoreV2PublicNetworkIpInput` via:
+//
+//	ObjectStoreV2PublicNetworkIpArgs{...}
+type ObjectStoreV2PublicNetworkIpInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2PublicNetworkIpOutput() ObjectStoreV2PublicNetworkIpOutput
+	ToObjectStoreV2PublicNetworkIpOutputWithContext(context.Context) ObjectStoreV2PublicNetworkIpOutput
+}
+
+type ObjectStoreV2PublicNetworkIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 ObjectStoreV2PublicNetworkIpIpv4PtrInput `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 ObjectStoreV2PublicNetworkIpIpv6PtrInput `pulumi:"ipv6"`
+}
+
+func (ObjectStoreV2PublicNetworkIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2PublicNetworkIp)(nil)).Elem()
+}
+
+func (i ObjectStoreV2PublicNetworkIpArgs) ToObjectStoreV2PublicNetworkIpOutput() ObjectStoreV2PublicNetworkIpOutput {
+	return i.ToObjectStoreV2PublicNetworkIpOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2PublicNetworkIpArgs) ToObjectStoreV2PublicNetworkIpOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2PublicNetworkIpOutput)
+}
+
+// ObjectStoreV2PublicNetworkIpArrayInput is an input type that accepts ObjectStoreV2PublicNetworkIpArray and ObjectStoreV2PublicNetworkIpArrayOutput values.
+// You can construct a concrete instance of `ObjectStoreV2PublicNetworkIpArrayInput` via:
+//
+//	ObjectStoreV2PublicNetworkIpArray{ ObjectStoreV2PublicNetworkIpArgs{...} }
+type ObjectStoreV2PublicNetworkIpArrayInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2PublicNetworkIpArrayOutput() ObjectStoreV2PublicNetworkIpArrayOutput
+	ToObjectStoreV2PublicNetworkIpArrayOutputWithContext(context.Context) ObjectStoreV2PublicNetworkIpArrayOutput
+}
+
+type ObjectStoreV2PublicNetworkIpArray []ObjectStoreV2PublicNetworkIpInput
+
+func (ObjectStoreV2PublicNetworkIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreV2PublicNetworkIp)(nil)).Elem()
+}
+
+func (i ObjectStoreV2PublicNetworkIpArray) ToObjectStoreV2PublicNetworkIpArrayOutput() ObjectStoreV2PublicNetworkIpArrayOutput {
+	return i.ToObjectStoreV2PublicNetworkIpArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2PublicNetworkIpArray) ToObjectStoreV2PublicNetworkIpArrayOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2PublicNetworkIpArrayOutput)
+}
+
+type ObjectStoreV2PublicNetworkIpOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2PublicNetworkIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2PublicNetworkIp)(nil)).Elem()
+}
+
+func (o ObjectStoreV2PublicNetworkIpOutput) ToObjectStoreV2PublicNetworkIpOutput() ObjectStoreV2PublicNetworkIpOutput {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpOutput) ToObjectStoreV2PublicNetworkIpOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o ObjectStoreV2PublicNetworkIpOutput) Ipv4() ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2PublicNetworkIp) *ObjectStoreV2PublicNetworkIpIpv4 { return v.Ipv4 }).(ObjectStoreV2PublicNetworkIpIpv4PtrOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o ObjectStoreV2PublicNetworkIpOutput) Ipv6() ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2PublicNetworkIp) *ObjectStoreV2PublicNetworkIpIpv6 { return v.Ipv6 }).(ObjectStoreV2PublicNetworkIpIpv6PtrOutput)
+}
+
+type ObjectStoreV2PublicNetworkIpArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2PublicNetworkIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectStoreV2PublicNetworkIp)(nil)).Elem()
+}
+
+func (o ObjectStoreV2PublicNetworkIpArrayOutput) ToObjectStoreV2PublicNetworkIpArrayOutput() ObjectStoreV2PublicNetworkIpArrayOutput {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpArrayOutput) ToObjectStoreV2PublicNetworkIpArrayOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpArrayOutput {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpArrayOutput) Index(i pulumi.IntInput) ObjectStoreV2PublicNetworkIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectStoreV2PublicNetworkIp {
+		return vs[0].([]ObjectStoreV2PublicNetworkIp)[vs[1].(int)]
+	}).(ObjectStoreV2PublicNetworkIpOutput)
+}
+
+type ObjectStoreV2PublicNetworkIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// ObjectStoreV2PublicNetworkIpIpv4Input is an input type that accepts ObjectStoreV2PublicNetworkIpIpv4Args and ObjectStoreV2PublicNetworkIpIpv4Output values.
+// You can construct a concrete instance of `ObjectStoreV2PublicNetworkIpIpv4Input` via:
+//
+//	ObjectStoreV2PublicNetworkIpIpv4Args{...}
+type ObjectStoreV2PublicNetworkIpIpv4Input interface {
+	pulumi.Input
+
+	ToObjectStoreV2PublicNetworkIpIpv4Output() ObjectStoreV2PublicNetworkIpIpv4Output
+	ToObjectStoreV2PublicNetworkIpIpv4OutputWithContext(context.Context) ObjectStoreV2PublicNetworkIpIpv4Output
+}
+
+type ObjectStoreV2PublicNetworkIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ObjectStoreV2PublicNetworkIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2PublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (i ObjectStoreV2PublicNetworkIpIpv4Args) ToObjectStoreV2PublicNetworkIpIpv4Output() ObjectStoreV2PublicNetworkIpIpv4Output {
+	return i.ToObjectStoreV2PublicNetworkIpIpv4OutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2PublicNetworkIpIpv4Args) ToObjectStoreV2PublicNetworkIpIpv4OutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2PublicNetworkIpIpv4Output)
+}
+
+func (i ObjectStoreV2PublicNetworkIpIpv4Args) ToObjectStoreV2PublicNetworkIpIpv4PtrOutput() ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return i.ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2PublicNetworkIpIpv4Args) ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2PublicNetworkIpIpv4Output).ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(ctx)
+}
+
+// ObjectStoreV2PublicNetworkIpIpv4PtrInput is an input type that accepts ObjectStoreV2PublicNetworkIpIpv4Args, ObjectStoreV2PublicNetworkIpIpv4Ptr and ObjectStoreV2PublicNetworkIpIpv4PtrOutput values.
+// You can construct a concrete instance of `ObjectStoreV2PublicNetworkIpIpv4PtrInput` via:
+//
+//	        ObjectStoreV2PublicNetworkIpIpv4Args{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreV2PublicNetworkIpIpv4PtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2PublicNetworkIpIpv4PtrOutput() ObjectStoreV2PublicNetworkIpIpv4PtrOutput
+	ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(context.Context) ObjectStoreV2PublicNetworkIpIpv4PtrOutput
+}
+
+type objectStoreV2PublicNetworkIpIpv4PtrType ObjectStoreV2PublicNetworkIpIpv4Args
+
+func ObjectStoreV2PublicNetworkIpIpv4Ptr(v *ObjectStoreV2PublicNetworkIpIpv4Args) ObjectStoreV2PublicNetworkIpIpv4PtrInput {
+	return (*objectStoreV2PublicNetworkIpIpv4PtrType)(v)
+}
+
+func (*objectStoreV2PublicNetworkIpIpv4PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2PublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (i *objectStoreV2PublicNetworkIpIpv4PtrType) ToObjectStoreV2PublicNetworkIpIpv4PtrOutput() ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return i.ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreV2PublicNetworkIpIpv4PtrType) ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2PublicNetworkIpIpv4PtrOutput)
+}
+
+type ObjectStoreV2PublicNetworkIpIpv4Output struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2PublicNetworkIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2PublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv4Output) ToObjectStoreV2PublicNetworkIpIpv4Output() ObjectStoreV2PublicNetworkIpIpv4Output {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv4Output) ToObjectStoreV2PublicNetworkIpIpv4OutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv4Output {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv4Output) ToObjectStoreV2PublicNetworkIpIpv4PtrOutput() ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return o.ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv4Output) ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreV2PublicNetworkIpIpv4) *ObjectStoreV2PublicNetworkIpIpv4 {
+		return &v
+	}).(ObjectStoreV2PublicNetworkIpIpv4PtrOutput)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2PublicNetworkIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2PublicNetworkIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2PublicNetworkIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ObjectStoreV2PublicNetworkIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ObjectStoreV2PublicNetworkIpIpv4PtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2PublicNetworkIpIpv4PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2PublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv4PtrOutput) ToObjectStoreV2PublicNetworkIpIpv4PtrOutput() ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv4PtrOutput) ToObjectStoreV2PublicNetworkIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv4PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv4PtrOutput) Elem() ObjectStoreV2PublicNetworkIpIpv4Output {
+	return o.ApplyT(func(v *ObjectStoreV2PublicNetworkIpIpv4) ObjectStoreV2PublicNetworkIpIpv4 {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreV2PublicNetworkIpIpv4
+		return ret
+	}).(ObjectStoreV2PublicNetworkIpIpv4Output)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2PublicNetworkIpIpv4PtrOutput) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2PublicNetworkIpIpv4) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PrefixLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2PublicNetworkIpIpv4PtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2PublicNetworkIpIpv4) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreV2PublicNetworkIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// ObjectStoreV2PublicNetworkIpIpv6Input is an input type that accepts ObjectStoreV2PublicNetworkIpIpv6Args and ObjectStoreV2PublicNetworkIpIpv6Output values.
+// You can construct a concrete instance of `ObjectStoreV2PublicNetworkIpIpv6Input` via:
+//
+//	ObjectStoreV2PublicNetworkIpIpv6Args{...}
+type ObjectStoreV2PublicNetworkIpIpv6Input interface {
+	pulumi.Input
+
+	ToObjectStoreV2PublicNetworkIpIpv6Output() ObjectStoreV2PublicNetworkIpIpv6Output
+	ToObjectStoreV2PublicNetworkIpIpv6OutputWithContext(context.Context) ObjectStoreV2PublicNetworkIpIpv6Output
+}
+
+type ObjectStoreV2PublicNetworkIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ObjectStoreV2PublicNetworkIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2PublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (i ObjectStoreV2PublicNetworkIpIpv6Args) ToObjectStoreV2PublicNetworkIpIpv6Output() ObjectStoreV2PublicNetworkIpIpv6Output {
+	return i.ToObjectStoreV2PublicNetworkIpIpv6OutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2PublicNetworkIpIpv6Args) ToObjectStoreV2PublicNetworkIpIpv6OutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2PublicNetworkIpIpv6Output)
+}
+
+func (i ObjectStoreV2PublicNetworkIpIpv6Args) ToObjectStoreV2PublicNetworkIpIpv6PtrOutput() ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return i.ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2PublicNetworkIpIpv6Args) ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2PublicNetworkIpIpv6Output).ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(ctx)
+}
+
+// ObjectStoreV2PublicNetworkIpIpv6PtrInput is an input type that accepts ObjectStoreV2PublicNetworkIpIpv6Args, ObjectStoreV2PublicNetworkIpIpv6Ptr and ObjectStoreV2PublicNetworkIpIpv6PtrOutput values.
+// You can construct a concrete instance of `ObjectStoreV2PublicNetworkIpIpv6PtrInput` via:
+//
+//	        ObjectStoreV2PublicNetworkIpIpv6Args{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreV2PublicNetworkIpIpv6PtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2PublicNetworkIpIpv6PtrOutput() ObjectStoreV2PublicNetworkIpIpv6PtrOutput
+	ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(context.Context) ObjectStoreV2PublicNetworkIpIpv6PtrOutput
+}
+
+type objectStoreV2PublicNetworkIpIpv6PtrType ObjectStoreV2PublicNetworkIpIpv6Args
+
+func ObjectStoreV2PublicNetworkIpIpv6Ptr(v *ObjectStoreV2PublicNetworkIpIpv6Args) ObjectStoreV2PublicNetworkIpIpv6PtrInput {
+	return (*objectStoreV2PublicNetworkIpIpv6PtrType)(v)
+}
+
+func (*objectStoreV2PublicNetworkIpIpv6PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2PublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (i *objectStoreV2PublicNetworkIpIpv6PtrType) ToObjectStoreV2PublicNetworkIpIpv6PtrOutput() ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return i.ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreV2PublicNetworkIpIpv6PtrType) ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2PublicNetworkIpIpv6PtrOutput)
+}
+
+type ObjectStoreV2PublicNetworkIpIpv6Output struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2PublicNetworkIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2PublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv6Output) ToObjectStoreV2PublicNetworkIpIpv6Output() ObjectStoreV2PublicNetworkIpIpv6Output {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv6Output) ToObjectStoreV2PublicNetworkIpIpv6OutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv6Output {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv6Output) ToObjectStoreV2PublicNetworkIpIpv6PtrOutput() ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return o.ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv6Output) ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreV2PublicNetworkIpIpv6) *ObjectStoreV2PublicNetworkIpIpv6 {
+		return &v
+	}).(ObjectStoreV2PublicNetworkIpIpv6PtrOutput)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2PublicNetworkIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2PublicNetworkIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2PublicNetworkIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ObjectStoreV2PublicNetworkIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ObjectStoreV2PublicNetworkIpIpv6PtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2PublicNetworkIpIpv6PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2PublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv6PtrOutput) ToObjectStoreV2PublicNetworkIpIpv6PtrOutput() ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv6PtrOutput) ToObjectStoreV2PublicNetworkIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2PublicNetworkIpIpv6PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2PublicNetworkIpIpv6PtrOutput) Elem() ObjectStoreV2PublicNetworkIpIpv6Output {
+	return o.ApplyT(func(v *ObjectStoreV2PublicNetworkIpIpv6) ObjectStoreV2PublicNetworkIpIpv6 {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreV2PublicNetworkIpIpv6
+		return ret
+	}).(ObjectStoreV2PublicNetworkIpIpv6Output)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2PublicNetworkIpIpv6PtrOutput) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2PublicNetworkIpIpv6) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PrefixLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2PublicNetworkIpIpv6PtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2PublicNetworkIpIpv6) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 *ObjectStoreV2StorageNetworkDnsIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 *ObjectStoreV2StorageNetworkDnsIpIpv6 `pulumi:"ipv6"`
+}
+
+// ObjectStoreV2StorageNetworkDnsIpInput is an input type that accepts ObjectStoreV2StorageNetworkDnsIpArgs and ObjectStoreV2StorageNetworkDnsIpOutput values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkDnsIpInput` via:
+//
+//	ObjectStoreV2StorageNetworkDnsIpArgs{...}
+type ObjectStoreV2StorageNetworkDnsIpInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkDnsIpOutput() ObjectStoreV2StorageNetworkDnsIpOutput
+	ToObjectStoreV2StorageNetworkDnsIpOutputWithContext(context.Context) ObjectStoreV2StorageNetworkDnsIpOutput
+}
+
+type ObjectStoreV2StorageNetworkDnsIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 ObjectStoreV2StorageNetworkDnsIpIpv4PtrInput `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 ObjectStoreV2StorageNetworkDnsIpIpv6PtrInput `pulumi:"ipv6"`
+}
+
+func (ObjectStoreV2StorageNetworkDnsIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpArgs) ToObjectStoreV2StorageNetworkDnsIpOutput() ObjectStoreV2StorageNetworkDnsIpOutput {
+	return i.ToObjectStoreV2StorageNetworkDnsIpOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpArgs) ToObjectStoreV2StorageNetworkDnsIpOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpOutput)
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpArgs) ToObjectStoreV2StorageNetworkDnsIpPtrOutput() ObjectStoreV2StorageNetworkDnsIpPtrOutput {
+	return i.ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpArgs) ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpOutput).ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(ctx)
+}
+
+// ObjectStoreV2StorageNetworkDnsIpPtrInput is an input type that accepts ObjectStoreV2StorageNetworkDnsIpArgs, ObjectStoreV2StorageNetworkDnsIpPtr and ObjectStoreV2StorageNetworkDnsIpPtrOutput values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkDnsIpPtrInput` via:
+//
+//	        ObjectStoreV2StorageNetworkDnsIpArgs{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreV2StorageNetworkDnsIpPtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkDnsIpPtrOutput() ObjectStoreV2StorageNetworkDnsIpPtrOutput
+	ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(context.Context) ObjectStoreV2StorageNetworkDnsIpPtrOutput
+}
+
+type objectStoreV2StorageNetworkDnsIpPtrType ObjectStoreV2StorageNetworkDnsIpArgs
+
+func ObjectStoreV2StorageNetworkDnsIpPtr(v *ObjectStoreV2StorageNetworkDnsIpArgs) ObjectStoreV2StorageNetworkDnsIpPtrInput {
+	return (*objectStoreV2StorageNetworkDnsIpPtrType)(v)
+}
+
+func (*objectStoreV2StorageNetworkDnsIpPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (i *objectStoreV2StorageNetworkDnsIpPtrType) ToObjectStoreV2StorageNetworkDnsIpPtrOutput() ObjectStoreV2StorageNetworkDnsIpPtrOutput {
+	return i.ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreV2StorageNetworkDnsIpPtrType) ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpPtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIpOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkDnsIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpOutput) ToObjectStoreV2StorageNetworkDnsIpOutput() ObjectStoreV2StorageNetworkDnsIpOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpOutput) ToObjectStoreV2StorageNetworkDnsIpOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpOutput) ToObjectStoreV2StorageNetworkDnsIpPtrOutput() ObjectStoreV2StorageNetworkDnsIpPtrOutput {
+	return o.ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpOutput) ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreV2StorageNetworkDnsIp) *ObjectStoreV2StorageNetworkDnsIp {
+		return &v
+	}).(ObjectStoreV2StorageNetworkDnsIpPtrOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o ObjectStoreV2StorageNetworkDnsIpOutput) Ipv4() ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkDnsIp) *ObjectStoreV2StorageNetworkDnsIpIpv4 { return v.Ipv4 }).(ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o ObjectStoreV2StorageNetworkDnsIpOutput) Ipv6() ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkDnsIp) *ObjectStoreV2StorageNetworkDnsIpIpv6 { return v.Ipv6 }).(ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIpPtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkDnsIpPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpPtrOutput) ToObjectStoreV2StorageNetworkDnsIpPtrOutput() ObjectStoreV2StorageNetworkDnsIpPtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpPtrOutput) ToObjectStoreV2StorageNetworkDnsIpPtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpPtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpPtrOutput) Elem() ObjectStoreV2StorageNetworkDnsIpOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIp) ObjectStoreV2StorageNetworkDnsIp {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreV2StorageNetworkDnsIp
+		return ret
+	}).(ObjectStoreV2StorageNetworkDnsIpOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o ObjectStoreV2StorageNetworkDnsIpPtrOutput) Ipv4() ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIp) *ObjectStoreV2StorageNetworkDnsIpIpv4 {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv4
+	}).(ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o ObjectStoreV2StorageNetworkDnsIpPtrOutput) Ipv6() ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIp) *ObjectStoreV2StorageNetworkDnsIpIpv6 {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6
+	}).(ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// ObjectStoreV2StorageNetworkDnsIpIpv4Input is an input type that accepts ObjectStoreV2StorageNetworkDnsIpIpv4Args and ObjectStoreV2StorageNetworkDnsIpIpv4Output values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkDnsIpIpv4Input` via:
+//
+//	ObjectStoreV2StorageNetworkDnsIpIpv4Args{...}
+type ObjectStoreV2StorageNetworkDnsIpIpv4Input interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkDnsIpIpv4Output() ObjectStoreV2StorageNetworkDnsIpIpv4Output
+	ToObjectStoreV2StorageNetworkDnsIpIpv4OutputWithContext(context.Context) ObjectStoreV2StorageNetworkDnsIpIpv4Output
+}
+
+type ObjectStoreV2StorageNetworkDnsIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ObjectStoreV2StorageNetworkDnsIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpIpv4Args) ToObjectStoreV2StorageNetworkDnsIpIpv4Output() ObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return i.ToObjectStoreV2StorageNetworkDnsIpIpv4OutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpIpv4Args) ToObjectStoreV2StorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpIpv4Output)
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpIpv4Args) ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return i.ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpIpv4Args) ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpIpv4Output).ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(ctx)
+}
+
+// ObjectStoreV2StorageNetworkDnsIpIpv4PtrInput is an input type that accepts ObjectStoreV2StorageNetworkDnsIpIpv4Args, ObjectStoreV2StorageNetworkDnsIpIpv4Ptr and ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkDnsIpIpv4PtrInput` via:
+//
+//	        ObjectStoreV2StorageNetworkDnsIpIpv4Args{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreV2StorageNetworkDnsIpIpv4PtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput
+	ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(context.Context) ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput
+}
+
+type objectStoreV2StorageNetworkDnsIpIpv4PtrType ObjectStoreV2StorageNetworkDnsIpIpv4Args
+
+func ObjectStoreV2StorageNetworkDnsIpIpv4Ptr(v *ObjectStoreV2StorageNetworkDnsIpIpv4Args) ObjectStoreV2StorageNetworkDnsIpIpv4PtrInput {
+	return (*objectStoreV2StorageNetworkDnsIpIpv4PtrType)(v)
+}
+
+func (*objectStoreV2StorageNetworkDnsIpIpv4PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (i *objectStoreV2StorageNetworkDnsIpIpv4PtrType) ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return i.ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreV2StorageNetworkDnsIpIpv4PtrType) ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIpIpv4Output struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkDnsIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4Output) ToObjectStoreV2StorageNetworkDnsIpIpv4Output() ObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4Output) ToObjectStoreV2StorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4Output) ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return o.ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4Output) ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreV2StorageNetworkDnsIpIpv4) *ObjectStoreV2StorageNetworkDnsIpIpv4 {
+		return &v
+	}).(ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkDnsIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkDnsIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput) ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput) ToObjectStoreV2StorageNetworkDnsIpIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput) Elem() ObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIpIpv4) ObjectStoreV2StorageNetworkDnsIpIpv4 {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreV2StorageNetworkDnsIpIpv4
+		return ret
+	}).(ObjectStoreV2StorageNetworkDnsIpIpv4Output)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIpIpv4) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PrefixLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIpIpv4) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// ObjectStoreV2StorageNetworkDnsIpIpv6Input is an input type that accepts ObjectStoreV2StorageNetworkDnsIpIpv6Args and ObjectStoreV2StorageNetworkDnsIpIpv6Output values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkDnsIpIpv6Input` via:
+//
+//	ObjectStoreV2StorageNetworkDnsIpIpv6Args{...}
+type ObjectStoreV2StorageNetworkDnsIpIpv6Input interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkDnsIpIpv6Output() ObjectStoreV2StorageNetworkDnsIpIpv6Output
+	ToObjectStoreV2StorageNetworkDnsIpIpv6OutputWithContext(context.Context) ObjectStoreV2StorageNetworkDnsIpIpv6Output
+}
+
+type ObjectStoreV2StorageNetworkDnsIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ObjectStoreV2StorageNetworkDnsIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpIpv6Args) ToObjectStoreV2StorageNetworkDnsIpIpv6Output() ObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return i.ToObjectStoreV2StorageNetworkDnsIpIpv6OutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpIpv6Args) ToObjectStoreV2StorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpIpv6Output)
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpIpv6Args) ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return i.ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkDnsIpIpv6Args) ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpIpv6Output).ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(ctx)
+}
+
+// ObjectStoreV2StorageNetworkDnsIpIpv6PtrInput is an input type that accepts ObjectStoreV2StorageNetworkDnsIpIpv6Args, ObjectStoreV2StorageNetworkDnsIpIpv6Ptr and ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkDnsIpIpv6PtrInput` via:
+//
+//	        ObjectStoreV2StorageNetworkDnsIpIpv6Args{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreV2StorageNetworkDnsIpIpv6PtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput
+	ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(context.Context) ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput
+}
+
+type objectStoreV2StorageNetworkDnsIpIpv6PtrType ObjectStoreV2StorageNetworkDnsIpIpv6Args
+
+func ObjectStoreV2StorageNetworkDnsIpIpv6Ptr(v *ObjectStoreV2StorageNetworkDnsIpIpv6Args) ObjectStoreV2StorageNetworkDnsIpIpv6PtrInput {
+	return (*objectStoreV2StorageNetworkDnsIpIpv6PtrType)(v)
+}
+
+func (*objectStoreV2StorageNetworkDnsIpIpv6PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (i *objectStoreV2StorageNetworkDnsIpIpv6PtrType) ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return i.ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreV2StorageNetworkDnsIpIpv6PtrType) ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIpIpv6Output struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkDnsIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6Output) ToObjectStoreV2StorageNetworkDnsIpIpv6Output() ObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6Output) ToObjectStoreV2StorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6Output) ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return o.ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6Output) ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreV2StorageNetworkDnsIpIpv6) *ObjectStoreV2StorageNetworkDnsIpIpv6 {
+		return &v
+	}).(ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkDnsIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkDnsIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput) ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput() ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput) ToObjectStoreV2StorageNetworkDnsIpIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput) Elem() ObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIpIpv6) ObjectStoreV2StorageNetworkDnsIpIpv6 {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreV2StorageNetworkDnsIpIpv6
+		return ret
+	}).(ObjectStoreV2StorageNetworkDnsIpIpv6Output)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIpIpv6) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PrefixLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkDnsIpIpv6) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkVip struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 *ObjectStoreV2StorageNetworkVipIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 *ObjectStoreV2StorageNetworkVipIpv6 `pulumi:"ipv6"`
+}
+
+// ObjectStoreV2StorageNetworkVipInput is an input type that accepts ObjectStoreV2StorageNetworkVipArgs and ObjectStoreV2StorageNetworkVipOutput values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkVipInput` via:
+//
+//	ObjectStoreV2StorageNetworkVipArgs{...}
+type ObjectStoreV2StorageNetworkVipInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkVipOutput() ObjectStoreV2StorageNetworkVipOutput
+	ToObjectStoreV2StorageNetworkVipOutputWithContext(context.Context) ObjectStoreV2StorageNetworkVipOutput
+}
+
+type ObjectStoreV2StorageNetworkVipArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 ObjectStoreV2StorageNetworkVipIpv4PtrInput `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 ObjectStoreV2StorageNetworkVipIpv6PtrInput `pulumi:"ipv6"`
+}
+
+func (ObjectStoreV2StorageNetworkVipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkVip)(nil)).Elem()
+}
+
+func (i ObjectStoreV2StorageNetworkVipArgs) ToObjectStoreV2StorageNetworkVipOutput() ObjectStoreV2StorageNetworkVipOutput {
+	return i.ToObjectStoreV2StorageNetworkVipOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkVipArgs) ToObjectStoreV2StorageNetworkVipOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipOutput)
+}
+
+func (i ObjectStoreV2StorageNetworkVipArgs) ToObjectStoreV2StorageNetworkVipPtrOutput() ObjectStoreV2StorageNetworkVipPtrOutput {
+	return i.ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkVipArgs) ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipOutput).ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(ctx)
+}
+
+// ObjectStoreV2StorageNetworkVipPtrInput is an input type that accepts ObjectStoreV2StorageNetworkVipArgs, ObjectStoreV2StorageNetworkVipPtr and ObjectStoreV2StorageNetworkVipPtrOutput values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkVipPtrInput` via:
+//
+//	        ObjectStoreV2StorageNetworkVipArgs{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreV2StorageNetworkVipPtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkVipPtrOutput() ObjectStoreV2StorageNetworkVipPtrOutput
+	ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(context.Context) ObjectStoreV2StorageNetworkVipPtrOutput
+}
+
+type objectStoreV2StorageNetworkVipPtrType ObjectStoreV2StorageNetworkVipArgs
+
+func ObjectStoreV2StorageNetworkVipPtr(v *ObjectStoreV2StorageNetworkVipArgs) ObjectStoreV2StorageNetworkVipPtrInput {
+	return (*objectStoreV2StorageNetworkVipPtrType)(v)
+}
+
+func (*objectStoreV2StorageNetworkVipPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkVip)(nil)).Elem()
+}
+
+func (i *objectStoreV2StorageNetworkVipPtrType) ToObjectStoreV2StorageNetworkVipPtrOutput() ObjectStoreV2StorageNetworkVipPtrOutput {
+	return i.ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreV2StorageNetworkVipPtrType) ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipPtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkVipOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkVipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkVip)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkVipOutput) ToObjectStoreV2StorageNetworkVipOutput() ObjectStoreV2StorageNetworkVipOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipOutput) ToObjectStoreV2StorageNetworkVipOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipOutput) ToObjectStoreV2StorageNetworkVipPtrOutput() ObjectStoreV2StorageNetworkVipPtrOutput {
+	return o.ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreV2StorageNetworkVipOutput) ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreV2StorageNetworkVip) *ObjectStoreV2StorageNetworkVip {
+		return &v
+	}).(ObjectStoreV2StorageNetworkVipPtrOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o ObjectStoreV2StorageNetworkVipOutput) Ipv4() ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkVip) *ObjectStoreV2StorageNetworkVipIpv4 { return v.Ipv4 }).(ObjectStoreV2StorageNetworkVipIpv4PtrOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o ObjectStoreV2StorageNetworkVipOutput) Ipv6() ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkVip) *ObjectStoreV2StorageNetworkVipIpv6 { return v.Ipv6 }).(ObjectStoreV2StorageNetworkVipIpv6PtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkVipPtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkVipPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkVip)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkVipPtrOutput) ToObjectStoreV2StorageNetworkVipPtrOutput() ObjectStoreV2StorageNetworkVipPtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipPtrOutput) ToObjectStoreV2StorageNetworkVipPtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipPtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipPtrOutput) Elem() ObjectStoreV2StorageNetworkVipOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVip) ObjectStoreV2StorageNetworkVip {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreV2StorageNetworkVip
+		return ret
+	}).(ObjectStoreV2StorageNetworkVipOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o ObjectStoreV2StorageNetworkVipPtrOutput) Ipv4() ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVip) *ObjectStoreV2StorageNetworkVipIpv4 {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv4
+	}).(ObjectStoreV2StorageNetworkVipIpv4PtrOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o ObjectStoreV2StorageNetworkVipPtrOutput) Ipv6() ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVip) *ObjectStoreV2StorageNetworkVipIpv6 {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6
+	}).(ObjectStoreV2StorageNetworkVipIpv6PtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkVipIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// ObjectStoreV2StorageNetworkVipIpv4Input is an input type that accepts ObjectStoreV2StorageNetworkVipIpv4Args and ObjectStoreV2StorageNetworkVipIpv4Output values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkVipIpv4Input` via:
+//
+//	ObjectStoreV2StorageNetworkVipIpv4Args{...}
+type ObjectStoreV2StorageNetworkVipIpv4Input interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkVipIpv4Output() ObjectStoreV2StorageNetworkVipIpv4Output
+	ToObjectStoreV2StorageNetworkVipIpv4OutputWithContext(context.Context) ObjectStoreV2StorageNetworkVipIpv4Output
+}
+
+type ObjectStoreV2StorageNetworkVipIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ObjectStoreV2StorageNetworkVipIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (i ObjectStoreV2StorageNetworkVipIpv4Args) ToObjectStoreV2StorageNetworkVipIpv4Output() ObjectStoreV2StorageNetworkVipIpv4Output {
+	return i.ToObjectStoreV2StorageNetworkVipIpv4OutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkVipIpv4Args) ToObjectStoreV2StorageNetworkVipIpv4OutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipIpv4Output)
+}
+
+func (i ObjectStoreV2StorageNetworkVipIpv4Args) ToObjectStoreV2StorageNetworkVipIpv4PtrOutput() ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return i.ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkVipIpv4Args) ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipIpv4Output).ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(ctx)
+}
+
+// ObjectStoreV2StorageNetworkVipIpv4PtrInput is an input type that accepts ObjectStoreV2StorageNetworkVipIpv4Args, ObjectStoreV2StorageNetworkVipIpv4Ptr and ObjectStoreV2StorageNetworkVipIpv4PtrOutput values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkVipIpv4PtrInput` via:
+//
+//	        ObjectStoreV2StorageNetworkVipIpv4Args{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreV2StorageNetworkVipIpv4PtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkVipIpv4PtrOutput() ObjectStoreV2StorageNetworkVipIpv4PtrOutput
+	ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(context.Context) ObjectStoreV2StorageNetworkVipIpv4PtrOutput
+}
+
+type objectStoreV2StorageNetworkVipIpv4PtrType ObjectStoreV2StorageNetworkVipIpv4Args
+
+func ObjectStoreV2StorageNetworkVipIpv4Ptr(v *ObjectStoreV2StorageNetworkVipIpv4Args) ObjectStoreV2StorageNetworkVipIpv4PtrInput {
+	return (*objectStoreV2StorageNetworkVipIpv4PtrType)(v)
+}
+
+func (*objectStoreV2StorageNetworkVipIpv4PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (i *objectStoreV2StorageNetworkVipIpv4PtrType) ToObjectStoreV2StorageNetworkVipIpv4PtrOutput() ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return i.ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreV2StorageNetworkVipIpv4PtrType) ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipIpv4PtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkVipIpv4Output struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkVipIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv4Output) ToObjectStoreV2StorageNetworkVipIpv4Output() ObjectStoreV2StorageNetworkVipIpv4Output {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv4Output) ToObjectStoreV2StorageNetworkVipIpv4OutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv4Output {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv4Output) ToObjectStoreV2StorageNetworkVipIpv4PtrOutput() ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return o.ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv4Output) ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreV2StorageNetworkVipIpv4) *ObjectStoreV2StorageNetworkVipIpv4 {
+		return &v
+	}).(ObjectStoreV2StorageNetworkVipIpv4PtrOutput)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2StorageNetworkVipIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkVipIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2StorageNetworkVipIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkVipIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ObjectStoreV2StorageNetworkVipIpv4PtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkVipIpv4PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv4PtrOutput) ToObjectStoreV2StorageNetworkVipIpv4PtrOutput() ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv4PtrOutput) ToObjectStoreV2StorageNetworkVipIpv4PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv4PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv4PtrOutput) Elem() ObjectStoreV2StorageNetworkVipIpv4Output {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVipIpv4) ObjectStoreV2StorageNetworkVipIpv4 {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreV2StorageNetworkVipIpv4
+		return ret
+	}).(ObjectStoreV2StorageNetworkVipIpv4Output)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2StorageNetworkVipIpv4PtrOutput) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVipIpv4) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PrefixLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2StorageNetworkVipIpv4PtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVipIpv4) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkVipIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// ObjectStoreV2StorageNetworkVipIpv6Input is an input type that accepts ObjectStoreV2StorageNetworkVipIpv6Args and ObjectStoreV2StorageNetworkVipIpv6Output values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkVipIpv6Input` via:
+//
+//	ObjectStoreV2StorageNetworkVipIpv6Args{...}
+type ObjectStoreV2StorageNetworkVipIpv6Input interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkVipIpv6Output() ObjectStoreV2StorageNetworkVipIpv6Output
+	ToObjectStoreV2StorageNetworkVipIpv6OutputWithContext(context.Context) ObjectStoreV2StorageNetworkVipIpv6Output
+}
+
+type ObjectStoreV2StorageNetworkVipIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ObjectStoreV2StorageNetworkVipIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (i ObjectStoreV2StorageNetworkVipIpv6Args) ToObjectStoreV2StorageNetworkVipIpv6Output() ObjectStoreV2StorageNetworkVipIpv6Output {
+	return i.ToObjectStoreV2StorageNetworkVipIpv6OutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkVipIpv6Args) ToObjectStoreV2StorageNetworkVipIpv6OutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipIpv6Output)
+}
+
+func (i ObjectStoreV2StorageNetworkVipIpv6Args) ToObjectStoreV2StorageNetworkVipIpv6PtrOutput() ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return i.ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(context.Background())
+}
+
+func (i ObjectStoreV2StorageNetworkVipIpv6Args) ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipIpv6Output).ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(ctx)
+}
+
+// ObjectStoreV2StorageNetworkVipIpv6PtrInput is an input type that accepts ObjectStoreV2StorageNetworkVipIpv6Args, ObjectStoreV2StorageNetworkVipIpv6Ptr and ObjectStoreV2StorageNetworkVipIpv6PtrOutput values.
+// You can construct a concrete instance of `ObjectStoreV2StorageNetworkVipIpv6PtrInput` via:
+//
+//	        ObjectStoreV2StorageNetworkVipIpv6Args{...}
+//
+//	or:
+//
+//	        nil
+type ObjectStoreV2StorageNetworkVipIpv6PtrInput interface {
+	pulumi.Input
+
+	ToObjectStoreV2StorageNetworkVipIpv6PtrOutput() ObjectStoreV2StorageNetworkVipIpv6PtrOutput
+	ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(context.Context) ObjectStoreV2StorageNetworkVipIpv6PtrOutput
+}
+
+type objectStoreV2StorageNetworkVipIpv6PtrType ObjectStoreV2StorageNetworkVipIpv6Args
+
+func ObjectStoreV2StorageNetworkVipIpv6Ptr(v *ObjectStoreV2StorageNetworkVipIpv6Args) ObjectStoreV2StorageNetworkVipIpv6PtrInput {
+	return (*objectStoreV2StorageNetworkVipIpv6PtrType)(v)
+}
+
+func (*objectStoreV2StorageNetworkVipIpv6PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (i *objectStoreV2StorageNetworkVipIpv6PtrType) ToObjectStoreV2StorageNetworkVipIpv6PtrOutput() ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return i.ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(context.Background())
+}
+
+func (i *objectStoreV2StorageNetworkVipIpv6PtrType) ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectStoreV2StorageNetworkVipIpv6PtrOutput)
+}
+
+type ObjectStoreV2StorageNetworkVipIpv6Output struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkVipIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectStoreV2StorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv6Output) ToObjectStoreV2StorageNetworkVipIpv6Output() ObjectStoreV2StorageNetworkVipIpv6Output {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv6Output) ToObjectStoreV2StorageNetworkVipIpv6OutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv6Output {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv6Output) ToObjectStoreV2StorageNetworkVipIpv6PtrOutput() ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return o.ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(context.Background())
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv6Output) ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectStoreV2StorageNetworkVipIpv6) *ObjectStoreV2StorageNetworkVipIpv6 {
+		return &v
+	}).(ObjectStoreV2StorageNetworkVipIpv6PtrOutput)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2StorageNetworkVipIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkVipIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2StorageNetworkVipIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ObjectStoreV2StorageNetworkVipIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ObjectStoreV2StorageNetworkVipIpv6PtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectStoreV2StorageNetworkVipIpv6PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectStoreV2StorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv6PtrOutput) ToObjectStoreV2StorageNetworkVipIpv6PtrOutput() ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv6PtrOutput) ToObjectStoreV2StorageNetworkVipIpv6PtrOutputWithContext(ctx context.Context) ObjectStoreV2StorageNetworkVipIpv6PtrOutput {
+	return o
+}
+
+func (o ObjectStoreV2StorageNetworkVipIpv6PtrOutput) Elem() ObjectStoreV2StorageNetworkVipIpv6Output {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVipIpv6) ObjectStoreV2StorageNetworkVipIpv6 {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectStoreV2StorageNetworkVipIpv6
+		return ret
+	}).(ObjectStoreV2StorageNetworkVipIpv6Output)
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o ObjectStoreV2StorageNetworkVipIpv6PtrOutput) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVipIpv6) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PrefixLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o ObjectStoreV2StorageNetworkVipIpv6PtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectStoreV2StorageNetworkVipIpv6) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
 type PbrDestination struct {
 	AddressType  *string `pulumi:"addressType"`
 	PrefixLength *int    `pulumi:"prefixLength"`
@@ -59900,2085 +62201,6 @@ func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-type ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories struct {
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// value of the key.
-	Values []string `pulumi:"values"`
-}
-
-// ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesInput is an input type that accepts ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs and ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput values.
-// You can construct a concrete instance of `ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesInput` via:
-//
-//	ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs{...}
-type ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesInput interface {
-	pulumi.Input
-
-	ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput
-	ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutputWithContext(context.Context) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput
-}
-
-type ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs struct {
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// value of the key.
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories)(nil)).Elem()
-}
-
-func (i ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput {
-	return i.ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutputWithContext(ctx context.Context) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput)
-}
-
-func (i ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return i.ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx context.Context) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput).ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx)
-}
-
-// ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrInput is an input type that accepts ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs, ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtr and ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput values.
-// You can construct a concrete instance of `ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrInput` via:
-//
-//	        ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs{...}
-//
-//	or:
-//
-//	        nil
-type ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrInput interface {
-	pulumi.Input
-
-	ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput
-	ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(context.Context) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput
-}
-
-type projectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrType ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs
-
-func ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtr(v *ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrInput {
-	return (*projectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrType)(v)
-}
-
-func (*projectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories)(nil)).Elem()
-}
-
-func (i *projectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrType) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return i.ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(context.Background())
-}
-
-func (i *projectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrType) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx context.Context) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput)
-}
-
-type ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories)(nil)).Elem()
-}
-
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutputWithContext(ctx context.Context) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o.ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(context.Background())
-}
-
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx context.Context) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories) *ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories {
-		return &v
-	}).(ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories) *string {
-		return v.Name
-	}).(pulumi.StringPtrOutput)
-}
-
-// value of the key.
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories) []string {
-		return v.Values
-	}).(pulumi.StringArrayOutput)
-}
-
-type ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories)(nil)).Elem()
-}
-
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput) ToProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx context.Context) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput) Elem() ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput {
-	return o.ApplyT(func(v *ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories) ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories {
-		if v != nil {
-			return *v
-		}
-		var ret ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories
-		return ret
-	}).(ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput)
-}
-
-// The name for the project.
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Name
-	}).(pulumi.StringPtrOutput)
-}
-
-// value of the key.
-func (o ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories) []string {
-		if v == nil {
-			return nil
-		}
-		return v.Values
-	}).(pulumi.StringArrayOutput)
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionList struct {
-	// - (Optional)  The LHS of the filter expression - the scope type.
-	LeftHandSide string `pulumi:"leftHandSide"`
-	// - (Required) The operator in the filter expression.
-	Operator string `pulumi:"operator"`
-	// - (Required) The right hand side (RHS) of an scope expression.
-	RightHandSide ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide `pulumi:"rightHandSide"`
-}
-
-// ProjectAcpContextFilterListScopeFilterExpressionListInput is an input type that accepts ProjectAcpContextFilterListScopeFilterExpressionListArgs and ProjectAcpContextFilterListScopeFilterExpressionListOutput values.
-// You can construct a concrete instance of `ProjectAcpContextFilterListScopeFilterExpressionListInput` via:
-//
-//	ProjectAcpContextFilterListScopeFilterExpressionListArgs{...}
-type ProjectAcpContextFilterListScopeFilterExpressionListInput interface {
-	pulumi.Input
-
-	ToProjectAcpContextFilterListScopeFilterExpressionListOutput() ProjectAcpContextFilterListScopeFilterExpressionListOutput
-	ToProjectAcpContextFilterListScopeFilterExpressionListOutputWithContext(context.Context) ProjectAcpContextFilterListScopeFilterExpressionListOutput
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListArgs struct {
-	// - (Optional)  The LHS of the filter expression - the scope type.
-	LeftHandSide pulumi.StringInput `pulumi:"leftHandSide"`
-	// - (Required) The operator in the filter expression.
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// - (Required) The right hand side (RHS) of an scope expression.
-	RightHandSide ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput `pulumi:"rightHandSide"`
-}
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionList)(nil)).Elem()
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListArgs) ToProjectAcpContextFilterListScopeFilterExpressionListOutput() ProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return i.ToProjectAcpContextFilterListScopeFilterExpressionListOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListArgs) ToProjectAcpContextFilterListScopeFilterExpressionListOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListScopeFilterExpressionListOutput)
-}
-
-// ProjectAcpContextFilterListScopeFilterExpressionListArrayInput is an input type that accepts ProjectAcpContextFilterListScopeFilterExpressionListArray and ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput values.
-// You can construct a concrete instance of `ProjectAcpContextFilterListScopeFilterExpressionListArrayInput` via:
-//
-//	ProjectAcpContextFilterListScopeFilterExpressionListArray{ ProjectAcpContextFilterListScopeFilterExpressionListArgs{...} }
-type ProjectAcpContextFilterListScopeFilterExpressionListArrayInput interface {
-	pulumi.Input
-
-	ToProjectAcpContextFilterListScopeFilterExpressionListArrayOutput() ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput
-	ToProjectAcpContextFilterListScopeFilterExpressionListArrayOutputWithContext(context.Context) ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListArray []ProjectAcpContextFilterListScopeFilterExpressionListInput
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectAcpContextFilterListScopeFilterExpressionList)(nil)).Elem()
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListArray) ToProjectAcpContextFilterListScopeFilterExpressionListArrayOutput() ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return i.ToProjectAcpContextFilterListScopeFilterExpressionListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListArray) ToProjectAcpContextFilterListScopeFilterExpressionListArrayOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput)
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionList)(nil)).Elem()
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListOutput) ToProjectAcpContextFilterListScopeFilterExpressionListOutput() ProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListOutput) ToProjectAcpContextFilterListScopeFilterExpressionListOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return o
-}
-
-// - (Optional)  The LHS of the filter expression - the scope type.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListOutput) LeftHandSide() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListScopeFilterExpressionList) string { return v.LeftHandSide }).(pulumi.StringOutput)
-}
-
-// - (Required) The operator in the filter expression.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListScopeFilterExpressionList) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// - (Required) The right hand side (RHS) of an scope expression.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListOutput) RightHandSide() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListScopeFilterExpressionList) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide {
-		return v.RightHandSide
-	}).(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput)
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectAcpContextFilterListScopeFilterExpressionList)(nil)).Elem()
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput) ToProjectAcpContextFilterListScopeFilterExpressionListArrayOutput() ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput) ToProjectAcpContextFilterListScopeFilterExpressionListArrayOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput) Index(i pulumi.IntInput) ProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectAcpContextFilterListScopeFilterExpressionList {
-		return vs[0].([]ProjectAcpContextFilterListScopeFilterExpressionList)[vs[1].(int)]
-	}).(ProjectAcpContextFilterListScopeFilterExpressionListOutput)
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide struct {
-	// - (Optional) The category values represented as a dictionary of key > list of values.
-	Categories *ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories `pulumi:"categories"`
-	// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-	Collection *string `pulumi:"collection"`
-	// - (Optional) The explicit list of UUIDs for the given kind.
-	UuidLists []string `pulumi:"uuidLists"`
-}
-
-// ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput is an input type that accepts ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs and ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput values.
-// You can construct a concrete instance of `ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput` via:
-//
-//	ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs{...}
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput interface {
-	pulumi.Input
-
-	ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput
-	ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutputWithContext(context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs struct {
-	// - (Optional) The category values represented as a dictionary of key > list of values.
-	Categories ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrInput `pulumi:"categories"`
-	// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-	Collection pulumi.StringPtrInput `pulumi:"collection"`
-	// - (Optional) The explicit list of UUIDs for the given kind.
-	UuidLists pulumi.StringArrayInput `pulumi:"uuidLists"`
-}
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return i.ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput)
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return o
-}
-
-// - (Optional) The category values represented as a dictionary of key > list of values.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) Categories() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide) *ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories {
-		return v.Categories
-	}).(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput)
-}
-
-// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) Collection() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide) *string { return v.Collection }).(pulumi.StringPtrOutput)
-}
-
-// - (Optional) The explicit list of UUIDs for the given kind.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) UuidLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide) []string { return v.UuidLists }).(pulumi.StringArrayOutput)
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories struct {
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// value of the key.
-	Values []string `pulumi:"values"`
-}
-
-// ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesInput is an input type that accepts ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs and ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput values.
-// You can construct a concrete instance of `ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesInput` via:
-//
-//	ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs{...}
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesInput interface {
-	pulumi.Input
-
-	ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput
-	ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutputWithContext(context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs struct {
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// value of the key.
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories)(nil)).Elem()
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput {
-	return i.ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput)
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return i.ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput).ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx)
-}
-
-// ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrInput is an input type that accepts ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs, ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtr and ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput values.
-// You can construct a concrete instance of `ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrInput` via:
-//
-//	        ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs{...}
-//
-//	or:
-//
-//	        nil
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrInput interface {
-	pulumi.Input
-
-	ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput
-	ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput
-}
-
-type projectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrType ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs
-
-func ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtr(v *ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrInput {
-	return (*projectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrType)(v)
-}
-
-func (*projectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories)(nil)).Elem()
-}
-
-func (i *projectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrType) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return i.ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(context.Background())
-}
-
-func (i *projectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrType) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput)
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories)(nil)).Elem()
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o.ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(context.Background())
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories) *ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories {
-		return &v
-	}).(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories) *string {
-		return v.Name
-	}).(pulumi.StringPtrOutput)
-}
-
-// value of the key.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories) []string {
-		return v.Values
-	}).(pulumi.StringArrayOutput)
-}
-
-type ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories)(nil)).Elem()
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput) ToProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutputWithContext(ctx context.Context) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput {
-	return o
-}
-
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput) Elem() ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput {
-	return o.ApplyT(func(v *ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories) ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories {
-		if v != nil {
-			return *v
-		}
-		var ret ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories
-		return ret
-	}).(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput)
-}
-
-// The name for the project.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Name
-	}).(pulumi.StringPtrOutput)
-}
-
-// value of the key.
-func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories) []string {
-		if v == nil {
-			return nil
-		}
-		return v.Values
-	}).(pulumi.StringArrayOutput)
-}
-
-type ProjectAcpRoleReference struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectAcpRoleReferenceInput is an input type that accepts ProjectAcpRoleReferenceArgs and ProjectAcpRoleReferenceOutput values.
-// You can construct a concrete instance of `ProjectAcpRoleReferenceInput` via:
-//
-//	ProjectAcpRoleReferenceArgs{...}
-type ProjectAcpRoleReferenceInput interface {
-	pulumi.Input
-
-	ToProjectAcpRoleReferenceOutput() ProjectAcpRoleReferenceOutput
-	ToProjectAcpRoleReferenceOutputWithContext(context.Context) ProjectAcpRoleReferenceOutput
-}
-
-type ProjectAcpRoleReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectAcpRoleReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpRoleReference)(nil)).Elem()
-}
-
-func (i ProjectAcpRoleReferenceArgs) ToProjectAcpRoleReferenceOutput() ProjectAcpRoleReferenceOutput {
-	return i.ToProjectAcpRoleReferenceOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpRoleReferenceArgs) ToProjectAcpRoleReferenceOutputWithContext(ctx context.Context) ProjectAcpRoleReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpRoleReferenceOutput)
-}
-
-type ProjectAcpRoleReferenceOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpRoleReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpRoleReference)(nil)).Elem()
-}
-
-func (o ProjectAcpRoleReferenceOutput) ToProjectAcpRoleReferenceOutput() ProjectAcpRoleReferenceOutput {
-	return o
-}
-
-func (o ProjectAcpRoleReferenceOutput) ToProjectAcpRoleReferenceOutputWithContext(ctx context.Context) ProjectAcpRoleReferenceOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectAcpRoleReferenceOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectAcpRoleReference) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// The name for the project.
-func (o ProjectAcpRoleReferenceOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectAcpRoleReference) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectAcpRoleReferenceOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectAcpRoleReference) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectAcpUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectAcpUserGroupReferenceListInput is an input type that accepts ProjectAcpUserGroupReferenceListArgs and ProjectAcpUserGroupReferenceListOutput values.
-// You can construct a concrete instance of `ProjectAcpUserGroupReferenceListInput` via:
-//
-//	ProjectAcpUserGroupReferenceListArgs{...}
-type ProjectAcpUserGroupReferenceListInput interface {
-	pulumi.Input
-
-	ToProjectAcpUserGroupReferenceListOutput() ProjectAcpUserGroupReferenceListOutput
-	ToProjectAcpUserGroupReferenceListOutputWithContext(context.Context) ProjectAcpUserGroupReferenceListOutput
-}
-
-type ProjectAcpUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectAcpUserGroupReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i ProjectAcpUserGroupReferenceListArgs) ToProjectAcpUserGroupReferenceListOutput() ProjectAcpUserGroupReferenceListOutput {
-	return i.ToProjectAcpUserGroupReferenceListOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpUserGroupReferenceListArgs) ToProjectAcpUserGroupReferenceListOutputWithContext(ctx context.Context) ProjectAcpUserGroupReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpUserGroupReferenceListOutput)
-}
-
-// ProjectAcpUserGroupReferenceListArrayInput is an input type that accepts ProjectAcpUserGroupReferenceListArray and ProjectAcpUserGroupReferenceListArrayOutput values.
-// You can construct a concrete instance of `ProjectAcpUserGroupReferenceListArrayInput` via:
-//
-//	ProjectAcpUserGroupReferenceListArray{ ProjectAcpUserGroupReferenceListArgs{...} }
-type ProjectAcpUserGroupReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToProjectAcpUserGroupReferenceListArrayOutput() ProjectAcpUserGroupReferenceListArrayOutput
-	ToProjectAcpUserGroupReferenceListArrayOutputWithContext(context.Context) ProjectAcpUserGroupReferenceListArrayOutput
-}
-
-type ProjectAcpUserGroupReferenceListArray []ProjectAcpUserGroupReferenceListInput
-
-func (ProjectAcpUserGroupReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectAcpUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i ProjectAcpUserGroupReferenceListArray) ToProjectAcpUserGroupReferenceListArrayOutput() ProjectAcpUserGroupReferenceListArrayOutput {
-	return i.ToProjectAcpUserGroupReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpUserGroupReferenceListArray) ToProjectAcpUserGroupReferenceListArrayOutputWithContext(ctx context.Context) ProjectAcpUserGroupReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpUserGroupReferenceListArrayOutput)
-}
-
-type ProjectAcpUserGroupReferenceListOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpUserGroupReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o ProjectAcpUserGroupReferenceListOutput) ToProjectAcpUserGroupReferenceListOutput() ProjectAcpUserGroupReferenceListOutput {
-	return o
-}
-
-func (o ProjectAcpUserGroupReferenceListOutput) ToProjectAcpUserGroupReferenceListOutputWithContext(ctx context.Context) ProjectAcpUserGroupReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectAcpUserGroupReferenceListOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectAcpUserGroupReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectAcpUserGroupReferenceListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectAcpUserGroupReferenceList) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectAcpUserGroupReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectAcpUserGroupReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectAcpUserGroupReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpUserGroupReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectAcpUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o ProjectAcpUserGroupReferenceListArrayOutput) ToProjectAcpUserGroupReferenceListArrayOutput() ProjectAcpUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectAcpUserGroupReferenceListArrayOutput) ToProjectAcpUserGroupReferenceListArrayOutputWithContext(ctx context.Context) ProjectAcpUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectAcpUserGroupReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectAcpUserGroupReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectAcpUserGroupReferenceList {
-		return vs[0].([]ProjectAcpUserGroupReferenceList)[vs[1].(int)]
-	}).(ProjectAcpUserGroupReferenceListOutput)
-}
-
-type ProjectAcpUserReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectAcpUserReferenceListInput is an input type that accepts ProjectAcpUserReferenceListArgs and ProjectAcpUserReferenceListOutput values.
-// You can construct a concrete instance of `ProjectAcpUserReferenceListInput` via:
-//
-//	ProjectAcpUserReferenceListArgs{...}
-type ProjectAcpUserReferenceListInput interface {
-	pulumi.Input
-
-	ToProjectAcpUserReferenceListOutput() ProjectAcpUserReferenceListOutput
-	ToProjectAcpUserReferenceListOutputWithContext(context.Context) ProjectAcpUserReferenceListOutput
-}
-
-type ProjectAcpUserReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectAcpUserReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpUserReferenceList)(nil)).Elem()
-}
-
-func (i ProjectAcpUserReferenceListArgs) ToProjectAcpUserReferenceListOutput() ProjectAcpUserReferenceListOutput {
-	return i.ToProjectAcpUserReferenceListOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpUserReferenceListArgs) ToProjectAcpUserReferenceListOutputWithContext(ctx context.Context) ProjectAcpUserReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpUserReferenceListOutput)
-}
-
-// ProjectAcpUserReferenceListArrayInput is an input type that accepts ProjectAcpUserReferenceListArray and ProjectAcpUserReferenceListArrayOutput values.
-// You can construct a concrete instance of `ProjectAcpUserReferenceListArrayInput` via:
-//
-//	ProjectAcpUserReferenceListArray{ ProjectAcpUserReferenceListArgs{...} }
-type ProjectAcpUserReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToProjectAcpUserReferenceListArrayOutput() ProjectAcpUserReferenceListArrayOutput
-	ToProjectAcpUserReferenceListArrayOutputWithContext(context.Context) ProjectAcpUserReferenceListArrayOutput
-}
-
-type ProjectAcpUserReferenceListArray []ProjectAcpUserReferenceListInput
-
-func (ProjectAcpUserReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectAcpUserReferenceList)(nil)).Elem()
-}
-
-func (i ProjectAcpUserReferenceListArray) ToProjectAcpUserReferenceListArrayOutput() ProjectAcpUserReferenceListArrayOutput {
-	return i.ToProjectAcpUserReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectAcpUserReferenceListArray) ToProjectAcpUserReferenceListArrayOutputWithContext(ctx context.Context) ProjectAcpUserReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectAcpUserReferenceListArrayOutput)
-}
-
-type ProjectAcpUserReferenceListOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpUserReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectAcpUserReferenceList)(nil)).Elem()
-}
-
-func (o ProjectAcpUserReferenceListOutput) ToProjectAcpUserReferenceListOutput() ProjectAcpUserReferenceListOutput {
-	return o
-}
-
-func (o ProjectAcpUserReferenceListOutput) ToProjectAcpUserReferenceListOutputWithContext(ctx context.Context) ProjectAcpUserReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectAcpUserReferenceListOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectAcpUserReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectAcpUserReferenceListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectAcpUserReferenceList) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectAcpUserReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectAcpUserReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectAcpUserReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectAcpUserReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectAcpUserReferenceList)(nil)).Elem()
-}
-
-func (o ProjectAcpUserReferenceListArrayOutput) ToProjectAcpUserReferenceListArrayOutput() ProjectAcpUserReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectAcpUserReferenceListArrayOutput) ToProjectAcpUserReferenceListArrayOutputWithContext(ctx context.Context) ProjectAcpUserReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectAcpUserReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectAcpUserReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectAcpUserReferenceList {
-		return vs[0].([]ProjectAcpUserReferenceList)[vs[1].(int)]
-	}).(ProjectAcpUserReferenceListOutput)
-}
-
-type ProjectCategory struct {
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// value of the key.
-	Value *string `pulumi:"value"`
-}
-
-// ProjectCategoryInput is an input type that accepts ProjectCategoryArgs and ProjectCategoryOutput values.
-// You can construct a concrete instance of `ProjectCategoryInput` via:
-//
-//	ProjectCategoryArgs{...}
-type ProjectCategoryInput interface {
-	pulumi.Input
-
-	ToProjectCategoryOutput() ProjectCategoryOutput
-	ToProjectCategoryOutputWithContext(context.Context) ProjectCategoryOutput
-}
-
-type ProjectCategoryArgs struct {
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// value of the key.
-	Value pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ProjectCategoryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectCategory)(nil)).Elem()
-}
-
-func (i ProjectCategoryArgs) ToProjectCategoryOutput() ProjectCategoryOutput {
-	return i.ToProjectCategoryOutputWithContext(context.Background())
-}
-
-func (i ProjectCategoryArgs) ToProjectCategoryOutputWithContext(ctx context.Context) ProjectCategoryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectCategoryOutput)
-}
-
-// ProjectCategoryArrayInput is an input type that accepts ProjectCategoryArray and ProjectCategoryArrayOutput values.
-// You can construct a concrete instance of `ProjectCategoryArrayInput` via:
-//
-//	ProjectCategoryArray{ ProjectCategoryArgs{...} }
-type ProjectCategoryArrayInput interface {
-	pulumi.Input
-
-	ToProjectCategoryArrayOutput() ProjectCategoryArrayOutput
-	ToProjectCategoryArrayOutputWithContext(context.Context) ProjectCategoryArrayOutput
-}
-
-type ProjectCategoryArray []ProjectCategoryInput
-
-func (ProjectCategoryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectCategory)(nil)).Elem()
-}
-
-func (i ProjectCategoryArray) ToProjectCategoryArrayOutput() ProjectCategoryArrayOutput {
-	return i.ToProjectCategoryArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectCategoryArray) ToProjectCategoryArrayOutputWithContext(ctx context.Context) ProjectCategoryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectCategoryArrayOutput)
-}
-
-type ProjectCategoryOutput struct{ *pulumi.OutputState }
-
-func (ProjectCategoryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectCategory)(nil)).Elem()
-}
-
-func (o ProjectCategoryOutput) ToProjectCategoryOutput() ProjectCategoryOutput {
-	return o
-}
-
-func (o ProjectCategoryOutput) ToProjectCategoryOutputWithContext(ctx context.Context) ProjectCategoryOutput {
-	return o
-}
-
-// The name for the project.
-func (o ProjectCategoryOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectCategory) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// value of the key.
-func (o ProjectCategoryOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectCategory) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ProjectCategoryArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectCategoryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectCategory)(nil)).Elem()
-}
-
-func (o ProjectCategoryArrayOutput) ToProjectCategoryArrayOutput() ProjectCategoryArrayOutput {
-	return o
-}
-
-func (o ProjectCategoryArrayOutput) ToProjectCategoryArrayOutputWithContext(ctx context.Context) ProjectCategoryArrayOutput {
-	return o
-}
-
-func (o ProjectCategoryArrayOutput) Index(i pulumi.IntInput) ProjectCategoryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectCategory {
-		return vs[0].([]ProjectCategory)[vs[1].(int)]
-	}).(ProjectCategoryOutput)
-}
-
-type ProjectClusterReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectClusterReferenceListInput is an input type that accepts ProjectClusterReferenceListArgs and ProjectClusterReferenceListOutput values.
-// You can construct a concrete instance of `ProjectClusterReferenceListInput` via:
-//
-//	ProjectClusterReferenceListArgs{...}
-type ProjectClusterReferenceListInput interface {
-	pulumi.Input
-
-	ToProjectClusterReferenceListOutput() ProjectClusterReferenceListOutput
-	ToProjectClusterReferenceListOutputWithContext(context.Context) ProjectClusterReferenceListOutput
-}
-
-type ProjectClusterReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectClusterReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectClusterReferenceList)(nil)).Elem()
-}
-
-func (i ProjectClusterReferenceListArgs) ToProjectClusterReferenceListOutput() ProjectClusterReferenceListOutput {
-	return i.ToProjectClusterReferenceListOutputWithContext(context.Background())
-}
-
-func (i ProjectClusterReferenceListArgs) ToProjectClusterReferenceListOutputWithContext(ctx context.Context) ProjectClusterReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectClusterReferenceListOutput)
-}
-
-// ProjectClusterReferenceListArrayInput is an input type that accepts ProjectClusterReferenceListArray and ProjectClusterReferenceListArrayOutput values.
-// You can construct a concrete instance of `ProjectClusterReferenceListArrayInput` via:
-//
-//	ProjectClusterReferenceListArray{ ProjectClusterReferenceListArgs{...} }
-type ProjectClusterReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToProjectClusterReferenceListArrayOutput() ProjectClusterReferenceListArrayOutput
-	ToProjectClusterReferenceListArrayOutputWithContext(context.Context) ProjectClusterReferenceListArrayOutput
-}
-
-type ProjectClusterReferenceListArray []ProjectClusterReferenceListInput
-
-func (ProjectClusterReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectClusterReferenceList)(nil)).Elem()
-}
-
-func (i ProjectClusterReferenceListArray) ToProjectClusterReferenceListArrayOutput() ProjectClusterReferenceListArrayOutput {
-	return i.ToProjectClusterReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectClusterReferenceListArray) ToProjectClusterReferenceListArrayOutputWithContext(ctx context.Context) ProjectClusterReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectClusterReferenceListArrayOutput)
-}
-
-type ProjectClusterReferenceListOutput struct{ *pulumi.OutputState }
-
-func (ProjectClusterReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectClusterReferenceList)(nil)).Elem()
-}
-
-func (o ProjectClusterReferenceListOutput) ToProjectClusterReferenceListOutput() ProjectClusterReferenceListOutput {
-	return o
-}
-
-func (o ProjectClusterReferenceListOutput) ToProjectClusterReferenceListOutputWithContext(ctx context.Context) ProjectClusterReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectClusterReferenceListOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectClusterReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectClusterReferenceListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectClusterReferenceList) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectClusterReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectClusterReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectClusterReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectClusterReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectClusterReferenceList)(nil)).Elem()
-}
-
-func (o ProjectClusterReferenceListArrayOutput) ToProjectClusterReferenceListArrayOutput() ProjectClusterReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectClusterReferenceListArrayOutput) ToProjectClusterReferenceListArrayOutputWithContext(ctx context.Context) ProjectClusterReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectClusterReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectClusterReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectClusterReferenceList {
-		return vs[0].([]ProjectClusterReferenceList)[vs[1].(int)]
-	}).(ProjectClusterReferenceListOutput)
-}
-
-type ProjectDefaultEnvironmentReference struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectDefaultEnvironmentReferenceInput is an input type that accepts ProjectDefaultEnvironmentReferenceArgs and ProjectDefaultEnvironmentReferenceOutput values.
-// You can construct a concrete instance of `ProjectDefaultEnvironmentReferenceInput` via:
-//
-//	ProjectDefaultEnvironmentReferenceArgs{...}
-type ProjectDefaultEnvironmentReferenceInput interface {
-	pulumi.Input
-
-	ToProjectDefaultEnvironmentReferenceOutput() ProjectDefaultEnvironmentReferenceOutput
-	ToProjectDefaultEnvironmentReferenceOutputWithContext(context.Context) ProjectDefaultEnvironmentReferenceOutput
-}
-
-type ProjectDefaultEnvironmentReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectDefaultEnvironmentReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectDefaultEnvironmentReference)(nil)).Elem()
-}
-
-func (i ProjectDefaultEnvironmentReferenceArgs) ToProjectDefaultEnvironmentReferenceOutput() ProjectDefaultEnvironmentReferenceOutput {
-	return i.ToProjectDefaultEnvironmentReferenceOutputWithContext(context.Background())
-}
-
-func (i ProjectDefaultEnvironmentReferenceArgs) ToProjectDefaultEnvironmentReferenceOutputWithContext(ctx context.Context) ProjectDefaultEnvironmentReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectDefaultEnvironmentReferenceOutput)
-}
-
-func (i ProjectDefaultEnvironmentReferenceArgs) ToProjectDefaultEnvironmentReferencePtrOutput() ProjectDefaultEnvironmentReferencePtrOutput {
-	return i.ToProjectDefaultEnvironmentReferencePtrOutputWithContext(context.Background())
-}
-
-func (i ProjectDefaultEnvironmentReferenceArgs) ToProjectDefaultEnvironmentReferencePtrOutputWithContext(ctx context.Context) ProjectDefaultEnvironmentReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectDefaultEnvironmentReferenceOutput).ToProjectDefaultEnvironmentReferencePtrOutputWithContext(ctx)
-}
-
-// ProjectDefaultEnvironmentReferencePtrInput is an input type that accepts ProjectDefaultEnvironmentReferenceArgs, ProjectDefaultEnvironmentReferencePtr and ProjectDefaultEnvironmentReferencePtrOutput values.
-// You can construct a concrete instance of `ProjectDefaultEnvironmentReferencePtrInput` via:
-//
-//	        ProjectDefaultEnvironmentReferenceArgs{...}
-//
-//	or:
-//
-//	        nil
-type ProjectDefaultEnvironmentReferencePtrInput interface {
-	pulumi.Input
-
-	ToProjectDefaultEnvironmentReferencePtrOutput() ProjectDefaultEnvironmentReferencePtrOutput
-	ToProjectDefaultEnvironmentReferencePtrOutputWithContext(context.Context) ProjectDefaultEnvironmentReferencePtrOutput
-}
-
-type projectDefaultEnvironmentReferencePtrType ProjectDefaultEnvironmentReferenceArgs
-
-func ProjectDefaultEnvironmentReferencePtr(v *ProjectDefaultEnvironmentReferenceArgs) ProjectDefaultEnvironmentReferencePtrInput {
-	return (*projectDefaultEnvironmentReferencePtrType)(v)
-}
-
-func (*projectDefaultEnvironmentReferencePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectDefaultEnvironmentReference)(nil)).Elem()
-}
-
-func (i *projectDefaultEnvironmentReferencePtrType) ToProjectDefaultEnvironmentReferencePtrOutput() ProjectDefaultEnvironmentReferencePtrOutput {
-	return i.ToProjectDefaultEnvironmentReferencePtrOutputWithContext(context.Background())
-}
-
-func (i *projectDefaultEnvironmentReferencePtrType) ToProjectDefaultEnvironmentReferencePtrOutputWithContext(ctx context.Context) ProjectDefaultEnvironmentReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectDefaultEnvironmentReferencePtrOutput)
-}
-
-type ProjectDefaultEnvironmentReferenceOutput struct{ *pulumi.OutputState }
-
-func (ProjectDefaultEnvironmentReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectDefaultEnvironmentReference)(nil)).Elem()
-}
-
-func (o ProjectDefaultEnvironmentReferenceOutput) ToProjectDefaultEnvironmentReferenceOutput() ProjectDefaultEnvironmentReferenceOutput {
-	return o
-}
-
-func (o ProjectDefaultEnvironmentReferenceOutput) ToProjectDefaultEnvironmentReferenceOutputWithContext(ctx context.Context) ProjectDefaultEnvironmentReferenceOutput {
-	return o
-}
-
-func (o ProjectDefaultEnvironmentReferenceOutput) ToProjectDefaultEnvironmentReferencePtrOutput() ProjectDefaultEnvironmentReferencePtrOutput {
-	return o.ToProjectDefaultEnvironmentReferencePtrOutputWithContext(context.Background())
-}
-
-func (o ProjectDefaultEnvironmentReferenceOutput) ToProjectDefaultEnvironmentReferencePtrOutputWithContext(ctx context.Context) ProjectDefaultEnvironmentReferencePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectDefaultEnvironmentReference) *ProjectDefaultEnvironmentReference {
-		return &v
-	}).(ProjectDefaultEnvironmentReferencePtrOutput)
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectDefaultEnvironmentReferenceOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectDefaultEnvironmentReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectDefaultEnvironmentReferenceOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectDefaultEnvironmentReference) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectDefaultEnvironmentReferenceOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectDefaultEnvironmentReference) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectDefaultEnvironmentReferencePtrOutput struct{ *pulumi.OutputState }
-
-func (ProjectDefaultEnvironmentReferencePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectDefaultEnvironmentReference)(nil)).Elem()
-}
-
-func (o ProjectDefaultEnvironmentReferencePtrOutput) ToProjectDefaultEnvironmentReferencePtrOutput() ProjectDefaultEnvironmentReferencePtrOutput {
-	return o
-}
-
-func (o ProjectDefaultEnvironmentReferencePtrOutput) ToProjectDefaultEnvironmentReferencePtrOutputWithContext(ctx context.Context) ProjectDefaultEnvironmentReferencePtrOutput {
-	return o
-}
-
-func (o ProjectDefaultEnvironmentReferencePtrOutput) Elem() ProjectDefaultEnvironmentReferenceOutput {
-	return o.ApplyT(func(v *ProjectDefaultEnvironmentReference) ProjectDefaultEnvironmentReference {
-		if v != nil {
-			return *v
-		}
-		var ret ProjectDefaultEnvironmentReference
-		return ret
-	}).(ProjectDefaultEnvironmentReferenceOutput)
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectDefaultEnvironmentReferencePtrOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ProjectDefaultEnvironmentReference) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Kind
-	}).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectDefaultEnvironmentReferencePtrOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ProjectDefaultEnvironmentReference) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Name
-	}).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectDefaultEnvironmentReferencePtrOutput) Uuid() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ProjectDefaultEnvironmentReference) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Uuid
-	}).(pulumi.StringPtrOutput)
-}
-
-type ProjectDefaultSubnetReference struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectDefaultSubnetReferenceInput is an input type that accepts ProjectDefaultSubnetReferenceArgs and ProjectDefaultSubnetReferenceOutput values.
-// You can construct a concrete instance of `ProjectDefaultSubnetReferenceInput` via:
-//
-//	ProjectDefaultSubnetReferenceArgs{...}
-type ProjectDefaultSubnetReferenceInput interface {
-	pulumi.Input
-
-	ToProjectDefaultSubnetReferenceOutput() ProjectDefaultSubnetReferenceOutput
-	ToProjectDefaultSubnetReferenceOutputWithContext(context.Context) ProjectDefaultSubnetReferenceOutput
-}
-
-type ProjectDefaultSubnetReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectDefaultSubnetReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectDefaultSubnetReference)(nil)).Elem()
-}
-
-func (i ProjectDefaultSubnetReferenceArgs) ToProjectDefaultSubnetReferenceOutput() ProjectDefaultSubnetReferenceOutput {
-	return i.ToProjectDefaultSubnetReferenceOutputWithContext(context.Background())
-}
-
-func (i ProjectDefaultSubnetReferenceArgs) ToProjectDefaultSubnetReferenceOutputWithContext(ctx context.Context) ProjectDefaultSubnetReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectDefaultSubnetReferenceOutput)
-}
-
-func (i ProjectDefaultSubnetReferenceArgs) ToProjectDefaultSubnetReferencePtrOutput() ProjectDefaultSubnetReferencePtrOutput {
-	return i.ToProjectDefaultSubnetReferencePtrOutputWithContext(context.Background())
-}
-
-func (i ProjectDefaultSubnetReferenceArgs) ToProjectDefaultSubnetReferencePtrOutputWithContext(ctx context.Context) ProjectDefaultSubnetReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectDefaultSubnetReferenceOutput).ToProjectDefaultSubnetReferencePtrOutputWithContext(ctx)
-}
-
-// ProjectDefaultSubnetReferencePtrInput is an input type that accepts ProjectDefaultSubnetReferenceArgs, ProjectDefaultSubnetReferencePtr and ProjectDefaultSubnetReferencePtrOutput values.
-// You can construct a concrete instance of `ProjectDefaultSubnetReferencePtrInput` via:
-//
-//	        ProjectDefaultSubnetReferenceArgs{...}
-//
-//	or:
-//
-//	        nil
-type ProjectDefaultSubnetReferencePtrInput interface {
-	pulumi.Input
-
-	ToProjectDefaultSubnetReferencePtrOutput() ProjectDefaultSubnetReferencePtrOutput
-	ToProjectDefaultSubnetReferencePtrOutputWithContext(context.Context) ProjectDefaultSubnetReferencePtrOutput
-}
-
-type projectDefaultSubnetReferencePtrType ProjectDefaultSubnetReferenceArgs
-
-func ProjectDefaultSubnetReferencePtr(v *ProjectDefaultSubnetReferenceArgs) ProjectDefaultSubnetReferencePtrInput {
-	return (*projectDefaultSubnetReferencePtrType)(v)
-}
-
-func (*projectDefaultSubnetReferencePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectDefaultSubnetReference)(nil)).Elem()
-}
-
-func (i *projectDefaultSubnetReferencePtrType) ToProjectDefaultSubnetReferencePtrOutput() ProjectDefaultSubnetReferencePtrOutput {
-	return i.ToProjectDefaultSubnetReferencePtrOutputWithContext(context.Background())
-}
-
-func (i *projectDefaultSubnetReferencePtrType) ToProjectDefaultSubnetReferencePtrOutputWithContext(ctx context.Context) ProjectDefaultSubnetReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectDefaultSubnetReferencePtrOutput)
-}
-
-type ProjectDefaultSubnetReferenceOutput struct{ *pulumi.OutputState }
-
-func (ProjectDefaultSubnetReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectDefaultSubnetReference)(nil)).Elem()
-}
-
-func (o ProjectDefaultSubnetReferenceOutput) ToProjectDefaultSubnetReferenceOutput() ProjectDefaultSubnetReferenceOutput {
-	return o
-}
-
-func (o ProjectDefaultSubnetReferenceOutput) ToProjectDefaultSubnetReferenceOutputWithContext(ctx context.Context) ProjectDefaultSubnetReferenceOutput {
-	return o
-}
-
-func (o ProjectDefaultSubnetReferenceOutput) ToProjectDefaultSubnetReferencePtrOutput() ProjectDefaultSubnetReferencePtrOutput {
-	return o.ToProjectDefaultSubnetReferencePtrOutputWithContext(context.Background())
-}
-
-func (o ProjectDefaultSubnetReferenceOutput) ToProjectDefaultSubnetReferencePtrOutputWithContext(ctx context.Context) ProjectDefaultSubnetReferencePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectDefaultSubnetReference) *ProjectDefaultSubnetReference {
-		return &v
-	}).(ProjectDefaultSubnetReferencePtrOutput)
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectDefaultSubnetReferenceOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectDefaultSubnetReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectDefaultSubnetReferenceOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectDefaultSubnetReference) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectDefaultSubnetReferenceOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectDefaultSubnetReference) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectDefaultSubnetReferencePtrOutput struct{ *pulumi.OutputState }
-
-func (ProjectDefaultSubnetReferencePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectDefaultSubnetReference)(nil)).Elem()
-}
-
-func (o ProjectDefaultSubnetReferencePtrOutput) ToProjectDefaultSubnetReferencePtrOutput() ProjectDefaultSubnetReferencePtrOutput {
-	return o
-}
-
-func (o ProjectDefaultSubnetReferencePtrOutput) ToProjectDefaultSubnetReferencePtrOutputWithContext(ctx context.Context) ProjectDefaultSubnetReferencePtrOutput {
-	return o
-}
-
-func (o ProjectDefaultSubnetReferencePtrOutput) Elem() ProjectDefaultSubnetReferenceOutput {
-	return o.ApplyT(func(v *ProjectDefaultSubnetReference) ProjectDefaultSubnetReference {
-		if v != nil {
-			return *v
-		}
-		var ret ProjectDefaultSubnetReference
-		return ret
-	}).(ProjectDefaultSubnetReferenceOutput)
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectDefaultSubnetReferencePtrOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ProjectDefaultSubnetReference) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Kind
-	}).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectDefaultSubnetReferencePtrOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ProjectDefaultSubnetReference) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Name
-	}).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectDefaultSubnetReferencePtrOutput) Uuid() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ProjectDefaultSubnetReference) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Uuid
-	}).(pulumi.StringPtrOutput)
-}
-
-type ProjectEnvironmentReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectEnvironmentReferenceListInput is an input type that accepts ProjectEnvironmentReferenceListArgs and ProjectEnvironmentReferenceListOutput values.
-// You can construct a concrete instance of `ProjectEnvironmentReferenceListInput` via:
-//
-//	ProjectEnvironmentReferenceListArgs{...}
-type ProjectEnvironmentReferenceListInput interface {
-	pulumi.Input
-
-	ToProjectEnvironmentReferenceListOutput() ProjectEnvironmentReferenceListOutput
-	ToProjectEnvironmentReferenceListOutputWithContext(context.Context) ProjectEnvironmentReferenceListOutput
-}
-
-type ProjectEnvironmentReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectEnvironmentReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (i ProjectEnvironmentReferenceListArgs) ToProjectEnvironmentReferenceListOutput() ProjectEnvironmentReferenceListOutput {
-	return i.ToProjectEnvironmentReferenceListOutputWithContext(context.Background())
-}
-
-func (i ProjectEnvironmentReferenceListArgs) ToProjectEnvironmentReferenceListOutputWithContext(ctx context.Context) ProjectEnvironmentReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectEnvironmentReferenceListOutput)
-}
-
-// ProjectEnvironmentReferenceListArrayInput is an input type that accepts ProjectEnvironmentReferenceListArray and ProjectEnvironmentReferenceListArrayOutput values.
-// You can construct a concrete instance of `ProjectEnvironmentReferenceListArrayInput` via:
-//
-//	ProjectEnvironmentReferenceListArray{ ProjectEnvironmentReferenceListArgs{...} }
-type ProjectEnvironmentReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToProjectEnvironmentReferenceListArrayOutput() ProjectEnvironmentReferenceListArrayOutput
-	ToProjectEnvironmentReferenceListArrayOutputWithContext(context.Context) ProjectEnvironmentReferenceListArrayOutput
-}
-
-type ProjectEnvironmentReferenceListArray []ProjectEnvironmentReferenceListInput
-
-func (ProjectEnvironmentReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (i ProjectEnvironmentReferenceListArray) ToProjectEnvironmentReferenceListArrayOutput() ProjectEnvironmentReferenceListArrayOutput {
-	return i.ToProjectEnvironmentReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectEnvironmentReferenceListArray) ToProjectEnvironmentReferenceListArrayOutputWithContext(ctx context.Context) ProjectEnvironmentReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectEnvironmentReferenceListArrayOutput)
-}
-
-type ProjectEnvironmentReferenceListOutput struct{ *pulumi.OutputState }
-
-func (ProjectEnvironmentReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (o ProjectEnvironmentReferenceListOutput) ToProjectEnvironmentReferenceListOutput() ProjectEnvironmentReferenceListOutput {
-	return o
-}
-
-func (o ProjectEnvironmentReferenceListOutput) ToProjectEnvironmentReferenceListOutputWithContext(ctx context.Context) ProjectEnvironmentReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectEnvironmentReferenceListOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectEnvironmentReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectEnvironmentReferenceListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectEnvironmentReferenceList) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectEnvironmentReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectEnvironmentReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectEnvironmentReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectEnvironmentReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (o ProjectEnvironmentReferenceListArrayOutput) ToProjectEnvironmentReferenceListArrayOutput() ProjectEnvironmentReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectEnvironmentReferenceListArrayOutput) ToProjectEnvironmentReferenceListArrayOutputWithContext(ctx context.Context) ProjectEnvironmentReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectEnvironmentReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectEnvironmentReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectEnvironmentReferenceList {
-		return vs[0].([]ProjectEnvironmentReferenceList)[vs[1].(int)]
-	}).(ProjectEnvironmentReferenceListOutput)
-}
-
-type ProjectExternalNetworkList struct {
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectExternalNetworkListInput is an input type that accepts ProjectExternalNetworkListArgs and ProjectExternalNetworkListOutput values.
-// You can construct a concrete instance of `ProjectExternalNetworkListInput` via:
-//
-//	ProjectExternalNetworkListArgs{...}
-type ProjectExternalNetworkListInput interface {
-	pulumi.Input
-
-	ToProjectExternalNetworkListOutput() ProjectExternalNetworkListOutput
-	ToProjectExternalNetworkListOutputWithContext(context.Context) ProjectExternalNetworkListOutput
-}
-
-type ProjectExternalNetworkListArgs struct {
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectExternalNetworkListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectExternalNetworkList)(nil)).Elem()
-}
-
-func (i ProjectExternalNetworkListArgs) ToProjectExternalNetworkListOutput() ProjectExternalNetworkListOutput {
-	return i.ToProjectExternalNetworkListOutputWithContext(context.Background())
-}
-
-func (i ProjectExternalNetworkListArgs) ToProjectExternalNetworkListOutputWithContext(ctx context.Context) ProjectExternalNetworkListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectExternalNetworkListOutput)
-}
-
-// ProjectExternalNetworkListArrayInput is an input type that accepts ProjectExternalNetworkListArray and ProjectExternalNetworkListArrayOutput values.
-// You can construct a concrete instance of `ProjectExternalNetworkListArrayInput` via:
-//
-//	ProjectExternalNetworkListArray{ ProjectExternalNetworkListArgs{...} }
-type ProjectExternalNetworkListArrayInput interface {
-	pulumi.Input
-
-	ToProjectExternalNetworkListArrayOutput() ProjectExternalNetworkListArrayOutput
-	ToProjectExternalNetworkListArrayOutputWithContext(context.Context) ProjectExternalNetworkListArrayOutput
-}
-
-type ProjectExternalNetworkListArray []ProjectExternalNetworkListInput
-
-func (ProjectExternalNetworkListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectExternalNetworkList)(nil)).Elem()
-}
-
-func (i ProjectExternalNetworkListArray) ToProjectExternalNetworkListArrayOutput() ProjectExternalNetworkListArrayOutput {
-	return i.ToProjectExternalNetworkListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectExternalNetworkListArray) ToProjectExternalNetworkListArrayOutputWithContext(ctx context.Context) ProjectExternalNetworkListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectExternalNetworkListArrayOutput)
-}
-
-type ProjectExternalNetworkListOutput struct{ *pulumi.OutputState }
-
-func (ProjectExternalNetworkListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectExternalNetworkList)(nil)).Elem()
-}
-
-func (o ProjectExternalNetworkListOutput) ToProjectExternalNetworkListOutput() ProjectExternalNetworkListOutput {
-	return o
-}
-
-func (o ProjectExternalNetworkListOutput) ToProjectExternalNetworkListOutputWithContext(ctx context.Context) ProjectExternalNetworkListOutput {
-	return o
-}
-
-// The name for the project.
-func (o ProjectExternalNetworkListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectExternalNetworkList) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectExternalNetworkListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectExternalNetworkList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectExternalNetworkListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectExternalNetworkListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectExternalNetworkList)(nil)).Elem()
-}
-
-func (o ProjectExternalNetworkListArrayOutput) ToProjectExternalNetworkListArrayOutput() ProjectExternalNetworkListArrayOutput {
-	return o
-}
-
-func (o ProjectExternalNetworkListArrayOutput) ToProjectExternalNetworkListArrayOutputWithContext(ctx context.Context) ProjectExternalNetworkListArrayOutput {
-	return o
-}
-
-func (o ProjectExternalNetworkListArrayOutput) Index(i pulumi.IntInput) ProjectExternalNetworkListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectExternalNetworkList {
-		return vs[0].([]ProjectExternalNetworkList)[vs[1].(int)]
-	}).(ProjectExternalNetworkListOutput)
-}
-
-type ProjectExternalUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectExternalUserGroupReferenceListInput is an input type that accepts ProjectExternalUserGroupReferenceListArgs and ProjectExternalUserGroupReferenceListOutput values.
-// You can construct a concrete instance of `ProjectExternalUserGroupReferenceListInput` via:
-//
-//	ProjectExternalUserGroupReferenceListArgs{...}
-type ProjectExternalUserGroupReferenceListInput interface {
-	pulumi.Input
-
-	ToProjectExternalUserGroupReferenceListOutput() ProjectExternalUserGroupReferenceListOutput
-	ToProjectExternalUserGroupReferenceListOutputWithContext(context.Context) ProjectExternalUserGroupReferenceListOutput
-}
-
-type ProjectExternalUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectExternalUserGroupReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i ProjectExternalUserGroupReferenceListArgs) ToProjectExternalUserGroupReferenceListOutput() ProjectExternalUserGroupReferenceListOutput {
-	return i.ToProjectExternalUserGroupReferenceListOutputWithContext(context.Background())
-}
-
-func (i ProjectExternalUserGroupReferenceListArgs) ToProjectExternalUserGroupReferenceListOutputWithContext(ctx context.Context) ProjectExternalUserGroupReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectExternalUserGroupReferenceListOutput)
-}
-
-// ProjectExternalUserGroupReferenceListArrayInput is an input type that accepts ProjectExternalUserGroupReferenceListArray and ProjectExternalUserGroupReferenceListArrayOutput values.
-// You can construct a concrete instance of `ProjectExternalUserGroupReferenceListArrayInput` via:
-//
-//	ProjectExternalUserGroupReferenceListArray{ ProjectExternalUserGroupReferenceListArgs{...} }
-type ProjectExternalUserGroupReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToProjectExternalUserGroupReferenceListArrayOutput() ProjectExternalUserGroupReferenceListArrayOutput
-	ToProjectExternalUserGroupReferenceListArrayOutputWithContext(context.Context) ProjectExternalUserGroupReferenceListArrayOutput
-}
-
-type ProjectExternalUserGroupReferenceListArray []ProjectExternalUserGroupReferenceListInput
-
-func (ProjectExternalUserGroupReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i ProjectExternalUserGroupReferenceListArray) ToProjectExternalUserGroupReferenceListArrayOutput() ProjectExternalUserGroupReferenceListArrayOutput {
-	return i.ToProjectExternalUserGroupReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectExternalUserGroupReferenceListArray) ToProjectExternalUserGroupReferenceListArrayOutputWithContext(ctx context.Context) ProjectExternalUserGroupReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectExternalUserGroupReferenceListArrayOutput)
-}
-
-type ProjectExternalUserGroupReferenceListOutput struct{ *pulumi.OutputState }
-
-func (ProjectExternalUserGroupReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o ProjectExternalUserGroupReferenceListOutput) ToProjectExternalUserGroupReferenceListOutput() ProjectExternalUserGroupReferenceListOutput {
-	return o
-}
-
-func (o ProjectExternalUserGroupReferenceListOutput) ToProjectExternalUserGroupReferenceListOutputWithContext(ctx context.Context) ProjectExternalUserGroupReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectExternalUserGroupReferenceListOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectExternalUserGroupReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectExternalUserGroupReferenceListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectExternalUserGroupReferenceList) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectExternalUserGroupReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectExternalUserGroupReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectExternalUserGroupReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectExternalUserGroupReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o ProjectExternalUserGroupReferenceListArrayOutput) ToProjectExternalUserGroupReferenceListArrayOutput() ProjectExternalUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectExternalUserGroupReferenceListArrayOutput) ToProjectExternalUserGroupReferenceListArrayOutputWithContext(ctx context.Context) ProjectExternalUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectExternalUserGroupReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectExternalUserGroupReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectExternalUserGroupReferenceList {
-		return vs[0].([]ProjectExternalUserGroupReferenceList)[vs[1].(int)]
-	}).(ProjectExternalUserGroupReferenceListOutput)
-}
-
-type ProjectResourceDomain struct {
-	Resources []ProjectResourceDomainResource `pulumi:"resources"`
-}
-
-// ProjectResourceDomainInput is an input type that accepts ProjectResourceDomainArgs and ProjectResourceDomainOutput values.
-// You can construct a concrete instance of `ProjectResourceDomainInput` via:
-//
-//	ProjectResourceDomainArgs{...}
-type ProjectResourceDomainInput interface {
-	pulumi.Input
-
-	ToProjectResourceDomainOutput() ProjectResourceDomainOutput
-	ToProjectResourceDomainOutputWithContext(context.Context) ProjectResourceDomainOutput
-}
-
-type ProjectResourceDomainArgs struct {
-	Resources ProjectResourceDomainResourceArrayInput `pulumi:"resources"`
-}
-
-func (ProjectResourceDomainArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectResourceDomain)(nil)).Elem()
-}
-
-func (i ProjectResourceDomainArgs) ToProjectResourceDomainOutput() ProjectResourceDomainOutput {
-	return i.ToProjectResourceDomainOutputWithContext(context.Background())
-}
-
-func (i ProjectResourceDomainArgs) ToProjectResourceDomainOutputWithContext(ctx context.Context) ProjectResourceDomainOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectResourceDomainOutput)
-}
-
-func (i ProjectResourceDomainArgs) ToProjectResourceDomainPtrOutput() ProjectResourceDomainPtrOutput {
-	return i.ToProjectResourceDomainPtrOutputWithContext(context.Background())
-}
-
-func (i ProjectResourceDomainArgs) ToProjectResourceDomainPtrOutputWithContext(ctx context.Context) ProjectResourceDomainPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectResourceDomainOutput).ToProjectResourceDomainPtrOutputWithContext(ctx)
-}
-
-// ProjectResourceDomainPtrInput is an input type that accepts ProjectResourceDomainArgs, ProjectResourceDomainPtr and ProjectResourceDomainPtrOutput values.
-// You can construct a concrete instance of `ProjectResourceDomainPtrInput` via:
-//
-//	        ProjectResourceDomainArgs{...}
-//
-//	or:
-//
-//	        nil
-type ProjectResourceDomainPtrInput interface {
-	pulumi.Input
-
-	ToProjectResourceDomainPtrOutput() ProjectResourceDomainPtrOutput
-	ToProjectResourceDomainPtrOutputWithContext(context.Context) ProjectResourceDomainPtrOutput
-}
-
-type projectResourceDomainPtrType ProjectResourceDomainArgs
-
-func ProjectResourceDomainPtr(v *ProjectResourceDomainArgs) ProjectResourceDomainPtrInput {
-	return (*projectResourceDomainPtrType)(v)
-}
-
-func (*projectResourceDomainPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectResourceDomain)(nil)).Elem()
-}
-
-func (i *projectResourceDomainPtrType) ToProjectResourceDomainPtrOutput() ProjectResourceDomainPtrOutput {
-	return i.ToProjectResourceDomainPtrOutputWithContext(context.Background())
-}
-
-func (i *projectResourceDomainPtrType) ToProjectResourceDomainPtrOutputWithContext(ctx context.Context) ProjectResourceDomainPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectResourceDomainPtrOutput)
-}
-
-type ProjectResourceDomainOutput struct{ *pulumi.OutputState }
-
-func (ProjectResourceDomainOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectResourceDomain)(nil)).Elem()
-}
-
-func (o ProjectResourceDomainOutput) ToProjectResourceDomainOutput() ProjectResourceDomainOutput {
-	return o
-}
-
-func (o ProjectResourceDomainOutput) ToProjectResourceDomainOutputWithContext(ctx context.Context) ProjectResourceDomainOutput {
-	return o
-}
-
-func (o ProjectResourceDomainOutput) ToProjectResourceDomainPtrOutput() ProjectResourceDomainPtrOutput {
-	return o.ToProjectResourceDomainPtrOutputWithContext(context.Background())
-}
-
-func (o ProjectResourceDomainOutput) ToProjectResourceDomainPtrOutputWithContext(ctx context.Context) ProjectResourceDomainPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectResourceDomain) *ProjectResourceDomain {
-		return &v
-	}).(ProjectResourceDomainPtrOutput)
-}
-
-func (o ProjectResourceDomainOutput) Resources() ProjectResourceDomainResourceArrayOutput {
-	return o.ApplyT(func(v ProjectResourceDomain) []ProjectResourceDomainResource { return v.Resources }).(ProjectResourceDomainResourceArrayOutput)
-}
-
-type ProjectResourceDomainPtrOutput struct{ *pulumi.OutputState }
-
-func (ProjectResourceDomainPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ProjectResourceDomain)(nil)).Elem()
-}
-
-func (o ProjectResourceDomainPtrOutput) ToProjectResourceDomainPtrOutput() ProjectResourceDomainPtrOutput {
-	return o
-}
-
-func (o ProjectResourceDomainPtrOutput) ToProjectResourceDomainPtrOutputWithContext(ctx context.Context) ProjectResourceDomainPtrOutput {
-	return o
-}
-
-func (o ProjectResourceDomainPtrOutput) Elem() ProjectResourceDomainOutput {
-	return o.ApplyT(func(v *ProjectResourceDomain) ProjectResourceDomain {
-		if v != nil {
-			return *v
-		}
-		var ret ProjectResourceDomain
-		return ret
-	}).(ProjectResourceDomainOutput)
-}
-
-func (o ProjectResourceDomainPtrOutput) Resources() ProjectResourceDomainResourceArrayOutput {
-	return o.ApplyT(func(v *ProjectResourceDomain) []ProjectResourceDomainResource {
-		if v == nil {
-			return nil
-		}
-		return v.Resources
-	}).(ProjectResourceDomainResourceArrayOutput)
-}
-
-type ProjectResourceDomainResource struct {
-	Limit        int     `pulumi:"limit"`
-	ResourceType string  `pulumi:"resourceType"`
-	Units        *string `pulumi:"units"`
-	// value of the key.
-	Value *int `pulumi:"value"`
-}
-
-// ProjectResourceDomainResourceInput is an input type that accepts ProjectResourceDomainResourceArgs and ProjectResourceDomainResourceOutput values.
-// You can construct a concrete instance of `ProjectResourceDomainResourceInput` via:
-//
-//	ProjectResourceDomainResourceArgs{...}
-type ProjectResourceDomainResourceInput interface {
-	pulumi.Input
-
-	ToProjectResourceDomainResourceOutput() ProjectResourceDomainResourceOutput
-	ToProjectResourceDomainResourceOutputWithContext(context.Context) ProjectResourceDomainResourceOutput
-}
-
-type ProjectResourceDomainResourceArgs struct {
-	Limit        pulumi.IntInput       `pulumi:"limit"`
-	ResourceType pulumi.StringInput    `pulumi:"resourceType"`
-	Units        pulumi.StringPtrInput `pulumi:"units"`
-	// value of the key.
-	Value pulumi.IntPtrInput `pulumi:"value"`
-}
-
-func (ProjectResourceDomainResourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectResourceDomainResource)(nil)).Elem()
-}
-
-func (i ProjectResourceDomainResourceArgs) ToProjectResourceDomainResourceOutput() ProjectResourceDomainResourceOutput {
-	return i.ToProjectResourceDomainResourceOutputWithContext(context.Background())
-}
-
-func (i ProjectResourceDomainResourceArgs) ToProjectResourceDomainResourceOutputWithContext(ctx context.Context) ProjectResourceDomainResourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectResourceDomainResourceOutput)
-}
-
-// ProjectResourceDomainResourceArrayInput is an input type that accepts ProjectResourceDomainResourceArray and ProjectResourceDomainResourceArrayOutput values.
-// You can construct a concrete instance of `ProjectResourceDomainResourceArrayInput` via:
-//
-//	ProjectResourceDomainResourceArray{ ProjectResourceDomainResourceArgs{...} }
-type ProjectResourceDomainResourceArrayInput interface {
-	pulumi.Input
-
-	ToProjectResourceDomainResourceArrayOutput() ProjectResourceDomainResourceArrayOutput
-	ToProjectResourceDomainResourceArrayOutputWithContext(context.Context) ProjectResourceDomainResourceArrayOutput
-}
-
-type ProjectResourceDomainResourceArray []ProjectResourceDomainResourceInput
-
-func (ProjectResourceDomainResourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectResourceDomainResource)(nil)).Elem()
-}
-
-func (i ProjectResourceDomainResourceArray) ToProjectResourceDomainResourceArrayOutput() ProjectResourceDomainResourceArrayOutput {
-	return i.ToProjectResourceDomainResourceArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectResourceDomainResourceArray) ToProjectResourceDomainResourceArrayOutputWithContext(ctx context.Context) ProjectResourceDomainResourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectResourceDomainResourceArrayOutput)
-}
-
-type ProjectResourceDomainResourceOutput struct{ *pulumi.OutputState }
-
-func (ProjectResourceDomainResourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectResourceDomainResource)(nil)).Elem()
-}
-
-func (o ProjectResourceDomainResourceOutput) ToProjectResourceDomainResourceOutput() ProjectResourceDomainResourceOutput {
-	return o
-}
-
-func (o ProjectResourceDomainResourceOutput) ToProjectResourceDomainResourceOutputWithContext(ctx context.Context) ProjectResourceDomainResourceOutput {
-	return o
-}
-
-func (o ProjectResourceDomainResourceOutput) Limit() pulumi.IntOutput {
-	return o.ApplyT(func(v ProjectResourceDomainResource) int { return v.Limit }).(pulumi.IntOutput)
-}
-
-func (o ProjectResourceDomainResourceOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectResourceDomainResource) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-func (o ProjectResourceDomainResourceOutput) Units() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectResourceDomainResource) *string { return v.Units }).(pulumi.StringPtrOutput)
-}
-
-// value of the key.
-func (o ProjectResourceDomainResourceOutput) Value() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ProjectResourceDomainResource) *int { return v.Value }).(pulumi.IntPtrOutput)
-}
-
-type ProjectResourceDomainResourceArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectResourceDomainResourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectResourceDomainResource)(nil)).Elem()
-}
-
-func (o ProjectResourceDomainResourceArrayOutput) ToProjectResourceDomainResourceArrayOutput() ProjectResourceDomainResourceArrayOutput {
-	return o
-}
-
-func (o ProjectResourceDomainResourceArrayOutput) ToProjectResourceDomainResourceArrayOutputWithContext(ctx context.Context) ProjectResourceDomainResourceArrayOutput {
-	return o
-}
-
-func (o ProjectResourceDomainResourceArrayOutput) Index(i pulumi.IntInput) ProjectResourceDomainResourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectResourceDomainResource {
-		return vs[0].([]ProjectResourceDomainResource)[vs[1].(int)]
-	}).(ProjectResourceDomainResourceOutput)
-}
-
-type ProjectSubnetReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectSubnetReferenceListInput is an input type that accepts ProjectSubnetReferenceListArgs and ProjectSubnetReferenceListOutput values.
-// You can construct a concrete instance of `ProjectSubnetReferenceListInput` via:
-//
-//	ProjectSubnetReferenceListArgs{...}
-type ProjectSubnetReferenceListInput interface {
-	pulumi.Input
-
-	ToProjectSubnetReferenceListOutput() ProjectSubnetReferenceListOutput
-	ToProjectSubnetReferenceListOutputWithContext(context.Context) ProjectSubnetReferenceListOutput
-}
-
-type ProjectSubnetReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectSubnetReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectSubnetReferenceList)(nil)).Elem()
-}
-
-func (i ProjectSubnetReferenceListArgs) ToProjectSubnetReferenceListOutput() ProjectSubnetReferenceListOutput {
-	return i.ToProjectSubnetReferenceListOutputWithContext(context.Background())
-}
-
-func (i ProjectSubnetReferenceListArgs) ToProjectSubnetReferenceListOutputWithContext(ctx context.Context) ProjectSubnetReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectSubnetReferenceListOutput)
-}
-
-// ProjectSubnetReferenceListArrayInput is an input type that accepts ProjectSubnetReferenceListArray and ProjectSubnetReferenceListArrayOutput values.
-// You can construct a concrete instance of `ProjectSubnetReferenceListArrayInput` via:
-//
-//	ProjectSubnetReferenceListArray{ ProjectSubnetReferenceListArgs{...} }
-type ProjectSubnetReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToProjectSubnetReferenceListArrayOutput() ProjectSubnetReferenceListArrayOutput
-	ToProjectSubnetReferenceListArrayOutputWithContext(context.Context) ProjectSubnetReferenceListArrayOutput
-}
-
-type ProjectSubnetReferenceListArray []ProjectSubnetReferenceListInput
-
-func (ProjectSubnetReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectSubnetReferenceList)(nil)).Elem()
-}
-
-func (i ProjectSubnetReferenceListArray) ToProjectSubnetReferenceListArrayOutput() ProjectSubnetReferenceListArrayOutput {
-	return i.ToProjectSubnetReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectSubnetReferenceListArray) ToProjectSubnetReferenceListArrayOutputWithContext(ctx context.Context) ProjectSubnetReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectSubnetReferenceListArrayOutput)
-}
-
-type ProjectSubnetReferenceListOutput struct{ *pulumi.OutputState }
-
-func (ProjectSubnetReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectSubnetReferenceList)(nil)).Elem()
-}
-
-func (o ProjectSubnetReferenceListOutput) ToProjectSubnetReferenceListOutput() ProjectSubnetReferenceListOutput {
-	return o
-}
-
-func (o ProjectSubnetReferenceListOutput) ToProjectSubnetReferenceListOutputWithContext(ctx context.Context) ProjectSubnetReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectSubnetReferenceListOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectSubnetReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectSubnetReferenceListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectSubnetReferenceList) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectSubnetReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectSubnetReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectSubnetReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectSubnetReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectSubnetReferenceList)(nil)).Elem()
-}
-
-func (o ProjectSubnetReferenceListArrayOutput) ToProjectSubnetReferenceListArrayOutput() ProjectSubnetReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectSubnetReferenceListArrayOutput) ToProjectSubnetReferenceListArrayOutputWithContext(ctx context.Context) ProjectSubnetReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectSubnetReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectSubnetReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectSubnetReferenceList {
-		return vs[0].([]ProjectSubnetReferenceList)[vs[1].(int)]
-	}).(ProjectSubnetReferenceListOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray{})
@@ -62428,6 +62650,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NgtUpgradeV2RebootPreferencePtrInput)(nil)).Elem(), NgtUpgradeV2RebootPreferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NgtUpgradeV2RebootPreferenceScheduleInput)(nil)).Elem(), NgtUpgradeV2RebootPreferenceScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NgtUpgradeV2RebootPreferenceSchedulePtrInput)(nil)).Elem(), NgtUpgradeV2RebootPreferenceScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2AlternateFqdnInput)(nil)).Elem(), ObjectStoreCertificateV2AlternateFqdnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2AlternateFqdnArrayInput)(nil)).Elem(), ObjectStoreCertificateV2AlternateFqdnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpInput)(nil)).Elem(), ObjectStoreCertificateV2AlternateIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpArrayInput)(nil)).Elem(), ObjectStoreCertificateV2AlternateIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpIpv4Input)(nil)).Elem(), ObjectStoreCertificateV2AlternateIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpIpv4PtrInput)(nil)).Elem(), ObjectStoreCertificateV2AlternateIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpIpv6Input)(nil)).Elem(), ObjectStoreCertificateV2AlternateIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2AlternateIpIpv6PtrInput)(nil)).Elem(), ObjectStoreCertificateV2AlternateIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2LinkInput)(nil)).Elem(), ObjectStoreCertificateV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2LinkArrayInput)(nil)).Elem(), ObjectStoreCertificateV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2MetadataInput)(nil)).Elem(), ObjectStoreCertificateV2MetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreCertificateV2MetadataArrayInput)(nil)).Elem(), ObjectStoreCertificateV2MetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2LinkInput)(nil)).Elem(), ObjectStoreV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2LinkArrayInput)(nil)).Elem(), ObjectStoreV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2MetadataInput)(nil)).Elem(), ObjectStoreV2MetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2MetadataArrayInput)(nil)).Elem(), ObjectStoreV2MetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2PublicNetworkIpInput)(nil)).Elem(), ObjectStoreV2PublicNetworkIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2PublicNetworkIpArrayInput)(nil)).Elem(), ObjectStoreV2PublicNetworkIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2PublicNetworkIpIpv4Input)(nil)).Elem(), ObjectStoreV2PublicNetworkIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2PublicNetworkIpIpv4PtrInput)(nil)).Elem(), ObjectStoreV2PublicNetworkIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2PublicNetworkIpIpv6Input)(nil)).Elem(), ObjectStoreV2PublicNetworkIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2PublicNetworkIpIpv6PtrInput)(nil)).Elem(), ObjectStoreV2PublicNetworkIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpInput)(nil)).Elem(), ObjectStoreV2StorageNetworkDnsIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpPtrInput)(nil)).Elem(), ObjectStoreV2StorageNetworkDnsIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpIpv4Input)(nil)).Elem(), ObjectStoreV2StorageNetworkDnsIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpIpv4PtrInput)(nil)).Elem(), ObjectStoreV2StorageNetworkDnsIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpIpv6Input)(nil)).Elem(), ObjectStoreV2StorageNetworkDnsIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkDnsIpIpv6PtrInput)(nil)).Elem(), ObjectStoreV2StorageNetworkDnsIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkVipInput)(nil)).Elem(), ObjectStoreV2StorageNetworkVipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkVipPtrInput)(nil)).Elem(), ObjectStoreV2StorageNetworkVipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkVipIpv4Input)(nil)).Elem(), ObjectStoreV2StorageNetworkVipIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkVipIpv4PtrInput)(nil)).Elem(), ObjectStoreV2StorageNetworkVipIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkVipIpv6Input)(nil)).Elem(), ObjectStoreV2StorageNetworkVipIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectStoreV2StorageNetworkVipIpv6PtrInput)(nil)).Elem(), ObjectStoreV2StorageNetworkVipIpv6Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PbrDestinationInput)(nil)).Elem(), PbrDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PbrDestinationPtrInput)(nil)).Elem(), PbrDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PbrProtocolParametersInput)(nil)).Elem(), PbrProtocolParametersArgs{})
@@ -62937,38 +63193,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListEntityFilterExpressionListInput)(nil)).Elem(), ProjectAcpContextFilterListEntityFilterExpressionListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListEntityFilterExpressionListArrayInput)(nil)).Elem(), ProjectAcpContextFilterListEntityFilterExpressionListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideInput)(nil)).Elem(), ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesInput)(nil)).Elem(), ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrInput)(nil)).Elem(), ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListInput)(nil)).Elem(), ProjectAcpContextFilterListScopeFilterExpressionListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListArrayInput)(nil)).Elem(), ProjectAcpContextFilterListScopeFilterExpressionListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput)(nil)).Elem(), ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesInput)(nil)).Elem(), ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrInput)(nil)).Elem(), ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpRoleReferenceInput)(nil)).Elem(), ProjectAcpRoleReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpUserGroupReferenceListInput)(nil)).Elem(), ProjectAcpUserGroupReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpUserGroupReferenceListArrayInput)(nil)).Elem(), ProjectAcpUserGroupReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpUserReferenceListInput)(nil)).Elem(), ProjectAcpUserReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectAcpUserReferenceListArrayInput)(nil)).Elem(), ProjectAcpUserReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectCategoryInput)(nil)).Elem(), ProjectCategoryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectCategoryArrayInput)(nil)).Elem(), ProjectCategoryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectClusterReferenceListInput)(nil)).Elem(), ProjectClusterReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectClusterReferenceListArrayInput)(nil)).Elem(), ProjectClusterReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectDefaultEnvironmentReferenceInput)(nil)).Elem(), ProjectDefaultEnvironmentReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectDefaultEnvironmentReferencePtrInput)(nil)).Elem(), ProjectDefaultEnvironmentReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectDefaultSubnetReferenceInput)(nil)).Elem(), ProjectDefaultSubnetReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectDefaultSubnetReferencePtrInput)(nil)).Elem(), ProjectDefaultSubnetReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectEnvironmentReferenceListInput)(nil)).Elem(), ProjectEnvironmentReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectEnvironmentReferenceListArrayInput)(nil)).Elem(), ProjectEnvironmentReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectExternalNetworkListInput)(nil)).Elem(), ProjectExternalNetworkListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectExternalNetworkListArrayInput)(nil)).Elem(), ProjectExternalNetworkListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectExternalUserGroupReferenceListInput)(nil)).Elem(), ProjectExternalUserGroupReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectExternalUserGroupReferenceListArrayInput)(nil)).Elem(), ProjectExternalUserGroupReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectResourceDomainInput)(nil)).Elem(), ProjectResourceDomainArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectResourceDomainPtrInput)(nil)).Elem(), ProjectResourceDomainArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectResourceDomainResourceInput)(nil)).Elem(), ProjectResourceDomainResourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectResourceDomainResourceArrayInput)(nil)).Elem(), ProjectResourceDomainResourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectSubnetReferenceListInput)(nil)).Elem(), ProjectSubnetReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectSubnetReferenceListArrayInput)(nil)).Elem(), ProjectSubnetReferenceListArray{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineSlaOutput{})
@@ -63417,6 +63641,40 @@ func init() {
 	pulumi.RegisterOutputType(NgtUpgradeV2RebootPreferencePtrOutput{})
 	pulumi.RegisterOutputType(NgtUpgradeV2RebootPreferenceScheduleOutput{})
 	pulumi.RegisterOutputType(NgtUpgradeV2RebootPreferenceSchedulePtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2AlternateFqdnOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2AlternateFqdnArrayOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2AlternateIpOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2AlternateIpArrayOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2AlternateIpIpv4Output{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2AlternateIpIpv4PtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2AlternateIpIpv6Output{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2AlternateIpIpv6PtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2LinkOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2MetadataOutput{})
+	pulumi.RegisterOutputType(ObjectStoreCertificateV2MetadataArrayOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2LinkOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2MetadataOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2MetadataArrayOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2PublicNetworkIpOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2PublicNetworkIpArrayOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2PublicNetworkIpIpv4Output{})
+	pulumi.RegisterOutputType(ObjectStoreV2PublicNetworkIpIpv4PtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2PublicNetworkIpIpv6Output{})
+	pulumi.RegisterOutputType(ObjectStoreV2PublicNetworkIpIpv6PtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkDnsIpOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkDnsIpPtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkDnsIpIpv4Output{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkDnsIpIpv4PtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkDnsIpIpv6Output{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkDnsIpIpv6PtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkVipOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkVipPtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkVipIpv4Output{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkVipIpv4PtrOutput{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkVipIpv6Output{})
+	pulumi.RegisterOutputType(ObjectStoreV2StorageNetworkVipIpv6PtrOutput{})
 	pulumi.RegisterOutputType(PbrDestinationOutput{})
 	pulumi.RegisterOutputType(PbrDestinationPtrOutput{})
 	pulumi.RegisterOutputType(PbrProtocolParametersOutput{})
@@ -63926,36 +64184,4 @@ func init() {
 	pulumi.RegisterOutputType(ProjectAcpContextFilterListEntityFilterExpressionListOutput{})
 	pulumi.RegisterOutputType(ProjectAcpContextFilterListEntityFilterExpressionListArrayOutput{})
 	pulumi.RegisterOutputType(ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput{})
-	pulumi.RegisterOutputType(ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesOutput{})
-	pulumi.RegisterOutputType(ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesPtrOutput{})
-	pulumi.RegisterOutputType(ProjectAcpContextFilterListScopeFilterExpressionListOutput{})
-	pulumi.RegisterOutputType(ProjectAcpContextFilterListScopeFilterExpressionListArrayOutput{})
-	pulumi.RegisterOutputType(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput{})
-	pulumi.RegisterOutputType(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesOutput{})
-	pulumi.RegisterOutputType(ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesPtrOutput{})
-	pulumi.RegisterOutputType(ProjectAcpRoleReferenceOutput{})
-	pulumi.RegisterOutputType(ProjectAcpUserGroupReferenceListOutput{})
-	pulumi.RegisterOutputType(ProjectAcpUserGroupReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(ProjectAcpUserReferenceListOutput{})
-	pulumi.RegisterOutputType(ProjectAcpUserReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(ProjectCategoryOutput{})
-	pulumi.RegisterOutputType(ProjectCategoryArrayOutput{})
-	pulumi.RegisterOutputType(ProjectClusterReferenceListOutput{})
-	pulumi.RegisterOutputType(ProjectClusterReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(ProjectDefaultEnvironmentReferenceOutput{})
-	pulumi.RegisterOutputType(ProjectDefaultEnvironmentReferencePtrOutput{})
-	pulumi.RegisterOutputType(ProjectDefaultSubnetReferenceOutput{})
-	pulumi.RegisterOutputType(ProjectDefaultSubnetReferencePtrOutput{})
-	pulumi.RegisterOutputType(ProjectEnvironmentReferenceListOutput{})
-	pulumi.RegisterOutputType(ProjectEnvironmentReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(ProjectExternalNetworkListOutput{})
-	pulumi.RegisterOutputType(ProjectExternalNetworkListArrayOutput{})
-	pulumi.RegisterOutputType(ProjectExternalUserGroupReferenceListOutput{})
-	pulumi.RegisterOutputType(ProjectExternalUserGroupReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(ProjectResourceDomainOutput{})
-	pulumi.RegisterOutputType(ProjectResourceDomainPtrOutput{})
-	pulumi.RegisterOutputType(ProjectResourceDomainResourceOutput{})
-	pulumi.RegisterOutputType(ProjectResourceDomainResourceArrayOutput{})
-	pulumi.RegisterOutputType(ProjectSubnetReferenceListOutput{})
-	pulumi.RegisterOutputType(ProjectSubnetReferenceListArrayOutput{})
 }

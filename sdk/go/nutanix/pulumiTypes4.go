@@ -13,6 +13,4029 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsage struct {
+	IpPoolUsages   []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage `pulumi:"ipPoolUsages"`
+	NumAssignedIps int                                                          `pulumi:"numAssignedIps"`
+	NumFreeIps     int                                                          `pulumi:"numFreeIps"`
+	NumMacs        int                                                          `pulumi:"numMacs"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs struct {
+	IpPoolUsages   GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput `pulumi:"ipPoolUsages"`
+	NumAssignedIps pulumi.IntInput                                                      `pulumi:"numAssignedIps"`
+	NumFreeIps     pulumi.IntInput                                                      `pulumi:"numFreeIps"`
+	NumMacs        pulumi.IntInput                                                      `pulumi:"numMacs"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) IpPoolUsages() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsage) []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage {
+		return v.IpPoolUsages
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) NumAssignedIps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsage) int { return v.NumAssignedIps }).(pulumi.IntOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) NumFreeIps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsage) int { return v.NumFreeIps }).(pulumi.IntOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) NumMacs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsage) int { return v.NumMacs }).(pulumi.IntOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsage {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage struct {
+	NumFreeIps  int                                                               `pulumi:"numFreeIps"`
+	NumTotalIps int                                                               `pulumi:"numTotalIps"`
+	Ranges      []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange `pulumi:"ranges"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs struct {
+	NumFreeIps  pulumi.IntInput                                                           `pulumi:"numFreeIps"`
+	NumTotalIps pulumi.IntInput                                                           `pulumi:"numTotalIps"`
+	Ranges      GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput `pulumi:"ranges"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) NumFreeIps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage) int { return v.NumFreeIps }).(pulumi.IntOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) NumTotalIps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage) int { return v.NumTotalIps }).(pulumi.IntOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) Ranges() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage) []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange {
+		return v.Ranges
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange struct {
+	EndIps   []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp   `pulumi:"endIps"`
+	StartIps []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp `pulumi:"startIps"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs struct {
+	EndIps   GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput   `pulumi:"endIps"`
+	StartIps GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput `pulumi:"startIps"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) EndIps() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange) []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp {
+		return v.EndIps
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) StartIps() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange) []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp {
+		return v.StartIps
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetLink struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetLinkInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs and GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetLinkInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetLinkInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetLink)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetLinkArray and GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetLinkArray{ GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetLinkArray []GetFloatingIpsV2FloatingIpExternalSubnetLinkInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetLink)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetLink)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetLink)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetLink {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetLink)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs and GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray and GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray{ GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray []GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch struct {
+	BondMode bool                                                           `pulumi:"bondMode"`
+	Clusters []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster `pulumi:"clusters"`
+	// Description for the Floating IP.
+	Description string `pulumi:"description"`
+	// Floating IP UUID
+	ExtId              string `pulumi:"extId"`
+	HasDeploymentError bool   `pulumi:"hasDeploymentError"`
+	IsDefault          bool   `pulumi:"isDefault"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink `pulumi:"links"`
+	// Metadata associated with this resource.
+	Metadatas []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata `pulumi:"metadatas"`
+	Mtu       int                                                             `pulumi:"mtu"`
+	// Name of the floating IP.
+	Name string `pulumi:"name"`
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId string `pulumi:"tenantId"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs struct {
+	BondMode pulumi.BoolInput                                                       `pulumi:"bondMode"`
+	Clusters GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput `pulumi:"clusters"`
+	// Description for the Floating IP.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Floating IP UUID
+	ExtId              pulumi.StringInput `pulumi:"extId"`
+	HasDeploymentError pulumi.BoolInput   `pulumi:"hasDeploymentError"`
+	IsDefault          pulumi.BoolInput   `pulumi:"isDefault"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput `pulumi:"links"`
+	// Metadata associated with this resource.
+	Metadatas GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput `pulumi:"metadatas"`
+	Mtu       pulumi.IntInput                                                         `pulumi:"mtu"`
+	// Name of the floating IP.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) BondMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) bool { return v.BondMode }).(pulumi.BoolOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Clusters() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster {
+		return v.Clusters
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput)
+}
+
+// Description for the Floating IP.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Floating IP UUID
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) HasDeploymentError() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) bool { return v.HasDeploymentError }).(pulumi.BoolOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) IsDefault() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) bool { return v.IsDefault }).(pulumi.BoolOutput)
+}
+
+// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Links() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink {
+		return v.Links
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput)
+}
+
+// Metadata associated with this resource.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Metadatas() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata {
+		return v.Metadatas
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Mtu() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) int { return v.Mtu }).(pulumi.IntOutput)
+}
+
+// Name of the floating IP.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A globally unique identifier that represents the tenant that owns this entity.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster struct {
+	// Floating IP UUID
+	ExtId              string                                                                         `pulumi:"extId"`
+	GatewayIpAddresses []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress `pulumi:"gatewayIpAddresses"`
+	Hosts              []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost             `pulumi:"hosts"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs struct {
+	// Floating IP UUID
+	ExtId              pulumi.StringInput                                                                     `pulumi:"extId"`
+	GatewayIpAddresses GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput `pulumi:"gatewayIpAddresses"`
+	Hosts              GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput             `pulumi:"hosts"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
+	return o
+}
+
+// Floating IP UUID
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) GatewayIpAddresses() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress {
+		return v.GatewayIpAddresses
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) Hosts() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost {
+		return v.Hosts
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost struct {
+	// Floating IP UUID
+	ExtId              string                                                                      `pulumi:"extId"`
+	HostNics           []string                                                                    `pulumi:"hostNics"`
+	InternalBridgeName string                                                                      `pulumi:"internalBridgeName"`
+	IpAddresses        []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress `pulumi:"ipAddresses"`
+	RouteTable         int                                                                         `pulumi:"routeTable"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs struct {
+	// Floating IP UUID
+	ExtId              pulumi.StringInput                                                                  `pulumi:"extId"`
+	HostNics           pulumi.StringArrayInput                                                             `pulumi:"hostNics"`
+	InternalBridgeName pulumi.StringInput                                                                  `pulumi:"internalBridgeName"`
+	IpAddresses        GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput `pulumi:"ipAddresses"`
+	RouteTable         pulumi.IntInput                                                                     `pulumi:"routeTable"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
+	return o
+}
+
+// Floating IP UUID
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) HostNics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) []string { return v.HostNics }).(pulumi.StringArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) InternalBridgeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) string {
+		return v.InternalBridgeName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) IpAddresses() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress {
+		return v.IpAddresses
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) RouteTable() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) int { return v.RouteTable }).(pulumi.IntOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress struct {
+	Ips []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp `pulumi:"ips"`
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs struct {
+	Ips GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput `pulumi:"ips"`
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) Ips() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp {
+		return v.Ips
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput)
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata struct {
+	// A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds [][]interface{} `pulumi:"categoryIds"`
+	// A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId string `pulumi:"ownerReferenceId"`
+	// The userName of the owner of this resource.
+	OwnerUserName string `pulumi:"ownerUserName"`
+	// The name of the project this resource belongs to.
+	ProjectName string `pulumi:"projectName"`
+	// A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId string `pulumi:"projectReferenceId"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs struct {
+	// A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds pulumi.ArrayArrayInput `pulumi:"categoryIds"`
+	// A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId pulumi.StringInput `pulumi:"ownerReferenceId"`
+	// The userName of the owner of this resource.
+	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	// The name of the project this resource belongs to.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId pulumi.StringInput `pulumi:"projectReferenceId"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
+	return o
+}
+
+// A list of globally unique identifiers that represent all the categories the resource is associated with.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) CategoryIds() pulumi.ArrayArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) [][]interface{} {
+		return v.CategoryIds
+	}).(pulumi.ArrayArrayOutput)
+}
+
+// A globally unique identifier that represents the owner of this resource.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) OwnerReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) string {
+		return v.OwnerReferenceId
+	}).(pulumi.StringOutput)
+}
+
+// The userName of the owner of this resource.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) OwnerUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+// The name of the project this resource belongs to.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// A globally unique identifier that represents the project this resource belongs to.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ProjectReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) string {
+		return v.ProjectReferenceId
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpc struct {
+	CommonDhcpOptions []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption `pulumi:"commonDhcpOptions"`
+	// Description for the Floating IP.
+	Description string `pulumi:"description"`
+	// Floating IP UUID
+	ExtId                          string                                                                `pulumi:"extId"`
+	ExternalRoutingDomainReference string                                                                `pulumi:"externalRoutingDomainReference"`
+	ExternalSubnets                []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet           `pulumi:"externalSubnets"`
+	ExternallyRoutablePrefixes     []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix `pulumi:"externallyRoutablePrefixes"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetFloatingIpsV2FloatingIpExternalSubnetVpcLink `pulumi:"links"`
+	// Metadata associated with this resource.
+	Metadatas []GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata `pulumi:"metadatas"`
+	// Name of the floating IP.
+	Name    string                                              `pulumi:"name"`
+	SnatIps []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp `pulumi:"snatIps"`
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId string `pulumi:"tenantId"`
+	VpcType  string `pulumi:"vpcType"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs struct {
+	CommonDhcpOptions GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput `pulumi:"commonDhcpOptions"`
+	// Description for the Floating IP.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Floating IP UUID
+	ExtId                          pulumi.StringInput                                                            `pulumi:"extId"`
+	ExternalRoutingDomainReference pulumi.StringInput                                                            `pulumi:"externalRoutingDomainReference"`
+	ExternalSubnets                GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput           `pulumi:"externalSubnets"`
+	ExternallyRoutablePrefixes     GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput `pulumi:"externallyRoutablePrefixes"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput `pulumi:"links"`
+	// Metadata associated with this resource.
+	Metadatas GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput `pulumi:"metadatas"`
+	// Name of the floating IP.
+	Name    pulumi.StringInput                                          `pulumi:"name"`
+	SnatIps GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput `pulumi:"snatIps"`
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	VpcType  pulumi.StringInput `pulumi:"vpcType"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpc)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpc)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpc)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) CommonDhcpOptions() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption {
+		return v.CommonDhcpOptions
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput)
+}
+
+// Description for the Floating IP.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Floating IP UUID
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ExternalRoutingDomainReference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.ExternalRoutingDomainReference }).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ExternalSubnets() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet {
+		return v.ExternalSubnets
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ExternallyRoutablePrefixes() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix {
+		return v.ExternallyRoutablePrefixes
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput)
+}
+
+// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) Links() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcLink {
+		return v.Links
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput)
+}
+
+// Metadata associated with this resource.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) Metadatas() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata {
+		return v.Metadatas
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput)
+}
+
+// Name of the floating IP.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) SnatIps() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp {
+		return v.SnatIps
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput)
+}
+
+// A globally unique identifier that represents the tenant that owns this entity.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) VpcType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.VpcType }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpc)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpc {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpc)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption struct {
+	DomainNameServers []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer `pulumi:"domainNameServers"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs struct {
+	DomainNameServers GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput `pulumi:"domainNameServers"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput) DomainNameServers() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption) []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer {
+		return v.DomainNameServers
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer struct {
+	// Reference to IP Configuration
+	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 `pulumi:"ipv6s"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs struct {
+	// Reference to IP Configuration
+	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
+	return o
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer) []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 {
+		return v.Ipv4s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput)
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer) []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 {
+		return v.Ipv6s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet struct {
+	ActiveGatewayCount int                                                                          `pulumi:"activeGatewayCount"`
+	ActiveGatewayNodes []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode `pulumi:"activeGatewayNodes"`
+	ExternalIps        []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp        `pulumi:"externalIps"`
+	GatewayNodes       []string                                                                     `pulumi:"gatewayNodes"`
+	SubnetReference    string                                                                       `pulumi:"subnetReference"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs struct {
+	ActiveGatewayCount pulumi.IntInput                                                                      `pulumi:"activeGatewayCount"`
+	ActiveGatewayNodes GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput `pulumi:"activeGatewayNodes"`
+	ExternalIps        GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput        `pulumi:"externalIps"`
+	GatewayNodes       pulumi.StringArrayInput                                                              `pulumi:"gatewayNodes"`
+	SubnetReference    pulumi.StringInput                                                                   `pulumi:"subnetReference"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ActiveGatewayCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) int { return v.ActiveGatewayCount }).(pulumi.IntOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ActiveGatewayNodes() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode {
+		return v.ActiveGatewayNodes
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ExternalIps() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp {
+		return v.ExternalIps
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) GatewayNodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) []string { return v.GatewayNodes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) SubnetReference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) string { return v.SubnetReference }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode struct {
+	NodeId          string                                                                                    `pulumi:"nodeId"`
+	NodeIpAddresses []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress `pulumi:"nodeIpAddresses"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs struct {
+	NodeId          pulumi.StringInput                                                                                `pulumi:"nodeId"`
+	NodeIpAddresses GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput `pulumi:"nodeIpAddresses"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode) string {
+		return v.NodeId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) NodeIpAddresses() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+		return v.NodeIpAddresses
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress struct {
+	// Reference to IP Configuration
+	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 `pulumi:"ipv6s"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs struct {
+	// Reference to IP Configuration
+	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return o
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+		return v.Ipv4s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput)
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+		return v.Ipv6s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp struct {
+	// Reference to IP Configuration
+	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 `pulumi:"ipv6s"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs struct {
+	// Reference to IP Configuration
+	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
+	return o
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 {
+		return v.Ipv4s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput)
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 {
+		return v.Ipv6s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix struct {
+	// Reference to IP Configuration
+	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 `pulumi:"ipv6s"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs struct {
+	// Reference to IP Configuration
+	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
+	return o
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 {
+		return v.Ipv4s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput)
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 {
+		return v.Ipv6s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 struct {
+	Ips []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip `pulumi:"ips"`
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args struct {
+	Ips GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput `pulumi:"ips"`
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4OutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) Ips() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip {
+		return v.Ips
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput)
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 struct {
+	Ips []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip `pulumi:"ips"`
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args struct {
+	Ips GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput `pulumi:"ips"`
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6OutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) Ips() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip {
+		return v.Ips
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput)
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs struct {
+	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
+	return o
+}
+
+// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip) int {
+		return v.PrefixLength
+	}).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcLink struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcLink {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata struct {
+	// A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds [][]interface{} `pulumi:"categoryIds"`
+	// A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId string `pulumi:"ownerReferenceId"`
+	// The userName of the owner of this resource.
+	OwnerUserName string `pulumi:"ownerUserName"`
+	// The name of the project this resource belongs to.
+	ProjectName string `pulumi:"projectName"`
+	// A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId string `pulumi:"projectReferenceId"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs struct {
+	// A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds pulumi.ArrayArrayInput `pulumi:"categoryIds"`
+	// A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId pulumi.StringInput `pulumi:"ownerReferenceId"`
+	// The userName of the owner of this resource.
+	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	// The name of the project this resource belongs to.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId pulumi.StringInput `pulumi:"projectReferenceId"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
+	return o
+}
+
+// A list of globally unique identifiers that represent all the categories the resource is associated with.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) CategoryIds() pulumi.ArrayArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) [][]interface{} { return v.CategoryIds }).(pulumi.ArrayArrayOutput)
+}
+
+// A globally unique identifier that represents the owner of this resource.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) OwnerReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
+}
+
+// The userName of the owner of this resource.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) OwnerUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+// The name of the project this resource belongs to.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// A globally unique identifier that represents the project this resource belongs to.
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ProjectReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput)
+}
+
 type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp struct {
 	// Reference to IP Configuration
 	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4 `pulumi:"ipv4s"`
@@ -59485,4775 +63508,77 @@ func (o GetNdbSnapshotsSnapshotLcmConfigArrayOutput) Index(i pulumi.IntInput) Ge
 	}).(GetNdbSnapshotsSnapshotLcmConfigOutput)
 }
 
-type GetNdbSnapshotsSnapshotLcmConfigExpiryDetail struct {
-	DeleteDatabase     bool   `pulumi:"deleteDatabase"`
-	DeleteTimeMachine  bool   `pulumi:"deleteTimeMachine"`
-	DeleteVm           bool   `pulumi:"deleteVm"`
-	EffectiveTimestamp string `pulumi:"effectiveTimestamp"`
-	ExpireInDays       int    `pulumi:"expireInDays"`
-	ExpiryDateTimezone string `pulumi:"expiryDateTimezone"`
-	ExpiryTimestamp    string `pulumi:"expiryTimestamp"`
-	RemindBeforeInDays int    `pulumi:"remindBeforeInDays"`
-	UserCreated        bool   `pulumi:"userCreated"`
-}
-
-// GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs and GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput` via:
-//
-//	GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs{...}
-type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput
-	ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs struct {
-	DeleteDatabase     pulumi.BoolInput   `pulumi:"deleteDatabase"`
-	DeleteTimeMachine  pulumi.BoolInput   `pulumi:"deleteTimeMachine"`
-	DeleteVm           pulumi.BoolInput   `pulumi:"deleteVm"`
-	EffectiveTimestamp pulumi.StringInput `pulumi:"effectiveTimestamp"`
-	ExpireInDays       pulumi.IntInput    `pulumi:"expireInDays"`
-	ExpiryDateTimezone pulumi.StringInput `pulumi:"expiryDateTimezone"`
-	ExpiryTimestamp    pulumi.StringInput `pulumi:"expiryTimestamp"`
-	RemindBeforeInDays pulumi.IntInput    `pulumi:"remindBeforeInDays"`
-	UserCreated        pulumi.BoolInput   `pulumi:"userCreated"`
-}
-
-func (GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
-	return i.ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput)
-}
-
-// GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray and GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayInput` via:
-//
-//	GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray{ GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs{...} }
-type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput
-	ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray []GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput
-
-func (GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput {
-	return i.ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) DeleteDatabase() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) bool { return v.DeleteDatabase }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) DeleteTimeMachine() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) bool { return v.DeleteTimeMachine }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) DeleteVm() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) bool { return v.DeleteVm }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) EffectiveTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) string { return v.EffectiveTimestamp }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ExpireInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) int { return v.ExpireInDays }).(pulumi.IntOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ExpiryDateTimezone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) string { return v.ExpiryDateTimezone }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ExpiryTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) string { return v.ExpiryTimestamp }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) RemindBeforeInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) int { return v.RemindBeforeInDays }).(pulumi.IntOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) UserCreated() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) bool { return v.UserCreated }).(pulumi.BoolOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotLcmConfigExpiryDetail {
-		return vs[0].([]GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)[vs[1].(int)]
-	}).(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand struct {
-	Command string `pulumi:"command"`
-}
-
-// GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs and GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput` via:
-//
-//	GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs{...}
-type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput
-	ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs struct {
-	Command pulumi.StringInput `pulumi:"command"`
-}
-
-func (GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
-	return i.ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput)
-}
-
-// GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray and GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayInput` via:
-//
-//	GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray{ GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs{...} }
-type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput
-	ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray []GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput
-
-func (GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return i.ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput) Command() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand) string { return v.Command }).(pulumi.StringOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand {
-		return vs[0].([]GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)[vs[1].(int)]
-	}).(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand struct {
-	Command string `pulumi:"command"`
-}
-
-// GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs and GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput` via:
-//
-//	GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs{...}
-type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput
-	ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs struct {
-	Command pulumi.StringInput `pulumi:"command"`
-}
-
-func (GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
-	return i.ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput)
-}
-
-// GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray and GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayInput` via:
-//
-//	GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray{ GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs{...} }
-type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput
-	ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray []GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput
-
-func (GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return i.ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput) Command() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand) string { return v.Command }).(pulumi.StringOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand {
-		return vs[0].([]GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)[vs[1].(int)]
-	}).(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigRefreshDetail struct {
-	LastRefreshDate     string `pulumi:"lastRefreshDate"`
-	NextRefreshDate     string `pulumi:"nextRefreshDate"`
-	RefreshDateTimezone string `pulumi:"refreshDateTimezone"`
-	RefreshInDays       int    `pulumi:"refreshInDays"`
-	RefreshInHours      int    `pulumi:"refreshInHours"`
-	RefreshInMonths     int    `pulumi:"refreshInMonths"`
-	RefreshTime         string `pulumi:"refreshTime"`
-}
-
-// GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs and GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput` via:
-//
-//	GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs{...}
-type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput
-	ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs struct {
-	LastRefreshDate     pulumi.StringInput `pulumi:"lastRefreshDate"`
-	NextRefreshDate     pulumi.StringInput `pulumi:"nextRefreshDate"`
-	RefreshDateTimezone pulumi.StringInput `pulumi:"refreshDateTimezone"`
-	RefreshInDays       pulumi.IntInput    `pulumi:"refreshInDays"`
-	RefreshInHours      pulumi.IntInput    `pulumi:"refreshInHours"`
-	RefreshInMonths     pulumi.IntInput    `pulumi:"refreshInMonths"`
-	RefreshTime         pulumi.StringInput `pulumi:"refreshTime"`
-}
-
-func (GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
-	return i.ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput)
-}
-
-// GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray and GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayInput` via:
-//
-//	GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray{ GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs{...} }
-type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput
-	ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray []GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput
-
-func (GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput {
-	return i.ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) LastRefreshDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) string { return v.LastRefreshDate }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) NextRefreshDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) string { return v.NextRefreshDate }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshDateTimezone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) string { return v.RefreshDateTimezone }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) int { return v.RefreshInDays }).(pulumi.IntOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshInHours() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) int { return v.RefreshInHours }).(pulumi.IntOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshInMonths() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) int { return v.RefreshInMonths }).(pulumi.IntOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) string { return v.RefreshTime }).(pulumi.StringOutput)
-}
-
-type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotLcmConfigRefreshDetail {
-		return vs[0].([]GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)[vs[1].(int)]
-	}).(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput)
-}
-
-type GetNdbSnapshotsSnapshotProperty struct {
-	Description string `pulumi:"description"`
-	Name        string `pulumi:"name"`
-	RefId       string `pulumi:"refId"`
-	Secure      bool   `pulumi:"secure"`
-	Value       string `pulumi:"value"`
-}
-
-// GetNdbSnapshotsSnapshotPropertyInput is an input type that accepts GetNdbSnapshotsSnapshotPropertyArgs and GetNdbSnapshotsSnapshotPropertyOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotPropertyInput` via:
-//
-//	GetNdbSnapshotsSnapshotPropertyArgs{...}
-type GetNdbSnapshotsSnapshotPropertyInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotPropertyOutput() GetNdbSnapshotsSnapshotPropertyOutput
-	ToGetNdbSnapshotsSnapshotPropertyOutputWithContext(context.Context) GetNdbSnapshotsSnapshotPropertyOutput
-}
-
-type GetNdbSnapshotsSnapshotPropertyArgs struct {
-	Description pulumi.StringInput `pulumi:"description"`
-	Name        pulumi.StringInput `pulumi:"name"`
-	RefId       pulumi.StringInput `pulumi:"refId"`
-	Secure      pulumi.BoolInput   `pulumi:"secure"`
-	Value       pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbSnapshotsSnapshotPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotProperty)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotPropertyArgs) ToGetNdbSnapshotsSnapshotPropertyOutput() GetNdbSnapshotsSnapshotPropertyOutput {
-	return i.ToGetNdbSnapshotsSnapshotPropertyOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotPropertyArgs) ToGetNdbSnapshotsSnapshotPropertyOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotPropertyOutput)
-}
-
-// GetNdbSnapshotsSnapshotPropertyArrayInput is an input type that accepts GetNdbSnapshotsSnapshotPropertyArray and GetNdbSnapshotsSnapshotPropertyArrayOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotPropertyArrayInput` via:
-//
-//	GetNdbSnapshotsSnapshotPropertyArray{ GetNdbSnapshotsSnapshotPropertyArgs{...} }
-type GetNdbSnapshotsSnapshotPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotPropertyArrayOutput() GetNdbSnapshotsSnapshotPropertyArrayOutput
-	ToGetNdbSnapshotsSnapshotPropertyArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotPropertyArrayOutput
-}
-
-type GetNdbSnapshotsSnapshotPropertyArray []GetNdbSnapshotsSnapshotPropertyInput
-
-func (GetNdbSnapshotsSnapshotPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotProperty)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotPropertyArray) ToGetNdbSnapshotsSnapshotPropertyArrayOutput() GetNdbSnapshotsSnapshotPropertyArrayOutput {
-	return i.ToGetNdbSnapshotsSnapshotPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotPropertyArray) ToGetNdbSnapshotsSnapshotPropertyArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotPropertyArrayOutput)
-}
-
-type GetNdbSnapshotsSnapshotPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotProperty)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyOutput) ToGetNdbSnapshotsSnapshotPropertyOutput() GetNdbSnapshotsSnapshotPropertyOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyOutput) ToGetNdbSnapshotsSnapshotPropertyOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotPropertyOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) string { return v.Description }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyOutput) RefId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) string { return v.RefId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyOutput) Secure() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) bool { return v.Secure }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbSnapshotsSnapshotPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotProperty)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyArrayOutput) ToGetNdbSnapshotsSnapshotPropertyArrayOutput() GetNdbSnapshotsSnapshotPropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyArrayOutput) ToGetNdbSnapshotsSnapshotPropertyArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotPropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotPropertyArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotProperty {
-		return vs[0].([]GetNdbSnapshotsSnapshotProperty)[vs[1].(int)]
-	}).(GetNdbSnapshotsSnapshotPropertyOutput)
-}
-
-type GetNdbSnapshotsSnapshotTag struct {
-	EntityId   string `pulumi:"entityId"`
-	EntityType string `pulumi:"entityType"`
-	TagId      string `pulumi:"tagId"`
-	TagName    string `pulumi:"tagName"`
-	Value      string `pulumi:"value"`
-}
-
-// GetNdbSnapshotsSnapshotTagInput is an input type that accepts GetNdbSnapshotsSnapshotTagArgs and GetNdbSnapshotsSnapshotTagOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotTagInput` via:
-//
-//	GetNdbSnapshotsSnapshotTagArgs{...}
-type GetNdbSnapshotsSnapshotTagInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotTagOutput() GetNdbSnapshotsSnapshotTagOutput
-	ToGetNdbSnapshotsSnapshotTagOutputWithContext(context.Context) GetNdbSnapshotsSnapshotTagOutput
-}
-
-type GetNdbSnapshotsSnapshotTagArgs struct {
-	EntityId   pulumi.StringInput `pulumi:"entityId"`
-	EntityType pulumi.StringInput `pulumi:"entityType"`
-	TagId      pulumi.StringInput `pulumi:"tagId"`
-	TagName    pulumi.StringInput `pulumi:"tagName"`
-	Value      pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbSnapshotsSnapshotTagArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotTag)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotTagArgs) ToGetNdbSnapshotsSnapshotTagOutput() GetNdbSnapshotsSnapshotTagOutput {
-	return i.ToGetNdbSnapshotsSnapshotTagOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotTagArgs) ToGetNdbSnapshotsSnapshotTagOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotTagOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotTagOutput)
-}
-
-// GetNdbSnapshotsSnapshotTagArrayInput is an input type that accepts GetNdbSnapshotsSnapshotTagArray and GetNdbSnapshotsSnapshotTagArrayOutput values.
-// You can construct a concrete instance of `GetNdbSnapshotsSnapshotTagArrayInput` via:
-//
-//	GetNdbSnapshotsSnapshotTagArray{ GetNdbSnapshotsSnapshotTagArgs{...} }
-type GetNdbSnapshotsSnapshotTagArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbSnapshotsSnapshotTagArrayOutput() GetNdbSnapshotsSnapshotTagArrayOutput
-	ToGetNdbSnapshotsSnapshotTagArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotTagArrayOutput
-}
-
-type GetNdbSnapshotsSnapshotTagArray []GetNdbSnapshotsSnapshotTagInput
-
-func (GetNdbSnapshotsSnapshotTagArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotTag)(nil)).Elem()
-}
-
-func (i GetNdbSnapshotsSnapshotTagArray) ToGetNdbSnapshotsSnapshotTagArrayOutput() GetNdbSnapshotsSnapshotTagArrayOutput {
-	return i.ToGetNdbSnapshotsSnapshotTagArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbSnapshotsSnapshotTagArray) ToGetNdbSnapshotsSnapshotTagArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotTagArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotTagArrayOutput)
-}
-
-type GetNdbSnapshotsSnapshotTagOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotTagOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbSnapshotsSnapshotTag)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotTagOutput) ToGetNdbSnapshotsSnapshotTagOutput() GetNdbSnapshotsSnapshotTagOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotTagOutput) ToGetNdbSnapshotsSnapshotTagOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotTagOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotTagOutput) EntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.EntityId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotTagOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.EntityType }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotTagOutput) TagId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.TagId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotTagOutput) TagName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.TagName }).(pulumi.StringOutput)
-}
-
-func (o GetNdbSnapshotsSnapshotTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbSnapshotsSnapshotTagArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbSnapshotsSnapshotTagArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotTag)(nil)).Elem()
-}
-
-func (o GetNdbSnapshotsSnapshotTagArrayOutput) ToGetNdbSnapshotsSnapshotTagArrayOutput() GetNdbSnapshotsSnapshotTagArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotTagArrayOutput) ToGetNdbSnapshotsSnapshotTagArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotTagArrayOutput {
-	return o
-}
-
-func (o GetNdbSnapshotsSnapshotTagArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotTagOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotTag {
-		return vs[0].([]GetNdbSnapshotsSnapshotTag)[vs[1].(int)]
-	}).(GetNdbSnapshotsSnapshotTagOutput)
-}
-
-type GetNdbTagsTag struct {
-	// date created of the tag
-	DateCreated string `pulumi:"dateCreated"`
-	// modified date of tha tag
-	DateModified string `pulumi:"dateModified"`
-	// description for the tag
-	Description string `pulumi:"description"`
-	// entity for the tag to be associated with.
-	EntityType string `pulumi:"entityType"`
-	Id         string `pulumi:"id"`
-	// name for the tag
-	Name string `pulumi:"name"`
-	// owner id of the tag
-	Owner string `pulumi:"owner"`
-	// tag value for entities.
-	Required bool `pulumi:"required"`
-	// Status of the tag
-	Status string `pulumi:"status"`
-	// value for the tag
-	Values int `pulumi:"values"`
-}
-
-// GetNdbTagsTagInput is an input type that accepts GetNdbTagsTagArgs and GetNdbTagsTagOutput values.
-// You can construct a concrete instance of `GetNdbTagsTagInput` via:
-//
-//	GetNdbTagsTagArgs{...}
-type GetNdbTagsTagInput interface {
-	pulumi.Input
-
-	ToGetNdbTagsTagOutput() GetNdbTagsTagOutput
-	ToGetNdbTagsTagOutputWithContext(context.Context) GetNdbTagsTagOutput
-}
-
-type GetNdbTagsTagArgs struct {
-	// date created of the tag
-	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
-	// modified date of tha tag
-	DateModified pulumi.StringInput `pulumi:"dateModified"`
-	// description for the tag
-	Description pulumi.StringInput `pulumi:"description"`
-	// entity for the tag to be associated with.
-	EntityType pulumi.StringInput `pulumi:"entityType"`
-	Id         pulumi.StringInput `pulumi:"id"`
-	// name for the tag
-	Name pulumi.StringInput `pulumi:"name"`
-	// owner id of the tag
-	Owner pulumi.StringInput `pulumi:"owner"`
-	// tag value for entities.
-	Required pulumi.BoolInput `pulumi:"required"`
-	// Status of the tag
-	Status pulumi.StringInput `pulumi:"status"`
-	// value for the tag
-	Values pulumi.IntInput `pulumi:"values"`
-}
-
-func (GetNdbTagsTagArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTagsTag)(nil)).Elem()
-}
-
-func (i GetNdbTagsTagArgs) ToGetNdbTagsTagOutput() GetNdbTagsTagOutput {
-	return i.ToGetNdbTagsTagOutputWithContext(context.Background())
-}
-
-func (i GetNdbTagsTagArgs) ToGetNdbTagsTagOutputWithContext(ctx context.Context) GetNdbTagsTagOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTagsTagOutput)
-}
-
-// GetNdbTagsTagArrayInput is an input type that accepts GetNdbTagsTagArray and GetNdbTagsTagArrayOutput values.
-// You can construct a concrete instance of `GetNdbTagsTagArrayInput` via:
-//
-//	GetNdbTagsTagArray{ GetNdbTagsTagArgs{...} }
-type GetNdbTagsTagArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTagsTagArrayOutput() GetNdbTagsTagArrayOutput
-	ToGetNdbTagsTagArrayOutputWithContext(context.Context) GetNdbTagsTagArrayOutput
-}
-
-type GetNdbTagsTagArray []GetNdbTagsTagInput
-
-func (GetNdbTagsTagArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTagsTag)(nil)).Elem()
-}
-
-func (i GetNdbTagsTagArray) ToGetNdbTagsTagArrayOutput() GetNdbTagsTagArrayOutput {
-	return i.ToGetNdbTagsTagArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTagsTagArray) ToGetNdbTagsTagArrayOutputWithContext(ctx context.Context) GetNdbTagsTagArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTagsTagArrayOutput)
-}
-
-type GetNdbTagsTagOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTagsTagOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTagsTag)(nil)).Elem()
-}
-
-func (o GetNdbTagsTagOutput) ToGetNdbTagsTagOutput() GetNdbTagsTagOutput {
-	return o
-}
-
-func (o GetNdbTagsTagOutput) ToGetNdbTagsTagOutputWithContext(ctx context.Context) GetNdbTagsTagOutput {
-	return o
-}
-
-// date created of the tag
-func (o GetNdbTagsTagOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-// modified date of tha tag
-func (o GetNdbTagsTagOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-// description for the tag
-func (o GetNdbTagsTagOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// entity for the tag to be associated with.
-func (o GetNdbTagsTagOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) string { return v.EntityType }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTagsTagOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// name for the tag
-func (o GetNdbTagsTagOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// owner id of the tag
-func (o GetNdbTagsTagOutput) Owner() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Owner }).(pulumi.StringOutput)
-}
-
-// tag value for entities.
-func (o GetNdbTagsTagOutput) Required() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) bool { return v.Required }).(pulumi.BoolOutput)
-}
-
-// Status of the tag
-func (o GetNdbTagsTagOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// value for the tag
-func (o GetNdbTagsTagOutput) Values() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTagsTag) int { return v.Values }).(pulumi.IntOutput)
-}
-
-type GetNdbTagsTagArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTagsTagArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTagsTag)(nil)).Elem()
-}
-
-func (o GetNdbTagsTagArrayOutput) ToGetNdbTagsTagArrayOutput() GetNdbTagsTagArrayOutput {
-	return o
-}
-
-func (o GetNdbTagsTagArrayOutput) ToGetNdbTagsTagArrayOutputWithContext(ctx context.Context) GetNdbTagsTagArrayOutput {
-	return o
-}
-
-func (o GetNdbTagsTagArrayOutput) Index(i pulumi.IntInput) GetNdbTagsTagOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTagsTag {
-		return vs[0].([]GetNdbTagsTag)[vs[1].(int)]
-	}).(GetNdbTagsTagOutput)
-}
-
-type GetNdbTimeMachineProperty struct {
-	// time machine description
-	Description string `pulumi:"description"`
-	// time machine name
-	Name   string `pulumi:"name"`
-	RefId  string `pulumi:"refId"`
-	Secure bool   `pulumi:"secure"`
-	Value  string `pulumi:"value"`
-}
-
-// GetNdbTimeMachinePropertyInput is an input type that accepts GetNdbTimeMachinePropertyArgs and GetNdbTimeMachinePropertyOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinePropertyInput` via:
-//
-//	GetNdbTimeMachinePropertyArgs{...}
-type GetNdbTimeMachinePropertyInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinePropertyOutput() GetNdbTimeMachinePropertyOutput
-	ToGetNdbTimeMachinePropertyOutputWithContext(context.Context) GetNdbTimeMachinePropertyOutput
-}
-
-type GetNdbTimeMachinePropertyArgs struct {
-	// time machine description
-	Description pulumi.StringInput `pulumi:"description"`
-	// time machine name
-	Name   pulumi.StringInput `pulumi:"name"`
-	RefId  pulumi.StringInput `pulumi:"refId"`
-	Secure pulumi.BoolInput   `pulumi:"secure"`
-	Value  pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbTimeMachinePropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineProperty)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinePropertyArgs) ToGetNdbTimeMachinePropertyOutput() GetNdbTimeMachinePropertyOutput {
-	return i.ToGetNdbTimeMachinePropertyOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinePropertyArgs) ToGetNdbTimeMachinePropertyOutputWithContext(ctx context.Context) GetNdbTimeMachinePropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinePropertyOutput)
-}
-
-// GetNdbTimeMachinePropertyArrayInput is an input type that accepts GetNdbTimeMachinePropertyArray and GetNdbTimeMachinePropertyArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinePropertyArrayInput` via:
-//
-//	GetNdbTimeMachinePropertyArray{ GetNdbTimeMachinePropertyArgs{...} }
-type GetNdbTimeMachinePropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinePropertyArrayOutput() GetNdbTimeMachinePropertyArrayOutput
-	ToGetNdbTimeMachinePropertyArrayOutputWithContext(context.Context) GetNdbTimeMachinePropertyArrayOutput
-}
-
-type GetNdbTimeMachinePropertyArray []GetNdbTimeMachinePropertyInput
-
-func (GetNdbTimeMachinePropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineProperty)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinePropertyArray) ToGetNdbTimeMachinePropertyArrayOutput() GetNdbTimeMachinePropertyArrayOutput {
-	return i.ToGetNdbTimeMachinePropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinePropertyArray) ToGetNdbTimeMachinePropertyArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinePropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinePropertyArrayOutput)
-}
-
-type GetNdbTimeMachinePropertyOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinePropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineProperty)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinePropertyOutput) ToGetNdbTimeMachinePropertyOutput() GetNdbTimeMachinePropertyOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinePropertyOutput) ToGetNdbTimeMachinePropertyOutputWithContext(ctx context.Context) GetNdbTimeMachinePropertyOutput {
-	return o
-}
-
-// time machine description
-func (o GetNdbTimeMachinePropertyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineProperty) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// time machine name
-func (o GetNdbTimeMachinePropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineProperty) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinePropertyOutput) RefId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineProperty) string { return v.RefId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinePropertyOutput) Secure() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineProperty) bool { return v.Secure }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinePropertyOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineProperty) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachinePropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinePropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineProperty)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinePropertyArrayOutput) ToGetNdbTimeMachinePropertyArrayOutput() GetNdbTimeMachinePropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinePropertyArrayOutput) ToGetNdbTimeMachinePropertyArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinePropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinePropertyArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinePropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineProperty {
-		return vs[0].([]GetNdbTimeMachineProperty)[vs[1].(int)]
-	}).(GetNdbTimeMachinePropertyOutput)
-}
-
-type GetNdbTimeMachineSchedule struct {
-	ContinuousSchedules []GetNdbTimeMachineScheduleContinuousSchedule `pulumi:"continuousSchedules"`
-	DailySchedules      []GetNdbTimeMachineScheduleDailySchedule      `pulumi:"dailySchedules"`
-	// date created
-	DateCreated string `pulumi:"dateCreated"`
-	// date modified
-	DateModified string `pulumi:"dateModified"`
-	// time machine description
-	Description  string `pulumi:"description"`
-	GlobalPolicy bool   `pulumi:"globalPolicy"`
-	// time machine id
-	Id               string                                     `pulumi:"id"`
-	MonthlySchedules []GetNdbTimeMachineScheduleMonthlySchedule `pulumi:"monthlySchedules"`
-	// time machine name
-	Name               string                                       `pulumi:"name"`
-	OwnerId            string                                       `pulumi:"ownerId"`
-	QuartelySchedules  []GetNdbTimeMachineScheduleQuartelySchedule  `pulumi:"quartelySchedules"`
-	ReferenceCount     int                                          `pulumi:"referenceCount"`
-	SnapshotTimeOfDays []GetNdbTimeMachineScheduleSnapshotTimeOfDay `pulumi:"snapshotTimeOfDays"`
-	StartTime          string                                       `pulumi:"startTime"`
-	SystemPolicy       bool                                         `pulumi:"systemPolicy"`
-	TimeZone           string                                       `pulumi:"timeZone"`
-	UniqueName         string                                       `pulumi:"uniqueName"`
-	WeeklySchedules    []GetNdbTimeMachineScheduleWeeklySchedule    `pulumi:"weeklySchedules"`
-	YearlySchedules    []GetNdbTimeMachineScheduleYearlySchedule    `pulumi:"yearlySchedules"`
-}
-
-// GetNdbTimeMachineScheduleInput is an input type that accepts GetNdbTimeMachineScheduleArgs and GetNdbTimeMachineScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleInput` via:
-//
-//	GetNdbTimeMachineScheduleArgs{...}
-type GetNdbTimeMachineScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleOutput() GetNdbTimeMachineScheduleOutput
-	ToGetNdbTimeMachineScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleOutput
-}
-
-type GetNdbTimeMachineScheduleArgs struct {
-	ContinuousSchedules GetNdbTimeMachineScheduleContinuousScheduleArrayInput `pulumi:"continuousSchedules"`
-	DailySchedules      GetNdbTimeMachineScheduleDailyScheduleArrayInput      `pulumi:"dailySchedules"`
-	// date created
-	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
-	// date modified
-	DateModified pulumi.StringInput `pulumi:"dateModified"`
-	// time machine description
-	Description  pulumi.StringInput `pulumi:"description"`
-	GlobalPolicy pulumi.BoolInput   `pulumi:"globalPolicy"`
-	// time machine id
-	Id               pulumi.StringInput                                 `pulumi:"id"`
-	MonthlySchedules GetNdbTimeMachineScheduleMonthlyScheduleArrayInput `pulumi:"monthlySchedules"`
-	// time machine name
-	Name               pulumi.StringInput                                   `pulumi:"name"`
-	OwnerId            pulumi.StringInput                                   `pulumi:"ownerId"`
-	QuartelySchedules  GetNdbTimeMachineScheduleQuartelyScheduleArrayInput  `pulumi:"quartelySchedules"`
-	ReferenceCount     pulumi.IntInput                                      `pulumi:"referenceCount"`
-	SnapshotTimeOfDays GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput `pulumi:"snapshotTimeOfDays"`
-	StartTime          pulumi.StringInput                                   `pulumi:"startTime"`
-	SystemPolicy       pulumi.BoolInput                                     `pulumi:"systemPolicy"`
-	TimeZone           pulumi.StringInput                                   `pulumi:"timeZone"`
-	UniqueName         pulumi.StringInput                                   `pulumi:"uniqueName"`
-	WeeklySchedules    GetNdbTimeMachineScheduleWeeklyScheduleArrayInput    `pulumi:"weeklySchedules"`
-	YearlySchedules    GetNdbTimeMachineScheduleYearlyScheduleArrayInput    `pulumi:"yearlySchedules"`
-}
-
-func (GetNdbTimeMachineScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineSchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleArgs) ToGetNdbTimeMachineScheduleOutput() GetNdbTimeMachineScheduleOutput {
-	return i.ToGetNdbTimeMachineScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleArgs) ToGetNdbTimeMachineScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleOutput)
-}
-
-// GetNdbTimeMachineScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleArray and GetNdbTimeMachineScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleArrayInput` via:
-//
-//	GetNdbTimeMachineScheduleArray{ GetNdbTimeMachineScheduleArgs{...} }
-type GetNdbTimeMachineScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleArrayOutput() GetNdbTimeMachineScheduleArrayOutput
-	ToGetNdbTimeMachineScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleArrayOutput
-}
-
-type GetNdbTimeMachineScheduleArray []GetNdbTimeMachineScheduleInput
-
-func (GetNdbTimeMachineScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineSchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleArray) ToGetNdbTimeMachineScheduleArrayOutput() GetNdbTimeMachineScheduleArrayOutput {
-	return i.ToGetNdbTimeMachineScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleArray) ToGetNdbTimeMachineScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineSchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleOutput) ToGetNdbTimeMachineScheduleOutput() GetNdbTimeMachineScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleOutput) ToGetNdbTimeMachineScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleOutput) ContinuousSchedules() GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleContinuousSchedule {
-		return v.ContinuousSchedules
-	}).(GetNdbTimeMachineScheduleContinuousScheduleArrayOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) DailySchedules() GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleDailySchedule { return v.DailySchedules }).(GetNdbTimeMachineScheduleDailyScheduleArrayOutput)
-}
-
-// date created
-func (o GetNdbTimeMachineScheduleOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-// date modified
-func (o GetNdbTimeMachineScheduleOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-// time machine description
-func (o GetNdbTimeMachineScheduleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.Description }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) GlobalPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) bool { return v.GlobalPolicy }).(pulumi.BoolOutput)
-}
-
-// time machine id
-func (o GetNdbTimeMachineScheduleOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) MonthlySchedules() GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleMonthlySchedule {
-		return v.MonthlySchedules
-	}).(GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput)
-}
-
-// time machine name
-func (o GetNdbTimeMachineScheduleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) OwnerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.OwnerId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) QuartelySchedules() GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleQuartelySchedule {
-		return v.QuartelySchedules
-	}).(GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) ReferenceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) int { return v.ReferenceCount }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) SnapshotTimeOfDays() GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleSnapshotTimeOfDay {
-		return v.SnapshotTimeOfDays
-	}).(GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) StartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.StartTime }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) SystemPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) bool { return v.SystemPolicy }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.TimeZone }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) UniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.UniqueName }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) WeeklySchedules() GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleWeeklySchedule { return v.WeeklySchedules }).(GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput)
-}
-
-func (o GetNdbTimeMachineScheduleOutput) YearlySchedules() GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleYearlySchedule { return v.YearlySchedules }).(GetNdbTimeMachineScheduleYearlyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineSchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleArrayOutput) ToGetNdbTimeMachineScheduleArrayOutput() GetNdbTimeMachineScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleArrayOutput) ToGetNdbTimeMachineScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineSchedule {
-		return vs[0].([]GetNdbTimeMachineSchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachineScheduleOutput)
-}
-
-type GetNdbTimeMachineScheduleContinuousSchedule struct {
-	Enabled           bool `pulumi:"enabled"`
-	LogBackupInterval int  `pulumi:"logBackupInterval"`
-	SnapshotsPerDay   int  `pulumi:"snapshotsPerDay"`
-}
-
-// GetNdbTimeMachineScheduleContinuousScheduleInput is an input type that accepts GetNdbTimeMachineScheduleContinuousScheduleArgs and GetNdbTimeMachineScheduleContinuousScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleContinuousScheduleInput` via:
-//
-//	GetNdbTimeMachineScheduleContinuousScheduleArgs{...}
-type GetNdbTimeMachineScheduleContinuousScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachineScheduleContinuousScheduleOutput
-	ToGetNdbTimeMachineScheduleContinuousScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleContinuousScheduleOutput
-}
-
-type GetNdbTimeMachineScheduleContinuousScheduleArgs struct {
-	Enabled           pulumi.BoolInput `pulumi:"enabled"`
-	LogBackupInterval pulumi.IntInput  `pulumi:"logBackupInterval"`
-	SnapshotsPerDay   pulumi.IntInput  `pulumi:"snapshotsPerDay"`
-}
-
-func (GetNdbTimeMachineScheduleContinuousScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleContinuousSchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleContinuousScheduleArgs) ToGetNdbTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachineScheduleContinuousScheduleOutput {
-	return i.ToGetNdbTimeMachineScheduleContinuousScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleContinuousScheduleArgs) ToGetNdbTimeMachineScheduleContinuousScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleContinuousScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleContinuousScheduleOutput)
-}
-
-// GetNdbTimeMachineScheduleContinuousScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleContinuousScheduleArray and GetNdbTimeMachineScheduleContinuousScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleContinuousScheduleArrayInput` via:
-//
-//	GetNdbTimeMachineScheduleContinuousScheduleArray{ GetNdbTimeMachineScheduleContinuousScheduleArgs{...} }
-type GetNdbTimeMachineScheduleContinuousScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachineScheduleContinuousScheduleArrayOutput
-	ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleContinuousScheduleArrayOutput
-}
-
-type GetNdbTimeMachineScheduleContinuousScheduleArray []GetNdbTimeMachineScheduleContinuousScheduleInput
-
-func (GetNdbTimeMachineScheduleContinuousScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleContinuousSchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleContinuousScheduleArray) ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
-	return i.ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleContinuousScheduleArray) ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleContinuousScheduleArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleContinuousScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleContinuousScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleContinuousSchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) ToGetNdbTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachineScheduleContinuousScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) ToGetNdbTimeMachineScheduleContinuousScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleContinuousScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleContinuousSchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) LogBackupInterval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleContinuousSchedule) int { return v.LogBackupInterval }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) SnapshotsPerDay() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleContinuousSchedule) int { return v.SnapshotsPerDay }).(pulumi.IntOutput)
-}
-
-type GetNdbTimeMachineScheduleContinuousScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleContinuousScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleContinuousSchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleContinuousScheduleArrayOutput) ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleContinuousScheduleArrayOutput) ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleContinuousScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleContinuousScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleContinuousSchedule {
-		return vs[0].([]GetNdbTimeMachineScheduleContinuousSchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachineScheduleContinuousScheduleOutput)
-}
-
-type GetNdbTimeMachineScheduleDailySchedule struct {
-	Enabled bool `pulumi:"enabled"`
-}
-
-// GetNdbTimeMachineScheduleDailyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleDailyScheduleArgs and GetNdbTimeMachineScheduleDailyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleDailyScheduleInput` via:
-//
-//	GetNdbTimeMachineScheduleDailyScheduleArgs{...}
-type GetNdbTimeMachineScheduleDailyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachineScheduleDailyScheduleOutput
-	ToGetNdbTimeMachineScheduleDailyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleDailyScheduleOutput
-}
-
-type GetNdbTimeMachineScheduleDailyScheduleArgs struct {
-	Enabled pulumi.BoolInput `pulumi:"enabled"`
-}
-
-func (GetNdbTimeMachineScheduleDailyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleDailySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleDailyScheduleArgs) ToGetNdbTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachineScheduleDailyScheduleOutput {
-	return i.ToGetNdbTimeMachineScheduleDailyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleDailyScheduleArgs) ToGetNdbTimeMachineScheduleDailyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleDailyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleDailyScheduleOutput)
-}
-
-// GetNdbTimeMachineScheduleDailyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleDailyScheduleArray and GetNdbTimeMachineScheduleDailyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleDailyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachineScheduleDailyScheduleArray{ GetNdbTimeMachineScheduleDailyScheduleArgs{...} }
-type GetNdbTimeMachineScheduleDailyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachineScheduleDailyScheduleArrayOutput
-	ToGetNdbTimeMachineScheduleDailyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleDailyScheduleArrayOutput
-}
-
-type GetNdbTimeMachineScheduleDailyScheduleArray []GetNdbTimeMachineScheduleDailyScheduleInput
-
-func (GetNdbTimeMachineScheduleDailyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleDailySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleDailyScheduleArray) ToGetNdbTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachineScheduleDailyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleDailyScheduleArray) ToGetNdbTimeMachineScheduleDailyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleDailyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleDailyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleDailyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleDailySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleDailyScheduleOutput) ToGetNdbTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachineScheduleDailyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleDailyScheduleOutput) ToGetNdbTimeMachineScheduleDailyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleDailyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleDailyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleDailySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-type GetNdbTimeMachineScheduleDailyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleDailyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleDailySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleDailyScheduleArrayOutput) ToGetNdbTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleDailyScheduleArrayOutput) ToGetNdbTimeMachineScheduleDailyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleDailyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleDailyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleDailySchedule {
-		return vs[0].([]GetNdbTimeMachineScheduleDailySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachineScheduleDailyScheduleOutput)
-}
-
-type GetNdbTimeMachineScheduleMonthlySchedule struct {
-	DayOfMonth int  `pulumi:"dayOfMonth"`
-	Enabled    bool `pulumi:"enabled"`
-}
-
-// GetNdbTimeMachineScheduleMonthlyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleMonthlyScheduleArgs and GetNdbTimeMachineScheduleMonthlyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleMonthlyScheduleInput` via:
-//
-//	GetNdbTimeMachineScheduleMonthlyScheduleArgs{...}
-type GetNdbTimeMachineScheduleMonthlyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachineScheduleMonthlyScheduleOutput
-	ToGetNdbTimeMachineScheduleMonthlyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleMonthlyScheduleOutput
-}
-
-type GetNdbTimeMachineScheduleMonthlyScheduleArgs struct {
-	DayOfMonth pulumi.IntInput  `pulumi:"dayOfMonth"`
-	Enabled    pulumi.BoolInput `pulumi:"enabled"`
-}
-
-func (GetNdbTimeMachineScheduleMonthlyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleMonthlySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleMonthlyScheduleArgs) ToGetNdbTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachineScheduleMonthlyScheduleOutput {
-	return i.ToGetNdbTimeMachineScheduleMonthlyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleMonthlyScheduleArgs) ToGetNdbTimeMachineScheduleMonthlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleMonthlyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleMonthlyScheduleOutput)
-}
-
-// GetNdbTimeMachineScheduleMonthlyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleMonthlyScheduleArray and GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleMonthlyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachineScheduleMonthlyScheduleArray{ GetNdbTimeMachineScheduleMonthlyScheduleArgs{...} }
-type GetNdbTimeMachineScheduleMonthlyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput
-	ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput
-}
-
-type GetNdbTimeMachineScheduleMonthlyScheduleArray []GetNdbTimeMachineScheduleMonthlyScheduleInput
-
-func (GetNdbTimeMachineScheduleMonthlyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleMonthlySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleMonthlyScheduleArray) ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleMonthlyScheduleArray) ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleMonthlyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleMonthlyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleMonthlySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleMonthlyScheduleOutput) ToGetNdbTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachineScheduleMonthlyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleMonthlyScheduleOutput) ToGetNdbTimeMachineScheduleMonthlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleMonthlyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleMonthlyScheduleOutput) DayOfMonth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleMonthlySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineScheduleMonthlyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleMonthlySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-type GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleMonthlySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput) ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput) ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleMonthlyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleMonthlySchedule {
-		return vs[0].([]GetNdbTimeMachineScheduleMonthlySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachineScheduleMonthlyScheduleOutput)
-}
-
-type GetNdbTimeMachineScheduleQuartelySchedule struct {
-	DayOfMonth      int    `pulumi:"dayOfMonth"`
-	Enabled         bool   `pulumi:"enabled"`
-	StartMonth      string `pulumi:"startMonth"`
-	StartMonthValue string `pulumi:"startMonthValue"`
-}
-
-// GetNdbTimeMachineScheduleQuartelyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleQuartelyScheduleArgs and GetNdbTimeMachineScheduleQuartelyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleQuartelyScheduleInput` via:
-//
-//	GetNdbTimeMachineScheduleQuartelyScheduleArgs{...}
-type GetNdbTimeMachineScheduleQuartelyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachineScheduleQuartelyScheduleOutput
-	ToGetNdbTimeMachineScheduleQuartelyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleQuartelyScheduleOutput
-}
-
-type GetNdbTimeMachineScheduleQuartelyScheduleArgs struct {
-	DayOfMonth      pulumi.IntInput    `pulumi:"dayOfMonth"`
-	Enabled         pulumi.BoolInput   `pulumi:"enabled"`
-	StartMonth      pulumi.StringInput `pulumi:"startMonth"`
-	StartMonthValue pulumi.StringInput `pulumi:"startMonthValue"`
-}
-
-func (GetNdbTimeMachineScheduleQuartelyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleQuartelySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleQuartelyScheduleArgs) ToGetNdbTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachineScheduleQuartelyScheduleOutput {
-	return i.ToGetNdbTimeMachineScheduleQuartelyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleQuartelyScheduleArgs) ToGetNdbTimeMachineScheduleQuartelyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleQuartelyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleQuartelyScheduleOutput)
-}
-
-// GetNdbTimeMachineScheduleQuartelyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleQuartelyScheduleArray and GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleQuartelyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachineScheduleQuartelyScheduleArray{ GetNdbTimeMachineScheduleQuartelyScheduleArgs{...} }
-type GetNdbTimeMachineScheduleQuartelyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput
-	ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput
-}
-
-type GetNdbTimeMachineScheduleQuartelyScheduleArray []GetNdbTimeMachineScheduleQuartelyScheduleInput
-
-func (GetNdbTimeMachineScheduleQuartelyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleQuartelySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleQuartelyScheduleArray) ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleQuartelyScheduleArray) ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleQuartelyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleQuartelyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleQuartelySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) ToGetNdbTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachineScheduleQuartelyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) ToGetNdbTimeMachineScheduleQuartelyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleQuartelyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) DayOfMonth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleQuartelySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleQuartelySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) StartMonth() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleQuartelySchedule) string { return v.StartMonth }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) StartMonthValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleQuartelySchedule) string { return v.StartMonthValue }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleQuartelySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput) ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput) ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleQuartelyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleQuartelySchedule {
-		return vs[0].([]GetNdbTimeMachineScheduleQuartelySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachineScheduleQuartelyScheduleOutput)
-}
-
-type GetNdbTimeMachineScheduleSnapshotTimeOfDay struct {
-	Extra   bool `pulumi:"extra"`
-	Hours   int  `pulumi:"hours"`
-	Minutes int  `pulumi:"minutes"`
-	Seconds int  `pulumi:"seconds"`
-}
-
-// GetNdbTimeMachineScheduleSnapshotTimeOfDayInput is an input type that accepts GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs and GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleSnapshotTimeOfDayInput` via:
-//
-//	GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs{...}
-type GetNdbTimeMachineScheduleSnapshotTimeOfDayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput
-	ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput
-}
-
-type GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs struct {
-	Extra   pulumi.BoolInput `pulumi:"extra"`
-	Hours   pulumi.IntInput  `pulumi:"hours"`
-	Minutes pulumi.IntInput  `pulumi:"minutes"`
-	Seconds pulumi.IntInput  `pulumi:"seconds"`
-}
-
-func (GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return i.ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput)
-}
-
-// GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput is an input type that accepts GetNdbTimeMachineScheduleSnapshotTimeOfDayArray and GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput` via:
-//
-//	GetNdbTimeMachineScheduleSnapshotTimeOfDayArray{ GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs{...} }
-type GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput
-	ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput
-}
-
-type GetNdbTimeMachineScheduleSnapshotTimeOfDayArray []GetNdbTimeMachineScheduleSnapshotTimeOfDayInput
-
-func (GetNdbTimeMachineScheduleSnapshotTimeOfDayArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleSnapshotTimeOfDayArray) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return i.ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleSnapshotTimeOfDayArray) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) Extra() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleSnapshotTimeOfDay) bool { return v.Extra }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) Hours() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleSnapshotTimeOfDay) int { return v.Hours }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) Minutes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleSnapshotTimeOfDay) int { return v.Minutes }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) Seconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleSnapshotTimeOfDay) int { return v.Seconds }).(pulumi.IntOutput)
-}
-
-type GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleSnapshotTimeOfDay {
-		return vs[0].([]GetNdbTimeMachineScheduleSnapshotTimeOfDay)[vs[1].(int)]
-	}).(GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput)
-}
-
-type GetNdbTimeMachineScheduleWeeklySchedule struct {
-	DayOfWeek      string `pulumi:"dayOfWeek"`
-	DayOfWeekValue string `pulumi:"dayOfWeekValue"`
-	Enabled        bool   `pulumi:"enabled"`
-}
-
-// GetNdbTimeMachineScheduleWeeklyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleWeeklyScheduleArgs and GetNdbTimeMachineScheduleWeeklyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleWeeklyScheduleInput` via:
-//
-//	GetNdbTimeMachineScheduleWeeklyScheduleArgs{...}
-type GetNdbTimeMachineScheduleWeeklyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachineScheduleWeeklyScheduleOutput
-	ToGetNdbTimeMachineScheduleWeeklyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleWeeklyScheduleOutput
-}
-
-type GetNdbTimeMachineScheduleWeeklyScheduleArgs struct {
-	DayOfWeek      pulumi.StringInput `pulumi:"dayOfWeek"`
-	DayOfWeekValue pulumi.StringInput `pulumi:"dayOfWeekValue"`
-	Enabled        pulumi.BoolInput   `pulumi:"enabled"`
-}
-
-func (GetNdbTimeMachineScheduleWeeklyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleWeeklySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleWeeklyScheduleArgs) ToGetNdbTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachineScheduleWeeklyScheduleOutput {
-	return i.ToGetNdbTimeMachineScheduleWeeklyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleWeeklyScheduleArgs) ToGetNdbTimeMachineScheduleWeeklyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleWeeklyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleWeeklyScheduleOutput)
-}
-
-// GetNdbTimeMachineScheduleWeeklyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleWeeklyScheduleArray and GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleWeeklyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachineScheduleWeeklyScheduleArray{ GetNdbTimeMachineScheduleWeeklyScheduleArgs{...} }
-type GetNdbTimeMachineScheduleWeeklyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput
-	ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput
-}
-
-type GetNdbTimeMachineScheduleWeeklyScheduleArray []GetNdbTimeMachineScheduleWeeklyScheduleInput
-
-func (GetNdbTimeMachineScheduleWeeklyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleWeeklySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleWeeklyScheduleArray) ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleWeeklyScheduleArray) ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleWeeklyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleWeeklyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleWeeklySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) ToGetNdbTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachineScheduleWeeklyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) ToGetNdbTimeMachineScheduleWeeklyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleWeeklyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) DayOfWeek() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleWeeklySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) DayOfWeekValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleWeeklySchedule) string { return v.DayOfWeekValue }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleWeeklySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-type GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleWeeklySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput) ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput) ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleWeeklyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleWeeklySchedule {
-		return vs[0].([]GetNdbTimeMachineScheduleWeeklySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachineScheduleWeeklyScheduleOutput)
-}
-
-type GetNdbTimeMachineScheduleYearlySchedule struct {
-	DayOfMonth int    `pulumi:"dayOfMonth"`
-	Enabled    bool   `pulumi:"enabled"`
-	Month      string `pulumi:"month"`
-	MonthValue string `pulumi:"monthValue"`
-}
-
-// GetNdbTimeMachineScheduleYearlyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleYearlyScheduleArgs and GetNdbTimeMachineScheduleYearlyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleYearlyScheduleInput` via:
-//
-//	GetNdbTimeMachineScheduleYearlyScheduleArgs{...}
-type GetNdbTimeMachineScheduleYearlyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachineScheduleYearlyScheduleOutput
-	ToGetNdbTimeMachineScheduleYearlyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleYearlyScheduleOutput
-}
-
-type GetNdbTimeMachineScheduleYearlyScheduleArgs struct {
-	DayOfMonth pulumi.IntInput    `pulumi:"dayOfMonth"`
-	Enabled    pulumi.BoolInput   `pulumi:"enabled"`
-	Month      pulumi.StringInput `pulumi:"month"`
-	MonthValue pulumi.StringInput `pulumi:"monthValue"`
-}
-
-func (GetNdbTimeMachineScheduleYearlyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleYearlyScheduleArgs) ToGetNdbTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachineScheduleYearlyScheduleOutput {
-	return i.ToGetNdbTimeMachineScheduleYearlyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleYearlyScheduleArgs) ToGetNdbTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleYearlyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleYearlyScheduleOutput)
-}
-
-// GetNdbTimeMachineScheduleYearlyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleYearlyScheduleArray and GetNdbTimeMachineScheduleYearlyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineScheduleYearlyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachineScheduleYearlyScheduleArray{ GetNdbTimeMachineScheduleYearlyScheduleArgs{...} }
-type GetNdbTimeMachineScheduleYearlyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachineScheduleYearlyScheduleArrayOutput
-	ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleYearlyScheduleArrayOutput
-}
-
-type GetNdbTimeMachineScheduleYearlyScheduleArray []GetNdbTimeMachineScheduleYearlyScheduleInput
-
-func (GetNdbTimeMachineScheduleYearlyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineScheduleYearlyScheduleArray) ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineScheduleYearlyScheduleArray) ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleYearlyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachineScheduleYearlyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleYearlyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) ToGetNdbTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachineScheduleYearlyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) ToGetNdbTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleYearlyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) DayOfMonth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleYearlySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleYearlySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) Month() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleYearlySchedule) string { return v.Month }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) MonthValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineScheduleYearlySchedule) string { return v.MonthValue }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachineScheduleYearlyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineScheduleYearlyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleArrayOutput) ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleArrayOutput) ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineScheduleYearlyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleYearlyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleYearlySchedule {
-		return vs[0].([]GetNdbTimeMachineScheduleYearlySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachineScheduleYearlyScheduleOutput)
-}
-
-type GetNdbTimeMachineSla struct {
-	ContinuousRetention    int    `pulumi:"continuousRetention"`
-	CurrentActiveFrequency string `pulumi:"currentActiveFrequency"`
-	DailyRetention         int    `pulumi:"dailyRetention"`
-	// date created
-	DateCreated string `pulumi:"dateCreated"`
-	// date modified
-	DateModified string `pulumi:"dateModified"`
-	// time machine description
-	Description string `pulumi:"description"`
-	// time machine id
-	Id               string `pulumi:"id"`
-	MonthlyRetention int    `pulumi:"monthlyRetention"`
-	// time machine name
-	Name               string `pulumi:"name"`
-	OwnerId            string `pulumi:"ownerId"`
-	PitrEnabled        bool   `pulumi:"pitrEnabled"`
-	QuarterlyRetention int    `pulumi:"quarterlyRetention"`
-	ReferenceCount     int    `pulumi:"referenceCount"`
-	SystemSla          bool   `pulumi:"systemSla"`
-	UniqueName         string `pulumi:"uniqueName"`
-	WeeklyRetention    int    `pulumi:"weeklyRetention"`
-	YearlyRetention    int    `pulumi:"yearlyRetention"`
-}
-
-// GetNdbTimeMachineSlaInput is an input type that accepts GetNdbTimeMachineSlaArgs and GetNdbTimeMachineSlaOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineSlaInput` via:
-//
-//	GetNdbTimeMachineSlaArgs{...}
-type GetNdbTimeMachineSlaInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineSlaOutput() GetNdbTimeMachineSlaOutput
-	ToGetNdbTimeMachineSlaOutputWithContext(context.Context) GetNdbTimeMachineSlaOutput
-}
-
-type GetNdbTimeMachineSlaArgs struct {
-	ContinuousRetention    pulumi.IntInput    `pulumi:"continuousRetention"`
-	CurrentActiveFrequency pulumi.StringInput `pulumi:"currentActiveFrequency"`
-	DailyRetention         pulumi.IntInput    `pulumi:"dailyRetention"`
-	// date created
-	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
-	// date modified
-	DateModified pulumi.StringInput `pulumi:"dateModified"`
-	// time machine description
-	Description pulumi.StringInput `pulumi:"description"`
-	// time machine id
-	Id               pulumi.StringInput `pulumi:"id"`
-	MonthlyRetention pulumi.IntInput    `pulumi:"monthlyRetention"`
-	// time machine name
-	Name               pulumi.StringInput `pulumi:"name"`
-	OwnerId            pulumi.StringInput `pulumi:"ownerId"`
-	PitrEnabled        pulumi.BoolInput   `pulumi:"pitrEnabled"`
-	QuarterlyRetention pulumi.IntInput    `pulumi:"quarterlyRetention"`
-	ReferenceCount     pulumi.IntInput    `pulumi:"referenceCount"`
-	SystemSla          pulumi.BoolInput   `pulumi:"systemSla"`
-	UniqueName         pulumi.StringInput `pulumi:"uniqueName"`
-	WeeklyRetention    pulumi.IntInput    `pulumi:"weeklyRetention"`
-	YearlyRetention    pulumi.IntInput    `pulumi:"yearlyRetention"`
-}
-
-func (GetNdbTimeMachineSlaArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineSla)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineSlaArgs) ToGetNdbTimeMachineSlaOutput() GetNdbTimeMachineSlaOutput {
-	return i.ToGetNdbTimeMachineSlaOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineSlaArgs) ToGetNdbTimeMachineSlaOutputWithContext(ctx context.Context) GetNdbTimeMachineSlaOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineSlaOutput)
-}
-
-// GetNdbTimeMachineSlaArrayInput is an input type that accepts GetNdbTimeMachineSlaArray and GetNdbTimeMachineSlaArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineSlaArrayInput` via:
-//
-//	GetNdbTimeMachineSlaArray{ GetNdbTimeMachineSlaArgs{...} }
-type GetNdbTimeMachineSlaArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineSlaArrayOutput() GetNdbTimeMachineSlaArrayOutput
-	ToGetNdbTimeMachineSlaArrayOutputWithContext(context.Context) GetNdbTimeMachineSlaArrayOutput
-}
-
-type GetNdbTimeMachineSlaArray []GetNdbTimeMachineSlaInput
-
-func (GetNdbTimeMachineSlaArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineSla)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineSlaArray) ToGetNdbTimeMachineSlaArrayOutput() GetNdbTimeMachineSlaArrayOutput {
-	return i.ToGetNdbTimeMachineSlaArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineSlaArray) ToGetNdbTimeMachineSlaArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineSlaArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineSlaArrayOutput)
-}
-
-type GetNdbTimeMachineSlaOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineSlaOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineSla)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineSlaOutput) ToGetNdbTimeMachineSlaOutput() GetNdbTimeMachineSlaOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineSlaOutput) ToGetNdbTimeMachineSlaOutputWithContext(ctx context.Context) GetNdbTimeMachineSlaOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineSlaOutput) ContinuousRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.ContinuousRetention }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) CurrentActiveFrequency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.CurrentActiveFrequency }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) DailyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.DailyRetention }).(pulumi.IntOutput)
-}
-
-// date created
-func (o GetNdbTimeMachineSlaOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-// date modified
-func (o GetNdbTimeMachineSlaOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-// time machine description
-func (o GetNdbTimeMachineSlaOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// time machine id
-func (o GetNdbTimeMachineSlaOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) MonthlyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.MonthlyRetention }).(pulumi.IntOutput)
-}
-
-// time machine name
-func (o GetNdbTimeMachineSlaOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) OwnerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.OwnerId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) PitrEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) bool { return v.PitrEnabled }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) QuarterlyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.QuarterlyRetention }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) ReferenceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.ReferenceCount }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) SystemSla() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) bool { return v.SystemSla }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) UniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.UniqueName }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) WeeklyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.WeeklyRetention }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachineSlaOutput) YearlyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.YearlyRetention }).(pulumi.IntOutput)
-}
-
-type GetNdbTimeMachineSlaArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineSlaArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineSla)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineSlaArrayOutput) ToGetNdbTimeMachineSlaArrayOutput() GetNdbTimeMachineSlaArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineSlaArrayOutput) ToGetNdbTimeMachineSlaArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineSlaArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineSlaArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineSlaOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineSla {
-		return vs[0].([]GetNdbTimeMachineSla)[vs[1].(int)]
-	}).(GetNdbTimeMachineSlaOutput)
-}
-
-type GetNdbTimeMachineTag struct {
-	EntityId   string `pulumi:"entityId"`
-	EntityType string `pulumi:"entityType"`
-	TagId      string `pulumi:"tagId"`
-	TagName    string `pulumi:"tagName"`
-	Value      string `pulumi:"value"`
-}
-
-// GetNdbTimeMachineTagInput is an input type that accepts GetNdbTimeMachineTagArgs and GetNdbTimeMachineTagOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineTagInput` via:
-//
-//	GetNdbTimeMachineTagArgs{...}
-type GetNdbTimeMachineTagInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineTagOutput() GetNdbTimeMachineTagOutput
-	ToGetNdbTimeMachineTagOutputWithContext(context.Context) GetNdbTimeMachineTagOutput
-}
-
-type GetNdbTimeMachineTagArgs struct {
-	EntityId   pulumi.StringInput `pulumi:"entityId"`
-	EntityType pulumi.StringInput `pulumi:"entityType"`
-	TagId      pulumi.StringInput `pulumi:"tagId"`
-	TagName    pulumi.StringInput `pulumi:"tagName"`
-	Value      pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbTimeMachineTagArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineTag)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineTagArgs) ToGetNdbTimeMachineTagOutput() GetNdbTimeMachineTagOutput {
-	return i.ToGetNdbTimeMachineTagOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineTagArgs) ToGetNdbTimeMachineTagOutputWithContext(ctx context.Context) GetNdbTimeMachineTagOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineTagOutput)
-}
-
-// GetNdbTimeMachineTagArrayInput is an input type that accepts GetNdbTimeMachineTagArray and GetNdbTimeMachineTagArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachineTagArrayInput` via:
-//
-//	GetNdbTimeMachineTagArray{ GetNdbTimeMachineTagArgs{...} }
-type GetNdbTimeMachineTagArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachineTagArrayOutput() GetNdbTimeMachineTagArrayOutput
-	ToGetNdbTimeMachineTagArrayOutputWithContext(context.Context) GetNdbTimeMachineTagArrayOutput
-}
-
-type GetNdbTimeMachineTagArray []GetNdbTimeMachineTagInput
-
-func (GetNdbTimeMachineTagArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineTag)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachineTagArray) ToGetNdbTimeMachineTagArrayOutput() GetNdbTimeMachineTagArrayOutput {
-	return i.ToGetNdbTimeMachineTagArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachineTagArray) ToGetNdbTimeMachineTagArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineTagArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineTagArrayOutput)
-}
-
-type GetNdbTimeMachineTagOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineTagOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachineTag)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineTagOutput) ToGetNdbTimeMachineTagOutput() GetNdbTimeMachineTagOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineTagOutput) ToGetNdbTimeMachineTagOutputWithContext(ctx context.Context) GetNdbTimeMachineTagOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineTagOutput) EntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.EntityId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineTagOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.EntityType }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineTagOutput) TagId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.TagId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineTagOutput) TagName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.TagName }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachineTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachineTagArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachineTagArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachineTag)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachineTagArrayOutput) ToGetNdbTimeMachineTagArrayOutput() GetNdbTimeMachineTagArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineTagArrayOutput) ToGetNdbTimeMachineTagArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineTagArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachineTagArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineTagOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineTag {
-		return vs[0].([]GetNdbTimeMachineTag)[vs[1].(int)]
-	}).(GetNdbTimeMachineTagOutput)
-}
-
-type GetNdbTimeMachinesTimeMachine struct {
-	// access level to time machines
-	AccessLevel string `pulumi:"accessLevel"`
-	// clone time machine or not
-	Clone bool `pulumi:"clone"`
-	// clone info
-	Clones string `pulumi:"clones"`
-	// clustered or not
-	Clustered bool `pulumi:"clustered"`
-	// database info
-	Database string `pulumi:"database"`
-	// database id
-	DatabaseId string `pulumi:"databaseId"`
-	// date created
-	DateCreated string `pulumi:"dateCreated"`
-	// date modified
-	DateModified string `pulumi:"dateModified"`
-	// time machine description
-	Description string `pulumi:"description"`
-	// ea status of time machine
-	EaStatus string `pulumi:"eaStatus"`
-	// time machine id
-	Id string `pulumi:"id"`
-	// Metric info
-	Metric string `pulumi:"metric"`
-	// time machine name
-	Name string `pulumi:"name"`
-	// List of all the properties
-	Properties []GetNdbTimeMachinesTimeMachineProperty `pulumi:"properties"`
-	// schedule id
-	ScheduleId string `pulumi:"scheduleId"`
-	// schedule info
-	//
-	// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
-	Schedules []GetNdbTimeMachinesTimeMachineSchedule `pulumi:"schedules"`
-	// scope
-	Scope string `pulumi:"scope"`
-	// sla id
-	SlaId string `pulumi:"slaId"`
-	// sla update in progress
-	SlaUpdateInProgress bool `pulumi:"slaUpdateInProgress"`
-	// sla update metadata
-	SlaUpdateMetadata string `pulumi:"slaUpdateMetadata"`
-	// sla info
-	Slas []GetNdbTimeMachinesTimeMachineSla `pulumi:"slas"`
-	// source clusters
-	SourceNxClusters []string `pulumi:"sourceNxClusters"`
-	// status of time machine
-	Status string `pulumi:"status"`
-	// tags
-	Tags []GetNdbTimeMachinesTimeMachineTag `pulumi:"tags"`
-	// type of time machine
-	Type string `pulumi:"type"`
-}
-
-// GetNdbTimeMachinesTimeMachineInput is an input type that accepts GetNdbTimeMachinesTimeMachineArgs and GetNdbTimeMachinesTimeMachineOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineArgs{...}
-type GetNdbTimeMachinesTimeMachineInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineOutput() GetNdbTimeMachinesTimeMachineOutput
-	ToGetNdbTimeMachinesTimeMachineOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineOutput
-}
-
-type GetNdbTimeMachinesTimeMachineArgs struct {
-	// access level to time machines
-	AccessLevel pulumi.StringInput `pulumi:"accessLevel"`
-	// clone time machine or not
-	Clone pulumi.BoolInput `pulumi:"clone"`
-	// clone info
-	Clones pulumi.StringInput `pulumi:"clones"`
-	// clustered or not
-	Clustered pulumi.BoolInput `pulumi:"clustered"`
-	// database info
-	Database pulumi.StringInput `pulumi:"database"`
-	// database id
-	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
-	// date created
-	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
-	// date modified
-	DateModified pulumi.StringInput `pulumi:"dateModified"`
-	// time machine description
-	Description pulumi.StringInput `pulumi:"description"`
-	// ea status of time machine
-	EaStatus pulumi.StringInput `pulumi:"eaStatus"`
-	// time machine id
-	Id pulumi.StringInput `pulumi:"id"`
-	// Metric info
-	Metric pulumi.StringInput `pulumi:"metric"`
-	// time machine name
-	Name pulumi.StringInput `pulumi:"name"`
-	// List of all the properties
-	Properties GetNdbTimeMachinesTimeMachinePropertyArrayInput `pulumi:"properties"`
-	// schedule id
-	ScheduleId pulumi.StringInput `pulumi:"scheduleId"`
-	// schedule info
-	//
-	// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
-	Schedules GetNdbTimeMachinesTimeMachineScheduleArrayInput `pulumi:"schedules"`
-	// scope
-	Scope pulumi.StringInput `pulumi:"scope"`
-	// sla id
-	SlaId pulumi.StringInput `pulumi:"slaId"`
-	// sla update in progress
-	SlaUpdateInProgress pulumi.BoolInput `pulumi:"slaUpdateInProgress"`
-	// sla update metadata
-	SlaUpdateMetadata pulumi.StringInput `pulumi:"slaUpdateMetadata"`
-	// sla info
-	Slas GetNdbTimeMachinesTimeMachineSlaArrayInput `pulumi:"slas"`
-	// source clusters
-	SourceNxClusters pulumi.StringArrayInput `pulumi:"sourceNxClusters"`
-	// status of time machine
-	Status pulumi.StringInput `pulumi:"status"`
-	// tags
-	Tags GetNdbTimeMachinesTimeMachineTagArrayInput `pulumi:"tags"`
-	// type of time machine
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetNdbTimeMachinesTimeMachineArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachine)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineArgs) ToGetNdbTimeMachinesTimeMachineOutput() GetNdbTimeMachinesTimeMachineOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineArgs) ToGetNdbTimeMachinesTimeMachineOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineArray and GetNdbTimeMachinesTimeMachineArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineArray{ GetNdbTimeMachinesTimeMachineArgs{...} }
-type GetNdbTimeMachinesTimeMachineArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineArrayOutput() GetNdbTimeMachinesTimeMachineArrayOutput
-	ToGetNdbTimeMachinesTimeMachineArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineArray []GetNdbTimeMachinesTimeMachineInput
-
-func (GetNdbTimeMachinesTimeMachineArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachine)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineArray) ToGetNdbTimeMachinesTimeMachineArrayOutput() GetNdbTimeMachinesTimeMachineArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineArray) ToGetNdbTimeMachinesTimeMachineArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachine)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineOutput) ToGetNdbTimeMachinesTimeMachineOutput() GetNdbTimeMachinesTimeMachineOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineOutput) ToGetNdbTimeMachinesTimeMachineOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineOutput {
-	return o
-}
-
-// access level to time machines
-func (o GetNdbTimeMachinesTimeMachineOutput) AccessLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.AccessLevel }).(pulumi.StringOutput)
-}
-
-// clone time machine or not
-func (o GetNdbTimeMachinesTimeMachineOutput) Clone() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.Clone }).(pulumi.BoolOutput)
-}
-
-// clone info
-func (o GetNdbTimeMachinesTimeMachineOutput) Clones() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Clones }).(pulumi.StringOutput)
-}
-
-// clustered or not
-func (o GetNdbTimeMachinesTimeMachineOutput) Clustered() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.Clustered }).(pulumi.BoolOutput)
-}
-
-// database info
-func (o GetNdbTimeMachinesTimeMachineOutput) Database() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Database }).(pulumi.StringOutput)
-}
-
-// database id
-func (o GetNdbTimeMachinesTimeMachineOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DatabaseId }).(pulumi.StringOutput)
-}
-
-// date created
-func (o GetNdbTimeMachinesTimeMachineOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-// date modified
-func (o GetNdbTimeMachinesTimeMachineOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-// time machine description
-func (o GetNdbTimeMachinesTimeMachineOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// ea status of time machine
-func (o GetNdbTimeMachinesTimeMachineOutput) EaStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.EaStatus }).(pulumi.StringOutput)
-}
-
-// time machine id
-func (o GetNdbTimeMachinesTimeMachineOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// Metric info
-func (o GetNdbTimeMachinesTimeMachineOutput) Metric() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Metric }).(pulumi.StringOutput)
-}
-
-// time machine name
-func (o GetNdbTimeMachinesTimeMachineOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// List of all the properties
-func (o GetNdbTimeMachinesTimeMachineOutput) Properties() GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineProperty { return v.Properties }).(GetNdbTimeMachinesTimeMachinePropertyArrayOutput)
-}
-
-// schedule id
-func (o GetNdbTimeMachinesTimeMachineOutput) ScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.ScheduleId }).(pulumi.StringOutput)
-}
-
-// schedule info
-//
-// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
-func (o GetNdbTimeMachinesTimeMachineOutput) Schedules() GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineSchedule { return v.Schedules }).(GetNdbTimeMachinesTimeMachineScheduleArrayOutput)
-}
-
-// scope
-func (o GetNdbTimeMachinesTimeMachineOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Scope }).(pulumi.StringOutput)
-}
-
-// sla id
-func (o GetNdbTimeMachinesTimeMachineOutput) SlaId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.SlaId }).(pulumi.StringOutput)
-}
-
-// sla update in progress
-func (o GetNdbTimeMachinesTimeMachineOutput) SlaUpdateInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.SlaUpdateInProgress }).(pulumi.BoolOutput)
-}
-
-// sla update metadata
-func (o GetNdbTimeMachinesTimeMachineOutput) SlaUpdateMetadata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.SlaUpdateMetadata }).(pulumi.StringOutput)
-}
-
-// sla info
-func (o GetNdbTimeMachinesTimeMachineOutput) Slas() GetNdbTimeMachinesTimeMachineSlaArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineSla { return v.Slas }).(GetNdbTimeMachinesTimeMachineSlaArrayOutput)
-}
-
-// source clusters
-func (o GetNdbTimeMachinesTimeMachineOutput) SourceNxClusters() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []string { return v.SourceNxClusters }).(pulumi.StringArrayOutput)
-}
-
-// status of time machine
-func (o GetNdbTimeMachinesTimeMachineOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// tags
-func (o GetNdbTimeMachinesTimeMachineOutput) Tags() GetNdbTimeMachinesTimeMachineTagArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineTag { return v.Tags }).(GetNdbTimeMachinesTimeMachineTagArrayOutput)
-}
-
-// type of time machine
-func (o GetNdbTimeMachinesTimeMachineOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachine)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineArrayOutput) ToGetNdbTimeMachinesTimeMachineArrayOutput() GetNdbTimeMachinesTimeMachineArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineArrayOutput) ToGetNdbTimeMachinesTimeMachineArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachine {
-		return vs[0].([]GetNdbTimeMachinesTimeMachine)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineProperty struct {
-	// time machine description
-	Description string `pulumi:"description"`
-	// time machine name
-	Name   string `pulumi:"name"`
-	RefId  string `pulumi:"refId"`
-	Secure bool   `pulumi:"secure"`
-	Value  string `pulumi:"value"`
-}
-
-// GetNdbTimeMachinesTimeMachinePropertyInput is an input type that accepts GetNdbTimeMachinesTimeMachinePropertyArgs and GetNdbTimeMachinesTimeMachinePropertyOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachinePropertyInput` via:
-//
-//	GetNdbTimeMachinesTimeMachinePropertyArgs{...}
-type GetNdbTimeMachinesTimeMachinePropertyInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachinePropertyOutput() GetNdbTimeMachinesTimeMachinePropertyOutput
-	ToGetNdbTimeMachinesTimeMachinePropertyOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachinePropertyOutput
-}
-
-type GetNdbTimeMachinesTimeMachinePropertyArgs struct {
-	// time machine description
-	Description pulumi.StringInput `pulumi:"description"`
-	// time machine name
-	Name   pulumi.StringInput `pulumi:"name"`
-	RefId  pulumi.StringInput `pulumi:"refId"`
-	Secure pulumi.BoolInput   `pulumi:"secure"`
-	Value  pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbTimeMachinesTimeMachinePropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineProperty)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachinePropertyArgs) ToGetNdbTimeMachinesTimeMachinePropertyOutput() GetNdbTimeMachinesTimeMachinePropertyOutput {
-	return i.ToGetNdbTimeMachinesTimeMachinePropertyOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachinePropertyArgs) ToGetNdbTimeMachinesTimeMachinePropertyOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachinePropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachinePropertyOutput)
-}
-
-// GetNdbTimeMachinesTimeMachinePropertyArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachinePropertyArray and GetNdbTimeMachinesTimeMachinePropertyArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachinePropertyArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachinePropertyArray{ GetNdbTimeMachinesTimeMachinePropertyArgs{...} }
-type GetNdbTimeMachinesTimeMachinePropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachinePropertyArrayOutput() GetNdbTimeMachinesTimeMachinePropertyArrayOutput
-	ToGetNdbTimeMachinesTimeMachinePropertyArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachinePropertyArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachinePropertyArray []GetNdbTimeMachinesTimeMachinePropertyInput
-
-func (GetNdbTimeMachinesTimeMachinePropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineProperty)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachinePropertyArray) ToGetNdbTimeMachinesTimeMachinePropertyArrayOutput() GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachinePropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachinePropertyArray) ToGetNdbTimeMachinesTimeMachinePropertyArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachinePropertyArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachinePropertyOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachinePropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineProperty)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachinePropertyOutput) ToGetNdbTimeMachinesTimeMachinePropertyOutput() GetNdbTimeMachinesTimeMachinePropertyOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachinePropertyOutput) ToGetNdbTimeMachinesTimeMachinePropertyOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachinePropertyOutput {
-	return o
-}
-
-// time machine description
-func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// time machine name
-func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachinePropertyOutput) RefId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.RefId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Secure() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) bool { return v.Secure }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachinesTimeMachinePropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachinePropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineProperty)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachinePropertyArrayOutput) ToGetNdbTimeMachinesTimeMachinePropertyArrayOutput() GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachinePropertyArrayOutput) ToGetNdbTimeMachinesTimeMachinePropertyArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachinePropertyArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachinePropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineProperty {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineProperty)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachinePropertyOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineSchedule struct {
-	ContinuousSchedules []GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule `pulumi:"continuousSchedules"`
-	DailySchedules      []GetNdbTimeMachinesTimeMachineScheduleDailySchedule      `pulumi:"dailySchedules"`
-	// date created
-	DateCreated string `pulumi:"dateCreated"`
-	// date modified
-	DateModified string `pulumi:"dateModified"`
-	// time machine description
-	Description  string `pulumi:"description"`
-	GlobalPolicy bool   `pulumi:"globalPolicy"`
-	// time machine id
-	Id               string                                                 `pulumi:"id"`
-	MonthlySchedules []GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule `pulumi:"monthlySchedules"`
-	// time machine name
-	Name               string                                                   `pulumi:"name"`
-	OwnerId            string                                                   `pulumi:"ownerId"`
-	QuartelySchedules  []GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule  `pulumi:"quartelySchedules"`
-	ReferenceCount     int                                                      `pulumi:"referenceCount"`
-	SnapshotTimeOfDays []GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay `pulumi:"snapshotTimeOfDays"`
-	StartTime          string                                                   `pulumi:"startTime"`
-	SystemPolicy       bool                                                     `pulumi:"systemPolicy"`
-	TimeZone           string                                                   `pulumi:"timeZone"`
-	UniqueName         string                                                   `pulumi:"uniqueName"`
-	WeeklySchedules    []GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule    `pulumi:"weeklySchedules"`
-	YearlySchedules    []GetNdbTimeMachinesTimeMachineScheduleYearlySchedule    `pulumi:"yearlySchedules"`
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleArgs{...}
-type GetNdbTimeMachinesTimeMachineScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleArgs struct {
-	ContinuousSchedules GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput `pulumi:"continuousSchedules"`
-	DailySchedules      GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput      `pulumi:"dailySchedules"`
-	// date created
-	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
-	// date modified
-	DateModified pulumi.StringInput `pulumi:"dateModified"`
-	// time machine description
-	Description  pulumi.StringInput `pulumi:"description"`
-	GlobalPolicy pulumi.BoolInput   `pulumi:"globalPolicy"`
-	// time machine id
-	Id               pulumi.StringInput                                             `pulumi:"id"`
-	MonthlySchedules GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput `pulumi:"monthlySchedules"`
-	// time machine name
-	Name               pulumi.StringInput                                               `pulumi:"name"`
-	OwnerId            pulumi.StringInput                                               `pulumi:"ownerId"`
-	QuartelySchedules  GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput  `pulumi:"quartelySchedules"`
-	ReferenceCount     pulumi.IntInput                                                  `pulumi:"referenceCount"`
-	SnapshotTimeOfDays GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput `pulumi:"snapshotTimeOfDays"`
-	StartTime          pulumi.StringInput                                               `pulumi:"startTime"`
-	SystemPolicy       pulumi.BoolInput                                                 `pulumi:"systemPolicy"`
-	TimeZone           pulumi.StringInput                                               `pulumi:"timeZone"`
-	UniqueName         pulumi.StringInput                                               `pulumi:"uniqueName"`
-	WeeklySchedules    GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput    `pulumi:"weeklySchedules"`
-	YearlySchedules    GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput    `pulumi:"yearlySchedules"`
-}
-
-func (GetNdbTimeMachinesTimeMachineScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleArray and GetNdbTimeMachinesTimeMachineScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleArgs{...} }
-type GetNdbTimeMachinesTimeMachineScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleArrayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleArray []GetNdbTimeMachinesTimeMachineScheduleInput
-
-func (GetNdbTimeMachinesTimeMachineScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineSchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) ContinuousSchedules() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule {
-		return v.ContinuousSchedules
-	}).(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DailySchedules() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleDailySchedule {
-		return v.DailySchedules
-	}).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput)
-}
-
-// date created
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-// date modified
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-// time machine description
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Description }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) GlobalPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) bool { return v.GlobalPolicy }).(pulumi.BoolOutput)
-}
-
-// time machine id
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) MonthlySchedules() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule {
-		return v.MonthlySchedules
-	}).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput)
-}
-
-// time machine name
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) OwnerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.OwnerId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) QuartelySchedules() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule {
-		return v.QuartelySchedules
-	}).(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) ReferenceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) int { return v.ReferenceCount }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) SnapshotTimeOfDays() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay {
-		return v.SnapshotTimeOfDays
-	}).(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) StartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.StartTime }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) SystemPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) bool { return v.SystemPolicy }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.TimeZone }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) UniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.UniqueName }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) WeeklySchedules() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule {
-		return v.WeeklySchedules
-	}).(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleOutput) YearlySchedules() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleYearlySchedule {
-		return v.YearlySchedules
-	}).(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineSchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineSchedule {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineSchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineScheduleOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule struct {
-	Enabled           bool `pulumi:"enabled"`
-	LogBackupInterval int  `pulumi:"logBackupInterval"`
-	SnapshotsPerDay   int  `pulumi:"snapshotsPerDay"`
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs{...}
-type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs struct {
-	Enabled           pulumi.BoolInput `pulumi:"enabled"`
-	LogBackupInterval pulumi.IntInput  `pulumi:"logBackupInterval"`
-	SnapshotsPerDay   pulumi.IntInput  `pulumi:"snapshotsPerDay"`
-}
-
-func (GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray and GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs{...} }
-type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray []GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput
-
-func (GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) LogBackupInterval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule) int { return v.LogBackupInterval }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) SnapshotsPerDay() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule) int { return v.SnapshotsPerDay }).(pulumi.IntOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleDailySchedule struct {
-	Enabled bool `pulumi:"enabled"`
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs{...}
-type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs struct {
-	Enabled pulumi.BoolInput `pulumi:"enabled"`
-}
-
-func (GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleDailySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs{...} }
-type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput
-
-func (GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleDailySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleDailySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleDailySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleDailySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleDailySchedule {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleDailySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule struct {
-	DayOfMonth int  `pulumi:"dayOfMonth"`
-	Enabled    bool `pulumi:"enabled"`
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs{...}
-type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs struct {
-	DayOfMonth pulumi.IntInput  `pulumi:"dayOfMonth"`
-	Enabled    pulumi.BoolInput `pulumi:"enabled"`
-}
-
-func (GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs{...} }
-type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput
-
-func (GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) DayOfMonth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule struct {
-	DayOfMonth      int    `pulumi:"dayOfMonth"`
-	Enabled         bool   `pulumi:"enabled"`
-	StartMonth      string `pulumi:"startMonth"`
-	StartMonthValue string `pulumi:"startMonthValue"`
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs{...}
-type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs struct {
-	DayOfMonth      pulumi.IntInput    `pulumi:"dayOfMonth"`
-	Enabled         pulumi.BoolInput   `pulumi:"enabled"`
-	StartMonth      pulumi.StringInput `pulumi:"startMonth"`
-	StartMonthValue pulumi.StringInput `pulumi:"startMonthValue"`
-}
-
-func (GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs{...} }
-type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput
-
-func (GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) DayOfMonth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) StartMonth() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule) string { return v.StartMonth }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) StartMonthValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule) string { return v.StartMonthValue }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay struct {
-	Extra   bool `pulumi:"extra"`
-	Hours   int  `pulumi:"hours"`
-	Minutes int  `pulumi:"minutes"`
-	Seconds int  `pulumi:"seconds"`
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs and GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs{...}
-type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs struct {
-	Extra   pulumi.BoolInput `pulumi:"extra"`
-	Hours   pulumi.IntInput  `pulumi:"hours"`
-	Minutes pulumi.IntInput  `pulumi:"minutes"`
-	Seconds pulumi.IntInput  `pulumi:"seconds"`
-}
-
-func (GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray and GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray{ GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs{...} }
-type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray []GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput
-
-func (GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) Extra() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay) bool { return v.Extra }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) Hours() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay) int { return v.Hours }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) Minutes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay) int { return v.Minutes }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) Seconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay) int { return v.Seconds }).(pulumi.IntOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule struct {
-	DayOfWeek      string `pulumi:"dayOfWeek"`
-	DayOfWeekValue string `pulumi:"dayOfWeekValue"`
-	Enabled        bool   `pulumi:"enabled"`
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs{...}
-type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs struct {
-	DayOfWeek      pulumi.StringInput `pulumi:"dayOfWeek"`
-	DayOfWeekValue pulumi.StringInput `pulumi:"dayOfWeekValue"`
-	Enabled        pulumi.BoolInput   `pulumi:"enabled"`
-}
-
-func (GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs{...} }
-type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput
-
-func (GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) DayOfWeek() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) DayOfWeekValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule) string { return v.DayOfWeekValue }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleYearlySchedule struct {
-	DayOfMonth int    `pulumi:"dayOfMonth"`
-	Enabled    bool   `pulumi:"enabled"`
-	Month      string `pulumi:"month"`
-	MonthValue string `pulumi:"monthValue"`
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs{...}
-type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs struct {
-	DayOfMonth pulumi.IntInput    `pulumi:"dayOfMonth"`
-	Enabled    pulumi.BoolInput   `pulumi:"enabled"`
-	Month      pulumi.StringInput `pulumi:"month"`
-	MonthValue pulumi.StringInput `pulumi:"monthValue"`
-}
-
-func (GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs{...} }
-type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput
-	ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput
-
-func (GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) DayOfMonth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleYearlySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleYearlySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) Month() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleYearlySchedule) string { return v.Month }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) MonthValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleYearlySchedule) string { return v.MonthValue }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleYearlySchedule {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineSla struct {
-	ContinuousRetention    int    `pulumi:"continuousRetention"`
-	CurrentActiveFrequency string `pulumi:"currentActiveFrequency"`
-	DailyRetention         int    `pulumi:"dailyRetention"`
-	// date created
-	DateCreated string `pulumi:"dateCreated"`
-	// date modified
-	DateModified string `pulumi:"dateModified"`
-	// time machine description
-	Description string `pulumi:"description"`
-	// time machine id
-	Id               string `pulumi:"id"`
-	MonthlyRetention int    `pulumi:"monthlyRetention"`
-	// time machine name
-	Name               string `pulumi:"name"`
-	OwnerId            string `pulumi:"ownerId"`
-	PitrEnabled        bool   `pulumi:"pitrEnabled"`
-	QuarterlyRetention int    `pulumi:"quarterlyRetention"`
-	ReferenceCount     int    `pulumi:"referenceCount"`
-	SystemSla          bool   `pulumi:"systemSla"`
-	UniqueName         string `pulumi:"uniqueName"`
-	WeeklyRetention    int    `pulumi:"weeklyRetention"`
-	YearlyRetention    int    `pulumi:"yearlyRetention"`
-}
-
-// GetNdbTimeMachinesTimeMachineSlaInput is an input type that accepts GetNdbTimeMachinesTimeMachineSlaArgs and GetNdbTimeMachinesTimeMachineSlaOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineSlaInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineSlaArgs{...}
-type GetNdbTimeMachinesTimeMachineSlaInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineSlaOutput() GetNdbTimeMachinesTimeMachineSlaOutput
-	ToGetNdbTimeMachinesTimeMachineSlaOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineSlaOutput
-}
-
-type GetNdbTimeMachinesTimeMachineSlaArgs struct {
-	ContinuousRetention    pulumi.IntInput    `pulumi:"continuousRetention"`
-	CurrentActiveFrequency pulumi.StringInput `pulumi:"currentActiveFrequency"`
-	DailyRetention         pulumi.IntInput    `pulumi:"dailyRetention"`
-	// date created
-	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
-	// date modified
-	DateModified pulumi.StringInput `pulumi:"dateModified"`
-	// time machine description
-	Description pulumi.StringInput `pulumi:"description"`
-	// time machine id
-	Id               pulumi.StringInput `pulumi:"id"`
-	MonthlyRetention pulumi.IntInput    `pulumi:"monthlyRetention"`
-	// time machine name
-	Name               pulumi.StringInput `pulumi:"name"`
-	OwnerId            pulumi.StringInput `pulumi:"ownerId"`
-	PitrEnabled        pulumi.BoolInput   `pulumi:"pitrEnabled"`
-	QuarterlyRetention pulumi.IntInput    `pulumi:"quarterlyRetention"`
-	ReferenceCount     pulumi.IntInput    `pulumi:"referenceCount"`
-	SystemSla          pulumi.BoolInput   `pulumi:"systemSla"`
-	UniqueName         pulumi.StringInput `pulumi:"uniqueName"`
-	WeeklyRetention    pulumi.IntInput    `pulumi:"weeklyRetention"`
-	YearlyRetention    pulumi.IntInput    `pulumi:"yearlyRetention"`
-}
-
-func (GetNdbTimeMachinesTimeMachineSlaArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSla)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineSlaArgs) ToGetNdbTimeMachinesTimeMachineSlaOutput() GetNdbTimeMachinesTimeMachineSlaOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineSlaOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineSlaArgs) ToGetNdbTimeMachinesTimeMachineSlaOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineSlaOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineSlaOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineSlaArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineSlaArray and GetNdbTimeMachinesTimeMachineSlaArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineSlaArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineSlaArray{ GetNdbTimeMachinesTimeMachineSlaArgs{...} }
-type GetNdbTimeMachinesTimeMachineSlaArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineSlaArrayOutput() GetNdbTimeMachinesTimeMachineSlaArrayOutput
-	ToGetNdbTimeMachinesTimeMachineSlaArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineSlaArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineSlaArray []GetNdbTimeMachinesTimeMachineSlaInput
-
-func (GetNdbTimeMachinesTimeMachineSlaArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineSla)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineSlaArray) ToGetNdbTimeMachinesTimeMachineSlaArrayOutput() GetNdbTimeMachinesTimeMachineSlaArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineSlaArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineSlaArray) ToGetNdbTimeMachinesTimeMachineSlaArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineSlaArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineSlaArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineSlaOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineSlaOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSla)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) ToGetNdbTimeMachinesTimeMachineSlaOutput() GetNdbTimeMachinesTimeMachineSlaOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) ToGetNdbTimeMachinesTimeMachineSlaOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineSlaOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) ContinuousRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.ContinuousRetention }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) CurrentActiveFrequency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.CurrentActiveFrequency }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) DailyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.DailyRetention }).(pulumi.IntOutput)
-}
-
-// date created
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-// date modified
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-// time machine description
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// time machine id
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) MonthlyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.MonthlyRetention }).(pulumi.IntOutput)
-}
-
-// time machine name
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) OwnerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.OwnerId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) PitrEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) bool { return v.PitrEnabled }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) QuarterlyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.QuarterlyRetention }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) ReferenceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.ReferenceCount }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) SystemSla() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) bool { return v.SystemSla }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) UniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.UniqueName }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) WeeklyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.WeeklyRetention }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaOutput) YearlyRetention() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.YearlyRetention }).(pulumi.IntOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineSlaArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineSlaArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineSla)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaArrayOutput) ToGetNdbTimeMachinesTimeMachineSlaArrayOutput() GetNdbTimeMachinesTimeMachineSlaArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaArrayOutput) ToGetNdbTimeMachinesTimeMachineSlaArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineSlaArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineSlaArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineSlaOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineSla {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineSla)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineSlaOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineTag struct {
-	EntityId   string `pulumi:"entityId"`
-	EntityType string `pulumi:"entityType"`
-	TagId      string `pulumi:"tagId"`
-	TagName    string `pulumi:"tagName"`
-	Value      string `pulumi:"value"`
-}
-
-// GetNdbTimeMachinesTimeMachineTagInput is an input type that accepts GetNdbTimeMachinesTimeMachineTagArgs and GetNdbTimeMachinesTimeMachineTagOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineTagInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineTagArgs{...}
-type GetNdbTimeMachinesTimeMachineTagInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineTagOutput() GetNdbTimeMachinesTimeMachineTagOutput
-	ToGetNdbTimeMachinesTimeMachineTagOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineTagOutput
-}
-
-type GetNdbTimeMachinesTimeMachineTagArgs struct {
-	EntityId   pulumi.StringInput `pulumi:"entityId"`
-	EntityType pulumi.StringInput `pulumi:"entityType"`
-	TagId      pulumi.StringInput `pulumi:"tagId"`
-	TagName    pulumi.StringInput `pulumi:"tagName"`
-	Value      pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbTimeMachinesTimeMachineTagArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineTag)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineTagArgs) ToGetNdbTimeMachinesTimeMachineTagOutput() GetNdbTimeMachinesTimeMachineTagOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineTagOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineTagArgs) ToGetNdbTimeMachinesTimeMachineTagOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineTagOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineTagOutput)
-}
-
-// GetNdbTimeMachinesTimeMachineTagArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineTagArray and GetNdbTimeMachinesTimeMachineTagArrayOutput values.
-// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineTagArrayInput` via:
-//
-//	GetNdbTimeMachinesTimeMachineTagArray{ GetNdbTimeMachinesTimeMachineTagArgs{...} }
-type GetNdbTimeMachinesTimeMachineTagArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTimeMachinesTimeMachineTagArrayOutput() GetNdbTimeMachinesTimeMachineTagArrayOutput
-	ToGetNdbTimeMachinesTimeMachineTagArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineTagArrayOutput
-}
-
-type GetNdbTimeMachinesTimeMachineTagArray []GetNdbTimeMachinesTimeMachineTagInput
-
-func (GetNdbTimeMachinesTimeMachineTagArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineTag)(nil)).Elem()
-}
-
-func (i GetNdbTimeMachinesTimeMachineTagArray) ToGetNdbTimeMachinesTimeMachineTagArrayOutput() GetNdbTimeMachinesTimeMachineTagArrayOutput {
-	return i.ToGetNdbTimeMachinesTimeMachineTagArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTimeMachinesTimeMachineTagArray) ToGetNdbTimeMachinesTimeMachineTagArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineTagArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineTagArrayOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineTagOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineTagOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineTag)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagOutput) ToGetNdbTimeMachinesTimeMachineTagOutput() GetNdbTimeMachinesTimeMachineTagOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagOutput) ToGetNdbTimeMachinesTimeMachineTagOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineTagOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagOutput) EntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.EntityId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.EntityType }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagOutput) TagId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.TagId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagOutput) TagName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.TagName }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbTimeMachinesTimeMachineTagArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTimeMachinesTimeMachineTagArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineTag)(nil)).Elem()
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagArrayOutput) ToGetNdbTimeMachinesTimeMachineTagArrayOutput() GetNdbTimeMachinesTimeMachineTagArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagArrayOutput) ToGetNdbTimeMachinesTimeMachineTagArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineTagArrayOutput {
-	return o
-}
-
-func (o GetNdbTimeMachinesTimeMachineTagArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineTagOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineTag {
-		return vs[0].([]GetNdbTimeMachinesTimeMachineTag)[vs[1].(int)]
-	}).(GetNdbTimeMachinesTimeMachineTagOutput)
-}
-
-type GetNdbTmsCapabilityCapability struct {
-	ContinuousRegions         []GetNdbTmsCapabilityCapabilityContinuousRegion `pulumi:"continuousRegions"`
-	DatabaseIds               []string                                        `pulumi:"databaseIds"`
-	DatabasesContinuousRegion string                                          `pulumi:"databasesContinuousRegion"`
-	From                      string                                          `pulumi:"from"`
-	Mode                      string                                          `pulumi:"mode"`
-	Snapshots                 []GetNdbTmsCapabilityCapabilitySnapshot         `pulumi:"snapshots"`
-	TimeUnit                  string                                          `pulumi:"timeUnit"`
-	TimeUnitNumber            string                                          `pulumi:"timeUnitNumber"`
-	To                        string                                          `pulumi:"to"`
-}
-
-// GetNdbTmsCapabilityCapabilityInput is an input type that accepts GetNdbTmsCapabilityCapabilityArgs and GetNdbTmsCapabilityCapabilityOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityArgs{...}
-type GetNdbTmsCapabilityCapabilityInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityOutput() GetNdbTmsCapabilityCapabilityOutput
-	ToGetNdbTmsCapabilityCapabilityOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityOutput
-}
-
-type GetNdbTmsCapabilityCapabilityArgs struct {
-	ContinuousRegions         GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput `pulumi:"continuousRegions"`
-	DatabaseIds               pulumi.StringArrayInput                                 `pulumi:"databaseIds"`
-	DatabasesContinuousRegion pulumi.StringInput                                      `pulumi:"databasesContinuousRegion"`
-	From                      pulumi.StringInput                                      `pulumi:"from"`
-	Mode                      pulumi.StringInput                                      `pulumi:"mode"`
-	Snapshots                 GetNdbTmsCapabilityCapabilitySnapshotArrayInput         `pulumi:"snapshots"`
-	TimeUnit                  pulumi.StringInput                                      `pulumi:"timeUnit"`
-	TimeUnitNumber            pulumi.StringInput                                      `pulumi:"timeUnitNumber"`
-	To                        pulumi.StringInput                                      `pulumi:"to"`
-}
-
-func (GetNdbTmsCapabilityCapabilityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapability)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityArgs) ToGetNdbTmsCapabilityCapabilityOutput() GetNdbTmsCapabilityCapabilityOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityArgs) ToGetNdbTmsCapabilityCapabilityOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityOutput)
-}
-
-// GetNdbTmsCapabilityCapabilityArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityArray and GetNdbTmsCapabilityCapabilityArrayOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityArrayInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityArray{ GetNdbTmsCapabilityCapabilityArgs{...} }
-type GetNdbTmsCapabilityCapabilityArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityArrayOutput() GetNdbTmsCapabilityCapabilityArrayOutput
-	ToGetNdbTmsCapabilityCapabilityArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityArrayOutput
-}
-
-type GetNdbTmsCapabilityCapabilityArray []GetNdbTmsCapabilityCapabilityInput
-
-func (GetNdbTmsCapabilityCapabilityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapability)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityArray) ToGetNdbTmsCapabilityCapabilityArrayOutput() GetNdbTmsCapabilityCapabilityArrayOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityArray) ToGetNdbTmsCapabilityCapabilityArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapability)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) ToGetNdbTmsCapabilityCapabilityOutput() GetNdbTmsCapabilityCapabilityOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) ToGetNdbTmsCapabilityCapabilityOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) ContinuousRegions() GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) []GetNdbTmsCapabilityCapabilityContinuousRegion {
-		return v.ContinuousRegions
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) DatabaseIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) []string { return v.DatabaseIds }).(pulumi.StringArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) DatabasesContinuousRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.DatabasesContinuousRegion }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) From() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.From }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) Mode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.Mode }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) Snapshots() GetNdbTmsCapabilityCapabilitySnapshotArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) []GetNdbTmsCapabilityCapabilitySnapshot { return v.Snapshots }).(GetNdbTmsCapabilityCapabilitySnapshotArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) TimeUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.TimeUnit }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) TimeUnitNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.TimeUnitNumber }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityOutput) To() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.To }).(pulumi.StringOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapability)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityArrayOutput) ToGetNdbTmsCapabilityCapabilityArrayOutput() GetNdbTmsCapabilityCapabilityArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityArrayOutput) ToGetNdbTmsCapabilityCapabilityArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapability {
-		return vs[0].([]GetNdbTmsCapabilityCapability)[vs[1].(int)]
-	}).(GetNdbTmsCapabilityCapabilityOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegion struct {
-	DbLogs                []GetNdbTmsCapabilityCapabilityContinuousRegionDbLog            `pulumi:"dbLogs"`
-	FromTime              string                                                          `pulumi:"fromTime"`
-	Message               string                                                          `pulumi:"message"`
-	PartialRanges         bool                                                            `pulumi:"partialRanges"`
-	ProcessedRanges       []GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange   `pulumi:"processedRanges"`
-	SnapshotIds           []string                                                        `pulumi:"snapshotIds"`
-	Snapshots             string                                                          `pulumi:"snapshots"`
-	SubRange              bool                                                            `pulumi:"subRange"`
-	TimeRangeAndDatabases string                                                          `pulumi:"timeRangeAndDatabases"`
-	Timezone              string                                                          `pulumi:"timezone"`
-	ToTime                string                                                          `pulumi:"toTime"`
-	UnknownTimeRanges     string                                                          `pulumi:"unknownTimeRanges"`
-	UnprocessedRanges     []GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRange `pulumi:"unprocessedRanges"`
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionArgs and GetNdbTmsCapabilityCapabilityContinuousRegionOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionArgs{...}
-type GetNdbTmsCapabilityCapabilityContinuousRegionInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionOutput() GetNdbTmsCapabilityCapabilityContinuousRegionOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionArgs struct {
-	DbLogs                GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput            `pulumi:"dbLogs"`
-	FromTime              pulumi.StringInput                                                      `pulumi:"fromTime"`
-	Message               pulumi.StringInput                                                      `pulumi:"message"`
-	PartialRanges         pulumi.BoolInput                                                        `pulumi:"partialRanges"`
-	ProcessedRanges       GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput   `pulumi:"processedRanges"`
-	SnapshotIds           pulumi.StringArrayInput                                                 `pulumi:"snapshotIds"`
-	Snapshots             pulumi.StringInput                                                      `pulumi:"snapshots"`
-	SubRange              pulumi.BoolInput                                                        `pulumi:"subRange"`
-	TimeRangeAndDatabases pulumi.StringInput                                                      `pulumi:"timeRangeAndDatabases"`
-	Timezone              pulumi.StringInput                                                      `pulumi:"timezone"`
-	ToTime                pulumi.StringInput                                                      `pulumi:"toTime"`
-	UnknownTimeRanges     pulumi.StringInput                                                      `pulumi:"unknownTimeRanges"`
-	UnprocessedRanges     GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArrayInput `pulumi:"unprocessedRanges"`
-}
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegion)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionOutput() GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionOutput)
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionArray and GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionArray{ GetNdbTmsCapabilityCapabilityContinuousRegionArgs{...} }
-type GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionArray []GetNdbTmsCapabilityCapabilityContinuousRegionInput
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegion)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegion)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionOutput() GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) DbLogs() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) []GetNdbTmsCapabilityCapabilityContinuousRegionDbLog {
-		return v.DbLogs
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) FromTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.FromTime }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.Message }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) PartialRanges() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) bool { return v.PartialRanges }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ProcessedRanges() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) []GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange {
-		return v.ProcessedRanges
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) SnapshotIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) []string { return v.SnapshotIds }).(pulumi.StringArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) Snapshots() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.Snapshots }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) SubRange() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) bool { return v.SubRange }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) TimeRangeAndDatabases() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.TimeRangeAndDatabases }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) Timezone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.Timezone }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ToTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.ToTime }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) UnknownTimeRanges() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.UnknownTimeRanges }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) UnprocessedRanges() GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) []GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRange {
-		return v.UnprocessedRanges
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegion)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegion {
-		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegion)[vs[1].(int)]
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLog struct {
-	DatabaseId         string                                                       `pulumi:"databaseId"`
-	DatabaseNodeId     string                                                       `pulumi:"databaseNodeId"`
-	DateCreated        string                                                       `pulumi:"dateCreated"`
-	DateModified       string                                                       `pulumi:"dateModified"`
-	EraLogDriveId      string                                                       `pulumi:"eraLogDriveId"`
-	FromTime           string                                                       `pulumi:"fromTime"`
-	Id                 string                                                       `pulumi:"id"`
-	Infos              []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo     `pulumi:"infos"`
-	LogCopyOperationId string                                                       `pulumi:"logCopyOperationId"`
-	Message            string                                                       `pulumi:"message"`
-	Metadatas          []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata `pulumi:"metadatas"`
-	Name               string                                                       `pulumi:"name"`
-	OwnerId            string                                                       `pulumi:"ownerId"`
-	Size               int                                                          `pulumi:"size"`
-	Status             string                                                       `pulumi:"status"`
-	ToTime             string                                                       `pulumi:"toTime"`
-	Unprocessed        bool                                                         `pulumi:"unprocessed"`
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs{...}
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs struct {
-	DatabaseId         pulumi.StringInput                                                   `pulumi:"databaseId"`
-	DatabaseNodeId     pulumi.StringInput                                                   `pulumi:"databaseNodeId"`
-	DateCreated        pulumi.StringInput                                                   `pulumi:"dateCreated"`
-	DateModified       pulumi.StringInput                                                   `pulumi:"dateModified"`
-	EraLogDriveId      pulumi.StringInput                                                   `pulumi:"eraLogDriveId"`
-	FromTime           pulumi.StringInput                                                   `pulumi:"fromTime"`
-	Id                 pulumi.StringInput                                                   `pulumi:"id"`
-	Infos              GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput     `pulumi:"infos"`
-	LogCopyOperationId pulumi.StringInput                                                   `pulumi:"logCopyOperationId"`
-	Message            pulumi.StringInput                                                   `pulumi:"message"`
-	Metadatas          GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput `pulumi:"metadatas"`
-	Name               pulumi.StringInput                                                   `pulumi:"name"`
-	OwnerId            pulumi.StringInput                                                   `pulumi:"ownerId"`
-	Size               pulumi.IntInput                                                      `pulumi:"size"`
-	Status             pulumi.StringInput                                                   `pulumi:"status"`
-	ToTime             pulumi.StringInput                                                   `pulumi:"toTime"`
-	Unprocessed        pulumi.BoolInput                                                     `pulumi:"unprocessed"`
-}
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput)
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray{ GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs{...} }
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.DatabaseId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) DatabaseNodeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.DatabaseNodeId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) EraLogDriveId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.EraLogDriveId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) FromTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.FromTime }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Infos() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo {
-		return v.Infos
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) LogCopyOperationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.LogCopyOperationId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.Message }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Metadatas() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata {
-		return v.Metadatas
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) OwnerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.OwnerId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) int { return v.Size }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.Status }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) ToTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.ToTime }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Unprocessed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) bool { return v.Unprocessed }).(pulumi.BoolOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionDbLog {
-		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)[vs[1].(int)]
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo struct {
-	Info             map[string]string `pulumi:"info"`
-	SecureInfo       map[string]string `pulumi:"secureInfo"`
-	UnknownTimeRange bool              `pulumi:"unknownTimeRange"`
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs{...}
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs struct {
-	Info             pulumi.StringMapInput `pulumi:"info"`
-	SecureInfo       pulumi.StringMapInput `pulumi:"secureInfo"`
-	UnknownTimeRange pulumi.BoolInput      `pulumi:"unknownTimeRange"`
-}
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput)
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray{ GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs{...} }
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) Info() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo) map[string]string { return v.Info }).(pulumi.StringMapOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) SecureInfo() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo) map[string]string { return v.SecureInfo }).(pulumi.StringMapOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) UnknownTimeRange() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo) bool { return v.UnknownTimeRange }).(pulumi.BoolOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo {
-		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)[vs[1].(int)]
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata struct {
-	CreatedDirectly    bool                                                                       `pulumi:"createdDirectly"`
-	CurationRetryCount int                                                                        `pulumi:"curationRetryCount"`
-	DeregisterInfos    []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo `pulumi:"deregisterInfos"`
-	Info               map[string]string                                                          `pulumi:"info"`
-	SecureInfo         map[string]string                                                          `pulumi:"secureInfo"`
-	UpdatedDirectly    bool                                                                       `pulumi:"updatedDirectly"`
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs{...}
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs struct {
-	CreatedDirectly    pulumi.BoolInput                                                                   `pulumi:"createdDirectly"`
-	CurationRetryCount pulumi.IntInput                                                                    `pulumi:"curationRetryCount"`
-	DeregisterInfos    GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput `pulumi:"deregisterInfos"`
-	Info               pulumi.StringMapInput                                                              `pulumi:"info"`
-	SecureInfo         pulumi.StringMapInput                                                              `pulumi:"secureInfo"`
-	UpdatedDirectly    pulumi.BoolInput                                                                   `pulumi:"updatedDirectly"`
-}
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput)
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray{ GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs{...} }
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) CreatedDirectly() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) bool { return v.CreatedDirectly }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) CurationRetryCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) int { return v.CurationRetryCount }).(pulumi.IntOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) DeregisterInfos() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo {
-		return v.DeregisterInfos
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) Info() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) map[string]string { return v.Info }).(pulumi.StringMapOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) SecureInfo() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) map[string]string {
-		return v.SecureInfo
-	}).(pulumi.StringMapOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) UpdatedDirectly() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) bool { return v.UpdatedDirectly }).(pulumi.BoolOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata {
-		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)[vs[1].(int)]
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetLinkInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4Args{})
@@ -65182,76 +64507,76 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotPropertyInput)(nil)).Elem(), GetNdbSnapshotsSnapshotPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotPropertyArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotTagInput)(nil)).Elem(), GetNdbSnapshotsSnapshotTagArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotTagArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotTagArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTagsTagInput)(nil)).Elem(), GetNdbTagsTagArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTagsTagArrayInput)(nil)).Elem(), GetNdbTagsTagArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinePropertyInput)(nil)).Elem(), GetNdbTimeMachinePropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinePropertyArrayInput)(nil)).Elem(), GetNdbTimeMachinePropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleContinuousScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleContinuousScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleContinuousScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleContinuousScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleDailyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleDailyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleDailyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleDailyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleMonthlyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleMonthlyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleMonthlyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleMonthlyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleQuartelyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleQuartelyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleQuartelyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleQuartelyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleSnapshotTimeOfDayInput)(nil)).Elem(), GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleSnapshotTimeOfDayArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleWeeklyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleWeeklyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleWeeklyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleWeeklyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleYearlyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleYearlyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleYearlyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleYearlyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineSlaInput)(nil)).Elem(), GetNdbTimeMachineSlaArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineSlaArrayInput)(nil)).Elem(), GetNdbTimeMachineSlaArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineTagInput)(nil)).Elem(), GetNdbTimeMachineTagArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineTagArrayInput)(nil)).Elem(), GetNdbTimeMachineTagArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachinePropertyInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachinePropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachinePropertyArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachinePropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSlaInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineSlaArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSlaArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineSlaArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineTagInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineTagArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineTagArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineTagArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4Output{})
@@ -66180,74 +65505,4 @@ func init() {
 	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigOutput{})
 	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotPropertyOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotTagOutput{})
-	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotTagArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTagsTagOutput{})
-	pulumi.RegisterOutputType(GetNdbTagsTagArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinePropertyOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinePropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleContinuousScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleContinuousScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleDailyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleDailyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleMonthlyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleQuartelyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleWeeklyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleYearlyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleYearlyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineSlaOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineSlaArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineTagOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachineTagArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachinePropertyOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachinePropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineSlaOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineSlaArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineTagOutput{})
-	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineTagArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput{})
 }

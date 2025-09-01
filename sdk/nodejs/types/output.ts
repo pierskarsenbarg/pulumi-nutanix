@@ -1041,8 +1041,6 @@ export interface ClusterV2NetworkExternalAddressIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1076,8 +1074,6 @@ export interface ClusterV2NetworkExternalDataServicesIpIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1135,8 +1131,6 @@ export interface ClusterV2NetworkHttpProxyListIpAddressIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1206,8 +1200,6 @@ export interface ClusterV2NetworkManagementServerIpIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1241,8 +1233,6 @@ export interface ClusterV2NetworkMasqueradingIpIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1284,8 +1274,6 @@ export interface ClusterV2NetworkNameServerIpListIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1327,8 +1315,6 @@ export interface ClusterV2NetworkNtpServerIpListIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1408,8 +1394,6 @@ export interface ClusterV2NetworkSmtpServerServerIpAddressIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1463,8 +1447,6 @@ export interface ClusterV2NodeNodeListControllerVmIpIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -1498,8 +1480,6 @@ export interface ClusterV2NodeNodeListHostIpIpv6 {
     prefixLength?: number;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: string;
 }
@@ -4959,6 +4939,80 @@ export interface GetCategoryV2DetailedAssociation {
 export interface GetCategoryV2Link {
     href: string;
     rel: string;
+}
+
+export interface GetCertificateV2AlternateFqdn {
+    value: string;
+}
+
+export interface GetCertificateV2AlternateIp {
+    ipv4: outputs.GetCertificateV2AlternateIpIpv4;
+    ipv6: outputs.GetCertificateV2AlternateIpIpv6;
+}
+
+export interface GetCertificateV2AlternateIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetCertificateV2AlternateIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetCertificateV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetCertificateV2Metadata {
+    categoryIds: string[];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetCertificatesV2Certificate {
+    alternateFqdns: outputs.GetCertificatesV2CertificateAlternateFqdn[];
+    alternateIps: outputs.GetCertificatesV2CertificateAlternateIp[];
+    extId: string;
+    links: outputs.GetCertificatesV2CertificateLink[];
+    metadatas: outputs.GetCertificatesV2CertificateMetadata[];
+    objectStoreExtId: string;
+    tenantId: string;
+}
+
+export interface GetCertificatesV2CertificateAlternateFqdn {
+    value: string;
+}
+
+export interface GetCertificatesV2CertificateAlternateIp {
+    ipv4: outputs.GetCertificatesV2CertificateAlternateIpIpv4;
+    ipv6: outputs.GetCertificatesV2CertificateAlternateIpIpv6;
+}
+
+export interface GetCertificatesV2CertificateAlternateIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetCertificatesV2CertificateAlternateIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetCertificatesV2CertificateLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetCertificatesV2CertificateMetadata {
+    categoryIds: string[];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
 }
 
 export interface GetClusterAuthorizedPublicKeyList {
@@ -17847,6 +17901,371 @@ export interface GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParam {
     values: string[];
 }
 
+export interface GetObjectStoreV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetObjectStoreV2Metadata {
+    /**
+     * - A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds: string[];
+    /**
+     * - A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * - The userName of the owner of this resource.
+     */
+    ownerUserName: string;
+    /**
+     * - The name of the project this resource belongs to.
+     */
+    projectName: string;
+    /**
+     * - A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId: string;
+}
+
+export interface GetObjectStoreV2PublicNetworkIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.GetObjectStoreV2PublicNetworkIpIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.GetObjectStoreV2PublicNetworkIpIpv6;
+}
+
+export interface GetObjectStoreV2PublicNetworkIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoreV2PublicNetworkIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoreV2StorageNetworkDnsIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.GetObjectStoreV2StorageNetworkDnsIpIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.GetObjectStoreV2StorageNetworkDnsIpIpv6;
+}
+
+export interface GetObjectStoreV2StorageNetworkDnsIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoreV2StorageNetworkDnsIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoreV2StorageNetworkVip {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.GetObjectStoreV2StorageNetworkVipIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.GetObjectStoreV2StorageNetworkVipIpv6;
+}
+
+export interface GetObjectStoreV2StorageNetworkVipIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoreV2StorageNetworkVipIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoresV2ObjectStore {
+    /**
+     * - A list of the UUIDs of the certificates of an Object store.
+     */
+    certificateExtIds: string[];
+    /**
+     * - UUID of the AHV or ESXi cluster.
+     */
+    clusterExtId: string;
+    /**
+     * - The time when the Object store was created.
+     */
+    creationTime: string;
+    /**
+     * - The deployment version of the Object store.
+     */
+    deploymentVersion: string;
+    /**
+     * - A brief description of the Object store.
+     */
+    description: string;
+    /**
+     * - The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
+     */
+    domain: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - The time when the Object store was last updated.
+     */
+    lastUpdateTime: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetObjectStoresV2ObjectStoreLink[];
+    /**
+     * - Metadata associated with this resource.
+     */
+    metadatas: outputs.GetObjectStoresV2ObjectStoreMetadata[];
+    /**
+     * - The name of the Object store.
+     */
+    name: string;
+    /**
+     * - The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
+     */
+    numWorkerNodes: number;
+    /**
+     * - A list of static IP addresses used as public IPs to access the Object store.
+     */
+    publicNetworkIps: outputs.GetObjectStoresV2ObjectStorePublicNetworkIp[];
+    /**
+     * - Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
+     */
+    publicNetworkReference: string;
+    /**
+     * - The region in which the Object store is deployed.
+     */
+    region: string;
+    /**
+     * - Enum for the state of the Object store.
+     * | Enum                                   | Description                                                     |
+     * |----------------------------------------|-----------------------------------------------------------------|
+     * | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
+     * | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
+     * | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
+     * | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
+     * | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
+     * | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
+     * | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
+     * | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
+     * | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
+     * | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+     */
+    state: string;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    storageNetworkDnsIps: outputs.GetObjectStoresV2ObjectStoreStorageNetworkDnsIp[];
+    /**
+     * - Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
+     */
+    storageNetworkReference: string;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    storageNetworkVips: outputs.GetObjectStoresV2ObjectStoreStorageNetworkVip[];
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+    /**
+     * - Size of the Object store in GiB.
+     */
+    totalCapacityGib: number;
+}
+
+export interface GetObjectStoresV2ObjectStoreLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetObjectStoresV2ObjectStoreMetadata {
+    /**
+     * - A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds: string[];
+    /**
+     * - A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * - The userName of the owner of this resource.
+     */
+    ownerUserName: string;
+    /**
+     * - The name of the project this resource belongs to.
+     */
+    projectName: string;
+    /**
+     * - A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId: string;
+}
+
+export interface GetObjectStoresV2ObjectStorePublicNetworkIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.GetObjectStoresV2ObjectStorePublicNetworkIpIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.GetObjectStoresV2ObjectStorePublicNetworkIpIpv6;
+}
+
+export interface GetObjectStoresV2ObjectStorePublicNetworkIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoresV2ObjectStorePublicNetworkIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoresV2ObjectStoreStorageNetworkDnsIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6;
+}
+
+export interface GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoresV2ObjectStoreStorageNetworkVip {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6;
+}
+
+export interface GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
 export interface GetOperationV2AssociatedEndpointList {
     /**
      * Version of the API for the provided associated endpoint.
@@ -29233,6 +29652,112 @@ export interface GetUserIdentityProviderUserIdentityProviderReference {
     uuid: string;
 }
 
+export interface GetUserKeyV2KeyDetail {
+    apiKeyDetails: outputs.GetUserKeyV2KeyDetailApiKeyDetail[];
+    objectKeyDetails: outputs.GetUserKeyV2KeyDetailObjectKeyDetail[];
+}
+
+export interface GetUserKeyV2KeyDetailApiKeyDetail {
+    apiKey: string;
+}
+
+export interface GetUserKeyV2KeyDetailObjectKeyDetail {
+    accessKey: string;
+    secretKey: string;
+}
+
+export interface GetUserKeyV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetUserKeysV2Key {
+    /**
+     * - External client to whom the given key is allocated.
+     */
+    assignedTo: string;
+    /**
+     * - User or service who created the key.
+     */
+    createdBy: string;
+    /**
+     * - The creation time of the key.
+     */
+    createdTime: string;
+    /**
+     * - The creation mechanism of this entity.
+     */
+    creationType: string;
+    /**
+     * - Brief description of the key.
+     */
+    description?: string;
+    /**
+     * - The time when the key will expire.
+     */
+    expiryTime: string;
+    /**
+     * The External Identifier of the User Group.
+     */
+    extId: string;
+    /**
+     * - Details specific to type of the key.
+     */
+    keyDetails: outputs.GetUserKeysV2KeyKeyDetail[];
+    /**
+     * - The type of key.
+     */
+    keyType: string;
+    /**
+     * - User who updated the key.
+     */
+    lastUpdatedBy: string;
+    /**
+     * - The time when the key was updated.
+     */
+    lastUpdatedTime: string;
+    /**
+     * - The time when the key was last used.
+     */
+    lastUsedTime: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetUserKeysV2KeyLink[];
+    /**
+     * - Identifier for the key in the form of a name.
+     */
+    name: string;
+    /**
+     * - The status of the key.
+     */
+    status: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+    userExtId: string;
+}
+
+export interface GetUserKeysV2KeyKeyDetail {
+    apiKeyDetails: outputs.GetUserKeysV2KeyKeyDetailApiKeyDetail[];
+    objectKeyDetails: outputs.GetUserKeysV2KeyKeyDetailObjectKeyDetail[];
+}
+
+export interface GetUserKeysV2KeyKeyDetailApiKeyDetail {
+    apiKey: string;
+}
+
+export interface GetUserKeysV2KeyKeyDetailObjectKeyDetail {
+    accessKey: string;
+    secretKey: string;
+}
+
+export interface GetUserKeysV2KeyLink {
+    href: string;
+    rel: string;
+}
+
 export interface GetUserProjectReferenceList {
     /**
      * - The kind name. (Default depends on the resource you are referencing)
@@ -29486,6 +30011,10 @@ export interface GetUsersV2User {
      * - Creation time for the Bucket Access Key.
      */
     createdTime: string;
+    /**
+     * - Description of the user.
+     */
+    description: string;
     /**
      * - Display name for the User.
      */
@@ -37922,6 +38451,171 @@ export interface NgtUpgradeV2RebootPreferenceSchedule {
     startTime: string;
 }
 
+export interface ObjectStoreCertificateV2AlternateFqdn {
+    value: string;
+}
+
+export interface ObjectStoreCertificateV2AlternateIp {
+    ipv4: outputs.ObjectStoreCertificateV2AlternateIpIpv4;
+    ipv6: outputs.ObjectStoreCertificateV2AlternateIpIpv6;
+}
+
+export interface ObjectStoreCertificateV2AlternateIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ObjectStoreCertificateV2AlternateIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ObjectStoreCertificateV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface ObjectStoreCertificateV2Metadata {
+    categoryIds: string[];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface ObjectStoreV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface ObjectStoreV2Metadata {
+    /**
+     * -(Optional) A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds: string[];
+    /**
+     * -(Optional) A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * -(Optional) The userName of the owner of this resource.
+     */
+    ownerUserName: string;
+    /**
+     * -(Optional) The name of the project this resource belongs to.
+     */
+    projectName: string;
+    /**
+     * -(Optional) A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId: string;
+}
+
+export interface ObjectStoreV2PublicNetworkIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.ObjectStoreV2PublicNetworkIpIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.ObjectStoreV2PublicNetworkIpIpv6;
+}
+
+export interface ObjectStoreV2PublicNetworkIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ObjectStoreV2PublicNetworkIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ObjectStoreV2StorageNetworkDnsIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.ObjectStoreV2StorageNetworkDnsIpIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.ObjectStoreV2StorageNetworkDnsIpIpv6;
+}
+
+export interface ObjectStoreV2StorageNetworkDnsIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ObjectStoreV2StorageNetworkDnsIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ObjectStoreV2StorageNetworkVip {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4: outputs.ObjectStoreV2StorageNetworkVipIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6: outputs.ObjectStoreV2StorageNetworkVipIpv6;
+}
+
+export interface ObjectStoreV2StorageNetworkVipIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ObjectStoreV2StorageNetworkVipIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
 export interface PbrDestination {
     addressType?: string;
     prefixLength?: number;
@@ -43924,6 +44618,29 @@ export interface UserIdentityProviderUserIdentityProviderReference {
      * - the UUID(Required).
      */
     uuid: string;
+}
+
+export interface UserKeyRevokeV2ArgumentsMap {
+    propertyName: string;
+}
+
+export interface UserKeyV2KeyDetail {
+    apiKeyDetails: outputs.UserKeyV2KeyDetailApiKeyDetail[];
+    objectKeyDetails: outputs.UserKeyV2KeyDetailObjectKeyDetail[];
+}
+
+export interface UserKeyV2KeyDetailApiKeyDetail {
+    apiKey: string;
+}
+
+export interface UserKeyV2KeyDetailObjectKeyDetail {
+    accessKey: string;
+    secretKey: string;
+}
+
+export interface UserKeyV2Link {
+    href: string;
+    rel: string;
 }
 
 export interface UserProjectReferenceList {

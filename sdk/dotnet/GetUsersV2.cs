@@ -32,6 +32,11 @@ namespace PiersKarsenbarg.Nutanix
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
+        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
+        ///     {
+        ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
+        ///     });
+        /// 
         /// });
         /// ```
         /// 
@@ -111,6 +116,11 @@ namespace PiersKarsenbarg.Nutanix
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
+        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
+        ///     {
+        ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
+        ///     });
+        /// 
         /// });
         /// ```
         /// 
@@ -188,6 +198,11 @@ namespace PiersKarsenbarg.Nutanix
         ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "username eq 'username-example'",
+        ///     });
+        /// 
+        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
+        ///     {
+        ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
         ///     });
         /// 
         /// });

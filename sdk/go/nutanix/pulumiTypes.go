@@ -8390,8 +8390,6 @@ type ClusterV2NetworkExternalAddressIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -8410,8 +8408,6 @@ type ClusterV2NetworkExternalAddressIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -8472,8 +8468,6 @@ func (o ClusterV2NetworkExternalAddressIpv6Output) PrefixLength() pulumi.IntPtrO
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkExternalAddressIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkExternalAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -8718,8 +8712,6 @@ type ClusterV2NetworkExternalDataServicesIpIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -8738,8 +8730,6 @@ type ClusterV2NetworkExternalDataServicesIpIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -8800,8 +8790,6 @@ func (o ClusterV2NetworkExternalDataServicesIpIpv6Output) PrefixLength() pulumi.
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkExternalDataServicesIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkExternalDataServicesIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9185,8 +9173,6 @@ type ClusterV2NetworkHttpProxyListIpAddressIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -9205,8 +9191,6 @@ type ClusterV2NetworkHttpProxyListIpAddressIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9267,8 +9251,6 @@ func (o ClusterV2NetworkHttpProxyListIpAddressIpv6Output) PrefixLength() pulumi.
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkHttpProxyListIpAddressIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkHttpProxyListIpAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9766,8 +9748,6 @@ type ClusterV2NetworkManagementServerIpIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -9786,8 +9766,6 @@ type ClusterV2NetworkManagementServerIpIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9848,8 +9826,6 @@ func (o ClusterV2NetworkManagementServerIpIpv6Output) PrefixLength() pulumi.IntP
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkManagementServerIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkManagementServerIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -10090,8 +10066,6 @@ type ClusterV2NetworkMasqueradingIpIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -10110,8 +10084,6 @@ type ClusterV2NetworkMasqueradingIpIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10172,8 +10144,6 @@ func (o ClusterV2NetworkMasqueradingIpIpv6Output) PrefixLength() pulumi.IntPtrOu
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkMasqueradingIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkMasqueradingIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -10517,8 +10487,6 @@ type ClusterV2NetworkNameServerIpListIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -10537,8 +10505,6 @@ type ClusterV2NetworkNameServerIpListIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10599,8 +10565,6 @@ func (o ClusterV2NetworkNameServerIpListIpv6Output) PrefixLength() pulumi.IntPtr
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkNameServerIpListIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkNameServerIpListIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -10944,8 +10908,6 @@ type ClusterV2NetworkNtpServerIpListIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -10964,8 +10926,6 @@ type ClusterV2NetworkNtpServerIpListIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -11026,8 +10986,6 @@ func (o ClusterV2NetworkNtpServerIpListIpv6Output) PrefixLength() pulumi.IntPtrO
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkNtpServerIpListIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkNtpServerIpListIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -11630,8 +11588,6 @@ type ClusterV2NetworkSmtpServerServerIpAddressIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -11650,8 +11606,6 @@ type ClusterV2NetworkSmtpServerServerIpAddressIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -11712,8 +11666,6 @@ func (o ClusterV2NetworkSmtpServerServerIpAddressIpv6Output) PrefixLength() pulu
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkSmtpServerServerIpAddressIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkSmtpServerServerIpAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -12169,8 +12121,6 @@ type ClusterV2NodeNodeListControllerVmIpIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -12189,8 +12139,6 @@ type ClusterV2NodeNodeListControllerVmIpIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -12251,8 +12199,6 @@ func (o ClusterV2NodeNodeListControllerVmIpIpv6Output) PrefixLength() pulumi.Int
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NodeNodeListControllerVmIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NodeNodeListControllerVmIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -12493,8 +12439,6 @@ type ClusterV2NodeNodeListHostIpIpv6 struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -12513,8 +12457,6 @@ type ClusterV2NodeNodeListHostIpIpv6Args struct {
 	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
-	//
-	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -12575,8 +12517,6 @@ func (o ClusterV2NodeNodeListHostIpIpv6Output) PrefixLength() pulumi.IntPtrOutpu
 }
 
 // - (Required) Ip address.
-//
-// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NodeNodeListHostIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NodeNodeListHostIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }

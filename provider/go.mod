@@ -6,13 +6,13 @@ toolchain go1.24.3
 
 replace (
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20250530111747-935112552988
-	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250630105412-87ed6118a50a
+	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250821135208-4117db4b142a
 )
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.113.0
 	github.com/pulumi/pulumi/sdk/v3 v3.190.0
-	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20250630105412-87ed6118a50a
+	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20250821135208-4117db4b142a
 )
 
 require (
@@ -127,16 +127,17 @@ require (
 	github.com/muesli/reflow v0.3.0 // indirect
 	github.com/muesli/termenv v0.15.2 // indirect
 	github.com/natefinch/atomic v1.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/clustermgmt-go-client/v4 v4.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/datapolicies-go-client/v4 v4.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/dataprotection-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/clustermgmt-go-client/v4 v4.1.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/datapolicies-go-client/v4 v4.1.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/dataprotection-go-client/v4 v4.1.1 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/iam-go-client/v4 v4.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/lifecycle-go-client/v4 v4.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/microseg-go-client/v4 v4.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/networking-go-client/v4 v4.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/prism-go-client/v4 v4.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/vmm-go-client/v4 v4.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/volumes-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/lifecycle-go-client/v4 v4.1.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/microseg-go-client/v4 v4.1.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/networking-go-client/v4 v4.1.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/objects-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/prism-go-client/v4 v4.1.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/vmm-go-client/v4 v4.1.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/volumes-go-client/v4 v4.1.1 // indirect
 	github.com/oklog/run v1.1.0 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/opentracing/basictracer-go v1.1.0 // indirect

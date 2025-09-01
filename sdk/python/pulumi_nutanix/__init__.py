@@ -40,6 +40,8 @@ from .get_blueprint_runtime_editables import *
 from .get_categories_v2 import *
 from .get_category_key import *
 from .get_category_v2 import *
+from .get_certificate_v2 import *
+from .get_certificates_v2 import *
 from .get_cluster import *
 from .get_cluster_v2 import *
 from .get_clusters import *
@@ -107,6 +109,8 @@ from .get_network_security_policies_v2 import *
 from .get_network_security_policy_v2 import *
 from .get_network_security_rule import *
 from .get_ngt_configuration_v2 import *
+from .get_object_store_v2 import *
+from .get_object_stores_v2 import *
 from .get_operation_v2 import *
 from .get_operations_v2 import *
 from .get_pbr import *
@@ -166,6 +170,8 @@ from .get_user_group import *
 from .get_user_group_v2 import *
 from .get_user_groups import *
 from .get_user_groups_v2 import *
+from .get_user_key_v2 import *
+from .get_user_keys_v2 import *
 from .get_user_v2 import *
 from .get_users import *
 from .get_users_v2 import *
@@ -221,6 +227,8 @@ from .network_security_rule import *
 from .ngt_insert_iso_v2 import *
 from .ngt_installation_v2 import *
 from .ngt_upgrade_v2 import *
+from .object_store_certificate_v2 import *
+from .object_store_v2 import *
 from .pbr import *
 from .pbr_v2 import *
 from .pc_backup_target_v2 import *
@@ -259,6 +267,8 @@ from .template_v2 import *
 from .user import *
 from .user_groups import *
 from .user_groups_v2 import *
+from .user_key_revoke_v2 import *
+from .user_key_v2 import *
 from .users_v2 import *
 from .virtual_machine import *
 from .virtual_machine_v2 import *
@@ -762,6 +772,22 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/objectStoreCertificateV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/objectStoreCertificateV2:ObjectStoreCertificateV2": "ObjectStoreCertificateV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/objectStoreV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/objectStoreV2:ObjectStoreV2": "ObjectStoreV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/pbr",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -1054,6 +1080,22 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/userGroupsV2:UserGroupsV2": "UserGroupsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/userKeyRevokeV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/userKeyRevokeV2:UserKeyRevokeV2": "UserKeyRevokeV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/userKeyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/userKeyV2:UserKeyV2": "UserKeyV2"
   }
  },
  {

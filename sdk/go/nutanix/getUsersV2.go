@@ -37,6 +37,12 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.LookupUsersV2(ctx, &nutanix.LookupUsersV2Args{
+//				Filter: pulumi.StringRef("userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}

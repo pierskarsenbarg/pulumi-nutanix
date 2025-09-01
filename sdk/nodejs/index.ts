@@ -175,6 +175,16 @@ export const getCategoryV2: typeof import("./getCategoryV2").getCategoryV2 = nul
 export const getCategoryV2Output: typeof import("./getCategoryV2").getCategoryV2Output = null as any;
 utilities.lazyLoad(exports, ["getCategoryV2","getCategoryV2Output"], () => require("./getCategoryV2"));
 
+export { GetCertificateV2Args, GetCertificateV2Result, GetCertificateV2OutputArgs } from "./getCertificateV2";
+export const getCertificateV2: typeof import("./getCertificateV2").getCertificateV2 = null as any;
+export const getCertificateV2Output: typeof import("./getCertificateV2").getCertificateV2Output = null as any;
+utilities.lazyLoad(exports, ["getCertificateV2","getCertificateV2Output"], () => require("./getCertificateV2"));
+
+export { GetCertificatesV2Args, GetCertificatesV2Result, GetCertificatesV2OutputArgs } from "./getCertificatesV2";
+export const getCertificatesV2: typeof import("./getCertificatesV2").getCertificatesV2 = null as any;
+export const getCertificatesV2Output: typeof import("./getCertificatesV2").getCertificatesV2Output = null as any;
+utilities.lazyLoad(exports, ["getCertificatesV2","getCertificatesV2Output"], () => require("./getCertificatesV2"));
+
 export { GetClusterArgs, GetClusterResult, GetClusterOutputArgs } from "./getCluster";
 export const getCluster: typeof import("./getCluster").getCluster = null as any;
 export const getClusterOutput: typeof import("./getCluster").getClusterOutput = null as any;
@@ -510,6 +520,16 @@ export const getNgtConfigurationV2: typeof import("./getNgtConfigurationV2").get
 export const getNgtConfigurationV2Output: typeof import("./getNgtConfigurationV2").getNgtConfigurationV2Output = null as any;
 utilities.lazyLoad(exports, ["getNgtConfigurationV2","getNgtConfigurationV2Output"], () => require("./getNgtConfigurationV2"));
 
+export { GetObjectStoreV2Args, GetObjectStoreV2Result, GetObjectStoreV2OutputArgs } from "./getObjectStoreV2";
+export const getObjectStoreV2: typeof import("./getObjectStoreV2").getObjectStoreV2 = null as any;
+export const getObjectStoreV2Output: typeof import("./getObjectStoreV2").getObjectStoreV2Output = null as any;
+utilities.lazyLoad(exports, ["getObjectStoreV2","getObjectStoreV2Output"], () => require("./getObjectStoreV2"));
+
+export { GetObjectStoresV2Args, GetObjectStoresV2Result, GetObjectStoresV2OutputArgs } from "./getObjectStoresV2";
+export const getObjectStoresV2: typeof import("./getObjectStoresV2").getObjectStoresV2 = null as any;
+export const getObjectStoresV2Output: typeof import("./getObjectStoresV2").getObjectStoresV2Output = null as any;
+utilities.lazyLoad(exports, ["getObjectStoresV2","getObjectStoresV2Output"], () => require("./getObjectStoresV2"));
+
 export { GetOperationV2Args, GetOperationV2Result, GetOperationV2OutputArgs } from "./getOperationV2";
 export const getOperationV2: typeof import("./getOperationV2").getOperationV2 = null as any;
 export const getOperationV2Output: typeof import("./getOperationV2").getOperationV2Output = null as any;
@@ -805,6 +825,16 @@ export const getUserGroupsV2: typeof import("./getUserGroupsV2").getUserGroupsV2
 export const getUserGroupsV2Output: typeof import("./getUserGroupsV2").getUserGroupsV2Output = null as any;
 utilities.lazyLoad(exports, ["getUserGroupsV2","getUserGroupsV2Output"], () => require("./getUserGroupsV2"));
 
+export { GetUserKeyV2Args, GetUserKeyV2Result, GetUserKeyV2OutputArgs } from "./getUserKeyV2";
+export const getUserKeyV2: typeof import("./getUserKeyV2").getUserKeyV2 = null as any;
+export const getUserKeyV2Output: typeof import("./getUserKeyV2").getUserKeyV2Output = null as any;
+utilities.lazyLoad(exports, ["getUserKeyV2","getUserKeyV2Output"], () => require("./getUserKeyV2"));
+
+export { GetUserKeysV2Args, GetUserKeysV2Result, GetUserKeysV2OutputArgs } from "./getUserKeysV2";
+export const getUserKeysV2: typeof import("./getUserKeysV2").getUserKeysV2 = null as any;
+export const getUserKeysV2Output: typeof import("./getUserKeysV2").getUserKeysV2Output = null as any;
+utilities.lazyLoad(exports, ["getUserKeysV2","getUserKeysV2Output"], () => require("./getUserKeysV2"));
+
 export { GetUserV2Args, GetUserV2Result, GetUserV2OutputArgs } from "./getUserV2";
 export const getUserV2: typeof import("./getUserV2").getUserV2 = null as any;
 export const getUserV2Output: typeof import("./getUserV2").getUserV2Output = null as any;
@@ -1080,6 +1110,16 @@ export type NgtUpgradeV2 = import("./ngtUpgradeV2").NgtUpgradeV2;
 export const NgtUpgradeV2: typeof import("./ngtUpgradeV2").NgtUpgradeV2 = null as any;
 utilities.lazyLoad(exports, ["NgtUpgradeV2"], () => require("./ngtUpgradeV2"));
 
+export { ObjectStoreCertificateV2Args, ObjectStoreCertificateV2State } from "./objectStoreCertificateV2";
+export type ObjectStoreCertificateV2 = import("./objectStoreCertificateV2").ObjectStoreCertificateV2;
+export const ObjectStoreCertificateV2: typeof import("./objectStoreCertificateV2").ObjectStoreCertificateV2 = null as any;
+utilities.lazyLoad(exports, ["ObjectStoreCertificateV2"], () => require("./objectStoreCertificateV2"));
+
+export { ObjectStoreV2Args, ObjectStoreV2State } from "./objectStoreV2";
+export type ObjectStoreV2 = import("./objectStoreV2").ObjectStoreV2;
+export const ObjectStoreV2: typeof import("./objectStoreV2").ObjectStoreV2 = null as any;
+utilities.lazyLoad(exports, ["ObjectStoreV2"], () => require("./objectStoreV2"));
+
 export { PbrArgs, PbrState } from "./pbr";
 export type Pbr = import("./pbr").Pbr;
 export const Pbr: typeof import("./pbr").Pbr = null as any;
@@ -1267,6 +1307,16 @@ export { UserGroupsV2Args, UserGroupsV2State } from "./userGroupsV2";
 export type UserGroupsV2 = import("./userGroupsV2").UserGroupsV2;
 export const UserGroupsV2: typeof import("./userGroupsV2").UserGroupsV2 = null as any;
 utilities.lazyLoad(exports, ["UserGroupsV2"], () => require("./userGroupsV2"));
+
+export { UserKeyRevokeV2Args, UserKeyRevokeV2State } from "./userKeyRevokeV2";
+export type UserKeyRevokeV2 = import("./userKeyRevokeV2").UserKeyRevokeV2;
+export const UserKeyRevokeV2: typeof import("./userKeyRevokeV2").UserKeyRevokeV2 = null as any;
+utilities.lazyLoad(exports, ["UserKeyRevokeV2"], () => require("./userKeyRevokeV2"));
+
+export { UserKeyV2Args, UserKeyV2State } from "./userKeyV2";
+export type UserKeyV2 = import("./userKeyV2").UserKeyV2;
+export const UserKeyV2: typeof import("./userKeyV2").UserKeyV2 = null as any;
+utilities.lazyLoad(exports, ["UserKeyV2"], () => require("./userKeyV2"));
 
 export { UsersV2Args, UsersV2State } from "./usersV2";
 export type UsersV2 = import("./usersV2").UsersV2;
@@ -1480,6 +1530,10 @@ const _module = {
                 return new NgtInstallationV2(name, <any>undefined, { urn })
             case "nutanix:index/ngtUpgradeV2:NgtUpgradeV2":
                 return new NgtUpgradeV2(name, <any>undefined, { urn })
+            case "nutanix:index/objectStoreCertificateV2:ObjectStoreCertificateV2":
+                return new ObjectStoreCertificateV2(name, <any>undefined, { urn })
+            case "nutanix:index/objectStoreV2:ObjectStoreV2":
+                return new ObjectStoreV2(name, <any>undefined, { urn })
             case "nutanix:index/pbr:Pbr":
                 return new Pbr(name, <any>undefined, { urn })
             case "nutanix:index/pbrV2:PbrV2":
@@ -1554,6 +1608,10 @@ const _module = {
                 return new UserGroups(name, <any>undefined, { urn })
             case "nutanix:index/userGroupsV2:UserGroupsV2":
                 return new UserGroupsV2(name, <any>undefined, { urn })
+            case "nutanix:index/userKeyRevokeV2:UserKeyRevokeV2":
+                return new UserKeyRevokeV2(name, <any>undefined, { urn })
+            case "nutanix:index/userKeyV2:UserKeyV2":
+                return new UserKeyV2(name, <any>undefined, { urn })
             case "nutanix:index/usersV2:UsersV2":
                 return new UsersV2(name, <any>undefined, { urn })
             case "nutanix:index/virtualMachine:VirtualMachine":
@@ -1650,6 +1708,8 @@ pulumi.runtime.registerResourceModule("nutanix", "index/networkSecurityRule", _m
 pulumi.runtime.registerResourceModule("nutanix", "index/ngtInsertIsoV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/ngtInstallationV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/ngtUpgradeV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/objectStoreCertificateV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/objectStoreV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/pbr", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/pbrV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/pcBackupTargetV2", _module)
@@ -1687,6 +1747,8 @@ pulumi.runtime.registerResourceModule("nutanix", "index/templateV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/user", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/userGroups", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/userGroupsV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/userKeyRevokeV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/userKeyV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/usersV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/virtualMachine", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/virtualMachineV2", _module)

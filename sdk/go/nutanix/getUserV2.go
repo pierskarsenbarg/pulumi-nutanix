@@ -70,6 +70,8 @@ type GetUserV2Result struct {
 	CreatedBy string `pulumi:"createdBy"`
 	// - Creation time for the Bucket Access Key.
 	CreatedTime string `pulumi:"createdTime"`
+	// - Description of the user.
+	Description string `pulumi:"description"`
 	// - Display name for the User.
 	DisplayName string `pulumi:"displayName"`
 	// - Email Id for the User.
@@ -160,6 +162,11 @@ func (o GetUserV2ResultOutput) CreatedBy() pulumi.StringOutput {
 // - Creation time for the Bucket Access Key.
 func (o GetUserV2ResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserV2Result) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// - Description of the user.
+func (o GetUserV2ResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserV2Result) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // - Display name for the User.

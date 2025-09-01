@@ -50,6 +50,7 @@ func LookupPbrV2(ctx *pulumi.Context, args *LookupPbrV2Args, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getPbrV2.
 type LookupPbrV2Args struct {
+	// pbr UUID
 	ExtId string `pulumi:"extId"`
 }
 
@@ -89,6 +90,7 @@ func LookupPbrV2Output(ctx *pulumi.Context, args LookupPbrV2OutputArgs, opts ...
 
 // A collection of arguments for invoking getPbrV2.
 type LookupPbrV2OutputArgs struct {
+	// pbr UUID
 	ExtId pulumi.StringInput `pulumi:"extId"`
 }
 

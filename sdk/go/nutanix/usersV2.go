@@ -42,6 +42,8 @@ type UsersV2 struct {
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// - Creation time for the Bucket Access Key.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
+	// - Description of the user.
+	Description pulumi.StringOutput `pulumi:"description"`
 	// - Display name for the User.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// - Email Id for the User.
@@ -121,6 +123,8 @@ type usersV2State struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// - Creation time for the Bucket Access Key.
 	CreatedTime *string `pulumi:"createdTime"`
+	// - Description of the user.
+	Description *string `pulumi:"description"`
 	// - Display name for the User.
 	DisplayName *string `pulumi:"displayName"`
 	// - Email Id for the User.
@@ -165,6 +169,8 @@ type UsersV2State struct {
 	CreatedBy pulumi.StringPtrInput
 	// - Creation time for the Bucket Access Key.
 	CreatedTime pulumi.StringPtrInput
+	// - Description of the user.
+	Description pulumi.StringPtrInput
 	// - Display name for the User.
 	DisplayName pulumi.StringPtrInput
 	// - Email Id for the User.
@@ -207,6 +213,8 @@ func (UsersV2State) ElementType() reflect.Type {
 type usersV2Args struct {
 	// -  Any additional attribute for the User.
 	AdditionalAttributes []UsersV2AdditionalAttribute `pulumi:"additionalAttributes"`
+	// - Description of the user.
+	Description *string `pulumi:"description"`
 	// - Display name for the User.
 	DisplayName *string `pulumi:"displayName"`
 	// - Email Id for the User.
@@ -238,6 +246,8 @@ type usersV2Args struct {
 type UsersV2Args struct {
 	// -  Any additional attribute for the User.
 	AdditionalAttributes UsersV2AdditionalAttributeArrayInput
+	// - Description of the user.
+	Description pulumi.StringPtrInput
 	// - Display name for the User.
 	DisplayName pulumi.StringPtrInput
 	// - Email Id for the User.
@@ -370,6 +380,11 @@ func (o UsersV2Output) CreatedBy() pulumi.StringOutput {
 // - Creation time for the Bucket Access Key.
 func (o UsersV2Output) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// - Description of the user.
+func (o UsersV2Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // - Display name for the User.

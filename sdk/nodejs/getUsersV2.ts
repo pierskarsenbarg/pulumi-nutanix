@@ -19,6 +19,9 @@ import * as utilities from "./utilities";
  * const filtered_users = nutanix.getUsersV2({
  *     filter: "username eq 'username-example'",
  * });
+ * const listServiceAccount = nutanix.getUsersV2({
+ *     filter: "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
+ * });
  * ```
  *
  * ## Argument Reference
@@ -127,6 +130,9 @@ export interface GetUsersV2Result {
  * const list_users = nutanix.getUsersV2({});
  * const filtered_users = nutanix.getUsersV2({
  *     filter: "username eq 'username-example'",
+ * });
+ * const listServiceAccount = nutanix.getUsersV2({
+ *     filter: "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
  * });
  * ```
  *

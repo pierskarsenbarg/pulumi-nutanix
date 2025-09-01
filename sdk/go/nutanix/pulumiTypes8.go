@@ -13,6 +13,7248 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetVolumeIscsiClientsV2IscsiClientAttachedTarget struct {
+	// Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+	IscsiTargetName string `pulumi:"iscsiTargetName"`
+	// Number of virtual targets generated for the iSCSI target. This field is immutable.
+	NumVirtualTargets int `pulumi:"numVirtualTargets"`
+}
+
+// GetVolumeIscsiClientsV2IscsiClientAttachedTargetInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientAttachedTargetArgs and GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientAttachedTargetInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientAttachedTargetArgs{...}
+type GetVolumeIscsiClientsV2IscsiClientAttachedTargetInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput() GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput
+	ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientAttachedTargetArgs struct {
+	// Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+	IscsiTargetName pulumi.StringInput `pulumi:"iscsiTargetName"`
+	// Number of virtual targets generated for the iSCSI target. This field is immutable.
+	NumVirtualTargets pulumi.IntInput `pulumi:"numVirtualTargets"`
+}
+
+func (GetVolumeIscsiClientsV2IscsiClientAttachedTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientAttachedTarget)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientAttachedTargetArgs) ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput() GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientAttachedTargetArgs) ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput)
+}
+
+// GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientAttachedTargetArray and GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientAttachedTargetArray{ GetVolumeIscsiClientsV2IscsiClientAttachedTargetArgs{...} }
+type GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput() GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput
+	ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientAttachedTargetArray []GetVolumeIscsiClientsV2IscsiClientAttachedTargetInput
+
+func (GetVolumeIscsiClientsV2IscsiClientAttachedTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientAttachedTarget)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientAttachedTargetArray) ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput() GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientAttachedTargetArray) ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientAttachedTarget)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput) ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput() GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput) ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput {
+	return o
+}
+
+// Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+func (o GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput) IscsiTargetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientAttachedTarget) string { return v.IscsiTargetName }).(pulumi.StringOutput)
+}
+
+// Number of virtual targets generated for the iSCSI target. This field is immutable.
+func (o GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput) NumVirtualTargets() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientAttachedTarget) int { return v.NumVirtualTargets }).(pulumi.IntOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientAttachedTarget)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput() GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput) Index(i pulumi.IntInput) GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeIscsiClientsV2IscsiClientAttachedTarget {
+		return vs[0].([]GetVolumeIscsiClientsV2IscsiClientAttachedTarget)[vs[1].(int)]
+	}).(GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId struct {
+	// A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+	Fqdns []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn `pulumi:"fqdns"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4 `pulumi:"ipv4s"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArgs and GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArgs{...}
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArgs struct {
+	// A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+	Fqdns GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayInput `pulumi:"fqdns"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayInput `pulumi:"ipv4s"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArgs) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArgs) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput)
+}
+
+// GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArray and GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArray{ GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArgs{...} }
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArray []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdInput
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArray) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArray) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput {
+	return o
+}
+
+// A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput) Fqdns() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId) []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn {
+		return v.Fqdns
+	}).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput) Ipv4s() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId) []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4 {
+		return v.Ipv4s
+	}).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput) Ipv6s() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId) []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6 {
+		return v.Ipv6s
+	}).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput) Index(i pulumi.IntInput) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId {
+		return vs[0].([]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId)[vs[1].(int)]
+	}).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn struct {
+	// The fully qualified domain name.
+	Value string `pulumi:"value"`
+}
+
+// GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArgs and GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArgs{...}
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArgs struct {
+	// The fully qualified domain name.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArgs) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArgs) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput)
+}
+
+// GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArray and GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArray{ GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArgs{...} }
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArray []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnInput
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArray) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArray) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput {
+	return o
+}
+
+// The fully qualified domain name.
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput) Index(i pulumi.IntInput) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn {
+		return vs[0].([]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn)[vs[1].(int)]
+	}).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4 struct {
+	// The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength int `pulumi:"prefixLength"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Value string `pulumi:"value"`
+}
+
+// GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Input is an input type that accepts GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Args and GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Input` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Args{...}
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Input interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4OutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Args struct {
+	// The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Args) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Args) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4OutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output)
+}
+
+// GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Array and GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Array{ GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Args{...} }
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Array []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Input
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Array) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Array) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4OutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output {
+	return o
+}
+
+// The prefix length of the network to which this host IPv4 address belongs.
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput) Index(i pulumi.IntInput) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4 {
+		return vs[0].([]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4)[vs[1].(int)]
+	}).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6 struct {
+	// The prefix length of the network to which this host IPv6 address belongs.
+	PrefixLength int `pulumi:"prefixLength"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Value string `pulumi:"value"`
+}
+
+// GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Input is an input type that accepts GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Args and GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Input` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Args{...}
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Input interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6OutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Args struct {
+	// The prefix length of the network to which this host IPv6 address belongs.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Args) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Args) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6OutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output)
+}
+
+// GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Array and GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Array{ GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Args{...} }
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput
+	ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Array []GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Input
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Array) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Array) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6OutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output {
+	return o
+}
+
+// The prefix length of the network to which this host IPv6 address belongs.
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput() GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput) Index(i pulumi.IntInput) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6 {
+		return vs[0].([]GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6)[vs[1].(int)]
+	}).(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientLink struct {
+	// The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetVolumeIscsiClientsV2IscsiClientLinkInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientLinkArgs and GetVolumeIscsiClientsV2IscsiClientLinkOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientLinkInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientLinkArgs{...}
+type GetVolumeIscsiClientsV2IscsiClientLinkInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientLinkOutput() GetVolumeIscsiClientsV2IscsiClientLinkOutput
+	ToGetVolumeIscsiClientsV2IscsiClientLinkOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientLinkOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientLinkArgs struct {
+	// The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetVolumeIscsiClientsV2IscsiClientLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientLink)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientLinkArgs) ToGetVolumeIscsiClientsV2IscsiClientLinkOutput() GetVolumeIscsiClientsV2IscsiClientLinkOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientLinkOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientLinkArgs) ToGetVolumeIscsiClientsV2IscsiClientLinkOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientLinkOutput)
+}
+
+// GetVolumeIscsiClientsV2IscsiClientLinkArrayInput is an input type that accepts GetVolumeIscsiClientsV2IscsiClientLinkArray and GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput values.
+// You can construct a concrete instance of `GetVolumeIscsiClientsV2IscsiClientLinkArrayInput` via:
+//
+//	GetVolumeIscsiClientsV2IscsiClientLinkArray{ GetVolumeIscsiClientsV2IscsiClientLinkArgs{...} }
+type GetVolumeIscsiClientsV2IscsiClientLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetVolumeIscsiClientsV2IscsiClientLinkArrayOutput() GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput
+	ToGetVolumeIscsiClientsV2IscsiClientLinkArrayOutputWithContext(context.Context) GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput
+}
+
+type GetVolumeIscsiClientsV2IscsiClientLinkArray []GetVolumeIscsiClientsV2IscsiClientLinkInput
+
+func (GetVolumeIscsiClientsV2IscsiClientLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientLink)(nil)).Elem()
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientLinkArray) ToGetVolumeIscsiClientsV2IscsiClientLinkArrayOutput() GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput {
+	return i.ToGetVolumeIscsiClientsV2IscsiClientLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVolumeIscsiClientsV2IscsiClientLinkArray) ToGetVolumeIscsiClientsV2IscsiClientLinkArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientLinkOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientLink)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientLinkOutput) ToGetVolumeIscsiClientsV2IscsiClientLinkOutput() GetVolumeIscsiClientsV2IscsiClientLinkOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientLinkOutput) ToGetVolumeIscsiClientsV2IscsiClientLinkOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientLinkOutput {
+	return o
+}
+
+// The URL at which the entity described by the link can be accessed.
+func (o GetVolumeIscsiClientsV2IscsiClientLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetVolumeIscsiClientsV2IscsiClientLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeIscsiClientsV2IscsiClientLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVolumeIscsiClientsV2IscsiClientLink)(nil)).Elem()
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientLinkArrayOutput() GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput) ToGetVolumeIscsiClientsV2IscsiClientLinkArrayOutputWithContext(ctx context.Context) GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput {
+	return o
+}
+
+func (o GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput) Index(i pulumi.IntInput) GetVolumeIscsiClientsV2IscsiClientLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeIscsiClientsV2IscsiClientLink {
+		return vs[0].([]GetVolumeIscsiClientsV2IscsiClientLink)[vs[1].(int)]
+	}).(GetVolumeIscsiClientsV2IscsiClientLinkOutput)
+}
+
+type GetVpcSpec struct {
+	// - the name.
+	Name string `pulumi:"name"`
+	// VPC resources status
+	Resources []GetVpcSpecResource `pulumi:"resources"`
+}
+
+// GetVpcSpecInput is an input type that accepts GetVpcSpecArgs and GetVpcSpecOutput values.
+// You can construct a concrete instance of `GetVpcSpecInput` via:
+//
+//	GetVpcSpecArgs{...}
+type GetVpcSpecInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecOutput() GetVpcSpecOutput
+	ToGetVpcSpecOutputWithContext(context.Context) GetVpcSpecOutput
+}
+
+type GetVpcSpecArgs struct {
+	// - the name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// VPC resources status
+	Resources GetVpcSpecResourceArrayInput `pulumi:"resources"`
+}
+
+func (GetVpcSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpec)(nil)).Elem()
+}
+
+func (i GetVpcSpecArgs) ToGetVpcSpecOutput() GetVpcSpecOutput {
+	return i.ToGetVpcSpecOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecArgs) ToGetVpcSpecOutputWithContext(ctx context.Context) GetVpcSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecOutput)
+}
+
+// GetVpcSpecArrayInput is an input type that accepts GetVpcSpecArray and GetVpcSpecArrayOutput values.
+// You can construct a concrete instance of `GetVpcSpecArrayInput` via:
+//
+//	GetVpcSpecArray{ GetVpcSpecArgs{...} }
+type GetVpcSpecArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecArrayOutput() GetVpcSpecArrayOutput
+	ToGetVpcSpecArrayOutputWithContext(context.Context) GetVpcSpecArrayOutput
+}
+
+type GetVpcSpecArray []GetVpcSpecInput
+
+func (GetVpcSpecArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpec)(nil)).Elem()
+}
+
+func (i GetVpcSpecArray) ToGetVpcSpecArrayOutput() GetVpcSpecArrayOutput {
+	return i.ToGetVpcSpecArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecArray) ToGetVpcSpecArrayOutputWithContext(ctx context.Context) GetVpcSpecArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecArrayOutput)
+}
+
+type GetVpcSpecOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpec)(nil)).Elem()
+}
+
+func (o GetVpcSpecOutput) ToGetVpcSpecOutput() GetVpcSpecOutput {
+	return o
+}
+
+func (o GetVpcSpecOutput) ToGetVpcSpecOutputWithContext(ctx context.Context) GetVpcSpecOutput {
+	return o
+}
+
+// - the name.
+func (o GetVpcSpecOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcSpec) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// VPC resources status
+func (o GetVpcSpecOutput) Resources() GetVpcSpecResourceArrayOutput {
+	return o.ApplyT(func(v GetVpcSpec) []GetVpcSpecResource { return v.Resources }).(GetVpcSpecResourceArrayOutput)
+}
+
+type GetVpcSpecArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpec)(nil)).Elem()
+}
+
+func (o GetVpcSpecArrayOutput) ToGetVpcSpecArrayOutput() GetVpcSpecArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecArrayOutput) ToGetVpcSpecArrayOutputWithContext(ctx context.Context) GetVpcSpecArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecArrayOutput) Index(i pulumi.IntInput) GetVpcSpecOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcSpec {
+		return vs[0].([]GetVpcSpec)[vs[1].(int)]
+	}).(GetVpcSpecOutput)
+}
+
+type GetVpcSpecResource struct {
+	// List of domain name server IPs.
+	CommonDomainNameServerIpLists []GetVpcSpecResourceCommonDomainNameServerIpList `pulumi:"commonDomainNameServerIpLists"`
+	// List of external subnets attached to this VPC.
+	ExternalSubnetLists []GetVpcSpecResourceExternalSubnetList `pulumi:"externalSubnetLists"`
+	// List of external routable ip and prefix .
+	ExternallyRoutablePrefixLists []GetVpcSpecResourceExternallyRoutablePrefixList `pulumi:"externallyRoutablePrefixLists"`
+}
+
+// GetVpcSpecResourceInput is an input type that accepts GetVpcSpecResourceArgs and GetVpcSpecResourceOutput values.
+// You can construct a concrete instance of `GetVpcSpecResourceInput` via:
+//
+//	GetVpcSpecResourceArgs{...}
+type GetVpcSpecResourceInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecResourceOutput() GetVpcSpecResourceOutput
+	ToGetVpcSpecResourceOutputWithContext(context.Context) GetVpcSpecResourceOutput
+}
+
+type GetVpcSpecResourceArgs struct {
+	// List of domain name server IPs.
+	CommonDomainNameServerIpLists GetVpcSpecResourceCommonDomainNameServerIpListArrayInput `pulumi:"commonDomainNameServerIpLists"`
+	// List of external subnets attached to this VPC.
+	ExternalSubnetLists GetVpcSpecResourceExternalSubnetListArrayInput `pulumi:"externalSubnetLists"`
+	// List of external routable ip and prefix .
+	ExternallyRoutablePrefixLists GetVpcSpecResourceExternallyRoutablePrefixListArrayInput `pulumi:"externallyRoutablePrefixLists"`
+}
+
+func (GetVpcSpecResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpecResource)(nil)).Elem()
+}
+
+func (i GetVpcSpecResourceArgs) ToGetVpcSpecResourceOutput() GetVpcSpecResourceOutput {
+	return i.ToGetVpcSpecResourceOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecResourceArgs) ToGetVpcSpecResourceOutputWithContext(ctx context.Context) GetVpcSpecResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecResourceOutput)
+}
+
+// GetVpcSpecResourceArrayInput is an input type that accepts GetVpcSpecResourceArray and GetVpcSpecResourceArrayOutput values.
+// You can construct a concrete instance of `GetVpcSpecResourceArrayInput` via:
+//
+//	GetVpcSpecResourceArray{ GetVpcSpecResourceArgs{...} }
+type GetVpcSpecResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecResourceArrayOutput() GetVpcSpecResourceArrayOutput
+	ToGetVpcSpecResourceArrayOutputWithContext(context.Context) GetVpcSpecResourceArrayOutput
+}
+
+type GetVpcSpecResourceArray []GetVpcSpecResourceInput
+
+func (GetVpcSpecResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpecResource)(nil)).Elem()
+}
+
+func (i GetVpcSpecResourceArray) ToGetVpcSpecResourceArrayOutput() GetVpcSpecResourceArrayOutput {
+	return i.ToGetVpcSpecResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecResourceArray) ToGetVpcSpecResourceArrayOutputWithContext(ctx context.Context) GetVpcSpecResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecResourceArrayOutput)
+}
+
+type GetVpcSpecResourceOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpecResource)(nil)).Elem()
+}
+
+func (o GetVpcSpecResourceOutput) ToGetVpcSpecResourceOutput() GetVpcSpecResourceOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceOutput) ToGetVpcSpecResourceOutputWithContext(ctx context.Context) GetVpcSpecResourceOutput {
+	return o
+}
+
+// List of domain name server IPs.
+func (o GetVpcSpecResourceOutput) CommonDomainNameServerIpLists() GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput {
+	return o.ApplyT(func(v GetVpcSpecResource) []GetVpcSpecResourceCommonDomainNameServerIpList {
+		return v.CommonDomainNameServerIpLists
+	}).(GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput)
+}
+
+// List of external subnets attached to this VPC.
+func (o GetVpcSpecResourceOutput) ExternalSubnetLists() GetVpcSpecResourceExternalSubnetListArrayOutput {
+	return o.ApplyT(func(v GetVpcSpecResource) []GetVpcSpecResourceExternalSubnetList { return v.ExternalSubnetLists }).(GetVpcSpecResourceExternalSubnetListArrayOutput)
+}
+
+// List of external routable ip and prefix .
+func (o GetVpcSpecResourceOutput) ExternallyRoutablePrefixLists() GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput {
+	return o.ApplyT(func(v GetVpcSpecResource) []GetVpcSpecResourceExternallyRoutablePrefixList {
+		return v.ExternallyRoutablePrefixLists
+	}).(GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput)
+}
+
+type GetVpcSpecResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpecResource)(nil)).Elem()
+}
+
+func (o GetVpcSpecResourceArrayOutput) ToGetVpcSpecResourceArrayOutput() GetVpcSpecResourceArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceArrayOutput) ToGetVpcSpecResourceArrayOutputWithContext(ctx context.Context) GetVpcSpecResourceArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceArrayOutput) Index(i pulumi.IntInput) GetVpcSpecResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcSpecResource {
+		return vs[0].([]GetVpcSpecResource)[vs[1].(int)]
+	}).(GetVpcSpecResourceOutput)
+}
+
+type GetVpcSpecResourceCommonDomainNameServerIpList struct {
+	// ip address of domain name server.
+	Ip string `pulumi:"ip"`
+}
+
+// GetVpcSpecResourceCommonDomainNameServerIpListInput is an input type that accepts GetVpcSpecResourceCommonDomainNameServerIpListArgs and GetVpcSpecResourceCommonDomainNameServerIpListOutput values.
+// You can construct a concrete instance of `GetVpcSpecResourceCommonDomainNameServerIpListInput` via:
+//
+//	GetVpcSpecResourceCommonDomainNameServerIpListArgs{...}
+type GetVpcSpecResourceCommonDomainNameServerIpListInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecResourceCommonDomainNameServerIpListOutput() GetVpcSpecResourceCommonDomainNameServerIpListOutput
+	ToGetVpcSpecResourceCommonDomainNameServerIpListOutputWithContext(context.Context) GetVpcSpecResourceCommonDomainNameServerIpListOutput
+}
+
+type GetVpcSpecResourceCommonDomainNameServerIpListArgs struct {
+	// ip address of domain name server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+}
+
+func (GetVpcSpecResourceCommonDomainNameServerIpListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpecResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (i GetVpcSpecResourceCommonDomainNameServerIpListArgs) ToGetVpcSpecResourceCommonDomainNameServerIpListOutput() GetVpcSpecResourceCommonDomainNameServerIpListOutput {
+	return i.ToGetVpcSpecResourceCommonDomainNameServerIpListOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecResourceCommonDomainNameServerIpListArgs) ToGetVpcSpecResourceCommonDomainNameServerIpListOutputWithContext(ctx context.Context) GetVpcSpecResourceCommonDomainNameServerIpListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecResourceCommonDomainNameServerIpListOutput)
+}
+
+// GetVpcSpecResourceCommonDomainNameServerIpListArrayInput is an input type that accepts GetVpcSpecResourceCommonDomainNameServerIpListArray and GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput values.
+// You can construct a concrete instance of `GetVpcSpecResourceCommonDomainNameServerIpListArrayInput` via:
+//
+//	GetVpcSpecResourceCommonDomainNameServerIpListArray{ GetVpcSpecResourceCommonDomainNameServerIpListArgs{...} }
+type GetVpcSpecResourceCommonDomainNameServerIpListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecResourceCommonDomainNameServerIpListArrayOutput() GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput
+	ToGetVpcSpecResourceCommonDomainNameServerIpListArrayOutputWithContext(context.Context) GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput
+}
+
+type GetVpcSpecResourceCommonDomainNameServerIpListArray []GetVpcSpecResourceCommonDomainNameServerIpListInput
+
+func (GetVpcSpecResourceCommonDomainNameServerIpListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpecResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (i GetVpcSpecResourceCommonDomainNameServerIpListArray) ToGetVpcSpecResourceCommonDomainNameServerIpListArrayOutput() GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput {
+	return i.ToGetVpcSpecResourceCommonDomainNameServerIpListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecResourceCommonDomainNameServerIpListArray) ToGetVpcSpecResourceCommonDomainNameServerIpListArrayOutputWithContext(ctx context.Context) GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput)
+}
+
+type GetVpcSpecResourceCommonDomainNameServerIpListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecResourceCommonDomainNameServerIpListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpecResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (o GetVpcSpecResourceCommonDomainNameServerIpListOutput) ToGetVpcSpecResourceCommonDomainNameServerIpListOutput() GetVpcSpecResourceCommonDomainNameServerIpListOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceCommonDomainNameServerIpListOutput) ToGetVpcSpecResourceCommonDomainNameServerIpListOutputWithContext(ctx context.Context) GetVpcSpecResourceCommonDomainNameServerIpListOutput {
+	return o
+}
+
+// ip address of domain name server.
+func (o GetVpcSpecResourceCommonDomainNameServerIpListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcSpecResourceCommonDomainNameServerIpList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+type GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpecResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (o GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput) ToGetVpcSpecResourceCommonDomainNameServerIpListArrayOutput() GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput) ToGetVpcSpecResourceCommonDomainNameServerIpListArrayOutputWithContext(ctx context.Context) GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput) Index(i pulumi.IntInput) GetVpcSpecResourceCommonDomainNameServerIpListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcSpecResourceCommonDomainNameServerIpList {
+		return vs[0].([]GetVpcSpecResourceCommonDomainNameServerIpList)[vs[1].(int)]
+	}).(GetVpcSpecResourceCommonDomainNameServerIpListOutput)
+}
+
+type GetVpcSpecResourceExternalSubnetList struct {
+	// Reference to a subnet.
+	ExternalSubnetReference map[string]string `pulumi:"externalSubnetReference"`
+}
+
+// GetVpcSpecResourceExternalSubnetListInput is an input type that accepts GetVpcSpecResourceExternalSubnetListArgs and GetVpcSpecResourceExternalSubnetListOutput values.
+// You can construct a concrete instance of `GetVpcSpecResourceExternalSubnetListInput` via:
+//
+//	GetVpcSpecResourceExternalSubnetListArgs{...}
+type GetVpcSpecResourceExternalSubnetListInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecResourceExternalSubnetListOutput() GetVpcSpecResourceExternalSubnetListOutput
+	ToGetVpcSpecResourceExternalSubnetListOutputWithContext(context.Context) GetVpcSpecResourceExternalSubnetListOutput
+}
+
+type GetVpcSpecResourceExternalSubnetListArgs struct {
+	// Reference to a subnet.
+	ExternalSubnetReference pulumi.StringMapInput `pulumi:"externalSubnetReference"`
+}
+
+func (GetVpcSpecResourceExternalSubnetListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpecResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (i GetVpcSpecResourceExternalSubnetListArgs) ToGetVpcSpecResourceExternalSubnetListOutput() GetVpcSpecResourceExternalSubnetListOutput {
+	return i.ToGetVpcSpecResourceExternalSubnetListOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecResourceExternalSubnetListArgs) ToGetVpcSpecResourceExternalSubnetListOutputWithContext(ctx context.Context) GetVpcSpecResourceExternalSubnetListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecResourceExternalSubnetListOutput)
+}
+
+// GetVpcSpecResourceExternalSubnetListArrayInput is an input type that accepts GetVpcSpecResourceExternalSubnetListArray and GetVpcSpecResourceExternalSubnetListArrayOutput values.
+// You can construct a concrete instance of `GetVpcSpecResourceExternalSubnetListArrayInput` via:
+//
+//	GetVpcSpecResourceExternalSubnetListArray{ GetVpcSpecResourceExternalSubnetListArgs{...} }
+type GetVpcSpecResourceExternalSubnetListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecResourceExternalSubnetListArrayOutput() GetVpcSpecResourceExternalSubnetListArrayOutput
+	ToGetVpcSpecResourceExternalSubnetListArrayOutputWithContext(context.Context) GetVpcSpecResourceExternalSubnetListArrayOutput
+}
+
+type GetVpcSpecResourceExternalSubnetListArray []GetVpcSpecResourceExternalSubnetListInput
+
+func (GetVpcSpecResourceExternalSubnetListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpecResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (i GetVpcSpecResourceExternalSubnetListArray) ToGetVpcSpecResourceExternalSubnetListArrayOutput() GetVpcSpecResourceExternalSubnetListArrayOutput {
+	return i.ToGetVpcSpecResourceExternalSubnetListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecResourceExternalSubnetListArray) ToGetVpcSpecResourceExternalSubnetListArrayOutputWithContext(ctx context.Context) GetVpcSpecResourceExternalSubnetListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecResourceExternalSubnetListArrayOutput)
+}
+
+type GetVpcSpecResourceExternalSubnetListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecResourceExternalSubnetListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpecResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (o GetVpcSpecResourceExternalSubnetListOutput) ToGetVpcSpecResourceExternalSubnetListOutput() GetVpcSpecResourceExternalSubnetListOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceExternalSubnetListOutput) ToGetVpcSpecResourceExternalSubnetListOutputWithContext(ctx context.Context) GetVpcSpecResourceExternalSubnetListOutput {
+	return o
+}
+
+// Reference to a subnet.
+func (o GetVpcSpecResourceExternalSubnetListOutput) ExternalSubnetReference() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVpcSpecResourceExternalSubnetList) map[string]string { return v.ExternalSubnetReference }).(pulumi.StringMapOutput)
+}
+
+type GetVpcSpecResourceExternalSubnetListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecResourceExternalSubnetListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpecResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (o GetVpcSpecResourceExternalSubnetListArrayOutput) ToGetVpcSpecResourceExternalSubnetListArrayOutput() GetVpcSpecResourceExternalSubnetListArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceExternalSubnetListArrayOutput) ToGetVpcSpecResourceExternalSubnetListArrayOutputWithContext(ctx context.Context) GetVpcSpecResourceExternalSubnetListArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceExternalSubnetListArrayOutput) Index(i pulumi.IntInput) GetVpcSpecResourceExternalSubnetListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcSpecResourceExternalSubnetList {
+		return vs[0].([]GetVpcSpecResourceExternalSubnetList)[vs[1].(int)]
+	}).(GetVpcSpecResourceExternalSubnetListOutput)
+}
+
+type GetVpcSpecResourceExternallyRoutablePrefixList struct {
+	// ip address of domain name server.
+	Ip string `pulumi:"ip"`
+	// prefix length of routable ip .
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetVpcSpecResourceExternallyRoutablePrefixListInput is an input type that accepts GetVpcSpecResourceExternallyRoutablePrefixListArgs and GetVpcSpecResourceExternallyRoutablePrefixListOutput values.
+// You can construct a concrete instance of `GetVpcSpecResourceExternallyRoutablePrefixListInput` via:
+//
+//	GetVpcSpecResourceExternallyRoutablePrefixListArgs{...}
+type GetVpcSpecResourceExternallyRoutablePrefixListInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecResourceExternallyRoutablePrefixListOutput() GetVpcSpecResourceExternallyRoutablePrefixListOutput
+	ToGetVpcSpecResourceExternallyRoutablePrefixListOutputWithContext(context.Context) GetVpcSpecResourceExternallyRoutablePrefixListOutput
+}
+
+type GetVpcSpecResourceExternallyRoutablePrefixListArgs struct {
+	// ip address of domain name server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// prefix length of routable ip .
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetVpcSpecResourceExternallyRoutablePrefixListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpecResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (i GetVpcSpecResourceExternallyRoutablePrefixListArgs) ToGetVpcSpecResourceExternallyRoutablePrefixListOutput() GetVpcSpecResourceExternallyRoutablePrefixListOutput {
+	return i.ToGetVpcSpecResourceExternallyRoutablePrefixListOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecResourceExternallyRoutablePrefixListArgs) ToGetVpcSpecResourceExternallyRoutablePrefixListOutputWithContext(ctx context.Context) GetVpcSpecResourceExternallyRoutablePrefixListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecResourceExternallyRoutablePrefixListOutput)
+}
+
+// GetVpcSpecResourceExternallyRoutablePrefixListArrayInput is an input type that accepts GetVpcSpecResourceExternallyRoutablePrefixListArray and GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput values.
+// You can construct a concrete instance of `GetVpcSpecResourceExternallyRoutablePrefixListArrayInput` via:
+//
+//	GetVpcSpecResourceExternallyRoutablePrefixListArray{ GetVpcSpecResourceExternallyRoutablePrefixListArgs{...} }
+type GetVpcSpecResourceExternallyRoutablePrefixListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcSpecResourceExternallyRoutablePrefixListArrayOutput() GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput
+	ToGetVpcSpecResourceExternallyRoutablePrefixListArrayOutputWithContext(context.Context) GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput
+}
+
+type GetVpcSpecResourceExternallyRoutablePrefixListArray []GetVpcSpecResourceExternallyRoutablePrefixListInput
+
+func (GetVpcSpecResourceExternallyRoutablePrefixListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpecResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (i GetVpcSpecResourceExternallyRoutablePrefixListArray) ToGetVpcSpecResourceExternallyRoutablePrefixListArrayOutput() GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput {
+	return i.ToGetVpcSpecResourceExternallyRoutablePrefixListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcSpecResourceExternallyRoutablePrefixListArray) ToGetVpcSpecResourceExternallyRoutablePrefixListArrayOutputWithContext(ctx context.Context) GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput)
+}
+
+type GetVpcSpecResourceExternallyRoutablePrefixListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecResourceExternallyRoutablePrefixListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcSpecResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (o GetVpcSpecResourceExternallyRoutablePrefixListOutput) ToGetVpcSpecResourceExternallyRoutablePrefixListOutput() GetVpcSpecResourceExternallyRoutablePrefixListOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceExternallyRoutablePrefixListOutput) ToGetVpcSpecResourceExternallyRoutablePrefixListOutputWithContext(ctx context.Context) GetVpcSpecResourceExternallyRoutablePrefixListOutput {
+	return o
+}
+
+// ip address of domain name server.
+func (o GetVpcSpecResourceExternallyRoutablePrefixListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcSpecResourceExternallyRoutablePrefixList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// prefix length of routable ip .
+func (o GetVpcSpecResourceExternallyRoutablePrefixListOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcSpecResourceExternallyRoutablePrefixList) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+type GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcSpecResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (o GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput) ToGetVpcSpecResourceExternallyRoutablePrefixListArrayOutput() GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput) ToGetVpcSpecResourceExternallyRoutablePrefixListArrayOutputWithContext(ctx context.Context) GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput {
+	return o
+}
+
+func (o GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput) Index(i pulumi.IntInput) GetVpcSpecResourceExternallyRoutablePrefixListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcSpecResourceExternallyRoutablePrefixList {
+		return vs[0].([]GetVpcSpecResourceExternallyRoutablePrefixList)[vs[1].(int)]
+	}).(GetVpcSpecResourceExternallyRoutablePrefixListOutput)
+}
+
+type GetVpcStatus struct {
+	// Execution Context of VPC.
+	ExecutionContexts []GetVpcStatusExecutionContext `pulumi:"executionContexts"`
+	// - the name.
+	Name string `pulumi:"name"`
+	// VPC resources status
+	Resources []GetVpcStatusResource `pulumi:"resources"`
+	// The state of the VPC
+	State string `pulumi:"state"`
+}
+
+// GetVpcStatusInput is an input type that accepts GetVpcStatusArgs and GetVpcStatusOutput values.
+// You can construct a concrete instance of `GetVpcStatusInput` via:
+//
+//	GetVpcStatusArgs{...}
+type GetVpcStatusInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusOutput() GetVpcStatusOutput
+	ToGetVpcStatusOutputWithContext(context.Context) GetVpcStatusOutput
+}
+
+type GetVpcStatusArgs struct {
+	// Execution Context of VPC.
+	ExecutionContexts GetVpcStatusExecutionContextArrayInput `pulumi:"executionContexts"`
+	// - the name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// VPC resources status
+	Resources GetVpcStatusResourceArrayInput `pulumi:"resources"`
+	// The state of the VPC
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetVpcStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatus)(nil)).Elem()
+}
+
+func (i GetVpcStatusArgs) ToGetVpcStatusOutput() GetVpcStatusOutput {
+	return i.ToGetVpcStatusOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusArgs) ToGetVpcStatusOutputWithContext(ctx context.Context) GetVpcStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusOutput)
+}
+
+// GetVpcStatusArrayInput is an input type that accepts GetVpcStatusArray and GetVpcStatusArrayOutput values.
+// You can construct a concrete instance of `GetVpcStatusArrayInput` via:
+//
+//	GetVpcStatusArray{ GetVpcStatusArgs{...} }
+type GetVpcStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusArrayOutput() GetVpcStatusArrayOutput
+	ToGetVpcStatusArrayOutputWithContext(context.Context) GetVpcStatusArrayOutput
+}
+
+type GetVpcStatusArray []GetVpcStatusInput
+
+func (GetVpcStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatus)(nil)).Elem()
+}
+
+func (i GetVpcStatusArray) ToGetVpcStatusArrayOutput() GetVpcStatusArrayOutput {
+	return i.ToGetVpcStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusArray) ToGetVpcStatusArrayOutputWithContext(ctx context.Context) GetVpcStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusArrayOutput)
+}
+
+type GetVpcStatusOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatus)(nil)).Elem()
+}
+
+func (o GetVpcStatusOutput) ToGetVpcStatusOutput() GetVpcStatusOutput {
+	return o
+}
+
+func (o GetVpcStatusOutput) ToGetVpcStatusOutputWithContext(ctx context.Context) GetVpcStatusOutput {
+	return o
+}
+
+// Execution Context of VPC.
+func (o GetVpcStatusOutput) ExecutionContexts() GetVpcStatusExecutionContextArrayOutput {
+	return o.ApplyT(func(v GetVpcStatus) []GetVpcStatusExecutionContext { return v.ExecutionContexts }).(GetVpcStatusExecutionContextArrayOutput)
+}
+
+// - the name.
+func (o GetVpcStatusOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcStatus) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// VPC resources status
+func (o GetVpcStatusOutput) Resources() GetVpcStatusResourceArrayOutput {
+	return o.ApplyT(func(v GetVpcStatus) []GetVpcStatusResource { return v.Resources }).(GetVpcStatusResourceArrayOutput)
+}
+
+// The state of the VPC
+func (o GetVpcStatusOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcStatus) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetVpcStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatus)(nil)).Elem()
+}
+
+func (o GetVpcStatusArrayOutput) ToGetVpcStatusArrayOutput() GetVpcStatusArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusArrayOutput) ToGetVpcStatusArrayOutputWithContext(ctx context.Context) GetVpcStatusArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusArrayOutput) Index(i pulumi.IntInput) GetVpcStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcStatus {
+		return vs[0].([]GetVpcStatus)[vs[1].(int)]
+	}).(GetVpcStatusOutput)
+}
+
+type GetVpcStatusExecutionContext struct {
+	TaskUuids []string `pulumi:"taskUuids"`
+}
+
+// GetVpcStatusExecutionContextInput is an input type that accepts GetVpcStatusExecutionContextArgs and GetVpcStatusExecutionContextOutput values.
+// You can construct a concrete instance of `GetVpcStatusExecutionContextInput` via:
+//
+//	GetVpcStatusExecutionContextArgs{...}
+type GetVpcStatusExecutionContextInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusExecutionContextOutput() GetVpcStatusExecutionContextOutput
+	ToGetVpcStatusExecutionContextOutputWithContext(context.Context) GetVpcStatusExecutionContextOutput
+}
+
+type GetVpcStatusExecutionContextArgs struct {
+	TaskUuids pulumi.StringArrayInput `pulumi:"taskUuids"`
+}
+
+func (GetVpcStatusExecutionContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusExecutionContext)(nil)).Elem()
+}
+
+func (i GetVpcStatusExecutionContextArgs) ToGetVpcStatusExecutionContextOutput() GetVpcStatusExecutionContextOutput {
+	return i.ToGetVpcStatusExecutionContextOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusExecutionContextArgs) ToGetVpcStatusExecutionContextOutputWithContext(ctx context.Context) GetVpcStatusExecutionContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusExecutionContextOutput)
+}
+
+// GetVpcStatusExecutionContextArrayInput is an input type that accepts GetVpcStatusExecutionContextArray and GetVpcStatusExecutionContextArrayOutput values.
+// You can construct a concrete instance of `GetVpcStatusExecutionContextArrayInput` via:
+//
+//	GetVpcStatusExecutionContextArray{ GetVpcStatusExecutionContextArgs{...} }
+type GetVpcStatusExecutionContextArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusExecutionContextArrayOutput() GetVpcStatusExecutionContextArrayOutput
+	ToGetVpcStatusExecutionContextArrayOutputWithContext(context.Context) GetVpcStatusExecutionContextArrayOutput
+}
+
+type GetVpcStatusExecutionContextArray []GetVpcStatusExecutionContextInput
+
+func (GetVpcStatusExecutionContextArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusExecutionContext)(nil)).Elem()
+}
+
+func (i GetVpcStatusExecutionContextArray) ToGetVpcStatusExecutionContextArrayOutput() GetVpcStatusExecutionContextArrayOutput {
+	return i.ToGetVpcStatusExecutionContextArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusExecutionContextArray) ToGetVpcStatusExecutionContextArrayOutputWithContext(ctx context.Context) GetVpcStatusExecutionContextArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusExecutionContextArrayOutput)
+}
+
+type GetVpcStatusExecutionContextOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusExecutionContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusExecutionContext)(nil)).Elem()
+}
+
+func (o GetVpcStatusExecutionContextOutput) ToGetVpcStatusExecutionContextOutput() GetVpcStatusExecutionContextOutput {
+	return o
+}
+
+func (o GetVpcStatusExecutionContextOutput) ToGetVpcStatusExecutionContextOutputWithContext(ctx context.Context) GetVpcStatusExecutionContextOutput {
+	return o
+}
+
+func (o GetVpcStatusExecutionContextOutput) TaskUuids() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVpcStatusExecutionContext) []string { return v.TaskUuids }).(pulumi.StringArrayOutput)
+}
+
+type GetVpcStatusExecutionContextArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusExecutionContextArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusExecutionContext)(nil)).Elem()
+}
+
+func (o GetVpcStatusExecutionContextArrayOutput) ToGetVpcStatusExecutionContextArrayOutput() GetVpcStatusExecutionContextArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusExecutionContextArrayOutput) ToGetVpcStatusExecutionContextArrayOutputWithContext(ctx context.Context) GetVpcStatusExecutionContextArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusExecutionContextArrayOutput) Index(i pulumi.IntInput) GetVpcStatusExecutionContextOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcStatusExecutionContext {
+		return vs[0].([]GetVpcStatusExecutionContext)[vs[1].(int)]
+	}).(GetVpcStatusExecutionContextOutput)
+}
+
+type GetVpcStatusResource struct {
+	// List of domain name server IPs.
+	CommonDomainNameServerIpLists []GetVpcStatusResourceCommonDomainNameServerIpList `pulumi:"commonDomainNameServerIpLists"`
+	// List of external subnets attached to this VPC.
+	ExternalSubnetLists []GetVpcStatusResourceExternalSubnetList `pulumi:"externalSubnetLists"`
+	// List of external routable ip and prefix .
+	ExternallyRoutablePrefixLists []GetVpcStatusResourceExternallyRoutablePrefixList `pulumi:"externallyRoutablePrefixLists"`
+}
+
+// GetVpcStatusResourceInput is an input type that accepts GetVpcStatusResourceArgs and GetVpcStatusResourceOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceInput` via:
+//
+//	GetVpcStatusResourceArgs{...}
+type GetVpcStatusResourceInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceOutput() GetVpcStatusResourceOutput
+	ToGetVpcStatusResourceOutputWithContext(context.Context) GetVpcStatusResourceOutput
+}
+
+type GetVpcStatusResourceArgs struct {
+	// List of domain name server IPs.
+	CommonDomainNameServerIpLists GetVpcStatusResourceCommonDomainNameServerIpListArrayInput `pulumi:"commonDomainNameServerIpLists"`
+	// List of external subnets attached to this VPC.
+	ExternalSubnetLists GetVpcStatusResourceExternalSubnetListArrayInput `pulumi:"externalSubnetLists"`
+	// List of external routable ip and prefix .
+	ExternallyRoutablePrefixLists GetVpcStatusResourceExternallyRoutablePrefixListArrayInput `pulumi:"externallyRoutablePrefixLists"`
+}
+
+func (GetVpcStatusResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResource)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceArgs) ToGetVpcStatusResourceOutput() GetVpcStatusResourceOutput {
+	return i.ToGetVpcStatusResourceOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceArgs) ToGetVpcStatusResourceOutputWithContext(ctx context.Context) GetVpcStatusResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceOutput)
+}
+
+// GetVpcStatusResourceArrayInput is an input type that accepts GetVpcStatusResourceArray and GetVpcStatusResourceArrayOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceArrayInput` via:
+//
+//	GetVpcStatusResourceArray{ GetVpcStatusResourceArgs{...} }
+type GetVpcStatusResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceArrayOutput() GetVpcStatusResourceArrayOutput
+	ToGetVpcStatusResourceArrayOutputWithContext(context.Context) GetVpcStatusResourceArrayOutput
+}
+
+type GetVpcStatusResourceArray []GetVpcStatusResourceInput
+
+func (GetVpcStatusResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResource)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceArray) ToGetVpcStatusResourceArrayOutput() GetVpcStatusResourceArrayOutput {
+	return i.ToGetVpcStatusResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceArray) ToGetVpcStatusResourceArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceArrayOutput)
+}
+
+type GetVpcStatusResourceOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResource)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceOutput) ToGetVpcStatusResourceOutput() GetVpcStatusResourceOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceOutput) ToGetVpcStatusResourceOutputWithContext(ctx context.Context) GetVpcStatusResourceOutput {
+	return o
+}
+
+// List of domain name server IPs.
+func (o GetVpcStatusResourceOutput) CommonDomainNameServerIpLists() GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return o.ApplyT(func(v GetVpcStatusResource) []GetVpcStatusResourceCommonDomainNameServerIpList {
+		return v.CommonDomainNameServerIpLists
+	}).(GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput)
+}
+
+// List of external subnets attached to this VPC.
+func (o GetVpcStatusResourceOutput) ExternalSubnetLists() GetVpcStatusResourceExternalSubnetListArrayOutput {
+	return o.ApplyT(func(v GetVpcStatusResource) []GetVpcStatusResourceExternalSubnetList { return v.ExternalSubnetLists }).(GetVpcStatusResourceExternalSubnetListArrayOutput)
+}
+
+// List of external routable ip and prefix .
+func (o GetVpcStatusResourceOutput) ExternallyRoutablePrefixLists() GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return o.ApplyT(func(v GetVpcStatusResource) []GetVpcStatusResourceExternallyRoutablePrefixList {
+		return v.ExternallyRoutablePrefixLists
+	}).(GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput)
+}
+
+type GetVpcStatusResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResource)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceArrayOutput) ToGetVpcStatusResourceArrayOutput() GetVpcStatusResourceArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceArrayOutput) ToGetVpcStatusResourceArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceArrayOutput) Index(i pulumi.IntInput) GetVpcStatusResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcStatusResource {
+		return vs[0].([]GetVpcStatusResource)[vs[1].(int)]
+	}).(GetVpcStatusResourceOutput)
+}
+
+type GetVpcStatusResourceCommonDomainNameServerIpList struct {
+	// ip address of domain name server.
+	Ip string `pulumi:"ip"`
+}
+
+// GetVpcStatusResourceCommonDomainNameServerIpListInput is an input type that accepts GetVpcStatusResourceCommonDomainNameServerIpListArgs and GetVpcStatusResourceCommonDomainNameServerIpListOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceCommonDomainNameServerIpListInput` via:
+//
+//	GetVpcStatusResourceCommonDomainNameServerIpListArgs{...}
+type GetVpcStatusResourceCommonDomainNameServerIpListInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceCommonDomainNameServerIpListOutput() GetVpcStatusResourceCommonDomainNameServerIpListOutput
+	ToGetVpcStatusResourceCommonDomainNameServerIpListOutputWithContext(context.Context) GetVpcStatusResourceCommonDomainNameServerIpListOutput
+}
+
+type GetVpcStatusResourceCommonDomainNameServerIpListArgs struct {
+	// ip address of domain name server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+}
+
+func (GetVpcStatusResourceCommonDomainNameServerIpListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceCommonDomainNameServerIpListArgs) ToGetVpcStatusResourceCommonDomainNameServerIpListOutput() GetVpcStatusResourceCommonDomainNameServerIpListOutput {
+	return i.ToGetVpcStatusResourceCommonDomainNameServerIpListOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceCommonDomainNameServerIpListArgs) ToGetVpcStatusResourceCommonDomainNameServerIpListOutputWithContext(ctx context.Context) GetVpcStatusResourceCommonDomainNameServerIpListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceCommonDomainNameServerIpListOutput)
+}
+
+// GetVpcStatusResourceCommonDomainNameServerIpListArrayInput is an input type that accepts GetVpcStatusResourceCommonDomainNameServerIpListArray and GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceCommonDomainNameServerIpListArrayInput` via:
+//
+//	GetVpcStatusResourceCommonDomainNameServerIpListArray{ GetVpcStatusResourceCommonDomainNameServerIpListArgs{...} }
+type GetVpcStatusResourceCommonDomainNameServerIpListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceCommonDomainNameServerIpListArrayOutput() GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput
+	ToGetVpcStatusResourceCommonDomainNameServerIpListArrayOutputWithContext(context.Context) GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput
+}
+
+type GetVpcStatusResourceCommonDomainNameServerIpListArray []GetVpcStatusResourceCommonDomainNameServerIpListInput
+
+func (GetVpcStatusResourceCommonDomainNameServerIpListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceCommonDomainNameServerIpListArray) ToGetVpcStatusResourceCommonDomainNameServerIpListArrayOutput() GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return i.ToGetVpcStatusResourceCommonDomainNameServerIpListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceCommonDomainNameServerIpListArray) ToGetVpcStatusResourceCommonDomainNameServerIpListArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput)
+}
+
+type GetVpcStatusResourceCommonDomainNameServerIpListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceCommonDomainNameServerIpListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceCommonDomainNameServerIpListOutput) ToGetVpcStatusResourceCommonDomainNameServerIpListOutput() GetVpcStatusResourceCommonDomainNameServerIpListOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceCommonDomainNameServerIpListOutput) ToGetVpcStatusResourceCommonDomainNameServerIpListOutputWithContext(ctx context.Context) GetVpcStatusResourceCommonDomainNameServerIpListOutput {
+	return o
+}
+
+// ip address of domain name server.
+func (o GetVpcStatusResourceCommonDomainNameServerIpListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcStatusResourceCommonDomainNameServerIpList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+type GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput) ToGetVpcStatusResourceCommonDomainNameServerIpListArrayOutput() GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput) ToGetVpcStatusResourceCommonDomainNameServerIpListArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput) Index(i pulumi.IntInput) GetVpcStatusResourceCommonDomainNameServerIpListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcStatusResourceCommonDomainNameServerIpList {
+		return vs[0].([]GetVpcStatusResourceCommonDomainNameServerIpList)[vs[1].(int)]
+	}).(GetVpcStatusResourceCommonDomainNameServerIpListOutput)
+}
+
+type GetVpcStatusResourceExternalSubnetList struct {
+	// Active Gateway Node. Only present in VPC Status Resources.
+	ActiveGatewayNodes []GetVpcStatusResourceExternalSubnetListActiveGatewayNode `pulumi:"activeGatewayNodes"`
+	// List of external subnets attached to this VPC. Only present in VPC Status Resources .
+	ExternalIpLists []string `pulumi:"externalIpLists"`
+	// Reference to a subnet.
+	ExternalSubnetReference map[string]string `pulumi:"externalSubnetReference"`
+}
+
+// GetVpcStatusResourceExternalSubnetListInput is an input type that accepts GetVpcStatusResourceExternalSubnetListArgs and GetVpcStatusResourceExternalSubnetListOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceExternalSubnetListInput` via:
+//
+//	GetVpcStatusResourceExternalSubnetListArgs{...}
+type GetVpcStatusResourceExternalSubnetListInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceExternalSubnetListOutput() GetVpcStatusResourceExternalSubnetListOutput
+	ToGetVpcStatusResourceExternalSubnetListOutputWithContext(context.Context) GetVpcStatusResourceExternalSubnetListOutput
+}
+
+type GetVpcStatusResourceExternalSubnetListArgs struct {
+	// Active Gateway Node. Only present in VPC Status Resources.
+	ActiveGatewayNodes GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayInput `pulumi:"activeGatewayNodes"`
+	// List of external subnets attached to this VPC. Only present in VPC Status Resources .
+	ExternalIpLists pulumi.StringArrayInput `pulumi:"externalIpLists"`
+	// Reference to a subnet.
+	ExternalSubnetReference pulumi.StringMapInput `pulumi:"externalSubnetReference"`
+}
+
+func (GetVpcStatusResourceExternalSubnetListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceExternalSubnetListArgs) ToGetVpcStatusResourceExternalSubnetListOutput() GetVpcStatusResourceExternalSubnetListOutput {
+	return i.ToGetVpcStatusResourceExternalSubnetListOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceExternalSubnetListArgs) ToGetVpcStatusResourceExternalSubnetListOutputWithContext(ctx context.Context) GetVpcStatusResourceExternalSubnetListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceExternalSubnetListOutput)
+}
+
+// GetVpcStatusResourceExternalSubnetListArrayInput is an input type that accepts GetVpcStatusResourceExternalSubnetListArray and GetVpcStatusResourceExternalSubnetListArrayOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceExternalSubnetListArrayInput` via:
+//
+//	GetVpcStatusResourceExternalSubnetListArray{ GetVpcStatusResourceExternalSubnetListArgs{...} }
+type GetVpcStatusResourceExternalSubnetListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceExternalSubnetListArrayOutput() GetVpcStatusResourceExternalSubnetListArrayOutput
+	ToGetVpcStatusResourceExternalSubnetListArrayOutputWithContext(context.Context) GetVpcStatusResourceExternalSubnetListArrayOutput
+}
+
+type GetVpcStatusResourceExternalSubnetListArray []GetVpcStatusResourceExternalSubnetListInput
+
+func (GetVpcStatusResourceExternalSubnetListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceExternalSubnetListArray) ToGetVpcStatusResourceExternalSubnetListArrayOutput() GetVpcStatusResourceExternalSubnetListArrayOutput {
+	return i.ToGetVpcStatusResourceExternalSubnetListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceExternalSubnetListArray) ToGetVpcStatusResourceExternalSubnetListArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceExternalSubnetListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceExternalSubnetListArrayOutput)
+}
+
+type GetVpcStatusResourceExternalSubnetListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceExternalSubnetListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceExternalSubnetListOutput) ToGetVpcStatusResourceExternalSubnetListOutput() GetVpcStatusResourceExternalSubnetListOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternalSubnetListOutput) ToGetVpcStatusResourceExternalSubnetListOutputWithContext(ctx context.Context) GetVpcStatusResourceExternalSubnetListOutput {
+	return o
+}
+
+// Active Gateway Node. Only present in VPC Status Resources.
+func (o GetVpcStatusResourceExternalSubnetListOutput) ActiveGatewayNodes() GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return o.ApplyT(func(v GetVpcStatusResourceExternalSubnetList) []GetVpcStatusResourceExternalSubnetListActiveGatewayNode {
+		return v.ActiveGatewayNodes
+	}).(GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput)
+}
+
+// List of external subnets attached to this VPC. Only present in VPC Status Resources .
+func (o GetVpcStatusResourceExternalSubnetListOutput) ExternalIpLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVpcStatusResourceExternalSubnetList) []string { return v.ExternalIpLists }).(pulumi.StringArrayOutput)
+}
+
+// Reference to a subnet.
+func (o GetVpcStatusResourceExternalSubnetListOutput) ExternalSubnetReference() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVpcStatusResourceExternalSubnetList) map[string]string { return v.ExternalSubnetReference }).(pulumi.StringMapOutput)
+}
+
+type GetVpcStatusResourceExternalSubnetListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceExternalSubnetListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceExternalSubnetListArrayOutput) ToGetVpcStatusResourceExternalSubnetListArrayOutput() GetVpcStatusResourceExternalSubnetListArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternalSubnetListArrayOutput) ToGetVpcStatusResourceExternalSubnetListArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceExternalSubnetListArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternalSubnetListArrayOutput) Index(i pulumi.IntInput) GetVpcStatusResourceExternalSubnetListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcStatusResourceExternalSubnetList {
+		return vs[0].([]GetVpcStatusResourceExternalSubnetList)[vs[1].(int)]
+	}).(GetVpcStatusResourceExternalSubnetListOutput)
+}
+
+type GetVpcStatusResourceExternalSubnetListActiveGatewayNode struct {
+	// Reference to host.
+	HostReference map[string]string `pulumi:"hostReference"`
+	// ip address.
+	IpAddress string `pulumi:"ipAddress"`
+}
+
+// GetVpcStatusResourceExternalSubnetListActiveGatewayNodeInput is an input type that accepts GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArgs and GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceExternalSubnetListActiveGatewayNodeInput` via:
+//
+//	GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArgs{...}
+type GetVpcStatusResourceExternalSubnetListActiveGatewayNodeInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput() GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput
+	ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutputWithContext(context.Context) GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput
+}
+
+type GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArgs struct {
+	// Reference to host.
+	HostReference pulumi.StringMapInput `pulumi:"hostReference"`
+	// ip address.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+}
+
+func (GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResourceExternalSubnetListActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArgs) ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput() GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return i.ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArgs) ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutputWithContext(ctx context.Context) GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput)
+}
+
+// GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayInput is an input type that accepts GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArray and GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayInput` via:
+//
+//	GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArray{ GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArgs{...} }
+type GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput() GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput
+	ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutputWithContext(context.Context) GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput
+}
+
+type GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArray []GetVpcStatusResourceExternalSubnetListActiveGatewayNodeInput
+
+func (GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResourceExternalSubnetListActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArray) ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput() GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return i.ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArray) ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput)
+}
+
+type GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResourceExternalSubnetListActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput) ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput() GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput) ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutputWithContext(ctx context.Context) GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return o
+}
+
+// Reference to host.
+func (o GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput) HostReference() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVpcStatusResourceExternalSubnetListActiveGatewayNode) map[string]string {
+		return v.HostReference
+	}).(pulumi.StringMapOutput)
+}
+
+// ip address.
+func (o GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcStatusResourceExternalSubnetListActiveGatewayNode) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+type GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResourceExternalSubnetListActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput) ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput() GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput) ToGetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput) Index(i pulumi.IntInput) GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcStatusResourceExternalSubnetListActiveGatewayNode {
+		return vs[0].([]GetVpcStatusResourceExternalSubnetListActiveGatewayNode)[vs[1].(int)]
+	}).(GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput)
+}
+
+type GetVpcStatusResourceExternallyRoutablePrefixList struct {
+	// ip address of domain name server.
+	Ip string `pulumi:"ip"`
+	// prefix length of routable ip .
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetVpcStatusResourceExternallyRoutablePrefixListInput is an input type that accepts GetVpcStatusResourceExternallyRoutablePrefixListArgs and GetVpcStatusResourceExternallyRoutablePrefixListOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceExternallyRoutablePrefixListInput` via:
+//
+//	GetVpcStatusResourceExternallyRoutablePrefixListArgs{...}
+type GetVpcStatusResourceExternallyRoutablePrefixListInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceExternallyRoutablePrefixListOutput() GetVpcStatusResourceExternallyRoutablePrefixListOutput
+	ToGetVpcStatusResourceExternallyRoutablePrefixListOutputWithContext(context.Context) GetVpcStatusResourceExternallyRoutablePrefixListOutput
+}
+
+type GetVpcStatusResourceExternallyRoutablePrefixListArgs struct {
+	// ip address of domain name server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// prefix length of routable ip .
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetVpcStatusResourceExternallyRoutablePrefixListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceExternallyRoutablePrefixListArgs) ToGetVpcStatusResourceExternallyRoutablePrefixListOutput() GetVpcStatusResourceExternallyRoutablePrefixListOutput {
+	return i.ToGetVpcStatusResourceExternallyRoutablePrefixListOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceExternallyRoutablePrefixListArgs) ToGetVpcStatusResourceExternallyRoutablePrefixListOutputWithContext(ctx context.Context) GetVpcStatusResourceExternallyRoutablePrefixListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceExternallyRoutablePrefixListOutput)
+}
+
+// GetVpcStatusResourceExternallyRoutablePrefixListArrayInput is an input type that accepts GetVpcStatusResourceExternallyRoutablePrefixListArray and GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput values.
+// You can construct a concrete instance of `GetVpcStatusResourceExternallyRoutablePrefixListArrayInput` via:
+//
+//	GetVpcStatusResourceExternallyRoutablePrefixListArray{ GetVpcStatusResourceExternallyRoutablePrefixListArgs{...} }
+type GetVpcStatusResourceExternallyRoutablePrefixListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcStatusResourceExternallyRoutablePrefixListArrayOutput() GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput
+	ToGetVpcStatusResourceExternallyRoutablePrefixListArrayOutputWithContext(context.Context) GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput
+}
+
+type GetVpcStatusResourceExternallyRoutablePrefixListArray []GetVpcStatusResourceExternallyRoutablePrefixListInput
+
+func (GetVpcStatusResourceExternallyRoutablePrefixListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (i GetVpcStatusResourceExternallyRoutablePrefixListArray) ToGetVpcStatusResourceExternallyRoutablePrefixListArrayOutput() GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return i.ToGetVpcStatusResourceExternallyRoutablePrefixListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcStatusResourceExternallyRoutablePrefixListArray) ToGetVpcStatusResourceExternallyRoutablePrefixListArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput)
+}
+
+type GetVpcStatusResourceExternallyRoutablePrefixListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceExternallyRoutablePrefixListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcStatusResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceExternallyRoutablePrefixListOutput) ToGetVpcStatusResourceExternallyRoutablePrefixListOutput() GetVpcStatusResourceExternallyRoutablePrefixListOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternallyRoutablePrefixListOutput) ToGetVpcStatusResourceExternallyRoutablePrefixListOutputWithContext(ctx context.Context) GetVpcStatusResourceExternallyRoutablePrefixListOutput {
+	return o
+}
+
+// ip address of domain name server.
+func (o GetVpcStatusResourceExternallyRoutablePrefixListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcStatusResourceExternallyRoutablePrefixList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// prefix length of routable ip .
+func (o GetVpcStatusResourceExternallyRoutablePrefixListOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcStatusResourceExternallyRoutablePrefixList) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+type GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcStatusResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (o GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput) ToGetVpcStatusResourceExternallyRoutablePrefixListArrayOutput() GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput) ToGetVpcStatusResourceExternallyRoutablePrefixListArrayOutputWithContext(ctx context.Context) GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return o
+}
+
+func (o GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput) Index(i pulumi.IntInput) GetVpcStatusResourceExternallyRoutablePrefixListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcStatusResourceExternallyRoutablePrefixList {
+		return vs[0].([]GetVpcStatusResourceExternallyRoutablePrefixList)[vs[1].(int)]
+	}).(GetVpcStatusResourceExternallyRoutablePrefixListOutput)
+}
+
+type GetVpcV2CommonDhcpOption struct {
+	// List of Domain Name Server addresses
+	DomainNameServers []GetVpcV2CommonDhcpOptionDomainNameServer `pulumi:"domainNameServers"`
+}
+
+// GetVpcV2CommonDhcpOptionInput is an input type that accepts GetVpcV2CommonDhcpOptionArgs and GetVpcV2CommonDhcpOptionOutput values.
+// You can construct a concrete instance of `GetVpcV2CommonDhcpOptionInput` via:
+//
+//	GetVpcV2CommonDhcpOptionArgs{...}
+type GetVpcV2CommonDhcpOptionInput interface {
+	pulumi.Input
+
+	ToGetVpcV2CommonDhcpOptionOutput() GetVpcV2CommonDhcpOptionOutput
+	ToGetVpcV2CommonDhcpOptionOutputWithContext(context.Context) GetVpcV2CommonDhcpOptionOutput
+}
+
+type GetVpcV2CommonDhcpOptionArgs struct {
+	// List of Domain Name Server addresses
+	DomainNameServers GetVpcV2CommonDhcpOptionDomainNameServerArrayInput `pulumi:"domainNameServers"`
+}
+
+func (GetVpcV2CommonDhcpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2CommonDhcpOption)(nil)).Elem()
+}
+
+func (i GetVpcV2CommonDhcpOptionArgs) ToGetVpcV2CommonDhcpOptionOutput() GetVpcV2CommonDhcpOptionOutput {
+	return i.ToGetVpcV2CommonDhcpOptionOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2CommonDhcpOptionArgs) ToGetVpcV2CommonDhcpOptionOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2CommonDhcpOptionOutput)
+}
+
+// GetVpcV2CommonDhcpOptionArrayInput is an input type that accepts GetVpcV2CommonDhcpOptionArray and GetVpcV2CommonDhcpOptionArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2CommonDhcpOptionArrayInput` via:
+//
+//	GetVpcV2CommonDhcpOptionArray{ GetVpcV2CommonDhcpOptionArgs{...} }
+type GetVpcV2CommonDhcpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2CommonDhcpOptionArrayOutput() GetVpcV2CommonDhcpOptionArrayOutput
+	ToGetVpcV2CommonDhcpOptionArrayOutputWithContext(context.Context) GetVpcV2CommonDhcpOptionArrayOutput
+}
+
+type GetVpcV2CommonDhcpOptionArray []GetVpcV2CommonDhcpOptionInput
+
+func (GetVpcV2CommonDhcpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2CommonDhcpOption)(nil)).Elem()
+}
+
+func (i GetVpcV2CommonDhcpOptionArray) ToGetVpcV2CommonDhcpOptionArrayOutput() GetVpcV2CommonDhcpOptionArrayOutput {
+	return i.ToGetVpcV2CommonDhcpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2CommonDhcpOptionArray) ToGetVpcV2CommonDhcpOptionArrayOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2CommonDhcpOptionArrayOutput)
+}
+
+type GetVpcV2CommonDhcpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2CommonDhcpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2CommonDhcpOption)(nil)).Elem()
+}
+
+func (o GetVpcV2CommonDhcpOptionOutput) ToGetVpcV2CommonDhcpOptionOutput() GetVpcV2CommonDhcpOptionOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionOutput) ToGetVpcV2CommonDhcpOptionOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionOutput {
+	return o
+}
+
+// List of Domain Name Server addresses
+func (o GetVpcV2CommonDhcpOptionOutput) DomainNameServers() GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput {
+	return o.ApplyT(func(v GetVpcV2CommonDhcpOption) []GetVpcV2CommonDhcpOptionDomainNameServer {
+		return v.DomainNameServers
+	}).(GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput)
+}
+
+type GetVpcV2CommonDhcpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2CommonDhcpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2CommonDhcpOption)(nil)).Elem()
+}
+
+func (o GetVpcV2CommonDhcpOptionArrayOutput) ToGetVpcV2CommonDhcpOptionArrayOutput() GetVpcV2CommonDhcpOptionArrayOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionArrayOutput) ToGetVpcV2CommonDhcpOptionArrayOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionArrayOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionArrayOutput) Index(i pulumi.IntInput) GetVpcV2CommonDhcpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2CommonDhcpOption {
+		return vs[0].([]GetVpcV2CommonDhcpOption)[vs[1].(int)]
+	}).(GetVpcV2CommonDhcpOptionOutput)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServer struct {
+	// Reference to address configuration
+	Ipv4s []GetVpcV2CommonDhcpOptionDomainNameServerIpv4 `pulumi:"ipv4s"`
+	// Reference to address configuration
+	Ipv6s []GetVpcV2CommonDhcpOptionDomainNameServerIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcV2CommonDhcpOptionDomainNameServerInput is an input type that accepts GetVpcV2CommonDhcpOptionDomainNameServerArgs and GetVpcV2CommonDhcpOptionDomainNameServerOutput values.
+// You can construct a concrete instance of `GetVpcV2CommonDhcpOptionDomainNameServerInput` via:
+//
+//	GetVpcV2CommonDhcpOptionDomainNameServerArgs{...}
+type GetVpcV2CommonDhcpOptionDomainNameServerInput interface {
+	pulumi.Input
+
+	ToGetVpcV2CommonDhcpOptionDomainNameServerOutput() GetVpcV2CommonDhcpOptionDomainNameServerOutput
+	ToGetVpcV2CommonDhcpOptionDomainNameServerOutputWithContext(context.Context) GetVpcV2CommonDhcpOptionDomainNameServerOutput
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerArgs struct {
+	// Reference to address configuration
+	Ipv4s GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayInput `pulumi:"ipv4s"`
+	// Reference to address configuration
+	Ipv6s GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerArgs) ToGetVpcV2CommonDhcpOptionDomainNameServerOutput() GetVpcV2CommonDhcpOptionDomainNameServerOutput {
+	return i.ToGetVpcV2CommonDhcpOptionDomainNameServerOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerArgs) ToGetVpcV2CommonDhcpOptionDomainNameServerOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2CommonDhcpOptionDomainNameServerOutput)
+}
+
+// GetVpcV2CommonDhcpOptionDomainNameServerArrayInput is an input type that accepts GetVpcV2CommonDhcpOptionDomainNameServerArray and GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2CommonDhcpOptionDomainNameServerArrayInput` via:
+//
+//	GetVpcV2CommonDhcpOptionDomainNameServerArray{ GetVpcV2CommonDhcpOptionDomainNameServerArgs{...} }
+type GetVpcV2CommonDhcpOptionDomainNameServerArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2CommonDhcpOptionDomainNameServerArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput
+	ToGetVpcV2CommonDhcpOptionDomainNameServerArrayOutputWithContext(context.Context) GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerArray []GetVpcV2CommonDhcpOptionDomainNameServerInput
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2CommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerArray) ToGetVpcV2CommonDhcpOptionDomainNameServerArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput {
+	return i.ToGetVpcV2CommonDhcpOptionDomainNameServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerArray) ToGetVpcV2CommonDhcpOptionDomainNameServerArrayOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerOutput) ToGetVpcV2CommonDhcpOptionDomainNameServerOutput() GetVpcV2CommonDhcpOptionDomainNameServerOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerOutput) ToGetVpcV2CommonDhcpOptionDomainNameServerOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerOutput {
+	return o
+}
+
+// Reference to address configuration
+func (o GetVpcV2CommonDhcpOptionDomainNameServerOutput) Ipv4s() GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2CommonDhcpOptionDomainNameServer) []GetVpcV2CommonDhcpOptionDomainNameServerIpv4 {
+		return v.Ipv4s
+	}).(GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput)
+}
+
+// Reference to address configuration
+func (o GetVpcV2CommonDhcpOptionDomainNameServerOutput) Ipv6s() GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2CommonDhcpOptionDomainNameServer) []GetVpcV2CommonDhcpOptionDomainNameServerIpv6 {
+		return v.Ipv6s
+	}).(GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2CommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput) ToGetVpcV2CommonDhcpOptionDomainNameServerArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput) ToGetVpcV2CommonDhcpOptionDomainNameServerArrayOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput) Index(i pulumi.IntInput) GetVpcV2CommonDhcpOptionDomainNameServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2CommonDhcpOptionDomainNameServer {
+		return vs[0].([]GetVpcV2CommonDhcpOptionDomainNameServer)[vs[1].(int)]
+	}).(GetVpcV2CommonDhcpOptionDomainNameServerOutput)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv4 struct {
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2CommonDhcpOptionDomainNameServerIpv4Input is an input type that accepts GetVpcV2CommonDhcpOptionDomainNameServerIpv4Args and GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output values.
+// You can construct a concrete instance of `GetVpcV2CommonDhcpOptionDomainNameServerIpv4Input` via:
+//
+//	GetVpcV2CommonDhcpOptionDomainNameServerIpv4Args{...}
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4Output() GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output
+	ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4OutputWithContext(context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv4Args struct {
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerIpv4Args) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4Output() GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output {
+	return i.ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerIpv4Args) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4OutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output)
+}
+
+// GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayInput is an input type that accepts GetVpcV2CommonDhcpOptionDomainNameServerIpv4Array and GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayInput` via:
+//
+//	GetVpcV2CommonDhcpOptionDomainNameServerIpv4Array{ GetVpcV2CommonDhcpOptionDomainNameServerIpv4Args{...} }
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput
+	ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv4Array []GetVpcV2CommonDhcpOptionDomainNameServerIpv4Input
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2CommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerIpv4Array) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return i.ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerIpv4Array) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4Output() GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4OutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output {
+	return o
+}
+
+// The prefix length of the network
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2CommonDhcpOptionDomainNameServerIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2CommonDhcpOptionDomainNameServerIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2CommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2CommonDhcpOptionDomainNameServerIpv4 {
+		return vs[0].([]GetVpcV2CommonDhcpOptionDomainNameServerIpv4)[vs[1].(int)]
+	}).(GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv6 struct {
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2CommonDhcpOptionDomainNameServerIpv6Input is an input type that accepts GetVpcV2CommonDhcpOptionDomainNameServerIpv6Args and GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output values.
+// You can construct a concrete instance of `GetVpcV2CommonDhcpOptionDomainNameServerIpv6Input` via:
+//
+//	GetVpcV2CommonDhcpOptionDomainNameServerIpv6Args{...}
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv6Input interface {
+	pulumi.Input
+
+	ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6Output() GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output
+	ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6OutputWithContext(context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv6Args struct {
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerIpv6Args) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6Output() GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output {
+	return i.ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerIpv6Args) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6OutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output)
+}
+
+// GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayInput is an input type that accepts GetVpcV2CommonDhcpOptionDomainNameServerIpv6Array and GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayInput` via:
+//
+//	GetVpcV2CommonDhcpOptionDomainNameServerIpv6Array{ GetVpcV2CommonDhcpOptionDomainNameServerIpv6Args{...} }
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput
+	ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv6Array []GetVpcV2CommonDhcpOptionDomainNameServerIpv6Input
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2CommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerIpv6Array) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return i.ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2CommonDhcpOptionDomainNameServerIpv6Array) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6Output() GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6OutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output {
+	return o
+}
+
+// The prefix length of the network
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2CommonDhcpOptionDomainNameServerIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2CommonDhcpOptionDomainNameServerIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2CommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput) ToGetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2CommonDhcpOptionDomainNameServerIpv6 {
+		return vs[0].([]GetVpcV2CommonDhcpOptionDomainNameServerIpv6)[vs[1].(int)]
+	}).(GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output)
+}
+
+type GetVpcV2ExternalSubnet struct {
+	// Maximum number of active gateway nodes for the VPC external subnet association.
+	ActiveGatewayCount int `pulumi:"activeGatewayCount"`
+	// Reference of gateway nodes
+	ActiveGatewayNodes []GetVpcV2ExternalSubnetActiveGatewayNode `pulumi:"activeGatewayNodes"`
+	// List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+	ExternalIps []GetVpcV2ExternalSubnetExternalIp `pulumi:"externalIps"`
+	// List of gateway nodes that can be used for external connectivity.
+	GatewayNodes []string `pulumi:"gatewayNodes"`
+	// External subnet reference.
+	SubnetReference string `pulumi:"subnetReference"`
+}
+
+// GetVpcV2ExternalSubnetInput is an input type that accepts GetVpcV2ExternalSubnetArgs and GetVpcV2ExternalSubnetOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetInput` via:
+//
+//	GetVpcV2ExternalSubnetArgs{...}
+type GetVpcV2ExternalSubnetInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetOutput() GetVpcV2ExternalSubnetOutput
+	ToGetVpcV2ExternalSubnetOutputWithContext(context.Context) GetVpcV2ExternalSubnetOutput
+}
+
+type GetVpcV2ExternalSubnetArgs struct {
+	// Maximum number of active gateway nodes for the VPC external subnet association.
+	ActiveGatewayCount pulumi.IntInput `pulumi:"activeGatewayCount"`
+	// Reference of gateway nodes
+	ActiveGatewayNodes GetVpcV2ExternalSubnetActiveGatewayNodeArrayInput `pulumi:"activeGatewayNodes"`
+	// List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+	ExternalIps GetVpcV2ExternalSubnetExternalIpArrayInput `pulumi:"externalIps"`
+	// List of gateway nodes that can be used for external connectivity.
+	GatewayNodes pulumi.StringArrayInput `pulumi:"gatewayNodes"`
+	// External subnet reference.
+	SubnetReference pulumi.StringInput `pulumi:"subnetReference"`
+}
+
+func (GetVpcV2ExternalSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnet)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetArgs) ToGetVpcV2ExternalSubnetOutput() GetVpcV2ExternalSubnetOutput {
+	return i.ToGetVpcV2ExternalSubnetOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetArgs) ToGetVpcV2ExternalSubnetOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetOutput)
+}
+
+// GetVpcV2ExternalSubnetArrayInput is an input type that accepts GetVpcV2ExternalSubnetArray and GetVpcV2ExternalSubnetArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetArrayInput` via:
+//
+//	GetVpcV2ExternalSubnetArray{ GetVpcV2ExternalSubnetArgs{...} }
+type GetVpcV2ExternalSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetArrayOutput() GetVpcV2ExternalSubnetArrayOutput
+	ToGetVpcV2ExternalSubnetArrayOutputWithContext(context.Context) GetVpcV2ExternalSubnetArrayOutput
+}
+
+type GetVpcV2ExternalSubnetArray []GetVpcV2ExternalSubnetInput
+
+func (GetVpcV2ExternalSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnet)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetArray) ToGetVpcV2ExternalSubnetArrayOutput() GetVpcV2ExternalSubnetArrayOutput {
+	return i.ToGetVpcV2ExternalSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetArray) ToGetVpcV2ExternalSubnetArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnet)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetOutput) ToGetVpcV2ExternalSubnetOutput() GetVpcV2ExternalSubnetOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetOutput) ToGetVpcV2ExternalSubnetOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetOutput {
+	return o
+}
+
+// Maximum number of active gateway nodes for the VPC external subnet association.
+func (o GetVpcV2ExternalSubnetOutput) ActiveGatewayCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnet) int { return v.ActiveGatewayCount }).(pulumi.IntOutput)
+}
+
+// Reference of gateway nodes
+func (o GetVpcV2ExternalSubnetOutput) ActiveGatewayNodes() GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnet) []GetVpcV2ExternalSubnetActiveGatewayNode { return v.ActiveGatewayNodes }).(GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput)
+}
+
+// List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+func (o GetVpcV2ExternalSubnetOutput) ExternalIps() GetVpcV2ExternalSubnetExternalIpArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnet) []GetVpcV2ExternalSubnetExternalIp { return v.ExternalIps }).(GetVpcV2ExternalSubnetExternalIpArrayOutput)
+}
+
+// List of gateway nodes that can be used for external connectivity.
+func (o GetVpcV2ExternalSubnetOutput) GatewayNodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnet) []string { return v.GatewayNodes }).(pulumi.StringArrayOutput)
+}
+
+// External subnet reference.
+func (o GetVpcV2ExternalSubnetOutput) SubnetReference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnet) string { return v.SubnetReference }).(pulumi.StringOutput)
+}
+
+type GetVpcV2ExternalSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnet)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetArrayOutput) ToGetVpcV2ExternalSubnetArrayOutput() GetVpcV2ExternalSubnetArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetArrayOutput) ToGetVpcV2ExternalSubnetArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternalSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternalSubnet {
+		return vs[0].([]GetVpcV2ExternalSubnet)[vs[1].(int)]
+	}).(GetVpcV2ExternalSubnetOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNode struct {
+	NodeId          string                                                 `pulumi:"nodeId"`
+	NodeIpAddresses []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress `pulumi:"nodeIpAddresses"`
+}
+
+// GetVpcV2ExternalSubnetActiveGatewayNodeInput is an input type that accepts GetVpcV2ExternalSubnetActiveGatewayNodeArgs and GetVpcV2ExternalSubnetActiveGatewayNodeOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetActiveGatewayNodeInput` via:
+//
+//	GetVpcV2ExternalSubnetActiveGatewayNodeArgs{...}
+type GetVpcV2ExternalSubnetActiveGatewayNodeInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeOutput() GetVpcV2ExternalSubnetActiveGatewayNodeOutput
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeOutputWithContext(context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeOutput
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeArgs struct {
+	NodeId          pulumi.StringInput                                             `pulumi:"nodeId"`
+	NodeIpAddresses GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput `pulumi:"nodeIpAddresses"`
+}
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeArgs) ToGetVpcV2ExternalSubnetActiveGatewayNodeOutput() GetVpcV2ExternalSubnetActiveGatewayNodeOutput {
+	return i.ToGetVpcV2ExternalSubnetActiveGatewayNodeOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeArgs) ToGetVpcV2ExternalSubnetActiveGatewayNodeOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetActiveGatewayNodeOutput)
+}
+
+// GetVpcV2ExternalSubnetActiveGatewayNodeArrayInput is an input type that accepts GetVpcV2ExternalSubnetActiveGatewayNodeArray and GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetActiveGatewayNodeArrayInput` via:
+//
+//	GetVpcV2ExternalSubnetActiveGatewayNodeArray{ GetVpcV2ExternalSubnetActiveGatewayNodeArgs{...} }
+type GetVpcV2ExternalSubnetActiveGatewayNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeArrayOutputWithContext(context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeArray []GetVpcV2ExternalSubnetActiveGatewayNodeInput
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeArray) ToGetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput {
+	return i.ToGetVpcV2ExternalSubnetActiveGatewayNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeArray) ToGetVpcV2ExternalSubnetActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeOutput() GetVpcV2ExternalSubnetActiveGatewayNodeOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetActiveGatewayNode) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeOutput) NodeIpAddresses() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetActiveGatewayNode) []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress {
+		return v.NodeIpAddresses
+	}).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternalSubnetActiveGatewayNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternalSubnetActiveGatewayNode {
+		return vs[0].([]GetVpcV2ExternalSubnetActiveGatewayNode)[vs[1].(int)]
+	}).(GetVpcV2ExternalSubnetActiveGatewayNodeOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress struct {
+	// IP V4 Configuration
+	Ipv4s []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 `pulumi:"ipv4s"`
+	// IP V6 Configuration
+	Ipv6s []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressInput is an input type that accepts GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArgs and GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressInput` via:
+//
+//	GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArgs{...}
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArgs struct {
+	// IP V4 Configuration
+	Ipv4s GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput `pulumi:"ipv4s"`
+	// IP V6 Configuration
+	Ipv6s GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return i.ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput)
+}
+
+// GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput is an input type that accepts GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArray and GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput` via:
+//
+//	GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArray{ GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArgs{...} }
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArray []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressInput
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArray) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return i.ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArray) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return o
+}
+
+// IP V4 Configuration
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput) Ipv4s() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress) []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+		return v.Ipv4s
+	}).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput)
+}
+
+// IP V6 Configuration
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput) Ipv6s() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress) []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+		return v.Ipv6s
+	}).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress {
+		return vs[0].([]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress)[vs[1].(int)]
+	}).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 struct {
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input is an input type that accepts GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args and GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input` via:
+//
+//	GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{...}
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args struct {
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return i.ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output)
+}
+
+// GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput is an input type that accepts GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array and GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput` via:
+//
+//	GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array{ GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{...} }
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return i.ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return o
+}
+
+// The prefix length of the network
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+		return vs[0].([]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)[vs[1].(int)]
+	}).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 struct {
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input is an input type that accepts GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args and GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input` via:
+//
+//	GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{...}
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args struct {
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return i.ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output)
+}
+
+// GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput is an input type that accepts GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array and GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput` via:
+//
+//	GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array{ GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{...} }
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput
+	ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array []GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return i.ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return o
+}
+
+// The prefix length of the network
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ToGetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+		return vs[0].([]GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)[vs[1].(int)]
+	}).(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output)
+}
+
+type GetVpcV2ExternalSubnetExternalIp struct {
+	// IP V4 Configuration
+	Ipv4s []GetVpcV2ExternalSubnetExternalIpIpv4 `pulumi:"ipv4s"`
+	// IP V6 Configuration
+	Ipv6s []GetVpcV2ExternalSubnetExternalIpIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcV2ExternalSubnetExternalIpInput is an input type that accepts GetVpcV2ExternalSubnetExternalIpArgs and GetVpcV2ExternalSubnetExternalIpOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetExternalIpInput` via:
+//
+//	GetVpcV2ExternalSubnetExternalIpArgs{...}
+type GetVpcV2ExternalSubnetExternalIpInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetExternalIpOutput() GetVpcV2ExternalSubnetExternalIpOutput
+	ToGetVpcV2ExternalSubnetExternalIpOutputWithContext(context.Context) GetVpcV2ExternalSubnetExternalIpOutput
+}
+
+type GetVpcV2ExternalSubnetExternalIpArgs struct {
+	// IP V4 Configuration
+	Ipv4s GetVpcV2ExternalSubnetExternalIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// IP V6 Configuration
+	Ipv6s GetVpcV2ExternalSubnetExternalIpIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcV2ExternalSubnetExternalIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpArgs) ToGetVpcV2ExternalSubnetExternalIpOutput() GetVpcV2ExternalSubnetExternalIpOutput {
+	return i.ToGetVpcV2ExternalSubnetExternalIpOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpArgs) ToGetVpcV2ExternalSubnetExternalIpOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetExternalIpOutput)
+}
+
+// GetVpcV2ExternalSubnetExternalIpArrayInput is an input type that accepts GetVpcV2ExternalSubnetExternalIpArray and GetVpcV2ExternalSubnetExternalIpArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetExternalIpArrayInput` via:
+//
+//	GetVpcV2ExternalSubnetExternalIpArray{ GetVpcV2ExternalSubnetExternalIpArgs{...} }
+type GetVpcV2ExternalSubnetExternalIpArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetExternalIpArrayOutput() GetVpcV2ExternalSubnetExternalIpArrayOutput
+	ToGetVpcV2ExternalSubnetExternalIpArrayOutputWithContext(context.Context) GetVpcV2ExternalSubnetExternalIpArrayOutput
+}
+
+type GetVpcV2ExternalSubnetExternalIpArray []GetVpcV2ExternalSubnetExternalIpInput
+
+func (GetVpcV2ExternalSubnetExternalIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpArray) ToGetVpcV2ExternalSubnetExternalIpArrayOutput() GetVpcV2ExternalSubnetExternalIpArrayOutput {
+	return i.ToGetVpcV2ExternalSubnetExternalIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpArray) ToGetVpcV2ExternalSubnetExternalIpArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetExternalIpArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetExternalIpOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetExternalIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpOutput) ToGetVpcV2ExternalSubnetExternalIpOutput() GetVpcV2ExternalSubnetExternalIpOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpOutput) ToGetVpcV2ExternalSubnetExternalIpOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpOutput {
+	return o
+}
+
+// IP V4 Configuration
+func (o GetVpcV2ExternalSubnetExternalIpOutput) Ipv4s() GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetExternalIp) []GetVpcV2ExternalSubnetExternalIpIpv4 { return v.Ipv4s }).(GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput)
+}
+
+// IP V6 Configuration
+func (o GetVpcV2ExternalSubnetExternalIpOutput) Ipv6s() GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetExternalIp) []GetVpcV2ExternalSubnetExternalIpIpv6 { return v.Ipv6s }).(GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetExternalIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetExternalIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpArrayOutput) ToGetVpcV2ExternalSubnetExternalIpArrayOutput() GetVpcV2ExternalSubnetExternalIpArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpArrayOutput) ToGetVpcV2ExternalSubnetExternalIpArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternalSubnetExternalIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternalSubnetExternalIp {
+		return vs[0].([]GetVpcV2ExternalSubnetExternalIp)[vs[1].(int)]
+	}).(GetVpcV2ExternalSubnetExternalIpOutput)
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv4 struct {
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2ExternalSubnetExternalIpIpv4Input is an input type that accepts GetVpcV2ExternalSubnetExternalIpIpv4Args and GetVpcV2ExternalSubnetExternalIpIpv4Output values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetExternalIpIpv4Input` via:
+//
+//	GetVpcV2ExternalSubnetExternalIpIpv4Args{...}
+type GetVpcV2ExternalSubnetExternalIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetExternalIpIpv4Output() GetVpcV2ExternalSubnetExternalIpIpv4Output
+	ToGetVpcV2ExternalSubnetExternalIpIpv4OutputWithContext(context.Context) GetVpcV2ExternalSubnetExternalIpIpv4Output
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv4Args struct {
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2ExternalSubnetExternalIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpIpv4Args) ToGetVpcV2ExternalSubnetExternalIpIpv4Output() GetVpcV2ExternalSubnetExternalIpIpv4Output {
+	return i.ToGetVpcV2ExternalSubnetExternalIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpIpv4Args) ToGetVpcV2ExternalSubnetExternalIpIpv4OutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetExternalIpIpv4Output)
+}
+
+// GetVpcV2ExternalSubnetExternalIpIpv4ArrayInput is an input type that accepts GetVpcV2ExternalSubnetExternalIpIpv4Array and GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetExternalIpIpv4ArrayInput` via:
+//
+//	GetVpcV2ExternalSubnetExternalIpIpv4Array{ GetVpcV2ExternalSubnetExternalIpIpv4Args{...} }
+type GetVpcV2ExternalSubnetExternalIpIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput() GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput
+	ToGetVpcV2ExternalSubnetExternalIpIpv4ArrayOutputWithContext(context.Context) GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv4Array []GetVpcV2ExternalSubnetExternalIpIpv4Input
+
+func (GetVpcV2ExternalSubnetExternalIpIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpIpv4Array) ToGetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput() GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput {
+	return i.ToGetVpcV2ExternalSubnetExternalIpIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpIpv4Array) ToGetVpcV2ExternalSubnetExternalIpIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetExternalIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv4Output) ToGetVpcV2ExternalSubnetExternalIpIpv4Output() GetVpcV2ExternalSubnetExternalIpIpv4Output {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv4Output) ToGetVpcV2ExternalSubnetExternalIpIpv4OutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpIpv4Output {
+	return o
+}
+
+// The prefix length of the network
+func (o GetVpcV2ExternalSubnetExternalIpIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetExternalIpIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2ExternalSubnetExternalIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetExternalIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput) ToGetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput() GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput) ToGetVpcV2ExternalSubnetExternalIpIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternalSubnetExternalIpIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternalSubnetExternalIpIpv4 {
+		return vs[0].([]GetVpcV2ExternalSubnetExternalIpIpv4)[vs[1].(int)]
+	}).(GetVpcV2ExternalSubnetExternalIpIpv4Output)
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv6 struct {
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2ExternalSubnetExternalIpIpv6Input is an input type that accepts GetVpcV2ExternalSubnetExternalIpIpv6Args and GetVpcV2ExternalSubnetExternalIpIpv6Output values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetExternalIpIpv6Input` via:
+//
+//	GetVpcV2ExternalSubnetExternalIpIpv6Args{...}
+type GetVpcV2ExternalSubnetExternalIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetExternalIpIpv6Output() GetVpcV2ExternalSubnetExternalIpIpv6Output
+	ToGetVpcV2ExternalSubnetExternalIpIpv6OutputWithContext(context.Context) GetVpcV2ExternalSubnetExternalIpIpv6Output
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv6Args struct {
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2ExternalSubnetExternalIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpIpv6Args) ToGetVpcV2ExternalSubnetExternalIpIpv6Output() GetVpcV2ExternalSubnetExternalIpIpv6Output {
+	return i.ToGetVpcV2ExternalSubnetExternalIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpIpv6Args) ToGetVpcV2ExternalSubnetExternalIpIpv6OutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetExternalIpIpv6Output)
+}
+
+// GetVpcV2ExternalSubnetExternalIpIpv6ArrayInput is an input type that accepts GetVpcV2ExternalSubnetExternalIpIpv6Array and GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternalSubnetExternalIpIpv6ArrayInput` via:
+//
+//	GetVpcV2ExternalSubnetExternalIpIpv6Array{ GetVpcV2ExternalSubnetExternalIpIpv6Args{...} }
+type GetVpcV2ExternalSubnetExternalIpIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput() GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput
+	ToGetVpcV2ExternalSubnetExternalIpIpv6ArrayOutputWithContext(context.Context) GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv6Array []GetVpcV2ExternalSubnetExternalIpIpv6Input
+
+func (GetVpcV2ExternalSubnetExternalIpIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpIpv6Array) ToGetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput() GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput {
+	return i.ToGetVpcV2ExternalSubnetExternalIpIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternalSubnetExternalIpIpv6Array) ToGetVpcV2ExternalSubnetExternalIpIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput)
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetExternalIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv6Output) ToGetVpcV2ExternalSubnetExternalIpIpv6Output() GetVpcV2ExternalSubnetExternalIpIpv6Output {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv6Output) ToGetVpcV2ExternalSubnetExternalIpIpv6OutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpIpv6Output {
+	return o
+}
+
+// The prefix length of the network
+func (o GetVpcV2ExternalSubnetExternalIpIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetExternalIpIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2ExternalSubnetExternalIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2ExternalSubnetExternalIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput) ToGetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput() GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput) ToGetVpcV2ExternalSubnetExternalIpIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternalSubnetExternalIpIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternalSubnetExternalIpIpv6 {
+		return vs[0].([]GetVpcV2ExternalSubnetExternalIpIpv6)[vs[1].(int)]
+	}).(GetVpcV2ExternalSubnetExternalIpIpv6Output)
+}
+
+type GetVpcV2ExternallyRoutablePrefix struct {
+	// IP V4 Configuration
+	Ipv4s []GetVpcV2ExternallyRoutablePrefixIpv4 `pulumi:"ipv4s"`
+	// IP V6 Configuration
+	Ipv6s []GetVpcV2ExternallyRoutablePrefixIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcV2ExternallyRoutablePrefixInput is an input type that accepts GetVpcV2ExternallyRoutablePrefixArgs and GetVpcV2ExternallyRoutablePrefixOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixInput` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixArgs{...}
+type GetVpcV2ExternallyRoutablePrefixInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixOutput() GetVpcV2ExternallyRoutablePrefixOutput
+	ToGetVpcV2ExternallyRoutablePrefixOutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixOutput
+}
+
+type GetVpcV2ExternallyRoutablePrefixArgs struct {
+	// IP V4 Configuration
+	Ipv4s GetVpcV2ExternallyRoutablePrefixIpv4ArrayInput `pulumi:"ipv4s"`
+	// IP V6 Configuration
+	Ipv6s GetVpcV2ExternallyRoutablePrefixIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcV2ExternallyRoutablePrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixArgs) ToGetVpcV2ExternallyRoutablePrefixOutput() GetVpcV2ExternallyRoutablePrefixOutput {
+	return i.ToGetVpcV2ExternallyRoutablePrefixOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixArgs) ToGetVpcV2ExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixOutput)
+}
+
+// GetVpcV2ExternallyRoutablePrefixArrayInput is an input type that accepts GetVpcV2ExternallyRoutablePrefixArray and GetVpcV2ExternallyRoutablePrefixArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixArrayInput` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixArray{ GetVpcV2ExternallyRoutablePrefixArgs{...} }
+type GetVpcV2ExternallyRoutablePrefixArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixArrayOutput() GetVpcV2ExternallyRoutablePrefixArrayOutput
+	ToGetVpcV2ExternallyRoutablePrefixArrayOutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixArrayOutput
+}
+
+type GetVpcV2ExternallyRoutablePrefixArray []GetVpcV2ExternallyRoutablePrefixInput
+
+func (GetVpcV2ExternallyRoutablePrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixArray) ToGetVpcV2ExternallyRoutablePrefixArrayOutput() GetVpcV2ExternallyRoutablePrefixArrayOutput {
+	return i.ToGetVpcV2ExternallyRoutablePrefixArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixArray) ToGetVpcV2ExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixArrayOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixOutput) ToGetVpcV2ExternallyRoutablePrefixOutput() GetVpcV2ExternallyRoutablePrefixOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixOutput) ToGetVpcV2ExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixOutput {
+	return o
+}
+
+// IP V4 Configuration
+func (o GetVpcV2ExternallyRoutablePrefixOutput) Ipv4s() GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefix) []GetVpcV2ExternallyRoutablePrefixIpv4 { return v.Ipv4s }).(GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput)
+}
+
+// IP V6 Configuration
+func (o GetVpcV2ExternallyRoutablePrefixOutput) Ipv6s() GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefix) []GetVpcV2ExternallyRoutablePrefixIpv6 { return v.Ipv6s }).(GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixArrayOutput) ToGetVpcV2ExternallyRoutablePrefixArrayOutput() GetVpcV2ExternallyRoutablePrefixArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixArrayOutput) ToGetVpcV2ExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternallyRoutablePrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternallyRoutablePrefix {
+		return vs[0].([]GetVpcV2ExternallyRoutablePrefix)[vs[1].(int)]
+	}).(GetVpcV2ExternallyRoutablePrefixOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4 struct {
+	// Reference to address configuration
+	Ips []GetVpcV2ExternallyRoutablePrefixIpv4Ip `pulumi:"ips"`
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetVpcV2ExternallyRoutablePrefixIpv4Input is an input type that accepts GetVpcV2ExternallyRoutablePrefixIpv4Args and GetVpcV2ExternallyRoutablePrefixIpv4Output values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixIpv4Input` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixIpv4Args{...}
+type GetVpcV2ExternallyRoutablePrefixIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixIpv4Output() GetVpcV2ExternallyRoutablePrefixIpv4Output
+	ToGetVpcV2ExternallyRoutablePrefixIpv4OutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixIpv4Output
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4Args struct {
+	// Reference to address configuration
+	Ips GetVpcV2ExternallyRoutablePrefixIpv4IpArrayInput `pulumi:"ips"`
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetVpcV2ExternallyRoutablePrefixIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv4Args) ToGetVpcV2ExternallyRoutablePrefixIpv4Output() GetVpcV2ExternallyRoutablePrefixIpv4Output {
+	return i.ToGetVpcV2ExternallyRoutablePrefixIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv4Args) ToGetVpcV2ExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixIpv4Output)
+}
+
+// GetVpcV2ExternallyRoutablePrefixIpv4ArrayInput is an input type that accepts GetVpcV2ExternallyRoutablePrefixIpv4Array and GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixIpv4ArrayInput` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixIpv4Array{ GetVpcV2ExternallyRoutablePrefixIpv4Args{...} }
+type GetVpcV2ExternallyRoutablePrefixIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput
+	ToGetVpcV2ExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4Array []GetVpcV2ExternallyRoutablePrefixIpv4Input
+
+func (GetVpcV2ExternallyRoutablePrefixIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv4Array) ToGetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput {
+	return i.ToGetVpcV2ExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv4Array) ToGetVpcV2ExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4Output) ToGetVpcV2ExternallyRoutablePrefixIpv4Output() GetVpcV2ExternallyRoutablePrefixIpv4Output {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4Output) ToGetVpcV2ExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv4Output {
+	return o
+}
+
+// Reference to address configuration
+func (o GetVpcV2ExternallyRoutablePrefixIpv4Output) Ips() GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefixIpv4) []GetVpcV2ExternallyRoutablePrefixIpv4Ip { return v.Ips }).(GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput)
+}
+
+// The prefix length of the network
+func (o GetVpcV2ExternallyRoutablePrefixIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefixIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput) ToGetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput) ToGetVpcV2ExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternallyRoutablePrefixIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternallyRoutablePrefixIpv4 {
+		return vs[0].([]GetVpcV2ExternallyRoutablePrefixIpv4)[vs[1].(int)]
+	}).(GetVpcV2ExternallyRoutablePrefixIpv4Output)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4Ip struct {
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2ExternallyRoutablePrefixIpv4IpInput is an input type that accepts GetVpcV2ExternallyRoutablePrefixIpv4IpArgs and GetVpcV2ExternallyRoutablePrefixIpv4IpOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixIpv4IpInput` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixIpv4IpArgs{...}
+type GetVpcV2ExternallyRoutablePrefixIpv4IpInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixIpv4IpOutput() GetVpcV2ExternallyRoutablePrefixIpv4IpOutput
+	ToGetVpcV2ExternallyRoutablePrefixIpv4IpOutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixIpv4IpOutput
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4IpArgs struct {
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2ExternallyRoutablePrefixIpv4IpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv4IpArgs) ToGetVpcV2ExternallyRoutablePrefixIpv4IpOutput() GetVpcV2ExternallyRoutablePrefixIpv4IpOutput {
+	return i.ToGetVpcV2ExternallyRoutablePrefixIpv4IpOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv4IpArgs) ToGetVpcV2ExternallyRoutablePrefixIpv4IpOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv4IpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixIpv4IpOutput)
+}
+
+// GetVpcV2ExternallyRoutablePrefixIpv4IpArrayInput is an input type that accepts GetVpcV2ExternallyRoutablePrefixIpv4IpArray and GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixIpv4IpArrayInput` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixIpv4IpArray{ GetVpcV2ExternallyRoutablePrefixIpv4IpArgs{...} }
+type GetVpcV2ExternallyRoutablePrefixIpv4IpArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput
+	ToGetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4IpArray []GetVpcV2ExternallyRoutablePrefixIpv4IpInput
+
+func (GetVpcV2ExternallyRoutablePrefixIpv4IpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv4IpArray) ToGetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput {
+	return i.ToGetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv4IpArray) ToGetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4IpOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixIpv4IpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4IpOutput) ToGetVpcV2ExternallyRoutablePrefixIpv4IpOutput() GetVpcV2ExternallyRoutablePrefixIpv4IpOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4IpOutput) ToGetVpcV2ExternallyRoutablePrefixIpv4IpOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv4IpOutput {
+	return o
+}
+
+// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetVpcV2ExternallyRoutablePrefixIpv4IpOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefixIpv4Ip) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2ExternallyRoutablePrefixIpv4IpOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefixIpv4Ip) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput) ToGetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput) ToGetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternallyRoutablePrefixIpv4IpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternallyRoutablePrefixIpv4Ip {
+		return vs[0].([]GetVpcV2ExternallyRoutablePrefixIpv4Ip)[vs[1].(int)]
+	}).(GetVpcV2ExternallyRoutablePrefixIpv4IpOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6 struct {
+	// Reference to address configuration
+	Ips []GetVpcV2ExternallyRoutablePrefixIpv6Ip `pulumi:"ips"`
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetVpcV2ExternallyRoutablePrefixIpv6Input is an input type that accepts GetVpcV2ExternallyRoutablePrefixIpv6Args and GetVpcV2ExternallyRoutablePrefixIpv6Output values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixIpv6Input` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixIpv6Args{...}
+type GetVpcV2ExternallyRoutablePrefixIpv6Input interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixIpv6Output() GetVpcV2ExternallyRoutablePrefixIpv6Output
+	ToGetVpcV2ExternallyRoutablePrefixIpv6OutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixIpv6Output
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6Args struct {
+	// Reference to address configuration
+	Ips GetVpcV2ExternallyRoutablePrefixIpv6IpArrayInput `pulumi:"ips"`
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetVpcV2ExternallyRoutablePrefixIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv6Args) ToGetVpcV2ExternallyRoutablePrefixIpv6Output() GetVpcV2ExternallyRoutablePrefixIpv6Output {
+	return i.ToGetVpcV2ExternallyRoutablePrefixIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv6Args) ToGetVpcV2ExternallyRoutablePrefixIpv6OutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixIpv6Output)
+}
+
+// GetVpcV2ExternallyRoutablePrefixIpv6ArrayInput is an input type that accepts GetVpcV2ExternallyRoutablePrefixIpv6Array and GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixIpv6ArrayInput` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixIpv6Array{ GetVpcV2ExternallyRoutablePrefixIpv6Args{...} }
+type GetVpcV2ExternallyRoutablePrefixIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput
+	ToGetVpcV2ExternallyRoutablePrefixIpv6ArrayOutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6Array []GetVpcV2ExternallyRoutablePrefixIpv6Input
+
+func (GetVpcV2ExternallyRoutablePrefixIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefixIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv6Array) ToGetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput {
+	return i.ToGetVpcV2ExternallyRoutablePrefixIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv6Array) ToGetVpcV2ExternallyRoutablePrefixIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6Output) ToGetVpcV2ExternallyRoutablePrefixIpv6Output() GetVpcV2ExternallyRoutablePrefixIpv6Output {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6Output) ToGetVpcV2ExternallyRoutablePrefixIpv6OutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv6Output {
+	return o
+}
+
+// Reference to address configuration
+func (o GetVpcV2ExternallyRoutablePrefixIpv6Output) Ips() GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefixIpv6) []GetVpcV2ExternallyRoutablePrefixIpv6Ip { return v.Ips }).(GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput)
+}
+
+// The prefix length of the network
+func (o GetVpcV2ExternallyRoutablePrefixIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefixIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefixIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput) ToGetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput) ToGetVpcV2ExternallyRoutablePrefixIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternallyRoutablePrefixIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternallyRoutablePrefixIpv6 {
+		return vs[0].([]GetVpcV2ExternallyRoutablePrefixIpv6)[vs[1].(int)]
+	}).(GetVpcV2ExternallyRoutablePrefixIpv6Output)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6Ip struct {
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2ExternallyRoutablePrefixIpv6IpInput is an input type that accepts GetVpcV2ExternallyRoutablePrefixIpv6IpArgs and GetVpcV2ExternallyRoutablePrefixIpv6IpOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixIpv6IpInput` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixIpv6IpArgs{...}
+type GetVpcV2ExternallyRoutablePrefixIpv6IpInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixIpv6IpOutput() GetVpcV2ExternallyRoutablePrefixIpv6IpOutput
+	ToGetVpcV2ExternallyRoutablePrefixIpv6IpOutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixIpv6IpOutput
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6IpArgs struct {
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2ExternallyRoutablePrefixIpv6IpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv6IpArgs) ToGetVpcV2ExternallyRoutablePrefixIpv6IpOutput() GetVpcV2ExternallyRoutablePrefixIpv6IpOutput {
+	return i.ToGetVpcV2ExternallyRoutablePrefixIpv6IpOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv6IpArgs) ToGetVpcV2ExternallyRoutablePrefixIpv6IpOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv6IpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixIpv6IpOutput)
+}
+
+// GetVpcV2ExternallyRoutablePrefixIpv6IpArrayInput is an input type that accepts GetVpcV2ExternallyRoutablePrefixIpv6IpArray and GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2ExternallyRoutablePrefixIpv6IpArrayInput` via:
+//
+//	GetVpcV2ExternallyRoutablePrefixIpv6IpArray{ GetVpcV2ExternallyRoutablePrefixIpv6IpArgs{...} }
+type GetVpcV2ExternallyRoutablePrefixIpv6IpArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput
+	ToGetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutputWithContext(context.Context) GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6IpArray []GetVpcV2ExternallyRoutablePrefixIpv6IpInput
+
+func (GetVpcV2ExternallyRoutablePrefixIpv6IpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv6IpArray) ToGetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput {
+	return i.ToGetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2ExternallyRoutablePrefixIpv6IpArray) ToGetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6IpOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixIpv6IpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6IpOutput) ToGetVpcV2ExternallyRoutablePrefixIpv6IpOutput() GetVpcV2ExternallyRoutablePrefixIpv6IpOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6IpOutput) ToGetVpcV2ExternallyRoutablePrefixIpv6IpOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv6IpOutput {
+	return o
+}
+
+// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetVpcV2ExternallyRoutablePrefixIpv6IpOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefixIpv6Ip) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2ExternallyRoutablePrefixIpv6IpOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2ExternallyRoutablePrefixIpv6Ip) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2ExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput) ToGetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput() GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput) ToGetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutputWithContext(ctx context.Context) GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput {
+	return o
+}
+
+func (o GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput) Index(i pulumi.IntInput) GetVpcV2ExternallyRoutablePrefixIpv6IpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2ExternallyRoutablePrefixIpv6Ip {
+		return vs[0].([]GetVpcV2ExternallyRoutablePrefixIpv6Ip)[vs[1].(int)]
+	}).(GetVpcV2ExternallyRoutablePrefixIpv6IpOutput)
+}
+
+type GetVpcV2Link struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetVpcV2LinkInput is an input type that accepts GetVpcV2LinkArgs and GetVpcV2LinkOutput values.
+// You can construct a concrete instance of `GetVpcV2LinkInput` via:
+//
+//	GetVpcV2LinkArgs{...}
+type GetVpcV2LinkInput interface {
+	pulumi.Input
+
+	ToGetVpcV2LinkOutput() GetVpcV2LinkOutput
+	ToGetVpcV2LinkOutputWithContext(context.Context) GetVpcV2LinkOutput
+}
+
+type GetVpcV2LinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetVpcV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2Link)(nil)).Elem()
+}
+
+func (i GetVpcV2LinkArgs) ToGetVpcV2LinkOutput() GetVpcV2LinkOutput {
+	return i.ToGetVpcV2LinkOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2LinkArgs) ToGetVpcV2LinkOutputWithContext(ctx context.Context) GetVpcV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2LinkOutput)
+}
+
+// GetVpcV2LinkArrayInput is an input type that accepts GetVpcV2LinkArray and GetVpcV2LinkArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2LinkArrayInput` via:
+//
+//	GetVpcV2LinkArray{ GetVpcV2LinkArgs{...} }
+type GetVpcV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2LinkArrayOutput() GetVpcV2LinkArrayOutput
+	ToGetVpcV2LinkArrayOutputWithContext(context.Context) GetVpcV2LinkArrayOutput
+}
+
+type GetVpcV2LinkArray []GetVpcV2LinkInput
+
+func (GetVpcV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2Link)(nil)).Elem()
+}
+
+func (i GetVpcV2LinkArray) ToGetVpcV2LinkArrayOutput() GetVpcV2LinkArrayOutput {
+	return i.ToGetVpcV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2LinkArray) ToGetVpcV2LinkArrayOutputWithContext(ctx context.Context) GetVpcV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2LinkArrayOutput)
+}
+
+type GetVpcV2LinkOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2Link)(nil)).Elem()
+}
+
+func (o GetVpcV2LinkOutput) ToGetVpcV2LinkOutput() GetVpcV2LinkOutput {
+	return o
+}
+
+func (o GetVpcV2LinkOutput) ToGetVpcV2LinkOutputWithContext(ctx context.Context) GetVpcV2LinkOutput {
+	return o
+}
+
+func (o GetVpcV2LinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2Link) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetVpcV2LinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2Link) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetVpcV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2Link)(nil)).Elem()
+}
+
+func (o GetVpcV2LinkArrayOutput) ToGetVpcV2LinkArrayOutput() GetVpcV2LinkArrayOutput {
+	return o
+}
+
+func (o GetVpcV2LinkArrayOutput) ToGetVpcV2LinkArrayOutputWithContext(ctx context.Context) GetVpcV2LinkArrayOutput {
+	return o
+}
+
+func (o GetVpcV2LinkArrayOutput) Index(i pulumi.IntInput) GetVpcV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2Link {
+		return vs[0].([]GetVpcV2Link)[vs[1].(int)]
+	}).(GetVpcV2LinkOutput)
+}
+
+type GetVpcV2Metadata struct {
+	CategoryIds        [][]interface{} `pulumi:"categoryIds"`
+	OwnerReferenceId   string          `pulumi:"ownerReferenceId"`
+	OwnerUserName      string          `pulumi:"ownerUserName"`
+	ProjectName        string          `pulumi:"projectName"`
+	ProjectReferenceId string          `pulumi:"projectReferenceId"`
+}
+
+// GetVpcV2MetadataInput is an input type that accepts GetVpcV2MetadataArgs and GetVpcV2MetadataOutput values.
+// You can construct a concrete instance of `GetVpcV2MetadataInput` via:
+//
+//	GetVpcV2MetadataArgs{...}
+type GetVpcV2MetadataInput interface {
+	pulumi.Input
+
+	ToGetVpcV2MetadataOutput() GetVpcV2MetadataOutput
+	ToGetVpcV2MetadataOutputWithContext(context.Context) GetVpcV2MetadataOutput
+}
+
+type GetVpcV2MetadataArgs struct {
+	CategoryIds        pulumi.ArrayArrayInput `pulumi:"categoryIds"`
+	OwnerReferenceId   pulumi.StringInput     `pulumi:"ownerReferenceId"`
+	OwnerUserName      pulumi.StringInput     `pulumi:"ownerUserName"`
+	ProjectName        pulumi.StringInput     `pulumi:"projectName"`
+	ProjectReferenceId pulumi.StringInput     `pulumi:"projectReferenceId"`
+}
+
+func (GetVpcV2MetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2Metadata)(nil)).Elem()
+}
+
+func (i GetVpcV2MetadataArgs) ToGetVpcV2MetadataOutput() GetVpcV2MetadataOutput {
+	return i.ToGetVpcV2MetadataOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2MetadataArgs) ToGetVpcV2MetadataOutputWithContext(ctx context.Context) GetVpcV2MetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2MetadataOutput)
+}
+
+// GetVpcV2MetadataArrayInput is an input type that accepts GetVpcV2MetadataArray and GetVpcV2MetadataArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2MetadataArrayInput` via:
+//
+//	GetVpcV2MetadataArray{ GetVpcV2MetadataArgs{...} }
+type GetVpcV2MetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2MetadataArrayOutput() GetVpcV2MetadataArrayOutput
+	ToGetVpcV2MetadataArrayOutputWithContext(context.Context) GetVpcV2MetadataArrayOutput
+}
+
+type GetVpcV2MetadataArray []GetVpcV2MetadataInput
+
+func (GetVpcV2MetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2Metadata)(nil)).Elem()
+}
+
+func (i GetVpcV2MetadataArray) ToGetVpcV2MetadataArrayOutput() GetVpcV2MetadataArrayOutput {
+	return i.ToGetVpcV2MetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2MetadataArray) ToGetVpcV2MetadataArrayOutputWithContext(ctx context.Context) GetVpcV2MetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2MetadataArrayOutput)
+}
+
+type GetVpcV2MetadataOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2MetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2Metadata)(nil)).Elem()
+}
+
+func (o GetVpcV2MetadataOutput) ToGetVpcV2MetadataOutput() GetVpcV2MetadataOutput {
+	return o
+}
+
+func (o GetVpcV2MetadataOutput) ToGetVpcV2MetadataOutputWithContext(ctx context.Context) GetVpcV2MetadataOutput {
+	return o
+}
+
+func (o GetVpcV2MetadataOutput) CategoryIds() pulumi.ArrayArrayOutput {
+	return o.ApplyT(func(v GetVpcV2Metadata) [][]interface{} { return v.CategoryIds }).(pulumi.ArrayArrayOutput)
+}
+
+func (o GetVpcV2MetadataOutput) OwnerReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2Metadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
+}
+
+func (o GetVpcV2MetadataOutput) OwnerUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2Metadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+func (o GetVpcV2MetadataOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2Metadata) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+func (o GetVpcV2MetadataOutput) ProjectReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2Metadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
+}
+
+type GetVpcV2MetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2MetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2Metadata)(nil)).Elem()
+}
+
+func (o GetVpcV2MetadataArrayOutput) ToGetVpcV2MetadataArrayOutput() GetVpcV2MetadataArrayOutput {
+	return o
+}
+
+func (o GetVpcV2MetadataArrayOutput) ToGetVpcV2MetadataArrayOutputWithContext(ctx context.Context) GetVpcV2MetadataArrayOutput {
+	return o
+}
+
+func (o GetVpcV2MetadataArrayOutput) Index(i pulumi.IntInput) GetVpcV2MetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2Metadata {
+		return vs[0].([]GetVpcV2Metadata)[vs[1].(int)]
+	}).(GetVpcV2MetadataOutput)
+}
+
+type GetVpcV2SnatIp struct {
+	// IP V4 Configuration
+	Ipv4s []GetVpcV2SnatIpIpv4 `pulumi:"ipv4s"`
+	// IP V6 Configuration
+	Ipv6s []GetVpcV2SnatIpIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcV2SnatIpInput is an input type that accepts GetVpcV2SnatIpArgs and GetVpcV2SnatIpOutput values.
+// You can construct a concrete instance of `GetVpcV2SnatIpInput` via:
+//
+//	GetVpcV2SnatIpArgs{...}
+type GetVpcV2SnatIpInput interface {
+	pulumi.Input
+
+	ToGetVpcV2SnatIpOutput() GetVpcV2SnatIpOutput
+	ToGetVpcV2SnatIpOutputWithContext(context.Context) GetVpcV2SnatIpOutput
+}
+
+type GetVpcV2SnatIpArgs struct {
+	// IP V4 Configuration
+	Ipv4s GetVpcV2SnatIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// IP V6 Configuration
+	Ipv6s GetVpcV2SnatIpIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcV2SnatIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2SnatIp)(nil)).Elem()
+}
+
+func (i GetVpcV2SnatIpArgs) ToGetVpcV2SnatIpOutput() GetVpcV2SnatIpOutput {
+	return i.ToGetVpcV2SnatIpOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2SnatIpArgs) ToGetVpcV2SnatIpOutputWithContext(ctx context.Context) GetVpcV2SnatIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2SnatIpOutput)
+}
+
+// GetVpcV2SnatIpArrayInput is an input type that accepts GetVpcV2SnatIpArray and GetVpcV2SnatIpArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2SnatIpArrayInput` via:
+//
+//	GetVpcV2SnatIpArray{ GetVpcV2SnatIpArgs{...} }
+type GetVpcV2SnatIpArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2SnatIpArrayOutput() GetVpcV2SnatIpArrayOutput
+	ToGetVpcV2SnatIpArrayOutputWithContext(context.Context) GetVpcV2SnatIpArrayOutput
+}
+
+type GetVpcV2SnatIpArray []GetVpcV2SnatIpInput
+
+func (GetVpcV2SnatIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2SnatIp)(nil)).Elem()
+}
+
+func (i GetVpcV2SnatIpArray) ToGetVpcV2SnatIpArrayOutput() GetVpcV2SnatIpArrayOutput {
+	return i.ToGetVpcV2SnatIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2SnatIpArray) ToGetVpcV2SnatIpArrayOutputWithContext(ctx context.Context) GetVpcV2SnatIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2SnatIpArrayOutput)
+}
+
+type GetVpcV2SnatIpOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2SnatIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2SnatIp)(nil)).Elem()
+}
+
+func (o GetVpcV2SnatIpOutput) ToGetVpcV2SnatIpOutput() GetVpcV2SnatIpOutput {
+	return o
+}
+
+func (o GetVpcV2SnatIpOutput) ToGetVpcV2SnatIpOutputWithContext(ctx context.Context) GetVpcV2SnatIpOutput {
+	return o
+}
+
+// IP V4 Configuration
+func (o GetVpcV2SnatIpOutput) Ipv4s() GetVpcV2SnatIpIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2SnatIp) []GetVpcV2SnatIpIpv4 { return v.Ipv4s }).(GetVpcV2SnatIpIpv4ArrayOutput)
+}
+
+// IP V6 Configuration
+func (o GetVpcV2SnatIpOutput) Ipv6s() GetVpcV2SnatIpIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcV2SnatIp) []GetVpcV2SnatIpIpv6 { return v.Ipv6s }).(GetVpcV2SnatIpIpv6ArrayOutput)
+}
+
+type GetVpcV2SnatIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2SnatIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2SnatIp)(nil)).Elem()
+}
+
+func (o GetVpcV2SnatIpArrayOutput) ToGetVpcV2SnatIpArrayOutput() GetVpcV2SnatIpArrayOutput {
+	return o
+}
+
+func (o GetVpcV2SnatIpArrayOutput) ToGetVpcV2SnatIpArrayOutputWithContext(ctx context.Context) GetVpcV2SnatIpArrayOutput {
+	return o
+}
+
+func (o GetVpcV2SnatIpArrayOutput) Index(i pulumi.IntInput) GetVpcV2SnatIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2SnatIp {
+		return vs[0].([]GetVpcV2SnatIp)[vs[1].(int)]
+	}).(GetVpcV2SnatIpOutput)
+}
+
+type GetVpcV2SnatIpIpv4 struct {
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2SnatIpIpv4Input is an input type that accepts GetVpcV2SnatIpIpv4Args and GetVpcV2SnatIpIpv4Output values.
+// You can construct a concrete instance of `GetVpcV2SnatIpIpv4Input` via:
+//
+//	GetVpcV2SnatIpIpv4Args{...}
+type GetVpcV2SnatIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcV2SnatIpIpv4Output() GetVpcV2SnatIpIpv4Output
+	ToGetVpcV2SnatIpIpv4OutputWithContext(context.Context) GetVpcV2SnatIpIpv4Output
+}
+
+type GetVpcV2SnatIpIpv4Args struct {
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2SnatIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2SnatIpIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2SnatIpIpv4Args) ToGetVpcV2SnatIpIpv4Output() GetVpcV2SnatIpIpv4Output {
+	return i.ToGetVpcV2SnatIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2SnatIpIpv4Args) ToGetVpcV2SnatIpIpv4OutputWithContext(ctx context.Context) GetVpcV2SnatIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2SnatIpIpv4Output)
+}
+
+// GetVpcV2SnatIpIpv4ArrayInput is an input type that accepts GetVpcV2SnatIpIpv4Array and GetVpcV2SnatIpIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2SnatIpIpv4ArrayInput` via:
+//
+//	GetVpcV2SnatIpIpv4Array{ GetVpcV2SnatIpIpv4Args{...} }
+type GetVpcV2SnatIpIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2SnatIpIpv4ArrayOutput() GetVpcV2SnatIpIpv4ArrayOutput
+	ToGetVpcV2SnatIpIpv4ArrayOutputWithContext(context.Context) GetVpcV2SnatIpIpv4ArrayOutput
+}
+
+type GetVpcV2SnatIpIpv4Array []GetVpcV2SnatIpIpv4Input
+
+func (GetVpcV2SnatIpIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2SnatIpIpv4)(nil)).Elem()
+}
+
+func (i GetVpcV2SnatIpIpv4Array) ToGetVpcV2SnatIpIpv4ArrayOutput() GetVpcV2SnatIpIpv4ArrayOutput {
+	return i.ToGetVpcV2SnatIpIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2SnatIpIpv4Array) ToGetVpcV2SnatIpIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2SnatIpIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2SnatIpIpv4ArrayOutput)
+}
+
+type GetVpcV2SnatIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2SnatIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2SnatIpIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2SnatIpIpv4Output) ToGetVpcV2SnatIpIpv4Output() GetVpcV2SnatIpIpv4Output {
+	return o
+}
+
+func (o GetVpcV2SnatIpIpv4Output) ToGetVpcV2SnatIpIpv4OutputWithContext(ctx context.Context) GetVpcV2SnatIpIpv4Output {
+	return o
+}
+
+// The prefix length of the network
+func (o GetVpcV2SnatIpIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2SnatIpIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2SnatIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2SnatIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2SnatIpIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2SnatIpIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2SnatIpIpv4)(nil)).Elem()
+}
+
+func (o GetVpcV2SnatIpIpv4ArrayOutput) ToGetVpcV2SnatIpIpv4ArrayOutput() GetVpcV2SnatIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2SnatIpIpv4ArrayOutput) ToGetVpcV2SnatIpIpv4ArrayOutputWithContext(ctx context.Context) GetVpcV2SnatIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2SnatIpIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcV2SnatIpIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2SnatIpIpv4 {
+		return vs[0].([]GetVpcV2SnatIpIpv4)[vs[1].(int)]
+	}).(GetVpcV2SnatIpIpv4Output)
+}
+
+type GetVpcV2SnatIpIpv6 struct {
+	// The prefix length of the network
+	PrefixLength int `pulumi:"prefixLength"`
+	// value of address
+	Value string `pulumi:"value"`
+}
+
+// GetVpcV2SnatIpIpv6Input is an input type that accepts GetVpcV2SnatIpIpv6Args and GetVpcV2SnatIpIpv6Output values.
+// You can construct a concrete instance of `GetVpcV2SnatIpIpv6Input` via:
+//
+//	GetVpcV2SnatIpIpv6Args{...}
+type GetVpcV2SnatIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetVpcV2SnatIpIpv6Output() GetVpcV2SnatIpIpv6Output
+	ToGetVpcV2SnatIpIpv6OutputWithContext(context.Context) GetVpcV2SnatIpIpv6Output
+}
+
+type GetVpcV2SnatIpIpv6Args struct {
+	// The prefix length of the network
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// value of address
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcV2SnatIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2SnatIpIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2SnatIpIpv6Args) ToGetVpcV2SnatIpIpv6Output() GetVpcV2SnatIpIpv6Output {
+	return i.ToGetVpcV2SnatIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVpcV2SnatIpIpv6Args) ToGetVpcV2SnatIpIpv6OutputWithContext(ctx context.Context) GetVpcV2SnatIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2SnatIpIpv6Output)
+}
+
+// GetVpcV2SnatIpIpv6ArrayInput is an input type that accepts GetVpcV2SnatIpIpv6Array and GetVpcV2SnatIpIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVpcV2SnatIpIpv6ArrayInput` via:
+//
+//	GetVpcV2SnatIpIpv6Array{ GetVpcV2SnatIpIpv6Args{...} }
+type GetVpcV2SnatIpIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcV2SnatIpIpv6ArrayOutput() GetVpcV2SnatIpIpv6ArrayOutput
+	ToGetVpcV2SnatIpIpv6ArrayOutputWithContext(context.Context) GetVpcV2SnatIpIpv6ArrayOutput
+}
+
+type GetVpcV2SnatIpIpv6Array []GetVpcV2SnatIpIpv6Input
+
+func (GetVpcV2SnatIpIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2SnatIpIpv6)(nil)).Elem()
+}
+
+func (i GetVpcV2SnatIpIpv6Array) ToGetVpcV2SnatIpIpv6ArrayOutput() GetVpcV2SnatIpIpv6ArrayOutput {
+	return i.ToGetVpcV2SnatIpIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcV2SnatIpIpv6Array) ToGetVpcV2SnatIpIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2SnatIpIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcV2SnatIpIpv6ArrayOutput)
+}
+
+type GetVpcV2SnatIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVpcV2SnatIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcV2SnatIpIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2SnatIpIpv6Output) ToGetVpcV2SnatIpIpv6Output() GetVpcV2SnatIpIpv6Output {
+	return o
+}
+
+func (o GetVpcV2SnatIpIpv6Output) ToGetVpcV2SnatIpIpv6OutputWithContext(ctx context.Context) GetVpcV2SnatIpIpv6Output {
+	return o
+}
+
+// The prefix length of the network
+func (o GetVpcV2SnatIpIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcV2SnatIpIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// value of address
+func (o GetVpcV2SnatIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcV2SnatIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcV2SnatIpIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcV2SnatIpIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcV2SnatIpIpv6)(nil)).Elem()
+}
+
+func (o GetVpcV2SnatIpIpv6ArrayOutput) ToGetVpcV2SnatIpIpv6ArrayOutput() GetVpcV2SnatIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2SnatIpIpv6ArrayOutput) ToGetVpcV2SnatIpIpv6ArrayOutputWithContext(ctx context.Context) GetVpcV2SnatIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcV2SnatIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcV2SnatIpIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcV2SnatIpIpv6 {
+		return vs[0].([]GetVpcV2SnatIpIpv6)[vs[1].(int)]
+	}).(GetVpcV2SnatIpIpv6Output)
+}
+
+type GetVpcsEntity struct {
+	// - The vpc kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// VPC input spec
+	Specs []GetVpcsEntitySpec `pulumi:"specs"`
+	// VPC output status
+	Statuses []GetVpcsEntityStatus `pulumi:"statuses"`
+}
+
+// GetVpcsEntityInput is an input type that accepts GetVpcsEntityArgs and GetVpcsEntityOutput values.
+// You can construct a concrete instance of `GetVpcsEntityInput` via:
+//
+//	GetVpcsEntityArgs{...}
+type GetVpcsEntityInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityOutput() GetVpcsEntityOutput
+	ToGetVpcsEntityOutputWithContext(context.Context) GetVpcsEntityOutput
+}
+
+type GetVpcsEntityArgs struct {
+	// - The vpc kind metadata.
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// VPC input spec
+	Specs GetVpcsEntitySpecArrayInput `pulumi:"specs"`
+	// VPC output status
+	Statuses GetVpcsEntityStatusArrayInput `pulumi:"statuses"`
+}
+
+func (GetVpcsEntityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntity)(nil)).Elem()
+}
+
+func (i GetVpcsEntityArgs) ToGetVpcsEntityOutput() GetVpcsEntityOutput {
+	return i.ToGetVpcsEntityOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityArgs) ToGetVpcsEntityOutputWithContext(ctx context.Context) GetVpcsEntityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityOutput)
+}
+
+// GetVpcsEntityArrayInput is an input type that accepts GetVpcsEntityArray and GetVpcsEntityArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntityArrayInput` via:
+//
+//	GetVpcsEntityArray{ GetVpcsEntityArgs{...} }
+type GetVpcsEntityArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityArrayOutput() GetVpcsEntityArrayOutput
+	ToGetVpcsEntityArrayOutputWithContext(context.Context) GetVpcsEntityArrayOutput
+}
+
+type GetVpcsEntityArray []GetVpcsEntityInput
+
+func (GetVpcsEntityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntity)(nil)).Elem()
+}
+
+func (i GetVpcsEntityArray) ToGetVpcsEntityArrayOutput() GetVpcsEntityArrayOutput {
+	return i.ToGetVpcsEntityArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityArray) ToGetVpcsEntityArrayOutputWithContext(ctx context.Context) GetVpcsEntityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityArrayOutput)
+}
+
+type GetVpcsEntityOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntity)(nil)).Elem()
+}
+
+func (o GetVpcsEntityOutput) ToGetVpcsEntityOutput() GetVpcsEntityOutput {
+	return o
+}
+
+func (o GetVpcsEntityOutput) ToGetVpcsEntityOutputWithContext(ctx context.Context) GetVpcsEntityOutput {
+	return o
+}
+
+// - The vpc kind metadata.
+func (o GetVpcsEntityOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVpcsEntity) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// VPC input spec
+func (o GetVpcsEntityOutput) Specs() GetVpcsEntitySpecArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntity) []GetVpcsEntitySpec { return v.Specs }).(GetVpcsEntitySpecArrayOutput)
+}
+
+// VPC output status
+func (o GetVpcsEntityOutput) Statuses() GetVpcsEntityStatusArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntity) []GetVpcsEntityStatus { return v.Statuses }).(GetVpcsEntityStatusArrayOutput)
+}
+
+type GetVpcsEntityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntity)(nil)).Elem()
+}
+
+func (o GetVpcsEntityArrayOutput) ToGetVpcsEntityArrayOutput() GetVpcsEntityArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityArrayOutput) ToGetVpcsEntityArrayOutputWithContext(ctx context.Context) GetVpcsEntityArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityArrayOutput) Index(i pulumi.IntInput) GetVpcsEntityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntity {
+		return vs[0].([]GetVpcsEntity)[vs[1].(int)]
+	}).(GetVpcsEntityOutput)
+}
+
+type GetVpcsEntitySpec struct {
+	// - the name.
+	Name string `pulumi:"name"`
+	// VPC resources status
+	Resources []GetVpcsEntitySpecResource `pulumi:"resources"`
+}
+
+// GetVpcsEntitySpecInput is an input type that accepts GetVpcsEntitySpecArgs and GetVpcsEntitySpecOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecInput` via:
+//
+//	GetVpcsEntitySpecArgs{...}
+type GetVpcsEntitySpecInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecOutput() GetVpcsEntitySpecOutput
+	ToGetVpcsEntitySpecOutputWithContext(context.Context) GetVpcsEntitySpecOutput
+}
+
+type GetVpcsEntitySpecArgs struct {
+	// - the name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// VPC resources status
+	Resources GetVpcsEntitySpecResourceArrayInput `pulumi:"resources"`
+}
+
+func (GetVpcsEntitySpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpec)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecArgs) ToGetVpcsEntitySpecOutput() GetVpcsEntitySpecOutput {
+	return i.ToGetVpcsEntitySpecOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecArgs) ToGetVpcsEntitySpecOutputWithContext(ctx context.Context) GetVpcsEntitySpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecOutput)
+}
+
+// GetVpcsEntitySpecArrayInput is an input type that accepts GetVpcsEntitySpecArray and GetVpcsEntitySpecArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecArrayInput` via:
+//
+//	GetVpcsEntitySpecArray{ GetVpcsEntitySpecArgs{...} }
+type GetVpcsEntitySpecArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecArrayOutput() GetVpcsEntitySpecArrayOutput
+	ToGetVpcsEntitySpecArrayOutputWithContext(context.Context) GetVpcsEntitySpecArrayOutput
+}
+
+type GetVpcsEntitySpecArray []GetVpcsEntitySpecInput
+
+func (GetVpcsEntitySpecArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpec)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecArray) ToGetVpcsEntitySpecArrayOutput() GetVpcsEntitySpecArrayOutput {
+	return i.ToGetVpcsEntitySpecArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecArray) ToGetVpcsEntitySpecArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecArrayOutput)
+}
+
+type GetVpcsEntitySpecOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpec)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecOutput) ToGetVpcsEntitySpecOutput() GetVpcsEntitySpecOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecOutput) ToGetVpcsEntitySpecOutputWithContext(ctx context.Context) GetVpcsEntitySpecOutput {
+	return o
+}
+
+// - the name.
+func (o GetVpcsEntitySpecOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpec) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// VPC resources status
+func (o GetVpcsEntitySpecOutput) Resources() GetVpcsEntitySpecResourceArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpec) []GetVpcsEntitySpecResource { return v.Resources }).(GetVpcsEntitySpecResourceArrayOutput)
+}
+
+type GetVpcsEntitySpecArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpec)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecArrayOutput) ToGetVpcsEntitySpecArrayOutput() GetVpcsEntitySpecArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecArrayOutput) ToGetVpcsEntitySpecArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecArrayOutput) Index(i pulumi.IntInput) GetVpcsEntitySpecOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntitySpec {
+		return vs[0].([]GetVpcsEntitySpec)[vs[1].(int)]
+	}).(GetVpcsEntitySpecOutput)
+}
+
+type GetVpcsEntitySpecResource struct {
+	// List of domain name server IPs.
+	CommonDomainNameServerIpLists []GetVpcsEntitySpecResourceCommonDomainNameServerIpList `pulumi:"commonDomainNameServerIpLists"`
+	// List of external subnets attached to this VPC.
+	ExternalSubnetLists []GetVpcsEntitySpecResourceExternalSubnetList `pulumi:"externalSubnetLists"`
+	// List of external routable ip and prefix .
+	ExternallyRoutablePrefixLists []GetVpcsEntitySpecResourceExternallyRoutablePrefixList `pulumi:"externallyRoutablePrefixLists"`
+}
+
+// GetVpcsEntitySpecResourceInput is an input type that accepts GetVpcsEntitySpecResourceArgs and GetVpcsEntitySpecResourceOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecResourceInput` via:
+//
+//	GetVpcsEntitySpecResourceArgs{...}
+type GetVpcsEntitySpecResourceInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecResourceOutput() GetVpcsEntitySpecResourceOutput
+	ToGetVpcsEntitySpecResourceOutputWithContext(context.Context) GetVpcsEntitySpecResourceOutput
+}
+
+type GetVpcsEntitySpecResourceArgs struct {
+	// List of domain name server IPs.
+	CommonDomainNameServerIpLists GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayInput `pulumi:"commonDomainNameServerIpLists"`
+	// List of external subnets attached to this VPC.
+	ExternalSubnetLists GetVpcsEntitySpecResourceExternalSubnetListArrayInput `pulumi:"externalSubnetLists"`
+	// List of external routable ip and prefix .
+	ExternallyRoutablePrefixLists GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayInput `pulumi:"externallyRoutablePrefixLists"`
+}
+
+func (GetVpcsEntitySpecResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpecResource)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecResourceArgs) ToGetVpcsEntitySpecResourceOutput() GetVpcsEntitySpecResourceOutput {
+	return i.ToGetVpcsEntitySpecResourceOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecResourceArgs) ToGetVpcsEntitySpecResourceOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecResourceOutput)
+}
+
+// GetVpcsEntitySpecResourceArrayInput is an input type that accepts GetVpcsEntitySpecResourceArray and GetVpcsEntitySpecResourceArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecResourceArrayInput` via:
+//
+//	GetVpcsEntitySpecResourceArray{ GetVpcsEntitySpecResourceArgs{...} }
+type GetVpcsEntitySpecResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecResourceArrayOutput() GetVpcsEntitySpecResourceArrayOutput
+	ToGetVpcsEntitySpecResourceArrayOutputWithContext(context.Context) GetVpcsEntitySpecResourceArrayOutput
+}
+
+type GetVpcsEntitySpecResourceArray []GetVpcsEntitySpecResourceInput
+
+func (GetVpcsEntitySpecResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpecResource)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecResourceArray) ToGetVpcsEntitySpecResourceArrayOutput() GetVpcsEntitySpecResourceArrayOutput {
+	return i.ToGetVpcsEntitySpecResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecResourceArray) ToGetVpcsEntitySpecResourceArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecResourceArrayOutput)
+}
+
+type GetVpcsEntitySpecResourceOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpecResource)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecResourceOutput) ToGetVpcsEntitySpecResourceOutput() GetVpcsEntitySpecResourceOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceOutput) ToGetVpcsEntitySpecResourceOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceOutput {
+	return o
+}
+
+// List of domain name server IPs.
+func (o GetVpcsEntitySpecResourceOutput) CommonDomainNameServerIpLists() GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpecResource) []GetVpcsEntitySpecResourceCommonDomainNameServerIpList {
+		return v.CommonDomainNameServerIpLists
+	}).(GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput)
+}
+
+// List of external subnets attached to this VPC.
+func (o GetVpcsEntitySpecResourceOutput) ExternalSubnetLists() GetVpcsEntitySpecResourceExternalSubnetListArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpecResource) []GetVpcsEntitySpecResourceExternalSubnetList {
+		return v.ExternalSubnetLists
+	}).(GetVpcsEntitySpecResourceExternalSubnetListArrayOutput)
+}
+
+// List of external routable ip and prefix .
+func (o GetVpcsEntitySpecResourceOutput) ExternallyRoutablePrefixLists() GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpecResource) []GetVpcsEntitySpecResourceExternallyRoutablePrefixList {
+		return v.ExternallyRoutablePrefixLists
+	}).(GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput)
+}
+
+type GetVpcsEntitySpecResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpecResource)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecResourceArrayOutput) ToGetVpcsEntitySpecResourceArrayOutput() GetVpcsEntitySpecResourceArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceArrayOutput) ToGetVpcsEntitySpecResourceArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceArrayOutput) Index(i pulumi.IntInput) GetVpcsEntitySpecResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntitySpecResource {
+		return vs[0].([]GetVpcsEntitySpecResource)[vs[1].(int)]
+	}).(GetVpcsEntitySpecResourceOutput)
+}
+
+type GetVpcsEntitySpecResourceCommonDomainNameServerIpList struct {
+	// ip address of domain name server.
+	Ip string `pulumi:"ip"`
+}
+
+// GetVpcsEntitySpecResourceCommonDomainNameServerIpListInput is an input type that accepts GetVpcsEntitySpecResourceCommonDomainNameServerIpListArgs and GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecResourceCommonDomainNameServerIpListInput` via:
+//
+//	GetVpcsEntitySpecResourceCommonDomainNameServerIpListArgs{...}
+type GetVpcsEntitySpecResourceCommonDomainNameServerIpListInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput() GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput
+	ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListOutputWithContext(context.Context) GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput
+}
+
+type GetVpcsEntitySpecResourceCommonDomainNameServerIpListArgs struct {
+	// ip address of domain name server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+}
+
+func (GetVpcsEntitySpecResourceCommonDomainNameServerIpListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpecResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecResourceCommonDomainNameServerIpListArgs) ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput() GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput {
+	return i.ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecResourceCommonDomainNameServerIpListArgs) ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput)
+}
+
+// GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayInput is an input type that accepts GetVpcsEntitySpecResourceCommonDomainNameServerIpListArray and GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayInput` via:
+//
+//	GetVpcsEntitySpecResourceCommonDomainNameServerIpListArray{ GetVpcsEntitySpecResourceCommonDomainNameServerIpListArgs{...} }
+type GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput() GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput
+	ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutputWithContext(context.Context) GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput
+}
+
+type GetVpcsEntitySpecResourceCommonDomainNameServerIpListArray []GetVpcsEntitySpecResourceCommonDomainNameServerIpListInput
+
+func (GetVpcsEntitySpecResourceCommonDomainNameServerIpListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpecResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecResourceCommonDomainNameServerIpListArray) ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput() GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput {
+	return i.ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecResourceCommonDomainNameServerIpListArray) ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput)
+}
+
+type GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpecResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput) ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput() GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput) ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput {
+	return o
+}
+
+// ip address of domain name server.
+func (o GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpecResourceCommonDomainNameServerIpList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+type GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpecResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput) ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput() GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput) ToGetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput) Index(i pulumi.IntInput) GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntitySpecResourceCommonDomainNameServerIpList {
+		return vs[0].([]GetVpcsEntitySpecResourceCommonDomainNameServerIpList)[vs[1].(int)]
+	}).(GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput)
+}
+
+type GetVpcsEntitySpecResourceExternalSubnetList struct {
+	// Reference to a subnet.
+	ExternalSubnetReference map[string]string `pulumi:"externalSubnetReference"`
+}
+
+// GetVpcsEntitySpecResourceExternalSubnetListInput is an input type that accepts GetVpcsEntitySpecResourceExternalSubnetListArgs and GetVpcsEntitySpecResourceExternalSubnetListOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecResourceExternalSubnetListInput` via:
+//
+//	GetVpcsEntitySpecResourceExternalSubnetListArgs{...}
+type GetVpcsEntitySpecResourceExternalSubnetListInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecResourceExternalSubnetListOutput() GetVpcsEntitySpecResourceExternalSubnetListOutput
+	ToGetVpcsEntitySpecResourceExternalSubnetListOutputWithContext(context.Context) GetVpcsEntitySpecResourceExternalSubnetListOutput
+}
+
+type GetVpcsEntitySpecResourceExternalSubnetListArgs struct {
+	// Reference to a subnet.
+	ExternalSubnetReference pulumi.StringMapInput `pulumi:"externalSubnetReference"`
+}
+
+func (GetVpcsEntitySpecResourceExternalSubnetListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpecResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecResourceExternalSubnetListArgs) ToGetVpcsEntitySpecResourceExternalSubnetListOutput() GetVpcsEntitySpecResourceExternalSubnetListOutput {
+	return i.ToGetVpcsEntitySpecResourceExternalSubnetListOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecResourceExternalSubnetListArgs) ToGetVpcsEntitySpecResourceExternalSubnetListOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceExternalSubnetListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecResourceExternalSubnetListOutput)
+}
+
+// GetVpcsEntitySpecResourceExternalSubnetListArrayInput is an input type that accepts GetVpcsEntitySpecResourceExternalSubnetListArray and GetVpcsEntitySpecResourceExternalSubnetListArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecResourceExternalSubnetListArrayInput` via:
+//
+//	GetVpcsEntitySpecResourceExternalSubnetListArray{ GetVpcsEntitySpecResourceExternalSubnetListArgs{...} }
+type GetVpcsEntitySpecResourceExternalSubnetListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecResourceExternalSubnetListArrayOutput() GetVpcsEntitySpecResourceExternalSubnetListArrayOutput
+	ToGetVpcsEntitySpecResourceExternalSubnetListArrayOutputWithContext(context.Context) GetVpcsEntitySpecResourceExternalSubnetListArrayOutput
+}
+
+type GetVpcsEntitySpecResourceExternalSubnetListArray []GetVpcsEntitySpecResourceExternalSubnetListInput
+
+func (GetVpcsEntitySpecResourceExternalSubnetListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpecResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecResourceExternalSubnetListArray) ToGetVpcsEntitySpecResourceExternalSubnetListArrayOutput() GetVpcsEntitySpecResourceExternalSubnetListArrayOutput {
+	return i.ToGetVpcsEntitySpecResourceExternalSubnetListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecResourceExternalSubnetListArray) ToGetVpcsEntitySpecResourceExternalSubnetListArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceExternalSubnetListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecResourceExternalSubnetListArrayOutput)
+}
+
+type GetVpcsEntitySpecResourceExternalSubnetListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecResourceExternalSubnetListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpecResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecResourceExternalSubnetListOutput) ToGetVpcsEntitySpecResourceExternalSubnetListOutput() GetVpcsEntitySpecResourceExternalSubnetListOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceExternalSubnetListOutput) ToGetVpcsEntitySpecResourceExternalSubnetListOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceExternalSubnetListOutput {
+	return o
+}
+
+// Reference to a subnet.
+func (o GetVpcsEntitySpecResourceExternalSubnetListOutput) ExternalSubnetReference() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpecResourceExternalSubnetList) map[string]string {
+		return v.ExternalSubnetReference
+	}).(pulumi.StringMapOutput)
+}
+
+type GetVpcsEntitySpecResourceExternalSubnetListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecResourceExternalSubnetListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpecResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecResourceExternalSubnetListArrayOutput) ToGetVpcsEntitySpecResourceExternalSubnetListArrayOutput() GetVpcsEntitySpecResourceExternalSubnetListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceExternalSubnetListArrayOutput) ToGetVpcsEntitySpecResourceExternalSubnetListArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceExternalSubnetListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceExternalSubnetListArrayOutput) Index(i pulumi.IntInput) GetVpcsEntitySpecResourceExternalSubnetListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntitySpecResourceExternalSubnetList {
+		return vs[0].([]GetVpcsEntitySpecResourceExternalSubnetList)[vs[1].(int)]
+	}).(GetVpcsEntitySpecResourceExternalSubnetListOutput)
+}
+
+type GetVpcsEntitySpecResourceExternallyRoutablePrefixList struct {
+	// ip address of domain name server.
+	Ip string `pulumi:"ip"`
+	// prefix length of routable ip .
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetVpcsEntitySpecResourceExternallyRoutablePrefixListInput is an input type that accepts GetVpcsEntitySpecResourceExternallyRoutablePrefixListArgs and GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecResourceExternallyRoutablePrefixListInput` via:
+//
+//	GetVpcsEntitySpecResourceExternallyRoutablePrefixListArgs{...}
+type GetVpcsEntitySpecResourceExternallyRoutablePrefixListInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput() GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput
+	ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListOutputWithContext(context.Context) GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput
+}
+
+type GetVpcsEntitySpecResourceExternallyRoutablePrefixListArgs struct {
+	// ip address of domain name server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// prefix length of routable ip .
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetVpcsEntitySpecResourceExternallyRoutablePrefixListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpecResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecResourceExternallyRoutablePrefixListArgs) ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput() GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput {
+	return i.ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecResourceExternallyRoutablePrefixListArgs) ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput)
+}
+
+// GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayInput is an input type that accepts GetVpcsEntitySpecResourceExternallyRoutablePrefixListArray and GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayInput` via:
+//
+//	GetVpcsEntitySpecResourceExternallyRoutablePrefixListArray{ GetVpcsEntitySpecResourceExternallyRoutablePrefixListArgs{...} }
+type GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput() GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput
+	ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutputWithContext(context.Context) GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput
+}
+
+type GetVpcsEntitySpecResourceExternallyRoutablePrefixListArray []GetVpcsEntitySpecResourceExternallyRoutablePrefixListInput
+
+func (GetVpcsEntitySpecResourceExternallyRoutablePrefixListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpecResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (i GetVpcsEntitySpecResourceExternallyRoutablePrefixListArray) ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput() GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput {
+	return i.ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntitySpecResourceExternallyRoutablePrefixListArray) ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput)
+}
+
+type GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntitySpecResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput) ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput() GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput) ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput {
+	return o
+}
+
+// ip address of domain name server.
+func (o GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpecResourceExternallyRoutablePrefixList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// prefix length of routable ip .
+func (o GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsEntitySpecResourceExternallyRoutablePrefixList) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+type GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntitySpecResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (o GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput) ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput() GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput) ToGetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutputWithContext(ctx context.Context) GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput) Index(i pulumi.IntInput) GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntitySpecResourceExternallyRoutablePrefixList {
+		return vs[0].([]GetVpcsEntitySpecResourceExternallyRoutablePrefixList)[vs[1].(int)]
+	}).(GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput)
+}
+
+type GetVpcsEntityStatus struct {
+	// Execution Context of VPC.
+	ExecutionContexts []GetVpcsEntityStatusExecutionContext `pulumi:"executionContexts"`
+	// - the name.
+	Name string `pulumi:"name"`
+	// VPC resources status
+	Resources []GetVpcsEntityStatusResource `pulumi:"resources"`
+	// The state of the VPC
+	State string `pulumi:"state"`
+}
+
+// GetVpcsEntityStatusInput is an input type that accepts GetVpcsEntityStatusArgs and GetVpcsEntityStatusOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusInput` via:
+//
+//	GetVpcsEntityStatusArgs{...}
+type GetVpcsEntityStatusInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusOutput() GetVpcsEntityStatusOutput
+	ToGetVpcsEntityStatusOutputWithContext(context.Context) GetVpcsEntityStatusOutput
+}
+
+type GetVpcsEntityStatusArgs struct {
+	// Execution Context of VPC.
+	ExecutionContexts GetVpcsEntityStatusExecutionContextArrayInput `pulumi:"executionContexts"`
+	// - the name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// VPC resources status
+	Resources GetVpcsEntityStatusResourceArrayInput `pulumi:"resources"`
+	// The state of the VPC
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetVpcsEntityStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatus)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusArgs) ToGetVpcsEntityStatusOutput() GetVpcsEntityStatusOutput {
+	return i.ToGetVpcsEntityStatusOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusArgs) ToGetVpcsEntityStatusOutputWithContext(ctx context.Context) GetVpcsEntityStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusOutput)
+}
+
+// GetVpcsEntityStatusArrayInput is an input type that accepts GetVpcsEntityStatusArray and GetVpcsEntityStatusArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusArrayInput` via:
+//
+//	GetVpcsEntityStatusArray{ GetVpcsEntityStatusArgs{...} }
+type GetVpcsEntityStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusArrayOutput() GetVpcsEntityStatusArrayOutput
+	ToGetVpcsEntityStatusArrayOutputWithContext(context.Context) GetVpcsEntityStatusArrayOutput
+}
+
+type GetVpcsEntityStatusArray []GetVpcsEntityStatusInput
+
+func (GetVpcsEntityStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatus)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusArray) ToGetVpcsEntityStatusArrayOutput() GetVpcsEntityStatusArrayOutput {
+	return i.ToGetVpcsEntityStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusArray) ToGetVpcsEntityStatusArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusArrayOutput)
+}
+
+type GetVpcsEntityStatusOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatus)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusOutput) ToGetVpcsEntityStatusOutput() GetVpcsEntityStatusOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusOutput) ToGetVpcsEntityStatusOutputWithContext(ctx context.Context) GetVpcsEntityStatusOutput {
+	return o
+}
+
+// Execution Context of VPC.
+func (o GetVpcsEntityStatusOutput) ExecutionContexts() GetVpcsEntityStatusExecutionContextArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatus) []GetVpcsEntityStatusExecutionContext { return v.ExecutionContexts }).(GetVpcsEntityStatusExecutionContextArrayOutput)
+}
+
+// - the name.
+func (o GetVpcsEntityStatusOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatus) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// VPC resources status
+func (o GetVpcsEntityStatusOutput) Resources() GetVpcsEntityStatusResourceArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatus) []GetVpcsEntityStatusResource { return v.Resources }).(GetVpcsEntityStatusResourceArrayOutput)
+}
+
+// The state of the VPC
+func (o GetVpcsEntityStatusOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatus) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetVpcsEntityStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatus)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusArrayOutput) ToGetVpcsEntityStatusArrayOutput() GetVpcsEntityStatusArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusArrayOutput) ToGetVpcsEntityStatusArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusArrayOutput) Index(i pulumi.IntInput) GetVpcsEntityStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntityStatus {
+		return vs[0].([]GetVpcsEntityStatus)[vs[1].(int)]
+	}).(GetVpcsEntityStatusOutput)
+}
+
+type GetVpcsEntityStatusExecutionContext struct {
+	TaskUuids []string `pulumi:"taskUuids"`
+}
+
+// GetVpcsEntityStatusExecutionContextInput is an input type that accepts GetVpcsEntityStatusExecutionContextArgs and GetVpcsEntityStatusExecutionContextOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusExecutionContextInput` via:
+//
+//	GetVpcsEntityStatusExecutionContextArgs{...}
+type GetVpcsEntityStatusExecutionContextInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusExecutionContextOutput() GetVpcsEntityStatusExecutionContextOutput
+	ToGetVpcsEntityStatusExecutionContextOutputWithContext(context.Context) GetVpcsEntityStatusExecutionContextOutput
+}
+
+type GetVpcsEntityStatusExecutionContextArgs struct {
+	TaskUuids pulumi.StringArrayInput `pulumi:"taskUuids"`
+}
+
+func (GetVpcsEntityStatusExecutionContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusExecutionContext)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusExecutionContextArgs) ToGetVpcsEntityStatusExecutionContextOutput() GetVpcsEntityStatusExecutionContextOutput {
+	return i.ToGetVpcsEntityStatusExecutionContextOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusExecutionContextArgs) ToGetVpcsEntityStatusExecutionContextOutputWithContext(ctx context.Context) GetVpcsEntityStatusExecutionContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusExecutionContextOutput)
+}
+
+// GetVpcsEntityStatusExecutionContextArrayInput is an input type that accepts GetVpcsEntityStatusExecutionContextArray and GetVpcsEntityStatusExecutionContextArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusExecutionContextArrayInput` via:
+//
+//	GetVpcsEntityStatusExecutionContextArray{ GetVpcsEntityStatusExecutionContextArgs{...} }
+type GetVpcsEntityStatusExecutionContextArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusExecutionContextArrayOutput() GetVpcsEntityStatusExecutionContextArrayOutput
+	ToGetVpcsEntityStatusExecutionContextArrayOutputWithContext(context.Context) GetVpcsEntityStatusExecutionContextArrayOutput
+}
+
+type GetVpcsEntityStatusExecutionContextArray []GetVpcsEntityStatusExecutionContextInput
+
+func (GetVpcsEntityStatusExecutionContextArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusExecutionContext)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusExecutionContextArray) ToGetVpcsEntityStatusExecutionContextArrayOutput() GetVpcsEntityStatusExecutionContextArrayOutput {
+	return i.ToGetVpcsEntityStatusExecutionContextArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusExecutionContextArray) ToGetVpcsEntityStatusExecutionContextArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusExecutionContextArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusExecutionContextArrayOutput)
+}
+
+type GetVpcsEntityStatusExecutionContextOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusExecutionContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusExecutionContext)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusExecutionContextOutput) ToGetVpcsEntityStatusExecutionContextOutput() GetVpcsEntityStatusExecutionContextOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusExecutionContextOutput) ToGetVpcsEntityStatusExecutionContextOutputWithContext(ctx context.Context) GetVpcsEntityStatusExecutionContextOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusExecutionContextOutput) TaskUuids() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusExecutionContext) []string { return v.TaskUuids }).(pulumi.StringArrayOutput)
+}
+
+type GetVpcsEntityStatusExecutionContextArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusExecutionContextArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusExecutionContext)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusExecutionContextArrayOutput) ToGetVpcsEntityStatusExecutionContextArrayOutput() GetVpcsEntityStatusExecutionContextArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusExecutionContextArrayOutput) ToGetVpcsEntityStatusExecutionContextArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusExecutionContextArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusExecutionContextArrayOutput) Index(i pulumi.IntInput) GetVpcsEntityStatusExecutionContextOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntityStatusExecutionContext {
+		return vs[0].([]GetVpcsEntityStatusExecutionContext)[vs[1].(int)]
+	}).(GetVpcsEntityStatusExecutionContextOutput)
+}
+
+type GetVpcsEntityStatusResource struct {
+	// List of domain name server IPs.
+	CommonDomainNameServerIpLists []GetVpcsEntityStatusResourceCommonDomainNameServerIpList `pulumi:"commonDomainNameServerIpLists"`
+	// List of external subnets attached to this VPC.
+	ExternalSubnetLists []GetVpcsEntityStatusResourceExternalSubnetList `pulumi:"externalSubnetLists"`
+	// List of external routable ip and prefix .
+	ExternallyRoutablePrefixLists []GetVpcsEntityStatusResourceExternallyRoutablePrefixList `pulumi:"externallyRoutablePrefixLists"`
+}
+
+// GetVpcsEntityStatusResourceInput is an input type that accepts GetVpcsEntityStatusResourceArgs and GetVpcsEntityStatusResourceOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceInput` via:
+//
+//	GetVpcsEntityStatusResourceArgs{...}
+type GetVpcsEntityStatusResourceInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceOutput() GetVpcsEntityStatusResourceOutput
+	ToGetVpcsEntityStatusResourceOutputWithContext(context.Context) GetVpcsEntityStatusResourceOutput
+}
+
+type GetVpcsEntityStatusResourceArgs struct {
+	// List of domain name server IPs.
+	CommonDomainNameServerIpLists GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayInput `pulumi:"commonDomainNameServerIpLists"`
+	// List of external subnets attached to this VPC.
+	ExternalSubnetLists GetVpcsEntityStatusResourceExternalSubnetListArrayInput `pulumi:"externalSubnetLists"`
+	// List of external routable ip and prefix .
+	ExternallyRoutablePrefixLists GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayInput `pulumi:"externallyRoutablePrefixLists"`
+}
+
+func (GetVpcsEntityStatusResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResource)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceArgs) ToGetVpcsEntityStatusResourceOutput() GetVpcsEntityStatusResourceOutput {
+	return i.ToGetVpcsEntityStatusResourceOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceArgs) ToGetVpcsEntityStatusResourceOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceOutput)
+}
+
+// GetVpcsEntityStatusResourceArrayInput is an input type that accepts GetVpcsEntityStatusResourceArray and GetVpcsEntityStatusResourceArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceArrayInput` via:
+//
+//	GetVpcsEntityStatusResourceArray{ GetVpcsEntityStatusResourceArgs{...} }
+type GetVpcsEntityStatusResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceArrayOutput() GetVpcsEntityStatusResourceArrayOutput
+	ToGetVpcsEntityStatusResourceArrayOutputWithContext(context.Context) GetVpcsEntityStatusResourceArrayOutput
+}
+
+type GetVpcsEntityStatusResourceArray []GetVpcsEntityStatusResourceInput
+
+func (GetVpcsEntityStatusResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResource)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceArray) ToGetVpcsEntityStatusResourceArrayOutput() GetVpcsEntityStatusResourceArrayOutput {
+	return i.ToGetVpcsEntityStatusResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceArray) ToGetVpcsEntityStatusResourceArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceArrayOutput)
+}
+
+type GetVpcsEntityStatusResourceOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResource)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceOutput) ToGetVpcsEntityStatusResourceOutput() GetVpcsEntityStatusResourceOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceOutput) ToGetVpcsEntityStatusResourceOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceOutput {
+	return o
+}
+
+// List of domain name server IPs.
+func (o GetVpcsEntityStatusResourceOutput) CommonDomainNameServerIpLists() GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResource) []GetVpcsEntityStatusResourceCommonDomainNameServerIpList {
+		return v.CommonDomainNameServerIpLists
+	}).(GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput)
+}
+
+// List of external subnets attached to this VPC.
+func (o GetVpcsEntityStatusResourceOutput) ExternalSubnetLists() GetVpcsEntityStatusResourceExternalSubnetListArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResource) []GetVpcsEntityStatusResourceExternalSubnetList {
+		return v.ExternalSubnetLists
+	}).(GetVpcsEntityStatusResourceExternalSubnetListArrayOutput)
+}
+
+// List of external routable ip and prefix .
+func (o GetVpcsEntityStatusResourceOutput) ExternallyRoutablePrefixLists() GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResource) []GetVpcsEntityStatusResourceExternallyRoutablePrefixList {
+		return v.ExternallyRoutablePrefixLists
+	}).(GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput)
+}
+
+type GetVpcsEntityStatusResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResource)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceArrayOutput) ToGetVpcsEntityStatusResourceArrayOutput() GetVpcsEntityStatusResourceArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceArrayOutput) ToGetVpcsEntityStatusResourceArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceArrayOutput) Index(i pulumi.IntInput) GetVpcsEntityStatusResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntityStatusResource {
+		return vs[0].([]GetVpcsEntityStatusResource)[vs[1].(int)]
+	}).(GetVpcsEntityStatusResourceOutput)
+}
+
+type GetVpcsEntityStatusResourceCommonDomainNameServerIpList struct {
+	// ip address of domain name server.
+	Ip string `pulumi:"ip"`
+}
+
+// GetVpcsEntityStatusResourceCommonDomainNameServerIpListInput is an input type that accepts GetVpcsEntityStatusResourceCommonDomainNameServerIpListArgs and GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceCommonDomainNameServerIpListInput` via:
+//
+//	GetVpcsEntityStatusResourceCommonDomainNameServerIpListArgs{...}
+type GetVpcsEntityStatusResourceCommonDomainNameServerIpListInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput() GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput
+	ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListOutputWithContext(context.Context) GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput
+}
+
+type GetVpcsEntityStatusResourceCommonDomainNameServerIpListArgs struct {
+	// ip address of domain name server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+}
+
+func (GetVpcsEntityStatusResourceCommonDomainNameServerIpListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceCommonDomainNameServerIpListArgs) ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput() GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput {
+	return i.ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceCommonDomainNameServerIpListArgs) ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput)
+}
+
+// GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayInput is an input type that accepts GetVpcsEntityStatusResourceCommonDomainNameServerIpListArray and GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayInput` via:
+//
+//	GetVpcsEntityStatusResourceCommonDomainNameServerIpListArray{ GetVpcsEntityStatusResourceCommonDomainNameServerIpListArgs{...} }
+type GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput() GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput
+	ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutputWithContext(context.Context) GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput
+}
+
+type GetVpcsEntityStatusResourceCommonDomainNameServerIpListArray []GetVpcsEntityStatusResourceCommonDomainNameServerIpListInput
+
+func (GetVpcsEntityStatusResourceCommonDomainNameServerIpListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceCommonDomainNameServerIpListArray) ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput() GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return i.ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceCommonDomainNameServerIpListArray) ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput)
+}
+
+type GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput) ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput() GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput) ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput {
+	return o
+}
+
+// ip address of domain name server.
+func (o GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceCommonDomainNameServerIpList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+type GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResourceCommonDomainNameServerIpList)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput) ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput() GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput) ToGetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput) Index(i pulumi.IntInput) GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntityStatusResourceCommonDomainNameServerIpList {
+		return vs[0].([]GetVpcsEntityStatusResourceCommonDomainNameServerIpList)[vs[1].(int)]
+	}).(GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput)
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetList struct {
+	ActiveGatewayCount int `pulumi:"activeGatewayCount"`
+	// Active Gateway Node. Only present in VPC Status Resources.
+	ActiveGatewayNodes []GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode `pulumi:"activeGatewayNodes"`
+	// List of external subnets attached to this VPC. Only present in VPC Status Resources .
+	ExternalIpLists []string `pulumi:"externalIpLists"`
+	// Reference to a subnet.
+	ExternalSubnetReference map[string]string `pulumi:"externalSubnetReference"`
+}
+
+// GetVpcsEntityStatusResourceExternalSubnetListInput is an input type that accepts GetVpcsEntityStatusResourceExternalSubnetListArgs and GetVpcsEntityStatusResourceExternalSubnetListOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceExternalSubnetListInput` via:
+//
+//	GetVpcsEntityStatusResourceExternalSubnetListArgs{...}
+type GetVpcsEntityStatusResourceExternalSubnetListInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceExternalSubnetListOutput() GetVpcsEntityStatusResourceExternalSubnetListOutput
+	ToGetVpcsEntityStatusResourceExternalSubnetListOutputWithContext(context.Context) GetVpcsEntityStatusResourceExternalSubnetListOutput
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListArgs struct {
+	ActiveGatewayCount pulumi.IntInput `pulumi:"activeGatewayCount"`
+	// Active Gateway Node. Only present in VPC Status Resources.
+	ActiveGatewayNodes GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayInput `pulumi:"activeGatewayNodes"`
+	// List of external subnets attached to this VPC. Only present in VPC Status Resources .
+	ExternalIpLists pulumi.StringArrayInput `pulumi:"externalIpLists"`
+	// Reference to a subnet.
+	ExternalSubnetReference pulumi.StringMapInput `pulumi:"externalSubnetReference"`
+}
+
+func (GetVpcsEntityStatusResourceExternalSubnetListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceExternalSubnetListArgs) ToGetVpcsEntityStatusResourceExternalSubnetListOutput() GetVpcsEntityStatusResourceExternalSubnetListOutput {
+	return i.ToGetVpcsEntityStatusResourceExternalSubnetListOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceExternalSubnetListArgs) ToGetVpcsEntityStatusResourceExternalSubnetListOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternalSubnetListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceExternalSubnetListOutput)
+}
+
+// GetVpcsEntityStatusResourceExternalSubnetListArrayInput is an input type that accepts GetVpcsEntityStatusResourceExternalSubnetListArray and GetVpcsEntityStatusResourceExternalSubnetListArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceExternalSubnetListArrayInput` via:
+//
+//	GetVpcsEntityStatusResourceExternalSubnetListArray{ GetVpcsEntityStatusResourceExternalSubnetListArgs{...} }
+type GetVpcsEntityStatusResourceExternalSubnetListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceExternalSubnetListArrayOutput() GetVpcsEntityStatusResourceExternalSubnetListArrayOutput
+	ToGetVpcsEntityStatusResourceExternalSubnetListArrayOutputWithContext(context.Context) GetVpcsEntityStatusResourceExternalSubnetListArrayOutput
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListArray []GetVpcsEntityStatusResourceExternalSubnetListInput
+
+func (GetVpcsEntityStatusResourceExternalSubnetListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceExternalSubnetListArray) ToGetVpcsEntityStatusResourceExternalSubnetListArrayOutput() GetVpcsEntityStatusResourceExternalSubnetListArrayOutput {
+	return i.ToGetVpcsEntityStatusResourceExternalSubnetListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceExternalSubnetListArray) ToGetVpcsEntityStatusResourceExternalSubnetListArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternalSubnetListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceExternalSubnetListArrayOutput)
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceExternalSubnetListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListOutput) ToGetVpcsEntityStatusResourceExternalSubnetListOutput() GetVpcsEntityStatusResourceExternalSubnetListOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListOutput) ToGetVpcsEntityStatusResourceExternalSubnetListOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternalSubnetListOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListOutput) ActiveGatewayCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceExternalSubnetList) int { return v.ActiveGatewayCount }).(pulumi.IntOutput)
+}
+
+// Active Gateway Node. Only present in VPC Status Resources.
+func (o GetVpcsEntityStatusResourceExternalSubnetListOutput) ActiveGatewayNodes() GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceExternalSubnetList) []GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode {
+		return v.ActiveGatewayNodes
+	}).(GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput)
+}
+
+// List of external subnets attached to this VPC. Only present in VPC Status Resources .
+func (o GetVpcsEntityStatusResourceExternalSubnetListOutput) ExternalIpLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceExternalSubnetList) []string { return v.ExternalIpLists }).(pulumi.StringArrayOutput)
+}
+
+// Reference to a subnet.
+func (o GetVpcsEntityStatusResourceExternalSubnetListOutput) ExternalSubnetReference() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceExternalSubnetList) map[string]string {
+		return v.ExternalSubnetReference
+	}).(pulumi.StringMapOutput)
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceExternalSubnetListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResourceExternalSubnetList)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListArrayOutput) ToGetVpcsEntityStatusResourceExternalSubnetListArrayOutput() GetVpcsEntityStatusResourceExternalSubnetListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListArrayOutput) ToGetVpcsEntityStatusResourceExternalSubnetListArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternalSubnetListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListArrayOutput) Index(i pulumi.IntInput) GetVpcsEntityStatusResourceExternalSubnetListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntityStatusResourceExternalSubnetList {
+		return vs[0].([]GetVpcsEntityStatusResourceExternalSubnetList)[vs[1].(int)]
+	}).(GetVpcsEntityStatusResourceExternalSubnetListOutput)
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode struct {
+	// Reference to host.
+	HostReference map[string]string `pulumi:"hostReference"`
+	// ip address.
+	IpAddress string `pulumi:"ipAddress"`
+}
+
+// GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeInput is an input type that accepts GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArgs and GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeInput` via:
+//
+//	GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArgs{...}
+type GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput() GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput
+	ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutputWithContext(context.Context) GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArgs struct {
+	// Reference to host.
+	HostReference pulumi.StringMapInput `pulumi:"hostReference"`
+	// ip address.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+}
+
+func (GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArgs) ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput() GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return i.ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArgs) ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput)
+}
+
+// GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayInput is an input type that accepts GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArray and GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayInput` via:
+//
+//	GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArray{ GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArgs{...} }
+type GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput() GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput
+	ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutputWithContext(context.Context) GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArray []GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeInput
+
+func (GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArray) ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput() GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return i.ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArray) ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput)
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput) ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput() GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput) ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return o
+}
+
+// Reference to host.
+func (o GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput) HostReference() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode) map[string]string {
+		return v.HostReference
+	}).(pulumi.StringMapOutput)
+}
+
+// ip address.
+func (o GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+type GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput) ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput() GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput) ToGetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput) Index(i pulumi.IntInput) GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode {
+		return vs[0].([]GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNode)[vs[1].(int)]
+	}).(GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput)
+}
+
+type GetVpcsEntityStatusResourceExternallyRoutablePrefixList struct {
+	// ip address of domain name server.
+	Ip string `pulumi:"ip"`
+	// prefix length of routable ip .
+	PrefixLength int `pulumi:"prefixLength"`
+}
+
+// GetVpcsEntityStatusResourceExternallyRoutablePrefixListInput is an input type that accepts GetVpcsEntityStatusResourceExternallyRoutablePrefixListArgs and GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceExternallyRoutablePrefixListInput` via:
+//
+//	GetVpcsEntityStatusResourceExternallyRoutablePrefixListArgs{...}
+type GetVpcsEntityStatusResourceExternallyRoutablePrefixListInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput() GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput
+	ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListOutputWithContext(context.Context) GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput
+}
+
+type GetVpcsEntityStatusResourceExternallyRoutablePrefixListArgs struct {
+	// ip address of domain name server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// prefix length of routable ip .
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+}
+
+func (GetVpcsEntityStatusResourceExternallyRoutablePrefixListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceExternallyRoutablePrefixListArgs) ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput() GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput {
+	return i.ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceExternallyRoutablePrefixListArgs) ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput)
+}
+
+// GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayInput is an input type that accepts GetVpcsEntityStatusResourceExternallyRoutablePrefixListArray and GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput values.
+// You can construct a concrete instance of `GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayInput` via:
+//
+//	GetVpcsEntityStatusResourceExternallyRoutablePrefixListArray{ GetVpcsEntityStatusResourceExternallyRoutablePrefixListArgs{...} }
+type GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput() GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput
+	ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutputWithContext(context.Context) GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput
+}
+
+type GetVpcsEntityStatusResourceExternallyRoutablePrefixListArray []GetVpcsEntityStatusResourceExternallyRoutablePrefixListInput
+
+func (GetVpcsEntityStatusResourceExternallyRoutablePrefixListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (i GetVpcsEntityStatusResourceExternallyRoutablePrefixListArray) ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput() GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return i.ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsEntityStatusResourceExternallyRoutablePrefixListArray) ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput)
+}
+
+type GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsEntityStatusResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput) ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput() GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput) ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput {
+	return o
+}
+
+// ip address of domain name server.
+func (o GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceExternallyRoutablePrefixList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// prefix length of routable ip .
+func (o GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsEntityStatusResourceExternallyRoutablePrefixList) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+type GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsEntityStatusResourceExternallyRoutablePrefixList)(nil)).Elem()
+}
+
+func (o GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput) ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput() GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput) ToGetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutputWithContext(ctx context.Context) GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput {
+	return o
+}
+
+func (o GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput) Index(i pulumi.IntInput) GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsEntityStatusResourceExternallyRoutablePrefixList {
+		return vs[0].([]GetVpcsEntityStatusResourceExternallyRoutablePrefixList)[vs[1].(int)]
+	}).(GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput)
+}
+
+type GetVpcsMetadata struct {
+	Filter string `pulumi:"filter"`
+	// - The kind name (Default value: project).
+	Kind          string `pulumi:"kind"`
+	Length        int    `pulumi:"length"`
+	Offset        int    `pulumi:"offset"`
+	SortAttribute string `pulumi:"sortAttribute"`
+	SortOrder     string `pulumi:"sortOrder"`
+	TotalMatches  int    `pulumi:"totalMatches"`
+}
+
+// GetVpcsMetadataInput is an input type that accepts GetVpcsMetadataArgs and GetVpcsMetadataOutput values.
+// You can construct a concrete instance of `GetVpcsMetadataInput` via:
+//
+//	GetVpcsMetadataArgs{...}
+type GetVpcsMetadataInput interface {
+	pulumi.Input
+
+	ToGetVpcsMetadataOutput() GetVpcsMetadataOutput
+	ToGetVpcsMetadataOutputWithContext(context.Context) GetVpcsMetadataOutput
+}
+
+type GetVpcsMetadataArgs struct {
+	Filter pulumi.StringInput `pulumi:"filter"`
+	// - The kind name (Default value: project).
+	Kind          pulumi.StringInput `pulumi:"kind"`
+	Length        pulumi.IntInput    `pulumi:"length"`
+	Offset        pulumi.IntInput    `pulumi:"offset"`
+	SortAttribute pulumi.StringInput `pulumi:"sortAttribute"`
+	SortOrder     pulumi.StringInput `pulumi:"sortOrder"`
+	TotalMatches  pulumi.IntInput    `pulumi:"totalMatches"`
+}
+
+func (GetVpcsMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsMetadata)(nil)).Elem()
+}
+
+func (i GetVpcsMetadataArgs) ToGetVpcsMetadataOutput() GetVpcsMetadataOutput {
+	return i.ToGetVpcsMetadataOutputWithContext(context.Background())
+}
+
+func (i GetVpcsMetadataArgs) ToGetVpcsMetadataOutputWithContext(ctx context.Context) GetVpcsMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsMetadataOutput)
+}
+
+// GetVpcsMetadataArrayInput is an input type that accepts GetVpcsMetadataArray and GetVpcsMetadataArrayOutput values.
+// You can construct a concrete instance of `GetVpcsMetadataArrayInput` via:
+//
+//	GetVpcsMetadataArray{ GetVpcsMetadataArgs{...} }
+type GetVpcsMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsMetadataArrayOutput() GetVpcsMetadataArrayOutput
+	ToGetVpcsMetadataArrayOutputWithContext(context.Context) GetVpcsMetadataArrayOutput
+}
+
+type GetVpcsMetadataArray []GetVpcsMetadataInput
+
+func (GetVpcsMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsMetadata)(nil)).Elem()
+}
+
+func (i GetVpcsMetadataArray) ToGetVpcsMetadataArrayOutput() GetVpcsMetadataArrayOutput {
+	return i.ToGetVpcsMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsMetadataArray) ToGetVpcsMetadataArrayOutputWithContext(ctx context.Context) GetVpcsMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsMetadataArrayOutput)
+}
+
+type GetVpcsMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsMetadata)(nil)).Elem()
+}
+
+func (o GetVpcsMetadataOutput) ToGetVpcsMetadataOutput() GetVpcsMetadataOutput {
+	return o
+}
+
+func (o GetVpcsMetadataOutput) ToGetVpcsMetadataOutputWithContext(ctx context.Context) GetVpcsMetadataOutput {
+	return o
+}
+
+func (o GetVpcsMetadataOutput) Filter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsMetadata) string { return v.Filter }).(pulumi.StringOutput)
+}
+
+// - The kind name (Default value: project).
+func (o GetVpcsMetadataOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsMetadata) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsMetadataOutput) Length() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsMetadata) int { return v.Length }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsMetadataOutput) Offset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsMetadata) int { return v.Offset }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsMetadataOutput) SortAttribute() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsMetadata) string { return v.SortAttribute }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsMetadataOutput) SortOrder() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsMetadata) string { return v.SortOrder }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsMetadataOutput) TotalMatches() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsMetadata) int { return v.TotalMatches }).(pulumi.IntOutput)
+}
+
+type GetVpcsMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsMetadata)(nil)).Elem()
+}
+
+func (o GetVpcsMetadataArrayOutput) ToGetVpcsMetadataArrayOutput() GetVpcsMetadataArrayOutput {
+	return o
+}
+
+func (o GetVpcsMetadataArrayOutput) ToGetVpcsMetadataArrayOutputWithContext(ctx context.Context) GetVpcsMetadataArrayOutput {
+	return o
+}
+
+func (o GetVpcsMetadataArrayOutput) Index(i pulumi.IntInput) GetVpcsMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsMetadata {
+		return vs[0].([]GetVpcsMetadata)[vs[1].(int)]
+	}).(GetVpcsMetadataOutput)
+}
+
+type GetVpcsV2Vpc struct {
+	CommonDhcpOptions []GetVpcsV2VpcCommonDhcpOption `pulumi:"commonDhcpOptions"`
+	// - `extId`
+	// - `externalRoutingDomainReference`
+	Description                    string                                 `pulumi:"description"`
+	ExtId                          string                                 `pulumi:"extId"`
+	ExternalRoutingDomainReference string                                 `pulumi:"externalRoutingDomainReference"`
+	ExternalSubnets                []GetVpcsV2VpcExternalSubnet           `pulumi:"externalSubnets"`
+	ExternallyRoutablePrefixes     []GetVpcsV2VpcExternallyRoutablePrefix `pulumi:"externallyRoutablePrefixes"`
+	Links                          []GetVpcsV2VpcLink                     `pulumi:"links"`
+	Metadatas                      []GetVpcsV2VpcMetadata                 `pulumi:"metadatas"`
+	Name                           string                                 `pulumi:"name"`
+	SnatIps                        []GetVpcsV2VpcSnatIp                   `pulumi:"snatIps"`
+	TenantId                       string                                 `pulumi:"tenantId"`
+	VpcType                        string                                 `pulumi:"vpcType"`
+}
+
+// GetVpcsV2VpcInput is an input type that accepts GetVpcsV2VpcArgs and GetVpcsV2VpcOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcInput` via:
+//
+//	GetVpcsV2VpcArgs{...}
+type GetVpcsV2VpcInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcOutput() GetVpcsV2VpcOutput
+	ToGetVpcsV2VpcOutputWithContext(context.Context) GetVpcsV2VpcOutput
+}
+
+type GetVpcsV2VpcArgs struct {
+	CommonDhcpOptions GetVpcsV2VpcCommonDhcpOptionArrayInput `pulumi:"commonDhcpOptions"`
+	// - `extId`
+	// - `externalRoutingDomainReference`
+	Description                    pulumi.StringInput                             `pulumi:"description"`
+	ExtId                          pulumi.StringInput                             `pulumi:"extId"`
+	ExternalRoutingDomainReference pulumi.StringInput                             `pulumi:"externalRoutingDomainReference"`
+	ExternalSubnets                GetVpcsV2VpcExternalSubnetArrayInput           `pulumi:"externalSubnets"`
+	ExternallyRoutablePrefixes     GetVpcsV2VpcExternallyRoutablePrefixArrayInput `pulumi:"externallyRoutablePrefixes"`
+	Links                          GetVpcsV2VpcLinkArrayInput                     `pulumi:"links"`
+	Metadatas                      GetVpcsV2VpcMetadataArrayInput                 `pulumi:"metadatas"`
+	Name                           pulumi.StringInput                             `pulumi:"name"`
+	SnatIps                        GetVpcsV2VpcSnatIpArrayInput                   `pulumi:"snatIps"`
+	TenantId                       pulumi.StringInput                             `pulumi:"tenantId"`
+	VpcType                        pulumi.StringInput                             `pulumi:"vpcType"`
+}
+
+func (GetVpcsV2VpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2Vpc)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcArgs) ToGetVpcsV2VpcOutput() GetVpcsV2VpcOutput {
+	return i.ToGetVpcsV2VpcOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcArgs) ToGetVpcsV2VpcOutputWithContext(ctx context.Context) GetVpcsV2VpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcOutput)
+}
+
+// GetVpcsV2VpcArrayInput is an input type that accepts GetVpcsV2VpcArray and GetVpcsV2VpcArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcArrayInput` via:
+//
+//	GetVpcsV2VpcArray{ GetVpcsV2VpcArgs{...} }
+type GetVpcsV2VpcArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcArrayOutput() GetVpcsV2VpcArrayOutput
+	ToGetVpcsV2VpcArrayOutputWithContext(context.Context) GetVpcsV2VpcArrayOutput
+}
+
+type GetVpcsV2VpcArray []GetVpcsV2VpcInput
+
+func (GetVpcsV2VpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2Vpc)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcArray) ToGetVpcsV2VpcArrayOutput() GetVpcsV2VpcArrayOutput {
+	return i.ToGetVpcsV2VpcArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcArray) ToGetVpcsV2VpcArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcArrayOutput)
+}
+
+type GetVpcsV2VpcOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2Vpc)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcOutput) ToGetVpcsV2VpcOutput() GetVpcsV2VpcOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcOutput) ToGetVpcsV2VpcOutputWithContext(ctx context.Context) GetVpcsV2VpcOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcOutput) CommonDhcpOptions() GetVpcsV2VpcCommonDhcpOptionArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) []GetVpcsV2VpcCommonDhcpOption { return v.CommonDhcpOptions }).(GetVpcsV2VpcCommonDhcpOptionArrayOutput)
+}
+
+// - `extId`
+// - `externalRoutingDomainReference`
+func (o GetVpcsV2VpcOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsV2VpcOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsV2VpcOutput) ExternalRoutingDomainReference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) string { return v.ExternalRoutingDomainReference }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsV2VpcOutput) ExternalSubnets() GetVpcsV2VpcExternalSubnetArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) []GetVpcsV2VpcExternalSubnet { return v.ExternalSubnets }).(GetVpcsV2VpcExternalSubnetArrayOutput)
+}
+
+func (o GetVpcsV2VpcOutput) ExternallyRoutablePrefixes() GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) []GetVpcsV2VpcExternallyRoutablePrefix { return v.ExternallyRoutablePrefixes }).(GetVpcsV2VpcExternallyRoutablePrefixArrayOutput)
+}
+
+func (o GetVpcsV2VpcOutput) Links() GetVpcsV2VpcLinkArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) []GetVpcsV2VpcLink { return v.Links }).(GetVpcsV2VpcLinkArrayOutput)
+}
+
+func (o GetVpcsV2VpcOutput) Metadatas() GetVpcsV2VpcMetadataArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) []GetVpcsV2VpcMetadata { return v.Metadatas }).(GetVpcsV2VpcMetadataArrayOutput)
+}
+
+func (o GetVpcsV2VpcOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsV2VpcOutput) SnatIps() GetVpcsV2VpcSnatIpArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) []GetVpcsV2VpcSnatIp { return v.SnatIps }).(GetVpcsV2VpcSnatIpArrayOutput)
+}
+
+func (o GetVpcsV2VpcOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsV2VpcOutput) VpcType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2Vpc) string { return v.VpcType }).(pulumi.StringOutput)
+}
+
+type GetVpcsV2VpcArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2Vpc)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcArrayOutput) ToGetVpcsV2VpcArrayOutput() GetVpcsV2VpcArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcArrayOutput) ToGetVpcsV2VpcArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2Vpc {
+		return vs[0].([]GetVpcsV2Vpc)[vs[1].(int)]
+	}).(GetVpcsV2VpcOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOption struct {
+	DomainNameServers []GetVpcsV2VpcCommonDhcpOptionDomainNameServer `pulumi:"domainNameServers"`
+}
+
+// GetVpcsV2VpcCommonDhcpOptionInput is an input type that accepts GetVpcsV2VpcCommonDhcpOptionArgs and GetVpcsV2VpcCommonDhcpOptionOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcCommonDhcpOptionInput` via:
+//
+//	GetVpcsV2VpcCommonDhcpOptionArgs{...}
+type GetVpcsV2VpcCommonDhcpOptionInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcCommonDhcpOptionOutput() GetVpcsV2VpcCommonDhcpOptionOutput
+	ToGetVpcsV2VpcCommonDhcpOptionOutputWithContext(context.Context) GetVpcsV2VpcCommonDhcpOptionOutput
+}
+
+type GetVpcsV2VpcCommonDhcpOptionArgs struct {
+	DomainNameServers GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayInput `pulumi:"domainNameServers"`
+}
+
+func (GetVpcsV2VpcCommonDhcpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOption)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionArgs) ToGetVpcsV2VpcCommonDhcpOptionOutput() GetVpcsV2VpcCommonDhcpOptionOutput {
+	return i.ToGetVpcsV2VpcCommonDhcpOptionOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionArgs) ToGetVpcsV2VpcCommonDhcpOptionOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcCommonDhcpOptionOutput)
+}
+
+// GetVpcsV2VpcCommonDhcpOptionArrayInput is an input type that accepts GetVpcsV2VpcCommonDhcpOptionArray and GetVpcsV2VpcCommonDhcpOptionArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcCommonDhcpOptionArrayInput` via:
+//
+//	GetVpcsV2VpcCommonDhcpOptionArray{ GetVpcsV2VpcCommonDhcpOptionArgs{...} }
+type GetVpcsV2VpcCommonDhcpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcCommonDhcpOptionArrayOutput() GetVpcsV2VpcCommonDhcpOptionArrayOutput
+	ToGetVpcsV2VpcCommonDhcpOptionArrayOutputWithContext(context.Context) GetVpcsV2VpcCommonDhcpOptionArrayOutput
+}
+
+type GetVpcsV2VpcCommonDhcpOptionArray []GetVpcsV2VpcCommonDhcpOptionInput
+
+func (GetVpcsV2VpcCommonDhcpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcCommonDhcpOption)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionArray) ToGetVpcsV2VpcCommonDhcpOptionArrayOutput() GetVpcsV2VpcCommonDhcpOptionArrayOutput {
+	return i.ToGetVpcsV2VpcCommonDhcpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionArray) ToGetVpcsV2VpcCommonDhcpOptionArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcCommonDhcpOptionArrayOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcCommonDhcpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOption)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionOutput) ToGetVpcsV2VpcCommonDhcpOptionOutput() GetVpcsV2VpcCommonDhcpOptionOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionOutput) ToGetVpcsV2VpcCommonDhcpOptionOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionOutput) DomainNameServers() GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcCommonDhcpOption) []GetVpcsV2VpcCommonDhcpOptionDomainNameServer {
+		return v.DomainNameServers
+	}).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcCommonDhcpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcCommonDhcpOption)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionArrayOutput) ToGetVpcsV2VpcCommonDhcpOptionArrayOutput() GetVpcsV2VpcCommonDhcpOptionArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionArrayOutput) ToGetVpcsV2VpcCommonDhcpOptionArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcCommonDhcpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcCommonDhcpOption {
+		return vs[0].([]GetVpcsV2VpcCommonDhcpOption)[vs[1].(int)]
+	}).(GetVpcsV2VpcCommonDhcpOptionOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServer struct {
+	Ipv4s []GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4 `pulumi:"ipv4s"`
+	Ipv6s []GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcsV2VpcCommonDhcpOptionDomainNameServerInput is an input type that accepts GetVpcsV2VpcCommonDhcpOptionDomainNameServerArgs and GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcCommonDhcpOptionDomainNameServerInput` via:
+//
+//	GetVpcsV2VpcCommonDhcpOptionDomainNameServerArgs{...}
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerOutputWithContext(context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerArgs struct {
+	Ipv4s GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayInput `pulumi:"ipv4s"`
+	Ipv6s GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerArgs) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput {
+	return i.ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerArgs) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput)
+}
+
+// GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayInput is an input type that accepts GetVpcsV2VpcCommonDhcpOptionDomainNameServerArray and GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayInput` via:
+//
+//	GetVpcsV2VpcCommonDhcpOptionDomainNameServerArray{ GetVpcsV2VpcCommonDhcpOptionDomainNameServerArgs{...} }
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerArray []GetVpcsV2VpcCommonDhcpOptionDomainNameServerInput
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerArray) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return i.ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerArray) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput) Ipv4s() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcCommonDhcpOptionDomainNameServer) []GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4 {
+		return v.Ipv4s
+	}).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput)
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput) Ipv6s() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcCommonDhcpOptionDomainNameServer) []GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6 {
+		return v.Ipv6s
+	}).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcCommonDhcpOptionDomainNameServer {
+		return vs[0].([]GetVpcsV2VpcCommonDhcpOptionDomainNameServer)[vs[1].(int)]
+	}).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4 struct {
+	PrefixLength int    `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Input is an input type that accepts GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Args and GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output values.
+// You can construct a concrete instance of `GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Input` via:
+//
+//	GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Args{...}
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Args struct {
+	PrefixLength pulumi.IntInput    `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Args) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return i.ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Args) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output)
+}
+
+// GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayInput is an input type that accepts GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Array and GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayInput` via:
+//
+//	GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Array{ GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Args{...} }
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Array []GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Input
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Array) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return i.ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Array) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4 {
+		return vs[0].([]GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4)[vs[1].(int)]
+	}).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6 struct {
+	PrefixLength int    `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Input is an input type that accepts GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Args and GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output values.
+// You can construct a concrete instance of `GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Input` via:
+//
+//	GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Args{...}
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Input interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Args struct {
+	PrefixLength pulumi.IntInput    `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Args) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return i.ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Args) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output)
+}
+
+// GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayInput is an input type that accepts GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Array and GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayInput` via:
+//
+//	GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Array{ GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Args{...} }
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput
+	ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Array []GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Input
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Array) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return i.ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Array) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ToGetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6 {
+		return vs[0].([]GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6)[vs[1].(int)]
+	}).(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output)
+}
+
+type GetVpcsV2VpcExternalSubnet struct {
+	ActiveGatewayCount int                                           `pulumi:"activeGatewayCount"`
+	ActiveGatewayNodes []GetVpcsV2VpcExternalSubnetActiveGatewayNode `pulumi:"activeGatewayNodes"`
+	ExternalIps        []GetVpcsV2VpcExternalSubnetExternalIp        `pulumi:"externalIps"`
+	GatewayNodes       []string                                      `pulumi:"gatewayNodes"`
+	SubnetReference    string                                        `pulumi:"subnetReference"`
+}
+
+// GetVpcsV2VpcExternalSubnetInput is an input type that accepts GetVpcsV2VpcExternalSubnetArgs and GetVpcsV2VpcExternalSubnetOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetArgs{...}
+type GetVpcsV2VpcExternalSubnetInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetOutput() GetVpcsV2VpcExternalSubnetOutput
+	ToGetVpcsV2VpcExternalSubnetOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetOutput
+}
+
+type GetVpcsV2VpcExternalSubnetArgs struct {
+	ActiveGatewayCount pulumi.IntInput                                       `pulumi:"activeGatewayCount"`
+	ActiveGatewayNodes GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayInput `pulumi:"activeGatewayNodes"`
+	ExternalIps        GetVpcsV2VpcExternalSubnetExternalIpArrayInput        `pulumi:"externalIps"`
+	GatewayNodes       pulumi.StringArrayInput                               `pulumi:"gatewayNodes"`
+	SubnetReference    pulumi.StringInput                                    `pulumi:"subnetReference"`
+}
+
+func (GetVpcsV2VpcExternalSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnet)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetArgs) ToGetVpcsV2VpcExternalSubnetOutput() GetVpcsV2VpcExternalSubnetOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetArgs) ToGetVpcsV2VpcExternalSubnetOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetOutput)
+}
+
+// GetVpcsV2VpcExternalSubnetArrayInput is an input type that accepts GetVpcsV2VpcExternalSubnetArray and GetVpcsV2VpcExternalSubnetArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetArrayInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetArray{ GetVpcsV2VpcExternalSubnetArgs{...} }
+type GetVpcsV2VpcExternalSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetArrayOutput() GetVpcsV2VpcExternalSubnetArrayOutput
+	ToGetVpcsV2VpcExternalSubnetArrayOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetArrayOutput
+}
+
+type GetVpcsV2VpcExternalSubnetArray []GetVpcsV2VpcExternalSubnetInput
+
+func (GetVpcsV2VpcExternalSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnet)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetArray) ToGetVpcsV2VpcExternalSubnetArrayOutput() GetVpcsV2VpcExternalSubnetArrayOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetArray) ToGetVpcsV2VpcExternalSubnetArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnet)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetOutput) ToGetVpcsV2VpcExternalSubnetOutput() GetVpcsV2VpcExternalSubnetOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetOutput) ToGetVpcsV2VpcExternalSubnetOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetOutput) ActiveGatewayCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnet) int { return v.ActiveGatewayCount }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetOutput) ActiveGatewayNodes() GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnet) []GetVpcsV2VpcExternalSubnetActiveGatewayNode {
+		return v.ActiveGatewayNodes
+	}).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetOutput) ExternalIps() GetVpcsV2VpcExternalSubnetExternalIpArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnet) []GetVpcsV2VpcExternalSubnetExternalIp { return v.ExternalIps }).(GetVpcsV2VpcExternalSubnetExternalIpArrayOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetOutput) GatewayNodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnet) []string { return v.GatewayNodes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetOutput) SubnetReference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnet) string { return v.SubnetReference }).(pulumi.StringOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnet)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetArrayOutput) ToGetVpcsV2VpcExternalSubnetArrayOutput() GetVpcsV2VpcExternalSubnetArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetArrayOutput) ToGetVpcsV2VpcExternalSubnetArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternalSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternalSubnet {
+		return vs[0].([]GetVpcsV2VpcExternalSubnet)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternalSubnetOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNode struct {
+	NodeId          string                                                     `pulumi:"nodeId"`
+	NodeIpAddresses []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress `pulumi:"nodeIpAddresses"`
+}
+
+// GetVpcsV2VpcExternalSubnetActiveGatewayNodeInput is an input type that accepts GetVpcsV2VpcExternalSubnetActiveGatewayNodeArgs and GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetActiveGatewayNodeInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetActiveGatewayNodeArgs{...}
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeArgs struct {
+	NodeId          pulumi.StringInput                                                 `pulumi:"nodeId"`
+	NodeIpAddresses GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput `pulumi:"nodeIpAddresses"`
+}
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeArgs) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeArgs) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput)
+}
+
+// GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayInput is an input type that accepts GetVpcsV2VpcExternalSubnetActiveGatewayNodeArray and GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetActiveGatewayNodeArray{ GetVpcsV2VpcExternalSubnetActiveGatewayNodeArgs{...} }
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeArray []GetVpcsV2VpcExternalSubnetActiveGatewayNodeInput
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeArray) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeArray) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetActiveGatewayNode) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput) NodeIpAddresses() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetActiveGatewayNode) []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+		return v.NodeIpAddresses
+	}).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetActiveGatewayNode)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternalSubnetActiveGatewayNode {
+		return vs[0].([]GetVpcsV2VpcExternalSubnetActiveGatewayNode)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress struct {
+	Ipv4s []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 `pulumi:"ipv4s"`
+	Ipv6s []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressInput is an input type that accepts GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs and GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{...}
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs struct {
+	Ipv4s GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput `pulumi:"ipv4s"`
+	Ipv6s GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput)
+}
+
+// GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput is an input type that accepts GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArray and GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArray{ GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{...} }
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArray []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressInput
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) Ipv4s() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress) []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+		return v.Ipv4s
+	}).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) Ipv6s() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress) []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+		return v.Ipv6s
+	}).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+		return vs[0].([]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 struct {
+	PrefixLength int    `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input is an input type that accepts GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args and GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input` via:
+//
+//	GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{...}
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args struct {
+	PrefixLength pulumi.IntInput    `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return i.ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output)
+}
+
+// GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput is an input type that accepts GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array and GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array{ GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{...} }
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+		return vs[0].([]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 struct {
+	PrefixLength int    `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input is an input type that accepts GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args and GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input` via:
+//
+//	GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{...}
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args struct {
+	PrefixLength pulumi.IntInput    `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return i.ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output)
+}
+
+// GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput is an input type that accepts GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array and GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array{ GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{...} }
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput
+	ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array []GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ToGetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+		return vs[0].([]GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIp struct {
+	Ipv4s []GetVpcsV2VpcExternalSubnetExternalIpIpv4 `pulumi:"ipv4s"`
+	Ipv6s []GetVpcsV2VpcExternalSubnetExternalIpIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcsV2VpcExternalSubnetExternalIpInput is an input type that accepts GetVpcsV2VpcExternalSubnetExternalIpArgs and GetVpcsV2VpcExternalSubnetExternalIpOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetExternalIpInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetExternalIpArgs{...}
+type GetVpcsV2VpcExternalSubnetExternalIpInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetExternalIpOutput() GetVpcsV2VpcExternalSubnetExternalIpOutput
+	ToGetVpcsV2VpcExternalSubnetExternalIpOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetExternalIpOutput
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpArgs struct {
+	Ipv4s GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayInput `pulumi:"ipv4s"`
+	Ipv6s GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcsV2VpcExternalSubnetExternalIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpArgs) ToGetVpcsV2VpcExternalSubnetExternalIpOutput() GetVpcsV2VpcExternalSubnetExternalIpOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetExternalIpOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpArgs) ToGetVpcsV2VpcExternalSubnetExternalIpOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetExternalIpOutput)
+}
+
+// GetVpcsV2VpcExternalSubnetExternalIpArrayInput is an input type that accepts GetVpcsV2VpcExternalSubnetExternalIpArray and GetVpcsV2VpcExternalSubnetExternalIpArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetExternalIpArrayInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetExternalIpArray{ GetVpcsV2VpcExternalSubnetExternalIpArgs{...} }
+type GetVpcsV2VpcExternalSubnetExternalIpArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetExternalIpArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpArrayOutput
+	ToGetVpcsV2VpcExternalSubnetExternalIpArrayOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetExternalIpArrayOutput
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpArray []GetVpcsV2VpcExternalSubnetExternalIpInput
+
+func (GetVpcsV2VpcExternalSubnetExternalIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpArray) ToGetVpcsV2VpcExternalSubnetExternalIpArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpArrayOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetExternalIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpArray) ToGetVpcsV2VpcExternalSubnetExternalIpArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetExternalIpArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetExternalIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpOutput) ToGetVpcsV2VpcExternalSubnetExternalIpOutput() GetVpcsV2VpcExternalSubnetExternalIpOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpOutput) ToGetVpcsV2VpcExternalSubnetExternalIpOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpOutput) Ipv4s() GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetExternalIp) []GetVpcsV2VpcExternalSubnetExternalIpIpv4 {
+		return v.Ipv4s
+	}).(GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpOutput) Ipv6s() GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetExternalIp) []GetVpcsV2VpcExternalSubnetExternalIpIpv6 {
+		return v.Ipv6s
+	}).(GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetExternalIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetExternalIp)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpArrayOutput) ToGetVpcsV2VpcExternalSubnetExternalIpArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpArrayOutput) ToGetVpcsV2VpcExternalSubnetExternalIpArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternalSubnetExternalIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternalSubnetExternalIp {
+		return vs[0].([]GetVpcsV2VpcExternalSubnetExternalIp)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternalSubnetExternalIpOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv4 struct {
+	PrefixLength int    `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetVpcsV2VpcExternalSubnetExternalIpIpv4Input is an input type that accepts GetVpcsV2VpcExternalSubnetExternalIpIpv4Args and GetVpcsV2VpcExternalSubnetExternalIpIpv4Output values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetExternalIpIpv4Input` via:
+//
+//	GetVpcsV2VpcExternalSubnetExternalIpIpv4Args{...}
+type GetVpcsV2VpcExternalSubnetExternalIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetExternalIpIpv4Output() GetVpcsV2VpcExternalSubnetExternalIpIpv4Output
+	ToGetVpcsV2VpcExternalSubnetExternalIpIpv4OutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv4Output
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv4Args struct {
+	PrefixLength pulumi.IntInput    `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcsV2VpcExternalSubnetExternalIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpIpv4Args) ToGetVpcsV2VpcExternalSubnetExternalIpIpv4Output() GetVpcsV2VpcExternalSubnetExternalIpIpv4Output {
+	return i.ToGetVpcsV2VpcExternalSubnetExternalIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpIpv4Args) ToGetVpcsV2VpcExternalSubnetExternalIpIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetExternalIpIpv4Output)
+}
+
+// GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayInput is an input type that accepts GetVpcsV2VpcExternalSubnetExternalIpIpv4Array and GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetExternalIpIpv4Array{ GetVpcsV2VpcExternalSubnetExternalIpIpv4Args{...} }
+type GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput
+	ToGetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv4Array []GetVpcsV2VpcExternalSubnetExternalIpIpv4Input
+
+func (GetVpcsV2VpcExternalSubnetExternalIpIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpIpv4Array) ToGetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpIpv4Array) ToGetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetExternalIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv4Output) ToGetVpcsV2VpcExternalSubnetExternalIpIpv4Output() GetVpcsV2VpcExternalSubnetExternalIpIpv4Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv4Output) ToGetVpcsV2VpcExternalSubnetExternalIpIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv4Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetExternalIpIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetExternalIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetExternalIpIpv4)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput) ToGetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput) ToGetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternalSubnetExternalIpIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternalSubnetExternalIpIpv4 {
+		return vs[0].([]GetVpcsV2VpcExternalSubnetExternalIpIpv4)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternalSubnetExternalIpIpv4Output)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv6 struct {
+	PrefixLength int    `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetVpcsV2VpcExternalSubnetExternalIpIpv6Input is an input type that accepts GetVpcsV2VpcExternalSubnetExternalIpIpv6Args and GetVpcsV2VpcExternalSubnetExternalIpIpv6Output values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetExternalIpIpv6Input` via:
+//
+//	GetVpcsV2VpcExternalSubnetExternalIpIpv6Args{...}
+type GetVpcsV2VpcExternalSubnetExternalIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetExternalIpIpv6Output() GetVpcsV2VpcExternalSubnetExternalIpIpv6Output
+	ToGetVpcsV2VpcExternalSubnetExternalIpIpv6OutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv6Output
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv6Args struct {
+	PrefixLength pulumi.IntInput    `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcsV2VpcExternalSubnetExternalIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpIpv6Args) ToGetVpcsV2VpcExternalSubnetExternalIpIpv6Output() GetVpcsV2VpcExternalSubnetExternalIpIpv6Output {
+	return i.ToGetVpcsV2VpcExternalSubnetExternalIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpIpv6Args) ToGetVpcsV2VpcExternalSubnetExternalIpIpv6OutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetExternalIpIpv6Output)
+}
+
+// GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayInput is an input type that accepts GetVpcsV2VpcExternalSubnetExternalIpIpv6Array and GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayInput` via:
+//
+//	GetVpcsV2VpcExternalSubnetExternalIpIpv6Array{ GetVpcsV2VpcExternalSubnetExternalIpIpv6Args{...} }
+type GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput
+	ToGetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv6Array []GetVpcsV2VpcExternalSubnetExternalIpIpv6Input
+
+func (GetVpcsV2VpcExternalSubnetExternalIpIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpIpv6Array) ToGetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return i.ToGetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternalSubnetExternalIpIpv6Array) ToGetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetExternalIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv6Output) ToGetVpcsV2VpcExternalSubnetExternalIpIpv6Output() GetVpcsV2VpcExternalSubnetExternalIpIpv6Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv6Output) ToGetVpcsV2VpcExternalSubnetExternalIpIpv6OutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv6Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv6Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetExternalIpIpv6) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternalSubnetExternalIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternalSubnetExternalIpIpv6)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput) ToGetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput() GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput) ToGetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternalSubnetExternalIpIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternalSubnetExternalIpIpv6 {
+		return vs[0].([]GetVpcsV2VpcExternalSubnetExternalIpIpv6)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternalSubnetExternalIpIpv6Output)
+}
+
 type GetVpcsV2VpcExternallyRoutablePrefix struct {
 	Ipv4s []GetVpcsV2VpcExternallyRoutablePrefixIpv4 `pulumi:"ipv4s"`
 	Ipv6s []GetVpcsV2VpcExternallyRoutablePrefixIpv6 `pulumi:"ipv6s"`
@@ -1040,6 +8282,140 @@ func (o GetVpcsV2VpcSnatIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2Vpc
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientAttachedTargetInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientAttachedTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientAttachedTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Input)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Input)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientLinkInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeIscsiClientsV2IscsiClientLinkArrayInput)(nil)).Elem(), GetVolumeIscsiClientsV2IscsiClientLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecInput)(nil)).Elem(), GetVpcSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecArrayInput)(nil)).Elem(), GetVpcSpecArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecResourceInput)(nil)).Elem(), GetVpcSpecResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecResourceArrayInput)(nil)).Elem(), GetVpcSpecResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecResourceCommonDomainNameServerIpListInput)(nil)).Elem(), GetVpcSpecResourceCommonDomainNameServerIpListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecResourceCommonDomainNameServerIpListArrayInput)(nil)).Elem(), GetVpcSpecResourceCommonDomainNameServerIpListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecResourceExternalSubnetListInput)(nil)).Elem(), GetVpcSpecResourceExternalSubnetListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecResourceExternalSubnetListArrayInput)(nil)).Elem(), GetVpcSpecResourceExternalSubnetListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecResourceExternallyRoutablePrefixListInput)(nil)).Elem(), GetVpcSpecResourceExternallyRoutablePrefixListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcSpecResourceExternallyRoutablePrefixListArrayInput)(nil)).Elem(), GetVpcSpecResourceExternallyRoutablePrefixListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusInput)(nil)).Elem(), GetVpcStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusArrayInput)(nil)).Elem(), GetVpcStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusExecutionContextInput)(nil)).Elem(), GetVpcStatusExecutionContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusExecutionContextArrayInput)(nil)).Elem(), GetVpcStatusExecutionContextArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceInput)(nil)).Elem(), GetVpcStatusResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceArrayInput)(nil)).Elem(), GetVpcStatusResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceCommonDomainNameServerIpListInput)(nil)).Elem(), GetVpcStatusResourceCommonDomainNameServerIpListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceCommonDomainNameServerIpListArrayInput)(nil)).Elem(), GetVpcStatusResourceCommonDomainNameServerIpListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceExternalSubnetListInput)(nil)).Elem(), GetVpcStatusResourceExternalSubnetListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceExternalSubnetListArrayInput)(nil)).Elem(), GetVpcStatusResourceExternalSubnetListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceExternalSubnetListActiveGatewayNodeInput)(nil)).Elem(), GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayInput)(nil)).Elem(), GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceExternallyRoutablePrefixListInput)(nil)).Elem(), GetVpcStatusResourceExternallyRoutablePrefixListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcStatusResourceExternallyRoutablePrefixListArrayInput)(nil)).Elem(), GetVpcStatusResourceExternallyRoutablePrefixListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2CommonDhcpOptionInput)(nil)).Elem(), GetVpcV2CommonDhcpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2CommonDhcpOptionArrayInput)(nil)).Elem(), GetVpcV2CommonDhcpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerInput)(nil)).Elem(), GetVpcV2CommonDhcpOptionDomainNameServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerArrayInput)(nil)).Elem(), GetVpcV2CommonDhcpOptionDomainNameServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerIpv4Input)(nil)).Elem(), GetVpcV2CommonDhcpOptionDomainNameServerIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayInput)(nil)).Elem(), GetVpcV2CommonDhcpOptionDomainNameServerIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerIpv6Input)(nil)).Elem(), GetVpcV2CommonDhcpOptionDomainNameServerIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayInput)(nil)).Elem(), GetVpcV2CommonDhcpOptionDomainNameServerIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetInput)(nil)).Elem(), GetVpcV2ExternalSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetArrayInput)(nil)).Elem(), GetVpcV2ExternalSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeInput)(nil)).Elem(), GetVpcV2ExternalSubnetActiveGatewayNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeArrayInput)(nil)).Elem(), GetVpcV2ExternalSubnetActiveGatewayNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressInput)(nil)).Elem(), GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput)(nil)).Elem(), GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input)(nil)).Elem(), GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput)(nil)).Elem(), GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input)(nil)).Elem(), GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput)(nil)).Elem(), GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpInput)(nil)).Elem(), GetVpcV2ExternalSubnetExternalIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpArrayInput)(nil)).Elem(), GetVpcV2ExternalSubnetExternalIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpIpv4Input)(nil)).Elem(), GetVpcV2ExternalSubnetExternalIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpIpv4ArrayInput)(nil)).Elem(), GetVpcV2ExternalSubnetExternalIpIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpIpv6Input)(nil)).Elem(), GetVpcV2ExternalSubnetExternalIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternalSubnetExternalIpIpv6ArrayInput)(nil)).Elem(), GetVpcV2ExternalSubnetExternalIpIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixInput)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixArrayInput)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv4Input)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv4ArrayInput)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv4IpInput)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixIpv4IpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv4IpArrayInput)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixIpv4IpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv6Input)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv6ArrayInput)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv6IpInput)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixIpv6IpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2ExternallyRoutablePrefixIpv6IpArrayInput)(nil)).Elem(), GetVpcV2ExternallyRoutablePrefixIpv6IpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2LinkInput)(nil)).Elem(), GetVpcV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2LinkArrayInput)(nil)).Elem(), GetVpcV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2MetadataInput)(nil)).Elem(), GetVpcV2MetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2MetadataArrayInput)(nil)).Elem(), GetVpcV2MetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2SnatIpInput)(nil)).Elem(), GetVpcV2SnatIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2SnatIpArrayInput)(nil)).Elem(), GetVpcV2SnatIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2SnatIpIpv4Input)(nil)).Elem(), GetVpcV2SnatIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2SnatIpIpv4ArrayInput)(nil)).Elem(), GetVpcV2SnatIpIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2SnatIpIpv6Input)(nil)).Elem(), GetVpcV2SnatIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcV2SnatIpIpv6ArrayInput)(nil)).Elem(), GetVpcV2SnatIpIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityInput)(nil)).Elem(), GetVpcsEntityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityArrayInput)(nil)).Elem(), GetVpcsEntityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecInput)(nil)).Elem(), GetVpcsEntitySpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecArrayInput)(nil)).Elem(), GetVpcsEntitySpecArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecResourceInput)(nil)).Elem(), GetVpcsEntitySpecResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecResourceArrayInput)(nil)).Elem(), GetVpcsEntitySpecResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecResourceCommonDomainNameServerIpListInput)(nil)).Elem(), GetVpcsEntitySpecResourceCommonDomainNameServerIpListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayInput)(nil)).Elem(), GetVpcsEntitySpecResourceCommonDomainNameServerIpListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecResourceExternalSubnetListInput)(nil)).Elem(), GetVpcsEntitySpecResourceExternalSubnetListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecResourceExternalSubnetListArrayInput)(nil)).Elem(), GetVpcsEntitySpecResourceExternalSubnetListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecResourceExternallyRoutablePrefixListInput)(nil)).Elem(), GetVpcsEntitySpecResourceExternallyRoutablePrefixListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayInput)(nil)).Elem(), GetVpcsEntitySpecResourceExternallyRoutablePrefixListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusInput)(nil)).Elem(), GetVpcsEntityStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusArrayInput)(nil)).Elem(), GetVpcsEntityStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusExecutionContextInput)(nil)).Elem(), GetVpcsEntityStatusExecutionContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusExecutionContextArrayInput)(nil)).Elem(), GetVpcsEntityStatusExecutionContextArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceInput)(nil)).Elem(), GetVpcsEntityStatusResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceArrayInput)(nil)).Elem(), GetVpcsEntityStatusResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceCommonDomainNameServerIpListInput)(nil)).Elem(), GetVpcsEntityStatusResourceCommonDomainNameServerIpListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayInput)(nil)).Elem(), GetVpcsEntityStatusResourceCommonDomainNameServerIpListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceExternalSubnetListInput)(nil)).Elem(), GetVpcsEntityStatusResourceExternalSubnetListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceExternalSubnetListArrayInput)(nil)).Elem(), GetVpcsEntityStatusResourceExternalSubnetListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeInput)(nil)).Elem(), GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayInput)(nil)).Elem(), GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceExternallyRoutablePrefixListInput)(nil)).Elem(), GetVpcsEntityStatusResourceExternallyRoutablePrefixListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayInput)(nil)).Elem(), GetVpcsEntityStatusResourceExternallyRoutablePrefixListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsMetadataInput)(nil)).Elem(), GetVpcsMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsMetadataArrayInput)(nil)).Elem(), GetVpcsMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcInput)(nil)).Elem(), GetVpcsV2VpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcArrayInput)(nil)).Elem(), GetVpcsV2VpcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionInput)(nil)).Elem(), GetVpcsV2VpcCommonDhcpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionArrayInput)(nil)).Elem(), GetVpcsV2VpcCommonDhcpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerInput)(nil)).Elem(), GetVpcsV2VpcCommonDhcpOptionDomainNameServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayInput)(nil)).Elem(), GetVpcsV2VpcCommonDhcpOptionDomainNameServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Input)(nil)).Elem(), GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayInput)(nil)).Elem(), GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Input)(nil)).Elem(), GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayInput)(nil)).Elem(), GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetActiveGatewayNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetActiveGatewayNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input)(nil)).Elem(), GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input)(nil)).Elem(), GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv4Input)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv6Input)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpIpv6Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixArrayInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4Input)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixIpv4Args{})
@@ -1060,6 +8436,140 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcSnatIpIpv4ArrayInput)(nil)).Elem(), GetVpcsV2VpcSnatIpIpv4Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcSnatIpIpv6Input)(nil)).Elem(), GetVpcsV2VpcSnatIpIpv6Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcSnatIpIpv6ArrayInput)(nil)).Elem(), GetVpcsV2VpcSnatIpIpv6Array{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientAttachedTargetOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientAttachedTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Output{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Output{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientLinkOutput{})
+	pulumi.RegisterOutputType(GetVolumeIscsiClientsV2IscsiClientLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecResourceOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecResourceCommonDomainNameServerIpListOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecResourceCommonDomainNameServerIpListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecResourceExternalSubnetListOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecResourceExternalSubnetListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecResourceExternallyRoutablePrefixListOutput{})
+	pulumi.RegisterOutputType(GetVpcSpecResourceExternallyRoutablePrefixListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusExecutionContextOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusExecutionContextArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceCommonDomainNameServerIpListOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceCommonDomainNameServerIpListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceExternalSubnetListOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceExternalSubnetListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceExternalSubnetListActiveGatewayNodeOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceExternallyRoutablePrefixListOutput{})
+	pulumi.RegisterOutputType(GetVpcStatusResourceExternallyRoutablePrefixListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2CommonDhcpOptionOutput{})
+	pulumi.RegisterOutputType(GetVpcV2CommonDhcpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2CommonDhcpOptionDomainNameServerOutput{})
+	pulumi.RegisterOutputType(GetVpcV2CommonDhcpOptionDomainNameServerArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2CommonDhcpOptionDomainNameServerIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcV2CommonDhcpOptionDomainNameServerIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2CommonDhcpOptionDomainNameServerIpv6Output{})
+	pulumi.RegisterOutputType(GetVpcV2CommonDhcpOptionDomainNameServerIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetActiveGatewayNodeOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetActiveGatewayNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetExternalIpOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetExternalIpArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetExternalIpIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetExternalIpIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetExternalIpIpv6Output{})
+	pulumi.RegisterOutputType(GetVpcV2ExternalSubnetExternalIpIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixIpv4IpOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixIpv4IpArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixIpv6Output{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixIpv6IpOutput{})
+	pulumi.RegisterOutputType(GetVpcV2ExternallyRoutablePrefixIpv6IpArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2LinkOutput{})
+	pulumi.RegisterOutputType(GetVpcV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2MetadataOutput{})
+	pulumi.RegisterOutputType(GetVpcV2MetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2SnatIpOutput{})
+	pulumi.RegisterOutputType(GetVpcV2SnatIpArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2SnatIpIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcV2SnatIpIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcV2SnatIpIpv6Output{})
+	pulumi.RegisterOutputType(GetVpcV2SnatIpIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecResourceOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecResourceCommonDomainNameServerIpListOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecResourceCommonDomainNameServerIpListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecResourceExternalSubnetListOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecResourceExternalSubnetListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecResourceExternallyRoutablePrefixListOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntitySpecResourceExternallyRoutablePrefixListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusExecutionContextOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusExecutionContextArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceCommonDomainNameServerIpListOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceCommonDomainNameServerIpListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceExternalSubnetListOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceExternalSubnetListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceExternallyRoutablePrefixListOutput{})
+	pulumi.RegisterOutputType(GetVpcsEntityStatusResourceExternallyRoutablePrefixListArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsMetadataOutput{})
+	pulumi.RegisterOutputType(GetVpcsMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcCommonDhcpOptionOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcCommonDhcpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcCommonDhcpOptionDomainNameServerOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcCommonDhcpOptionDomainNameServerArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Output{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetActiveGatewayNodeOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetActiveGatewayNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpIpv6Output{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixOutput{})
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixIpv4Output{})
