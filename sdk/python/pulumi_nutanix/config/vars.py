@@ -23,9 +23,10 @@ class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def endpoint(self) -> Optional[str]:
         """
-        URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-        individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-        upgrades.
+        URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+        note, this is never the data services VIP, and should not be an
+        individual CVM address, as this would cause calls to fail during
+        cluster lifecycle management operations, such as AOS upgrades.
         """
         return __config__.get('endpoint')
 
@@ -93,7 +94,8 @@ class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def username(self) -> Optional[str]:
         """
-        User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+        User name for Nutanix Prism. Could be
+        local cluster auth (e.g. 'admin') or directory auth.
         """
         return __config__.get('username')
 
