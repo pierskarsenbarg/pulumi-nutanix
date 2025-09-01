@@ -8,9 +8,10 @@ declare var exports: any;
 const __config = new pulumi.Config("nutanix");
 
 /**
- * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
- * individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
- * upgrades.
+ * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+ * note, this is never the data services VIP, and should not be an
+ * individual CVM address, as this would cause calls to fail during
+ * cluster lifecycle management operations, such as AOS upgrades.
  */
 export declare const endpoint: string | undefined;
 Object.defineProperty(exports, "endpoint", {
@@ -122,7 +123,8 @@ Object.defineProperty(exports, "sessionAuth", {
 });
 
 /**
- * User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+ * User name for Nutanix Prism. Could be
+ * local cluster auth (e.g. 'admin') or directory auth.
  */
 export declare const username: string | undefined;
 Object.defineProperty(exports, "username", {

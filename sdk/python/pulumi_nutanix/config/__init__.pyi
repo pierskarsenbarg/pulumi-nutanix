@@ -16,9 +16,10 @@ from .. import _utilities
 
 endpoint: Optional[str]
 """
-URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-upgrades.
+URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+note, this is never the data services VIP, and should not be an
+individual CVM address, as this would cause calls to fail during
+cluster lifecycle management operations, such as AOS upgrades.
 """
 
 foundationEndpoint: Optional[str]
@@ -64,7 +65,8 @@ Use session authentification instead of basic auth for each request
 
 username: Optional[str]
 """
-User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+User name for Nutanix Prism. Could be
+local cluster auth (e.g. 'admin') or directory auth.
 """
 
 waitTimeout: Optional[int]

@@ -26,9 +26,10 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
-     * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-     * individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-     * upgrades.
+     * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+     * note, this is never the data services VIP, and should not be an
+     * individual CVM address, as this would cause calls to fail during
+     * cluster lifecycle management operations, such as AOS upgrades.
      */
     declare public readonly endpoint: pulumi.Output<string | undefined>;
     /**
@@ -55,7 +56,8 @@ export class Provider extends pulumi.ProviderResource {
     declare public readonly port: pulumi.Output<string | undefined>;
     declare public readonly proxyUrl: pulumi.Output<string | undefined>;
     /**
-     * User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+     * User name for Nutanix Prism. Could be
+     * local cluster auth (e.g. 'admin') or directory auth.
      */
     declare public readonly username: pulumi.Output<string | undefined>;
 
@@ -103,9 +105,10 @@ export class Provider extends pulumi.ProviderResource {
  */
 export interface ProviderArgs {
     /**
-     * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-     * individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-     * upgrades.
+     * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+     * note, this is never the data services VIP, and should not be an
+     * individual CVM address, as this would cause calls to fail during
+     * cluster lifecycle management operations, such as AOS upgrades.
      */
     endpoint?: pulumi.Input<string>;
     /**
@@ -140,7 +143,8 @@ export interface ProviderArgs {
      */
     sessionAuth?: pulumi.Input<boolean>;
     /**
-     * User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+     * User name for Nutanix Prism. Could be
+     * local cluster auth (e.g. 'admin') or directory auth.
      */
     username?: pulumi.Input<string>;
     /**
