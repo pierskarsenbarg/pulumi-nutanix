@@ -153,6 +153,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
+        /// - Description of the user.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// - Display name for the User.
         /// </summary>
         public readonly string DisplayName;
@@ -233,6 +237,8 @@ namespace PiersKarsenbarg.Nutanix
 
             string createdTime,
 
+            string description,
+
             string displayName,
 
             string emailId,
@@ -273,6 +279,7 @@ namespace PiersKarsenbarg.Nutanix
             BucketsAccessKeys = bucketsAccessKeys;
             CreatedBy = createdBy;
             CreatedTime = createdTime;
+            Description = description;
             DisplayName = displayName;
             EmailId = emailId;
             ExtId = extId;

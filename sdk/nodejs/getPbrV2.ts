@@ -31,6 +31,9 @@ export function getPbrV2(args: GetPbrV2Args, opts?: pulumi.InvokeOptions): Promi
  * A collection of arguments for invoking getPbrV2.
  */
 export interface GetPbrV2Args {
+    /**
+     * pbr UUID
+     */
     extId: string;
 }
 
@@ -105,5 +108,8 @@ export function getPbrV2Output(args: GetPbrV2OutputArgs, opts?: pulumi.InvokeOut
  * A collection of arguments for invoking getPbrV2.
  */
 export interface GetPbrV2OutputArgs {
+    /**
+     * pbr UUID
+     */
     extId: pulumi.Input<string>;
 }

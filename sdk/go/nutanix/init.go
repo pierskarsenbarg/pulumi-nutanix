@@ -139,6 +139,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NgtInstallationV2{}
 	case "nutanix:index/ngtUpgradeV2:NgtUpgradeV2":
 		r = &NgtUpgradeV2{}
+	case "nutanix:index/objectStoreCertificateV2:ObjectStoreCertificateV2":
+		r = &ObjectStoreCertificateV2{}
+	case "nutanix:index/objectStoreV2:ObjectStoreV2":
+		r = &ObjectStoreV2{}
 	case "nutanix:index/pbr:Pbr":
 		r = &Pbr{}
 	case "nutanix:index/pbrV2:PbrV2":
@@ -213,6 +217,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &UserGroups{}
 	case "nutanix:index/userGroupsV2:UserGroupsV2":
 		r = &UserGroupsV2{}
+	case "nutanix:index/userKeyRevokeV2:UserKeyRevokeV2":
+		r = &UserKeyRevokeV2{}
+	case "nutanix:index/userKeyV2:UserKeyV2":
+		r = &UserKeyV2{}
 	case "nutanix:index/usersV2:UsersV2":
 		r = &UsersV2{}
 	case "nutanix:index/virtualMachine:VirtualMachine":
@@ -573,6 +581,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/objectStoreCertificateV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/objectStoreV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/pbr",
 		&module{version},
 	)
@@ -754,6 +772,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/userGroupsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/userKeyRevokeV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/userKeyV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

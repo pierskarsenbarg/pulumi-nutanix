@@ -13,6 +13,2225 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type VirtualMachineV2VtpmConfig struct {
+	// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+	IsVtpmEnabled *bool   `pulumi:"isVtpmEnabled"`
+	Version       *string `pulumi:"version"`
+}
+
+// VirtualMachineV2VtpmConfigInput is an input type that accepts VirtualMachineV2VtpmConfigArgs and VirtualMachineV2VtpmConfigOutput values.
+// You can construct a concrete instance of `VirtualMachineV2VtpmConfigInput` via:
+//
+//	VirtualMachineV2VtpmConfigArgs{...}
+type VirtualMachineV2VtpmConfigInput interface {
+	pulumi.Input
+
+	ToVirtualMachineV2VtpmConfigOutput() VirtualMachineV2VtpmConfigOutput
+	ToVirtualMachineV2VtpmConfigOutputWithContext(context.Context) VirtualMachineV2VtpmConfigOutput
+}
+
+type VirtualMachineV2VtpmConfigArgs struct {
+	// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+	IsVtpmEnabled pulumi.BoolPtrInput   `pulumi:"isVtpmEnabled"`
+	Version       pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (VirtualMachineV2VtpmConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualMachineV2VtpmConfig)(nil)).Elem()
+}
+
+func (i VirtualMachineV2VtpmConfigArgs) ToVirtualMachineV2VtpmConfigOutput() VirtualMachineV2VtpmConfigOutput {
+	return i.ToVirtualMachineV2VtpmConfigOutputWithContext(context.Background())
+}
+
+func (i VirtualMachineV2VtpmConfigArgs) ToVirtualMachineV2VtpmConfigOutputWithContext(ctx context.Context) VirtualMachineV2VtpmConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualMachineV2VtpmConfigOutput)
+}
+
+// VirtualMachineV2VtpmConfigArrayInput is an input type that accepts VirtualMachineV2VtpmConfigArray and VirtualMachineV2VtpmConfigArrayOutput values.
+// You can construct a concrete instance of `VirtualMachineV2VtpmConfigArrayInput` via:
+//
+//	VirtualMachineV2VtpmConfigArray{ VirtualMachineV2VtpmConfigArgs{...} }
+type VirtualMachineV2VtpmConfigArrayInput interface {
+	pulumi.Input
+
+	ToVirtualMachineV2VtpmConfigArrayOutput() VirtualMachineV2VtpmConfigArrayOutput
+	ToVirtualMachineV2VtpmConfigArrayOutputWithContext(context.Context) VirtualMachineV2VtpmConfigArrayOutput
+}
+
+type VirtualMachineV2VtpmConfigArray []VirtualMachineV2VtpmConfigInput
+
+func (VirtualMachineV2VtpmConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualMachineV2VtpmConfig)(nil)).Elem()
+}
+
+func (i VirtualMachineV2VtpmConfigArray) ToVirtualMachineV2VtpmConfigArrayOutput() VirtualMachineV2VtpmConfigArrayOutput {
+	return i.ToVirtualMachineV2VtpmConfigArrayOutputWithContext(context.Background())
+}
+
+func (i VirtualMachineV2VtpmConfigArray) ToVirtualMachineV2VtpmConfigArrayOutputWithContext(ctx context.Context) VirtualMachineV2VtpmConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualMachineV2VtpmConfigArrayOutput)
+}
+
+type VirtualMachineV2VtpmConfigOutput struct{ *pulumi.OutputState }
+
+func (VirtualMachineV2VtpmConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualMachineV2VtpmConfig)(nil)).Elem()
+}
+
+func (o VirtualMachineV2VtpmConfigOutput) ToVirtualMachineV2VtpmConfigOutput() VirtualMachineV2VtpmConfigOutput {
+	return o
+}
+
+func (o VirtualMachineV2VtpmConfigOutput) ToVirtualMachineV2VtpmConfigOutputWithContext(ctx context.Context) VirtualMachineV2VtpmConfigOutput {
+	return o
+}
+
+// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+func (o VirtualMachineV2VtpmConfigOutput) IsVtpmEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VirtualMachineV2VtpmConfig) *bool { return v.IsVtpmEnabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o VirtualMachineV2VtpmConfigOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualMachineV2VtpmConfig) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type VirtualMachineV2VtpmConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (VirtualMachineV2VtpmConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualMachineV2VtpmConfig)(nil)).Elem()
+}
+
+func (o VirtualMachineV2VtpmConfigArrayOutput) ToVirtualMachineV2VtpmConfigArrayOutput() VirtualMachineV2VtpmConfigArrayOutput {
+	return o
+}
+
+func (o VirtualMachineV2VtpmConfigArrayOutput) ToVirtualMachineV2VtpmConfigArrayOutputWithContext(ctx context.Context) VirtualMachineV2VtpmConfigArrayOutput {
+	return o
+}
+
+func (o VirtualMachineV2VtpmConfigArrayOutput) Index(i pulumi.IntInput) VirtualMachineV2VtpmConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VirtualMachineV2VtpmConfig {
+		return vs[0].([]VirtualMachineV2VtpmConfig)[vs[1].(int)]
+	}).(VirtualMachineV2VtpmConfigOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfo struct {
+	DataSources       []VmCdromInsertEjectV2BackingInfoDataSource       `pulumi:"dataSources"`
+	DiskSizeBytes     *int                                              `pulumi:"diskSizeBytes"`
+	StorageConfigs    []VmCdromInsertEjectV2BackingInfoStorageConfig    `pulumi:"storageConfigs"`
+	StorageContainers []VmCdromInsertEjectV2BackingInfoStorageContainer `pulumi:"storageContainers"`
+}
+
+// VmCdromInsertEjectV2BackingInfoInput is an input type that accepts VmCdromInsertEjectV2BackingInfoArgs and VmCdromInsertEjectV2BackingInfoOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoArgs{...}
+type VmCdromInsertEjectV2BackingInfoInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoOutput() VmCdromInsertEjectV2BackingInfoOutput
+	ToVmCdromInsertEjectV2BackingInfoOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoArgs struct {
+	DataSources       VmCdromInsertEjectV2BackingInfoDataSourceArrayInput       `pulumi:"dataSources"`
+	DiskSizeBytes     pulumi.IntPtrInput                                        `pulumi:"diskSizeBytes"`
+	StorageConfigs    VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
+	StorageContainers VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput `pulumi:"storageContainers"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfo)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoArgs) ToVmCdromInsertEjectV2BackingInfoOutput() VmCdromInsertEjectV2BackingInfoOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoArgs) ToVmCdromInsertEjectV2BackingInfoOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoArray and VmCdromInsertEjectV2BackingInfoArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoArray{ VmCdromInsertEjectV2BackingInfoArgs{...} }
+type VmCdromInsertEjectV2BackingInfoArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoArrayOutput() VmCdromInsertEjectV2BackingInfoArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoArray []VmCdromInsertEjectV2BackingInfoInput
+
+func (VmCdromInsertEjectV2BackingInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfo)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoArray) ToVmCdromInsertEjectV2BackingInfoArrayOutput() VmCdromInsertEjectV2BackingInfoArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoArray) ToVmCdromInsertEjectV2BackingInfoArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfo)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoOutput) ToVmCdromInsertEjectV2BackingInfoOutput() VmCdromInsertEjectV2BackingInfoOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoOutput) ToVmCdromInsertEjectV2BackingInfoOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoOutput) DataSources() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoDataSource {
+		return v.DataSources
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput)
+}
+
+func (o VmCdromInsertEjectV2BackingInfoOutput) DiskSizeBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) *int { return v.DiskSizeBytes }).(pulumi.IntPtrOutput)
+}
+
+func (o VmCdromInsertEjectV2BackingInfoOutput) StorageConfigs() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoStorageConfig {
+		return v.StorageConfigs
+	}).(VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput)
+}
+
+func (o VmCdromInsertEjectV2BackingInfoOutput) StorageContainers() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoStorageContainer {
+		return v.StorageContainers
+	}).(VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfo)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoArrayOutput) ToVmCdromInsertEjectV2BackingInfoArrayOutput() VmCdromInsertEjectV2BackingInfoArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoArrayOutput) ToVmCdromInsertEjectV2BackingInfoArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfo {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfo)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSource struct {
+	References []VmCdromInsertEjectV2BackingInfoDataSourceReference `pulumi:"references"`
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceArgs and VmCdromInsertEjectV2BackingInfoDataSourceOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceArgs{...}
+type VmCdromInsertEjectV2BackingInfoDataSourceInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceOutput() VmCdromInsertEjectV2BackingInfoDataSourceOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceArgs struct {
+	References VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput `pulumi:"references"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSource)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceOutput() VmCdromInsertEjectV2BackingInfoDataSourceOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceArray and VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceArray{ VmCdromInsertEjectV2BackingInfoDataSourceArgs{...} }
+type VmCdromInsertEjectV2BackingInfoDataSourceArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceArray []VmCdromInsertEjectV2BackingInfoDataSourceInput
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSource)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSource)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceOutput() VmCdromInsertEjectV2BackingInfoDataSourceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) References() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSource) []VmCdromInsertEjectV2BackingInfoDataSourceReference {
+		return v.References
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSource)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSource {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSource)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReference struct {
+	ImageReferences  []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference  `pulumi:"imageReferences"`
+	VmDiskReferences []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs{...}
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs struct {
+	ImageReferences  VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput  `pulumi:"imageReferences"`
+	VmDiskReferences VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReference)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs{...} }
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReference)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReference)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ImageReferences() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference {
+		return v.ImageReferences
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput)
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) VmDiskReferences() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference {
+		return v.VmDiskReferences
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReference)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReference {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReference)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference struct {
+	ImageExtId *string `pulumi:"imageExtId"`
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs{...}
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs struct {
+	ImageExtId pulumi.StringPtrInput `pulumi:"imageExtId"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs{...} }
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput) ImageExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference) *string { return v.ImageExtId }).(pulumi.StringPtrOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference struct {
+	DiskAddresses []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress `pulumi:"diskAddresses"`
+	DiskExtId     *string                                                                        `pulumi:"diskExtId"`
+	VmReferences  []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference `pulumi:"vmReferences"`
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs{...}
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs struct {
+	DiskAddresses VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput `pulumi:"diskAddresses"`
+	DiskExtId     pulumi.StringPtrInput                                                                  `pulumi:"diskExtId"`
+	VmReferences  VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput `pulumi:"vmReferences"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs{...} }
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) DiskAddresses() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+		return v.DiskAddresses
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput)
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) DiskExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) VmReferences() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+		return v.VmReferences
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress struct {
+	BusType *string `pulumi:"busType"`
+	Index   *int    `pulumi:"index"`
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs{...}
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs struct {
+	BusType pulumi.StringPtrInput `pulumi:"busType"`
+	Index   pulumi.IntPtrInput    `pulumi:"index"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs{...} }
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) BusType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress) *string {
+		return v.BusType
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) Index() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress) *int {
+		return v.Index
+	}).(pulumi.IntPtrOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference struct {
+	ExtId *string `pulumi:"extId"`
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs{...}
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs struct {
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs{...} }
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference) *string {
+		return v.ExtId
+	}).(pulumi.StringPtrOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageConfig struct {
+	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
+}
+
+// VmCdromInsertEjectV2BackingInfoStorageConfigInput is an input type that accepts VmCdromInsertEjectV2BackingInfoStorageConfigArgs and VmCdromInsertEjectV2BackingInfoStorageConfigOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoStorageConfigInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoStorageConfigArgs{...}
+type VmCdromInsertEjectV2BackingInfoStorageConfigInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoStorageConfigOutput() VmCdromInsertEjectV2BackingInfoStorageConfigOutput
+	ToVmCdromInsertEjectV2BackingInfoStorageConfigOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageConfigArgs struct {
+	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoStorageConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageConfig)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoStorageConfigArgs) ToVmCdromInsertEjectV2BackingInfoStorageConfigOutput() VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoStorageConfigOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoStorageConfigArgs) ToVmCdromInsertEjectV2BackingInfoStorageConfigOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoStorageConfigOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoStorageConfigArray and VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoStorageConfigArray{ VmCdromInsertEjectV2BackingInfoStorageConfigArgs{...} }
+type VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageConfigArray []VmCdromInsertEjectV2BackingInfoStorageConfigInput
+
+func (VmCdromInsertEjectV2BackingInfoStorageConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoStorageConfig)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoStorageConfigArray) ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoStorageConfigArray) ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageConfigOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoStorageConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageConfig)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageConfigOutput) ToVmCdromInsertEjectV2BackingInfoStorageConfigOutput() VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageConfigOutput) ToVmCdromInsertEjectV2BackingInfoStorageConfigOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoStorageConfig) *bool { return v.IsFlashModeEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoStorageConfig)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoStorageConfig {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfoStorageConfig)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoStorageConfigOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageContainer struct {
+	ExtId *string `pulumi:"extId"`
+}
+
+// VmCdromInsertEjectV2BackingInfoStorageContainerInput is an input type that accepts VmCdromInsertEjectV2BackingInfoStorageContainerArgs and VmCdromInsertEjectV2BackingInfoStorageContainerOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoStorageContainerInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoStorageContainerArgs{...}
+type VmCdromInsertEjectV2BackingInfoStorageContainerInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoStorageContainerOutput() VmCdromInsertEjectV2BackingInfoStorageContainerOutput
+	ToVmCdromInsertEjectV2BackingInfoStorageContainerOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageContainerArgs struct {
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+}
+
+func (VmCdromInsertEjectV2BackingInfoStorageContainerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageContainer)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoStorageContainerArgs) ToVmCdromInsertEjectV2BackingInfoStorageContainerOutput() VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoStorageContainerOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoStorageContainerArgs) ToVmCdromInsertEjectV2BackingInfoStorageContainerOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoStorageContainerOutput)
+}
+
+// VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoStorageContainerArray and VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput values.
+// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput` via:
+//
+//	VmCdromInsertEjectV2BackingInfoStorageContainerArray{ VmCdromInsertEjectV2BackingInfoStorageContainerArgs{...} }
+type VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput interface {
+	pulumi.Input
+
+	ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput
+	ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageContainerArray []VmCdromInsertEjectV2BackingInfoStorageContainerInput
+
+func (VmCdromInsertEjectV2BackingInfoStorageContainerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoStorageContainer)(nil)).Elem()
+}
+
+func (i VmCdromInsertEjectV2BackingInfoStorageContainerArray) ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
+	return i.ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutputWithContext(context.Background())
+}
+
+func (i VmCdromInsertEjectV2BackingInfoStorageContainerArray) ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageContainerOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageContainer)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ToVmCdromInsertEjectV2BackingInfoStorageContainerOutput() VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ToVmCdromInsertEjectV2BackingInfoStorageContainerOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoStorageContainer) *string { return v.ExtId }).(pulumi.StringPtrOutput)
+}
+
+type VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoStorageContainer)(nil)).Elem()
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput) ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput) ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
+	return o
+}
+
+func (o VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoStorageContainer {
+		return vs[0].([]VmCdromInsertEjectV2BackingInfoStorageContainer)[vs[1].(int)]
+	}).(VmCdromInsertEjectV2BackingInfoStorageContainerOutput)
+}
+
+type VmCloneV2ApcConfig struct {
+	CpuModels    []VmCloneV2ApcConfigCpuModel `pulumi:"cpuModels"`
+	IsApcEnabled *bool                        `pulumi:"isApcEnabled"`
+}
+
+// VmCloneV2ApcConfigInput is an input type that accepts VmCloneV2ApcConfigArgs and VmCloneV2ApcConfigOutput values.
+// You can construct a concrete instance of `VmCloneV2ApcConfigInput` via:
+//
+//	VmCloneV2ApcConfigArgs{...}
+type VmCloneV2ApcConfigInput interface {
+	pulumi.Input
+
+	ToVmCloneV2ApcConfigOutput() VmCloneV2ApcConfigOutput
+	ToVmCloneV2ApcConfigOutputWithContext(context.Context) VmCloneV2ApcConfigOutput
+}
+
+type VmCloneV2ApcConfigArgs struct {
+	CpuModels    VmCloneV2ApcConfigCpuModelArrayInput `pulumi:"cpuModels"`
+	IsApcEnabled pulumi.BoolPtrInput                  `pulumi:"isApcEnabled"`
+}
+
+func (VmCloneV2ApcConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2ApcConfig)(nil)).Elem()
+}
+
+func (i VmCloneV2ApcConfigArgs) ToVmCloneV2ApcConfigOutput() VmCloneV2ApcConfigOutput {
+	return i.ToVmCloneV2ApcConfigOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2ApcConfigArgs) ToVmCloneV2ApcConfigOutputWithContext(ctx context.Context) VmCloneV2ApcConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2ApcConfigOutput)
+}
+
+// VmCloneV2ApcConfigArrayInput is an input type that accepts VmCloneV2ApcConfigArray and VmCloneV2ApcConfigArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2ApcConfigArrayInput` via:
+//
+//	VmCloneV2ApcConfigArray{ VmCloneV2ApcConfigArgs{...} }
+type VmCloneV2ApcConfigArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2ApcConfigArrayOutput() VmCloneV2ApcConfigArrayOutput
+	ToVmCloneV2ApcConfigArrayOutputWithContext(context.Context) VmCloneV2ApcConfigArrayOutput
+}
+
+type VmCloneV2ApcConfigArray []VmCloneV2ApcConfigInput
+
+func (VmCloneV2ApcConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2ApcConfig)(nil)).Elem()
+}
+
+func (i VmCloneV2ApcConfigArray) ToVmCloneV2ApcConfigArrayOutput() VmCloneV2ApcConfigArrayOutput {
+	return i.ToVmCloneV2ApcConfigArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2ApcConfigArray) ToVmCloneV2ApcConfigArrayOutputWithContext(ctx context.Context) VmCloneV2ApcConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2ApcConfigArrayOutput)
+}
+
+type VmCloneV2ApcConfigOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2ApcConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2ApcConfig)(nil)).Elem()
+}
+
+func (o VmCloneV2ApcConfigOutput) ToVmCloneV2ApcConfigOutput() VmCloneV2ApcConfigOutput {
+	return o
+}
+
+func (o VmCloneV2ApcConfigOutput) ToVmCloneV2ApcConfigOutputWithContext(ctx context.Context) VmCloneV2ApcConfigOutput {
+	return o
+}
+
+func (o VmCloneV2ApcConfigOutput) CpuModels() VmCloneV2ApcConfigCpuModelArrayOutput {
+	return o.ApplyT(func(v VmCloneV2ApcConfig) []VmCloneV2ApcConfigCpuModel { return v.CpuModels }).(VmCloneV2ApcConfigCpuModelArrayOutput)
+}
+
+func (o VmCloneV2ApcConfigOutput) IsApcEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VmCloneV2ApcConfig) *bool { return v.IsApcEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type VmCloneV2ApcConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2ApcConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2ApcConfig)(nil)).Elem()
+}
+
+func (o VmCloneV2ApcConfigArrayOutput) ToVmCloneV2ApcConfigArrayOutput() VmCloneV2ApcConfigArrayOutput {
+	return o
+}
+
+func (o VmCloneV2ApcConfigArrayOutput) ToVmCloneV2ApcConfigArrayOutputWithContext(ctx context.Context) VmCloneV2ApcConfigArrayOutput {
+	return o
+}
+
+func (o VmCloneV2ApcConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2ApcConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2ApcConfig {
+		return vs[0].([]VmCloneV2ApcConfig)[vs[1].(int)]
+	}).(VmCloneV2ApcConfigOutput)
+}
+
+type VmCloneV2ApcConfigCpuModel struct {
+	ExtId *string `pulumi:"extId"`
+	Name  *string `pulumi:"name"`
+}
+
+// VmCloneV2ApcConfigCpuModelInput is an input type that accepts VmCloneV2ApcConfigCpuModelArgs and VmCloneV2ApcConfigCpuModelOutput values.
+// You can construct a concrete instance of `VmCloneV2ApcConfigCpuModelInput` via:
+//
+//	VmCloneV2ApcConfigCpuModelArgs{...}
+type VmCloneV2ApcConfigCpuModelInput interface {
+	pulumi.Input
+
+	ToVmCloneV2ApcConfigCpuModelOutput() VmCloneV2ApcConfigCpuModelOutput
+	ToVmCloneV2ApcConfigCpuModelOutputWithContext(context.Context) VmCloneV2ApcConfigCpuModelOutput
+}
+
+type VmCloneV2ApcConfigCpuModelArgs struct {
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	Name  pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (VmCloneV2ApcConfigCpuModelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2ApcConfigCpuModel)(nil)).Elem()
+}
+
+func (i VmCloneV2ApcConfigCpuModelArgs) ToVmCloneV2ApcConfigCpuModelOutput() VmCloneV2ApcConfigCpuModelOutput {
+	return i.ToVmCloneV2ApcConfigCpuModelOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2ApcConfigCpuModelArgs) ToVmCloneV2ApcConfigCpuModelOutputWithContext(ctx context.Context) VmCloneV2ApcConfigCpuModelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2ApcConfigCpuModelOutput)
+}
+
+// VmCloneV2ApcConfigCpuModelArrayInput is an input type that accepts VmCloneV2ApcConfigCpuModelArray and VmCloneV2ApcConfigCpuModelArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2ApcConfigCpuModelArrayInput` via:
+//
+//	VmCloneV2ApcConfigCpuModelArray{ VmCloneV2ApcConfigCpuModelArgs{...} }
+type VmCloneV2ApcConfigCpuModelArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2ApcConfigCpuModelArrayOutput() VmCloneV2ApcConfigCpuModelArrayOutput
+	ToVmCloneV2ApcConfigCpuModelArrayOutputWithContext(context.Context) VmCloneV2ApcConfigCpuModelArrayOutput
+}
+
+type VmCloneV2ApcConfigCpuModelArray []VmCloneV2ApcConfigCpuModelInput
+
+func (VmCloneV2ApcConfigCpuModelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2ApcConfigCpuModel)(nil)).Elem()
+}
+
+func (i VmCloneV2ApcConfigCpuModelArray) ToVmCloneV2ApcConfigCpuModelArrayOutput() VmCloneV2ApcConfigCpuModelArrayOutput {
+	return i.ToVmCloneV2ApcConfigCpuModelArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2ApcConfigCpuModelArray) ToVmCloneV2ApcConfigCpuModelArrayOutputWithContext(ctx context.Context) VmCloneV2ApcConfigCpuModelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2ApcConfigCpuModelArrayOutput)
+}
+
+type VmCloneV2ApcConfigCpuModelOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2ApcConfigCpuModelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2ApcConfigCpuModel)(nil)).Elem()
+}
+
+func (o VmCloneV2ApcConfigCpuModelOutput) ToVmCloneV2ApcConfigCpuModelOutput() VmCloneV2ApcConfigCpuModelOutput {
+	return o
+}
+
+func (o VmCloneV2ApcConfigCpuModelOutput) ToVmCloneV2ApcConfigCpuModelOutputWithContext(ctx context.Context) VmCloneV2ApcConfigCpuModelOutput {
+	return o
+}
+
+func (o VmCloneV2ApcConfigCpuModelOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCloneV2ApcConfigCpuModel) *string { return v.ExtId }).(pulumi.StringPtrOutput)
+}
+
+func (o VmCloneV2ApcConfigCpuModelOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCloneV2ApcConfigCpuModel) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type VmCloneV2ApcConfigCpuModelArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2ApcConfigCpuModelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2ApcConfigCpuModel)(nil)).Elem()
+}
+
+func (o VmCloneV2ApcConfigCpuModelArrayOutput) ToVmCloneV2ApcConfigCpuModelArrayOutput() VmCloneV2ApcConfigCpuModelArrayOutput {
+	return o
+}
+
+func (o VmCloneV2ApcConfigCpuModelArrayOutput) ToVmCloneV2ApcConfigCpuModelArrayOutputWithContext(ctx context.Context) VmCloneV2ApcConfigCpuModelArrayOutput {
+	return o
+}
+
+func (o VmCloneV2ApcConfigCpuModelArrayOutput) Index(i pulumi.IntInput) VmCloneV2ApcConfigCpuModelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2ApcConfigCpuModel {
+		return vs[0].([]VmCloneV2ApcConfigCpuModel)[vs[1].(int)]
+	}).(VmCloneV2ApcConfigCpuModelOutput)
+}
+
+type VmCloneV2BootConfig struct {
+	LegacyBoots []VmCloneV2BootConfigLegacyBoot `pulumi:"legacyBoots"`
+	UefiBoots   []VmCloneV2BootConfigUefiBoot   `pulumi:"uefiBoots"`
+}
+
+// VmCloneV2BootConfigInput is an input type that accepts VmCloneV2BootConfigArgs and VmCloneV2BootConfigOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigInput` via:
+//
+//	VmCloneV2BootConfigArgs{...}
+type VmCloneV2BootConfigInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigOutput() VmCloneV2BootConfigOutput
+	ToVmCloneV2BootConfigOutputWithContext(context.Context) VmCloneV2BootConfigOutput
+}
+
+type VmCloneV2BootConfigArgs struct {
+	LegacyBoots VmCloneV2BootConfigLegacyBootArrayInput `pulumi:"legacyBoots"`
+	UefiBoots   VmCloneV2BootConfigUefiBootArrayInput   `pulumi:"uefiBoots"`
+}
+
+func (VmCloneV2BootConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfig)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigArgs) ToVmCloneV2BootConfigOutput() VmCloneV2BootConfigOutput {
+	return i.ToVmCloneV2BootConfigOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigArgs) ToVmCloneV2BootConfigOutputWithContext(ctx context.Context) VmCloneV2BootConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigOutput)
+}
+
+// VmCloneV2BootConfigArrayInput is an input type that accepts VmCloneV2BootConfigArray and VmCloneV2BootConfigArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigArrayInput` via:
+//
+//	VmCloneV2BootConfigArray{ VmCloneV2BootConfigArgs{...} }
+type VmCloneV2BootConfigArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigArrayOutput() VmCloneV2BootConfigArrayOutput
+	ToVmCloneV2BootConfigArrayOutputWithContext(context.Context) VmCloneV2BootConfigArrayOutput
+}
+
+type VmCloneV2BootConfigArray []VmCloneV2BootConfigInput
+
+func (VmCloneV2BootConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfig)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigArray) ToVmCloneV2BootConfigArrayOutput() VmCloneV2BootConfigArrayOutput {
+	return i.ToVmCloneV2BootConfigArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigArray) ToVmCloneV2BootConfigArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigArrayOutput)
+}
+
+type VmCloneV2BootConfigOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfig)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigOutput) ToVmCloneV2BootConfigOutput() VmCloneV2BootConfigOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigOutput) ToVmCloneV2BootConfigOutputWithContext(ctx context.Context) VmCloneV2BootConfigOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigOutput) LegacyBoots() VmCloneV2BootConfigLegacyBootArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfig) []VmCloneV2BootConfigLegacyBoot { return v.LegacyBoots }).(VmCloneV2BootConfigLegacyBootArrayOutput)
+}
+
+func (o VmCloneV2BootConfigOutput) UefiBoots() VmCloneV2BootConfigUefiBootArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfig) []VmCloneV2BootConfigUefiBoot { return v.UefiBoots }).(VmCloneV2BootConfigUefiBootArrayOutput)
+}
+
+type VmCloneV2BootConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfig)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigArrayOutput) ToVmCloneV2BootConfigArrayOutput() VmCloneV2BootConfigArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigArrayOutput) ToVmCloneV2BootConfigArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfig {
+		return vs[0].([]VmCloneV2BootConfig)[vs[1].(int)]
+	}).(VmCloneV2BootConfigOutput)
+}
+
+type VmCloneV2BootConfigLegacyBoot struct {
+	BootDevices []VmCloneV2BootConfigLegacyBootBootDevice `pulumi:"bootDevices"`
+	BootOrders  []string                                  `pulumi:"bootOrders"`
+}
+
+// VmCloneV2BootConfigLegacyBootInput is an input type that accepts VmCloneV2BootConfigLegacyBootArgs and VmCloneV2BootConfigLegacyBootOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootArgs{...}
+type VmCloneV2BootConfigLegacyBootInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootOutput() VmCloneV2BootConfigLegacyBootOutput
+	ToVmCloneV2BootConfigLegacyBootOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootOutput
+}
+
+type VmCloneV2BootConfigLegacyBootArgs struct {
+	BootDevices VmCloneV2BootConfigLegacyBootBootDeviceArrayInput `pulumi:"bootDevices"`
+	BootOrders  pulumi.StringArrayInput                           `pulumi:"bootOrders"`
+}
+
+func (VmCloneV2BootConfigLegacyBootArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBoot)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootArgs) ToVmCloneV2BootConfigLegacyBootOutput() VmCloneV2BootConfigLegacyBootOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootArgs) ToVmCloneV2BootConfigLegacyBootOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootOutput)
+}
+
+// VmCloneV2BootConfigLegacyBootArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootArray and VmCloneV2BootConfigLegacyBootArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootArrayInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootArray{ VmCloneV2BootConfigLegacyBootArgs{...} }
+type VmCloneV2BootConfigLegacyBootArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootArrayOutput() VmCloneV2BootConfigLegacyBootArrayOutput
+	ToVmCloneV2BootConfigLegacyBootArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootArrayOutput
+}
+
+type VmCloneV2BootConfigLegacyBootArray []VmCloneV2BootConfigLegacyBootInput
+
+func (VmCloneV2BootConfigLegacyBootArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBoot)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootArray) ToVmCloneV2BootConfigLegacyBootArrayOutput() VmCloneV2BootConfigLegacyBootArrayOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootArray) ToVmCloneV2BootConfigLegacyBootArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootArrayOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBoot)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootOutput) ToVmCloneV2BootConfigLegacyBootOutput() VmCloneV2BootConfigLegacyBootOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootOutput) ToVmCloneV2BootConfigLegacyBootOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootOutput) BootDevices() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBoot) []VmCloneV2BootConfigLegacyBootBootDevice { return v.BootDevices }).(VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput)
+}
+
+func (o VmCloneV2BootConfigLegacyBootOutput) BootOrders() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBoot)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootArrayOutput) ToVmCloneV2BootConfigLegacyBootArrayOutput() VmCloneV2BootConfigLegacyBootArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootArrayOutput) ToVmCloneV2BootConfigLegacyBootArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBoot {
+		return vs[0].([]VmCloneV2BootConfigLegacyBoot)[vs[1].(int)]
+	}).(VmCloneV2BootConfigLegacyBootOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDevice struct {
+	BootDeviceDisks []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
+	BootDeviceNics  []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic  `pulumi:"bootDeviceNics"`
+}
+
+// VmCloneV2BootConfigLegacyBootBootDeviceInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceArgs and VmCloneV2BootConfigLegacyBootBootDeviceOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootBootDeviceArgs{...}
+type VmCloneV2BootConfigLegacyBootBootDeviceInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootBootDeviceOutput() VmCloneV2BootConfigLegacyBootBootDeviceOutput
+	ToVmCloneV2BootConfigLegacyBootBootDeviceOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceOutput
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceArgs struct {
+	BootDeviceDisks VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
+	BootDeviceNics  VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput  `pulumi:"bootDeviceNics"`
+}
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDevice)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceOutput() VmCloneV2BootConfigLegacyBootBootDeviceOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceOutput)
+}
+
+// VmCloneV2BootConfigLegacyBootBootDeviceArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceArray and VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceArrayInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootBootDeviceArray{ VmCloneV2BootConfigLegacyBootBootDeviceArgs{...} }
+type VmCloneV2BootConfigLegacyBootBootDeviceArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput
+	ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceArray []VmCloneV2BootConfigLegacyBootBootDeviceInput
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDevice)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceArray) ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceArray) ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDevice)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceOutput() VmCloneV2BootConfigLegacyBootBootDeviceOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) BootDeviceDisks() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDevice) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
+		return v.BootDeviceDisks
+	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) BootDeviceNics() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDevice) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
+		return v.BootDeviceNics
+	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDevice)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootBootDeviceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBootBootDevice {
+		return vs[0].([]VmCloneV2BootConfigLegacyBootBootDevice)[vs[1].(int)]
+	}).(VmCloneV2BootConfigLegacyBootBootDeviceOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk struct {
+	DiskAddresses []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
+}
+
+// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs{...}
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs struct {
+	DiskAddresses VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
+}
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput)
+}
+
+// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray{ VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs{...} }
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) DiskAddresses() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+		return v.DiskAddresses
+	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
+		return vs[0].([]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)[vs[1].(int)]
+	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress struct {
+	BusType *string `pulumi:"busType"`
+	Index   *int    `pulumi:"index"`
+}
+
+// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{...}
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
+	BusType pulumi.StringPtrInput `pulumi:"busType"`
+	Index   pulumi.IntPtrInput    `pulumi:"index"`
+}
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput)
+}
+
+// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray{ VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{...} }
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+		return vs[0].([]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)[vs[1].(int)]
+	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic struct {
+	MacAddress *string `pulumi:"macAddress"`
+}
+
+// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs{...}
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs struct {
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+}
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput)
+}
+
+// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput` via:
+//
+//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray{ VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs{...} }
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput
+	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
+		return vs[0].([]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)[vs[1].(int)]
+	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput)
+}
+
+type VmCloneV2BootConfigUefiBoot struct {
+	BootDevices         []VmCloneV2BootConfigUefiBootBootDevice  `pulumi:"bootDevices"`
+	BootOrders          []string                                 `pulumi:"bootOrders"`
+	IsSecureBootEnabled *bool                                    `pulumi:"isSecureBootEnabled"`
+	NvramDevices        []VmCloneV2BootConfigUefiBootNvramDevice `pulumi:"nvramDevices"`
+}
+
+// VmCloneV2BootConfigUefiBootInput is an input type that accepts VmCloneV2BootConfigUefiBootArgs and VmCloneV2BootConfigUefiBootOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootInput` via:
+//
+//	VmCloneV2BootConfigUefiBootArgs{...}
+type VmCloneV2BootConfigUefiBootInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootOutput() VmCloneV2BootConfigUefiBootOutput
+	ToVmCloneV2BootConfigUefiBootOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootOutput
+}
+
+type VmCloneV2BootConfigUefiBootArgs struct {
+	BootDevices         VmCloneV2BootConfigUefiBootBootDeviceArrayInput  `pulumi:"bootDevices"`
+	BootOrders          pulumi.StringArrayInput                          `pulumi:"bootOrders"`
+	IsSecureBootEnabled pulumi.BoolPtrInput                              `pulumi:"isSecureBootEnabled"`
+	NvramDevices        VmCloneV2BootConfigUefiBootNvramDeviceArrayInput `pulumi:"nvramDevices"`
+}
+
+func (VmCloneV2BootConfigUefiBootArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBoot)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootArgs) ToVmCloneV2BootConfigUefiBootOutput() VmCloneV2BootConfigUefiBootOutput {
+	return i.ToVmCloneV2BootConfigUefiBootOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootArgs) ToVmCloneV2BootConfigUefiBootOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootOutput)
+}
+
+// VmCloneV2BootConfigUefiBootArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootArray and VmCloneV2BootConfigUefiBootArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootArrayInput` via:
+//
+//	VmCloneV2BootConfigUefiBootArray{ VmCloneV2BootConfigUefiBootArgs{...} }
+type VmCloneV2BootConfigUefiBootArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootArrayOutput() VmCloneV2BootConfigUefiBootArrayOutput
+	ToVmCloneV2BootConfigUefiBootArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootArrayOutput
+}
+
+type VmCloneV2BootConfigUefiBootArray []VmCloneV2BootConfigUefiBootInput
+
+func (VmCloneV2BootConfigUefiBootArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBoot)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootArray) ToVmCloneV2BootConfigUefiBootArrayOutput() VmCloneV2BootConfigUefiBootArrayOutput {
+	return i.ToVmCloneV2BootConfigUefiBootArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootArray) ToVmCloneV2BootConfigUefiBootArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootArrayOutput)
+}
+
+type VmCloneV2BootConfigUefiBootOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBoot)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootOutput) ToVmCloneV2BootConfigUefiBootOutput() VmCloneV2BootConfigUefiBootOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootOutput) ToVmCloneV2BootConfigUefiBootOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootOutput) BootDevices() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []VmCloneV2BootConfigUefiBootBootDevice { return v.BootDevices }).(VmCloneV2BootConfigUefiBootBootDeviceArrayOutput)
+}
+
+func (o VmCloneV2BootConfigUefiBootOutput) BootOrders() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
+}
+
+func (o VmCloneV2BootConfigUefiBootOutput) IsSecureBootEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) *bool { return v.IsSecureBootEnabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o VmCloneV2BootConfigUefiBootOutput) NvramDevices() VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []VmCloneV2BootConfigUefiBootNvramDevice { return v.NvramDevices }).(VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput)
+}
+
+type VmCloneV2BootConfigUefiBootArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBoot)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootArrayOutput) ToVmCloneV2BootConfigUefiBootArrayOutput() VmCloneV2BootConfigUefiBootArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootArrayOutput) ToVmCloneV2BootConfigUefiBootArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBoot {
+		return vs[0].([]VmCloneV2BootConfigUefiBoot)[vs[1].(int)]
+	}).(VmCloneV2BootConfigUefiBootOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDevice struct {
+	BootDeviceDisks []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
+	BootDeviceNics  []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic  `pulumi:"bootDeviceNics"`
+}
+
+// VmCloneV2BootConfigUefiBootBootDeviceInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceArgs and VmCloneV2BootConfigUefiBootBootDeviceOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceInput` via:
+//
+//	VmCloneV2BootConfigUefiBootBootDeviceArgs{...}
+type VmCloneV2BootConfigUefiBootBootDeviceInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootBootDeviceOutput() VmCloneV2BootConfigUefiBootBootDeviceOutput
+	ToVmCloneV2BootConfigUefiBootBootDeviceOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceOutput
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceArgs struct {
+	BootDeviceDisks VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
+	BootDeviceNics  VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput  `pulumi:"bootDeviceNics"`
+}
+
+func (VmCloneV2BootConfigUefiBootBootDeviceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDevice)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceArgs) ToVmCloneV2BootConfigUefiBootBootDeviceOutput() VmCloneV2BootConfigUefiBootBootDeviceOutput {
+	return i.ToVmCloneV2BootConfigUefiBootBootDeviceOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceArgs) ToVmCloneV2BootConfigUefiBootBootDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceOutput)
+}
+
+// VmCloneV2BootConfigUefiBootBootDeviceArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceArray and VmCloneV2BootConfigUefiBootBootDeviceArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceArrayInput` via:
+//
+//	VmCloneV2BootConfigUefiBootBootDeviceArray{ VmCloneV2BootConfigUefiBootBootDeviceArgs{...} }
+type VmCloneV2BootConfigUefiBootBootDeviceArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput
+	ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceArrayOutput
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceArray []VmCloneV2BootConfigUefiBootBootDeviceInput
+
+func (VmCloneV2BootConfigUefiBootBootDeviceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDevice)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceArray) ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
+	return i.ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceArray) ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceArrayOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootBootDeviceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDevice)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) ToVmCloneV2BootConfigUefiBootBootDeviceOutput() VmCloneV2BootConfigUefiBootBootDeviceOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) ToVmCloneV2BootConfigUefiBootBootDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) BootDeviceDisks() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDevice) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
+		return v.BootDeviceDisks
+	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) BootDeviceNics() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDevice) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
+		return v.BootDeviceNics
+	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDevice)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDevice {
+		return vs[0].([]VmCloneV2BootConfigUefiBootBootDevice)[vs[1].(int)]
+	}).(VmCloneV2BootConfigUefiBootBootDeviceOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk struct {
+	DiskAddresses []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
+}
+
+// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput` via:
+//
+//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs{...}
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs struct {
+	DiskAddresses VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
+}
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput)
+}
+
+// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput` via:
+//
+//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray{ VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs{...} }
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) DiskAddresses() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+		return v.DiskAddresses
+	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
+		return vs[0].([]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)[vs[1].(int)]
+	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress struct {
+	BusType *string `pulumi:"busType"`
+	Index   *int    `pulumi:"index"`
+}
+
+// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput` via:
+//
+//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs{...}
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
+	BusType pulumi.StringPtrInput `pulumi:"busType"`
+	Index   pulumi.IntPtrInput    `pulumi:"index"`
+}
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput)
+}
+
+// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput` via:
+//
+//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray{ VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs{...} }
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+		return vs[0].([]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)[vs[1].(int)]
+	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput)
+}
+
 type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic struct {
 	MacAddress *string `pulumi:"macAddress"`
 }
@@ -20693,6 +22912,1186 @@ func (o GetCategoryV2LinkArrayOutput) Index(i pulumi.IntInput) GetCategoryV2Link
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCategoryV2Link {
 		return vs[0].([]GetCategoryV2Link)[vs[1].(int)]
 	}).(GetCategoryV2LinkOutput)
+}
+
+type GetCertificateV2AlternateFqdn struct {
+	Value string `pulumi:"value"`
+}
+
+// GetCertificateV2AlternateFqdnInput is an input type that accepts GetCertificateV2AlternateFqdnArgs and GetCertificateV2AlternateFqdnOutput values.
+// You can construct a concrete instance of `GetCertificateV2AlternateFqdnInput` via:
+//
+//	GetCertificateV2AlternateFqdnArgs{...}
+type GetCertificateV2AlternateFqdnInput interface {
+	pulumi.Input
+
+	ToGetCertificateV2AlternateFqdnOutput() GetCertificateV2AlternateFqdnOutput
+	ToGetCertificateV2AlternateFqdnOutputWithContext(context.Context) GetCertificateV2AlternateFqdnOutput
+}
+
+type GetCertificateV2AlternateFqdnArgs struct {
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateV2AlternateFqdnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2AlternateFqdn)(nil)).Elem()
+}
+
+func (i GetCertificateV2AlternateFqdnArgs) ToGetCertificateV2AlternateFqdnOutput() GetCertificateV2AlternateFqdnOutput {
+	return i.ToGetCertificateV2AlternateFqdnOutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2AlternateFqdnArgs) ToGetCertificateV2AlternateFqdnOutputWithContext(ctx context.Context) GetCertificateV2AlternateFqdnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2AlternateFqdnOutput)
+}
+
+// GetCertificateV2AlternateFqdnArrayInput is an input type that accepts GetCertificateV2AlternateFqdnArray and GetCertificateV2AlternateFqdnArrayOutput values.
+// You can construct a concrete instance of `GetCertificateV2AlternateFqdnArrayInput` via:
+//
+//	GetCertificateV2AlternateFqdnArray{ GetCertificateV2AlternateFqdnArgs{...} }
+type GetCertificateV2AlternateFqdnArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateV2AlternateFqdnArrayOutput() GetCertificateV2AlternateFqdnArrayOutput
+	ToGetCertificateV2AlternateFqdnArrayOutputWithContext(context.Context) GetCertificateV2AlternateFqdnArrayOutput
+}
+
+type GetCertificateV2AlternateFqdnArray []GetCertificateV2AlternateFqdnInput
+
+func (GetCertificateV2AlternateFqdnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateV2AlternateFqdn)(nil)).Elem()
+}
+
+func (i GetCertificateV2AlternateFqdnArray) ToGetCertificateV2AlternateFqdnArrayOutput() GetCertificateV2AlternateFqdnArrayOutput {
+	return i.ToGetCertificateV2AlternateFqdnArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2AlternateFqdnArray) ToGetCertificateV2AlternateFqdnArrayOutputWithContext(ctx context.Context) GetCertificateV2AlternateFqdnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2AlternateFqdnArrayOutput)
+}
+
+type GetCertificateV2AlternateFqdnOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateV2AlternateFqdnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2AlternateFqdn)(nil)).Elem()
+}
+
+func (o GetCertificateV2AlternateFqdnOutput) ToGetCertificateV2AlternateFqdnOutput() GetCertificateV2AlternateFqdnOutput {
+	return o
+}
+
+func (o GetCertificateV2AlternateFqdnOutput) ToGetCertificateV2AlternateFqdnOutputWithContext(ctx context.Context) GetCertificateV2AlternateFqdnOutput {
+	return o
+}
+
+func (o GetCertificateV2AlternateFqdnOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2AlternateFqdn) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCertificateV2AlternateFqdnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateV2AlternateFqdnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateV2AlternateFqdn)(nil)).Elem()
+}
+
+func (o GetCertificateV2AlternateFqdnArrayOutput) ToGetCertificateV2AlternateFqdnArrayOutput() GetCertificateV2AlternateFqdnArrayOutput {
+	return o
+}
+
+func (o GetCertificateV2AlternateFqdnArrayOutput) ToGetCertificateV2AlternateFqdnArrayOutputWithContext(ctx context.Context) GetCertificateV2AlternateFqdnArrayOutput {
+	return o
+}
+
+func (o GetCertificateV2AlternateFqdnArrayOutput) Index(i pulumi.IntInput) GetCertificateV2AlternateFqdnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateV2AlternateFqdn {
+		return vs[0].([]GetCertificateV2AlternateFqdn)[vs[1].(int)]
+	}).(GetCertificateV2AlternateFqdnOutput)
+}
+
+type GetCertificateV2AlternateIp struct {
+	Ipv4 GetCertificateV2AlternateIpIpv4 `pulumi:"ipv4"`
+	Ipv6 GetCertificateV2AlternateIpIpv6 `pulumi:"ipv6"`
+}
+
+// GetCertificateV2AlternateIpInput is an input type that accepts GetCertificateV2AlternateIpArgs and GetCertificateV2AlternateIpOutput values.
+// You can construct a concrete instance of `GetCertificateV2AlternateIpInput` via:
+//
+//	GetCertificateV2AlternateIpArgs{...}
+type GetCertificateV2AlternateIpInput interface {
+	pulumi.Input
+
+	ToGetCertificateV2AlternateIpOutput() GetCertificateV2AlternateIpOutput
+	ToGetCertificateV2AlternateIpOutputWithContext(context.Context) GetCertificateV2AlternateIpOutput
+}
+
+type GetCertificateV2AlternateIpArgs struct {
+	Ipv4 GetCertificateV2AlternateIpIpv4Input `pulumi:"ipv4"`
+	Ipv6 GetCertificateV2AlternateIpIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetCertificateV2AlternateIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2AlternateIp)(nil)).Elem()
+}
+
+func (i GetCertificateV2AlternateIpArgs) ToGetCertificateV2AlternateIpOutput() GetCertificateV2AlternateIpOutput {
+	return i.ToGetCertificateV2AlternateIpOutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2AlternateIpArgs) ToGetCertificateV2AlternateIpOutputWithContext(ctx context.Context) GetCertificateV2AlternateIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2AlternateIpOutput)
+}
+
+// GetCertificateV2AlternateIpArrayInput is an input type that accepts GetCertificateV2AlternateIpArray and GetCertificateV2AlternateIpArrayOutput values.
+// You can construct a concrete instance of `GetCertificateV2AlternateIpArrayInput` via:
+//
+//	GetCertificateV2AlternateIpArray{ GetCertificateV2AlternateIpArgs{...} }
+type GetCertificateV2AlternateIpArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateV2AlternateIpArrayOutput() GetCertificateV2AlternateIpArrayOutput
+	ToGetCertificateV2AlternateIpArrayOutputWithContext(context.Context) GetCertificateV2AlternateIpArrayOutput
+}
+
+type GetCertificateV2AlternateIpArray []GetCertificateV2AlternateIpInput
+
+func (GetCertificateV2AlternateIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateV2AlternateIp)(nil)).Elem()
+}
+
+func (i GetCertificateV2AlternateIpArray) ToGetCertificateV2AlternateIpArrayOutput() GetCertificateV2AlternateIpArrayOutput {
+	return i.ToGetCertificateV2AlternateIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2AlternateIpArray) ToGetCertificateV2AlternateIpArrayOutputWithContext(ctx context.Context) GetCertificateV2AlternateIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2AlternateIpArrayOutput)
+}
+
+type GetCertificateV2AlternateIpOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateV2AlternateIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2AlternateIp)(nil)).Elem()
+}
+
+func (o GetCertificateV2AlternateIpOutput) ToGetCertificateV2AlternateIpOutput() GetCertificateV2AlternateIpOutput {
+	return o
+}
+
+func (o GetCertificateV2AlternateIpOutput) ToGetCertificateV2AlternateIpOutputWithContext(ctx context.Context) GetCertificateV2AlternateIpOutput {
+	return o
+}
+
+func (o GetCertificateV2AlternateIpOutput) Ipv4() GetCertificateV2AlternateIpIpv4Output {
+	return o.ApplyT(func(v GetCertificateV2AlternateIp) GetCertificateV2AlternateIpIpv4 { return v.Ipv4 }).(GetCertificateV2AlternateIpIpv4Output)
+}
+
+func (o GetCertificateV2AlternateIpOutput) Ipv6() GetCertificateV2AlternateIpIpv6Output {
+	return o.ApplyT(func(v GetCertificateV2AlternateIp) GetCertificateV2AlternateIpIpv6 { return v.Ipv6 }).(GetCertificateV2AlternateIpIpv6Output)
+}
+
+type GetCertificateV2AlternateIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateV2AlternateIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateV2AlternateIp)(nil)).Elem()
+}
+
+func (o GetCertificateV2AlternateIpArrayOutput) ToGetCertificateV2AlternateIpArrayOutput() GetCertificateV2AlternateIpArrayOutput {
+	return o
+}
+
+func (o GetCertificateV2AlternateIpArrayOutput) ToGetCertificateV2AlternateIpArrayOutputWithContext(ctx context.Context) GetCertificateV2AlternateIpArrayOutput {
+	return o
+}
+
+func (o GetCertificateV2AlternateIpArrayOutput) Index(i pulumi.IntInput) GetCertificateV2AlternateIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateV2AlternateIp {
+		return vs[0].([]GetCertificateV2AlternateIp)[vs[1].(int)]
+	}).(GetCertificateV2AlternateIpOutput)
+}
+
+type GetCertificateV2AlternateIpIpv4 struct {
+	PrefixLength *int   `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetCertificateV2AlternateIpIpv4Input is an input type that accepts GetCertificateV2AlternateIpIpv4Args and GetCertificateV2AlternateIpIpv4Output values.
+// You can construct a concrete instance of `GetCertificateV2AlternateIpIpv4Input` via:
+//
+//	GetCertificateV2AlternateIpIpv4Args{...}
+type GetCertificateV2AlternateIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetCertificateV2AlternateIpIpv4Output() GetCertificateV2AlternateIpIpv4Output
+	ToGetCertificateV2AlternateIpIpv4OutputWithContext(context.Context) GetCertificateV2AlternateIpIpv4Output
+}
+
+type GetCertificateV2AlternateIpIpv4Args struct {
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateV2AlternateIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2AlternateIpIpv4)(nil)).Elem()
+}
+
+func (i GetCertificateV2AlternateIpIpv4Args) ToGetCertificateV2AlternateIpIpv4Output() GetCertificateV2AlternateIpIpv4Output {
+	return i.ToGetCertificateV2AlternateIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2AlternateIpIpv4Args) ToGetCertificateV2AlternateIpIpv4OutputWithContext(ctx context.Context) GetCertificateV2AlternateIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2AlternateIpIpv4Output)
+}
+
+type GetCertificateV2AlternateIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetCertificateV2AlternateIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2AlternateIpIpv4)(nil)).Elem()
+}
+
+func (o GetCertificateV2AlternateIpIpv4Output) ToGetCertificateV2AlternateIpIpv4Output() GetCertificateV2AlternateIpIpv4Output {
+	return o
+}
+
+func (o GetCertificateV2AlternateIpIpv4Output) ToGetCertificateV2AlternateIpIpv4OutputWithContext(ctx context.Context) GetCertificateV2AlternateIpIpv4Output {
+	return o
+}
+
+func (o GetCertificateV2AlternateIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificateV2AlternateIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+func (o GetCertificateV2AlternateIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2AlternateIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCertificateV2AlternateIpIpv6 struct {
+	PrefixLength *int   `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetCertificateV2AlternateIpIpv6Input is an input type that accepts GetCertificateV2AlternateIpIpv6Args and GetCertificateV2AlternateIpIpv6Output values.
+// You can construct a concrete instance of `GetCertificateV2AlternateIpIpv6Input` via:
+//
+//	GetCertificateV2AlternateIpIpv6Args{...}
+type GetCertificateV2AlternateIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetCertificateV2AlternateIpIpv6Output() GetCertificateV2AlternateIpIpv6Output
+	ToGetCertificateV2AlternateIpIpv6OutputWithContext(context.Context) GetCertificateV2AlternateIpIpv6Output
+}
+
+type GetCertificateV2AlternateIpIpv6Args struct {
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateV2AlternateIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2AlternateIpIpv6)(nil)).Elem()
+}
+
+func (i GetCertificateV2AlternateIpIpv6Args) ToGetCertificateV2AlternateIpIpv6Output() GetCertificateV2AlternateIpIpv6Output {
+	return i.ToGetCertificateV2AlternateIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2AlternateIpIpv6Args) ToGetCertificateV2AlternateIpIpv6OutputWithContext(ctx context.Context) GetCertificateV2AlternateIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2AlternateIpIpv6Output)
+}
+
+type GetCertificateV2AlternateIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetCertificateV2AlternateIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2AlternateIpIpv6)(nil)).Elem()
+}
+
+func (o GetCertificateV2AlternateIpIpv6Output) ToGetCertificateV2AlternateIpIpv6Output() GetCertificateV2AlternateIpIpv6Output {
+	return o
+}
+
+func (o GetCertificateV2AlternateIpIpv6Output) ToGetCertificateV2AlternateIpIpv6OutputWithContext(ctx context.Context) GetCertificateV2AlternateIpIpv6Output {
+	return o
+}
+
+func (o GetCertificateV2AlternateIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificateV2AlternateIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+func (o GetCertificateV2AlternateIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2AlternateIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCertificateV2Link struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetCertificateV2LinkInput is an input type that accepts GetCertificateV2LinkArgs and GetCertificateV2LinkOutput values.
+// You can construct a concrete instance of `GetCertificateV2LinkInput` via:
+//
+//	GetCertificateV2LinkArgs{...}
+type GetCertificateV2LinkInput interface {
+	pulumi.Input
+
+	ToGetCertificateV2LinkOutput() GetCertificateV2LinkOutput
+	ToGetCertificateV2LinkOutputWithContext(context.Context) GetCertificateV2LinkOutput
+}
+
+type GetCertificateV2LinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetCertificateV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2Link)(nil)).Elem()
+}
+
+func (i GetCertificateV2LinkArgs) ToGetCertificateV2LinkOutput() GetCertificateV2LinkOutput {
+	return i.ToGetCertificateV2LinkOutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2LinkArgs) ToGetCertificateV2LinkOutputWithContext(ctx context.Context) GetCertificateV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2LinkOutput)
+}
+
+// GetCertificateV2LinkArrayInput is an input type that accepts GetCertificateV2LinkArray and GetCertificateV2LinkArrayOutput values.
+// You can construct a concrete instance of `GetCertificateV2LinkArrayInput` via:
+//
+//	GetCertificateV2LinkArray{ GetCertificateV2LinkArgs{...} }
+type GetCertificateV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateV2LinkArrayOutput() GetCertificateV2LinkArrayOutput
+	ToGetCertificateV2LinkArrayOutputWithContext(context.Context) GetCertificateV2LinkArrayOutput
+}
+
+type GetCertificateV2LinkArray []GetCertificateV2LinkInput
+
+func (GetCertificateV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateV2Link)(nil)).Elem()
+}
+
+func (i GetCertificateV2LinkArray) ToGetCertificateV2LinkArrayOutput() GetCertificateV2LinkArrayOutput {
+	return i.ToGetCertificateV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2LinkArray) ToGetCertificateV2LinkArrayOutputWithContext(ctx context.Context) GetCertificateV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2LinkArrayOutput)
+}
+
+type GetCertificateV2LinkOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2Link)(nil)).Elem()
+}
+
+func (o GetCertificateV2LinkOutput) ToGetCertificateV2LinkOutput() GetCertificateV2LinkOutput {
+	return o
+}
+
+func (o GetCertificateV2LinkOutput) ToGetCertificateV2LinkOutputWithContext(ctx context.Context) GetCertificateV2LinkOutput {
+	return o
+}
+
+func (o GetCertificateV2LinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2Link) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetCertificateV2LinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2Link) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetCertificateV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateV2Link)(nil)).Elem()
+}
+
+func (o GetCertificateV2LinkArrayOutput) ToGetCertificateV2LinkArrayOutput() GetCertificateV2LinkArrayOutput {
+	return o
+}
+
+func (o GetCertificateV2LinkArrayOutput) ToGetCertificateV2LinkArrayOutputWithContext(ctx context.Context) GetCertificateV2LinkArrayOutput {
+	return o
+}
+
+func (o GetCertificateV2LinkArrayOutput) Index(i pulumi.IntInput) GetCertificateV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateV2Link {
+		return vs[0].([]GetCertificateV2Link)[vs[1].(int)]
+	}).(GetCertificateV2LinkOutput)
+}
+
+type GetCertificateV2Metadata struct {
+	CategoryIds        []string `pulumi:"categoryIds"`
+	OwnerReferenceId   string   `pulumi:"ownerReferenceId"`
+	OwnerUserName      string   `pulumi:"ownerUserName"`
+	ProjectName        string   `pulumi:"projectName"`
+	ProjectReferenceId string   `pulumi:"projectReferenceId"`
+}
+
+// GetCertificateV2MetadataInput is an input type that accepts GetCertificateV2MetadataArgs and GetCertificateV2MetadataOutput values.
+// You can construct a concrete instance of `GetCertificateV2MetadataInput` via:
+//
+//	GetCertificateV2MetadataArgs{...}
+type GetCertificateV2MetadataInput interface {
+	pulumi.Input
+
+	ToGetCertificateV2MetadataOutput() GetCertificateV2MetadataOutput
+	ToGetCertificateV2MetadataOutputWithContext(context.Context) GetCertificateV2MetadataOutput
+}
+
+type GetCertificateV2MetadataArgs struct {
+	CategoryIds        pulumi.StringArrayInput `pulumi:"categoryIds"`
+	OwnerReferenceId   pulumi.StringInput      `pulumi:"ownerReferenceId"`
+	OwnerUserName      pulumi.StringInput      `pulumi:"ownerUserName"`
+	ProjectName        pulumi.StringInput      `pulumi:"projectName"`
+	ProjectReferenceId pulumi.StringInput      `pulumi:"projectReferenceId"`
+}
+
+func (GetCertificateV2MetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2Metadata)(nil)).Elem()
+}
+
+func (i GetCertificateV2MetadataArgs) ToGetCertificateV2MetadataOutput() GetCertificateV2MetadataOutput {
+	return i.ToGetCertificateV2MetadataOutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2MetadataArgs) ToGetCertificateV2MetadataOutputWithContext(ctx context.Context) GetCertificateV2MetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2MetadataOutput)
+}
+
+// GetCertificateV2MetadataArrayInput is an input type that accepts GetCertificateV2MetadataArray and GetCertificateV2MetadataArrayOutput values.
+// You can construct a concrete instance of `GetCertificateV2MetadataArrayInput` via:
+//
+//	GetCertificateV2MetadataArray{ GetCertificateV2MetadataArgs{...} }
+type GetCertificateV2MetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateV2MetadataArrayOutput() GetCertificateV2MetadataArrayOutput
+	ToGetCertificateV2MetadataArrayOutputWithContext(context.Context) GetCertificateV2MetadataArrayOutput
+}
+
+type GetCertificateV2MetadataArray []GetCertificateV2MetadataInput
+
+func (GetCertificateV2MetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateV2Metadata)(nil)).Elem()
+}
+
+func (i GetCertificateV2MetadataArray) ToGetCertificateV2MetadataArrayOutput() GetCertificateV2MetadataArrayOutput {
+	return i.ToGetCertificateV2MetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateV2MetadataArray) ToGetCertificateV2MetadataArrayOutputWithContext(ctx context.Context) GetCertificateV2MetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateV2MetadataArrayOutput)
+}
+
+type GetCertificateV2MetadataOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateV2MetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateV2Metadata)(nil)).Elem()
+}
+
+func (o GetCertificateV2MetadataOutput) ToGetCertificateV2MetadataOutput() GetCertificateV2MetadataOutput {
+	return o
+}
+
+func (o GetCertificateV2MetadataOutput) ToGetCertificateV2MetadataOutputWithContext(ctx context.Context) GetCertificateV2MetadataOutput {
+	return o
+}
+
+func (o GetCertificateV2MetadataOutput) CategoryIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCertificateV2Metadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetCertificateV2MetadataOutput) OwnerReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2Metadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
+}
+
+func (o GetCertificateV2MetadataOutput) OwnerUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2Metadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+func (o GetCertificateV2MetadataOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2Metadata) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+func (o GetCertificateV2MetadataOutput) ProjectReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateV2Metadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
+}
+
+type GetCertificateV2MetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateV2MetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateV2Metadata)(nil)).Elem()
+}
+
+func (o GetCertificateV2MetadataArrayOutput) ToGetCertificateV2MetadataArrayOutput() GetCertificateV2MetadataArrayOutput {
+	return o
+}
+
+func (o GetCertificateV2MetadataArrayOutput) ToGetCertificateV2MetadataArrayOutputWithContext(ctx context.Context) GetCertificateV2MetadataArrayOutput {
+	return o
+}
+
+func (o GetCertificateV2MetadataArrayOutput) Index(i pulumi.IntInput) GetCertificateV2MetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateV2Metadata {
+		return vs[0].([]GetCertificateV2Metadata)[vs[1].(int)]
+	}).(GetCertificateV2MetadataOutput)
+}
+
+type GetCertificatesV2Certificate struct {
+	AlternateFqdns   []GetCertificatesV2CertificateAlternateFqdn `pulumi:"alternateFqdns"`
+	AlternateIps     []GetCertificatesV2CertificateAlternateIp   `pulumi:"alternateIps"`
+	ExtId            string                                      `pulumi:"extId"`
+	Links            []GetCertificatesV2CertificateLink          `pulumi:"links"`
+	Metadatas        []GetCertificatesV2CertificateMetadata      `pulumi:"metadatas"`
+	ObjectStoreExtId string                                      `pulumi:"objectStoreExtId"`
+	TenantId         string                                      `pulumi:"tenantId"`
+}
+
+// GetCertificatesV2CertificateInput is an input type that accepts GetCertificatesV2CertificateArgs and GetCertificatesV2CertificateOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateInput` via:
+//
+//	GetCertificatesV2CertificateArgs{...}
+type GetCertificatesV2CertificateInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateOutput() GetCertificatesV2CertificateOutput
+	ToGetCertificatesV2CertificateOutputWithContext(context.Context) GetCertificatesV2CertificateOutput
+}
+
+type GetCertificatesV2CertificateArgs struct {
+	AlternateFqdns   GetCertificatesV2CertificateAlternateFqdnArrayInput `pulumi:"alternateFqdns"`
+	AlternateIps     GetCertificatesV2CertificateAlternateIpArrayInput   `pulumi:"alternateIps"`
+	ExtId            pulumi.StringInput                                  `pulumi:"extId"`
+	Links            GetCertificatesV2CertificateLinkArrayInput          `pulumi:"links"`
+	Metadatas        GetCertificatesV2CertificateMetadataArrayInput      `pulumi:"metadatas"`
+	ObjectStoreExtId pulumi.StringInput                                  `pulumi:"objectStoreExtId"`
+	TenantId         pulumi.StringInput                                  `pulumi:"tenantId"`
+}
+
+func (GetCertificatesV2CertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2Certificate)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateArgs) ToGetCertificatesV2CertificateOutput() GetCertificatesV2CertificateOutput {
+	return i.ToGetCertificatesV2CertificateOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateArgs) ToGetCertificatesV2CertificateOutputWithContext(ctx context.Context) GetCertificatesV2CertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateOutput)
+}
+
+// GetCertificatesV2CertificateArrayInput is an input type that accepts GetCertificatesV2CertificateArray and GetCertificatesV2CertificateArrayOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateArrayInput` via:
+//
+//	GetCertificatesV2CertificateArray{ GetCertificatesV2CertificateArgs{...} }
+type GetCertificatesV2CertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateArrayOutput() GetCertificatesV2CertificateArrayOutput
+	ToGetCertificatesV2CertificateArrayOutputWithContext(context.Context) GetCertificatesV2CertificateArrayOutput
+}
+
+type GetCertificatesV2CertificateArray []GetCertificatesV2CertificateInput
+
+func (GetCertificatesV2CertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2Certificate)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateArray) ToGetCertificatesV2CertificateArrayOutput() GetCertificatesV2CertificateArrayOutput {
+	return i.ToGetCertificatesV2CertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateArray) ToGetCertificatesV2CertificateArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateArrayOutput)
+}
+
+type GetCertificatesV2CertificateOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2Certificate)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateOutput) ToGetCertificatesV2CertificateOutput() GetCertificatesV2CertificateOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateOutput) ToGetCertificatesV2CertificateOutputWithContext(ctx context.Context) GetCertificatesV2CertificateOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateOutput) AlternateFqdns() GetCertificatesV2CertificateAlternateFqdnArrayOutput {
+	return o.ApplyT(func(v GetCertificatesV2Certificate) []GetCertificatesV2CertificateAlternateFqdn {
+		return v.AlternateFqdns
+	}).(GetCertificatesV2CertificateAlternateFqdnArrayOutput)
+}
+
+func (o GetCertificatesV2CertificateOutput) AlternateIps() GetCertificatesV2CertificateAlternateIpArrayOutput {
+	return o.ApplyT(func(v GetCertificatesV2Certificate) []GetCertificatesV2CertificateAlternateIp { return v.AlternateIps }).(GetCertificatesV2CertificateAlternateIpArrayOutput)
+}
+
+func (o GetCertificatesV2CertificateOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2Certificate) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesV2CertificateOutput) Links() GetCertificatesV2CertificateLinkArrayOutput {
+	return o.ApplyT(func(v GetCertificatesV2Certificate) []GetCertificatesV2CertificateLink { return v.Links }).(GetCertificatesV2CertificateLinkArrayOutput)
+}
+
+func (o GetCertificatesV2CertificateOutput) Metadatas() GetCertificatesV2CertificateMetadataArrayOutput {
+	return o.ApplyT(func(v GetCertificatesV2Certificate) []GetCertificatesV2CertificateMetadata { return v.Metadatas }).(GetCertificatesV2CertificateMetadataArrayOutput)
+}
+
+func (o GetCertificatesV2CertificateOutput) ObjectStoreExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2Certificate) string { return v.ObjectStoreExtId }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesV2CertificateOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2Certificate) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+type GetCertificatesV2CertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2Certificate)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateArrayOutput) ToGetCertificatesV2CertificateArrayOutput() GetCertificatesV2CertificateArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateArrayOutput) ToGetCertificatesV2CertificateArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateArrayOutput) Index(i pulumi.IntInput) GetCertificatesV2CertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesV2Certificate {
+		return vs[0].([]GetCertificatesV2Certificate)[vs[1].(int)]
+	}).(GetCertificatesV2CertificateOutput)
+}
+
+type GetCertificatesV2CertificateAlternateFqdn struct {
+	Value string `pulumi:"value"`
+}
+
+// GetCertificatesV2CertificateAlternateFqdnInput is an input type that accepts GetCertificatesV2CertificateAlternateFqdnArgs and GetCertificatesV2CertificateAlternateFqdnOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateAlternateFqdnInput` via:
+//
+//	GetCertificatesV2CertificateAlternateFqdnArgs{...}
+type GetCertificatesV2CertificateAlternateFqdnInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateAlternateFqdnOutput() GetCertificatesV2CertificateAlternateFqdnOutput
+	ToGetCertificatesV2CertificateAlternateFqdnOutputWithContext(context.Context) GetCertificatesV2CertificateAlternateFqdnOutput
+}
+
+type GetCertificatesV2CertificateAlternateFqdnArgs struct {
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificatesV2CertificateAlternateFqdnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateAlternateFqdn)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateAlternateFqdnArgs) ToGetCertificatesV2CertificateAlternateFqdnOutput() GetCertificatesV2CertificateAlternateFqdnOutput {
+	return i.ToGetCertificatesV2CertificateAlternateFqdnOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateAlternateFqdnArgs) ToGetCertificatesV2CertificateAlternateFqdnOutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateFqdnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateAlternateFqdnOutput)
+}
+
+// GetCertificatesV2CertificateAlternateFqdnArrayInput is an input type that accepts GetCertificatesV2CertificateAlternateFqdnArray and GetCertificatesV2CertificateAlternateFqdnArrayOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateAlternateFqdnArrayInput` via:
+//
+//	GetCertificatesV2CertificateAlternateFqdnArray{ GetCertificatesV2CertificateAlternateFqdnArgs{...} }
+type GetCertificatesV2CertificateAlternateFqdnArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateAlternateFqdnArrayOutput() GetCertificatesV2CertificateAlternateFqdnArrayOutput
+	ToGetCertificatesV2CertificateAlternateFqdnArrayOutputWithContext(context.Context) GetCertificatesV2CertificateAlternateFqdnArrayOutput
+}
+
+type GetCertificatesV2CertificateAlternateFqdnArray []GetCertificatesV2CertificateAlternateFqdnInput
+
+func (GetCertificatesV2CertificateAlternateFqdnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2CertificateAlternateFqdn)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateAlternateFqdnArray) ToGetCertificatesV2CertificateAlternateFqdnArrayOutput() GetCertificatesV2CertificateAlternateFqdnArrayOutput {
+	return i.ToGetCertificatesV2CertificateAlternateFqdnArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateAlternateFqdnArray) ToGetCertificatesV2CertificateAlternateFqdnArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateFqdnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateAlternateFqdnArrayOutput)
+}
+
+type GetCertificatesV2CertificateAlternateFqdnOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateAlternateFqdnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateAlternateFqdn)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateAlternateFqdnOutput) ToGetCertificatesV2CertificateAlternateFqdnOutput() GetCertificatesV2CertificateAlternateFqdnOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateFqdnOutput) ToGetCertificatesV2CertificateAlternateFqdnOutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateFqdnOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateFqdnOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateFqdn) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCertificatesV2CertificateAlternateFqdnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateAlternateFqdnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2CertificateAlternateFqdn)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateAlternateFqdnArrayOutput) ToGetCertificatesV2CertificateAlternateFqdnArrayOutput() GetCertificatesV2CertificateAlternateFqdnArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateFqdnArrayOutput) ToGetCertificatesV2CertificateAlternateFqdnArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateFqdnArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateFqdnArrayOutput) Index(i pulumi.IntInput) GetCertificatesV2CertificateAlternateFqdnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesV2CertificateAlternateFqdn {
+		return vs[0].([]GetCertificatesV2CertificateAlternateFqdn)[vs[1].(int)]
+	}).(GetCertificatesV2CertificateAlternateFqdnOutput)
+}
+
+type GetCertificatesV2CertificateAlternateIp struct {
+	Ipv4 GetCertificatesV2CertificateAlternateIpIpv4 `pulumi:"ipv4"`
+	Ipv6 GetCertificatesV2CertificateAlternateIpIpv6 `pulumi:"ipv6"`
+}
+
+// GetCertificatesV2CertificateAlternateIpInput is an input type that accepts GetCertificatesV2CertificateAlternateIpArgs and GetCertificatesV2CertificateAlternateIpOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateAlternateIpInput` via:
+//
+//	GetCertificatesV2CertificateAlternateIpArgs{...}
+type GetCertificatesV2CertificateAlternateIpInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateAlternateIpOutput() GetCertificatesV2CertificateAlternateIpOutput
+	ToGetCertificatesV2CertificateAlternateIpOutputWithContext(context.Context) GetCertificatesV2CertificateAlternateIpOutput
+}
+
+type GetCertificatesV2CertificateAlternateIpArgs struct {
+	Ipv4 GetCertificatesV2CertificateAlternateIpIpv4Input `pulumi:"ipv4"`
+	Ipv6 GetCertificatesV2CertificateAlternateIpIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetCertificatesV2CertificateAlternateIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateAlternateIp)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateAlternateIpArgs) ToGetCertificatesV2CertificateAlternateIpOutput() GetCertificatesV2CertificateAlternateIpOutput {
+	return i.ToGetCertificatesV2CertificateAlternateIpOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateAlternateIpArgs) ToGetCertificatesV2CertificateAlternateIpOutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateAlternateIpOutput)
+}
+
+// GetCertificatesV2CertificateAlternateIpArrayInput is an input type that accepts GetCertificatesV2CertificateAlternateIpArray and GetCertificatesV2CertificateAlternateIpArrayOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateAlternateIpArrayInput` via:
+//
+//	GetCertificatesV2CertificateAlternateIpArray{ GetCertificatesV2CertificateAlternateIpArgs{...} }
+type GetCertificatesV2CertificateAlternateIpArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateAlternateIpArrayOutput() GetCertificatesV2CertificateAlternateIpArrayOutput
+	ToGetCertificatesV2CertificateAlternateIpArrayOutputWithContext(context.Context) GetCertificatesV2CertificateAlternateIpArrayOutput
+}
+
+type GetCertificatesV2CertificateAlternateIpArray []GetCertificatesV2CertificateAlternateIpInput
+
+func (GetCertificatesV2CertificateAlternateIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2CertificateAlternateIp)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateAlternateIpArray) ToGetCertificatesV2CertificateAlternateIpArrayOutput() GetCertificatesV2CertificateAlternateIpArrayOutput {
+	return i.ToGetCertificatesV2CertificateAlternateIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateAlternateIpArray) ToGetCertificatesV2CertificateAlternateIpArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateAlternateIpArrayOutput)
+}
+
+type GetCertificatesV2CertificateAlternateIpOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateAlternateIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateAlternateIp)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateAlternateIpOutput) ToGetCertificatesV2CertificateAlternateIpOutput() GetCertificatesV2CertificateAlternateIpOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateIpOutput) ToGetCertificatesV2CertificateAlternateIpOutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateIpOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateIpOutput) Ipv4() GetCertificatesV2CertificateAlternateIpIpv4Output {
+	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIp) GetCertificatesV2CertificateAlternateIpIpv4 {
+		return v.Ipv4
+	}).(GetCertificatesV2CertificateAlternateIpIpv4Output)
+}
+
+func (o GetCertificatesV2CertificateAlternateIpOutput) Ipv6() GetCertificatesV2CertificateAlternateIpIpv6Output {
+	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIp) GetCertificatesV2CertificateAlternateIpIpv6 {
+		return v.Ipv6
+	}).(GetCertificatesV2CertificateAlternateIpIpv6Output)
+}
+
+type GetCertificatesV2CertificateAlternateIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateAlternateIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2CertificateAlternateIp)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateAlternateIpArrayOutput) ToGetCertificatesV2CertificateAlternateIpArrayOutput() GetCertificatesV2CertificateAlternateIpArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateIpArrayOutput) ToGetCertificatesV2CertificateAlternateIpArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateIpArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateIpArrayOutput) Index(i pulumi.IntInput) GetCertificatesV2CertificateAlternateIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesV2CertificateAlternateIp {
+		return vs[0].([]GetCertificatesV2CertificateAlternateIp)[vs[1].(int)]
+	}).(GetCertificatesV2CertificateAlternateIpOutput)
+}
+
+type GetCertificatesV2CertificateAlternateIpIpv4 struct {
+	PrefixLength *int   `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetCertificatesV2CertificateAlternateIpIpv4Input is an input type that accepts GetCertificatesV2CertificateAlternateIpIpv4Args and GetCertificatesV2CertificateAlternateIpIpv4Output values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateAlternateIpIpv4Input` via:
+//
+//	GetCertificatesV2CertificateAlternateIpIpv4Args{...}
+type GetCertificatesV2CertificateAlternateIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateAlternateIpIpv4Output() GetCertificatesV2CertificateAlternateIpIpv4Output
+	ToGetCertificatesV2CertificateAlternateIpIpv4OutputWithContext(context.Context) GetCertificatesV2CertificateAlternateIpIpv4Output
+}
+
+type GetCertificatesV2CertificateAlternateIpIpv4Args struct {
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificatesV2CertificateAlternateIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateAlternateIpIpv4)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateAlternateIpIpv4Args) ToGetCertificatesV2CertificateAlternateIpIpv4Output() GetCertificatesV2CertificateAlternateIpIpv4Output {
+	return i.ToGetCertificatesV2CertificateAlternateIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateAlternateIpIpv4Args) ToGetCertificatesV2CertificateAlternateIpIpv4OutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateAlternateIpIpv4Output)
+}
+
+type GetCertificatesV2CertificateAlternateIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateAlternateIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateAlternateIpIpv4)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateAlternateIpIpv4Output) ToGetCertificatesV2CertificateAlternateIpIpv4Output() GetCertificatesV2CertificateAlternateIpIpv4Output {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateIpIpv4Output) ToGetCertificatesV2CertificateAlternateIpIpv4OutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateIpIpv4Output {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+func (o GetCertificatesV2CertificateAlternateIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCertificatesV2CertificateAlternateIpIpv6 struct {
+	PrefixLength *int   `pulumi:"prefixLength"`
+	Value        string `pulumi:"value"`
+}
+
+// GetCertificatesV2CertificateAlternateIpIpv6Input is an input type that accepts GetCertificatesV2CertificateAlternateIpIpv6Args and GetCertificatesV2CertificateAlternateIpIpv6Output values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateAlternateIpIpv6Input` via:
+//
+//	GetCertificatesV2CertificateAlternateIpIpv6Args{...}
+type GetCertificatesV2CertificateAlternateIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateAlternateIpIpv6Output() GetCertificatesV2CertificateAlternateIpIpv6Output
+	ToGetCertificatesV2CertificateAlternateIpIpv6OutputWithContext(context.Context) GetCertificatesV2CertificateAlternateIpIpv6Output
+}
+
+type GetCertificatesV2CertificateAlternateIpIpv6Args struct {
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	Value        pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificatesV2CertificateAlternateIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateAlternateIpIpv6)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateAlternateIpIpv6Args) ToGetCertificatesV2CertificateAlternateIpIpv6Output() GetCertificatesV2CertificateAlternateIpIpv6Output {
+	return i.ToGetCertificatesV2CertificateAlternateIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateAlternateIpIpv6Args) ToGetCertificatesV2CertificateAlternateIpIpv6OutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateAlternateIpIpv6Output)
+}
+
+type GetCertificatesV2CertificateAlternateIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateAlternateIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateAlternateIpIpv6)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateAlternateIpIpv6Output) ToGetCertificatesV2CertificateAlternateIpIpv6Output() GetCertificatesV2CertificateAlternateIpIpv6Output {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateIpIpv6Output) ToGetCertificatesV2CertificateAlternateIpIpv6OutputWithContext(ctx context.Context) GetCertificatesV2CertificateAlternateIpIpv6Output {
+	return o
+}
+
+func (o GetCertificatesV2CertificateAlternateIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+func (o GetCertificatesV2CertificateAlternateIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCertificatesV2CertificateLink struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetCertificatesV2CertificateLinkInput is an input type that accepts GetCertificatesV2CertificateLinkArgs and GetCertificatesV2CertificateLinkOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateLinkInput` via:
+//
+//	GetCertificatesV2CertificateLinkArgs{...}
+type GetCertificatesV2CertificateLinkInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateLinkOutput() GetCertificatesV2CertificateLinkOutput
+	ToGetCertificatesV2CertificateLinkOutputWithContext(context.Context) GetCertificatesV2CertificateLinkOutput
+}
+
+type GetCertificatesV2CertificateLinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetCertificatesV2CertificateLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateLink)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateLinkArgs) ToGetCertificatesV2CertificateLinkOutput() GetCertificatesV2CertificateLinkOutput {
+	return i.ToGetCertificatesV2CertificateLinkOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateLinkArgs) ToGetCertificatesV2CertificateLinkOutputWithContext(ctx context.Context) GetCertificatesV2CertificateLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateLinkOutput)
+}
+
+// GetCertificatesV2CertificateLinkArrayInput is an input type that accepts GetCertificatesV2CertificateLinkArray and GetCertificatesV2CertificateLinkArrayOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateLinkArrayInput` via:
+//
+//	GetCertificatesV2CertificateLinkArray{ GetCertificatesV2CertificateLinkArgs{...} }
+type GetCertificatesV2CertificateLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateLinkArrayOutput() GetCertificatesV2CertificateLinkArrayOutput
+	ToGetCertificatesV2CertificateLinkArrayOutputWithContext(context.Context) GetCertificatesV2CertificateLinkArrayOutput
+}
+
+type GetCertificatesV2CertificateLinkArray []GetCertificatesV2CertificateLinkInput
+
+func (GetCertificatesV2CertificateLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2CertificateLink)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateLinkArray) ToGetCertificatesV2CertificateLinkArrayOutput() GetCertificatesV2CertificateLinkArrayOutput {
+	return i.ToGetCertificatesV2CertificateLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateLinkArray) ToGetCertificatesV2CertificateLinkArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateLinkArrayOutput)
+}
+
+type GetCertificatesV2CertificateLinkOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateLink)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateLinkOutput) ToGetCertificatesV2CertificateLinkOutput() GetCertificatesV2CertificateLinkOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateLinkOutput) ToGetCertificatesV2CertificateLinkOutputWithContext(ctx context.Context) GetCertificatesV2CertificateLinkOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesV2CertificateLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetCertificatesV2CertificateLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2CertificateLink)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateLinkArrayOutput) ToGetCertificatesV2CertificateLinkArrayOutput() GetCertificatesV2CertificateLinkArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateLinkArrayOutput) ToGetCertificatesV2CertificateLinkArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateLinkArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateLinkArrayOutput) Index(i pulumi.IntInput) GetCertificatesV2CertificateLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesV2CertificateLink {
+		return vs[0].([]GetCertificatesV2CertificateLink)[vs[1].(int)]
+	}).(GetCertificatesV2CertificateLinkOutput)
+}
+
+type GetCertificatesV2CertificateMetadata struct {
+	CategoryIds        []string `pulumi:"categoryIds"`
+	OwnerReferenceId   string   `pulumi:"ownerReferenceId"`
+	OwnerUserName      string   `pulumi:"ownerUserName"`
+	ProjectName        string   `pulumi:"projectName"`
+	ProjectReferenceId string   `pulumi:"projectReferenceId"`
+}
+
+// GetCertificatesV2CertificateMetadataInput is an input type that accepts GetCertificatesV2CertificateMetadataArgs and GetCertificatesV2CertificateMetadataOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateMetadataInput` via:
+//
+//	GetCertificatesV2CertificateMetadataArgs{...}
+type GetCertificatesV2CertificateMetadataInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateMetadataOutput() GetCertificatesV2CertificateMetadataOutput
+	ToGetCertificatesV2CertificateMetadataOutputWithContext(context.Context) GetCertificatesV2CertificateMetadataOutput
+}
+
+type GetCertificatesV2CertificateMetadataArgs struct {
+	CategoryIds        pulumi.StringArrayInput `pulumi:"categoryIds"`
+	OwnerReferenceId   pulumi.StringInput      `pulumi:"ownerReferenceId"`
+	OwnerUserName      pulumi.StringInput      `pulumi:"ownerUserName"`
+	ProjectName        pulumi.StringInput      `pulumi:"projectName"`
+	ProjectReferenceId pulumi.StringInput      `pulumi:"projectReferenceId"`
+}
+
+func (GetCertificatesV2CertificateMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateMetadata)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateMetadataArgs) ToGetCertificatesV2CertificateMetadataOutput() GetCertificatesV2CertificateMetadataOutput {
+	return i.ToGetCertificatesV2CertificateMetadataOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateMetadataArgs) ToGetCertificatesV2CertificateMetadataOutputWithContext(ctx context.Context) GetCertificatesV2CertificateMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateMetadataOutput)
+}
+
+// GetCertificatesV2CertificateMetadataArrayInput is an input type that accepts GetCertificatesV2CertificateMetadataArray and GetCertificatesV2CertificateMetadataArrayOutput values.
+// You can construct a concrete instance of `GetCertificatesV2CertificateMetadataArrayInput` via:
+//
+//	GetCertificatesV2CertificateMetadataArray{ GetCertificatesV2CertificateMetadataArgs{...} }
+type GetCertificatesV2CertificateMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificatesV2CertificateMetadataArrayOutput() GetCertificatesV2CertificateMetadataArrayOutput
+	ToGetCertificatesV2CertificateMetadataArrayOutputWithContext(context.Context) GetCertificatesV2CertificateMetadataArrayOutput
+}
+
+type GetCertificatesV2CertificateMetadataArray []GetCertificatesV2CertificateMetadataInput
+
+func (GetCertificatesV2CertificateMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2CertificateMetadata)(nil)).Elem()
+}
+
+func (i GetCertificatesV2CertificateMetadataArray) ToGetCertificatesV2CertificateMetadataArrayOutput() GetCertificatesV2CertificateMetadataArrayOutput {
+	return i.ToGetCertificatesV2CertificateMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificatesV2CertificateMetadataArray) ToGetCertificatesV2CertificateMetadataArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesV2CertificateMetadataArrayOutput)
+}
+
+type GetCertificatesV2CertificateMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificatesV2CertificateMetadata)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateMetadataOutput) ToGetCertificatesV2CertificateMetadataOutput() GetCertificatesV2CertificateMetadataOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateMetadataOutput) ToGetCertificatesV2CertificateMetadataOutputWithContext(ctx context.Context) GetCertificatesV2CertificateMetadataOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateMetadataOutput) CategoryIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetCertificatesV2CertificateMetadataOutput) OwnerReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesV2CertificateMetadataOutput) OwnerUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesV2CertificateMetadataOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesV2CertificateMetadataOutput) ProjectReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
+}
+
+type GetCertificatesV2CertificateMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificatesV2CertificateMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificatesV2CertificateMetadata)(nil)).Elem()
+}
+
+func (o GetCertificatesV2CertificateMetadataArrayOutput) ToGetCertificatesV2CertificateMetadataArrayOutput() GetCertificatesV2CertificateMetadataArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateMetadataArrayOutput) ToGetCertificatesV2CertificateMetadataArrayOutputWithContext(ctx context.Context) GetCertificatesV2CertificateMetadataArrayOutput {
+	return o
+}
+
+func (o GetCertificatesV2CertificateMetadataArrayOutput) Index(i pulumi.IntInput) GetCertificatesV2CertificateMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesV2CertificateMetadata {
+		return vs[0].([]GetCertificatesV2CertificateMetadata)[vs[1].(int)]
+	}).(GetCertificatesV2CertificateMetadataOutput)
 }
 
 type GetClusterAuthorizedPublicKeyList struct {
@@ -53355,4030 +56754,51 @@ func (o GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIpArray
 	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIpOutput)
 }
 
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsage struct {
-	IpPoolUsages   []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage `pulumi:"ipPoolUsages"`
-	NumAssignedIps int                                                          `pulumi:"numAssignedIps"`
-	NumFreeIps     int                                                          `pulumi:"numFreeIps"`
-	NumMacs        int                                                          `pulumi:"numMacs"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs struct {
-	IpPoolUsages   GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput `pulumi:"ipPoolUsages"`
-	NumAssignedIps pulumi.IntInput                                                      `pulumi:"numAssignedIps"`
-	NumFreeIps     pulumi.IntInput                                                      `pulumi:"numFreeIps"`
-	NumMacs        pulumi.IntInput                                                      `pulumi:"numMacs"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) IpPoolUsages() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsage) []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage {
-		return v.IpPoolUsages
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) NumAssignedIps() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsage) int { return v.NumAssignedIps }).(pulumi.IntOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) NumFreeIps() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsage) int { return v.NumFreeIps }).(pulumi.IntOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput) NumMacs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsage) int { return v.NumMacs }).(pulumi.IntOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsage {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsage)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage struct {
-	NumFreeIps  int                                                               `pulumi:"numFreeIps"`
-	NumTotalIps int                                                               `pulumi:"numTotalIps"`
-	Ranges      []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange `pulumi:"ranges"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs struct {
-	NumFreeIps  pulumi.IntInput                                                           `pulumi:"numFreeIps"`
-	NumTotalIps pulumi.IntInput                                                           `pulumi:"numTotalIps"`
-	Ranges      GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput `pulumi:"ranges"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) NumFreeIps() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage) int { return v.NumFreeIps }).(pulumi.IntOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) NumTotalIps() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage) int { return v.NumTotalIps }).(pulumi.IntOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput) Ranges() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage) []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange {
-		return v.Ranges
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange struct {
-	EndIps   []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp   `pulumi:"endIps"`
-	StartIps []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp `pulumi:"startIps"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs struct {
-	EndIps   GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput   `pulumi:"endIps"`
-	StartIps GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput `pulumi:"startIps"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) EndIps() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange) []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp {
-		return v.EndIps
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput) StartIps() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange) []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp {
-		return v.StartIps
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray and GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray []GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetLink struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href string `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel string `pulumi:"rel"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetLinkInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs and GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetLinkInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetLinkInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href pulumi.StringInput `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetLink)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetLinkArray and GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetLinkArray{ GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetLinkArray []GetFloatingIpsV2FloatingIpExternalSubnetLinkInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetLink)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetLink)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
-	return o
-}
-
-// - The URL at which the entity described by the link can be accessed.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetLink) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetLink) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetLink)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetLink {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetLink)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs and GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray and GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray{ GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray []GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress) int { return v.PrefixLength }).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch struct {
-	BondMode bool                                                           `pulumi:"bondMode"`
-	Clusters []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster `pulumi:"clusters"`
-	// Description for the Floating IP.
-	Description string `pulumi:"description"`
-	// Floating IP UUID
-	ExtId              string `pulumi:"extId"`
-	HasDeploymentError bool   `pulumi:"hasDeploymentError"`
-	IsDefault          bool   `pulumi:"isDefault"`
-	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink `pulumi:"links"`
-	// Metadata associated with this resource.
-	Metadatas []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata `pulumi:"metadatas"`
-	Mtu       int                                                             `pulumi:"mtu"`
-	// Name of the floating IP.
-	Name string `pulumi:"name"`
-	// A globally unique identifier that represents the tenant that owns this entity.
-	TenantId string `pulumi:"tenantId"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs struct {
-	BondMode pulumi.BoolInput                                                       `pulumi:"bondMode"`
-	Clusters GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput `pulumi:"clusters"`
-	// Description for the Floating IP.
-	Description pulumi.StringInput `pulumi:"description"`
-	// Floating IP UUID
-	ExtId              pulumi.StringInput `pulumi:"extId"`
-	HasDeploymentError pulumi.BoolInput   `pulumi:"hasDeploymentError"`
-	IsDefault          pulumi.BoolInput   `pulumi:"isDefault"`
-	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput `pulumi:"links"`
-	// Metadata associated with this resource.
-	Metadatas GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput `pulumi:"metadatas"`
-	Mtu       pulumi.IntInput                                                         `pulumi:"mtu"`
-	// Name of the floating IP.
-	Name pulumi.StringInput `pulumi:"name"`
-	// A globally unique identifier that represents the tenant that owns this entity.
-	TenantId pulumi.StringInput `pulumi:"tenantId"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) BondMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) bool { return v.BondMode }).(pulumi.BoolOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Clusters() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster {
-		return v.Clusters
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput)
-}
-
-// Description for the Floating IP.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Floating IP UUID
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) HasDeploymentError() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) bool { return v.HasDeploymentError }).(pulumi.BoolOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) bool { return v.IsDefault }).(pulumi.BoolOutput)
-}
-
-// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Links() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink {
-		return v.Links
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput)
-}
-
-// Metadata associated with this resource.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Metadatas() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata {
-		return v.Metadatas
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Mtu() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) int { return v.Mtu }).(pulumi.IntOutput)
-}
-
-// Name of the floating IP.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// A globally unique identifier that represents the tenant that owns this entity.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch) string { return v.TenantId }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster struct {
-	// Floating IP UUID
-	ExtId              string                                                                         `pulumi:"extId"`
-	GatewayIpAddresses []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress `pulumi:"gatewayIpAddresses"`
-	Hosts              []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost             `pulumi:"hosts"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs struct {
-	// Floating IP UUID
-	ExtId              pulumi.StringInput                                                                     `pulumi:"extId"`
-	GatewayIpAddresses GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput `pulumi:"gatewayIpAddresses"`
-	Hosts              GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput             `pulumi:"hosts"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
-	return o
-}
-
-// Floating IP UUID
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) GatewayIpAddresses() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress {
-		return v.GatewayIpAddresses
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput) Hosts() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost {
-		return v.Hosts
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost struct {
-	// Floating IP UUID
-	ExtId              string                                                                      `pulumi:"extId"`
-	HostNics           []string                                                                    `pulumi:"hostNics"`
-	InternalBridgeName string                                                                      `pulumi:"internalBridgeName"`
-	IpAddresses        []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress `pulumi:"ipAddresses"`
-	RouteTable         int                                                                         `pulumi:"routeTable"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs struct {
-	// Floating IP UUID
-	ExtId              pulumi.StringInput                                                                  `pulumi:"extId"`
-	HostNics           pulumi.StringArrayInput                                                             `pulumi:"hostNics"`
-	InternalBridgeName pulumi.StringInput                                                                  `pulumi:"internalBridgeName"`
-	IpAddresses        GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput `pulumi:"ipAddresses"`
-	RouteTable         pulumi.IntInput                                                                     `pulumi:"routeTable"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
-	return o
-}
-
-// Floating IP UUID
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) HostNics() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) []string { return v.HostNics }).(pulumi.StringArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) InternalBridgeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) string {
-		return v.InternalBridgeName
-	}).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) IpAddresses() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress {
-		return v.IpAddresses
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput) RouteTable() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost) int { return v.RouteTable }).(pulumi.IntOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress struct {
-	Ips []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp `pulumi:"ips"`
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs struct {
-	Ips GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput `pulumi:"ips"`
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) Ips() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress) []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp {
-		return v.Ips
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput)
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href string `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel string `pulumi:"rel"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href pulumi.StringInput `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
-	return o
-}
-
-// - The URL at which the entity described by the link can be accessed.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata struct {
-	// A list of globally unique identifiers that represent all the categories the resource is associated with.
-	CategoryIds [][]interface{} `pulumi:"categoryIds"`
-	// A globally unique identifier that represents the owner of this resource.
-	OwnerReferenceId string `pulumi:"ownerReferenceId"`
-	// The userName of the owner of this resource.
-	OwnerUserName string `pulumi:"ownerUserName"`
-	// The name of the project this resource belongs to.
-	ProjectName string `pulumi:"projectName"`
-	// A globally unique identifier that represents the project this resource belongs to.
-	ProjectReferenceId string `pulumi:"projectReferenceId"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs struct {
-	// A list of globally unique identifiers that represent all the categories the resource is associated with.
-	CategoryIds pulumi.ArrayArrayInput `pulumi:"categoryIds"`
-	// A globally unique identifier that represents the owner of this resource.
-	OwnerReferenceId pulumi.StringInput `pulumi:"ownerReferenceId"`
-	// The userName of the owner of this resource.
-	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
-	// The name of the project this resource belongs to.
-	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// A globally unique identifier that represents the project this resource belongs to.
-	ProjectReferenceId pulumi.StringInput `pulumi:"projectReferenceId"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray and GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray{ GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray []GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
-	return o
-}
-
-// A list of globally unique identifiers that represent all the categories the resource is associated with.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) CategoryIds() pulumi.ArrayArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) [][]interface{} {
-		return v.CategoryIds
-	}).(pulumi.ArrayArrayOutput)
-}
-
-// A globally unique identifier that represents the owner of this resource.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) OwnerReferenceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) string {
-		return v.OwnerReferenceId
-	}).(pulumi.StringOutput)
-}
-
-// The userName of the owner of this resource.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
-}
-
-// The name of the project this resource belongs to.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ProjectName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) string { return v.ProjectName }).(pulumi.StringOutput)
-}
-
-// A globally unique identifier that represents the project this resource belongs to.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput) ProjectReferenceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata) string {
-		return v.ProjectReferenceId
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpc struct {
-	CommonDhcpOptions []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption `pulumi:"commonDhcpOptions"`
-	// Description for the Floating IP.
-	Description string `pulumi:"description"`
-	// Floating IP UUID
-	ExtId                          string                                                                `pulumi:"extId"`
-	ExternalRoutingDomainReference string                                                                `pulumi:"externalRoutingDomainReference"`
-	ExternalSubnets                []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet           `pulumi:"externalSubnets"`
-	ExternallyRoutablePrefixes     []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix `pulumi:"externallyRoutablePrefixes"`
-	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links []GetFloatingIpsV2FloatingIpExternalSubnetVpcLink `pulumi:"links"`
-	// Metadata associated with this resource.
-	Metadatas []GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata `pulumi:"metadatas"`
-	// Name of the floating IP.
-	Name    string                                              `pulumi:"name"`
-	SnatIps []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp `pulumi:"snatIps"`
-	// A globally unique identifier that represents the tenant that owns this entity.
-	TenantId string `pulumi:"tenantId"`
-	VpcType  string `pulumi:"vpcType"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs struct {
-	CommonDhcpOptions GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput `pulumi:"commonDhcpOptions"`
-	// Description for the Floating IP.
-	Description pulumi.StringInput `pulumi:"description"`
-	// Floating IP UUID
-	ExtId                          pulumi.StringInput                                                            `pulumi:"extId"`
-	ExternalRoutingDomainReference pulumi.StringInput                                                            `pulumi:"externalRoutingDomainReference"`
-	ExternalSubnets                GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput           `pulumi:"externalSubnets"`
-	ExternallyRoutablePrefixes     GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput `pulumi:"externallyRoutablePrefixes"`
-	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput `pulumi:"links"`
-	// Metadata associated with this resource.
-	Metadatas GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput `pulumi:"metadatas"`
-	// Name of the floating IP.
-	Name    pulumi.StringInput                                          `pulumi:"name"`
-	SnatIps GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput `pulumi:"snatIps"`
-	// A globally unique identifier that represents the tenant that owns this entity.
-	TenantId pulumi.StringInput `pulumi:"tenantId"`
-	VpcType  pulumi.StringInput `pulumi:"vpcType"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpc)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpc)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpc)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) CommonDhcpOptions() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption {
-		return v.CommonDhcpOptions
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput)
-}
-
-// Description for the Floating IP.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Floating IP UUID
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ExternalRoutingDomainReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.ExternalRoutingDomainReference }).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ExternalSubnets() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet {
-		return v.ExternalSubnets
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) ExternallyRoutablePrefixes() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix {
-		return v.ExternallyRoutablePrefixes
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput)
-}
-
-// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) Links() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcLink {
-		return v.Links
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput)
-}
-
-// Metadata associated with this resource.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) Metadatas() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata {
-		return v.Metadatas
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput)
-}
-
-// Name of the floating IP.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) SnatIps() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp {
-		return v.SnatIps
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput)
-}
-
-// A globally unique identifier that represents the tenant that owns this entity.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.TenantId }).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput) VpcType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpc) string { return v.VpcType }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpc)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpc {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpc)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption struct {
-	DomainNameServers []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer `pulumi:"domainNameServers"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs struct {
-	DomainNameServers GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput `pulumi:"domainNameServers"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput) DomainNameServers() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption) []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer {
-		return v.DomainNameServers
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer struct {
-	// Reference to IP Configuration
-	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 `pulumi:"ipv6s"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs struct {
-	// Reference to IP Configuration
-	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
-	return o
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer) []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 {
-		return v.Ipv4s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput)
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer) []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 {
-		return v.Ipv6s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet struct {
-	ActiveGatewayCount int                                                                          `pulumi:"activeGatewayCount"`
-	ActiveGatewayNodes []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode `pulumi:"activeGatewayNodes"`
-	ExternalIps        []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp        `pulumi:"externalIps"`
-	GatewayNodes       []string                                                                     `pulumi:"gatewayNodes"`
-	SubnetReference    string                                                                       `pulumi:"subnetReference"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs struct {
-	ActiveGatewayCount pulumi.IntInput                                                                      `pulumi:"activeGatewayCount"`
-	ActiveGatewayNodes GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput `pulumi:"activeGatewayNodes"`
-	ExternalIps        GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput        `pulumi:"externalIps"`
-	GatewayNodes       pulumi.StringArrayInput                                                              `pulumi:"gatewayNodes"`
-	SubnetReference    pulumi.StringInput                                                                   `pulumi:"subnetReference"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ActiveGatewayCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) int { return v.ActiveGatewayCount }).(pulumi.IntOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ActiveGatewayNodes() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode {
-		return v.ActiveGatewayNodes
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) ExternalIps() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp {
-		return v.ExternalIps
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) GatewayNodes() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) []string { return v.GatewayNodes }).(pulumi.StringArrayOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput) SubnetReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet) string { return v.SubnetReference }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode struct {
-	NodeId          string                                                                                    `pulumi:"nodeId"`
-	NodeIpAddresses []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress `pulumi:"nodeIpAddresses"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs struct {
-	NodeId          pulumi.StringInput                                                                                `pulumi:"nodeId"`
-	NodeIpAddresses GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput `pulumi:"nodeIpAddresses"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) NodeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode) string {
-		return v.NodeId
-	}).(pulumi.StringOutput)
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput) NodeIpAddresses() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
-		return v.NodeIpAddresses
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress struct {
-	// Reference to IP Configuration
-	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 `pulumi:"ipv6s"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs struct {
-	// Reference to IP Configuration
-	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
-	return o
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
-		return v.Ipv4s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput)
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
-		return v.Ipv6s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp struct {
-	// Reference to IP Configuration
-	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 `pulumi:"ipv6s"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs struct {
-	// Reference to IP Configuration
-	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
-	return o
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 {
-		return v.Ipv4s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput)
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 {
-		return v.Ipv6s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4OutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6OutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix struct {
-	// Reference to IP Configuration
-	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 `pulumi:"ipv6s"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs struct {
-	// Reference to IP Configuration
-	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
-	return o
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 {
-		return v.Ipv4s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput)
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 {
-		return v.Ipv6s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 struct {
-	Ips []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip `pulumi:"ips"`
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args struct {
-	Ips GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput `pulumi:"ips"`
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4OutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) Ips() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip {
-		return v.Ips
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput)
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 struct {
-	Ips []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip `pulumi:"ips"`
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6OutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args struct {
-	Ips GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput `pulumi:"ips"`
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6OutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6OutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) Ips() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6) []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip {
-		return v.Ips
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput)
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength int `pulumi:"prefixLength"`
-	// value of address
-	Value string `pulumi:"value"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs struct {
-	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
-	// value of address
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
-	return o
-}
-
-// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip) int {
-		return v.PrefixLength
-	}).(pulumi.IntOutput)
-}
-
-// value of address
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcLink struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href string `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel string `pulumi:"rel"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href pulumi.StringInput `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
-	return o
-}
-
-// - The URL at which the entity described by the link can be accessed.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcLink) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcLink) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcLink {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcLink)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata struct {
-	// A list of globally unique identifiers that represent all the categories the resource is associated with.
-	CategoryIds [][]interface{} `pulumi:"categoryIds"`
-	// A globally unique identifier that represents the owner of this resource.
-	OwnerReferenceId string `pulumi:"ownerReferenceId"`
-	// The userName of the owner of this resource.
-	OwnerUserName string `pulumi:"ownerUserName"`
-	// The name of the project this resource belongs to.
-	ProjectName string `pulumi:"projectName"`
-	// A globally unique identifier that represents the project this resource belongs to.
-	ProjectReferenceId string `pulumi:"projectReferenceId"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs struct {
-	// A list of globally unique identifiers that represent all the categories the resource is associated with.
-	CategoryIds pulumi.ArrayArrayInput `pulumi:"categoryIds"`
-	// A globally unique identifier that represents the owner of this resource.
-	OwnerReferenceId pulumi.StringInput `pulumi:"ownerReferenceId"`
-	// The userName of the owner of this resource.
-	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
-	// The name of the project this resource belongs to.
-	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// A globally unique identifier that represents the project this resource belongs to.
-	ProjectReferenceId pulumi.StringInput `pulumi:"projectReferenceId"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
-	return o
-}
-
-// A list of globally unique identifiers that represent all the categories the resource is associated with.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) CategoryIds() pulumi.ArrayArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) [][]interface{} { return v.CategoryIds }).(pulumi.ArrayArrayOutput)
-}
-
-// A globally unique identifier that represents the owner of this resource.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) OwnerReferenceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
-}
-
-// The userName of the owner of this resource.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
-}
-
-// The name of the project this resource belongs to.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ProjectName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) string { return v.ProjectName }).(pulumi.StringOutput)
-}
-
-// A globally unique identifier that represents the project this resource belongs to.
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput) ProjectReferenceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualMachineV2VtpmConfigInput)(nil)).Elem(), VirtualMachineV2VtpmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualMachineV2VtpmConfigArrayInput)(nil)).Elem(), VirtualMachineV2VtpmConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageConfigInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoStorageConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoStorageConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageContainerInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoStorageContainerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoStorageContainerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2ApcConfigInput)(nil)).Elem(), VmCloneV2ApcConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2ApcConfigArrayInput)(nil)).Elem(), VmCloneV2ApcConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2ApcConfigCpuModelInput)(nil)).Elem(), VmCloneV2ApcConfigCpuModelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2ApcConfigCpuModelArrayInput)(nil)).Elem(), VmCloneV2ApcConfigCpuModelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigInput)(nil)).Elem(), VmCloneV2BootConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigArrayInput)(nil)).Elem(), VmCloneV2BootConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootNvramDeviceInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootNvramDeviceArgs{})
@@ -57755,6 +57175,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCategoryV2DetailedAssociationArrayInput)(nil)).Elem(), GetCategoryV2DetailedAssociationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCategoryV2LinkInput)(nil)).Elem(), GetCategoryV2LinkArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCategoryV2LinkArrayInput)(nil)).Elem(), GetCategoryV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2AlternateFqdnInput)(nil)).Elem(), GetCertificateV2AlternateFqdnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2AlternateFqdnArrayInput)(nil)).Elem(), GetCertificateV2AlternateFqdnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2AlternateIpInput)(nil)).Elem(), GetCertificateV2AlternateIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2AlternateIpArrayInput)(nil)).Elem(), GetCertificateV2AlternateIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2AlternateIpIpv4Input)(nil)).Elem(), GetCertificateV2AlternateIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2AlternateIpIpv6Input)(nil)).Elem(), GetCertificateV2AlternateIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2LinkInput)(nil)).Elem(), GetCertificateV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2LinkArrayInput)(nil)).Elem(), GetCertificateV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2MetadataInput)(nil)).Elem(), GetCertificateV2MetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateV2MetadataArrayInput)(nil)).Elem(), GetCertificateV2MetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateInput)(nil)).Elem(), GetCertificatesV2CertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateArrayInput)(nil)).Elem(), GetCertificatesV2CertificateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateAlternateFqdnInput)(nil)).Elem(), GetCertificatesV2CertificateAlternateFqdnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateAlternateFqdnArrayInput)(nil)).Elem(), GetCertificatesV2CertificateAlternateFqdnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateAlternateIpInput)(nil)).Elem(), GetCertificatesV2CertificateAlternateIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateAlternateIpArrayInput)(nil)).Elem(), GetCertificatesV2CertificateAlternateIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateAlternateIpIpv4Input)(nil)).Elem(), GetCertificatesV2CertificateAlternateIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateAlternateIpIpv6Input)(nil)).Elem(), GetCertificatesV2CertificateAlternateIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateLinkInput)(nil)).Elem(), GetCertificatesV2CertificateLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateLinkArrayInput)(nil)).Elem(), GetCertificatesV2CertificateLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateMetadataInput)(nil)).Elem(), GetCertificatesV2CertificateMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesV2CertificateMetadataArrayInput)(nil)).Elem(), GetCertificatesV2CertificateMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterAuthorizedPublicKeyListInput)(nil)).Elem(), GetClusterAuthorizedPublicKeyListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterAuthorizedPublicKeyListArrayInput)(nil)).Elem(), GetClusterAuthorizedPublicKeyListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterCaCertificateListInput)(nil)).Elem(), GetClusterCaCertificateListArgs{})
@@ -58309,76 +57751,50 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListEndIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListEndIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetLinkInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetLinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetLinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray{})
+	pulumi.RegisterOutputType(VirtualMachineV2VtpmConfigOutput{})
+	pulumi.RegisterOutputType(VirtualMachineV2VtpmConfigArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoStorageConfigOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoStorageContainerOutput{})
+	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2ApcConfigOutput{})
+	pulumi.RegisterOutputType(VmCloneV2ApcConfigArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2ApcConfigCpuModelOutput{})
+	pulumi.RegisterOutputType(VmCloneV2ApcConfigCpuModelArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput{})
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput{})
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput{})
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootNvramDeviceOutput{})
@@ -58755,6 +58171,28 @@ func init() {
 	pulumi.RegisterOutputType(GetCategoryV2DetailedAssociationArrayOutput{})
 	pulumi.RegisterOutputType(GetCategoryV2LinkOutput{})
 	pulumi.RegisterOutputType(GetCategoryV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateV2AlternateFqdnOutput{})
+	pulumi.RegisterOutputType(GetCertificateV2AlternateFqdnArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateV2AlternateIpOutput{})
+	pulumi.RegisterOutputType(GetCertificateV2AlternateIpArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateV2AlternateIpIpv4Output{})
+	pulumi.RegisterOutputType(GetCertificateV2AlternateIpIpv6Output{})
+	pulumi.RegisterOutputType(GetCertificateV2LinkOutput{})
+	pulumi.RegisterOutputType(GetCertificateV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateV2MetadataOutput{})
+	pulumi.RegisterOutputType(GetCertificateV2MetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateAlternateFqdnOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateAlternateFqdnArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateAlternateIpOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateAlternateIpArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateAlternateIpIpv4Output{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateAlternateIpIpv6Output{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateLinkOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateMetadataOutput{})
+	pulumi.RegisterOutputType(GetCertificatesV2CertificateMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterAuthorizedPublicKeyListOutput{})
 	pulumi.RegisterOutputType(GetClusterAuthorizedPublicKeyListArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterCaCertificateListOutput{})
@@ -59309,74 +58747,4 @@ func init() {
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListEndIpArrayOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIpOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIpArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIpArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIpArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetLinkOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetLinkArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddressArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddressArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIpArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLinkArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadataArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4Output{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6Output{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Output{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Output{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4Output{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6Output{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Output{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4IpArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Output{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6IpArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput{})
 }

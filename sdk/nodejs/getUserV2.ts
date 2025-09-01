@@ -64,6 +64,10 @@ export interface GetUserV2Result {
      */
     readonly createdTime: string;
     /**
+     * - Description of the user.
+     */
+    readonly description: string;
+    /**
      * - Display name for the User.
      */
     readonly displayName: string;

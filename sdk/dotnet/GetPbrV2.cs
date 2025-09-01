@@ -88,6 +88,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetPbrV2Args : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// pbr UUID
+        /// </summary>
         [Input("extId", required: true)]
         public string ExtId { get; set; } = null!;
 
@@ -99,6 +102,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetPbrV2InvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// pbr UUID
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 

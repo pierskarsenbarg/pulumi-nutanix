@@ -59,6 +59,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
+        /// - Description of the user.
+        /// </summary>
+        [Output("description")]
+        public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
         /// - Display name for the User.
         /// </summary>
         [Output("displayName")]
@@ -215,6 +221,12 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
+        /// - Description of the user.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// - Display name for the User.
         /// </summary>
         [Input("displayName")]
@@ -330,6 +342,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
+
+        /// <summary>
+        /// - Description of the user.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// - Display name for the User.

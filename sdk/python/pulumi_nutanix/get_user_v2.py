@@ -27,7 +27,7 @@ class GetUserV2Result:
     """
     A collection of values returned by getUserV2.
     """
-    def __init__(__self__, additional_attributes=None, buckets_access_keys=None, created_by=None, created_time=None, display_name=None, email_id=None, ext_id=None, first_name=None, id=None, idp_id=None, is_force_reset_password=None, last_login_time=None, last_name=None, last_updated_time=None, links=None, locale=None, middle_initial=None, password=None, region=None, status=None, user_type=None, username=None):
+    def __init__(__self__, additional_attributes=None, buckets_access_keys=None, created_by=None, created_time=None, description=None, display_name=None, email_id=None, ext_id=None, first_name=None, id=None, idp_id=None, is_force_reset_password=None, last_login_time=None, last_name=None, last_updated_time=None, links=None, locale=None, middle_initial=None, password=None, region=None, status=None, user_type=None, username=None):
         if additional_attributes and not isinstance(additional_attributes, list):
             raise TypeError("Expected argument 'additional_attributes' to be a list")
         pulumi.set(__self__, "additional_attributes", additional_attributes)
@@ -40,6 +40,9 @@ class GetUserV2Result:
         if created_time and not isinstance(created_time, str):
             raise TypeError("Expected argument 'created_time' to be a str")
         pulumi.set(__self__, "created_time", created_time)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -126,6 +129,14 @@ class GetUserV2Result:
         - Creation time for the Bucket Access Key.
         """
         return pulumi.get(self, "created_time")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        - Description of the user.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -280,6 +291,7 @@ class AwaitableGetUserV2Result(GetUserV2Result):
             buckets_access_keys=self.buckets_access_keys,
             created_by=self.created_by,
             created_time=self.created_time,
+            description=self.description,
             display_name=self.display_name,
             email_id=self.email_id,
             ext_id=self.ext_id,
@@ -333,6 +345,7 @@ def get_user_v2(ext_id: Optional[_builtins.str] = None,
         buckets_access_keys=pulumi.get(__ret__, 'buckets_access_keys'),
         created_by=pulumi.get(__ret__, 'created_by'),
         created_time=pulumi.get(__ret__, 'created_time'),
+        description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         email_id=pulumi.get(__ret__, 'email_id'),
         ext_id=pulumi.get(__ret__, 'ext_id'),
@@ -383,6 +396,7 @@ def get_user_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
         buckets_access_keys=pulumi.get(__response__, 'buckets_access_keys'),
         created_by=pulumi.get(__response__, 'created_by'),
         created_time=pulumi.get(__response__, 'created_time'),
+        description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
         email_id=pulumi.get(__response__, 'email_id'),
         ext_id=pulumi.get(__response__, 'ext_id'),

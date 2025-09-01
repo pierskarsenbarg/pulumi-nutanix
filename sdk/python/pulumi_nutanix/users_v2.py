@@ -24,6 +24,7 @@ class UsersV2Args:
                  user_type: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str],
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  email_id: Optional[pulumi.Input[_builtins.str]] = None,
                  first_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -41,6 +42,7 @@ class UsersV2Args:
                Type of the User.
         :param pulumi.Input[_builtins.str] username: - Identifier for the User in the form an email address.
         :param pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]] additional_attributes: -  Any additional attribute for the User.
+        :param pulumi.Input[_builtins.str] description: - Description of the user.
         :param pulumi.Input[_builtins.str] display_name: - Display name for the User.
         :param pulumi.Input[_builtins.str] email_id: - Email Id for the User.
         :param pulumi.Input[_builtins.str] first_name: - First name for the User.
@@ -55,6 +57,8 @@ class UsersV2Args:
         pulumi.set(__self__, "username", username)
         if additional_attributes is not None:
             pulumi.set(__self__, "additional_attributes", additional_attributes)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if email_id is not None:
@@ -114,6 +118,18 @@ class UsersV2Args:
     @additional_attributes.setter
     def additional_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]]]):
         pulumi.set(self, "additional_attributes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - Description of the user.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -249,6 +265,7 @@ class _UsersV2State:
                  buckets_access_keys: Optional[pulumi.Input[Sequence[pulumi.Input['UsersV2BucketsAccessKeyArgs']]]] = None,
                  created_by: Optional[pulumi.Input[_builtins.str]] = None,
                  created_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  email_id: Optional[pulumi.Input[_builtins.str]] = None,
                  ext_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -272,6 +289,7 @@ class _UsersV2State:
         :param pulumi.Input[Sequence[pulumi.Input['UsersV2BucketsAccessKeyArgs']]] buckets_access_keys: - Bucket Access Keys for the User.
         :param pulumi.Input[_builtins.str] created_by: - User or Service who created the User.
         :param pulumi.Input[_builtins.str] created_time: - Creation time for the Bucket Access Key.
+        :param pulumi.Input[_builtins.str] description: - Description of the user.
         :param pulumi.Input[_builtins.str] display_name: - Display name for the User.
         :param pulumi.Input[_builtins.str] email_id: - Email Id for the User.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
@@ -297,6 +315,8 @@ class _UsersV2State:
             pulumi.set(__self__, "created_by", created_by)
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if email_id is not None:
@@ -379,6 +399,18 @@ class _UsersV2State:
     @created_time.setter
     def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "created_time", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - Description of the user.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -587,6 +619,7 @@ class UsersV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  email_id: Optional[pulumi.Input[_builtins.str]] = None,
                  first_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -625,6 +658,7 @@ class UsersV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -  Any additional attribute for the User.
+        :param pulumi.Input[_builtins.str] description: - Description of the user.
         :param pulumi.Input[_builtins.str] display_name: - Display name for the User.
         :param pulumi.Input[_builtins.str] email_id: - Email Id for the User.
         :param pulumi.Input[_builtins.str] first_name: - First name for the User.
@@ -681,6 +715,7 @@ class UsersV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  email_id: Optional[pulumi.Input[_builtins.str]] = None,
                  first_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -704,6 +739,7 @@ class UsersV2(pulumi.CustomResource):
             __props__ = UsersV2Args.__new__(UsersV2Args)
 
             __props__.__dict__["additional_attributes"] = additional_attributes
+            __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["email_id"] = email_id
             __props__.__dict__["first_name"] = first_name
@@ -742,6 +778,7 @@ class UsersV2(pulumi.CustomResource):
             buckets_access_keys: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsersV2BucketsAccessKeyArgs', 'UsersV2BucketsAccessKeyArgsDict']]]]] = None,
             created_by: Optional[pulumi.Input[_builtins.str]] = None,
             created_time: Optional[pulumi.Input[_builtins.str]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             email_id: Optional[pulumi.Input[_builtins.str]] = None,
             ext_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -770,6 +807,7 @@ class UsersV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2BucketsAccessKeyArgs', 'UsersV2BucketsAccessKeyArgsDict']]]] buckets_access_keys: - Bucket Access Keys for the User.
         :param pulumi.Input[_builtins.str] created_by: - User or Service who created the User.
         :param pulumi.Input[_builtins.str] created_time: - Creation time for the Bucket Access Key.
+        :param pulumi.Input[_builtins.str] description: - Description of the user.
         :param pulumi.Input[_builtins.str] display_name: - Display name for the User.
         :param pulumi.Input[_builtins.str] email_id: - Email Id for the User.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
@@ -795,6 +833,7 @@ class UsersV2(pulumi.CustomResource):
         __props__.__dict__["buckets_access_keys"] = buckets_access_keys
         __props__.__dict__["created_by"] = created_by
         __props__.__dict__["created_time"] = created_time
+        __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["email_id"] = email_id
         __props__.__dict__["ext_id"] = ext_id
@@ -845,6 +884,14 @@ class UsersV2(pulumi.CustomResource):
         - Creation time for the Bucket Access Key.
         """
         return pulumi.get(self, "created_time")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[_builtins.str]:
+        """
+        - Description of the user.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")

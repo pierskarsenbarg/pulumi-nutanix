@@ -20,8 +20,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly int? PrefixLength;
         /// <summary>
         /// - (Required) Ip address.
-        /// 
-        /// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/createCluster).
         /// </summary>
         public readonly string Value;
 

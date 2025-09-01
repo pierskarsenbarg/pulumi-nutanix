@@ -72,6 +72,10 @@ export class UsersV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     /**
+     * - Description of the user.
+     */
+    declare public readonly description: pulumi.Output<string>;
+    /**
      * - Display name for the User.
      */
     declare public readonly displayName: pulumi.Output<string>;
@@ -152,6 +156,7 @@ export class UsersV2 extends pulumi.CustomResource {
             resourceInputs["bucketsAccessKeys"] = state?.bucketsAccessKeys;
             resourceInputs["createdBy"] = state?.createdBy;
             resourceInputs["createdTime"] = state?.createdTime;
+            resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["emailId"] = state?.emailId;
             resourceInputs["extId"] = state?.extId;
@@ -178,6 +183,7 @@ export class UsersV2 extends pulumi.CustomResource {
                 throw new Error("Missing required property 'username'");
             }
             resourceInputs["additionalAttributes"] = args?.additionalAttributes;
+            resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["emailId"] = args?.emailId;
             resourceInputs["firstName"] = args?.firstName;
@@ -224,6 +230,10 @@ export interface UsersV2State {
      * - Creation time for the Bucket Access Key.
      */
     createdTime?: pulumi.Input<string>;
+    /**
+     * - Description of the user.
+     */
+    description?: pulumi.Input<string>;
     /**
      * - Display name for the User.
      */
@@ -297,6 +307,10 @@ export interface UsersV2Args {
      * -  Any additional attribute for the User.
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.UsersV2AdditionalAttribute>[]>;
+    /**
+     * - Description of the user.
+     */
+    description?: pulumi.Input<string>;
     /**
      * - Display name for the User.
      */

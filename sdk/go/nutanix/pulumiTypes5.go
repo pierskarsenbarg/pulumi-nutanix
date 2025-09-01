@@ -13,6 +13,4774 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetNdbSnapshotsSnapshotLcmConfigExpiryDetail struct {
+	DeleteDatabase     bool   `pulumi:"deleteDatabase"`
+	DeleteTimeMachine  bool   `pulumi:"deleteTimeMachine"`
+	DeleteVm           bool   `pulumi:"deleteVm"`
+	EffectiveTimestamp string `pulumi:"effectiveTimestamp"`
+	ExpireInDays       int    `pulumi:"expireInDays"`
+	ExpiryDateTimezone string `pulumi:"expiryDateTimezone"`
+	ExpiryTimestamp    string `pulumi:"expiryTimestamp"`
+	RemindBeforeInDays int    `pulumi:"remindBeforeInDays"`
+	UserCreated        bool   `pulumi:"userCreated"`
+}
+
+// GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs and GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput` via:
+//
+//	GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs{...}
+type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput
+	ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs struct {
+	DeleteDatabase     pulumi.BoolInput   `pulumi:"deleteDatabase"`
+	DeleteTimeMachine  pulumi.BoolInput   `pulumi:"deleteTimeMachine"`
+	DeleteVm           pulumi.BoolInput   `pulumi:"deleteVm"`
+	EffectiveTimestamp pulumi.StringInput `pulumi:"effectiveTimestamp"`
+	ExpireInDays       pulumi.IntInput    `pulumi:"expireInDays"`
+	ExpiryDateTimezone pulumi.StringInput `pulumi:"expiryDateTimezone"`
+	ExpiryTimestamp    pulumi.StringInput `pulumi:"expiryTimestamp"`
+	RemindBeforeInDays pulumi.IntInput    `pulumi:"remindBeforeInDays"`
+	UserCreated        pulumi.BoolInput   `pulumi:"userCreated"`
+}
+
+func (GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
+	return i.ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput)
+}
+
+// GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray and GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayInput` via:
+//
+//	GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray{ GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs{...} }
+type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput
+	ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray []GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput
+
+func (GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput {
+	return i.ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) DeleteDatabase() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) bool { return v.DeleteDatabase }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) DeleteTimeMachine() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) bool { return v.DeleteTimeMachine }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) DeleteVm() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) bool { return v.DeleteVm }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) EffectiveTimestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) string { return v.EffectiveTimestamp }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ExpireInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) int { return v.ExpireInDays }).(pulumi.IntOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ExpiryDateTimezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) string { return v.ExpiryDateTimezone }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) ExpiryTimestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) string { return v.ExpiryTimestamp }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) RemindBeforeInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) int { return v.RemindBeforeInDays }).(pulumi.IntOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput) UserCreated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigExpiryDetail) bool { return v.UserCreated }).(pulumi.BoolOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotLcmConfigExpiryDetail {
+		return vs[0].([]GetNdbSnapshotsSnapshotLcmConfigExpiryDetail)[vs[1].(int)]
+	}).(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand struct {
+	Command string `pulumi:"command"`
+}
+
+// GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs and GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput` via:
+//
+//	GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs{...}
+type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput
+	ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs struct {
+	Command pulumi.StringInput `pulumi:"command"`
+}
+
+func (GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
+	return i.ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput)
+}
+
+// GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray and GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayInput` via:
+//
+//	GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray{ GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs{...} }
+type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput
+	ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray []GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput
+
+func (GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput {
+	return i.ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput) Command() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand) string { return v.Command }).(pulumi.StringOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand {
+		return vs[0].([]GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand)[vs[1].(int)]
+	}).(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand struct {
+	Command string `pulumi:"command"`
+}
+
+// GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs and GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput` via:
+//
+//	GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs{...}
+type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput
+	ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs struct {
+	Command pulumi.StringInput `pulumi:"command"`
+}
+
+func (GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
+	return i.ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput)
+}
+
+// GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray and GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayInput` via:
+//
+//	GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray{ GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs{...} }
+type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput
+	ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray []GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput
+
+func (GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput {
+	return i.ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput) Command() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand) string { return v.Command }).(pulumi.StringOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput() GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand {
+		return vs[0].([]GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand)[vs[1].(int)]
+	}).(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigRefreshDetail struct {
+	LastRefreshDate     string `pulumi:"lastRefreshDate"`
+	NextRefreshDate     string `pulumi:"nextRefreshDate"`
+	RefreshDateTimezone string `pulumi:"refreshDateTimezone"`
+	RefreshInDays       int    `pulumi:"refreshInDays"`
+	RefreshInHours      int    `pulumi:"refreshInHours"`
+	RefreshInMonths     int    `pulumi:"refreshInMonths"`
+	RefreshTime         string `pulumi:"refreshTime"`
+}
+
+// GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs and GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput` via:
+//
+//	GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs{...}
+type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput
+	ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs struct {
+	LastRefreshDate     pulumi.StringInput `pulumi:"lastRefreshDate"`
+	NextRefreshDate     pulumi.StringInput `pulumi:"nextRefreshDate"`
+	RefreshDateTimezone pulumi.StringInput `pulumi:"refreshDateTimezone"`
+	RefreshInDays       pulumi.IntInput    `pulumi:"refreshInDays"`
+	RefreshInHours      pulumi.IntInput    `pulumi:"refreshInHours"`
+	RefreshInMonths     pulumi.IntInput    `pulumi:"refreshInMonths"`
+	RefreshTime         pulumi.StringInput `pulumi:"refreshTime"`
+}
+
+func (GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
+	return i.ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput)
+}
+
+// GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayInput is an input type that accepts GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray and GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayInput` via:
+//
+//	GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray{ GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs{...} }
+type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput
+	ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray []GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput
+
+func (GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput {
+	return i.ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) LastRefreshDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) string { return v.LastRefreshDate }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) NextRefreshDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) string { return v.NextRefreshDate }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshDateTimezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) string { return v.RefreshDateTimezone }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) int { return v.RefreshInDays }).(pulumi.IntOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) int { return v.RefreshInHours }).(pulumi.IntOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshInMonths() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) int { return v.RefreshInMonths }).(pulumi.IntOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput) RefreshTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotLcmConfigRefreshDetail) string { return v.RefreshTime }).(pulumi.StringOutput)
+}
+
+type GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput() GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput) ToGetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotLcmConfigRefreshDetail {
+		return vs[0].([]GetNdbSnapshotsSnapshotLcmConfigRefreshDetail)[vs[1].(int)]
+	}).(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput)
+}
+
+type GetNdbSnapshotsSnapshotProperty struct {
+	Description string `pulumi:"description"`
+	Name        string `pulumi:"name"`
+	RefId       string `pulumi:"refId"`
+	Secure      bool   `pulumi:"secure"`
+	Value       string `pulumi:"value"`
+}
+
+// GetNdbSnapshotsSnapshotPropertyInput is an input type that accepts GetNdbSnapshotsSnapshotPropertyArgs and GetNdbSnapshotsSnapshotPropertyOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotPropertyInput` via:
+//
+//	GetNdbSnapshotsSnapshotPropertyArgs{...}
+type GetNdbSnapshotsSnapshotPropertyInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotPropertyOutput() GetNdbSnapshotsSnapshotPropertyOutput
+	ToGetNdbSnapshotsSnapshotPropertyOutputWithContext(context.Context) GetNdbSnapshotsSnapshotPropertyOutput
+}
+
+type GetNdbSnapshotsSnapshotPropertyArgs struct {
+	Description pulumi.StringInput `pulumi:"description"`
+	Name        pulumi.StringInput `pulumi:"name"`
+	RefId       pulumi.StringInput `pulumi:"refId"`
+	Secure      pulumi.BoolInput   `pulumi:"secure"`
+	Value       pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbSnapshotsSnapshotPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotProperty)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotPropertyArgs) ToGetNdbSnapshotsSnapshotPropertyOutput() GetNdbSnapshotsSnapshotPropertyOutput {
+	return i.ToGetNdbSnapshotsSnapshotPropertyOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotPropertyArgs) ToGetNdbSnapshotsSnapshotPropertyOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotPropertyOutput)
+}
+
+// GetNdbSnapshotsSnapshotPropertyArrayInput is an input type that accepts GetNdbSnapshotsSnapshotPropertyArray and GetNdbSnapshotsSnapshotPropertyArrayOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotPropertyArrayInput` via:
+//
+//	GetNdbSnapshotsSnapshotPropertyArray{ GetNdbSnapshotsSnapshotPropertyArgs{...} }
+type GetNdbSnapshotsSnapshotPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotPropertyArrayOutput() GetNdbSnapshotsSnapshotPropertyArrayOutput
+	ToGetNdbSnapshotsSnapshotPropertyArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotPropertyArrayOutput
+}
+
+type GetNdbSnapshotsSnapshotPropertyArray []GetNdbSnapshotsSnapshotPropertyInput
+
+func (GetNdbSnapshotsSnapshotPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotProperty)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotPropertyArray) ToGetNdbSnapshotsSnapshotPropertyArrayOutput() GetNdbSnapshotsSnapshotPropertyArrayOutput {
+	return i.ToGetNdbSnapshotsSnapshotPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotPropertyArray) ToGetNdbSnapshotsSnapshotPropertyArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotPropertyArrayOutput)
+}
+
+type GetNdbSnapshotsSnapshotPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotProperty)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyOutput) ToGetNdbSnapshotsSnapshotPropertyOutput() GetNdbSnapshotsSnapshotPropertyOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyOutput) ToGetNdbSnapshotsSnapshotPropertyOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotPropertyOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyOutput) RefId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) string { return v.RefId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyOutput) Secure() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) bool { return v.Secure }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbSnapshotsSnapshotPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotProperty)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyArrayOutput) ToGetNdbSnapshotsSnapshotPropertyArrayOutput() GetNdbSnapshotsSnapshotPropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyArrayOutput) ToGetNdbSnapshotsSnapshotPropertyArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotPropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotPropertyArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotProperty {
+		return vs[0].([]GetNdbSnapshotsSnapshotProperty)[vs[1].(int)]
+	}).(GetNdbSnapshotsSnapshotPropertyOutput)
+}
+
+type GetNdbSnapshotsSnapshotTag struct {
+	EntityId   string `pulumi:"entityId"`
+	EntityType string `pulumi:"entityType"`
+	TagId      string `pulumi:"tagId"`
+	TagName    string `pulumi:"tagName"`
+	Value      string `pulumi:"value"`
+}
+
+// GetNdbSnapshotsSnapshotTagInput is an input type that accepts GetNdbSnapshotsSnapshotTagArgs and GetNdbSnapshotsSnapshotTagOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotTagInput` via:
+//
+//	GetNdbSnapshotsSnapshotTagArgs{...}
+type GetNdbSnapshotsSnapshotTagInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotTagOutput() GetNdbSnapshotsSnapshotTagOutput
+	ToGetNdbSnapshotsSnapshotTagOutputWithContext(context.Context) GetNdbSnapshotsSnapshotTagOutput
+}
+
+type GetNdbSnapshotsSnapshotTagArgs struct {
+	EntityId   pulumi.StringInput `pulumi:"entityId"`
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	TagId      pulumi.StringInput `pulumi:"tagId"`
+	TagName    pulumi.StringInput `pulumi:"tagName"`
+	Value      pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbSnapshotsSnapshotTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotTag)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotTagArgs) ToGetNdbSnapshotsSnapshotTagOutput() GetNdbSnapshotsSnapshotTagOutput {
+	return i.ToGetNdbSnapshotsSnapshotTagOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotTagArgs) ToGetNdbSnapshotsSnapshotTagOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotTagOutput)
+}
+
+// GetNdbSnapshotsSnapshotTagArrayInput is an input type that accepts GetNdbSnapshotsSnapshotTagArray and GetNdbSnapshotsSnapshotTagArrayOutput values.
+// You can construct a concrete instance of `GetNdbSnapshotsSnapshotTagArrayInput` via:
+//
+//	GetNdbSnapshotsSnapshotTagArray{ GetNdbSnapshotsSnapshotTagArgs{...} }
+type GetNdbSnapshotsSnapshotTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbSnapshotsSnapshotTagArrayOutput() GetNdbSnapshotsSnapshotTagArrayOutput
+	ToGetNdbSnapshotsSnapshotTagArrayOutputWithContext(context.Context) GetNdbSnapshotsSnapshotTagArrayOutput
+}
+
+type GetNdbSnapshotsSnapshotTagArray []GetNdbSnapshotsSnapshotTagInput
+
+func (GetNdbSnapshotsSnapshotTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotTag)(nil)).Elem()
+}
+
+func (i GetNdbSnapshotsSnapshotTagArray) ToGetNdbSnapshotsSnapshotTagArrayOutput() GetNdbSnapshotsSnapshotTagArrayOutput {
+	return i.ToGetNdbSnapshotsSnapshotTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbSnapshotsSnapshotTagArray) ToGetNdbSnapshotsSnapshotTagArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbSnapshotsSnapshotTagArrayOutput)
+}
+
+type GetNdbSnapshotsSnapshotTagOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbSnapshotsSnapshotTag)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotTagOutput) ToGetNdbSnapshotsSnapshotTagOutput() GetNdbSnapshotsSnapshotTagOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotTagOutput) ToGetNdbSnapshotsSnapshotTagOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotTagOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotTagOutput) EntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.EntityId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotTagOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotTagOutput) TagId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.TagId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotTagOutput) TagName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.TagName }).(pulumi.StringOutput)
+}
+
+func (o GetNdbSnapshotsSnapshotTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbSnapshotsSnapshotTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbSnapshotsSnapshotTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbSnapshotsSnapshotTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbSnapshotsSnapshotTag)(nil)).Elem()
+}
+
+func (o GetNdbSnapshotsSnapshotTagArrayOutput) ToGetNdbSnapshotsSnapshotTagArrayOutput() GetNdbSnapshotsSnapshotTagArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotTagArrayOutput) ToGetNdbSnapshotsSnapshotTagArrayOutputWithContext(ctx context.Context) GetNdbSnapshotsSnapshotTagArrayOutput {
+	return o
+}
+
+func (o GetNdbSnapshotsSnapshotTagArrayOutput) Index(i pulumi.IntInput) GetNdbSnapshotsSnapshotTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbSnapshotsSnapshotTag {
+		return vs[0].([]GetNdbSnapshotsSnapshotTag)[vs[1].(int)]
+	}).(GetNdbSnapshotsSnapshotTagOutput)
+}
+
+type GetNdbTagsTag struct {
+	// date created of the tag
+	DateCreated string `pulumi:"dateCreated"`
+	// modified date of tha tag
+	DateModified string `pulumi:"dateModified"`
+	// description for the tag
+	Description string `pulumi:"description"`
+	// entity for the tag to be associated with.
+	EntityType string `pulumi:"entityType"`
+	Id         string `pulumi:"id"`
+	// name for the tag
+	Name string `pulumi:"name"`
+	// owner id of the tag
+	Owner string `pulumi:"owner"`
+	// tag value for entities.
+	Required bool `pulumi:"required"`
+	// Status of the tag
+	Status string `pulumi:"status"`
+	// value for the tag
+	Values int `pulumi:"values"`
+}
+
+// GetNdbTagsTagInput is an input type that accepts GetNdbTagsTagArgs and GetNdbTagsTagOutput values.
+// You can construct a concrete instance of `GetNdbTagsTagInput` via:
+//
+//	GetNdbTagsTagArgs{...}
+type GetNdbTagsTagInput interface {
+	pulumi.Input
+
+	ToGetNdbTagsTagOutput() GetNdbTagsTagOutput
+	ToGetNdbTagsTagOutputWithContext(context.Context) GetNdbTagsTagOutput
+}
+
+type GetNdbTagsTagArgs struct {
+	// date created of the tag
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// modified date of tha tag
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// description for the tag
+	Description pulumi.StringInput `pulumi:"description"`
+	// entity for the tag to be associated with.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	Id         pulumi.StringInput `pulumi:"id"`
+	// name for the tag
+	Name pulumi.StringInput `pulumi:"name"`
+	// owner id of the tag
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// tag value for entities.
+	Required pulumi.BoolInput `pulumi:"required"`
+	// Status of the tag
+	Status pulumi.StringInput `pulumi:"status"`
+	// value for the tag
+	Values pulumi.IntInput `pulumi:"values"`
+}
+
+func (GetNdbTagsTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTagsTag)(nil)).Elem()
+}
+
+func (i GetNdbTagsTagArgs) ToGetNdbTagsTagOutput() GetNdbTagsTagOutput {
+	return i.ToGetNdbTagsTagOutputWithContext(context.Background())
+}
+
+func (i GetNdbTagsTagArgs) ToGetNdbTagsTagOutputWithContext(ctx context.Context) GetNdbTagsTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTagsTagOutput)
+}
+
+// GetNdbTagsTagArrayInput is an input type that accepts GetNdbTagsTagArray and GetNdbTagsTagArrayOutput values.
+// You can construct a concrete instance of `GetNdbTagsTagArrayInput` via:
+//
+//	GetNdbTagsTagArray{ GetNdbTagsTagArgs{...} }
+type GetNdbTagsTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTagsTagArrayOutput() GetNdbTagsTagArrayOutput
+	ToGetNdbTagsTagArrayOutputWithContext(context.Context) GetNdbTagsTagArrayOutput
+}
+
+type GetNdbTagsTagArray []GetNdbTagsTagInput
+
+func (GetNdbTagsTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTagsTag)(nil)).Elem()
+}
+
+func (i GetNdbTagsTagArray) ToGetNdbTagsTagArrayOutput() GetNdbTagsTagArrayOutput {
+	return i.ToGetNdbTagsTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTagsTagArray) ToGetNdbTagsTagArrayOutputWithContext(ctx context.Context) GetNdbTagsTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTagsTagArrayOutput)
+}
+
+type GetNdbTagsTagOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTagsTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTagsTag)(nil)).Elem()
+}
+
+func (o GetNdbTagsTagOutput) ToGetNdbTagsTagOutput() GetNdbTagsTagOutput {
+	return o
+}
+
+func (o GetNdbTagsTagOutput) ToGetNdbTagsTagOutputWithContext(ctx context.Context) GetNdbTagsTagOutput {
+	return o
+}
+
+// date created of the tag
+func (o GetNdbTagsTagOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+// modified date of tha tag
+func (o GetNdbTagsTagOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+// description for the tag
+func (o GetNdbTagsTagOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// entity for the tag to be associated with.
+func (o GetNdbTagsTagOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTagsTagOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// name for the tag
+func (o GetNdbTagsTagOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// owner id of the tag
+func (o GetNdbTagsTagOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+// tag value for entities.
+func (o GetNdbTagsTagOutput) Required() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) bool { return v.Required }).(pulumi.BoolOutput)
+}
+
+// Status of the tag
+func (o GetNdbTagsTagOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// value for the tag
+func (o GetNdbTagsTagOutput) Values() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTagsTag) int { return v.Values }).(pulumi.IntOutput)
+}
+
+type GetNdbTagsTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTagsTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTagsTag)(nil)).Elem()
+}
+
+func (o GetNdbTagsTagArrayOutput) ToGetNdbTagsTagArrayOutput() GetNdbTagsTagArrayOutput {
+	return o
+}
+
+func (o GetNdbTagsTagArrayOutput) ToGetNdbTagsTagArrayOutputWithContext(ctx context.Context) GetNdbTagsTagArrayOutput {
+	return o
+}
+
+func (o GetNdbTagsTagArrayOutput) Index(i pulumi.IntInput) GetNdbTagsTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTagsTag {
+		return vs[0].([]GetNdbTagsTag)[vs[1].(int)]
+	}).(GetNdbTagsTagOutput)
+}
+
+type GetNdbTimeMachineProperty struct {
+	// time machine description
+	Description string `pulumi:"description"`
+	// time machine name
+	Name   string `pulumi:"name"`
+	RefId  string `pulumi:"refId"`
+	Secure bool   `pulumi:"secure"`
+	Value  string `pulumi:"value"`
+}
+
+// GetNdbTimeMachinePropertyInput is an input type that accepts GetNdbTimeMachinePropertyArgs and GetNdbTimeMachinePropertyOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinePropertyInput` via:
+//
+//	GetNdbTimeMachinePropertyArgs{...}
+type GetNdbTimeMachinePropertyInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinePropertyOutput() GetNdbTimeMachinePropertyOutput
+	ToGetNdbTimeMachinePropertyOutputWithContext(context.Context) GetNdbTimeMachinePropertyOutput
+}
+
+type GetNdbTimeMachinePropertyArgs struct {
+	// time machine description
+	Description pulumi.StringInput `pulumi:"description"`
+	// time machine name
+	Name   pulumi.StringInput `pulumi:"name"`
+	RefId  pulumi.StringInput `pulumi:"refId"`
+	Secure pulumi.BoolInput   `pulumi:"secure"`
+	Value  pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbTimeMachinePropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineProperty)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinePropertyArgs) ToGetNdbTimeMachinePropertyOutput() GetNdbTimeMachinePropertyOutput {
+	return i.ToGetNdbTimeMachinePropertyOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinePropertyArgs) ToGetNdbTimeMachinePropertyOutputWithContext(ctx context.Context) GetNdbTimeMachinePropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinePropertyOutput)
+}
+
+// GetNdbTimeMachinePropertyArrayInput is an input type that accepts GetNdbTimeMachinePropertyArray and GetNdbTimeMachinePropertyArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinePropertyArrayInput` via:
+//
+//	GetNdbTimeMachinePropertyArray{ GetNdbTimeMachinePropertyArgs{...} }
+type GetNdbTimeMachinePropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinePropertyArrayOutput() GetNdbTimeMachinePropertyArrayOutput
+	ToGetNdbTimeMachinePropertyArrayOutputWithContext(context.Context) GetNdbTimeMachinePropertyArrayOutput
+}
+
+type GetNdbTimeMachinePropertyArray []GetNdbTimeMachinePropertyInput
+
+func (GetNdbTimeMachinePropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineProperty)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinePropertyArray) ToGetNdbTimeMachinePropertyArrayOutput() GetNdbTimeMachinePropertyArrayOutput {
+	return i.ToGetNdbTimeMachinePropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinePropertyArray) ToGetNdbTimeMachinePropertyArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinePropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinePropertyArrayOutput)
+}
+
+type GetNdbTimeMachinePropertyOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinePropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineProperty)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinePropertyOutput) ToGetNdbTimeMachinePropertyOutput() GetNdbTimeMachinePropertyOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinePropertyOutput) ToGetNdbTimeMachinePropertyOutputWithContext(ctx context.Context) GetNdbTimeMachinePropertyOutput {
+	return o
+}
+
+// time machine description
+func (o GetNdbTimeMachinePropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// time machine name
+func (o GetNdbTimeMachinePropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinePropertyOutput) RefId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineProperty) string { return v.RefId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinePropertyOutput) Secure() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineProperty) bool { return v.Secure }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinePropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachinePropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinePropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineProperty)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinePropertyArrayOutput) ToGetNdbTimeMachinePropertyArrayOutput() GetNdbTimeMachinePropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinePropertyArrayOutput) ToGetNdbTimeMachinePropertyArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinePropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinePropertyArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinePropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineProperty {
+		return vs[0].([]GetNdbTimeMachineProperty)[vs[1].(int)]
+	}).(GetNdbTimeMachinePropertyOutput)
+}
+
+type GetNdbTimeMachineSchedule struct {
+	ContinuousSchedules []GetNdbTimeMachineScheduleContinuousSchedule `pulumi:"continuousSchedules"`
+	DailySchedules      []GetNdbTimeMachineScheduleDailySchedule      `pulumi:"dailySchedules"`
+	// date created
+	DateCreated string `pulumi:"dateCreated"`
+	// date modified
+	DateModified string `pulumi:"dateModified"`
+	// time machine description
+	Description  string `pulumi:"description"`
+	GlobalPolicy bool   `pulumi:"globalPolicy"`
+	// time machine id
+	Id               string                                     `pulumi:"id"`
+	MonthlySchedules []GetNdbTimeMachineScheduleMonthlySchedule `pulumi:"monthlySchedules"`
+	// time machine name
+	Name               string                                       `pulumi:"name"`
+	OwnerId            string                                       `pulumi:"ownerId"`
+	QuartelySchedules  []GetNdbTimeMachineScheduleQuartelySchedule  `pulumi:"quartelySchedules"`
+	ReferenceCount     int                                          `pulumi:"referenceCount"`
+	SnapshotTimeOfDays []GetNdbTimeMachineScheduleSnapshotTimeOfDay `pulumi:"snapshotTimeOfDays"`
+	StartTime          string                                       `pulumi:"startTime"`
+	SystemPolicy       bool                                         `pulumi:"systemPolicy"`
+	TimeZone           string                                       `pulumi:"timeZone"`
+	UniqueName         string                                       `pulumi:"uniqueName"`
+	WeeklySchedules    []GetNdbTimeMachineScheduleWeeklySchedule    `pulumi:"weeklySchedules"`
+	YearlySchedules    []GetNdbTimeMachineScheduleYearlySchedule    `pulumi:"yearlySchedules"`
+}
+
+// GetNdbTimeMachineScheduleInput is an input type that accepts GetNdbTimeMachineScheduleArgs and GetNdbTimeMachineScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleInput` via:
+//
+//	GetNdbTimeMachineScheduleArgs{...}
+type GetNdbTimeMachineScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleOutput() GetNdbTimeMachineScheduleOutput
+	ToGetNdbTimeMachineScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleOutput
+}
+
+type GetNdbTimeMachineScheduleArgs struct {
+	ContinuousSchedules GetNdbTimeMachineScheduleContinuousScheduleArrayInput `pulumi:"continuousSchedules"`
+	DailySchedules      GetNdbTimeMachineScheduleDailyScheduleArrayInput      `pulumi:"dailySchedules"`
+	// date created
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// date modified
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// time machine description
+	Description  pulumi.StringInput `pulumi:"description"`
+	GlobalPolicy pulumi.BoolInput   `pulumi:"globalPolicy"`
+	// time machine id
+	Id               pulumi.StringInput                                 `pulumi:"id"`
+	MonthlySchedules GetNdbTimeMachineScheduleMonthlyScheduleArrayInput `pulumi:"monthlySchedules"`
+	// time machine name
+	Name               pulumi.StringInput                                   `pulumi:"name"`
+	OwnerId            pulumi.StringInput                                   `pulumi:"ownerId"`
+	QuartelySchedules  GetNdbTimeMachineScheduleQuartelyScheduleArrayInput  `pulumi:"quartelySchedules"`
+	ReferenceCount     pulumi.IntInput                                      `pulumi:"referenceCount"`
+	SnapshotTimeOfDays GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput `pulumi:"snapshotTimeOfDays"`
+	StartTime          pulumi.StringInput                                   `pulumi:"startTime"`
+	SystemPolicy       pulumi.BoolInput                                     `pulumi:"systemPolicy"`
+	TimeZone           pulumi.StringInput                                   `pulumi:"timeZone"`
+	UniqueName         pulumi.StringInput                                   `pulumi:"uniqueName"`
+	WeeklySchedules    GetNdbTimeMachineScheduleWeeklyScheduleArrayInput    `pulumi:"weeklySchedules"`
+	YearlySchedules    GetNdbTimeMachineScheduleYearlyScheduleArrayInput    `pulumi:"yearlySchedules"`
+}
+
+func (GetNdbTimeMachineScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineSchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleArgs) ToGetNdbTimeMachineScheduleOutput() GetNdbTimeMachineScheduleOutput {
+	return i.ToGetNdbTimeMachineScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleArgs) ToGetNdbTimeMachineScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleOutput)
+}
+
+// GetNdbTimeMachineScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleArray and GetNdbTimeMachineScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleArrayInput` via:
+//
+//	GetNdbTimeMachineScheduleArray{ GetNdbTimeMachineScheduleArgs{...} }
+type GetNdbTimeMachineScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleArrayOutput() GetNdbTimeMachineScheduleArrayOutput
+	ToGetNdbTimeMachineScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleArrayOutput
+}
+
+type GetNdbTimeMachineScheduleArray []GetNdbTimeMachineScheduleInput
+
+func (GetNdbTimeMachineScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineSchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleArray) ToGetNdbTimeMachineScheduleArrayOutput() GetNdbTimeMachineScheduleArrayOutput {
+	return i.ToGetNdbTimeMachineScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleArray) ToGetNdbTimeMachineScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineSchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleOutput) ToGetNdbTimeMachineScheduleOutput() GetNdbTimeMachineScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleOutput) ToGetNdbTimeMachineScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleOutput) ContinuousSchedules() GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleContinuousSchedule {
+		return v.ContinuousSchedules
+	}).(GetNdbTimeMachineScheduleContinuousScheduleArrayOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) DailySchedules() GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleDailySchedule { return v.DailySchedules }).(GetNdbTimeMachineScheduleDailyScheduleArrayOutput)
+}
+
+// date created
+func (o GetNdbTimeMachineScheduleOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+// date modified
+func (o GetNdbTimeMachineScheduleOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+// time machine description
+func (o GetNdbTimeMachineScheduleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) GlobalPolicy() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) bool { return v.GlobalPolicy }).(pulumi.BoolOutput)
+}
+
+// time machine id
+func (o GetNdbTimeMachineScheduleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) MonthlySchedules() GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleMonthlySchedule {
+		return v.MonthlySchedules
+	}).(GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput)
+}
+
+// time machine name
+func (o GetNdbTimeMachineScheduleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) OwnerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.OwnerId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) QuartelySchedules() GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleQuartelySchedule {
+		return v.QuartelySchedules
+	}).(GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) ReferenceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) int { return v.ReferenceCount }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) SnapshotTimeOfDays() GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleSnapshotTimeOfDay {
+		return v.SnapshotTimeOfDays
+	}).(GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) SystemPolicy() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) bool { return v.SystemPolicy }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) UniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) string { return v.UniqueName }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) WeeklySchedules() GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleWeeklySchedule { return v.WeeklySchedules }).(GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput)
+}
+
+func (o GetNdbTimeMachineScheduleOutput) YearlySchedules() GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSchedule) []GetNdbTimeMachineScheduleYearlySchedule { return v.YearlySchedules }).(GetNdbTimeMachineScheduleYearlyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineSchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleArrayOutput) ToGetNdbTimeMachineScheduleArrayOutput() GetNdbTimeMachineScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleArrayOutput) ToGetNdbTimeMachineScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineSchedule {
+		return vs[0].([]GetNdbTimeMachineSchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachineScheduleOutput)
+}
+
+type GetNdbTimeMachineScheduleContinuousSchedule struct {
+	Enabled           bool `pulumi:"enabled"`
+	LogBackupInterval int  `pulumi:"logBackupInterval"`
+	SnapshotsPerDay   int  `pulumi:"snapshotsPerDay"`
+}
+
+// GetNdbTimeMachineScheduleContinuousScheduleInput is an input type that accepts GetNdbTimeMachineScheduleContinuousScheduleArgs and GetNdbTimeMachineScheduleContinuousScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleContinuousScheduleInput` via:
+//
+//	GetNdbTimeMachineScheduleContinuousScheduleArgs{...}
+type GetNdbTimeMachineScheduleContinuousScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachineScheduleContinuousScheduleOutput
+	ToGetNdbTimeMachineScheduleContinuousScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleContinuousScheduleOutput
+}
+
+type GetNdbTimeMachineScheduleContinuousScheduleArgs struct {
+	Enabled           pulumi.BoolInput `pulumi:"enabled"`
+	LogBackupInterval pulumi.IntInput  `pulumi:"logBackupInterval"`
+	SnapshotsPerDay   pulumi.IntInput  `pulumi:"snapshotsPerDay"`
+}
+
+func (GetNdbTimeMachineScheduleContinuousScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleContinuousSchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleContinuousScheduleArgs) ToGetNdbTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachineScheduleContinuousScheduleOutput {
+	return i.ToGetNdbTimeMachineScheduleContinuousScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleContinuousScheduleArgs) ToGetNdbTimeMachineScheduleContinuousScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleContinuousScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleContinuousScheduleOutput)
+}
+
+// GetNdbTimeMachineScheduleContinuousScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleContinuousScheduleArray and GetNdbTimeMachineScheduleContinuousScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleContinuousScheduleArrayInput` via:
+//
+//	GetNdbTimeMachineScheduleContinuousScheduleArray{ GetNdbTimeMachineScheduleContinuousScheduleArgs{...} }
+type GetNdbTimeMachineScheduleContinuousScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachineScheduleContinuousScheduleArrayOutput
+	ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleContinuousScheduleArrayOutput
+}
+
+type GetNdbTimeMachineScheduleContinuousScheduleArray []GetNdbTimeMachineScheduleContinuousScheduleInput
+
+func (GetNdbTimeMachineScheduleContinuousScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleContinuousSchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleContinuousScheduleArray) ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
+	return i.ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleContinuousScheduleArray) ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleContinuousScheduleArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleContinuousScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleContinuousScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleContinuousSchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) ToGetNdbTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachineScheduleContinuousScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) ToGetNdbTimeMachineScheduleContinuousScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleContinuousScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleContinuousSchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) LogBackupInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleContinuousSchedule) int { return v.LogBackupInterval }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineScheduleContinuousScheduleOutput) SnapshotsPerDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleContinuousSchedule) int { return v.SnapshotsPerDay }).(pulumi.IntOutput)
+}
+
+type GetNdbTimeMachineScheduleContinuousScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleContinuousScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleContinuousSchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleContinuousScheduleArrayOutput) ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleContinuousScheduleArrayOutput) ToGetNdbTimeMachineScheduleContinuousScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleContinuousScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleContinuousScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleContinuousScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleContinuousSchedule {
+		return vs[0].([]GetNdbTimeMachineScheduleContinuousSchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachineScheduleContinuousScheduleOutput)
+}
+
+type GetNdbTimeMachineScheduleDailySchedule struct {
+	Enabled bool `pulumi:"enabled"`
+}
+
+// GetNdbTimeMachineScheduleDailyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleDailyScheduleArgs and GetNdbTimeMachineScheduleDailyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleDailyScheduleInput` via:
+//
+//	GetNdbTimeMachineScheduleDailyScheduleArgs{...}
+type GetNdbTimeMachineScheduleDailyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachineScheduleDailyScheduleOutput
+	ToGetNdbTimeMachineScheduleDailyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleDailyScheduleOutput
+}
+
+type GetNdbTimeMachineScheduleDailyScheduleArgs struct {
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+}
+
+func (GetNdbTimeMachineScheduleDailyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleDailySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleDailyScheduleArgs) ToGetNdbTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachineScheduleDailyScheduleOutput {
+	return i.ToGetNdbTimeMachineScheduleDailyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleDailyScheduleArgs) ToGetNdbTimeMachineScheduleDailyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleDailyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleDailyScheduleOutput)
+}
+
+// GetNdbTimeMachineScheduleDailyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleDailyScheduleArray and GetNdbTimeMachineScheduleDailyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleDailyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachineScheduleDailyScheduleArray{ GetNdbTimeMachineScheduleDailyScheduleArgs{...} }
+type GetNdbTimeMachineScheduleDailyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachineScheduleDailyScheduleArrayOutput
+	ToGetNdbTimeMachineScheduleDailyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleDailyScheduleArrayOutput
+}
+
+type GetNdbTimeMachineScheduleDailyScheduleArray []GetNdbTimeMachineScheduleDailyScheduleInput
+
+func (GetNdbTimeMachineScheduleDailyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleDailySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleDailyScheduleArray) ToGetNdbTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachineScheduleDailyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleDailyScheduleArray) ToGetNdbTimeMachineScheduleDailyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleDailyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleDailyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleDailyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleDailySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleDailyScheduleOutput) ToGetNdbTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachineScheduleDailyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleDailyScheduleOutput) ToGetNdbTimeMachineScheduleDailyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleDailyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleDailyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleDailySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type GetNdbTimeMachineScheduleDailyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleDailyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleDailySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleDailyScheduleArrayOutput) ToGetNdbTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleDailyScheduleArrayOutput) ToGetNdbTimeMachineScheduleDailyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleDailyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleDailyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleDailyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleDailySchedule {
+		return vs[0].([]GetNdbTimeMachineScheduleDailySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachineScheduleDailyScheduleOutput)
+}
+
+type GetNdbTimeMachineScheduleMonthlySchedule struct {
+	DayOfMonth int  `pulumi:"dayOfMonth"`
+	Enabled    bool `pulumi:"enabled"`
+}
+
+// GetNdbTimeMachineScheduleMonthlyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleMonthlyScheduleArgs and GetNdbTimeMachineScheduleMonthlyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleMonthlyScheduleInput` via:
+//
+//	GetNdbTimeMachineScheduleMonthlyScheduleArgs{...}
+type GetNdbTimeMachineScheduleMonthlyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachineScheduleMonthlyScheduleOutput
+	ToGetNdbTimeMachineScheduleMonthlyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleMonthlyScheduleOutput
+}
+
+type GetNdbTimeMachineScheduleMonthlyScheduleArgs struct {
+	DayOfMonth pulumi.IntInput  `pulumi:"dayOfMonth"`
+	Enabled    pulumi.BoolInput `pulumi:"enabled"`
+}
+
+func (GetNdbTimeMachineScheduleMonthlyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleMonthlySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleMonthlyScheduleArgs) ToGetNdbTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachineScheduleMonthlyScheduleOutput {
+	return i.ToGetNdbTimeMachineScheduleMonthlyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleMonthlyScheduleArgs) ToGetNdbTimeMachineScheduleMonthlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleMonthlyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleMonthlyScheduleOutput)
+}
+
+// GetNdbTimeMachineScheduleMonthlyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleMonthlyScheduleArray and GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleMonthlyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachineScheduleMonthlyScheduleArray{ GetNdbTimeMachineScheduleMonthlyScheduleArgs{...} }
+type GetNdbTimeMachineScheduleMonthlyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput
+	ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput
+}
+
+type GetNdbTimeMachineScheduleMonthlyScheduleArray []GetNdbTimeMachineScheduleMonthlyScheduleInput
+
+func (GetNdbTimeMachineScheduleMonthlyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleMonthlySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleMonthlyScheduleArray) ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleMonthlyScheduleArray) ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleMonthlyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleMonthlyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleMonthlySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleMonthlyScheduleOutput) ToGetNdbTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachineScheduleMonthlyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleMonthlyScheduleOutput) ToGetNdbTimeMachineScheduleMonthlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleMonthlyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleMonthlyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleMonthlySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineScheduleMonthlyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleMonthlySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleMonthlySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput) ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput) ToGetNdbTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleMonthlyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleMonthlySchedule {
+		return vs[0].([]GetNdbTimeMachineScheduleMonthlySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachineScheduleMonthlyScheduleOutput)
+}
+
+type GetNdbTimeMachineScheduleQuartelySchedule struct {
+	DayOfMonth      int    `pulumi:"dayOfMonth"`
+	Enabled         bool   `pulumi:"enabled"`
+	StartMonth      string `pulumi:"startMonth"`
+	StartMonthValue string `pulumi:"startMonthValue"`
+}
+
+// GetNdbTimeMachineScheduleQuartelyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleQuartelyScheduleArgs and GetNdbTimeMachineScheduleQuartelyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleQuartelyScheduleInput` via:
+//
+//	GetNdbTimeMachineScheduleQuartelyScheduleArgs{...}
+type GetNdbTimeMachineScheduleQuartelyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachineScheduleQuartelyScheduleOutput
+	ToGetNdbTimeMachineScheduleQuartelyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleQuartelyScheduleOutput
+}
+
+type GetNdbTimeMachineScheduleQuartelyScheduleArgs struct {
+	DayOfMonth      pulumi.IntInput    `pulumi:"dayOfMonth"`
+	Enabled         pulumi.BoolInput   `pulumi:"enabled"`
+	StartMonth      pulumi.StringInput `pulumi:"startMonth"`
+	StartMonthValue pulumi.StringInput `pulumi:"startMonthValue"`
+}
+
+func (GetNdbTimeMachineScheduleQuartelyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleQuartelySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleQuartelyScheduleArgs) ToGetNdbTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachineScheduleQuartelyScheduleOutput {
+	return i.ToGetNdbTimeMachineScheduleQuartelyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleQuartelyScheduleArgs) ToGetNdbTimeMachineScheduleQuartelyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleQuartelyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleQuartelyScheduleOutput)
+}
+
+// GetNdbTimeMachineScheduleQuartelyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleQuartelyScheduleArray and GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleQuartelyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachineScheduleQuartelyScheduleArray{ GetNdbTimeMachineScheduleQuartelyScheduleArgs{...} }
+type GetNdbTimeMachineScheduleQuartelyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput
+	ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput
+}
+
+type GetNdbTimeMachineScheduleQuartelyScheduleArray []GetNdbTimeMachineScheduleQuartelyScheduleInput
+
+func (GetNdbTimeMachineScheduleQuartelyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleQuartelySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleQuartelyScheduleArray) ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleQuartelyScheduleArray) ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleQuartelyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleQuartelyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleQuartelySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) ToGetNdbTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachineScheduleQuartelyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) ToGetNdbTimeMachineScheduleQuartelyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleQuartelyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleQuartelySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleQuartelySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) StartMonth() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleQuartelySchedule) string { return v.StartMonth }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleOutput) StartMonthValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleQuartelySchedule) string { return v.StartMonthValue }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleQuartelySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput) ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput) ToGetNdbTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleQuartelyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleQuartelySchedule {
+		return vs[0].([]GetNdbTimeMachineScheduleQuartelySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachineScheduleQuartelyScheduleOutput)
+}
+
+type GetNdbTimeMachineScheduleSnapshotTimeOfDay struct {
+	Extra   bool `pulumi:"extra"`
+	Hours   int  `pulumi:"hours"`
+	Minutes int  `pulumi:"minutes"`
+	Seconds int  `pulumi:"seconds"`
+}
+
+// GetNdbTimeMachineScheduleSnapshotTimeOfDayInput is an input type that accepts GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs and GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleSnapshotTimeOfDayInput` via:
+//
+//	GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs{...}
+type GetNdbTimeMachineScheduleSnapshotTimeOfDayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput
+	ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput
+}
+
+type GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs struct {
+	Extra   pulumi.BoolInput `pulumi:"extra"`
+	Hours   pulumi.IntInput  `pulumi:"hours"`
+	Minutes pulumi.IntInput  `pulumi:"minutes"`
+	Seconds pulumi.IntInput  `pulumi:"seconds"`
+}
+
+func (GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return i.ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput)
+}
+
+// GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput is an input type that accepts GetNdbTimeMachineScheduleSnapshotTimeOfDayArray and GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput` via:
+//
+//	GetNdbTimeMachineScheduleSnapshotTimeOfDayArray{ GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs{...} }
+type GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput
+	ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput
+}
+
+type GetNdbTimeMachineScheduleSnapshotTimeOfDayArray []GetNdbTimeMachineScheduleSnapshotTimeOfDayInput
+
+func (GetNdbTimeMachineScheduleSnapshotTimeOfDayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleSnapshotTimeOfDayArray) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return i.ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleSnapshotTimeOfDayArray) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) Extra() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleSnapshotTimeOfDay) bool { return v.Extra }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) Hours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleSnapshotTimeOfDay) int { return v.Hours }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) Minutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleSnapshotTimeOfDay) int { return v.Minutes }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput) Seconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleSnapshotTimeOfDay) int { return v.Seconds }).(pulumi.IntOutput)
+}
+
+type GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ToGetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleSnapshotTimeOfDay {
+		return vs[0].([]GetNdbTimeMachineScheduleSnapshotTimeOfDay)[vs[1].(int)]
+	}).(GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput)
+}
+
+type GetNdbTimeMachineScheduleWeeklySchedule struct {
+	DayOfWeek      string `pulumi:"dayOfWeek"`
+	DayOfWeekValue string `pulumi:"dayOfWeekValue"`
+	Enabled        bool   `pulumi:"enabled"`
+}
+
+// GetNdbTimeMachineScheduleWeeklyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleWeeklyScheduleArgs and GetNdbTimeMachineScheduleWeeklyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleWeeklyScheduleInput` via:
+//
+//	GetNdbTimeMachineScheduleWeeklyScheduleArgs{...}
+type GetNdbTimeMachineScheduleWeeklyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachineScheduleWeeklyScheduleOutput
+	ToGetNdbTimeMachineScheduleWeeklyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleWeeklyScheduleOutput
+}
+
+type GetNdbTimeMachineScheduleWeeklyScheduleArgs struct {
+	DayOfWeek      pulumi.StringInput `pulumi:"dayOfWeek"`
+	DayOfWeekValue pulumi.StringInput `pulumi:"dayOfWeekValue"`
+	Enabled        pulumi.BoolInput   `pulumi:"enabled"`
+}
+
+func (GetNdbTimeMachineScheduleWeeklyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleWeeklySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleWeeklyScheduleArgs) ToGetNdbTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachineScheduleWeeklyScheduleOutput {
+	return i.ToGetNdbTimeMachineScheduleWeeklyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleWeeklyScheduleArgs) ToGetNdbTimeMachineScheduleWeeklyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleWeeklyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleWeeklyScheduleOutput)
+}
+
+// GetNdbTimeMachineScheduleWeeklyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleWeeklyScheduleArray and GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleWeeklyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachineScheduleWeeklyScheduleArray{ GetNdbTimeMachineScheduleWeeklyScheduleArgs{...} }
+type GetNdbTimeMachineScheduleWeeklyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput
+	ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput
+}
+
+type GetNdbTimeMachineScheduleWeeklyScheduleArray []GetNdbTimeMachineScheduleWeeklyScheduleInput
+
+func (GetNdbTimeMachineScheduleWeeklyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleWeeklySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleWeeklyScheduleArray) ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleWeeklyScheduleArray) ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleWeeklyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleWeeklyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleWeeklySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) ToGetNdbTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachineScheduleWeeklyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) ToGetNdbTimeMachineScheduleWeeklyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleWeeklyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleWeeklySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) DayOfWeekValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleWeeklySchedule) string { return v.DayOfWeekValue }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleWeeklyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleWeeklySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleWeeklySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput) ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput) ToGetNdbTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleWeeklyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleWeeklySchedule {
+		return vs[0].([]GetNdbTimeMachineScheduleWeeklySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachineScheduleWeeklyScheduleOutput)
+}
+
+type GetNdbTimeMachineScheduleYearlySchedule struct {
+	DayOfMonth int    `pulumi:"dayOfMonth"`
+	Enabled    bool   `pulumi:"enabled"`
+	Month      string `pulumi:"month"`
+	MonthValue string `pulumi:"monthValue"`
+}
+
+// GetNdbTimeMachineScheduleYearlyScheduleInput is an input type that accepts GetNdbTimeMachineScheduleYearlyScheduleArgs and GetNdbTimeMachineScheduleYearlyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleYearlyScheduleInput` via:
+//
+//	GetNdbTimeMachineScheduleYearlyScheduleArgs{...}
+type GetNdbTimeMachineScheduleYearlyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachineScheduleYearlyScheduleOutput
+	ToGetNdbTimeMachineScheduleYearlyScheduleOutputWithContext(context.Context) GetNdbTimeMachineScheduleYearlyScheduleOutput
+}
+
+type GetNdbTimeMachineScheduleYearlyScheduleArgs struct {
+	DayOfMonth pulumi.IntInput    `pulumi:"dayOfMonth"`
+	Enabled    pulumi.BoolInput   `pulumi:"enabled"`
+	Month      pulumi.StringInput `pulumi:"month"`
+	MonthValue pulumi.StringInput `pulumi:"monthValue"`
+}
+
+func (GetNdbTimeMachineScheduleYearlyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleYearlyScheduleArgs) ToGetNdbTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachineScheduleYearlyScheduleOutput {
+	return i.ToGetNdbTimeMachineScheduleYearlyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleYearlyScheduleArgs) ToGetNdbTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleYearlyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleYearlyScheduleOutput)
+}
+
+// GetNdbTimeMachineScheduleYearlyScheduleArrayInput is an input type that accepts GetNdbTimeMachineScheduleYearlyScheduleArray and GetNdbTimeMachineScheduleYearlyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineScheduleYearlyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachineScheduleYearlyScheduleArray{ GetNdbTimeMachineScheduleYearlyScheduleArgs{...} }
+type GetNdbTimeMachineScheduleYearlyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachineScheduleYearlyScheduleArrayOutput
+	ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachineScheduleYearlyScheduleArrayOutput
+}
+
+type GetNdbTimeMachineScheduleYearlyScheduleArray []GetNdbTimeMachineScheduleYearlyScheduleInput
+
+func (GetNdbTimeMachineScheduleYearlyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineScheduleYearlyScheduleArray) ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineScheduleYearlyScheduleArray) ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineScheduleYearlyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachineScheduleYearlyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleYearlyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) ToGetNdbTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachineScheduleYearlyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) ToGetNdbTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleYearlyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleYearlySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleYearlySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) Month() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleYearlySchedule) string { return v.Month }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleOutput) MonthValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineScheduleYearlySchedule) string { return v.MonthValue }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachineScheduleYearlyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineScheduleYearlyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleArrayOutput) ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleArrayOutput) ToGetNdbTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineScheduleYearlyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineScheduleYearlyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineScheduleYearlyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineScheduleYearlySchedule {
+		return vs[0].([]GetNdbTimeMachineScheduleYearlySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachineScheduleYearlyScheduleOutput)
+}
+
+type GetNdbTimeMachineSla struct {
+	ContinuousRetention    int    `pulumi:"continuousRetention"`
+	CurrentActiveFrequency string `pulumi:"currentActiveFrequency"`
+	DailyRetention         int    `pulumi:"dailyRetention"`
+	// date created
+	DateCreated string `pulumi:"dateCreated"`
+	// date modified
+	DateModified string `pulumi:"dateModified"`
+	// time machine description
+	Description string `pulumi:"description"`
+	// time machine id
+	Id               string `pulumi:"id"`
+	MonthlyRetention int    `pulumi:"monthlyRetention"`
+	// time machine name
+	Name               string `pulumi:"name"`
+	OwnerId            string `pulumi:"ownerId"`
+	PitrEnabled        bool   `pulumi:"pitrEnabled"`
+	QuarterlyRetention int    `pulumi:"quarterlyRetention"`
+	ReferenceCount     int    `pulumi:"referenceCount"`
+	SystemSla          bool   `pulumi:"systemSla"`
+	UniqueName         string `pulumi:"uniqueName"`
+	WeeklyRetention    int    `pulumi:"weeklyRetention"`
+	YearlyRetention    int    `pulumi:"yearlyRetention"`
+}
+
+// GetNdbTimeMachineSlaInput is an input type that accepts GetNdbTimeMachineSlaArgs and GetNdbTimeMachineSlaOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineSlaInput` via:
+//
+//	GetNdbTimeMachineSlaArgs{...}
+type GetNdbTimeMachineSlaInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineSlaOutput() GetNdbTimeMachineSlaOutput
+	ToGetNdbTimeMachineSlaOutputWithContext(context.Context) GetNdbTimeMachineSlaOutput
+}
+
+type GetNdbTimeMachineSlaArgs struct {
+	ContinuousRetention    pulumi.IntInput    `pulumi:"continuousRetention"`
+	CurrentActiveFrequency pulumi.StringInput `pulumi:"currentActiveFrequency"`
+	DailyRetention         pulumi.IntInput    `pulumi:"dailyRetention"`
+	// date created
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// date modified
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// time machine description
+	Description pulumi.StringInput `pulumi:"description"`
+	// time machine id
+	Id               pulumi.StringInput `pulumi:"id"`
+	MonthlyRetention pulumi.IntInput    `pulumi:"monthlyRetention"`
+	// time machine name
+	Name               pulumi.StringInput `pulumi:"name"`
+	OwnerId            pulumi.StringInput `pulumi:"ownerId"`
+	PitrEnabled        pulumi.BoolInput   `pulumi:"pitrEnabled"`
+	QuarterlyRetention pulumi.IntInput    `pulumi:"quarterlyRetention"`
+	ReferenceCount     pulumi.IntInput    `pulumi:"referenceCount"`
+	SystemSla          pulumi.BoolInput   `pulumi:"systemSla"`
+	UniqueName         pulumi.StringInput `pulumi:"uniqueName"`
+	WeeklyRetention    pulumi.IntInput    `pulumi:"weeklyRetention"`
+	YearlyRetention    pulumi.IntInput    `pulumi:"yearlyRetention"`
+}
+
+func (GetNdbTimeMachineSlaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineSla)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineSlaArgs) ToGetNdbTimeMachineSlaOutput() GetNdbTimeMachineSlaOutput {
+	return i.ToGetNdbTimeMachineSlaOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineSlaArgs) ToGetNdbTimeMachineSlaOutputWithContext(ctx context.Context) GetNdbTimeMachineSlaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineSlaOutput)
+}
+
+// GetNdbTimeMachineSlaArrayInput is an input type that accepts GetNdbTimeMachineSlaArray and GetNdbTimeMachineSlaArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineSlaArrayInput` via:
+//
+//	GetNdbTimeMachineSlaArray{ GetNdbTimeMachineSlaArgs{...} }
+type GetNdbTimeMachineSlaArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineSlaArrayOutput() GetNdbTimeMachineSlaArrayOutput
+	ToGetNdbTimeMachineSlaArrayOutputWithContext(context.Context) GetNdbTimeMachineSlaArrayOutput
+}
+
+type GetNdbTimeMachineSlaArray []GetNdbTimeMachineSlaInput
+
+func (GetNdbTimeMachineSlaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineSla)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineSlaArray) ToGetNdbTimeMachineSlaArrayOutput() GetNdbTimeMachineSlaArrayOutput {
+	return i.ToGetNdbTimeMachineSlaArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineSlaArray) ToGetNdbTimeMachineSlaArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineSlaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineSlaArrayOutput)
+}
+
+type GetNdbTimeMachineSlaOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineSlaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineSla)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineSlaOutput) ToGetNdbTimeMachineSlaOutput() GetNdbTimeMachineSlaOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineSlaOutput) ToGetNdbTimeMachineSlaOutputWithContext(ctx context.Context) GetNdbTimeMachineSlaOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineSlaOutput) ContinuousRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.ContinuousRetention }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) CurrentActiveFrequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.CurrentActiveFrequency }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) DailyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.DailyRetention }).(pulumi.IntOutput)
+}
+
+// date created
+func (o GetNdbTimeMachineSlaOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+// date modified
+func (o GetNdbTimeMachineSlaOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+// time machine description
+func (o GetNdbTimeMachineSlaOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// time machine id
+func (o GetNdbTimeMachineSlaOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) MonthlyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.MonthlyRetention }).(pulumi.IntOutput)
+}
+
+// time machine name
+func (o GetNdbTimeMachineSlaOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) OwnerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.OwnerId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) PitrEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) bool { return v.PitrEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) QuarterlyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.QuarterlyRetention }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) ReferenceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.ReferenceCount }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) SystemSla() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) bool { return v.SystemSla }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) UniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) string { return v.UniqueName }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) WeeklyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.WeeklyRetention }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachineSlaOutput) YearlyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineSla) int { return v.YearlyRetention }).(pulumi.IntOutput)
+}
+
+type GetNdbTimeMachineSlaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineSlaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineSla)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineSlaArrayOutput) ToGetNdbTimeMachineSlaArrayOutput() GetNdbTimeMachineSlaArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineSlaArrayOutput) ToGetNdbTimeMachineSlaArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineSlaArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineSlaArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineSlaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineSla {
+		return vs[0].([]GetNdbTimeMachineSla)[vs[1].(int)]
+	}).(GetNdbTimeMachineSlaOutput)
+}
+
+type GetNdbTimeMachineTag struct {
+	EntityId   string `pulumi:"entityId"`
+	EntityType string `pulumi:"entityType"`
+	TagId      string `pulumi:"tagId"`
+	TagName    string `pulumi:"tagName"`
+	Value      string `pulumi:"value"`
+}
+
+// GetNdbTimeMachineTagInput is an input type that accepts GetNdbTimeMachineTagArgs and GetNdbTimeMachineTagOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineTagInput` via:
+//
+//	GetNdbTimeMachineTagArgs{...}
+type GetNdbTimeMachineTagInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineTagOutput() GetNdbTimeMachineTagOutput
+	ToGetNdbTimeMachineTagOutputWithContext(context.Context) GetNdbTimeMachineTagOutput
+}
+
+type GetNdbTimeMachineTagArgs struct {
+	EntityId   pulumi.StringInput `pulumi:"entityId"`
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	TagId      pulumi.StringInput `pulumi:"tagId"`
+	TagName    pulumi.StringInput `pulumi:"tagName"`
+	Value      pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbTimeMachineTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineTag)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineTagArgs) ToGetNdbTimeMachineTagOutput() GetNdbTimeMachineTagOutput {
+	return i.ToGetNdbTimeMachineTagOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineTagArgs) ToGetNdbTimeMachineTagOutputWithContext(ctx context.Context) GetNdbTimeMachineTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineTagOutput)
+}
+
+// GetNdbTimeMachineTagArrayInput is an input type that accepts GetNdbTimeMachineTagArray and GetNdbTimeMachineTagArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachineTagArrayInput` via:
+//
+//	GetNdbTimeMachineTagArray{ GetNdbTimeMachineTagArgs{...} }
+type GetNdbTimeMachineTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachineTagArrayOutput() GetNdbTimeMachineTagArrayOutput
+	ToGetNdbTimeMachineTagArrayOutputWithContext(context.Context) GetNdbTimeMachineTagArrayOutput
+}
+
+type GetNdbTimeMachineTagArray []GetNdbTimeMachineTagInput
+
+func (GetNdbTimeMachineTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineTag)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachineTagArray) ToGetNdbTimeMachineTagArrayOutput() GetNdbTimeMachineTagArrayOutput {
+	return i.ToGetNdbTimeMachineTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachineTagArray) ToGetNdbTimeMachineTagArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachineTagArrayOutput)
+}
+
+type GetNdbTimeMachineTagOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachineTag)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineTagOutput) ToGetNdbTimeMachineTagOutput() GetNdbTimeMachineTagOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineTagOutput) ToGetNdbTimeMachineTagOutputWithContext(ctx context.Context) GetNdbTimeMachineTagOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineTagOutput) EntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.EntityId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineTagOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineTagOutput) TagId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.TagId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineTagOutput) TagName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.TagName }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachineTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachineTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachineTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachineTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachineTag)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachineTagArrayOutput) ToGetNdbTimeMachineTagArrayOutput() GetNdbTimeMachineTagArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineTagArrayOutput) ToGetNdbTimeMachineTagArrayOutputWithContext(ctx context.Context) GetNdbTimeMachineTagArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachineTagArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachineTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachineTag {
+		return vs[0].([]GetNdbTimeMachineTag)[vs[1].(int)]
+	}).(GetNdbTimeMachineTagOutput)
+}
+
+type GetNdbTimeMachinesTimeMachine struct {
+	// access level to time machines
+	AccessLevel string `pulumi:"accessLevel"`
+	// clone time machine or not
+	Clone bool `pulumi:"clone"`
+	// clone info
+	Clones string `pulumi:"clones"`
+	// clustered or not
+	Clustered bool `pulumi:"clustered"`
+	// database info
+	Database string `pulumi:"database"`
+	// database id
+	DatabaseId string `pulumi:"databaseId"`
+	// date created
+	DateCreated string `pulumi:"dateCreated"`
+	// date modified
+	DateModified string `pulumi:"dateModified"`
+	// time machine description
+	Description string `pulumi:"description"`
+	// ea status of time machine
+	EaStatus string `pulumi:"eaStatus"`
+	// time machine id
+	Id string `pulumi:"id"`
+	// Metric info
+	Metric string `pulumi:"metric"`
+	// time machine name
+	Name string `pulumi:"name"`
+	// List of all the properties
+	Properties []GetNdbTimeMachinesTimeMachineProperty `pulumi:"properties"`
+	// schedule id
+	ScheduleId string `pulumi:"scheduleId"`
+	// schedule info
+	//
+	// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+	Schedules []GetNdbTimeMachinesTimeMachineSchedule `pulumi:"schedules"`
+	// scope
+	Scope string `pulumi:"scope"`
+	// sla id
+	SlaId string `pulumi:"slaId"`
+	// sla update in progress
+	SlaUpdateInProgress bool `pulumi:"slaUpdateInProgress"`
+	// sla update metadata
+	SlaUpdateMetadata string `pulumi:"slaUpdateMetadata"`
+	// sla info
+	Slas []GetNdbTimeMachinesTimeMachineSla `pulumi:"slas"`
+	// source clusters
+	SourceNxClusters []string `pulumi:"sourceNxClusters"`
+	// status of time machine
+	Status string `pulumi:"status"`
+	// tags
+	Tags []GetNdbTimeMachinesTimeMachineTag `pulumi:"tags"`
+	// type of time machine
+	Type string `pulumi:"type"`
+}
+
+// GetNdbTimeMachinesTimeMachineInput is an input type that accepts GetNdbTimeMachinesTimeMachineArgs and GetNdbTimeMachinesTimeMachineOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineArgs{...}
+type GetNdbTimeMachinesTimeMachineInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineOutput() GetNdbTimeMachinesTimeMachineOutput
+	ToGetNdbTimeMachinesTimeMachineOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineOutput
+}
+
+type GetNdbTimeMachinesTimeMachineArgs struct {
+	// access level to time machines
+	AccessLevel pulumi.StringInput `pulumi:"accessLevel"`
+	// clone time machine or not
+	Clone pulumi.BoolInput `pulumi:"clone"`
+	// clone info
+	Clones pulumi.StringInput `pulumi:"clones"`
+	// clustered or not
+	Clustered pulumi.BoolInput `pulumi:"clustered"`
+	// database info
+	Database pulumi.StringInput `pulumi:"database"`
+	// database id
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	// date created
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// date modified
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// time machine description
+	Description pulumi.StringInput `pulumi:"description"`
+	// ea status of time machine
+	EaStatus pulumi.StringInput `pulumi:"eaStatus"`
+	// time machine id
+	Id pulumi.StringInput `pulumi:"id"`
+	// Metric info
+	Metric pulumi.StringInput `pulumi:"metric"`
+	// time machine name
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of all the properties
+	Properties GetNdbTimeMachinesTimeMachinePropertyArrayInput `pulumi:"properties"`
+	// schedule id
+	ScheduleId pulumi.StringInput `pulumi:"scheduleId"`
+	// schedule info
+	//
+	// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+	Schedules GetNdbTimeMachinesTimeMachineScheduleArrayInput `pulumi:"schedules"`
+	// scope
+	Scope pulumi.StringInput `pulumi:"scope"`
+	// sla id
+	SlaId pulumi.StringInput `pulumi:"slaId"`
+	// sla update in progress
+	SlaUpdateInProgress pulumi.BoolInput `pulumi:"slaUpdateInProgress"`
+	// sla update metadata
+	SlaUpdateMetadata pulumi.StringInput `pulumi:"slaUpdateMetadata"`
+	// sla info
+	Slas GetNdbTimeMachinesTimeMachineSlaArrayInput `pulumi:"slas"`
+	// source clusters
+	SourceNxClusters pulumi.StringArrayInput `pulumi:"sourceNxClusters"`
+	// status of time machine
+	Status pulumi.StringInput `pulumi:"status"`
+	// tags
+	Tags GetNdbTimeMachinesTimeMachineTagArrayInput `pulumi:"tags"`
+	// type of time machine
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNdbTimeMachinesTimeMachineArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachine)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineArgs) ToGetNdbTimeMachinesTimeMachineOutput() GetNdbTimeMachinesTimeMachineOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineArgs) ToGetNdbTimeMachinesTimeMachineOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineArray and GetNdbTimeMachinesTimeMachineArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineArray{ GetNdbTimeMachinesTimeMachineArgs{...} }
+type GetNdbTimeMachinesTimeMachineArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineArrayOutput() GetNdbTimeMachinesTimeMachineArrayOutput
+	ToGetNdbTimeMachinesTimeMachineArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineArray []GetNdbTimeMachinesTimeMachineInput
+
+func (GetNdbTimeMachinesTimeMachineArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachine)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineArray) ToGetNdbTimeMachinesTimeMachineArrayOutput() GetNdbTimeMachinesTimeMachineArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineArray) ToGetNdbTimeMachinesTimeMachineArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachine)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineOutput) ToGetNdbTimeMachinesTimeMachineOutput() GetNdbTimeMachinesTimeMachineOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineOutput) ToGetNdbTimeMachinesTimeMachineOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineOutput {
+	return o
+}
+
+// access level to time machines
+func (o GetNdbTimeMachinesTimeMachineOutput) AccessLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.AccessLevel }).(pulumi.StringOutput)
+}
+
+// clone time machine or not
+func (o GetNdbTimeMachinesTimeMachineOutput) Clone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.Clone }).(pulumi.BoolOutput)
+}
+
+// clone info
+func (o GetNdbTimeMachinesTimeMachineOutput) Clones() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Clones }).(pulumi.StringOutput)
+}
+
+// clustered or not
+func (o GetNdbTimeMachinesTimeMachineOutput) Clustered() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.Clustered }).(pulumi.BoolOutput)
+}
+
+// database info
+func (o GetNdbTimeMachinesTimeMachineOutput) Database() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Database }).(pulumi.StringOutput)
+}
+
+// database id
+func (o GetNdbTimeMachinesTimeMachineOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// date created
+func (o GetNdbTimeMachinesTimeMachineOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+// date modified
+func (o GetNdbTimeMachinesTimeMachineOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+// time machine description
+func (o GetNdbTimeMachinesTimeMachineOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// ea status of time machine
+func (o GetNdbTimeMachinesTimeMachineOutput) EaStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.EaStatus }).(pulumi.StringOutput)
+}
+
+// time machine id
+func (o GetNdbTimeMachinesTimeMachineOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Metric info
+func (o GetNdbTimeMachinesTimeMachineOutput) Metric() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Metric }).(pulumi.StringOutput)
+}
+
+// time machine name
+func (o GetNdbTimeMachinesTimeMachineOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of all the properties
+func (o GetNdbTimeMachinesTimeMachineOutput) Properties() GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineProperty { return v.Properties }).(GetNdbTimeMachinesTimeMachinePropertyArrayOutput)
+}
+
+// schedule id
+func (o GetNdbTimeMachinesTimeMachineOutput) ScheduleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.ScheduleId }).(pulumi.StringOutput)
+}
+
+// schedule info
+//
+// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+func (o GetNdbTimeMachinesTimeMachineOutput) Schedules() GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineSchedule { return v.Schedules }).(GetNdbTimeMachinesTimeMachineScheduleArrayOutput)
+}
+
+// scope
+func (o GetNdbTimeMachinesTimeMachineOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Scope }).(pulumi.StringOutput)
+}
+
+// sla id
+func (o GetNdbTimeMachinesTimeMachineOutput) SlaId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.SlaId }).(pulumi.StringOutput)
+}
+
+// sla update in progress
+func (o GetNdbTimeMachinesTimeMachineOutput) SlaUpdateInProgress() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.SlaUpdateInProgress }).(pulumi.BoolOutput)
+}
+
+// sla update metadata
+func (o GetNdbTimeMachinesTimeMachineOutput) SlaUpdateMetadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.SlaUpdateMetadata }).(pulumi.StringOutput)
+}
+
+// sla info
+func (o GetNdbTimeMachinesTimeMachineOutput) Slas() GetNdbTimeMachinesTimeMachineSlaArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineSla { return v.Slas }).(GetNdbTimeMachinesTimeMachineSlaArrayOutput)
+}
+
+// source clusters
+func (o GetNdbTimeMachinesTimeMachineOutput) SourceNxClusters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []string { return v.SourceNxClusters }).(pulumi.StringArrayOutput)
+}
+
+// status of time machine
+func (o GetNdbTimeMachinesTimeMachineOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// tags
+func (o GetNdbTimeMachinesTimeMachineOutput) Tags() GetNdbTimeMachinesTimeMachineTagArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineTag { return v.Tags }).(GetNdbTimeMachinesTimeMachineTagArrayOutput)
+}
+
+// type of time machine
+func (o GetNdbTimeMachinesTimeMachineOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachine)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineArrayOutput) ToGetNdbTimeMachinesTimeMachineArrayOutput() GetNdbTimeMachinesTimeMachineArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineArrayOutput) ToGetNdbTimeMachinesTimeMachineArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachine {
+		return vs[0].([]GetNdbTimeMachinesTimeMachine)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineProperty struct {
+	// time machine description
+	Description string `pulumi:"description"`
+	// time machine name
+	Name   string `pulumi:"name"`
+	RefId  string `pulumi:"refId"`
+	Secure bool   `pulumi:"secure"`
+	Value  string `pulumi:"value"`
+}
+
+// GetNdbTimeMachinesTimeMachinePropertyInput is an input type that accepts GetNdbTimeMachinesTimeMachinePropertyArgs and GetNdbTimeMachinesTimeMachinePropertyOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachinePropertyInput` via:
+//
+//	GetNdbTimeMachinesTimeMachinePropertyArgs{...}
+type GetNdbTimeMachinesTimeMachinePropertyInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachinePropertyOutput() GetNdbTimeMachinesTimeMachinePropertyOutput
+	ToGetNdbTimeMachinesTimeMachinePropertyOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachinePropertyOutput
+}
+
+type GetNdbTimeMachinesTimeMachinePropertyArgs struct {
+	// time machine description
+	Description pulumi.StringInput `pulumi:"description"`
+	// time machine name
+	Name   pulumi.StringInput `pulumi:"name"`
+	RefId  pulumi.StringInput `pulumi:"refId"`
+	Secure pulumi.BoolInput   `pulumi:"secure"`
+	Value  pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbTimeMachinesTimeMachinePropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineProperty)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachinePropertyArgs) ToGetNdbTimeMachinesTimeMachinePropertyOutput() GetNdbTimeMachinesTimeMachinePropertyOutput {
+	return i.ToGetNdbTimeMachinesTimeMachinePropertyOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachinePropertyArgs) ToGetNdbTimeMachinesTimeMachinePropertyOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachinePropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachinePropertyOutput)
+}
+
+// GetNdbTimeMachinesTimeMachinePropertyArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachinePropertyArray and GetNdbTimeMachinesTimeMachinePropertyArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachinePropertyArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachinePropertyArray{ GetNdbTimeMachinesTimeMachinePropertyArgs{...} }
+type GetNdbTimeMachinesTimeMachinePropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachinePropertyArrayOutput() GetNdbTimeMachinesTimeMachinePropertyArrayOutput
+	ToGetNdbTimeMachinesTimeMachinePropertyArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachinePropertyArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachinePropertyArray []GetNdbTimeMachinesTimeMachinePropertyInput
+
+func (GetNdbTimeMachinesTimeMachinePropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineProperty)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachinePropertyArray) ToGetNdbTimeMachinesTimeMachinePropertyArrayOutput() GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachinePropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachinePropertyArray) ToGetNdbTimeMachinesTimeMachinePropertyArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachinePropertyArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachinePropertyOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachinePropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineProperty)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachinePropertyOutput) ToGetNdbTimeMachinesTimeMachinePropertyOutput() GetNdbTimeMachinesTimeMachinePropertyOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachinePropertyOutput) ToGetNdbTimeMachinesTimeMachinePropertyOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachinePropertyOutput {
+	return o
+}
+
+// time machine description
+func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// time machine name
+func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachinePropertyOutput) RefId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.RefId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Secure() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) bool { return v.Secure }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachinesTimeMachinePropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachinePropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineProperty)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachinePropertyArrayOutput) ToGetNdbTimeMachinesTimeMachinePropertyArrayOutput() GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachinePropertyArrayOutput) ToGetNdbTimeMachinesTimeMachinePropertyArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachinePropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachinePropertyArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachinePropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineProperty {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineProperty)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachinePropertyOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineSchedule struct {
+	ContinuousSchedules []GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule `pulumi:"continuousSchedules"`
+	DailySchedules      []GetNdbTimeMachinesTimeMachineScheduleDailySchedule      `pulumi:"dailySchedules"`
+	// date created
+	DateCreated string `pulumi:"dateCreated"`
+	// date modified
+	DateModified string `pulumi:"dateModified"`
+	// time machine description
+	Description  string `pulumi:"description"`
+	GlobalPolicy bool   `pulumi:"globalPolicy"`
+	// time machine id
+	Id               string                                                 `pulumi:"id"`
+	MonthlySchedules []GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule `pulumi:"monthlySchedules"`
+	// time machine name
+	Name               string                                                   `pulumi:"name"`
+	OwnerId            string                                                   `pulumi:"ownerId"`
+	QuartelySchedules  []GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule  `pulumi:"quartelySchedules"`
+	ReferenceCount     int                                                      `pulumi:"referenceCount"`
+	SnapshotTimeOfDays []GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay `pulumi:"snapshotTimeOfDays"`
+	StartTime          string                                                   `pulumi:"startTime"`
+	SystemPolicy       bool                                                     `pulumi:"systemPolicy"`
+	TimeZone           string                                                   `pulumi:"timeZone"`
+	UniqueName         string                                                   `pulumi:"uniqueName"`
+	WeeklySchedules    []GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule    `pulumi:"weeklySchedules"`
+	YearlySchedules    []GetNdbTimeMachinesTimeMachineScheduleYearlySchedule    `pulumi:"yearlySchedules"`
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleArgs{...}
+type GetNdbTimeMachinesTimeMachineScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleArgs struct {
+	ContinuousSchedules GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput `pulumi:"continuousSchedules"`
+	DailySchedules      GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput      `pulumi:"dailySchedules"`
+	// date created
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// date modified
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// time machine description
+	Description  pulumi.StringInput `pulumi:"description"`
+	GlobalPolicy pulumi.BoolInput   `pulumi:"globalPolicy"`
+	// time machine id
+	Id               pulumi.StringInput                                             `pulumi:"id"`
+	MonthlySchedules GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput `pulumi:"monthlySchedules"`
+	// time machine name
+	Name               pulumi.StringInput                                               `pulumi:"name"`
+	OwnerId            pulumi.StringInput                                               `pulumi:"ownerId"`
+	QuartelySchedules  GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput  `pulumi:"quartelySchedules"`
+	ReferenceCount     pulumi.IntInput                                                  `pulumi:"referenceCount"`
+	SnapshotTimeOfDays GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput `pulumi:"snapshotTimeOfDays"`
+	StartTime          pulumi.StringInput                                               `pulumi:"startTime"`
+	SystemPolicy       pulumi.BoolInput                                                 `pulumi:"systemPolicy"`
+	TimeZone           pulumi.StringInput                                               `pulumi:"timeZone"`
+	UniqueName         pulumi.StringInput                                               `pulumi:"uniqueName"`
+	WeeklySchedules    GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput    `pulumi:"weeklySchedules"`
+	YearlySchedules    GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput    `pulumi:"yearlySchedules"`
+}
+
+func (GetNdbTimeMachinesTimeMachineScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleArray and GetNdbTimeMachinesTimeMachineScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleArgs{...} }
+type GetNdbTimeMachinesTimeMachineScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleArrayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleArray []GetNdbTimeMachinesTimeMachineScheduleInput
+
+func (GetNdbTimeMachinesTimeMachineScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineSchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) ContinuousSchedules() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule {
+		return v.ContinuousSchedules
+	}).(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DailySchedules() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleDailySchedule {
+		return v.DailySchedules
+	}).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput)
+}
+
+// date created
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+// date modified
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+// time machine description
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) GlobalPolicy() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) bool { return v.GlobalPolicy }).(pulumi.BoolOutput)
+}
+
+// time machine id
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) MonthlySchedules() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule {
+		return v.MonthlySchedules
+	}).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput)
+}
+
+// time machine name
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) OwnerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.OwnerId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) QuartelySchedules() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule {
+		return v.QuartelySchedules
+	}).(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) ReferenceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) int { return v.ReferenceCount }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) SnapshotTimeOfDays() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay {
+		return v.SnapshotTimeOfDays
+	}).(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) SystemPolicy() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) bool { return v.SystemPolicy }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) UniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.UniqueName }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) WeeklySchedules() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule {
+		return v.WeeklySchedules
+	}).(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleOutput) YearlySchedules() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) []GetNdbTimeMachinesTimeMachineScheduleYearlySchedule {
+		return v.YearlySchedules
+	}).(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineSchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineSchedule {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineSchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineScheduleOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule struct {
+	Enabled           bool `pulumi:"enabled"`
+	LogBackupInterval int  `pulumi:"logBackupInterval"`
+	SnapshotsPerDay   int  `pulumi:"snapshotsPerDay"`
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs{...}
+type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs struct {
+	Enabled           pulumi.BoolInput `pulumi:"enabled"`
+	LogBackupInterval pulumi.IntInput  `pulumi:"logBackupInterval"`
+	SnapshotsPerDay   pulumi.IntInput  `pulumi:"snapshotsPerDay"`
+}
+
+func (GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray and GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs{...} }
+type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray []GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput
+
+func (GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) LogBackupInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule) int { return v.LogBackupInterval }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput) SnapshotsPerDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule) int { return v.SnapshotsPerDay }).(pulumi.IntOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleDailySchedule struct {
+	Enabled bool `pulumi:"enabled"`
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs{...}
+type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs struct {
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+}
+
+func (GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleDailySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs{...} }
+type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput
+
+func (GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleDailySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleDailySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleDailySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleDailySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleDailySchedule {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleDailySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule struct {
+	DayOfMonth int  `pulumi:"dayOfMonth"`
+	Enabled    bool `pulumi:"enabled"`
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs{...}
+type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs struct {
+	DayOfMonth pulumi.IntInput  `pulumi:"dayOfMonth"`
+	Enabled    pulumi.BoolInput `pulumi:"enabled"`
+}
+
+func (GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs{...} }
+type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput
+
+func (GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule struct {
+	DayOfMonth      int    `pulumi:"dayOfMonth"`
+	Enabled         bool   `pulumi:"enabled"`
+	StartMonth      string `pulumi:"startMonth"`
+	StartMonthValue string `pulumi:"startMonthValue"`
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs{...}
+type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs struct {
+	DayOfMonth      pulumi.IntInput    `pulumi:"dayOfMonth"`
+	Enabled         pulumi.BoolInput   `pulumi:"enabled"`
+	StartMonth      pulumi.StringInput `pulumi:"startMonth"`
+	StartMonthValue pulumi.StringInput `pulumi:"startMonthValue"`
+}
+
+func (GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs{...} }
+type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput
+
+func (GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) StartMonth() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule) string { return v.StartMonth }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput) StartMonthValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule) string { return v.StartMonthValue }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay struct {
+	Extra   bool `pulumi:"extra"`
+	Hours   int  `pulumi:"hours"`
+	Minutes int  `pulumi:"minutes"`
+	Seconds int  `pulumi:"seconds"`
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs and GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs{...}
+type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs struct {
+	Extra   pulumi.BoolInput `pulumi:"extra"`
+	Hours   pulumi.IntInput  `pulumi:"hours"`
+	Minutes pulumi.IntInput  `pulumi:"minutes"`
+	Seconds pulumi.IntInput  `pulumi:"seconds"`
+}
+
+func (GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray and GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray{ GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs{...} }
+type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray []GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput
+
+func (GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) Extra() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay) bool { return v.Extra }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) Hours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay) int { return v.Hours }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) Minutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay) int { return v.Minutes }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput) Seconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay) int { return v.Seconds }).(pulumi.IntOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput() GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule struct {
+	DayOfWeek      string `pulumi:"dayOfWeek"`
+	DayOfWeekValue string `pulumi:"dayOfWeekValue"`
+	Enabled        bool   `pulumi:"enabled"`
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs{...}
+type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs struct {
+	DayOfWeek      pulumi.StringInput `pulumi:"dayOfWeek"`
+	DayOfWeekValue pulumi.StringInput `pulumi:"dayOfWeekValue"`
+	Enabled        pulumi.BoolInput   `pulumi:"enabled"`
+}
+
+func (GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs{...} }
+type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput
+
+func (GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) DayOfWeekValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule) string { return v.DayOfWeekValue }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleYearlySchedule struct {
+	DayOfMonth int    `pulumi:"dayOfMonth"`
+	Enabled    bool   `pulumi:"enabled"`
+	Month      string `pulumi:"month"`
+	MonthValue string `pulumi:"monthValue"`
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs{...}
+type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs struct {
+	DayOfMonth pulumi.IntInput    `pulumi:"dayOfMonth"`
+	Enabled    pulumi.BoolInput   `pulumi:"enabled"`
+	Month      pulumi.StringInput `pulumi:"month"`
+	MonthValue pulumi.StringInput `pulumi:"monthValue"`
+}
+
+func (GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray and GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray{ GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs{...} }
+type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput
+	ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray []GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput
+
+func (GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleYearlySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleYearlySchedule) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) Month() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleYearlySchedule) string { return v.Month }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput) MonthValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineScheduleYearlySchedule) string { return v.MonthValue }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput() GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput) ToGetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineScheduleYearlySchedule {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineScheduleYearlySchedule)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineSla struct {
+	ContinuousRetention    int    `pulumi:"continuousRetention"`
+	CurrentActiveFrequency string `pulumi:"currentActiveFrequency"`
+	DailyRetention         int    `pulumi:"dailyRetention"`
+	// date created
+	DateCreated string `pulumi:"dateCreated"`
+	// date modified
+	DateModified string `pulumi:"dateModified"`
+	// time machine description
+	Description string `pulumi:"description"`
+	// time machine id
+	Id               string `pulumi:"id"`
+	MonthlyRetention int    `pulumi:"monthlyRetention"`
+	// time machine name
+	Name               string `pulumi:"name"`
+	OwnerId            string `pulumi:"ownerId"`
+	PitrEnabled        bool   `pulumi:"pitrEnabled"`
+	QuarterlyRetention int    `pulumi:"quarterlyRetention"`
+	ReferenceCount     int    `pulumi:"referenceCount"`
+	SystemSla          bool   `pulumi:"systemSla"`
+	UniqueName         string `pulumi:"uniqueName"`
+	WeeklyRetention    int    `pulumi:"weeklyRetention"`
+	YearlyRetention    int    `pulumi:"yearlyRetention"`
+}
+
+// GetNdbTimeMachinesTimeMachineSlaInput is an input type that accepts GetNdbTimeMachinesTimeMachineSlaArgs and GetNdbTimeMachinesTimeMachineSlaOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineSlaInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineSlaArgs{...}
+type GetNdbTimeMachinesTimeMachineSlaInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineSlaOutput() GetNdbTimeMachinesTimeMachineSlaOutput
+	ToGetNdbTimeMachinesTimeMachineSlaOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineSlaOutput
+}
+
+type GetNdbTimeMachinesTimeMachineSlaArgs struct {
+	ContinuousRetention    pulumi.IntInput    `pulumi:"continuousRetention"`
+	CurrentActiveFrequency pulumi.StringInput `pulumi:"currentActiveFrequency"`
+	DailyRetention         pulumi.IntInput    `pulumi:"dailyRetention"`
+	// date created
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// date modified
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// time machine description
+	Description pulumi.StringInput `pulumi:"description"`
+	// time machine id
+	Id               pulumi.StringInput `pulumi:"id"`
+	MonthlyRetention pulumi.IntInput    `pulumi:"monthlyRetention"`
+	// time machine name
+	Name               pulumi.StringInput `pulumi:"name"`
+	OwnerId            pulumi.StringInput `pulumi:"ownerId"`
+	PitrEnabled        pulumi.BoolInput   `pulumi:"pitrEnabled"`
+	QuarterlyRetention pulumi.IntInput    `pulumi:"quarterlyRetention"`
+	ReferenceCount     pulumi.IntInput    `pulumi:"referenceCount"`
+	SystemSla          pulumi.BoolInput   `pulumi:"systemSla"`
+	UniqueName         pulumi.StringInput `pulumi:"uniqueName"`
+	WeeklyRetention    pulumi.IntInput    `pulumi:"weeklyRetention"`
+	YearlyRetention    pulumi.IntInput    `pulumi:"yearlyRetention"`
+}
+
+func (GetNdbTimeMachinesTimeMachineSlaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSla)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineSlaArgs) ToGetNdbTimeMachinesTimeMachineSlaOutput() GetNdbTimeMachinesTimeMachineSlaOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineSlaOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineSlaArgs) ToGetNdbTimeMachinesTimeMachineSlaOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineSlaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineSlaOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineSlaArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineSlaArray and GetNdbTimeMachinesTimeMachineSlaArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineSlaArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineSlaArray{ GetNdbTimeMachinesTimeMachineSlaArgs{...} }
+type GetNdbTimeMachinesTimeMachineSlaArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineSlaArrayOutput() GetNdbTimeMachinesTimeMachineSlaArrayOutput
+	ToGetNdbTimeMachinesTimeMachineSlaArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineSlaArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineSlaArray []GetNdbTimeMachinesTimeMachineSlaInput
+
+func (GetNdbTimeMachinesTimeMachineSlaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineSla)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineSlaArray) ToGetNdbTimeMachinesTimeMachineSlaArrayOutput() GetNdbTimeMachinesTimeMachineSlaArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineSlaArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineSlaArray) ToGetNdbTimeMachinesTimeMachineSlaArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineSlaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineSlaArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineSlaOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineSlaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSla)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) ToGetNdbTimeMachinesTimeMachineSlaOutput() GetNdbTimeMachinesTimeMachineSlaOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) ToGetNdbTimeMachinesTimeMachineSlaOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineSlaOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) ContinuousRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.ContinuousRetention }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) CurrentActiveFrequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.CurrentActiveFrequency }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) DailyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.DailyRetention }).(pulumi.IntOutput)
+}
+
+// date created
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+// date modified
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+// time machine description
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// time machine id
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) MonthlyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.MonthlyRetention }).(pulumi.IntOutput)
+}
+
+// time machine name
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) OwnerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.OwnerId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) PitrEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) bool { return v.PitrEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) QuarterlyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.QuarterlyRetention }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) ReferenceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.ReferenceCount }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) SystemSla() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) bool { return v.SystemSla }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) UniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.UniqueName }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) WeeklyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.WeeklyRetention }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaOutput) YearlyRetention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.YearlyRetention }).(pulumi.IntOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineSlaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineSlaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineSla)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaArrayOutput) ToGetNdbTimeMachinesTimeMachineSlaArrayOutput() GetNdbTimeMachinesTimeMachineSlaArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaArrayOutput) ToGetNdbTimeMachinesTimeMachineSlaArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineSlaArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineSlaArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineSlaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineSla {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineSla)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineSlaOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineTag struct {
+	EntityId   string `pulumi:"entityId"`
+	EntityType string `pulumi:"entityType"`
+	TagId      string `pulumi:"tagId"`
+	TagName    string `pulumi:"tagName"`
+	Value      string `pulumi:"value"`
+}
+
+// GetNdbTimeMachinesTimeMachineTagInput is an input type that accepts GetNdbTimeMachinesTimeMachineTagArgs and GetNdbTimeMachinesTimeMachineTagOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineTagInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineTagArgs{...}
+type GetNdbTimeMachinesTimeMachineTagInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineTagOutput() GetNdbTimeMachinesTimeMachineTagOutput
+	ToGetNdbTimeMachinesTimeMachineTagOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineTagOutput
+}
+
+type GetNdbTimeMachinesTimeMachineTagArgs struct {
+	EntityId   pulumi.StringInput `pulumi:"entityId"`
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	TagId      pulumi.StringInput `pulumi:"tagId"`
+	TagName    pulumi.StringInput `pulumi:"tagName"`
+	Value      pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbTimeMachinesTimeMachineTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineTag)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineTagArgs) ToGetNdbTimeMachinesTimeMachineTagOutput() GetNdbTimeMachinesTimeMachineTagOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineTagOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineTagArgs) ToGetNdbTimeMachinesTimeMachineTagOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineTagOutput)
+}
+
+// GetNdbTimeMachinesTimeMachineTagArrayInput is an input type that accepts GetNdbTimeMachinesTimeMachineTagArray and GetNdbTimeMachinesTimeMachineTagArrayOutput values.
+// You can construct a concrete instance of `GetNdbTimeMachinesTimeMachineTagArrayInput` via:
+//
+//	GetNdbTimeMachinesTimeMachineTagArray{ GetNdbTimeMachinesTimeMachineTagArgs{...} }
+type GetNdbTimeMachinesTimeMachineTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTimeMachinesTimeMachineTagArrayOutput() GetNdbTimeMachinesTimeMachineTagArrayOutput
+	ToGetNdbTimeMachinesTimeMachineTagArrayOutputWithContext(context.Context) GetNdbTimeMachinesTimeMachineTagArrayOutput
+}
+
+type GetNdbTimeMachinesTimeMachineTagArray []GetNdbTimeMachinesTimeMachineTagInput
+
+func (GetNdbTimeMachinesTimeMachineTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineTag)(nil)).Elem()
+}
+
+func (i GetNdbTimeMachinesTimeMachineTagArray) ToGetNdbTimeMachinesTimeMachineTagArrayOutput() GetNdbTimeMachinesTimeMachineTagArrayOutput {
+	return i.ToGetNdbTimeMachinesTimeMachineTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTimeMachinesTimeMachineTagArray) ToGetNdbTimeMachinesTimeMachineTagArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTimeMachinesTimeMachineTagArrayOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineTagOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTimeMachinesTimeMachineTag)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagOutput) ToGetNdbTimeMachinesTimeMachineTagOutput() GetNdbTimeMachinesTimeMachineTagOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagOutput) ToGetNdbTimeMachinesTimeMachineTagOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineTagOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagOutput) EntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.EntityId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagOutput) TagId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.TagId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagOutput) TagName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.TagName }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbTimeMachinesTimeMachineTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTimeMachinesTimeMachineTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTimeMachinesTimeMachineTag)(nil)).Elem()
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagArrayOutput) ToGetNdbTimeMachinesTimeMachineTagArrayOutput() GetNdbTimeMachinesTimeMachineTagArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagArrayOutput) ToGetNdbTimeMachinesTimeMachineTagArrayOutputWithContext(ctx context.Context) GetNdbTimeMachinesTimeMachineTagArrayOutput {
+	return o
+}
+
+func (o GetNdbTimeMachinesTimeMachineTagArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMachinesTimeMachineTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTimeMachinesTimeMachineTag {
+		return vs[0].([]GetNdbTimeMachinesTimeMachineTag)[vs[1].(int)]
+	}).(GetNdbTimeMachinesTimeMachineTagOutput)
+}
+
+type GetNdbTmsCapabilityCapability struct {
+	ContinuousRegions         []GetNdbTmsCapabilityCapabilityContinuousRegion `pulumi:"continuousRegions"`
+	DatabaseIds               []string                                        `pulumi:"databaseIds"`
+	DatabasesContinuousRegion string                                          `pulumi:"databasesContinuousRegion"`
+	From                      string                                          `pulumi:"from"`
+	Mode                      string                                          `pulumi:"mode"`
+	Snapshots                 []GetNdbTmsCapabilityCapabilitySnapshot         `pulumi:"snapshots"`
+	TimeUnit                  string                                          `pulumi:"timeUnit"`
+	TimeUnitNumber            string                                          `pulumi:"timeUnitNumber"`
+	To                        string                                          `pulumi:"to"`
+}
+
+// GetNdbTmsCapabilityCapabilityInput is an input type that accepts GetNdbTmsCapabilityCapabilityArgs and GetNdbTmsCapabilityCapabilityOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityArgs{...}
+type GetNdbTmsCapabilityCapabilityInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityOutput() GetNdbTmsCapabilityCapabilityOutput
+	ToGetNdbTmsCapabilityCapabilityOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityOutput
+}
+
+type GetNdbTmsCapabilityCapabilityArgs struct {
+	ContinuousRegions         GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput `pulumi:"continuousRegions"`
+	DatabaseIds               pulumi.StringArrayInput                                 `pulumi:"databaseIds"`
+	DatabasesContinuousRegion pulumi.StringInput                                      `pulumi:"databasesContinuousRegion"`
+	From                      pulumi.StringInput                                      `pulumi:"from"`
+	Mode                      pulumi.StringInput                                      `pulumi:"mode"`
+	Snapshots                 GetNdbTmsCapabilityCapabilitySnapshotArrayInput         `pulumi:"snapshots"`
+	TimeUnit                  pulumi.StringInput                                      `pulumi:"timeUnit"`
+	TimeUnitNumber            pulumi.StringInput                                      `pulumi:"timeUnitNumber"`
+	To                        pulumi.StringInput                                      `pulumi:"to"`
+}
+
+func (GetNdbTmsCapabilityCapabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapability)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityArgs) ToGetNdbTmsCapabilityCapabilityOutput() GetNdbTmsCapabilityCapabilityOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityArgs) ToGetNdbTmsCapabilityCapabilityOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityOutput)
+}
+
+// GetNdbTmsCapabilityCapabilityArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityArray and GetNdbTmsCapabilityCapabilityArrayOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityArrayInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityArray{ GetNdbTmsCapabilityCapabilityArgs{...} }
+type GetNdbTmsCapabilityCapabilityArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityArrayOutput() GetNdbTmsCapabilityCapabilityArrayOutput
+	ToGetNdbTmsCapabilityCapabilityArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityArrayOutput
+}
+
+type GetNdbTmsCapabilityCapabilityArray []GetNdbTmsCapabilityCapabilityInput
+
+func (GetNdbTmsCapabilityCapabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapability)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityArray) ToGetNdbTmsCapabilityCapabilityArrayOutput() GetNdbTmsCapabilityCapabilityArrayOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityArray) ToGetNdbTmsCapabilityCapabilityArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapability)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) ToGetNdbTmsCapabilityCapabilityOutput() GetNdbTmsCapabilityCapabilityOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) ToGetNdbTmsCapabilityCapabilityOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) ContinuousRegions() GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) []GetNdbTmsCapabilityCapabilityContinuousRegion {
+		return v.ContinuousRegions
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) DatabaseIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) []string { return v.DatabaseIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) DatabasesContinuousRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.DatabasesContinuousRegion }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) From() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.From }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) Snapshots() GetNdbTmsCapabilityCapabilitySnapshotArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) []GetNdbTmsCapabilityCapabilitySnapshot { return v.Snapshots }).(GetNdbTmsCapabilityCapabilitySnapshotArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) TimeUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.TimeUnit }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) TimeUnitNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.TimeUnitNumber }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityOutput) To() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapability) string { return v.To }).(pulumi.StringOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapability)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityArrayOutput) ToGetNdbTmsCapabilityCapabilityArrayOutput() GetNdbTmsCapabilityCapabilityArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityArrayOutput) ToGetNdbTmsCapabilityCapabilityArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapability {
+		return vs[0].([]GetNdbTmsCapabilityCapability)[vs[1].(int)]
+	}).(GetNdbTmsCapabilityCapabilityOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegion struct {
+	DbLogs                []GetNdbTmsCapabilityCapabilityContinuousRegionDbLog            `pulumi:"dbLogs"`
+	FromTime              string                                                          `pulumi:"fromTime"`
+	Message               string                                                          `pulumi:"message"`
+	PartialRanges         bool                                                            `pulumi:"partialRanges"`
+	ProcessedRanges       []GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange   `pulumi:"processedRanges"`
+	SnapshotIds           []string                                                        `pulumi:"snapshotIds"`
+	Snapshots             string                                                          `pulumi:"snapshots"`
+	SubRange              bool                                                            `pulumi:"subRange"`
+	TimeRangeAndDatabases string                                                          `pulumi:"timeRangeAndDatabases"`
+	Timezone              string                                                          `pulumi:"timezone"`
+	ToTime                string                                                          `pulumi:"toTime"`
+	UnknownTimeRanges     string                                                          `pulumi:"unknownTimeRanges"`
+	UnprocessedRanges     []GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRange `pulumi:"unprocessedRanges"`
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionArgs and GetNdbTmsCapabilityCapabilityContinuousRegionOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionArgs{...}
+type GetNdbTmsCapabilityCapabilityContinuousRegionInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionOutput() GetNdbTmsCapabilityCapabilityContinuousRegionOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionArgs struct {
+	DbLogs                GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput            `pulumi:"dbLogs"`
+	FromTime              pulumi.StringInput                                                      `pulumi:"fromTime"`
+	Message               pulumi.StringInput                                                      `pulumi:"message"`
+	PartialRanges         pulumi.BoolInput                                                        `pulumi:"partialRanges"`
+	ProcessedRanges       GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput   `pulumi:"processedRanges"`
+	SnapshotIds           pulumi.StringArrayInput                                                 `pulumi:"snapshotIds"`
+	Snapshots             pulumi.StringInput                                                      `pulumi:"snapshots"`
+	SubRange              pulumi.BoolInput                                                        `pulumi:"subRange"`
+	TimeRangeAndDatabases pulumi.StringInput                                                      `pulumi:"timeRangeAndDatabases"`
+	Timezone              pulumi.StringInput                                                      `pulumi:"timezone"`
+	ToTime                pulumi.StringInput                                                      `pulumi:"toTime"`
+	UnknownTimeRanges     pulumi.StringInput                                                      `pulumi:"unknownTimeRanges"`
+	UnprocessedRanges     GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArrayInput `pulumi:"unprocessedRanges"`
+}
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegion)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionOutput() GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionOutput)
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionArray and GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionArray{ GetNdbTmsCapabilityCapabilityContinuousRegionArgs{...} }
+type GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionArray []GetNdbTmsCapabilityCapabilityContinuousRegionInput
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegion)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegion)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionOutput() GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) DbLogs() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) []GetNdbTmsCapabilityCapabilityContinuousRegionDbLog {
+		return v.DbLogs
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) FromTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.FromTime }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.Message }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) PartialRanges() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) bool { return v.PartialRanges }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ProcessedRanges() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) []GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange {
+		return v.ProcessedRanges
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) SnapshotIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) []string { return v.SnapshotIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) Snapshots() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.Snapshots }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) SubRange() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) bool { return v.SubRange }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) TimeRangeAndDatabases() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.TimeRangeAndDatabases }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.Timezone }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) ToTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.ToTime }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) UnknownTimeRanges() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) string { return v.UnknownTimeRanges }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionOutput) UnprocessedRanges() GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegion) []GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRange {
+		return v.UnprocessedRanges
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegion)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegion {
+		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegion)[vs[1].(int)]
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLog struct {
+	DatabaseId         string                                                       `pulumi:"databaseId"`
+	DatabaseNodeId     string                                                       `pulumi:"databaseNodeId"`
+	DateCreated        string                                                       `pulumi:"dateCreated"`
+	DateModified       string                                                       `pulumi:"dateModified"`
+	EraLogDriveId      string                                                       `pulumi:"eraLogDriveId"`
+	FromTime           string                                                       `pulumi:"fromTime"`
+	Id                 string                                                       `pulumi:"id"`
+	Infos              []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo     `pulumi:"infos"`
+	LogCopyOperationId string                                                       `pulumi:"logCopyOperationId"`
+	Message            string                                                       `pulumi:"message"`
+	Metadatas          []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata `pulumi:"metadatas"`
+	Name               string                                                       `pulumi:"name"`
+	OwnerId            string                                                       `pulumi:"ownerId"`
+	Size               int                                                          `pulumi:"size"`
+	Status             string                                                       `pulumi:"status"`
+	ToTime             string                                                       `pulumi:"toTime"`
+	Unprocessed        bool                                                         `pulumi:"unprocessed"`
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs{...}
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs struct {
+	DatabaseId         pulumi.StringInput                                                   `pulumi:"databaseId"`
+	DatabaseNodeId     pulumi.StringInput                                                   `pulumi:"databaseNodeId"`
+	DateCreated        pulumi.StringInput                                                   `pulumi:"dateCreated"`
+	DateModified       pulumi.StringInput                                                   `pulumi:"dateModified"`
+	EraLogDriveId      pulumi.StringInput                                                   `pulumi:"eraLogDriveId"`
+	FromTime           pulumi.StringInput                                                   `pulumi:"fromTime"`
+	Id                 pulumi.StringInput                                                   `pulumi:"id"`
+	Infos              GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput     `pulumi:"infos"`
+	LogCopyOperationId pulumi.StringInput                                                   `pulumi:"logCopyOperationId"`
+	Message            pulumi.StringInput                                                   `pulumi:"message"`
+	Metadatas          GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput `pulumi:"metadatas"`
+	Name               pulumi.StringInput                                                   `pulumi:"name"`
+	OwnerId            pulumi.StringInput                                                   `pulumi:"ownerId"`
+	Size               pulumi.IntInput                                                      `pulumi:"size"`
+	Status             pulumi.StringInput                                                   `pulumi:"status"`
+	ToTime             pulumi.StringInput                                                   `pulumi:"toTime"`
+	Unprocessed        pulumi.BoolInput                                                     `pulumi:"unprocessed"`
+}
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput)
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray{ GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs{...} }
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) DatabaseNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.DatabaseNodeId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) EraLogDriveId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.EraLogDriveId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) FromTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.FromTime }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Infos() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo {
+		return v.Infos
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) LogCopyOperationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.LogCopyOperationId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.Message }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Metadatas() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata {
+		return v.Metadatas
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) OwnerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.OwnerId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) int { return v.Size }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) ToTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) string { return v.ToTime }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput) Unprocessed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLog) bool { return v.Unprocessed }).(pulumi.BoolOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionDbLog {
+		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionDbLog)[vs[1].(int)]
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo struct {
+	Info             map[string]string `pulumi:"info"`
+	SecureInfo       map[string]string `pulumi:"secureInfo"`
+	UnknownTimeRange bool              `pulumi:"unknownTimeRange"`
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs{...}
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs struct {
+	Info             pulumi.StringMapInput `pulumi:"info"`
+	SecureInfo       pulumi.StringMapInput `pulumi:"secureInfo"`
+	UnknownTimeRange pulumi.BoolInput      `pulumi:"unknownTimeRange"`
+}
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput)
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray{ GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs{...} }
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) Info() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo) map[string]string { return v.Info }).(pulumi.StringMapOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) SecureInfo() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo) map[string]string { return v.SecureInfo }).(pulumi.StringMapOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput) UnknownTimeRange() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo) bool { return v.UnknownTimeRange }).(pulumi.BoolOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo {
+		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo)[vs[1].(int)]
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata struct {
+	CreatedDirectly    bool                                                                       `pulumi:"createdDirectly"`
+	CurationRetryCount int                                                                        `pulumi:"curationRetryCount"`
+	DeregisterInfos    []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo `pulumi:"deregisterInfos"`
+	Info               map[string]string                                                          `pulumi:"info"`
+	SecureInfo         map[string]string                                                          `pulumi:"secureInfo"`
+	UpdatedDirectly    bool                                                                       `pulumi:"updatedDirectly"`
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs{...}
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs struct {
+	CreatedDirectly    pulumi.BoolInput                                                                   `pulumi:"createdDirectly"`
+	CurationRetryCount pulumi.IntInput                                                                    `pulumi:"curationRetryCount"`
+	DeregisterInfos    GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput `pulumi:"deregisterInfos"`
+	Info               pulumi.StringMapInput                                                              `pulumi:"info"`
+	SecureInfo         pulumi.StringMapInput                                                              `pulumi:"secureInfo"`
+	UpdatedDirectly    pulumi.BoolInput                                                                   `pulumi:"updatedDirectly"`
+}
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput)
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray{ GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs{...} }
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) CreatedDirectly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) bool { return v.CreatedDirectly }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) CurationRetryCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) int { return v.CurationRetryCount }).(pulumi.IntOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) DeregisterInfos() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo {
+		return v.DeregisterInfos
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) Info() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) map[string]string { return v.Info }).(pulumi.StringMapOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) SecureInfo() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) map[string]string {
+		return v.SecureInfo
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput) UpdatedDirectly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata) bool { return v.UpdatedDirectly }).(pulumi.BoolOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata {
+		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata)[vs[1].(int)]
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput)
+}
+
 type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo struct {
 	Message    string   `pulumi:"message"`
 	Operations []string `pulumi:"operations"`
@@ -14259,6 +19027,2183 @@ func (o GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamArrayOutput) I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParam {
 		return vs[0].([]GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParam)[vs[1].(int)]
 	}).(GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamOutput)
+}
+
+type GetObjectStoreV2Link struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetObjectStoreV2LinkInput is an input type that accepts GetObjectStoreV2LinkArgs and GetObjectStoreV2LinkOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2LinkInput` via:
+//
+//	GetObjectStoreV2LinkArgs{...}
+type GetObjectStoreV2LinkInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2LinkOutput() GetObjectStoreV2LinkOutput
+	ToGetObjectStoreV2LinkOutputWithContext(context.Context) GetObjectStoreV2LinkOutput
+}
+
+type GetObjectStoreV2LinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetObjectStoreV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2Link)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2LinkArgs) ToGetObjectStoreV2LinkOutput() GetObjectStoreV2LinkOutput {
+	return i.ToGetObjectStoreV2LinkOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2LinkArgs) ToGetObjectStoreV2LinkOutputWithContext(ctx context.Context) GetObjectStoreV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2LinkOutput)
+}
+
+// GetObjectStoreV2LinkArrayInput is an input type that accepts GetObjectStoreV2LinkArray and GetObjectStoreV2LinkArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2LinkArrayInput` via:
+//
+//	GetObjectStoreV2LinkArray{ GetObjectStoreV2LinkArgs{...} }
+type GetObjectStoreV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2LinkArrayOutput() GetObjectStoreV2LinkArrayOutput
+	ToGetObjectStoreV2LinkArrayOutputWithContext(context.Context) GetObjectStoreV2LinkArrayOutput
+}
+
+type GetObjectStoreV2LinkArray []GetObjectStoreV2LinkInput
+
+func (GetObjectStoreV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2Link)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2LinkArray) ToGetObjectStoreV2LinkArrayOutput() GetObjectStoreV2LinkArrayOutput {
+	return i.ToGetObjectStoreV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2LinkArray) ToGetObjectStoreV2LinkArrayOutputWithContext(ctx context.Context) GetObjectStoreV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2LinkArrayOutput)
+}
+
+type GetObjectStoreV2LinkOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2Link)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2LinkOutput) ToGetObjectStoreV2LinkOutput() GetObjectStoreV2LinkOutput {
+	return o
+}
+
+func (o GetObjectStoreV2LinkOutput) ToGetObjectStoreV2LinkOutputWithContext(ctx context.Context) GetObjectStoreV2LinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o GetObjectStoreV2LinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2Link) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetObjectStoreV2LinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2Link) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetObjectStoreV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2Link)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2LinkArrayOutput) ToGetObjectStoreV2LinkArrayOutput() GetObjectStoreV2LinkArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2LinkArrayOutput) ToGetObjectStoreV2LinkArrayOutputWithContext(ctx context.Context) GetObjectStoreV2LinkArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2LinkArrayOutput) Index(i pulumi.IntInput) GetObjectStoreV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoreV2Link {
+		return vs[0].([]GetObjectStoreV2Link)[vs[1].(int)]
+	}).(GetObjectStoreV2LinkOutput)
+}
+
+type GetObjectStoreV2Metadata struct {
+	// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds []string `pulumi:"categoryIds"`
+	// - A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId string `pulumi:"ownerReferenceId"`
+	// - The userName of the owner of this resource.
+	OwnerUserName string `pulumi:"ownerUserName"`
+	// - The name of the project this resource belongs to.
+	ProjectName string `pulumi:"projectName"`
+	// - A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId string `pulumi:"projectReferenceId"`
+}
+
+// GetObjectStoreV2MetadataInput is an input type that accepts GetObjectStoreV2MetadataArgs and GetObjectStoreV2MetadataOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2MetadataInput` via:
+//
+//	GetObjectStoreV2MetadataArgs{...}
+type GetObjectStoreV2MetadataInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2MetadataOutput() GetObjectStoreV2MetadataOutput
+	ToGetObjectStoreV2MetadataOutputWithContext(context.Context) GetObjectStoreV2MetadataOutput
+}
+
+type GetObjectStoreV2MetadataArgs struct {
+	// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds pulumi.StringArrayInput `pulumi:"categoryIds"`
+	// - A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId pulumi.StringInput `pulumi:"ownerReferenceId"`
+	// - The userName of the owner of this resource.
+	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	// - The name of the project this resource belongs to.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// - A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId pulumi.StringInput `pulumi:"projectReferenceId"`
+}
+
+func (GetObjectStoreV2MetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2Metadata)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2MetadataArgs) ToGetObjectStoreV2MetadataOutput() GetObjectStoreV2MetadataOutput {
+	return i.ToGetObjectStoreV2MetadataOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2MetadataArgs) ToGetObjectStoreV2MetadataOutputWithContext(ctx context.Context) GetObjectStoreV2MetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2MetadataOutput)
+}
+
+// GetObjectStoreV2MetadataArrayInput is an input type that accepts GetObjectStoreV2MetadataArray and GetObjectStoreV2MetadataArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2MetadataArrayInput` via:
+//
+//	GetObjectStoreV2MetadataArray{ GetObjectStoreV2MetadataArgs{...} }
+type GetObjectStoreV2MetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2MetadataArrayOutput() GetObjectStoreV2MetadataArrayOutput
+	ToGetObjectStoreV2MetadataArrayOutputWithContext(context.Context) GetObjectStoreV2MetadataArrayOutput
+}
+
+type GetObjectStoreV2MetadataArray []GetObjectStoreV2MetadataInput
+
+func (GetObjectStoreV2MetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2Metadata)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2MetadataArray) ToGetObjectStoreV2MetadataArrayOutput() GetObjectStoreV2MetadataArrayOutput {
+	return i.ToGetObjectStoreV2MetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2MetadataArray) ToGetObjectStoreV2MetadataArrayOutputWithContext(ctx context.Context) GetObjectStoreV2MetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2MetadataArrayOutput)
+}
+
+type GetObjectStoreV2MetadataOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2MetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2Metadata)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2MetadataOutput) ToGetObjectStoreV2MetadataOutput() GetObjectStoreV2MetadataOutput {
+	return o
+}
+
+func (o GetObjectStoreV2MetadataOutput) ToGetObjectStoreV2MetadataOutputWithContext(ctx context.Context) GetObjectStoreV2MetadataOutput {
+	return o
+}
+
+// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+func (o GetObjectStoreV2MetadataOutput) CategoryIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetObjectStoreV2Metadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
+}
+
+// - A globally unique identifier that represents the owner of this resource.
+func (o GetObjectStoreV2MetadataOutput) OwnerReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2Metadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
+}
+
+// - The userName of the owner of this resource.
+func (o GetObjectStoreV2MetadataOutput) OwnerUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2Metadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+// - The name of the project this resource belongs to.
+func (o GetObjectStoreV2MetadataOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2Metadata) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// - A globally unique identifier that represents the project this resource belongs to.
+func (o GetObjectStoreV2MetadataOutput) ProjectReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2Metadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
+}
+
+type GetObjectStoreV2MetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2MetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2Metadata)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2MetadataArrayOutput) ToGetObjectStoreV2MetadataArrayOutput() GetObjectStoreV2MetadataArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2MetadataArrayOutput) ToGetObjectStoreV2MetadataArrayOutputWithContext(ctx context.Context) GetObjectStoreV2MetadataArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2MetadataArrayOutput) Index(i pulumi.IntInput) GetObjectStoreV2MetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoreV2Metadata {
+		return vs[0].([]GetObjectStoreV2Metadata)[vs[1].(int)]
+	}).(GetObjectStoreV2MetadataOutput)
+}
+
+type GetObjectStoreV2PublicNetworkIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoreV2PublicNetworkIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoreV2PublicNetworkIpIpv6 `pulumi:"ipv6"`
+}
+
+// GetObjectStoreV2PublicNetworkIpInput is an input type that accepts GetObjectStoreV2PublicNetworkIpArgs and GetObjectStoreV2PublicNetworkIpOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2PublicNetworkIpInput` via:
+//
+//	GetObjectStoreV2PublicNetworkIpArgs{...}
+type GetObjectStoreV2PublicNetworkIpInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2PublicNetworkIpOutput() GetObjectStoreV2PublicNetworkIpOutput
+	ToGetObjectStoreV2PublicNetworkIpOutputWithContext(context.Context) GetObjectStoreV2PublicNetworkIpOutput
+}
+
+type GetObjectStoreV2PublicNetworkIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoreV2PublicNetworkIpIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoreV2PublicNetworkIpIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetObjectStoreV2PublicNetworkIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2PublicNetworkIp)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2PublicNetworkIpArgs) ToGetObjectStoreV2PublicNetworkIpOutput() GetObjectStoreV2PublicNetworkIpOutput {
+	return i.ToGetObjectStoreV2PublicNetworkIpOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2PublicNetworkIpArgs) ToGetObjectStoreV2PublicNetworkIpOutputWithContext(ctx context.Context) GetObjectStoreV2PublicNetworkIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2PublicNetworkIpOutput)
+}
+
+// GetObjectStoreV2PublicNetworkIpArrayInput is an input type that accepts GetObjectStoreV2PublicNetworkIpArray and GetObjectStoreV2PublicNetworkIpArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2PublicNetworkIpArrayInput` via:
+//
+//	GetObjectStoreV2PublicNetworkIpArray{ GetObjectStoreV2PublicNetworkIpArgs{...} }
+type GetObjectStoreV2PublicNetworkIpArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2PublicNetworkIpArrayOutput() GetObjectStoreV2PublicNetworkIpArrayOutput
+	ToGetObjectStoreV2PublicNetworkIpArrayOutputWithContext(context.Context) GetObjectStoreV2PublicNetworkIpArrayOutput
+}
+
+type GetObjectStoreV2PublicNetworkIpArray []GetObjectStoreV2PublicNetworkIpInput
+
+func (GetObjectStoreV2PublicNetworkIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2PublicNetworkIp)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2PublicNetworkIpArray) ToGetObjectStoreV2PublicNetworkIpArrayOutput() GetObjectStoreV2PublicNetworkIpArrayOutput {
+	return i.ToGetObjectStoreV2PublicNetworkIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2PublicNetworkIpArray) ToGetObjectStoreV2PublicNetworkIpArrayOutputWithContext(ctx context.Context) GetObjectStoreV2PublicNetworkIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2PublicNetworkIpArrayOutput)
+}
+
+type GetObjectStoreV2PublicNetworkIpOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2PublicNetworkIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2PublicNetworkIp)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2PublicNetworkIpOutput) ToGetObjectStoreV2PublicNetworkIpOutput() GetObjectStoreV2PublicNetworkIpOutput {
+	return o
+}
+
+func (o GetObjectStoreV2PublicNetworkIpOutput) ToGetObjectStoreV2PublicNetworkIpOutputWithContext(ctx context.Context) GetObjectStoreV2PublicNetworkIpOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetObjectStoreV2PublicNetworkIpOutput) Ipv4() GetObjectStoreV2PublicNetworkIpIpv4Output {
+	return o.ApplyT(func(v GetObjectStoreV2PublicNetworkIp) GetObjectStoreV2PublicNetworkIpIpv4 { return v.Ipv4 }).(GetObjectStoreV2PublicNetworkIpIpv4Output)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetObjectStoreV2PublicNetworkIpOutput) Ipv6() GetObjectStoreV2PublicNetworkIpIpv6Output {
+	return o.ApplyT(func(v GetObjectStoreV2PublicNetworkIp) GetObjectStoreV2PublicNetworkIpIpv6 { return v.Ipv6 }).(GetObjectStoreV2PublicNetworkIpIpv6Output)
+}
+
+type GetObjectStoreV2PublicNetworkIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2PublicNetworkIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2PublicNetworkIp)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2PublicNetworkIpArrayOutput) ToGetObjectStoreV2PublicNetworkIpArrayOutput() GetObjectStoreV2PublicNetworkIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2PublicNetworkIpArrayOutput) ToGetObjectStoreV2PublicNetworkIpArrayOutputWithContext(ctx context.Context) GetObjectStoreV2PublicNetworkIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2PublicNetworkIpArrayOutput) Index(i pulumi.IntInput) GetObjectStoreV2PublicNetworkIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoreV2PublicNetworkIp {
+		return vs[0].([]GetObjectStoreV2PublicNetworkIp)[vs[1].(int)]
+	}).(GetObjectStoreV2PublicNetworkIpOutput)
+}
+
+type GetObjectStoreV2PublicNetworkIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoreV2PublicNetworkIpIpv4Input is an input type that accepts GetObjectStoreV2PublicNetworkIpIpv4Args and GetObjectStoreV2PublicNetworkIpIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoreV2PublicNetworkIpIpv4Input` via:
+//
+//	GetObjectStoreV2PublicNetworkIpIpv4Args{...}
+type GetObjectStoreV2PublicNetworkIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2PublicNetworkIpIpv4Output() GetObjectStoreV2PublicNetworkIpIpv4Output
+	ToGetObjectStoreV2PublicNetworkIpIpv4OutputWithContext(context.Context) GetObjectStoreV2PublicNetworkIpIpv4Output
+}
+
+type GetObjectStoreV2PublicNetworkIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoreV2PublicNetworkIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2PublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2PublicNetworkIpIpv4Args) ToGetObjectStoreV2PublicNetworkIpIpv4Output() GetObjectStoreV2PublicNetworkIpIpv4Output {
+	return i.ToGetObjectStoreV2PublicNetworkIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2PublicNetworkIpIpv4Args) ToGetObjectStoreV2PublicNetworkIpIpv4OutputWithContext(ctx context.Context) GetObjectStoreV2PublicNetworkIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2PublicNetworkIpIpv4Output)
+}
+
+type GetObjectStoreV2PublicNetworkIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2PublicNetworkIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2PublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2PublicNetworkIpIpv4Output) ToGetObjectStoreV2PublicNetworkIpIpv4Output() GetObjectStoreV2PublicNetworkIpIpv4Output {
+	return o
+}
+
+func (o GetObjectStoreV2PublicNetworkIpIpv4Output) ToGetObjectStoreV2PublicNetworkIpIpv4OutputWithContext(ctx context.Context) GetObjectStoreV2PublicNetworkIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoreV2PublicNetworkIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoreV2PublicNetworkIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoreV2PublicNetworkIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2PublicNetworkIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoreV2PublicNetworkIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoreV2PublicNetworkIpIpv6Input is an input type that accepts GetObjectStoreV2PublicNetworkIpIpv6Args and GetObjectStoreV2PublicNetworkIpIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoreV2PublicNetworkIpIpv6Input` via:
+//
+//	GetObjectStoreV2PublicNetworkIpIpv6Args{...}
+type GetObjectStoreV2PublicNetworkIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2PublicNetworkIpIpv6Output() GetObjectStoreV2PublicNetworkIpIpv6Output
+	ToGetObjectStoreV2PublicNetworkIpIpv6OutputWithContext(context.Context) GetObjectStoreV2PublicNetworkIpIpv6Output
+}
+
+type GetObjectStoreV2PublicNetworkIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoreV2PublicNetworkIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2PublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2PublicNetworkIpIpv6Args) ToGetObjectStoreV2PublicNetworkIpIpv6Output() GetObjectStoreV2PublicNetworkIpIpv6Output {
+	return i.ToGetObjectStoreV2PublicNetworkIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2PublicNetworkIpIpv6Args) ToGetObjectStoreV2PublicNetworkIpIpv6OutputWithContext(ctx context.Context) GetObjectStoreV2PublicNetworkIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2PublicNetworkIpIpv6Output)
+}
+
+type GetObjectStoreV2PublicNetworkIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2PublicNetworkIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2PublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2PublicNetworkIpIpv6Output) ToGetObjectStoreV2PublicNetworkIpIpv6Output() GetObjectStoreV2PublicNetworkIpIpv6Output {
+	return o
+}
+
+func (o GetObjectStoreV2PublicNetworkIpIpv6Output) ToGetObjectStoreV2PublicNetworkIpIpv6OutputWithContext(ctx context.Context) GetObjectStoreV2PublicNetworkIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoreV2PublicNetworkIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoreV2PublicNetworkIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoreV2PublicNetworkIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2PublicNetworkIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoreV2StorageNetworkDnsIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoreV2StorageNetworkDnsIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoreV2StorageNetworkDnsIpIpv6 `pulumi:"ipv6"`
+}
+
+// GetObjectStoreV2StorageNetworkDnsIpInput is an input type that accepts GetObjectStoreV2StorageNetworkDnsIpArgs and GetObjectStoreV2StorageNetworkDnsIpOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2StorageNetworkDnsIpInput` via:
+//
+//	GetObjectStoreV2StorageNetworkDnsIpArgs{...}
+type GetObjectStoreV2StorageNetworkDnsIpInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2StorageNetworkDnsIpOutput() GetObjectStoreV2StorageNetworkDnsIpOutput
+	ToGetObjectStoreV2StorageNetworkDnsIpOutputWithContext(context.Context) GetObjectStoreV2StorageNetworkDnsIpOutput
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoreV2StorageNetworkDnsIpIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoreV2StorageNetworkDnsIpIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetObjectStoreV2StorageNetworkDnsIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2StorageNetworkDnsIpArgs) ToGetObjectStoreV2StorageNetworkDnsIpOutput() GetObjectStoreV2StorageNetworkDnsIpOutput {
+	return i.ToGetObjectStoreV2StorageNetworkDnsIpOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2StorageNetworkDnsIpArgs) ToGetObjectStoreV2StorageNetworkDnsIpOutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkDnsIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2StorageNetworkDnsIpOutput)
+}
+
+// GetObjectStoreV2StorageNetworkDnsIpArrayInput is an input type that accepts GetObjectStoreV2StorageNetworkDnsIpArray and GetObjectStoreV2StorageNetworkDnsIpArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2StorageNetworkDnsIpArrayInput` via:
+//
+//	GetObjectStoreV2StorageNetworkDnsIpArray{ GetObjectStoreV2StorageNetworkDnsIpArgs{...} }
+type GetObjectStoreV2StorageNetworkDnsIpArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2StorageNetworkDnsIpArrayOutput() GetObjectStoreV2StorageNetworkDnsIpArrayOutput
+	ToGetObjectStoreV2StorageNetworkDnsIpArrayOutputWithContext(context.Context) GetObjectStoreV2StorageNetworkDnsIpArrayOutput
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpArray []GetObjectStoreV2StorageNetworkDnsIpInput
+
+func (GetObjectStoreV2StorageNetworkDnsIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2StorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2StorageNetworkDnsIpArray) ToGetObjectStoreV2StorageNetworkDnsIpArrayOutput() GetObjectStoreV2StorageNetworkDnsIpArrayOutput {
+	return i.ToGetObjectStoreV2StorageNetworkDnsIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2StorageNetworkDnsIpArray) ToGetObjectStoreV2StorageNetworkDnsIpArrayOutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkDnsIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2StorageNetworkDnsIpArrayOutput)
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2StorageNetworkDnsIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpOutput) ToGetObjectStoreV2StorageNetworkDnsIpOutput() GetObjectStoreV2StorageNetworkDnsIpOutput {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpOutput) ToGetObjectStoreV2StorageNetworkDnsIpOutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkDnsIpOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetObjectStoreV2StorageNetworkDnsIpOutput) Ipv4() GetObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkDnsIp) GetObjectStoreV2StorageNetworkDnsIpIpv4 { return v.Ipv4 }).(GetObjectStoreV2StorageNetworkDnsIpIpv4Output)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetObjectStoreV2StorageNetworkDnsIpOutput) Ipv6() GetObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkDnsIp) GetObjectStoreV2StorageNetworkDnsIpIpv6 { return v.Ipv6 }).(GetObjectStoreV2StorageNetworkDnsIpIpv6Output)
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2StorageNetworkDnsIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2StorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpArrayOutput) ToGetObjectStoreV2StorageNetworkDnsIpArrayOutput() GetObjectStoreV2StorageNetworkDnsIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpArrayOutput) ToGetObjectStoreV2StorageNetworkDnsIpArrayOutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkDnsIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpArrayOutput) Index(i pulumi.IntInput) GetObjectStoreV2StorageNetworkDnsIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoreV2StorageNetworkDnsIp {
+		return vs[0].([]GetObjectStoreV2StorageNetworkDnsIp)[vs[1].(int)]
+	}).(GetObjectStoreV2StorageNetworkDnsIpOutput)
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoreV2StorageNetworkDnsIpIpv4Input is an input type that accepts GetObjectStoreV2StorageNetworkDnsIpIpv4Args and GetObjectStoreV2StorageNetworkDnsIpIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoreV2StorageNetworkDnsIpIpv4Input` via:
+//
+//	GetObjectStoreV2StorageNetworkDnsIpIpv4Args{...}
+type GetObjectStoreV2StorageNetworkDnsIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2StorageNetworkDnsIpIpv4Output() GetObjectStoreV2StorageNetworkDnsIpIpv4Output
+	ToGetObjectStoreV2StorageNetworkDnsIpIpv4OutputWithContext(context.Context) GetObjectStoreV2StorageNetworkDnsIpIpv4Output
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoreV2StorageNetworkDnsIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2StorageNetworkDnsIpIpv4Args) ToGetObjectStoreV2StorageNetworkDnsIpIpv4Output() GetObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return i.ToGetObjectStoreV2StorageNetworkDnsIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2StorageNetworkDnsIpIpv4Args) ToGetObjectStoreV2StorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2StorageNetworkDnsIpIpv4Output)
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2StorageNetworkDnsIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpIpv4Output) ToGetObjectStoreV2StorageNetworkDnsIpIpv4Output() GetObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpIpv4Output) ToGetObjectStoreV2StorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkDnsIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoreV2StorageNetworkDnsIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkDnsIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoreV2StorageNetworkDnsIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkDnsIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoreV2StorageNetworkDnsIpIpv6Input is an input type that accepts GetObjectStoreV2StorageNetworkDnsIpIpv6Args and GetObjectStoreV2StorageNetworkDnsIpIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoreV2StorageNetworkDnsIpIpv6Input` via:
+//
+//	GetObjectStoreV2StorageNetworkDnsIpIpv6Args{...}
+type GetObjectStoreV2StorageNetworkDnsIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2StorageNetworkDnsIpIpv6Output() GetObjectStoreV2StorageNetworkDnsIpIpv6Output
+	ToGetObjectStoreV2StorageNetworkDnsIpIpv6OutputWithContext(context.Context) GetObjectStoreV2StorageNetworkDnsIpIpv6Output
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoreV2StorageNetworkDnsIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2StorageNetworkDnsIpIpv6Args) ToGetObjectStoreV2StorageNetworkDnsIpIpv6Output() GetObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return i.ToGetObjectStoreV2StorageNetworkDnsIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2StorageNetworkDnsIpIpv6Args) ToGetObjectStoreV2StorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2StorageNetworkDnsIpIpv6Output)
+}
+
+type GetObjectStoreV2StorageNetworkDnsIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2StorageNetworkDnsIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpIpv6Output) ToGetObjectStoreV2StorageNetworkDnsIpIpv6Output() GetObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkDnsIpIpv6Output) ToGetObjectStoreV2StorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkDnsIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoreV2StorageNetworkDnsIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkDnsIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoreV2StorageNetworkDnsIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkDnsIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoreV2StorageNetworkVip struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoreV2StorageNetworkVipIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoreV2StorageNetworkVipIpv6 `pulumi:"ipv6"`
+}
+
+// GetObjectStoreV2StorageNetworkVipInput is an input type that accepts GetObjectStoreV2StorageNetworkVipArgs and GetObjectStoreV2StorageNetworkVipOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2StorageNetworkVipInput` via:
+//
+//	GetObjectStoreV2StorageNetworkVipArgs{...}
+type GetObjectStoreV2StorageNetworkVipInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2StorageNetworkVipOutput() GetObjectStoreV2StorageNetworkVipOutput
+	ToGetObjectStoreV2StorageNetworkVipOutputWithContext(context.Context) GetObjectStoreV2StorageNetworkVipOutput
+}
+
+type GetObjectStoreV2StorageNetworkVipArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoreV2StorageNetworkVipIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoreV2StorageNetworkVipIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetObjectStoreV2StorageNetworkVipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkVip)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2StorageNetworkVipArgs) ToGetObjectStoreV2StorageNetworkVipOutput() GetObjectStoreV2StorageNetworkVipOutput {
+	return i.ToGetObjectStoreV2StorageNetworkVipOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2StorageNetworkVipArgs) ToGetObjectStoreV2StorageNetworkVipOutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkVipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2StorageNetworkVipOutput)
+}
+
+// GetObjectStoreV2StorageNetworkVipArrayInput is an input type that accepts GetObjectStoreV2StorageNetworkVipArray and GetObjectStoreV2StorageNetworkVipArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoreV2StorageNetworkVipArrayInput` via:
+//
+//	GetObjectStoreV2StorageNetworkVipArray{ GetObjectStoreV2StorageNetworkVipArgs{...} }
+type GetObjectStoreV2StorageNetworkVipArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2StorageNetworkVipArrayOutput() GetObjectStoreV2StorageNetworkVipArrayOutput
+	ToGetObjectStoreV2StorageNetworkVipArrayOutputWithContext(context.Context) GetObjectStoreV2StorageNetworkVipArrayOutput
+}
+
+type GetObjectStoreV2StorageNetworkVipArray []GetObjectStoreV2StorageNetworkVipInput
+
+func (GetObjectStoreV2StorageNetworkVipArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2StorageNetworkVip)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2StorageNetworkVipArray) ToGetObjectStoreV2StorageNetworkVipArrayOutput() GetObjectStoreV2StorageNetworkVipArrayOutput {
+	return i.ToGetObjectStoreV2StorageNetworkVipArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2StorageNetworkVipArray) ToGetObjectStoreV2StorageNetworkVipArrayOutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkVipArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2StorageNetworkVipArrayOutput)
+}
+
+type GetObjectStoreV2StorageNetworkVipOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2StorageNetworkVipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkVip)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2StorageNetworkVipOutput) ToGetObjectStoreV2StorageNetworkVipOutput() GetObjectStoreV2StorageNetworkVipOutput {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkVipOutput) ToGetObjectStoreV2StorageNetworkVipOutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkVipOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetObjectStoreV2StorageNetworkVipOutput) Ipv4() GetObjectStoreV2StorageNetworkVipIpv4Output {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkVip) GetObjectStoreV2StorageNetworkVipIpv4 { return v.Ipv4 }).(GetObjectStoreV2StorageNetworkVipIpv4Output)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetObjectStoreV2StorageNetworkVipOutput) Ipv6() GetObjectStoreV2StorageNetworkVipIpv6Output {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkVip) GetObjectStoreV2StorageNetworkVipIpv6 { return v.Ipv6 }).(GetObjectStoreV2StorageNetworkVipIpv6Output)
+}
+
+type GetObjectStoreV2StorageNetworkVipArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2StorageNetworkVipArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoreV2StorageNetworkVip)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2StorageNetworkVipArrayOutput) ToGetObjectStoreV2StorageNetworkVipArrayOutput() GetObjectStoreV2StorageNetworkVipArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkVipArrayOutput) ToGetObjectStoreV2StorageNetworkVipArrayOutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkVipArrayOutput {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkVipArrayOutput) Index(i pulumi.IntInput) GetObjectStoreV2StorageNetworkVipOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoreV2StorageNetworkVip {
+		return vs[0].([]GetObjectStoreV2StorageNetworkVip)[vs[1].(int)]
+	}).(GetObjectStoreV2StorageNetworkVipOutput)
+}
+
+type GetObjectStoreV2StorageNetworkVipIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoreV2StorageNetworkVipIpv4Input is an input type that accepts GetObjectStoreV2StorageNetworkVipIpv4Args and GetObjectStoreV2StorageNetworkVipIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoreV2StorageNetworkVipIpv4Input` via:
+//
+//	GetObjectStoreV2StorageNetworkVipIpv4Args{...}
+type GetObjectStoreV2StorageNetworkVipIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2StorageNetworkVipIpv4Output() GetObjectStoreV2StorageNetworkVipIpv4Output
+	ToGetObjectStoreV2StorageNetworkVipIpv4OutputWithContext(context.Context) GetObjectStoreV2StorageNetworkVipIpv4Output
+}
+
+type GetObjectStoreV2StorageNetworkVipIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoreV2StorageNetworkVipIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2StorageNetworkVipIpv4Args) ToGetObjectStoreV2StorageNetworkVipIpv4Output() GetObjectStoreV2StorageNetworkVipIpv4Output {
+	return i.ToGetObjectStoreV2StorageNetworkVipIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2StorageNetworkVipIpv4Args) ToGetObjectStoreV2StorageNetworkVipIpv4OutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkVipIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2StorageNetworkVipIpv4Output)
+}
+
+type GetObjectStoreV2StorageNetworkVipIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2StorageNetworkVipIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2StorageNetworkVipIpv4Output) ToGetObjectStoreV2StorageNetworkVipIpv4Output() GetObjectStoreV2StorageNetworkVipIpv4Output {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkVipIpv4Output) ToGetObjectStoreV2StorageNetworkVipIpv4OutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkVipIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoreV2StorageNetworkVipIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkVipIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoreV2StorageNetworkVipIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkVipIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoreV2StorageNetworkVipIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoreV2StorageNetworkVipIpv6Input is an input type that accepts GetObjectStoreV2StorageNetworkVipIpv6Args and GetObjectStoreV2StorageNetworkVipIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoreV2StorageNetworkVipIpv6Input` via:
+//
+//	GetObjectStoreV2StorageNetworkVipIpv6Args{...}
+type GetObjectStoreV2StorageNetworkVipIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoreV2StorageNetworkVipIpv6Output() GetObjectStoreV2StorageNetworkVipIpv6Output
+	ToGetObjectStoreV2StorageNetworkVipIpv6OutputWithContext(context.Context) GetObjectStoreV2StorageNetworkVipIpv6Output
+}
+
+type GetObjectStoreV2StorageNetworkVipIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoreV2StorageNetworkVipIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoreV2StorageNetworkVipIpv6Args) ToGetObjectStoreV2StorageNetworkVipIpv6Output() GetObjectStoreV2StorageNetworkVipIpv6Output {
+	return i.ToGetObjectStoreV2StorageNetworkVipIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoreV2StorageNetworkVipIpv6Args) ToGetObjectStoreV2StorageNetworkVipIpv6OutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkVipIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoreV2StorageNetworkVipIpv6Output)
+}
+
+type GetObjectStoreV2StorageNetworkVipIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoreV2StorageNetworkVipIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoreV2StorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoreV2StorageNetworkVipIpv6Output) ToGetObjectStoreV2StorageNetworkVipIpv6Output() GetObjectStoreV2StorageNetworkVipIpv6Output {
+	return o
+}
+
+func (o GetObjectStoreV2StorageNetworkVipIpv6Output) ToGetObjectStoreV2StorageNetworkVipIpv6OutputWithContext(ctx context.Context) GetObjectStoreV2StorageNetworkVipIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoreV2StorageNetworkVipIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkVipIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoreV2StorageNetworkVipIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoreV2StorageNetworkVipIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStore struct {
+	// - A list of the UUIDs of the certificates of an Object store.
+	CertificateExtIds []string `pulumi:"certificateExtIds"`
+	// - UUID of the AHV or ESXi cluster.
+	ClusterExtId string `pulumi:"clusterExtId"`
+	// - The time when the Object store was created.
+	CreationTime string `pulumi:"creationTime"`
+	// - The deployment version of the Object store.
+	DeploymentVersion string `pulumi:"deploymentVersion"`
+	// - A brief description of the Object store.
+	Description string `pulumi:"description"`
+	// - The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
+	Domain string `pulumi:"domain"`
+	// - A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId string `pulumi:"extId"`
+	// - The time when the Object store was last updated.
+	LastUpdateTime string `pulumi:"lastUpdateTime"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetObjectStoresV2ObjectStoreLink `pulumi:"links"`
+	// - Metadata associated with this resource.
+	Metadatas []GetObjectStoresV2ObjectStoreMetadata `pulumi:"metadatas"`
+	// - The name of the Object store.
+	Name string `pulumi:"name"`
+	// - The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
+	NumWorkerNodes int `pulumi:"numWorkerNodes"`
+	// - A list of static IP addresses used as public IPs to access the Object store.
+	PublicNetworkIps []GetObjectStoresV2ObjectStorePublicNetworkIp `pulumi:"publicNetworkIps"`
+	// - Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
+	PublicNetworkReference string `pulumi:"publicNetworkReference"`
+	// - The region in which the Object store is deployed.
+	Region string `pulumi:"region"`
+	// - Enum for the state of the Object store.
+	//   | Enum                                   | Description                                                     |
+	//   |----------------------------------------|-----------------------------------------------------------------|
+	//   | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
+	//   | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
+	//   | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
+	//   | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
+	//   | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
+	//   | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
+	//   | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
+	//   | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
+	//   | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
+	//   | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+	State string `pulumi:"state"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	StorageNetworkDnsIps []GetObjectStoresV2ObjectStoreStorageNetworkDnsIp `pulumi:"storageNetworkDnsIps"`
+	// - Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
+	StorageNetworkReference string `pulumi:"storageNetworkReference"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	StorageNetworkVips []GetObjectStoresV2ObjectStoreStorageNetworkVip `pulumi:"storageNetworkVips"`
+	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId string `pulumi:"tenantId"`
+	// - Size of the Object store in GiB.
+	TotalCapacityGib int `pulumi:"totalCapacityGib"`
+}
+
+// GetObjectStoresV2ObjectStoreInput is an input type that accepts GetObjectStoresV2ObjectStoreArgs and GetObjectStoresV2ObjectStoreOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreInput` via:
+//
+//	GetObjectStoresV2ObjectStoreArgs{...}
+type GetObjectStoresV2ObjectStoreInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreOutput() GetObjectStoresV2ObjectStoreOutput
+	ToGetObjectStoresV2ObjectStoreOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreOutput
+}
+
+type GetObjectStoresV2ObjectStoreArgs struct {
+	// - A list of the UUIDs of the certificates of an Object store.
+	CertificateExtIds pulumi.StringArrayInput `pulumi:"certificateExtIds"`
+	// - UUID of the AHV or ESXi cluster.
+	ClusterExtId pulumi.StringInput `pulumi:"clusterExtId"`
+	// - The time when the Object store was created.
+	CreationTime pulumi.StringInput `pulumi:"creationTime"`
+	// - The deployment version of the Object store.
+	DeploymentVersion pulumi.StringInput `pulumi:"deploymentVersion"`
+	// - A brief description of the Object store.
+	Description pulumi.StringInput `pulumi:"description"`
+	// - The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// - A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// - The time when the Object store was last updated.
+	LastUpdateTime pulumi.StringInput `pulumi:"lastUpdateTime"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links GetObjectStoresV2ObjectStoreLinkArrayInput `pulumi:"links"`
+	// - Metadata associated with this resource.
+	Metadatas GetObjectStoresV2ObjectStoreMetadataArrayInput `pulumi:"metadatas"`
+	// - The name of the Object store.
+	Name pulumi.StringInput `pulumi:"name"`
+	// - The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
+	NumWorkerNodes pulumi.IntInput `pulumi:"numWorkerNodes"`
+	// - A list of static IP addresses used as public IPs to access the Object store.
+	PublicNetworkIps GetObjectStoresV2ObjectStorePublicNetworkIpArrayInput `pulumi:"publicNetworkIps"`
+	// - Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
+	PublicNetworkReference pulumi.StringInput `pulumi:"publicNetworkReference"`
+	// - The region in which the Object store is deployed.
+	Region pulumi.StringInput `pulumi:"region"`
+	// - Enum for the state of the Object store.
+	//   | Enum                                   | Description                                                     |
+	//   |----------------------------------------|-----------------------------------------------------------------|
+	//   | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
+	//   | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
+	//   | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
+	//   | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
+	//   | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
+	//   | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
+	//   | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
+	//   | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
+	//   | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
+	//   | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+	State pulumi.StringInput `pulumi:"state"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	StorageNetworkDnsIps GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput `pulumi:"storageNetworkDnsIps"`
+	// - Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
+	StorageNetworkReference pulumi.StringInput `pulumi:"storageNetworkReference"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	StorageNetworkVips GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput `pulumi:"storageNetworkVips"`
+	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// - Size of the Object store in GiB.
+	TotalCapacityGib pulumi.IntInput `pulumi:"totalCapacityGib"`
+}
+
+func (GetObjectStoresV2ObjectStoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStore)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreArgs) ToGetObjectStoresV2ObjectStoreOutput() GetObjectStoresV2ObjectStoreOutput {
+	return i.ToGetObjectStoresV2ObjectStoreOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreArgs) ToGetObjectStoresV2ObjectStoreOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreOutput)
+}
+
+// GetObjectStoresV2ObjectStoreArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreArray and GetObjectStoresV2ObjectStoreArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreArrayInput` via:
+//
+//	GetObjectStoresV2ObjectStoreArray{ GetObjectStoresV2ObjectStoreArgs{...} }
+type GetObjectStoresV2ObjectStoreArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreArrayOutput() GetObjectStoresV2ObjectStoreArrayOutput
+	ToGetObjectStoresV2ObjectStoreArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreArrayOutput
+}
+
+type GetObjectStoresV2ObjectStoreArray []GetObjectStoresV2ObjectStoreInput
+
+func (GetObjectStoresV2ObjectStoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStore)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreArray) ToGetObjectStoresV2ObjectStoreArrayOutput() GetObjectStoresV2ObjectStoreArrayOutput {
+	return i.ToGetObjectStoresV2ObjectStoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreArray) ToGetObjectStoresV2ObjectStoreArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreArrayOutput)
+}
+
+type GetObjectStoresV2ObjectStoreOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStore)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreOutput) ToGetObjectStoresV2ObjectStoreOutput() GetObjectStoresV2ObjectStoreOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreOutput) ToGetObjectStoresV2ObjectStoreOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreOutput {
+	return o
+}
+
+// - A list of the UUIDs of the certificates of an Object store.
+func (o GetObjectStoresV2ObjectStoreOutput) CertificateExtIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) []string { return v.CertificateExtIds }).(pulumi.StringArrayOutput)
+}
+
+// - UUID of the AHV or ESXi cluster.
+func (o GetObjectStoresV2ObjectStoreOutput) ClusterExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.ClusterExtId }).(pulumi.StringOutput)
+}
+
+// - The time when the Object store was created.
+func (o GetObjectStoresV2ObjectStoreOutput) CreationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.CreationTime }).(pulumi.StringOutput)
+}
+
+// - The deployment version of the Object store.
+func (o GetObjectStoresV2ObjectStoreOutput) DeploymentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.DeploymentVersion }).(pulumi.StringOutput)
+}
+
+// - A brief description of the Object store.
+func (o GetObjectStoresV2ObjectStoreOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// - The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
+func (o GetObjectStoresV2ObjectStoreOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// - A globally unique identifier of an instance that is suitable for external consumption.
+func (o GetObjectStoresV2ObjectStoreOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// - The time when the Object store was last updated.
+func (o GetObjectStoresV2ObjectStoreOutput) LastUpdateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.LastUpdateTime }).(pulumi.StringOutput)
+}
+
+// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+func (o GetObjectStoresV2ObjectStoreOutput) Links() GetObjectStoresV2ObjectStoreLinkArrayOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) []GetObjectStoresV2ObjectStoreLink { return v.Links }).(GetObjectStoresV2ObjectStoreLinkArrayOutput)
+}
+
+// - Metadata associated with this resource.
+func (o GetObjectStoresV2ObjectStoreOutput) Metadatas() GetObjectStoresV2ObjectStoreMetadataArrayOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) []GetObjectStoresV2ObjectStoreMetadata { return v.Metadatas }).(GetObjectStoresV2ObjectStoreMetadataArrayOutput)
+}
+
+// - The name of the Object store.
+func (o GetObjectStoresV2ObjectStoreOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// - The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
+func (o GetObjectStoresV2ObjectStoreOutput) NumWorkerNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) int { return v.NumWorkerNodes }).(pulumi.IntOutput)
+}
+
+// - A list of static IP addresses used as public IPs to access the Object store.
+func (o GetObjectStoresV2ObjectStoreOutput) PublicNetworkIps() GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) []GetObjectStoresV2ObjectStorePublicNetworkIp {
+		return v.PublicNetworkIps
+	}).(GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput)
+}
+
+// - Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
+func (o GetObjectStoresV2ObjectStoreOutput) PublicNetworkReference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.PublicNetworkReference }).(pulumi.StringOutput)
+}
+
+// - The region in which the Object store is deployed.
+func (o GetObjectStoresV2ObjectStoreOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.Region }).(pulumi.StringOutput)
+}
+
+//   - Enum for the state of the Object store.
+//     | Enum                                   | Description                                                     |
+//     |----------------------------------------|-----------------------------------------------------------------|
+//     | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
+//     | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
+//     | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
+//     | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
+//     | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
+//     | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
+//     | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
+//     | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
+//     | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
+//     | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+func (o GetObjectStoresV2ObjectStoreOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.State }).(pulumi.StringOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+func (o GetObjectStoresV2ObjectStoreOutput) StorageNetworkDnsIps() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) []GetObjectStoresV2ObjectStoreStorageNetworkDnsIp {
+		return v.StorageNetworkDnsIps
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput)
+}
+
+// - Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
+func (o GetObjectStoresV2ObjectStoreOutput) StorageNetworkReference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.StorageNetworkReference }).(pulumi.StringOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+func (o GetObjectStoresV2ObjectStoreOutput) StorageNetworkVips() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) []GetObjectStoresV2ObjectStoreStorageNetworkVip {
+		return v.StorageNetworkVips
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput)
+}
+
+// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+func (o GetObjectStoresV2ObjectStoreOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// - Size of the Object store in GiB.
+func (o GetObjectStoresV2ObjectStoreOutput) TotalCapacityGib() pulumi.IntOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStore) int { return v.TotalCapacityGib }).(pulumi.IntOutput)
+}
+
+type GetObjectStoresV2ObjectStoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStore)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreArrayOutput) ToGetObjectStoresV2ObjectStoreArrayOutput() GetObjectStoresV2ObjectStoreArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreArrayOutput) ToGetObjectStoresV2ObjectStoreArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStore {
+		return vs[0].([]GetObjectStoresV2ObjectStore)[vs[1].(int)]
+	}).(GetObjectStoresV2ObjectStoreOutput)
+}
+
+type GetObjectStoresV2ObjectStoreLink struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetObjectStoresV2ObjectStoreLinkInput is an input type that accepts GetObjectStoresV2ObjectStoreLinkArgs and GetObjectStoresV2ObjectStoreLinkOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreLinkInput` via:
+//
+//	GetObjectStoresV2ObjectStoreLinkArgs{...}
+type GetObjectStoresV2ObjectStoreLinkInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreLinkOutput() GetObjectStoresV2ObjectStoreLinkOutput
+	ToGetObjectStoresV2ObjectStoreLinkOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreLinkOutput
+}
+
+type GetObjectStoresV2ObjectStoreLinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetObjectStoresV2ObjectStoreLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreLink)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreLinkArgs) ToGetObjectStoresV2ObjectStoreLinkOutput() GetObjectStoresV2ObjectStoreLinkOutput {
+	return i.ToGetObjectStoresV2ObjectStoreLinkOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreLinkArgs) ToGetObjectStoresV2ObjectStoreLinkOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreLinkOutput)
+}
+
+// GetObjectStoresV2ObjectStoreLinkArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreLinkArray and GetObjectStoresV2ObjectStoreLinkArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreLinkArrayInput` via:
+//
+//	GetObjectStoresV2ObjectStoreLinkArray{ GetObjectStoresV2ObjectStoreLinkArgs{...} }
+type GetObjectStoresV2ObjectStoreLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreLinkArrayOutput() GetObjectStoresV2ObjectStoreLinkArrayOutput
+	ToGetObjectStoresV2ObjectStoreLinkArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreLinkArrayOutput
+}
+
+type GetObjectStoresV2ObjectStoreLinkArray []GetObjectStoresV2ObjectStoreLinkInput
+
+func (GetObjectStoresV2ObjectStoreLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreLink)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreLinkArray) ToGetObjectStoresV2ObjectStoreLinkArrayOutput() GetObjectStoresV2ObjectStoreLinkArrayOutput {
+	return i.ToGetObjectStoresV2ObjectStoreLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreLinkArray) ToGetObjectStoresV2ObjectStoreLinkArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreLinkArrayOutput)
+}
+
+type GetObjectStoresV2ObjectStoreLinkOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreLink)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreLinkOutput) ToGetObjectStoresV2ObjectStoreLinkOutput() GetObjectStoresV2ObjectStoreLinkOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreLinkOutput) ToGetObjectStoresV2ObjectStoreLinkOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreLinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o GetObjectStoresV2ObjectStoreLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetObjectStoresV2ObjectStoreLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreLink)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreLinkArrayOutput) ToGetObjectStoresV2ObjectStoreLinkArrayOutput() GetObjectStoresV2ObjectStoreLinkArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreLinkArrayOutput) ToGetObjectStoresV2ObjectStoreLinkArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreLinkArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreLinkArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStoreLink {
+		return vs[0].([]GetObjectStoresV2ObjectStoreLink)[vs[1].(int)]
+	}).(GetObjectStoresV2ObjectStoreLinkOutput)
+}
+
+type GetObjectStoresV2ObjectStoreMetadata struct {
+	// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds []string `pulumi:"categoryIds"`
+	// - A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId string `pulumi:"ownerReferenceId"`
+	// - The userName of the owner of this resource.
+	OwnerUserName string `pulumi:"ownerUserName"`
+	// - The name of the project this resource belongs to.
+	ProjectName string `pulumi:"projectName"`
+	// - A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId string `pulumi:"projectReferenceId"`
+}
+
+// GetObjectStoresV2ObjectStoreMetadataInput is an input type that accepts GetObjectStoresV2ObjectStoreMetadataArgs and GetObjectStoresV2ObjectStoreMetadataOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreMetadataInput` via:
+//
+//	GetObjectStoresV2ObjectStoreMetadataArgs{...}
+type GetObjectStoresV2ObjectStoreMetadataInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreMetadataOutput() GetObjectStoresV2ObjectStoreMetadataOutput
+	ToGetObjectStoresV2ObjectStoreMetadataOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreMetadataOutput
+}
+
+type GetObjectStoresV2ObjectStoreMetadataArgs struct {
+	// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds pulumi.StringArrayInput `pulumi:"categoryIds"`
+	// - A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId pulumi.StringInput `pulumi:"ownerReferenceId"`
+	// - The userName of the owner of this resource.
+	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	// - The name of the project this resource belongs to.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// - A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId pulumi.StringInput `pulumi:"projectReferenceId"`
+}
+
+func (GetObjectStoresV2ObjectStoreMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreMetadata)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreMetadataArgs) ToGetObjectStoresV2ObjectStoreMetadataOutput() GetObjectStoresV2ObjectStoreMetadataOutput {
+	return i.ToGetObjectStoresV2ObjectStoreMetadataOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreMetadataArgs) ToGetObjectStoresV2ObjectStoreMetadataOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreMetadataOutput)
+}
+
+// GetObjectStoresV2ObjectStoreMetadataArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreMetadataArray and GetObjectStoresV2ObjectStoreMetadataArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreMetadataArrayInput` via:
+//
+//	GetObjectStoresV2ObjectStoreMetadataArray{ GetObjectStoresV2ObjectStoreMetadataArgs{...} }
+type GetObjectStoresV2ObjectStoreMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreMetadataArrayOutput() GetObjectStoresV2ObjectStoreMetadataArrayOutput
+	ToGetObjectStoresV2ObjectStoreMetadataArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreMetadataArrayOutput
+}
+
+type GetObjectStoresV2ObjectStoreMetadataArray []GetObjectStoresV2ObjectStoreMetadataInput
+
+func (GetObjectStoresV2ObjectStoreMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreMetadata)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreMetadataArray) ToGetObjectStoresV2ObjectStoreMetadataArrayOutput() GetObjectStoresV2ObjectStoreMetadataArrayOutput {
+	return i.ToGetObjectStoresV2ObjectStoreMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreMetadataArray) ToGetObjectStoresV2ObjectStoreMetadataArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreMetadataArrayOutput)
+}
+
+type GetObjectStoresV2ObjectStoreMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreMetadata)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreMetadataOutput) ToGetObjectStoresV2ObjectStoreMetadataOutput() GetObjectStoresV2ObjectStoreMetadataOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreMetadataOutput) ToGetObjectStoresV2ObjectStoreMetadataOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreMetadataOutput {
+	return o
+}
+
+// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+func (o GetObjectStoresV2ObjectStoreMetadataOutput) CategoryIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreMetadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
+}
+
+// - A globally unique identifier that represents the owner of this resource.
+func (o GetObjectStoresV2ObjectStoreMetadataOutput) OwnerReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreMetadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
+}
+
+// - The userName of the owner of this resource.
+func (o GetObjectStoresV2ObjectStoreMetadataOutput) OwnerUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreMetadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+// - The name of the project this resource belongs to.
+func (o GetObjectStoresV2ObjectStoreMetadataOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreMetadata) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// - A globally unique identifier that represents the project this resource belongs to.
+func (o GetObjectStoresV2ObjectStoreMetadataOutput) ProjectReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreMetadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreMetadata)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreMetadataArrayOutput) ToGetObjectStoresV2ObjectStoreMetadataArrayOutput() GetObjectStoresV2ObjectStoreMetadataArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreMetadataArrayOutput) ToGetObjectStoresV2ObjectStoreMetadataArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreMetadataArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreMetadataArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStoreMetadata {
+		return vs[0].([]GetObjectStoresV2ObjectStoreMetadata)[vs[1].(int)]
+	}).(GetObjectStoresV2ObjectStoreMetadataOutput)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStorePublicNetworkIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStorePublicNetworkIpIpv6 `pulumi:"ipv6"`
+}
+
+// GetObjectStoresV2ObjectStorePublicNetworkIpInput is an input type that accepts GetObjectStoresV2ObjectStorePublicNetworkIpArgs and GetObjectStoresV2ObjectStorePublicNetworkIpOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStorePublicNetworkIpInput` via:
+//
+//	GetObjectStoresV2ObjectStorePublicNetworkIpArgs{...}
+type GetObjectStoresV2ObjectStorePublicNetworkIpInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpOutput() GetObjectStoresV2ObjectStorePublicNetworkIpOutput
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpOutputWithContext(context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpOutput
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIp)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpArgs) ToGetObjectStoresV2ObjectStorePublicNetworkIpOutput() GetObjectStoresV2ObjectStorePublicNetworkIpOutput {
+	return i.ToGetObjectStoresV2ObjectStorePublicNetworkIpOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpArgs) ToGetObjectStoresV2ObjectStorePublicNetworkIpOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStorePublicNetworkIpOutput)
+}
+
+// GetObjectStoresV2ObjectStorePublicNetworkIpArrayInput is an input type that accepts GetObjectStoresV2ObjectStorePublicNetworkIpArray and GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStorePublicNetworkIpArrayInput` via:
+//
+//	GetObjectStoresV2ObjectStorePublicNetworkIpArray{ GetObjectStoresV2ObjectStorePublicNetworkIpArgs{...} }
+type GetObjectStoresV2ObjectStorePublicNetworkIpArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput() GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpArray []GetObjectStoresV2ObjectStorePublicNetworkIpInput
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStorePublicNetworkIp)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpArray) ToGetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput() GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput {
+	return i.ToGetObjectStoresV2ObjectStorePublicNetworkIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpArray) ToGetObjectStoresV2ObjectStorePublicNetworkIpArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIp)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpOutput) ToGetObjectStoresV2ObjectStorePublicNetworkIpOutput() GetObjectStoresV2ObjectStorePublicNetworkIpOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpOutput) ToGetObjectStoresV2ObjectStorePublicNetworkIpOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpOutput) Ipv4() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIp) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4 {
+		return v.Ipv4
+	}).(GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpOutput) Ipv6() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIp) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6 {
+		return v.Ipv6
+	}).(GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStorePublicNetworkIp)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput) ToGetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput() GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput) ToGetObjectStoresV2ObjectStorePublicNetworkIpArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStorePublicNetworkIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStorePublicNetworkIp {
+		return vs[0].([]GetObjectStoresV2ObjectStorePublicNetworkIp)[vs[1].(int)]
+	}).(GetObjectStoresV2ObjectStorePublicNetworkIpOutput)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input is an input type that accepts GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args and GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input` via:
+//
+//	GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args{...}
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return i.ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input is an input type that accepts GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args and GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input` via:
+//
+//	GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args{...}
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return i.ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 `pulumi:"ipv6"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput)
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray{ GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{...} }
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray []GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) Ipv4() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIp) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 {
+		return v.Ipv4
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) Ipv6() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIp) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 {
+		return v.Ipv6
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStoreStorageNetworkDnsIp {
+		return vs[0].([]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)[vs[1].(int)]
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVip struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 `pulumi:"ipv6"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkVipInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipArgs and GetObjectStoresV2ObjectStoreStorageNetworkVipOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipInput` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkVipInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput)
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipArray and GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkVipArray{ GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{...} }
+type GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipArray []GetObjectStoresV2ObjectStoreStorageNetworkVipInput
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) Ipv4() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVip) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 {
+		return v.Ipv4
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) Ipv6() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVip) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 {
+		return v.Ipv6
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStoreStorageNetworkVip {
+		return vs[0].([]GetObjectStoresV2ObjectStoreStorageNetworkVip)[vs[1].(int)]
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args and GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args and GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
 
 type GetOperationV2AssociatedEndpointList struct {
@@ -48950,6571 +55895,77 @@ func (o GetPcsV2PcNetworkExternalAddressIpv6ArrayOutput) Index(i pulumi.IntInput
 	}).(GetPcsV2PcNetworkExternalAddressIpv6Output)
 }
 
-type GetPcsV2PcNetworkExternalNetwork struct {
-	DefaultGateways []GetPcsV2PcNetworkExternalNetworkDefaultGateway `pulumi:"defaultGateways"`
-	IpRanges        []GetPcsV2PcNetworkExternalNetworkIpRange        `pulumi:"ipRanges"`
-	NetworkExtId    string                                           `pulumi:"networkExtId"`
-	SubnetMasks     []GetPcsV2PcNetworkExternalNetworkSubnetMask     `pulumi:"subnetMasks"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkArgs and GetPcsV2PcNetworkExternalNetworkOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkArgs{...}
-type GetPcsV2PcNetworkExternalNetworkInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkOutput() GetPcsV2PcNetworkExternalNetworkOutput
-	ToGetPcsV2PcNetworkExternalNetworkOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkArgs struct {
-	DefaultGateways GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayInput `pulumi:"defaultGateways"`
-	IpRanges        GetPcsV2PcNetworkExternalNetworkIpRangeArrayInput        `pulumi:"ipRanges"`
-	NetworkExtId    pulumi.StringInput                                       `pulumi:"networkExtId"`
-	SubnetMasks     GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayInput     `pulumi:"subnetMasks"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetwork)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkArgs) ToGetPcsV2PcNetworkExternalNetworkOutput() GetPcsV2PcNetworkExternalNetworkOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkArgs) ToGetPcsV2PcNetworkExternalNetworkOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkOutput)
-}
-
-// GetPcsV2PcNetworkExternalNetworkArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkArray and GetPcsV2PcNetworkExternalNetworkArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkArray{ GetPcsV2PcNetworkExternalNetworkArgs{...} }
-type GetPcsV2PcNetworkExternalNetworkArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkArrayOutput() GetPcsV2PcNetworkExternalNetworkArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkArray []GetPcsV2PcNetworkExternalNetworkInput
-
-func (GetPcsV2PcNetworkExternalNetworkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetwork)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkArray) ToGetPcsV2PcNetworkExternalNetworkArrayOutput() GetPcsV2PcNetworkExternalNetworkArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkArray) ToGetPcsV2PcNetworkExternalNetworkArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetwork)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkOutput) ToGetPcsV2PcNetworkExternalNetworkOutput() GetPcsV2PcNetworkExternalNetworkOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkOutput) ToGetPcsV2PcNetworkExternalNetworkOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkOutput) DefaultGateways() GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetwork) []GetPcsV2PcNetworkExternalNetworkDefaultGateway {
-		return v.DefaultGateways
-	}).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkOutput) IpRanges() GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetwork) []GetPcsV2PcNetworkExternalNetworkIpRange { return v.IpRanges }).(GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkOutput) NetworkExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetwork) string { return v.NetworkExtId }).(pulumi.StringOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkOutput) SubnetMasks() GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetwork) []GetPcsV2PcNetworkExternalNetworkSubnetMask {
-		return v.SubnetMasks
-	}).(GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetwork)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkArrayOutput) ToGetPcsV2PcNetworkExternalNetworkArrayOutput() GetPcsV2PcNetworkExternalNetworkArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkArrayOutput) ToGetPcsV2PcNetworkExternalNetworkArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetwork {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetwork)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGateway struct {
-	Fqdns []GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn `pulumi:"fqdns"`
-	Ipv4s []GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkDefaultGatewayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkDefaultGatewayArgs and GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkDefaultGatewayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkDefaultGatewayArgs{...}
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayArgs struct {
-	Fqdns GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayInput `pulumi:"fqdns"`
-	Ipv4s GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGateway)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayArgs) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayArgs) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput)
-}
-
-// GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkDefaultGatewayArray and GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkDefaultGatewayArray{ GetPcsV2PcNetworkExternalNetworkDefaultGatewayArgs{...} }
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayArray []GetPcsV2PcNetworkExternalNetworkDefaultGatewayInput
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkDefaultGateway)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayArray) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayArray) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGateway)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput) Fqdns() GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkDefaultGateway) []GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn {
-		return v.Fqdns
-	}).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput) Ipv4s() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkDefaultGateway) []GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4 {
-		return v.Ipv4s
-	}).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput) Ipv6s() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkDefaultGateway) []GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6 {
-		return v.Ipv6s
-	}).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkDefaultGateway)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkDefaultGateway {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkDefaultGateway)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn struct {
-	Value string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArgs and GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArgs{...}
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArgs) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArgs) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput)
-}
-
-// GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArray and GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArray{ GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArgs{...} }
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArray []GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnInput
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArray) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArray) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdn)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Input is an input type that accepts GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Args and GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Input` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Args{...}
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4OutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Args) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return i.ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Args) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output)
-}
-
-// GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Array and GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Array{ GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Args{...} }
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Array []GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Input
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Array) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Array) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4 {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Input is an input type that accepts GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Args and GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Input` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Args{...}
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6OutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Args) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return i.ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Args) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output)
-}
-
-// GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Array and GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Array{ GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Args{...} }
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Array []GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Input
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Array) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Array) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6 {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRange struct {
-	Begins []GetPcsV2PcNetworkExternalNetworkIpRangeBegin `pulumi:"begins"`
-	Ends   []GetPcsV2PcNetworkExternalNetworkIpRangeEnd   `pulumi:"ends"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeArgs and GetPcsV2PcNetworkExternalNetworkIpRangeOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeArgs{...}
-type GetPcsV2PcNetworkExternalNetworkIpRangeInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeOutput() GetPcsV2PcNetworkExternalNetworkIpRangeOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeArgs struct {
-	Begins GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayInput `pulumi:"begins"`
-	Ends   GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayInput   `pulumi:"ends"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRange)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeArgs) ToGetPcsV2PcNetworkExternalNetworkIpRangeOutput() GetPcsV2PcNetworkExternalNetworkIpRangeOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeArgs) ToGetPcsV2PcNetworkExternalNetworkIpRangeOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeOutput)
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeArray and GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeArray{ GetPcsV2PcNetworkExternalNetworkIpRangeArgs{...} }
-type GetPcsV2PcNetworkExternalNetworkIpRangeArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeArray []GetPcsV2PcNetworkExternalNetworkIpRangeInput
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRange)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeArray) ToGetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeArray) ToGetPcsV2PcNetworkExternalNetworkIpRangeArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRange)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeOutput() GetPcsV2PcNetworkExternalNetworkIpRangeOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeOutput) Begins() GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRange) []GetPcsV2PcNetworkExternalNetworkIpRangeBegin {
-		return v.Begins
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeOutput) Ends() GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRange) []GetPcsV2PcNetworkExternalNetworkIpRangeEnd {
-		return v.Ends
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRange)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkIpRangeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkIpRange {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkIpRange)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBegin struct {
-	Ipv4s []GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeBeginInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeBeginArgs and GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeBeginInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeBeginArgs{...}
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginArgs struct {
-	Ipv4s GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBegin)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginArgs) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginArgs) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput)
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeBeginArray and GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeBeginArray{ GetPcsV2PcNetworkExternalNetworkIpRangeBeginArgs{...} }
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginArray []GetPcsV2PcNetworkExternalNetworkIpRangeBeginInput
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeBegin)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginArray) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginArray) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBegin)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput) Ipv4s() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeBegin) []GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4 {
-		return v.Ipv4s
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput) Ipv6s() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeBegin) []GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6 {
-		return v.Ipv6s
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeBegin)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkIpRangeBegin {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkIpRangeBegin)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Input is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Args and GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Input` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Args{...}
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4OutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Args) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Args) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output)
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Array and GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Array{ GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Args{...} }
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Array []GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Input
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Array) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Array) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4 {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Input is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Args and GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Input` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Args{...}
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6OutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Args) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Args) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output)
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Array and GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Array{ GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Args{...} }
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Array []GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Input
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Array) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Array) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6 {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEnd struct {
-	Ipv4s []GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeEndInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeEndArgs and GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeEndInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeEndArgs{...}
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndArgs struct {
-	Ipv4s GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEnd)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndArgs) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeEndOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndArgs) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput)
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeEndArray and GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeEndArray{ GetPcsV2PcNetworkExternalNetworkIpRangeEndArgs{...} }
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndArray []GetPcsV2PcNetworkExternalNetworkIpRangeEndInput
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeEnd)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndArray) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndArray) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEnd)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput) Ipv4s() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeEnd) []GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4 {
-		return v.Ipv4s
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput) Ipv6s() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeEnd) []GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6 {
-		return v.Ipv6s
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeEnd)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkIpRangeEnd {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkIpRangeEnd)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Input is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Args and GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Input` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Args{...}
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4OutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Args) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Args) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output)
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Array and GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Array{ GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Args{...} }
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Array []GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Input
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Array) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Array) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4 {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Input is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Args and GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Input` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Args{...}
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6OutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Args) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Args) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output)
-}
-
-// GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Array and GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Array{ GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Args{...} }
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Array []GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Input
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Array) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Array) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6 {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMask struct {
-	Fqdns []GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn `pulumi:"fqdns"`
-	Ipv4s []GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkSubnetMaskInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkSubnetMaskArgs and GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkSubnetMaskInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkSubnetMaskArgs{...}
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskArgs struct {
-	Fqdns GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayInput `pulumi:"fqdns"`
-	Ipv4s GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMask)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskArgs) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkSubnetMaskOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskArgs) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput)
-}
-
-// GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkSubnetMaskArray and GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkSubnetMaskArray{ GetPcsV2PcNetworkExternalNetworkSubnetMaskArgs{...} }
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskArray []GetPcsV2PcNetworkExternalNetworkSubnetMaskInput
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkSubnetMask)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskArray) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskArray) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMask)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput) Fqdns() GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkSubnetMask) []GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn {
-		return v.Fqdns
-	}).(GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput) Ipv4s() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkSubnetMask) []GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4 {
-		return v.Ipv4s
-	}).(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput) Ipv6s() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkSubnetMask) []GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6 {
-		return v.Ipv6s
-	}).(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkSubnetMask)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkSubnetMask {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkSubnetMask)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn struct {
-	Value string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArgs and GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArgs{...}
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArgs) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArgs) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput)
-}
-
-// GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArray and GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArray{ GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArgs{...} }
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArray []GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnInput
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArray) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArray) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdn)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Input is an input type that accepts GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Args and GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Input` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Args{...}
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4OutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Args) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output {
-	return i.ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Args) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output)
-}
-
-// GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Array and GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Array{ GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Args{...} }
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Array []GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Input
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Array) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Array) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4 {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Input is an input type that accepts GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Args and GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Input` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Args{...}
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6OutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Args) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output {
-	return i.ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Args) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output)
-}
-
-// GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayInput is an input type that accepts GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Array and GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayInput` via:
-//
-//	GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Array{ GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Args{...} }
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput
-	ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Array []GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Input
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Array) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return i.ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Array) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput() GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput) ToGetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6 {
-		return vs[0].([]GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output)
-}
-
-type GetPcsV2PcNetworkNameServer struct {
-	Fqdns []GetPcsV2PcNetworkNameServerFqdn `pulumi:"fqdns"`
-	Ipv4s []GetPcsV2PcNetworkNameServerIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcsV2PcNetworkNameServerIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcsV2PcNetworkNameServerInput is an input type that accepts GetPcsV2PcNetworkNameServerArgs and GetPcsV2PcNetworkNameServerOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNameServerInput` via:
-//
-//	GetPcsV2PcNetworkNameServerArgs{...}
-type GetPcsV2PcNetworkNameServerInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNameServerOutput() GetPcsV2PcNetworkNameServerOutput
-	ToGetPcsV2PcNetworkNameServerOutputWithContext(context.Context) GetPcsV2PcNetworkNameServerOutput
-}
-
-type GetPcsV2PcNetworkNameServerArgs struct {
-	Fqdns GetPcsV2PcNetworkNameServerFqdnArrayInput `pulumi:"fqdns"`
-	Ipv4s GetPcsV2PcNetworkNameServerIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcsV2PcNetworkNameServerIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcsV2PcNetworkNameServerArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNameServer)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNameServerArgs) ToGetPcsV2PcNetworkNameServerOutput() GetPcsV2PcNetworkNameServerOutput {
-	return i.ToGetPcsV2PcNetworkNameServerOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNameServerArgs) ToGetPcsV2PcNetworkNameServerOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNameServerOutput)
-}
-
-// GetPcsV2PcNetworkNameServerArrayInput is an input type that accepts GetPcsV2PcNetworkNameServerArray and GetPcsV2PcNetworkNameServerArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNameServerArrayInput` via:
-//
-//	GetPcsV2PcNetworkNameServerArray{ GetPcsV2PcNetworkNameServerArgs{...} }
-type GetPcsV2PcNetworkNameServerArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNameServerArrayOutput() GetPcsV2PcNetworkNameServerArrayOutput
-	ToGetPcsV2PcNetworkNameServerArrayOutputWithContext(context.Context) GetPcsV2PcNetworkNameServerArrayOutput
-}
-
-type GetPcsV2PcNetworkNameServerArray []GetPcsV2PcNetworkNameServerInput
-
-func (GetPcsV2PcNetworkNameServerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNameServer)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNameServerArray) ToGetPcsV2PcNetworkNameServerArrayOutput() GetPcsV2PcNetworkNameServerArrayOutput {
-	return i.ToGetPcsV2PcNetworkNameServerArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNameServerArray) ToGetPcsV2PcNetworkNameServerArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNameServerArrayOutput)
-}
-
-type GetPcsV2PcNetworkNameServerOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNameServerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNameServer)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNameServerOutput) ToGetPcsV2PcNetworkNameServerOutput() GetPcsV2PcNetworkNameServerOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerOutput) ToGetPcsV2PcNetworkNameServerOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerOutput) Fqdns() GetPcsV2PcNetworkNameServerFqdnArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNameServer) []GetPcsV2PcNetworkNameServerFqdn { return v.Fqdns }).(GetPcsV2PcNetworkNameServerFqdnArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkNameServerOutput) Ipv4s() GetPcsV2PcNetworkNameServerIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNameServer) []GetPcsV2PcNetworkNameServerIpv4 { return v.Ipv4s }).(GetPcsV2PcNetworkNameServerIpv4ArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkNameServerOutput) Ipv6s() GetPcsV2PcNetworkNameServerIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNameServer) []GetPcsV2PcNetworkNameServerIpv6 { return v.Ipv6s }).(GetPcsV2PcNetworkNameServerIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkNameServerArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNameServerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNameServer)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNameServerArrayOutput) ToGetPcsV2PcNetworkNameServerArrayOutput() GetPcsV2PcNetworkNameServerArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerArrayOutput) ToGetPcsV2PcNetworkNameServerArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkNameServerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkNameServer {
-		return vs[0].([]GetPcsV2PcNetworkNameServer)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkNameServerOutput)
-}
-
-type GetPcsV2PcNetworkNameServerFqdn struct {
-	Value string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkNameServerFqdnInput is an input type that accepts GetPcsV2PcNetworkNameServerFqdnArgs and GetPcsV2PcNetworkNameServerFqdnOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNameServerFqdnInput` via:
-//
-//	GetPcsV2PcNetworkNameServerFqdnArgs{...}
-type GetPcsV2PcNetworkNameServerFqdnInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNameServerFqdnOutput() GetPcsV2PcNetworkNameServerFqdnOutput
-	ToGetPcsV2PcNetworkNameServerFqdnOutputWithContext(context.Context) GetPcsV2PcNetworkNameServerFqdnOutput
-}
-
-type GetPcsV2PcNetworkNameServerFqdnArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkNameServerFqdnArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNameServerFqdn)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNameServerFqdnArgs) ToGetPcsV2PcNetworkNameServerFqdnOutput() GetPcsV2PcNetworkNameServerFqdnOutput {
-	return i.ToGetPcsV2PcNetworkNameServerFqdnOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNameServerFqdnArgs) ToGetPcsV2PcNetworkNameServerFqdnOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerFqdnOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNameServerFqdnOutput)
-}
-
-// GetPcsV2PcNetworkNameServerFqdnArrayInput is an input type that accepts GetPcsV2PcNetworkNameServerFqdnArray and GetPcsV2PcNetworkNameServerFqdnArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNameServerFqdnArrayInput` via:
-//
-//	GetPcsV2PcNetworkNameServerFqdnArray{ GetPcsV2PcNetworkNameServerFqdnArgs{...} }
-type GetPcsV2PcNetworkNameServerFqdnArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNameServerFqdnArrayOutput() GetPcsV2PcNetworkNameServerFqdnArrayOutput
-	ToGetPcsV2PcNetworkNameServerFqdnArrayOutputWithContext(context.Context) GetPcsV2PcNetworkNameServerFqdnArrayOutput
-}
-
-type GetPcsV2PcNetworkNameServerFqdnArray []GetPcsV2PcNetworkNameServerFqdnInput
-
-func (GetPcsV2PcNetworkNameServerFqdnArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNameServerFqdn)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNameServerFqdnArray) ToGetPcsV2PcNetworkNameServerFqdnArrayOutput() GetPcsV2PcNetworkNameServerFqdnArrayOutput {
-	return i.ToGetPcsV2PcNetworkNameServerFqdnArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNameServerFqdnArray) ToGetPcsV2PcNetworkNameServerFqdnArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerFqdnArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNameServerFqdnArrayOutput)
-}
-
-type GetPcsV2PcNetworkNameServerFqdnOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNameServerFqdnOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNameServerFqdn)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNameServerFqdnOutput) ToGetPcsV2PcNetworkNameServerFqdnOutput() GetPcsV2PcNetworkNameServerFqdnOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerFqdnOutput) ToGetPcsV2PcNetworkNameServerFqdnOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerFqdnOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerFqdnOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNameServerFqdn) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkNameServerFqdnArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNameServerFqdnArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNameServerFqdn)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNameServerFqdnArrayOutput) ToGetPcsV2PcNetworkNameServerFqdnArrayOutput() GetPcsV2PcNetworkNameServerFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerFqdnArrayOutput) ToGetPcsV2PcNetworkNameServerFqdnArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerFqdnArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkNameServerFqdnOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkNameServerFqdn {
-		return vs[0].([]GetPcsV2PcNetworkNameServerFqdn)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkNameServerFqdnOutput)
-}
-
-type GetPcsV2PcNetworkNameServerIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkNameServerIpv4Input is an input type that accepts GetPcsV2PcNetworkNameServerIpv4Args and GetPcsV2PcNetworkNameServerIpv4Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNameServerIpv4Input` via:
-//
-//	GetPcsV2PcNetworkNameServerIpv4Args{...}
-type GetPcsV2PcNetworkNameServerIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNameServerIpv4Output() GetPcsV2PcNetworkNameServerIpv4Output
-	ToGetPcsV2PcNetworkNameServerIpv4OutputWithContext(context.Context) GetPcsV2PcNetworkNameServerIpv4Output
-}
-
-type GetPcsV2PcNetworkNameServerIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkNameServerIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNameServerIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNameServerIpv4Args) ToGetPcsV2PcNetworkNameServerIpv4Output() GetPcsV2PcNetworkNameServerIpv4Output {
-	return i.ToGetPcsV2PcNetworkNameServerIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNameServerIpv4Args) ToGetPcsV2PcNetworkNameServerIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNameServerIpv4Output)
-}
-
-// GetPcsV2PcNetworkNameServerIpv4ArrayInput is an input type that accepts GetPcsV2PcNetworkNameServerIpv4Array and GetPcsV2PcNetworkNameServerIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNameServerIpv4ArrayInput` via:
-//
-//	GetPcsV2PcNetworkNameServerIpv4Array{ GetPcsV2PcNetworkNameServerIpv4Args{...} }
-type GetPcsV2PcNetworkNameServerIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNameServerIpv4ArrayOutput() GetPcsV2PcNetworkNameServerIpv4ArrayOutput
-	ToGetPcsV2PcNetworkNameServerIpv4ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkNameServerIpv4ArrayOutput
-}
-
-type GetPcsV2PcNetworkNameServerIpv4Array []GetPcsV2PcNetworkNameServerIpv4Input
-
-func (GetPcsV2PcNetworkNameServerIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNameServerIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNameServerIpv4Array) ToGetPcsV2PcNetworkNameServerIpv4ArrayOutput() GetPcsV2PcNetworkNameServerIpv4ArrayOutput {
-	return i.ToGetPcsV2PcNetworkNameServerIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNameServerIpv4Array) ToGetPcsV2PcNetworkNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNameServerIpv4ArrayOutput)
-}
-
-type GetPcsV2PcNetworkNameServerIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNameServerIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNameServerIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv4Output) ToGetPcsV2PcNetworkNameServerIpv4Output() GetPcsV2PcNetworkNameServerIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv4Output) ToGetPcsV2PcNetworkNameServerIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNameServerIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNameServerIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkNameServerIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNameServerIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNameServerIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv4ArrayOutput) ToGetPcsV2PcNetworkNameServerIpv4ArrayOutput() GetPcsV2PcNetworkNameServerIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv4ArrayOutput) ToGetPcsV2PcNetworkNameServerIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkNameServerIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkNameServerIpv4 {
-		return vs[0].([]GetPcsV2PcNetworkNameServerIpv4)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkNameServerIpv4Output)
-}
-
-type GetPcsV2PcNetworkNameServerIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkNameServerIpv6Input is an input type that accepts GetPcsV2PcNetworkNameServerIpv6Args and GetPcsV2PcNetworkNameServerIpv6Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNameServerIpv6Input` via:
-//
-//	GetPcsV2PcNetworkNameServerIpv6Args{...}
-type GetPcsV2PcNetworkNameServerIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNameServerIpv6Output() GetPcsV2PcNetworkNameServerIpv6Output
-	ToGetPcsV2PcNetworkNameServerIpv6OutputWithContext(context.Context) GetPcsV2PcNetworkNameServerIpv6Output
-}
-
-type GetPcsV2PcNetworkNameServerIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkNameServerIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNameServerIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNameServerIpv6Args) ToGetPcsV2PcNetworkNameServerIpv6Output() GetPcsV2PcNetworkNameServerIpv6Output {
-	return i.ToGetPcsV2PcNetworkNameServerIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNameServerIpv6Args) ToGetPcsV2PcNetworkNameServerIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNameServerIpv6Output)
-}
-
-// GetPcsV2PcNetworkNameServerIpv6ArrayInput is an input type that accepts GetPcsV2PcNetworkNameServerIpv6Array and GetPcsV2PcNetworkNameServerIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNameServerIpv6ArrayInput` via:
-//
-//	GetPcsV2PcNetworkNameServerIpv6Array{ GetPcsV2PcNetworkNameServerIpv6Args{...} }
-type GetPcsV2PcNetworkNameServerIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNameServerIpv6ArrayOutput() GetPcsV2PcNetworkNameServerIpv6ArrayOutput
-	ToGetPcsV2PcNetworkNameServerIpv6ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkNameServerIpv6ArrayOutput
-}
-
-type GetPcsV2PcNetworkNameServerIpv6Array []GetPcsV2PcNetworkNameServerIpv6Input
-
-func (GetPcsV2PcNetworkNameServerIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNameServerIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNameServerIpv6Array) ToGetPcsV2PcNetworkNameServerIpv6ArrayOutput() GetPcsV2PcNetworkNameServerIpv6ArrayOutput {
-	return i.ToGetPcsV2PcNetworkNameServerIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNameServerIpv6Array) ToGetPcsV2PcNetworkNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNameServerIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkNameServerIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNameServerIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNameServerIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv6Output) ToGetPcsV2PcNetworkNameServerIpv6Output() GetPcsV2PcNetworkNameServerIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv6Output) ToGetPcsV2PcNetworkNameServerIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNameServerIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNameServerIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkNameServerIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNameServerIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNameServerIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv6ArrayOutput) ToGetPcsV2PcNetworkNameServerIpv6ArrayOutput() GetPcsV2PcNetworkNameServerIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv6ArrayOutput) ToGetPcsV2PcNetworkNameServerIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNameServerIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNameServerIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkNameServerIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkNameServerIpv6 {
-		return vs[0].([]GetPcsV2PcNetworkNameServerIpv6)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkNameServerIpv6Output)
-}
-
-type GetPcsV2PcNetworkNtpServer struct {
-	Fqdns []GetPcsV2PcNetworkNtpServerFqdn `pulumi:"fqdns"`
-	Ipv4s []GetPcsV2PcNetworkNtpServerIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcsV2PcNetworkNtpServerIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcsV2PcNetworkNtpServerInput is an input type that accepts GetPcsV2PcNetworkNtpServerArgs and GetPcsV2PcNetworkNtpServerOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNtpServerInput` via:
-//
-//	GetPcsV2PcNetworkNtpServerArgs{...}
-type GetPcsV2PcNetworkNtpServerInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNtpServerOutput() GetPcsV2PcNetworkNtpServerOutput
-	ToGetPcsV2PcNetworkNtpServerOutputWithContext(context.Context) GetPcsV2PcNetworkNtpServerOutput
-}
-
-type GetPcsV2PcNetworkNtpServerArgs struct {
-	Fqdns GetPcsV2PcNetworkNtpServerFqdnArrayInput `pulumi:"fqdns"`
-	Ipv4s GetPcsV2PcNetworkNtpServerIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcsV2PcNetworkNtpServerIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcsV2PcNetworkNtpServerArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNtpServer)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNtpServerArgs) ToGetPcsV2PcNetworkNtpServerOutput() GetPcsV2PcNetworkNtpServerOutput {
-	return i.ToGetPcsV2PcNetworkNtpServerOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNtpServerArgs) ToGetPcsV2PcNetworkNtpServerOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNtpServerOutput)
-}
-
-// GetPcsV2PcNetworkNtpServerArrayInput is an input type that accepts GetPcsV2PcNetworkNtpServerArray and GetPcsV2PcNetworkNtpServerArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNtpServerArrayInput` via:
-//
-//	GetPcsV2PcNetworkNtpServerArray{ GetPcsV2PcNetworkNtpServerArgs{...} }
-type GetPcsV2PcNetworkNtpServerArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNtpServerArrayOutput() GetPcsV2PcNetworkNtpServerArrayOutput
-	ToGetPcsV2PcNetworkNtpServerArrayOutputWithContext(context.Context) GetPcsV2PcNetworkNtpServerArrayOutput
-}
-
-type GetPcsV2PcNetworkNtpServerArray []GetPcsV2PcNetworkNtpServerInput
-
-func (GetPcsV2PcNetworkNtpServerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNtpServer)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNtpServerArray) ToGetPcsV2PcNetworkNtpServerArrayOutput() GetPcsV2PcNetworkNtpServerArrayOutput {
-	return i.ToGetPcsV2PcNetworkNtpServerArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNtpServerArray) ToGetPcsV2PcNetworkNtpServerArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNtpServerArrayOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNtpServerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNtpServer)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNtpServerOutput) ToGetPcsV2PcNetworkNtpServerOutput() GetPcsV2PcNetworkNtpServerOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerOutput) ToGetPcsV2PcNetworkNtpServerOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerOutput) Fqdns() GetPcsV2PcNetworkNtpServerFqdnArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNtpServer) []GetPcsV2PcNetworkNtpServerFqdn { return v.Fqdns }).(GetPcsV2PcNetworkNtpServerFqdnArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkNtpServerOutput) Ipv4s() GetPcsV2PcNetworkNtpServerIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNtpServer) []GetPcsV2PcNetworkNtpServerIpv4 { return v.Ipv4s }).(GetPcsV2PcNetworkNtpServerIpv4ArrayOutput)
-}
-
-func (o GetPcsV2PcNetworkNtpServerOutput) Ipv6s() GetPcsV2PcNetworkNtpServerIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNtpServer) []GetPcsV2PcNetworkNtpServerIpv6 { return v.Ipv6s }).(GetPcsV2PcNetworkNtpServerIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNtpServerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNtpServer)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNtpServerArrayOutput) ToGetPcsV2PcNetworkNtpServerArrayOutput() GetPcsV2PcNetworkNtpServerArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerArrayOutput) ToGetPcsV2PcNetworkNtpServerArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkNtpServerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkNtpServer {
-		return vs[0].([]GetPcsV2PcNetworkNtpServer)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkNtpServerOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerFqdn struct {
-	Value string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkNtpServerFqdnInput is an input type that accepts GetPcsV2PcNetworkNtpServerFqdnArgs and GetPcsV2PcNetworkNtpServerFqdnOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNtpServerFqdnInput` via:
-//
-//	GetPcsV2PcNetworkNtpServerFqdnArgs{...}
-type GetPcsV2PcNetworkNtpServerFqdnInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNtpServerFqdnOutput() GetPcsV2PcNetworkNtpServerFqdnOutput
-	ToGetPcsV2PcNetworkNtpServerFqdnOutputWithContext(context.Context) GetPcsV2PcNetworkNtpServerFqdnOutput
-}
-
-type GetPcsV2PcNetworkNtpServerFqdnArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkNtpServerFqdnArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNtpServerFqdn)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNtpServerFqdnArgs) ToGetPcsV2PcNetworkNtpServerFqdnOutput() GetPcsV2PcNetworkNtpServerFqdnOutput {
-	return i.ToGetPcsV2PcNetworkNtpServerFqdnOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNtpServerFqdnArgs) ToGetPcsV2PcNetworkNtpServerFqdnOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerFqdnOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNtpServerFqdnOutput)
-}
-
-// GetPcsV2PcNetworkNtpServerFqdnArrayInput is an input type that accepts GetPcsV2PcNetworkNtpServerFqdnArray and GetPcsV2PcNetworkNtpServerFqdnArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNtpServerFqdnArrayInput` via:
-//
-//	GetPcsV2PcNetworkNtpServerFqdnArray{ GetPcsV2PcNetworkNtpServerFqdnArgs{...} }
-type GetPcsV2PcNetworkNtpServerFqdnArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNtpServerFqdnArrayOutput() GetPcsV2PcNetworkNtpServerFqdnArrayOutput
-	ToGetPcsV2PcNetworkNtpServerFqdnArrayOutputWithContext(context.Context) GetPcsV2PcNetworkNtpServerFqdnArrayOutput
-}
-
-type GetPcsV2PcNetworkNtpServerFqdnArray []GetPcsV2PcNetworkNtpServerFqdnInput
-
-func (GetPcsV2PcNetworkNtpServerFqdnArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNtpServerFqdn)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNtpServerFqdnArray) ToGetPcsV2PcNetworkNtpServerFqdnArrayOutput() GetPcsV2PcNetworkNtpServerFqdnArrayOutput {
-	return i.ToGetPcsV2PcNetworkNtpServerFqdnArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNtpServerFqdnArray) ToGetPcsV2PcNetworkNtpServerFqdnArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerFqdnArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNtpServerFqdnArrayOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerFqdnOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNtpServerFqdnOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNtpServerFqdn)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNtpServerFqdnOutput) ToGetPcsV2PcNetworkNtpServerFqdnOutput() GetPcsV2PcNetworkNtpServerFqdnOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerFqdnOutput) ToGetPcsV2PcNetworkNtpServerFqdnOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerFqdnOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerFqdnOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNtpServerFqdn) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerFqdnArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNtpServerFqdnArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNtpServerFqdn)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNtpServerFqdnArrayOutput) ToGetPcsV2PcNetworkNtpServerFqdnArrayOutput() GetPcsV2PcNetworkNtpServerFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerFqdnArrayOutput) ToGetPcsV2PcNetworkNtpServerFqdnArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerFqdnArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkNtpServerFqdnOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkNtpServerFqdn {
-		return vs[0].([]GetPcsV2PcNetworkNtpServerFqdn)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkNtpServerFqdnOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkNtpServerIpv4Input is an input type that accepts GetPcsV2PcNetworkNtpServerIpv4Args and GetPcsV2PcNetworkNtpServerIpv4Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNtpServerIpv4Input` via:
-//
-//	GetPcsV2PcNetworkNtpServerIpv4Args{...}
-type GetPcsV2PcNetworkNtpServerIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNtpServerIpv4Output() GetPcsV2PcNetworkNtpServerIpv4Output
-	ToGetPcsV2PcNetworkNtpServerIpv4OutputWithContext(context.Context) GetPcsV2PcNetworkNtpServerIpv4Output
-}
-
-type GetPcsV2PcNetworkNtpServerIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkNtpServerIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNtpServerIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNtpServerIpv4Args) ToGetPcsV2PcNetworkNtpServerIpv4Output() GetPcsV2PcNetworkNtpServerIpv4Output {
-	return i.ToGetPcsV2PcNetworkNtpServerIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNtpServerIpv4Args) ToGetPcsV2PcNetworkNtpServerIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNtpServerIpv4Output)
-}
-
-// GetPcsV2PcNetworkNtpServerIpv4ArrayInput is an input type that accepts GetPcsV2PcNetworkNtpServerIpv4Array and GetPcsV2PcNetworkNtpServerIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNtpServerIpv4ArrayInput` via:
-//
-//	GetPcsV2PcNetworkNtpServerIpv4Array{ GetPcsV2PcNetworkNtpServerIpv4Args{...} }
-type GetPcsV2PcNetworkNtpServerIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNtpServerIpv4ArrayOutput() GetPcsV2PcNetworkNtpServerIpv4ArrayOutput
-	ToGetPcsV2PcNetworkNtpServerIpv4ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkNtpServerIpv4ArrayOutput
-}
-
-type GetPcsV2PcNetworkNtpServerIpv4Array []GetPcsV2PcNetworkNtpServerIpv4Input
-
-func (GetPcsV2PcNetworkNtpServerIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNtpServerIpv4)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNtpServerIpv4Array) ToGetPcsV2PcNetworkNtpServerIpv4ArrayOutput() GetPcsV2PcNetworkNtpServerIpv4ArrayOutput {
-	return i.ToGetPcsV2PcNetworkNtpServerIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNtpServerIpv4Array) ToGetPcsV2PcNetworkNtpServerIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNtpServerIpv4ArrayOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNtpServerIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNtpServerIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv4Output) ToGetPcsV2PcNetworkNtpServerIpv4Output() GetPcsV2PcNetworkNtpServerIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv4Output) ToGetPcsV2PcNetworkNtpServerIpv4OutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerIpv4Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNtpServerIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNtpServerIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNtpServerIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNtpServerIpv4)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv4ArrayOutput) ToGetPcsV2PcNetworkNtpServerIpv4ArrayOutput() GetPcsV2PcNetworkNtpServerIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv4ArrayOutput) ToGetPcsV2PcNetworkNtpServerIpv4ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkNtpServerIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkNtpServerIpv4 {
-		return vs[0].([]GetPcsV2PcNetworkNtpServerIpv4)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkNtpServerIpv4Output)
-}
-
-type GetPcsV2PcNetworkNtpServerIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcsV2PcNetworkNtpServerIpv6Input is an input type that accepts GetPcsV2PcNetworkNtpServerIpv6Args and GetPcsV2PcNetworkNtpServerIpv6Output values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNtpServerIpv6Input` via:
-//
-//	GetPcsV2PcNetworkNtpServerIpv6Args{...}
-type GetPcsV2PcNetworkNtpServerIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNtpServerIpv6Output() GetPcsV2PcNetworkNtpServerIpv6Output
-	ToGetPcsV2PcNetworkNtpServerIpv6OutputWithContext(context.Context) GetPcsV2PcNetworkNtpServerIpv6Output
-}
-
-type GetPcsV2PcNetworkNtpServerIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcsV2PcNetworkNtpServerIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNtpServerIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNtpServerIpv6Args) ToGetPcsV2PcNetworkNtpServerIpv6Output() GetPcsV2PcNetworkNtpServerIpv6Output {
-	return i.ToGetPcsV2PcNetworkNtpServerIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNtpServerIpv6Args) ToGetPcsV2PcNetworkNtpServerIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNtpServerIpv6Output)
-}
-
-// GetPcsV2PcNetworkNtpServerIpv6ArrayInput is an input type that accepts GetPcsV2PcNetworkNtpServerIpv6Array and GetPcsV2PcNetworkNtpServerIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcsV2PcNetworkNtpServerIpv6ArrayInput` via:
-//
-//	GetPcsV2PcNetworkNtpServerIpv6Array{ GetPcsV2PcNetworkNtpServerIpv6Args{...} }
-type GetPcsV2PcNetworkNtpServerIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcsV2PcNetworkNtpServerIpv6ArrayOutput() GetPcsV2PcNetworkNtpServerIpv6ArrayOutput
-	ToGetPcsV2PcNetworkNtpServerIpv6ArrayOutputWithContext(context.Context) GetPcsV2PcNetworkNtpServerIpv6ArrayOutput
-}
-
-type GetPcsV2PcNetworkNtpServerIpv6Array []GetPcsV2PcNetworkNtpServerIpv6Input
-
-func (GetPcsV2PcNetworkNtpServerIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNtpServerIpv6)(nil)).Elem()
-}
-
-func (i GetPcsV2PcNetworkNtpServerIpv6Array) ToGetPcsV2PcNetworkNtpServerIpv6ArrayOutput() GetPcsV2PcNetworkNtpServerIpv6ArrayOutput {
-	return i.ToGetPcsV2PcNetworkNtpServerIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcsV2PcNetworkNtpServerIpv6Array) ToGetPcsV2PcNetworkNtpServerIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcsV2PcNetworkNtpServerIpv6ArrayOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNtpServerIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcsV2PcNetworkNtpServerIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv6Output) ToGetPcsV2PcNetworkNtpServerIpv6Output() GetPcsV2PcNetworkNtpServerIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv6Output) ToGetPcsV2PcNetworkNtpServerIpv6OutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerIpv6Output {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNtpServerIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcsV2PcNetworkNtpServerIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcsV2PcNetworkNtpServerIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcsV2PcNetworkNtpServerIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcsV2PcNetworkNtpServerIpv6)(nil)).Elem()
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv6ArrayOutput) ToGetPcsV2PcNetworkNtpServerIpv6ArrayOutput() GetPcsV2PcNetworkNtpServerIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv6ArrayOutput) ToGetPcsV2PcNetworkNtpServerIpv6ArrayOutputWithContext(ctx context.Context) GetPcsV2PcNetworkNtpServerIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcsV2PcNetworkNtpServerIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcsV2PcNetworkNtpServerIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcsV2PcNetworkNtpServerIpv6 {
-		return vs[0].([]GetPcsV2PcNetworkNtpServerIpv6)[vs[1].(int)]
-	}).(GetPcsV2PcNetworkNtpServerIpv6Output)
-}
-
-type GetPermissionCategory struct {
-	// the name.
-	Name string `pulumi:"name"`
-	// value of the key.
-	Value string `pulumi:"value"`
-}
-
-// GetPermissionCategoryInput is an input type that accepts GetPermissionCategoryArgs and GetPermissionCategoryOutput values.
-// You can construct a concrete instance of `GetPermissionCategoryInput` via:
-//
-//	GetPermissionCategoryArgs{...}
-type GetPermissionCategoryInput interface {
-	pulumi.Input
-
-	ToGetPermissionCategoryOutput() GetPermissionCategoryOutput
-	ToGetPermissionCategoryOutputWithContext(context.Context) GetPermissionCategoryOutput
-}
-
-type GetPermissionCategoryArgs struct {
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// value of the key.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPermissionCategoryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionCategory)(nil)).Elem()
-}
-
-func (i GetPermissionCategoryArgs) ToGetPermissionCategoryOutput() GetPermissionCategoryOutput {
-	return i.ToGetPermissionCategoryOutputWithContext(context.Background())
-}
-
-func (i GetPermissionCategoryArgs) ToGetPermissionCategoryOutputWithContext(ctx context.Context) GetPermissionCategoryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionCategoryOutput)
-}
-
-// GetPermissionCategoryArrayInput is an input type that accepts GetPermissionCategoryArray and GetPermissionCategoryArrayOutput values.
-// You can construct a concrete instance of `GetPermissionCategoryArrayInput` via:
-//
-//	GetPermissionCategoryArray{ GetPermissionCategoryArgs{...} }
-type GetPermissionCategoryArrayInput interface {
-	pulumi.Input
-
-	ToGetPermissionCategoryArrayOutput() GetPermissionCategoryArrayOutput
-	ToGetPermissionCategoryArrayOutputWithContext(context.Context) GetPermissionCategoryArrayOutput
-}
-
-type GetPermissionCategoryArray []GetPermissionCategoryInput
-
-func (GetPermissionCategoryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionCategory)(nil)).Elem()
-}
-
-func (i GetPermissionCategoryArray) ToGetPermissionCategoryArrayOutput() GetPermissionCategoryArrayOutput {
-	return i.ToGetPermissionCategoryArrayOutputWithContext(context.Background())
-}
-
-func (i GetPermissionCategoryArray) ToGetPermissionCategoryArrayOutputWithContext(ctx context.Context) GetPermissionCategoryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionCategoryArrayOutput)
-}
-
-type GetPermissionCategoryOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionCategoryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionCategory)(nil)).Elem()
-}
-
-func (o GetPermissionCategoryOutput) ToGetPermissionCategoryOutput() GetPermissionCategoryOutput {
-	return o
-}
-
-func (o GetPermissionCategoryOutput) ToGetPermissionCategoryOutputWithContext(ctx context.Context) GetPermissionCategoryOutput {
-	return o
-}
-
-// the name.
-func (o GetPermissionCategoryOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionCategory) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// value of the key.
-func (o GetPermissionCategoryOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionCategory) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPermissionCategoryArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionCategoryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionCategory)(nil)).Elem()
-}
-
-func (o GetPermissionCategoryArrayOutput) ToGetPermissionCategoryArrayOutput() GetPermissionCategoryArrayOutput {
-	return o
-}
-
-func (o GetPermissionCategoryArrayOutput) ToGetPermissionCategoryArrayOutputWithContext(ctx context.Context) GetPermissionCategoryArrayOutput {
-	return o
-}
-
-func (o GetPermissionCategoryArrayOutput) Index(i pulumi.IntInput) GetPermissionCategoryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPermissionCategory {
-		return vs[0].([]GetPermissionCategory)[vs[1].(int)]
-	}).(GetPermissionCategoryOutput)
-}
-
-type GetPermissionField struct {
-	// Allow or disallow the fields mentioned.
-	FieldMode string `pulumi:"fieldMode"`
-	// The list of fields.
-	FieldNameLists []string `pulumi:"fieldNameLists"`
-}
-
-// GetPermissionFieldInput is an input type that accepts GetPermissionFieldArgs and GetPermissionFieldOutput values.
-// You can construct a concrete instance of `GetPermissionFieldInput` via:
-//
-//	GetPermissionFieldArgs{...}
-type GetPermissionFieldInput interface {
-	pulumi.Input
-
-	ToGetPermissionFieldOutput() GetPermissionFieldOutput
-	ToGetPermissionFieldOutputWithContext(context.Context) GetPermissionFieldOutput
-}
-
-type GetPermissionFieldArgs struct {
-	// Allow or disallow the fields mentioned.
-	FieldMode pulumi.StringInput `pulumi:"fieldMode"`
-	// The list of fields.
-	FieldNameLists pulumi.StringArrayInput `pulumi:"fieldNameLists"`
-}
-
-func (GetPermissionFieldArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionField)(nil)).Elem()
-}
-
-func (i GetPermissionFieldArgs) ToGetPermissionFieldOutput() GetPermissionFieldOutput {
-	return i.ToGetPermissionFieldOutputWithContext(context.Background())
-}
-
-func (i GetPermissionFieldArgs) ToGetPermissionFieldOutputWithContext(ctx context.Context) GetPermissionFieldOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionFieldOutput)
-}
-
-// GetPermissionFieldArrayInput is an input type that accepts GetPermissionFieldArray and GetPermissionFieldArrayOutput values.
-// You can construct a concrete instance of `GetPermissionFieldArrayInput` via:
-//
-//	GetPermissionFieldArray{ GetPermissionFieldArgs{...} }
-type GetPermissionFieldArrayInput interface {
-	pulumi.Input
-
-	ToGetPermissionFieldArrayOutput() GetPermissionFieldArrayOutput
-	ToGetPermissionFieldArrayOutputWithContext(context.Context) GetPermissionFieldArrayOutput
-}
-
-type GetPermissionFieldArray []GetPermissionFieldInput
-
-func (GetPermissionFieldArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionField)(nil)).Elem()
-}
-
-func (i GetPermissionFieldArray) ToGetPermissionFieldArrayOutput() GetPermissionFieldArrayOutput {
-	return i.ToGetPermissionFieldArrayOutputWithContext(context.Background())
-}
-
-func (i GetPermissionFieldArray) ToGetPermissionFieldArrayOutputWithContext(ctx context.Context) GetPermissionFieldArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionFieldArrayOutput)
-}
-
-type GetPermissionFieldOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionFieldOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionField)(nil)).Elem()
-}
-
-func (o GetPermissionFieldOutput) ToGetPermissionFieldOutput() GetPermissionFieldOutput {
-	return o
-}
-
-func (o GetPermissionFieldOutput) ToGetPermissionFieldOutputWithContext(ctx context.Context) GetPermissionFieldOutput {
-	return o
-}
-
-// Allow or disallow the fields mentioned.
-func (o GetPermissionFieldOutput) FieldMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionField) string { return v.FieldMode }).(pulumi.StringOutput)
-}
-
-// The list of fields.
-func (o GetPermissionFieldOutput) FieldNameLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetPermissionField) []string { return v.FieldNameLists }).(pulumi.StringArrayOutput)
-}
-
-type GetPermissionFieldArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionFieldArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionField)(nil)).Elem()
-}
-
-func (o GetPermissionFieldArrayOutput) ToGetPermissionFieldArrayOutput() GetPermissionFieldArrayOutput {
-	return o
-}
-
-func (o GetPermissionFieldArrayOutput) ToGetPermissionFieldArrayOutputWithContext(ctx context.Context) GetPermissionFieldArrayOutput {
-	return o
-}
-
-func (o GetPermissionFieldArrayOutput) Index(i pulumi.IntInput) GetPermissionFieldOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPermissionField {
-		return vs[0].([]GetPermissionField)[vs[1].(int)]
-	}).(GetPermissionFieldOutput)
-}
-
-type GetPermissionsEntity struct {
-	// version of the API
-	ApiVersion string `pulumi:"apiVersion"`
-	// The categories for this resource.
-	Categories []GetPermissionsEntityCategory `pulumi:"categories"`
-	// A description for the permission.
-	Description string `pulumi:"description"`
-	// . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
-	Fields []GetPermissionsEntityField `pulumi:"fields"`
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// The permission kind metadata.
-	Metadata map[string]string `pulumi:"metadata"`
-	// the name.
-	Name string `pulumi:"name"`
-	// The operation that is being performed on a given kind.
-	Operation string `pulumi:"operation"`
-	// The reference to a user.
-	OwnerReference map[string]string `pulumi:"ownerReference"`
-	// The reference to a project.
-	ProjectReference map[string]string `pulumi:"projectReference"`
-	// The state of the permission.
-	State string `pulumi:"state"`
-}
-
-// GetPermissionsEntityInput is an input type that accepts GetPermissionsEntityArgs and GetPermissionsEntityOutput values.
-// You can construct a concrete instance of `GetPermissionsEntityInput` via:
-//
-//	GetPermissionsEntityArgs{...}
-type GetPermissionsEntityInput interface {
-	pulumi.Input
-
-	ToGetPermissionsEntityOutput() GetPermissionsEntityOutput
-	ToGetPermissionsEntityOutputWithContext(context.Context) GetPermissionsEntityOutput
-}
-
-type GetPermissionsEntityArgs struct {
-	// version of the API
-	ApiVersion pulumi.StringInput `pulumi:"apiVersion"`
-	// The categories for this resource.
-	Categories GetPermissionsEntityCategoryArrayInput `pulumi:"categories"`
-	// A description for the permission.
-	Description pulumi.StringInput `pulumi:"description"`
-	// . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
-	Fields GetPermissionsEntityFieldArrayInput `pulumi:"fields"`
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// The permission kind metadata.
-	Metadata pulumi.StringMapInput `pulumi:"metadata"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The operation that is being performed on a given kind.
-	Operation pulumi.StringInput `pulumi:"operation"`
-	// The reference to a user.
-	OwnerReference pulumi.StringMapInput `pulumi:"ownerReference"`
-	// The reference to a project.
-	ProjectReference pulumi.StringMapInput `pulumi:"projectReference"`
-	// The state of the permission.
-	State pulumi.StringInput `pulumi:"state"`
-}
-
-func (GetPermissionsEntityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionsEntity)(nil)).Elem()
-}
-
-func (i GetPermissionsEntityArgs) ToGetPermissionsEntityOutput() GetPermissionsEntityOutput {
-	return i.ToGetPermissionsEntityOutputWithContext(context.Background())
-}
-
-func (i GetPermissionsEntityArgs) ToGetPermissionsEntityOutputWithContext(ctx context.Context) GetPermissionsEntityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionsEntityOutput)
-}
-
-// GetPermissionsEntityArrayInput is an input type that accepts GetPermissionsEntityArray and GetPermissionsEntityArrayOutput values.
-// You can construct a concrete instance of `GetPermissionsEntityArrayInput` via:
-//
-//	GetPermissionsEntityArray{ GetPermissionsEntityArgs{...} }
-type GetPermissionsEntityArrayInput interface {
-	pulumi.Input
-
-	ToGetPermissionsEntityArrayOutput() GetPermissionsEntityArrayOutput
-	ToGetPermissionsEntityArrayOutputWithContext(context.Context) GetPermissionsEntityArrayOutput
-}
-
-type GetPermissionsEntityArray []GetPermissionsEntityInput
-
-func (GetPermissionsEntityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionsEntity)(nil)).Elem()
-}
-
-func (i GetPermissionsEntityArray) ToGetPermissionsEntityArrayOutput() GetPermissionsEntityArrayOutput {
-	return i.ToGetPermissionsEntityArrayOutputWithContext(context.Background())
-}
-
-func (i GetPermissionsEntityArray) ToGetPermissionsEntityArrayOutputWithContext(ctx context.Context) GetPermissionsEntityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionsEntityArrayOutput)
-}
-
-type GetPermissionsEntityOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionsEntityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionsEntity)(nil)).Elem()
-}
-
-func (o GetPermissionsEntityOutput) ToGetPermissionsEntityOutput() GetPermissionsEntityOutput {
-	return o
-}
-
-func (o GetPermissionsEntityOutput) ToGetPermissionsEntityOutputWithContext(ctx context.Context) GetPermissionsEntityOutput {
-	return o
-}
-
-// version of the API
-func (o GetPermissionsEntityOutput) ApiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) string { return v.ApiVersion }).(pulumi.StringOutput)
-}
-
-// The categories for this resource.
-func (o GetPermissionsEntityOutput) Categories() GetPermissionsEntityCategoryArrayOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) []GetPermissionsEntityCategory { return v.Categories }).(GetPermissionsEntityCategoryArrayOutput)
-}
-
-// A description for the permission.
-func (o GetPermissionsEntityOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
-func (o GetPermissionsEntityOutput) Fields() GetPermissionsEntityFieldArrayOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) []GetPermissionsEntityField { return v.Fields }).(GetPermissionsEntityFieldArrayOutput)
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetPermissionsEntityOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// The permission kind metadata.
-func (o GetPermissionsEntityOutput) Metadata() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
-}
-
-// the name.
-func (o GetPermissionsEntityOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The operation that is being performed on a given kind.
-func (o GetPermissionsEntityOutput) Operation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) string { return v.Operation }).(pulumi.StringOutput)
-}
-
-// The reference to a user.
-func (o GetPermissionsEntityOutput) OwnerReference() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
-}
-
-// The reference to a project.
-func (o GetPermissionsEntityOutput) ProjectReference() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
-}
-
-// The state of the permission.
-func (o GetPermissionsEntityOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntity) string { return v.State }).(pulumi.StringOutput)
-}
-
-type GetPermissionsEntityArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionsEntityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionsEntity)(nil)).Elem()
-}
-
-func (o GetPermissionsEntityArrayOutput) ToGetPermissionsEntityArrayOutput() GetPermissionsEntityArrayOutput {
-	return o
-}
-
-func (o GetPermissionsEntityArrayOutput) ToGetPermissionsEntityArrayOutputWithContext(ctx context.Context) GetPermissionsEntityArrayOutput {
-	return o
-}
-
-func (o GetPermissionsEntityArrayOutput) Index(i pulumi.IntInput) GetPermissionsEntityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPermissionsEntity {
-		return vs[0].([]GetPermissionsEntity)[vs[1].(int)]
-	}).(GetPermissionsEntityOutput)
-}
-
-type GetPermissionsEntityCategory struct {
-	// the name.
-	Name string `pulumi:"name"`
-	// value of the key.
-	Value string `pulumi:"value"`
-}
-
-// GetPermissionsEntityCategoryInput is an input type that accepts GetPermissionsEntityCategoryArgs and GetPermissionsEntityCategoryOutput values.
-// You can construct a concrete instance of `GetPermissionsEntityCategoryInput` via:
-//
-//	GetPermissionsEntityCategoryArgs{...}
-type GetPermissionsEntityCategoryInput interface {
-	pulumi.Input
-
-	ToGetPermissionsEntityCategoryOutput() GetPermissionsEntityCategoryOutput
-	ToGetPermissionsEntityCategoryOutputWithContext(context.Context) GetPermissionsEntityCategoryOutput
-}
-
-type GetPermissionsEntityCategoryArgs struct {
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// value of the key.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPermissionsEntityCategoryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionsEntityCategory)(nil)).Elem()
-}
-
-func (i GetPermissionsEntityCategoryArgs) ToGetPermissionsEntityCategoryOutput() GetPermissionsEntityCategoryOutput {
-	return i.ToGetPermissionsEntityCategoryOutputWithContext(context.Background())
-}
-
-func (i GetPermissionsEntityCategoryArgs) ToGetPermissionsEntityCategoryOutputWithContext(ctx context.Context) GetPermissionsEntityCategoryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionsEntityCategoryOutput)
-}
-
-// GetPermissionsEntityCategoryArrayInput is an input type that accepts GetPermissionsEntityCategoryArray and GetPermissionsEntityCategoryArrayOutput values.
-// You can construct a concrete instance of `GetPermissionsEntityCategoryArrayInput` via:
-//
-//	GetPermissionsEntityCategoryArray{ GetPermissionsEntityCategoryArgs{...} }
-type GetPermissionsEntityCategoryArrayInput interface {
-	pulumi.Input
-
-	ToGetPermissionsEntityCategoryArrayOutput() GetPermissionsEntityCategoryArrayOutput
-	ToGetPermissionsEntityCategoryArrayOutputWithContext(context.Context) GetPermissionsEntityCategoryArrayOutput
-}
-
-type GetPermissionsEntityCategoryArray []GetPermissionsEntityCategoryInput
-
-func (GetPermissionsEntityCategoryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionsEntityCategory)(nil)).Elem()
-}
-
-func (i GetPermissionsEntityCategoryArray) ToGetPermissionsEntityCategoryArrayOutput() GetPermissionsEntityCategoryArrayOutput {
-	return i.ToGetPermissionsEntityCategoryArrayOutputWithContext(context.Background())
-}
-
-func (i GetPermissionsEntityCategoryArray) ToGetPermissionsEntityCategoryArrayOutputWithContext(ctx context.Context) GetPermissionsEntityCategoryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionsEntityCategoryArrayOutput)
-}
-
-type GetPermissionsEntityCategoryOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionsEntityCategoryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionsEntityCategory)(nil)).Elem()
-}
-
-func (o GetPermissionsEntityCategoryOutput) ToGetPermissionsEntityCategoryOutput() GetPermissionsEntityCategoryOutput {
-	return o
-}
-
-func (o GetPermissionsEntityCategoryOutput) ToGetPermissionsEntityCategoryOutputWithContext(ctx context.Context) GetPermissionsEntityCategoryOutput {
-	return o
-}
-
-// the name.
-func (o GetPermissionsEntityCategoryOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntityCategory) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// value of the key.
-func (o GetPermissionsEntityCategoryOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntityCategory) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPermissionsEntityCategoryArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionsEntityCategoryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionsEntityCategory)(nil)).Elem()
-}
-
-func (o GetPermissionsEntityCategoryArrayOutput) ToGetPermissionsEntityCategoryArrayOutput() GetPermissionsEntityCategoryArrayOutput {
-	return o
-}
-
-func (o GetPermissionsEntityCategoryArrayOutput) ToGetPermissionsEntityCategoryArrayOutputWithContext(ctx context.Context) GetPermissionsEntityCategoryArrayOutput {
-	return o
-}
-
-func (o GetPermissionsEntityCategoryArrayOutput) Index(i pulumi.IntInput) GetPermissionsEntityCategoryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPermissionsEntityCategory {
-		return vs[0].([]GetPermissionsEntityCategory)[vs[1].(int)]
-	}).(GetPermissionsEntityCategoryOutput)
-}
-
-type GetPermissionsEntityField struct {
-	// Allow or disallow the fields mentioned.
-	FieldMode string `pulumi:"fieldMode"`
-	// The list of fields.
-	FieldNameLists []string `pulumi:"fieldNameLists"`
-}
-
-// GetPermissionsEntityFieldInput is an input type that accepts GetPermissionsEntityFieldArgs and GetPermissionsEntityFieldOutput values.
-// You can construct a concrete instance of `GetPermissionsEntityFieldInput` via:
-//
-//	GetPermissionsEntityFieldArgs{...}
-type GetPermissionsEntityFieldInput interface {
-	pulumi.Input
-
-	ToGetPermissionsEntityFieldOutput() GetPermissionsEntityFieldOutput
-	ToGetPermissionsEntityFieldOutputWithContext(context.Context) GetPermissionsEntityFieldOutput
-}
-
-type GetPermissionsEntityFieldArgs struct {
-	// Allow or disallow the fields mentioned.
-	FieldMode pulumi.StringInput `pulumi:"fieldMode"`
-	// The list of fields.
-	FieldNameLists pulumi.StringArrayInput `pulumi:"fieldNameLists"`
-}
-
-func (GetPermissionsEntityFieldArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionsEntityField)(nil)).Elem()
-}
-
-func (i GetPermissionsEntityFieldArgs) ToGetPermissionsEntityFieldOutput() GetPermissionsEntityFieldOutput {
-	return i.ToGetPermissionsEntityFieldOutputWithContext(context.Background())
-}
-
-func (i GetPermissionsEntityFieldArgs) ToGetPermissionsEntityFieldOutputWithContext(ctx context.Context) GetPermissionsEntityFieldOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionsEntityFieldOutput)
-}
-
-// GetPermissionsEntityFieldArrayInput is an input type that accepts GetPermissionsEntityFieldArray and GetPermissionsEntityFieldArrayOutput values.
-// You can construct a concrete instance of `GetPermissionsEntityFieldArrayInput` via:
-//
-//	GetPermissionsEntityFieldArray{ GetPermissionsEntityFieldArgs{...} }
-type GetPermissionsEntityFieldArrayInput interface {
-	pulumi.Input
-
-	ToGetPermissionsEntityFieldArrayOutput() GetPermissionsEntityFieldArrayOutput
-	ToGetPermissionsEntityFieldArrayOutputWithContext(context.Context) GetPermissionsEntityFieldArrayOutput
-}
-
-type GetPermissionsEntityFieldArray []GetPermissionsEntityFieldInput
-
-func (GetPermissionsEntityFieldArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionsEntityField)(nil)).Elem()
-}
-
-func (i GetPermissionsEntityFieldArray) ToGetPermissionsEntityFieldArrayOutput() GetPermissionsEntityFieldArrayOutput {
-	return i.ToGetPermissionsEntityFieldArrayOutputWithContext(context.Background())
-}
-
-func (i GetPermissionsEntityFieldArray) ToGetPermissionsEntityFieldArrayOutputWithContext(ctx context.Context) GetPermissionsEntityFieldArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionsEntityFieldArrayOutput)
-}
-
-type GetPermissionsEntityFieldOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionsEntityFieldOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionsEntityField)(nil)).Elem()
-}
-
-func (o GetPermissionsEntityFieldOutput) ToGetPermissionsEntityFieldOutput() GetPermissionsEntityFieldOutput {
-	return o
-}
-
-func (o GetPermissionsEntityFieldOutput) ToGetPermissionsEntityFieldOutputWithContext(ctx context.Context) GetPermissionsEntityFieldOutput {
-	return o
-}
-
-// Allow or disallow the fields mentioned.
-func (o GetPermissionsEntityFieldOutput) FieldMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsEntityField) string { return v.FieldMode }).(pulumi.StringOutput)
-}
-
-// The list of fields.
-func (o GetPermissionsEntityFieldOutput) FieldNameLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetPermissionsEntityField) []string { return v.FieldNameLists }).(pulumi.StringArrayOutput)
-}
-
-type GetPermissionsEntityFieldArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionsEntityFieldArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionsEntityField)(nil)).Elem()
-}
-
-func (o GetPermissionsEntityFieldArrayOutput) ToGetPermissionsEntityFieldArrayOutput() GetPermissionsEntityFieldArrayOutput {
-	return o
-}
-
-func (o GetPermissionsEntityFieldArrayOutput) ToGetPermissionsEntityFieldArrayOutputWithContext(ctx context.Context) GetPermissionsEntityFieldArrayOutput {
-	return o
-}
-
-func (o GetPermissionsEntityFieldArrayOutput) Index(i pulumi.IntInput) GetPermissionsEntityFieldOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPermissionsEntityField {
-		return vs[0].([]GetPermissionsEntityField)[vs[1].(int)]
-	}).(GetPermissionsEntityFieldOutput)
-}
-
-type GetPermissionsMetadata struct {
-	Filter string `pulumi:"filter"`
-	// (Required) The kind name (Default value: `project`).
-	Kind          string `pulumi:"kind"`
-	Length        int    `pulumi:"length"`
-	Offset        int    `pulumi:"offset"`
-	SortAttribute string `pulumi:"sortAttribute"`
-	SortOrder     string `pulumi:"sortOrder"`
-}
-
-// GetPermissionsMetadataInput is an input type that accepts GetPermissionsMetadataArgs and GetPermissionsMetadataOutput values.
-// You can construct a concrete instance of `GetPermissionsMetadataInput` via:
-//
-//	GetPermissionsMetadataArgs{...}
-type GetPermissionsMetadataInput interface {
-	pulumi.Input
-
-	ToGetPermissionsMetadataOutput() GetPermissionsMetadataOutput
-	ToGetPermissionsMetadataOutputWithContext(context.Context) GetPermissionsMetadataOutput
-}
-
-type GetPermissionsMetadataArgs struct {
-	Filter pulumi.StringInput `pulumi:"filter"`
-	// (Required) The kind name (Default value: `project`).
-	Kind          pulumi.StringInput `pulumi:"kind"`
-	Length        pulumi.IntInput    `pulumi:"length"`
-	Offset        pulumi.IntInput    `pulumi:"offset"`
-	SortAttribute pulumi.StringInput `pulumi:"sortAttribute"`
-	SortOrder     pulumi.StringInput `pulumi:"sortOrder"`
-}
-
-func (GetPermissionsMetadataArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionsMetadata)(nil)).Elem()
-}
-
-func (i GetPermissionsMetadataArgs) ToGetPermissionsMetadataOutput() GetPermissionsMetadataOutput {
-	return i.ToGetPermissionsMetadataOutputWithContext(context.Background())
-}
-
-func (i GetPermissionsMetadataArgs) ToGetPermissionsMetadataOutputWithContext(ctx context.Context) GetPermissionsMetadataOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionsMetadataOutput)
-}
-
-// GetPermissionsMetadataArrayInput is an input type that accepts GetPermissionsMetadataArray and GetPermissionsMetadataArrayOutput values.
-// You can construct a concrete instance of `GetPermissionsMetadataArrayInput` via:
-//
-//	GetPermissionsMetadataArray{ GetPermissionsMetadataArgs{...} }
-type GetPermissionsMetadataArrayInput interface {
-	pulumi.Input
-
-	ToGetPermissionsMetadataArrayOutput() GetPermissionsMetadataArrayOutput
-	ToGetPermissionsMetadataArrayOutputWithContext(context.Context) GetPermissionsMetadataArrayOutput
-}
-
-type GetPermissionsMetadataArray []GetPermissionsMetadataInput
-
-func (GetPermissionsMetadataArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionsMetadata)(nil)).Elem()
-}
-
-func (i GetPermissionsMetadataArray) ToGetPermissionsMetadataArrayOutput() GetPermissionsMetadataArrayOutput {
-	return i.ToGetPermissionsMetadataArrayOutputWithContext(context.Background())
-}
-
-func (i GetPermissionsMetadataArray) ToGetPermissionsMetadataArrayOutputWithContext(ctx context.Context) GetPermissionsMetadataArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionsMetadataArrayOutput)
-}
-
-type GetPermissionsMetadataOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionsMetadataOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPermissionsMetadata)(nil)).Elem()
-}
-
-func (o GetPermissionsMetadataOutput) ToGetPermissionsMetadataOutput() GetPermissionsMetadataOutput {
-	return o
-}
-
-func (o GetPermissionsMetadataOutput) ToGetPermissionsMetadataOutputWithContext(ctx context.Context) GetPermissionsMetadataOutput {
-	return o
-}
-
-func (o GetPermissionsMetadataOutput) Filter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsMetadata) string { return v.Filter }).(pulumi.StringOutput)
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetPermissionsMetadataOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsMetadata) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-func (o GetPermissionsMetadataOutput) Length() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPermissionsMetadata) int { return v.Length }).(pulumi.IntOutput)
-}
-
-func (o GetPermissionsMetadataOutput) Offset() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPermissionsMetadata) int { return v.Offset }).(pulumi.IntOutput)
-}
-
-func (o GetPermissionsMetadataOutput) SortAttribute() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsMetadata) string { return v.SortAttribute }).(pulumi.StringOutput)
-}
-
-func (o GetPermissionsMetadataOutput) SortOrder() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPermissionsMetadata) string { return v.SortOrder }).(pulumi.StringOutput)
-}
-
-type GetPermissionsMetadataArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPermissionsMetadataArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPermissionsMetadata)(nil)).Elem()
-}
-
-func (o GetPermissionsMetadataArrayOutput) ToGetPermissionsMetadataArrayOutput() GetPermissionsMetadataArrayOutput {
-	return o
-}
-
-func (o GetPermissionsMetadataArrayOutput) ToGetPermissionsMetadataArrayOutputWithContext(ctx context.Context) GetPermissionsMetadataArrayOutput {
-	return o
-}
-
-func (o GetPermissionsMetadataArrayOutput) Index(i pulumi.IntInput) GetPermissionsMetadataOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPermissionsMetadata {
-		return vs[0].([]GetPermissionsMetadata)[vs[1].(int)]
-	}).(GetPermissionsMetadataOutput)
-}
-
-type GetProjectAccountReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectAccountReferenceListInput is an input type that accepts GetProjectAccountReferenceListArgs and GetProjectAccountReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectAccountReferenceListInput` via:
-//
-//	GetProjectAccountReferenceListArgs{...}
-type GetProjectAccountReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectAccountReferenceListOutput() GetProjectAccountReferenceListOutput
-	ToGetProjectAccountReferenceListOutputWithContext(context.Context) GetProjectAccountReferenceListOutput
-}
-
-type GetProjectAccountReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectAccountReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAccountReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectAccountReferenceListArgs) ToGetProjectAccountReferenceListOutput() GetProjectAccountReferenceListOutput {
-	return i.ToGetProjectAccountReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectAccountReferenceListArgs) ToGetProjectAccountReferenceListOutputWithContext(ctx context.Context) GetProjectAccountReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAccountReferenceListOutput)
-}
-
-// GetProjectAccountReferenceListArrayInput is an input type that accepts GetProjectAccountReferenceListArray and GetProjectAccountReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectAccountReferenceListArrayInput` via:
-//
-//	GetProjectAccountReferenceListArray{ GetProjectAccountReferenceListArgs{...} }
-type GetProjectAccountReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAccountReferenceListArrayOutput() GetProjectAccountReferenceListArrayOutput
-	ToGetProjectAccountReferenceListArrayOutputWithContext(context.Context) GetProjectAccountReferenceListArrayOutput
-}
-
-type GetProjectAccountReferenceListArray []GetProjectAccountReferenceListInput
-
-func (GetProjectAccountReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAccountReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectAccountReferenceListArray) ToGetProjectAccountReferenceListArrayOutput() GetProjectAccountReferenceListArrayOutput {
-	return i.ToGetProjectAccountReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAccountReferenceListArray) ToGetProjectAccountReferenceListArrayOutputWithContext(ctx context.Context) GetProjectAccountReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAccountReferenceListArrayOutput)
-}
-
-type GetProjectAccountReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAccountReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAccountReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectAccountReferenceListOutput) ToGetProjectAccountReferenceListOutput() GetProjectAccountReferenceListOutput {
-	return o
-}
-
-func (o GetProjectAccountReferenceListOutput) ToGetProjectAccountReferenceListOutputWithContext(ctx context.Context) GetProjectAccountReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectAccountReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAccountReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectAccountReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAccountReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectAccountReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAccountReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectAccountReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAccountReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAccountReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectAccountReferenceListArrayOutput) ToGetProjectAccountReferenceListArrayOutput() GetProjectAccountReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectAccountReferenceListArrayOutput) ToGetProjectAccountReferenceListArrayOutputWithContext(ctx context.Context) GetProjectAccountReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectAccountReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectAccountReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAccountReferenceList {
-		return vs[0].([]GetProjectAccountReferenceList)[vs[1].(int)]
-	}).(GetProjectAccountReferenceListOutput)
-}
-
-type GetProjectAcp struct {
-	// The list of context filters. These are OR filters. The scope-expression-list defines the context, and the filter works in conjunction with the entity-expression-list.
-	ContextFilterLists []GetProjectAcpContextFilterList `pulumi:"contextFilterLists"`
-	// Description of ACP
-	Description string            `pulumi:"description"`
-	Metadata    map[string]string `pulumi:"metadata"`
-	// the name.
-	Name string `pulumi:"name"`
-	// Reference to role.
-	RoleReferences []GetProjectAcpRoleReference `pulumi:"roleReferences"`
-	// List of Reference of users groups.
-	UserGroupReferenceLists []GetProjectAcpUserGroupReferenceList `pulumi:"userGroupReferenceLists"`
-	// List of Reference of users.
-	UserReferenceLists []GetProjectAcpUserReferenceList `pulumi:"userReferenceLists"`
-}
-
-// GetProjectAcpInput is an input type that accepts GetProjectAcpArgs and GetProjectAcpOutput values.
-// You can construct a concrete instance of `GetProjectAcpInput` via:
-//
-//	GetProjectAcpArgs{...}
-type GetProjectAcpInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpOutput() GetProjectAcpOutput
-	ToGetProjectAcpOutputWithContext(context.Context) GetProjectAcpOutput
-}
-
-type GetProjectAcpArgs struct {
-	// The list of context filters. These are OR filters. The scope-expression-list defines the context, and the filter works in conjunction with the entity-expression-list.
-	ContextFilterLists GetProjectAcpContextFilterListArrayInput `pulumi:"contextFilterLists"`
-	// Description of ACP
-	Description pulumi.StringInput    `pulumi:"description"`
-	Metadata    pulumi.StringMapInput `pulumi:"metadata"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// Reference to role.
-	RoleReferences GetProjectAcpRoleReferenceArrayInput `pulumi:"roleReferences"`
-	// List of Reference of users groups.
-	UserGroupReferenceLists GetProjectAcpUserGroupReferenceListArrayInput `pulumi:"userGroupReferenceLists"`
-	// List of Reference of users.
-	UserReferenceLists GetProjectAcpUserReferenceListArrayInput `pulumi:"userReferenceLists"`
-}
-
-func (GetProjectAcpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcp)(nil)).Elem()
-}
-
-func (i GetProjectAcpArgs) ToGetProjectAcpOutput() GetProjectAcpOutput {
-	return i.ToGetProjectAcpOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpArgs) ToGetProjectAcpOutputWithContext(ctx context.Context) GetProjectAcpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpOutput)
-}
-
-// GetProjectAcpArrayInput is an input type that accepts GetProjectAcpArray and GetProjectAcpArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpArrayInput` via:
-//
-//	GetProjectAcpArray{ GetProjectAcpArgs{...} }
-type GetProjectAcpArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpArrayOutput() GetProjectAcpArrayOutput
-	ToGetProjectAcpArrayOutputWithContext(context.Context) GetProjectAcpArrayOutput
-}
-
-type GetProjectAcpArray []GetProjectAcpInput
-
-func (GetProjectAcpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcp)(nil)).Elem()
-}
-
-func (i GetProjectAcpArray) ToGetProjectAcpArrayOutput() GetProjectAcpArrayOutput {
-	return i.ToGetProjectAcpArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpArray) ToGetProjectAcpArrayOutputWithContext(ctx context.Context) GetProjectAcpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpArrayOutput)
-}
-
-type GetProjectAcpOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcp)(nil)).Elem()
-}
-
-func (o GetProjectAcpOutput) ToGetProjectAcpOutput() GetProjectAcpOutput {
-	return o
-}
-
-func (o GetProjectAcpOutput) ToGetProjectAcpOutputWithContext(ctx context.Context) GetProjectAcpOutput {
-	return o
-}
-
-// The list of context filters. These are OR filters. The scope-expression-list defines the context, and the filter works in conjunction with the entity-expression-list.
-func (o GetProjectAcpOutput) ContextFilterLists() GetProjectAcpContextFilterListArrayOutput {
-	return o.ApplyT(func(v GetProjectAcp) []GetProjectAcpContextFilterList { return v.ContextFilterLists }).(GetProjectAcpContextFilterListArrayOutput)
-}
-
-// Description of ACP
-func (o GetProjectAcpOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcp) string { return v.Description }).(pulumi.StringOutput)
-}
-
-func (o GetProjectAcpOutput) Metadata() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetProjectAcp) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
-}
-
-// the name.
-func (o GetProjectAcpOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcp) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// Reference to role.
-func (o GetProjectAcpOutput) RoleReferences() GetProjectAcpRoleReferenceArrayOutput {
-	return o.ApplyT(func(v GetProjectAcp) []GetProjectAcpRoleReference { return v.RoleReferences }).(GetProjectAcpRoleReferenceArrayOutput)
-}
-
-// List of Reference of users groups.
-func (o GetProjectAcpOutput) UserGroupReferenceLists() GetProjectAcpUserGroupReferenceListArrayOutput {
-	return o.ApplyT(func(v GetProjectAcp) []GetProjectAcpUserGroupReferenceList { return v.UserGroupReferenceLists }).(GetProjectAcpUserGroupReferenceListArrayOutput)
-}
-
-// List of Reference of users.
-func (o GetProjectAcpOutput) UserReferenceLists() GetProjectAcpUserReferenceListArrayOutput {
-	return o.ApplyT(func(v GetProjectAcp) []GetProjectAcpUserReferenceList { return v.UserReferenceLists }).(GetProjectAcpUserReferenceListArrayOutput)
-}
-
-type GetProjectAcpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcp)(nil)).Elem()
-}
-
-func (o GetProjectAcpArrayOutput) ToGetProjectAcpArrayOutput() GetProjectAcpArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpArrayOutput) ToGetProjectAcpArrayOutputWithContext(ctx context.Context) GetProjectAcpArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpArrayOutput) Index(i pulumi.IntInput) GetProjectAcpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcp {
-		return vs[0].([]GetProjectAcp)[vs[1].(int)]
-	}).(GetProjectAcpOutput)
-}
-
-type GetProjectAcpContextFilterList struct {
-	// (Required) A list of Entity filter expressions.
-	EntityFilterExpressionLists []GetProjectAcpContextFilterListEntityFilterExpressionList `pulumi:"entityFilterExpressionLists"`
-	// - (Optional) Filter the scope of an Access Control Policy.
-	ScopeFilterExpressionLists []GetProjectAcpContextFilterListScopeFilterExpressionList `pulumi:"scopeFilterExpressionLists"`
-}
-
-// GetProjectAcpContextFilterListInput is an input type that accepts GetProjectAcpContextFilterListArgs and GetProjectAcpContextFilterListOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListInput` via:
-//
-//	GetProjectAcpContextFilterListArgs{...}
-type GetProjectAcpContextFilterListInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListOutput() GetProjectAcpContextFilterListOutput
-	ToGetProjectAcpContextFilterListOutputWithContext(context.Context) GetProjectAcpContextFilterListOutput
-}
-
-type GetProjectAcpContextFilterListArgs struct {
-	// (Required) A list of Entity filter expressions.
-	EntityFilterExpressionLists GetProjectAcpContextFilterListEntityFilterExpressionListArrayInput `pulumi:"entityFilterExpressionLists"`
-	// - (Optional) Filter the scope of an Access Control Policy.
-	ScopeFilterExpressionLists GetProjectAcpContextFilterListScopeFilterExpressionListArrayInput `pulumi:"scopeFilterExpressionLists"`
-}
-
-func (GetProjectAcpContextFilterListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterList)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListArgs) ToGetProjectAcpContextFilterListOutput() GetProjectAcpContextFilterListOutput {
-	return i.ToGetProjectAcpContextFilterListOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListArgs) ToGetProjectAcpContextFilterListOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListOutput)
-}
-
-// GetProjectAcpContextFilterListArrayInput is an input type that accepts GetProjectAcpContextFilterListArray and GetProjectAcpContextFilterListArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListArrayInput` via:
-//
-//	GetProjectAcpContextFilterListArray{ GetProjectAcpContextFilterListArgs{...} }
-type GetProjectAcpContextFilterListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListArrayOutput() GetProjectAcpContextFilterListArrayOutput
-	ToGetProjectAcpContextFilterListArrayOutputWithContext(context.Context) GetProjectAcpContextFilterListArrayOutput
-}
-
-type GetProjectAcpContextFilterListArray []GetProjectAcpContextFilterListInput
-
-func (GetProjectAcpContextFilterListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterList)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListArray) ToGetProjectAcpContextFilterListArrayOutput() GetProjectAcpContextFilterListArrayOutput {
-	return i.ToGetProjectAcpContextFilterListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListArray) ToGetProjectAcpContextFilterListArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListArrayOutput)
-}
-
-type GetProjectAcpContextFilterListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterList)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListOutput) ToGetProjectAcpContextFilterListOutput() GetProjectAcpContextFilterListOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListOutput) ToGetProjectAcpContextFilterListOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListOutput {
-	return o
-}
-
-// (Required) A list of Entity filter expressions.
-func (o GetProjectAcpContextFilterListOutput) EntityFilterExpressionLists() GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterList) []GetProjectAcpContextFilterListEntityFilterExpressionList {
-		return v.EntityFilterExpressionLists
-	}).(GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput)
-}
-
-// - (Optional) Filter the scope of an Access Control Policy.
-func (o GetProjectAcpContextFilterListOutput) ScopeFilterExpressionLists() GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterList) []GetProjectAcpContextFilterListScopeFilterExpressionList {
-		return v.ScopeFilterExpressionLists
-	}).(GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput)
-}
-
-type GetProjectAcpContextFilterListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterList)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListArrayOutput) ToGetProjectAcpContextFilterListArrayOutput() GetProjectAcpContextFilterListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListArrayOutput) ToGetProjectAcpContextFilterListArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListArrayOutput) Index(i pulumi.IntInput) GetProjectAcpContextFilterListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpContextFilterList {
-		return vs[0].([]GetProjectAcpContextFilterList)[vs[1].(int)]
-	}).(GetProjectAcpContextFilterListOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionList struct {
-	// - (Optional)  The LHS of the filter expression - the entity type.
-	LeftHandSideEntityType string `pulumi:"leftHandSideEntityType"`
-	// - (Required) The operator in the filter expression.
-	Operator string `pulumi:"operator"`
-	// - (Required) The right hand side (RHS) of an scope expression.
-	RightHandSides []GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide `pulumi:"rightHandSides"`
-}
-
-// GetProjectAcpContextFilterListEntityFilterExpressionListInput is an input type that accepts GetProjectAcpContextFilterListEntityFilterExpressionListArgs and GetProjectAcpContextFilterListEntityFilterExpressionListOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListEntityFilterExpressionListInput` via:
-//
-//	GetProjectAcpContextFilterListEntityFilterExpressionListArgs{...}
-type GetProjectAcpContextFilterListEntityFilterExpressionListInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListOutput() GetProjectAcpContextFilterListEntityFilterExpressionListOutput
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListOutputWithContext(context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListOutput
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListArgs struct {
-	// - (Optional)  The LHS of the filter expression - the entity type.
-	LeftHandSideEntityType pulumi.StringInput `pulumi:"leftHandSideEntityType"`
-	// - (Required) The operator in the filter expression.
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// - (Required) The right hand side (RHS) of an scope expression.
-	RightHandSides GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayInput `pulumi:"rightHandSides"`
-}
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionList)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListArgs) ToGetProjectAcpContextFilterListEntityFilterExpressionListOutput() GetProjectAcpContextFilterListEntityFilterExpressionListOutput {
-	return i.ToGetProjectAcpContextFilterListEntityFilterExpressionListOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListArgs) ToGetProjectAcpContextFilterListEntityFilterExpressionListOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListEntityFilterExpressionListOutput)
-}
-
-// GetProjectAcpContextFilterListEntityFilterExpressionListArrayInput is an input type that accepts GetProjectAcpContextFilterListEntityFilterExpressionListArray and GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListEntityFilterExpressionListArrayInput` via:
-//
-//	GetProjectAcpContextFilterListEntityFilterExpressionListArray{ GetProjectAcpContextFilterListEntityFilterExpressionListArgs{...} }
-type GetProjectAcpContextFilterListEntityFilterExpressionListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListArrayOutputWithContext(context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListArray []GetProjectAcpContextFilterListEntityFilterExpressionListInput
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListEntityFilterExpressionList)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListArray) ToGetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput {
-	return i.ToGetProjectAcpContextFilterListEntityFilterExpressionListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListArray) ToGetProjectAcpContextFilterListEntityFilterExpressionListArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionList)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListOutput() GetProjectAcpContextFilterListEntityFilterExpressionListOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListOutput {
-	return o
-}
-
-// - (Optional)  The LHS of the filter expression - the entity type.
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListOutput) LeftHandSideEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListEntityFilterExpressionList) string {
-		return v.LeftHandSideEntityType
-	}).(pulumi.StringOutput)
-}
-
-// - (Required) The operator in the filter expression.
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListEntityFilterExpressionList) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// - (Required) The right hand side (RHS) of an scope expression.
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListOutput) RightHandSides() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListEntityFilterExpressionList) []GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide {
-		return v.RightHandSides
-	}).(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListEntityFilterExpressionList)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput) Index(i pulumi.IntInput) GetProjectAcpContextFilterListEntityFilterExpressionListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpContextFilterListEntityFilterExpressionList {
-		return vs[0].([]GetProjectAcpContextFilterListEntityFilterExpressionList)[vs[1].(int)]
-	}).(GetProjectAcpContextFilterListEntityFilterExpressionListOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide struct {
-	// - (Optional) The category values represented as a dictionary of key > list of values.
-	Categories []GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory `pulumi:"categories"`
-	// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-	Collection string `pulumi:"collection"`
-	// - (Optional) The explicit list of UUIDs for the given kind.
-	UuidLists []string `pulumi:"uuidLists"`
-}
-
-// GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideInput is an input type that accepts GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs and GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideInput` via:
-//
-//	GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs{...}
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutputWithContext(context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs struct {
-	// - (Optional) The category values represented as a dictionary of key > list of values.
-	Categories GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayInput `pulumi:"categories"`
-	// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-	Collection pulumi.StringInput `pulumi:"collection"`
-	// - (Optional) The explicit list of UUIDs for the given kind.
-	UuidLists pulumi.StringArrayInput `pulumi:"uuidLists"`
-}
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput {
-	return i.ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput)
-}
-
-// GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayInput is an input type that accepts GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArray and GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayInput` via:
-//
-//	GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArray{ GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs{...} }
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutputWithContext(context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArray []GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideInput
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArray) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput {
-	return i.ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArray) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput {
-	return o
-}
-
-// - (Optional) The category values represented as a dictionary of key > list of values.
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput) Categories() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide) []GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory {
-		return v.Categories
-	}).(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput)
-}
-
-// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput) Collection() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide) string {
-		return v.Collection
-	}).(pulumi.StringOutput)
-}
-
-// - (Optional) The explicit list of UUIDs for the given kind.
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput) UuidLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide) []string {
-		return v.UuidLists
-	}).(pulumi.StringArrayOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput) Index(i pulumi.IntInput) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide {
-		return vs[0].([]GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide)[vs[1].(int)]
-	}).(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory struct {
-	// the name.
-	Name string `pulumi:"name"`
-	// value of the key.
-	Values []string `pulumi:"values"`
-}
-
-// GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryInput is an input type that accepts GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArgs and GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryInput` via:
-//
-//	GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArgs{...}
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutputWithContext(context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArgs struct {
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// value of the key.
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArgs) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput {
-	return i.ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArgs) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput)
-}
-
-// GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayInput is an input type that accepts GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArray and GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayInput` via:
-//
-//	GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArray{ GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArgs{...} }
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput
-	ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutputWithContext(context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArray []GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryInput
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArray) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput {
-	return i.ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArray) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput {
-	return o
-}
-
-// the name.
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory) string {
-		return v.Name
-	}).(pulumi.StringOutput)
-}
-
-// value of the key.
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory) []string {
-		return v.Values
-	}).(pulumi.StringArrayOutput)
-}
-
-type GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput() GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput) ToGetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput) Index(i pulumi.IntInput) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory {
-		return vs[0].([]GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory)[vs[1].(int)]
-	}).(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionList struct {
-	// - (Optional)  The LHS of the filter expression - the scope type.
-	LeftHandSide string `pulumi:"leftHandSide"`
-	// - (Required) The operator in the filter expression.
-	Operator string `pulumi:"operator"`
-	// - (Required) The right hand side (RHS) of an scope expression.
-	RightHandSides []GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide `pulumi:"rightHandSides"`
-}
-
-// GetProjectAcpContextFilterListScopeFilterExpressionListInput is an input type that accepts GetProjectAcpContextFilterListScopeFilterExpressionListArgs and GetProjectAcpContextFilterListScopeFilterExpressionListOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListScopeFilterExpressionListInput` via:
-//
-//	GetProjectAcpContextFilterListScopeFilterExpressionListArgs{...}
-type GetProjectAcpContextFilterListScopeFilterExpressionListInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListOutput() GetProjectAcpContextFilterListScopeFilterExpressionListOutput
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListOutputWithContext(context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListOutput
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListArgs struct {
-	// - (Optional)  The LHS of the filter expression - the scope type.
-	LeftHandSide pulumi.StringInput `pulumi:"leftHandSide"`
-	// - (Required) The operator in the filter expression.
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// - (Required) The right hand side (RHS) of an scope expression.
-	RightHandSides GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayInput `pulumi:"rightHandSides"`
-}
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionList)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListArgs) ToGetProjectAcpContextFilterListScopeFilterExpressionListOutput() GetProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return i.ToGetProjectAcpContextFilterListScopeFilterExpressionListOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListArgs) ToGetProjectAcpContextFilterListScopeFilterExpressionListOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListScopeFilterExpressionListOutput)
-}
-
-// GetProjectAcpContextFilterListScopeFilterExpressionListArrayInput is an input type that accepts GetProjectAcpContextFilterListScopeFilterExpressionListArray and GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListScopeFilterExpressionListArrayInput` via:
-//
-//	GetProjectAcpContextFilterListScopeFilterExpressionListArray{ GetProjectAcpContextFilterListScopeFilterExpressionListArgs{...} }
-type GetProjectAcpContextFilterListScopeFilterExpressionListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListArrayOutputWithContext(context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListArray []GetProjectAcpContextFilterListScopeFilterExpressionListInput
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListScopeFilterExpressionList)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListArray) ToGetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return i.ToGetProjectAcpContextFilterListScopeFilterExpressionListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListArray) ToGetProjectAcpContextFilterListScopeFilterExpressionListArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionList)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListOutput() GetProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return o
-}
-
-// - (Optional)  The LHS of the filter expression - the scope type.
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListOutput) LeftHandSide() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListScopeFilterExpressionList) string { return v.LeftHandSide }).(pulumi.StringOutput)
-}
-
-// - (Required) The operator in the filter expression.
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListScopeFilterExpressionList) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// - (Required) The right hand side (RHS) of an scope expression.
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListOutput) RightHandSides() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListScopeFilterExpressionList) []GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide {
-		return v.RightHandSides
-	}).(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListScopeFilterExpressionList)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput) Index(i pulumi.IntInput) GetProjectAcpContextFilterListScopeFilterExpressionListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpContextFilterListScopeFilterExpressionList {
-		return vs[0].([]GetProjectAcpContextFilterListScopeFilterExpressionList)[vs[1].(int)]
-	}).(GetProjectAcpContextFilterListScopeFilterExpressionListOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide struct {
-	// - (Optional) The category values represented as a dictionary of key > list of values.
-	Categories []GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory `pulumi:"categories"`
-	// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-	Collection string `pulumi:"collection"`
-	// - (Optional) The explicit list of UUIDs for the given kind.
-	UuidLists []string `pulumi:"uuidLists"`
-}
-
-// GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput is an input type that accepts GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs and GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput` via:
-//
-//	GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs{...}
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutputWithContext(context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs struct {
-	// - (Optional) The category values represented as a dictionary of key > list of values.
-	Categories GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayInput `pulumi:"categories"`
-	// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-	Collection pulumi.StringInput `pulumi:"collection"`
-	// - (Optional) The explicit list of UUIDs for the given kind.
-	UuidLists pulumi.StringArrayInput `pulumi:"uuidLists"`
-}
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return i.ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput)
-}
-
-// GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayInput is an input type that accepts GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArray and GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayInput` via:
-//
-//	GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArray{ GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs{...} }
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutputWithContext(context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArray []GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArray) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput {
-	return i.ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArray) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return o
-}
-
-// - (Optional) The category values represented as a dictionary of key > list of values.
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) Categories() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide) []GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory {
-		return v.Categories
-	}).(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput)
-}
-
-// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) Collection() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide) string {
-		return v.Collection
-	}).(pulumi.StringOutput)
-}
-
-// - (Optional) The explicit list of UUIDs for the given kind.
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput) UuidLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide) []string {
-		return v.UuidLists
-	}).(pulumi.StringArrayOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput) Index(i pulumi.IntInput) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide {
-		return vs[0].([]GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide)[vs[1].(int)]
-	}).(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory struct {
-	// the name.
-	Name string `pulumi:"name"`
-	// value of the key.
-	Values []string `pulumi:"values"`
-}
-
-// GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryInput is an input type that accepts GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArgs and GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryInput` via:
-//
-//	GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArgs{...}
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutputWithContext(context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArgs struct {
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// value of the key.
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArgs) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput {
-	return i.ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArgs) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput)
-}
-
-// GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayInput is an input type that accepts GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArray and GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayInput` via:
-//
-//	GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArray{ GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArgs{...} }
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput
-	ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutputWithContext(context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArray []GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryInput
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory)(nil)).Elem()
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArray) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput {
-	return i.ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArray) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput {
-	return o
-}
-
-// the name.
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory) string {
-		return v.Name
-	}).(pulumi.StringOutput)
-}
-
-// value of the key.
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory) []string {
-		return v.Values
-	}).(pulumi.StringArrayOutput)
-}
-
-type GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory)(nil)).Elem()
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput() GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput) ToGetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutputWithContext(ctx context.Context) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput) Index(i pulumi.IntInput) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory {
-		return vs[0].([]GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory)[vs[1].(int)]
-	}).(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput)
-}
-
-type GetProjectAcpRoleReference struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectAcpRoleReferenceInput is an input type that accepts GetProjectAcpRoleReferenceArgs and GetProjectAcpRoleReferenceOutput values.
-// You can construct a concrete instance of `GetProjectAcpRoleReferenceInput` via:
-//
-//	GetProjectAcpRoleReferenceArgs{...}
-type GetProjectAcpRoleReferenceInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpRoleReferenceOutput() GetProjectAcpRoleReferenceOutput
-	ToGetProjectAcpRoleReferenceOutputWithContext(context.Context) GetProjectAcpRoleReferenceOutput
-}
-
-type GetProjectAcpRoleReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectAcpRoleReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpRoleReference)(nil)).Elem()
-}
-
-func (i GetProjectAcpRoleReferenceArgs) ToGetProjectAcpRoleReferenceOutput() GetProjectAcpRoleReferenceOutput {
-	return i.ToGetProjectAcpRoleReferenceOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpRoleReferenceArgs) ToGetProjectAcpRoleReferenceOutputWithContext(ctx context.Context) GetProjectAcpRoleReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpRoleReferenceOutput)
-}
-
-// GetProjectAcpRoleReferenceArrayInput is an input type that accepts GetProjectAcpRoleReferenceArray and GetProjectAcpRoleReferenceArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpRoleReferenceArrayInput` via:
-//
-//	GetProjectAcpRoleReferenceArray{ GetProjectAcpRoleReferenceArgs{...} }
-type GetProjectAcpRoleReferenceArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpRoleReferenceArrayOutput() GetProjectAcpRoleReferenceArrayOutput
-	ToGetProjectAcpRoleReferenceArrayOutputWithContext(context.Context) GetProjectAcpRoleReferenceArrayOutput
-}
-
-type GetProjectAcpRoleReferenceArray []GetProjectAcpRoleReferenceInput
-
-func (GetProjectAcpRoleReferenceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpRoleReference)(nil)).Elem()
-}
-
-func (i GetProjectAcpRoleReferenceArray) ToGetProjectAcpRoleReferenceArrayOutput() GetProjectAcpRoleReferenceArrayOutput {
-	return i.ToGetProjectAcpRoleReferenceArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpRoleReferenceArray) ToGetProjectAcpRoleReferenceArrayOutputWithContext(ctx context.Context) GetProjectAcpRoleReferenceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpRoleReferenceArrayOutput)
-}
-
-type GetProjectAcpRoleReferenceOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpRoleReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpRoleReference)(nil)).Elem()
-}
-
-func (o GetProjectAcpRoleReferenceOutput) ToGetProjectAcpRoleReferenceOutput() GetProjectAcpRoleReferenceOutput {
-	return o
-}
-
-func (o GetProjectAcpRoleReferenceOutput) ToGetProjectAcpRoleReferenceOutputWithContext(ctx context.Context) GetProjectAcpRoleReferenceOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectAcpRoleReferenceOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpRoleReference) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectAcpRoleReferenceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpRoleReference) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectAcpRoleReferenceOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpRoleReference) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectAcpRoleReferenceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpRoleReferenceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpRoleReference)(nil)).Elem()
-}
-
-func (o GetProjectAcpRoleReferenceArrayOutput) ToGetProjectAcpRoleReferenceArrayOutput() GetProjectAcpRoleReferenceArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpRoleReferenceArrayOutput) ToGetProjectAcpRoleReferenceArrayOutputWithContext(ctx context.Context) GetProjectAcpRoleReferenceArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpRoleReferenceArrayOutput) Index(i pulumi.IntInput) GetProjectAcpRoleReferenceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpRoleReference {
-		return vs[0].([]GetProjectAcpRoleReference)[vs[1].(int)]
-	}).(GetProjectAcpRoleReferenceOutput)
-}
-
-type GetProjectAcpUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectAcpUserGroupReferenceListInput is an input type that accepts GetProjectAcpUserGroupReferenceListArgs and GetProjectAcpUserGroupReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectAcpUserGroupReferenceListInput` via:
-//
-//	GetProjectAcpUserGroupReferenceListArgs{...}
-type GetProjectAcpUserGroupReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpUserGroupReferenceListOutput() GetProjectAcpUserGroupReferenceListOutput
-	ToGetProjectAcpUserGroupReferenceListOutputWithContext(context.Context) GetProjectAcpUserGroupReferenceListOutput
-}
-
-type GetProjectAcpUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectAcpUserGroupReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectAcpUserGroupReferenceListArgs) ToGetProjectAcpUserGroupReferenceListOutput() GetProjectAcpUserGroupReferenceListOutput {
-	return i.ToGetProjectAcpUserGroupReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpUserGroupReferenceListArgs) ToGetProjectAcpUserGroupReferenceListOutputWithContext(ctx context.Context) GetProjectAcpUserGroupReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpUserGroupReferenceListOutput)
-}
-
-// GetProjectAcpUserGroupReferenceListArrayInput is an input type that accepts GetProjectAcpUserGroupReferenceListArray and GetProjectAcpUserGroupReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpUserGroupReferenceListArrayInput` via:
-//
-//	GetProjectAcpUserGroupReferenceListArray{ GetProjectAcpUserGroupReferenceListArgs{...} }
-type GetProjectAcpUserGroupReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpUserGroupReferenceListArrayOutput() GetProjectAcpUserGroupReferenceListArrayOutput
-	ToGetProjectAcpUserGroupReferenceListArrayOutputWithContext(context.Context) GetProjectAcpUserGroupReferenceListArrayOutput
-}
-
-type GetProjectAcpUserGroupReferenceListArray []GetProjectAcpUserGroupReferenceListInput
-
-func (GetProjectAcpUserGroupReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectAcpUserGroupReferenceListArray) ToGetProjectAcpUserGroupReferenceListArrayOutput() GetProjectAcpUserGroupReferenceListArrayOutput {
-	return i.ToGetProjectAcpUserGroupReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpUserGroupReferenceListArray) ToGetProjectAcpUserGroupReferenceListArrayOutputWithContext(ctx context.Context) GetProjectAcpUserGroupReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpUserGroupReferenceListArrayOutput)
-}
-
-type GetProjectAcpUserGroupReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpUserGroupReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectAcpUserGroupReferenceListOutput) ToGetProjectAcpUserGroupReferenceListOutput() GetProjectAcpUserGroupReferenceListOutput {
-	return o
-}
-
-func (o GetProjectAcpUserGroupReferenceListOutput) ToGetProjectAcpUserGroupReferenceListOutputWithContext(ctx context.Context) GetProjectAcpUserGroupReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectAcpUserGroupReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpUserGroupReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectAcpUserGroupReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpUserGroupReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectAcpUserGroupReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpUserGroupReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectAcpUserGroupReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpUserGroupReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectAcpUserGroupReferenceListArrayOutput) ToGetProjectAcpUserGroupReferenceListArrayOutput() GetProjectAcpUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpUserGroupReferenceListArrayOutput) ToGetProjectAcpUserGroupReferenceListArrayOutputWithContext(ctx context.Context) GetProjectAcpUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpUserGroupReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectAcpUserGroupReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpUserGroupReferenceList {
-		return vs[0].([]GetProjectAcpUserGroupReferenceList)[vs[1].(int)]
-	}).(GetProjectAcpUserGroupReferenceListOutput)
-}
-
-type GetProjectAcpUserReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectAcpUserReferenceListInput is an input type that accepts GetProjectAcpUserReferenceListArgs and GetProjectAcpUserReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectAcpUserReferenceListInput` via:
-//
-//	GetProjectAcpUserReferenceListArgs{...}
-type GetProjectAcpUserReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpUserReferenceListOutput() GetProjectAcpUserReferenceListOutput
-	ToGetProjectAcpUserReferenceListOutputWithContext(context.Context) GetProjectAcpUserReferenceListOutput
-}
-
-type GetProjectAcpUserReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectAcpUserReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpUserReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectAcpUserReferenceListArgs) ToGetProjectAcpUserReferenceListOutput() GetProjectAcpUserReferenceListOutput {
-	return i.ToGetProjectAcpUserReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpUserReferenceListArgs) ToGetProjectAcpUserReferenceListOutputWithContext(ctx context.Context) GetProjectAcpUserReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpUserReferenceListOutput)
-}
-
-// GetProjectAcpUserReferenceListArrayInput is an input type that accepts GetProjectAcpUserReferenceListArray and GetProjectAcpUserReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectAcpUserReferenceListArrayInput` via:
-//
-//	GetProjectAcpUserReferenceListArray{ GetProjectAcpUserReferenceListArgs{...} }
-type GetProjectAcpUserReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectAcpUserReferenceListArrayOutput() GetProjectAcpUserReferenceListArrayOutput
-	ToGetProjectAcpUserReferenceListArrayOutputWithContext(context.Context) GetProjectAcpUserReferenceListArrayOutput
-}
-
-type GetProjectAcpUserReferenceListArray []GetProjectAcpUserReferenceListInput
-
-func (GetProjectAcpUserReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpUserReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectAcpUserReferenceListArray) ToGetProjectAcpUserReferenceListArrayOutput() GetProjectAcpUserReferenceListArrayOutput {
-	return i.ToGetProjectAcpUserReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectAcpUserReferenceListArray) ToGetProjectAcpUserReferenceListArrayOutputWithContext(ctx context.Context) GetProjectAcpUserReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectAcpUserReferenceListArrayOutput)
-}
-
-type GetProjectAcpUserReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpUserReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectAcpUserReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectAcpUserReferenceListOutput) ToGetProjectAcpUserReferenceListOutput() GetProjectAcpUserReferenceListOutput {
-	return o
-}
-
-func (o GetProjectAcpUserReferenceListOutput) ToGetProjectAcpUserReferenceListOutputWithContext(ctx context.Context) GetProjectAcpUserReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectAcpUserReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpUserReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectAcpUserReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpUserReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectAcpUserReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectAcpUserReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectAcpUserReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectAcpUserReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectAcpUserReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectAcpUserReferenceListArrayOutput) ToGetProjectAcpUserReferenceListArrayOutput() GetProjectAcpUserReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpUserReferenceListArrayOutput) ToGetProjectAcpUserReferenceListArrayOutputWithContext(ctx context.Context) GetProjectAcpUserReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectAcpUserReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectAcpUserReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectAcpUserReferenceList {
-		return vs[0].([]GetProjectAcpUserReferenceList)[vs[1].(int)]
-	}).(GetProjectAcpUserReferenceListOutput)
-}
-
-type GetProjectCategory struct {
-	// the name.
-	Name string `pulumi:"name"`
-	// value of the key.
-	Value string `pulumi:"value"`
-}
-
-// GetProjectCategoryInput is an input type that accepts GetProjectCategoryArgs and GetProjectCategoryOutput values.
-// You can construct a concrete instance of `GetProjectCategoryInput` via:
-//
-//	GetProjectCategoryArgs{...}
-type GetProjectCategoryInput interface {
-	pulumi.Input
-
-	ToGetProjectCategoryOutput() GetProjectCategoryOutput
-	ToGetProjectCategoryOutputWithContext(context.Context) GetProjectCategoryOutput
-}
-
-type GetProjectCategoryArgs struct {
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// value of the key.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetProjectCategoryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectCategory)(nil)).Elem()
-}
-
-func (i GetProjectCategoryArgs) ToGetProjectCategoryOutput() GetProjectCategoryOutput {
-	return i.ToGetProjectCategoryOutputWithContext(context.Background())
-}
-
-func (i GetProjectCategoryArgs) ToGetProjectCategoryOutputWithContext(ctx context.Context) GetProjectCategoryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectCategoryOutput)
-}
-
-// GetProjectCategoryArrayInput is an input type that accepts GetProjectCategoryArray and GetProjectCategoryArrayOutput values.
-// You can construct a concrete instance of `GetProjectCategoryArrayInput` via:
-//
-//	GetProjectCategoryArray{ GetProjectCategoryArgs{...} }
-type GetProjectCategoryArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectCategoryArrayOutput() GetProjectCategoryArrayOutput
-	ToGetProjectCategoryArrayOutputWithContext(context.Context) GetProjectCategoryArrayOutput
-}
-
-type GetProjectCategoryArray []GetProjectCategoryInput
-
-func (GetProjectCategoryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectCategory)(nil)).Elem()
-}
-
-func (i GetProjectCategoryArray) ToGetProjectCategoryArrayOutput() GetProjectCategoryArrayOutput {
-	return i.ToGetProjectCategoryArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectCategoryArray) ToGetProjectCategoryArrayOutputWithContext(ctx context.Context) GetProjectCategoryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectCategoryArrayOutput)
-}
-
-type GetProjectCategoryOutput struct{ *pulumi.OutputState }
-
-func (GetProjectCategoryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectCategory)(nil)).Elem()
-}
-
-func (o GetProjectCategoryOutput) ToGetProjectCategoryOutput() GetProjectCategoryOutput {
-	return o
-}
-
-func (o GetProjectCategoryOutput) ToGetProjectCategoryOutputWithContext(ctx context.Context) GetProjectCategoryOutput {
-	return o
-}
-
-// the name.
-func (o GetProjectCategoryOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectCategory) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// value of the key.
-func (o GetProjectCategoryOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectCategory) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetProjectCategoryArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectCategoryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectCategory)(nil)).Elem()
-}
-
-func (o GetProjectCategoryArrayOutput) ToGetProjectCategoryArrayOutput() GetProjectCategoryArrayOutput {
-	return o
-}
-
-func (o GetProjectCategoryArrayOutput) ToGetProjectCategoryArrayOutputWithContext(ctx context.Context) GetProjectCategoryArrayOutput {
-	return o
-}
-
-func (o GetProjectCategoryArrayOutput) Index(i pulumi.IntInput) GetProjectCategoryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectCategory {
-		return vs[0].([]GetProjectCategory)[vs[1].(int)]
-	}).(GetProjectCategoryOutput)
-}
-
-type GetProjectClusterReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectClusterReferenceListInput is an input type that accepts GetProjectClusterReferenceListArgs and GetProjectClusterReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectClusterReferenceListInput` via:
-//
-//	GetProjectClusterReferenceListArgs{...}
-type GetProjectClusterReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectClusterReferenceListOutput() GetProjectClusterReferenceListOutput
-	ToGetProjectClusterReferenceListOutputWithContext(context.Context) GetProjectClusterReferenceListOutput
-}
-
-type GetProjectClusterReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectClusterReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectClusterReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectClusterReferenceListArgs) ToGetProjectClusterReferenceListOutput() GetProjectClusterReferenceListOutput {
-	return i.ToGetProjectClusterReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectClusterReferenceListArgs) ToGetProjectClusterReferenceListOutputWithContext(ctx context.Context) GetProjectClusterReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectClusterReferenceListOutput)
-}
-
-// GetProjectClusterReferenceListArrayInput is an input type that accepts GetProjectClusterReferenceListArray and GetProjectClusterReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectClusterReferenceListArrayInput` via:
-//
-//	GetProjectClusterReferenceListArray{ GetProjectClusterReferenceListArgs{...} }
-type GetProjectClusterReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectClusterReferenceListArrayOutput() GetProjectClusterReferenceListArrayOutput
-	ToGetProjectClusterReferenceListArrayOutputWithContext(context.Context) GetProjectClusterReferenceListArrayOutput
-}
-
-type GetProjectClusterReferenceListArray []GetProjectClusterReferenceListInput
-
-func (GetProjectClusterReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectClusterReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectClusterReferenceListArray) ToGetProjectClusterReferenceListArrayOutput() GetProjectClusterReferenceListArrayOutput {
-	return i.ToGetProjectClusterReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectClusterReferenceListArray) ToGetProjectClusterReferenceListArrayOutputWithContext(ctx context.Context) GetProjectClusterReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectClusterReferenceListArrayOutput)
-}
-
-type GetProjectClusterReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectClusterReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectClusterReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectClusterReferenceListOutput) ToGetProjectClusterReferenceListOutput() GetProjectClusterReferenceListOutput {
-	return o
-}
-
-func (o GetProjectClusterReferenceListOutput) ToGetProjectClusterReferenceListOutputWithContext(ctx context.Context) GetProjectClusterReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectClusterReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectClusterReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectClusterReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectClusterReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectClusterReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectClusterReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectClusterReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectClusterReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectClusterReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectClusterReferenceListArrayOutput) ToGetProjectClusterReferenceListArrayOutput() GetProjectClusterReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectClusterReferenceListArrayOutput) ToGetProjectClusterReferenceListArrayOutputWithContext(ctx context.Context) GetProjectClusterReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectClusterReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectClusterReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectClusterReferenceList {
-		return vs[0].([]GetProjectClusterReferenceList)[vs[1].(int)]
-	}).(GetProjectClusterReferenceListOutput)
-}
-
-type GetProjectDefaultEnvironmentReference struct {
-	// (Optional) The kind name. Default value is `environment`
-	Kind string `pulumi:"kind"`
-	// (Optional/Computed) The name of a environment.
-	Name string `pulumi:"name"`
-	// (Required) The UUID of a environment
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectDefaultEnvironmentReferenceInput is an input type that accepts GetProjectDefaultEnvironmentReferenceArgs and GetProjectDefaultEnvironmentReferenceOutput values.
-// You can construct a concrete instance of `GetProjectDefaultEnvironmentReferenceInput` via:
-//
-//	GetProjectDefaultEnvironmentReferenceArgs{...}
-type GetProjectDefaultEnvironmentReferenceInput interface {
-	pulumi.Input
-
-	ToGetProjectDefaultEnvironmentReferenceOutput() GetProjectDefaultEnvironmentReferenceOutput
-	ToGetProjectDefaultEnvironmentReferenceOutputWithContext(context.Context) GetProjectDefaultEnvironmentReferenceOutput
-}
-
-type GetProjectDefaultEnvironmentReferenceArgs struct {
-	// (Optional) The kind name. Default value is `environment`
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// (Optional/Computed) The name of a environment.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) The UUID of a environment
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectDefaultEnvironmentReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectDefaultEnvironmentReference)(nil)).Elem()
-}
-
-func (i GetProjectDefaultEnvironmentReferenceArgs) ToGetProjectDefaultEnvironmentReferenceOutput() GetProjectDefaultEnvironmentReferenceOutput {
-	return i.ToGetProjectDefaultEnvironmentReferenceOutputWithContext(context.Background())
-}
-
-func (i GetProjectDefaultEnvironmentReferenceArgs) ToGetProjectDefaultEnvironmentReferenceOutputWithContext(ctx context.Context) GetProjectDefaultEnvironmentReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectDefaultEnvironmentReferenceOutput)
-}
-
-// GetProjectDefaultEnvironmentReferenceArrayInput is an input type that accepts GetProjectDefaultEnvironmentReferenceArray and GetProjectDefaultEnvironmentReferenceArrayOutput values.
-// You can construct a concrete instance of `GetProjectDefaultEnvironmentReferenceArrayInput` via:
-//
-//	GetProjectDefaultEnvironmentReferenceArray{ GetProjectDefaultEnvironmentReferenceArgs{...} }
-type GetProjectDefaultEnvironmentReferenceArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectDefaultEnvironmentReferenceArrayOutput() GetProjectDefaultEnvironmentReferenceArrayOutput
-	ToGetProjectDefaultEnvironmentReferenceArrayOutputWithContext(context.Context) GetProjectDefaultEnvironmentReferenceArrayOutput
-}
-
-type GetProjectDefaultEnvironmentReferenceArray []GetProjectDefaultEnvironmentReferenceInput
-
-func (GetProjectDefaultEnvironmentReferenceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectDefaultEnvironmentReference)(nil)).Elem()
-}
-
-func (i GetProjectDefaultEnvironmentReferenceArray) ToGetProjectDefaultEnvironmentReferenceArrayOutput() GetProjectDefaultEnvironmentReferenceArrayOutput {
-	return i.ToGetProjectDefaultEnvironmentReferenceArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectDefaultEnvironmentReferenceArray) ToGetProjectDefaultEnvironmentReferenceArrayOutputWithContext(ctx context.Context) GetProjectDefaultEnvironmentReferenceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectDefaultEnvironmentReferenceArrayOutput)
-}
-
-type GetProjectDefaultEnvironmentReferenceOutput struct{ *pulumi.OutputState }
-
-func (GetProjectDefaultEnvironmentReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectDefaultEnvironmentReference)(nil)).Elem()
-}
-
-func (o GetProjectDefaultEnvironmentReferenceOutput) ToGetProjectDefaultEnvironmentReferenceOutput() GetProjectDefaultEnvironmentReferenceOutput {
-	return o
-}
-
-func (o GetProjectDefaultEnvironmentReferenceOutput) ToGetProjectDefaultEnvironmentReferenceOutputWithContext(ctx context.Context) GetProjectDefaultEnvironmentReferenceOutput {
-	return o
-}
-
-// (Optional) The kind name. Default value is `environment`
-func (o GetProjectDefaultEnvironmentReferenceOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectDefaultEnvironmentReference) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// (Optional/Computed) The name of a environment.
-func (o GetProjectDefaultEnvironmentReferenceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectDefaultEnvironmentReference) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) The UUID of a environment
-func (o GetProjectDefaultEnvironmentReferenceOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectDefaultEnvironmentReference) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectDefaultEnvironmentReferenceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectDefaultEnvironmentReferenceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectDefaultEnvironmentReference)(nil)).Elem()
-}
-
-func (o GetProjectDefaultEnvironmentReferenceArrayOutput) ToGetProjectDefaultEnvironmentReferenceArrayOutput() GetProjectDefaultEnvironmentReferenceArrayOutput {
-	return o
-}
-
-func (o GetProjectDefaultEnvironmentReferenceArrayOutput) ToGetProjectDefaultEnvironmentReferenceArrayOutputWithContext(ctx context.Context) GetProjectDefaultEnvironmentReferenceArrayOutput {
-	return o
-}
-
-func (o GetProjectDefaultEnvironmentReferenceArrayOutput) Index(i pulumi.IntInput) GetProjectDefaultEnvironmentReferenceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectDefaultEnvironmentReference {
-		return vs[0].([]GetProjectDefaultEnvironmentReference)[vs[1].(int)]
-	}).(GetProjectDefaultEnvironmentReferenceOutput)
-}
-
-type GetProjectEnvironmentReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectEnvironmentReferenceListInput is an input type that accepts GetProjectEnvironmentReferenceListArgs and GetProjectEnvironmentReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectEnvironmentReferenceListInput` via:
-//
-//	GetProjectEnvironmentReferenceListArgs{...}
-type GetProjectEnvironmentReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectEnvironmentReferenceListOutput() GetProjectEnvironmentReferenceListOutput
-	ToGetProjectEnvironmentReferenceListOutputWithContext(context.Context) GetProjectEnvironmentReferenceListOutput
-}
-
-type GetProjectEnvironmentReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectEnvironmentReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectEnvironmentReferenceListArgs) ToGetProjectEnvironmentReferenceListOutput() GetProjectEnvironmentReferenceListOutput {
-	return i.ToGetProjectEnvironmentReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectEnvironmentReferenceListArgs) ToGetProjectEnvironmentReferenceListOutputWithContext(ctx context.Context) GetProjectEnvironmentReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectEnvironmentReferenceListOutput)
-}
-
-// GetProjectEnvironmentReferenceListArrayInput is an input type that accepts GetProjectEnvironmentReferenceListArray and GetProjectEnvironmentReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectEnvironmentReferenceListArrayInput` via:
-//
-//	GetProjectEnvironmentReferenceListArray{ GetProjectEnvironmentReferenceListArgs{...} }
-type GetProjectEnvironmentReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectEnvironmentReferenceListArrayOutput() GetProjectEnvironmentReferenceListArrayOutput
-	ToGetProjectEnvironmentReferenceListArrayOutputWithContext(context.Context) GetProjectEnvironmentReferenceListArrayOutput
-}
-
-type GetProjectEnvironmentReferenceListArray []GetProjectEnvironmentReferenceListInput
-
-func (GetProjectEnvironmentReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectEnvironmentReferenceListArray) ToGetProjectEnvironmentReferenceListArrayOutput() GetProjectEnvironmentReferenceListArrayOutput {
-	return i.ToGetProjectEnvironmentReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectEnvironmentReferenceListArray) ToGetProjectEnvironmentReferenceListArrayOutputWithContext(ctx context.Context) GetProjectEnvironmentReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectEnvironmentReferenceListArrayOutput)
-}
-
-type GetProjectEnvironmentReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectEnvironmentReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectEnvironmentReferenceListOutput) ToGetProjectEnvironmentReferenceListOutput() GetProjectEnvironmentReferenceListOutput {
-	return o
-}
-
-func (o GetProjectEnvironmentReferenceListOutput) ToGetProjectEnvironmentReferenceListOutputWithContext(ctx context.Context) GetProjectEnvironmentReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectEnvironmentReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectEnvironmentReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectEnvironmentReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectEnvironmentReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectEnvironmentReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectEnvironmentReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectEnvironmentReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectEnvironmentReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectEnvironmentReferenceListArrayOutput) ToGetProjectEnvironmentReferenceListArrayOutput() GetProjectEnvironmentReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectEnvironmentReferenceListArrayOutput) ToGetProjectEnvironmentReferenceListArrayOutputWithContext(ctx context.Context) GetProjectEnvironmentReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectEnvironmentReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectEnvironmentReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectEnvironmentReferenceList {
-		return vs[0].([]GetProjectEnvironmentReferenceList)[vs[1].(int)]
-	}).(GetProjectEnvironmentReferenceListOutput)
-}
-
-type GetProjectExternalNetworkList struct {
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectExternalNetworkListInput is an input type that accepts GetProjectExternalNetworkListArgs and GetProjectExternalNetworkListOutput values.
-// You can construct a concrete instance of `GetProjectExternalNetworkListInput` via:
-//
-//	GetProjectExternalNetworkListArgs{...}
-type GetProjectExternalNetworkListInput interface {
-	pulumi.Input
-
-	ToGetProjectExternalNetworkListOutput() GetProjectExternalNetworkListOutput
-	ToGetProjectExternalNetworkListOutputWithContext(context.Context) GetProjectExternalNetworkListOutput
-}
-
-type GetProjectExternalNetworkListArgs struct {
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectExternalNetworkListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectExternalNetworkList)(nil)).Elem()
-}
-
-func (i GetProjectExternalNetworkListArgs) ToGetProjectExternalNetworkListOutput() GetProjectExternalNetworkListOutput {
-	return i.ToGetProjectExternalNetworkListOutputWithContext(context.Background())
-}
-
-func (i GetProjectExternalNetworkListArgs) ToGetProjectExternalNetworkListOutputWithContext(ctx context.Context) GetProjectExternalNetworkListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectExternalNetworkListOutput)
-}
-
-// GetProjectExternalNetworkListArrayInput is an input type that accepts GetProjectExternalNetworkListArray and GetProjectExternalNetworkListArrayOutput values.
-// You can construct a concrete instance of `GetProjectExternalNetworkListArrayInput` via:
-//
-//	GetProjectExternalNetworkListArray{ GetProjectExternalNetworkListArgs{...} }
-type GetProjectExternalNetworkListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectExternalNetworkListArrayOutput() GetProjectExternalNetworkListArrayOutput
-	ToGetProjectExternalNetworkListArrayOutputWithContext(context.Context) GetProjectExternalNetworkListArrayOutput
-}
-
-type GetProjectExternalNetworkListArray []GetProjectExternalNetworkListInput
-
-func (GetProjectExternalNetworkListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectExternalNetworkList)(nil)).Elem()
-}
-
-func (i GetProjectExternalNetworkListArray) ToGetProjectExternalNetworkListArrayOutput() GetProjectExternalNetworkListArrayOutput {
-	return i.ToGetProjectExternalNetworkListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectExternalNetworkListArray) ToGetProjectExternalNetworkListArrayOutputWithContext(ctx context.Context) GetProjectExternalNetworkListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectExternalNetworkListArrayOutput)
-}
-
-type GetProjectExternalNetworkListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectExternalNetworkListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectExternalNetworkList)(nil)).Elem()
-}
-
-func (o GetProjectExternalNetworkListOutput) ToGetProjectExternalNetworkListOutput() GetProjectExternalNetworkListOutput {
-	return o
-}
-
-func (o GetProjectExternalNetworkListOutput) ToGetProjectExternalNetworkListOutputWithContext(ctx context.Context) GetProjectExternalNetworkListOutput {
-	return o
-}
-
-// the name.
-func (o GetProjectExternalNetworkListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectExternalNetworkList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectExternalNetworkListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectExternalNetworkList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectExternalNetworkListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectExternalNetworkListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectExternalNetworkList)(nil)).Elem()
-}
-
-func (o GetProjectExternalNetworkListArrayOutput) ToGetProjectExternalNetworkListArrayOutput() GetProjectExternalNetworkListArrayOutput {
-	return o
-}
-
-func (o GetProjectExternalNetworkListArrayOutput) ToGetProjectExternalNetworkListArrayOutputWithContext(ctx context.Context) GetProjectExternalNetworkListArrayOutput {
-	return o
-}
-
-func (o GetProjectExternalNetworkListArrayOutput) Index(i pulumi.IntInput) GetProjectExternalNetworkListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectExternalNetworkList {
-		return vs[0].([]GetProjectExternalNetworkList)[vs[1].(int)]
-	}).(GetProjectExternalNetworkListOutput)
-}
-
-type GetProjectExternalUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectExternalUserGroupReferenceListInput is an input type that accepts GetProjectExternalUserGroupReferenceListArgs and GetProjectExternalUserGroupReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectExternalUserGroupReferenceListInput` via:
-//
-//	GetProjectExternalUserGroupReferenceListArgs{...}
-type GetProjectExternalUserGroupReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectExternalUserGroupReferenceListOutput() GetProjectExternalUserGroupReferenceListOutput
-	ToGetProjectExternalUserGroupReferenceListOutputWithContext(context.Context) GetProjectExternalUserGroupReferenceListOutput
-}
-
-type GetProjectExternalUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectExternalUserGroupReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectExternalUserGroupReferenceListArgs) ToGetProjectExternalUserGroupReferenceListOutput() GetProjectExternalUserGroupReferenceListOutput {
-	return i.ToGetProjectExternalUserGroupReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectExternalUserGroupReferenceListArgs) ToGetProjectExternalUserGroupReferenceListOutputWithContext(ctx context.Context) GetProjectExternalUserGroupReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectExternalUserGroupReferenceListOutput)
-}
-
-// GetProjectExternalUserGroupReferenceListArrayInput is an input type that accepts GetProjectExternalUserGroupReferenceListArray and GetProjectExternalUserGroupReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectExternalUserGroupReferenceListArrayInput` via:
-//
-//	GetProjectExternalUserGroupReferenceListArray{ GetProjectExternalUserGroupReferenceListArgs{...} }
-type GetProjectExternalUserGroupReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectExternalUserGroupReferenceListArrayOutput() GetProjectExternalUserGroupReferenceListArrayOutput
-	ToGetProjectExternalUserGroupReferenceListArrayOutputWithContext(context.Context) GetProjectExternalUserGroupReferenceListArrayOutput
-}
-
-type GetProjectExternalUserGroupReferenceListArray []GetProjectExternalUserGroupReferenceListInput
-
-func (GetProjectExternalUserGroupReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectExternalUserGroupReferenceListArray) ToGetProjectExternalUserGroupReferenceListArrayOutput() GetProjectExternalUserGroupReferenceListArrayOutput {
-	return i.ToGetProjectExternalUserGroupReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectExternalUserGroupReferenceListArray) ToGetProjectExternalUserGroupReferenceListArrayOutputWithContext(ctx context.Context) GetProjectExternalUserGroupReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectExternalUserGroupReferenceListArrayOutput)
-}
-
-type GetProjectExternalUserGroupReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectExternalUserGroupReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectExternalUserGroupReferenceListOutput) ToGetProjectExternalUserGroupReferenceListOutput() GetProjectExternalUserGroupReferenceListOutput {
-	return o
-}
-
-func (o GetProjectExternalUserGroupReferenceListOutput) ToGetProjectExternalUserGroupReferenceListOutputWithContext(ctx context.Context) GetProjectExternalUserGroupReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectExternalUserGroupReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectExternalUserGroupReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectExternalUserGroupReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectExternalUserGroupReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectExternalUserGroupReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectExternalUserGroupReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectExternalUserGroupReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectExternalUserGroupReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectExternalUserGroupReferenceListArrayOutput) ToGetProjectExternalUserGroupReferenceListArrayOutput() GetProjectExternalUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectExternalUserGroupReferenceListArrayOutput) ToGetProjectExternalUserGroupReferenceListArrayOutputWithContext(ctx context.Context) GetProjectExternalUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectExternalUserGroupReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectExternalUserGroupReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectExternalUserGroupReferenceList {
-		return vs[0].([]GetProjectExternalUserGroupReferenceList)[vs[1].(int)]
-	}).(GetProjectExternalUserGroupReferenceListOutput)
-}
-
-type GetProjectResourceDomain struct {
-	// Array of the utilization/limit for resource types
-	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-	// * `resource_domain.resources.#.units` - The units of the resource type
-	// * `resource_domain.resources.#.value` - The amount of resource consumed
-	Resources []GetProjectResourceDomainResource `pulumi:"resources"`
-}
-
-// GetProjectResourceDomainInput is an input type that accepts GetProjectResourceDomainArgs and GetProjectResourceDomainOutput values.
-// You can construct a concrete instance of `GetProjectResourceDomainInput` via:
-//
-//	GetProjectResourceDomainArgs{...}
-type GetProjectResourceDomainInput interface {
-	pulumi.Input
-
-	ToGetProjectResourceDomainOutput() GetProjectResourceDomainOutput
-	ToGetProjectResourceDomainOutputWithContext(context.Context) GetProjectResourceDomainOutput
-}
-
-type GetProjectResourceDomainArgs struct {
-	// Array of the utilization/limit for resource types
-	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-	// * `resource_domain.resources.#.units` - The units of the resource type
-	// * `resource_domain.resources.#.value` - The amount of resource consumed
-	Resources GetProjectResourceDomainResourceArrayInput `pulumi:"resources"`
-}
-
-func (GetProjectResourceDomainArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectResourceDomain)(nil)).Elem()
-}
-
-func (i GetProjectResourceDomainArgs) ToGetProjectResourceDomainOutput() GetProjectResourceDomainOutput {
-	return i.ToGetProjectResourceDomainOutputWithContext(context.Background())
-}
-
-func (i GetProjectResourceDomainArgs) ToGetProjectResourceDomainOutputWithContext(ctx context.Context) GetProjectResourceDomainOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectResourceDomainOutput)
-}
-
-// GetProjectResourceDomainArrayInput is an input type that accepts GetProjectResourceDomainArray and GetProjectResourceDomainArrayOutput values.
-// You can construct a concrete instance of `GetProjectResourceDomainArrayInput` via:
-//
-//	GetProjectResourceDomainArray{ GetProjectResourceDomainArgs{...} }
-type GetProjectResourceDomainArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectResourceDomainArrayOutput() GetProjectResourceDomainArrayOutput
-	ToGetProjectResourceDomainArrayOutputWithContext(context.Context) GetProjectResourceDomainArrayOutput
-}
-
-type GetProjectResourceDomainArray []GetProjectResourceDomainInput
-
-func (GetProjectResourceDomainArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectResourceDomain)(nil)).Elem()
-}
-
-func (i GetProjectResourceDomainArray) ToGetProjectResourceDomainArrayOutput() GetProjectResourceDomainArrayOutput {
-	return i.ToGetProjectResourceDomainArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectResourceDomainArray) ToGetProjectResourceDomainArrayOutputWithContext(ctx context.Context) GetProjectResourceDomainArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectResourceDomainArrayOutput)
-}
-
-type GetProjectResourceDomainOutput struct{ *pulumi.OutputState }
-
-func (GetProjectResourceDomainOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectResourceDomain)(nil)).Elem()
-}
-
-func (o GetProjectResourceDomainOutput) ToGetProjectResourceDomainOutput() GetProjectResourceDomainOutput {
-	return o
-}
-
-func (o GetProjectResourceDomainOutput) ToGetProjectResourceDomainOutputWithContext(ctx context.Context) GetProjectResourceDomainOutput {
-	return o
-}
-
-// Array of the utilization/limit for resource types
-// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-// * `resource_domain.resources.#.units` - The units of the resource type
-// * `resource_domain.resources.#.value` - The amount of resource consumed
-func (o GetProjectResourceDomainOutput) Resources() GetProjectResourceDomainResourceArrayOutput {
-	return o.ApplyT(func(v GetProjectResourceDomain) []GetProjectResourceDomainResource { return v.Resources }).(GetProjectResourceDomainResourceArrayOutput)
-}
-
-type GetProjectResourceDomainArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectResourceDomainArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectResourceDomain)(nil)).Elem()
-}
-
-func (o GetProjectResourceDomainArrayOutput) ToGetProjectResourceDomainArrayOutput() GetProjectResourceDomainArrayOutput {
-	return o
-}
-
-func (o GetProjectResourceDomainArrayOutput) ToGetProjectResourceDomainArrayOutputWithContext(ctx context.Context) GetProjectResourceDomainArrayOutput {
-	return o
-}
-
-func (o GetProjectResourceDomainArrayOutput) Index(i pulumi.IntInput) GetProjectResourceDomainOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectResourceDomain {
-		return vs[0].([]GetProjectResourceDomain)[vs[1].(int)]
-	}).(GetProjectResourceDomainOutput)
-}
-
-type GetProjectResourceDomainResource struct {
-	Limit        int    `pulumi:"limit"`
-	ResourceType string `pulumi:"resourceType"`
-	Units        string `pulumi:"units"`
-	// value of the key.
-	Value int `pulumi:"value"`
-}
-
-// GetProjectResourceDomainResourceInput is an input type that accepts GetProjectResourceDomainResourceArgs and GetProjectResourceDomainResourceOutput values.
-// You can construct a concrete instance of `GetProjectResourceDomainResourceInput` via:
-//
-//	GetProjectResourceDomainResourceArgs{...}
-type GetProjectResourceDomainResourceInput interface {
-	pulumi.Input
-
-	ToGetProjectResourceDomainResourceOutput() GetProjectResourceDomainResourceOutput
-	ToGetProjectResourceDomainResourceOutputWithContext(context.Context) GetProjectResourceDomainResourceOutput
-}
-
-type GetProjectResourceDomainResourceArgs struct {
-	Limit        pulumi.IntInput    `pulumi:"limit"`
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-	Units        pulumi.StringInput `pulumi:"units"`
-	// value of the key.
-	Value pulumi.IntInput `pulumi:"value"`
-}
-
-func (GetProjectResourceDomainResourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectResourceDomainResource)(nil)).Elem()
-}
-
-func (i GetProjectResourceDomainResourceArgs) ToGetProjectResourceDomainResourceOutput() GetProjectResourceDomainResourceOutput {
-	return i.ToGetProjectResourceDomainResourceOutputWithContext(context.Background())
-}
-
-func (i GetProjectResourceDomainResourceArgs) ToGetProjectResourceDomainResourceOutputWithContext(ctx context.Context) GetProjectResourceDomainResourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectResourceDomainResourceOutput)
-}
-
-// GetProjectResourceDomainResourceArrayInput is an input type that accepts GetProjectResourceDomainResourceArray and GetProjectResourceDomainResourceArrayOutput values.
-// You can construct a concrete instance of `GetProjectResourceDomainResourceArrayInput` via:
-//
-//	GetProjectResourceDomainResourceArray{ GetProjectResourceDomainResourceArgs{...} }
-type GetProjectResourceDomainResourceArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectResourceDomainResourceArrayOutput() GetProjectResourceDomainResourceArrayOutput
-	ToGetProjectResourceDomainResourceArrayOutputWithContext(context.Context) GetProjectResourceDomainResourceArrayOutput
-}
-
-type GetProjectResourceDomainResourceArray []GetProjectResourceDomainResourceInput
-
-func (GetProjectResourceDomainResourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectResourceDomainResource)(nil)).Elem()
-}
-
-func (i GetProjectResourceDomainResourceArray) ToGetProjectResourceDomainResourceArrayOutput() GetProjectResourceDomainResourceArrayOutput {
-	return i.ToGetProjectResourceDomainResourceArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectResourceDomainResourceArray) ToGetProjectResourceDomainResourceArrayOutputWithContext(ctx context.Context) GetProjectResourceDomainResourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectResourceDomainResourceArrayOutput)
-}
-
-type GetProjectResourceDomainResourceOutput struct{ *pulumi.OutputState }
-
-func (GetProjectResourceDomainResourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectResourceDomainResource)(nil)).Elem()
-}
-
-func (o GetProjectResourceDomainResourceOutput) ToGetProjectResourceDomainResourceOutput() GetProjectResourceDomainResourceOutput {
-	return o
-}
-
-func (o GetProjectResourceDomainResourceOutput) ToGetProjectResourceDomainResourceOutputWithContext(ctx context.Context) GetProjectResourceDomainResourceOutput {
-	return o
-}
-
-func (o GetProjectResourceDomainResourceOutput) Limit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProjectResourceDomainResource) int { return v.Limit }).(pulumi.IntOutput)
-}
-
-func (o GetProjectResourceDomainResourceOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectResourceDomainResource) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-func (o GetProjectResourceDomainResourceOutput) Units() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectResourceDomainResource) string { return v.Units }).(pulumi.StringOutput)
-}
-
-// value of the key.
-func (o GetProjectResourceDomainResourceOutput) Value() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProjectResourceDomainResource) int { return v.Value }).(pulumi.IntOutput)
-}
-
-type GetProjectResourceDomainResourceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectResourceDomainResourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectResourceDomainResource)(nil)).Elem()
-}
-
-func (o GetProjectResourceDomainResourceArrayOutput) ToGetProjectResourceDomainResourceArrayOutput() GetProjectResourceDomainResourceArrayOutput {
-	return o
-}
-
-func (o GetProjectResourceDomainResourceArrayOutput) ToGetProjectResourceDomainResourceArrayOutputWithContext(ctx context.Context) GetProjectResourceDomainResourceArrayOutput {
-	return o
-}
-
-func (o GetProjectResourceDomainResourceArrayOutput) Index(i pulumi.IntInput) GetProjectResourceDomainResourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectResourceDomainResource {
-		return vs[0].([]GetProjectResourceDomainResource)[vs[1].(int)]
-	}).(GetProjectResourceDomainResourceOutput)
-}
-
-type GetProjectSubnetReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectSubnetReferenceListInput is an input type that accepts GetProjectSubnetReferenceListArgs and GetProjectSubnetReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectSubnetReferenceListInput` via:
-//
-//	GetProjectSubnetReferenceListArgs{...}
-type GetProjectSubnetReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectSubnetReferenceListOutput() GetProjectSubnetReferenceListOutput
-	ToGetProjectSubnetReferenceListOutputWithContext(context.Context) GetProjectSubnetReferenceListOutput
-}
-
-type GetProjectSubnetReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectSubnetReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectSubnetReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectSubnetReferenceListArgs) ToGetProjectSubnetReferenceListOutput() GetProjectSubnetReferenceListOutput {
-	return i.ToGetProjectSubnetReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectSubnetReferenceListArgs) ToGetProjectSubnetReferenceListOutputWithContext(ctx context.Context) GetProjectSubnetReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectSubnetReferenceListOutput)
-}
-
-// GetProjectSubnetReferenceListArrayInput is an input type that accepts GetProjectSubnetReferenceListArray and GetProjectSubnetReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectSubnetReferenceListArrayInput` via:
-//
-//	GetProjectSubnetReferenceListArray{ GetProjectSubnetReferenceListArgs{...} }
-type GetProjectSubnetReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectSubnetReferenceListArrayOutput() GetProjectSubnetReferenceListArrayOutput
-	ToGetProjectSubnetReferenceListArrayOutputWithContext(context.Context) GetProjectSubnetReferenceListArrayOutput
-}
-
-type GetProjectSubnetReferenceListArray []GetProjectSubnetReferenceListInput
-
-func (GetProjectSubnetReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectSubnetReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectSubnetReferenceListArray) ToGetProjectSubnetReferenceListArrayOutput() GetProjectSubnetReferenceListArrayOutput {
-	return i.ToGetProjectSubnetReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectSubnetReferenceListArray) ToGetProjectSubnetReferenceListArrayOutputWithContext(ctx context.Context) GetProjectSubnetReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectSubnetReferenceListArrayOutput)
-}
-
-type GetProjectSubnetReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectSubnetReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectSubnetReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectSubnetReferenceListOutput) ToGetProjectSubnetReferenceListOutput() GetProjectSubnetReferenceListOutput {
-	return o
-}
-
-func (o GetProjectSubnetReferenceListOutput) ToGetProjectSubnetReferenceListOutputWithContext(ctx context.Context) GetProjectSubnetReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectSubnetReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectSubnetReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectSubnetReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectSubnetReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectSubnetReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectSubnetReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectSubnetReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectSubnetReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectSubnetReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectSubnetReferenceListArrayOutput) ToGetProjectSubnetReferenceListArrayOutput() GetProjectSubnetReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectSubnetReferenceListArrayOutput) ToGetProjectSubnetReferenceListArrayOutputWithContext(ctx context.Context) GetProjectSubnetReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectSubnetReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectSubnetReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectSubnetReferenceList {
-		return vs[0].([]GetProjectSubnetReferenceList)[vs[1].(int)]
-	}).(GetProjectSubnetReferenceListOutput)
-}
-
-type GetProjectTunnelReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectTunnelReferenceListInput is an input type that accepts GetProjectTunnelReferenceListArgs and GetProjectTunnelReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectTunnelReferenceListInput` via:
-//
-//	GetProjectTunnelReferenceListArgs{...}
-type GetProjectTunnelReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectTunnelReferenceListOutput() GetProjectTunnelReferenceListOutput
-	ToGetProjectTunnelReferenceListOutputWithContext(context.Context) GetProjectTunnelReferenceListOutput
-}
-
-type GetProjectTunnelReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectTunnelReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectTunnelReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectTunnelReferenceListArgs) ToGetProjectTunnelReferenceListOutput() GetProjectTunnelReferenceListOutput {
-	return i.ToGetProjectTunnelReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectTunnelReferenceListArgs) ToGetProjectTunnelReferenceListOutputWithContext(ctx context.Context) GetProjectTunnelReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectTunnelReferenceListOutput)
-}
-
-// GetProjectTunnelReferenceListArrayInput is an input type that accepts GetProjectTunnelReferenceListArray and GetProjectTunnelReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectTunnelReferenceListArrayInput` via:
-//
-//	GetProjectTunnelReferenceListArray{ GetProjectTunnelReferenceListArgs{...} }
-type GetProjectTunnelReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectTunnelReferenceListArrayOutput() GetProjectTunnelReferenceListArrayOutput
-	ToGetProjectTunnelReferenceListArrayOutputWithContext(context.Context) GetProjectTunnelReferenceListArrayOutput
-}
-
-type GetProjectTunnelReferenceListArray []GetProjectTunnelReferenceListInput
-
-func (GetProjectTunnelReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectTunnelReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectTunnelReferenceListArray) ToGetProjectTunnelReferenceListArrayOutput() GetProjectTunnelReferenceListArrayOutput {
-	return i.ToGetProjectTunnelReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectTunnelReferenceListArray) ToGetProjectTunnelReferenceListArrayOutputWithContext(ctx context.Context) GetProjectTunnelReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectTunnelReferenceListArrayOutput)
-}
-
-type GetProjectTunnelReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectTunnelReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectTunnelReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectTunnelReferenceListOutput) ToGetProjectTunnelReferenceListOutput() GetProjectTunnelReferenceListOutput {
-	return o
-}
-
-func (o GetProjectTunnelReferenceListOutput) ToGetProjectTunnelReferenceListOutputWithContext(ctx context.Context) GetProjectTunnelReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectTunnelReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectTunnelReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectTunnelReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectTunnelReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectTunnelReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectTunnelReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectTunnelReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectTunnelReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectTunnelReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectTunnelReferenceListArrayOutput) ToGetProjectTunnelReferenceListArrayOutput() GetProjectTunnelReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectTunnelReferenceListArrayOutput) ToGetProjectTunnelReferenceListArrayOutputWithContext(ctx context.Context) GetProjectTunnelReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectTunnelReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectTunnelReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectTunnelReferenceList {
-		return vs[0].([]GetProjectTunnelReferenceList)[vs[1].(int)]
-	}).(GetProjectTunnelReferenceListOutput)
-}
-
-type GetProjectUserReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectUserReferenceListInput is an input type that accepts GetProjectUserReferenceListArgs and GetProjectUserReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectUserReferenceListInput` via:
-//
-//	GetProjectUserReferenceListArgs{...}
-type GetProjectUserReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectUserReferenceListOutput() GetProjectUserReferenceListOutput
-	ToGetProjectUserReferenceListOutputWithContext(context.Context) GetProjectUserReferenceListOutput
-}
-
-type GetProjectUserReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectUserReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectUserReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectUserReferenceListArgs) ToGetProjectUserReferenceListOutput() GetProjectUserReferenceListOutput {
-	return i.ToGetProjectUserReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectUserReferenceListArgs) ToGetProjectUserReferenceListOutputWithContext(ctx context.Context) GetProjectUserReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectUserReferenceListOutput)
-}
-
-// GetProjectUserReferenceListArrayInput is an input type that accepts GetProjectUserReferenceListArray and GetProjectUserReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectUserReferenceListArrayInput` via:
-//
-//	GetProjectUserReferenceListArray{ GetProjectUserReferenceListArgs{...} }
-type GetProjectUserReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectUserReferenceListArrayOutput() GetProjectUserReferenceListArrayOutput
-	ToGetProjectUserReferenceListArrayOutputWithContext(context.Context) GetProjectUserReferenceListArrayOutput
-}
-
-type GetProjectUserReferenceListArray []GetProjectUserReferenceListInput
-
-func (GetProjectUserReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectUserReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectUserReferenceListArray) ToGetProjectUserReferenceListArrayOutput() GetProjectUserReferenceListArrayOutput {
-	return i.ToGetProjectUserReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectUserReferenceListArray) ToGetProjectUserReferenceListArrayOutputWithContext(ctx context.Context) GetProjectUserReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectUserReferenceListArrayOutput)
-}
-
-type GetProjectUserReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectUserReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectUserReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectUserReferenceListOutput) ToGetProjectUserReferenceListOutput() GetProjectUserReferenceListOutput {
-	return o
-}
-
-func (o GetProjectUserReferenceListOutput) ToGetProjectUserReferenceListOutputWithContext(ctx context.Context) GetProjectUserReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectUserReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectUserReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectUserReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectUserReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectUserReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectUserReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectUserReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectUserReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectUserReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectUserReferenceListArrayOutput) ToGetProjectUserReferenceListArrayOutput() GetProjectUserReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectUserReferenceListArrayOutput) ToGetProjectUserReferenceListArrayOutputWithContext(ctx context.Context) GetProjectUserReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectUserReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectUserReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectUserReferenceList {
-		return vs[0].([]GetProjectUserReferenceList)[vs[1].(int)]
-	}).(GetProjectUserReferenceListOutput)
-}
-
-type GetProjectVpcReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectVpcReferenceListInput is an input type that accepts GetProjectVpcReferenceListArgs and GetProjectVpcReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectVpcReferenceListInput` via:
-//
-//	GetProjectVpcReferenceListArgs{...}
-type GetProjectVpcReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectVpcReferenceListOutput() GetProjectVpcReferenceListOutput
-	ToGetProjectVpcReferenceListOutputWithContext(context.Context) GetProjectVpcReferenceListOutput
-}
-
-type GetProjectVpcReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectVpcReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectVpcReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectVpcReferenceListArgs) ToGetProjectVpcReferenceListOutput() GetProjectVpcReferenceListOutput {
-	return i.ToGetProjectVpcReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectVpcReferenceListArgs) ToGetProjectVpcReferenceListOutputWithContext(ctx context.Context) GetProjectVpcReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectVpcReferenceListOutput)
-}
-
-// GetProjectVpcReferenceListArrayInput is an input type that accepts GetProjectVpcReferenceListArray and GetProjectVpcReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectVpcReferenceListArrayInput` via:
-//
-//	GetProjectVpcReferenceListArray{ GetProjectVpcReferenceListArgs{...} }
-type GetProjectVpcReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectVpcReferenceListArrayOutput() GetProjectVpcReferenceListArrayOutput
-	ToGetProjectVpcReferenceListArrayOutputWithContext(context.Context) GetProjectVpcReferenceListArrayOutput
-}
-
-type GetProjectVpcReferenceListArray []GetProjectVpcReferenceListInput
-
-func (GetProjectVpcReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectVpcReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectVpcReferenceListArray) ToGetProjectVpcReferenceListArrayOutput() GetProjectVpcReferenceListArrayOutput {
-	return i.ToGetProjectVpcReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectVpcReferenceListArray) ToGetProjectVpcReferenceListArrayOutputWithContext(ctx context.Context) GetProjectVpcReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectVpcReferenceListArrayOutput)
-}
-
-type GetProjectVpcReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectVpcReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectVpcReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectVpcReferenceListOutput) ToGetProjectVpcReferenceListOutput() GetProjectVpcReferenceListOutput {
-	return o
-}
-
-func (o GetProjectVpcReferenceListOutput) ToGetProjectVpcReferenceListOutputWithContext(ctx context.Context) GetProjectVpcReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectVpcReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectVpcReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// the name.
-func (o GetProjectVpcReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectVpcReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectVpcReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectVpcReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectVpcReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectVpcReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectVpcReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectVpcReferenceListArrayOutput) ToGetProjectVpcReferenceListArrayOutput() GetProjectVpcReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectVpcReferenceListArrayOutput) ToGetProjectVpcReferenceListArrayOutputWithContext(ctx context.Context) GetProjectVpcReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectVpcReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectVpcReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectVpcReferenceList {
-		return vs[0].([]GetProjectVpcReferenceList)[vs[1].(int)]
-	}).(GetProjectVpcReferenceListOutput)
-}
-
-type GetProjectsEntity struct {
-	// List of accounts associated with the project.
-	// * `account_reference_list.#.kind` - The kind name. Default value is `account`
-	// * `account_reference_list.#.uuid` - The UUID of an account.
-	// * `account_reference_list.#.name` - The name of an account.
-	AccountReferenceLists []GetProjectsEntityAccountReferenceList `pulumi:"accountReferenceLists"`
-	// version of the API
-	ApiVersion string                      `pulumi:"apiVersion"`
-	Categories []GetProjectsEntityCategory `pulumi:"categories"`
-	// Reference to a subnet.
-	DefaultSubnetReference map[string]string `pulumi:"defaultSubnetReference"`
-	// A description for project.
-	Description string `pulumi:"description"`
-	// List of environments associated with the project.
-	// * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
-	// * `environment_reference_list.#.uuid` - The UUID of an environment.
-	// * `environment_reference_list.#.name` - The name of an environment.
-	EnvironmentReferenceLists []GetProjectsEntityEnvironmentReferenceList `pulumi:"environmentReferenceLists"`
-	// List of external networks associated with the project.
-	// * `external_network_list.#.uuid` - The UUID of a network.
-	// * `external_network_list.#.name` - The name of a network.
-	ExternalNetworkLists []GetProjectsEntityExternalNetworkList `pulumi:"externalNetworkLists"`
-	// List of directory service user groups. These groups are not managed by Nutanix.
-	// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `userGroup`
-	// * `external_user_group_reference_list.#.uuid` - The UUID of a userGroup
-	// * `external_user_group_reference_list.#.name` - The name of a user_group
-	ExternalUserGroupReferenceLists []GetProjectsEntityExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
-	IsDefault                       bool                                              `pulumi:"isDefault"`
-	Metadata                        map[string]string                                 `pulumi:"metadata"`
-	// (Optional) the name.
-	Name             string            `pulumi:"name"`
-	OwnerReference   map[string]string `pulumi:"ownerReference"`
-	ProjectReference map[string]string `pulumi:"projectReference"`
-	// The status for a resource domain (limits and values)
-	ResourceDomains []GetProjectsEntityResourceDomain `pulumi:"resourceDomains"`
-	State           string                            `pulumi:"state"`
-	// List of subnets for the project.
-	// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
-	// * `subnet_reference_list.#.uuid` - The UUID of a subnet
-	// * `subnet_reference_list.#.name` - The name of a subnet.
-	SubnetReferenceLists []GetProjectsEntitySubnetReferenceList `pulumi:"subnetReferenceLists"`
-	// List of users in the project.
-	// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-	// * `user_reference_list.#.uuid` - The UUID of a user
-	// * `user_reference_list.#.name` - The name of a user.
-	UserReferenceLists []GetProjectsEntityUserReferenceList `pulumi:"userReferenceLists"`
-}
-
-// GetProjectsEntityInput is an input type that accepts GetProjectsEntityArgs and GetProjectsEntityOutput values.
-// You can construct a concrete instance of `GetProjectsEntityInput` via:
-//
-//	GetProjectsEntityArgs{...}
-type GetProjectsEntityInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityOutput() GetProjectsEntityOutput
-	ToGetProjectsEntityOutputWithContext(context.Context) GetProjectsEntityOutput
-}
-
-type GetProjectsEntityArgs struct {
-	// List of accounts associated with the project.
-	// * `account_reference_list.#.kind` - The kind name. Default value is `account`
-	// * `account_reference_list.#.uuid` - The UUID of an account.
-	// * `account_reference_list.#.name` - The name of an account.
-	AccountReferenceLists GetProjectsEntityAccountReferenceListArrayInput `pulumi:"accountReferenceLists"`
-	// version of the API
-	ApiVersion pulumi.StringInput                  `pulumi:"apiVersion"`
-	Categories GetProjectsEntityCategoryArrayInput `pulumi:"categories"`
-	// Reference to a subnet.
-	DefaultSubnetReference pulumi.StringMapInput `pulumi:"defaultSubnetReference"`
-	// A description for project.
-	Description pulumi.StringInput `pulumi:"description"`
-	// List of environments associated with the project.
-	// * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
-	// * `environment_reference_list.#.uuid` - The UUID of an environment.
-	// * `environment_reference_list.#.name` - The name of an environment.
-	EnvironmentReferenceLists GetProjectsEntityEnvironmentReferenceListArrayInput `pulumi:"environmentReferenceLists"`
-	// List of external networks associated with the project.
-	// * `external_network_list.#.uuid` - The UUID of a network.
-	// * `external_network_list.#.name` - The name of a network.
-	ExternalNetworkLists GetProjectsEntityExternalNetworkListArrayInput `pulumi:"externalNetworkLists"`
-	// List of directory service user groups. These groups are not managed by Nutanix.
-	// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `userGroup`
-	// * `external_user_group_reference_list.#.uuid` - The UUID of a userGroup
-	// * `external_user_group_reference_list.#.name` - The name of a user_group
-	ExternalUserGroupReferenceLists GetProjectsEntityExternalUserGroupReferenceListArrayInput `pulumi:"externalUserGroupReferenceLists"`
-	IsDefault                       pulumi.BoolInput                                          `pulumi:"isDefault"`
-	Metadata                        pulumi.StringMapInput                                     `pulumi:"metadata"`
-	// (Optional) the name.
-	Name             pulumi.StringInput    `pulumi:"name"`
-	OwnerReference   pulumi.StringMapInput `pulumi:"ownerReference"`
-	ProjectReference pulumi.StringMapInput `pulumi:"projectReference"`
-	// The status for a resource domain (limits and values)
-	ResourceDomains GetProjectsEntityResourceDomainArrayInput `pulumi:"resourceDomains"`
-	State           pulumi.StringInput                        `pulumi:"state"`
-	// List of subnets for the project.
-	// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
-	// * `subnet_reference_list.#.uuid` - The UUID of a subnet
-	// * `subnet_reference_list.#.name` - The name of a subnet.
-	SubnetReferenceLists GetProjectsEntitySubnetReferenceListArrayInput `pulumi:"subnetReferenceLists"`
-	// List of users in the project.
-	// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-	// * `user_reference_list.#.uuid` - The UUID of a user
-	// * `user_reference_list.#.name` - The name of a user.
-	UserReferenceLists GetProjectsEntityUserReferenceListArrayInput `pulumi:"userReferenceLists"`
-}
-
-func (GetProjectsEntityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntity)(nil)).Elem()
-}
-
-func (i GetProjectsEntityArgs) ToGetProjectsEntityOutput() GetProjectsEntityOutput {
-	return i.ToGetProjectsEntityOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityArgs) ToGetProjectsEntityOutputWithContext(ctx context.Context) GetProjectsEntityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityOutput)
-}
-
-// GetProjectsEntityArrayInput is an input type that accepts GetProjectsEntityArray and GetProjectsEntityArrayOutput values.
-// You can construct a concrete instance of `GetProjectsEntityArrayInput` via:
-//
-//	GetProjectsEntityArray{ GetProjectsEntityArgs{...} }
-type GetProjectsEntityArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityArrayOutput() GetProjectsEntityArrayOutput
-	ToGetProjectsEntityArrayOutputWithContext(context.Context) GetProjectsEntityArrayOutput
-}
-
-type GetProjectsEntityArray []GetProjectsEntityInput
-
-func (GetProjectsEntityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntity)(nil)).Elem()
-}
-
-func (i GetProjectsEntityArray) ToGetProjectsEntityArrayOutput() GetProjectsEntityArrayOutput {
-	return i.ToGetProjectsEntityArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityArray) ToGetProjectsEntityArrayOutputWithContext(ctx context.Context) GetProjectsEntityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityArrayOutput)
-}
-
-type GetProjectsEntityOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntity)(nil)).Elem()
-}
-
-func (o GetProjectsEntityOutput) ToGetProjectsEntityOutput() GetProjectsEntityOutput {
-	return o
-}
-
-func (o GetProjectsEntityOutput) ToGetProjectsEntityOutputWithContext(ctx context.Context) GetProjectsEntityOutput {
-	return o
-}
-
-// List of accounts associated with the project.
-// * `account_reference_list.#.kind` - The kind name. Default value is `account`
-// * `account_reference_list.#.uuid` - The UUID of an account.
-// * `account_reference_list.#.name` - The name of an account.
-func (o GetProjectsEntityOutput) AccountReferenceLists() GetProjectsEntityAccountReferenceListArrayOutput {
-	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntityAccountReferenceList { return v.AccountReferenceLists }).(GetProjectsEntityAccountReferenceListArrayOutput)
-}
-
-// version of the API
-func (o GetProjectsEntityOutput) ApiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntity) string { return v.ApiVersion }).(pulumi.StringOutput)
-}
-
-func (o GetProjectsEntityOutput) Categories() GetProjectsEntityCategoryArrayOutput {
-	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntityCategory { return v.Categories }).(GetProjectsEntityCategoryArrayOutput)
-}
-
-// Reference to a subnet.
-func (o GetProjectsEntityOutput) DefaultSubnetReference() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetProjectsEntity) map[string]string { return v.DefaultSubnetReference }).(pulumi.StringMapOutput)
-}
-
-// A description for project.
-func (o GetProjectsEntityOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntity) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// List of environments associated with the project.
-// * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
-// * `environment_reference_list.#.uuid` - The UUID of an environment.
-// * `environment_reference_list.#.name` - The name of an environment.
-func (o GetProjectsEntityOutput) EnvironmentReferenceLists() GetProjectsEntityEnvironmentReferenceListArrayOutput {
-	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntityEnvironmentReferenceList {
-		return v.EnvironmentReferenceLists
-	}).(GetProjectsEntityEnvironmentReferenceListArrayOutput)
-}
-
-// List of external networks associated with the project.
-// * `external_network_list.#.uuid` - The UUID of a network.
-// * `external_network_list.#.name` - The name of a network.
-func (o GetProjectsEntityOutput) ExternalNetworkLists() GetProjectsEntityExternalNetworkListArrayOutput {
-	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntityExternalNetworkList { return v.ExternalNetworkLists }).(GetProjectsEntityExternalNetworkListArrayOutput)
-}
-
-// List of directory service user groups. These groups are not managed by Nutanix.
-// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `userGroup`
-// * `external_user_group_reference_list.#.uuid` - The UUID of a userGroup
-// * `external_user_group_reference_list.#.name` - The name of a user_group
-func (o GetProjectsEntityOutput) ExternalUserGroupReferenceLists() GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
-	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntityExternalUserGroupReferenceList {
-		return v.ExternalUserGroupReferenceLists
-	}).(GetProjectsEntityExternalUserGroupReferenceListArrayOutput)
-}
-
-func (o GetProjectsEntityOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProjectsEntity) bool { return v.IsDefault }).(pulumi.BoolOutput)
-}
-
-func (o GetProjectsEntityOutput) Metadata() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetProjectsEntity) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
-}
-
-// (Optional) the name.
-func (o GetProjectsEntityOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntity) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetProjectsEntityOutput) OwnerReference() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetProjectsEntity) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
-}
-
-func (o GetProjectsEntityOutput) ProjectReference() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetProjectsEntity) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
-}
-
-// The status for a resource domain (limits and values)
-func (o GetProjectsEntityOutput) ResourceDomains() GetProjectsEntityResourceDomainArrayOutput {
-	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntityResourceDomain { return v.ResourceDomains }).(GetProjectsEntityResourceDomainArrayOutput)
-}
-
-func (o GetProjectsEntityOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntity) string { return v.State }).(pulumi.StringOutput)
-}
-
-// List of subnets for the project.
-// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
-// * `subnet_reference_list.#.uuid` - The UUID of a subnet
-// * `subnet_reference_list.#.name` - The name of a subnet.
-func (o GetProjectsEntityOutput) SubnetReferenceLists() GetProjectsEntitySubnetReferenceListArrayOutput {
-	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntitySubnetReferenceList { return v.SubnetReferenceLists }).(GetProjectsEntitySubnetReferenceListArrayOutput)
-}
-
-// List of users in the project.
-// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-// * `user_reference_list.#.uuid` - The UUID of a user
-// * `user_reference_list.#.name` - The name of a user.
-func (o GetProjectsEntityOutput) UserReferenceLists() GetProjectsEntityUserReferenceListArrayOutput {
-	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntityUserReferenceList { return v.UserReferenceLists }).(GetProjectsEntityUserReferenceListArrayOutput)
-}
-
-type GetProjectsEntityArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntity)(nil)).Elem()
-}
-
-func (o GetProjectsEntityArrayOutput) ToGetProjectsEntityArrayOutput() GetProjectsEntityArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityArrayOutput) ToGetProjectsEntityArrayOutputWithContext(ctx context.Context) GetProjectsEntityArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityArrayOutput) Index(i pulumi.IntInput) GetProjectsEntityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsEntity {
-		return vs[0].([]GetProjectsEntity)[vs[1].(int)]
-	}).(GetProjectsEntityOutput)
-}
-
-type GetProjectsEntityAccountReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// (Optional) the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectsEntityAccountReferenceListInput is an input type that accepts GetProjectsEntityAccountReferenceListArgs and GetProjectsEntityAccountReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectsEntityAccountReferenceListInput` via:
-//
-//	GetProjectsEntityAccountReferenceListArgs{...}
-type GetProjectsEntityAccountReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityAccountReferenceListOutput() GetProjectsEntityAccountReferenceListOutput
-	ToGetProjectsEntityAccountReferenceListOutputWithContext(context.Context) GetProjectsEntityAccountReferenceListOutput
-}
-
-type GetProjectsEntityAccountReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// (Optional) the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectsEntityAccountReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityAccountReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectsEntityAccountReferenceListArgs) ToGetProjectsEntityAccountReferenceListOutput() GetProjectsEntityAccountReferenceListOutput {
-	return i.ToGetProjectsEntityAccountReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityAccountReferenceListArgs) ToGetProjectsEntityAccountReferenceListOutputWithContext(ctx context.Context) GetProjectsEntityAccountReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityAccountReferenceListOutput)
-}
-
-// GetProjectsEntityAccountReferenceListArrayInput is an input type that accepts GetProjectsEntityAccountReferenceListArray and GetProjectsEntityAccountReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectsEntityAccountReferenceListArrayInput` via:
-//
-//	GetProjectsEntityAccountReferenceListArray{ GetProjectsEntityAccountReferenceListArgs{...} }
-type GetProjectsEntityAccountReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityAccountReferenceListArrayOutput() GetProjectsEntityAccountReferenceListArrayOutput
-	ToGetProjectsEntityAccountReferenceListArrayOutputWithContext(context.Context) GetProjectsEntityAccountReferenceListArrayOutput
-}
-
-type GetProjectsEntityAccountReferenceListArray []GetProjectsEntityAccountReferenceListInput
-
-func (GetProjectsEntityAccountReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityAccountReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectsEntityAccountReferenceListArray) ToGetProjectsEntityAccountReferenceListArrayOutput() GetProjectsEntityAccountReferenceListArrayOutput {
-	return i.ToGetProjectsEntityAccountReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityAccountReferenceListArray) ToGetProjectsEntityAccountReferenceListArrayOutputWithContext(ctx context.Context) GetProjectsEntityAccountReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityAccountReferenceListArrayOutput)
-}
-
-type GetProjectsEntityAccountReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityAccountReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityAccountReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectsEntityAccountReferenceListOutput) ToGetProjectsEntityAccountReferenceListOutput() GetProjectsEntityAccountReferenceListOutput {
-	return o
-}
-
-func (o GetProjectsEntityAccountReferenceListOutput) ToGetProjectsEntityAccountReferenceListOutputWithContext(ctx context.Context) GetProjectsEntityAccountReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectsEntityAccountReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityAccountReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// (Optional) the name.
-func (o GetProjectsEntityAccountReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityAccountReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectsEntityAccountReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityAccountReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectsEntityAccountReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityAccountReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityAccountReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectsEntityAccountReferenceListArrayOutput) ToGetProjectsEntityAccountReferenceListArrayOutput() GetProjectsEntityAccountReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityAccountReferenceListArrayOutput) ToGetProjectsEntityAccountReferenceListArrayOutputWithContext(ctx context.Context) GetProjectsEntityAccountReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityAccountReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectsEntityAccountReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsEntityAccountReferenceList {
-		return vs[0].([]GetProjectsEntityAccountReferenceList)[vs[1].(int)]
-	}).(GetProjectsEntityAccountReferenceListOutput)
-}
-
-type GetProjectsEntityCategory struct {
-	// (Optional) the name.
-	Name string `pulumi:"name"`
-	// value of the key.
-	Value string `pulumi:"value"`
-}
-
-// GetProjectsEntityCategoryInput is an input type that accepts GetProjectsEntityCategoryArgs and GetProjectsEntityCategoryOutput values.
-// You can construct a concrete instance of `GetProjectsEntityCategoryInput` via:
-//
-//	GetProjectsEntityCategoryArgs{...}
-type GetProjectsEntityCategoryInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityCategoryOutput() GetProjectsEntityCategoryOutput
-	ToGetProjectsEntityCategoryOutputWithContext(context.Context) GetProjectsEntityCategoryOutput
-}
-
-type GetProjectsEntityCategoryArgs struct {
-	// (Optional) the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// value of the key.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetProjectsEntityCategoryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityCategory)(nil)).Elem()
-}
-
-func (i GetProjectsEntityCategoryArgs) ToGetProjectsEntityCategoryOutput() GetProjectsEntityCategoryOutput {
-	return i.ToGetProjectsEntityCategoryOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityCategoryArgs) ToGetProjectsEntityCategoryOutputWithContext(ctx context.Context) GetProjectsEntityCategoryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityCategoryOutput)
-}
-
-// GetProjectsEntityCategoryArrayInput is an input type that accepts GetProjectsEntityCategoryArray and GetProjectsEntityCategoryArrayOutput values.
-// You can construct a concrete instance of `GetProjectsEntityCategoryArrayInput` via:
-//
-//	GetProjectsEntityCategoryArray{ GetProjectsEntityCategoryArgs{...} }
-type GetProjectsEntityCategoryArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityCategoryArrayOutput() GetProjectsEntityCategoryArrayOutput
-	ToGetProjectsEntityCategoryArrayOutputWithContext(context.Context) GetProjectsEntityCategoryArrayOutput
-}
-
-type GetProjectsEntityCategoryArray []GetProjectsEntityCategoryInput
-
-func (GetProjectsEntityCategoryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityCategory)(nil)).Elem()
-}
-
-func (i GetProjectsEntityCategoryArray) ToGetProjectsEntityCategoryArrayOutput() GetProjectsEntityCategoryArrayOutput {
-	return i.ToGetProjectsEntityCategoryArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityCategoryArray) ToGetProjectsEntityCategoryArrayOutputWithContext(ctx context.Context) GetProjectsEntityCategoryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityCategoryArrayOutput)
-}
-
-type GetProjectsEntityCategoryOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityCategoryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityCategory)(nil)).Elem()
-}
-
-func (o GetProjectsEntityCategoryOutput) ToGetProjectsEntityCategoryOutput() GetProjectsEntityCategoryOutput {
-	return o
-}
-
-func (o GetProjectsEntityCategoryOutput) ToGetProjectsEntityCategoryOutputWithContext(ctx context.Context) GetProjectsEntityCategoryOutput {
-	return o
-}
-
-// (Optional) the name.
-func (o GetProjectsEntityCategoryOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityCategory) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// value of the key.
-func (o GetProjectsEntityCategoryOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityCategory) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetProjectsEntityCategoryArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityCategoryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityCategory)(nil)).Elem()
-}
-
-func (o GetProjectsEntityCategoryArrayOutput) ToGetProjectsEntityCategoryArrayOutput() GetProjectsEntityCategoryArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityCategoryArrayOutput) ToGetProjectsEntityCategoryArrayOutputWithContext(ctx context.Context) GetProjectsEntityCategoryArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityCategoryArrayOutput) Index(i pulumi.IntInput) GetProjectsEntityCategoryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsEntityCategory {
-		return vs[0].([]GetProjectsEntityCategory)[vs[1].(int)]
-	}).(GetProjectsEntityCategoryOutput)
-}
-
-type GetProjectsEntityEnvironmentReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// (Optional) the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectsEntityEnvironmentReferenceListInput is an input type that accepts GetProjectsEntityEnvironmentReferenceListArgs and GetProjectsEntityEnvironmentReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectsEntityEnvironmentReferenceListInput` via:
-//
-//	GetProjectsEntityEnvironmentReferenceListArgs{...}
-type GetProjectsEntityEnvironmentReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityEnvironmentReferenceListOutput() GetProjectsEntityEnvironmentReferenceListOutput
-	ToGetProjectsEntityEnvironmentReferenceListOutputWithContext(context.Context) GetProjectsEntityEnvironmentReferenceListOutput
-}
-
-type GetProjectsEntityEnvironmentReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// (Optional) the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectsEntityEnvironmentReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectsEntityEnvironmentReferenceListArgs) ToGetProjectsEntityEnvironmentReferenceListOutput() GetProjectsEntityEnvironmentReferenceListOutput {
-	return i.ToGetProjectsEntityEnvironmentReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityEnvironmentReferenceListArgs) ToGetProjectsEntityEnvironmentReferenceListOutputWithContext(ctx context.Context) GetProjectsEntityEnvironmentReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityEnvironmentReferenceListOutput)
-}
-
-// GetProjectsEntityEnvironmentReferenceListArrayInput is an input type that accepts GetProjectsEntityEnvironmentReferenceListArray and GetProjectsEntityEnvironmentReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectsEntityEnvironmentReferenceListArrayInput` via:
-//
-//	GetProjectsEntityEnvironmentReferenceListArray{ GetProjectsEntityEnvironmentReferenceListArgs{...} }
-type GetProjectsEntityEnvironmentReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityEnvironmentReferenceListArrayOutput() GetProjectsEntityEnvironmentReferenceListArrayOutput
-	ToGetProjectsEntityEnvironmentReferenceListArrayOutputWithContext(context.Context) GetProjectsEntityEnvironmentReferenceListArrayOutput
-}
-
-type GetProjectsEntityEnvironmentReferenceListArray []GetProjectsEntityEnvironmentReferenceListInput
-
-func (GetProjectsEntityEnvironmentReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectsEntityEnvironmentReferenceListArray) ToGetProjectsEntityEnvironmentReferenceListArrayOutput() GetProjectsEntityEnvironmentReferenceListArrayOutput {
-	return i.ToGetProjectsEntityEnvironmentReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityEnvironmentReferenceListArray) ToGetProjectsEntityEnvironmentReferenceListArrayOutputWithContext(ctx context.Context) GetProjectsEntityEnvironmentReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityEnvironmentReferenceListArrayOutput)
-}
-
-type GetProjectsEntityEnvironmentReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityEnvironmentReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectsEntityEnvironmentReferenceListOutput) ToGetProjectsEntityEnvironmentReferenceListOutput() GetProjectsEntityEnvironmentReferenceListOutput {
-	return o
-}
-
-func (o GetProjectsEntityEnvironmentReferenceListOutput) ToGetProjectsEntityEnvironmentReferenceListOutputWithContext(ctx context.Context) GetProjectsEntityEnvironmentReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectsEntityEnvironmentReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityEnvironmentReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// (Optional) the name.
-func (o GetProjectsEntityEnvironmentReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityEnvironmentReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectsEntityEnvironmentReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityEnvironmentReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectsEntityEnvironmentReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityEnvironmentReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityEnvironmentReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectsEntityEnvironmentReferenceListArrayOutput) ToGetProjectsEntityEnvironmentReferenceListArrayOutput() GetProjectsEntityEnvironmentReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityEnvironmentReferenceListArrayOutput) ToGetProjectsEntityEnvironmentReferenceListArrayOutputWithContext(ctx context.Context) GetProjectsEntityEnvironmentReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityEnvironmentReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectsEntityEnvironmentReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsEntityEnvironmentReferenceList {
-		return vs[0].([]GetProjectsEntityEnvironmentReferenceList)[vs[1].(int)]
-	}).(GetProjectsEntityEnvironmentReferenceListOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigExpiryDetailInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigRefreshDetailInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotPropertyInput)(nil)).Elem(), GetNdbSnapshotsSnapshotPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotPropertyArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotTagInput)(nil)).Elem(), GetNdbSnapshotsSnapshotTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbSnapshotsSnapshotTagArrayInput)(nil)).Elem(), GetNdbSnapshotsSnapshotTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTagsTagInput)(nil)).Elem(), GetNdbTagsTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTagsTagArrayInput)(nil)).Elem(), GetNdbTagsTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinePropertyInput)(nil)).Elem(), GetNdbTimeMachinePropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinePropertyArrayInput)(nil)).Elem(), GetNdbTimeMachinePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleContinuousScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleContinuousScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleContinuousScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleContinuousScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleDailyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleDailyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleDailyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleDailyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleMonthlyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleMonthlyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleMonthlyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleMonthlyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleQuartelyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleQuartelyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleQuartelyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleQuartelyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleSnapshotTimeOfDayInput)(nil)).Elem(), GetNdbTimeMachineScheduleSnapshotTimeOfDayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleSnapshotTimeOfDayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleWeeklyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleWeeklyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleWeeklyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleWeeklyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleYearlyScheduleInput)(nil)).Elem(), GetNdbTimeMachineScheduleYearlyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineScheduleYearlyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachineScheduleYearlyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineSlaInput)(nil)).Elem(), GetNdbTimeMachineSlaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineSlaArrayInput)(nil)).Elem(), GetNdbTimeMachineSlaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineTagInput)(nil)).Elem(), GetNdbTimeMachineTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachineTagArrayInput)(nil)).Elem(), GetNdbTimeMachineTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachinePropertyInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachinePropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachinePropertyArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachinePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleDailyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSlaInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineSlaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineSlaArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineSlaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineTagInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTimeMachinesTimeMachineTagArrayInput)(nil)).Elem(), GetNdbTimeMachinesTimeMachineTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs{})
@@ -55749,6 +56200,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityRuleQuarantineRuleOutboundAllowListUdpPortRangeListArrayInput)(nil)).Elem(), GetNetworkSecurityRuleQuarantineRuleOutboundAllowListUdpPortRangeListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamInput)(nil)).Elem(), GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamArrayInput)(nil)).Elem(), GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2LinkInput)(nil)).Elem(), GetObjectStoreV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2LinkArrayInput)(nil)).Elem(), GetObjectStoreV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2MetadataInput)(nil)).Elem(), GetObjectStoreV2MetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2MetadataArrayInput)(nil)).Elem(), GetObjectStoreV2MetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2PublicNetworkIpInput)(nil)).Elem(), GetObjectStoreV2PublicNetworkIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2PublicNetworkIpArrayInput)(nil)).Elem(), GetObjectStoreV2PublicNetworkIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2PublicNetworkIpIpv4Input)(nil)).Elem(), GetObjectStoreV2PublicNetworkIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2PublicNetworkIpIpv6Input)(nil)).Elem(), GetObjectStoreV2PublicNetworkIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIpInput)(nil)).Elem(), GetObjectStoreV2StorageNetworkDnsIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIpArrayInput)(nil)).Elem(), GetObjectStoreV2StorageNetworkDnsIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIpIpv4Input)(nil)).Elem(), GetObjectStoreV2StorageNetworkDnsIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2StorageNetworkDnsIpIpv6Input)(nil)).Elem(), GetObjectStoreV2StorageNetworkDnsIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2StorageNetworkVipInput)(nil)).Elem(), GetObjectStoreV2StorageNetworkVipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2StorageNetworkVipArrayInput)(nil)).Elem(), GetObjectStoreV2StorageNetworkVipArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2StorageNetworkVipIpv4Input)(nil)).Elem(), GetObjectStoreV2StorageNetworkVipIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoreV2StorageNetworkVipIpv6Input)(nil)).Elem(), GetObjectStoreV2StorageNetworkVipIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreLinkInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreLinkArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreMetadataInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreMetadataArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpInput)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationV2AssociatedEndpointListInput)(nil)).Elem(), GetOperationV2AssociatedEndpointListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationV2AssociatedEndpointListArrayInput)(nil)).Elem(), GetOperationV2AssociatedEndpointListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationInput)(nil)).Elem(), GetOperationsV2OperationArgs{})
@@ -56375,122 +56860,76 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalAddressIpv4ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalAddressIpv4Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalAddressIpv6Input)(nil)).Elem(), GetPcsV2PcNetworkExternalAddressIpv6Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalAddressIpv6ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalAddressIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkDefaultGatewayArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkDefaultGatewayArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Input)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Input)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeBeginArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeBeginArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Input)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Input)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeEndArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeEndArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Input)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Input)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkSubnetMaskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkSubnetMaskArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Input)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Input)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNameServerInput)(nil)).Elem(), GetPcsV2PcNetworkNameServerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNameServerArrayInput)(nil)).Elem(), GetPcsV2PcNetworkNameServerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNameServerFqdnInput)(nil)).Elem(), GetPcsV2PcNetworkNameServerFqdnArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNameServerFqdnArrayInput)(nil)).Elem(), GetPcsV2PcNetworkNameServerFqdnArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNameServerIpv4Input)(nil)).Elem(), GetPcsV2PcNetworkNameServerIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNameServerIpv4ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkNameServerIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNameServerIpv6Input)(nil)).Elem(), GetPcsV2PcNetworkNameServerIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNameServerIpv6ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkNameServerIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNtpServerInput)(nil)).Elem(), GetPcsV2PcNetworkNtpServerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNtpServerArrayInput)(nil)).Elem(), GetPcsV2PcNetworkNtpServerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNtpServerFqdnInput)(nil)).Elem(), GetPcsV2PcNetworkNtpServerFqdnArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNtpServerFqdnArrayInput)(nil)).Elem(), GetPcsV2PcNetworkNtpServerFqdnArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNtpServerIpv4Input)(nil)).Elem(), GetPcsV2PcNetworkNtpServerIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNtpServerIpv4ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkNtpServerIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNtpServerIpv6Input)(nil)).Elem(), GetPcsV2PcNetworkNtpServerIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcsV2PcNetworkNtpServerIpv6ArrayInput)(nil)).Elem(), GetPcsV2PcNetworkNtpServerIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionCategoryInput)(nil)).Elem(), GetPermissionCategoryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionCategoryArrayInput)(nil)).Elem(), GetPermissionCategoryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionFieldInput)(nil)).Elem(), GetPermissionFieldArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionFieldArrayInput)(nil)).Elem(), GetPermissionFieldArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionsEntityInput)(nil)).Elem(), GetPermissionsEntityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionsEntityArrayInput)(nil)).Elem(), GetPermissionsEntityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionsEntityCategoryInput)(nil)).Elem(), GetPermissionsEntityCategoryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionsEntityCategoryArrayInput)(nil)).Elem(), GetPermissionsEntityCategoryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionsEntityFieldInput)(nil)).Elem(), GetPermissionsEntityFieldArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionsEntityFieldArrayInput)(nil)).Elem(), GetPermissionsEntityFieldArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionsMetadataInput)(nil)).Elem(), GetPermissionsMetadataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionsMetadataArrayInput)(nil)).Elem(), GetPermissionsMetadataArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAccountReferenceListInput)(nil)).Elem(), GetProjectAccountReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAccountReferenceListArrayInput)(nil)).Elem(), GetProjectAccountReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpInput)(nil)).Elem(), GetProjectAcpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpArrayInput)(nil)).Elem(), GetProjectAcpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListInput)(nil)).Elem(), GetProjectAcpContextFilterListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListArrayInput)(nil)).Elem(), GetProjectAcpContextFilterListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListInput)(nil)).Elem(), GetProjectAcpContextFilterListEntityFilterExpressionListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListArrayInput)(nil)).Elem(), GetProjectAcpContextFilterListEntityFilterExpressionListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideInput)(nil)).Elem(), GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayInput)(nil)).Elem(), GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryInput)(nil)).Elem(), GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayInput)(nil)).Elem(), GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListInput)(nil)).Elem(), GetProjectAcpContextFilterListScopeFilterExpressionListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListArrayInput)(nil)).Elem(), GetProjectAcpContextFilterListScopeFilterExpressionListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideInput)(nil)).Elem(), GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayInput)(nil)).Elem(), GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryInput)(nil)).Elem(), GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayInput)(nil)).Elem(), GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpRoleReferenceInput)(nil)).Elem(), GetProjectAcpRoleReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpRoleReferenceArrayInput)(nil)).Elem(), GetProjectAcpRoleReferenceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpUserGroupReferenceListInput)(nil)).Elem(), GetProjectAcpUserGroupReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpUserGroupReferenceListArrayInput)(nil)).Elem(), GetProjectAcpUserGroupReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpUserReferenceListInput)(nil)).Elem(), GetProjectAcpUserReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectAcpUserReferenceListArrayInput)(nil)).Elem(), GetProjectAcpUserReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectCategoryInput)(nil)).Elem(), GetProjectCategoryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectCategoryArrayInput)(nil)).Elem(), GetProjectCategoryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectClusterReferenceListInput)(nil)).Elem(), GetProjectClusterReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectClusterReferenceListArrayInput)(nil)).Elem(), GetProjectClusterReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectDefaultEnvironmentReferenceInput)(nil)).Elem(), GetProjectDefaultEnvironmentReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectDefaultEnvironmentReferenceArrayInput)(nil)).Elem(), GetProjectDefaultEnvironmentReferenceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectEnvironmentReferenceListInput)(nil)).Elem(), GetProjectEnvironmentReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectEnvironmentReferenceListArrayInput)(nil)).Elem(), GetProjectEnvironmentReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectExternalNetworkListInput)(nil)).Elem(), GetProjectExternalNetworkListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectExternalNetworkListArrayInput)(nil)).Elem(), GetProjectExternalNetworkListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectExternalUserGroupReferenceListInput)(nil)).Elem(), GetProjectExternalUserGroupReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectExternalUserGroupReferenceListArrayInput)(nil)).Elem(), GetProjectExternalUserGroupReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectResourceDomainInput)(nil)).Elem(), GetProjectResourceDomainArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectResourceDomainArrayInput)(nil)).Elem(), GetProjectResourceDomainArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectResourceDomainResourceInput)(nil)).Elem(), GetProjectResourceDomainResourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectResourceDomainResourceArrayInput)(nil)).Elem(), GetProjectResourceDomainResourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectSubnetReferenceListInput)(nil)).Elem(), GetProjectSubnetReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectSubnetReferenceListArrayInput)(nil)).Elem(), GetProjectSubnetReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectTunnelReferenceListInput)(nil)).Elem(), GetProjectTunnelReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectTunnelReferenceListArrayInput)(nil)).Elem(), GetProjectTunnelReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectUserReferenceListInput)(nil)).Elem(), GetProjectUserReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectUserReferenceListArrayInput)(nil)).Elem(), GetProjectUserReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectVpcReferenceListInput)(nil)).Elem(), GetProjectVpcReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectVpcReferenceListArrayInput)(nil)).Elem(), GetProjectVpcReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityInput)(nil)).Elem(), GetProjectsEntityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityArrayInput)(nil)).Elem(), GetProjectsEntityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityAccountReferenceListInput)(nil)).Elem(), GetProjectsEntityAccountReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityAccountReferenceListArrayInput)(nil)).Elem(), GetProjectsEntityAccountReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityCategoryInput)(nil)).Elem(), GetProjectsEntityCategoryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityCategoryArrayInput)(nil)).Elem(), GetProjectsEntityCategoryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityEnvironmentReferenceListInput)(nil)).Elem(), GetProjectsEntityEnvironmentReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityEnvironmentReferenceListArrayInput)(nil)).Elem(), GetProjectsEntityEnvironmentReferenceListArray{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigExpiryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommandArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommandArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotLcmConfigRefreshDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotPropertyOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotTagOutput{})
+	pulumi.RegisterOutputType(GetNdbSnapshotsSnapshotTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTagsTagOutput{})
+	pulumi.RegisterOutputType(GetNdbTagsTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinePropertyOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinePropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleContinuousScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleContinuousScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleDailyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleDailyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleMonthlyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleMonthlyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleQuartelyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleQuartelyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleSnapshotTimeOfDayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleSnapshotTimeOfDayArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleWeeklyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleWeeklyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleYearlyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineScheduleYearlyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineSlaOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineSlaArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineTagOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachineTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachinePropertyOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachinePropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineSlaOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineSlaArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineTagOutput{})
+	pulumi.RegisterOutputType(GetNdbTimeMachinesTimeMachineTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput{})
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput{})
@@ -56725,6 +57164,40 @@ func init() {
 	pulumi.RegisterOutputType(GetNetworkSecurityRuleQuarantineRuleOutboundAllowListUdpPortRangeListArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamOutput{})
 	pulumi.RegisterOutputType(GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2LinkOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2MetadataOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2MetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2PublicNetworkIpOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2PublicNetworkIpArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2PublicNetworkIpIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoreV2PublicNetworkIpIpv6Output{})
+	pulumi.RegisterOutputType(GetObjectStoreV2StorageNetworkDnsIpOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2StorageNetworkDnsIpArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2StorageNetworkDnsIpIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoreV2StorageNetworkDnsIpIpv6Output{})
+	pulumi.RegisterOutputType(GetObjectStoreV2StorageNetworkVipOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2StorageNetworkVipArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoreV2StorageNetworkVipIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoreV2StorageNetworkVipIpv6Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreLinkOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreMetadataOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output{})
 	pulumi.RegisterOutputType(GetOperationV2AssociatedEndpointListOutput{})
 	pulumi.RegisterOutputType(GetOperationV2AssociatedEndpointListArrayOutput{})
 	pulumi.RegisterOutputType(GetOperationsV2OperationOutput{})
@@ -57351,120 +57824,4 @@ func init() {
 	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalAddressIpv4ArrayOutput{})
 	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalAddressIpv6Output{})
 	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalAddressIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkDefaultGatewayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkDefaultGatewayArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkDefaultGatewayFqdnArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeBeginOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeBeginArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeEndOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeEndArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkIpRangeEndIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkSubnetMaskOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkSubnetMaskArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkSubnetMaskFqdnArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkExternalNetworkSubnetMaskIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNameServerOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNameServerArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNameServerFqdnOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNameServerFqdnArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNameServerIpv4Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNameServerIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNameServerIpv6Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNameServerIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNtpServerOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNtpServerArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNtpServerFqdnOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNtpServerFqdnArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNtpServerIpv4Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNtpServerIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNtpServerIpv6Output{})
-	pulumi.RegisterOutputType(GetPcsV2PcNetworkNtpServerIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPermissionCategoryOutput{})
-	pulumi.RegisterOutputType(GetPermissionCategoryArrayOutput{})
-	pulumi.RegisterOutputType(GetPermissionFieldOutput{})
-	pulumi.RegisterOutputType(GetPermissionFieldArrayOutput{})
-	pulumi.RegisterOutputType(GetPermissionsEntityOutput{})
-	pulumi.RegisterOutputType(GetPermissionsEntityArrayOutput{})
-	pulumi.RegisterOutputType(GetPermissionsEntityCategoryOutput{})
-	pulumi.RegisterOutputType(GetPermissionsEntityCategoryArrayOutput{})
-	pulumi.RegisterOutputType(GetPermissionsEntityFieldOutput{})
-	pulumi.RegisterOutputType(GetPermissionsEntityFieldArrayOutput{})
-	pulumi.RegisterOutputType(GetPermissionsMetadataOutput{})
-	pulumi.RegisterOutputType(GetPermissionsMetadataArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAccountReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectAccountReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListEntityFilterExpressionListOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListEntityFilterExpressionListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoryArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListScopeFilterExpressionListOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListScopeFilterExpressionListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoryArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpRoleReferenceOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpRoleReferenceArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpUserGroupReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpUserGroupReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpUserReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectAcpUserReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectCategoryOutput{})
-	pulumi.RegisterOutputType(GetProjectCategoryArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectClusterReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectClusterReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectDefaultEnvironmentReferenceOutput{})
-	pulumi.RegisterOutputType(GetProjectDefaultEnvironmentReferenceArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectEnvironmentReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectEnvironmentReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectExternalNetworkListOutput{})
-	pulumi.RegisterOutputType(GetProjectExternalNetworkListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectExternalUserGroupReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectExternalUserGroupReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectResourceDomainOutput{})
-	pulumi.RegisterOutputType(GetProjectResourceDomainArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectResourceDomainResourceOutput{})
-	pulumi.RegisterOutputType(GetProjectResourceDomainResourceArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectSubnetReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectSubnetReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectTunnelReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectTunnelReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectUserReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectUserReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectVpcReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectVpcReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityAccountReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityAccountReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityCategoryOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityCategoryArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityEnvironmentReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityEnvironmentReferenceListArrayOutput{})
 }

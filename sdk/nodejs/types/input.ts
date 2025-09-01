@@ -1041,8 +1041,6 @@ export interface ClusterV2NetworkExternalAddressIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1076,8 +1074,6 @@ export interface ClusterV2NetworkExternalDataServicesIpIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1135,8 +1131,6 @@ export interface ClusterV2NetworkHttpProxyListIpAddressIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1206,8 +1200,6 @@ export interface ClusterV2NetworkManagementServerIpIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1241,8 +1233,6 @@ export interface ClusterV2NetworkMasqueradingIpIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1284,8 +1274,6 @@ export interface ClusterV2NetworkNameServerIpListIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1327,8 +1315,6 @@ export interface ClusterV2NetworkNtpServerIpListIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1408,8 +1394,6 @@ export interface ClusterV2NetworkSmtpServerServerIpAddressIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1463,8 +1447,6 @@ export interface ClusterV2NodeNodeListControllerVmIpIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1498,8 +1480,6 @@ export interface ClusterV2NodeNodeListHostIpIpv6 {
     prefixLength?: pulumi.Input<number>;
     /**
      * - (Required) Ip address.
-     *
-     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -10774,6 +10754,171 @@ export interface NgtUpgradeV2RebootPreferenceSchedule {
     startTime: pulumi.Input<string>;
 }
 
+export interface ObjectStoreCertificateV2AlternateFqdn {
+    value?: pulumi.Input<string>;
+}
+
+export interface ObjectStoreCertificateV2AlternateIp {
+    ipv4?: pulumi.Input<inputs.ObjectStoreCertificateV2AlternateIpIpv4>;
+    ipv6?: pulumi.Input<inputs.ObjectStoreCertificateV2AlternateIpIpv6>;
+}
+
+export interface ObjectStoreCertificateV2AlternateIpIpv4 {
+    prefixLength?: pulumi.Input<number>;
+    value: pulumi.Input<string>;
+}
+
+export interface ObjectStoreCertificateV2AlternateIpIpv6 {
+    prefixLength?: pulumi.Input<number>;
+    value: pulumi.Input<string>;
+}
+
+export interface ObjectStoreCertificateV2Link {
+    href?: pulumi.Input<string>;
+    rel?: pulumi.Input<string>;
+}
+
+export interface ObjectStoreCertificateV2Metadata {
+    categoryIds?: pulumi.Input<pulumi.Input<string>[]>;
+    ownerReferenceId?: pulumi.Input<string>;
+    ownerUserName?: pulumi.Input<string>;
+    projectName?: pulumi.Input<string>;
+    projectReferenceId?: pulumi.Input<string>;
+}
+
+export interface ObjectStoreV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string>;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel?: pulumi.Input<string>;
+}
+
+export interface ObjectStoreV2Metadata {
+    /**
+     * -(Optional) A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * -(Optional) A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId?: pulumi.Input<string>;
+    /**
+     * -(Optional) The userName of the owner of this resource.
+     */
+    ownerUserName?: pulumi.Input<string>;
+    /**
+     * -(Optional) The name of the project this resource belongs to.
+     */
+    projectName?: pulumi.Input<string>;
+    /**
+     * -(Optional) A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId?: pulumi.Input<string>;
+}
+
+export interface ObjectStoreV2PublicNetworkIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4?: pulumi.Input<inputs.ObjectStoreV2PublicNetworkIpIpv4>;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6?: pulumi.Input<inputs.ObjectStoreV2PublicNetworkIpIpv6>;
+}
+
+export interface ObjectStoreV2PublicNetworkIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ObjectStoreV2PublicNetworkIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ObjectStoreV2StorageNetworkDnsIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkDnsIpIpv4>;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkDnsIpIpv6>;
+}
+
+export interface ObjectStoreV2StorageNetworkDnsIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ObjectStoreV2StorageNetworkDnsIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ObjectStoreV2StorageNetworkVip {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkVipIpv4>;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkVipIpv6>;
+}
+
+export interface ObjectStoreV2StorageNetworkVipIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ObjectStoreV2StorageNetworkVipIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
 export interface PbrDestination {
     addressType?: pulumi.Input<string>;
     prefixLength?: pulumi.Input<number>;
@@ -16776,6 +16921,29 @@ export interface UserIdentityProviderUserIdentityProviderReference {
      * - the UUID(Required).
      */
     uuid: pulumi.Input<string>;
+}
+
+export interface UserKeyRevokeV2ArgumentsMap {
+    propertyName?: pulumi.Input<string>;
+}
+
+export interface UserKeyV2KeyDetail {
+    apiKeyDetails?: pulumi.Input<pulumi.Input<inputs.UserKeyV2KeyDetailApiKeyDetail>[]>;
+    objectKeyDetails?: pulumi.Input<pulumi.Input<inputs.UserKeyV2KeyDetailObjectKeyDetail>[]>;
+}
+
+export interface UserKeyV2KeyDetailApiKeyDetail {
+    apiKey?: pulumi.Input<string>;
+}
+
+export interface UserKeyV2KeyDetailObjectKeyDetail {
+    accessKey?: pulumi.Input<string>;
+    secretKey?: pulumi.Input<string>;
+}
+
+export interface UserKeyV2Link {
+    href?: pulumi.Input<string>;
+    rel?: pulumi.Input<string>;
 }
 
 export interface UserProjectReferenceList {

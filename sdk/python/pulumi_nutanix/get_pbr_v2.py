@@ -180,6 +180,9 @@ def get_pbr_v2(ext_id: Optional[_builtins.str] = None,
 
     get_pbr = nutanix.get_pbr_v2(ext_id="96a22c81-ed58-4bed-96bc-46b488626612")
     ```
+
+
+    :param _builtins.str ext_id: pbr UUID
     """
     __args__ = dict()
     __args__['extId'] = ext_id
@@ -211,6 +214,9 @@ def get_pbr_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
 
     get_pbr = nutanix.get_pbr_v2(ext_id="96a22c81-ed58-4bed-96bc-46b488626612")
     ```
+
+
+    :param _builtins.str ext_id: pbr UUID
     """
     __args__ = dict()
     __args__['extId'] = ext_id

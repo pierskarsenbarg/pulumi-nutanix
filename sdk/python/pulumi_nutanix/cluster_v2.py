@@ -433,6 +433,24 @@ class ClusterV2(pulumi.CustomResource):
         """
         Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
 
+        ## Import
+
+        This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,
+
+        hcl
+
+        // create its configuration in the root module. For example:
+
+        resource "nutanix_cluster_v2" "import_cluster" {}
+
+        // execute this cli command
+
+        ```sh
+        $ pulumi import nutanix:index/clusterV2:ClusterV2 import_cluster <UUID>
+        ```
+
+        See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
@@ -451,6 +469,24 @@ class ClusterV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
+
+        ## Import
+
+        This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,
+
+        hcl
+
+        // create its configuration in the root module. For example:
+
+        resource "nutanix_cluster_v2" "import_cluster" {}
+
+        // execute this cli command
+
+        ```sh
+        $ pulumi import nutanix:index/clusterV2:ClusterV2 import_cluster <UUID>
+        ```
+
+        See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 
         :param str resource_name: The name of the resource.
         :param ClusterV2Args args: The arguments to use to populate this resource's properties.
