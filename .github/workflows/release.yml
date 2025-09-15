@@ -266,7 +266,7 @@ jobs:
       - name: Copy README to npm package
         run: cp ${{github.workspace}}/README.md ${{github.workspace}}/sdk/nodejs/bin
       - name: Publish NPM package
-        uses: JS-DevTools/npm-publish@v3
+        uses: JS-DevTools/npm-publish@v4
         with:
           access: "public"
           token: ${{ secrets.NPM_TOKEN }}
