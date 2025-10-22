@@ -232,7 +232,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `id` of the protection rule.
+        /// - (Required) The `Id` of the protection rule.
         /// </summary>
         [Input("protectionRuleId")]
         public string? ProtectionRuleId { get; set; }
@@ -257,7 +257,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `id` of the protection rule.
+        /// - (Required) The `Id` of the protection rule.
         /// </summary>
         [Input("protectionRuleId")]
         public Input<string>? ProtectionRuleId { get; set; }

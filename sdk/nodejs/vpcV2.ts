@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource to create VPC.
+ *
+ * ## Example
  */
 export class VpcV2 extends pulumi.CustomResource {
     /**

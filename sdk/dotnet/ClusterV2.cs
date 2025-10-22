@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,

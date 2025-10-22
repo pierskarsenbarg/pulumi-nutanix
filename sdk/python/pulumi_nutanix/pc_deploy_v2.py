@@ -144,6 +144,8 @@ class PcDeployV2(pulumi.CustomResource):
 
         Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
@@ -161,6 +163,8 @@ class PcDeployV2(pulumi.CustomResource):
         > - We need to increase the timeout for deploying the PC resource because the deployment takes longer than the default timeout allows for the operation to complete.
 
         Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param PcDeployV2Args args: The arguments to use to populate this resource's properties.

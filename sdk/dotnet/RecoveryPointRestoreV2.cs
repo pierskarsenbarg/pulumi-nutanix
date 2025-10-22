@@ -12,7 +12,7 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// This operation Restore a recovery point identified by {extId}.
-    /// A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys `vm_ext_ids` and `volume_group_ext_ids` respectively.
+    /// A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys `VmExtIds` and `VolumeGroupExtIds` respectively.
     /// 
     /// ## Example Usage
     /// 

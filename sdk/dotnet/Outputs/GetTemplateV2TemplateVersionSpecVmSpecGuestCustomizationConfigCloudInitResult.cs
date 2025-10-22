@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string DatasourceType;
         /// <summary>
-        /// The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        /// The contents of the MetaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         /// </summary>
         public readonly string Metadata;
 

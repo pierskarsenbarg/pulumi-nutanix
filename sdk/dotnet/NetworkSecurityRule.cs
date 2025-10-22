@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Provides a Nutanix network security rule resource to Create a network security rule.
     /// 
-    /// &gt; NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+    /// &gt; NOTE: The use of NetworkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
     /// 
     /// ## Example Usage
     /// 
@@ -191,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
     public partial class NetworkSecurityRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         [Output("adRuleAction")]
         public Output<string> AdRuleAction { get; private set; } = null!;
@@ -248,7 +248,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ApiVersion { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         [Output("appRuleAction")]
         public Output<string> AppRuleAction { get; private set; } = null!;
@@ -353,7 +353,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> IsolationRuleSecondEntityFilterType { get; private set; } = null!;
 
         /// <summary>
-        /// - The network_security_rule kind metadata.
+        /// - The NetworkSecurityRule kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
@@ -424,7 +424,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class NetworkSecurityRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         [Input("adRuleAction")]
         public Input<string>? AdRuleAction { get; set; }
@@ -499,7 +499,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? AllowIpv6Traffic { get; set; }
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         [Input("appRuleAction")]
         public Input<string>? AppRuleAction { get; set; }
@@ -696,7 +696,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class NetworkSecurityRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         [Input("adRuleAction")]
         public Input<string>? AdRuleAction { get; set; }
@@ -777,7 +777,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ApiVersion { get; set; }
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         [Input("appRuleAction")]
         public Input<string>? AppRuleAction { get; set; }
@@ -939,7 +939,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// - The network_security_rule kind metadata.
+        /// - The NetworkSecurityRule kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {

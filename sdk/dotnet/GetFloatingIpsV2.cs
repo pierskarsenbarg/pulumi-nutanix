@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFloatingIpsV2
     {
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with floating_ip_uuid .
+        /// Provides a datasource to retrieve floating IP with FloatingIpUuid .
         /// 
         /// ## Example Usage
         /// 
@@ -50,7 +50,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpsV2Result>("nutanix:index/getFloatingIpsV2:getFloatingIpsV2", args ?? new GetFloatingIpsV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with floating_ip_uuid .
+        /// Provides a datasource to retrieve floating IP with FloatingIpUuid .
         /// 
         /// ## Example Usage
         /// 
@@ -87,7 +87,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpsV2Result>("nutanix:index/getFloatingIpsV2:getFloatingIpsV2", args ?? new GetFloatingIpsV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with floating_ip_uuid .
+        /// Provides a datasource to retrieve floating IP with FloatingIpUuid .
         /// 
         /// ## Example Usage
         /// 

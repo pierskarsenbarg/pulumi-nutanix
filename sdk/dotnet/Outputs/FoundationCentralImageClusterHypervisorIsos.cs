@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? HypervProductKey;
         /// <summary>
-        /// SKU of hyperv to be installed if hypervisor_type is hyperv.
+        /// SKU of hyperv to be installed if HypervisorType is hyperv.
         /// </summary>
         public readonly string? HypervSku;
         public readonly string? HypervisorType;

@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     public partial class VmShutdownActionV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// It supports "shutdown", "guest_shutdown", "reboot", "guest_reboot".
+        /// It supports "shutdown", "GuestShutdown", "reboot", "GuestReboot".
         /// </summary>
         [Output("action")]
         public Output<string> Action { get; private set; } = null!;
@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
-        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `guest_shutdown` or `guest_reboot`.
+        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `GuestShutdown` or `GuestReboot`.
         /// </summary>
         [Output("guestPowerStateTransitionConfigs")]
         public Output<ImmutableArray<Outputs.VmShutdownActionV2GuestPowerStateTransitionConfig>> GuestPowerStateTransitionConfigs { get; private set; } = null!;
@@ -82,7 +82,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class VmShutdownActionV2Args : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// It supports "shutdown", "guest_shutdown", "reboot", "guest_reboot".
+        /// It supports "shutdown", "GuestShutdown", "reboot", "GuestReboot".
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
@@ -97,7 +97,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.VmShutdownActionV2GuestPowerStateTransitionConfigArgs>? _guestPowerStateTransitionConfigs;
 
         /// <summary>
-        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `guest_shutdown` or `guest_reboot`.
+        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `GuestShutdown` or `GuestReboot`.
         /// </summary>
         public InputList<Inputs.VmShutdownActionV2GuestPowerStateTransitionConfigArgs> GuestPowerStateTransitionConfigs
         {
@@ -114,7 +114,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class VmShutdownActionV2State : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// It supports "shutdown", "guest_shutdown", "reboot", "guest_reboot".
+        /// It supports "shutdown", "GuestShutdown", "reboot", "GuestReboot".
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
@@ -129,7 +129,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.VmShutdownActionV2GuestPowerStateTransitionConfigGetArgs>? _guestPowerStateTransitionConfigs;
 
         /// <summary>
-        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `guest_shutdown` or `guest_reboot`.
+        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `GuestShutdown` or `GuestReboot`.
         /// </summary>
         public InputList<Inputs.VmShutdownActionV2GuestPowerStateTransitionConfigGetArgs> GuestPowerStateTransitionConfigs
         {

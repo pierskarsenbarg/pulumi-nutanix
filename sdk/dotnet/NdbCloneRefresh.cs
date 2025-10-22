@@ -34,6 +34,8 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
+    /// ### resource to refresh clone with user pitr timestamp
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbCloneRefresh:NdbCloneRefresh")]
     public partial class NdbCloneRefresh : global::Pulumi.CustomResource

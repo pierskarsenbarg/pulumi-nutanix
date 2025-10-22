@@ -62,6 +62,8 @@ class AwaitableGetKarbonPrivateRegistriesResult(GetKarbonPrivateRegistriesResult
 def get_karbon_private_registries(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetKarbonPrivateRegistriesResult:
     """
     Describes a List of Karbon private registry entry
+
+    ## Example Usage
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -73,6 +75,8 @@ def get_karbon_private_registries(opts: Optional[pulumi.InvokeOptions] = None) -
 def get_karbon_private_registries_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonPrivateRegistriesResult]:
     """
     Describes a List of Karbon private registry entry
+
+    ## Example Usage
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

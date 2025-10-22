@@ -54,34 +54,34 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Categories
         /// 
-        /// The `categories` contains list of categories. Each category has the following attributes:
+        /// The `Categories` contains list of categories. Each category has the following attributes:
         /// 
-        /// * `ext_id`: The extID for the category.
-        /// * `key`: The key of a category when it is represented in key:value format.
-        /// * `value`: The value of a category when it is represented in key:value format
-        /// * `type`: Denotes the type of a category.
+        /// * `ExtId`: The extID for the category.
+        /// * `Key`: The key of a category when it is represented in key:value format.
+        /// * `Value`: The value of a category when it is represented in key:value format
+        /// * `Type`: Denotes the type of a category.
         /// There are three types of categories: SYSTEM, INTERNAL, and USER.
-        /// * `description`: A string consisting of the description of the category as defined by the user.
-        /// * `owner_uuid`: This field contains the UUID of a user who owns the category.
-        /// * `associations`: This field gives basic information about resources that are associated to the category.
-        /// * `detailed_associations`: This field gives detailed information about resources that are associated to the category.
-        /// * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity.
-        /// * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * `Description`: A string consisting of the description of the category as defined by the user.
+        /// * `OwnerUuid`: This field contains the UUID of a user who owns the category.
+        /// * `Associations`: This field gives basic information about resources that are associated to the category.
+        /// * `DetailedAssociations`: This field gives detailed information about resources that are associated to the category.
+        /// * `TenantId`: A globally unique identifier that represents the tenant that owns this entity.
+        /// * `Links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
         /// 
         /// ### associations
-        /// * `category_id`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * `resource_type`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * `resource_group`: An enum denoting the resource group.
+        /// * `CategoryId`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * `ResourceType`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * `ResourceGroup`: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * `count`: Count of associations of a particular type of entity or policy
+        /// * `Count`: Count of associations of a particular type of entity or policy
         /// 
-        /// ### detailed_associations
-        /// * `category_id`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * `resource_type`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * `resource_group`: An enum denoting the resource group.
+        /// ### DetailedAssociations
+        /// * `CategoryId`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * `ResourceType`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * `ResourceGroup`: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * `resource_id`: The UUID of the entity or policy associated with the particular category.
+        /// * `ResourceId`: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
         /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/Categories/operation/listCategories).
@@ -131,34 +131,34 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Categories
         /// 
-        /// The `categories` contains list of categories. Each category has the following attributes:
+        /// The `Categories` contains list of categories. Each category has the following attributes:
         /// 
-        /// * `ext_id`: The extID for the category.
-        /// * `key`: The key of a category when it is represented in key:value format.
-        /// * `value`: The value of a category when it is represented in key:value format
-        /// * `type`: Denotes the type of a category.
+        /// * `ExtId`: The extID for the category.
+        /// * `Key`: The key of a category when it is represented in key:value format.
+        /// * `Value`: The value of a category when it is represented in key:value format
+        /// * `Type`: Denotes the type of a category.
         /// There are three types of categories: SYSTEM, INTERNAL, and USER.
-        /// * `description`: A string consisting of the description of the category as defined by the user.
-        /// * `owner_uuid`: This field contains the UUID of a user who owns the category.
-        /// * `associations`: This field gives basic information about resources that are associated to the category.
-        /// * `detailed_associations`: This field gives detailed information about resources that are associated to the category.
-        /// * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity.
-        /// * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * `Description`: A string consisting of the description of the category as defined by the user.
+        /// * `OwnerUuid`: This field contains the UUID of a user who owns the category.
+        /// * `Associations`: This field gives basic information about resources that are associated to the category.
+        /// * `DetailedAssociations`: This field gives detailed information about resources that are associated to the category.
+        /// * `TenantId`: A globally unique identifier that represents the tenant that owns this entity.
+        /// * `Links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
         /// 
         /// ### associations
-        /// * `category_id`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * `resource_type`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * `resource_group`: An enum denoting the resource group.
+        /// * `CategoryId`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * `ResourceType`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * `ResourceGroup`: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * `count`: Count of associations of a particular type of entity or policy
+        /// * `Count`: Count of associations of a particular type of entity or policy
         /// 
-        /// ### detailed_associations
-        /// * `category_id`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * `resource_type`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * `resource_group`: An enum denoting the resource group.
+        /// ### DetailedAssociations
+        /// * `CategoryId`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * `ResourceType`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * `ResourceGroup`: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * `resource_id`: The UUID of the entity or policy associated with the particular category.
+        /// * `ResourceId`: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
         /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/Categories/operation/listCategories).
@@ -208,34 +208,34 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Categories
         /// 
-        /// The `categories` contains list of categories. Each category has the following attributes:
+        /// The `Categories` contains list of categories. Each category has the following attributes:
         /// 
-        /// * `ext_id`: The extID for the category.
-        /// * `key`: The key of a category when it is represented in key:value format.
-        /// * `value`: The value of a category when it is represented in key:value format
-        /// * `type`: Denotes the type of a category.
+        /// * `ExtId`: The extID for the category.
+        /// * `Key`: The key of a category when it is represented in key:value format.
+        /// * `Value`: The value of a category when it is represented in key:value format
+        /// * `Type`: Denotes the type of a category.
         /// There are three types of categories: SYSTEM, INTERNAL, and USER.
-        /// * `description`: A string consisting of the description of the category as defined by the user.
-        /// * `owner_uuid`: This field contains the UUID of a user who owns the category.
-        /// * `associations`: This field gives basic information about resources that are associated to the category.
-        /// * `detailed_associations`: This field gives detailed information about resources that are associated to the category.
-        /// * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity.
-        /// * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * `Description`: A string consisting of the description of the category as defined by the user.
+        /// * `OwnerUuid`: This field contains the UUID of a user who owns the category.
+        /// * `Associations`: This field gives basic information about resources that are associated to the category.
+        /// * `DetailedAssociations`: This field gives detailed information about resources that are associated to the category.
+        /// * `TenantId`: A globally unique identifier that represents the tenant that owns this entity.
+        /// * `Links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
         /// 
         /// ### associations
-        /// * `category_id`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * `resource_type`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * `resource_group`: An enum denoting the resource group.
+        /// * `CategoryId`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * `ResourceType`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * `ResourceGroup`: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * `count`: Count of associations of a particular type of entity or policy
+        /// * `Count`: Count of associations of a particular type of entity or policy
         /// 
-        /// ### detailed_associations
-        /// * `category_id`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * `resource_type`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * `resource_group`: An enum denoting the resource group.
+        /// ### DetailedAssociations
+        /// * `CategoryId`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * `ResourceType`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * `ResourceGroup`: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * `resource_id`: The UUID of the entity or policy associated with the particular category.
+        /// * `ResourceId`: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
         /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/Categories/operation/listCategories).

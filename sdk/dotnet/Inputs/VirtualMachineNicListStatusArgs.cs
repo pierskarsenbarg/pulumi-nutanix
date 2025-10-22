@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class VirtualMachineNicListStatusArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
+        /// -  The Floating IP associated with the vnic. (Only in `NicListStatus`)
         /// </summary>
         [Input("floatingIp")]
         public Input<string>? FloatingIp { get; set; }
@@ -32,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// - Indicates whether the serial port connection is connected or not (`True` or `False`).
         /// </summary>
         [Input("isConnected")]
         public Input<string>? IsConnected { get; set; }

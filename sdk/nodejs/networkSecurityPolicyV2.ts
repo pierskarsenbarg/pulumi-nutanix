@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
 
 /**
  * Create a Network Security Policy
+ *
+ * ## Example
  */
 export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
     /**

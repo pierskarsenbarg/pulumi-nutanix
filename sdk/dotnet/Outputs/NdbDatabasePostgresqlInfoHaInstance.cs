@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly int? ArchiveWalExpireDays;
         /// <summary>
-        /// - (Optional) backup policy for instance. Default is "primary_only"
+        /// - (Optional) backup policy for instance. Default is "PrimaryOnly"
         /// </summary>
         public readonly string? BackupPolicy;
         public readonly string? ClusterDescription;

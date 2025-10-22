@@ -118,7 +118,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
         /// 
-        /// Both (`bp_uuid` and `bp_name`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (`BpUuid` and `BpName`) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpName")]
         public string? BpName { get; set; }
@@ -140,7 +140,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
         /// 
-        /// Both (`bp_uuid` and `bp_name`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (`BpUuid` and `BpName`) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpName")]
         public Input<string>? BpName { get; set; }

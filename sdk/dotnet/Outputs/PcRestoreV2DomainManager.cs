@@ -26,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.PcRestoreV2DomainManagerNetwork> Networks;
         public readonly ImmutableArray<string> NodeExtIds;
         /// <summary>
-        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `False`.
         /// </summary>
         public readonly bool? ShouldEnableHighAvailability;
 

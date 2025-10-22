@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public string Filter { get; set; } = null!;
 
         /// <summary>
-        /// (Required) The kind name (Default value: `project`).
+        /// (Required) The kind name (Default value: `Project`).
         /// </summary>
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;

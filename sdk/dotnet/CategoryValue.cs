@@ -53,7 +53,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The category_key name for the category value.
+        /// - (Required) The CategoryKey name for the category value.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -124,7 +124,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - (Required) The category_key name for the category value.
+        /// - (Required) The CategoryKey name for the category value.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -156,7 +156,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - (Required) The category_key name for the category value.
+        /// - (Required) The CategoryKey name for the category value.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

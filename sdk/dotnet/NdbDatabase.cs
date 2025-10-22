@@ -99,6 +99,8 @@ namespace PiersKarsenbarg.Nutanix
     /// });
     /// ```
     /// 
+    /// ### NDB database resource to provision HA instance with new database server VM
+    /// 
     /// ### NDB database resource with registered database server VM
     /// 
     /// ```csharp

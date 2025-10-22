@@ -15,6 +15,8 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// ### Cluster Location
+    /// 
     /// ### Object Store Location
     /// 
     /// ```csharp

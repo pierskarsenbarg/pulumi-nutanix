@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceResult
     {
         /// <summary>
-        /// (Required) The kind name (Default value: `project`).
+        /// (Required) The kind name (Default value: `Project`).
         /// </summary>
         public readonly string Kind;
         /// <summary>

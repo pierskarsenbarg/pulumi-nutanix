@@ -79,7 +79,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.UserGroupsDirectoryServiceUserGroup>> DirectoryServiceUserGroups { get; private set; } = null!;
 
         /// <summary>
-        /// The user_group kind metadata.
+        /// The UserGroup kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
@@ -247,7 +247,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// The user_group kind metadata.
+        /// The UserGroup kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {

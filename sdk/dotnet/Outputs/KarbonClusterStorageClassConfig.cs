@@ -21,7 +21,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// Reclaim policy for persistent volumes provisioned using the specified storage class.
         /// * `volumes_config.#.file_system` - (Optional) Karbon uses either the ext4 or xfs file-system on the volume disk.
-        /// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a `true` value.
+        /// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a `True` value.
         /// * `volumes_config.#.password` - (Required) The password of the Prism Element user that the API calls use to provision volumes.
         /// * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
         /// * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.

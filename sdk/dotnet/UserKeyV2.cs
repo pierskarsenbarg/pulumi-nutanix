@@ -38,22 +38,22 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// The following arguments are supported:
     /// 
-    /// * `user_ext_id`: - ( Required ) External Identifier of the User.
-    /// * `name`: - ( Required ) Identifier for the key in the form of a name.
-    /// * `description`: - ( Optional ) Brief description of the key.
-    /// * `key_type`: - ( Required ) The type of key. Enum Values:
+    /// * `UserExtId`: - ( Required ) External Identifier of the User.
+    /// * `Name`: - ( Required ) Identifier for the key in the form of a name.
+    /// * `Description`: - ( Optional ) Brief description of the key.
+    /// * `KeyType`: - ( Required ) The type of key. Enum Values:
     ///       * "API_KEY":	A key type that is used to identify a service.
     ///       * "OBJECT_KEY":	A combination of access key and secret key to sign an API request.
-    /// * `creation_type`: - ( Optional ) The creation mechanism of this entity. Enum Values:
+    /// * `CreationType`: - ( Optional ) The creation mechanism of this entity. Enum Values:
     ///       * "PREDEFINED":	Predefined creator workflow type is for entity created by the system.
     ///       * "SERVICEDEFINED":	Servicedefined creator workflow type is for entity created by the service.
     ///       * "USERDEFINED":	Userdefined creator workflow type is for entity created by the users.
-    /// * `expiry_time`: - ( Optional ) The time when the key will expire.
-    /// * `status`: - ( Optional ) The status of the key. Enum Values:
+    /// * `ExpiryTime`: - ( Optional ) The time when the key will expire.
+    /// * `Status`: - ( Optional ) The status of the key. Enum Values:
     ///       * "REVOKED":	Key is revoked.
     ///       * "VALID":	Key is valid.
     ///       * "EXPIRED":	Key is expired.
-    /// * `assigned_to`: - ( Optional ) External client to whom the given key is allocated.
+    /// * `AssignedTo`: - ( Optional ) External client to whom the given key is allocated.
     /// </summary>
     [NutanixResourceType("nutanix:index/userKeyV2:UserKeyV2")]
     public partial class UserKeyV2 : global::Pulumi.CustomResource

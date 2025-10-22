@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapList
     {
         /// <summary>
-        /// -(Optional) Field containing digital_certificate_base64 and key_management_server_uuid for key management server.
+        /// -(Optional) Field containing DigitalCertificateBase64 and KeyManagementServerUuid for key management server.
         /// </summary>
         public readonly string? Key;
         public readonly string? Value;

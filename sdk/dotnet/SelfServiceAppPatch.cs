@@ -244,7 +244,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.SelfServiceAppPatchCategory>> Categories { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as patch_name for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as PatchName for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Output("configName")]
         public Output<string> ConfigName { get; private set; } = null!;
@@ -332,7 +332,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as patch_name for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as PatchName for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Input("configName", required: true)]
         public Input<string> ConfigName { get; set; } = null!;
@@ -396,7 +396,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as patch_name for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as PatchName for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Input("configName")]
         public Input<string>? ConfigName { get; set; }

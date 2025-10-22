@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
 
 /**
  * Describes a Virtual Machine
+ *
+ * ## Example Usage
  */
 export function getVirtualMachine(args: GetVirtualMachineArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualMachineResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -222,6 +224,8 @@ export interface GetVirtualMachineResult {
 }
 /**
  * Describes a Virtual Machine
+ *
+ * ## Example Usage
  */
 export function getVirtualMachineOutput(args: GetVirtualMachineOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualMachineResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

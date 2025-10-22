@@ -103,7 +103,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The UUID of the application.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("appUuid")]
         public string? AppUuid { get; set; }
@@ -137,7 +137,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The UUID of the application.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("appUuid")]
         public Input<string>? AppUuid { get; set; }

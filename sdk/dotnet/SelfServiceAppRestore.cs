@@ -78,7 +78,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Output("snapshotUuid")]
         public Output<string> SnapshotUuid { get; private set; } = null!;
@@ -157,7 +157,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Input("snapshotUuid", required: true)]
         public Input<string> SnapshotUuid { get; set; } = null!;
@@ -191,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Input("snapshotUuid")]
         public Input<string>? SnapshotUuid { get; set; }

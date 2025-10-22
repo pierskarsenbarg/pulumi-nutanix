@@ -41,49 +41,49 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Attribute Reference 
         /// 
-        /// * `snapshots`: List of snapshots
+        /// * `Snapshots`: List of snapshots
         /// 
         /// ### snapshots
         /// 
-        /// * `id`: name of snapshot
-        /// * `description`: description of snapshot
-        /// * `properties`: properties 
-        /// * `owner_id`: owner id 
-        /// * `date_created`: created date
-        /// * `date_modified`: modified date
-        /// * `properties`: properties 
-        /// * `tags`: tags
-        /// * `snapshot_uuid`: snapshot uuid 
-        /// * `nx_cluster_id`: nx cluster id
-        /// * `protection_domain_id`: protection domain
-        /// * `parent_snapshot_id`: parent snapshot id
-        /// * `database_node_id`: database node id
-        /// * `app_info_version`: App info version
-        /// * `status`: status
-        /// * `type`: type
-        /// * `applicable_types`: Applicable types
-        /// * `snapshot_timestamp`: snapshot timeStamp
-        /// * `metadata`: metadata of snapshot 
-        /// * `software_snapshot_id`: software snapshot id
-        /// * `software_database_snapshot`: software database snapshot
-        /// * `dbserver_storage_metadata_version`: dbserver storage metadata version
-        /// * `santised_from_snapshot_id`: sanitized  snapshot id
-        /// * `timezone`: timezone
-        /// * `processed`: processed
-        /// * `database_snapshot`: database snapshot
-        /// * `from_timestamp`: from timestamp
-        /// * `to_timestamp`: to timestamp
-        /// * `dbserver_id`: dbserver id
-        /// * `dbserver_name`: dbserver name
-        /// * `dbserver_ip`:dbserver ip
-        /// * `replicated_snapshots`: replicated snapshots
-        /// * `software_snapshot`: software snapshot
-        /// * `santised_snapshots`:santised snapshots
-        /// * `snapshot_family`: snapshot family
-        /// * `snapshot_timestamp_date`: snapshot timestamp date
-        /// * `lcm_config`: LCM config
-        /// * `parent_snapshot`: parent snapshot
-        /// * `snapshot_size`: snapshot size
+        /// * `Id`: name of snapshot
+        /// * `Description`: description of snapshot
+        /// * `Properties`: properties 
+        /// * `OwnerId`: owner id 
+        /// * `DateCreated`: created date
+        /// * `DateModified`: modified date
+        /// * `Properties`: properties 
+        /// * `Tags`: tags
+        /// * `SnapshotUuid`: snapshot uuid 
+        /// * `NxClusterId`: nx cluster id
+        /// * `ProtectionDomainId`: protection domain
+        /// * `ParentSnapshotId`: parent snapshot id
+        /// * `DatabaseNodeId`: database node id
+        /// * `AppInfoVersion`: App info version
+        /// * `Status`: status
+        /// * `Type`: type
+        /// * `ApplicableTypes`: Applicable types
+        /// * `SnapshotTimestamp`: snapshot timeStamp
+        /// * `Metadata`: metadata of snapshot 
+        /// * `SoftwareSnapshotId`: software snapshot id
+        /// * `SoftwareDatabaseSnapshot`: software database snapshot
+        /// * `DbserverStorageMetadataVersion`: dbserver storage metadata version
+        /// * `SantisedFromSnapshotId`: sanitized  snapshot id
+        /// * `Timezone`: timezone
+        /// * `Processed`: processed
+        /// * `DatabaseSnapshot`: database snapshot
+        /// * `FromTimestamp`: from timestamp
+        /// * `ToTimestamp`: to timestamp
+        /// * `DbserverId`: dbserver id
+        /// * `DbserverName`: dbserver name
+        /// * `DbserverIp`:dbserver ip
+        /// * `ReplicatedSnapshots`: replicated snapshots
+        /// * `SoftwareSnapshot`: software snapshot
+        /// * `SantisedSnapshots`:santised snapshots
+        /// * `SnapshotFamily`: snapshot family
+        /// * `SnapshotTimestampDate`: snapshot timestamp date
+        /// * `LcmConfig`: LCM config
+        /// * `ParentSnapshot`: parent snapshot
+        /// * `SnapshotSize`: snapshot size
         /// 
         /// 
         /// See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).
@@ -120,49 +120,49 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Attribute Reference 
         /// 
-        /// * `snapshots`: List of snapshots
+        /// * `Snapshots`: List of snapshots
         /// 
         /// ### snapshots
         /// 
-        /// * `id`: name of snapshot
-        /// * `description`: description of snapshot
-        /// * `properties`: properties 
-        /// * `owner_id`: owner id 
-        /// * `date_created`: created date
-        /// * `date_modified`: modified date
-        /// * `properties`: properties 
-        /// * `tags`: tags
-        /// * `snapshot_uuid`: snapshot uuid 
-        /// * `nx_cluster_id`: nx cluster id
-        /// * `protection_domain_id`: protection domain
-        /// * `parent_snapshot_id`: parent snapshot id
-        /// * `database_node_id`: database node id
-        /// * `app_info_version`: App info version
-        /// * `status`: status
-        /// * `type`: type
-        /// * `applicable_types`: Applicable types
-        /// * `snapshot_timestamp`: snapshot timeStamp
-        /// * `metadata`: metadata of snapshot 
-        /// * `software_snapshot_id`: software snapshot id
-        /// * `software_database_snapshot`: software database snapshot
-        /// * `dbserver_storage_metadata_version`: dbserver storage metadata version
-        /// * `santised_from_snapshot_id`: sanitized  snapshot id
-        /// * `timezone`: timezone
-        /// * `processed`: processed
-        /// * `database_snapshot`: database snapshot
-        /// * `from_timestamp`: from timestamp
-        /// * `to_timestamp`: to timestamp
-        /// * `dbserver_id`: dbserver id
-        /// * `dbserver_name`: dbserver name
-        /// * `dbserver_ip`:dbserver ip
-        /// * `replicated_snapshots`: replicated snapshots
-        /// * `software_snapshot`: software snapshot
-        /// * `santised_snapshots`:santised snapshots
-        /// * `snapshot_family`: snapshot family
-        /// * `snapshot_timestamp_date`: snapshot timestamp date
-        /// * `lcm_config`: LCM config
-        /// * `parent_snapshot`: parent snapshot
-        /// * `snapshot_size`: snapshot size
+        /// * `Id`: name of snapshot
+        /// * `Description`: description of snapshot
+        /// * `Properties`: properties 
+        /// * `OwnerId`: owner id 
+        /// * `DateCreated`: created date
+        /// * `DateModified`: modified date
+        /// * `Properties`: properties 
+        /// * `Tags`: tags
+        /// * `SnapshotUuid`: snapshot uuid 
+        /// * `NxClusterId`: nx cluster id
+        /// * `ProtectionDomainId`: protection domain
+        /// * `ParentSnapshotId`: parent snapshot id
+        /// * `DatabaseNodeId`: database node id
+        /// * `AppInfoVersion`: App info version
+        /// * `Status`: status
+        /// * `Type`: type
+        /// * `ApplicableTypes`: Applicable types
+        /// * `SnapshotTimestamp`: snapshot timeStamp
+        /// * `Metadata`: metadata of snapshot 
+        /// * `SoftwareSnapshotId`: software snapshot id
+        /// * `SoftwareDatabaseSnapshot`: software database snapshot
+        /// * `DbserverStorageMetadataVersion`: dbserver storage metadata version
+        /// * `SantisedFromSnapshotId`: sanitized  snapshot id
+        /// * `Timezone`: timezone
+        /// * `Processed`: processed
+        /// * `DatabaseSnapshot`: database snapshot
+        /// * `FromTimestamp`: from timestamp
+        /// * `ToTimestamp`: to timestamp
+        /// * `DbserverId`: dbserver id
+        /// * `DbserverName`: dbserver name
+        /// * `DbserverIp`:dbserver ip
+        /// * `ReplicatedSnapshots`: replicated snapshots
+        /// * `SoftwareSnapshot`: software snapshot
+        /// * `SantisedSnapshots`:santised snapshots
+        /// * `SnapshotFamily`: snapshot family
+        /// * `SnapshotTimestampDate`: snapshot timestamp date
+        /// * `LcmConfig`: LCM config
+        /// * `ParentSnapshot`: parent snapshot
+        /// * `SnapshotSize`: snapshot size
         /// 
         /// 
         /// See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).
@@ -199,49 +199,49 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Attribute Reference 
         /// 
-        /// * `snapshots`: List of snapshots
+        /// * `Snapshots`: List of snapshots
         /// 
         /// ### snapshots
         /// 
-        /// * `id`: name of snapshot
-        /// * `description`: description of snapshot
-        /// * `properties`: properties 
-        /// * `owner_id`: owner id 
-        /// * `date_created`: created date
-        /// * `date_modified`: modified date
-        /// * `properties`: properties 
-        /// * `tags`: tags
-        /// * `snapshot_uuid`: snapshot uuid 
-        /// * `nx_cluster_id`: nx cluster id
-        /// * `protection_domain_id`: protection domain
-        /// * `parent_snapshot_id`: parent snapshot id
-        /// * `database_node_id`: database node id
-        /// * `app_info_version`: App info version
-        /// * `status`: status
-        /// * `type`: type
-        /// * `applicable_types`: Applicable types
-        /// * `snapshot_timestamp`: snapshot timeStamp
-        /// * `metadata`: metadata of snapshot 
-        /// * `software_snapshot_id`: software snapshot id
-        /// * `software_database_snapshot`: software database snapshot
-        /// * `dbserver_storage_metadata_version`: dbserver storage metadata version
-        /// * `santised_from_snapshot_id`: sanitized  snapshot id
-        /// * `timezone`: timezone
-        /// * `processed`: processed
-        /// * `database_snapshot`: database snapshot
-        /// * `from_timestamp`: from timestamp
-        /// * `to_timestamp`: to timestamp
-        /// * `dbserver_id`: dbserver id
-        /// * `dbserver_name`: dbserver name
-        /// * `dbserver_ip`:dbserver ip
-        /// * `replicated_snapshots`: replicated snapshots
-        /// * `software_snapshot`: software snapshot
-        /// * `santised_snapshots`:santised snapshots
-        /// * `snapshot_family`: snapshot family
-        /// * `snapshot_timestamp_date`: snapshot timestamp date
-        /// * `lcm_config`: LCM config
-        /// * `parent_snapshot`: parent snapshot
-        /// * `snapshot_size`: snapshot size
+        /// * `Id`: name of snapshot
+        /// * `Description`: description of snapshot
+        /// * `Properties`: properties 
+        /// * `OwnerId`: owner id 
+        /// * `DateCreated`: created date
+        /// * `DateModified`: modified date
+        /// * `Properties`: properties 
+        /// * `Tags`: tags
+        /// * `SnapshotUuid`: snapshot uuid 
+        /// * `NxClusterId`: nx cluster id
+        /// * `ProtectionDomainId`: protection domain
+        /// * `ParentSnapshotId`: parent snapshot id
+        /// * `DatabaseNodeId`: database node id
+        /// * `AppInfoVersion`: App info version
+        /// * `Status`: status
+        /// * `Type`: type
+        /// * `ApplicableTypes`: Applicable types
+        /// * `SnapshotTimestamp`: snapshot timeStamp
+        /// * `Metadata`: metadata of snapshot 
+        /// * `SoftwareSnapshotId`: software snapshot id
+        /// * `SoftwareDatabaseSnapshot`: software database snapshot
+        /// * `DbserverStorageMetadataVersion`: dbserver storage metadata version
+        /// * `SantisedFromSnapshotId`: sanitized  snapshot id
+        /// * `Timezone`: timezone
+        /// * `Processed`: processed
+        /// * `DatabaseSnapshot`: database snapshot
+        /// * `FromTimestamp`: from timestamp
+        /// * `ToTimestamp`: to timestamp
+        /// * `DbserverId`: dbserver id
+        /// * `DbserverName`: dbserver name
+        /// * `DbserverIp`:dbserver ip
+        /// * `ReplicatedSnapshots`: replicated snapshots
+        /// * `SoftwareSnapshot`: software snapshot
+        /// * `SantisedSnapshots`:santised snapshots
+        /// * `SnapshotFamily`: snapshot family
+        /// * `SnapshotTimestampDate`: snapshot timestamp date
+        /// * `LcmConfig`: LCM config
+        /// * `ParentSnapshot`: parent snapshot
+        /// * `SnapshotSize`: snapshot size
         /// 
         /// 
         /// See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).

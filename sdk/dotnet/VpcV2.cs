@@ -12,6 +12,8 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource to create VPC.
+    /// 
+    /// ## Example
     /// </summary>
     [NutanixResourceType("nutanix:index/vpcV2:VpcV2")]
     public partial class VpcV2 : global::Pulumi.CustomResource

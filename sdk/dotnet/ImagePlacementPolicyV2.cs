@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
-    /// Create an image placement policy using the provided request body. Name, placement_type, image_entity_filter and source are mandatory fields to create an policy.
+    /// Create an image placement policy using the provided request body. Name, placement_type, ImageEntityFilter and source are mandatory fields to create an policy.
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

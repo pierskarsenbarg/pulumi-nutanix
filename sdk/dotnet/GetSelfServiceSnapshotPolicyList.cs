@@ -103,7 +103,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which snapshot policies should be listed.
         /// 
-        /// Both (`bp_name` and `bp_uuid`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (`BpName` and `BpUuid`) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpUuid")]
         public string? BpUuid { get; set; }
@@ -137,7 +137,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which snapshot policies should be listed.
         /// 
-        /// Both (`bp_name` and `bp_uuid`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (`BpName` and `BpUuid`) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpUuid")]
         public Input<string>? BpUuid { get; set; }

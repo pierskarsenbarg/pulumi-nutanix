@@ -131,7 +131,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? FoundationPort { get; set; }
 
         /// <summary>
-        /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
+        /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `False`
         /// </summary>
         [Input("insecure", json: true)]
         public Input<bool>? Insecure { get; set; }

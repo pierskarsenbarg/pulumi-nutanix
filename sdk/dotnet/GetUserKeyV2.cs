@@ -38,8 +38,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `user_ext_id`: - ( Required ) External Identifier of the User.
-        /// * `ext_id`: - ( Required ) External identifier of the key.
+        /// * `UserExtId`: - ( Required ) External Identifier of the User.
+        /// * `ExtId`: - ( Required ) External identifier of the key.
         /// </summary>
         public static Task<GetUserKeyV2Result> InvokeAsync(GetUserKeyV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2Args(), options.WithDefaults());
@@ -70,8 +70,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `user_ext_id`: - ( Required ) External Identifier of the User.
-        /// * `ext_id`: - ( Required ) External identifier of the key.
+        /// * `UserExtId`: - ( Required ) External Identifier of the User.
+        /// * `ExtId`: - ( Required ) External identifier of the key.
         /// </summary>
         public static Output<GetUserKeyV2Result> Invoke(GetUserKeyV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2InvokeArgs(), options.WithDefaults());
@@ -102,8 +102,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `user_ext_id`: - ( Required ) External Identifier of the User.
-        /// * `ext_id`: - ( Required ) External identifier of the key.
+        /// * `UserExtId`: - ( Required ) External Identifier of the User.
+        /// * `ExtId`: - ( Required ) External identifier of the key.
         /// </summary>
         public static Output<GetUserKeyV2Result> Invoke(GetUserKeyV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2InvokeArgs(), options.WithDefaults());

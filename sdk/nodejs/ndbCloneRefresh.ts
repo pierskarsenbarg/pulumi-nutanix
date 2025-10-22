@@ -21,6 +21,8 @@ import * as utilities from "./utilities";
  *     timezone: "Asia/Calcutta",
  * });
  * ```
+ *
+ * ### resource to refresh clone with user pitr timestamp
  */
 export class NdbCloneRefresh extends pulumi.CustomResource {
     /**

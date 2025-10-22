@@ -13,19 +13,19 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetPbr
     {
         /// <summary>
-        /// Provides a datasource to retrieve PBR with pbr_uuid .
+        /// Provides a datasource to retrieve PBR with PbrUuid .
         /// </summary>
         public static Task<GetPbrResult> InvokeAsync(GetPbrArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve PBR with pbr_uuid .
+        /// Provides a datasource to retrieve PBR with PbrUuid .
         /// </summary>
         public static Output<GetPbrResult> Invoke(GetPbrInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve PBR with pbr_uuid .
+        /// Provides a datasource to retrieve PBR with PbrUuid .
         /// </summary>
         public static Output<GetPbrResult> Invoke(GetPbrInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrInvokeArgs(), options.WithDefaults());

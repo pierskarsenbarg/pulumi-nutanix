@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ext_id`: -(Required) External Identifier of the User.
+        /// * `ExtId`: -(Required) External Identifier of the User.
         /// </summary>
         public static Task<GetUserV2Result> InvokeAsync(GetUserV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2Args(), options.WithDefaults());
@@ -67,7 +67,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ext_id`: -(Required) External Identifier of the User.
+        /// * `ExtId`: -(Required) External Identifier of the User.
         /// </summary>
         public static Output<GetUserV2Result> Invoke(GetUserV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2InvokeArgs(), options.WithDefaults());
@@ -97,7 +97,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ext_id`: -(Required) External Identifier of the User.
+        /// * `ExtId`: -(Required) External Identifier of the User.
         /// </summary>
         public static Output<GetUserV2Result> Invoke(GetUserV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2InvokeArgs(), options.WithDefaults());

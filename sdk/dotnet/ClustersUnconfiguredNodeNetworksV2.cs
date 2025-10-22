@@ -12,6 +12,8 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
+    /// 
+    /// ## Example Usage
     /// </summary>
     [NutanixResourceType("nutanix:index/clustersUnconfiguredNodeNetworksV2:ClustersUnconfiguredNodeNetworksV2")]
     public partial class ClustersUnconfiguredNodeNetworksV2 : global::Pulumi.CustomResource

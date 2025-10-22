@@ -108,7 +108,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string MasqueradingIp;
         /// <summary>
-        /// - Port used together with masquerading_ip to connect to the cluster.
+        /// - Port used together with MasqueradingIp to connect to the cluster.
         /// </summary>
         public readonly int MasqueradingPort;
         /// <summary>

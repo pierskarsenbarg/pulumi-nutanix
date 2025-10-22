@@ -605,6 +605,8 @@ def get_virtual_machine(boot_device_disk_address: Optional[Mapping[str, _builtin
     """
     Describes a Virtual Machine
 
+    ## Example Usage
+
 
     :param Mapping[str, _builtins.str] boot_device_disk_address: - Address of disk to boot from.
     :param _builtins.str boot_device_mac_address: - MAC address of nic to boot from.
@@ -675,6 +677,8 @@ def get_virtual_machine_output(boot_device_disk_address: Optional[pulumi.Input[O
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualMachineResult]:
     """
     Describes a Virtual Machine
+
+    ## Example Usage
 
 
     :param Mapping[str, _builtins.str] boot_device_disk_address: - Address of disk to boot from.

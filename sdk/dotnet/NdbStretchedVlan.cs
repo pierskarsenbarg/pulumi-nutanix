@@ -78,7 +78,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Update the stretched VLAN Gateway and Subnet Mask IP address
         /// * `metadata.gateway`: Update the gateway of stretched vlan
-        /// * `metadata.subnet_mask`: Update the subnet_mask of stretched vlan
+        /// * `metadata.subnet_mask`: Update the SubnetMask of stretched vlan
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.NdbStretchedVlanMetadata> Metadata { get; private set; } = null!;
@@ -163,7 +163,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Update the stretched VLAN Gateway and Subnet Mask IP address
         /// * `metadata.gateway`: Update the gateway of stretched vlan
-        /// * `metadata.subnet_mask`: Update the subnet_mask of stretched vlan
+        /// * `metadata.subnet_mask`: Update the SubnetMask of stretched vlan
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.NdbStretchedVlanMetadataArgs>? Metadata { get; set; }
@@ -209,7 +209,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Update the stretched VLAN Gateway and Subnet Mask IP address
         /// * `metadata.gateway`: Update the gateway of stretched vlan
-        /// * `metadata.subnet_mask`: Update the subnet_mask of stretched vlan
+        /// * `metadata.subnet_mask`: Update the SubnetMask of stretched vlan
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.NdbStretchedVlanMetadataGetArgs>? Metadata { get; set; }

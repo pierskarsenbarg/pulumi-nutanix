@@ -116,13 +116,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The `id` of the permission.
+        /// The `Id` of the permission.
         /// </summary>
         [Input("permissionId")]
         public string? PermissionId { get; set; }
 
         /// <summary>
-        /// The `name` of the permission.
+        /// The `Name` of the permission.
         /// </summary>
         [Input("permissionName")]
         public string? PermissionName { get; set; }
@@ -148,13 +148,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The `id` of the permission.
+        /// The `Id` of the permission.
         /// </summary>
         [Input("permissionId")]
         public Input<string>? PermissionId { get; set; }
 
         /// <summary>
-        /// The `name` of the permission.
+        /// The `Name` of the permission.
         /// </summary>
         [Input("permissionName")]
         public Input<string>? PermissionName { get; set; }
@@ -179,7 +179,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// . The fields that can/cannot be accessed during the specified operation. field_name_list will be a list of fields. e.g. if field_mode = disallowed, field_name_list = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+        /// . The fields that can/cannot be accessed during the specified operation. FieldNameList will be a list of fields. e.g. if FieldMode = disallowed, FieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionFieldResult> Fields;
         /// <summary>
@@ -187,7 +187,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// (Required) The kind name (Default value: `project`).
+        /// (Required) The kind name (Default value: `Project`).
         /// </summary>
         public readonly string Kind;
         /// <summary>

@@ -35,7 +35,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? DatasourceType { get; set; }
 
         /// <summary>
-        /// The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+        /// The contents of the MetaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
         /// </summary>
         [Input("metadata")]
         public Input<string>? Metadata { get; set; }

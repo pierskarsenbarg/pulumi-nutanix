@@ -101,7 +101,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNdbSlaArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// and `sla_name` are mutually exclusive.
+        /// and `SlaName` are mutually exclusive.
         /// </summary>
         [Input("slaId")]
         public string? SlaId { get; set; }
@@ -121,7 +121,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNdbSlaInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// and `sla_name` are mutually exclusive.
+        /// and `SlaName` are mutually exclusive.
         /// </summary>
         [Input("slaId")]
         public Input<string>? SlaId { get; set; }

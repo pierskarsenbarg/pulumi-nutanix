@@ -12,6 +12,8 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Create a Network Security Policy
+    /// 
+    /// ## Example
     /// </summary>
     [NutanixResourceType("nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2")]
     public partial class NetworkSecurityPolicyV2 : global::Pulumi.CustomResource

@@ -45,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> TimeMachineId { get; private set; } = null!;
 
         /// <summary>
-        /// * `dbservers_id `: (Required)
+        /// * `DbserversId `: (Required)
         /// </summary>
         [Output("timeMachineName")]
         public Output<string?> TimeMachineName { get; private set; } = null!;
@@ -109,7 +109,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TimeMachineId { get; set; }
 
         /// <summary>
-        /// * `dbservers_id `: (Required)
+        /// * `DbserversId `: (Required)
         /// </summary>
         [Input("timeMachineName")]
         public Input<string>? TimeMachineName { get; set; }
@@ -134,7 +134,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TimeMachineId { get; set; }
 
         /// <summary>
-        /// * `dbservers_id `: (Required)
+        /// * `DbserversId `: (Required)
         /// </summary>
         [Input("timeMachineName")]
         public Input<string>? TimeMachineName { get; set; }

@@ -13,19 +13,19 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetVpc
     {
         /// <summary>
-        /// Provides a datasource to retrieve VPC with vpc_uuid or vpc_name .
+        /// Provides a datasource to retrieve VPC with VpcUuid or VpcName .
         /// </summary>
         public static Task<GetVpcResult> InvokeAsync(GetVpcArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with vpc_uuid or vpc_name .
+        /// Provides a datasource to retrieve VPC with VpcUuid or VpcName .
         /// </summary>
         public static Output<GetVpcResult> Invoke(GetVpcInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with vpc_uuid or vpc_name .
+        /// Provides a datasource to retrieve VPC with VpcUuid or VpcName .
         /// </summary>
         public static Output<GetVpcResult> Invoke(GetVpcInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcInvokeArgs(), options.WithDefaults());

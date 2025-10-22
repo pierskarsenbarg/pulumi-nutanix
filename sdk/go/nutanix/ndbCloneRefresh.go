@@ -43,6 +43,8 @@ import (
 //	}
 //
 // ```
+//
+// ### resource to refresh clone with user pitr timestamp
 type NdbCloneRefresh struct {
 	pulumi.CustomResourceState
 

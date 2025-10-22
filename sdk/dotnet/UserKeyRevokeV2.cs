@@ -37,8 +37,8 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// The following arguments are supported:
     /// 
-    /// * `user_ext_id`: - ( Required ) External Identifier of the User.
-    /// * `ext_id`: - ( Required ) External identifier of the key.
+    /// * `UserExtId`: - ( Required ) External Identifier of the User.
+    /// * `ExtId`: - ( Required ) External identifier of the key.
     /// </summary>
     [NutanixResourceType("nutanix:index/userKeyRevokeV2:UserKeyRevokeV2")]
     public partial class UserKeyRevokeV2 : global::Pulumi.CustomResource

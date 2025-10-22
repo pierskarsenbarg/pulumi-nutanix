@@ -74,19 +74,19 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExternalSubnetReferenceUuid { get; private set; } = null!;
 
         /// <summary>
-        /// The floating_ips kind metadata.
+        /// The FloatingIps kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// Private IP with which floating IP is associated. Should be used with vpc_reference .
+        /// Private IP with which floating IP is associated. Should be used with VpcReference .
         /// </summary>
         [Output("privateIp")]
         public Output<string?> PrivateIp { get; private set; } = null!;
 
         /// <summary>
-        /// The reference to a vm_nic .
+        /// The reference to a VmNic .
         /// </summary>
         [Output("vmNicReferenceUuid")]
         public Output<string?> VmNicReferenceUuid { get; private set; } = null!;
@@ -170,13 +170,13 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ExternalSubnetReferenceUuid { get; set; }
 
         /// <summary>
-        /// Private IP with which floating IP is associated. Should be used with vpc_reference .
+        /// Private IP with which floating IP is associated. Should be used with VpcReference .
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
 
         /// <summary>
-        /// The reference to a vm_nic .
+        /// The reference to a VmNic .
         /// </summary>
         [Input("vmNicReferenceUuid")]
         public Input<string>? VmNicReferenceUuid { get; set; }
@@ -224,7 +224,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// The floating_ips kind metadata.
+        /// The FloatingIps kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {
@@ -233,13 +233,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// Private IP with which floating IP is associated. Should be used with vpc_reference .
+        /// Private IP with which floating IP is associated. Should be used with VpcReference .
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
 
         /// <summary>
-        /// The reference to a vm_nic .
+        /// The reference to a VmNic .
         /// </summary>
         [Input("vmNicReferenceUuid")]
         public Input<string>? VmNicReferenceUuid { get; set; }

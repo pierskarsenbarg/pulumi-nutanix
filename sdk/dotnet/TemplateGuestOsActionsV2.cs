@@ -64,7 +64,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
-        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `Complete` action.
         /// 
         /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> IsActiveVersion { get; private set; } = null!;
 
         /// <summary>
-        /// The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        /// The user defined description of a Template Version. (Required) Only applicable with `Complete` action.
         /// </summary>
         [Output("versionDescription")]
         public Output<string?> VersionDescription { get; private set; } = null!;
@@ -87,7 +87,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> VersionId { get; private set; } = null!;
 
         /// <summary>
-        /// The user defined name of a Template Version. Only applicable with `complete` action.
+        /// The user defined name of a Template Version. Only applicable with `Complete` action.
         /// </summary>
         [Output("versionName")]
         public Output<string?> VersionName { get; private set; } = null!;
@@ -152,7 +152,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string> ExtId { get; set; } = null!;
 
         /// <summary>
-        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `Complete` action.
         /// 
         /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -163,7 +163,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? IsActiveVersion { get; set; }
 
         /// <summary>
-        /// The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        /// The user defined description of a Template Version. (Required) Only applicable with `Complete` action.
         /// </summary>
         [Input("versionDescription")]
         public Input<string>? VersionDescription { get; set; }
@@ -175,7 +175,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? VersionId { get; set; }
 
         /// <summary>
-        /// The user defined name of a Template Version. Only applicable with `complete` action.
+        /// The user defined name of a Template Version. Only applicable with `Complete` action.
         /// </summary>
         [Input("versionName")]
         public Input<string>? VersionName { get; set; }
@@ -201,7 +201,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ExtId { get; set; }
 
         /// <summary>
-        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `Complete` action.
         /// 
         /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -212,7 +212,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? IsActiveVersion { get; set; }
 
         /// <summary>
-        /// The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        /// The user defined description of a Template Version. (Required) Only applicable with `Complete` action.
         /// </summary>
         [Input("versionDescription")]
         public Input<string>? VersionDescription { get; set; }
@@ -224,7 +224,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? VersionId { get; set; }
 
         /// <summary>
-        /// The user defined name of a Template Version. Only applicable with `complete` action.
+        /// The user defined name of a Template Version. Only applicable with `Complete` action.
         /// </summary>
         [Input("versionName")]
         public Input<string>? VersionName { get; set; }

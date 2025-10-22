@@ -51,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? HypervProductKey { get; set; }
 
         /// <summary>
-        /// SKU of hyperv to be installed if hypervisor_type is hyperv.
+        /// SKU of hyperv to be installed if HypervisorType is hyperv.
         /// </summary>
         [Input("hypervSku")]
         public Input<string>? HypervSku { get; set; }

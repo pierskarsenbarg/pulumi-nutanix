@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VirtualMachineV2NicNetworkInfoNetworkFunctionChainGetArgs>? _networkFunctionChains;
 
         /// <summary>
-        /// The network function chain associates with the NIC. Only valid if nic_type is NORMAL_NIC.
+        /// The network function chain associates with the NIC. Only valid if NicType is NORMAL_NIC.
         /// </summary>
         public InputList<Inputs.VirtualMachineV2NicNetworkInfoNetworkFunctionChainGetArgs> NetworkFunctionChains
         {
@@ -67,7 +67,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VirtualMachineV2NicNetworkInfoSubnetGetArgs>? _subnets;
 
         /// <summary>
-        /// Network identifier for this adapter. Only valid if nic_type is NORMAL_NIC or DIRECT_NIC
+        /// Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC
         /// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
         /// </summary>
         public InputList<Inputs.VirtualMachineV2NicNetworkInfoSubnetGetArgs> Subnets

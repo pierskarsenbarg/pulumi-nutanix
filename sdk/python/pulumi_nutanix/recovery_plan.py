@@ -269,6 +269,8 @@ class RecoveryPlan(pulumi.CustomResource):
         """
         Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A description for Recovery Plan.
@@ -282,6 +284,8 @@ class RecoveryPlan(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param RecoveryPlanArgs args: The arguments to use to populate this resource's properties.

@@ -31,7 +31,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The description of application.
         /// 
-        /// Both are `bp_name` and `bp_uuid` are optional but atleast one of them to be provided for this resource to work.
+        /// Both are `BpName` and `BpUuid` are optional but atleast one of them to be provided for this resource to work.
         /// </summary>
         [Output("appDescription")]
         public Output<string?> AppDescription { get; private set; } = null!;
@@ -143,7 +143,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The description of application.
         /// 
-        /// Both are `bp_name` and `bp_uuid` are optional but atleast one of them to be provided for this resource to work.
+        /// Both are `BpName` and `BpUuid` are optional but atleast one of them to be provided for this resource to work.
         /// </summary>
         [Input("appDescription")]
         public Input<string>? AppDescription { get; set; }
@@ -211,7 +211,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The description of application.
         /// 
-        /// Both are `bp_name` and `bp_uuid` are optional but atleast one of them to be provided for this resource to work.
+        /// Both are `BpName` and `BpUuid` are optional but atleast one of them to be provided for this resource to work.
         /// </summary>
         [Input("appDescription")]
         public Input<string>? AppDescription { get; set; }

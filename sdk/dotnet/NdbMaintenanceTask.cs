@@ -111,13 +111,13 @@ namespace PiersKarsenbarg.Nutanix
     public partial class NdbMaintenanceTask : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// dbserver cluster ids. Conflicts with "dbserver_id"
+        /// dbserver cluster ids. Conflicts with "DbserverId"
         /// </summary>
         [Output("dbserverClusters")]
         public Output<ImmutableArray<string>> DbserverClusters { get; private set; } = null!;
 
         /// <summary>
-        /// dbserver vm id. Conflicts with "dbserver_cluster"
+        /// dbserver vm id. Conflicts with "DbserverCluster"
         /// </summary>
         [Output("dbserverIds")]
         public Output<ImmutableArray<string>> DbserverIds { get; private set; } = null!;
@@ -191,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dbserverClusters;
 
         /// <summary>
-        /// dbserver cluster ids. Conflicts with "dbserver_id"
+        /// dbserver cluster ids. Conflicts with "DbserverId"
         /// </summary>
         public InputList<string> DbserverClusters
         {
@@ -203,7 +203,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dbserverIds;
 
         /// <summary>
-        /// dbserver vm id. Conflicts with "dbserver_cluster"
+        /// dbserver vm id. Conflicts with "DbserverCluster"
         /// </summary>
         public InputList<string> DbserverIds
         {
@@ -241,7 +241,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dbserverClusters;
 
         /// <summary>
-        /// dbserver cluster ids. Conflicts with "dbserver_id"
+        /// dbserver cluster ids. Conflicts with "DbserverId"
         /// </summary>
         public InputList<string> DbserverClusters
         {
@@ -253,7 +253,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dbserverIds;
 
         /// <summary>
-        /// dbserver vm id. Conflicts with "dbserver_cluster"
+        /// dbserver vm id. Conflicts with "DbserverCluster"
         /// </summary>
         public InputList<string> DbserverIds
         {

@@ -18,7 +18,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - list containing cluster name and cluster urls for created clusters in current session
-        /// * `cluster_urls.#.cluster_name` :- cluster_name
+        /// * `cluster_urls.#.cluster_name` :- ClusterName
         /// * `cluster_urls.#.cluster_url` :- url to access the cluster login
         /// </summary>
         [Output("clusterUrls")]
@@ -145,7 +145,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> NosPackage { get; private set; } = null!;
 
         /// <summary>
-        /// - session_id of the imaging session
+        /// - SessionId of the imaging session
         /// </summary>
         [Output("sessionId")]
         public Output<string> SessionId { get; private set; } = null!;
@@ -157,7 +157,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool?> SkipHypervisor { get; private set; } = null!;
 
         /// <summary>
-        /// - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to SvmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         [Output("svmRescueArgs")]
         public Output<ImmutableArray<string>> SvmRescueArgs { get; private set; } = null!;
@@ -424,7 +424,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _svmRescueArgs;
 
         /// <summary>
-        /// - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to SvmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         public InputList<string> SvmRescueArgs
         {
@@ -525,7 +525,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - list containing cluster name and cluster urls for created clusters in current session
-        /// * `cluster_urls.#.cluster_name` :- cluster_name
+        /// * `cluster_urls.#.cluster_name` :- ClusterName
         /// * `cluster_urls.#.cluster_url` :- url to access the cluster login
         /// </summary>
         public InputList<Inputs.FoundationImageNodesClusterUrlGetArgs> ClusterUrls
@@ -660,7 +660,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? NosPackage { get; set; }
 
         /// <summary>
-        /// - session_id of the imaging session
+        /// - SessionId of the imaging session
         /// </summary>
         [Input("sessionId")]
         public Input<string>? SessionId { get; set; }
@@ -675,7 +675,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _svmRescueArgs;
 
         /// <summary>
-        /// - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to SvmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         public InputList<string> SvmRescueArgs
         {

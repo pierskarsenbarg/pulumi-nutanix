@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.KarbonClusterCniConfigFlannelConfig> FlannelConfigs;
         /// <summary>
-        /// - (Optional) The size of the subnet from the pod_ipv4_cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+        /// - (Optional) The size of the subnet from the PodIpv4Cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
         /// </summary>
         public readonly int? NodeCidrMaskSize;
         /// <summary>

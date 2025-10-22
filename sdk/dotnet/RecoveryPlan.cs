@@ -12,6 +12,8 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
+    /// 
+    /// ## Example Usage
     /// </summary>
     [NutanixResourceType("nutanix:index/recoveryPlan:RecoveryPlan")]
     public partial class RecoveryPlan : global::Pulumi.CustomResource

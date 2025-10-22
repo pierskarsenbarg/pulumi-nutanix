@@ -14,18 +14,579 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes the Lists of all host entities across clusters registered to Prism Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// 
+        /// 
+        /// ## Host Entities
+        /// 
+        /// The HostEntities attribute supports the following:
+        /// 
+        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * `TenantId`: - image uuid.
+        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * `HostName`: - Name of the host.
+        /// * `HostType`: - Type of the host.
+        ///    * `HYPER_CONVERGED`: Hyper-converged node.
+        ///    * `COMPUTE_ONLY`: Compute only node.
+        ///    * `STORAGE_ONLY`: Storage only node.
+        /// * `Hypervisor`: - Hypervisor details.
+        /// * `Cluster`: - Cluster reference for an entity.
+        /// * `ControllerVm`: - Host entity with its attributes.
+        /// * `Disk`: - Disks attached to host.
+        /// * `IsDegraded`: - Node degraded status.
+        /// * `IsSecureBooted`: - Secure boot status.
+        /// * `IsHardwareVirtualized`: - Indicates whether the hardware is virtualized or not.
+        /// * `HasCsr`: - Certificate signing request status.
+        /// * `KeyManagementDeviceToCertStatus`: - Mapping of key management device to certificate status list.
+        /// * `NumberOfCpuCores`: - Number of CPU cores.
+        /// * `NumberOfCpuThreads`: - Number of CPU threads.
+        /// * `NumberOfCpuSockets`: - Number of CPU sockets.
+        /// * `CpuCapacityHz`: - CPU capacity in Hz.
+        /// * `CpuFrequencyHz`: - CPU frequency in Hz.
+        /// * `CpuModel`: - CPU model name.
+        /// * `GpuDriverVersion`: - GPU driver version.
+        /// * `GpuList`: - GPU attached list.
+        /// * `DefaultVhdLocation`: - Default VHD location.
+        /// * `DefaultVhdContainerUuid`: - Default VHD container UUID.
+        /// * `DefaultVmLocation`: - Default VM location.
+        /// * `DefaultVmContainerUuid`: - Default VM container UUID.
+        /// * `RebootPending`: - Reboot pending status.
+        /// * `FailoverClusterFqdn`: - Failover cluster FQDN.
+        /// * `FailoverClusterNodeStatus`: - Failover cluster node status.
+        /// * `BootTimeUsecs`: - Boot time in secs.
+        /// * `MemorySizeBytes`: - Memory size in bytes.
+        /// * `BlockSerial`: - Rackable unit serial name.
+        /// * `BlockModel`: - Rackable unit model name.
+        /// * `MaintenanceState`: - Host Maintenance State.
+        /// * `NodeStatus`: - Node status.
+        ///    * `TO_BE_PREPROTECTED`: Node to be preprotected.
+        ///    * `TO_BE_REMOVED`: Node to be removed.
+        ///    * `PREPROTECTED`: Node is preprotected.
+        ///    * `OK_TO_BE_REMOVED`: Indicates whether removing the node from the cluster is adequate.
+        ///    * `NORMAL`: Normal node.
+        ///    * `NEW_NODE`: New node.
+        /// 
+        /// ### Links
+        /// 
+        /// The links attribute supports the following:
+        /// 
+        /// * `Href`: - The URL at which the entity described by the link can be accessed.
+        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// 
+        /// ### Hypervisor
+        /// The hypervisor attribute supports the following:
+        /// 
+        /// * `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `UserName`: - Hypervisor user name.
+        /// * `FullName`: - Hypervisor full name.
+        /// * `Type`: - Hypervisor type.
+        ///    * `XEN`: Xen hypervisor.
+        ///    * `HYPERV`: HyperV hypervisor.
+        ///    * `ESX`: ESX hypervisor.
+        ///    * `AHV`: AHV hypervisor.
+        /// * `NumberOfVms`: - Number of VMs.
+        /// * `State`: - Hypervisor state.
+        ///    * `HA_HEALING_TARGET`: Hypervisor in HA healing target state.
+        ///    * `ENTERING_MAINTENANCE_MODE`: Hypervisor entering maintenance mode.
+        ///    * `RESERVED_FOR_HA_FAILOVER`: Hypervisor reserved for HA failover.
+        ///    * `HA_HEALING_SOURCE`: Hypervisor in HA healing source state.
+        ///    * `RESERVING_FOR_HA_FAILOVER`: Hypervisor that is planned to be reserved for HA failover.
+        ///    * `HA_FAILOVER_SOURCE`: Hypervisor in HA failover source state.
+        ///    * `ACROPOLIS_NORMAL`: Hypervisor in Acropolis normal state.
+        ///    * `ENTERED_MAINTENANCE_MODE`: Hypervisor entered maintenance mode.
+        ///    * `ENTERING_MAINTENANCE_MODE_FROM_HA_FAILOVER`: Hypervisor entering maintenance mode from HA failover.
+        ///    * `HA_FAILOVER_TARGET`: Hypervisor in HA failover target state.
+        /// * `AcropolisConnectionState`: - Status of Acropolis connection to hypervisor.
+        ///    * `DISCONNECTED`: Acropolis disconnected.
+        ///    * `CONNECTED`: Acropolis connected.
+        /// 
+        /// 
+        /// ### Cluster
+        /// The cluster attribute supports the following:
+        /// 
+        /// * `Uuid`: - Cluster UUID.
+        /// * `Name`: - Cluster name. This is part of payload for both cluster create &amp; update operations.
+        /// 
+        /// 
+        /// ### Controller VM
+        /// The ControllerVm attribute supports the following:
+        /// 
+        /// * `Id`: - Controller VM Id.
+        /// * `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `BackplaneAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `RdmaBackplaneAddress`: - RDMA backplane address.
+        /// * `Ipmi`: - IPMI reference.
+        /// * `NatIp`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `NatPort`: - NAT port.
+        /// * `MaintenanceMode`: - Maintenance mode status.
+        /// * `RackableUnitUuid`: - Rackable unit UUID.
+        /// 
+        /// 
+        /// ### Disk
+        /// The disk attribute supports the following:
+        /// 
+        /// * `Uuid`: - Disk UUID.
+        /// * `MountPath`: - Disk mount path.
+        /// * `SizeInBytes`: - Disk size.
+        /// * `SerialId`: - Disk serial Id.
+        /// * `StorageTier`: - Disk storage Tier type.
+        ///    * `HDD`: HDD storage tier.
+        ///    * `PCIE_SSD`: PCIE SSD storage tier.
+        ///    * `SATA_SSD`: SATA SSD storage tier.
+        /// 
+        /// ### key Management Device To Cert Status
+        /// The KeyManagementDeviceToCertStatus attribute supports the following:
+        /// 
+        /// * `KeyManagementServerName`: - Key management server name.
+        /// * `Status`: - Certificate status.
+        /// 
+        /// 
+        /// #### external Address
+        /// The ExternalAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// #### Backplane Address
+        /// The BackplaneAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// #### Rdma Backplane Address
+        /// The RdmaBackplaneAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// #### ipmi
+        /// The ipmi attribute supports the following:
+        /// 
+        /// * `Ip`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `Username`: - IPMI username.
+        /// 
+        /// 
+        /// #### Nat Ip
+        /// The NatIp attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// ##### ip
+        /// 
+        /// The ip attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// ###### IPV4
+        /// 
+        /// The ipv4 attribute supports the following:
+        /// 
+        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `PrefixLength`: - The prefix length of the network to which this host IPv4 address belongs.
+        /// 
+        /// ###### IPV6
+        /// 
+        /// The ipv6 attribute supports the following:
+        /// 
+        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * `PrefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
+        /// 
+        /// 
+        /// 
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Task<GetHostsV2Result> InvokeAsync(GetHostsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Describes the Lists of all host entities across clusters registered to Prism Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// 
+        /// 
+        /// ## Host Entities
+        /// 
+        /// The HostEntities attribute supports the following:
+        /// 
+        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * `TenantId`: - image uuid.
+        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * `HostName`: - Name of the host.
+        /// * `HostType`: - Type of the host.
+        ///    * `HYPER_CONVERGED`: Hyper-converged node.
+        ///    * `COMPUTE_ONLY`: Compute only node.
+        ///    * `STORAGE_ONLY`: Storage only node.
+        /// * `Hypervisor`: - Hypervisor details.
+        /// * `Cluster`: - Cluster reference for an entity.
+        /// * `ControllerVm`: - Host entity with its attributes.
+        /// * `Disk`: - Disks attached to host.
+        /// * `IsDegraded`: - Node degraded status.
+        /// * `IsSecureBooted`: - Secure boot status.
+        /// * `IsHardwareVirtualized`: - Indicates whether the hardware is virtualized or not.
+        /// * `HasCsr`: - Certificate signing request status.
+        /// * `KeyManagementDeviceToCertStatus`: - Mapping of key management device to certificate status list.
+        /// * `NumberOfCpuCores`: - Number of CPU cores.
+        /// * `NumberOfCpuThreads`: - Number of CPU threads.
+        /// * `NumberOfCpuSockets`: - Number of CPU sockets.
+        /// * `CpuCapacityHz`: - CPU capacity in Hz.
+        /// * `CpuFrequencyHz`: - CPU frequency in Hz.
+        /// * `CpuModel`: - CPU model name.
+        /// * `GpuDriverVersion`: - GPU driver version.
+        /// * `GpuList`: - GPU attached list.
+        /// * `DefaultVhdLocation`: - Default VHD location.
+        /// * `DefaultVhdContainerUuid`: - Default VHD container UUID.
+        /// * `DefaultVmLocation`: - Default VM location.
+        /// * `DefaultVmContainerUuid`: - Default VM container UUID.
+        /// * `RebootPending`: - Reboot pending status.
+        /// * `FailoverClusterFqdn`: - Failover cluster FQDN.
+        /// * `FailoverClusterNodeStatus`: - Failover cluster node status.
+        /// * `BootTimeUsecs`: - Boot time in secs.
+        /// * `MemorySizeBytes`: - Memory size in bytes.
+        /// * `BlockSerial`: - Rackable unit serial name.
+        /// * `BlockModel`: - Rackable unit model name.
+        /// * `MaintenanceState`: - Host Maintenance State.
+        /// * `NodeStatus`: - Node status.
+        ///    * `TO_BE_PREPROTECTED`: Node to be preprotected.
+        ///    * `TO_BE_REMOVED`: Node to be removed.
+        ///    * `PREPROTECTED`: Node is preprotected.
+        ///    * `OK_TO_BE_REMOVED`: Indicates whether removing the node from the cluster is adequate.
+        ///    * `NORMAL`: Normal node.
+        ///    * `NEW_NODE`: New node.
+        /// 
+        /// ### Links
+        /// 
+        /// The links attribute supports the following:
+        /// 
+        /// * `Href`: - The URL at which the entity described by the link can be accessed.
+        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// 
+        /// ### Hypervisor
+        /// The hypervisor attribute supports the following:
+        /// 
+        /// * `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `UserName`: - Hypervisor user name.
+        /// * `FullName`: - Hypervisor full name.
+        /// * `Type`: - Hypervisor type.
+        ///    * `XEN`: Xen hypervisor.
+        ///    * `HYPERV`: HyperV hypervisor.
+        ///    * `ESX`: ESX hypervisor.
+        ///    * `AHV`: AHV hypervisor.
+        /// * `NumberOfVms`: - Number of VMs.
+        /// * `State`: - Hypervisor state.
+        ///    * `HA_HEALING_TARGET`: Hypervisor in HA healing target state.
+        ///    * `ENTERING_MAINTENANCE_MODE`: Hypervisor entering maintenance mode.
+        ///    * `RESERVED_FOR_HA_FAILOVER`: Hypervisor reserved for HA failover.
+        ///    * `HA_HEALING_SOURCE`: Hypervisor in HA healing source state.
+        ///    * `RESERVING_FOR_HA_FAILOVER`: Hypervisor that is planned to be reserved for HA failover.
+        ///    * `HA_FAILOVER_SOURCE`: Hypervisor in HA failover source state.
+        ///    * `ACROPOLIS_NORMAL`: Hypervisor in Acropolis normal state.
+        ///    * `ENTERED_MAINTENANCE_MODE`: Hypervisor entered maintenance mode.
+        ///    * `ENTERING_MAINTENANCE_MODE_FROM_HA_FAILOVER`: Hypervisor entering maintenance mode from HA failover.
+        ///    * `HA_FAILOVER_TARGET`: Hypervisor in HA failover target state.
+        /// * `AcropolisConnectionState`: - Status of Acropolis connection to hypervisor.
+        ///    * `DISCONNECTED`: Acropolis disconnected.
+        ///    * `CONNECTED`: Acropolis connected.
+        /// 
+        /// 
+        /// ### Cluster
+        /// The cluster attribute supports the following:
+        /// 
+        /// * `Uuid`: - Cluster UUID.
+        /// * `Name`: - Cluster name. This is part of payload for both cluster create &amp; update operations.
+        /// 
+        /// 
+        /// ### Controller VM
+        /// The ControllerVm attribute supports the following:
+        /// 
+        /// * `Id`: - Controller VM Id.
+        /// * `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `BackplaneAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `RdmaBackplaneAddress`: - RDMA backplane address.
+        /// * `Ipmi`: - IPMI reference.
+        /// * `NatIp`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `NatPort`: - NAT port.
+        /// * `MaintenanceMode`: - Maintenance mode status.
+        /// * `RackableUnitUuid`: - Rackable unit UUID.
+        /// 
+        /// 
+        /// ### Disk
+        /// The disk attribute supports the following:
+        /// 
+        /// * `Uuid`: - Disk UUID.
+        /// * `MountPath`: - Disk mount path.
+        /// * `SizeInBytes`: - Disk size.
+        /// * `SerialId`: - Disk serial Id.
+        /// * `StorageTier`: - Disk storage Tier type.
+        ///    * `HDD`: HDD storage tier.
+        ///    * `PCIE_SSD`: PCIE SSD storage tier.
+        ///    * `SATA_SSD`: SATA SSD storage tier.
+        /// 
+        /// ### key Management Device To Cert Status
+        /// The KeyManagementDeviceToCertStatus attribute supports the following:
+        /// 
+        /// * `KeyManagementServerName`: - Key management server name.
+        /// * `Status`: - Certificate status.
+        /// 
+        /// 
+        /// #### external Address
+        /// The ExternalAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// #### Backplane Address
+        /// The BackplaneAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// #### Rdma Backplane Address
+        /// The RdmaBackplaneAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// #### ipmi
+        /// The ipmi attribute supports the following:
+        /// 
+        /// * `Ip`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `Username`: - IPMI username.
+        /// 
+        /// 
+        /// #### Nat Ip
+        /// The NatIp attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// ##### ip
+        /// 
+        /// The ip attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// ###### IPV4
+        /// 
+        /// The ipv4 attribute supports the following:
+        /// 
+        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `PrefixLength`: - The prefix length of the network to which this host IPv4 address belongs.
+        /// 
+        /// ###### IPV6
+        /// 
+        /// The ipv6 attribute supports the following:
+        /// 
+        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * `PrefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
+        /// 
+        /// 
+        /// 
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Output<GetHostsV2Result> Invoke(GetHostsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes the Lists of all host entities across clusters registered to Prism Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// 
+        /// 
+        /// ## Host Entities
+        /// 
+        /// The HostEntities attribute supports the following:
+        /// 
+        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * `TenantId`: - image uuid.
+        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * `HostName`: - Name of the host.
+        /// * `HostType`: - Type of the host.
+        ///    * `HYPER_CONVERGED`: Hyper-converged node.
+        ///    * `COMPUTE_ONLY`: Compute only node.
+        ///    * `STORAGE_ONLY`: Storage only node.
+        /// * `Hypervisor`: - Hypervisor details.
+        /// * `Cluster`: - Cluster reference for an entity.
+        /// * `ControllerVm`: - Host entity with its attributes.
+        /// * `Disk`: - Disks attached to host.
+        /// * `IsDegraded`: - Node degraded status.
+        /// * `IsSecureBooted`: - Secure boot status.
+        /// * `IsHardwareVirtualized`: - Indicates whether the hardware is virtualized or not.
+        /// * `HasCsr`: - Certificate signing request status.
+        /// * `KeyManagementDeviceToCertStatus`: - Mapping of key management device to certificate status list.
+        /// * `NumberOfCpuCores`: - Number of CPU cores.
+        /// * `NumberOfCpuThreads`: - Number of CPU threads.
+        /// * `NumberOfCpuSockets`: - Number of CPU sockets.
+        /// * `CpuCapacityHz`: - CPU capacity in Hz.
+        /// * `CpuFrequencyHz`: - CPU frequency in Hz.
+        /// * `CpuModel`: - CPU model name.
+        /// * `GpuDriverVersion`: - GPU driver version.
+        /// * `GpuList`: - GPU attached list.
+        /// * `DefaultVhdLocation`: - Default VHD location.
+        /// * `DefaultVhdContainerUuid`: - Default VHD container UUID.
+        /// * `DefaultVmLocation`: - Default VM location.
+        /// * `DefaultVmContainerUuid`: - Default VM container UUID.
+        /// * `RebootPending`: - Reboot pending status.
+        /// * `FailoverClusterFqdn`: - Failover cluster FQDN.
+        /// * `FailoverClusterNodeStatus`: - Failover cluster node status.
+        /// * `BootTimeUsecs`: - Boot time in secs.
+        /// * `MemorySizeBytes`: - Memory size in bytes.
+        /// * `BlockSerial`: - Rackable unit serial name.
+        /// * `BlockModel`: - Rackable unit model name.
+        /// * `MaintenanceState`: - Host Maintenance State.
+        /// * `NodeStatus`: - Node status.
+        ///    * `TO_BE_PREPROTECTED`: Node to be preprotected.
+        ///    * `TO_BE_REMOVED`: Node to be removed.
+        ///    * `PREPROTECTED`: Node is preprotected.
+        ///    * `OK_TO_BE_REMOVED`: Indicates whether removing the node from the cluster is adequate.
+        ///    * `NORMAL`: Normal node.
+        ///    * `NEW_NODE`: New node.
+        /// 
+        /// ### Links
+        /// 
+        /// The links attribute supports the following:
+        /// 
+        /// * `Href`: - The URL at which the entity described by the link can be accessed.
+        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// 
+        /// ### Hypervisor
+        /// The hypervisor attribute supports the following:
+        /// 
+        /// * `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `UserName`: - Hypervisor user name.
+        /// * `FullName`: - Hypervisor full name.
+        /// * `Type`: - Hypervisor type.
+        ///    * `XEN`: Xen hypervisor.
+        ///    * `HYPERV`: HyperV hypervisor.
+        ///    * `ESX`: ESX hypervisor.
+        ///    * `AHV`: AHV hypervisor.
+        /// * `NumberOfVms`: - Number of VMs.
+        /// * `State`: - Hypervisor state.
+        ///    * `HA_HEALING_TARGET`: Hypervisor in HA healing target state.
+        ///    * `ENTERING_MAINTENANCE_MODE`: Hypervisor entering maintenance mode.
+        ///    * `RESERVED_FOR_HA_FAILOVER`: Hypervisor reserved for HA failover.
+        ///    * `HA_HEALING_SOURCE`: Hypervisor in HA healing source state.
+        ///    * `RESERVING_FOR_HA_FAILOVER`: Hypervisor that is planned to be reserved for HA failover.
+        ///    * `HA_FAILOVER_SOURCE`: Hypervisor in HA failover source state.
+        ///    * `ACROPOLIS_NORMAL`: Hypervisor in Acropolis normal state.
+        ///    * `ENTERED_MAINTENANCE_MODE`: Hypervisor entered maintenance mode.
+        ///    * `ENTERING_MAINTENANCE_MODE_FROM_HA_FAILOVER`: Hypervisor entering maintenance mode from HA failover.
+        ///    * `HA_FAILOVER_TARGET`: Hypervisor in HA failover target state.
+        /// * `AcropolisConnectionState`: - Status of Acropolis connection to hypervisor.
+        ///    * `DISCONNECTED`: Acropolis disconnected.
+        ///    * `CONNECTED`: Acropolis connected.
+        /// 
+        /// 
+        /// ### Cluster
+        /// The cluster attribute supports the following:
+        /// 
+        /// * `Uuid`: - Cluster UUID.
+        /// * `Name`: - Cluster name. This is part of payload for both cluster create &amp; update operations.
+        /// 
+        /// 
+        /// ### Controller VM
+        /// The ControllerVm attribute supports the following:
+        /// 
+        /// * `Id`: - Controller VM Id.
+        /// * `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `BackplaneAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `RdmaBackplaneAddress`: - RDMA backplane address.
+        /// * `Ipmi`: - IPMI reference.
+        /// * `NatIp`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `NatPort`: - NAT port.
+        /// * `MaintenanceMode`: - Maintenance mode status.
+        /// * `RackableUnitUuid`: - Rackable unit UUID.
+        /// 
+        /// 
+        /// ### Disk
+        /// The disk attribute supports the following:
+        /// 
+        /// * `Uuid`: - Disk UUID.
+        /// * `MountPath`: - Disk mount path.
+        /// * `SizeInBytes`: - Disk size.
+        /// * `SerialId`: - Disk serial Id.
+        /// * `StorageTier`: - Disk storage Tier type.
+        ///    * `HDD`: HDD storage tier.
+        ///    * `PCIE_SSD`: PCIE SSD storage tier.
+        ///    * `SATA_SSD`: SATA SSD storage tier.
+        /// 
+        /// ### key Management Device To Cert Status
+        /// The KeyManagementDeviceToCertStatus attribute supports the following:
+        /// 
+        /// * `KeyManagementServerName`: - Key management server name.
+        /// * `Status`: - Certificate status.
+        /// 
+        /// 
+        /// #### external Address
+        /// The ExternalAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// #### Backplane Address
+        /// The BackplaneAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// #### Rdma Backplane Address
+        /// The RdmaBackplaneAddress attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// #### ipmi
+        /// The ipmi attribute supports the following:
+        /// 
+        /// * `Ip`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// * `Username`: - IPMI username.
+        /// 
+        /// 
+        /// #### Nat Ip
+        /// The NatIp attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// ##### ip
+        /// 
+        /// The ip attribute supports the following:
+        /// 
+        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// 
+        /// 
+        /// ###### IPV4
+        /// 
+        /// The ipv4 attribute supports the following:
+        /// 
+        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * `PrefixLength`: - The prefix length of the network to which this host IPv4 address belongs.
+        /// 
+        /// ###### IPV6
+        /// 
+        /// The ipv6 attribute supports the following:
+        /// 
+        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * `PrefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
+        /// 
+        /// 
+        /// 
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Output<GetHostsV2Result> Invoke(GetHostsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2InvokeArgs(), options.WithDefaults());

@@ -351,6 +351,8 @@ class VpcV2(pulumi.CustomResource):
         """
         Provides Nutanix resource to create VPC.
 
+        ## Example
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]] common_dhcp_options: List of DHCP options to be configured.
@@ -369,6 +371,8 @@ class VpcV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource to create VPC.
+
+        ## Example
 
         :param str resource_name: The name of the resource.
         :param VpcV2Args args: The arguments to use to populate this resource's properties.

@@ -12,6 +12,8 @@ import (
 )
 
 // Describes a List of Karbon private registry entry
+//
+// ## Example Usage
 func GetKarbonPrivateRegistries(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetKarbonPrivateRegistriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKarbonPrivateRegistriesResult

@@ -43,7 +43,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// - The recovery_point_info_list contains information about recovery points for the snapshots. Each recovery point has the following attributes:
+        /// - The RecoveryPointInfoList contains information about recovery points for the snapshots. Each recovery point has the following attributes:
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSelfServiceAppSnapshotsEntityRecoveryPointInfoListResult> RecoveryPointInfoLists;
         /// <summary>

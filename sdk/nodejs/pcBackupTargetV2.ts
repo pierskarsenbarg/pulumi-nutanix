@@ -11,6 +11,8 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * ### Cluster Location
+ *
  * ### Object Store Location
  *
  * ```typescript

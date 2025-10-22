@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
+ *
+ * ## Example Usage
  */
 export class RecoveryPlan extends pulumi.CustomResource {
     /**

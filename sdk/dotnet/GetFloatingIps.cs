@@ -83,7 +83,7 @@ namespace PiersKarsenbarg.Nutanix
         private List<Inputs.GetFloatingIpsMetadataArgs>? _metadatas;
 
         /// <summary>
-        /// - The floating_ip kind metadata.
+        /// - The FloatingIp kind metadata.
         /// </summary>
         public List<Inputs.GetFloatingIpsMetadataArgs> Metadatas
         {
@@ -103,7 +103,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.GetFloatingIpsMetadataInputArgs>? _metadatas;
 
         /// <summary>
-        /// - The floating_ip kind metadata.
+        /// - The FloatingIp kind metadata.
         /// </summary>
         public InputList<Inputs.GetFloatingIpsMetadataInputArgs> Metadatas
         {
@@ -134,7 +134,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// - The floating_ip kind metadata.
+        /// - The FloatingIp kind metadata.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFloatingIpsMetadataResult> Metadatas;
 
