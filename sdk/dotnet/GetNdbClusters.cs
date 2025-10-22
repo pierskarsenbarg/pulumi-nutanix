@@ -38,30 +38,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each cluster:
         /// 
-        /// * `id`: - id of cluster
-        /// * `name`: - name of cluster
-        /// * `unique_name`: - unique name of cluster
-        /// * `ip_addresses`: - IP address
-        /// * `fqdns`: - fqdn
-        /// * `nx_cluster_uuid`: - nutanix cluster uuid
-        /// * `description`: - description
-        /// * `cloud_type`: - cloud type
-        /// * `date_created`: - creation date
-        /// * `date_modified`: - date modified
-        /// * `version`: - version
-        /// * `owner_id`: - owner UUID
-        /// * `status`: - current status
-        /// * `hypervisor_type`: - hypervisor type
-        /// * `hypervisor_version`: - hypervisor version
-        /// * `properties`: - list of properties
-        /// * `reference_count`: - NA
-        /// * `username`: - username 
-        /// * `password`: - password
-        /// * `cloud_info`: - cloud info
-        /// * `resource_config`: - resource related consumption info
-        /// * `management_server_info`: - NA
-        /// * `entity_counts`: - no. of entities related
-        /// * `healthy`: - if healthy status
+        /// * `Id`: - id of cluster
+        /// * `Name`: - name of cluster
+        /// * `UniqueName`: - unique name of cluster
+        /// * `IpAddresses`: - IP address
+        /// * `Fqdns`: - fqdn
+        /// * `NxClusterUuid`: - nutanix cluster uuid
+        /// * `Description`: - description
+        /// * `CloudType`: - cloud type
+        /// * `DateCreated`: - creation date
+        /// * `DateModified`: - date modified
+        /// * `Version`: - version
+        /// * `OwnerId`: - owner UUID
+        /// * `Status`: - current status
+        /// * `HypervisorType`: - hypervisor type
+        /// * `HypervisorVersion`: - hypervisor version
+        /// * `Properties`: - list of properties
+        /// * `ReferenceCount`: - NA
+        /// * `Username`: - username 
+        /// * `Password`: - password
+        /// * `CloudInfo`: - cloud info
+        /// * `ResourceConfig`: - resource related consumption info
+        /// * `ManagementServerInfo`: - NA
+        /// * `EntityCounts`: - no. of entities related
+        /// * `Healthy`: - if healthy status
         /// 
         /// See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
         /// </summary>
@@ -94,30 +94,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each cluster:
         /// 
-        /// * `id`: - id of cluster
-        /// * `name`: - name of cluster
-        /// * `unique_name`: - unique name of cluster
-        /// * `ip_addresses`: - IP address
-        /// * `fqdns`: - fqdn
-        /// * `nx_cluster_uuid`: - nutanix cluster uuid
-        /// * `description`: - description
-        /// * `cloud_type`: - cloud type
-        /// * `date_created`: - creation date
-        /// * `date_modified`: - date modified
-        /// * `version`: - version
-        /// * `owner_id`: - owner UUID
-        /// * `status`: - current status
-        /// * `hypervisor_type`: - hypervisor type
-        /// * `hypervisor_version`: - hypervisor version
-        /// * `properties`: - list of properties
-        /// * `reference_count`: - NA
-        /// * `username`: - username 
-        /// * `password`: - password
-        /// * `cloud_info`: - cloud info
-        /// * `resource_config`: - resource related consumption info
-        /// * `management_server_info`: - NA
-        /// * `entity_counts`: - no. of entities related
-        /// * `healthy`: - if healthy status
+        /// * `Id`: - id of cluster
+        /// * `Name`: - name of cluster
+        /// * `UniqueName`: - unique name of cluster
+        /// * `IpAddresses`: - IP address
+        /// * `Fqdns`: - fqdn
+        /// * `NxClusterUuid`: - nutanix cluster uuid
+        /// * `Description`: - description
+        /// * `CloudType`: - cloud type
+        /// * `DateCreated`: - creation date
+        /// * `DateModified`: - date modified
+        /// * `Version`: - version
+        /// * `OwnerId`: - owner UUID
+        /// * `Status`: - current status
+        /// * `HypervisorType`: - hypervisor type
+        /// * `HypervisorVersion`: - hypervisor version
+        /// * `Properties`: - list of properties
+        /// * `ReferenceCount`: - NA
+        /// * `Username`: - username 
+        /// * `Password`: - password
+        /// * `CloudInfo`: - cloud info
+        /// * `ResourceConfig`: - resource related consumption info
+        /// * `ManagementServerInfo`: - NA
+        /// * `EntityCounts`: - no. of entities related
+        /// * `Healthy`: - if healthy status
         /// 
         /// See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
         /// </summary>
@@ -150,30 +150,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each cluster:
         /// 
-        /// * `id`: - id of cluster
-        /// * `name`: - name of cluster
-        /// * `unique_name`: - unique name of cluster
-        /// * `ip_addresses`: - IP address
-        /// * `fqdns`: - fqdn
-        /// * `nx_cluster_uuid`: - nutanix cluster uuid
-        /// * `description`: - description
-        /// * `cloud_type`: - cloud type
-        /// * `date_created`: - creation date
-        /// * `date_modified`: - date modified
-        /// * `version`: - version
-        /// * `owner_id`: - owner UUID
-        /// * `status`: - current status
-        /// * `hypervisor_type`: - hypervisor type
-        /// * `hypervisor_version`: - hypervisor version
-        /// * `properties`: - list of properties
-        /// * `reference_count`: - NA
-        /// * `username`: - username 
-        /// * `password`: - password
-        /// * `cloud_info`: - cloud info
-        /// * `resource_config`: - resource related consumption info
-        /// * `management_server_info`: - NA
-        /// * `entity_counts`: - no. of entities related
-        /// * `healthy`: - if healthy status
+        /// * `Id`: - id of cluster
+        /// * `Name`: - name of cluster
+        /// * `UniqueName`: - unique name of cluster
+        /// * `IpAddresses`: - IP address
+        /// * `Fqdns`: - fqdn
+        /// * `NxClusterUuid`: - nutanix cluster uuid
+        /// * `Description`: - description
+        /// * `CloudType`: - cloud type
+        /// * `DateCreated`: - creation date
+        /// * `DateModified`: - date modified
+        /// * `Version`: - version
+        /// * `OwnerId`: - owner UUID
+        /// * `Status`: - current status
+        /// * `HypervisorType`: - hypervisor type
+        /// * `HypervisorVersion`: - hypervisor version
+        /// * `Properties`: - list of properties
+        /// * `ReferenceCount`: - NA
+        /// * `Username`: - username 
+        /// * `Password`: - password
+        /// * `CloudInfo`: - cloud info
+        /// * `ResourceConfig`: - resource related consumption info
+        /// * `ManagementServerInfo`: - NA
+        /// * `EntityCounts`: - no. of entities related
+        /// * `Healthy`: - if healthy status
         /// 
         /// See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
         /// </summary>

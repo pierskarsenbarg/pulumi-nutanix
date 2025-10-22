@@ -32,18 +32,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Reference
         /// 
-        /// The `project_reference`, `owner_reference`, `availability_zone_reference`, `cluster_reference`, attributes supports the following:
+        /// The `ProjectReference`, `OwnerReference`, `AvailabilityZoneReference`, `ClusterReference`, attributes supports the following:
         /// 
-        /// * `kind`: - The kind name (Default value: project).
-        /// * `name`: - the name.
+        /// * `Kind`: - The kind name (Default value: project).
+        /// * `Name`: - the name.
         /// * `UUID`: - the UUID.
         /// 
         /// ### Version
         /// 
         /// The version attribute supports the following:
         /// 
-        /// * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
-        /// * `product_version`: - Version string for the disk image.
+        /// * `ProductName`: - Name of the producer/distribution of the image. For example windows or red hat.
+        /// * `ProductVersion`: - Version string for the disk image.
         /// 
         /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
         /// </summary>
@@ -70,18 +70,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Reference
         /// 
-        /// The `project_reference`, `owner_reference`, `availability_zone_reference`, `cluster_reference`, attributes supports the following:
+        /// The `ProjectReference`, `OwnerReference`, `AvailabilityZoneReference`, `ClusterReference`, attributes supports the following:
         /// 
-        /// * `kind`: - The kind name (Default value: project).
-        /// * `name`: - the name.
+        /// * `Kind`: - The kind name (Default value: project).
+        /// * `Name`: - the name.
         /// * `UUID`: - the UUID.
         /// 
         /// ### Version
         /// 
         /// The version attribute supports the following:
         /// 
-        /// * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
-        /// * `product_version`: - Version string for the disk image.
+        /// * `ProductName`: - Name of the producer/distribution of the image. For example windows or red hat.
+        /// * `ProductVersion`: - Version string for the disk image.
         /// 
         /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
         /// </summary>
@@ -108,18 +108,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Reference
         /// 
-        /// The `project_reference`, `owner_reference`, `availability_zone_reference`, `cluster_reference`, attributes supports the following:
+        /// The `ProjectReference`, `OwnerReference`, `AvailabilityZoneReference`, `ClusterReference`, attributes supports the following:
         /// 
-        /// * `kind`: - The kind name (Default value: project).
-        /// * `name`: - the name.
+        /// * `Kind`: - The kind name (Default value: project).
+        /// * `Name`: - the name.
         /// * `UUID`: - the UUID.
         /// 
         /// ### Version
         /// 
         /// The version attribute supports the following:
         /// 
-        /// * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
-        /// * `product_version`: - Version string for the disk image.
+        /// * `ProductName`: - Name of the producer/distribution of the image. For example windows or red hat.
+        /// * `ProductVersion`: - Version string for the disk image.
         /// 
         /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
         /// </summary>

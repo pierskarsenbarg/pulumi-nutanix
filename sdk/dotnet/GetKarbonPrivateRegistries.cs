@@ -14,18 +14,24 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes a List of Karbon private registry entry
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetKarbonPrivateRegistriesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonPrivateRegistriesResult>("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
         /// Describes a List of Karbon private registry entry
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetKarbonPrivateRegistriesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistriesResult>("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
         /// Describes a List of Karbon private registry entry
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetKarbonPrivateRegistriesResult> Invoke(InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistriesResult>("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", InvokeArgs.Empty, options.WithDefaults());

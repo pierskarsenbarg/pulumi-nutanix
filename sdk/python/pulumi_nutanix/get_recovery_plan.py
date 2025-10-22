@@ -178,6 +178,8 @@ def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCatego
     """
     Describe a Nutanix Recovery Plan and its values (if it has them).
 
+    ## Example Usage
+
 
     :param _builtins.str recovery_plan_id: - (Required) The `id` of the Recovery Plan.
     """
@@ -208,6 +210,8 @@ def get_recovery_plan_output(categories: Optional[pulumi.Input[Optional[Sequence
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPlanResult]:
     """
     Describe a Nutanix Recovery Plan and its values (if it has them).
+
+    ## Example Usage
 
 
     :param _builtins.str recovery_plan_id: - (Required) The `id` of the Recovery Plan.

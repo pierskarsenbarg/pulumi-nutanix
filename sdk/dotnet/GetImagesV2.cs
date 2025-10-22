@@ -39,38 +39,38 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Images
         /// 
-        /// The `images` object is a list of all images. Each image has the following attributes:
+        /// The `Images` object is a list of all images. Each image has the following attributes:
         /// 
-        /// * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `name`: The user defined name of an image.
-        /// * `description`: The user defined description of an image.
-        /// * `type`: The type of an image.
-        /// * `checksum`: The checksum of an image.
-        /// * `size_bytes`: The size in bytes of an image file.
-        /// * `source`: The source of an image. It can be a VM disk or a URL.
-        /// * `category_ext_ids`: List of category external identifiers for an image.
-        /// * `cluster_location_ext_ids`: List of cluster external identifiers where the image is located.
-        /// * `create_time`: Create time of an image.
-        /// * `last_update_time`: Last update time of an image.
-        /// * `owner_ext_id`: External identifier of the owner of the image
-        /// * `placement_policy_status`: Status of an image placement policy.
+        /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption.
+        /// * `Name`: The user defined name of an image.
+        /// * `Description`: The user defined description of an image.
+        /// * `Type`: The type of an image.
+        /// * `Checksum`: The checksum of an image.
+        /// * `SizeBytes`: The size in bytes of an image file.
+        /// * `Source`: The source of an image. It can be a VM disk or a URL.
+        /// * `CategoryExtIds`: List of category external identifiers for an image.
+        /// * `ClusterLocationExtIds`: List of cluster external identifiers where the image is located.
+        /// * `CreateTime`: Create time of an image.
+        /// * `LastUpdateTime`: Last update time of an image.
+        /// * `OwnerExtId`: External identifier of the owner of the image
+        /// * `PlacementPolicyStatus`: Status of an image placement policy.
         /// 
         /// 
         /// ### source
-        /// * `ext_id`: The external identifier of VM Disk.
-        /// * `url`: The URL for creating an image.
-        /// * `basic_auth`: Basic authentication credentials for image source HTTP/S URL.
+        /// * `ExtId`: The external identifier of VM Disk.
+        /// * `Url`: The URL for creating an image.
+        /// * `BasicAuth`: Basic authentication credentials for image source HTTP/S URL.
         /// * `basic_auth.username`: Username for basic authentication.
         /// * `basic_auth.password`: Password for basic authentication.
         /// 
         /// 
-        /// ### placement_policy_status
-        /// * `placement_policy_ext_id`: Image placement policy external identifier.
-        /// * `compliance_status`: Compliance status for a placement policy.
-        /// * `enforcement_mode`: Indicates whether the placement policy enforcement is ongoing or has failed.
-        /// * `policy_cluster_ext_ids`: List of cluster external identifiers of the image location for the enforced placement policy.
-        /// * `enforced_cluster_ext_ids`: List of cluster external identifiers for the enforced placement policy.
-        /// * `conflicting_policy_ext_ids`: List of image placement policy external identifier that conflict with the current one.
+        /// ### PlacementPolicyStatus
+        /// * `PlacementPolicyExtId`: Image placement policy external identifier.
+        /// * `ComplianceStatus`: Compliance status for a placement policy.
+        /// * `EnforcementMode`: Indicates whether the placement policy enforcement is ongoing or has failed.
+        /// * `PolicyClusterExtIds`: List of cluster external identifiers of the image location for the enforced placement policy.
+        /// * `EnforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
+        /// * `ConflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
         /// 
         /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Images)
         /// </summary>
@@ -104,38 +104,38 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Images
         /// 
-        /// The `images` object is a list of all images. Each image has the following attributes:
+        /// The `Images` object is a list of all images. Each image has the following attributes:
         /// 
-        /// * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `name`: The user defined name of an image.
-        /// * `description`: The user defined description of an image.
-        /// * `type`: The type of an image.
-        /// * `checksum`: The checksum of an image.
-        /// * `size_bytes`: The size in bytes of an image file.
-        /// * `source`: The source of an image. It can be a VM disk or a URL.
-        /// * `category_ext_ids`: List of category external identifiers for an image.
-        /// * `cluster_location_ext_ids`: List of cluster external identifiers where the image is located.
-        /// * `create_time`: Create time of an image.
-        /// * `last_update_time`: Last update time of an image.
-        /// * `owner_ext_id`: External identifier of the owner of the image
-        /// * `placement_policy_status`: Status of an image placement policy.
+        /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption.
+        /// * `Name`: The user defined name of an image.
+        /// * `Description`: The user defined description of an image.
+        /// * `Type`: The type of an image.
+        /// * `Checksum`: The checksum of an image.
+        /// * `SizeBytes`: The size in bytes of an image file.
+        /// * `Source`: The source of an image. It can be a VM disk or a URL.
+        /// * `CategoryExtIds`: List of category external identifiers for an image.
+        /// * `ClusterLocationExtIds`: List of cluster external identifiers where the image is located.
+        /// * `CreateTime`: Create time of an image.
+        /// * `LastUpdateTime`: Last update time of an image.
+        /// * `OwnerExtId`: External identifier of the owner of the image
+        /// * `PlacementPolicyStatus`: Status of an image placement policy.
         /// 
         /// 
         /// ### source
-        /// * `ext_id`: The external identifier of VM Disk.
-        /// * `url`: The URL for creating an image.
-        /// * `basic_auth`: Basic authentication credentials for image source HTTP/S URL.
+        /// * `ExtId`: The external identifier of VM Disk.
+        /// * `Url`: The URL for creating an image.
+        /// * `BasicAuth`: Basic authentication credentials for image source HTTP/S URL.
         /// * `basic_auth.username`: Username for basic authentication.
         /// * `basic_auth.password`: Password for basic authentication.
         /// 
         /// 
-        /// ### placement_policy_status
-        /// * `placement_policy_ext_id`: Image placement policy external identifier.
-        /// * `compliance_status`: Compliance status for a placement policy.
-        /// * `enforcement_mode`: Indicates whether the placement policy enforcement is ongoing or has failed.
-        /// * `policy_cluster_ext_ids`: List of cluster external identifiers of the image location for the enforced placement policy.
-        /// * `enforced_cluster_ext_ids`: List of cluster external identifiers for the enforced placement policy.
-        /// * `conflicting_policy_ext_ids`: List of image placement policy external identifier that conflict with the current one.
+        /// ### PlacementPolicyStatus
+        /// * `PlacementPolicyExtId`: Image placement policy external identifier.
+        /// * `ComplianceStatus`: Compliance status for a placement policy.
+        /// * `EnforcementMode`: Indicates whether the placement policy enforcement is ongoing or has failed.
+        /// * `PolicyClusterExtIds`: List of cluster external identifiers of the image location for the enforced placement policy.
+        /// * `EnforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
+        /// * `ConflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
         /// 
         /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Images)
         /// </summary>
@@ -169,38 +169,38 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Images
         /// 
-        /// The `images` object is a list of all images. Each image has the following attributes:
+        /// The `Images` object is a list of all images. Each image has the following attributes:
         /// 
-        /// * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `name`: The user defined name of an image.
-        /// * `description`: The user defined description of an image.
-        /// * `type`: The type of an image.
-        /// * `checksum`: The checksum of an image.
-        /// * `size_bytes`: The size in bytes of an image file.
-        /// * `source`: The source of an image. It can be a VM disk or a URL.
-        /// * `category_ext_ids`: List of category external identifiers for an image.
-        /// * `cluster_location_ext_ids`: List of cluster external identifiers where the image is located.
-        /// * `create_time`: Create time of an image.
-        /// * `last_update_time`: Last update time of an image.
-        /// * `owner_ext_id`: External identifier of the owner of the image
-        /// * `placement_policy_status`: Status of an image placement policy.
+        /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption.
+        /// * `Name`: The user defined name of an image.
+        /// * `Description`: The user defined description of an image.
+        /// * `Type`: The type of an image.
+        /// * `Checksum`: The checksum of an image.
+        /// * `SizeBytes`: The size in bytes of an image file.
+        /// * `Source`: The source of an image. It can be a VM disk or a URL.
+        /// * `CategoryExtIds`: List of category external identifiers for an image.
+        /// * `ClusterLocationExtIds`: List of cluster external identifiers where the image is located.
+        /// * `CreateTime`: Create time of an image.
+        /// * `LastUpdateTime`: Last update time of an image.
+        /// * `OwnerExtId`: External identifier of the owner of the image
+        /// * `PlacementPolicyStatus`: Status of an image placement policy.
         /// 
         /// 
         /// ### source
-        /// * `ext_id`: The external identifier of VM Disk.
-        /// * `url`: The URL for creating an image.
-        /// * `basic_auth`: Basic authentication credentials for image source HTTP/S URL.
+        /// * `ExtId`: The external identifier of VM Disk.
+        /// * `Url`: The URL for creating an image.
+        /// * `BasicAuth`: Basic authentication credentials for image source HTTP/S URL.
         /// * `basic_auth.username`: Username for basic authentication.
         /// * `basic_auth.password`: Password for basic authentication.
         /// 
         /// 
-        /// ### placement_policy_status
-        /// * `placement_policy_ext_id`: Image placement policy external identifier.
-        /// * `compliance_status`: Compliance status for a placement policy.
-        /// * `enforcement_mode`: Indicates whether the placement policy enforcement is ongoing or has failed.
-        /// * `policy_cluster_ext_ids`: List of cluster external identifiers of the image location for the enforced placement policy.
-        /// * `enforced_cluster_ext_ids`: List of cluster external identifiers for the enforced placement policy.
-        /// * `conflicting_policy_ext_ids`: List of image placement policy external identifier that conflict with the current one.
+        /// ### PlacementPolicyStatus
+        /// * `PlacementPolicyExtId`: Image placement policy external identifier.
+        /// * `ComplianceStatus`: Compliance status for a placement policy.
+        /// * `EnforcementMode`: Indicates whether the placement policy enforcement is ongoing or has failed.
+        /// * `PolicyClusterExtIds`: List of cluster external identifiers of the image location for the enforced placement policy.
+        /// * `EnforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
+        /// * `ConflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
         /// 
         /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Images)
         /// </summary>

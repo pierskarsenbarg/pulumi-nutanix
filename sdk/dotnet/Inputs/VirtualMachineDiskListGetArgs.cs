@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// Reference to a data source.
         /// 
-        /// The disk_size (the disk size_mib and the disk_size_bytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk size_mib or disk_size_bytes when you set data_source_reference but, you can update the disk_size after creation (second apply).
+        /// The DiskSize (the disk SizeMib and the DiskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk SizeMib or DiskSizeBytes when you set DataSourceReference but, you can update the DiskSize after creation (second apply).
         /// </summary>
         public InputMap<string> DataSourceReference
         {

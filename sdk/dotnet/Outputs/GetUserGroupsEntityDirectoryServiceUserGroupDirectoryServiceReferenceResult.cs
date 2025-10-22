@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - the UUID(Required).
         /// 
-        /// For `access_control_policy_reference_list` and `project_reference_list` are the same as reference but used as list.
+        /// For `AccessControlPolicyReferenceList` and `ProjectReferenceList` are the same as reference but used as list.
         /// 
         /// See detailed information in [Nutanix Users](https://www.nutanix.dev/api_references/prism-central-v3/#/6016c890e9122-get-a-list-of-existing-user-groups).
         /// </summary>

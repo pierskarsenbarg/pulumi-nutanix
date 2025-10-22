@@ -468,6 +468,8 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         """
         Create a Network Security Policy
 
+        ## Example
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A user defined annotation for a policy.
@@ -488,6 +490,8 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a Network Security Policy
+
+        ## Example
 
         :param str resource_name: The name of the resource.
         :param NetworkSecurityPolicyV2Args args: The arguments to use to populate this resource's properties.

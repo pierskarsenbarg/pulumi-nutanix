@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetProjectDefaultEnvironmentReferenceResult
     {
         /// <summary>
-        /// (Optional) The kind name. Default value is `environment`
+        /// (Optional) The kind name. Default value is `Environment`
         /// </summary>
         public readonly string Kind;
         /// <summary>

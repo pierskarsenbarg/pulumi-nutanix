@@ -13,19 +13,19 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFloatingIp
     {
         /// <summary>
-        /// Provides a datasource to retrieve floating IPs with floating_ip_uuid .
+        /// Provides a datasource to retrieve floating IPs with FloatingIpUuid .
         /// </summary>
         public static Task<GetFloatingIpResult> InvokeAsync(GetFloatingIpArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IPs with floating_ip_uuid .
+        /// Provides a datasource to retrieve floating IPs with FloatingIpUuid .
         /// </summary>
         public static Output<GetFloatingIpResult> Invoke(GetFloatingIpInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IPs with floating_ip_uuid .
+        /// Provides a datasource to retrieve floating IPs with FloatingIpUuid .
         /// </summary>
         public static Output<GetFloatingIpResult> Invoke(GetFloatingIpInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpInvokeArgs(), options.WithDefaults());
@@ -74,7 +74,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// - The floating_ip kind metadata.
+        /// - The FloatingIp kind metadata.
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>

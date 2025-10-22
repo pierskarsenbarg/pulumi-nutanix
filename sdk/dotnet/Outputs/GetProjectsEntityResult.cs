@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// List of accounts associated with the project.
-        /// * `account_reference_list.#.kind` - The kind name. Default value is `account`
+        /// * `account_reference_list.#.kind` - The kind name. Default value is `Account`
         /// * `account_reference_list.#.uuid` - The UUID of an account.
         /// * `account_reference_list.#.name` - The name of an account.
         /// </summary>
@@ -36,7 +36,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Description;
         /// <summary>
         /// List of environments associated with the project.
-        /// * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
+        /// * `environment_reference_list.#.kind` - The kind name. Default value is `Environment`
         /// * `environment_reference_list.#.uuid` - The UUID of an environment.
         /// * `environment_reference_list.#.name` - The name of an environment.
         /// </summary>
@@ -49,8 +49,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetProjectsEntityExternalNetworkListResult> ExternalNetworkLists;
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `user_group`
-        /// * `external_user_group_reference_list.#.uuid` - The UUID of a user_group
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `UserGroup`
+        /// * `external_user_group_reference_list.#.uuid` - The UUID of a UserGroup
         /// * `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntityExternalUserGroupReferenceListResult> ExternalUserGroupReferenceLists;
@@ -69,14 +69,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string State;
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `Subnet`
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntitySubnetReferenceListResult> SubnetReferenceLists;
         /// <summary>
         /// List of users in the project.
-        /// * `user_reference_list.#.kind` - The kind name. Default value is `user`
+        /// * `user_reference_list.#.kind` - The kind name. Default value is `User`
         /// * `user_reference_list.#.uuid` - The UUID of a user
         /// * `user_reference_list.#.name` - The name of a user.
         /// </summary>

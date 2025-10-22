@@ -65,7 +65,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<int>? CvmNumVcpus { get; set; }
 
         /// <summary>
-        /// - use "vm_installer" to enable CVM imaging from standalone.
+        /// - use "VmInstaller" to enable CVM imaging from standalone.
         /// </summary>
         [Input("deviceHint")]
         public Input<string>? DeviceHint { get; set; }
@@ -149,13 +149,13 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? IpmiUser { get; set; }
 
         /// <summary>
-        /// - (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) IPV6 address.
+        /// - (Required when DeviceHint = "VmInstaller" for imaging using node's existing cvm for imaging) IPV6 address.
         /// </summary>
         [Input("ipv6Address")]
         public Input<string>? Ipv6Address { get; set; }
 
         /// <summary>
-        /// - (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) ipv6 interface.
+        /// - (Required when DeviceHint = "VmInstaller" for imaging using node's existing cvm for imaging) ipv6 interface.
         /// </summary>
         [Input("ipv6Interface")]
         public Input<string>? Ipv6Interface { get; set; }

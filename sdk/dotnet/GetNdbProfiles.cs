@@ -38,22 +38,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each profile:
         /// 
-        /// * `id`: - id of profile
-        /// * `name`: - profile name
-        /// * `description`: - description of profile
-        /// * `status`: - status of profile
-        /// * `owner`: - owner name
-        /// * `engine_type`: - database engine type
-        /// * `db_version`: - database version
-        /// * `topology`: - topology
-        /// * `system_profile`: - if system profile or not
-        /// * `assoc_db_servers`: - associated DB servers
-        /// * `assoc_databases`: - associated databases
-        /// * `latest_version`: - latest version for engine software
-        /// * `latest_version_id`: - ID of latest version for engine software
-        /// * `versions`: - profile's different version config
-        /// * `cluster_availability`: - list of clusters availability
-        /// * `nx_cluster_id`: - era cluster ID
+        /// * `Id`: - id of profile
+        /// * `Name`: - profile name
+        /// * `Description`: - description of profile
+        /// * `Status`: - status of profile
+        /// * `Owner`: - owner name
+        /// * `EngineType`: - database engine type
+        /// * `DbVersion`: - database version
+        /// * `Topology`: - topology
+        /// * `SystemProfile`: - if system profile or not
+        /// * `AssocDbServers`: - associated DB servers
+        /// * `AssocDatabases`: - associated databases
+        /// * `LatestVersion`: - latest version for engine software
+        /// * `LatestVersionId`: - ID of latest version for engine software
+        /// * `Versions`: - profile's different version config
+        /// * `ClusterAvailability`: - list of clusters availability
+        /// * `NxClusterId`: - era cluster ID
         /// 
         /// See detailed information in [Nutanix Database Service Profiles](https://www.nutanix.dev/api_references/ndb/#/74ae456d63b24-get-all-profiles).
         /// </summary>
@@ -86,22 +86,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each profile:
         /// 
-        /// * `id`: - id of profile
-        /// * `name`: - profile name
-        /// * `description`: - description of profile
-        /// * `status`: - status of profile
-        /// * `owner`: - owner name
-        /// * `engine_type`: - database engine type
-        /// * `db_version`: - database version
-        /// * `topology`: - topology
-        /// * `system_profile`: - if system profile or not
-        /// * `assoc_db_servers`: - associated DB servers
-        /// * `assoc_databases`: - associated databases
-        /// * `latest_version`: - latest version for engine software
-        /// * `latest_version_id`: - ID of latest version for engine software
-        /// * `versions`: - profile's different version config
-        /// * `cluster_availability`: - list of clusters availability
-        /// * `nx_cluster_id`: - era cluster ID
+        /// * `Id`: - id of profile
+        /// * `Name`: - profile name
+        /// * `Description`: - description of profile
+        /// * `Status`: - status of profile
+        /// * `Owner`: - owner name
+        /// * `EngineType`: - database engine type
+        /// * `DbVersion`: - database version
+        /// * `Topology`: - topology
+        /// * `SystemProfile`: - if system profile or not
+        /// * `AssocDbServers`: - associated DB servers
+        /// * `AssocDatabases`: - associated databases
+        /// * `LatestVersion`: - latest version for engine software
+        /// * `LatestVersionId`: - ID of latest version for engine software
+        /// * `Versions`: - profile's different version config
+        /// * `ClusterAvailability`: - list of clusters availability
+        /// * `NxClusterId`: - era cluster ID
         /// 
         /// See detailed information in [Nutanix Database Service Profiles](https://www.nutanix.dev/api_references/ndb/#/74ae456d63b24-get-all-profiles).
         /// </summary>
@@ -134,22 +134,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each profile:
         /// 
-        /// * `id`: - id of profile
-        /// * `name`: - profile name
-        /// * `description`: - description of profile
-        /// * `status`: - status of profile
-        /// * `owner`: - owner name
-        /// * `engine_type`: - database engine type
-        /// * `db_version`: - database version
-        /// * `topology`: - topology
-        /// * `system_profile`: - if system profile or not
-        /// * `assoc_db_servers`: - associated DB servers
-        /// * `assoc_databases`: - associated databases
-        /// * `latest_version`: - latest version for engine software
-        /// * `latest_version_id`: - ID of latest version for engine software
-        /// * `versions`: - profile's different version config
-        /// * `cluster_availability`: - list of clusters availability
-        /// * `nx_cluster_id`: - era cluster ID
+        /// * `Id`: - id of profile
+        /// * `Name`: - profile name
+        /// * `Description`: - description of profile
+        /// * `Status`: - status of profile
+        /// * `Owner`: - owner name
+        /// * `EngineType`: - database engine type
+        /// * `DbVersion`: - database version
+        /// * `Topology`: - topology
+        /// * `SystemProfile`: - if system profile or not
+        /// * `AssocDbServers`: - associated DB servers
+        /// * `AssocDatabases`: - associated databases
+        /// * `LatestVersion`: - latest version for engine software
+        /// * `LatestVersionId`: - ID of latest version for engine software
+        /// * `Versions`: - profile's different version config
+        /// * `ClusterAvailability`: - list of clusters availability
+        /// * `NxClusterId`: - era cluster ID
         /// 
         /// See detailed information in [Nutanix Database Service Profiles](https://www.nutanix.dev/api_references/ndb/#/74ae456d63b24-get-all-profiles).
         /// </summary>

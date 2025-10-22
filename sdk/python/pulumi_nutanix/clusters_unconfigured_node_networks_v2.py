@@ -178,6 +178,8 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
         """
         Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
@@ -192,6 +194,8 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param ClustersUnconfiguredNodeNetworksV2Args args: The arguments to use to populate this resource's properties.

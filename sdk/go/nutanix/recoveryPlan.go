@@ -13,6 +13,8 @@ import (
 )
 
 // Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
+//
+// ## Example Usage
 type RecoveryPlan struct {
 	pulumi.CustomResourceState
 

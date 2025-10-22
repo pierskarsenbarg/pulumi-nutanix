@@ -130,7 +130,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool?> SoftRemove { get; private set; } = null!;
 
         /// <summary>
-        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with TimeMachineId .
         /// </summary>
         [Output("softwareProfileId")]
         public Output<string?> SoftwareProfileId { get; private set; } = null!;
@@ -318,7 +318,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? SoftRemove { get; set; }
 
         /// <summary>
-        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with TimeMachineId .
         /// </summary>
         [Input("softwareProfileId")]
         public Input<string>? SoftwareProfileId { get; set; }
@@ -509,7 +509,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? SoftRemove { get; set; }
 
         /// <summary>
-        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with TimeMachineId .
         /// </summary>
         [Input("softwareProfileId")]
         public Input<string>? SoftwareProfileId { get; set; }

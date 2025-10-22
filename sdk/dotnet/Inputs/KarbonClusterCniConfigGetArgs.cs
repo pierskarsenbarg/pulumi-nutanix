@@ -34,7 +34,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// - (Optional) The size of the subnet from the pod_ipv4_cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+        /// - (Optional) The size of the subnet from the PodIpv4Cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
         /// </summary>
         [Input("nodeCidrMaskSize")]
         public Input<int>? NodeCidrMaskSize { get; set; }

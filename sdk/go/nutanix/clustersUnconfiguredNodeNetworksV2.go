@@ -13,6 +13,8 @@ import (
 )
 
 // Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
+//
+// ## Example Usage
 type ClustersUnconfiguredNodeNetworksV2 struct {
 	pulumi.CustomResourceState
 

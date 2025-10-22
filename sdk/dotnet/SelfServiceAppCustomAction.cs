@@ -47,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The name of the action to run.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        /// Both (`AppName` and `AppUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         /// </summary>
         [Output("actionName")]
         public Output<string> ActionName { get; private set; } = null!;
@@ -120,7 +120,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The name of the action to run.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        /// Both (`AppName` and `AppUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         /// </summary>
         [Input("actionName", required: true)]
         public Input<string> ActionName { get; set; } = null!;
@@ -154,7 +154,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The name of the action to run.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        /// Both (`AppName` and `AppUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         /// </summary>
         [Input("actionName")]
         public Input<string>? ActionName { get; set; }

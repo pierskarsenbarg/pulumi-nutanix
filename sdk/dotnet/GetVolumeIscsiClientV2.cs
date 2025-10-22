@@ -40,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
         /// The following arguments are supported:
         /// 
         /// 
-        /// * `ext_id`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * `ExtId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Task<GetVolumeIscsiClientV2Result> InvokeAsync(GetVolumeIscsiClientV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2Args(), options.WithDefaults());
@@ -73,7 +73,7 @@ namespace PiersKarsenbarg.Nutanix
         /// The following arguments are supported:
         /// 
         /// 
-        /// * `ext_id`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * `ExtId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Output<GetVolumeIscsiClientV2Result> Invoke(GetVolumeIscsiClientV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2InvokeArgs(), options.WithDefaults());
@@ -106,7 +106,7 @@ namespace PiersKarsenbarg.Nutanix
         /// The following arguments are supported:
         /// 
         /// 
-        /// * `ext_id`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * `ExtId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Output<GetVolumeIscsiClientV2Result> Invoke(GetVolumeIscsiClientV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2InvokeArgs(), options.WithDefaults());

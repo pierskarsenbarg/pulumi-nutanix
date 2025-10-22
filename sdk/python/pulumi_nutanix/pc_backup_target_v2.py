@@ -182,6 +182,8 @@ class PcBackupTargetV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        ### Cluster Location
+
         ### Object Store Location
 
         ```python
@@ -223,6 +225,8 @@ class PcBackupTargetV2(pulumi.CustomResource):
         Create a cluster or object store as the backup target. For a given Prism Central, there can be up to 3 clusters as backup targets and 1 object store as backup target. If any cluster or object store is not eligible for backup or lacks appropriate permissions, the API request will fail. For object store backup targets, specifying backup policy is mandatory along with the location of the object store.
 
         ## Example Usage
+
+        ### Cluster Location
 
         ### Object Store Location
 

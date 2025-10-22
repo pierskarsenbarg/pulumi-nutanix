@@ -13,6 +13,8 @@ import (
 )
 
 // Provides a resource to create an access control policy based on the input parameters.
+//
+// ## Example Usage
 type AccessControlPolicy struct {
 	pulumi.CustomResourceState
 

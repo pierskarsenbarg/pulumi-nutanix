@@ -187,6 +187,8 @@ class NdbCloneRefresh(pulumi.CustomResource):
             timezone="Asia/Calcutta")
         ```
 
+        ### resource to refresh clone with user pitr timestamp
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] clone_id: clone id
@@ -217,6 +219,8 @@ class NdbCloneRefresh(pulumi.CustomResource):
             snapshot_id="{{ snapshot_id }}",
             timezone="Asia/Calcutta")
         ```
+
+        ### resource to refresh clone with user pitr timestamp
 
         :param str resource_name: The name of the resource.
         :param NdbCloneRefreshArgs args: The arguments to use to populate this resource's properties.

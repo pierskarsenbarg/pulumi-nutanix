@@ -12,6 +12,8 @@ import (
 )
 
 // Provides Nutanix resource to create VPC.
+//
+// ## Example
 type VpcV2 struct {
 	pulumi.CustomResourceState
 

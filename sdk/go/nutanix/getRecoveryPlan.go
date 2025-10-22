@@ -12,6 +12,8 @@ import (
 )
 
 // Describe a Nutanix Recovery Plan and its values (if it has them).
+//
+// ## Example Usage
 func LookupRecoveryPlan(ctx *pulumi.Context, args *LookupRecoveryPlanArgs, opts ...pulumi.InvokeOption) (*LookupRecoveryPlanResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRecoveryPlanResult

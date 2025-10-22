@@ -90,7 +90,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.StaticRoutesDefaultRouteNexthop>> DefaultRouteNexthops { get; private set; } = null!;
 
         /// <summary>
-        /// The vpc_route_table kind metadata.
+        /// The VpcRouteTable kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
@@ -232,7 +232,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// The vpc_route_table kind metadata.
+        /// The VpcRouteTable kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {

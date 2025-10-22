@@ -109,6 +109,8 @@ def get_karbon_private_registry(private_registry_id: Optional[_builtins.str] = N
     """
     Describes Karbon private registry entry
 
+    ## Example Usage
+
 
     :param _builtins.str private_registry_id: Represents karbon private registry uuid
     :param _builtins.str private_registry_name: Represents the name of karbon private registry
@@ -131,6 +133,8 @@ def get_karbon_private_registry_output(private_registry_id: Optional[pulumi.Inpu
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonPrivateRegistryResult]:
     """
     Describes Karbon private registry entry
+
+    ## Example Usage
 
 
     :param _builtins.str private_registry_id: Represents karbon private registry uuid

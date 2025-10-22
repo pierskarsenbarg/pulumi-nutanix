@@ -47,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
     public partial class LcmConfigV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when auto_inventory_enabled is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when AutoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Output("autoInventorySchedule")]
         public Output<string?> AutoInventorySchedule { get; private set; } = null!;
@@ -141,7 +141,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class LcmConfigV2Args : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when auto_inventory_enabled is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when AutoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Input("autoInventorySchedule")]
         public Input<string>? AutoInventorySchedule { get; set; }
@@ -193,7 +193,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class LcmConfigV2State : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when auto_inventory_enabled is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when AutoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Input("autoInventorySchedule")]
         public Input<string>? AutoInventorySchedule { get; set; }

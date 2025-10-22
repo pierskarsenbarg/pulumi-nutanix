@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of NetworkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
@@ -82,7 +82,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of NetworkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
@@ -149,7 +149,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of NetworkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
@@ -272,7 +272,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNetworkSecurityRuleResult
     {
         /// <summary>
-        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         public readonly string AdRuleAction;
         /// <summary>
@@ -303,7 +303,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly bool AllowIpv6Traffic;
         public readonly string ApiVersion;
         /// <summary>
-        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         public readonly string AppRuleAction;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAppRuleInboundAllowListResult> AppRuleInboundAllowLists;
@@ -387,7 +387,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
         /// <summary>
-        /// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inbound_allow_list will not allow anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty InboundAllowList will not allow anything into target group. Empty OutboundAllowList will allow everything from target group.
         /// </summary>
         public readonly string QuarantineRuleAction;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleQuarantineRuleInboundAllowListResult> QuarantineRuleInboundAllowLists;

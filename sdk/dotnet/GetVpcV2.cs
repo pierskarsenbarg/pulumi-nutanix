@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetVpcV2
     {
         /// <summary>
-        /// Provides a datasource to retrieve VPC with vpc_uuid .
+        /// Provides a datasource to retrieve VPC with VpcUuid .
         /// 
         /// ## Example Usage
         /// 
@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcV2Result>("nutanix:index/getVpcV2:getVpcV2", args ?? new GetVpcV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with vpc_uuid .
+        /// Provides a datasource to retrieve VPC with VpcUuid .
         /// 
         /// ## Example Usage
         /// 
@@ -61,7 +61,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcV2Result>("nutanix:index/getVpcV2:getVpcV2", args ?? new GetVpcV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with vpc_uuid .
+        /// Provides a datasource to retrieve VPC with VpcUuid .
         /// 
         /// ## Example Usage
         /// 

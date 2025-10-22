@@ -79,15 +79,15 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The vpc_route_table kind metadata
+        /// The VpcRouteTable kind metadata
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
-        /// An intentful representation of a vpc_route_table spec
+        /// An intentful representation of a VpcRouteTable spec
         /// </summary>
         public readonly ImmutableArray<Outputs.GetStaticRoutesSpecResult> Specs;
         /// <summary>
-        /// An intentful representation of a vpc_route_table status
+        /// An intentful representation of a VpcRouteTable status
         /// </summary>
         public readonly ImmutableArray<Outputs.GetStaticRoutesStatusResult> Statuses;
         public readonly string? VpcName;

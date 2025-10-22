@@ -6,6 +6,8 @@ import * as utilities from "./utilities";
 
 /**
  * Describes Karbon private registry entry
+ *
+ * ## Example Usage
  */
 export function getKarbonPrivateRegistry(args?: GetKarbonPrivateRegistryArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonPrivateRegistryResult> {
     args = args || {};
@@ -55,6 +57,8 @@ export interface GetKarbonPrivateRegistryResult {
 }
 /**
  * Describes Karbon private registry entry
+ *
+ * ## Example Usage
  */
 export function getKarbonPrivateRegistryOutput(args?: GetKarbonPrivateRegistryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonPrivateRegistryResult> {
     args = args || {};

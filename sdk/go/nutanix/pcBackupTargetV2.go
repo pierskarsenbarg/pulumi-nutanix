@@ -16,6 +16,8 @@ import (
 //
 // ## Example Usage
 //
+// ### Cluster Location
+//
 // ### Object Store Location
 //
 // ```go

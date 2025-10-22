@@ -125,7 +125,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetLcmConfigV2Result
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when auto_inventory_enabled is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when AutoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         public readonly string AutoInventorySchedule;
         /// <summary>

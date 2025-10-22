@@ -276,8 +276,8 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `user_group`
-        /// * `external_user_group_reference_list.#.uuid` - The UUID of a user_group
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `UserGroup`
+        /// * `external_user_group_reference_list.#.uuid` - The UUID of a UserGroup
         /// * `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public List<Inputs.GetProjectExternalUserGroupReferenceListArgs> ExternalUserGroupReferenceLists
@@ -287,7 +287,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `id` of the project.
+        /// - (Required) The `Id` of the project.
         /// </summary>
         [Input("projectId")]
         public string? ProjectId { get; set; }
@@ -300,7 +300,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `Subnet`
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
@@ -347,8 +347,8 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `user_group`
-        /// * `external_user_group_reference_list.#.uuid` - The UUID of a user_group
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `UserGroup`
+        /// * `external_user_group_reference_list.#.uuid` - The UUID of a UserGroup
         /// * `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public InputList<Inputs.GetProjectExternalUserGroupReferenceListInputArgs> ExternalUserGroupReferenceLists
@@ -358,7 +358,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `id` of the project.
+        /// - (Required) The `Id` of the project.
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
@@ -371,7 +371,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `Subnet`
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
@@ -405,7 +405,7 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// List of accounts associated with the project.
-        /// * `account_reference_list.#.kind` - The kind name. Default value is `account`
+        /// * `account_reference_list.#.kind` - The kind name. Default value is `Account`
         /// * `account_reference_list.#.uuid` - The UUID of an account.
         /// * `account_reference_list.#.name` - The name of an account.
         /// </summary>
@@ -418,7 +418,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectCategoryResult> Categories;
         /// <summary>
         /// (Optional/Computed) List of clusters associated with the project..
-        /// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `cluster`
+        /// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `Cluster`
         /// * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
         /// * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
         /// </summary>
@@ -437,7 +437,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string Description;
         /// <summary>
         /// List of environments associated with the project.
-        /// * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
+        /// * `environment_reference_list.#.kind` - The kind name. Default value is `Environment`
         /// * `environment_reference_list.#.uuid` - The UUID of an environment.
         /// * `environment_reference_list.#.name` - The name of an environment.
         /// </summary>
@@ -450,8 +450,8 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectExternalNetworkListResult> ExternalNetworkLists;
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `user_group`
-        /// * `external_user_group_reference_list.#.uuid` - The UUID of a user_group
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `UserGroup`
+        /// * `external_user_group_reference_list.#.uuid` - The UUID of a UserGroup
         /// * `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectExternalUserGroupReferenceListResult> ExternalUserGroupReferenceLists;
@@ -476,14 +476,14 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string State;
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `Subnet`
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectSubnetReferenceListResult> SubnetReferenceLists;
         /// <summary>
         /// (Optional/Computed) List of tunnels associated with the project.
-        /// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `tunnel`
+        /// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `Tunnel`
         /// * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
         /// * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
         /// </summary>
@@ -494,7 +494,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectUserReferenceListResult> UserReferenceLists;
         /// <summary>
         /// (Optional/Computed) List of VPCs associated with the project..
-        /// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `vpc`
+        /// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `Vpc`
         /// * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
         /// * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
         /// </summary>

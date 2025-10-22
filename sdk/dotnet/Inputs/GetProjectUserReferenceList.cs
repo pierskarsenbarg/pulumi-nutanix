@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class GetProjectUserReferenceListArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// (Required) The kind name (Default value: `project`).
+        /// (Required) The kind name (Default value: `Project`).
         /// </summary>
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;

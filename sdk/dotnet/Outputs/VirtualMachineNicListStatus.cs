@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VirtualMachineNicListStatus
     {
         /// <summary>
-        /// -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
+        /// -  The Floating IP associated with the vnic. (Only in `NicListStatus`)
         /// </summary>
         public readonly string? FloatingIp;
         /// <summary>
@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineNicListStatusIpEndpointList> IpEndpointLists;
         /// <summary>
-        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// - Indicates whether the serial port connection is connected or not (`True` or `False`).
         /// </summary>
         public readonly string? IsConnected;
         /// <summary>

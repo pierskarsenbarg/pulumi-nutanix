@@ -16,6 +16,8 @@ import (
 // > - We need to increase the timeout for deploying the PC resource because the deployment takes longer than the default timeout allows for the operation to complete.
 //
 // Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
+//
+// ## Example Usage
 type PcDeployV2 struct {
 	pulumi.CustomResourceState
 

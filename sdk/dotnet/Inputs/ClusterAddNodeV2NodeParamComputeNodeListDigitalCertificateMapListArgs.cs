@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// -(Optional) Field containing digital_certificate_base64 and key_management_server_uuid for key management server.
+        /// -(Optional) Field containing DigitalCertificateBase64 and KeyManagementServerUuid for key management server.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

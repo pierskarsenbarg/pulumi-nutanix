@@ -51,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the application.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Output("appUuid")]
         public Output<string?> AppUuid { get; private set; } = null!;
@@ -124,7 +124,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the application.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Input("appUuid")]
         public Input<string>? AppUuid { get; set; }
@@ -158,7 +158,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the application.
         /// 
-        /// Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Input("appUuid")]
         public Input<string>? AppUuid { get; set; }

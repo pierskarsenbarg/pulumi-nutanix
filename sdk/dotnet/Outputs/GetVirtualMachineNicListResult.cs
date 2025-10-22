@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineNicListIpEndpointListResult> IpEndpointLists;
         /// <summary>
-        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// - Indicates whether the serial port connection is connected or not (`True` or `False`).
         /// </summary>
         public readonly string IsConnected;
         /// <summary>

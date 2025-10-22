@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
 
 /**
  * Describes a List of Karbon private registry entry
+ *
+ * ## Example Usage
  */
 export function getKarbonPrivateRegistries(opts?: pulumi.InvokeOptions): Promise<GetKarbonPrivateRegistriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -27,6 +29,8 @@ export interface GetKarbonPrivateRegistriesResult {
 }
 /**
  * Describes a List of Karbon private registry entry
+ *
+ * ## Example Usage
  */
 export function getKarbonPrivateRegistriesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonPrivateRegistriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

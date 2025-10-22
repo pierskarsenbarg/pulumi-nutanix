@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigResult> Ipv4Configs;
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoResult> Ipv4Infos;
         /// <summary>
-        /// The network function chain associates with the NIC. Only valid if nic_type is NORMAL_NIC.
+        /// The network function chain associates with the NIC. Only valid if NicType is NORMAL_NIC.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainResult> NetworkFunctionChains;
         /// <summary>
@@ -36,7 +36,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly bool ShouldAllowUnknownMacs;
         /// <summary>
-        /// Network identifier for this adapter. Only valid if nic_type is NORMAL_NIC or DIRECT_NIC
+        /// Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetResult> Subnets;
         /// <summary>

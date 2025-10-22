@@ -67,7 +67,7 @@ namespace PiersKarsenbarg.Nutanix
 
         private static readonly __Value<bool?> _insecure = new __Value<bool?>(() => __config.GetBoolean("insecure"));
         /// <summary>
-        /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
+        /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `False`
         /// </summary>
         public static bool? Insecure
         {

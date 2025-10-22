@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<int>? Index { get; set; }
 
         /// <summary>
-        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// - Indicates whether the serial port connection is connected or not (`True` or `False`).
         /// </summary>
         [Input("isConnected")]
         public Input<bool>? IsConnected { get; set; }

@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
 
 /**
  * Describe a Nutanix Recovery Plan and its values (if it has them).
+ *
+ * ## Example Usage
  */
 export function getRecoveryPlan(args?: GetRecoveryPlanArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryPlanResult> {
     args = args || {};
@@ -66,6 +68,8 @@ export interface GetRecoveryPlanResult {
 }
 /**
  * Describe a Nutanix Recovery Plan and its values (if it has them).
+ *
+ * ## Example Usage
  */
 export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryPlanResult> {
     args = args || {};

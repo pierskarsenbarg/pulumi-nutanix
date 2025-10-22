@@ -107,7 +107,7 @@ namespace PiersKarsenbarg.Nutanix
         public string? ClusterId { get; set; }
 
         /// <summary>
-        /// and `cluster_id` are mutually exclusive.
+        /// and `ClusterId` are mutually exclusive.
         /// </summary>
         [Input("clusterName")]
         public string? ClusterName { get; set; }
@@ -127,7 +127,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// and `cluster_id` are mutually exclusive.
+        /// and `ClusterId` are mutually exclusive.
         /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }

@@ -41,7 +41,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapListGetArgs>? _digitalCertificateMapLists;
 
         /// <summary>
-        /// -(Optional) List of objects containing digital_certificate_base64 and key_management_server_uuid fields for key management server.
+        /// -(Optional) List of objects containing DigitalCertificateBase64 and KeyManagementServerUuid fields for key management server.
         /// </summary>
         public InputList<Inputs.ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapListGetArgs> DigitalCertificateMapLists
         {

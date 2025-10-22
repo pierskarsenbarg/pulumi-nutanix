@@ -13,6 +13,8 @@ import (
 )
 
 // Create a Network Security Policy
+//
+// ## Example
 type NetworkSecurityPolicyV2 struct {
 	pulumi.CustomResourceState
 

@@ -52,7 +52,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `False`.
         /// </summary>
         [Input("shouldEnableHighAvailability")]
         public Input<bool>? ShouldEnableHighAvailability { get; set; }
