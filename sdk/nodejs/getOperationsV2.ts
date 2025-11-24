@@ -15,13 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //list operations
  * const operation_list = nutanix.getOperationsV2({});
+ * // filtered list operation
  * const operation_list_filtered = nutanix.getOperationsV2({
  *     filter: "displayName eq 'Create_Role'",
  * });
+ * // list operations withe page and limit
  * const operation_list_paginated = nutanix.getOperationsV2({
- *     limit: 10,
  *     page: 1,
+ *     limit: 10,
  * });
  * ```
  */
@@ -153,13 +156,16 @@ export interface GetOperationsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //list operations
  * const operation_list = nutanix.getOperationsV2({});
+ * // filtered list operation
  * const operation_list_filtered = nutanix.getOperationsV2({
  *     filter: "displayName eq 'Create_Role'",
  * });
+ * // list operations withe page and limit
  * const operation_list_paginated = nutanix.getOperationsV2({
- *     limit: 10,
  *     page: 1,
+ *     limit: 10,
  * });
  * ```
  */

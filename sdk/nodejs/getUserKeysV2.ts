@@ -15,12 +15,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Data source to fetch the list of keys
  * const getKeys = nutanix.getUserKeysV2({
  *     userExtId: "<SERVICE_ACCOUNT_UUID>",
  * });
+ * // Data source to fetch the key by name
  * const getKeysFilter = nutanix.getUserKeysV2({
- *     filter: "name eq '<NAME_OF_API_KEY>'",
  *     userExtId: "<SERVICE_ACCOUNT_UUID>",
+ *     filter: "name eq '<NAME_OF_API_KEY>'",
  * });
  * ```
  *
@@ -116,12 +118,14 @@ export interface GetUserKeysV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Data source to fetch the list of keys
  * const getKeys = nutanix.getUserKeysV2({
  *     userExtId: "<SERVICE_ACCOUNT_UUID>",
  * });
+ * // Data source to fetch the key by name
  * const getKeysFilter = nutanix.getUserKeysV2({
- *     filter: "name eq '<NAME_OF_API_KEY>'",
  *     userExtId: "<SERVICE_ACCOUNT_UUID>",
+ *     filter: "name eq '<NAME_OF_API_KEY>'",
  * });
  * ```
  *

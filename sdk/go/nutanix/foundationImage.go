@@ -29,17 +29,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewFoundationImage(ctx, "nos-image", &nutanix.FoundationImageArgs{
+//				Source:        pulumi.String("../../../files/nutanix_installer_x86_64.tar"),
 //				Filename:      pulumi.String("nos_image.tar"),
 //				InstallerType: pulumi.String("nos"),
-//				Source:        pulumi.String("../../../files/nutanix_installer_x86_64.tar"),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = nutanix.NewFoundationImage(ctx, "hypervisor-image", &nutanix.FoundationImageArgs{
+//				Source:        pulumi.String("../../../files/VMware-Installer.x86_64.iso"),
 //				Filename:      pulumi.String("esx_image.iso"),
 //				InstallerType: pulumi.String("esx"),
-//				Source:        pulumi.String("../../../files/VMware-Installer.x86_64.iso"),
 //			})
 //			if err != nil {
 //				return err

@@ -447,15 +447,6 @@ def get_ndb_dbserver(dbserver_cluster_id: Optional[_builtins.str] = None,
     """
     Describes Database Server VM in Nutanix Database Service
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    dbserver = nutanix.get_ndb_dbserver(ip="{{ dbserver_vm_ip }}")
-    ```
-
 
     :param _builtins.str id: id of database server vm
     :param _builtins.str ip: ip of database server vm
@@ -523,15 +514,6 @@ def get_ndb_dbserver_output(dbserver_cluster_id: Optional[pulumi.Input[Optional[
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDbserverResult]:
     """
     Describes Database Server VM in Nutanix Database Service
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    dbserver = nutanix.get_ndb_dbserver(ip="{{ dbserver_vm_ip }}")
-    ```
 
 
     :param _builtins.str id: id of database server vm

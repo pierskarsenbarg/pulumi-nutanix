@@ -283,6 +283,11 @@ class Vpc(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         vpc = nutanix.Vpc("vpc",
+            name="testtNew-1",
+            external_subnet_reference_names=[
+                "test-Ext1",
+                "test-ext2",
+            ],
             common_domain_name_server_ip_lists=[
                 {
                     "ip": "8.8.8.8",
@@ -290,10 +295,6 @@ class Vpc(pulumi.CustomResource):
                 {
                     "ip": "8.8.8.9",
                 },
-            ],
-            external_subnet_reference_names=[
-                "test-Ext1",
-                "test-ext2",
             ],
             externally_routable_prefix_lists=[{
                 "ip": "192.43.0.0",
@@ -308,10 +309,11 @@ class Vpc(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         vpc = nutanix.Vpc("vpc",
+            name="testtNew-1",
+            external_subnet_reference_uuids=["<subnet_uuid>"],
             common_domain_name_server_ip_lists=[{
                 "ip": "8.8.8.8",
             }],
-            external_subnet_reference_uuids=["<subnet_uuid>"],
             externally_routable_prefix_lists=[
                 {
                     "ip": "192.43.0.0",
@@ -351,6 +353,11 @@ class Vpc(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         vpc = nutanix.Vpc("vpc",
+            name="testtNew-1",
+            external_subnet_reference_names=[
+                "test-Ext1",
+                "test-ext2",
+            ],
             common_domain_name_server_ip_lists=[
                 {
                     "ip": "8.8.8.8",
@@ -358,10 +365,6 @@ class Vpc(pulumi.CustomResource):
                 {
                     "ip": "8.8.8.9",
                 },
-            ],
-            external_subnet_reference_names=[
-                "test-Ext1",
-                "test-ext2",
             ],
             externally_routable_prefix_lists=[{
                 "ip": "192.43.0.0",
@@ -376,10 +379,11 @@ class Vpc(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         vpc = nutanix.Vpc("vpc",
+            name="testtNew-1",
+            external_subnet_reference_uuids=["<subnet_uuid>"],
             common_domain_name_server_ip_lists=[{
                 "ip": "8.8.8.8",
             }],
-            external_subnet_reference_uuids=["<subnet_uuid>"],
             externally_routable_prefix_lists=[
                 {
                     "ip": "192.43.0.0",

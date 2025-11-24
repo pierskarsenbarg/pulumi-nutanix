@@ -146,7 +146,9 @@ class CategoryKey(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test = nutanix.CategoryKey("test", description="App Support Category Key")
+        test = nutanix.CategoryKey("test",
+            name="app-support-example",
+            description="App Support Category Key")
         ```
 
         :param str resource_name: The name of the resource.
@@ -169,7 +171,9 @@ class CategoryKey(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test = nutanix.CategoryKey("test", description="App Support Category Key")
+        test = nutanix.CategoryKey("test",
+            name="app-support-example",
+            description="App Support Category Key")
         ```
 
         :param str resource_name: The name of the resource.

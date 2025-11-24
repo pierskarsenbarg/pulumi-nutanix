@@ -27,16 +27,6 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     //defining nutanix configuration for PE
-    ///     var pe = new Nutanix.Provider("pe", new()
-    ///     {
-    ///         Username = @var.Nutanix_pe_username,
-    ///         Password = @var.Nutanix_pe_password,
-    ///         Endpoint = @var.Nutanix_pe_endpoint,
-    ///         Insecure = true,
-    ///         Port = "9440",
-    ///     });
-    /// 
     ///     // restore source is auto-deleted after sometime, nutanix_pc_restore_source_v2 resource is auto-create
     ///     // new restore source if it was deleted, so notice that the id of the restore source will be different
     ///     // after recreation
@@ -58,9 +48,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 },
     ///             },
     ///         },
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         Provider = nutanix.Pe,
     ///     });
     /// 
     /// });

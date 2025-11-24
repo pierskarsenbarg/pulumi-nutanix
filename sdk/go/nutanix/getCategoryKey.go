@@ -12,6 +12,44 @@ import (
 )
 
 // Describe a Nutanix Category Key and its values (if it has them).
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			testKeyValueCategoryKey, err := nutanix.NewCategoryKey(ctx, "test_key_value", &nutanix.CategoryKeyArgs{
+//				Name:        pulumi.String("data_source_category_key_test_values"),
+//				Description: pulumi.String("Data Source CategoryKey Test with Values"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewCategoryValue(ctx, "test_value", &nutanix.CategoryValueArgs{
+//				Name:        testKeyValueCategoryKey.Name,
+//				Value:       pulumi.String("test_category_value_data_source"),
+//				Description: pulumi.String("Data Source CategoryValue Test with Values"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_ = nutanix.LookupCategoryKeyOutput(ctx, nutanix.GetCategoryKeyOutputArgs{
+//				Name: testKeyValueCategoryKey.Name,
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupCategoryKey(ctx *pulumi.Context, args *LookupCategoryKeyArgs, opts ...pulumi.InvokeOption) (*LookupCategoryKeyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCategoryKeyResult

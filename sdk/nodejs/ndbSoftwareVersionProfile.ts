@@ -17,7 +17,8 @@ import * as utilities from "./utilities";
  *
  * const name = new nutanix.NdbSoftwareVersionProfile("name", {
  *     engineType: "postgres_database",
- *     profileId: resource.nutanix_ndb_profile.name12.id,
+ *     profileId: nutanixNdbProfile.name12.id,
+ *     name: "test-tf",
  *     description: "made  by tf",
  *     postgresDatabases: [{
  *         sourceDbserverId: "{{ DB_Server_ID }}",

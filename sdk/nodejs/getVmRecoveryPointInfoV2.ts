@@ -15,9 +15,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // vm recovery point details
  * const rp_vm_info = nutanix.getVmRecoveryPointInfoV2({
- *     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
  *     recoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+ *     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
  * });
  * ```
  */
@@ -104,9 +105,10 @@ export interface GetVmRecoveryPointInfoV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // vm recovery point details
  * const rp_vm_info = nutanix.getVmRecoveryPointInfoV2({
- *     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
  *     recoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+ *     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
  * });
  * ```
  */

@@ -23,11 +23,12 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
+    ///     // resource to scale the database
     ///     var scale = new Nutanix.NdbDatabaseScale("scale", new()
     ///     {
     ///         ApplicationType = "{{ Application Type }}",
-    ///         DataStorageSize = 1,
     ///         DatabaseUuid = "{{ database_id }}",
+    ///         DataStorageSize = 1,
     ///     });
     /// 
     /// });

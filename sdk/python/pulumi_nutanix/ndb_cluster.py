@@ -723,6 +723,39 @@ class NdbCluster(pulumi.CustomResource):
         """
         Provides a resource to add a Nutanix cluster based on the input parameters.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        clsname = nutanix.index.NdbClusters("clsname",
+            name={{ test-cluster }},
+            description=test description,
+            cluster_ip={{ cluster_ip }},
+            username={{ username of cluster }},
+            password={{ password of cluster }},
+            storage_container={{ storage_container }},
+            agent_network_info=[{
+                dns: {{ DNS servers available in the }},
+                ntp: {{ NTP servers available }},
+            }],
+            networks_info=[{
+                type: DHCP,
+                networkInfo: [{
+                    vlanName: vlan_static,
+                    staticIp: {{ static_ip }},
+                    gateway: {{ gateway }},
+                    subnetMask: {{ subnet_mask }},
+                }],
+                accessType: [
+                    PRISM,
+                    DSIP,
+                    DBSERVER,
+                ],
+            }])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]] agent_network_infos: agent network info to register cluster
@@ -743,6 +776,39 @@ class NdbCluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to add a Nutanix cluster based on the input parameters.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        clsname = nutanix.index.NdbClusters("clsname",
+            name={{ test-cluster }},
+            description=test description,
+            cluster_ip={{ cluster_ip }},
+            username={{ username of cluster }},
+            password={{ password of cluster }},
+            storage_container={{ storage_container }},
+            agent_network_info=[{
+                dns: {{ DNS servers available in the }},
+                ntp: {{ NTP servers available }},
+            }],
+            networks_info=[{
+                type: DHCP,
+                networkInfo: [{
+                    vlanName: vlan_static,
+                    staticIp: {{ static_ip }},
+                    gateway: {{ gateway }},
+                    subnetMask: {{ subnet_mask }},
+                }],
+                accessType: [
+                    PRISM,
+                    DSIP,
+                    DBSERVER,
+                ],
+            }])
+        ```
 
         :param str resource_name: The name of the resource.
         :param NdbClusterArgs args: The arguments to use to populate this resource's properties.

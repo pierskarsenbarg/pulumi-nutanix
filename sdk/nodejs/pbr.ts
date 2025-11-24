@@ -18,16 +18,17 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const pbr = new nutanix.Pbr("pbr", {
- *     action: "PERMIT",
- *     destination: {
- *         addressType: "ALL",
- *     },
+ *     name: "test-policy-1",
  *     priority: 123,
  *     protocolType: "ALL",
+ *     action: "PERMIT",
+ *     vpcName: "test123",
  *     source: {
  *         addressType: "ALL",
  *     },
- *     vpcName: "test123",
+ *     destination: {
+ *         addressType: "ALL",
+ *     },
  * });
  * ```
  */

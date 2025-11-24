@@ -28,12 +28,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetNdbSnapshot(ctx, &nutanix.GetNdbSnapshotArgs{
+//				SnapshotId: "{{ snapshot_id }}",
 //				Filters: []nutanix.GetNdbSnapshotFilter{
 //					{
 //						LoadReplicatedChildSnapshots: pulumi.StringRef("true"),
 //					},
 //				},
-//				SnapshotId: "{{ snapshot_id }}",
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -26,6 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     // create Floating IP with External Subnet UUID
     ///     var fip_ext_subnet = new Nutanix.FloatingIpV2("fip-ext-subnet", new()
     ///     {
+    ///         Name = "example-fip",
     ///         Description = "example fip  description",
     ///         ExternalSubnetReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
     ///     });
@@ -45,6 +46,9 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var fip_ext_subnet_vm = new Nutanix.FloatingIpV2("fip-ext-subnet-vm", new()
     ///     {
+    ///         Name = "example-fip",
+    ///         Description = "example fip  description",
+    ///         ExternalSubnetReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
     ///         Associations = new[]
     ///         {
     ///             new Nutanix.Inputs.FloatingIpV2AssociationArgs
@@ -58,8 +62,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 },
     ///             },
     ///         },
-    ///         Description = "example fip  description",
-    ///         ExternalSubnetReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
     ///     });
     /// 
     /// });

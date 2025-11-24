@@ -27,20 +27,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewProvider(ctx, "pe", &nutanix.ProviderArgs{
-//				Username: pulumi.Any(_var.Nutanix_pe_username),
-//				Password: pulumi.Any(_var.Nutanix_pe_password),
-//				Endpoint: pulumi.Any(_var.Nutanix_pe_endpoint),
-//				Port:     pulumi.String("9440"),
-//				Insecure: pulumi.Bool(true),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = nutanix.GetPcRestorePointV2(ctx, &nutanix.GetPcRestorePointV2Args{
-//				RestorableDomainManagerExtId: data.Nutanix_restorable_pcs_v2.Test.Restorable_pcs[0].Ext_id,
-//				RestoreSourceExtId:           nutanix_pc_restore_source_v2.ClusterLocation.Id,
-//				ExtId:                        data.Nutanix_pc_restore_points_v2.Test.Restore_points[0].Ext_id,
+//			// this is PE based module, so use PE provider alias
+//			_, err := nutanix.GetPcRestorePointV2(ctx, &nutanix.GetPcRestorePointV2Args{
+//				RestorableDomainManagerExtId: testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
+//				RestoreSourceExtId:           cluster_location.Id,
+//				ExtId:                        test.RestorePoints[0].ExtId,
 //			}, nil)
 //			if err != nil {
 //				return err

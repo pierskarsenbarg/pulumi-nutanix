@@ -25,13 +25,16 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all Roles
         ///     var roles = Nutanix.GetRolesV2.Invoke();
         /// 
+        ///     // List Roles with filter
         ///     var filtered_roles = Nutanix.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///     });
         /// 
+        ///     // List Roles with filter and orderby
         ///     var filtered_ordered_roles = Nutanix.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
@@ -95,13 +98,16 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all Roles
         ///     var roles = Nutanix.GetRolesV2.Invoke();
         /// 
+        ///     // List Roles with filter
         ///     var filtered_roles = Nutanix.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///     });
         /// 
+        ///     // List Roles with filter and orderby
         ///     var filtered_ordered_roles = Nutanix.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
@@ -165,13 +171,16 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all Roles
         ///     var roles = Nutanix.GetRolesV2.Invoke();
         /// 
+        ///     // List Roles with filter
         ///     var filtered_roles = Nutanix.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///     });
         /// 
+        ///     // List Roles with filter and orderby
         ///     var filtered_ordered_roles = Nutanix.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",

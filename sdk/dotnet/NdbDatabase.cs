@@ -28,6 +28,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
     ///     {
     ///         Databasetype = "postgres_database",
+    ///         Name = "test-inst",
     ///         Description = "add description",
     ///         Softwareprofileid = "{{ software_profile_id }}",
     ///         Softwareprofileversionid = "{{ software_profile_version_id }}",
@@ -41,7 +42,7 @@ namespace PiersKarsenbarg.Nutanix
     ///             DbPassword = "password",
     ///             DatabaseNames = "testdb1",
     ///         },
-    ///         Nxclusterid = local.Clusters.EraCluster.Id,
+    ///         Nxclusterid = clusters.EraCluster.Id,
     ///         Sshpublickey = "{{ ssh-public-key }}",
     ///         Nodes = new[]
     ///         {
@@ -101,6 +102,200 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### NDB database resource to provision HA instance with new database server VM
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
+    ///     {
+    ///         Databasetype = "postgres_database",
+    ///         Name = "test-pg-inst-HA-tf",
+    ///         Description = "adding description",
+    ///         Softwareprofileid = "{{ software_profile_id }}",
+    ///         Softwareprofileversionid = "{{ software_profile_version_id }}",
+    ///         Computeprofileid = "{{ compute_profile_id }}",
+    ///         Networkprofileid = "{{ network_profile_id }}",
+    ///         Dbparameterprofileid = "{{ db_parameter_profile_id }}",
+    ///         Createdbserver = true,
+    ///         Clustered = true,
+    ///         Nodecount = 4,
+    ///         PostgresqlInfo = new Nutanix.Inputs.NdbDatabasePostgresqlInfoArgs
+    ///         {
+    ///             ListenerPort = "5432",
+    ///             DatabaseSize = "200",
+    ///             DbPassword = "{{ database password}}",
+    ///             DatabaseNames = "testdb1",
+    ///             HaInstance = new Nutanix.Inputs.NdbDatabasePostgresqlInfoHaInstanceArgs
+    ///             {
+    ///                 ProxyReadPort = "5001",
+    ///                 ProxyWritePort = "5000",
+    ///                 ClusterName = "{{ cluster_name }}",
+    ///                 PatroniClusterName = " {{ patroni_cluster_name }}",
+    ///             },
+    ///         },
+    ///         Nxclusterid = "1c42ca25-32f4-42d9-a2bd-6a21f925b725",
+    ///         Sshpublickey = "{{ ssh_public_key }}",
+    ///         Nodes = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NdbDatabaseNodeArgs
+    ///             {
+    ///                 Properties = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "node_type",
+    ///                         Value = "haproxy",
+    ///                     },
+    ///                 },
+    ///                 Vmname = "{{ vm name }}",
+    ///                 NxClusterId = "{{ nx_cluster_id }}",
+    ///             },
+    ///             new Nutanix.Inputs.NdbDatabaseNodeArgs
+    ///             {
+    ///                 Properties = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "role",
+    ///                         Value = "Primary",
+    ///                     },
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "failover_mode",
+    ///                         Value = "Automatic",
+    ///                     },
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "node_type",
+    ///                         Value = "database",
+    ///                     },
+    ///                 },
+    ///                 Vmname = "{{ name of vm }}",
+    ///                 Networkprofileid = "{{ network_profile_id }}",
+    ///                 Computeprofileid = "{{ compute_profile_id }}",
+    ///                 NxClusterId = "{{ nx_cluster_id }}",
+    ///             },
+    ///             new Nutanix.Inputs.NdbDatabaseNodeArgs
+    ///             {
+    ///                 Properties = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "role",
+    ///                         Value = "Secondary",
+    ///                     },
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "failover_mode",
+    ///                         Value = "Automatic",
+    ///                     },
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "node_type",
+    ///                         Value = "database",
+    ///                     },
+    ///                 },
+    ///                 Vmname = "{{ name of vm }}",
+    ///                 Networkprofileid = "{{ network_profile_id }}",
+    ///                 Computeprofileid = "{{ compute_profile_id }}",
+    ///                 NxClusterId = "{{ nx_cluster_id }}",
+    ///             },
+    ///             new Nutanix.Inputs.NdbDatabaseNodeArgs
+    ///             {
+    ///                 Properties = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "role",
+    ///                         Value = "Secondary",
+    ///                     },
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "failover_mode",
+    ///                         Value = "Automatic",
+    ///                     },
+    ///                     new Nutanix.Inputs.NdbDatabaseNodePropertyArgs
+    ///                     {
+    ///                         Name = "node_type",
+    ///                         Value = "database",
+    ///                     },
+    ///                 },
+    ///                 Vmname = "{{ name of vm }}",
+    ///                 Networkprofileid = "{{ network_profile_id }}",
+    ///                 Computeprofileid = "{{ compute_profile_id }}",
+    ///                 NxClusterId = "{{ nx_cluster_id }}",
+    ///             },
+    ///         },
+    ///         Timemachineinfo = new Nutanix.Inputs.NdbDatabaseTimemachineinfoArgs
+    ///         {
+    ///             Name = "test-pg-inst-HA",
+    ///             Description = "",
+    ///             SlaDetails = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.NdbDatabaseTimemachineinfoSlaDetailArgs
+    ///                 {
+    ///                     PrimarySlas = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgs
+    ///                         {
+    ///                             SlaId = "{{ required SLA}}0",
+    ///                             NxClusterIds = new[]
+    ///                             {
+    ///                                 "{{ nx_cluster_id}}",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             Schedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleArgs
+    ///             {
+    ///                 Snapshottimeofday = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs
+    ///                 {
+    ///                     Hours = 16,
+    ///                     Minutes = 0,
+    ///                     Seconds = 0,
+    ///                 },
+    ///                 Continuousschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Logbackupinterval = 30,
+    ///                     Snapshotsperday = 1,
+    ///                 },
+    ///                 Weeklyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Dayofweek = "WEDNESDAY",
+    ///                 },
+    ///                 Monthlyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Dayofmonth = 27,
+    ///                 },
+    ///                 Quartelyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Startmonth = "JANUARY",
+    ///                     Dayofmonth = 27,
+    ///                 },
+    ///                 Yearlyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs
+    ///                 {
+    ///                     Enabled = false,
+    ///                     Dayofmonth = 31,
+    ///                     Month = "DECEMBER",
+    ///                 },
+    ///             },
+    ///         },
+    ///         VmPassword = "{{ vm_password}}",
+    ///         Autotunestagingdrive = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ### NDB database resource with registered database server VM
     /// 
     /// ```csharp
@@ -113,6 +308,19 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
     ///     {
+    ///         Databasetype = "postgres_database",
+    ///         Name = "test-inst",
+    ///         Description = "add description",
+    ///         Dbparameterprofileid = "{{ db_parameter_profile_id }}",
+    ///         DbserverId = "{{ dbserver_id }}",
+    ///         Createdbserver = false,
+    ///         PostgresqlInfo = new Nutanix.Inputs.NdbDatabasePostgresqlInfoArgs
+    ///         {
+    ///             ListenerPort = "{{ listner_port }}",
+    ///             DatabaseSize = "{{ 200 }}",
+    ///             DbPassword = "password",
+    ///             DatabaseNames = "testdb1",
+    ///         },
     ///         Actionarguments = new[]
     ///         {
     ///             new Nutanix.Inputs.NdbDatabaseActionargumentArgs
@@ -121,11 +329,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Value = "{{ hostIP }}",
     ///             },
     ///         },
-    ///         Createdbserver = false,
-    ///         Databasetype = "postgres_database",
-    ///         Dbparameterprofileid = "{{ db_parameter_profile_id }}",
-    ///         DbserverId = "{{ dbserver_id }}",
-    ///         Description = "add description",
     ///         Nodes = new[]
     ///         {
     ///             new Nutanix.Inputs.NdbDatabaseNodeArgs
@@ -133,55 +336,48 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Dbserverid = "{{ dbserver_id }}",
     ///             },
     ///         },
-    ///         PostgresqlInfo = new Nutanix.Inputs.NdbDatabasePostgresqlInfoArgs
-    ///         {
-    ///             DatabaseNames = "testdb1",
-    ///             DatabaseSize = "{{ 200 }}",
-    ///             DbPassword = "password",
-    ///             ListenerPort = "{{ listner_port }}",
-    ///         },
     ///         Timemachineinfo = new Nutanix.Inputs.NdbDatabaseTimemachineinfoArgs
     ///         {
-    ///             Description = "description of time machine",
     ///             Name = "test-pg-inst",
+    ///             Description = "description of time machine",
+    ///             Slaid = "{{ sla_id }}",
     ///             Schedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleArgs
     ///             {
-    ///                 Continuousschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs
-    ///                 {
-    ///                     Enabled = true,
-    ///                     Logbackupinterval = 30,
-    ///                     Snapshotsperday = 1,
-    ///                 },
-    ///                 Monthlyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs
-    ///                 {
-    ///                     Dayofmonth = 27,
-    ///                     Enabled = true,
-    ///                 },
-    ///                 Quartelyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs
-    ///                 {
-    ///                     Dayofmonth = 27,
-    ///                     Enabled = true,
-    ///                     Startmonth = "JANUARY",
-    ///                 },
     ///                 Snapshottimeofday = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs
     ///                 {
     ///                     Hours = 16,
     ///                     Minutes = 0,
     ///                     Seconds = 0,
     ///                 },
+    ///                 Continuousschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Logbackupinterval = 30,
+    ///                     Snapshotsperday = 1,
+    ///                 },
     ///                 Weeklyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs
     ///                 {
-    ///                     Dayofweek = "WEDNESDAY",
     ///                     Enabled = true,
+    ///                     Dayofweek = "WEDNESDAY",
+    ///                 },
+    ///                 Monthlyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Dayofmonth = 27,
+    ///                 },
+    ///                 Quartelyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Startmonth = "JANUARY",
+    ///                     Dayofmonth = 27,
     ///                 },
     ///                 Yearlyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs
     ///                 {
-    ///                     Dayofmonth = 31,
     ///                     Enabled = false,
+    ///                     Dayofmonth = 31,
     ///                     Month = "DECEMBER",
     ///                 },
     ///             },
-    ///             Slaid = "{{ sla_id }}",
     ///         },
     ///     });
     /// 

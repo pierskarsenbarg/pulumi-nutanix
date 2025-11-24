@@ -8,6 +8,25 @@ import * as utilities from "./utilities";
 
 /**
  * Describes a Role.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const testRole = new nutanix.Role("test", {
+ *     name: "NAME",
+ *     description: "DESCRIPTION",
+ *     permissionReferenceLists: [{
+ *         kind: "permission",
+ *         uuid: "ID OF PERMISSION",
+ *     }],
+ * });
+ * const test = nutanix.getRoleOutput({
+ *     roleId: testRole.id,
+ * });
+ * ```
  */
 export function getRole(args?: GetRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetRoleResult> {
     args = args || {};
@@ -86,6 +105,25 @@ export interface GetRoleResult {
 }
 /**
  * Describes a Role.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const testRole = new nutanix.Role("test", {
+ *     name: "NAME",
+ *     description: "DESCRIPTION",
+ *     permissionReferenceLists: [{
+ *         kind: "permission",
+ *         uuid: "ID OF PERMISSION",
+ *     }],
+ * });
+ * const test = nutanix.getRoleOutput({
+ *     roleId: testRole.id,
+ * });
+ * ```
  */
 export function getRoleOutput(args?: GetRoleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRoleResult> {
     args = args || {};

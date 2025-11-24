@@ -491,10 +491,11 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         acctest_managed = nutanix.NdbMaintenanceWindow("acctest-managed",
-            day_of_week="TUESDAY",
+            name="test-maintenance",
             description="desc",
             duration=3,
             recurrence="WEEKLY",
+            day_of_week="TUESDAY",
             start_time="17:04:47")
         ```
 
@@ -504,10 +505,11 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         acctest_managed = nutanix.NdbMaintenanceWindow("acctest-managed",
-            day_of_week="TUESDAY",
+            name="test-maintenance",
             description="description",
             duration=2,
             recurrence="MONTHLY",
+            day_of_week="TUESDAY",
             start_time="17:04:47",
             week_of_month=4)
         ```
@@ -541,10 +543,11 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         acctest_managed = nutanix.NdbMaintenanceWindow("acctest-managed",
-            day_of_week="TUESDAY",
+            name="test-maintenance",
             description="desc",
             duration=3,
             recurrence="WEEKLY",
+            day_of_week="TUESDAY",
             start_time="17:04:47")
         ```
 
@@ -554,10 +557,11 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         acctest_managed = nutanix.NdbMaintenanceWindow("acctest-managed",
-            day_of_week="TUESDAY",
+            name="test-maintenance",
             description="description",
             duration=2,
             recurrence="MONTHLY",
+            day_of_week="TUESDAY",
             start_time="17:04:47",
             week_of_month=4)
         ```

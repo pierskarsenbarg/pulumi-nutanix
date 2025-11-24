@@ -178,15 +178,6 @@ class NdbLogCatchups(pulumi.CustomResource):
         """
         Provides a resource to perform the log cactup for database instance based on the input parameters.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        name = nutanix.NdbLogCatchups("name", database_id="{{ DatabaseID }}")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] for_restore: Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
@@ -204,15 +195,6 @@ class NdbLogCatchups(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to perform the log cactup for database instance based on the input parameters.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        name = nutanix.NdbLogCatchups("name", database_id="{{ DatabaseID }}")
-        ```
 
         :param str resource_name: The name of the resource.
         :param NdbLogCatchupsArgs args: The arguments to use to populate this resource's properties.

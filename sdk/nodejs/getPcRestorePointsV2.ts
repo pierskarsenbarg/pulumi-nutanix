@@ -18,17 +18,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const pe = new nutanix.Provider("pe", {
- *     username: _var.username,
- *     password: _var.password,
- *     endpoint: _var.pe_endpoint,
- *     insecure: true,
- *     port: _var.port,
- * });
+ * // This pe based module, so use pe provider alias
  * const restorePoints = nutanix.getPcRestorePointsV2({
  *     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
  *     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
  * });
+ * // list all the restorable pcs with select properties
  * const restorePointsSelect = nutanix.getPcRestorePointsV2({
  *     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
  *     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
@@ -280,17 +275,12 @@ export interface GetPcRestorePointsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const pe = new nutanix.Provider("pe", {
- *     username: _var.username,
- *     password: _var.password,
- *     endpoint: _var.pe_endpoint,
- *     insecure: true,
- *     port: _var.port,
- * });
+ * // This pe based module, so use pe provider alias
  * const restorePoints = nutanix.getPcRestorePointsV2({
  *     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
  *     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
  * });
+ * // list all the restorable pcs with select properties
  * const restorePointsSelect = nutanix.getPcRestorePointsV2({
  *     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
  *     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",

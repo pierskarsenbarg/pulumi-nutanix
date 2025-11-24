@@ -25,8 +25,8 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var test = new Nutanix.SelfServiceAppRecoveryPoint("test", new()
     ///     {
-    ///         ActionName = "SNAPSHOT ACTION NAME",
     ///         AppName = "NAME OF APPLICATION",
+    ///         ActionName = "SNAPSHOT ACTION NAME",
     ///         RecoveryPointName = "RECOVERY POINT NAME",
     ///     });
     /// 

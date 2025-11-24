@@ -10,6 +10,59 @@ import * as utilities from "./utilities";
  * Provides Nutanix resource to create VPC.
  *
  * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const vpc = new nutanix.VpcV2("vpc", {
+ *     name: "vpc-example",
+ *     description: "VPC for example",
+ *     externalSubnets: [{
+ *         subnetReference: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+ *     }],
+ * });
+ * // creating VPC with external routable prefixes
+ * const external_vpc_routable_vpc = new nutanix.VpcV2("external-vpc-routable-vpc", {
+ *     name: "tf-vpc-example",
+ *     description: "VPC ",
+ *     externalSubnets: [{
+ *         subnetReference: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+ *         externalIps: [
+ *             {
+ *                 ipv4s: [{
+ *                     value: "192.168.0.24",
+ *                     prefixLength: 32,
+ *                 }],
+ *             },
+ *             {
+ *                 ipv4s: [{
+ *                     value: "192.168.0.25",
+ *                     prefixLength: 32,
+ *                 }],
+ *             },
+ *         ],
+ *     }],
+ *     externallyRoutablePrefixes: [{
+ *         ipv4s: [{
+ *             ips: [{
+ *                 value: "172.30.0.0",
+ *                 prefixLength: 32,
+ *             }],
+ *             prefixLength: 16,
+ *         }],
+ *     }],
+ * });
+ * // creating VPC with transit type
+ * const transit_vpc = new nutanix.VpcV2("transit-vpc", {
+ *     name: "vpc-transit",
+ *     description: "VPC for transit type",
+ *     externalSubnets: [{
+ *         subnetReference: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+ *     }],
+ *     vpcType: "TRANSIT",
+ * });
+ * ```
  */
 export class VpcV2 extends pulumi.CustomResource {
     /**

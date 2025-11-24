@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Provision Application
-//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "testSelfServiceAppProvision", &nutanix.SelfServiceAppProvisionArgs{
+//			test, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
 //				BpName:         pulumi.String("NAME OF BLUEPRINT"),
 //				AppName:        pulumi.String("NAME OF APPLICATION"),
 //				AppDescription: pulumi.String("DESCRIPTION OF APPLICATION"),
@@ -40,8 +40,8 @@ import (
 //				return err
 //			}
 //			// Run patch config (update config)
-//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "testSelfServiceAppPatch", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    testSelfServiceAppProvision.ID(),
+//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
+//				AppUuid:    test.ID(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //			})
@@ -69,7 +69,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Provision Application
-//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "testSelfServiceAppProvision", &nutanix.SelfServiceAppProvisionArgs{
+//			test, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
 //				BpName:         pulumi.String("NAME OF BLUEPRINT"),
 //				AppName:        pulumi.String("NAME OF APPLICATION"),
 //				AppDescription: pulumi.String("DESCRIPTION OF APPLICATION"),
@@ -78,8 +78,8 @@ import (
 //				return err
 //			}
 //			// Run patch config (update config)
-//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "testSelfServiceAppPatch", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    testSelfServiceAppProvision.ID(),
+//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
+//				AppUuid:    test.ID(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				VmConfigs: nutanix.SelfServiceAppPatchVmConfigArray{
@@ -114,7 +114,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Provision Application
-//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "testSelfServiceAppProvision", &nutanix.SelfServiceAppProvisionArgs{
+//			test, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
 //				BpName:         pulumi.String("NAME OF BLUEPRINT"),
 //				AppName:        pulumi.String("NAME OF APPLICATION"),
 //				AppDescription: pulumi.String("DESCRIPTION OF APPLICATION"),
@@ -123,8 +123,8 @@ import (
 //				return err
 //			}
 //			// Run patch config (update config)
-//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "testSelfServiceAppPatch", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    testSelfServiceAppProvision.ID(),
+//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
+//				AppUuid:    test.ID(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				Categories: nutanix.SelfServiceAppPatchCategoryArray{
@@ -158,7 +158,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Provision Application
-//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "testSelfServiceAppProvision", &nutanix.SelfServiceAppProvisionArgs{
+//			test, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
 //				BpName:         pulumi.String("NAME OF BLUEPRINT"),
 //				AppName:        pulumi.String("NAME OF APPLICATION"),
 //				AppDescription: pulumi.String("DESCRIPTION OF APPLICATION"),
@@ -167,8 +167,8 @@ import (
 //				return err
 //			}
 //			// Run patch config (update config)
-//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "testSelfServiceAppPatch", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    testSelfServiceAppProvision.ID(),
+//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
+//				AppUuid:    test.ID(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				Categories: nutanix.SelfServiceAppPatchCategoryArray{
@@ -202,7 +202,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Provision Application
-//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "testSelfServiceAppProvision", &nutanix.SelfServiceAppProvisionArgs{
+//			test, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
 //				BpName:         pulumi.String("NAME OF BLUEPRINT"),
 //				AppName:        pulumi.String("NAME OF APPLICATION"),
 //				AppDescription: pulumi.String("DESCRIPTION OF APPLICATION"),
@@ -211,8 +211,8 @@ import (
 //				return err
 //			}
 //			// Run patch config (update config)
-//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "testSelfServiceAppPatch", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    testSelfServiceAppProvision.ID(),
+//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
+//				AppUuid:    test.ID(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				Disks: nutanix.SelfServiceAppPatchDiskArray{
@@ -246,7 +246,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Provision Application
-//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "testSelfServiceAppProvision", &nutanix.SelfServiceAppProvisionArgs{
+//			test, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
 //				BpName:         pulumi.String("NAME OF BLUEPRINT"),
 //				AppName:        pulumi.String("NAME OF APPLICATION"),
 //				AppDescription: pulumi.String("DESCRIPTION OF APPLICATION"),
@@ -255,8 +255,8 @@ import (
 //				return err
 //			}
 //			// Run patch config (update config)
-//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "testSelfServiceAppPatch", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    testSelfServiceAppProvision.ID(),
+//			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
+//				AppUuid:    test.ID(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				Nics: nutanix.SelfServiceAppPatchNicArray{

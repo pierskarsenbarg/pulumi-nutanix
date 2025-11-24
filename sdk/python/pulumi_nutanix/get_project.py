@@ -353,6 +353,7 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
 
     subnet = nutanix.Subnet("subnet",
         cluster_uuid="<YOUR_CLUSTER_ID>",
+        name="sunet_test_name",
         description="Description of my unit test VLAN",
         vlan_id=31,
         subnet_type="VLAN",
@@ -372,7 +373,8 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
             "terraform.nutanix.com",
             "terraform.unit.test.com",
         ])
-    project_test = nutanix.Project("projectTest",
+    project_test = nutanix.Project("project_test",
+        name="my-project",
         description="This is my project",
         categories=[{
             "name": "Environment",
@@ -458,6 +460,7 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union
 
     subnet = nutanix.Subnet("subnet",
         cluster_uuid="<YOUR_CLUSTER_ID>",
+        name="sunet_test_name",
         description="Description of my unit test VLAN",
         vlan_id=31,
         subnet_type="VLAN",
@@ -477,7 +480,8 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union
             "terraform.nutanix.com",
             "terraform.unit.test.com",
         ])
-    project_test = nutanix.Project("projectTest",
+    project_test = nutanix.Project("project_test",
+        name="my-project",
         description="This is my project",
         categories=[{
             "name": "Environment",

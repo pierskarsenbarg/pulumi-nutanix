@@ -12,6 +12,102 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// using Std = Pulumi.Std;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Nutanix.ObjectStoreV2("example", new()
+    ///     {
+    ///         Name = "tf-example-os",
+    ///         Description = "terraform create object store example",
+    ///         DeploymentVersion = "5.1.1",
+    ///         Domain = "msp.pc-idbc.nutanix.com",
+    ///         NumWorkerNodes = 1,
+    ///         ClusterExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///         TotalCapacityGib = Std.Pow.Invoke(new()
+    ///         {
+    ///             Base = 1024,
+    ///             Exponent = 3,
+    ///         }).Apply(invoke =&gt; 20 * invoke.Result),
+    ///         PublicNetworkReference = "57c4caf1-67e3-457e-8265-6d872f2a3135",
+    ///         PublicNetworkIps = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ObjectStoreV2PublicNetworkIpArgs
+    ///             {
+    ///                 Ipv4 = new Nutanix.Inputs.ObjectStoreV2PublicNetworkIpIpv4Args
+    ///                 {
+    ///                     Value = "10.44.77.123",
+    ///                 },
+    ///             },
+    ///         },
+    ///         StorageNetworkReference = "57c4caf1-67e3-457e-8265-6d872f2a3135",
+    ///         StorageNetworkDnsIp = new Nutanix.Inputs.ObjectStoreV2StorageNetworkDnsIpArgs
+    ///         {
+    ///             Ipv4 = new Nutanix.Inputs.ObjectStoreV2StorageNetworkDnsIpIpv4Args
+    ///             {
+    ///                 Value = "10.44.77.124",
+    ///             },
+    ///         },
+    ///         StorageNetworkVip = new Nutanix.Inputs.ObjectStoreV2StorageNetworkVipArgs
+    ///         {
+    ///             Ipv4 = new Nutanix.Inputs.ObjectStoreV2StorageNetworkVipIpv4Args
+    ///             {
+    ///                 Value = "10.44.77.125",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     // Deploying Object Store in draft state
+    ///     var example_draft = new Nutanix.ObjectStoreV2("example-draft", new()
+    ///     {
+    ///         Name = "tf-draft-os",
+    ///         Description = "terraform deploy object store draft example",
+    ///         DeploymentVersion = "5.1.1",
+    ///         Domain = "msp.pc-idbc.nutanix.com",
+    ///         NumWorkerNodes = 1,
+    ///         ClusterExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///         TotalCapacityGib = Std.Pow.Invoke(new()
+    ///         {
+    ///             Base = 1024,
+    ///             Exponent = 3,
+    ///         }).Apply(invoke =&gt; 20 * invoke.Result),
+    ///         PublicNetworkReference = "57c4caf1-67e3-457e-8265-6d872f2a3135",
+    ///         State = "UNDEPLOYED_OBJECT_STORE",
+    ///         PublicNetworkIps = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ObjectStoreV2PublicNetworkIpArgs
+    ///             {
+    ///                 Ipv4 = new Nutanix.Inputs.ObjectStoreV2PublicNetworkIpIpv4Args
+    ///                 {
+    ///                     Value = "10.44.77.126",
+    ///                 },
+    ///             },
+    ///         },
+    ///         StorageNetworkReference = "57c4caf1-67e3-457e-8265-6d872f2a3135",
+    ///         StorageNetworkDnsIp = new Nutanix.Inputs.ObjectStoreV2StorageNetworkDnsIpArgs
+    ///         {
+    ///             Ipv4 = new Nutanix.Inputs.ObjectStoreV2StorageNetworkDnsIpIpv4Args
+    ///             {
+    ///                 Value = "10.44.77.127",
+    ///             },
+    ///         },
+    ///         StorageNetworkVip = new Nutanix.Inputs.ObjectStoreV2StorageNetworkVipArgs
+    ///         {
+    ///             Ipv4 = new Nutanix.Inputs.ObjectStoreV2StorageNetworkVipIpv4Args
+    ///             {
+    ///                 Value = "10.44.77.128",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/objectStoreV2:ObjectStoreV2")]
     public partial class ObjectStoreV2 : global::Pulumi.CustomResource

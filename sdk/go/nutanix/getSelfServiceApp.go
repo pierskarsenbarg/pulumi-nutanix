@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "testSelfServiceAppProvision", &nutanix.SelfServiceAppProvisionArgs{
+//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
 //				BpName:         pulumi.String("NAME OF BLUEPRINT IN SERVER"),
 //				AppName:        pulumi.String("NAME OF APP YOU WANT TO SET"),
 //				AppDescription: pulumi.String("DESCRIPTION OF APP"),

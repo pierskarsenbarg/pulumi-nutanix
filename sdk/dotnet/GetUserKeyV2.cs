@@ -25,10 +25,11 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get key
         ///     var getKey = Nutanix.GetUserKeyV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;USER_KEY_UUID&gt;",
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///         ExtId = "&lt;USER_KEY_UUID&gt;",
         ///     });
         /// 
         /// });
@@ -57,10 +58,11 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get key
         ///     var getKey = Nutanix.GetUserKeyV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;USER_KEY_UUID&gt;",
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///         ExtId = "&lt;USER_KEY_UUID&gt;",
         ///     });
         /// 
         /// });
@@ -89,10 +91,11 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get key
         ///     var getKey = Nutanix.GetUserKeyV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;USER_KEY_UUID&gt;",
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///         ExtId = "&lt;USER_KEY_UUID&gt;",
         ///     });
         /// 
         /// });

@@ -313,6 +313,20 @@ def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetIm
     """
     Describes a Image
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_image = nutanix.Image("test",
+        name="Ubuntu",
+        description="Ubuntu",
+        source_uri="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
+    test = nutanix.get_image_output(image_id=test_image.id)
+    testname = nutanix.get_image_output(image_name=test_image.name)
+    ```
+
 
     :param Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']] categories: - Categories for the image.
     :param _builtins.str image_id: Represents image UUID
@@ -356,6 +370,20 @@ def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageResult]:
     """
     Describes a Image
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_image = nutanix.Image("test",
+        name="Ubuntu",
+        description="Ubuntu",
+        source_uri="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
+    test = nutanix.get_image_output(image_id=test_image.id)
+    testname = nutanix.get_image_output(image_name=test_image.name)
+    ```
 
 
     :param Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']] categories: - Categories for the image.

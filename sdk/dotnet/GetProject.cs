@@ -29,6 +29,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     var subnet = new Nutanix.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
+        ///         Name = "sunet_test_name",
         ///         Description = "Description of my unit test VLAN",
         ///         VlanId = 31,
         ///         SubnetType = "VLAN",
@@ -53,8 +54,9 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Project("projectTest", new()
+        ///     var projectTest = new Nutanix.Project("project_test", new()
         ///     {
+        ///         Name = "my-project",
         ///         Description = "This is my project",
         ///         Categories = new[]
         ///         {
@@ -110,6 +112,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     var subnet = new Nutanix.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
+        ///         Name = "sunet_test_name",
         ///         Description = "Description of my unit test VLAN",
         ///         VlanId = 31,
         ///         SubnetType = "VLAN",
@@ -134,8 +137,9 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Project("projectTest", new()
+        ///     var projectTest = new Nutanix.Project("project_test", new()
         ///     {
+        ///         Name = "my-project",
         ///         Description = "This is my project",
         ///         Categories = new[]
         ///         {
@@ -191,6 +195,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     var subnet = new Nutanix.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
+        ///         Name = "sunet_test_name",
         ///         Description = "Description of my unit test VLAN",
         ///         VlanId = 31,
         ///         SubnetType = "VLAN",
@@ -215,8 +220,9 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Project("projectTest", new()
+        ///     var projectTest = new Nutanix.Project("project_test", new()
         ///     {
+        ///         Name = "my-project",
         ///         Description = "This is my project",
         ///         Categories = new[]
         ///         {

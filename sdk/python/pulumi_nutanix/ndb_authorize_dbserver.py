@@ -132,8 +132,8 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbAuthorizeDbserver("name",
-            dbservers_ids=["{{ dbServer_IDs}}"],
-            time_machine_name="test-pg-inst")
+            time_machine_name="test-pg-inst",
+            dbservers_ids=["{{ dbServer_IDs}}"])
         ```
 
         :param str resource_name: The name of the resource.
@@ -156,8 +156,8 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbAuthorizeDbserver("name",
-            dbservers_ids=["{{ dbServer_IDs}}"],
-            time_machine_name="test-pg-inst")
+            time_machine_name="test-pg-inst",
+            dbservers_ids=["{{ dbServer_IDs}}"])
         ```
 
         :param str resource_name: The name of the resource.

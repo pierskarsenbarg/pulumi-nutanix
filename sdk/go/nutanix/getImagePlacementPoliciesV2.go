@@ -27,14 +27,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// List all image placement policies
 //			_, err := nutanix.GetImagePlacementPoliciesV2(ctx, &nutanix.GetImagePlacementPoliciesV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// List image placement policies with filter, page and limit
 //			_, err = nutanix.GetImagePlacementPoliciesV2(ctx, &nutanix.GetImagePlacementPoliciesV2Args{
 //				Filter: pulumi.StringRef("startswith(name,'ipp_name')"),
-//				Limit:  pulumi.IntRef(10),
 //				Page:   pulumi.IntRef(0),
+//				Limit:  pulumi.IntRef(10),
 //			}, nil)
 //			if err != nil {
 //				return err

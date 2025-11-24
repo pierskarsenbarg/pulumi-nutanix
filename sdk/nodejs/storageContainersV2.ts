@@ -16,23 +16,24 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const storage_container = new nutanix.StorageContainersV2("storage-container", {
- *     cacheDeduplication: "OFF",
- *     erasureCode: "OFF",
- *     hasHigherEcFaultDomainPreference: false,
- *     isCompressionEnabled: true,
- *     isInlineEcEnabled: false,
- *     isInternal: false,
- *     isSoftwareEncryptionEnabled: false,
+ *     name: "example-storage-container",
  *     logicalAdvertisedCapacityBytes: 1073741824000,
  *     logicalExplicitReservedCapacityBytes: 32,
+ *     replicationFactor: 1,
  *     nfsWhitelistAddresses: [{
  *         ipv4s: [{
- *             prefixLength: 32,
  *             value: "192.168.15.0",
+ *             prefixLength: 32,
  *         }],
  *     }],
+ *     erasureCode: "OFF",
+ *     isInlineEcEnabled: false,
+ *     hasHigherEcFaultDomainPreference: false,
+ *     cacheDeduplication: "OFF",
  *     onDiskDedup: "OFF",
- *     replicationFactor: 1,
+ *     isCompressionEnabled: true,
+ *     isInternal: false,
+ *     isSoftwareEncryptionEnabled: false,
  * });
  * ```
  */

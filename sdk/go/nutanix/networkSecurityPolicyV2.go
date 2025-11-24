@@ -15,6 +15,54 @@ import (
 // Create a Network Security Policy
 //
 // ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Network Security Policy TWO_ENV_ISOLATION Rule
+//			_, err := nutanix.NewNetworkSecurityPolicyV2(ctx, "isolation-nsp", &nutanix.NetworkSecurityPolicyV2Args{
+//				Name:        pulumi.String("isolation_policy"),
+//				Description: pulumi.String("isolation policy example"),
+//				State:       pulumi.String("SAVE"),
+//				Type:        pulumi.String("ISOLATION"),
+//				Rules: nutanix.NetworkSecurityPolicyV2RuleArray{
+//					&nutanix.NetworkSecurityPolicyV2RuleArgs{
+//						Type: pulumi.String("TWO_ENV_ISOLATION"),
+//						Specs: nutanix.NetworkSecurityPolicyV2RuleSpecArray{
+//							&nutanix.NetworkSecurityPolicyV2RuleSpecArgs{
+//								TwoEnvIsolationRuleSpecs: nutanix.NetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpecArray{
+//									&nutanix.NetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpecArgs{
+//										FirstIsolationGroups: pulumi.StringArray{
+//											pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//										},
+//										SecondIsolationGroups: pulumi.StringArray{
+//											pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				IsHitlogEnabled: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NetworkSecurityPolicyV2 struct {
 	pulumi.CustomResourceState
 

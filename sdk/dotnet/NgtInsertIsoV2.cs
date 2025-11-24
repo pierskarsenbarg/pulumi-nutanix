@@ -25,11 +25,11 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var example = new Nutanix.NgtInsertIsoV2("example", new()
     ///     {
+    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         Capablities = new[]
     ///         {
     ///             "VSS_SNAPSHOT",
     ///         },
-    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         IsConfigOnly = false,
     ///     });
     /// 

@@ -189,12 +189,12 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
-        test_self_service_app_custom_action = nutanix.SelfServiceAppCustomAction("testSelfServiceAppCustomAction",
-            app_name=test_self_service_app_provision.app_name,
+        test_self_service_app_custom_action = nutanix.SelfServiceAppCustomAction("test",
+            app_name=test.app_name,
             action_name="NAME OF ACTION")
         ```
 
@@ -224,12 +224,12 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
-        test_self_service_app_custom_action = nutanix.SelfServiceAppCustomAction("testSelfServiceAppCustomAction",
-            app_name=test_self_service_app_provision.app_name,
+        test_self_service_app_custom_action = nutanix.SelfServiceAppCustomAction("test",
+            app_name=test.app_name,
             action_name="NAME OF ACTION")
         ```
 

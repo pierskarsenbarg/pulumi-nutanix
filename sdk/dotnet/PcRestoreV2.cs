@@ -15,6 +15,192 @@ namespace PiersKarsenbarg.Nutanix
     /// &gt; -  We need to increase the timeout for restoring the PC, because the restore pc takes longer than the default timeout allows for the operation to complete.
     /// 
     /// The restore domain manager is a task-driven operation to restore a domain manager from a cluster or object store backup location based on the selected restore point.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Command = Pulumi.Command;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// using Nutanix = Pulumi.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // Fetch Cluster Ext ID from PC
+    ///     var clusters = Nutanix.GetClustersV2.Invoke();
+    /// 
+    ///     var domainManagerExtId = cls.ClusterEntities[0].ExtId;
+    /// 
+    ///     var clusterExtId = .Where(cluster =&gt; cluster.Config[0].ClusterFunction[0] != "PRISM_CENTRAL").Select(cluster =&gt; 
+    ///     {
+    ///         return cluster.ExtId;
+    ///     }).ToList()[0];
+    /// 
+    ///     // Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
+    ///     // wait until backup target is synced, you can check the last_sync_time from the backup target data source
+    ///     var cluster_location = new Nutanix.PcRestoreSourceV2("cluster-location", new()
+    ///     {
+    ///         Location = new Nutanix.Inputs.PcRestoreSourceV2LocationArgs
+    ///         {
+    ///             ClusterLocations = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.PcRestoreSourceV2LocationClusterLocationArgs
+    ///                 {
+    ///                     Configs = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcRestoreSourceV2LocationClusterLocationConfigArgs
+    ///                         {
+    ///                             ExtId = clusterExtId,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var restorable_pcs = Nutanix.GetRestorablePcsV2.Invoke(new()
+    ///     {
+    ///         RestoreSourceExtId = cluster_location.ExtId,
+    ///     });
+    /// 
+    ///     var restorablePcExtId = restorable_pcs.Apply(restorable_pcs =&gt; restorable_pcs.Apply(getRestorablePcsV2Result =&gt; getRestorablePcsV2Result.RestorablePcs[0]?.ExtId));
+    /// 
+    ///     var restore_points = Nutanix.GetPcRestorePointsV2.Invoke(new()
+    ///     {
+    ///         RestorableDomainManagerExtId = restorablePcExtId,
+    ///         RestoreSourceExtId = cluster_location.Id,
+    ///     });
+    /// 
+    ///     var restore_point = Nutanix.GetPcRestorePointV2.Invoke(new()
+    ///     {
+    ///         RestoreSourceExtId = cluster_location.Id,
+    ///         RestorableDomainManagerExtId = restorablePcExtId,
+    ///         ExtId = restore_points.Apply(getPcRestorePointsV2Result =&gt; getPcRestorePointsV2Result.RestorePoints[0]?.ExtId),
+    ///     });
+    /// 
+    ///     var restorePoint = restore_point;
+    /// 
+    ///     // define the restore pc resource
+    ///     // you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
+    ///     var test = new Nutanix.PcRestoreV2("test", new()
+    ///     {
+    ///         ExtId = restorePoint.Apply(restorePoint =&gt; restorePoint.ExtId),
+    ///         RestoreSourceExtId = cluster_location.Id,
+    ///         RestorableDomainManagerExtId = restorablePcExtId,
+    ///         DomainManager = new Nutanix.Inputs.PcRestoreV2DomainManagerArgs
+    ///         {
+    ///             Networks = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkArgs
+    ///                 {
+    ///                     NameServers = ,
+    ///                     NtpServers = ,
+    ///                     ExternalAddress = new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalAddressArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalAddressIpv4Args
+    ///                             {
+    ///                                 Value = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Network[0].ExternalAddress[0].Ipv4[0].Value),
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     ExternalNetworks = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkArgs
+    ///                         {
+    ///                             NetworkExtId = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Network[0].ExternalNetworks[0].NetworkExtId),
+    ///                             DefaultGateway = new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args
+    ///                                     {
+    ///                                         Value = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Network[0].ExternalNetworks[0].DefaultGateway[0].Ipv4[0].Value),
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             SubnetMask = new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskIpv4Args
+    ///                                     {
+    ///                                         Value = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Network[0].ExternalNetworks[0].SubnetMask[0].Ipv4[0].Value),
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             IpRanges = new[]
+    ///                             {
+    ///                                 new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeArgs
+    ///                                 {
+    ///                                     Begin = new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeBeginArgs
+    ///                                     {
+    ///                                         Ipv4s = new[]
+    ///                                         {
+    ///                                             new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args
+    ///                                             {
+    ///                                                 Value = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Network[0].ExternalNetworks[0].IpRanges[0].Begin[0].Ipv4[0].Value),
+    ///                                             },
+    ///                                         },
+    ///                                     },
+    ///                                     End = new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeEndArgs
+    ///                                     {
+    ///                                         Ipv4s = new[]
+    ///                                         {
+    ///                                             new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeEndIpv4Args
+    ///                                             {
+    ///                                                 Value = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Network[0].ExternalNetworks[0].IpRanges[0].End[0].Ipv4[0].Value),
+    ///                                             },
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             Configs = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.PcRestoreV2DomainManagerConfigArgs
+    ///                 {
+    ///                     ShouldEnableLockdownMode = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Config[0].ShouldEnableLockdownMode),
+    ///                     BuildInfo = new Nutanix.Inputs.PcRestoreV2DomainManagerConfigBuildInfoArgs
+    ///                     {
+    ///                         Version = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Config[0].BuildInfo[0].Version),
+    ///                     },
+    ///                     Name = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Config[0].Name),
+    ///                     Size = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Config[0].Size),
+    ///                     ResourceConfigs = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcRestoreV2DomainManagerConfigResourceConfigArgs
+    ///                         {
+    ///                             ContainerExtIds = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Config[0].ResourceConfig[0].ContainerExtIds),
+    ///                             DataDiskSizeBytes = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Config[0].ResourceConfig[0].DataDiskSizeBytes),
+    ///                             MemorySizeBytes = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Config[0].ResourceConfig[0].MemorySizeBytes),
+    ///                             NumVcpus = restorePoint.Apply(restorePoint =&gt; restorePoint.DomainManager[0].Config[0].ResourceConfig[0].NumVcpus),
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var testProvisioner0 = new Command.Local.Command("testProvisioner0", new()
+    ///     {
+    ///         Create = "sshpass -p 'nutanix/4u' ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null nutanix@10.44.76.16 '/home/nutanix/prism/cli/ncli user reset-password user-name=admin password=o.P.5.#.s.U.Z.f ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=n.L.9.@.P.Y ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=g.B.1.$.U.$.2.@ ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=r.B.7.$.V.9.W ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=l.H.2.$.2.a.a.P ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=q.F.4.#.u.t ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=n.T.0.#.r ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=s.K.0.$.w ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=o.K.7.@.j ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=Nutanix.123'",
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn =
+    ///         {
+    ///             test,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/pcRestoreV2:PcRestoreV2")]
     public partial class PcRestoreV2 : global::Pulumi.CustomResource

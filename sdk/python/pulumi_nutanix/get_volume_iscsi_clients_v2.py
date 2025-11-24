@@ -132,10 +132,13 @@ def get_volume_iscsi_clients_v2(expand: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # List all the iSCSI clients.
     list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
+    # list iSCSI clients with a filter.
     list_iscsi_clients_filter = nutanix.get_volume_iscsi_clients_v2(filter="clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'")
-    list_iscsi_clients_limit = nutanix.get_volume_iscsi_clients_v2(limit=1,
-        page=2)
+    # list iSCSI clients with a limit and pagination.
+    list_iscsi_clients_limit = nutanix.get_volume_iscsi_clients_v2(page=2,
+        limit=1)
     ```
 
     ## Argument Reference
@@ -249,10 +252,13 @@ def get_volume_iscsi_clients_v2_output(expand: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # List all the iSCSI clients.
     list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
+    # list iSCSI clients with a filter.
     list_iscsi_clients_filter = nutanix.get_volume_iscsi_clients_v2(filter="clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'")
-    list_iscsi_clients_limit = nutanix.get_volume_iscsi_clients_v2(limit=1,
-        page=2)
+    # list iSCSI clients with a limit and pagination.
+    list_iscsi_clients_limit = nutanix.get_volume_iscsi_clients_v2(page=2,
+        limit=1)
     ```
 
     ## Argument Reference

@@ -26,6 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var name = new Nutanix.NdbStretchedVlan("name", new()
     ///     {
+    ///         Name = "test-stretcName",
     ///         Description = "vlan desc updated",
     ///         Type = "Static",
     ///         VlanIds = new[]
@@ -49,17 +50,18 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var name = new Nutanix.NdbStretchedVlan("name", new()
     ///     {
+    ///         Name = "test-stretcName",
     ///         Description = "vlan desc updated",
-    ///         Metadata = new Nutanix.Inputs.NdbStretchedVlanMetadataArgs
-    ///         {
-    ///             Gateway = "{{ gateway of vlans }}",
-    ///             SubnetMask = "{{ subnet mask of vlans }}",
-    ///         },
     ///         Type = "Static",
     ///         VlanIds = new[]
     ///         {
     ///             "{{ vlan_id_1 }}",
     ///             "{{ vlan_id_2 }}",
+    ///         },
+    ///         Metadata = new Nutanix.Inputs.NdbStretchedVlanMetadataArgs
+    ///         {
+    ///             Gateway = "{{ gateway of vlans }}",
+    ///             SubnetMask = "{{ subnet mask of vlans }}",
     ///         },
     ///     });
     /// 

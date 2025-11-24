@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const userGrp = new nutanix.UserGroups("userGrp", {directoryServiceUserGroups: [{
+ * const userGrp = new nutanix.UserGroups("user_grp", {directoryServiceUserGroups: [{
  *     distinguishedName: "<distinguished name for the user group>",
  * }]});
  * ```
@@ -24,9 +24,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const userGrp = new nutanix.UserGroups("userGrp", {samlUserGroups: [{
- *     idpUuid: "<idp uuid of the group>",
+ * const userGrp = new nutanix.UserGroups("user_grp", {samlUserGroups: [{
  *     name: "<name of saml group>",
+ *     idpUuid: "<idp uuid of the group>",
  * }]});
  * ```
  */

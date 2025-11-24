@@ -16,11 +16,11 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const scn = new nutanix.StaticRoutes("scn", {
+ *     vpcUuid: "{{vpc_uuid}}",
  *     staticRoutesLists: [{
  *         destination: "10.x.x.x/x",
  *         externalSubnetReferenceUuid: "{{ext_subnet_uuid}}",
  *     }],
- *     vpcUuid: "{{vpc_uuid}}",
  * });
  * ```
  *
@@ -31,14 +31,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const scn = new nutanix.StaticRoutes("scn", {
- *     defaultRouteNexthops: [{
- *         externalSubnetReferenceUuid: "{{ext_subnet_uuid}}",
- *     }],
+ *     vpcName: "{{vpc_name}}",
  *     staticRoutesLists: [{
  *         destination: "10.x.x.x/x",
  *         externalSubnetReferenceUuid: "{{ext_subnet_uuid}}",
  *     }],
- *     vpcName: "{{vpc_name}}",
+ *     defaultRouteNexthops: [{
+ *         externalSubnetReferenceUuid: "{{ext_subnet_uuid}}",
+ *     }],
  * });
  * ```
  *

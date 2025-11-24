@@ -141,15 +141,10 @@ def get_pc_restore_point_v2(ext_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    pe = nutanix.Provider("pe",
-        username=var["nutanix_pe_username"],
-        password=var["nutanix_pe_password"],
-        endpoint=var["nutanix_pe_endpoint"],
-        port="9440",
-        insecure=True)
-    get_restore_point = nutanix.get_pc_restore_point_v2(restorable_domain_manager_ext_id=data["nutanix_restorable_pcs_v2"]["test"]["restorable_pcs"][0]["ext_id"],
-        restore_source_ext_id=nutanix_pc_restore_source_v2["cluster-location"]["id"],
-        ext_id=data["nutanix_pc_restore_points_v2"]["test"]["restore_points"][0]["ext_id"])
+    # this is PE based module, so use PE provider alias
+    get_restore_point = nutanix.get_pc_restore_point_v2(restorable_domain_manager_ext_id=test_nutanix_restorable_pcs_v2["restorablePcs"][0]["extId"],
+        restore_source_ext_id=cluster_location["id"],
+        ext_id=test["restorePoints"][0]["extId"])
     ```
 
 
@@ -186,15 +181,10 @@ def get_pc_restore_point_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_nutanix as nutanix
 
-    pe = nutanix.Provider("pe",
-        username=var["nutanix_pe_username"],
-        password=var["nutanix_pe_password"],
-        endpoint=var["nutanix_pe_endpoint"],
-        port="9440",
-        insecure=True)
-    get_restore_point = nutanix.get_pc_restore_point_v2(restorable_domain_manager_ext_id=data["nutanix_restorable_pcs_v2"]["test"]["restorable_pcs"][0]["ext_id"],
-        restore_source_ext_id=nutanix_pc_restore_source_v2["cluster-location"]["id"],
-        ext_id=data["nutanix_pc_restore_points_v2"]["test"]["restore_points"][0]["ext_id"])
+    # this is PE based module, so use PE provider alias
+    get_restore_point = nutanix.get_pc_restore_point_v2(restorable_domain_manager_ext_id=test_nutanix_restorable_pcs_v2["restorablePcs"][0]["extId"],
+        restore_source_ext_id=cluster_location["id"],
+        ext_id=test["restorePoints"][0]["extId"])
     ```
 
 

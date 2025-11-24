@@ -180,6 +180,28 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # ## fetch Network info for unconfigured node
+        node_network_info = nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info",
+            ext_id="0005b6b0-0b0b-0000-0000-000000000000",
+            request_type="expand_cluster",
+            node_lists=[{
+                "cvm_ips": [{
+                    "ipv4s": [{
+                        "value": "10.73.23.55",
+                    }],
+                }],
+                "hypervisor_ips": [{
+                    "ipv4s": [{
+                        "value": "10.33.44.12",
+                    }],
+                }],
+            }])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
@@ -196,6 +218,28 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
         Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # ## fetch Network info for unconfigured node
+        node_network_info = nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info",
+            ext_id="0005b6b0-0b0b-0000-0000-000000000000",
+            request_type="expand_cluster",
+            node_lists=[{
+                "cvm_ips": [{
+                    "ipv4s": [{
+                        "value": "10.73.23.55",
+                    }],
+                }],
+                "hypervisor_ips": [{
+                    "ipv4s": [{
+                        "value": "10.33.44.12",
+                    }],
+                }],
+            }])
+        ```
 
         :param str resource_name: The name of the resource.
         :param ClustersUnconfiguredNodeNetworksV2Args args: The arguments to use to populate this resource's properties.

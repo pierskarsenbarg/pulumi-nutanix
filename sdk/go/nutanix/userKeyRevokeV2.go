@@ -30,8 +30,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// revoke key
 //			_, err := nutanix.NewUserKeyRevokeV2(ctx, "revoke-key", &nutanix.UserKeyRevokeV2Args{
-//				ExtId:     pulumi.String("<USER_KEY_UUID>"),
 //				UserExtId: pulumi.String("<SERVICE_ACCOUNT_UUID>"),
+//				ExtId:     pulumi.String("<USER_KEY_UUID>"),
 //			})
 //			if err != nil {
 //				return err

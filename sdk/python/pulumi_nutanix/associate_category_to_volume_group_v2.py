@@ -109,6 +109,7 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
 
         # Associate categories to volume group
         example = nutanix.AssociateCategoryToVolumeGroupV2("example",
+            ext_id="f0c0a4ac-c734-4770-b5d7-eca6793eeeb7",
             categories=[
                 {
                     "ext_id": "85e68112-5b2b-4220-bc8d-e529e4bf420e",
@@ -119,9 +120,7 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
                 {
                     "ext_id": "1c6638f2-5215-4086-8f21-a30e75cb8068",
                 },
-            ],
-            ext_id="f0c0a4ac-c734-4770-b5d7-eca6793eeeb7")
-        # Volume Group extId
+            ])
         ```
 
         :param str resource_name: The name of the resource.
@@ -145,6 +144,7 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
 
         # Associate categories to volume group
         example = nutanix.AssociateCategoryToVolumeGroupV2("example",
+            ext_id="f0c0a4ac-c734-4770-b5d7-eca6793eeeb7",
             categories=[
                 {
                     "ext_id": "85e68112-5b2b-4220-bc8d-e529e4bf420e",
@@ -155,9 +155,7 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
                 {
                     "ext_id": "1c6638f2-5215-4086-8f21-a30e75cb8068",
                 },
-            ],
-            ext_id="f0c0a4ac-c734-4770-b5d7-eca6793eeeb7")
-        # Volume Group extId
+            ])
         ```
 
         :param str resource_name: The name of the resource.

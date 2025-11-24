@@ -363,16 +363,17 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example = nutanix.ImagePlacementPolicyV2("example",
+            name="image_placement_policy",
+            description="%[2]s",
+            placement_type="SOFT",
             cluster_entity_filters=[{
                 "category_ext_ids": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
                 "type": "CATEGORIES_MATCH_ALL",
             }],
-            description="%[2]s",
             image_entity_filters=[{
                 "category_ext_ids": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
                 "type": "CATEGORIES_MATCH_ALL",
-            }],
-            placement_type="SOFT")
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -399,16 +400,17 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example = nutanix.ImagePlacementPolicyV2("example",
+            name="image_placement_policy",
+            description="%[2]s",
+            placement_type="SOFT",
             cluster_entity_filters=[{
                 "category_ext_ids": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
                 "type": "CATEGORIES_MATCH_ALL",
             }],
-            description="%[2]s",
             image_entity_filters=[{
                 "category_ext_ids": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
                 "type": "CATEGORIES_MATCH_ALL",
-            }],
-            placement_type="SOFT")
+            }])
         ```
 
         :param str resource_name: The name of the resource.

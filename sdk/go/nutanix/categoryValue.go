@@ -28,13 +28,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewCategoryKey(ctx, "test-category-key", &nutanix.CategoryKeyArgs{
+//			test_category_key, err := nutanix.NewCategoryKey(ctx, "test-category-key", &nutanix.CategoryKeyArgs{
+//				Name:        pulumi.String("app-support-1"),
 //				Description: pulumi.String("App Support Category Key"),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = nutanix.NewCategoryValue(ctx, "test", &nutanix.CategoryValueArgs{
+//				Name:        test_category_key.ID(),
 //				Description: pulumi.String("Test Category Value"),
 //				Value:       pulumi.String("test-value"),
 //			})

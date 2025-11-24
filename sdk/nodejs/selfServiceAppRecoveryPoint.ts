@@ -14,8 +14,8 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = new nutanix.SelfServiceAppRecoveryPoint("test", {
- *     actionName: "SNAPSHOT ACTION NAME",
  *     appName: "NAME OF APPLICATION",
+ *     actionName: "SNAPSHOT ACTION NAME",
  *     recoveryPointName: "RECOVERY POINT NAME",
  * });
  * ```

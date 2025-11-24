@@ -264,8 +264,9 @@ def get_user_key_v2(description: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    get_key = nutanix.get_user_key_v2(ext_id="<USER_KEY_UUID>",
-        user_ext_id="<SERVICE_ACCOUNT_UUID>")
+    # Get key
+    get_key = nutanix.get_user_key_v2(user_ext_id="<SERVICE_ACCOUNT_UUID>",
+        ext_id="<USER_KEY_UUID>")
     ```
 
     ## Argument Reference
@@ -318,8 +319,9 @@ def get_user_key_v2_output(description: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_nutanix as nutanix
 
-    get_key = nutanix.get_user_key_v2(ext_id="<USER_KEY_UUID>",
-        user_ext_id="<SERVICE_ACCOUNT_UUID>")
+    # Get key
+    get_key = nutanix.get_user_key_v2(user_ext_id="<SERVICE_ACCOUNT_UUID>",
+        ext_id="<USER_KEY_UUID>")
     ```
 
     ## Argument Reference

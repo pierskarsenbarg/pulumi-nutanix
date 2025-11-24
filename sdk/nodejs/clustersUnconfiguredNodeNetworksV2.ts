@@ -10,6 +10,29 @@ import * as utilities from "./utilities";
  * Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // ## fetch Network info for unconfigured node
+ * const node_network_info = new nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info", {
+ *     extId: "0005b6b0-0b0b-0000-0000-000000000000",
+ *     requestType: "expand_cluster",
+ *     nodeLists: [{
+ *         cvmIps: [{
+ *             ipv4s: [{
+ *                 value: "10.73.23.55",
+ *             }],
+ *         }],
+ *         hypervisorIps: [{
+ *             ipv4s: [{
+ *                 value: "10.33.44.12",
+ *             }],
+ *         }],
+ *     }],
+ * });
+ * ```
  */
 export class ClustersUnconfiguredNodeNetworksV2 extends pulumi.CustomResource {
     /**

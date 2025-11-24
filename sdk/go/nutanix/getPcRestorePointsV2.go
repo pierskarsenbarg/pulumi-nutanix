@@ -30,23 +30,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewProvider(ctx, "pe", &nutanix.ProviderArgs{
-//				Username: pulumi.Any(_var.Username),
-//				Password: pulumi.Any(_var.Password),
-//				Endpoint: pulumi.Any(_var.Pe_endpoint),
-//				Insecure: pulumi.Bool(true),
-//				Port:     pulumi.Any(_var.Port),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = nutanix.GetPcRestorePointsV2(ctx, &nutanix.GetPcRestorePointsV2Args{
+//			// This pe based module, so use pe provider alias
+//			_, err := nutanix.GetPcRestorePointsV2(ctx, &nutanix.GetPcRestorePointsV2Args{
 //				RestorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
 //				RestoreSourceExtId:           "ec77405b-16c5-4c8d-ade1-bede241afae0",
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// list all the restorable pcs with select properties
 //			_, err = nutanix.GetPcRestorePointsV2(ctx, &nutanix.GetPcRestorePointsV2Args{
 //				RestorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
 //				RestoreSourceExtId:           "ec77405b-16c5-4c8d-ade1-bede241afae0",

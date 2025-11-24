@@ -144,7 +144,7 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        new_api_key = nutanix.FoundationCentralApiKeys("newApiKey", alias="<NAME-FOR-API-KEY>")
+        new_api_key = nutanix.FoundationCentralApiKeys("new_api_key", alias="<NAME-FOR-API-KEY>")
         ```
 
         :param str resource_name: The name of the resource.
@@ -166,7 +166,7 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        new_api_key = nutanix.FoundationCentralApiKeys("newApiKey", alias="<NAME-FOR-API-KEY>")
+        new_api_key = nutanix.FoundationCentralApiKeys("new_api_key", alias="<NAME-FOR-API-KEY>")
         ```
 
         :param str resource_name: The name of the resource.

@@ -15,9 +15,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //Get permission by UUID
  * const byuuid = nutanix.getPermission({
  *     permissionId: "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
  * });
+ * //Get permission by name
  * const byname = nutanix.getPermission({
  *     permissionName: "Access_Console_Virtual_Machine",
  * });
@@ -112,9 +114,11 @@ export interface GetPermissionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //Get permission by UUID
  * const byuuid = nutanix.getPermission({
  *     permissionId: "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
  * });
+ * //Get permission by name
  * const byname = nutanix.getPermission({
  *     permissionName: "Access_Console_Virtual_Machine",
  * });

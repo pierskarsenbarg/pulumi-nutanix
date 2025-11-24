@@ -27,16 +27,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// list all address groups
 //			_, err := nutanix.LookupAddressGroupsV2(ctx, &nutanix.LookupAddressGroupsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// filtered the address groups
 //			_, err = nutanix.LookupAddressGroupsV2(ctx, &nutanix.LookupAddressGroupsV2Args{
 //				Filter: pulumi.StringRef("name eq 'td-addr-group'"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// filtered and limit the number of address groups
 //			_, err = nutanix.LookupAddressGroupsV2(ctx, &nutanix.LookupAddressGroupsV2Args{
 //				Filter: pulumi.StringRef("name eq 'td-addr-group'"),
 //				Limit:  pulumi.IntRef(1),

@@ -27,14 +27,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// List all templates
 //			_, err := nutanix.GetTemplatesV2(ctx, &nutanix.GetTemplatesV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// List templates with filter, page and limit
 //			_, err = nutanix.GetTemplatesV2(ctx, &nutanix.GetTemplatesV2Args{
 //				Filter: pulumi.StringRef("startswith(templateName,'template_name')"),
-//				Limit:  pulumi.IntRef(10),
 //				Page:   pulumi.IntRef(0),
+//				Limit:  pulumi.IntRef(10),
 //			}, nil)
 //			if err != nil {
 //				return err

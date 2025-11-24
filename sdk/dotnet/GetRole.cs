@@ -14,18 +14,117 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes a Role.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRole = new Nutanix.Role("test", new()
+        ///     {
+        ///         Name = "NAME",
+        ///         Description = "DESCRIPTION",
+        ///         PermissionReferenceLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
+        ///             {
+        ///                 Kind = "permission",
+        ///                 Uuid = "ID OF PERMISSION",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetRole.Invoke(new()
+        ///     {
+        ///         RoleId = testRole.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetRoleResult> InvokeAsync(GetRoleArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Role.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRole = new Nutanix.Role("test", new()
+        ///     {
+        ///         Name = "NAME",
+        ///         Description = "DESCRIPTION",
+        ///         PermissionReferenceLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
+        ///             {
+        ///                 Kind = "permission",
+        ///                 Uuid = "ID OF PERMISSION",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetRole.Invoke(new()
+        ///     {
+        ///         RoleId = testRole.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetRoleResult> Invoke(GetRoleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Role.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRole = new Nutanix.Role("test", new()
+        ///     {
+        ///         Name = "NAME",
+        ///         Description = "DESCRIPTION",
+        ///         PermissionReferenceLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
+        ///             {
+        ///                 Kind = "permission",
+        ///                 Uuid = "ID OF PERMISSION",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetRole.Invoke(new()
+        ///     {
+        ///         RoleId = testRole.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetRoleResult> Invoke(GetRoleInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());

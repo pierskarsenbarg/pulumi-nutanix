@@ -157,27 +157,11 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        # Restore a protected virtual machine on remote site
-        # This example demonstrates how to restore a protected virtual machine on remote site.
-        # steps:
-        # 1. Define the provider for the remote site
-        # 2. Create a category and a protection policy, on the local site
-        # 3. Create a virtual machine and associate it with the protection policy, on local site
-        # 4. Restore the virtual machine on the remote site
-        # define another alias for the provider, this time for the remote PC
-        remote = nutanix.Provider("remote",
-            username=var["nutanix_remote_username"],
-            password=var["nutanix_remote_password"],
-            endpoint=var["nutanix_remote_endpoint"],
-            insecure=True,
-            port="9440")
         # create a category and a protection policy on the local site
         # restore the protected virtual machine on the remote site
         rp_vm = nutanix.RestoreProtectedResourceV2("rp-vm",
             ext_id="d22529bb-f02d-4710-894b-d1de772d7832",
-            cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07",
-            opts = pulumi.ResourceOptions(provider=nutanix["remote"]))
-        # remote cluster ext_id
+            cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07")
         ```
 
         ## Example 2: Restore Volume Group
@@ -186,27 +170,11 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        # Restore a protected volume group on remote site
-        # This example demonstrates how to restore a protected volume group on remote site.
-        # steps:
-        # 1. Define the provider for the remote site
-        # 2. Create a category and a protection policy, on the local site
-        # 3. Create a volume group and associate it with the category on the local site
-        # 4. Restore the volume group on the remote site
-        # define another alias for the provider, this time for the remote PC
-        remote = nutanix.Provider("remote",
-            username=var["nutanix_remote_username"],
-            password=var["nutanix_remote_password"],
-            endpoint=var["nutanix_remote_endpoint"],
-            insecure=True,
-            port="9440")
         # create a category , a protection policy and VG on the local site
         # restore the protected volume group on the remote site
         rp_vg = nutanix.RestoreProtectedResourceV2("rp-vg",
             ext_id="246c651a-1b16-4983-b5ff-204840f85e07",
-            cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07",
-            opts = pulumi.ResourceOptions(provider=nutanix["remote"]))
-        # remote cluster ext_id
+            cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07")
         ```
 
         :param str resource_name: The name of the resource.
@@ -233,27 +201,11 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        # Restore a protected virtual machine on remote site
-        # This example demonstrates how to restore a protected virtual machine on remote site.
-        # steps:
-        # 1. Define the provider for the remote site
-        # 2. Create a category and a protection policy, on the local site
-        # 3. Create a virtual machine and associate it with the protection policy, on local site
-        # 4. Restore the virtual machine on the remote site
-        # define another alias for the provider, this time for the remote PC
-        remote = nutanix.Provider("remote",
-            username=var["nutanix_remote_username"],
-            password=var["nutanix_remote_password"],
-            endpoint=var["nutanix_remote_endpoint"],
-            insecure=True,
-            port="9440")
         # create a category and a protection policy on the local site
         # restore the protected virtual machine on the remote site
         rp_vm = nutanix.RestoreProtectedResourceV2("rp-vm",
             ext_id="d22529bb-f02d-4710-894b-d1de772d7832",
-            cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07",
-            opts = pulumi.ResourceOptions(provider=nutanix["remote"]))
-        # remote cluster ext_id
+            cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07")
         ```
 
         ## Example 2: Restore Volume Group
@@ -262,27 +214,11 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        # Restore a protected volume group on remote site
-        # This example demonstrates how to restore a protected volume group on remote site.
-        # steps:
-        # 1. Define the provider for the remote site
-        # 2. Create a category and a protection policy, on the local site
-        # 3. Create a volume group and associate it with the category on the local site
-        # 4. Restore the volume group on the remote site
-        # define another alias for the provider, this time for the remote PC
-        remote = nutanix.Provider("remote",
-            username=var["nutanix_remote_username"],
-            password=var["nutanix_remote_password"],
-            endpoint=var["nutanix_remote_endpoint"],
-            insecure=True,
-            port="9440")
         # create a category , a protection policy and VG on the local site
         # restore the protected volume group on the remote site
         rp_vg = nutanix.RestoreProtectedResourceV2("rp-vg",
             ext_id="246c651a-1b16-4983-b5ff-204840f85e07",
-            cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07",
-            opts = pulumi.ResourceOptions(provider=nutanix["remote"]))
-        # remote cluster ext_id
+            cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07")
         ```
 
         :param str resource_name: The name of the resource.

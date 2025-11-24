@@ -17,38 +17,41 @@ import * as utilities from "./utilities";
  *
  * // Add Service  group. with TCP and UDP
  * const tcp_udp_service = new nutanix.ServiceGroupsV2("tcp-udp-service", {
+ *     name: "service_group_tcp_udp",
  *     description: "service group description",
  *     tcpServices: [{
- *         endPort: 232,
  *         startPort: 232,
+ *         endPort: 232,
  *     }],
  *     udpServices: [{
- *         endPort: 232,
  *         startPort: 232,
+ *         endPort: 232,
  *     }],
  * });
  * // service group with ICMP
  * const icmp_service = new nutanix.ServiceGroupsV2("icmp-service", {
+ *     name: "service_group_icmp",
  *     description: "service group description",
  *     icmpServices: [{
- *         code: 0,
  *         type: 8,
+ *         code: 0,
  *     }],
  * });
  * // service group with All TCP, UDP and ICMP
  * const all_service = new nutanix.ServiceGroupsV2("all-service", {
+ *     name: "service_group_udp_tcp_icmp",
  *     description: "service group description",
- *     icmpServices: [{
- *         code: 0,
- *         type: 8,
- *     }],
  *     tcpServices: [{
- *         endPort: 232,
  *         startPort: 232,
+ *         endPort: 232,
  *     }],
  *     udpServices: [{
- *         endPort: 232,
  *         startPort: 232,
+ *         endPort: 232,
+ *     }],
+ *     icmpServices: [{
+ *         type: 8,
+ *         code: 0,
  *     }],
  * });
  * ```

@@ -25,12 +25,13 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var sla = new Nutanix.NdbSla("sla", new()
     ///     {
+    ///         Name = "test-sla",
+    ///         Description = "here goes description",
     ///         ContinuousRetention = 30,
     ///         DailyRetention = 3,
-    ///         Description = "here goes description",
+    ///         WeeklyRetention = 2,
     ///         MonthlyRetention = 1,
     ///         QuarterlyRetention = 1,
-    ///         WeeklyRetention = 2,
     ///     });
     /// 
     /// });

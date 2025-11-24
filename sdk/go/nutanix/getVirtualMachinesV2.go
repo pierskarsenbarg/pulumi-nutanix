@@ -27,17 +27,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// List all virtual machines
 //			_, err := nutanix.GetVirtualMachinesV2(ctx, &nutanix.GetVirtualMachinesV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// List virtual machines with  page and limit
 //			_, err = nutanix.GetVirtualMachinesV2(ctx, &nutanix.GetVirtualMachinesV2Args{
-//				Limit: pulumi.IntRef(2),
 //				Page:  pulumi.IntRef(0),
+//				Limit: pulumi.IntRef(2),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// List virtual machines with filter
 //			_, err = nutanix.GetVirtualMachinesV2(ctx, &nutanix.GetVirtualMachinesV2Args{
 //				Filter: pulumi.StringRef("name eq 'example-vm-filter'"),
 //			}, nil)

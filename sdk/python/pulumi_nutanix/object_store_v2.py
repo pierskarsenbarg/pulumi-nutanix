@@ -700,6 +700,67 @@ class ObjectStoreV2(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+        import pulumi_std as std
+
+        example = nutanix.ObjectStoreV2("example",
+            name="tf-example-os",
+            description="terraform create object store example",
+            deployment_version="5.1.1",
+            domain="msp.pc-idbc.nutanix.com",
+            num_worker_nodes=1,
+            cluster_ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            total_capacity_gib=20 * std.pow(base=1024,
+                exponent=3).result,
+            public_network_reference="57c4caf1-67e3-457e-8265-6d872f2a3135",
+            public_network_ips=[{
+                "ipv4": {
+                    "value": "10.44.77.123",
+                },
+            }],
+            storage_network_reference="57c4caf1-67e3-457e-8265-6d872f2a3135",
+            storage_network_dns_ip={
+                "ipv4": {
+                    "value": "10.44.77.124",
+                },
+            },
+            storage_network_vip={
+                "ipv4": {
+                    "value": "10.44.77.125",
+                },
+            })
+        # Deploying Object Store in draft state
+        example_draft = nutanix.ObjectStoreV2("example-draft",
+            name="tf-draft-os",
+            description="terraform deploy object store draft example",
+            deployment_version="5.1.1",
+            domain="msp.pc-idbc.nutanix.com",
+            num_worker_nodes=1,
+            cluster_ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            total_capacity_gib=20 * std.pow(base=1024,
+                exponent=3).result,
+            public_network_reference="57c4caf1-67e3-457e-8265-6d872f2a3135",
+            state="UNDEPLOYED_OBJECT_STORE",
+            public_network_ips=[{
+                "ipv4": {
+                    "value": "10.44.77.126",
+                },
+            }],
+            storage_network_reference="57c4caf1-67e3-457e-8265-6d872f2a3135",
+            storage_network_dns_ip={
+                "ipv4": {
+                    "value": "10.44.77.127",
+                },
+            },
+            storage_network_vip={
+                "ipv4": {
+                    "value": "10.44.77.128",
+                },
+            })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] certificate_ext_ids: - A list of the UUIDs of the certificates of an Object store.
@@ -739,6 +800,67 @@ class ObjectStoreV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+        import pulumi_std as std
+
+        example = nutanix.ObjectStoreV2("example",
+            name="tf-example-os",
+            description="terraform create object store example",
+            deployment_version="5.1.1",
+            domain="msp.pc-idbc.nutanix.com",
+            num_worker_nodes=1,
+            cluster_ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            total_capacity_gib=20 * std.pow(base=1024,
+                exponent=3).result,
+            public_network_reference="57c4caf1-67e3-457e-8265-6d872f2a3135",
+            public_network_ips=[{
+                "ipv4": {
+                    "value": "10.44.77.123",
+                },
+            }],
+            storage_network_reference="57c4caf1-67e3-457e-8265-6d872f2a3135",
+            storage_network_dns_ip={
+                "ipv4": {
+                    "value": "10.44.77.124",
+                },
+            },
+            storage_network_vip={
+                "ipv4": {
+                    "value": "10.44.77.125",
+                },
+            })
+        # Deploying Object Store in draft state
+        example_draft = nutanix.ObjectStoreV2("example-draft",
+            name="tf-draft-os",
+            description="terraform deploy object store draft example",
+            deployment_version="5.1.1",
+            domain="msp.pc-idbc.nutanix.com",
+            num_worker_nodes=1,
+            cluster_ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            total_capacity_gib=20 * std.pow(base=1024,
+                exponent=3).result,
+            public_network_reference="57c4caf1-67e3-457e-8265-6d872f2a3135",
+            state="UNDEPLOYED_OBJECT_STORE",
+            public_network_ips=[{
+                "ipv4": {
+                    "value": "10.44.77.126",
+                },
+            }],
+            storage_network_reference="57c4caf1-67e3-457e-8265-6d872f2a3135",
+            storage_network_dns_ip={
+                "ipv4": {
+                    "value": "10.44.77.127",
+                },
+            },
+            storage_network_vip={
+                "ipv4": {
+                    "value": "10.44.77.128",
+                },
+            })
+        ```
 
         :param str resource_name: The name of the resource.
         :param ObjectStoreV2Args args: The arguments to use to populate this resource's properties.

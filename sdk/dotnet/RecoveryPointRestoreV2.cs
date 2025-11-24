@@ -27,8 +27,8 @@ namespace PiersKarsenbarg.Nutanix
     ///     // restore RP
     ///     var rp_restore = new Nutanix.RecoveryPointRestoreV2("rp-restore", new()
     ///     {
-    ///         ClusterExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
     ///         ExtId = "150a7ed0-9d05-4f35-a060-16dac4c835d0",
+    ///         ClusterExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
     ///         VmRecoveryPointRestoreOverrides = new[]
     ///         {
     ///             new Nutanix.Inputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs
@@ -40,6 +40,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         {
     ///             new Nutanix.Inputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs
     ///             {
+    ///                 VolumeGroupRecoveryPointExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///                 VolumeGroupOverrideSpecs = new[]
     ///                 {
     ///                     new Nutanix.Inputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideVolumeGroupOverrideSpecArgs
@@ -47,7 +48,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                         Name = "vg_restored",
     ///                     },
     ///                 },
-    ///                 VolumeGroupRecoveryPointExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///             },
     ///         },
     ///     });

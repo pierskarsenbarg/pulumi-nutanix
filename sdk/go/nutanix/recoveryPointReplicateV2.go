@@ -30,8 +30,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// replicate RP
 //			_, err := nutanix.NewRecoveryPointReplicateV2(ctx, "rp-replicate", &nutanix.RecoveryPointReplicateV2Args{
-//				ClusterExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
 //				ExtId:        pulumi.String("150a7ed0-9d05-4f35-a060-16dac4c835d0"),
+//				ClusterExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
 //				PcExtId:      pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
 //			})
 //			if err != nil {

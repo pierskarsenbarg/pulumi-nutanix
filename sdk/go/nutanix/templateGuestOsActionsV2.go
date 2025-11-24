@@ -29,26 +29,26 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewTemplateGuestOsActionsV2(ctx, "example-1", &nutanix.TemplateGuestOsActionsV2Args{
-//				Action:    pulumi.String("initiate"),
 //				ExtId:     pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//				Action:    pulumi.String("initiate"),
 //				VersionId: pulumi.String("c2c249b0-98a0-43fa-9ff6-dcde578d3936"),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = nutanix.NewTemplateGuestOsActionsV2(ctx, "example-2", &nutanix.TemplateGuestOsActionsV2Args{
-//				Action:             pulumi.String("complete"),
 //				ExtId:              pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
-//				IsActiveVersion:    pulumi.String("true"),
-//				VersionDescription: pulumi.String("version desc"),
+//				Action:             pulumi.String("complete"),
 //				VersionName:        pulumi.String("version_name"),
+//				VersionDescription: pulumi.String("version desc"),
+//				IsActiveVersion:    pulumi.String("true"),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = nutanix.NewTemplateGuestOsActionsV2(ctx, "example-3", &nutanix.TemplateGuestOsActionsV2Args{
-//				Action: pulumi.String("cancel"),
 //				ExtId:  pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
+//				Action: pulumi.String("cancel"),
 //			})
 //			if err != nil {
 //				return err

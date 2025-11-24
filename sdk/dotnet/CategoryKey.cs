@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var test = new Nutanix.CategoryKey("test", new()
     ///     {
+    ///         Name = "app-support-example",
     ///         Description = "App Support Category Key",
     ///     });
     /// 

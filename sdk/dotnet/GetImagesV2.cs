@@ -25,13 +25,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all images
         ///     var list_images = Nutanix.GetImagesV2.Invoke();
         /// 
+        ///     // List images with filter, page and limit
         ///     var filtered_images = Nutanix.GetImagesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'image_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -90,13 +92,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all images
         ///     var list_images = Nutanix.GetImagesV2.Invoke();
         /// 
+        ///     // List images with filter, page and limit
         ///     var filtered_images = Nutanix.GetImagesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'image_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -155,13 +159,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all images
         ///     var list_images = Nutanix.GetImagesV2.Invoke();
         /// 
+        ///     // List images with filter, page and limit
         ///     var filtered_images = Nutanix.GetImagesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'image_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });

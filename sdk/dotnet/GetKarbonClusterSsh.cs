@@ -25,11 +25,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get ssh credentials by cluster UUID
         ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
+        ///     // Get ssh credentials by cluster name
         ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
@@ -54,11 +56,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get ssh credentials by cluster UUID
         ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
+        ///     // Get ssh credentials by cluster name
         ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
@@ -83,11 +87,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get ssh credentials by cluster UUID
         ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
+        ///     // Get ssh credentials by cluster name
         ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",

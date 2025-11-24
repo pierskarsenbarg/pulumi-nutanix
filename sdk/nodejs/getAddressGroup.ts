@@ -15,7 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const testAddress = new nutanix.AddressGroup("testAddress", {
+ * const testAddress = new nutanix.AddressGroup("test_address", {
+ *     name: "test",
  *     description: "test address groups resource",
  *     ipAddressBlockLists: [{
  *         ip: "10.0.0.0",
@@ -82,7 +83,8 @@ export interface GetAddressGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const testAddress = new nutanix.AddressGroup("testAddress", {
+ * const testAddress = new nutanix.AddressGroup("test_address", {
+ *     name: "test",
  *     description: "test address groups resource",
  *     ipAddressBlockLists: [{
  *         ip: "10.0.0.0",

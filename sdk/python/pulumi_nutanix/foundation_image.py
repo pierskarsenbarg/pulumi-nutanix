@@ -193,13 +193,13 @@ class FoundationImage(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         nos_image = nutanix.FoundationImage("nos-image",
+            source="../../../files/nutanix_installer_x86_64.tar",
             filename="nos_image.tar",
-            installer_type="nos",
-            source="../../../files/nutanix_installer_x86_64.tar")
+            installer_type="nos")
         hypervisor_image = nutanix.FoundationImage("hypervisor-image",
+            source="../../../files/VMware-Installer.x86_64.iso",
             filename="esx_image.iso",
-            installer_type="esx",
-            source="../../../files/VMware-Installer.x86_64.iso")
+            installer_type="esx")
         ```
 
         ## lifecycle
@@ -230,13 +230,13 @@ class FoundationImage(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         nos_image = nutanix.FoundationImage("nos-image",
+            source="../../../files/nutanix_installer_x86_64.tar",
             filename="nos_image.tar",
-            installer_type="nos",
-            source="../../../files/nutanix_installer_x86_64.tar")
+            installer_type="nos")
         hypervisor_image = nutanix.FoundationImage("hypervisor-image",
+            source="../../../files/VMware-Installer.x86_64.iso",
             filename="esx_image.iso",
-            installer_type="esx",
-            source="../../../files/VMware-Installer.x86_64.iso")
+            installer_type="esx")
         ```
 
         ## lifecycle

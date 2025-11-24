@@ -93,7 +93,7 @@ def get_blueprint_runtime_editables(bp_name: Optional[_builtins.str] = None,
 
     example = nutanix.get_blueprint_runtime_editables(bp_name="NAME OF BLUEPRINT")
     # dumps read value into a readable json file
-    dump_runtime_value = local.File("dumpRuntimeValue",
+    dump_runtime_value = local.File("dump_runtime_value",
         content=json.dumps(example.runtime_editables),
         filename="runtime_value.json")
     ```
@@ -131,7 +131,7 @@ def get_blueprint_runtime_editables_output(bp_name: Optional[pulumi.Input[Option
 
     example = nutanix.get_blueprint_runtime_editables(bp_name="NAME OF BLUEPRINT")
     # dumps read value into a readable json file
-    dump_runtime_value = local.File("dumpRuntimeValue",
+    dump_runtime_value = local.File("dump_runtime_value",
         content=json.dumps(example.runtime_editables),
         filename="runtime_value.json")
     ```

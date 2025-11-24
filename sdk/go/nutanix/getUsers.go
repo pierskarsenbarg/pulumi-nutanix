@@ -29,10 +29,10 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewUser(ctx, "user", &nutanix.UserArgs{
 //				DirectoryServiceUser: &nutanix.UserDirectoryServiceUserArgs{
+//					UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
 //					DirectoryServiceReference: &nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs{
 //						Uuid: pulumi.String("<directory-service-uuid>"),
 //					},
-//					UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
 //				},
 //			})
 //			if err != nil {

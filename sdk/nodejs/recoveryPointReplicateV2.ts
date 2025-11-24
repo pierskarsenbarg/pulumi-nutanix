@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  *
  * // replicate RP
  * const rp_replicate = new nutanix.RecoveryPointReplicateV2("rp-replicate", {
- *     clusterExtId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
  *     extId: "150a7ed0-9d05-4f35-a060-16dac4c835d0",
+ *     clusterExtId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
  *     pcExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```

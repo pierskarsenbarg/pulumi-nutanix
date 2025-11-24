@@ -178,8 +178,11 @@ class CategoryValue(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test_category_key = nutanix.CategoryKey("test-category-key", description="App Support Category Key")
+        test_category_key = nutanix.CategoryKey("test-category-key",
+            name="app-support-1",
+            description="App Support Category Key")
         test = nutanix.CategoryValue("test",
+            name=test_category_key.id,
             description="Test Category Value",
             value="test-value")
         ```
@@ -205,8 +208,11 @@ class CategoryValue(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test_category_key = nutanix.CategoryKey("test-category-key", description="App Support Category Key")
+        test_category_key = nutanix.CategoryKey("test-category-key",
+            name="app-support-1",
+            description="App Support Category Key")
         test = nutanix.CategoryValue("test",
+            name=test_category_key.id,
             description="Test Category Value",
             value="test-value")
         ```

@@ -17,6 +17,7 @@ import * as utilities from "./utilities";
  *
  * // create Floating IP with External Subnet UUID
  * const fip_ext_subnet = new nutanix.FloatingIpV2("fip-ext-subnet", {
+ *     name: "example-fip",
  *     description: "example fip  description",
  *     externalSubnetReference: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
  * });
@@ -29,13 +30,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const fip_ext_subnet_vm = new nutanix.FloatingIpV2("fip-ext-subnet-vm", {
+ *     name: "example-fip",
+ *     description: "example fip  description",
+ *     externalSubnetReference: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
  *     associations: [{
  *         vmNicAssociations: [{
  *             vmNicReference: "31e4b3b1-4b3b-4b3b-4b3b-4b3b4b3b4b3b",
  *         }],
  *     }],
- *     description: "example fip  description",
- *     externalSubnetReference: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
  * });
  * ```
  */

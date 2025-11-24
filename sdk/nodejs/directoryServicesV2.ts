@@ -17,6 +17,7 @@ import * as utilities from "./utilities";
  *
  * // Add Directory Service .
  * const active_directory = new nutanix.DirectoryServicesV2("active-directory", {
+ *     name: "example_active_directory",
  *     url: "ldap://10.xx.xx.xx:xxxx",
  *     directoryType: "ACTIVE_DIRECTORY",
  *     domainName: "nutanix.com",

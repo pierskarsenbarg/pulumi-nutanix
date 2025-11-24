@@ -27,18 +27,19 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var pbr = new Nutanix.Pbr("pbr", new()
     ///     {
-    ///         Action = "PERMIT",
-    ///         Destination = new Nutanix.Inputs.PbrDestinationArgs
-    ///         {
-    ///             AddressType = "ALL",
-    ///         },
+    ///         Name = "test-policy-1",
     ///         Priority = 123,
     ///         ProtocolType = "ALL",
+    ///         Action = "PERMIT",
+    ///         VpcName = "test123",
     ///         Source = new Nutanix.Inputs.PbrSourceArgs
     ///         {
     ///             AddressType = "ALL",
     ///         },
-    ///         VpcName = "test123",
+    ///         Destination = new Nutanix.Inputs.PbrDestinationArgs
+    ///         {
+    ///             AddressType = "ALL",
+    ///         },
     ///     });
     /// 
     /// });

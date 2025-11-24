@@ -15,6 +15,54 @@ import (
 // Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// ## fetch Network info for unconfigured node
+//			_, err := nutanix.NewClustersUnconfiguredNodeNetworksV2(ctx, "node-network-info", &nutanix.ClustersUnconfiguredNodeNetworksV2Args{
+//				ExtId:       pulumi.String("0005b6b0-0b0b-0000-0000-000000000000"),
+//				RequestType: pulumi.String("expand_cluster"),
+//				NodeLists: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListArray{
+//					&nutanix.ClustersUnconfiguredNodeNetworksV2NodeListArgs{
+//						CvmIps: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpArray{
+//							&nutanix.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpArgs{
+//								Ipv4s: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv4Array{
+//									&nutanix.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv4Args{
+//										Value: pulumi.String("10.73.23.55"),
+//									},
+//								},
+//							},
+//						},
+//						HypervisorIps: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpArray{
+//							&nutanix.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpArgs{
+//								Ipv4s: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv4Array{
+//									&nutanix.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv4Args{
+//										Value: pulumi.String("10.33.44.12"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ClustersUnconfiguredNodeNetworksV2 struct {
 	pulumi.CustomResourceState
 

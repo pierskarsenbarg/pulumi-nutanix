@@ -27,19 +27,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// List all the iSCSI clients.
 //			_, err := nutanix.GetVolumeIscsiClientsV2(ctx, &nutanix.GetVolumeIscsiClientsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// list iSCSI clients with a filter.
 //			_, err = nutanix.GetVolumeIscsiClientsV2(ctx, &nutanix.GetVolumeIscsiClientsV2Args{
 //				Filter: pulumi.StringRef("clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// list iSCSI clients with a limit and pagination.
 //			_, err = nutanix.GetVolumeIscsiClientsV2(ctx, &nutanix.GetVolumeIscsiClientsV2Args{
-//				Limit: pulumi.IntRef(1),
 //				Page:  pulumi.IntRef(2),
+//				Limit: pulumi.IntRef(1),
 //			}, nil)
 //			if err != nil {
 //				return err

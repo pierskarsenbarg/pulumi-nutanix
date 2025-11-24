@@ -28,12 +28,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbSla(ctx, "sla", &nutanix.NdbSlaArgs{
+//				Name:                pulumi.String("test-sla"),
+//				Description:         pulumi.String("here goes description"),
 //				ContinuousRetention: pulumi.Int(30),
 //				DailyRetention:      pulumi.Int(3),
-//				Description:         pulumi.String("here goes description"),
+//				WeeklyRetention:     pulumi.Int(2),
 //				MonthlyRetention:    pulumi.Int(1),
 //				QuarterlyRetention:  pulumi.Int(1),
-//				WeeklyRetention:     pulumi.Int(2),
 //			})
 //			if err != nil {
 //				return err

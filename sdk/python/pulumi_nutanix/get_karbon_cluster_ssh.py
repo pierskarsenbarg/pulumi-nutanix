@@ -127,7 +127,9 @@ def get_karbon_cluster_ssh(karbon_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Get ssh credentials by cluster UUID
     sshbyid = nutanix.get_karbon_cluster_ssh(karbon_cluster_id="<YOUR-CLUSTER-ID>")
+    # Get ssh credentials by cluster name
     sshbyname = nutanix.get_karbon_cluster_ssh(karbon_cluster_name="<YOUR-CLUSTER-NAME>")
     ```
 
@@ -161,7 +163,9 @@ def get_karbon_cluster_ssh_output(karbon_cluster_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Get ssh credentials by cluster UUID
     sshbyid = nutanix.get_karbon_cluster_ssh(karbon_cluster_id="<YOUR-CLUSTER-ID>")
+    # Get ssh credentials by cluster name
     sshbyname = nutanix.get_karbon_cluster_ssh(karbon_cluster_name="<YOUR-CLUSTER-NAME>")
     ```
 

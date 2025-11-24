@@ -338,9 +338,9 @@ class NdbTmsCluster(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         cls = nutanix.NdbTmsCluster("cls",
+            time_machine_id="{{ tms_id }}",
             nx_cluster_id="{{ cluster_id }}",
-            sla_id="{{ sla_id }}",
-            time_machine_id="{{ tms_id }}")
+            sla_id="{{ sla_id }}")
         ```
 
         :param str resource_name: The name of the resource.
@@ -366,9 +366,9 @@ class NdbTmsCluster(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         cls = nutanix.NdbTmsCluster("cls",
+            time_machine_id="{{ tms_id }}",
             nx_cluster_id="{{ cluster_id }}",
-            sla_id="{{ sla_id }}",
-            time_machine_id="{{ tms_id }}")
+            sla_id="{{ sla_id }}")
         ```
 
         :param str resource_name: The name of the resource.

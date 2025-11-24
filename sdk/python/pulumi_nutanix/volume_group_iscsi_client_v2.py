@@ -307,6 +307,21 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
         """
         Attaches iSCSI initiator to a Volume Group identified by {extId}.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        #list iscsi clients
+        list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
+        # attach iscsi client to the volume group
+        vg_iscsi_example = nutanix.index.VolumeGroupIscsiClientsV2("vg_iscsi_example",
+            vg_ext_id=1cdb5b48-fb2c-41b6-b751-b504117ee3e2,
+            ext_id=list_iscsi_clients.iscsi_clients[0].ext_id,
+            iscsi_initiator_name=list_iscsi_clients.iscsi_clients[0].iscsi_initiator_name)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] attachment_site: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
@@ -326,6 +341,21 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Attaches iSCSI initiator to a Volume Group identified by {extId}.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        #list iscsi clients
+        list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
+        # attach iscsi client to the volume group
+        vg_iscsi_example = nutanix.index.VolumeGroupIscsiClientsV2("vg_iscsi_example",
+            vg_ext_id=1cdb5b48-fb2c-41b6-b751-b504117ee3e2,
+            ext_id=list_iscsi_clients.iscsi_clients[0].ext_id,
+            iscsi_initiator_name=list_iscsi_clients.iscsi_clients[0].iscsi_initiator_name)
+        ```
 
         :param str resource_name: The name of the resource.
         :param VolumeGroupIscsiClientV2Args args: The arguments to use to populate this resource's properties.

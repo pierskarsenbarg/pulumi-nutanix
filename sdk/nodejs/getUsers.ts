@@ -16,10 +16,10 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const user = new nutanix.User("user", {directoryServiceUser: {
+ *     userPrincipalName: "test-user@ntnxlab.local",
  *     directoryServiceReference: {
  *         uuid: "<directory-service-uuid>",
  *     },
- *     userPrincipalName: "test-user@ntnxlab.local",
  * }});
  * const users = nutanix.getUser({});
  * ```
@@ -73,10 +73,10 @@ export interface GetUsersResult {
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const user = new nutanix.User("user", {directoryServiceUser: {
+ *     userPrincipalName: "test-user@ntnxlab.local",
  *     directoryServiceReference: {
  *         uuid: "<directory-service-uuid>",
  *     },
- *     userPrincipalName: "test-user@ntnxlab.local",
  * }});
  * const users = nutanix.getUser({});
  * ```

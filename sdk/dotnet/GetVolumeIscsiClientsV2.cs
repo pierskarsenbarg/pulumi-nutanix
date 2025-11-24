@@ -26,17 +26,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all the iSCSI clients.
         ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
         /// 
+        ///     // list iSCSI clients with a filter.
         ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
+        ///     // list iSCSI clients with a limit and pagination.
         ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
-        ///         Limit = 1,
         ///         Page = 2,
+        ///         Limit = 1,
         ///     });
         /// 
         /// });
@@ -139,17 +142,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all the iSCSI clients.
         ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
         /// 
+        ///     // list iSCSI clients with a filter.
         ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
+        ///     // list iSCSI clients with a limit and pagination.
         ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
-        ///         Limit = 1,
         ///         Page = 2,
+        ///         Limit = 1,
         ///     });
         /// 
         /// });
@@ -252,17 +258,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all the iSCSI clients.
         ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
         /// 
+        ///     // list iSCSI clients with a filter.
         ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
+        ///     // list iSCSI clients with a limit and pagination.
         ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
-        ///         Limit = 1,
         ///         Page = 2,
+        ///         Limit = 1,
         ///     });
         /// 
         /// });

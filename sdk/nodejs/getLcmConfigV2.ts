@@ -16,6 +16,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const lcm_configuration = nutanix.getLcmConfigV2({});
+ * // Get LCM configuration for a specific cluster
  * const lcm_configuration_cluster = nutanix.getLcmConfigV2({
  *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
  * });
@@ -118,6 +119,7 @@ export interface GetLcmConfigV2Result {
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const lcm_configuration = nutanix.getLcmConfigV2({});
+ * // Get LCM configuration for a specific cluster
  * const lcm_configuration_cluster = nutanix.getLcmConfigV2({
  *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
  * });

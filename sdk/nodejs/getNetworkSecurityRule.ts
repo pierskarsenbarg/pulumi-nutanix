@@ -20,20 +20,21 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const isolation = new nutanix.NetworkSecurityRule("isolation", {
+ *     name: "example-isolation-rule",
  *     description: "Isolation Rule Example",
  *     isolationRuleAction: "APPLY",
  *     isolationRuleFirstEntityFilterKindLists: ["vm"],
+ *     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleFirstEntityFilterParams: [{
  *         name: "Environment",
  *         values: ["Dev"],
  *     }],
- *     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleSecondEntityFilterKindLists: ["vm"],
+ *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleSecondEntityFilterParams: [{
  *         name: "Environment",
  *         values: ["Production"],
  *     }],
- *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
  * });
  * const test = nutanix.getNetworkSecurityRuleOutput({
  *     networkSecurityRuleId: isolation.id,
@@ -222,20 +223,21 @@ export interface GetNetworkSecurityRuleResult {
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const isolation = new nutanix.NetworkSecurityRule("isolation", {
+ *     name: "example-isolation-rule",
  *     description: "Isolation Rule Example",
  *     isolationRuleAction: "APPLY",
  *     isolationRuleFirstEntityFilterKindLists: ["vm"],
+ *     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleFirstEntityFilterParams: [{
  *         name: "Environment",
  *         values: ["Dev"],
  *     }],
- *     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleSecondEntityFilterKindLists: ["vm"],
+ *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleSecondEntityFilterParams: [{
  *         name: "Environment",
  *         values: ["Production"],
  *     }],
- *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
  * });
  * const test = nutanix.getNetworkSecurityRuleOutput({
  *     networkSecurityRuleId: isolation.id,

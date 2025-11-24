@@ -14,14 +14,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const nos_image = new nutanix.FoundationImage("nos-image", {
+ *     source: "../../../files/nutanix_installer_x86_64.tar",
  *     filename: "nos_image.tar",
  *     installerType: "nos",
- *     source: "../../../files/nutanix_installer_x86_64.tar",
  * });
  * const hypervisor_image = new nutanix.FoundationImage("hypervisor-image", {
+ *     source: "../../../files/VMware-Installer.x86_64.iso",
  *     filename: "esx_image.iso",
  *     installerType: "esx",
- *     source: "../../../files/VMware-Installer.x86_64.iso",
  * });
  * ```
  *

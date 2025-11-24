@@ -16,17 +16,19 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = new nutanix.Image("test", {
+ *     name: "Ubuntu",
  *     description: "Ubuntu",
  *     sourceUri: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
  * });
  * // Create image with data_source_reference
- * const createImageWithDataSourceReference = new nutanix.Image("createImageWithDataSourceReference", {
+ * const createImageWithDataSourceReference = new nutanix.Image("create_image_with_data_source_reference", {
+ *     name: "Sql Server Image",
+ *     description: "Sql Server",
+ *     imageType: "DISK_IMAGE",
  *     dataSourceReferences: [{
  *         kind: "vm_disk",
  *         uuid: "<uuid of the vm disk>",
  *     }],
- *     description: "Sql Server",
- *     imageType: "DISK_IMAGE",
  * });
  * ```
  */

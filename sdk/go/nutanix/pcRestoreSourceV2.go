@@ -32,21 +32,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// defining nutanix configuration for PE
-//			_, err := nutanix.NewProvider(ctx, "pe", &nutanix.ProviderArgs{
-//				Username: pulumi.Any(_var.Nutanix_pe_username),
-//				Password: pulumi.Any(_var.Nutanix_pe_password),
-//				Endpoint: pulumi.Any(_var.Nutanix_pe_endpoint),
-//				Insecure: pulumi.Bool(true),
-//				Port:     pulumi.String("9440"),
-//			})
-//			if err != nil {
-//				return err
-//			}
 //			// restore source is auto-deleted after sometime, nutanix_pc_restore_source_v2 resource is auto-create
 //			// new restore source if it was deleted, so notice that the id of the restore source will be different
 //			// after recreation
-//			_, err = nutanix.NewPcRestoreSourceV2(ctx, "cluster-location", &nutanix.PcRestoreSourceV2Args{
+//			_, err := nutanix.NewPcRestoreSourceV2(ctx, "cluster-location", &nutanix.PcRestoreSourceV2Args{
 //				Location: &nutanix.PcRestoreSourceV2LocationArgs{
 //					ClusterLocations: nutanix.PcRestoreSourceV2LocationClusterLocationArray{
 //						&nutanix.PcRestoreSourceV2LocationClusterLocationArgs{
@@ -58,7 +47,7 @@ import (
 //						},
 //					},
 //				},
-//			}, pulumi.Provider(nutanix.Pe))
+//			})
 //			if err != nil {
 //				return err
 //			}

@@ -12,36 +12,6 @@ import (
 )
 
 // List all the clone present in Nutanix Database Service
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.GetNdbClones(ctx, &nutanix.GetNdbClonesArgs{
-//				Filters: []nutanix.GetNdbClonesFilter{
-//					{
-//						Detailed: pulumi.StringRef("true"),
-//					},
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetNdbClones(ctx *pulumi.Context, args *GetNdbClonesArgs, opts ...pulumi.InvokeOption) (*GetNdbClonesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNdbClonesResult

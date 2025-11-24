@@ -8,67 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * List all snapshots present in Nutanix Database Service
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const snaps = nutanix.getNdbSnapshots({
- *     filters: [{
- *         timeMachineId: "{{ time_machine_id }}",
- *     }],
- * });
- * ```
- *
- * ## Attribute Reference
- *
- * * `snapshots`: List of snapshots
- *
- * ### snapshots
- *
- * * `id`: name of snapshot
- * * `description`: description of snapshot
- * * `properties`: properties
- * * `ownerId`: owner id
- * * `dateCreated`: created date
- * * `dateModified`: modified date
- * * `properties`: properties
- * * `tags`: tags
- * * `snapshotUuid`: snapshot uuid
- * * `nxClusterId`: nx cluster id
- * * `protectionDomainId`: protection domain
- * * `parentSnapshotId`: parent snapshot id
- * * `databaseNodeId`: database node id
- * * `appInfoVersion`: App info version
- * * `status`: status
- * * `type`: type
- * * `applicableTypes`: Applicable types
- * * `snapshotTimestamp`: snapshot timeStamp
- * * `metadata`: metadata of snapshot
- * * `softwareSnapshotId`: software snapshot id
- * * `softwareDatabaseSnapshot`: software database snapshot
- * * `dbserverStorageMetadataVersion`: dbserver storage metadata version
- * * `santisedFromSnapshotId`: sanitized  snapshot id
- * * `timezone`: timezone
- * * `processed`: processed
- * * `databaseSnapshot`: database snapshot
- * * `fromTimestamp`: from timestamp
- * * `toTimestamp`: to timestamp
- * * `dbserverId`: dbserver id
- * * `dbserverName`: dbserver name
- * * `dbserverIp`:dbserver ip
- * * `replicatedSnapshots`: replicated snapshots
- * * `softwareSnapshot`: software snapshot
- * * `santisedSnapshots`:santised snapshots
- * * `snapshotFamily`: snapshot family
- * * `snapshotTimestampDate`: snapshot timestamp date
- * * `lcmConfig`: LCM config
- * * `parentSnapshot`: parent snapshot
- * * `snapshotSize`: snapshot size
- *
- * See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).
  */
 export function getNdbSnapshots(args?: GetNdbSnapshotsArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbSnapshotsResult> {
     args = args || {};
@@ -101,67 +40,6 @@ export interface GetNdbSnapshotsResult {
 }
 /**
  * List all snapshots present in Nutanix Database Service
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const snaps = nutanix.getNdbSnapshots({
- *     filters: [{
- *         timeMachineId: "{{ time_machine_id }}",
- *     }],
- * });
- * ```
- *
- * ## Attribute Reference
- *
- * * `snapshots`: List of snapshots
- *
- * ### snapshots
- *
- * * `id`: name of snapshot
- * * `description`: description of snapshot
- * * `properties`: properties
- * * `ownerId`: owner id
- * * `dateCreated`: created date
- * * `dateModified`: modified date
- * * `properties`: properties
- * * `tags`: tags
- * * `snapshotUuid`: snapshot uuid
- * * `nxClusterId`: nx cluster id
- * * `protectionDomainId`: protection domain
- * * `parentSnapshotId`: parent snapshot id
- * * `databaseNodeId`: database node id
- * * `appInfoVersion`: App info version
- * * `status`: status
- * * `type`: type
- * * `applicableTypes`: Applicable types
- * * `snapshotTimestamp`: snapshot timeStamp
- * * `metadata`: metadata of snapshot
- * * `softwareSnapshotId`: software snapshot id
- * * `softwareDatabaseSnapshot`: software database snapshot
- * * `dbserverStorageMetadataVersion`: dbserver storage metadata version
- * * `santisedFromSnapshotId`: sanitized  snapshot id
- * * `timezone`: timezone
- * * `processed`: processed
- * * `databaseSnapshot`: database snapshot
- * * `fromTimestamp`: from timestamp
- * * `toTimestamp`: to timestamp
- * * `dbserverId`: dbserver id
- * * `dbserverName`: dbserver name
- * * `dbserverIp`:dbserver ip
- * * `replicatedSnapshots`: replicated snapshots
- * * `softwareSnapshot`: software snapshot
- * * `santisedSnapshots`:santised snapshots
- * * `snapshotFamily`: snapshot family
- * * `snapshotTimestampDate`: snapshot timestamp date
- * * `lcmConfig`: LCM config
- * * `parentSnapshot`: parent snapshot
- * * `snapshotSize`: snapshot size
- *
- * See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).
  */
 export function getNdbSnapshotsOutput(args?: GetNdbSnapshotsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbSnapshotsResult> {
     args = args || {};

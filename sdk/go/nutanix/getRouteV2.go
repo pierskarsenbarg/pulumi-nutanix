@@ -28,8 +28,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetRouteV2(ctx, &nutanix.GetRouteV2Args{
-//				ExtId:           "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
 //				RouteTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+//				ExtId:           "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
 //			}, nil)
 //			if err != nil {
 //				return err

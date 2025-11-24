@@ -313,36 +313,39 @@ class ServiceGroupsV2(pulumi.CustomResource):
 
         # Add Service  group. with TCP and UDP
         tcp_udp_service = nutanix.ServiceGroupsV2("tcp-udp-service",
+            name="service_group_tcp_udp",
             description="service group description",
             tcp_services=[{
-                "end_port": 232,
                 "start_port": 232,
+                "end_port": 232,
             }],
             udp_services=[{
-                "end_port": 232,
                 "start_port": 232,
+                "end_port": 232,
             }])
         # service group with ICMP
         icmp_service = nutanix.ServiceGroupsV2("icmp-service",
+            name="service_group_icmp",
             description="service group description",
             icmp_services=[{
-                "code": 0,
                 "type": 8,
+                "code": 0,
             }])
         # service group with All TCP, UDP and ICMP
         all_service = nutanix.ServiceGroupsV2("all-service",
+            name="service_group_udp_tcp_icmp",
             description="service group description",
-            icmp_services=[{
-                "code": 0,
-                "type": 8,
-            }],
             tcp_services=[{
-                "end_port": 232,
                 "start_port": 232,
+                "end_port": 232,
             }],
             udp_services=[{
-                "end_port": 232,
                 "start_port": 232,
+                "end_port": 232,
+            }],
+            icmp_services=[{
+                "type": 8,
+                "code": 0,
             }])
         ```
 
@@ -371,36 +374,39 @@ class ServiceGroupsV2(pulumi.CustomResource):
 
         # Add Service  group. with TCP and UDP
         tcp_udp_service = nutanix.ServiceGroupsV2("tcp-udp-service",
+            name="service_group_tcp_udp",
             description="service group description",
             tcp_services=[{
-                "end_port": 232,
                 "start_port": 232,
+                "end_port": 232,
             }],
             udp_services=[{
-                "end_port": 232,
                 "start_port": 232,
+                "end_port": 232,
             }])
         # service group with ICMP
         icmp_service = nutanix.ServiceGroupsV2("icmp-service",
+            name="service_group_icmp",
             description="service group description",
             icmp_services=[{
-                "code": 0,
                 "type": 8,
+                "code": 0,
             }])
         # service group with All TCP, UDP and ICMP
         all_service = nutanix.ServiceGroupsV2("all-service",
+            name="service_group_udp_tcp_icmp",
             description="service group description",
-            icmp_services=[{
-                "code": 0,
-                "type": 8,
-            }],
             tcp_services=[{
-                "end_port": 232,
                 "start_port": 232,
+                "end_port": 232,
             }],
             udp_services=[{
-                "end_port": 232,
                 "start_port": 232,
+                "end_port": 232,
+            }],
+            icmp_services=[{
+                "type": 8,
+                "code": 0,
             }])
         ```
 

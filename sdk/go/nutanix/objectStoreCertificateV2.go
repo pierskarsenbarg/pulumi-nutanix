@@ -29,8 +29,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetCertificateV2(ctx, &nutanix.GetCertificateV2Args{
-//				ExtId:            "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
 //				ObjectStoreExtId: "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+//				ExtId:            "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -1336,26 +1336,28 @@ class NdbClone(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
+        ## resource for cloning using Point in time given time machine name
         name = nutanix.NdbClone("name",
-            compute_profile_id="{{ compute_profile_id }}",
+            time_machine_name="test-pg-inst",
+            name="test-inst-tf-check",
+            nx_cluster_id="{{ nx_Cluster_id }}",
+            ssh_public_key="{{ sshkey }}",
+            user_pitr_timestamp="{{ point_in_time }}",
+            time_zone="Asia/Calcutta",
             create_dbserver=True,
-            database_parameter_profile_id="{{ databse_profile_id }}",
+            compute_profile_id="{{ compute_profile_id }}",
             network_profile_id="{{ network_profile_id }}",
+            database_parameter_profile_id="{{ databse_profile_id }}",
             nodes=[{
+                "vm_name": "test_vm_clone",
                 "compute_profile_id": "{{ compute_profile_id }}",
                 "network_profile_id": "{{ network_profile_id }}",
                 "nx_cluster_id": "{{ nx_Cluster_id }}",
-                "vm_name": "test_vm_clone",
             }],
-            nx_cluster_id="{{ nx_Cluster_id }}",
             postgresql_infos=[{
-                "db_password": "pass",
                 "vm_name": "test_vm_clone",
-            }],
-            ssh_public_key="{{ sshkey }}",
-            time_machine_name="test-pg-inst",
-            time_zone="Asia/Calcutta",
-            user_pitr_timestamp="{{ point_in_time }}")
+                "db_password": "pass",
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -1408,26 +1410,28 @@ class NdbClone(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
+        ## resource for cloning using Point in time given time machine name
         name = nutanix.NdbClone("name",
-            compute_profile_id="{{ compute_profile_id }}",
+            time_machine_name="test-pg-inst",
+            name="test-inst-tf-check",
+            nx_cluster_id="{{ nx_Cluster_id }}",
+            ssh_public_key="{{ sshkey }}",
+            user_pitr_timestamp="{{ point_in_time }}",
+            time_zone="Asia/Calcutta",
             create_dbserver=True,
-            database_parameter_profile_id="{{ databse_profile_id }}",
+            compute_profile_id="{{ compute_profile_id }}",
             network_profile_id="{{ network_profile_id }}",
+            database_parameter_profile_id="{{ databse_profile_id }}",
             nodes=[{
+                "vm_name": "test_vm_clone",
                 "compute_profile_id": "{{ compute_profile_id }}",
                 "network_profile_id": "{{ network_profile_id }}",
                 "nx_cluster_id": "{{ nx_Cluster_id }}",
-                "vm_name": "test_vm_clone",
             }],
-            nx_cluster_id="{{ nx_Cluster_id }}",
             postgresql_infos=[{
-                "db_password": "pass",
                 "vm_name": "test_vm_clone",
-            }],
-            ssh_public_key="{{ sshkey }}",
-            time_machine_name="test-pg-inst",
-            time_zone="Asia/Calcutta",
-            user_pitr_timestamp="{{ point_in_time }}")
+                "db_password": "pass",
+            }])
         ```
 
         :param str resource_name: The name of the resource.

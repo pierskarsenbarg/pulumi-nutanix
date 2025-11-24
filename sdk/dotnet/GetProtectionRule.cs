@@ -26,8 +26,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new()
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
         ///     {
+        ///         Name = "test",
         ///         Description = "test",
         ///         OrderedAvailabilityZoneLists = new[]
         ///         {
@@ -95,8 +96,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new()
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
         ///     {
+        ///         Name = "test",
         ///         Description = "test",
         ///         OrderedAvailabilityZoneLists = new[]
         ///         {
@@ -164,8 +166,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new()
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
         ///     {
+        ///         Name = "test",
         ///         Description = "test",
         ///         OrderedAvailabilityZoneLists = new[]
         ///         {

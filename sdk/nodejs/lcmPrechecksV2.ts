@@ -16,11 +16,11 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const pre_checks = new nutanix.LcmPrechecksV2("pre-checks", {
+ *     xClusterId: "0005a104-0b0b-4b0-8005-0b0b0b0b0b0b",
  *     entityUpdateSpecs: [{
  *         entityUuid: "0c5c9e53-3551-4c5d-b13c-e41c04cbfaf7",
  *         toVersion: "4.0.0",
  *     }],
- *     xClusterId: "0005a104-0b0b-4b0-8005-0b0b0b0b0b0b",
  * });
  * ```
  */

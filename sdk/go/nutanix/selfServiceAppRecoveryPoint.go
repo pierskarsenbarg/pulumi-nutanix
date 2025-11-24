@@ -29,8 +29,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewSelfServiceAppRecoveryPoint(ctx, "test", &nutanix.SelfServiceAppRecoveryPointArgs{
-//				ActionName:        pulumi.String("SNAPSHOT ACTION NAME"),
 //				AppName:           pulumi.String("NAME OF APPLICATION"),
+//				ActionName:        pulumi.String("SNAPSHOT ACTION NAME"),
 //				RecoveryPointName: pulumi.String("RECOVERY POINT NAME"),
 //			})
 //			if err != nil {

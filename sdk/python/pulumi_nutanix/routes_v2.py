@@ -460,7 +460,10 @@ class RoutesV2(pulumi.CustomResource):
 
         # create a route
         route = nutanix.RoutesV2("route",
+            name="terraform_example_route",
             description="terraform example route to example create route",
+            vpc_reference="8a938cc5-282b-48c4-81be-de22de145d07",
+            route_table_ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936",
             destination={
                 "ipv4": {
                     "ip": {
@@ -469,17 +472,15 @@ class RoutesV2(pulumi.CustomResource):
                     "prefix_length": 32,
                 },
             },
+            next_hop={
+                "next_hop_type": "EXTERNAL_SUBNET",
+                "next_hop_reference": "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            },
             metadata={
                 "owner_reference_id": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
                 "project_reference_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             },
-            next_hop={
-                "next_hop_reference": "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-                "next_hop_type": "EXTERNAL_SUBNET",
-            },
-            route_table_ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936",
-            route_type="STATIC",
-            vpc_reference="8a938cc5-282b-48c4-81be-de22de145d07")
+            route_type="STATIC")
         ```
 
         :param str resource_name: The name of the resource.
@@ -512,7 +513,10 @@ class RoutesV2(pulumi.CustomResource):
 
         # create a route
         route = nutanix.RoutesV2("route",
+            name="terraform_example_route",
             description="terraform example route to example create route",
+            vpc_reference="8a938cc5-282b-48c4-81be-de22de145d07",
+            route_table_ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936",
             destination={
                 "ipv4": {
                     "ip": {
@@ -521,17 +525,15 @@ class RoutesV2(pulumi.CustomResource):
                     "prefix_length": 32,
                 },
             },
+            next_hop={
+                "next_hop_type": "EXTERNAL_SUBNET",
+                "next_hop_reference": "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            },
             metadata={
                 "owner_reference_id": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
                 "project_reference_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             },
-            next_hop={
-                "next_hop_reference": "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-                "next_hop_type": "EXTERNAL_SUBNET",
-            },
-            route_table_ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936",
-            route_type="STATIC",
-            vpc_reference="8a938cc5-282b-48c4-81be-de22de145d07")
+            route_type="STATIC")
         ```
 
         :param str resource_name: The name of the resource.

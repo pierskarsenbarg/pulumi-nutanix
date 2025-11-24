@@ -15,9 +15,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get the details of a Volume Disk attached to the Volume Group.
  * const example = nutanix.getVolumeGroupDiskV2({
- *     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
  *     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+ *     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
  * });
  * ```
  */
@@ -95,9 +96,10 @@ export interface GetVolumeGroupDiskV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get the details of a Volume Disk attached to the Volume Group.
  * const example = nutanix.getVolumeGroupDiskV2({
- *     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
  *     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+ *     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
  * });
  * ```
  */

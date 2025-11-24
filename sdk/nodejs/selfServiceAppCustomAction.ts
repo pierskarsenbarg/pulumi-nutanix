@@ -15,13 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const test = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT",
  *     appName: "NAME OF APPLICATION",
  *     appDescription: "DESCRIPTION OF APPLICATION",
  * });
- * const testSelfServiceAppCustomAction = new nutanix.SelfServiceAppCustomAction("testSelfServiceAppCustomAction", {
- *     appName: testSelfServiceAppProvision.appName,
+ * const testSelfServiceAppCustomAction = new nutanix.SelfServiceAppCustomAction("test", {
+ *     appName: test.appName,
  *     actionName: "NAME OF ACTION",
  * });
  * ```

@@ -25,11 +25,11 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var name = new Nutanix.NdbAuthorizeDbserver("name", new()
     ///     {
+    ///         TimeMachineName = "test-pg-inst",
     ///         DbserversIds = new[]
     ///         {
     ///             "{{ dbServer_IDs}}",
     ///         },
-    ///         TimeMachineName = "test-pg-inst",
     ///     });
     /// 
     /// });

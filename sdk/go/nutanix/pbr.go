@@ -31,16 +31,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewPbr(ctx, "pbr", &nutanix.PbrArgs{
-//				Action: pulumi.String("PERMIT"),
-//				Destination: &nutanix.PbrDestinationArgs{
-//					AddressType: pulumi.String("ALL"),
-//				},
+//				Name:         pulumi.String("test-policy-1"),
 //				Priority:     pulumi.Int(123),
 //				ProtocolType: pulumi.String("ALL"),
+//				Action:       pulumi.String("PERMIT"),
+//				VpcName:      pulumi.String("test123"),
 //				Source: &nutanix.PbrSourceArgs{
 //					AddressType: pulumi.String("ALL"),
 //				},
-//				VpcName: pulumi.String("test123"),
+//				Destination: &nutanix.PbrDestinationArgs{
+//					AddressType: pulumi.String("ALL"),
+//				},
 //			})
 //			if err != nil {
 //				return err

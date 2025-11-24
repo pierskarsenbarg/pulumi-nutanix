@@ -202,16 +202,17 @@ class SelfServiceAppRestore(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test_self_service_app_recovery_point = nutanix.SelfServiceAppRecoveryPoint("testSelfServiceAppRecoveryPoint",
+        test = nutanix.SelfServiceAppRecoveryPoint("test",
             app_name="NAME OF APPLICATION",
             action_name="SNAPSHOT ACTION NAME",
             recovery_point_name="RECOVERY POINT NAME")
+        # Read available recovery points in app
         snapshots = nutanix.get_self_service_app_snapshots(app_name="NAME OF APPLICATION",
             length=250,
             offset=0)
         snapshot_uuid = [snapshot.uuid for snapshot in snapshots.entities if snapshot.name == "SNAPSHOT ACTION NAME"][0]
         # Restore from recovery point
-        test_self_service_app_restore = nutanix.SelfServiceAppRestore("testSelfServiceAppRestore",
+        test_self_service_app_restore = nutanix.SelfServiceAppRestore("test",
             restore_action_name="RESTORE ACTION NAME",
             app_name="NAME OF APPLICATION",
             snapshot_uuid=snapshot_uuid)
@@ -241,16 +242,17 @@ class SelfServiceAppRestore(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test_self_service_app_recovery_point = nutanix.SelfServiceAppRecoveryPoint("testSelfServiceAppRecoveryPoint",
+        test = nutanix.SelfServiceAppRecoveryPoint("test",
             app_name="NAME OF APPLICATION",
             action_name="SNAPSHOT ACTION NAME",
             recovery_point_name="RECOVERY POINT NAME")
+        # Read available recovery points in app
         snapshots = nutanix.get_self_service_app_snapshots(app_name="NAME OF APPLICATION",
             length=250,
             offset=0)
         snapshot_uuid = [snapshot.uuid for snapshot in snapshots.entities if snapshot.name == "SNAPSHOT ACTION NAME"][0]
         # Restore from recovery point
-        test_self_service_app_restore = nutanix.SelfServiceAppRestore("testSelfServiceAppRestore",
+        test_self_service_app_restore = nutanix.SelfServiceAppRestore("test",
             restore_action_name="RESTORE ACTION NAME",
             app_name="NAME OF APPLICATION",
             snapshot_uuid=snapshot_uuid)

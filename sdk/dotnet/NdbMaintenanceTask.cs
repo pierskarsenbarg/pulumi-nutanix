@@ -91,15 +91,15 @@ namespace PiersKarsenbarg.Nutanix
     ///         {
     ///             new Nutanix.Inputs.NdbMaintenanceTaskTaskArgs
     ///             {
-    ///                 PostCommand = "{{ post_command for db patching }}",
-    ///                 PreCommand = "{{ pre_command for db patching }}",
     ///                 TaskType = "DB_PATCHING",
+    ///                 PreCommand = "{{ pre_command for db patching }}",
+    ///                 PostCommand = "{{ post_command for db patching }}",
     ///             },
     ///             new Nutanix.Inputs.NdbMaintenanceTaskTaskArgs
     ///             {
-    ///                 PostCommand = "{{ post_command for os patching }}",
-    ///                 PreCommand = "{{ pre_command for os patching}}",
     ///                 TaskType = "OS_PATCHING",
+    ///                 PreCommand = "{{ pre_command for os patching}}",
+    ///                 PostCommand = "{{ post_command for os patching }}",
     ///             },
     ///         },
     ///     });

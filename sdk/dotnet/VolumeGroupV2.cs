@@ -23,8 +23,9 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var volumeGroupExample = new Nutanix.VolumeGroupV2("volumeGroupExample", new()
+    ///     var volumeGroupExample = new Nutanix.VolumeGroupV2("volume_group_example", new()
     ///     {
+    ///         Name = "volume_group_test",
     ///         Description = "Test Create Volume group with spec",
     ///         ShouldLoadBalanceVmAttachments = false,
     ///         SharingStatus = "SHARED",

@@ -99,10 +99,10 @@ def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUse
     import pulumi_nutanix as nutanix
 
     user = nutanix.User("user", directory_service_user={
+        "user_principal_name": "test-user@ntnxlab.local",
         "directory_service_reference": {
             "uuid": "<directory-service-uuid>",
         },
-        "user_principal_name": "test-user@ntnxlab.local",
     })
     users = nutanix.get_user()
     ```
@@ -132,10 +132,10 @@ def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['G
     import pulumi_nutanix as nutanix
 
     user = nutanix.User("user", directory_service_user={
+        "user_principal_name": "test-user@ntnxlab.local",
         "directory_service_reference": {
             "uuid": "<directory-service-uuid>",
         },
-        "user_principal_name": "test-user@ntnxlab.local",
     })
     users = nutanix.get_user()
     ```

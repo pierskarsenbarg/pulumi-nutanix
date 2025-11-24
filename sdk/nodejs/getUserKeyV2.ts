@@ -15,9 +15,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get key
  * const getKey = nutanix.getUserKeyV2({
- *     extId: "<USER_KEY_UUID>",
  *     userExtId: "<SERVICE_ACCOUNT_UUID>",
+ *     extId: "<USER_KEY_UUID>",
  * });
  * ```
  *
@@ -135,9 +136,10 @@ export interface GetUserKeyV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get key
  * const getKey = nutanix.getUserKeyV2({
- *     extId: "<USER_KEY_UUID>",
  *     userExtId: "<SERVICE_ACCOUNT_UUID>",
+ *     extId: "<USER_KEY_UUID>",
  * });
  * ```
  *

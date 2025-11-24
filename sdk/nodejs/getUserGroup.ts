@@ -15,12 +15,15 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //Retrieve by UUID
  * const usergroup = nutanix.getUserGroup({
  *     userGroupId: "dd30a856-8e72-4158-b716-98455ceda220",
  * });
+ * //Retrieve by Name
  * const usergroupbyname = nutanix.getUserGroup({
  *     userGroupName: "example-group-1",
  * });
+ * //Retrieve by Distinguished Name
  * const test = nutanix.getUserGroup({
  *     userGroupDistinguishedName: "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
  * });
@@ -134,12 +137,15 @@ export interface GetUserGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //Retrieve by UUID
  * const usergroup = nutanix.getUserGroup({
  *     userGroupId: "dd30a856-8e72-4158-b716-98455ceda220",
  * });
+ * //Retrieve by Name
  * const usergroupbyname = nutanix.getUserGroup({
  *     userGroupName: "example-group-1",
  * });
+ * //Retrieve by Distinguished Name
  * const test = nutanix.getUserGroup({
  *     userGroupDistinguishedName: "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
  * });

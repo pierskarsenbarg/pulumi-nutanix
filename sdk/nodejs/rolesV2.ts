@@ -15,6 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // filtered list operation
  * const operations_filtered_list = nutanix.getOperationsV2({
  *     filter: "startswith(displayName, 'Create_')",
  * });

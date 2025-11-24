@@ -25,15 +25,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Data source to fetch the list of keys
         ///     var getKeys = Nutanix.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///     });
         /// 
+        ///     // Data source to fetch the key by name
         ///     var getKeysFilter = Nutanix.GetUserKeysV2.Invoke(new()
         ///     {
-        ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",
         ///     });
         /// 
         /// });
@@ -98,15 +100,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Data source to fetch the list of keys
         ///     var getKeys = Nutanix.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///     });
         /// 
+        ///     // Data source to fetch the key by name
         ///     var getKeysFilter = Nutanix.GetUserKeysV2.Invoke(new()
         ///     {
-        ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",
         ///     });
         /// 
         /// });
@@ -171,15 +175,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Data source to fetch the list of keys
         ///     var getKeys = Nutanix.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///     });
         /// 
+        ///     // Data source to fetch the key by name
         ///     var getKeysFilter = Nutanix.GetUserKeysV2.Invoke(new()
         ///     {
-        ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",
         ///     });
         /// 
         /// });

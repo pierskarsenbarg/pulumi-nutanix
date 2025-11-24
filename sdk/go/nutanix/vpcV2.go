@@ -14,6 +14,96 @@ import (
 // Provides Nutanix resource to create VPC.
 //
 // ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewVpcV2(ctx, "vpc", &nutanix.VpcV2Args{
+//				Name:        pulumi.String("vpc-example"),
+//				Description: pulumi.String("VPC for example"),
+//				ExternalSubnets: nutanix.VpcV2ExternalSubnetArray{
+//					&nutanix.VpcV2ExternalSubnetArgs{
+//						SubnetReference: pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// creating VPC with external routable prefixes
+//			_, err = nutanix.NewVpcV2(ctx, "external-vpc-routable-vpc", &nutanix.VpcV2Args{
+//				Name:        pulumi.String("tf-vpc-example"),
+//				Description: pulumi.String("VPC "),
+//				ExternalSubnets: nutanix.VpcV2ExternalSubnetArray{
+//					&nutanix.VpcV2ExternalSubnetArgs{
+//						SubnetReference: pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
+//						ExternalIps: nutanix.VpcV2ExternalSubnetExternalIpArray{
+//							&nutanix.VpcV2ExternalSubnetExternalIpArgs{
+//								Ipv4s: nutanix.VpcV2ExternalSubnetExternalIpIpv4Array{
+//									&nutanix.VpcV2ExternalSubnetExternalIpIpv4Args{
+//										Value:        pulumi.String("192.168.0.24"),
+//										PrefixLength: pulumi.Int(32),
+//									},
+//								},
+//							},
+//							&nutanix.VpcV2ExternalSubnetExternalIpArgs{
+//								Ipv4s: nutanix.VpcV2ExternalSubnetExternalIpIpv4Array{
+//									&nutanix.VpcV2ExternalSubnetExternalIpIpv4Args{
+//										Value:        pulumi.String("192.168.0.25"),
+//										PrefixLength: pulumi.Int(32),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				ExternallyRoutablePrefixes: nutanix.VpcV2ExternallyRoutablePrefixArray{
+//					&nutanix.VpcV2ExternallyRoutablePrefixArgs{
+//						Ipv4s: nutanix.VpcV2ExternallyRoutablePrefixIpv4Array{
+//							&nutanix.VpcV2ExternallyRoutablePrefixIpv4Args{
+//								Ips: nutanix.VpcV2ExternallyRoutablePrefixIpv4IpArray{
+//									&nutanix.VpcV2ExternallyRoutablePrefixIpv4IpArgs{
+//										Value:        pulumi.String("172.30.0.0"),
+//										PrefixLength: pulumi.Int(32),
+//									},
+//								},
+//								PrefixLength: pulumi.Int(16),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// creating VPC with transit type
+//			_, err = nutanix.NewVpcV2(ctx, "transit-vpc", &nutanix.VpcV2Args{
+//				Name:        pulumi.String("vpc-transit"),
+//				Description: pulumi.String("VPC for transit type"),
+//				ExternalSubnets: nutanix.VpcV2ExternalSubnetArray{
+//					&nutanix.VpcV2ExternalSubnetArgs{
+//						SubnetReference: pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
+//					},
+//				},
+//				VpcType: pulumi.String("TRANSIT"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type VpcV2 struct {
 	pulumi.CustomResourceState
 

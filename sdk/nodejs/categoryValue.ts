@@ -13,8 +13,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const test_category_key = new nutanix.CategoryKey("test-category-key", {description: "App Support Category Key"});
+ * const test_category_key = new nutanix.CategoryKey("test-category-key", {
+ *     name: "app-support-1",
+ *     description: "App Support Category Key",
+ * });
  * const test = new nutanix.CategoryValue("test", {
+ *     name: test_category_key.id,
  *     description: "Test Category Value",
  *     value: "test-value",
  * });

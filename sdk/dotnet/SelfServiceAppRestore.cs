@@ -24,13 +24,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSelfServiceAppRecoveryPoint = new Nutanix.SelfServiceAppRecoveryPoint("testSelfServiceAppRecoveryPoint", new()
+    ///     var test = new Nutanix.SelfServiceAppRecoveryPoint("test", new()
     ///     {
     ///         AppName = "NAME OF APPLICATION",
     ///         ActionName = "SNAPSHOT ACTION NAME",
     ///         RecoveryPointName = "RECOVERY POINT NAME",
     ///     });
     /// 
+    ///     // Read available recovery points in app
     ///     var snapshots = Nutanix.GetSelfServiceAppSnapshots.Invoke(new()
     ///     {
     ///         AppName = "NAME OF APPLICATION",
@@ -44,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     }).ToList()[0];
     /// 
     ///     // Restore from recovery point
-    ///     var testSelfServiceAppRestore = new Nutanix.SelfServiceAppRestore("testSelfServiceAppRestore", new()
+    ///     var testSelfServiceAppRestore = new Nutanix.SelfServiceAppRestore("test", new()
     ///     {
     ///         RestoreActionName = "RESTORE ACTION NAME",
     ///         AppName = "NAME OF APPLICATION",

@@ -16,11 +16,12 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * // Create key under service account, never expires
- * const createKey = new nutanix.UserKeyV2("createKey", {
- *     assignedTo: "developer_user_1",
- *     expiryTime: "2125-01-01T00:00:00Z",
- *     keyType: "API_KEY",
+ * const createKey = new nutanix.UserKeyV2("create_key", {
  *     userExtId: "<SERVICE_ACCOUNT_UUID>",
+ *     name: "api_key_developers",
+ *     keyType: "API_KEY",
+ *     expiryTime: "2125-01-01T00:00:00Z",
+ *     assignedTo: "developer_user_1",
  * });
  * ```
  * ## Argument Reference

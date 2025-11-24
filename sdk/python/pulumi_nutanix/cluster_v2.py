@@ -435,6 +435,69 @@ class ClusterV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cluster = nutanix.ClusterV2("cluster",
+            name="cluster-example",
+            nodes=[{
+                "node_lists": [{
+                    "controller_vm_ips": [{
+                        "ipv4s": [{
+                            "value": "10.xx.xx.xx",
+                        }],
+                    }],
+                }],
+            }],
+            configs=[{
+                "cluster_functions": ["AOS"],
+                "redundancy_factor": 1,
+                "cluster_arch": "X86_64",
+                "fault_tolerance_states": [{
+                    "domain_awareness_level": "DISK",
+                }],
+            }],
+            networks=[{
+                "external_addresses": [{
+                    "ipv4s": [{
+                        "value": "10.xx.xx.xx",
+                    }],
+                }],
+                "external_data_services_ips": [{
+                    "ipv4s": [{
+                        "value": "10.xx.xx.xx",
+                    }],
+                }],
+                "ntp_server_ip_lists": [
+                    {
+                        "fqdns": [{
+                            "value": "ntp.server.nutanix.com",
+                        }],
+                    },
+                    {
+                        "fqdns": [{
+                            "value": "ntp.server_1.nutanix.com",
+                        }],
+                    },
+                ],
+                "smtp_servers": [{
+                    "email_address": "example.ex@exmple.com",
+                    "servers": [{
+                        "ip_addresses": [{
+                            "ipv4s": [{
+                                "value": "10.xx.xx.xx",
+                            }],
+                        }],
+                        "port": 123,
+                        "username": "example",
+                        "password": "example!2134",
+                    }],
+                    "type": "PLAIN",
+                }],
+            }])
+        ```
+
         ## Import
 
         This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,
@@ -473,6 +536,69 @@ class ClusterV2(pulumi.CustomResource):
         Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cluster = nutanix.ClusterV2("cluster",
+            name="cluster-example",
+            nodes=[{
+                "node_lists": [{
+                    "controller_vm_ips": [{
+                        "ipv4s": [{
+                            "value": "10.xx.xx.xx",
+                        }],
+                    }],
+                }],
+            }],
+            configs=[{
+                "cluster_functions": ["AOS"],
+                "redundancy_factor": 1,
+                "cluster_arch": "X86_64",
+                "fault_tolerance_states": [{
+                    "domain_awareness_level": "DISK",
+                }],
+            }],
+            networks=[{
+                "external_addresses": [{
+                    "ipv4s": [{
+                        "value": "10.xx.xx.xx",
+                    }],
+                }],
+                "external_data_services_ips": [{
+                    "ipv4s": [{
+                        "value": "10.xx.xx.xx",
+                    }],
+                }],
+                "ntp_server_ip_lists": [
+                    {
+                        "fqdns": [{
+                            "value": "ntp.server.nutanix.com",
+                        }],
+                    },
+                    {
+                        "fqdns": [{
+                            "value": "ntp.server_1.nutanix.com",
+                        }],
+                    },
+                ],
+                "smtp_servers": [{
+                    "email_address": "example.ex@exmple.com",
+                    "servers": [{
+                        "ip_addresses": [{
+                            "ipv4s": [{
+                                "value": "10.xx.xx.xx",
+                            }],
+                        }],
+                        "port": 123,
+                        "username": "example",
+                        "password": "example!2134",
+                    }],
+                    "type": "PLAIN",
+                }],
+            }])
+        ```
 
         ## Import
 

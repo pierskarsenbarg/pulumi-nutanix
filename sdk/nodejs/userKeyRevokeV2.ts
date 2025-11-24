@@ -17,8 +17,8 @@ import * as utilities from "./utilities";
  *
  * // revoke key
  * const revoke_key = new nutanix.UserKeyRevokeV2("revoke-key", {
- *     extId: "<USER_KEY_UUID>",
  *     userExtId: "<SERVICE_ACCOUNT_UUID>",
+ *     extId: "<USER_KEY_UUID>",
  * });
  * ```
  *

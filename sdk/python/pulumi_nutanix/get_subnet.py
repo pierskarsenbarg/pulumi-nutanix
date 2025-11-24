@@ -401,6 +401,8 @@ def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalF
     """
     Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 
+    ## Example Usage
+
 
     :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']] additional_filters: - Additional filters to narrow down list of subnets.
     :param Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']] categories: The API Version.
@@ -455,6 +457,8 @@ def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequenc
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetResult]:
     """
     Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
+
+    ## Example Usage
 
 
     :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']] additional_filters: - Additional filters to narrow down list of subnets.

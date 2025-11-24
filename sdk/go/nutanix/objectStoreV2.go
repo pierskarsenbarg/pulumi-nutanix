@@ -12,6 +12,103 @@ import (
 )
 
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi-std/sdk/go/std"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			invokePow, err := std.Pow(ctx, &std.PowArgs{
+//				Base:     1024,
+//				Exponent: 3,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewObjectStoreV2(ctx, "example", &nutanix.ObjectStoreV2Args{
+//				Name:                   pulumi.String("tf-example-os"),
+//				Description:            pulumi.String("terraform create object store example"),
+//				DeploymentVersion:      pulumi.String("5.1.1"),
+//				Domain:                 pulumi.String("msp.pc-idbc.nutanix.com"),
+//				NumWorkerNodes:         pulumi.Int(1),
+//				ClusterExtId:           pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//				TotalCapacityGib:       pulumi.Int(20 * pulumi.Float64(invokePow.Result)),
+//				PublicNetworkReference: pulumi.String("57c4caf1-67e3-457e-8265-6d872f2a3135"),
+//				PublicNetworkIps: nutanix.ObjectStoreV2PublicNetworkIpArray{
+//					&nutanix.ObjectStoreV2PublicNetworkIpArgs{
+//						Ipv4: &nutanix.ObjectStoreV2PublicNetworkIpIpv4Args{
+//							Value: pulumi.String("10.44.77.123"),
+//						},
+//					},
+//				},
+//				StorageNetworkReference: pulumi.String("57c4caf1-67e3-457e-8265-6d872f2a3135"),
+//				StorageNetworkDnsIp: &nutanix.ObjectStoreV2StorageNetworkDnsIpArgs{
+//					Ipv4: &nutanix.ObjectStoreV2StorageNetworkDnsIpIpv4Args{
+//						Value: pulumi.String("10.44.77.124"),
+//					},
+//				},
+//				StorageNetworkVip: &nutanix.ObjectStoreV2StorageNetworkVipArgs{
+//					Ipv4: &nutanix.ObjectStoreV2StorageNetworkVipIpv4Args{
+//						Value: pulumi.String("10.44.77.125"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			invokePow1, err := std.Pow(ctx, &std.PowArgs{
+//				Base:     1024,
+//				Exponent: 3,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			// Deploying Object Store in draft state
+//			_, err = nutanix.NewObjectStoreV2(ctx, "example-draft", &nutanix.ObjectStoreV2Args{
+//				Name:                   pulumi.String("tf-draft-os"),
+//				Description:            pulumi.String("terraform deploy object store draft example"),
+//				DeploymentVersion:      pulumi.String("5.1.1"),
+//				Domain:                 pulumi.String("msp.pc-idbc.nutanix.com"),
+//				NumWorkerNodes:         pulumi.Int(1),
+//				ClusterExtId:           pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//				TotalCapacityGib:       pulumi.Int(20 * pulumi.Float64(invokePow1.Result)),
+//				PublicNetworkReference: pulumi.String("57c4caf1-67e3-457e-8265-6d872f2a3135"),
+//				State:                  pulumi.String("UNDEPLOYED_OBJECT_STORE"),
+//				PublicNetworkIps: nutanix.ObjectStoreV2PublicNetworkIpArray{
+//					&nutanix.ObjectStoreV2PublicNetworkIpArgs{
+//						Ipv4: &nutanix.ObjectStoreV2PublicNetworkIpIpv4Args{
+//							Value: pulumi.String("10.44.77.126"),
+//						},
+//					},
+//				},
+//				StorageNetworkReference: pulumi.String("57c4caf1-67e3-457e-8265-6d872f2a3135"),
+//				StorageNetworkDnsIp: &nutanix.ObjectStoreV2StorageNetworkDnsIpArgs{
+//					Ipv4: &nutanix.ObjectStoreV2StorageNetworkDnsIpIpv4Args{
+//						Value: pulumi.String("10.44.77.127"),
+//					},
+//				},
+//				StorageNetworkVip: &nutanix.ObjectStoreV2StorageNetworkVipArgs{
+//					Ipv4: &nutanix.ObjectStoreV2StorageNetworkVipIpv4Args{
+//						Value: pulumi.String("10.44.77.128"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ObjectStoreV2 struct {
 	pulumi.CustomResourceState
 

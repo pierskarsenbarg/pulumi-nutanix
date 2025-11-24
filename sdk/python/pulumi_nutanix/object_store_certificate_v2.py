@@ -190,8 +190,8 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example = nutanix.get_certificate_v2(ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
-            object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4")
+        example = nutanix.get_certificate_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+            ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea")
         ```
 
         ## JSON Example
@@ -218,8 +218,8 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example = nutanix.get_certificate_v2(ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
-            object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4")
+        example = nutanix.get_certificate_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+            ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea")
         ```
 
         ## JSON Example

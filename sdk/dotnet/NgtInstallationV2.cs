@@ -25,19 +25,19 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var example = new Nutanix.NgtInstallationV2("example", new()
     ///     {
-    ///         Capablities = new[]
-    ///         {
-    ///             "VSS_SNAPSHOT",
-    ///         },
+    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         Credential = new Nutanix.Inputs.NgtInstallationV2CredentialArgs
     ///         {
-    ///             Password = "pass.1234567890",
     ///             Username = "username",
+    ///             Password = "pass.1234567890",
     ///         },
-    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         RebootPreference = new Nutanix.Inputs.NgtInstallationV2RebootPreferenceArgs
     ///         {
     ///             ScheduleType = "IMMEDIATE",
+    ///         },
+    ///         Capablities = new[]
+    ///         {
+    ///             "VSS_SNAPSHOT",
     ///         },
     ///     });
     /// 

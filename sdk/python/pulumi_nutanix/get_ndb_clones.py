@@ -77,17 +77,6 @@ def get_ndb_clones(filters: Optional[Sequence[Union['GetNdbClonesFilterArgs', 'G
     """
     List all the clone present in Nutanix Database Service
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    clones = nutanix.get_ndb_clones(filters=[{
-        "detailed": "true",
-    }])
-    ```
-
 
     :param Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']] filters: Fetches the clone info based on given params
     """
@@ -104,17 +93,6 @@ def get_ndb_clones_output(filters: Optional[pulumi.Input[Optional[Sequence[Union
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbClonesResult]:
     """
     List all the clone present in Nutanix Database Service
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    clones = nutanix.get_ndb_clones(filters=[{
-        "detailed": "true",
-    }])
-    ```
 
 
     :param Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']] filters: Fetches the clone info based on given params

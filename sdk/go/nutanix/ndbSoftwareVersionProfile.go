@@ -30,7 +30,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbSoftwareVersionProfile(ctx, "name", &nutanix.NdbSoftwareVersionProfileArgs{
 //				EngineType:  pulumi.String("postgres_database"),
-//				ProfileId:   pulumi.Any(resource.Nutanix_ndb_profile.Name12.Id),
+//				ProfileId:   pulumi.Any(nutanixNdbProfile.Name12.Id),
+//				Name:        pulumi.String("test-tf"),
 //				Description: pulumi.String("made  by tf"),
 //				PostgresDatabases: nutanix.NdbSoftwareVersionProfilePostgresDatabaseArray{
 //					&nutanix.NdbSoftwareVersionProfilePostgresDatabaseArgs{

@@ -25,14 +25,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all the Volume Groups.
         ///     var volumeGroups = Nutanix.GetVolumeGroupsV2.Invoke();
         /// 
+        ///     // list all the Volume Groups with pagination.
         ///     var vg_pagination = Nutanix.GetVolumeGroupsV2.Invoke(new()
         ///     {
-        ///         Limit = 10,
         ///         Page = 1,
+        ///         Limit = 10,
         ///     });
         /// 
+        ///     // list all the Volume Groups with filter.
         ///     var vg_filter = Nutanix.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'volume_group_test'",
@@ -126,14 +129,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all the Volume Groups.
         ///     var volumeGroups = Nutanix.GetVolumeGroupsV2.Invoke();
         /// 
+        ///     // list all the Volume Groups with pagination.
         ///     var vg_pagination = Nutanix.GetVolumeGroupsV2.Invoke(new()
         ///     {
-        ///         Limit = 10,
         ///         Page = 1,
+        ///         Limit = 10,
         ///     });
         /// 
+        ///     // list all the Volume Groups with filter.
         ///     var vg_filter = Nutanix.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'volume_group_test'",
@@ -227,14 +233,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all the Volume Groups.
         ///     var volumeGroups = Nutanix.GetVolumeGroupsV2.Invoke();
         /// 
+        ///     // list all the Volume Groups with pagination.
         ///     var vg_pagination = Nutanix.GetVolumeGroupsV2.Invoke(new()
         ///     {
-        ///         Limit = 10,
         ///         Page = 1,
+        ///         Limit = 10,
         ///     });
         /// 
+        ///     // list all the Volume Groups with filter.
         ///     var vg_filter = Nutanix.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'volume_group_test'",

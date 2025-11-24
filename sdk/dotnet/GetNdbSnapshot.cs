@@ -27,6 +27,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
         ///     {
+        ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]
         ///         {
         ///             new Nutanix.Inputs.GetNdbSnapshotFilterInputArgs
@@ -34,7 +35,6 @@ namespace PiersKarsenbarg.Nutanix
         ///                 LoadReplicatedChildSnapshots = "true",
         ///             },
         ///         },
-        ///         SnapshotId = "{{ snapshot_id }}",
         ///     });
         /// 
         /// });
@@ -58,6 +58,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
         ///     {
+        ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]
         ///         {
         ///             new Nutanix.Inputs.GetNdbSnapshotFilterInputArgs
@@ -65,7 +66,6 @@ namespace PiersKarsenbarg.Nutanix
         ///                 LoadReplicatedChildSnapshots = "true",
         ///             },
         ///         },
-        ///         SnapshotId = "{{ snapshot_id }}",
         ///     });
         /// 
         /// });
@@ -89,6 +89,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
         ///     {
+        ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]
         ///         {
         ///             new Nutanix.Inputs.GetNdbSnapshotFilterInputArgs
@@ -96,7 +97,6 @@ namespace PiersKarsenbarg.Nutanix
         ///                 LoadReplicatedChildSnapshots = "true",
         ///             },
         ///         },
-        ///         SnapshotId = "{{ snapshot_id }}",
         ///     });
         /// 
         /// });

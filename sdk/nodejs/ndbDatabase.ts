@@ -19,6 +19,7 @@ import * as utilities from "./utilities";
  *
  * const dbp = new nutanix.NdbDatabase("dbp", {
  *     databasetype: "postgres_database",
+ *     name: "test-inst",
  *     description: "add description",
  *     softwareprofileid: "{{ software_profile_id }}",
  *     softwareprofileversionid: "{{ software_profile_version_id }}",
@@ -31,7 +32,7 @@ import * as utilities from "./utilities";
  *         dbPassword: "password",
  *         databaseNames: "testdb1",
  *     },
- *     nxclusterid: local.clusters.EraCluster.id,
+ *     nxclusterid: clusters.EraCluster.id,
  *     sshpublickey: "{{ ssh-public-key }}",
  *     nodes: [{
  *         vmname: "test-era-vm1",
@@ -77,6 +78,151 @@ import * as utilities from "./utilities";
  *
  * ### NDB database resource to provision HA instance with new database server VM
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const dbp = new nutanix.NdbDatabase("dbp", {
+ *     databasetype: "postgres_database",
+ *     name: "test-pg-inst-HA-tf",
+ *     description: "adding description",
+ *     softwareprofileid: "{{ software_profile_id }}",
+ *     softwareprofileversionid: "{{ software_profile_version_id }}",
+ *     computeprofileid: "{{ compute_profile_id }}",
+ *     networkprofileid: "{{ network_profile_id }}",
+ *     dbparameterprofileid: "{{ db_parameter_profile_id }}",
+ *     createdbserver: true,
+ *     clustered: true,
+ *     nodecount: 4,
+ *     postgresqlInfo: {
+ *         listenerPort: "5432",
+ *         databaseSize: "200",
+ *         dbPassword: "{{ database password}}",
+ *         databaseNames: "testdb1",
+ *         haInstance: {
+ *             proxyReadPort: "5001",
+ *             proxyWritePort: "5000",
+ *             clusterName: "{{ cluster_name }}",
+ *             patroniClusterName: " {{ patroni_cluster_name }}",
+ *         },
+ *     },
+ *     nxclusterid: "1c42ca25-32f4-42d9-a2bd-6a21f925b725",
+ *     sshpublickey: "{{ ssh_public_key }}",
+ *     nodes: [
+ *         {
+ *             properties: [{
+ *                 name: "node_type",
+ *                 value: "haproxy",
+ *             }],
+ *             vmname: "{{ vm name }}",
+ *             nxClusterId: "{{ nx_cluster_id }}",
+ *         },
+ *         {
+ *             properties: [
+ *                 {
+ *                     name: "role",
+ *                     value: "Primary",
+ *                 },
+ *                 {
+ *                     name: "failover_mode",
+ *                     value: "Automatic",
+ *                 },
+ *                 {
+ *                     name: "node_type",
+ *                     value: "database",
+ *                 },
+ *             ],
+ *             vmname: "{{ name of vm }}",
+ *             networkprofileid: "{{ network_profile_id }}",
+ *             computeprofileid: "{{ compute_profile_id }}",
+ *             nxClusterId: "{{ nx_cluster_id }}",
+ *         },
+ *         {
+ *             properties: [
+ *                 {
+ *                     name: "role",
+ *                     value: "Secondary",
+ *                 },
+ *                 {
+ *                     name: "failover_mode",
+ *                     value: "Automatic",
+ *                 },
+ *                 {
+ *                     name: "node_type",
+ *                     value: "database",
+ *                 },
+ *             ],
+ *             vmname: "{{ name of vm }}",
+ *             networkprofileid: "{{ network_profile_id }}",
+ *             computeprofileid: "{{ compute_profile_id }}",
+ *             nxClusterId: "{{ nx_cluster_id }}",
+ *         },
+ *         {
+ *             properties: [
+ *                 {
+ *                     name: "role",
+ *                     value: "Secondary",
+ *                 },
+ *                 {
+ *                     name: "failover_mode",
+ *                     value: "Automatic",
+ *                 },
+ *                 {
+ *                     name: "node_type",
+ *                     value: "database",
+ *                 },
+ *             ],
+ *             vmname: "{{ name of vm }}",
+ *             networkprofileid: "{{ network_profile_id }}",
+ *             computeprofileid: "{{ compute_profile_id }}",
+ *             nxClusterId: "{{ nx_cluster_id }}",
+ *         },
+ *     ],
+ *     timemachineinfo: {
+ *         name: "test-pg-inst-HA",
+ *         description: "",
+ *         slaDetails: [{
+ *             primarySlas: [{
+ *                 slaId: "{{ required SLA}}0",
+ *                 nxClusterIds: ["{{ nx_cluster_id}}"],
+ *             }],
+ *         }],
+ *         schedule: {
+ *             snapshottimeofday: {
+ *                 hours: 16,
+ *                 minutes: 0,
+ *                 seconds: 0,
+ *             },
+ *             continuousschedule: {
+ *                 enabled: true,
+ *                 logbackupinterval: 30,
+ *                 snapshotsperday: 1,
+ *             },
+ *             weeklyschedule: {
+ *                 enabled: true,
+ *                 dayofweek: "WEDNESDAY",
+ *             },
+ *             monthlyschedule: {
+ *                 enabled: true,
+ *                 dayofmonth: 27,
+ *             },
+ *             quartelyschedule: {
+ *                 enabled: true,
+ *                 startmonth: "JANUARY",
+ *                 dayofmonth: 27,
+ *             },
+ *             yearlyschedule: {
+ *                 enabled: false,
+ *                 dayofmonth: 31,
+ *                 month: "DECEMBER",
+ *             },
+ *         },
+ *     },
+ *     vmPassword: "{{ vm_password}}",
+ *     autotunestagingdrive: true,
+ * });
+ * ```
+ *
  * ### NDB database resource with registered database server VM
  *
  * ```typescript
@@ -84,58 +230,59 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const dbp = new nutanix.NdbDatabase("dbp", {
+ *     databasetype: "postgres_database",
+ *     name: "test-inst",
+ *     description: "add description",
+ *     dbparameterprofileid: "{{ db_parameter_profile_id }}",
+ *     dbserverId: "{{ dbserver_id }}",
+ *     createdbserver: false,
+ *     postgresqlInfo: {
+ *         listenerPort: "{{ listner_port }}",
+ *         databaseSize: "{{ 200 }}",
+ *         dbPassword: "password",
+ *         databaseNames: "testdb1",
+ *     },
  *     actionarguments: [{
  *         name: "host_ip",
  *         value: "{{ hostIP }}",
  *     }],
- *     createdbserver: false,
- *     databasetype: "postgres_database",
- *     dbparameterprofileid: "{{ db_parameter_profile_id }}",
- *     dbserverId: "{{ dbserver_id }}",
- *     description: "add description",
  *     nodes: [{
  *         dbserverid: "{{ dbserver_id }}",
  *     }],
- *     postgresqlInfo: {
- *         databaseNames: "testdb1",
- *         databaseSize: "{{ 200 }}",
- *         dbPassword: "password",
- *         listenerPort: "{{ listner_port }}",
- *     },
  *     timemachineinfo: {
- *         description: "description of time machine",
  *         name: "test-pg-inst",
+ *         description: "description of time machine",
+ *         slaid: "{{ sla_id }}",
  *         schedule: {
- *             continuousschedule: {
- *                 enabled: true,
- *                 logbackupinterval: 30,
- *                 snapshotsperday: 1,
- *             },
- *             monthlyschedule: {
- *                 dayofmonth: 27,
- *                 enabled: true,
- *             },
- *             quartelyschedule: {
- *                 dayofmonth: 27,
- *                 enabled: true,
- *                 startmonth: "JANUARY",
- *             },
  *             snapshottimeofday: {
  *                 hours: 16,
  *                 minutes: 0,
  *                 seconds: 0,
  *             },
- *             weeklyschedule: {
- *                 dayofweek: "WEDNESDAY",
+ *             continuousschedule: {
  *                 enabled: true,
+ *                 logbackupinterval: 30,
+ *                 snapshotsperday: 1,
+ *             },
+ *             weeklyschedule: {
+ *                 enabled: true,
+ *                 dayofweek: "WEDNESDAY",
+ *             },
+ *             monthlyschedule: {
+ *                 enabled: true,
+ *                 dayofmonth: 27,
+ *             },
+ *             quartelyschedule: {
+ *                 enabled: true,
+ *                 startmonth: "JANUARY",
+ *                 dayofmonth: 27,
  *             },
  *             yearlyschedule: {
- *                 dayofmonth: 31,
  *                 enabled: false,
+ *                 dayofmonth: 31,
  *                 month: "DECEMBER",
  *             },
  *         },
- *         slaid: "{{ sla_id }}",
  *     },
  * });
  * ```

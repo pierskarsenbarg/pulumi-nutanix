@@ -8,6 +8,40 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a resource to add a Nutanix cluster based on the input parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const clsname = new nutanix.index.NdbClusters("clsname", {
+ *     name: "{{ test-cluster }}",
+ *     description: "test description",
+ *     clusterIp: "{{ cluster_ip }}",
+ *     username: "{{ username of cluster }}",
+ *     password: "{{ password of cluster }}",
+ *     storageContainer: "{{ storage_container }}",
+ *     agentNetworkInfo: [{
+ *         dns: "{{ DNS servers available in the }}",
+ *         ntp: "{{ NTP servers available }}",
+ *     }],
+ *     networksInfo: [{
+ *         type: "DHCP",
+ *         networkInfo: [{
+ *             vlanName: "vlan_static",
+ *             staticIp: "{{ static_ip }}",
+ *             gateway: "{{ gateway }}",
+ *             subnetMask: "{{ subnet_mask }}",
+ *         }],
+ *         accessType: [
+ *             "PRISM",
+ *             "DSIP",
+ *             "DBSERVER",
+ *         ],
+ *     }],
+ * });
+ * ```
  */
 export class NdbCluster extends pulumi.CustomResource {
     /**

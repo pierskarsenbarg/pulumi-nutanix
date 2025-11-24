@@ -17,16 +17,17 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const name = new nutanix.NdbNetwork("name", {
+ *     name: "test-sub",
+ *     type: "Static",
  *     clusterId: "{{ cluster_id }}",
  *     gateway: "{{ gatway for the vlan }}",
- *     ipPools: [{
- *         endIp: "{{ ending address range }}",
- *         startIp: "{{ starting address range}}",
- *     }],
+ *     subnetMask: "{{ subnet mask for the vlan}}",
  *     primaryDns: " {{ primary dns for the vlan }}",
  *     secondaryDns: "{{secondary dns for the vlan }}",
- *     subnetMask: "{{ subnet mask for the vlan}}",
- *     type: "Static",
+ *     ipPools: [{
+ *         startIp: "{{ starting address range}}",
+ *         endIp: "{{ ending address range }}",
+ *     }],
  * });
  * ```
  */

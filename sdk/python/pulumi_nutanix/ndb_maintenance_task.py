@@ -229,14 +229,14 @@ class NdbMaintenanceTask(pulumi.CustomResource):
             maintenance_window_id="{{ maintenance_window_id }}",
             tasks=[
                 {
-                    "post_command": "{{ post_command for db patching }}",
-                    "pre_command": "{{ pre_command for db patching }}",
                     "task_type": "DB_PATCHING",
+                    "pre_command": "{{ pre_command for db patching }}",
+                    "post_command": "{{ post_command for db patching }}",
                 },
                 {
-                    "post_command": "{{ post_command for os patching }}",
-                    "pre_command": "{{ pre_command for os patching}}",
                     "task_type": "OS_PATCHING",
+                    "pre_command": "{{ pre_command for os patching}}",
+                    "post_command": "{{ post_command for os patching }}",
                 },
             ])
         ```
@@ -295,14 +295,14 @@ class NdbMaintenanceTask(pulumi.CustomResource):
             maintenance_window_id="{{ maintenance_window_id }}",
             tasks=[
                 {
-                    "post_command": "{{ post_command for db patching }}",
-                    "pre_command": "{{ pre_command for db patching }}",
                     "task_type": "DB_PATCHING",
+                    "pre_command": "{{ pre_command for db patching }}",
+                    "post_command": "{{ post_command for db patching }}",
                 },
                 {
-                    "post_command": "{{ post_command for os patching }}",
-                    "pre_command": "{{ pre_command for os patching}}",
                     "task_type": "OS_PATCHING",
+                    "pre_command": "{{ pre_command for os patching}}",
+                    "post_command": "{{ post_command for os patching }}",
                 },
             ])
         ```

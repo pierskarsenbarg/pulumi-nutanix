@@ -207,7 +207,8 @@ def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCa
     import pulumi
     import pulumi_nutanix as nutanix
 
-    protection_rule_test = nutanix.ProtectionRule("protectionRuleTest",
+    protection_rule_test = nutanix.ProtectionRule("protection_rule_test",
+        name="test",
         description="test",
         ordered_availability_zone_lists=[{
             "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
@@ -269,7 +270,8 @@ def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_nutanix as nutanix
 
-    protection_rule_test = nutanix.ProtectionRule("protectionRuleTest",
+    protection_rule_test = nutanix.ProtectionRule("protection_rule_test",
+        name="test",
         description="test",
         ordered_availability_zone_lists=[{
             "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",

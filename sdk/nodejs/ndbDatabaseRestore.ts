@@ -8,18 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a resource to restore the database instance based on the input parameters.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const name = new nutanix.NdbDatabaseRestore("name", {
- *     databaseId: "{{ database_id }}",
- *     snapshotId: "{{ snapshot id }}",
- * });
- * ```
  */
 export class NdbDatabaseRestore extends pulumi.CustomResource {
     /**

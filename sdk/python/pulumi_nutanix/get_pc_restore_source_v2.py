@@ -109,13 +109,7 @@ def get_pc_restore_source_v2(ext_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    #defining nutanix configuration for PE
-    pe = nutanix.Provider("pe",
-        username=var["nutanix_pe_username"],
-        password=var["nutanix_pe_password"],
-        endpoint=var["nutanix_pe_endpoint"],
-        insecure=True,
-        port="9440")
+    # get the restore source
     restore_source = nutanix.get_pc_restore_source_v2(ext_id="323860ca-bd10-411e-9fe0-1430b62eaf45")
     ```
 
@@ -144,13 +138,7 @@ def get_pc_restore_source_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_nutanix as nutanix
 
-    #defining nutanix configuration for PE
-    pe = nutanix.Provider("pe",
-        username=var["nutanix_pe_username"],
-        password=var["nutanix_pe_password"],
-        endpoint=var["nutanix_pe_endpoint"],
-        insecure=True,
-        port="9440")
+    # get the restore source
     restore_source = nutanix.get_pc_restore_source_v2(ext_id="323860ca-bd10-411e-9fe0-1430b62eaf45")
     ```
 

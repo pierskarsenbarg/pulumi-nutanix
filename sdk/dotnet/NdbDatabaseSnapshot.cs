@@ -12,25 +12,6 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to perform the snapshot for database instance based on the input parameters.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var name = new Nutanix.NdbDatabaseSnapshot("name", new()
-    ///     {
-    ///         RemoveScheduleInDays = 1,
-    ///         TimeMachineName = "{{ tms_name }}",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbDatabaseSnapshot:NdbDatabaseSnapshot")]
     public partial class NdbDatabaseSnapshot : global::Pulumi.CustomResource

@@ -189,6 +189,16 @@ class NdbCloneRefresh(pulumi.CustomResource):
 
         ### resource to refresh clone with user pitr timestamp
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        acctest_managed = nutanix.NdbCloneRefresh("acctest-managed",
+            clone_id="{{ clone_id }}",
+            user_pitr_stamp="{{ timestamp }}",
+            timezone="Asia/Calcutta")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] clone_id: clone id
@@ -221,6 +231,16 @@ class NdbCloneRefresh(pulumi.CustomResource):
         ```
 
         ### resource to refresh clone with user pitr timestamp
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        acctest_managed = nutanix.NdbCloneRefresh("acctest-managed",
+            clone_id="{{ clone_id }}",
+            user_pitr_stamp="{{ timestamp }}",
+            timezone="Asia/Calcutta")
+        ```
 
         :param str resource_name: The name of the resource.
         :param NdbCloneRefreshArgs args: The arguments to use to populate this resource's properties.

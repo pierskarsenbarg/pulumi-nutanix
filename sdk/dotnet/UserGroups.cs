@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var userGrp = new Nutanix.UserGroups("userGrp", new()
+    ///     var userGrp = new Nutanix.UserGroups("user_grp", new()
     ///     {
     ///         DirectoryServiceUserGroups = new[]
     ///         {
@@ -45,14 +45,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var userGrp = new Nutanix.UserGroups("userGrp", new()
+    ///     var userGrp = new Nutanix.UserGroups("user_grp", new()
     ///     {
     ///         SamlUserGroups = new[]
     ///         {
     ///             new Nutanix.Inputs.UserGroupsSamlUserGroupArgs
     ///             {
-    ///                 IdpUuid = "&lt;idp uuid of the group&gt;",
     ///                 Name = "&lt;name of saml group&gt;",
+    ///                 IdpUuid = "&lt;idp uuid of the group&gt;",
     ///             },
     ///         },
     ///     });

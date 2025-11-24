@@ -33,7 +33,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.File("dumpRuntimeValue", new()
+        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",
@@ -66,7 +66,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.File("dumpRuntimeValue", new()
+        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",
@@ -99,7 +99,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.File("dumpRuntimeValue", new()
+        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",

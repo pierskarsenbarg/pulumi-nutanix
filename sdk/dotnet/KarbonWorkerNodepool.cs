@@ -25,6 +25,9 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var kworkerNp = new Nutanix.KarbonWorkerNodepool("kworkerNp", new()
     ///     {
+    ///         ClusterName = "karbon",
+    ///         Name = "workerpool1",
+    ///         NumInstances = 1,
     ///         AhvConfig = new Nutanix.Inputs.KarbonWorkerNodepoolAhvConfigArgs
     ///         {
     ///             Cpu = 4,
@@ -32,8 +35,6 @@ namespace PiersKarsenbarg.Nutanix
     ///             MemoryMib = 8192,
     ///             NetworkUuid = "61213511-6383-4a38-9ac8-4a552c0e5865",
     ///         },
-    ///         ClusterName = "karbon",
-    ///         NumInstances = 1,
     ///     });
     /// 
     /// });
@@ -49,6 +50,9 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var kworkerNp = new Nutanix.KarbonWorkerNodepool("kworkerNp", new()
     ///     {
+    ///         ClusterName = "karbon",
+    ///         Name = "workerpool1",
+    ///         NumInstances = 1,
     ///         AhvConfig = new Nutanix.Inputs.KarbonWorkerNodepoolAhvConfigArgs
     ///         {
     ///             Cpu = 4,
@@ -56,13 +60,11 @@ namespace PiersKarsenbarg.Nutanix
     ///             MemoryMib = 8192,
     ///             NetworkUuid = "61213511-6383-4a38-9ac8-4a552c0e5865",
     ///         },
-    ///         ClusterName = "karbon",
     ///         Labels = 
     ///         {
     ///             { "k1", "v1" },
     ///             { "k2", "v2" },
     ///         },
-    ///         NumInstances = 1,
     ///     });
     /// 
     /// });

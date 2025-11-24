@@ -27,18 +27,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// with filter
 //			_, err := nutanix.GetProtectionPoliciesV2(ctx, &nutanix.GetProtectionPoliciesV2Args{
 //				Filter: pulumi.StringRef("name eq 'example_protection_policy'"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// with limit
 //			_, err = nutanix.GetProtectionPoliciesV2(ctx, &nutanix.GetProtectionPoliciesV2Args{
 //				Limit: pulumi.IntRef(4),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// with filter and limit
 //			_, err = nutanix.GetProtectionPoliciesV2(ctx, &nutanix.GetProtectionPoliciesV2Args{
 //				Filter: pulumi.StringRef("startswith(name, 'C')"),
 //				Limit:  pulumi.IntRef(10),

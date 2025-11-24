@@ -17,6 +17,38 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### Cluster Location
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var cluster_location = new Nutanix.PcBackupTargetV2("cluster-location", new()
+    ///     {
+    ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
+    ///         Location = new Nutanix.Inputs.PcBackupTargetV2LocationArgs
+    ///         {
+    ///             ClusterLocations = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.PcBackupTargetV2LocationClusterLocationArgs
+    ///                 {
+    ///                     Configs = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcBackupTargetV2LocationClusterLocationConfigArgs
+    ///                         {
+    ///                             ExtId = "323860ca-bd10-411e-9fe0-1430b62eaf45",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ### Object Store Location
     /// 
     /// ```csharp

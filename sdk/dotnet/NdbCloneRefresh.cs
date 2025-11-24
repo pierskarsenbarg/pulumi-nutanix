@@ -36,6 +36,24 @@ namespace PiersKarsenbarg.Nutanix
     /// ```
     /// 
     /// ### resource to refresh clone with user pitr timestamp
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var acctest_managed = new Nutanix.NdbCloneRefresh("acctest-managed", new()
+    ///     {
+    ///         CloneId = "{{ clone_id }}",
+    ///         UserPitrStamp = "{{ timestamp }}",
+    ///         Timezone = "Asia/Calcutta",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbCloneRefresh:NdbCloneRefresh")]
     public partial class NdbCloneRefresh : global::Pulumi.CustomResource

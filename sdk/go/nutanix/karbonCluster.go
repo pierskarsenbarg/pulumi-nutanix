@@ -32,28 +32,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewKarbonCluster(ctx, "exampleCluster", &nutanix.KarbonClusterArgs{
-//				CniConfig: &nutanix.KarbonClusterCniConfigArgs{
-//					NodeCidrMaskSize: pulumi.Int(24),
-//					PodIpv4Cidr:      pulumi.String("172.20.0.0/16"),
-//					ServiceIpv4Cidr:  pulumi.String("172.19.0.0/16"),
-//				},
-//				EtcdNodePool: &nutanix.KarbonClusterEtcdNodePoolArgs{
-//					AhvConfig: &nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs{
-//						NetworkUuid:             pulumi.String("my_subnet_id"),
-//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
-//					},
-//					NodeOsVersion: pulumi.String("ntnx-1.0"),
-//					NumInstances:  pulumi.Int(1),
-//				},
-//				MasterNodePool: &nutanix.KarbonClusterMasterNodePoolArgs{
-//					AhvConfig: &nutanix.KarbonClusterMasterNodePoolAhvConfigArgs{
-//						NetworkUuid:             pulumi.String("my_subnet_id"),
-//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
-//					},
-//					NodeOsVersion: pulumi.String("ntnx-1.0"),
-//					NumInstances:  pulumi.Int(1),
-//				},
+//			_, err := nutanix.NewKarbonCluster(ctx, "example_cluster", &nutanix.KarbonClusterArgs{
+//				Name:    pulumi.String("example_cluster"),
+//				Version: pulumi.String("1.18.15-1"),
 //				StorageClassConfig: &nutanix.KarbonClusterStorageClassConfigArgs{
 //					ReclaimPolicy: pulumi.String("Delete"),
 //					VolumesConfig: &nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs{
@@ -65,14 +46,34 @@ import (
 //						Username:                pulumi.String("my_pe_username"),
 //					},
 //				},
-//				Version: pulumi.String("1.18.15-1"),
+//				CniConfig: &nutanix.KarbonClusterCniConfigArgs{
+//					NodeCidrMaskSize: pulumi.Int(24),
+//					PodIpv4Cidr:      pulumi.String("172.20.0.0/16"),
+//					ServiceIpv4Cidr:  pulumi.String("172.19.0.0/16"),
+//				},
 //				WorkerNodePool: &nutanix.KarbonClusterWorkerNodePoolArgs{
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
 //					AhvConfig: &nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs{
 //						NetworkUuid:             pulumi.String("my_subnet_id"),
 //						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
 //					},
+//				},
+//				EtcdNodePool: &nutanix.KarbonClusterEtcdNodePoolArgs{
 //					NodeOsVersion: pulumi.String("ntnx-1.0"),
 //					NumInstances:  pulumi.Int(1),
+//					AhvConfig: &nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
+//				},
+//				MasterNodePool: &nutanix.KarbonClusterMasterNodePoolArgs{
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
+//					AhvConfig: &nutanix.KarbonClusterMasterNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
 //				},
 //			})
 //			if err != nil {
@@ -97,28 +98,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewKarbonCluster(ctx, "exampleCluster", &nutanix.KarbonClusterArgs{
-//				CniConfig: &nutanix.KarbonClusterCniConfigArgs{
-//					NodeCidrMaskSize: pulumi.Int(24),
-//					PodIpv4Cidr:      pulumi.String("172.20.0.0/16"),
-//					ServiceIpv4Cidr:  pulumi.String("172.19.0.0/16"),
-//				},
-//				EtcdNodePool: &nutanix.KarbonClusterEtcdNodePoolArgs{
-//					AhvConfig: &nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs{
-//						NetworkUuid:             pulumi.String("my_subnet_id"),
-//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
-//					},
-//					NodeOsVersion: pulumi.String("ntnx-1.0"),
-//					NumInstances:  pulumi.Int(1),
-//				},
-//				MasterNodePool: &nutanix.KarbonClusterMasterNodePoolArgs{
-//					AhvConfig: &nutanix.KarbonClusterMasterNodePoolAhvConfigArgs{
-//						NetworkUuid:             pulumi.String("my_subnet_id"),
-//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
-//					},
-//					NodeOsVersion: pulumi.String("ntnx-1.0"),
-//					NumInstances:  pulumi.Int(1),
-//				},
+//			_, err := nutanix.NewKarbonCluster(ctx, "example_cluster", &nutanix.KarbonClusterArgs{
+//				Name:    pulumi.String("example_cluster"),
+//				Version: pulumi.String("1.18.15-1"),
 //				StorageClassConfig: &nutanix.KarbonClusterStorageClassConfigArgs{
 //					ReclaimPolicy: pulumi.String("Delete"),
 //					VolumesConfig: &nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs{
@@ -130,14 +112,34 @@ import (
 //						Username:                pulumi.String("my_pe_username"),
 //					},
 //				},
-//				Version: pulumi.String("1.18.15-1"),
+//				CniConfig: &nutanix.KarbonClusterCniConfigArgs{
+//					NodeCidrMaskSize: pulumi.Int(24),
+//					PodIpv4Cidr:      pulumi.String("172.20.0.0/16"),
+//					ServiceIpv4Cidr:  pulumi.String("172.19.0.0/16"),
+//				},
 //				WorkerNodePool: &nutanix.KarbonClusterWorkerNodePoolArgs{
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
 //					AhvConfig: &nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs{
 //						NetworkUuid:             pulumi.String("my_subnet_id"),
 //						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
 //					},
+//				},
+//				EtcdNodePool: &nutanix.KarbonClusterEtcdNodePoolArgs{
 //					NodeOsVersion: pulumi.String("ntnx-1.0"),
 //					NumInstances:  pulumi.Int(1),
+//					AhvConfig: &nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
+//				},
+//				MasterNodePool: &nutanix.KarbonClusterMasterNodePoolArgs{
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
+//					AhvConfig: &nutanix.KarbonClusterMasterNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
 //				},
 //			})
 //			if err != nil {

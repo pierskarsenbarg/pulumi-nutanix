@@ -33,6 +33,7 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.NewVirtualMachine(ctx, "vm1", &nutanix.VirtualMachineArgs{
+//				Name:        pulumi.String("test-dou"),
 //				ClusterUuid: pulumi.String(clusters.Entities[0].Metadata.Uuid),
 //				Categories: nutanix.VirtualMachineCategoryArray{
 //					&nutanix.VirtualMachineCategoryArgs{
@@ -71,6 +72,7 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.NewVirtualMachine(ctx, "vm", &nutanix.VirtualMachineArgs{
+//				Name:              pulumi.String("myVm"),
 //				ClusterUuid:       pulumi.String(clusters.Entities[0].Metadata.Uuid),
 //				NumVcpusPerSocket: pulumi.Int(1),
 //				NumSockets:        pulumi.Int(1),

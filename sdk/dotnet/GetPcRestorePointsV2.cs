@@ -24,26 +24,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Username,
-        ///         Password = @var.Password,
-        ///         Endpoint = @var.Pe_endpoint,
-        ///         Insecure = true,
-        ///         Port = @var.Port,
-        ///     });
-        /// 
+        ///     // This pe based module, so use pe provider alias
         ///     var restorePoints = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
         ///     });
         /// 
+        ///     // list all the restorable pcs with select properties
         ///     var restorePointsSelect = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
@@ -226,26 +218,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Username,
-        ///         Password = @var.Password,
-        ///         Endpoint = @var.Pe_endpoint,
-        ///         Insecure = true,
-        ///         Port = @var.Port,
-        ///     });
-        /// 
+        ///     // This pe based module, so use pe provider alias
         ///     var restorePoints = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
         ///     });
         /// 
+        ///     // list all the restorable pcs with select properties
         ///     var restorePointsSelect = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
@@ -428,26 +412,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Username,
-        ///         Password = @var.Password,
-        ///         Endpoint = @var.Pe_endpoint,
-        ///         Insecure = true,
-        ///         Port = @var.Port,
-        ///     });
-        /// 
+        ///     // This pe based module, so use pe provider alias
         ///     var restorePoints = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
         ///     });
         /// 
+        ///     // list all the restorable pcs with select properties
         ///     var restorePointsSelect = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",

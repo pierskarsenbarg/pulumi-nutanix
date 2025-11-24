@@ -122,8 +122,11 @@ def get_protection_policies_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # with filter
     pps_filter = nutanix.get_protection_policies_v2(filter="name eq 'example_protection_policy'")
+    # with limit
     pp_limit = nutanix.get_protection_policies_v2(limit=4)
+    # with filter and limit
     example = nutanix.get_protection_policies_v2(filter="startswith(name, 'C')",
         limit=10)
     ```
@@ -266,8 +269,11 @@ def get_protection_policies_v2_output(filter: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # with filter
     pps_filter = nutanix.get_protection_policies_v2(filter="name eq 'example_protection_policy'")
+    # with limit
     pp_limit = nutanix.get_protection_policies_v2(limit=4)
+    # with filter and limit
     example = nutanix.get_protection_policies_v2(filter="startswith(name, 'C')",
         limit=10)
     ```

@@ -29,17 +29,18 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Add Service  group. with TCP and UDP
 //			_, err := nutanix.NewServiceGroupsV2(ctx, "tcp-udp-service", &nutanix.ServiceGroupsV2Args{
+//				Name:        pulumi.String("service_group_tcp_udp"),
 //				Description: pulumi.String("service group description"),
 //				TcpServices: nutanix.ServiceGroupsV2TcpServiceArray{
 //					&nutanix.ServiceGroupsV2TcpServiceArgs{
-//						EndPort:   pulumi.Int(232),
 //						StartPort: pulumi.Int(232),
+//						EndPort:   pulumi.Int(232),
 //					},
 //				},
 //				UdpServices: nutanix.ServiceGroupsV2UdpServiceArray{
 //					&nutanix.ServiceGroupsV2UdpServiceArgs{
-//						EndPort:   pulumi.Int(232),
 //						StartPort: pulumi.Int(232),
+//						EndPort:   pulumi.Int(232),
 //					},
 //				},
 //			})
@@ -48,11 +49,12 @@ import (
 //			}
 //			// service group with ICMP
 //			_, err = nutanix.NewServiceGroupsV2(ctx, "icmp-service", &nutanix.ServiceGroupsV2Args{
+//				Name:        pulumi.String("service_group_icmp"),
 //				Description: pulumi.String("service group description"),
 //				IcmpServices: nutanix.ServiceGroupsV2IcmpServiceArray{
 //					&nutanix.ServiceGroupsV2IcmpServiceArgs{
-//						Code: pulumi.Int(0),
 //						Type: pulumi.Int(8),
+//						Code: pulumi.Int(0),
 //					},
 //				},
 //			})
@@ -61,23 +63,24 @@ import (
 //			}
 //			// service group with All TCP, UDP and ICMP
 //			_, err = nutanix.NewServiceGroupsV2(ctx, "all-service", &nutanix.ServiceGroupsV2Args{
+//				Name:        pulumi.String("service_group_udp_tcp_icmp"),
 //				Description: pulumi.String("service group description"),
-//				IcmpServices: nutanix.ServiceGroupsV2IcmpServiceArray{
-//					&nutanix.ServiceGroupsV2IcmpServiceArgs{
-//						Code: pulumi.Int(0),
-//						Type: pulumi.Int(8),
-//					},
-//				},
 //				TcpServices: nutanix.ServiceGroupsV2TcpServiceArray{
 //					&nutanix.ServiceGroupsV2TcpServiceArgs{
-//						EndPort:   pulumi.Int(232),
 //						StartPort: pulumi.Int(232),
+//						EndPort:   pulumi.Int(232),
 //					},
 //				},
 //				UdpServices: nutanix.ServiceGroupsV2UdpServiceArray{
 //					&nutanix.ServiceGroupsV2UdpServiceArgs{
-//						EndPort:   pulumi.Int(232),
 //						StartPort: pulumi.Int(232),
+//						EndPort:   pulumi.Int(232),
+//					},
+//				},
+//				IcmpServices: nutanix.ServiceGroupsV2IcmpServiceArray{
+//					&nutanix.ServiceGroupsV2IcmpServiceArgs{
+//						Type: pulumi.Int(8),
+//						Code: pulumi.Int(0),
 //					},
 //				},
 //			})

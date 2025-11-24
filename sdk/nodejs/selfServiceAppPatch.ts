@@ -18,14 +18,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * // Provision Application
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const test = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT",
  *     appName: "NAME OF APPLICATION",
  *     appDescription: "DESCRIPTION OF APPLICATION",
  * });
  * // Run patch config (update config)
- * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", {
- *     appUuid: testSelfServiceAppProvision.id,
+ * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("test", {
+ *     appUuid: test.id,
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  * });
@@ -38,14 +38,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * // Provision Application
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const test = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT",
  *     appName: "NAME OF APPLICATION",
  *     appDescription: "DESCRIPTION OF APPLICATION",
  * });
  * // Run patch config (update config)
- * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", {
- *     appUuid: testSelfServiceAppProvision.id,
+ * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("test", {
+ *     appUuid: test.id,
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  *     vmConfigs: [{
@@ -63,14 +63,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * // Provision Application
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const test = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT",
  *     appName: "NAME OF APPLICATION",
  *     appDescription: "DESCRIPTION OF APPLICATION",
  * });
  * // Run patch config (update config)
- * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", {
- *     appUuid: testSelfServiceAppProvision.id,
+ * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("test", {
+ *     appUuid: test.id,
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  *     categories: [{
@@ -87,14 +87,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * // Provision Application
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const test = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT",
  *     appName: "NAME OF APPLICATION",
  *     appDescription: "DESCRIPTION OF APPLICATION",
  * });
  * // Run patch config (update config)
- * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", {
- *     appUuid: testSelfServiceAppProvision.id,
+ * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("test", {
+ *     appUuid: test.id,
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  *     categories: [{
@@ -111,14 +111,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * // Provision Application
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const test = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT",
  *     appName: "NAME OF APPLICATION",
  *     appDescription: "DESCRIPTION OF APPLICATION",
  * });
  * // Run patch config (update config)
- * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", {
- *     appUuid: testSelfServiceAppProvision.id,
+ * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("test", {
+ *     appUuid: test.id,
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  *     disks: [{
@@ -135,14 +135,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * // Provision Application
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const test = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT",
  *     appName: "NAME OF APPLICATION",
  *     appDescription: "DESCRIPTION OF APPLICATION",
  * });
  * // Run patch config (update config)
- * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", {
- *     appUuid: testSelfServiceAppProvision.id,
+ * const testSelfServiceAppPatch = new nutanix.SelfServiceAppPatch("test", {
+ *     appUuid: test.id,
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  *     nics: [{

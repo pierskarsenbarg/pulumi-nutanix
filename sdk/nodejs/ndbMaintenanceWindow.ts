@@ -17,10 +17,11 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const acctest_managed = new nutanix.NdbMaintenanceWindow("acctest-managed", {
- *     dayOfWeek: "TUESDAY",
+ *     name: "test-maintenance",
  *     description: "desc",
  *     duration: 3,
  *     recurrence: "WEEKLY",
+ *     dayOfWeek: "TUESDAY",
  *     startTime: "17:04:47",
  * });
  * ```
@@ -31,10 +32,11 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const acctest_managed = new nutanix.NdbMaintenanceWindow("acctest-managed", {
- *     dayOfWeek: "TUESDAY",
+ *     name: "test-maintenance",
  *     description: "description",
  *     duration: 2,
  *     recurrence: "MONTHLY",
+ *     dayOfWeek: "TUESDAY",
  *     startTime: "17:04:47",
  *     weekOfMonth: 4,
  * });

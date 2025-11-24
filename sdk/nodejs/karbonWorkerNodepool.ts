@@ -16,14 +16,15 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const kworkerNp = new nutanix.KarbonWorkerNodepool("kworkerNp", {
+ *     clusterName: "karbon",
+ *     name: "workerpool1",
+ *     numInstances: 1,
  *     ahvConfig: {
  *         cpu: 4,
  *         diskMib: 122880,
  *         memoryMib: 8192,
  *         networkUuid: "61213511-6383-4a38-9ac8-4a552c0e5865",
  *     },
- *     clusterName: "karbon",
- *     numInstances: 1,
  * });
  * ```
  *
@@ -32,18 +33,19 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const kworkerNp = new nutanix.KarbonWorkerNodepool("kworkerNp", {
+ *     clusterName: "karbon",
+ *     name: "workerpool1",
+ *     numInstances: 1,
  *     ahvConfig: {
  *         cpu: 4,
  *         diskMib: 122880,
  *         memoryMib: 8192,
  *         networkUuid: "61213511-6383-4a38-9ac8-4a552c0e5865",
  *     },
- *     clusterName: "karbon",
  *     labels: {
  *         k1: "v1",
  *         k2: "v2",
  *     },
- *     numInstances: 1,
  * });
  * ```
  */

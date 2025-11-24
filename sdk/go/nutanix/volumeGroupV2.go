@@ -28,7 +28,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewVolumeGroupV2(ctx, "volumeGroupExample", &nutanix.VolumeGroupV2Args{
+//			_, err := nutanix.NewVolumeGroupV2(ctx, "volume_group_example", &nutanix.VolumeGroupV2Args{
+//				Name:                           pulumi.String("volume_group_test"),
 //				Description:                    pulumi.String("Test Create Volume group with spec"),
 //				ShouldLoadBalanceVmAttachments: pulumi.Bool(false),
 //				SharingStatus:                  pulumi.String("SHARED"),

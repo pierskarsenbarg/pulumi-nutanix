@@ -163,8 +163,8 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
 
         # replicate RP
         rp_replicate = nutanix.RecoveryPointReplicateV2("rp-replicate",
-            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             ext_id="150a7ed0-9d05-4f35-a060-16dac4c835d0",
+            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             pc_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
 
@@ -191,8 +191,8 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
 
         # replicate RP
         rp_replicate = nutanix.RecoveryPointReplicateV2("rp-replicate",
-            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             ext_id="150a7ed0-9d05-4f35-a060-16dac4c835d0",
+            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             pc_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
 

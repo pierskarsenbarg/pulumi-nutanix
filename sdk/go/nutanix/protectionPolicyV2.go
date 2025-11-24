@@ -29,40 +29,41 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewProtectionPolicyV2(ctx, "synchronous-protection-policy", &nutanix.ProtectionPolicyV2Args{
-//				CategoryIds: pulumi.StringArray{
-//					pulumi.String("b08ed184-6b0c-42c1-8179-7b9026fe2676"),
-//				},
+//				Name: pulumi.String("synchronous_protection_policy"),
 //				ReplicationConfigurations: nutanix.ProtectionPolicyV2ReplicationConfigurationArray{
 //					&nutanix.ProtectionPolicyV2ReplicationConfigurationArgs{
+//						SourceLocationLabel: pulumi.String("source"),
 //						RemoteLocationLabel: pulumi.String("target"),
 //						Schedule: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleArgs{
 //							RecoveryPointObjectiveTimeSeconds:        pulumi.Int(0),
 //							RecoveryPointType:                        pulumi.String("CRASH_CONSISTENT"),
 //							SyncReplicationAutoSuspendTimeoutSeconds: pulumi.Int(10),
 //						},
-//						SourceLocationLabel: pulumi.String("source"),
 //					},
 //					&nutanix.ProtectionPolicyV2ReplicationConfigurationArgs{
+//						SourceLocationLabel: pulumi.String("target"),
 //						RemoteLocationLabel: pulumi.String("source"),
 //						Schedule: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleArgs{
 //							RecoveryPointObjectiveTimeSeconds:        pulumi.Int(0),
 //							RecoveryPointType:                        pulumi.String("CRASH_CONSISTENT"),
 //							SyncReplicationAutoSuspendTimeoutSeconds: pulumi.Int(10),
 //						},
-//						SourceLocationLabel: pulumi.String("target"),
 //					},
 //				},
 //				ReplicationLocations: nutanix.ProtectionPolicyV2ReplicationLocationArray{
 //					&nutanix.ProtectionPolicyV2ReplicationLocationArgs{
 //						DomainManagerExtId: pulumi.String("6a44b05e-cb9b-4e7e-8d75-b1b4715369c4"),
-//						IsPrimary:          pulumi.Bool(true),
 //						Label:              pulumi.String("source"),
+//						IsPrimary:          pulumi.Bool(true),
 //					},
 //					&nutanix.ProtectionPolicyV2ReplicationLocationArgs{
 //						DomainManagerExtId: pulumi.String("75dde184-3a0e-4f59-a185-03ca1efead17"),
-//						IsPrimary:          pulumi.Bool(false),
 //						Label:              pulumi.String("target"),
+//						IsPrimary:          pulumi.Bool(false),
 //					},
+//				},
+//				CategoryIds: pulumi.StringArray{
+//					pulumi.String("b08ed184-6b0c-42c1-8179-7b9026fe2676"),
 //				},
 //			})
 //			if err != nil {
@@ -89,6 +90,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewProtectionPolicyV2(ctx, "linear-retention-protection-policy", &nutanix.ProtectionPolicyV2Args{
+//				Name: pulumi.String("linear-retention-protection-policy"),
 //				ReplicationConfigurations: nutanix.ProtectionPolicyV2ReplicationConfigurationArray{
 //					&nutanix.ProtectionPolicyV2ReplicationConfigurationArgs{
 //						SourceLocationLabel: pulumi.String("source"),
@@ -127,7 +129,7 @@ import (
 //						ReplicationSubLocation: &nutanix.ProtectionPolicyV2ReplicationLocationReplicationSubLocationArgs{
 //							ClusterExtIds: &nutanix.ProtectionPolicyV2ReplicationLocationReplicationSubLocationClusterExtIdsArgs{
 //								ClusterExtIds: pulumi.StringArray{
-//									local.ClusterExtId,
+//									clusterExtId,
 //								},
 //							},
 //						},
@@ -167,66 +169,67 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Create Auto Rollup Retention Protection Policy
 //			_, err := nutanix.NewProtectionPolicyV2(ctx, "auto-rollup-retention-protection-policy", &nutanix.ProtectionPolicyV2Args{
-//				CategoryIds: pulumi.StringArray{
-//					pulumi.String("b08ed184-6b0c-42c1-8179-7b9026fe2676"),
-//				},
+//				Name: pulumi.String("auto_rollup_retention_protection_policy"),
 //				ReplicationConfigurations: nutanix.ProtectionPolicyV2ReplicationConfigurationArray{
 //					&nutanix.ProtectionPolicyV2ReplicationConfigurationArgs{
+//						SourceLocationLabel: pulumi.String("source"),
 //						RemoteLocationLabel: pulumi.String("target"),
 //						Schedule: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleArgs{
-//							RecoveryPointObjectiveTimeSeconds: pulumi.Int(60),
-//							RecoveryPointType:                 pulumi.String("CRASH_CONSISTENT"),
+//							RecoveryPointObjectiveTimeSeconds:        pulumi.Int(60),
+//							RecoveryPointType:                        pulumi.String("CRASH_CONSISTENT"),
+//							SyncReplicationAutoSuspendTimeoutSeconds: pulumi.Int(20),
+//							StartTime:                                pulumi.String("18h:10m"),
 //							Retention: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs{
 //								AutoRollupRetention: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionArgs{
 //									Local: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionLocalArgs{
-//										Frequency:            pulumi.Int(2),
 //										SnapshotIntervalType: pulumi.String("WEEKLY"),
+//										Frequency:            pulumi.Int(2),
 //									},
 //									Remote: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionRemoteArgs{
-//										Frequency:            pulumi.Int(1),
 //										SnapshotIntervalType: pulumi.String("DAILY"),
+//										Frequency:            pulumi.Int(1),
 //									},
 //								},
 //							},
-//							StartTime:                                pulumi.String("18h:10m"),
-//							SyncReplicationAutoSuspendTimeoutSeconds: pulumi.Int(20),
 //						},
-//						SourceLocationLabel: pulumi.String("source"),
 //					},
 //					&nutanix.ProtectionPolicyV2ReplicationConfigurationArgs{
+//						SourceLocationLabel: pulumi.String("target"),
 //						RemoteLocationLabel: pulumi.String("source"),
 //						Schedule: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleArgs{
-//							RecoveryPointObjectiveTimeSeconds: pulumi.Int(60),
-//							RecoveryPointType:                 pulumi.String("CRASH_CONSISTENT"),
+//							RecoveryPointObjectiveTimeSeconds:        pulumi.Int(60),
+//							RecoveryPointType:                        pulumi.String("CRASH_CONSISTENT"),
+//							SyncReplicationAutoSuspendTimeoutSeconds: pulumi.Int(30),
+//							StartTime:                                pulumi.String("18h:10m"),
 //							Retention: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs{
 //								AutoRollupRetention: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionArgs{
 //									Local: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionLocalArgs{
-//										Frequency:            pulumi.Int(1),
 //										SnapshotIntervalType: pulumi.String("DAILY"),
+//										Frequency:            pulumi.Int(1),
 //									},
 //									Remote: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionRemoteArgs{
-//										Frequency:            pulumi.Int(2),
 //										SnapshotIntervalType: pulumi.String("WEEKLY"),
+//										Frequency:            pulumi.Int(2),
 //									},
 //								},
 //							},
-//							StartTime:                                pulumi.String("18h:10m"),
-//							SyncReplicationAutoSuspendTimeoutSeconds: pulumi.Int(30),
 //						},
-//						SourceLocationLabel: pulumi.String("target"),
 //					},
 //				},
 //				ReplicationLocations: nutanix.ProtectionPolicyV2ReplicationLocationArray{
 //					&nutanix.ProtectionPolicyV2ReplicationLocationArgs{
 //						DomainManagerExtId: pulumi.String("6a44b05e-cb9b-4e7e-8d75-b1b4715369c4"),
-//						IsPrimary:          pulumi.Bool(true),
 //						Label:              pulumi.String("source"),
+//						IsPrimary:          pulumi.Bool(true),
 //					},
 //					&nutanix.ProtectionPolicyV2ReplicationLocationArgs{
 //						DomainManagerExtId: pulumi.String("75dde184-3a0e-4f59-a185-03ca1efead17"),
-//						IsPrimary:          pulumi.Bool(false),
 //						Label:              pulumi.String("target"),
+//						IsPrimary:          pulumi.Bool(false),
 //					},
+//				},
+//				CategoryIds: pulumi.StringArray{
+//					pulumi.String("b08ed184-6b0c-42c1-8179-7b9026fe2676"),
 //				},
 //			})
 //			if err != nil {

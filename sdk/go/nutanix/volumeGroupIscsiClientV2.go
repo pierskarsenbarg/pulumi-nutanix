@@ -13,6 +13,40 @@ import (
 )
 
 // Attaches iSCSI initiator to a Volume Group identified by {extId}.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// list iscsi clients
+//			list_iscsi_clients, err := nutanix.GetVolumeIscsiClientsV2(ctx, &nutanix.GetVolumeIscsiClientsV2Args{}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			// attach iscsi client to the volume group
+//			_, err = nutanix.NewVolumeGroupIscsiClientsV2(ctx, "vg_iscsi_example", &nutanix.VolumeGroupIscsiClientsV2Args{
+//				VgExtId:            "1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
+//				ExtId:              list_iscsi_clients.IscsiClients[0].ExtId,
+//				IscsiInitiatorName: list_iscsi_clients.IscsiClients[0].IscsiInitiatorName,
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type VolumeGroupIscsiClientV2 struct {
 	pulumi.CustomResourceState
 

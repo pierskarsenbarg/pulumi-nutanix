@@ -27,10 +27,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Fetch all PCs (Domain Managers)
 //			_, err := nutanix.GetPcsV2(ctx, &nutanix.GetPcsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// List all PCs (Domain Managers) with selected properties
 //			_, err = nutanix.GetPcsV2(ctx, &nutanix.GetPcsV2Args{
 //				Select: pulumi.StringRef("config,extId"),
 //			}, nil)

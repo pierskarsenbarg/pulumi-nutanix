@@ -343,15 +343,15 @@ class NgtInstallationV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example = nutanix.NgtInstallationV2("example",
-            capablities=["VSS_SNAPSHOT"],
-            credential={
-                "password": "pass.1234567890",
-                "username": "username",
-            },
             ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            credential={
+                "username": "username",
+                "password": "pass.1234567890",
+            },
             reboot_preference={
                 "schedule_type": "IMMEDIATE",
-            })
+            },
+            capablities=["VSS_SNAPSHOT"])
         ```
 
         :param str resource_name: The name of the resource.
@@ -378,15 +378,15 @@ class NgtInstallationV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example = nutanix.NgtInstallationV2("example",
-            capablities=["VSS_SNAPSHOT"],
-            credential={
-                "password": "pass.1234567890",
-                "username": "username",
-            },
             ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            credential={
+                "username": "username",
+                "password": "pass.1234567890",
+            },
             reboot_preference={
                 "schedule_type": "IMMEDIATE",
-            })
+            },
+            capablities=["VSS_SNAPSHOT"])
         ```
 
         :param str resource_name: The name of the resource.

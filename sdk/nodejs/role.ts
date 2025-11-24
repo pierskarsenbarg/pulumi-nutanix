@@ -16,6 +16,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = new nutanix.Role("test", {
+ *     name: "NAME",
  *     description: "DESCRIPTION",
  *     permissionReferenceLists: [
  *         {

@@ -184,6 +184,21 @@ class PcBackupTargetV2(pulumi.CustomResource):
 
         ### Cluster Location
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cluster_location = nutanix.PcBackupTargetV2("cluster-location",
+            domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17",
+            location={
+                "cluster_locations": [{
+                    "configs": [{
+                        "ext_id": "323860ca-bd10-411e-9fe0-1430b62eaf45",
+                    }],
+                }],
+            })
+        ```
+
         ### Object Store Location
 
         ```python
@@ -227,6 +242,21 @@ class PcBackupTargetV2(pulumi.CustomResource):
         ## Example Usage
 
         ### Cluster Location
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cluster_location = nutanix.PcBackupTargetV2("cluster-location",
+            domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17",
+            location={
+                "cluster_locations": [{
+                    "configs": [{
+                        "ext_id": "323860ca-bd10-411e-9fe0-1430b62eaf45",
+                    }],
+                }],
+            })
+        ```
 
         ### Object Store Location
 

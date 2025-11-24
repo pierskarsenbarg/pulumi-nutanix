@@ -14,72 +14,18 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes Database Server VM in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var dbserver = Nutanix.GetNdbDbserver.Invoke(new()
-        ///     {
-        ///         Ip = "{{ dbserver_vm_ip }}",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetNdbDbserverResult> InvokeAsync(GetNdbDbserverArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbDbserverResult>("nutanix:index/getNdbDbserver:getNdbDbserver", args ?? new GetNdbDbserverArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes Database Server VM in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var dbserver = Nutanix.GetNdbDbserver.Invoke(new()
-        ///     {
-        ///         Ip = "{{ dbserver_vm_ip }}",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetNdbDbserverResult> Invoke(GetNdbDbserverInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbDbserverResult>("nutanix:index/getNdbDbserver:getNdbDbserver", args ?? new GetNdbDbserverInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes Database Server VM in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var dbserver = Nutanix.GetNdbDbserver.Invoke(new()
-        ///     {
-        ///         Ip = "{{ dbserver_vm_ip }}",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetNdbDbserverResult> Invoke(GetNdbDbserverInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbDbserverResult>("nutanix:index/getNdbDbserver:getNdbDbserver", args ?? new GetNdbDbserverInvokeArgs(), options.WithDefaults());

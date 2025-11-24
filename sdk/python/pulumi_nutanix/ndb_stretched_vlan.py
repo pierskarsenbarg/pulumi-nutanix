@@ -239,6 +239,7 @@ class NdbStretchedVlan(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbStretchedVlan("name",
+            name="test-stretcName",
             description="vlan desc updated",
             type="Static",
             vlan_ids=[
@@ -253,16 +254,17 @@ class NdbStretchedVlan(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbStretchedVlan("name",
+            name="test-stretcName",
             description="vlan desc updated",
-            metadata={
-                "gateway": "{{ gateway of vlans }}",
-                "subnet_mask": "{{ subnet mask of vlans }}",
-            },
             type="Static",
             vlan_ids=[
                 "{{ vlan_id_1 }}",
                 "{{ vlan_id_2 }}",
-            ])
+            ],
+            metadata={
+                "gateway": "{{ gateway of vlans }}",
+                "subnet_mask": "{{ subnet mask of vlans }}",
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -292,6 +294,7 @@ class NdbStretchedVlan(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbStretchedVlan("name",
+            name="test-stretcName",
             description="vlan desc updated",
             type="Static",
             vlan_ids=[
@@ -306,16 +309,17 @@ class NdbStretchedVlan(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbStretchedVlan("name",
+            name="test-stretcName",
             description="vlan desc updated",
-            metadata={
-                "gateway": "{{ gateway of vlans }}",
-                "subnet_mask": "{{ subnet mask of vlans }}",
-            },
             type="Static",
             vlan_ids=[
                 "{{ vlan_id_1 }}",
                 "{{ vlan_id_2 }}",
-            ])
+            ],
+            metadata={
+                "gateway": "{{ gateway of vlans }}",
+                "subnet_mask": "{{ subnet mask of vlans }}",
+            })
         ```
 
         :param str resource_name: The name of the resource.

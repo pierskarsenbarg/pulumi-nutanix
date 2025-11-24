@@ -1230,69 +1230,6 @@ class NdbRegisterDatabase(pulumi.CustomResource):
         """
         Provides a resource to register the database based on the input parameters.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        # register PostgreSQL database with instance not registered on VM
-        name = nutanix.NdbRegisterDatabase("name",
-            category="DEFAULT",
-            database_name="test-inst",
-            database_type="postgres_database",
-            description="added by terraform",
-            nx_cluster_id="{{ cluster_ID }}",
-            postgress_infos=[{
-                "backup_policy": "prefer_secondary",
-                "db_name": "testdb1",
-                "db_password": "pass",
-                "db_user": "postgres",
-                "listener_port": "5432",
-                "postgres_software_home": "{{ directory where the PostgreSQL database software is installed }}",
-            }],
-            reset_description_in_nx_cluster=False,
-            time_machine_info={
-                "description": "description of tms",
-                "name": "test-pg-inst-regis",
-                "schedule": {
-                    "continuousschedule": {
-                        "enabled": True,
-                        "logbackupinterval": 30,
-                        "snapshotsperday": 1,
-                    },
-                    "monthlyschedule": {
-                        "dayofmonth": 27,
-                        "enabled": True,
-                    },
-                    "quartelyschedule": {
-                        "dayofmonth": 27,
-                        "enabled": True,
-                        "startmonth": "JANUARY",
-                    },
-                    "snapshottimeofday": {
-                        "hours": 16,
-                        "minutes": 0,
-                        "seconds": 0,
-                    },
-                    "weeklyschedule": {
-                        "dayofweek": "WEDNESDAY",
-                        "enabled": True,
-                    },
-                    "yearlyschedule": {
-                        "dayofmonth": 31,
-                        "enabled": False,
-                        "month": "DECEMBER",
-                    },
-                },
-                "slaid": " {{ SLA ID}}",
-            },
-            vm_ip="{{ vm_ip }}",
-            vm_password="{{ vm_password }}",
-            vm_username="{{ vm_username }}",
-            working_directory="/tmp")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]] actionarguments: action arguments
@@ -1329,69 +1266,6 @@ class NdbRegisterDatabase(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to register the database based on the input parameters.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        # register PostgreSQL database with instance not registered on VM
-        name = nutanix.NdbRegisterDatabase("name",
-            category="DEFAULT",
-            database_name="test-inst",
-            database_type="postgres_database",
-            description="added by terraform",
-            nx_cluster_id="{{ cluster_ID }}",
-            postgress_infos=[{
-                "backup_policy": "prefer_secondary",
-                "db_name": "testdb1",
-                "db_password": "pass",
-                "db_user": "postgres",
-                "listener_port": "5432",
-                "postgres_software_home": "{{ directory where the PostgreSQL database software is installed }}",
-            }],
-            reset_description_in_nx_cluster=False,
-            time_machine_info={
-                "description": "description of tms",
-                "name": "test-pg-inst-regis",
-                "schedule": {
-                    "continuousschedule": {
-                        "enabled": True,
-                        "logbackupinterval": 30,
-                        "snapshotsperday": 1,
-                    },
-                    "monthlyschedule": {
-                        "dayofmonth": 27,
-                        "enabled": True,
-                    },
-                    "quartelyschedule": {
-                        "dayofmonth": 27,
-                        "enabled": True,
-                        "startmonth": "JANUARY",
-                    },
-                    "snapshottimeofday": {
-                        "hours": 16,
-                        "minutes": 0,
-                        "seconds": 0,
-                    },
-                    "weeklyschedule": {
-                        "dayofweek": "WEDNESDAY",
-                        "enabled": True,
-                    },
-                    "yearlyschedule": {
-                        "dayofmonth": 31,
-                        "enabled": False,
-                        "month": "DECEMBER",
-                    },
-                },
-                "slaid": " {{ SLA ID}}",
-            },
-            vm_ip="{{ vm_ip }}",
-            vm_password="{{ vm_password }}",
-            vm_username="{{ vm_username }}",
-            working_directory="/tmp")
-        ```
 
         :param str resource_name: The name of the resource.
         :param NdbRegisterDatabaseArgs args: The arguments to use to populate this resource's properties.

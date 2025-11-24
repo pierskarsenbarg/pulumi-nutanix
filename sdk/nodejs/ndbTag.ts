@@ -15,6 +15,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const name = new nutanix.NdbTag("name", {
+ *     name: "testst-up",
  *     description: "this is desc ok",
  *     entityType: "DATABASE",
  *     required: true,
@@ -27,6 +28,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const name = new nutanix.NdbTag("name", {
+ *     name: "testst-up",
  *     description: "this is desc ok",
  *     entityType: "DATABASE",
  *     required: true,

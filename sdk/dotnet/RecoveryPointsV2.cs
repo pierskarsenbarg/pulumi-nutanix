@@ -26,9 +26,10 @@ namespace PiersKarsenbarg.Nutanix
     ///     // create RP with Vm Rp
     ///     var rp_example = new Nutanix.RecoveryPointsV2("rp-example", new()
     ///     {
+    ///         Name = "terraform-test-recovery-point",
     ///         ExpirationTime = "2024-09-17T09:20:42Z",
-    ///         RecoveryPointType = "APPLICATION_CONSISTENT",
     ///         Status = "COMPLETE",
+    ///         RecoveryPointType = "APPLICATION_CONSISTENT",
     ///         VmRecoveryPoints = new[]
     ///         {
     ///             new Nutanix.Inputs.RecoveryPointsV2VmRecoveryPointArgs

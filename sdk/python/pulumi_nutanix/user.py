@@ -344,10 +344,10 @@ class User(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         user = nutanix.User("user", directory_service_user={
+            "user_principal_name": "test-user@ntnxlab.local",
             "directory_service_reference": {
                 "uuid": "<directory-service-uuid>",
             },
-            "user_principal_name": "test-user@ntnxlab.local",
         })
         ```
 
@@ -356,10 +356,10 @@ class User(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         user = nutanix.User("user", identity_provider_user={
+            "username": "username",
             "identity_provider_reference": {
                 "uuid": "<identity-provider-uuid>",
             },
-            "username": "username",
         })
         ```
 
@@ -387,10 +387,10 @@ class User(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         user = nutanix.User("user", directory_service_user={
+            "user_principal_name": "test-user@ntnxlab.local",
             "directory_service_reference": {
                 "uuid": "<directory-service-uuid>",
             },
-            "user_principal_name": "test-user@ntnxlab.local",
         })
         ```
 
@@ -399,10 +399,10 @@ class User(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         user = nutanix.User("user", identity_provider_user={
+            "username": "username",
             "identity_provider_reference": {
                 "uuid": "<identity-provider-uuid>",
             },
-            "username": "username",
         })
         ```
 

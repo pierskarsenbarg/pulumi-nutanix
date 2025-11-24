@@ -16,8 +16,8 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const route_by_id = nutanix.getRouteV2({
- *     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
  *     routeTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+ *     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
  * });
  * ```
  */
@@ -119,8 +119,8 @@ export interface GetRouteV2Result {
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const route_by_id = nutanix.getRouteV2({
- *     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
  *     routeTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+ *     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
  * });
  * ```
  */

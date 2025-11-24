@@ -23,8 +23,17 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new()
+    ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
     ///     {
+    ///         Name = "test",
+    ///         Description = "test",
+    ///         OrderedAvailabilityZoneLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
+    ///             {
+    ///                 AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+    ///             },
+    ///         },
     ///         AvailabilityZoneConnectivityLists = new[]
     ///         {
     ///             new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs
@@ -33,12 +42,12 @@ namespace PiersKarsenbarg.Nutanix
     ///                 {
     ///                     new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs
     ///                     {
+    ///                         RecoveryPointObjectiveSecs = 3600,
+    ///                         SnapshotType = "CRASH_CONSISTENT",
     ///                         LocalSnapshotRetentionPolicy = new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs
     ///                         {
     ///                             NumSnapshots = 1,
     ///                         },
-    ///                         RecoveryPointObjectiveSecs = 3600,
-    ///                         SnapshotType = "CRASH_CONSISTENT",
     ///                     },
     ///                 },
     ///             },
@@ -55,14 +64,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                         "Dev",
     ///                     },
     ///                 },
-    ///             },
-    ///         },
-    ///         Description = "test",
-    ///         OrderedAvailabilityZoneLists = new[]
-    ///         {
-    ///             new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
-    ///             {
-    ///                 AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
     ///             },
     ///         },
     ///     });

@@ -8,20 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Describes the clone present in Nutanix Database Service
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const name = nutanix.getNdbClone({
- *     cloneName: "test-inst-tf-check",
- *     filters: [{
- *         detailed: "true",
- *     }],
- * });
- * ```
  */
 export function getNdbClone(args?: GetNdbCloneArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbCloneResult> {
     args = args || {};
@@ -178,20 +164,6 @@ export interface GetNdbCloneResult {
 }
 /**
  * Describes the clone present in Nutanix Database Service
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const name = nutanix.getNdbClone({
- *     cloneName: "test-inst-tf-check",
- *     filters: [{
- *         detailed: "true",
- *     }],
- * });
- * ```
  */
 export function getNdbCloneOutput(args?: GetNdbCloneOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbCloneResult> {
     args = args || {};

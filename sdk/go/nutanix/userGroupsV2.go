@@ -28,10 +28,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewUserGroupsV2(ctx, "usrGroup", &nutanix.UserGroupsV2Args{
-//				DistinguishedName: pulumi.String("cn=group_0664229e,ou=group,dc=devtest,dc=local"),
+//			_, err := nutanix.NewUserGroupsV2(ctx, "usr_group", &nutanix.UserGroupsV2Args{
 //				GroupType:         pulumi.String("LDAP"),
 //				IdpId:             pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//				Name:              pulumi.String("group_0664229e"),
+//				DistinguishedName: pulumi.String("cn=group_0664229e,ou=group,dc=devtest,dc=local"),
 //			})
 //			if err != nil {
 //				return err
@@ -40,6 +41,7 @@ import (
 //			_, err = nutanix.NewUserGroupsV2(ctx, "saml-ug", &nutanix.UserGroupsV2Args{
 //				GroupType: pulumi.String("SAML"),
 //				IdpId:     pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
+//				Name:      pulumi.String("adfs19admingroup"),
 //			})
 //			if err != nil {
 //				return err

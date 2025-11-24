@@ -26,7 +26,10 @@ namespace PiersKarsenbarg.Nutanix
     ///     // create a route
     ///     var route = new Nutanix.RoutesV2("route", new()
     ///     {
+    ///         Name = "terraform_example_route",
     ///         Description = "terraform example route to example create route",
+    ///         VpcReference = "8a938cc5-282b-48c4-81be-de22de145d07",
+    ///         RouteTableExtId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
     ///         Destination = new Nutanix.Inputs.RoutesV2DestinationArgs
     ///         {
     ///             Ipv4 = new Nutanix.Inputs.RoutesV2DestinationIpv4Args
@@ -38,19 +41,17 @@ namespace PiersKarsenbarg.Nutanix
     ///                 PrefixLength = 32,
     ///             },
     ///         },
+    ///         NextHop = new Nutanix.Inputs.RoutesV2NextHopArgs
+    ///         {
+    ///             NextHopType = "EXTERNAL_SUBNET",
+    ///             NextHopReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///         },
     ///         Metadata = new Nutanix.Inputs.RoutesV2MetadataArgs
     ///         {
     ///             OwnerReferenceId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
     ///             ProjectReferenceId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         },
-    ///         NextHop = new Nutanix.Inputs.RoutesV2NextHopArgs
-    ///         {
-    ///             NextHopReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-    ///             NextHopType = "EXTERNAL_SUBNET",
-    ///         },
-    ///         RouteTableExtId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
     ///         RouteType = "STATIC",
-    ///         VpcReference = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///     });
     /// 
     /// });

@@ -12,25 +12,6 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to restore the database instance based on the input parameters.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var name = new Nutanix.NdbDatabaseRestore("name", new()
-    ///     {
-    ///         DatabaseId = "{{ database_id }}",
-    ///         SnapshotId = "{{ snapshot id }}",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbDatabaseRestore:NdbDatabaseRestore")]
     public partial class NdbDatabaseRestore : global::Pulumi.CustomResource

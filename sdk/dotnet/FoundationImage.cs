@@ -25,16 +25,16 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var nos_image = new Nutanix.FoundationImage("nos-image", new()
     ///     {
+    ///         Source = "../../../files/nutanix_installer_x86_64.tar",
     ///         Filename = "nos_image.tar",
     ///         InstallerType = "nos",
-    ///         Source = "../../../files/nutanix_installer_x86_64.tar",
     ///     });
     /// 
     ///     var hypervisor_image = new Nutanix.FoundationImage("hypervisor-image", new()
     ///     {
+    ///         Source = "../../../files/VMware-Installer.x86_64.iso",
     ///         Filename = "esx_image.iso",
     ///         InstallerType = "esx",
-    ///         Source = "../../../files/VMware-Installer.x86_64.iso",
     ///     });
     /// 
     /// });

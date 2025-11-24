@@ -26,8 +26,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
+        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
         ///     {
+        ///         Name = "test",
         ///         Description = "test address groups resource",
         ///         IpAddressBlockLists = new[]
         ///         {
@@ -64,8 +65,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
+        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
         ///     {
+        ///         Name = "test",
         ///         Description = "test address groups resource",
         ///         IpAddressBlockLists = new[]
         ///         {
@@ -102,8 +104,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
+        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
         ///     {
+        ///         Name = "test",
         ///         Description = "test address groups resource",
         ///         IpAddressBlockLists = new[]
         ///         {

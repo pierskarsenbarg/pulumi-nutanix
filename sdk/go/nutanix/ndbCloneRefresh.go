@@ -45,6 +45,32 @@ import (
 // ```
 //
 // ### resource to refresh clone with user pitr timestamp
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbCloneRefresh(ctx, "acctest-managed", &nutanix.NdbCloneRefreshArgs{
+//				CloneId:       pulumi.String("{{ clone_id }}"),
+//				UserPitrStamp: "{{ timestamp }}",
+//				Timezone:      pulumi.String("Asia/Calcutta"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NdbCloneRefresh struct {
 	pulumi.CustomResourceState
 

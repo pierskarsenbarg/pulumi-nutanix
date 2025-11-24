@@ -25,9 +25,9 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var cls = new Nutanix.NdbTmsCluster("cls", new()
     ///     {
+    ///         TimeMachineId = "{{ tms_id }}",
     ///         NxClusterId = "{{ cluster_id }}",
     ///         SlaId = "{{ sla_id }}",
-    ///         TimeMachineId = "{{ tms_id }}",
     ///     });
     /// 
     /// });

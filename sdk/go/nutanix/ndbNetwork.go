@@ -30,18 +30,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbNetwork(ctx, "name", &nutanix.NdbNetworkArgs{
-//				ClusterId: pulumi.String("{{ cluster_id }}"),
-//				Gateway:   pulumi.String("{{ gatway for the vlan }}"),
-//				IpPools: nutanix.NdbNetworkIpPoolArray{
-//					&nutanix.NdbNetworkIpPoolArgs{
-//						EndIp:   pulumi.String("{{ ending address range }}"),
-//						StartIp: pulumi.String("{{ starting address range}}"),
-//					},
-//				},
+//				Name:         pulumi.String("test-sub"),
+//				Type:         pulumi.String("Static"),
+//				ClusterId:    pulumi.String("{{ cluster_id }}"),
+//				Gateway:      pulumi.String("{{ gatway for the vlan }}"),
+//				SubnetMask:   pulumi.String("{{ subnet mask for the vlan}}"),
 //				PrimaryDns:   pulumi.String(" {{ primary dns for the vlan }}"),
 //				SecondaryDns: pulumi.String("{{secondary dns for the vlan }}"),
-//				SubnetMask:   pulumi.String("{{ subnet mask for the vlan}}"),
-//				Type:         pulumi.String("Static"),
+//				IpPools: nutanix.NdbNetworkIpPoolArray{
+//					&nutanix.NdbNetworkIpPoolArgs{
+//						StartIp: pulumi.String("{{ starting address range}}"),
+//						EndIp:   pulumi.String("{{ ending address range }}"),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err

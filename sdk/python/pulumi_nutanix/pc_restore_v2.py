@@ -175,6 +175,8 @@ class PcRestoreV2(pulumi.CustomResource):
 
         The restore domain manager is a task-driven operation to restore a domain manager from a cluster or object store backup location based on the selected restore point.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']] domain_manager: -(Required) Domain manager (Prism Central) details.
@@ -193,6 +195,8 @@ class PcRestoreV2(pulumi.CustomResource):
         > -  We need to increase the timeout for restoring the PC, because the restore pc takes longer than the default timeout allows for the operation to complete.
 
         The restore domain manager is a task-driven operation to restore a domain manager from a cluster or object store backup location based on the selected restore point.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param PcRestoreV2Args args: The arguments to use to populate this resource's properties.

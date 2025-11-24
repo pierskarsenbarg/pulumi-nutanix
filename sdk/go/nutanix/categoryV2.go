@@ -29,9 +29,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewCategoryV2(ctx, "example", &nutanix.CategoryV2Args{
-//				Description: pulumi.String("category example description"),
 //				Key:         pulumi.String("category_example_key"),
 //				Value:       pulumi.String("category_example_value"),
+//				Description: pulumi.String("category example description"),
 //			})
 //			if err != nil {
 //				return err

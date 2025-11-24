@@ -25,11 +25,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get kubeconfig by cluster UUID
         ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
+        ///     // Get Kubeconfig by cluster name
         ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
@@ -54,11 +56,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get kubeconfig by cluster UUID
         ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
+        ///     // Get Kubeconfig by cluster name
         ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
@@ -83,11 +87,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get kubeconfig by cluster UUID
         ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
+        ///     // Get Kubeconfig by cluster name
         ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",

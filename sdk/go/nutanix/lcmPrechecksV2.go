@@ -29,13 +29,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewLcmPrechecksV2(ctx, "pre-checks", &nutanix.LcmPrechecksV2Args{
+//				XClusterId: pulumi.String("0005a104-0b0b-4b0-8005-0b0b0b0b0b0b"),
 //				EntityUpdateSpecs: nutanix.LcmPrechecksV2EntityUpdateSpecArray{
 //					&nutanix.LcmPrechecksV2EntityUpdateSpecArgs{
 //						EntityUuid: pulumi.String("0c5c9e53-3551-4c5d-b13c-e41c04cbfaf7"),
 //						ToVersion:  pulumi.String("4.0.0"),
 //					},
 //				},
-//				XClusterId: pulumi.String("0005a104-0b0b-4b0-8005-0b0b0b0b0b0b"),
 //			})
 //			if err != nil {
 //				return err

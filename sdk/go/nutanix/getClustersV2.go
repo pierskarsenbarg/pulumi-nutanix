@@ -38,8 +38,8 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.GetClustersV2(ctx, &nutanix.GetClustersV2Args{
-//				Limit: pulumi.IntRef(10),
 //				Page:  pulumi.IntRef(1),
+//				Limit: pulumi.IntRef(10),
 //			}, nil)
 //			if err != nil {
 //				return err

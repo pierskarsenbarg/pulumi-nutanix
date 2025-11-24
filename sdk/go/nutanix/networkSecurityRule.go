@@ -32,11 +32,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNetworkSecurityRule(ctx, "isolation", &nutanix.NetworkSecurityRuleArgs{
+//				Name:                pulumi.String("example-isolation-rule"),
 //				Description:         pulumi.String("Isolation Rule Example"),
 //				IsolationRuleAction: pulumi.String("APPLY"),
 //				IsolationRuleFirstEntityFilterKindLists: pulumi.StringArray{
 //					pulumi.String("vm"),
 //				},
+//				IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
 //				IsolationRuleFirstEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArray{
 //					&nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs{
 //						Name: pulumi.String("Environment"),
@@ -45,10 +47,10 @@ import (
 //						},
 //					},
 //				},
-//				IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
 //				IsolationRuleSecondEntityFilterKindLists: pulumi.StringArray{
 //					pulumi.String("vm"),
 //				},
+//				IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
 //				IsolationRuleSecondEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArray{
 //					&nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs{
 //						Name: pulumi.String("Environment"),
@@ -57,7 +59,6 @@ import (
 //						},
 //					},
 //				},
-//				IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
 //			})
 //			if err != nil {
 //				return err
@@ -67,6 +68,8 @@ import (
 //	}
 //
 // ```
+//
+// ### App Rule Example with associated VMs.
 //
 // ### Usage with service and address groups
 // ```go
@@ -82,6 +85,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			service1, err := nutanix.NewServiceGroup(ctx, "service1", &nutanix.ServiceGroupArgs{
+//				Name:        pulumi.String("srv-1"),
 //				Description: pulumi.String("test"),
 //				ServiceLists: nutanix.ServiceGroupServiceListArray{
 //					&nutanix.ServiceGroupServiceListArgs{
@@ -103,6 +107,7 @@ import (
 //				return err
 //			}
 //			address1, err := nutanix.NewAddressGroup(ctx, "address1", &nutanix.AddressGroupArgs{
+//				Name:        pulumi.String("addr-1"),
 //				Description: pulumi.String("test"),
 //				IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
 //					&nutanix.AddressGroupIpAddressBlockListArgs{
@@ -115,13 +120,15 @@ import (
 //				return err
 //			}
 //			ad_group_user_1, err := nutanix.NewCategoryValue(ctx, "ad-group-user-1", &nutanix.CategoryValueArgs{
+//				Name:        pulumi.String("AD"),
 //				Description: pulumi.String("group user category value"),
 //				Value:       pulumi.String("AD"),
 //			})
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.NewNetworkSecurityRule(ctx, "vDI", &nutanix.NetworkSecurityRuleArgs{
+//			_, err = nutanix.NewNetworkSecurityRule(ctx, "VDI", &nutanix.NetworkSecurityRuleArgs{
+//				Name:         pulumi.String("nsr-1"),
 //				AdRuleAction: pulumi.String("APPLY"),
 //				Description:  pulumi.String("test"),
 //				AdRuleInboundAllowLists: nutanix.NetworkSecurityRuleAdRuleInboundAllowListArray{

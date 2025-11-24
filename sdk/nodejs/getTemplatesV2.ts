@@ -15,11 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all templates
  * const list_templates = nutanix.getTemplatesV2({});
+ * // List templates with filter, page and limit
  * const filtered_templates = nutanix.getTemplatesV2({
  *     filter: "startswith(templateName,'template_name')",
- *     limit: 10,
  *     page: 0,
+ *     limit: 10,
  * });
  * ```
  *
@@ -437,11 +439,13 @@ export interface GetTemplatesV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all templates
  * const list_templates = nutanix.getTemplatesV2({});
+ * // List templates with filter, page and limit
  * const filtered_templates = nutanix.getTemplatesV2({
  *     filter: "startswith(templateName,'template_name')",
- *     limit: 10,
  *     page: 0,
+ *     limit: 10,
  * });
  * ```
  *

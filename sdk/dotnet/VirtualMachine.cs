@@ -28,6 +28,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     ///     var vm1 = new Nutanix.VirtualMachine("vm1", new()
     ///     {
+    ///         Name = "test-dou",
     ///         ClusterUuid = clusters.Apply(getClustersResult =&gt; getClustersResult.Entities[0]?.Metadata?.Uuid),
     ///         Categories = new[]
     ///         {
@@ -59,6 +60,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     ///     var vm = new Nutanix.VirtualMachine("vm", new()
     ///     {
+    ///         Name = "myVm",
     ///         ClusterUuid = clusters.Apply(getClustersResult =&gt; getClustersResult.Entities[0]?.Metadata?.Uuid),
     ///         NumVcpusPerSocket = 1,
     ///         NumSockets = 1,

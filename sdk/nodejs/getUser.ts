@@ -8,6 +8,28 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a datasource to retrieve a user based on the input parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const userUser = new nutanix.User("user", {directoryServiceUser: {
+ *     userPrincipalName: "test-user@ntnxlab.local",
+ *     directoryServiceReference: {
+ *         uuid: "<directory-service-uuid>",
+ *     },
+ * }});
+ * //Retrieve by UUID
+ * const user = nutanix.getUserOutput({
+ *     userId: userUser.id,
+ * });
+ * //Retrieve by Name
+ * const userbyname = nutanix.getUserOutput({
+ *     userName: userUser.name,
+ * });
+ * ```
  */
 export function getUser(args?: GetUserArgs, opts?: pulumi.InvokeOptions): Promise<GetUserResult> {
     args = args || {};
@@ -102,6 +124,28 @@ export interface GetUserResult {
 }
 /**
  * Provides a datasource to retrieve a user based on the input parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const userUser = new nutanix.User("user", {directoryServiceUser: {
+ *     userPrincipalName: "test-user@ntnxlab.local",
+ *     directoryServiceReference: {
+ *         uuid: "<directory-service-uuid>",
+ *     },
+ * }});
+ * //Retrieve by UUID
+ * const user = nutanix.getUserOutput({
+ *     userId: userUser.id,
+ * });
+ * //Retrieve by Name
+ * const userbyname = nutanix.getUserOutput({
+ *     userName: userUser.name,
+ * });
+ * ```
  */
 export function getUserOutput(args?: GetUserOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserResult> {
     args = args || {};

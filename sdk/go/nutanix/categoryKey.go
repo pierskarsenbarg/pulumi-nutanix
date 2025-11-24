@@ -28,6 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewCategoryKey(ctx, "test", &nutanix.CategoryKeyArgs{
+//				Name:        pulumi.String("app-support-example"),
 //				Description: pulumi.String("App Support Category Key"),
 //			})
 //			if err != nil {

@@ -410,18 +410,6 @@ def get_ndb_clone(clone_id: Optional[_builtins.str] = None,
     """
     Describes the clone present in Nutanix Database Service
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    name = nutanix.get_ndb_clone(clone_name="test-inst-tf-check",
-        filters=[{
-            "detailed": "true",
-        }])
-    ```
-
 
     :param _builtins.str clone_id: Clone id
     :param _builtins.str clone_name: Clone Name
@@ -475,18 +463,6 @@ def get_ndb_clone_output(clone_id: Optional[pulumi.Input[Optional[_builtins.str]
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbCloneResult]:
     """
     Describes the clone present in Nutanix Database Service
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    name = nutanix.get_ndb_clone(clone_name="test-inst-tf-check",
-        filters=[{
-            "detailed": "true",
-        }])
-    ```
 
 
     :param _builtins.str clone_id: Clone id

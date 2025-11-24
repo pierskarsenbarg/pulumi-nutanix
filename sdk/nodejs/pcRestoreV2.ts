@@ -11,6 +11,110 @@ import * as utilities from "./utilities";
  * > -  We need to increase the timeout for restoring the PC, because the restore pc takes longer than the default timeout allows for the operation to complete.
  *
  * The restore domain manager is a task-driven operation to restore a domain manager from a cluster or object store backup location based on the selected restore point.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as command from "@pulumi/command";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // Fetch Cluster Ext ID from PC
+ * const clusters = nutanix.getClustersV2({});
+ * const domainManagerExtId = cls.clusterEntities[0].extId;
+ * const clusterExtId = clusters.then(clusters => .filter(cluster => cluster.config[0].clusterFunction[0] != "PRISM_CENTRAL").map(cluster => (cluster.extId))[0]);
+ * // Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
+ * // wait until backup target is synced, you can check the last_sync_time from the backup target data source
+ * const cluster_location = new nutanix.PcRestoreSourceV2("cluster-location", {location: {
+ *     clusterLocations: [{
+ *         configs: [{
+ *             extId: clusterExtId,
+ *         }],
+ *     }],
+ * }});
+ * const restorable_pcs = nutanix.getRestorablePcsV2Output({
+ *     restoreSourceExtId: cluster_location.extId,
+ * });
+ * const restorablePcExtId = restorable_pcs.apply(restorable_pcs => restorable_pcs.restorablePcs?.[0]?.extId);
+ * const restore_points = pulumi.all([restorablePcExtId, cluster_location.id]).apply(([restorablePcExtId, id]) => nutanix.getPcRestorePointsV2Output({
+ *     restorableDomainManagerExtId: restorablePcExtId,
+ *     restoreSourceExtId: id,
+ * }));
+ * const restore_point = pulumi.all([cluster_location.id, restorablePcExtId, restore_points]).apply(([id, restorablePcExtId, restore_points]) => nutanix.getPcRestorePointV2Output({
+ *     restoreSourceExtId: id,
+ *     restorableDomainManagerExtId: restorablePcExtId,
+ *     extId: restore_points.restorePoints?.[0]?.extId,
+ * }));
+ * const restorePoint = restore_point;
+ * // define the restore pc resource
+ * // you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
+ * const test = new nutanix.PcRestoreV2("test", {
+ *     extId: restorePoint.apply(restorePoint => restorePoint.extId),
+ *     restoreSourceExtId: cluster_location.id,
+ *     restorableDomainManagerExtId: restorablePcExtId,
+ *     domainManager: {
+ *         networks: [{
+ *             nameServers: .map(entry => ({
+ *                 ipv4s: [{
+ *                     value: entry.value.ipv4[0].value,
+ *                 }],
+ *             })),
+ *             ntpServers: .map(entry => ({
+ *                 fqdns: [{
+ *                     value: entry.value.fqdn[0].value,
+ *                 }],
+ *             })),
+ *             externalAddress: {
+ *                 ipv4s: [{
+ *                     value: restorePoint.domainManager[0].network[0].externalAddress[0].ipv4[0].value,
+ *                 }],
+ *             },
+ *             externalNetworks: [{
+ *                 networkExtId: restorePoint.domainManager[0].network[0].externalNetworks[0].networkExtId,
+ *                 defaultGateway: {
+ *                     ipv4s: [{
+ *                         value: restorePoint.domainManager[0].network[0].externalNetworks[0].defaultGateway[0].ipv4[0].value,
+ *                     }],
+ *                 },
+ *                 subnetMask: {
+ *                     ipv4s: [{
+ *                         value: restorePoint.domainManager[0].network[0].externalNetworks[0].subnetMask[0].ipv4[0].value,
+ *                     }],
+ *                 },
+ *                 ipRanges: [{
+ *                     begin: {
+ *                         ipv4s: [{
+ *                             value: restorePoint.domainManager[0].network[0].externalNetworks[0].ipRanges[0].begin[0].ipv4[0].value,
+ *                         }],
+ *                     },
+ *                     end: {
+ *                         ipv4s: [{
+ *                             value: restorePoint.domainManager[0].network[0].externalNetworks[0].ipRanges[0].end[0].ipv4[0].value,
+ *                         }],
+ *                     },
+ *                 }],
+ *             }],
+ *         }],
+ *         configs: [{
+ *             shouldEnableLockdownMode: restorePoint.domainManager[0].config[0].shouldEnableLockdownMode,
+ *             buildInfo: {
+ *                 version: restorePoint.domainManager[0].config[0].buildInfo[0].version,
+ *             },
+ *             name: restorePoint.domainManager[0].config[0].name,
+ *             size: restorePoint.domainManager[0].config[0].size,
+ *             resourceConfigs: [{
+ *                 containerExtIds: restorePoint.domainManager[0].config[0].resourceConfig[0].containerExtIds,
+ *                 dataDiskSizeBytes: restorePoint.domainManager[0].config[0].resourceConfig[0].dataDiskSizeBytes,
+ *                 memorySizeBytes: restorePoint.domainManager[0].config[0].resourceConfig[0].memorySizeBytes,
+ *                 numVcpus: restorePoint.domainManager[0].config[0].resourceConfig[0].numVcpus,
+ *             }],
+ *         }],
+ *     },
+ * });
+ * const testProvisioner0 = new command.local.Command("testProvisioner0", {create: "sshpass -p 'nutanix/4u' ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null nutanix@10.44.76.16 '/home/nutanix/prism/cli/ncli user reset-password user-name=admin password=o.P.5.#.s.U.Z.f ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=n.L.9.@.P.Y ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=g.B.1.$.U.$.2.@ ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=r.B.7.$.V.9.W ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=l.H.2.$.2.a.a.P ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=q.F.4.#.u.t ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=n.T.0.#.r ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=s.K.0.$.w ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=o.K.7.@.j ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=Nutanix.123'"}, {
+ *     dependsOn: [test],
+ * });
+ * ```
  */
 export class PcRestoreV2 extends pulumi.CustomResource {
     /**

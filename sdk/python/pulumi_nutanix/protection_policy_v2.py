@@ -273,39 +273,40 @@ class ProtectionPolicyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         synchronous_protection_policy = nutanix.ProtectionPolicyV2("synchronous-protection-policy",
-            category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
+            name="synchronous_protection_policy",
             replication_configurations=[
                 {
+                    "source_location_label": "source",
                     "remote_location_label": "target",
                     "schedule": {
                         "recovery_point_objective_time_seconds": 0,
                         "recovery_point_type": "CRASH_CONSISTENT",
                         "sync_replication_auto_suspend_timeout_seconds": 10,
                     },
-                    "source_location_label": "source",
                 },
                 {
+                    "source_location_label": "target",
                     "remote_location_label": "source",
                     "schedule": {
                         "recovery_point_objective_time_seconds": 0,
                         "recovery_point_type": "CRASH_CONSISTENT",
                         "sync_replication_auto_suspend_timeout_seconds": 10,
                     },
-                    "source_location_label": "target",
                 },
             ],
             replication_locations=[
                 {
                     "domain_manager_ext_id": "6a44b05e-cb9b-4e7e-8d75-b1b4715369c4",
-                    "is_primary": True,
                     "label": "source",
+                    "is_primary": True,
                 },
                 {
                     "domain_manager_ext_id": "75dde184-3a0e-4f59-a185-03ca1efead17",
-                    "is_primary": False,
                     "label": "target",
+                    "is_primary": False,
                 },
-            ])
+            ],
+            category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
 
         ## Example—Linear Retention Protection Policy
@@ -315,6 +316,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         linear_retention_protection_policy = nutanix.ProtectionPolicyV2("linear-retention-protection-policy",
+            name="linear-retention-protection-policy",
             replication_configurations=[
                 {
                     "source_location_label": "source",
@@ -352,7 +354,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
                     "is_primary": True,
                     "replication_sub_location": {
                         "cluster_ext_ids": {
-                            "cluster_ext_ids": [local["clusterExtId"]],
+                            "cluster_ext_ids": [cluster_ext_id],
                         },
                     },
                 },
@@ -373,65 +375,66 @@ class ProtectionPolicyV2(pulumi.CustomResource):
 
         # Create Auto Rollup Retention Protection Policy
         auto_rollup_retention_protection_policy = nutanix.ProtectionPolicyV2("auto-rollup-retention-protection-policy",
-            category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
+            name="auto_rollup_retention_protection_policy",
             replication_configurations=[
                 {
+                    "source_location_label": "source",
                     "remote_location_label": "target",
                     "schedule": {
                         "recovery_point_objective_time_seconds": 60,
                         "recovery_point_type": "CRASH_CONSISTENT",
+                        "sync_replication_auto_suspend_timeout_seconds": 20,
+                        "start_time": "18h:10m",
                         "retention": {
                             "auto_rollup_retention": {
                                 "local": {
-                                    "frequency": 2,
                                     "snapshot_interval_type": "WEEKLY",
+                                    "frequency": 2,
                                 },
                                 "remote": {
-                                    "frequency": 1,
                                     "snapshot_interval_type": "DAILY",
+                                    "frequency": 1,
                                 },
                             },
                         },
-                        "start_time": "18h:10m",
-                        "sync_replication_auto_suspend_timeout_seconds": 20,
                     },
-                    "source_location_label": "source",
                 },
                 {
+                    "source_location_label": "target",
                     "remote_location_label": "source",
                     "schedule": {
                         "recovery_point_objective_time_seconds": 60,
                         "recovery_point_type": "CRASH_CONSISTENT",
+                        "sync_replication_auto_suspend_timeout_seconds": 30,
+                        "start_time": "18h:10m",
                         "retention": {
                             "auto_rollup_retention": {
                                 "local": {
-                                    "frequency": 1,
                                     "snapshot_interval_type": "DAILY",
+                                    "frequency": 1,
                                 },
                                 "remote": {
-                                    "frequency": 2,
                                     "snapshot_interval_type": "WEEKLY",
+                                    "frequency": 2,
                                 },
                             },
                         },
-                        "start_time": "18h:10m",
-                        "sync_replication_auto_suspend_timeout_seconds": 30,
                     },
-                    "source_location_label": "target",
                 },
             ],
             replication_locations=[
                 {
                     "domain_manager_ext_id": "6a44b05e-cb9b-4e7e-8d75-b1b4715369c4",
-                    "is_primary": True,
                     "label": "source",
+                    "is_primary": True,
                 },
                 {
                     "domain_manager_ext_id": "75dde184-3a0e-4f59-a185-03ca1efead17",
-                    "is_primary": False,
                     "label": "target",
+                    "is_primary": False,
                 },
-            ])
+            ],
+            category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
 
         :param str resource_name: The name of the resource.
@@ -458,39 +461,40 @@ class ProtectionPolicyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         synchronous_protection_policy = nutanix.ProtectionPolicyV2("synchronous-protection-policy",
-            category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
+            name="synchronous_protection_policy",
             replication_configurations=[
                 {
+                    "source_location_label": "source",
                     "remote_location_label": "target",
                     "schedule": {
                         "recovery_point_objective_time_seconds": 0,
                         "recovery_point_type": "CRASH_CONSISTENT",
                         "sync_replication_auto_suspend_timeout_seconds": 10,
                     },
-                    "source_location_label": "source",
                 },
                 {
+                    "source_location_label": "target",
                     "remote_location_label": "source",
                     "schedule": {
                         "recovery_point_objective_time_seconds": 0,
                         "recovery_point_type": "CRASH_CONSISTENT",
                         "sync_replication_auto_suspend_timeout_seconds": 10,
                     },
-                    "source_location_label": "target",
                 },
             ],
             replication_locations=[
                 {
                     "domain_manager_ext_id": "6a44b05e-cb9b-4e7e-8d75-b1b4715369c4",
-                    "is_primary": True,
                     "label": "source",
+                    "is_primary": True,
                 },
                 {
                     "domain_manager_ext_id": "75dde184-3a0e-4f59-a185-03ca1efead17",
-                    "is_primary": False,
                     "label": "target",
+                    "is_primary": False,
                 },
-            ])
+            ],
+            category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
 
         ## Example—Linear Retention Protection Policy
@@ -500,6 +504,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         linear_retention_protection_policy = nutanix.ProtectionPolicyV2("linear-retention-protection-policy",
+            name="linear-retention-protection-policy",
             replication_configurations=[
                 {
                     "source_location_label": "source",
@@ -537,7 +542,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
                     "is_primary": True,
                     "replication_sub_location": {
                         "cluster_ext_ids": {
-                            "cluster_ext_ids": [local["clusterExtId"]],
+                            "cluster_ext_ids": [cluster_ext_id],
                         },
                     },
                 },
@@ -558,65 +563,66 @@ class ProtectionPolicyV2(pulumi.CustomResource):
 
         # Create Auto Rollup Retention Protection Policy
         auto_rollup_retention_protection_policy = nutanix.ProtectionPolicyV2("auto-rollup-retention-protection-policy",
-            category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
+            name="auto_rollup_retention_protection_policy",
             replication_configurations=[
                 {
+                    "source_location_label": "source",
                     "remote_location_label": "target",
                     "schedule": {
                         "recovery_point_objective_time_seconds": 60,
                         "recovery_point_type": "CRASH_CONSISTENT",
+                        "sync_replication_auto_suspend_timeout_seconds": 20,
+                        "start_time": "18h:10m",
                         "retention": {
                             "auto_rollup_retention": {
                                 "local": {
-                                    "frequency": 2,
                                     "snapshot_interval_type": "WEEKLY",
+                                    "frequency": 2,
                                 },
                                 "remote": {
-                                    "frequency": 1,
                                     "snapshot_interval_type": "DAILY",
+                                    "frequency": 1,
                                 },
                             },
                         },
-                        "start_time": "18h:10m",
-                        "sync_replication_auto_suspend_timeout_seconds": 20,
                     },
-                    "source_location_label": "source",
                 },
                 {
+                    "source_location_label": "target",
                     "remote_location_label": "source",
                     "schedule": {
                         "recovery_point_objective_time_seconds": 60,
                         "recovery_point_type": "CRASH_CONSISTENT",
+                        "sync_replication_auto_suspend_timeout_seconds": 30,
+                        "start_time": "18h:10m",
                         "retention": {
                             "auto_rollup_retention": {
                                 "local": {
-                                    "frequency": 1,
                                     "snapshot_interval_type": "DAILY",
+                                    "frequency": 1,
                                 },
                                 "remote": {
-                                    "frequency": 2,
                                     "snapshot_interval_type": "WEEKLY",
+                                    "frequency": 2,
                                 },
                             },
                         },
-                        "start_time": "18h:10m",
-                        "sync_replication_auto_suspend_timeout_seconds": 30,
                     },
-                    "source_location_label": "target",
                 },
             ],
             replication_locations=[
                 {
                     "domain_manager_ext_id": "6a44b05e-cb9b-4e7e-8d75-b1b4715369c4",
-                    "is_primary": True,
                     "label": "source",
+                    "is_primary": True,
                 },
                 {
                     "domain_manager_ext_id": "75dde184-3a0e-4f59-a185-03ca1efead17",
-                    "is_primary": False,
                     "label": "target",
+                    "is_primary": False,
                 },
-            ])
+            ],
+            category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
 
         :param str resource_name: The name of the resource.

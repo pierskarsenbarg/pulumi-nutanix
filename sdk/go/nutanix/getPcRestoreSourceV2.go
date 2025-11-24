@@ -27,18 +27,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// defining nutanix configuration for PE
-//			_, err := nutanix.NewProvider(ctx, "pe", &nutanix.ProviderArgs{
-//				Username: pulumi.Any(_var.Nutanix_pe_username),
-//				Password: pulumi.Any(_var.Nutanix_pe_password),
-//				Endpoint: pulumi.Any(_var.Nutanix_pe_endpoint),
-//				Insecure: pulumi.Bool(true),
-//				Port:     pulumi.String("9440"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = nutanix.LookupPcRestoreSourceV2(ctx, &nutanix.LookupPcRestoreSourceV2Args{
+//			// get the restore source
+//			_, err := nutanix.LookupPcRestoreSourceV2(ctx, &nutanix.LookupPcRestoreSourceV2Args{
 //				ExtId: "323860ca-bd10-411e-9fe0-1430b62eaf45",
 //			}, nil)
 //			if err != nil {

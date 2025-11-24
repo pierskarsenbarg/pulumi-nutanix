@@ -217,6 +217,22 @@ def get_access_control_policy(access_control_policy_id: Optional[_builtins.str] 
     """
     Describes an Access Control Policy.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_access_control_policy = nutanix.AccessControlPolicy("test",
+        name="NAME OF ACCESS CONTROL POLICY",
+        description="DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        role_reference={
+            "kind": "role",
+            "uuid": "UUID of role",
+        })
+    test = nutanix.get_access_control_policy_output(access_control_policy_id=test_access_control_policy.id)
+    ```
+
 
     :param _builtins.str access_control_policy_id: - (Required) The UUID of an access control policy.
     :param Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']] categories: - The category values represented as a dictionary of key > list of values.
@@ -250,6 +266,22 @@ def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.I
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessControlPolicyResult]:
     """
     Describes an Access Control Policy.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_access_control_policy = nutanix.AccessControlPolicy("test",
+        name="NAME OF ACCESS CONTROL POLICY",
+        description="DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        role_reference={
+            "kind": "role",
+            "uuid": "UUID of role",
+        })
+    test = nutanix.get_access_control_policy_output(access_control_policy_id=test_access_control_policy.id)
+    ```
 
 
     :param _builtins.str access_control_policy_id: - (Required) The UUID of an access control policy.

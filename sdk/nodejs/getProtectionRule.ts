@@ -15,7 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const protectionRuleTest = new nutanix.ProtectionRule("protectionRuleTest", {
+ * const protectionRuleTest = new nutanix.ProtectionRule("protection_rule_test", {
+ *     name: "test",
  *     description: "test",
  *     orderedAvailabilityZoneLists: [{
  *         availabilityZoneUrl: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
@@ -112,7 +113,8 @@ export interface GetProtectionRuleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const protectionRuleTest = new nutanix.ProtectionRule("protectionRuleTest", {
+ * const protectionRuleTest = new nutanix.ProtectionRule("protection_rule_test", {
+ *     name: "test",
  *     description: "test",
  *     orderedAvailabilityZoneLists: [{
  *         availabilityZoneUrl: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",

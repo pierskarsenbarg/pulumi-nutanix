@@ -13,6 +13,72 @@ import * as utilities from "./utilities";
  * Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const example = new nutanix.PcDeployV2("example", {
+ *     config: {
+ *         buildInfo: {
+ *             version: "pc.2024.3",
+ *         },
+ *         size: "STARTER",
+ *         name: "PC_EXAMPLE",
+ *     },
+ *     network: {
+ *         externalNetworks: [{
+ *             networkExtId: "ba416f8d-00f2-499d-bc4c-19da8d104af9",
+ *             defaultGateway: {
+ *                 ipv4s: [{
+ *                     value: "10.97.64.1",
+ *                 }],
+ *             },
+ *             subnetMask: {
+ *                 ipv4s: [{
+ *                     value: "255.255.252.0",
+ *                 }],
+ *             },
+ *             ipRanges: [{
+ *                 begin: {
+ *                     ipv4s: [{
+ *                         value: "10.97.64.91",
+ *                     }],
+ *                 },
+ *                 end: {
+ *                     ipv4s: [{
+ *                         value: "10.97.64.91",
+ *                     }],
+ *                 },
+ *             }],
+ *         }],
+ *         nameServers: [
+ *             {
+ *                 ipv4s: [{
+ *                     value: "10.40.64.16",
+ *                 }],
+ *             },
+ *             {
+ *                 ipv4s: [{
+ *                     value: "10.40.64.15",
+ *                 }],
+ *             },
+ *         ],
+ *         ntpServers: [
+ *             {
+ *                 fqdns: [{
+ *                     value: "2.centos.pool.ntp.org",
+ *                 }],
+ *             },
+ *             {
+ *                 fqdns: [{
+ *                     value: "3.centos.pool.ntp.org",
+ *                 }],
+ *             },
+ *         ],
+ *     },
+ * });
+ * ```
  */
 export class PcDeployV2 extends pulumi.CustomResource {
     /**

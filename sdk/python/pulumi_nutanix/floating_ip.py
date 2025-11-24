@@ -310,8 +310,8 @@ class FloatingIp(pulumi.CustomResource):
 
         fip2 = nutanix.FloatingIp("fip2",
             external_subnet_reference_name="{{ext_sub_name}}",
-            private_ip="{{ip_address}}",
-            vpc_reference_name="{{vpc_name}}")
+            vpc_reference_name="{{vpc_name}}",
+            private_ip="{{ip_address}}")
         ```
 
         :param str resource_name: The name of the resource.
@@ -351,8 +351,8 @@ class FloatingIp(pulumi.CustomResource):
 
         fip2 = nutanix.FloatingIp("fip2",
             external_subnet_reference_name="{{ext_sub_name}}",
-            private_ip="{{ip_address}}",
-            vpc_reference_name="{{vpc_name}}")
+            vpc_reference_name="{{vpc_name}}",
+            private_ip="{{ip_address}}")
         ```
 
         :param str resource_name: The name of the resource.

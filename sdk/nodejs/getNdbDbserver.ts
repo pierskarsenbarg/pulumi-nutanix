@@ -8,17 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Describes Database Server VM in Nutanix Database Service
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const dbserver = nutanix.getNdbDbserver({
- *     ip: "{{ dbserver_vm_ip }}",
- * });
- * ```
  */
 export function getNdbDbserver(args?: GetNdbDbserverArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbDbserverResult> {
     args = args || {};
@@ -190,17 +179,6 @@ export interface GetNdbDbserverResult {
 }
 /**
  * Describes Database Server VM in Nutanix Database Service
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const dbserver = nutanix.getNdbDbserver({
- *     ip: "{{ dbserver_vm_ip }}",
- * });
- * ```
  */
 export function getNdbDbserverOutput(args?: GetNdbDbserverOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbDbserverResult> {
     args = args || {};

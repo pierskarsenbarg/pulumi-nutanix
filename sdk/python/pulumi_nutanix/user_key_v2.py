@@ -534,11 +534,12 @@ class UserKeyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Create key under service account, never expires
-        create_key = nutanix.UserKeyV2("createKey",
-            assigned_to="developer_user_1",
-            expiry_time="2125-01-01T00:00:00Z",
+        create_key = nutanix.UserKeyV2("create_key",
+            user_ext_id="<SERVICE_ACCOUNT_UUID>",
+            name="api_key_developers",
             key_type="API_KEY",
-            user_ext_id="<SERVICE_ACCOUNT_UUID>")
+            expiry_time="2125-01-01T00:00:00Z",
+            assigned_to="developer_user_1")
         ```
         ## Argument Reference
 
@@ -592,11 +593,12 @@ class UserKeyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Create key under service account, never expires
-        create_key = nutanix.UserKeyV2("createKey",
-            assigned_to="developer_user_1",
-            expiry_time="2125-01-01T00:00:00Z",
+        create_key = nutanix.UserKeyV2("create_key",
+            user_ext_id="<SERVICE_ACCOUNT_UUID>",
+            name="api_key_developers",
             key_type="API_KEY",
-            user_ext_id="<SERVICE_ACCOUNT_UUID>")
+            expiry_time="2125-01-01T00:00:00Z",
+            assigned_to="developer_user_1")
         ```
         ## Argument Reference
 

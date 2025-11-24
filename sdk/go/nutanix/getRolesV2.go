@@ -27,16 +27,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// List all Roles
 //			_, err := nutanix.LookupRolesV2(ctx, &nutanix.LookupRolesV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// List Roles with filter
 //			_, err = nutanix.LookupRolesV2(ctx, &nutanix.LookupRolesV2Args{
 //				Filter: pulumi.StringRef("displayName eq 'example_role'"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// List Roles with filter and orderby
 //			_, err = nutanix.LookupRolesV2(ctx, &nutanix.LookupRolesV2Args{
 //				Filter:  pulumi.StringRef("displayName eq 'example_role'"),
 //				OrderBy: pulumi.StringRef("createdTime desc"),

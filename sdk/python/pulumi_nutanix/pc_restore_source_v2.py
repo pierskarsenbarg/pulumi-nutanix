@@ -158,13 +158,6 @@ class PcRestoreSourceV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        #defining nutanix configuration for PE
-        pe = nutanix.Provider("pe",
-            username=var["nutanix_pe_username"],
-            password=var["nutanix_pe_password"],
-            endpoint=var["nutanix_pe_endpoint"],
-            insecure=True,
-            port="9440")
         # restore source is auto-deleted after sometime, nutanix_pc_restore_source_v2 resource is auto-create
         # new restore source if it was deleted, so notice that the id of the restore source will be different
         # after recreation
@@ -174,8 +167,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
                     "ext_id": "323860ca-bd10-411e-9fe0-1430b62eaf45",
                 }],
             }],
-        },
-        opts = pulumi.ResourceOptions(provider=nutanix["pe"]))
+        })
         ```
 
         ### Object Store Location
@@ -225,13 +217,6 @@ class PcRestoreSourceV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        #defining nutanix configuration for PE
-        pe = nutanix.Provider("pe",
-            username=var["nutanix_pe_username"],
-            password=var["nutanix_pe_password"],
-            endpoint=var["nutanix_pe_endpoint"],
-            insecure=True,
-            port="9440")
         # restore source is auto-deleted after sometime, nutanix_pc_restore_source_v2 resource is auto-create
         # new restore source if it was deleted, so notice that the id of the restore source will be different
         # after recreation
@@ -241,8 +226,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
                     "ext_id": "323860ca-bd10-411e-9fe0-1430b62eaf45",
                 }],
             }],
-        },
-        opts = pulumi.ResourceOptions(provider=nutanix["pe"]))
+        })
         ```
 
         ### Object Store Location

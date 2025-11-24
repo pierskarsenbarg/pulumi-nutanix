@@ -16,10 +16,10 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const user = new nutanix.User("user", {directoryServiceUser: {
+ *     userPrincipalName: "test-user@ntnxlab.local",
  *     directoryServiceReference: {
  *         uuid: "<directory-service-uuid>",
  *     },
- *     userPrincipalName: "test-user@ntnxlab.local",
  * }});
  * ```
  *
@@ -28,10 +28,10 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const user = new nutanix.User("user", {identityProviderUser: {
+ *     username: "username",
  *     identityProviderReference: {
  *         uuid: "<identity-provider-uuid>",
  *     },
- *     username: "username",
  * }});
  * ```
  */

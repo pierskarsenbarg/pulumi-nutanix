@@ -27,20 +27,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get all VPCs
 //			_, err := nutanix.GetVpcsV2(ctx, &nutanix.GetVpcsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// Get all VPCs with filter
 //			_, err = nutanix.GetVpcsV2(ctx, &nutanix.GetVpcsV2Args{
 //				Filter: pulumi.StringRef("vpcType eq 'VLAN'"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// Get all VPCs with order by and limit and filter
 //			_, err = nutanix.GetVpcsV2(ctx, &nutanix.GetVpcsV2Args{
 //				Filter:  pulumi.StringRef("vpcType eq 'VLAN'"),
-//				Limit:   pulumi.IntRef(10),
 //				OrderBy: pulumi.StringRef("name desc"),
+//				Limit:   pulumi.IntRef(10),
 //			}, nil)
 //			if err != nil {
 //				return err

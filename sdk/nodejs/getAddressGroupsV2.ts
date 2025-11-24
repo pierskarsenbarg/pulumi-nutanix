@@ -15,10 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // list all address groups
  * const list_addr_groups = nutanix.getAddressGroupsV2({});
+ * // filtered the address groups
  * const list_addr_group_filtered = nutanix.getAddressGroupsV2({
  *     filter: "name eq 'td-addr-group'",
  * });
+ * // filtered and limit the number of address groups
  * const list_addr_groups_filter_limit = nutanix.getAddressGroupsV2({
  *     filter: "name eq 'td-addr-group'",
  *     limit: 1,
@@ -105,10 +108,13 @@ export interface GetAddressGroupsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // list all address groups
  * const list_addr_groups = nutanix.getAddressGroupsV2({});
+ * // filtered the address groups
  * const list_addr_group_filtered = nutanix.getAddressGroupsV2({
  *     filter: "name eq 'td-addr-group'",
  * });
+ * // filtered and limit the number of address groups
  * const list_addr_groups_filter_limit = nutanix.getAddressGroupsV2({
  *     filter: "name eq 'td-addr-group'",
  *     limit: 1,

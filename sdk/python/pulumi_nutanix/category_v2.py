@@ -368,9 +368,9 @@ class CategoryV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example = nutanix.CategoryV2("example",
-            description="category example description",
             key="category_example_key",
-            value="category_example_value")
+            value="category_example_value",
+            description="category example description")
         ```
 
         :param str resource_name: The name of the resource.
@@ -424,9 +424,9 @@ class CategoryV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example = nutanix.CategoryV2("example",
-            description="category example description",
             key="category_example_key",
-            value="category_example_value")
+            value="category_example_value",
+            description="category example description")
         ```
 
         :param str resource_name: The name of the resource.

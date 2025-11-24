@@ -1061,20 +1061,203 @@ class NetworkSecurityRule(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         isolation = nutanix.NetworkSecurityRule("isolation",
+            name="example-isolation-rule",
             description="Isolation Rule Example",
             isolation_rule_action="APPLY",
             isolation_rule_first_entity_filter_kind_lists=["vm"],
+            isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
             isolation_rule_first_entity_filter_params=[{
                 "name": "Environment",
                 "values": ["Dev"],
             }],
-            isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
             isolation_rule_second_entity_filter_kind_lists=["vm"],
+            isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL",
             isolation_rule_second_entity_filter_params=[{
                 "name": "Environment",
                 "values": ["Production"],
+            }])
+        ```
+
+        ### App Rule Example with associated VMs.
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        clusters = nutanix.get_clusters()
+        cluster_uuid = [cluster.metadata["uuid"] for cluster in clusters.entities if cluster.service_list[0] != "PRISM_CENTRAL"][0]
+        #Create categories.
+        test_category_key = nutanix.CategoryKey("test-category-key",
+            name="TIER-1",
+            description="TIER Category Key")
+        user = nutanix.CategoryKey("USER",
+            name="user",
+            description="user Category Key")
+        web = nutanix.CategoryValue("WEB",
+            name=test_category_key.id,
+            description="WEB Category Value",
+            value="WEB-1")
+        app = nutanix.CategoryValue("APP",
+            name=test_category_key.id,
+            description="APP Category Value",
+            value="APP-1")
+        db = nutanix.CategoryValue("DB",
+            name=test_category_key.id,
+            description="DB Category Value",
+            value="DB-1")
+        group = nutanix.CategoryValue("group",
+            name=user.id,
+            description="group Category Value",
+            value="group-1")
+        #Create a cirros image
+        cirros_034_disk = nutanix.Image("cirros-034-disk",
+            name="test-image-vm-create-flow",
+            source_uri="http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img",
+            description="heres a tiny linux image, not an iso, but a real disk!")
+        #APP-1 VM.
+        vm_app = nutanix.VirtualMachine("vm-app",
+            name="test-dou-vm-flow-APP-1",
+            cluster_uuid=cluster_uuid,
+            num_vcpus_per_socket=1,
+            num_sockets=1,
+            memory_size_mib=186,
+            nic_lists=[{
+                "subnet_uuid": "c56b535c-8aff-4435-ae85-78e64a07f76d",
             }],
-            isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
+            disk_lists=[{
+                "data_source_reference": {
+                    "kind": "image",
+                    "uuid": cirros_034_disk.id,
+                },
+                "device_properties": {
+                    "disk_address": {
+                        "device_index": "0",
+                        "adapter_type": "SCSI",
+                    },
+                    "device_type": "DISK",
+                },
+            }],
+            categories=[
+                {
+                    "name": "Environment",
+                    "value": "Staging",
+                },
+                {
+                    "name": "TIER-1",
+                    "value": app.id,
+                },
+            ])
+        #WEB-1 VM
+        vm_web = nutanix.VirtualMachine("vm-web",
+            name="test-dou-vm-flow-WEB-1",
+            cluster_uuid=cluster_uuid,
+            num_vcpus_per_socket=1,
+            num_sockets=1,
+            memory_size_mib=186,
+            nic_lists=[{
+                "subnet_uuid": "c56b535c-8aff-4435-ae85-78e64a07f76d",
+            }],
+            disk_lists=[{
+                "data_source_reference": {
+                    "kind": "image",
+                    "uuid": cirros_034_disk.id,
+                },
+                "device_properties": {
+                    "disk_address": {
+                        "device_index": "0",
+                        "adapter_type": "SCSI",
+                    },
+                    "device_type": "DISK",
+                },
+            }],
+            categories=[
+                {
+                    "name": "Environment",
+                    "value": "Staging",
+                },
+                {
+                    "name": "TIER-1",
+                    "value": web.id,
+                },
+            ])
+        #DB-1 VM
+        vm_db = nutanix.VirtualMachine("vm-db",
+            name="test-dou-vm-flow-DB-1",
+            cluster_uuid=cluster_uuid,
+            num_vcpus_per_socket=1,
+            num_sockets=1,
+            memory_size_mib=186,
+            nic_lists=[{
+                "subnet_uuid": "c56b535c-8aff-4435-ae85-78e64a07f76d",
+            }],
+            disk_lists=[{
+                "data_source_reference": {
+                    "kind": "image",
+                    "uuid": cirros_034_disk.id,
+                },
+                "device_properties": {
+                    "disk_address": {
+                        "device_index": "0",
+                        "adapter_type": "SCSI",
+                    },
+                    "device_type": "DISK",
+                },
+            }],
+            categories=[
+                {
+                    "name": "Environment",
+                    "value": "Staging",
+                },
+                {
+                    "name": "TIER-1",
+                    "value": db.id,
+                },
+            ])
+        #Create Application Network Policy.
+        tes_t__tier = nutanix.NetworkSecurityRule("TEST-TIER",
+            name="RULE-1-TIERS",
+            description="rule 1 tiers",
+            app_rule_action="APPLY",
+            app_rule_inbound_allow_lists=[{
+                "peer_specification_type": "FILTER",
+                "filter_type": "CATEGORIES_MATCH_ALL",
+                "filter_kind_lists": ["vm"],
+                "filter_params": [{
+                    "name": test_category_key.id,
+                    "values": [web.id],
+                }],
+            }],
+            app_rule_target_group_default_internal_policy="DENY_ALL",
+            app_rule_target_group_peer_specification_type="FILTER",
+            app_rule_target_group_filter_type="CATEGORIES_MATCH_ALL",
+            app_rule_target_group_filter_kind_lists=["vm"],
+            app_rule_target_group_filter_params=[
+                {
+                    "name": test_category_key.id,
+                    "values": [app.id],
+                },
+                {
+                    "name": user.id,
+                    "values": [group.id],
+                },
+                {
+                    "name": "AppType",
+                    "values": ["Default"],
+                },
+            ],
+            app_rule_outbound_allow_lists=[{
+                "peer_specification_type": "FILTER",
+                "filter_type": "CATEGORIES_MATCH_ALL",
+                "filter_kind_lists": ["vm"],
+                "filter_params": [{
+                    "name": test_category_key.id,
+                    "values": [db.id],
+                }],
+            }],
+            opts = pulumi.ResourceOptions(depends_on=[
+                    vm_app,
+                    vm_web,
+                    vm_db,
+                ]))
         ```
 
         ### Usage with service and address groups
@@ -1083,6 +1266,7 @@ class NetworkSecurityRule(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         service1 = nutanix.ServiceGroup("service1",
+            name="srv-1",
             description="test",
             service_lists=[{
                 "protocol": "TCP",
@@ -1098,15 +1282,18 @@ class NetworkSecurityRule(pulumi.CustomResource):
                 ],
             }])
         address1 = nutanix.AddressGroup("address1",
+            name="addr-1",
             description="test",
             ip_address_block_lists=[{
                 "ip": "10.0.0.0",
                 "prefix_length": 24,
             }])
         ad_group_user_1 = nutanix.CategoryValue("ad-group-user-1",
+            name="AD",
             description="group user category value",
             value="AD")
-        v_di = nutanix.NetworkSecurityRule("vDI",
+        vdi = nutanix.NetworkSecurityRule("VDI",
+            name="nsr-1",
             ad_rule_action="APPLY",
             description="test",
             ad_rule_inbound_allow_lists=[{
@@ -1188,20 +1375,203 @@ class NetworkSecurityRule(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         isolation = nutanix.NetworkSecurityRule("isolation",
+            name="example-isolation-rule",
             description="Isolation Rule Example",
             isolation_rule_action="APPLY",
             isolation_rule_first_entity_filter_kind_lists=["vm"],
+            isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
             isolation_rule_first_entity_filter_params=[{
                 "name": "Environment",
                 "values": ["Dev"],
             }],
-            isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
             isolation_rule_second_entity_filter_kind_lists=["vm"],
+            isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL",
             isolation_rule_second_entity_filter_params=[{
                 "name": "Environment",
                 "values": ["Production"],
+            }])
+        ```
+
+        ### App Rule Example with associated VMs.
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        clusters = nutanix.get_clusters()
+        cluster_uuid = [cluster.metadata["uuid"] for cluster in clusters.entities if cluster.service_list[0] != "PRISM_CENTRAL"][0]
+        #Create categories.
+        test_category_key = nutanix.CategoryKey("test-category-key",
+            name="TIER-1",
+            description="TIER Category Key")
+        user = nutanix.CategoryKey("USER",
+            name="user",
+            description="user Category Key")
+        web = nutanix.CategoryValue("WEB",
+            name=test_category_key.id,
+            description="WEB Category Value",
+            value="WEB-1")
+        app = nutanix.CategoryValue("APP",
+            name=test_category_key.id,
+            description="APP Category Value",
+            value="APP-1")
+        db = nutanix.CategoryValue("DB",
+            name=test_category_key.id,
+            description="DB Category Value",
+            value="DB-1")
+        group = nutanix.CategoryValue("group",
+            name=user.id,
+            description="group Category Value",
+            value="group-1")
+        #Create a cirros image
+        cirros_034_disk = nutanix.Image("cirros-034-disk",
+            name="test-image-vm-create-flow",
+            source_uri="http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img",
+            description="heres a tiny linux image, not an iso, but a real disk!")
+        #APP-1 VM.
+        vm_app = nutanix.VirtualMachine("vm-app",
+            name="test-dou-vm-flow-APP-1",
+            cluster_uuid=cluster_uuid,
+            num_vcpus_per_socket=1,
+            num_sockets=1,
+            memory_size_mib=186,
+            nic_lists=[{
+                "subnet_uuid": "c56b535c-8aff-4435-ae85-78e64a07f76d",
             }],
-            isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
+            disk_lists=[{
+                "data_source_reference": {
+                    "kind": "image",
+                    "uuid": cirros_034_disk.id,
+                },
+                "device_properties": {
+                    "disk_address": {
+                        "device_index": "0",
+                        "adapter_type": "SCSI",
+                    },
+                    "device_type": "DISK",
+                },
+            }],
+            categories=[
+                {
+                    "name": "Environment",
+                    "value": "Staging",
+                },
+                {
+                    "name": "TIER-1",
+                    "value": app.id,
+                },
+            ])
+        #WEB-1 VM
+        vm_web = nutanix.VirtualMachine("vm-web",
+            name="test-dou-vm-flow-WEB-1",
+            cluster_uuid=cluster_uuid,
+            num_vcpus_per_socket=1,
+            num_sockets=1,
+            memory_size_mib=186,
+            nic_lists=[{
+                "subnet_uuid": "c56b535c-8aff-4435-ae85-78e64a07f76d",
+            }],
+            disk_lists=[{
+                "data_source_reference": {
+                    "kind": "image",
+                    "uuid": cirros_034_disk.id,
+                },
+                "device_properties": {
+                    "disk_address": {
+                        "device_index": "0",
+                        "adapter_type": "SCSI",
+                    },
+                    "device_type": "DISK",
+                },
+            }],
+            categories=[
+                {
+                    "name": "Environment",
+                    "value": "Staging",
+                },
+                {
+                    "name": "TIER-1",
+                    "value": web.id,
+                },
+            ])
+        #DB-1 VM
+        vm_db = nutanix.VirtualMachine("vm-db",
+            name="test-dou-vm-flow-DB-1",
+            cluster_uuid=cluster_uuid,
+            num_vcpus_per_socket=1,
+            num_sockets=1,
+            memory_size_mib=186,
+            nic_lists=[{
+                "subnet_uuid": "c56b535c-8aff-4435-ae85-78e64a07f76d",
+            }],
+            disk_lists=[{
+                "data_source_reference": {
+                    "kind": "image",
+                    "uuid": cirros_034_disk.id,
+                },
+                "device_properties": {
+                    "disk_address": {
+                        "device_index": "0",
+                        "adapter_type": "SCSI",
+                    },
+                    "device_type": "DISK",
+                },
+            }],
+            categories=[
+                {
+                    "name": "Environment",
+                    "value": "Staging",
+                },
+                {
+                    "name": "TIER-1",
+                    "value": db.id,
+                },
+            ])
+        #Create Application Network Policy.
+        tes_t__tier = nutanix.NetworkSecurityRule("TEST-TIER",
+            name="RULE-1-TIERS",
+            description="rule 1 tiers",
+            app_rule_action="APPLY",
+            app_rule_inbound_allow_lists=[{
+                "peer_specification_type": "FILTER",
+                "filter_type": "CATEGORIES_MATCH_ALL",
+                "filter_kind_lists": ["vm"],
+                "filter_params": [{
+                    "name": test_category_key.id,
+                    "values": [web.id],
+                }],
+            }],
+            app_rule_target_group_default_internal_policy="DENY_ALL",
+            app_rule_target_group_peer_specification_type="FILTER",
+            app_rule_target_group_filter_type="CATEGORIES_MATCH_ALL",
+            app_rule_target_group_filter_kind_lists=["vm"],
+            app_rule_target_group_filter_params=[
+                {
+                    "name": test_category_key.id,
+                    "values": [app.id],
+                },
+                {
+                    "name": user.id,
+                    "values": [group.id],
+                },
+                {
+                    "name": "AppType",
+                    "values": ["Default"],
+                },
+            ],
+            app_rule_outbound_allow_lists=[{
+                "peer_specification_type": "FILTER",
+                "filter_type": "CATEGORIES_MATCH_ALL",
+                "filter_kind_lists": ["vm"],
+                "filter_params": [{
+                    "name": test_category_key.id,
+                    "values": [db.id],
+                }],
+            }],
+            opts = pulumi.ResourceOptions(depends_on=[
+                    vm_app,
+                    vm_web,
+                    vm_db,
+                ]))
         ```
 
         ### Usage with service and address groups
@@ -1210,6 +1580,7 @@ class NetworkSecurityRule(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         service1 = nutanix.ServiceGroup("service1",
+            name="srv-1",
             description="test",
             service_lists=[{
                 "protocol": "TCP",
@@ -1225,15 +1596,18 @@ class NetworkSecurityRule(pulumi.CustomResource):
                 ],
             }])
         address1 = nutanix.AddressGroup("address1",
+            name="addr-1",
             description="test",
             ip_address_block_lists=[{
                 "ip": "10.0.0.0",
                 "prefix_length": 24,
             }])
         ad_group_user_1 = nutanix.CategoryValue("ad-group-user-1",
+            name="AD",
             description="group user category value",
             value="AD")
-        v_di = nutanix.NetworkSecurityRule("vDI",
+        vdi = nutanix.NetworkSecurityRule("VDI",
+            name="nsr-1",
             ad_rule_action="APPLY",
             description="test",
             ad_rule_inbound_allow_lists=[{

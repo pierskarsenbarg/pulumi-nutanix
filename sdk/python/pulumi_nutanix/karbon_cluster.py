@@ -480,28 +480,9 @@ class KarbonCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example_cluster = nutanix.KarbonCluster("exampleCluster",
-            cni_config={
-                "node_cidr_mask_size": 24,
-                "pod_ipv4_cidr": "172.20.0.0/16",
-                "service_ipv4_cidr": "172.19.0.0/16",
-            },
-            etcd_node_pool={
-                "ahv_config": {
-                    "network_uuid": "my_subnet_id",
-                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
-                },
-                "node_os_version": "ntnx-1.0",
-                "num_instances": 1,
-            },
-            master_node_pool={
-                "ahv_config": {
-                    "network_uuid": "my_subnet_id",
-                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
-                },
-                "node_os_version": "ntnx-1.0",
-                "num_instances": 1,
-            },
+        example_cluster = nutanix.KarbonCluster("example_cluster",
+            name="example_cluster",
+            version="1.18.15-1",
             storage_class_config={
                 "reclaim_policy": "Delete",
                 "volumes_config": {
@@ -513,14 +494,34 @@ class KarbonCluster(pulumi.CustomResource):
                     "username": "my_pe_username",
                 },
             },
-            version="1.18.15-1",
+            cni_config={
+                "node_cidr_mask_size": 24,
+                "pod_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv4_cidr": "172.19.0.0/16",
+            },
             worker_node_pool={
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
                 "ahv_config": {
                     "network_uuid": "my_subnet_id",
                     "prism_element_cluster_uuid": "my_pe_cluster_uuid",
                 },
+            },
+            etcd_node_pool={
                 "node_os_version": "ntnx-1.0",
                 "num_instances": 1,
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+            },
+            master_node_pool={
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
             })
         ```
 
@@ -529,28 +530,9 @@ class KarbonCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example_cluster = nutanix.KarbonCluster("exampleCluster",
-            cni_config={
-                "node_cidr_mask_size": 24,
-                "pod_ipv4_cidr": "172.20.0.0/16",
-                "service_ipv4_cidr": "172.19.0.0/16",
-            },
-            etcd_node_pool={
-                "ahv_config": {
-                    "network_uuid": "my_subnet_id",
-                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
-                },
-                "node_os_version": "ntnx-1.0",
-                "num_instances": 1,
-            },
-            master_node_pool={
-                "ahv_config": {
-                    "network_uuid": "my_subnet_id",
-                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
-                },
-                "node_os_version": "ntnx-1.0",
-                "num_instances": 1,
-            },
+        example_cluster = nutanix.KarbonCluster("example_cluster",
+            name="example_cluster",
+            version="1.18.15-1",
             storage_class_config={
                 "reclaim_policy": "Delete",
                 "volumes_config": {
@@ -562,14 +544,34 @@ class KarbonCluster(pulumi.CustomResource):
                     "username": "my_pe_username",
                 },
             },
-            version="1.18.15-1",
+            cni_config={
+                "node_cidr_mask_size": 24,
+                "pod_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv4_cidr": "172.19.0.0/16",
+            },
             worker_node_pool={
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
                 "ahv_config": {
                     "network_uuid": "my_subnet_id",
                     "prism_element_cluster_uuid": "my_pe_cluster_uuid",
                 },
+            },
+            etcd_node_pool={
                 "node_os_version": "ntnx-1.0",
                 "num_instances": 1,
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+            },
+            master_node_pool={
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
             })
         ```
 
@@ -606,28 +608,9 @@ class KarbonCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example_cluster = nutanix.KarbonCluster("exampleCluster",
-            cni_config={
-                "node_cidr_mask_size": 24,
-                "pod_ipv4_cidr": "172.20.0.0/16",
-                "service_ipv4_cidr": "172.19.0.0/16",
-            },
-            etcd_node_pool={
-                "ahv_config": {
-                    "network_uuid": "my_subnet_id",
-                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
-                },
-                "node_os_version": "ntnx-1.0",
-                "num_instances": 1,
-            },
-            master_node_pool={
-                "ahv_config": {
-                    "network_uuid": "my_subnet_id",
-                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
-                },
-                "node_os_version": "ntnx-1.0",
-                "num_instances": 1,
-            },
+        example_cluster = nutanix.KarbonCluster("example_cluster",
+            name="example_cluster",
+            version="1.18.15-1",
             storage_class_config={
                 "reclaim_policy": "Delete",
                 "volumes_config": {
@@ -639,14 +622,34 @@ class KarbonCluster(pulumi.CustomResource):
                     "username": "my_pe_username",
                 },
             },
-            version="1.18.15-1",
+            cni_config={
+                "node_cidr_mask_size": 24,
+                "pod_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv4_cidr": "172.19.0.0/16",
+            },
             worker_node_pool={
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
                 "ahv_config": {
                     "network_uuid": "my_subnet_id",
                     "prism_element_cluster_uuid": "my_pe_cluster_uuid",
                 },
+            },
+            etcd_node_pool={
                 "node_os_version": "ntnx-1.0",
                 "num_instances": 1,
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+            },
+            master_node_pool={
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
             })
         ```
 
@@ -655,28 +658,9 @@ class KarbonCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example_cluster = nutanix.KarbonCluster("exampleCluster",
-            cni_config={
-                "node_cidr_mask_size": 24,
-                "pod_ipv4_cidr": "172.20.0.0/16",
-                "service_ipv4_cidr": "172.19.0.0/16",
-            },
-            etcd_node_pool={
-                "ahv_config": {
-                    "network_uuid": "my_subnet_id",
-                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
-                },
-                "node_os_version": "ntnx-1.0",
-                "num_instances": 1,
-            },
-            master_node_pool={
-                "ahv_config": {
-                    "network_uuid": "my_subnet_id",
-                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
-                },
-                "node_os_version": "ntnx-1.0",
-                "num_instances": 1,
-            },
+        example_cluster = nutanix.KarbonCluster("example_cluster",
+            name="example_cluster",
+            version="1.18.15-1",
             storage_class_config={
                 "reclaim_policy": "Delete",
                 "volumes_config": {
@@ -688,14 +672,34 @@ class KarbonCluster(pulumi.CustomResource):
                     "username": "my_pe_username",
                 },
             },
-            version="1.18.15-1",
+            cni_config={
+                "node_cidr_mask_size": 24,
+                "pod_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv4_cidr": "172.19.0.0/16",
+            },
             worker_node_pool={
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
                 "ahv_config": {
                     "network_uuid": "my_subnet_id",
                     "prism_element_cluster_uuid": "my_pe_cluster_uuid",
                 },
+            },
+            etcd_node_pool={
                 "node_os_version": "ntnx-1.0",
                 "num_instances": 1,
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+            },
+            master_node_pool={
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
             })
         ```
 

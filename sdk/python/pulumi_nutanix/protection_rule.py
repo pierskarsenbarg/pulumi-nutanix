@@ -325,14 +325,19 @@ class ProtectionRule(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        protection_rule_test = nutanix.ProtectionRule("protectionRuleTest",
+        protection_rule_test = nutanix.ProtectionRule("protection_rule_test",
+            name="test",
+            description="test",
+            ordered_availability_zone_lists=[{
+                "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+            }],
             availability_zone_connectivity_lists=[{
                 "snapshot_schedule_lists": [{
+                    "recovery_point_objective_secs": 3600,
+                    "snapshot_type": "CRASH_CONSISTENT",
                     "local_snapshot_retention_policy": {
                         "num_snapshots": 1,
                     },
-                    "recovery_point_objective_secs": 3600,
-                    "snapshot_type": "CRASH_CONSISTENT",
                 }],
             }],
             category_filter={
@@ -340,11 +345,7 @@ class ProtectionRule(pulumi.CustomResource):
                     "name": "Environment",
                     "values": ["Dev"],
                 }],
-            },
-            description="test",
-            ordered_availability_zone_lists=[{
-                "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-            }])
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -367,14 +368,19 @@ class ProtectionRule(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        protection_rule_test = nutanix.ProtectionRule("protectionRuleTest",
+        protection_rule_test = nutanix.ProtectionRule("protection_rule_test",
+            name="test",
+            description="test",
+            ordered_availability_zone_lists=[{
+                "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+            }],
             availability_zone_connectivity_lists=[{
                 "snapshot_schedule_lists": [{
+                    "recovery_point_objective_secs": 3600,
+                    "snapshot_type": "CRASH_CONSISTENT",
                     "local_snapshot_retention_policy": {
                         "num_snapshots": 1,
                     },
-                    "recovery_point_objective_secs": 3600,
-                    "snapshot_type": "CRASH_CONSISTENT",
                 }],
             }],
             category_filter={
@@ -382,11 +388,7 @@ class ProtectionRule(pulumi.CustomResource):
                     "name": "Environment",
                     "values": ["Dev"],
                 }],
-            },
-            description="test",
-            ordered_availability_zone_lists=[{
-                "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-            }])
+            })
         ```
 
         :param str resource_name: The name of the resource.

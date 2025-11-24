@@ -55,8 +55,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewFloatingIp(ctx, "fip2", &nutanix.FloatingIpArgs{
 //				ExternalSubnetReferenceName: pulumi.String("{{ext_sub_name}}"),
-//				PrivateIp:                   pulumi.String("{{ip_address}}"),
 //				VpcReferenceName:            pulumi.String("{{vpc_name}}"),
+//				PrivateIp:                   pulumi.String("{{ip_address}}"),
 //			})
 //			if err != nil {
 //				return err

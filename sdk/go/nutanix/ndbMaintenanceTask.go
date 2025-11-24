@@ -102,14 +102,14 @@ import (
 //				MaintenanceWindowId: pulumi.String("{{ maintenance_window_id }}"),
 //				Tasks: nutanix.NdbMaintenanceTaskTaskArray{
 //					&nutanix.NdbMaintenanceTaskTaskArgs{
-//						PostCommand: pulumi.String("{{ post_command for db patching }}"),
-//						PreCommand:  pulumi.String("{{ pre_command for db patching }}"),
 //						TaskType:    pulumi.String("DB_PATCHING"),
+//						PreCommand:  pulumi.String("{{ pre_command for db patching }}"),
+//						PostCommand: pulumi.String("{{ post_command for db patching }}"),
 //					},
 //					&nutanix.NdbMaintenanceTaskTaskArgs{
-//						PostCommand: pulumi.String("{{ post_command for os patching }}"),
-//						PreCommand:  pulumi.String("{{ pre_command for os patching}}"),
 //						TaskType:    pulumi.String("OS_PATCHING"),
+//						PreCommand:  pulumi.String("{{ pre_command for os patching}}"),
+//						PostCommand: pulumi.String("{{ post_command for os patching }}"),
 //					},
 //				},
 //			})

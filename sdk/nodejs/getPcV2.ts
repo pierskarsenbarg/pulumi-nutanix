@@ -15,6 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Fetch a single PC (Domain Manager) by its external ID
  * const example_2 = nutanix.getPcV2({
  *     extId: "75dde184-3a0e-4f59-a185-03ca1efead17",
  * });
@@ -96,6 +97,7 @@ export interface GetPcV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Fetch a single PC (Domain Manager) by its external ID
  * const example_2 = nutanix.getPcV2({
  *     extId: "75dde184-3a0e-4f59-a185-03ca1efead17",
  * });

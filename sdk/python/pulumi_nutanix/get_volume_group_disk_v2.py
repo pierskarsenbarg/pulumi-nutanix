@@ -179,8 +179,9 @@ def get_volume_group_disk_v2(ext_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_volume_group_disk_v2(ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0",
-        volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1")
+    # Get the details of a Volume Disk attached to the Volume Group.
+    example = nutanix.get_volume_group_disk_v2(volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0")
     ```
 
 
@@ -216,8 +217,9 @@ def get_volume_group_disk_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_volume_group_disk_v2(ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0",
-        volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1")
+    # Get the details of a Volume Disk attached to the Volume Group.
+    example = nutanix.get_volume_group_disk_v2(volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0")
     ```
 
 

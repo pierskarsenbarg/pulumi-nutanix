@@ -24,8 +24,8 @@ import * as utilities from "./utilities";
  *
  * const fip2 = new nutanix.FloatingIp("fip2", {
  *     externalSubnetReferenceName: "{{ext_sub_name}}",
- *     privateIp: "{{ip_address}}",
  *     vpcReferenceName: "{{vpc_name}}",
+ *     privateIp: "{{ip_address}}",
  * });
  * ```
  */

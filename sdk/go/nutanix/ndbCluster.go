@@ -13,6 +13,61 @@ import (
 )
 
 // Provides a resource to add a Nutanix cluster based on the input parameters.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbClusters(ctx, "clsname", &nutanix.NdbClustersArgs{
+//				Name:             "{{ test-cluster }}",
+//				Description:      "test description",
+//				ClusterIp:        "{{ cluster_ip }}",
+//				Username:         "{{ username of cluster }}",
+//				Password:         "{{ password of cluster }}",
+//				StorageContainer: "{{ storage_container }}",
+//				AgentNetworkInfo: []map[string]interface{}{
+//					map[string]interface{}{
+//						"dns": "{{ DNS servers available in the }}",
+//						"ntp": "{{ NTP servers available }}",
+//					},
+//				},
+//				NetworksInfo: []map[string]interface{}{
+//					map[string]interface{}{
+//						"type": "DHCP",
+//						"networkInfo": []map[string]interface{}{
+//							map[string]interface{}{
+//								"vlanName":   "vlan_static",
+//								"staticIp":   "{{ static_ip }}",
+//								"gateway":    "{{ gateway }}",
+//								"subnetMask": "{{ subnet_mask }}",
+//							},
+//						},
+//						"accessType": []string{
+//							"PRISM",
+//							"DSIP",
+//							"DBSERVER",
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NdbCluster struct {
 	pulumi.CustomResourceState
 

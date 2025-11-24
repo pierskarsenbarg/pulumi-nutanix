@@ -164,15 +164,6 @@ def get_ndb_network(id: Optional[_builtins.str] = None,
     """
     Describes a network in Nutanix Database Service
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    nw = nutanix.get_ndb_network(id="{{ id of network }}")
-    ```
-
 
     :param _builtins.str id: id of network
     :param _builtins.str name: name of network
@@ -199,15 +190,6 @@ def get_ndb_network_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] =
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbNetworkResult]:
     """
     Describes a network in Nutanix Database Service
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    nw = nutanix.get_ndb_network(id="{{ id of network }}")
-    ```
 
 
     :param _builtins.str id: id of network

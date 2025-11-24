@@ -863,23 +863,24 @@ class StorageContainersV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         storage_container = nutanix.StorageContainersV2("storage-container",
-            cache_deduplication="OFF",
-            erasure_code="OFF",
-            has_higher_ec_fault_domain_preference=False,
-            is_compression_enabled=True,
-            is_inline_ec_enabled=False,
-            is_internal=False,
-            is_software_encryption_enabled=False,
+            name="example-storage-container",
             logical_advertised_capacity_bytes=1073741824000,
             logical_explicit_reserved_capacity_bytes=32,
+            replication_factor=1,
             nfs_whitelist_addresses=[{
                 "ipv4s": [{
-                    "prefix_length": 32,
                     "value": "192.168.15.0",
+                    "prefix_length": 32,
                 }],
             }],
+            erasure_code="OFF",
+            is_inline_ec_enabled=False,
+            has_higher_ec_fault_domain_preference=False,
+            cache_deduplication="OFF",
             on_disk_dedup="OFF",
-            replication_factor=1)
+            is_compression_enabled=True,
+            is_internal=False,
+            is_software_encryption_enabled=False)
         ```
 
         :param str resource_name: The name of the resource.
@@ -921,23 +922,24 @@ class StorageContainersV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         storage_container = nutanix.StorageContainersV2("storage-container",
-            cache_deduplication="OFF",
-            erasure_code="OFF",
-            has_higher_ec_fault_domain_preference=False,
-            is_compression_enabled=True,
-            is_inline_ec_enabled=False,
-            is_internal=False,
-            is_software_encryption_enabled=False,
+            name="example-storage-container",
             logical_advertised_capacity_bytes=1073741824000,
             logical_explicit_reserved_capacity_bytes=32,
+            replication_factor=1,
             nfs_whitelist_addresses=[{
                 "ipv4s": [{
-                    "prefix_length": 32,
                     "value": "192.168.15.0",
+                    "prefix_length": 32,
                 }],
             }],
+            erasure_code="OFF",
+            is_inline_ec_enabled=False,
+            has_higher_ec_fault_domain_preference=False,
+            cache_deduplication="OFF",
             on_disk_dedup="OFF",
-            replication_factor=1)
+            is_compression_enabled=True,
+            is_internal=False,
+            is_software_encryption_enabled=False)
         ```
 
         :param str resource_name: The name of the resource.

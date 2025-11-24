@@ -823,17 +823,6 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
         """
         Provides a resource to perform the snapshot for database instance based on the input parameters.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        name = nutanix.NdbDatabaseSnapshot("name",
-            remove_schedule_in_days=1,
-            time_machine_name="{{ tms_name }}")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] expiry_date_timezone: Default is set to Asia/Calcutta
@@ -852,17 +841,6 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to perform the snapshot for database instance based on the input parameters.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        name = nutanix.NdbDatabaseSnapshot("name",
-            remove_schedule_in_days=1,
-            time_machine_name="{{ tms_name }}")
-        ```
 
         :param str resource_name: The name of the resource.
         :param NdbDatabaseSnapshotArgs args: The arguments to use to populate this resource's properties.

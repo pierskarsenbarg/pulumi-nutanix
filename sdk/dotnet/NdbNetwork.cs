@@ -26,20 +26,21 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var name = new Nutanix.NdbNetwork("name", new()
     ///     {
+    ///         Name = "test-sub",
+    ///         Type = "Static",
     ///         ClusterId = "{{ cluster_id }}",
     ///         Gateway = "{{ gatway for the vlan }}",
+    ///         SubnetMask = "{{ subnet mask for the vlan}}",
+    ///         PrimaryDns = " {{ primary dns for the vlan }}",
+    ///         SecondaryDns = "{{secondary dns for the vlan }}",
     ///         IpPools = new[]
     ///         {
     ///             new Nutanix.Inputs.NdbNetworkIpPoolArgs
     ///             {
-    ///                 EndIp = "{{ ending address range }}",
     ///                 StartIp = "{{ starting address range}}",
+    ///                 EndIp = "{{ ending address range }}",
     ///             },
     ///         },
-    ///         PrimaryDns = " {{ primary dns for the vlan }}",
-    ///         SecondaryDns = "{{secondary dns for the vlan }}",
-    ///         SubnetMask = "{{ subnet mask for the vlan}}",
-    ///         Type = "Static",
     ///     });
     /// 
     /// });

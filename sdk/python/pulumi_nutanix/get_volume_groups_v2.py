@@ -129,9 +129,12 @@ def get_volume_groups_v2(expand: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # list all the Volume Groups.
     volume_groups = nutanix.get_volume_groups_v2()
-    vg_pagination = nutanix.get_volume_groups_v2(limit=10,
-        page=1)
+    # list all the Volume Groups with pagination.
+    vg_pagination = nutanix.get_volume_groups_v2(page=1,
+        limit=10)
+    # list all the Volume Groups with filter.
     vg_filter = nutanix.get_volume_groups_v2(filter="name eq 'volume_group_test'")
     ```
 
@@ -239,9 +242,12 @@ def get_volume_groups_v2_output(expand: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # list all the Volume Groups.
     volume_groups = nutanix.get_volume_groups_v2()
-    vg_pagination = nutanix.get_volume_groups_v2(limit=10,
-        page=1)
+    # list all the Volume Groups with pagination.
+    vg_pagination = nutanix.get_volume_groups_v2(page=1,
+        limit=10)
+    # list all the Volume Groups with filter.
     vg_filter = nutanix.get_volume_groups_v2(filter="name eq 'volume_group_test'")
     ```
 

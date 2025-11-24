@@ -194,11 +194,11 @@ class LcmPrechecksV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         pre_checks = nutanix.LcmPrechecksV2("pre-checks",
+            x_cluster_id="0005a104-0b0b-4b0-8005-0b0b0b0b0b0b",
             entity_update_specs=[{
                 "entity_uuid": "0c5c9e53-3551-4c5d-b13c-e41c04cbfaf7",
                 "to_version": "4.0.0",
-            }],
-            x_cluster_id="0005a104-0b0b-4b0-8005-0b0b0b0b0b0b")
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -224,11 +224,11 @@ class LcmPrechecksV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         pre_checks = nutanix.LcmPrechecksV2("pre-checks",
+            x_cluster_id="0005a104-0b0b-4b0-8005-0b0b0b0b0b0b",
             entity_update_specs=[{
                 "entity_uuid": "0c5c9e53-3551-4c5d-b13c-e41c04cbfaf7",
                 "to_version": "4.0.0",
-            }],
-            x_cluster_id="0005a104-0b0b-4b0-8005-0b0b0b0b0b0b")
+            }])
         ```
 
         :param str resource_name: The name of the resource.

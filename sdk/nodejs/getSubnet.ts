@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
+ *
+ * ## Example Usage
  */
 export function getSubnet(args?: GetSubnetArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetResult> {
     args = args || {};
@@ -147,6 +149,8 @@ export interface GetSubnetResult {
 }
 /**
  * Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
+ *
+ * ## Example Usage
  */
 export function getSubnetOutput(args?: GetSubnetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubnetResult> {
     args = args || {};

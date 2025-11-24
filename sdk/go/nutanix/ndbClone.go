@@ -28,30 +28,32 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// # resource for cloning using Point in time given time machine name
 //			_, err := nutanix.NewNdbClone(ctx, "name", &nutanix.NdbCloneArgs{
-//				ComputeProfileId:           pulumi.String("{{ compute_profile_id }}"),
+//				TimeMachineName:            pulumi.String("test-pg-inst"),
+//				Name:                       pulumi.String("test-inst-tf-check"),
+//				NxClusterId:                pulumi.String("{{ nx_Cluster_id }}"),
+//				SshPublicKey:               pulumi.String("{{ sshkey }}"),
+//				UserPitrTimestamp:          pulumi.String("{{ point_in_time }}"),
+//				TimeZone:                   pulumi.String("Asia/Calcutta"),
 //				CreateDbserver:             pulumi.Bool(true),
-//				DatabaseParameterProfileId: pulumi.String("{{ databse_profile_id }}"),
+//				ComputeProfileId:           pulumi.String("{{ compute_profile_id }}"),
 //				NetworkProfileId:           pulumi.String("{{ network_profile_id }}"),
+//				DatabaseParameterProfileId: pulumi.String("{{ databse_profile_id }}"),
 //				Nodes: nutanix.NdbCloneNodeArray{
 //					&nutanix.NdbCloneNodeArgs{
+//						VmName:           pulumi.String("test_vm_clone"),
 //						ComputeProfileId: pulumi.String("{{ compute_profile_id }}"),
 //						NetworkProfileId: pulumi.String("{{ network_profile_id }}"),
 //						NxClusterId:      pulumi.String("{{ nx_Cluster_id }}"),
-//						VmName:           pulumi.String("test_vm_clone"),
 //					},
 //				},
-//				NxClusterId: pulumi.String("{{ nx_Cluster_id }}"),
 //				PostgresqlInfos: nutanix.NdbClonePostgresqlInfoArray{
 //					&nutanix.NdbClonePostgresqlInfoArgs{
-//						DbPassword: pulumi.String("pass"),
 //						VmName:     pulumi.String("test_vm_clone"),
+//						DbPassword: pulumi.String("pass"),
 //					},
 //				},
-//				SshPublicKey:      pulumi.String("{{ sshkey }}"),
-//				TimeMachineName:   pulumi.String("test-pg-inst"),
-//				TimeZone:          pulumi.String("Asia/Calcutta"),
-//				UserPitrTimestamp: pulumi.String("{{ point_in_time }}"),
 //			})
 //			if err != nil {
 //				return err

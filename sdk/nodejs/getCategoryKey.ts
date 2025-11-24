@@ -6,6 +6,26 @@ import * as utilities from "./utilities";
 
 /**
  * Describe a Nutanix Category Key and its values (if it has them).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const testKeyValueCategoryKey = new nutanix.CategoryKey("test_key_value", {
+ *     name: "data_source_category_key_test_values",
+ *     description: "Data Source CategoryKey Test with Values",
+ * });
+ * const testValue = new nutanix.CategoryValue("test_value", {
+ *     name: testKeyValueCategoryKey.name,
+ *     value: "test_category_value_data_source",
+ *     description: "Data Source CategoryValue Test with Values",
+ * });
+ * const testKeyValue = nutanix.getCategoryKeyOutput({
+ *     name: testKeyValueCategoryKey.name,
+ * });
+ * ```
  */
 export function getCategoryKey(args: GetCategoryKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoryKeyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -52,6 +72,26 @@ export interface GetCategoryKeyResult {
 }
 /**
  * Describe a Nutanix Category Key and its values (if it has them).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const testKeyValueCategoryKey = new nutanix.CategoryKey("test_key_value", {
+ *     name: "data_source_category_key_test_values",
+ *     description: "Data Source CategoryKey Test with Values",
+ * });
+ * const testValue = new nutanix.CategoryValue("test_value", {
+ *     name: testKeyValueCategoryKey.name,
+ *     value: "test_category_value_data_source",
+ *     description: "Data Source CategoryValue Test with Values",
+ * });
+ * const testKeyValue = nutanix.getCategoryKeyOutput({
+ *     name: testKeyValueCategoryKey.name,
+ * });
+ * ```
  */
 export function getCategoryKeyOutput(args: GetCategoryKeyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoryKeyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

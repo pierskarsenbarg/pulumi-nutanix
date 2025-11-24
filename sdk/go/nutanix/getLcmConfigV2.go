@@ -31,6 +31,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			// Get LCM configuration for a specific cluster
 //			_, err = nutanix.LookupLcmConfigV2(ctx, &nutanix.LookupLcmConfigV2Args{
 //				XClusterId: pulumi.StringRef("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"),
 //			}, nil)

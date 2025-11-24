@@ -23,35 +23,37 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
+    ///     //# resource for cloning using Point in time given time machine name
     ///     var name = new Nutanix.NdbClone("name", new()
     ///     {
-    ///         ComputeProfileId = "{{ compute_profile_id }}",
+    ///         TimeMachineName = "test-pg-inst",
+    ///         Name = "test-inst-tf-check",
+    ///         NxClusterId = "{{ nx_Cluster_id }}",
+    ///         SshPublicKey = "{{ sshkey }}",
+    ///         UserPitrTimestamp = "{{ point_in_time }}",
+    ///         TimeZone = "Asia/Calcutta",
     ///         CreateDbserver = true,
-    ///         DatabaseParameterProfileId = "{{ databse_profile_id }}",
+    ///         ComputeProfileId = "{{ compute_profile_id }}",
     ///         NetworkProfileId = "{{ network_profile_id }}",
+    ///         DatabaseParameterProfileId = "{{ databse_profile_id }}",
     ///         Nodes = new[]
     ///         {
     ///             new Nutanix.Inputs.NdbCloneNodeArgs
     ///             {
+    ///                 VmName = "test_vm_clone",
     ///                 ComputeProfileId = "{{ compute_profile_id }}",
     ///                 NetworkProfileId = "{{ network_profile_id }}",
     ///                 NxClusterId = "{{ nx_Cluster_id }}",
-    ///                 VmName = "test_vm_clone",
     ///             },
     ///         },
-    ///         NxClusterId = "{{ nx_Cluster_id }}",
     ///         PostgresqlInfos = new[]
     ///         {
     ///             new Nutanix.Inputs.NdbClonePostgresqlInfoArgs
     ///             {
-    ///                 DbPassword = "pass",
     ///                 VmName = "test_vm_clone",
+    ///                 DbPassword = "pass",
     ///             },
     ///         },
-    ///         SshPublicKey = "{{ sshkey }}",
-    ///         TimeMachineName = "test-pg-inst",
-    ///         TimeZone = "Asia/Calcutta",
-    ///         UserPitrTimestamp = "{{ point_in_time }}",
     ///     });
     /// 
     /// });

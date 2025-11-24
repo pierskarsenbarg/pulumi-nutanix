@@ -11,6 +11,70 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const cluster = new nutanix.ClusterV2("cluster", {
+ *     name: "cluster-example",
+ *     nodes: [{
+ *         nodeLists: [{
+ *             controllerVmIps: [{
+ *                 ipv4s: [{
+ *                     value: "10.xx.xx.xx",
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ *     configs: [{
+ *         clusterFunctions: ["AOS"],
+ *         redundancyFactor: 1,
+ *         clusterArch: "X86_64",
+ *         faultToleranceStates: [{
+ *             domainAwarenessLevel: "DISK",
+ *         }],
+ *     }],
+ *     networks: [{
+ *         externalAddresses: [{
+ *             ipv4s: [{
+ *                 value: "10.xx.xx.xx",
+ *             }],
+ *         }],
+ *         externalDataServicesIps: [{
+ *             ipv4s: [{
+ *                 value: "10.xx.xx.xx",
+ *             }],
+ *         }],
+ *         ntpServerIpLists: [
+ *             {
+ *                 fqdns: [{
+ *                     value: "ntp.server.nutanix.com",
+ *                 }],
+ *             },
+ *             {
+ *                 fqdns: [{
+ *                     value: "ntp.server_1.nutanix.com",
+ *                 }],
+ *             },
+ *         ],
+ *         smtpServers: [{
+ *             emailAddress: "example.ex@exmple.com",
+ *             servers: [{
+ *                 ipAddresses: [{
+ *                     ipv4s: [{
+ *                         value: "10.xx.xx.xx",
+ *                     }],
+ *                 }],
+ *                 port: 123,
+ *                 username: "example",
+ *                 password: "example!2134",
+ *             }],
+ *             type: "PLAIN",
+ *         }],
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,

@@ -10,6 +10,29 @@ import * as utilities from "./utilities";
  * Create a Network Security Policy
  *
  * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // Network Security Policy TWO_ENV_ISOLATION Rule
+ * const isolation_nsp = new nutanix.NetworkSecurityPolicyV2("isolation-nsp", {
+ *     name: "isolation_policy",
+ *     description: "isolation policy example",
+ *     state: "SAVE",
+ *     type: "ISOLATION",
+ *     rules: [{
+ *         type: "TWO_ENV_ISOLATION",
+ *         specs: [{
+ *             twoEnvIsolationRuleSpecs: [{
+ *                 firstIsolationGroups: ["ba250e3e-1db1-4950-917f-a9e2ea35b8e3"],
+ *                 secondIsolationGroups: ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
+ *             }],
+ *         }],
+ *     }],
+ *     isHitlogEnabled: true,
+ * });
+ * ```
  */
 export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
     /**

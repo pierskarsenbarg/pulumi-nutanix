@@ -169,11 +169,11 @@ def get_self_service_app(app_uuid: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+    test_self_service_app_provision = nutanix.SelfServiceAppProvision("test",
         bp_name="NAME OF BLUEPRINT IN SERVER",
         app_name="NAME OF APP YOU WANT TO SET",
         app_description="DESCRIPTION OF APP")
-    test_self_service_app = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
+    test = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
     ```
 
 
@@ -207,11 +207,11 @@ def get_self_service_app_output(app_uuid: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_nutanix as nutanix
 
-    test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+    test_self_service_app_provision = nutanix.SelfServiceAppProvision("test",
         bp_name="NAME OF BLUEPRINT IN SERVER",
         app_name="NAME OF APP YOU WANT TO SET",
         app_description="DESCRIPTION OF APP")
-    test_self_service_app = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
+    test = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
     ```
 
 
