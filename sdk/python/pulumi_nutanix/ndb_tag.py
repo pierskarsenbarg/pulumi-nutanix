@@ -278,6 +278,7 @@ class NdbTag(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbTag("name",
+            name="testst-up",
             description="this is desc ok",
             entity_type="DATABASE",
             required=True)
@@ -289,6 +290,7 @@ class NdbTag(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbTag("name",
+            name="testst-up",
             description="this is desc ok",
             entity_type="DATABASE",
             required=True,
@@ -320,6 +322,7 @@ class NdbTag(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbTag("name",
+            name="testst-up",
             description="this is desc ok",
             entity_type="DATABASE",
             required=True)
@@ -331,6 +334,7 @@ class NdbTag(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbTag("name",
+            name="testst-up",
             description="this is desc ok",
             entity_type="DATABASE",
             required=True,

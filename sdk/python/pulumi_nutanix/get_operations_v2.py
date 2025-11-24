@@ -161,10 +161,13 @@ def get_operations_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    #list operations
     operation_list = nutanix.get_operations_v2()
+    # filtered list operation
     operation_list_filtered = nutanix.get_operations_v2(filter="displayName eq 'Create_Role'")
-    operation_list_paginated = nutanix.get_operations_v2(limit=10,
-        page=1)
+    # list operations withe page and limit
+    operation_list_paginated = nutanix.get_operations_v2(page=1,
+        limit=10)
     ```
 
 
@@ -230,10 +233,13 @@ def get_operations_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.st
     import pulumi
     import pulumi_nutanix as nutanix
 
+    #list operations
     operation_list = nutanix.get_operations_v2()
+    # filtered list operation
     operation_list_filtered = nutanix.get_operations_v2(filter="displayName eq 'Create_Role'")
-    operation_list_paginated = nutanix.get_operations_v2(limit=10,
-        page=1)
+    # list operations withe page and limit
+    operation_list_paginated = nutanix.get_operations_v2(page=1,
+        limit=10)
     ```
 
 

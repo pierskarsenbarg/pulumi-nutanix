@@ -15,11 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all images
  * const list_images = nutanix.getImagesV2({});
+ * // List images with filter, page and limit
  * const filtered_images = nutanix.getImagesV2({
  *     filter: "startswith(name,'image_name')",
- *     limit: 10,
  *     page: 0,
+ *     limit: 10,
  * });
  * ```
  *
@@ -144,11 +146,13 @@ export interface GetImagesV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all images
  * const list_images = nutanix.getImagesV2({});
+ * // List images with filter, page and limit
  * const filtered_images = nutanix.getImagesV2({
  *     filter: "startswith(name,'image_name')",
- *     limit: 10,
  *     page: 0,
+ *     limit: 10,
  * });
  * ```
  *

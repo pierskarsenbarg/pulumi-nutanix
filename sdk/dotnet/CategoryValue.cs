@@ -25,11 +25,13 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var test_category_key = new Nutanix.CategoryKey("test-category-key", new()
     ///     {
+    ///         Name = "app-support-1",
     ///         Description = "App Support Category Key",
     ///     });
     /// 
     ///     var test = new Nutanix.CategoryValue("test", new()
     ///     {
+    ///         Name = test_category_key.Id,
     ///         Description = "Test Category Value",
     ///         Value = "test-value",
     ///     });

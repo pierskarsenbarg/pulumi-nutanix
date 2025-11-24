@@ -25,9 +25,17 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var ap_example = new Nutanix.AuthorizationPolicyV2("ap-example", new()
     ///     {
-    ///         AuthorizationPolicyType = "USER_DEFINED",
-    ///         Description = "authorization policy example",
+    ///         Role = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
     ///         DisplayName = "auth_policy_example",
+    ///         Description = "authorization policy example",
+    ///         AuthorizationPolicyType = "USER_DEFINED",
+    ///         Identities = new[]
+    ///         {
+    ///             new Nutanix.Inputs.AuthorizationPolicyV2IdentityArgs
+    ///             {
+    ///                 Reserved = "{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}",
+    ///             },
+    ///         },
     ///         Entities = new[]
     ///         {
     ///             new Nutanix.Inputs.AuthorizationPolicyV2EntityArgs
@@ -39,14 +47,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Reserved = "{\"marketplace_item\":{\"owner_uuid\":{\"eq\":\"SELF_OWNED\"}}}",
     ///             },
     ///         },
-    ///         Identities = new[]
-    ///         {
-    ///             new Nutanix.Inputs.AuthorizationPolicyV2IdentityArgs
-    ///             {
-    ///                 Reserved = "{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}",
-    ///             },
-    ///         },
-    ///         Role = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
     ///     });
     /// 
     /// });

@@ -15,7 +15,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Fetch all PCs (Domain Managers)
  * const pcs = nutanix.getPcsV2({});
+ * // List all PCs (Domain Managers) with selected properties
  * const pcs_select = nutanix.getPcsV2({
  *     select: "config,extId",
  * });
@@ -188,7 +190,9 @@ export interface GetPcsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Fetch all PCs (Domain Managers)
  * const pcs = nutanix.getPcsV2({});
+ * // List all PCs (Domain Managers) with selected properties
  * const pcs_select = nutanix.getPcsV2({
  *     select: "config,extId",
  * });

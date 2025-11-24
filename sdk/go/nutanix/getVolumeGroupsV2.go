@@ -27,17 +27,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// list all the Volume Groups.
 //			_, err := nutanix.GetVolumeGroupsV2(ctx, &nutanix.GetVolumeGroupsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// list all the Volume Groups with pagination.
 //			_, err = nutanix.GetVolumeGroupsV2(ctx, &nutanix.GetVolumeGroupsV2Args{
-//				Limit: pulumi.IntRef(10),
 //				Page:  pulumi.IntRef(1),
+//				Limit: pulumi.IntRef(10),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// list all the Volume Groups with filter.
 //			_, err = nutanix.GetVolumeGroupsV2(ctx, &nutanix.GetVolumeGroupsV2Args{
 //				Filter: pulumi.StringRef("name eq 'volume_group_test'"),
 //			}, nil)

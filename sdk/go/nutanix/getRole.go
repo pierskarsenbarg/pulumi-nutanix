@@ -12,6 +12,42 @@ import (
 )
 
 // Describes a Role.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			testRole, err := nutanix.NewRole(ctx, "test", &nutanix.RoleArgs{
+//				Name:        pulumi.String("NAME"),
+//				Description: pulumi.String("DESCRIPTION"),
+//				PermissionReferenceLists: nutanix.RolePermissionReferenceListArray{
+//					&nutanix.RolePermissionReferenceListArgs{
+//						Kind: pulumi.String("permission"),
+//						Uuid: pulumi.String("ID OF PERMISSION"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_ = nutanix.LookupRoleOutput(ctx, nutanix.GetRoleOutputArgs{
+//				RoleId: testRole.ID(),
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupRole(ctx *pulumi.Context, args *LookupRoleArgs, opts ...pulumi.InvokeOption) (*LookupRoleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRoleResult

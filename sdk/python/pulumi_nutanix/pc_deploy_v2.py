@@ -146,6 +146,71 @@ class PcDeployV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example = nutanix.PcDeployV2("example",
+            config={
+                "build_info": {
+                    "version": "pc.2024.3",
+                },
+                "size": "STARTER",
+                "name": "PC_EXAMPLE",
+            },
+            network={
+                "external_networks": [{
+                    "network_ext_id": "ba416f8d-00f2-499d-bc4c-19da8d104af9",
+                    "default_gateway": {
+                        "ipv4s": [{
+                            "value": "10.97.64.1",
+                        }],
+                    },
+                    "subnet_mask": {
+                        "ipv4s": [{
+                            "value": "255.255.252.0",
+                        }],
+                    },
+                    "ip_ranges": [{
+                        "begin": {
+                            "ipv4s": [{
+                                "value": "10.97.64.91",
+                            }],
+                        },
+                        "end": {
+                            "ipv4s": [{
+                                "value": "10.97.64.91",
+                            }],
+                        },
+                    }],
+                }],
+                "name_servers": [
+                    {
+                        "ipv4s": [{
+                            "value": "10.40.64.16",
+                        }],
+                    },
+                    {
+                        "ipv4s": [{
+                            "value": "10.40.64.15",
+                        }],
+                    },
+                ],
+                "ntp_servers": [
+                    {
+                        "fqdns": [{
+                            "value": "2.centos.pool.ntp.org",
+                        }],
+                    },
+                    {
+                        "fqdns": [{
+                            "value": "3.centos.pool.ntp.org",
+                        }],
+                    },
+                ],
+            })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
@@ -165,6 +230,71 @@ class PcDeployV2(pulumi.CustomResource):
         Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example = nutanix.PcDeployV2("example",
+            config={
+                "build_info": {
+                    "version": "pc.2024.3",
+                },
+                "size": "STARTER",
+                "name": "PC_EXAMPLE",
+            },
+            network={
+                "external_networks": [{
+                    "network_ext_id": "ba416f8d-00f2-499d-bc4c-19da8d104af9",
+                    "default_gateway": {
+                        "ipv4s": [{
+                            "value": "10.97.64.1",
+                        }],
+                    },
+                    "subnet_mask": {
+                        "ipv4s": [{
+                            "value": "255.255.252.0",
+                        }],
+                    },
+                    "ip_ranges": [{
+                        "begin": {
+                            "ipv4s": [{
+                                "value": "10.97.64.91",
+                            }],
+                        },
+                        "end": {
+                            "ipv4s": [{
+                                "value": "10.97.64.91",
+                            }],
+                        },
+                    }],
+                }],
+                "name_servers": [
+                    {
+                        "ipv4s": [{
+                            "value": "10.40.64.16",
+                        }],
+                    },
+                    {
+                        "ipv4s": [{
+                            "value": "10.40.64.15",
+                        }],
+                    },
+                ],
+                "ntp_servers": [
+                    {
+                        "fqdns": [{
+                            "value": "2.centos.pool.ntp.org",
+                        }],
+                    },
+                    {
+                        "fqdns": [{
+                            "value": "3.centos.pool.ntp.org",
+                        }],
+                    },
+                ],
+            })
+        ```
 
         :param str resource_name: The name of the resource.
         :param PcDeployV2Args args: The arguments to use to populate this resource's properties.

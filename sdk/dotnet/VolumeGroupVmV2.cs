@@ -23,10 +23,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vgVmExample = new Nutanix.VolumeGroupVmV2("vgVmExample", new()
+    ///     var vgVmExample = new Nutanix.VolumeGroupVmV2("vg_vm_example", new()
     ///     {
-    ///         VmExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///         VolumeGroupExtId = "1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
+    ///         VmExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///     });
     /// 
     /// });

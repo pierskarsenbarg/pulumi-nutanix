@@ -129,9 +129,11 @@ def get_user_keys_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Data source to fetch the list of keys
     get_keys = nutanix.get_user_keys_v2(user_ext_id="<SERVICE_ACCOUNT_UUID>")
-    get_keys_filter = nutanix.get_user_keys_v2(filter="name eq '<NAME_OF_API_KEY>'",
-        user_ext_id="<SERVICE_ACCOUNT_UUID>")
+    # Data source to fetch the key by name
+    get_keys_filter = nutanix.get_user_keys_v2(user_ext_id="<SERVICE_ACCOUNT_UUID>",
+        filter="name eq '<NAME_OF_API_KEY>'")
     ```
 
     ## Argument Reference
@@ -212,9 +214,11 @@ def get_user_keys_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Data source to fetch the list of keys
     get_keys = nutanix.get_user_keys_v2(user_ext_id="<SERVICE_ACCOUNT_UUID>")
-    get_keys_filter = nutanix.get_user_keys_v2(filter="name eq '<NAME_OF_API_KEY>'",
-        user_ext_id="<SERVICE_ACCOUNT_UUID>")
+    # Data source to fetch the key by name
+    get_keys_filter = nutanix.get_user_keys_v2(user_ext_id="<SERVICE_ACCOUNT_UUID>",
+        filter="name eq '<NAME_OF_API_KEY>'")
     ```
 
     ## Argument Reference

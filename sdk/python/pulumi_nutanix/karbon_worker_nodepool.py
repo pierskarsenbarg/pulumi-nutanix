@@ -263,14 +263,15 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         kworker_np = nutanix.KarbonWorkerNodepool("kworkerNp",
+            cluster_name="karbon",
+            name="workerpool1",
+            num_instances=1,
             ahv_config={
                 "cpu": 4,
                 "disk_mib": 122880,
                 "memory_mib": 8192,
                 "network_uuid": "61213511-6383-4a38-9ac8-4a552c0e5865",
-            },
-            cluster_name="karbon",
-            num_instances=1)
+            })
         ```
 
         ```python
@@ -278,18 +279,19 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         kworker_np = nutanix.KarbonWorkerNodepool("kworkerNp",
+            cluster_name="karbon",
+            name="workerpool1",
+            num_instances=1,
             ahv_config={
                 "cpu": 4,
                 "disk_mib": 122880,
                 "memory_mib": 8192,
                 "network_uuid": "61213511-6383-4a38-9ac8-4a552c0e5865",
             },
-            cluster_name="karbon",
             labels={
                 "k1": "v1",
                 "k2": "v2",
-            },
-            num_instances=1)
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -317,14 +319,15 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         kworker_np = nutanix.KarbonWorkerNodepool("kworkerNp",
+            cluster_name="karbon",
+            name="workerpool1",
+            num_instances=1,
             ahv_config={
                 "cpu": 4,
                 "disk_mib": 122880,
                 "memory_mib": 8192,
                 "network_uuid": "61213511-6383-4a38-9ac8-4a552c0e5865",
-            },
-            cluster_name="karbon",
-            num_instances=1)
+            })
         ```
 
         ```python
@@ -332,18 +335,19 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         kworker_np = nutanix.KarbonWorkerNodepool("kworkerNp",
+            cluster_name="karbon",
+            name="workerpool1",
+            num_instances=1,
             ahv_config={
                 "cpu": 4,
                 "disk_mib": 122880,
                 "memory_mib": 8192,
                 "network_uuid": "61213511-6383-4a38-9ac8-4a552c0e5865",
             },
-            cluster_name="karbon",
             labels={
                 "k1": "v1",
                 "k2": "v2",
-            },
-            num_instances=1)
+            })
         ```
 
         :param str resource_name: The name of the resource.

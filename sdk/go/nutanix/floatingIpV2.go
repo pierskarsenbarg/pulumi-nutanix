@@ -29,6 +29,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// create Floating IP with External Subnet UUID
 //			_, err := nutanix.NewFloatingIpV2(ctx, "fip-ext-subnet", &nutanix.FloatingIpV2Args{
+//				Name:                    pulumi.String("example-fip"),
 //				Description:             pulumi.String("example fip  description"),
 //				ExternalSubnetReference: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
 //			})
@@ -56,6 +57,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewFloatingIpV2(ctx, "fip-ext-subnet-vm", &nutanix.FloatingIpV2Args{
+//				Name:                    pulumi.String("example-fip"),
+//				Description:             pulumi.String("example fip  description"),
+//				ExternalSubnetReference: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
 //				Associations: nutanix.FloatingIpV2AssociationArray{
 //					&nutanix.FloatingIpV2AssociationArgs{
 //						VmNicAssociations: nutanix.FloatingIpV2AssociationVmNicAssociationArray{
@@ -65,8 +69,6 @@ import (
 //						},
 //					},
 //				},
-//				Description:             pulumi.String("example fip  description"),
-//				ExternalSubnetReference: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
 //			})
 //			if err != nil {
 //				return err

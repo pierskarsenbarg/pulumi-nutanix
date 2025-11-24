@@ -12,6 +12,8 @@ import (
 )
 
 // Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
+//
+// ## Example Usage
 func LookupSubnet(ctx *pulumi.Context, args *LookupSubnetArgs, opts ...pulumi.InvokeOption) (*LookupSubnetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSubnetResult

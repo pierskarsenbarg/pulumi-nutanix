@@ -622,17 +622,6 @@ class NdbDatabaseRestore(pulumi.CustomResource):
         """
         Provides a resource to restore the database instance based on the input parameters.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        name = nutanix.NdbDatabaseRestore("name",
-            database_id="{{ database_id }}",
-            snapshot_id="{{ snapshot id }}")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_id: database id
@@ -651,17 +640,6 @@ class NdbDatabaseRestore(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to restore the database instance based on the input parameters.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        name = nutanix.NdbDatabaseRestore("name",
-            database_id="{{ database_id }}",
-            snapshot_id="{{ snapshot id }}")
-        ```
 
         :param str resource_name: The name of the resource.
         :param NdbDatabaseRestoreArgs args: The arguments to use to populate this resource's properties.

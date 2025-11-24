@@ -23,35 +23,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     // Restore a protected virtual machine on remote site
-    ///     // This example demonstrates how to restore a protected virtual machine on remote site.
-    ///     // steps:
-    ///     // 1. Define the provider for the remote site
-    ///     // 2. Create a category and a protection policy, on the local site
-    ///     // 3. Create a virtual machine and associate it with the protection policy, on local site
-    ///     // 4. Restore the virtual machine on the remote site
-    ///     // define another alias for the provider, this time for the remote PC
-    ///     var remote = new Nutanix.Provider("remote", new()
-    ///     {
-    ///         Username = @var.Nutanix_remote_username,
-    ///         Password = @var.Nutanix_remote_password,
-    ///         Endpoint = @var.Nutanix_remote_endpoint,
-    ///         Insecure = true,
-    ///         Port = "9440",
-    ///     });
-    /// 
     ///     // create a category and a protection policy on the local site
     ///     // restore the protected virtual machine on the remote site
     ///     var rp_vm = new Nutanix.RestoreProtectedResourceV2("rp-vm", new()
     ///     {
     ///         ExtId = "d22529bb-f02d-4710-894b-d1de772d7832",
     ///         ClusterExtId = "0005b6b1-1b16-4983-b5ff-204840f85e07",
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         Provider = nutanix.Remote,
     ///     });
     /// 
-    ///     // remote cluster ext_id
     /// });
     /// ```
     /// 
@@ -65,35 +44,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     // Restore a protected volume group on remote site
-    ///     // This example demonstrates how to restore a protected volume group on remote site.
-    ///     // steps:
-    ///     // 1. Define the provider for the remote site
-    ///     // 2. Create a category and a protection policy, on the local site
-    ///     // 3. Create a volume group and associate it with the category on the local site
-    ///     // 4. Restore the volume group on the remote site
-    ///     // define another alias for the provider, this time for the remote PC
-    ///     var remote = new Nutanix.Provider("remote", new()
-    ///     {
-    ///         Username = @var.Nutanix_remote_username,
-    ///         Password = @var.Nutanix_remote_password,
-    ///         Endpoint = @var.Nutanix_remote_endpoint,
-    ///         Insecure = true,
-    ///         Port = "9440",
-    ///     });
-    /// 
     ///     // create a category , a protection policy and VG on the local site
     ///     // restore the protected volume group on the remote site
     ///     var rp_vg = new Nutanix.RestoreProtectedResourceV2("rp-vg", new()
     ///     {
     ///         ExtId = "246c651a-1b16-4983-b5ff-204840f85e07",
     ///         ClusterExtId = "0005b6b1-1b16-4983-b5ff-204840f85e07",
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         Provider = nutanix.Remote,
     ///     });
     /// 
-    ///     // remote cluster ext_id
     /// });
     /// ```
     /// </summary>

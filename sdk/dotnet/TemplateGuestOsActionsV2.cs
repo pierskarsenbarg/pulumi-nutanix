@@ -25,24 +25,24 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var example_1 = new Nutanix.TemplateGuestOsActionsV2("example-1", new()
     ///     {
-    ///         Action = "initiate",
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///         Action = "initiate",
     ///         VersionId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
     ///     });
     /// 
     ///     var example_2 = new Nutanix.TemplateGuestOsActionsV2("example-2", new()
     ///     {
-    ///         Action = "complete",
     ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
-    ///         IsActiveVersion = "true",
-    ///         VersionDescription = "version desc",
+    ///         Action = "complete",
     ///         VersionName = "version_name",
+    ///         VersionDescription = "version desc",
+    ///         IsActiveVersion = "true",
     ///     });
     /// 
     ///     var example_3 = new Nutanix.TemplateGuestOsActionsV2("example-3", new()
     ///     {
-    ///         Action = "cancel",
     ///         ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///         Action = "cancel",
     ///     });
     /// 
     /// });

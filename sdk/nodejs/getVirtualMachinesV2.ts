@@ -15,11 +15,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all virtual machines
  * const list_vms = nutanix.getVirtualMachinesV2({});
+ * // List virtual machines with  page and limit
  * const paged_vms = nutanix.getVirtualMachinesV2({
- *     limit: 2,
  *     page: 0,
+ *     limit: 2,
  * });
+ * // List virtual machines with filter
  * const filtered_vms = nutanix.getVirtualMachinesV2({
  *     filter: "name eq 'example-vm-filter'",
  * });
@@ -463,11 +466,14 @@ export interface GetVirtualMachinesV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all virtual machines
  * const list_vms = nutanix.getVirtualMachinesV2({});
+ * // List virtual machines with  page and limit
  * const paged_vms = nutanix.getVirtualMachinesV2({
- *     limit: 2,
  *     page: 0,
+ *     limit: 2,
  * });
+ * // List virtual machines with filter
  * const filtered_vms = nutanix.getVirtualMachinesV2({
  *     filter: "name eq 'example-vm-filter'",
  * });

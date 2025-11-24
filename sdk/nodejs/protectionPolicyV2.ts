@@ -16,39 +16,40 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const synchronous_protection_policy = new nutanix.ProtectionPolicyV2("synchronous-protection-policy", {
- *     categoryIds: ["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
+ *     name: "synchronous_protection_policy",
  *     replicationConfigurations: [
  *         {
+ *             sourceLocationLabel: "source",
  *             remoteLocationLabel: "target",
  *             schedule: {
  *                 recoveryPointObjectiveTimeSeconds: 0,
  *                 recoveryPointType: "CRASH_CONSISTENT",
  *                 syncReplicationAutoSuspendTimeoutSeconds: 10,
  *             },
- *             sourceLocationLabel: "source",
  *         },
  *         {
+ *             sourceLocationLabel: "target",
  *             remoteLocationLabel: "source",
  *             schedule: {
  *                 recoveryPointObjectiveTimeSeconds: 0,
  *                 recoveryPointType: "CRASH_CONSISTENT",
  *                 syncReplicationAutoSuspendTimeoutSeconds: 10,
  *             },
- *             sourceLocationLabel: "target",
  *         },
  *     ],
  *     replicationLocations: [
  *         {
  *             domainManagerExtId: "6a44b05e-cb9b-4e7e-8d75-b1b4715369c4",
- *             isPrimary: true,
  *             label: "source",
+ *             isPrimary: true,
  *         },
  *         {
  *             domainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
- *             isPrimary: false,
  *             label: "target",
+ *             isPrimary: false,
  *         },
  *     ],
+ *     categoryIds: ["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
  * });
  * ```
  *
@@ -59,6 +60,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const linear_retention_protection_policy = new nutanix.ProtectionPolicyV2("linear-retention-protection-policy", {
+ *     name: "linear-retention-protection-policy",
  *     replicationConfigurations: [
  *         {
  *             sourceLocationLabel: "source",
@@ -96,7 +98,7 @@ import * as utilities from "./utilities";
  *             isPrimary: true,
  *             replicationSubLocation: {
  *                 clusterExtIds: {
- *                     clusterExtIds: [local.clusterExtId],
+ *                     clusterExtIds: [clusterExtId],
  *                 },
  *             },
  *         },
@@ -118,65 +120,66 @@ import * as utilities from "./utilities";
  *
  * // Create Auto Rollup Retention Protection Policy
  * const auto_rollup_retention_protection_policy = new nutanix.ProtectionPolicyV2("auto-rollup-retention-protection-policy", {
- *     categoryIds: ["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
+ *     name: "auto_rollup_retention_protection_policy",
  *     replicationConfigurations: [
  *         {
+ *             sourceLocationLabel: "source",
  *             remoteLocationLabel: "target",
  *             schedule: {
  *                 recoveryPointObjectiveTimeSeconds: 60,
  *                 recoveryPointType: "CRASH_CONSISTENT",
+ *                 syncReplicationAutoSuspendTimeoutSeconds: 20,
+ *                 startTime: "18h:10m",
  *                 retention: {
  *                     autoRollupRetention: {
  *                         local: {
- *                             frequency: 2,
  *                             snapshotIntervalType: "WEEKLY",
+ *                             frequency: 2,
  *                         },
  *                         remote: {
- *                             frequency: 1,
  *                             snapshotIntervalType: "DAILY",
+ *                             frequency: 1,
  *                         },
  *                     },
  *                 },
- *                 startTime: "18h:10m",
- *                 syncReplicationAutoSuspendTimeoutSeconds: 20,
  *             },
- *             sourceLocationLabel: "source",
  *         },
  *         {
+ *             sourceLocationLabel: "target",
  *             remoteLocationLabel: "source",
  *             schedule: {
  *                 recoveryPointObjectiveTimeSeconds: 60,
  *                 recoveryPointType: "CRASH_CONSISTENT",
+ *                 syncReplicationAutoSuspendTimeoutSeconds: 30,
+ *                 startTime: "18h:10m",
  *                 retention: {
  *                     autoRollupRetention: {
  *                         local: {
- *                             frequency: 1,
  *                             snapshotIntervalType: "DAILY",
+ *                             frequency: 1,
  *                         },
  *                         remote: {
- *                             frequency: 2,
  *                             snapshotIntervalType: "WEEKLY",
+ *                             frequency: 2,
  *                         },
  *                     },
  *                 },
- *                 startTime: "18h:10m",
- *                 syncReplicationAutoSuspendTimeoutSeconds: 30,
  *             },
- *             sourceLocationLabel: "target",
  *         },
  *     ],
  *     replicationLocations: [
  *         {
  *             domainManagerExtId: "6a44b05e-cb9b-4e7e-8d75-b1b4715369c4",
- *             isPrimary: true,
  *             label: "source",
+ *             isPrimary: true,
  *         },
  *         {
  *             domainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
- *             isPrimary: false,
  *             label: "target",
+ *             isPrimary: false,
  *         },
  *     ],
+ *     categoryIds: ["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
  * });
  * ```
  */

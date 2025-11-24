@@ -122,9 +122,12 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # List all virtual machines
     list_vms = nutanix.get_virtual_machines_v2()
-    paged_vms = nutanix.get_virtual_machines_v2(limit=2,
-        page=0)
+    # List virtual machines with  page and limit
+    paged_vms = nutanix.get_virtual_machines_v2(page=0,
+        limit=2)
+    # List virtual machines with filter
     filtered_vms = nutanix.get_virtual_machines_v2(filter="name eq 'example-vm-filter'")
     ```
 
@@ -540,9 +543,12 @@ def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # List all virtual machines
     list_vms = nutanix.get_virtual_machines_v2()
-    paged_vms = nutanix.get_virtual_machines_v2(limit=2,
-        page=0)
+    # List virtual machines with  page and limit
+    paged_vms = nutanix.get_virtual_machines_v2(page=0,
+        limit=2)
+    # List virtual machines with filter
     filtered_vms = nutanix.get_virtual_machines_v2(filter="name eq 'example-vm-filter'")
     ```
 

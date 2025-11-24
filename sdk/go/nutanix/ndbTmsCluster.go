@@ -29,9 +29,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbTmsCluster(ctx, "cls", &nutanix.NdbTmsClusterArgs{
+//				TimeMachineId: pulumi.String("{{ tms_id }}"),
 //				NxClusterId:   pulumi.String("{{ cluster_id }}"),
 //				SlaId:         pulumi.String("{{ sla_id }}"),
-//				TimeMachineId: pulumi.String("{{ tms_id }}"),
 //			})
 //			if err != nil {
 //				return err

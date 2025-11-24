@@ -15,12 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT IN SERVER",
  *     appName: "NAME OF APP YOU WANT TO SET",
  *     appDescription: "DESCRIPTION OF APP",
  * });
- * const testSelfServiceApp = nutanix.getSelfServiceAppOutput({
+ * const test = nutanix.getSelfServiceAppOutput({
  *     appUuid: testSelfServiceAppProvision.id,
  * });
  * ```
@@ -88,12 +88,12 @@ export interface GetSelfServiceAppResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", {
+ * const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("test", {
  *     bpName: "NAME OF BLUEPRINT IN SERVER",
  *     appName: "NAME OF APP YOU WANT TO SET",
  *     appDescription: "DESCRIPTION OF APP",
  * });
- * const testSelfServiceApp = nutanix.getSelfServiceAppOutput({
+ * const test = nutanix.getSelfServiceAppOutput({
  *     appUuid: testSelfServiceAppProvision.id,
  * });
  * ```

@@ -20,8 +20,8 @@ import * as utilities from "./utilities";
  *     filter: "name eq 'cluster-1'",
  * });
  * const paged_cls = nutanix.getClustersV2({
- *     limit: 10,
  *     page: 1,
+ *     limit: 10,
  * });
  * ```
  */
@@ -144,8 +144,8 @@ export interface GetClustersV2Result {
  *     filter: "name eq 'cluster-1'",
  * });
  * const paged_cls = nutanix.getClustersV2({
- *     limit: 10,
  *     page: 1,
+ *     limit: 10,
  * });
  * ```
  */

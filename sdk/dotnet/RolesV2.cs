@@ -24,6 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
+    ///     // filtered list operation
     ///     var operations_filtered_list = Nutanix.GetOperationsV2.Invoke(new()
     ///     {
     ///         Filter = "startswith(displayName, 'Create_')",

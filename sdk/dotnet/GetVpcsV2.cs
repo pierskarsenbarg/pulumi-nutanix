@@ -25,18 +25,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all VPCs
         ///     var list_vpcs = Nutanix.GetVpcsV2.Invoke();
         /// 
+        ///     // Get all VPCs with filter
         ///     var list_vpcs_with_filter = Nutanix.GetVpcsV2.Invoke(new()
         ///     {
         ///         Filter = "vpcType eq 'VLAN'",
         ///     });
         /// 
+        ///     // Get all VPCs with order by and limit and filter
         ///     var list_vpcs_with_order_by_limit_filter = Nutanix.GetVpcsV2.Invoke(new()
         ///     {
         ///         Filter = "vpcType eq 'VLAN'",
-        ///         Limit = 10,
         ///         OrderBy = "name desc",
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -111,18 +114,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all VPCs
         ///     var list_vpcs = Nutanix.GetVpcsV2.Invoke();
         /// 
+        ///     // Get all VPCs with filter
         ///     var list_vpcs_with_filter = Nutanix.GetVpcsV2.Invoke(new()
         ///     {
         ///         Filter = "vpcType eq 'VLAN'",
         ///     });
         /// 
+        ///     // Get all VPCs with order by and limit and filter
         ///     var list_vpcs_with_order_by_limit_filter = Nutanix.GetVpcsV2.Invoke(new()
         ///     {
         ///         Filter = "vpcType eq 'VLAN'",
-        ///         Limit = 10,
         ///         OrderBy = "name desc",
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -197,18 +203,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all VPCs
         ///     var list_vpcs = Nutanix.GetVpcsV2.Invoke();
         /// 
+        ///     // Get all VPCs with filter
         ///     var list_vpcs_with_filter = Nutanix.GetVpcsV2.Invoke(new()
         ///     {
         ///         Filter = "vpcType eq 'VLAN'",
         ///     });
         /// 
+        ///     // Get all VPCs with order by and limit and filter
         ///     var list_vpcs_with_order_by_limit_filter = Nutanix.GetVpcsV2.Invoke(new()
         ///     {
         ///         Filter = "vpcType eq 'VLAN'",
-        ///         Limit = 10,
         ///         OrderBy = "name desc",
+        ///         Limit = 10,
         ///     });
         /// 
         /// });

@@ -211,7 +211,9 @@ def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArg
     import pulumi
     import pulumi_nutanix as nutanix
 
+    #Get permission by UUID
     byuuid = nutanix.get_permission(permission_id="26b81a55-2bca-48c6-9fab-4f82c6bb4284")
+    #Get permission by name
     byname = nutanix.get_permission(permission_name="Access_Console_Virtual_Machine")
     ```
 
@@ -255,7 +257,9 @@ def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
     import pulumi
     import pulumi_nutanix as nutanix
 
+    #Get permission by UUID
     byuuid = nutanix.get_permission(permission_id="26b81a55-2bca-48c6-9fab-4f82c6bb4284")
+    #Get permission by name
     byname = nutanix.get_permission(permission_name="Access_Console_Virtual_Machine")
     ```
 

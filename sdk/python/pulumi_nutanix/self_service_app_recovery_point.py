@@ -188,8 +188,8 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         test = nutanix.SelfServiceAppRecoveryPoint("test",
-            action_name="SNAPSHOT ACTION NAME",
             app_name="NAME OF APPLICATION",
+            action_name="SNAPSHOT ACTION NAME",
             recovery_point_name="RECOVERY POINT NAME")
         ```
 
@@ -218,8 +218,8 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         test = nutanix.SelfServiceAppRecoveryPoint("test",
-            action_name="SNAPSHOT ACTION NAME",
             app_name="NAME OF APPLICATION",
+            action_name="SNAPSHOT ACTION NAME",
             recovery_point_name="RECOVERY POINT NAME")
         ```
 

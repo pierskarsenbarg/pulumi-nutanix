@@ -184,6 +184,22 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
     """
     Describes a Role.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_role = nutanix.Role("test",
+        name="NAME",
+        description="DESCRIPTION",
+        permission_reference_lists=[{
+            "kind": "permission",
+            "uuid": "ID OF PERMISSION",
+        }])
+    test = nutanix.get_role_output(role_id=test_role.id)
+    ```
+
 
     :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']] categories: - Categories for the Role.
     :param _builtins.str role_id: - (Optional) The UUID of a Role.
@@ -215,6 +231,22 @@ def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoleResult]:
     """
     Describes a Role.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_role = nutanix.Role("test",
+        name="NAME",
+        description="DESCRIPTION",
+        permission_reference_lists=[{
+            "kind": "permission",
+            "uuid": "ID OF PERMISSION",
+        }])
+    test = nutanix.get_role_output(role_id=test_role.id)
+    ```
 
 
     :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']] categories: - Categories for the Role.

@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var pre_checks = new Nutanix.LcmPrechecksV2("pre-checks", new()
     ///     {
+    ///         XClusterId = "0005a104-0b0b-4b0-8005-0b0b0b0b0b0b",
     ///         EntityUpdateSpecs = new[]
     ///         {
     ///             new Nutanix.Inputs.LcmPrechecksV2EntityUpdateSpecArgs
@@ -33,7 +34,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 ToVersion = "4.0.0",
     ///             },
     ///         },
-    ///         XClusterId = "0005a104-0b0b-4b0-8005-0b0b0b0b0b0b",
     ///     });
     /// 
     /// });

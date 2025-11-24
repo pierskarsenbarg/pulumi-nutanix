@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all users
         ///     var list_users = Nutanix.GetUsersV2.Invoke();
         /// 
         ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
@@ -32,6 +33,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
+        ///     // list users of user_type SERVICE_ACCOUNT
         ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
@@ -109,6 +111,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all users
         ///     var list_users = Nutanix.GetUsersV2.Invoke();
         /// 
         ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
@@ -116,6 +119,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
+        ///     // list users of user_type SERVICE_ACCOUNT
         ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
@@ -193,6 +197,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all users
         ///     var list_users = Nutanix.GetUsersV2.Invoke();
         /// 
         ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
@@ -200,6 +205,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
+        ///     // list users of user_type SERVICE_ACCOUNT
         ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",

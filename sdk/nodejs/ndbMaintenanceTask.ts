@@ -49,14 +49,14 @@ import * as utilities from "./utilities";
  *     maintenanceWindowId: "{{ maintenance_window_id }}",
  *     tasks: [
  *         {
- *             postCommand: "{{ post_command for db patching }}",
- *             preCommand: "{{ pre_command for db patching }}",
  *             taskType: "DB_PATCHING",
+ *             preCommand: "{{ pre_command for db patching }}",
+ *             postCommand: "{{ post_command for db patching }}",
  *         },
  *         {
- *             postCommand: "{{ post_command for os patching }}",
- *             preCommand: "{{ pre_command for os patching}}",
  *             taskType: "OS_PATCHING",
+ *             preCommand: "{{ pre_command for os patching}}",
+ *             postCommand: "{{ post_command for os patching }}",
  *         },
  *     ],
  * });

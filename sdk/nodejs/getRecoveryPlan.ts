@@ -10,6 +10,31 @@ import * as utilities from "./utilities";
  * Describe a Nutanix Recovery Plan and its values (if it has them).
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const recoveryPlanTest = new nutanix.RecoveryPlan("recovery_plan_test", {
+ *     name: "%s",
+ *     description: "%s",
+ *     stageLists: [{
+ *         stageWork: {
+ *             recoverEntities: {
+ *                 entityInfoLists: [{
+ *                     categories: [{
+ *                         name: "Environment",
+ *                         value: "Dev",
+ *                     }],
+ *                 }],
+ *             },
+ *         },
+ *         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+ *         delayTimeSecs: 0,
+ *     }],
+ *     parameters: {},
+ * });
+ * ```
  */
 export function getRecoveryPlan(args?: GetRecoveryPlanArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryPlanResult> {
     args = args || {};
@@ -70,6 +95,31 @@ export interface GetRecoveryPlanResult {
  * Describe a Nutanix Recovery Plan and its values (if it has them).
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const recoveryPlanTest = new nutanix.RecoveryPlan("recovery_plan_test", {
+ *     name: "%s",
+ *     description: "%s",
+ *     stageLists: [{
+ *         stageWork: {
+ *             recoverEntities: {
+ *                 entityInfoLists: [{
+ *                     categories: [{
+ *                         name: "Environment",
+ *                         value: "Dev",
+ *                     }],
+ *                 }],
+ *             },
+ *         },
+ *         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+ *         delayTimeSecs: 0,
+ *     }],
+ *     parameters: {},
+ * });
+ * ```
  */
 export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryPlanResult> {
     args = args || {};

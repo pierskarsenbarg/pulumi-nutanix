@@ -28,10 +28,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbAuthorizeDbserver(ctx, "name", &nutanix.NdbAuthorizeDbserverArgs{
+//				TimeMachineName: pulumi.String("test-pg-inst"),
 //				DbserversIds: pulumi.StringArray{
 //					pulumi.String("{{ dbServer_IDs}}"),
 //				},
-//				TimeMachineName: pulumi.String("test-pg-inst"),
 //			})
 //			if err != nil {
 //				return err

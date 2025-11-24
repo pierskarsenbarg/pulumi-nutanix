@@ -215,16 +215,16 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
 
         # restore RP
         rp_restore = nutanix.RecoveryPointRestoreV2("rp-restore",
-            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             ext_id="150a7ed0-9d05-4f35-a060-16dac4c835d0",
+            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             vm_recovery_point_restore_overrides=[{
                 "vm_recovery_point_ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             }],
             volume_group_recovery_point_restore_overrides=[{
+                "volume_group_recovery_point_ext_id": "8a938cc5-282b-48c4-81be-de22de145d07",
                 "volume_group_override_specs": [{
                     "name": "vg_restored",
                 }],
-                "volume_group_recovery_point_ext_id": "8a938cc5-282b-48c4-81be-de22de145d07",
             }])
         ```
 
@@ -253,16 +253,16 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
 
         # restore RP
         rp_restore = nutanix.RecoveryPointRestoreV2("rp-restore",
-            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             ext_id="150a7ed0-9d05-4f35-a060-16dac4c835d0",
+            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             vm_recovery_point_restore_overrides=[{
                 "vm_recovery_point_ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             }],
             volume_group_recovery_point_restore_overrides=[{
+                "volume_group_recovery_point_ext_id": "8a938cc5-282b-48c4-81be-de22de145d07",
                 "volume_group_override_specs": [{
                     "name": "vg_restored",
                 }],
-                "volume_group_recovery_point_ext_id": "8a938cc5-282b-48c4-81be-de22de145d07",
             }])
         ```
 

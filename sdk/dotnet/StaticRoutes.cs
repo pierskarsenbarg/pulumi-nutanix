@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var scn = new Nutanix.StaticRoutes("scn", new()
     ///     {
+    ///         VpcUuid = "{{vpc_uuid}}",
     ///         StaticRoutesLists = new[]
     ///         {
     ///             new Nutanix.Inputs.StaticRoutesStaticRoutesListArgs
@@ -33,7 +34,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
     ///             },
     ///         },
-    ///         VpcUuid = "{{vpc_uuid}}",
     ///     });
     /// 
     /// });
@@ -51,13 +51,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var scn = new Nutanix.StaticRoutes("scn", new()
     ///     {
-    ///         DefaultRouteNexthops = new[]
-    ///         {
-    ///             new Nutanix.Inputs.StaticRoutesDefaultRouteNexthopArgs
-    ///             {
-    ///                 ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
-    ///             },
-    ///         },
+    ///         VpcName = "{{vpc_name}}",
     ///         StaticRoutesLists = new[]
     ///         {
     ///             new Nutanix.Inputs.StaticRoutesStaticRoutesListArgs
@@ -66,7 +60,13 @@ namespace PiersKarsenbarg.Nutanix
     ///                 ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
     ///             },
     ///         },
-    ///         VpcName = "{{vpc_name}}",
+    ///         DefaultRouteNexthops = new[]
+    ///         {
+    ///             new Nutanix.Inputs.StaticRoutesDefaultRouteNexthopArgs
+    ///             {
+    ///                 ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });

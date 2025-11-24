@@ -15,11 +15,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // list all the Volume Groups.
  * const volumeGroups = nutanix.getVolumeGroupsV2({});
+ * // list all the Volume Groups with pagination.
  * const vg_pagination = nutanix.getVolumeGroupsV2({
- *     limit: 10,
  *     page: 1,
+ *     limit: 10,
  * });
+ * // list all the Volume Groups with filter.
  * const vg_filter = nutanix.getVolumeGroupsV2({
  *     filter: "name eq 'volume_group_test'",
  * });
@@ -144,11 +147,14 @@ export interface GetVolumeGroupsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // list all the Volume Groups.
  * const volumeGroups = nutanix.getVolumeGroupsV2({});
+ * // list all the Volume Groups with pagination.
  * const vg_pagination = nutanix.getVolumeGroupsV2({
- *     limit: 10,
  *     page: 1,
+ *     limit: 10,
  * });
+ * // list all the Volume Groups with filter.
  * const vg_filter = nutanix.getVolumeGroupsV2({
  *     filter: "name eq 'volume_group_test'",
  * });

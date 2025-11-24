@@ -18,6 +18,41 @@ import (
 //
 // ### Cluster Location
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewPcBackupTargetV2(ctx, "cluster-location", &nutanix.PcBackupTargetV2Args{
+//				DomainManagerExtId: pulumi.String("75dde184-3a0e-4f59-a185-03ca1efead17"),
+//				Location: &nutanix.PcBackupTargetV2LocationArgs{
+//					ClusterLocations: nutanix.PcBackupTargetV2LocationClusterLocationArray{
+//						&nutanix.PcBackupTargetV2LocationClusterLocationArgs{
+//							Configs: nutanix.PcBackupTargetV2LocationClusterLocationConfigArray{
+//								&nutanix.PcBackupTargetV2LocationClusterLocationConfigArgs{
+//									ExtId: pulumi.String("323860ca-bd10-411e-9fe0-1430b62eaf45"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ### Object Store Location
 //
 // ```go

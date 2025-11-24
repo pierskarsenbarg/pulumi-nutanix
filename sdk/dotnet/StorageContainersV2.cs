@@ -25,15 +25,10 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var storage_container = new Nutanix.StorageContainersV2("storage-container", new()
     ///     {
-    ///         CacheDeduplication = "OFF",
-    ///         ErasureCode = "OFF",
-    ///         HasHigherEcFaultDomainPreference = false,
-    ///         IsCompressionEnabled = true,
-    ///         IsInlineEcEnabled = false,
-    ///         IsInternal = false,
-    ///         IsSoftwareEncryptionEnabled = false,
+    ///         Name = "example-storage-container",
     ///         LogicalAdvertisedCapacityBytes = 1073741824000,
     ///         LogicalExplicitReservedCapacityBytes = 32,
+    ///         ReplicationFactor = 1,
     ///         NfsWhitelistAddresses = new[]
     ///         {
     ///             new Nutanix.Inputs.StorageContainersV2NfsWhitelistAddressArgs
@@ -42,14 +37,20 @@ namespace PiersKarsenbarg.Nutanix
     ///                 {
     ///                     new Nutanix.Inputs.StorageContainersV2NfsWhitelistAddressIpv4Args
     ///                     {
-    ///                         PrefixLength = 32,
     ///                         Value = "192.168.15.0",
+    ///                         PrefixLength = 32,
     ///                     },
     ///                 },
     ///             },
     ///         },
+    ///         ErasureCode = "OFF",
+    ///         IsInlineEcEnabled = false,
+    ///         HasHigherEcFaultDomainPreference = false,
+    ///         CacheDeduplication = "OFF",
     ///         OnDiskDedup = "OFF",
-    ///         ReplicationFactor = 1,
+    ///         IsCompressionEnabled = true,
+    ///         IsInternal = false,
+    ///         IsSoftwareEncryptionEnabled = false,
     ///     });
     /// 
     /// });

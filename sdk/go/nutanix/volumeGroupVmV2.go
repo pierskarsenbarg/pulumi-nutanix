@@ -28,9 +28,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewVolumeGroupVmV2(ctx, "vgVmExample", &nutanix.VolumeGroupVmV2Args{
-//				VmExtId:          pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
+//			_, err := nutanix.NewVolumeGroupVmV2(ctx, "vg_vm_example", &nutanix.VolumeGroupVmV2Args{
 //				VolumeGroupExtId: pulumi.String("1cdb5b48-fb2c-41b6-b751-b504117ee3e2"),
+//				VmExtId:          pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
 //			})
 //			if err != nil {
 //				return err

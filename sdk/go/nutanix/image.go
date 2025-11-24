@@ -28,6 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewImage(ctx, "test", &nutanix.ImageArgs{
+//				Name:        pulumi.String("Ubuntu"),
 //				Description: pulumi.String("Ubuntu"),
 //				SourceUri:   pulumi.String("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"),
 //			})
@@ -35,15 +36,16 @@ import (
 //				return err
 //			}
 //			// Create image with data_source_reference
-//			_, err = nutanix.NewImage(ctx, "createImageWithDataSourceReference", &nutanix.ImageArgs{
+//			_, err = nutanix.NewImage(ctx, "create_image_with_data_source_reference", &nutanix.ImageArgs{
+//				Name:        pulumi.String("Sql Server Image"),
+//				Description: pulumi.String("Sql Server"),
+//				ImageType:   pulumi.String("DISK_IMAGE"),
 //				DataSourceReferences: nutanix.ImageDataSourceReferenceArray{
 //					&nutanix.ImageDataSourceReferenceArgs{
 //						Kind: pulumi.String("vm_disk"),
 //						Uuid: pulumi.String("<uuid of the vm disk>"),
 //					},
 //				},
-//				Description: pulumi.String("Sql Server"),
-//				ImageType:   pulumi.String("DISK_IMAGE"),
 //			})
 //			if err != nil {
 //				return err

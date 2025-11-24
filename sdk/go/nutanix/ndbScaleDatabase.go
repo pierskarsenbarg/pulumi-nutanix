@@ -28,10 +28,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// resource to scale the database
 //			_, err := nutanix.NewNdbDatabaseScale(ctx, "scale", &nutanix.NdbDatabaseScaleArgs{
 //				ApplicationType: pulumi.String("{{ Application Type }}"),
-//				DataStorageSize: pulumi.Int(1),
 //				DatabaseUuid:    pulumi.String("{{ database_id }}"),
+//				DataStorageSize: pulumi.Int(1),
 //			})
 //			if err != nil {
 //				return err

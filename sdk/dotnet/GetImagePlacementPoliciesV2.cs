@@ -25,13 +25,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all image placement policies
         ///     var list_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke();
         /// 
+        ///     // List image placement policies with filter, page and limit
         ///     var filtered_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -53,13 +55,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all image placement policies
         ///     var list_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke();
         /// 
+        ///     // List image placement policies with filter, page and limit
         ///     var filtered_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -81,13 +85,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all image placement policies
         ///     var list_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke();
         /// 
+        ///     // List image placement policies with filter, page and limit
         ///     var filtered_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });

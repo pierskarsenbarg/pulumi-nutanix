@@ -122,8 +122,10 @@ def get_users_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # list all users
     list_users = nutanix.get_users_v2()
     filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
+    # list users of user_type SERVICE_ACCOUNT
     list_service_account = nutanix.get_users_v2(filter="userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
     ```
 
@@ -212,8 +214,10 @@ def get_users_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] 
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # list all users
     list_users = nutanix.get_users_v2()
     filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
+    # list users of user_type SERVICE_ACCOUNT
     list_service_account = nutanix.get_users_v2(filter="userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
     ```
 

@@ -1508,6 +1508,7 @@ class VirtualMachine(pulumi.CustomResource):
 
         clusters = nutanix.get_clusters()
         vm1 = nutanix.VirtualMachine("vm1",
+            name="test-dou",
             cluster_uuid=clusters.entities[0].metadata["uuid"],
             categories=[{
                 "name": "Environment",
@@ -1525,6 +1526,7 @@ class VirtualMachine(pulumi.CustomResource):
 
         clusters = nutanix.get_clusters()
         vm = nutanix.VirtualMachine("vm",
+            name="myVm",
             cluster_uuid=clusters.entities[0].metadata["uuid"],
             num_vcpus_per_socket=1,
             num_sockets=1,
@@ -1613,6 +1615,7 @@ class VirtualMachine(pulumi.CustomResource):
 
         clusters = nutanix.get_clusters()
         vm1 = nutanix.VirtualMachine("vm1",
+            name="test-dou",
             cluster_uuid=clusters.entities[0].metadata["uuid"],
             categories=[{
                 "name": "Environment",
@@ -1630,6 +1633,7 @@ class VirtualMachine(pulumi.CustomResource):
 
         clusters = nutanix.get_clusters()
         vm = nutanix.VirtualMachine("vm",
+            name="myVm",
             cluster_uuid=clusters.entities[0].metadata["uuid"],
             num_vcpus_per_socket=1,
             num_sockets=1,

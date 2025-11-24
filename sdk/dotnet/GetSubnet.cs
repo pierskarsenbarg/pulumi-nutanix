@@ -14,18 +14,24 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetSubnetResult> InvokeAsync(GetSubnetArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetSubnetResult> Invoke(GetSubnetInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetSubnetResult> Invoke(GetSubnetInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetInvokeArgs(), options.WithDefaults());

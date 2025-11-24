@@ -16,8 +16,8 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const example = nutanix.getCertificateV2({
- *     extId: "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
  *     objectStoreExtId: "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+ *     extId: "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
  * });
  * ```
  *

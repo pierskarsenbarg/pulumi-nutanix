@@ -27,6 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get a Directory Service.
 //			_, err := nutanix.GetDirectoryServiceV2(ctx, &nutanix.GetDirectoryServiceV2Args{
 //				ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
 //			}, nil)

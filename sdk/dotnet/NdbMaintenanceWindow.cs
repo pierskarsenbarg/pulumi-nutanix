@@ -26,10 +26,11 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var acctest_managed = new Nutanix.NdbMaintenanceWindow("acctest-managed", new()
     ///     {
-    ///         DayOfWeek = "TUESDAY",
+    ///         Name = "test-maintenance",
     ///         Description = "desc",
     ///         Duration = 3,
     ///         Recurrence = "WEEKLY",
+    ///         DayOfWeek = "TUESDAY",
     ///         StartTime = "17:04:47",
     ///     });
     /// 
@@ -47,10 +48,11 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var acctest_managed = new Nutanix.NdbMaintenanceWindow("acctest-managed", new()
     ///     {
-    ///         DayOfWeek = "TUESDAY",
+    ///         Name = "test-maintenance",
     ///         Description = "description",
     ///         Duration = 2,
     ///         Recurrence = "MONTHLY",
+    ///         DayOfWeek = "TUESDAY",
     ///         StartTime = "17:04:47",
     ///         WeekOfMonth = 4,
     ///     });

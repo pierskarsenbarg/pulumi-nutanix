@@ -17,9 +17,10 @@ import * as utilities from "./utilities";
  *
  * // create RP with Vm Rp
  * const rp_example = new nutanix.RecoveryPointsV2("rp-example", {
+ *     name: "terraform-test-recovery-point",
  *     expirationTime: "2024-09-17T09:20:42Z",
- *     recoveryPointType: "APPLICATION_CONSISTENT",
  *     status: "COMPLETE",
+ *     recoveryPointType: "APPLICATION_CONSISTENT",
  *     vmRecoveryPoints: [{
  *         vmExtId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
  *     }],

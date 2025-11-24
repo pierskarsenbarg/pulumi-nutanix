@@ -13,9 +13,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get kubeconfig by cluster UUID
  * const configbyid = nutanix.getKarbonClusterKubeConfig({
  *     karbonClusterId: "<YOUR-CLUSTER-ID>",
  * });
+ * // Get Kubeconfig by cluster name
  * const configbyname = nutanix.getKarbonClusterKubeConfig({
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
  * });
@@ -68,9 +70,11 @@ export interface GetKarbonClusterKubeConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get kubeconfig by cluster UUID
  * const configbyid = nutanix.getKarbonClusterKubeConfig({
  *     karbonClusterId: "<YOUR-CLUSTER-ID>",
  * });
+ * // Get Kubeconfig by cluster name
  * const configbyname = nutanix.getKarbonClusterKubeConfig({
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
  * });

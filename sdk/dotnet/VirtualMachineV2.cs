@@ -12,6 +12,311 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Creates a Virtual Machine with the provided configuration.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// using Std = Pulumi.Std;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var vm_1 = new Nutanix.VirtualMachineV2("vm-1", new()
+    ///     {
+    ///         Name = "example-vm-1",
+    ///         Description = "vm desc",
+    ///         NumCoresPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         Clusters = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2ClusterArgs
+    ///             {
+    ///                 ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var vm_2 = new Nutanix.VirtualMachineV2("vm-2", new()
+    ///     {
+    ///         Name = "example-vm-2",
+    ///         Description = "vm desc",
+    ///         NumCoresPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         Clusters = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2ClusterArgs
+    ///             {
+    ///                 ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///             },
+    ///         },
+    ///         Disks = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2DiskArgs
+    ///             {
+    ///                 DiskAddresses = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskDiskAddressArgs
+    ///                     {
+    ///                         BusType = "SCSI",
+    ///                         Index = 0,
+    ///                     },
+    ///                 },
+    ///                 BackingInfos = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoArgs
+    ///                     {
+    ///                         VmDisks = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
+    ///                             {
+    ///                                 DiskSizeBytes = 1073741824,
+    ///                                 StorageContainers = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs
+    ///                                     {
+    ///                                         ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         BootConfigs = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2BootConfigArgs
+    ///             {
+    ///                 UefiBoots = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2BootConfigUefiBootArgs
+    ///                     {
+    ///                         BootOrders = new[]
+    ///                         {
+    ///                             "NETWORK",
+    ///                             "DISK",
+    ///                             "CDROM",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var vm_3 = new Nutanix.VirtualMachineV2("vm-3", new()
+    ///     {
+    ///         Name = "terraform-example-vm-4-disks",
+    ///         NumCoresPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         Clusters = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2ClusterArgs
+    ///             {
+    ///                 ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///             },
+    ///         },
+    ///         Disks = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2DiskArgs
+    ///             {
+    ///                 DiskAddresses = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskDiskAddressArgs
+    ///                     {
+    ///                         BusType = "SCSI",
+    ///                         Index = 0,
+    ///                     },
+    ///                 },
+    ///                 BackingInfos = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoArgs
+    ///                     {
+    ///                         VmDisks = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
+    ///                             {
+    ///                                 DataSources = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskDataSourceArgs
+    ///                                     {
+    ///                                         References = new[]
+    ///                                         {
+    ///                                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceArgs
+    ///                                             {
+    ///                                                 ImageReferences = new[]
+    ///                                                 {
+    ///                                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArgs
+    ///                                                     {
+    ///                                                         ImageExtId = "59ec786c-4311-4225-affe-68b65c5ebf10",
+    ///                                                     },
+    ///                                                 },
+    ///                                             },
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 {
+    ///                                     Base = 1024,
+    ///                                     Exponent = 3,
+    ///                                 }).Apply(invoke =&gt; 20 * invoke.Result),
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             new Nutanix.Inputs.VirtualMachineV2DiskArgs
+    ///             {
+    ///                 DiskAddresses = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskDiskAddressArgs
+    ///                     {
+    ///                         BusType = "SCSI",
+    ///                         Index = 1,
+    ///                     },
+    ///                 },
+    ///                 BackingInfos = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoArgs
+    ///                     {
+    ///                         VmDisks = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
+    ///                             {
+    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 {
+    ///                                     Base = 1024,
+    ///                                     Exponent = 3,
+    ///                                 }).Apply(invoke =&gt; 10 * invoke.Result),
+    ///                                 StorageContainers = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs
+    ///                                     {
+    ///                                         ExtId = "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             new Nutanix.Inputs.VirtualMachineV2DiskArgs
+    ///             {
+    ///                 DiskAddresses = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskDiskAddressArgs
+    ///                     {
+    ///                         BusType = "SCSI",
+    ///                         Index = 2,
+    ///                     },
+    ///                 },
+    ///                 BackingInfos = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoArgs
+    ///                     {
+    ///                         VmDisks = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
+    ///                             {
+    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 {
+    ///                                     Base = 1024,
+    ///                                     Exponent = 3,
+    ///                                 }).Apply(invoke =&gt; 15 * invoke.Result),
+    ///                                 StorageContainers = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs
+    ///                                     {
+    ///                                         ExtId = "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             new Nutanix.Inputs.VirtualMachineV2DiskArgs
+    ///             {
+    ///                 DiskAddresses = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskDiskAddressArgs
+    ///                     {
+    ///                         BusType = "SCSI",
+    ///                         Index = 3,
+    ///                     },
+    ///                 },
+    ///                 BackingInfos = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoArgs
+    ///                     {
+    ///                         VmDisks = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
+    ///                             {
+    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 {
+    ///                                     Base = 1024,
+    ///                                     Exponent = 3,
+    ///                                 }).Apply(invoke =&gt; 20 * invoke.Result),
+    ///                                 StorageContainers = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs
+    ///                                     {
+    ///                                         ExtId = "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Nics = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2NicArgs
+    ///             {
+    ///                 NetworkInfos = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2NicNetworkInfoArgs
+    ///                     {
+    ///                         NicType = "NORMAL_NIC",
+    ///                         Subnets = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VirtualMachineV2NicNetworkInfoSubnetArgs
+    ///                             {
+    ///                                 ExtId = "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+    ///                             },
+    ///                         },
+    ///                         VlanMode = "ACCESS",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         BootConfigs = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2BootConfigArgs
+    ///             {
+    ///                 LegacyBoots = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VirtualMachineV2BootConfigLegacyBootArgs
+    ///                     {
+    ///                         BootOrders = new[]
+    ///                         {
+    ///                             "CDROM",
+    ///                             "DISK",
+    ///                             "NETWORK",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         PowerState = "ON",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/virtualMachineV2:VirtualMachineV2")]
     public partial class VirtualMachineV2 : global::Pulumi.CustomResource

@@ -115,7 +115,9 @@ def get_karbon_cluster_kube_config(karbon_cluster_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Get kubeconfig by cluster UUID
     configbyid = nutanix.get_karbon_cluster_kube_config(karbon_cluster_id="<YOUR-CLUSTER-ID>")
+    # Get Kubeconfig by cluster name
     configbyname = nutanix.get_karbon_cluster_kube_config(karbon_cluster_name="<YOUR-CLUSTER-NAME>")
     ```
 
@@ -149,7 +151,9 @@ def get_karbon_cluster_kube_config_output(karbon_cluster_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Get kubeconfig by cluster UUID
     configbyid = nutanix.get_karbon_cluster_kube_config(karbon_cluster_id="<YOUR-CLUSTER-ID>")
+    # Get Kubeconfig by cluster name
     configbyname = nutanix.get_karbon_cluster_kube_config(karbon_cluster_name="<YOUR-CLUSTER-NAME>")
     ```
 

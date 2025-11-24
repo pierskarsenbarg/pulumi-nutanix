@@ -301,15 +301,15 @@ class LcmConfigV2(pulumi.CustomResource):
 
         # Enable Auto Inventory, Add Auto Inventory Schedule and enable auto upgrade
         lcm_configuration_update = nutanix.LcmConfigV2("lcm-configuration-update",
-            auto_inventory_schedule="16:30",
-            has_module_auto_upgrade_enabled=True,
+            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
             is_auto_inventory_enabled=True,
-            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+            auto_inventory_schedule="16:30",
+            has_module_auto_upgrade_enabled=True)
         # Update the LCM url to darksite server
         lcm_configuration_update_connectivity_type = nutanix.LcmConfigV2("lcm-configuration-update-connectivity-type",
-            connectivity_type="DARKSITE_WEB_SERVER",
+            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
             url="https://x.x.x.x:8000/builds",
-            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+            connectivity_type="DARKSITE_WEB_SERVER")
         ```
 
         :param str resource_name: The name of the resource.
@@ -341,15 +341,15 @@ class LcmConfigV2(pulumi.CustomResource):
 
         # Enable Auto Inventory, Add Auto Inventory Schedule and enable auto upgrade
         lcm_configuration_update = nutanix.LcmConfigV2("lcm-configuration-update",
-            auto_inventory_schedule="16:30",
-            has_module_auto_upgrade_enabled=True,
+            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
             is_auto_inventory_enabled=True,
-            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+            auto_inventory_schedule="16:30",
+            has_module_auto_upgrade_enabled=True)
         # Update the LCM url to darksite server
         lcm_configuration_update_connectivity_type = nutanix.LcmConfigV2("lcm-configuration-update-connectivity-type",
-            connectivity_type="DARKSITE_WEB_SERVER",
+            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
             url="https://x.x.x.x:8000/builds",
-            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+            connectivity_type="DARKSITE_WEB_SERVER")
         ```
 
         :param str resource_name: The name of the resource.

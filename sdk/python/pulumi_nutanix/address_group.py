@@ -164,7 +164,8 @@ class AddressGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test_address = nutanix.AddressGroup("testAddress",
+        test_address = nutanix.AddressGroup("test_address",
+            name="test",
             description="test address groups resource",
             ip_address_block_lists=[{
                 "ip": "10.0.0.0",
@@ -193,7 +194,8 @@ class AddressGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        test_address = nutanix.AddressGroup("testAddress",
+        test_address = nutanix.AddressGroup("test_address",
+            name="test",
             description="test address groups resource",
             ip_address_block_lists=[{
                 "ip": "10.0.0.0",

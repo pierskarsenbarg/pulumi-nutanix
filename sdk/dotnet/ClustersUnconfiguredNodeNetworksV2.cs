@@ -14,6 +14,56 @@ namespace PiersKarsenbarg.Nutanix
     /// Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // ## fetch Network info for unconfigured node
+    ///     var node_network_info = new Nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info", new()
+    ///     {
+    ///         ExtId = "0005b6b0-0b0b-0000-0000-000000000000",
+    ///         RequestType = "expand_cluster",
+    ///         NodeLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListArgs
+    ///             {
+    ///                 CvmIps = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv4Args
+    ///                             {
+    ///                                 Value = "10.73.23.55",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 HypervisorIps = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv4Args
+    ///                             {
+    ///                                 Value = "10.33.44.12",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/clustersUnconfiguredNodeNetworksV2:ClustersUnconfiguredNodeNetworksV2")]
     public partial class ClustersUnconfiguredNodeNetworksV2 : global::Pulumi.CustomResource

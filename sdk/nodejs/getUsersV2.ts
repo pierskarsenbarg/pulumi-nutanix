@@ -15,10 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // list all users
  * const list_users = nutanix.getUsersV2({});
  * const filtered_users = nutanix.getUsersV2({
  *     filter: "username eq 'username-example'",
  * });
+ * // list users of user_type SERVICE_ACCOUNT
  * const listServiceAccount = nutanix.getUsersV2({
  *     filter: "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
  * });
@@ -127,10 +129,12 @@ export interface GetUsersV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // list all users
  * const list_users = nutanix.getUsersV2({});
  * const filtered_users = nutanix.getUsersV2({
  *     filter: "username eq 'username-example'",
  * });
+ * // list users of user_type SERVICE_ACCOUNT
  * const listServiceAccount = nutanix.getUsersV2({
  *     filter: "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
  * });

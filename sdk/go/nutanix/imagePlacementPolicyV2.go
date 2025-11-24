@@ -27,6 +27,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewImagePlacementPolicyV2(ctx, "example", &nutanix.ImagePlacementPolicyV2Args{
+//				Name:          pulumi.String("image_placement_policy"),
+//				Description:   pulumi.String("%[2]s"),
+//				PlacementType: pulumi.String("SOFT"),
 //				ClusterEntityFilters: nutanix.ImagePlacementPolicyV2ClusterEntityFilterArray{
 //					&nutanix.ImagePlacementPolicyV2ClusterEntityFilterArgs{
 //						CategoryExtIds: pulumi.StringArray{
@@ -35,7 +38,6 @@ import (
 //						Type: pulumi.String("CATEGORIES_MATCH_ALL"),
 //					},
 //				},
-//				Description: pulumi.String("%[2]s"),
 //				ImageEntityFilters: nutanix.ImagePlacementPolicyV2ImageEntityFilterArray{
 //					&nutanix.ImagePlacementPolicyV2ImageEntityFilterArgs{
 //						CategoryExtIds: pulumi.StringArray{
@@ -44,7 +46,6 @@ import (
 //						Type: pulumi.String("CATEGORIES_MATCH_ALL"),
 //					},
 //				},
-//				PlacementType: pulumi.String("SOFT"),
 //			})
 //			if err != nil {
 //				return err

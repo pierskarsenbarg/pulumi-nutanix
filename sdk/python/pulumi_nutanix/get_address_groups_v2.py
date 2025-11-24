@@ -122,8 +122,11 @@ def get_address_groups_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # list all address groups
     list_addr_groups = nutanix.get_address_groups_v2()
+    # filtered the address groups
     list_addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'")
+    # filtered and limit the number of address groups
     list_addr_groups_filter_limit = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'",
         limit=1)
     ```
@@ -182,8 +185,11 @@ def get_address_groups_v2_output(filter: Optional[pulumi.Input[Optional[_builtin
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # list all address groups
     list_addr_groups = nutanix.get_address_groups_v2()
+    # filtered the address groups
     list_addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'")
+    # filtered and limit the number of address groups
     list_addr_groups_filter_limit = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'",
         limit=1)
     ```

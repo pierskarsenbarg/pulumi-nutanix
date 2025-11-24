@@ -14,6 +14,52 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
+    ///     {
+    ///         Name = "%s",
+    ///         Description = "%s",
+    ///         StageLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.RecoveryPlanStageListArgs
+    ///             {
+    ///                 StageWork = new Nutanix.Inputs.RecoveryPlanStageListStageWorkArgs
+    ///                 {
+    ///                     RecoverEntities = new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs
+    ///                     {
+    ///                         EntityInfoLists = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs
+    ///                             {
+    ///                                 Categories = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs
+    ///                                     {
+    ///                                         Name = "Environment",
+    ///                                         Value = "Dev",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 StageUuid = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+    ///                 DelayTimeSecs = 0,
+    ///             },
+    ///         },
+    ///         Parameters = null,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/recoveryPlan:RecoveryPlan")]
     public partial class RecoveryPlan : global::Pulumi.CustomResource

@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *     bpName: "NAME OF BLUEPRINT",
  * });
  * // dumps read value into a readable json file
- * const dumpRuntimeValue = new local.File("dumpRuntimeValue", {
+ * const dumpRuntimeValue = new local.File("dump_runtime_value", {
  *     content: JSON.stringify(example.then(example => example.runtimeEditables)),
  *     filename: "runtime_value.json",
  * });
@@ -77,7 +77,7 @@ export interface GetBlueprintRuntimeEditablesResult {
  *     bpName: "NAME OF BLUEPRINT",
  * });
  * // dumps read value into a readable json file
- * const dumpRuntimeValue = new local.File("dumpRuntimeValue", {
+ * const dumpRuntimeValue = new local.File("dump_runtime_value", {
  *     content: JSON.stringify(example.then(example => example.runtimeEditables)),
  *     filename: "runtime_value.json",
  * });

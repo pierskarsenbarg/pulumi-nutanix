@@ -16,10 +16,10 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const snaps = nutanix.getNdbSnapshot({
+ *     snapshotId: "{{ snapshot_id }}",
  *     filters: [{
  *         loadReplicatedChildSnapshots: "true",
  *     }],
- *     snapshotId: "{{ snapshot_id }}",
  * });
  * ```
  */
@@ -208,10 +208,10 @@ export interface GetNdbSnapshotResult {
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const snaps = nutanix.getNdbSnapshot({
+ *     snapshotId: "{{ snapshot_id }}",
  *     filters: [{
  *         loadReplicatedChildSnapshots: "true",
  *     }],
- *     snapshotId: "{{ snapshot_id }}",
  * });
  * ```
  */

@@ -29,10 +29,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNgtInsertIsoV2(ctx, "example", &nutanix.NgtInsertIsoV2Args{
+//				ExtId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
 //				Capablities: pulumi.StringArray{
 //					pulumi.String("VSS_SNAPSHOT"),
 //				},
-//				ExtId:        pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
 //				IsConfigOnly: pulumi.Bool(false),
 //			})
 //			if err != nil {

@@ -26,6 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var name = new Nutanix.NdbTag("name", new()
     ///     {
+    ///         Name = "testst-up",
     ///         Description = "this is desc ok",
     ///         EntityType = "DATABASE",
     ///         Required = true,
@@ -45,6 +46,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var name = new Nutanix.NdbTag("name", new()
     ///     {
+    ///         Name = "testst-up",
     ///         Description = "this is desc ok",
     ///         EntityType = "DATABASE",
     ///         Required = true,

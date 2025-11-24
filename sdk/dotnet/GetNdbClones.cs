@@ -14,90 +14,18 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// List all the clone present in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var clones = Nutanix.GetNdbClones.Invoke(new()
-        ///     {
-        ///         Filters = new[]
-        ///         {
-        ///             new Nutanix.Inputs.GetNdbClonesFilterInputArgs
-        ///             {
-        ///                 Detailed = "true",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetNdbClonesResult> InvokeAsync(GetNdbClonesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbClonesResult>("nutanix:index/getNdbClones:getNdbClones", args ?? new GetNdbClonesArgs(), options.WithDefaults());
 
         /// <summary>
         /// List all the clone present in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var clones = Nutanix.GetNdbClones.Invoke(new()
-        ///     {
-        ///         Filters = new[]
-        ///         {
-        ///             new Nutanix.Inputs.GetNdbClonesFilterInputArgs
-        ///             {
-        ///                 Detailed = "true",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetNdbClonesResult> Invoke(GetNdbClonesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbClonesResult>("nutanix:index/getNdbClones:getNdbClones", args ?? new GetNdbClonesInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// List all the clone present in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var clones = Nutanix.GetNdbClones.Invoke(new()
-        ///     {
-        ///         Filters = new[]
-        ///         {
-        ///             new Nutanix.Inputs.GetNdbClonesFilterInputArgs
-        ///             {
-        ///                 Detailed = "true",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetNdbClonesResult> Invoke(GetNdbClonesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbClonesResult>("nutanix:index/getNdbClones:getNdbClones", args ?? new GetNdbClonesInvokeArgs(), options.WithDefaults());

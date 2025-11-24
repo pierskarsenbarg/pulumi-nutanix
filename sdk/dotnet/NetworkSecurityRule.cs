@@ -29,12 +29,14 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
     ///     {
+    ///         Name = "example-isolation-rule",
     ///         Description = "Isolation Rule Example",
     ///         IsolationRuleAction = "APPLY",
     ///         IsolationRuleFirstEntityFilterKindLists = new[]
     ///         {
     ///             "vm",
     ///         },
+    ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
     ///         IsolationRuleFirstEntityFilterParams = new[]
     ///         {
     ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
@@ -46,11 +48,11 @@ namespace PiersKarsenbarg.Nutanix
     ///                 },
     ///             },
     ///         },
-    ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
     ///         IsolationRuleSecondEntityFilterKindLists = new[]
     ///         {
     ///             "vm",
     ///         },
+    ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
     ///         IsolationRuleSecondEntityFilterParams = new[]
     ///         {
     ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
@@ -62,7 +64,321 @@ namespace PiersKarsenbarg.Nutanix
     ///                 },
     ///             },
     ///         },
-    ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ### App Rule Example with associated VMs.
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// using Nutanix = Pulumi.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var clusters = Nutanix.GetClusters.Invoke();
+    /// 
+    ///     var clusterUuid = .Where(cluster =&gt; cluster.ServiceList[0] != "PRISM_CENTRAL").Select(cluster =&gt; 
+    ///     {
+    ///         return cluster.Metadata?.Uuid;
+    ///     }).ToList()[0];
+    /// 
+    ///     //Create categories.
+    ///     var test_category_key = new Nutanix.CategoryKey("test-category-key", new()
+    ///     {
+    ///         Name = "TIER-1",
+    ///         Description = "TIER Category Key",
+    ///     });
+    /// 
+    ///     var USER = new Nutanix.CategoryKey("USER", new()
+    ///     {
+    ///         Name = "user",
+    ///         Description = "user Category Key",
+    ///     });
+    /// 
+    ///     var WEB = new Nutanix.CategoryValue("WEB", new()
+    ///     {
+    ///         Name = test_category_key.Id,
+    ///         Description = "WEB Category Value",
+    ///         Value = "WEB-1",
+    ///     });
+    /// 
+    ///     var APP = new Nutanix.CategoryValue("APP", new()
+    ///     {
+    ///         Name = test_category_key.Id,
+    ///         Description = "APP Category Value",
+    ///         Value = "APP-1",
+    ///     });
+    /// 
+    ///     var DB = new Nutanix.CategoryValue("DB", new()
+    ///     {
+    ///         Name = test_category_key.Id,
+    ///         Description = "DB Category Value",
+    ///         Value = "DB-1",
+    ///     });
+    /// 
+    ///     var @group = new Nutanix.CategoryValue("group", new()
+    ///     {
+    ///         Name = USER.Id,
+    ///         Description = "group Category Value",
+    ///         Value = "group-1",
+    ///     });
+    /// 
+    ///     //Create a cirros image
+    ///     var cirros_034_disk = new Nutanix.Image("cirros-034-disk", new()
+    ///     {
+    ///         Name = "test-image-vm-create-flow",
+    ///         SourceUri = "http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img",
+    ///         Description = "heres a tiny linux image, not an iso, but a real disk!",
+    ///     });
+    /// 
+    ///     //APP-1 VM.
+    ///     var vm_app = new Nutanix.VirtualMachine("vm-app", new()
+    ///     {
+    ///         Name = "test-dou-vm-flow-APP-1",
+    ///         ClusterUuid = clusterUuid,
+    ///         NumVcpusPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         MemorySizeMib = 186,
+    ///         NicLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineNicListArgs
+    ///             {
+    ///                 SubnetUuid = "c56b535c-8aff-4435-ae85-78e64a07f76d",
+    ///             },
+    ///         },
+    ///         DiskLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineDiskListArgs
+    ///             {
+    ///                 DataSourceReference = 
+    ///                 {
+    ///                     { "kind", "image" },
+    ///                     { "uuid", cirros_034_disk.Id },
+    ///                 },
+    ///                 DeviceProperties = new Nutanix.Inputs.VirtualMachineDiskListDevicePropertiesArgs
+    ///                 {
+    ///                     DiskAddress = 
+    ///                     {
+    ///                         { "device_index", "0" },
+    ///                         { "adapter_type", "SCSI" },
+    ///                     },
+    ///                     DeviceType = "DISK",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Categories = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineCategoryArgs
+    ///             {
+    ///                 Name = "Environment",
+    ///                 Value = "Staging",
+    ///             },
+    ///             new Nutanix.Inputs.VirtualMachineCategoryArgs
+    ///             {
+    ///                 Name = "TIER-1",
+    ///                 Value = APP.Id,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     //WEB-1 VM
+    ///     var vm_web = new Nutanix.VirtualMachine("vm-web", new()
+    ///     {
+    ///         Name = "test-dou-vm-flow-WEB-1",
+    ///         ClusterUuid = clusterUuid,
+    ///         NumVcpusPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         MemorySizeMib = 186,
+    ///         NicLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineNicListArgs
+    ///             {
+    ///                 SubnetUuid = "c56b535c-8aff-4435-ae85-78e64a07f76d",
+    ///             },
+    ///         },
+    ///         DiskLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineDiskListArgs
+    ///             {
+    ///                 DataSourceReference = 
+    ///                 {
+    ///                     { "kind", "image" },
+    ///                     { "uuid", cirros_034_disk.Id },
+    ///                 },
+    ///                 DeviceProperties = new Nutanix.Inputs.VirtualMachineDiskListDevicePropertiesArgs
+    ///                 {
+    ///                     DiskAddress = 
+    ///                     {
+    ///                         { "device_index", "0" },
+    ///                         { "adapter_type", "SCSI" },
+    ///                     },
+    ///                     DeviceType = "DISK",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Categories = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineCategoryArgs
+    ///             {
+    ///                 Name = "Environment",
+    ///                 Value = "Staging",
+    ///             },
+    ///             new Nutanix.Inputs.VirtualMachineCategoryArgs
+    ///             {
+    ///                 Name = "TIER-1",
+    ///                 Value = WEB.Id,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     //DB-1 VM
+    ///     var vm_db = new Nutanix.VirtualMachine("vm-db", new()
+    ///     {
+    ///         Name = "test-dou-vm-flow-DB-1",
+    ///         ClusterUuid = clusterUuid,
+    ///         NumVcpusPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         MemorySizeMib = 186,
+    ///         NicLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineNicListArgs
+    ///             {
+    ///                 SubnetUuid = "c56b535c-8aff-4435-ae85-78e64a07f76d",
+    ///             },
+    ///         },
+    ///         DiskLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineDiskListArgs
+    ///             {
+    ///                 DataSourceReference = 
+    ///                 {
+    ///                     { "kind", "image" },
+    ///                     { "uuid", cirros_034_disk.Id },
+    ///                 },
+    ///                 DeviceProperties = new Nutanix.Inputs.VirtualMachineDiskListDevicePropertiesArgs
+    ///                 {
+    ///                     DiskAddress = 
+    ///                     {
+    ///                         { "device_index", "0" },
+    ///                         { "adapter_type", "SCSI" },
+    ///                     },
+    ///                     DeviceType = "DISK",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Categories = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineCategoryArgs
+    ///             {
+    ///                 Name = "Environment",
+    ///                 Value = "Staging",
+    ///             },
+    ///             new Nutanix.Inputs.VirtualMachineCategoryArgs
+    ///             {
+    ///                 Name = "TIER-1",
+    ///                 Value = DB.Id,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     //Create Application Network Policy.
+    ///     var TEST_TIER = new Nutanix.NetworkSecurityRule("TEST-TIER", new()
+    ///     {
+    ///         Name = "RULE-1-TIERS",
+    ///         Description = "rule 1 tiers",
+    ///         AppRuleAction = "APPLY",
+    ///         AppRuleInboundAllowLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityRuleAppRuleInboundAllowListArgs
+    ///             {
+    ///                 PeerSpecificationType = "FILTER",
+    ///                 FilterType = "CATEGORIES_MATCH_ALL",
+    ///                 FilterKindLists = new[]
+    ///                 {
+    ///                     "vm",
+    ///                 },
+    ///                 FilterParams = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NetworkSecurityRuleAppRuleInboundAllowListFilterParamArgs
+    ///                     {
+    ///                         Name = test_category_key.Id,
+    ///                         Values = new[]
+    ///                         {
+    ///                             WEB.Id,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         AppRuleTargetGroupDefaultInternalPolicy = "DENY_ALL",
+    ///         AppRuleTargetGroupPeerSpecificationType = "FILTER",
+    ///         AppRuleTargetGroupFilterType = "CATEGORIES_MATCH_ALL",
+    ///         AppRuleTargetGroupFilterKindLists = new[]
+    ///         {
+    ///             "vm",
+    ///         },
+    ///         AppRuleTargetGroupFilterParams = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs
+    ///             {
+    ///                 Name = test_category_key.Id,
+    ///                 Values = new[]
+    ///                 {
+    ///                     APP.Id,
+    ///                 },
+    ///             },
+    ///             new Nutanix.Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs
+    ///             {
+    ///                 Name = USER.Id,
+    ///                 Values = new[]
+    ///                 {
+    ///                     @group.Id,
+    ///                 },
+    ///             },
+    ///             new Nutanix.Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs
+    ///             {
+    ///                 Name = "AppType",
+    ///                 Values = new[]
+    ///                 {
+    ///                     "Default",
+    ///                 },
+    ///             },
+    ///         },
+    ///         AppRuleOutboundAllowLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityRuleAppRuleOutboundAllowListArgs
+    ///             {
+    ///                 PeerSpecificationType = "FILTER",
+    ///                 FilterType = "CATEGORIES_MATCH_ALL",
+    ///                 FilterKindLists = new[]
+    ///                 {
+    ///                     "vm",
+    ///                 },
+    ///                 FilterParams = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NetworkSecurityRuleAppRuleOutboundAllowListFilterParamArgs
+    ///                     {
+    ///                         Name = test_category_key.Id,
+    ///                         Values = new[]
+    ///                         {
+    ///                             DB.Id,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn =
+    ///         {
+    ///             vm_app,
+    ///             vm_web,
+    ///             vm_db,
+    ///         },
     ///     });
     /// 
     /// });
@@ -79,6 +395,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var service1 = new Nutanix.ServiceGroup("service1", new()
     ///     {
+    ///         Name = "srv-1",
     ///         Description = "test",
     ///         ServiceLists = new[]
     ///         {
@@ -104,6 +421,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     ///     var address1 = new Nutanix.AddressGroup("address1", new()
     ///     {
+    ///         Name = "addr-1",
     ///         Description = "test",
     ///         IpAddressBlockLists = new[]
     ///         {
@@ -117,12 +435,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     ///     var ad_group_user_1 = new Nutanix.CategoryValue("ad-group-user-1", new()
     ///     {
+    ///         Name = "AD",
     ///         Description = "group user category value",
     ///         Value = "AD",
     ///     });
     /// 
-    ///     var vDI = new Nutanix.NetworkSecurityRule("vDI", new()
+    ///     var VDI = new Nutanix.NetworkSecurityRule("VDI", new()
     ///     {
+    ///         Name = "nsr-1",
     ///         AdRuleAction = "APPLY",
     ///         Description = "test",
     ///         AdRuleInboundAllowLists = new[]

@@ -15,50 +15,6 @@ import (
 // Run restore action in application to restore from recovery point.
 //
 // ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewSelfServiceAppRecoveryPoint(ctx, "testSelfServiceAppRecoveryPoint", &nutanix.SelfServiceAppRecoveryPointArgs{
-//				AppName:           pulumi.String("NAME OF APPLICATION"),
-//				ActionName:        pulumi.String("SNAPSHOT ACTION NAME"),
-//				RecoveryPointName: pulumi.String("RECOVERY POINT NAME"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			snapshots, err := nutanix.GetSelfServiceAppSnapshots(ctx, &nutanix.GetSelfServiceAppSnapshotsArgs{
-//				AppName: pulumi.StringRef("NAME OF APPLICATION"),
-//				Length:  250,
-//				Offset:  0,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			snapshotUuid := "TODO: For expression"[0]
-//			// Restore from recovery point
-//			_, err = nutanix.NewSelfServiceAppRestore(ctx, "testSelfServiceAppRestore", &nutanix.SelfServiceAppRestoreArgs{
-//				RestoreActionName: pulumi.String("RESTORE ACTION NAME"),
-//				AppName:           pulumi.String("NAME OF APPLICATION"),
-//				SnapshotUuid:      pulumi.String(snapshotUuid),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type SelfServiceAppRestore struct {
 	pulumi.CustomResourceState
 

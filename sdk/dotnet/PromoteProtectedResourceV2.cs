@@ -23,34 +23,13 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     // Promote a protected virtual machine on remote site
-    ///     // This example promotes a protected virtual machine on a remote site.
-    ///     // Steps:
-    ///     // 1. Define the provider for the remote site
-    ///     // 2. Create a category and a protection policy, on the local site
-    ///     // 3. Create a virtual machine and associate it with the protection policy, on local site
-    ///     // 4. Promote the protected virtual machine on the remote site
-    ///     // define another alias for the provider, this time for the remote PC
-    ///     var remote = new Nutanix.Provider("remote", new()
-    ///     {
-    ///         Username = @var.Nutanix_remote_username,
-    ///         Password = @var.Nutanix_remote_password,
-    ///         Endpoint = @var.Nutanix_remote_endpoint,
-    ///         Insecure = true,
-    ///         Port = "9440",
-    ///     });
-    /// 
     ///     // create a category and a protection policy on the local site
     ///     // promote the protected virtual machine on the remote site
     ///     var promote_example = new Nutanix.PromoteProtectedResourceV2("promote-example", new()
     ///     {
     ///         ExtId = "d22529bb-f02d-4710-894b-d1de772d7832",
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         Provider = nutanix.Remote,
     ///     });
     /// 
-    ///     // protected resource (VM or VG) ext_id
     /// });
     /// ```
     /// </summary>

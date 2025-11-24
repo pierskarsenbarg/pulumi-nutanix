@@ -16,9 +16,13 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const ap_example = new nutanix.AuthorizationPolicyV2("ap-example", {
- *     authorizationPolicyType: "USER_DEFINED",
- *     description: "authorization policy example",
+ *     role: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
  *     displayName: "auth_policy_example",
+ *     description: "authorization policy example",
+ *     authorizationPolicyType: "USER_DEFINED",
+ *     identities: [{
+ *         reserved: "{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}",
+ *     }],
  *     entities: [
  *         {
  *             reserved: "{\"images\":{\"*\":{\"eq\":\"*\"}}}",
@@ -27,10 +31,6 @@ import * as utilities from "./utilities";
  *             reserved: "{\"marketplace_item\":{\"owner_uuid\":{\"eq\":\"SELF_OWNED\"}}}",
  *         },
  *     ],
- *     identities: [{
- *         reserved: "{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}",
- *     }],
- *     role: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
  * });
  * ```
  */

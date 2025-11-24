@@ -13,7 +13,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const test = new nutanix.CategoryKey("test", {description: "App Support Category Key"});
+ * const test = new nutanix.CategoryKey("test", {
+ *     name: "app-support-example",
+ *     description: "App Support Category Key",
+ * });
  * ```
  */
 export class CategoryKey extends pulumi.CustomResource {

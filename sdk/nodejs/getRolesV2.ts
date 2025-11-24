@@ -15,10 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all Roles
  * const roles = nutanix.getRolesV2({});
+ * // List Roles with filter
  * const filtered_roles = nutanix.getRolesV2({
  *     filter: "displayName eq 'example_role'",
  * });
+ * // List Roles with filter and orderby
  * const filtered_ordered_roles = nutanix.getRolesV2({
  *     filter: "displayName eq 'example_role'",
  *     orderBy: "createdTime desc",
@@ -113,10 +116,13 @@ export interface GetRolesV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all Roles
  * const roles = nutanix.getRolesV2({});
+ * // List Roles with filter
  * const filtered_roles = nutanix.getRolesV2({
  *     filter: "displayName eq 'example_role'",
  * });
+ * // List Roles with filter and orderby
  * const filtered_ordered_roles = nutanix.getRolesV2({
  *     filter: "displayName eq 'example_role'",
  *     orderBy: "createdTime desc",

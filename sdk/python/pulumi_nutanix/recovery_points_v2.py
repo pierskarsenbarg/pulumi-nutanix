@@ -382,9 +382,10 @@ class RecoveryPointsV2(pulumi.CustomResource):
 
         # create RP with Vm Rp
         rp_example = nutanix.RecoveryPointsV2("rp-example",
+            name="terraform-test-recovery-point",
             expiration_time="2024-09-17T09:20:42Z",
-            recovery_point_type="APPLICATION_CONSISTENT",
             status="COMPLETE",
+            recovery_point_type="APPLICATION_CONSISTENT",
             vm_recovery_points=[{
                 "vm_ext_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             }])
@@ -421,9 +422,10 @@ class RecoveryPointsV2(pulumi.CustomResource):
 
         # create RP with Vm Rp
         rp_example = nutanix.RecoveryPointsV2("rp-example",
+            name="terraform-test-recovery-point",
             expiration_time="2024-09-17T09:20:42Z",
-            recovery_point_type="APPLICATION_CONSISTENT",
             status="COMPLETE",
+            recovery_point_type="APPLICATION_CONSISTENT",
             vm_recovery_points=[{
                 "vm_ext_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             }])

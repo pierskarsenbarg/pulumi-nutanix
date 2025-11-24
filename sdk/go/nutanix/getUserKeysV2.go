@@ -27,15 +27,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Data source to fetch the list of keys
 //			_, err := nutanix.GetUserKeysV2(ctx, &nutanix.GetUserKeysV2Args{
 //				UserExtId: "<SERVICE_ACCOUNT_UUID>",
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// Data source to fetch the key by name
 //			_, err = nutanix.GetUserKeysV2(ctx, &nutanix.GetUserKeysV2Args{
-//				Filter:    pulumi.StringRef("name eq '<NAME_OF_API_KEY>'"),
 //				UserExtId: "<SERVICE_ACCOUNT_UUID>",
+//				Filter:    pulumi.StringRef("name eq '<NAME_OF_API_KEY>'"),
 //			}, nil)
 //			if err != nil {
 //				return err

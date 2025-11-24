@@ -30,10 +30,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbMaintenanceWindow(ctx, "acctest-managed", &nutanix.NdbMaintenanceWindowArgs{
-//				DayOfWeek:   pulumi.String("TUESDAY"),
+//				Name:        pulumi.String("test-maintenance"),
 //				Description: pulumi.String("desc"),
 //				Duration:    pulumi.Int(3),
 //				Recurrence:  pulumi.String("WEEKLY"),
+//				DayOfWeek:   pulumi.String("TUESDAY"),
 //				StartTime:   pulumi.String("17:04:47"),
 //			})
 //			if err != nil {
@@ -59,10 +60,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbMaintenanceWindow(ctx, "acctest-managed", &nutanix.NdbMaintenanceWindowArgs{
-//				DayOfWeek:   pulumi.String("TUESDAY"),
+//				Name:        pulumi.String("test-maintenance"),
 //				Description: pulumi.String("description"),
 //				Duration:    pulumi.Int(2),
 //				Recurrence:  pulumi.String("MONTHLY"),
+//				DayOfWeek:   pulumi.String("TUESDAY"),
 //				StartTime:   pulumi.String("17:04:47"),
 //				WeekOfMonth: pulumi.Int(4),
 //			})

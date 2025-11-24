@@ -25,9 +25,9 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var example = new Nutanix.CategoryV2("example", new()
     ///     {
-    ///         Description = "category example description",
     ///         Key = "category_example_key",
     ///         Value = "category_example_value",
+    ///         Description = "category example description",
     ///     });
     /// 
     /// });

@@ -30,6 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbStretchedVlan(ctx, "name", &nutanix.NdbStretchedVlanArgs{
+//				Name:        pulumi.String("test-stretcName"),
 //				Description: pulumi.String("vlan desc updated"),
 //				Type:        pulumi.String("Static"),
 //				VlanIds: pulumi.StringArray{
@@ -60,15 +61,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbStretchedVlan(ctx, "name", &nutanix.NdbStretchedVlanArgs{
+//				Name:        pulumi.String("test-stretcName"),
 //				Description: pulumi.String("vlan desc updated"),
-//				Metadata: &nutanix.NdbStretchedVlanMetadataArgs{
-//					Gateway:    pulumi.String("{{ gateway of vlans }}"),
-//					SubnetMask: pulumi.String("{{ subnet mask of vlans }}"),
-//				},
-//				Type: pulumi.String("Static"),
+//				Type:        pulumi.String("Static"),
 //				VlanIds: pulumi.StringArray{
 //					pulumi.String("{{ vlan_id_1 }}"),
 //					pulumi.String("{{ vlan_id_2 }}"),
+//				},
+//				Metadata: &nutanix.NdbStretchedVlanMetadataArgs{
+//					Gateway:    pulumi.String("{{ gateway of vlans }}"),
+//					SubnetMask: pulumi.String("{{ subnet mask of vlans }}"),
 //				},
 //			})
 //			if err != nil {

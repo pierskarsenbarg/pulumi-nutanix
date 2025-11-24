@@ -27,34 +27,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var exampleCluster = new Nutanix.KarbonCluster("exampleCluster", new()
+    ///     var exampleCluster = new Nutanix.KarbonCluster("example_cluster", new()
     ///     {
-    ///         CniConfig = new Nutanix.Inputs.KarbonClusterCniConfigArgs
-    ///         {
-    ///             NodeCidrMaskSize = 24,
-    ///             PodIpv4Cidr = "172.20.0.0/16",
-    ///             ServiceIpv4Cidr = "172.19.0.0/16",
-    ///         },
-    ///         EtcdNodePool = new Nutanix.Inputs.KarbonClusterEtcdNodePoolArgs
-    ///         {
-    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterEtcdNodePoolAhvConfigArgs
-    ///             {
-    ///                 NetworkUuid = "my_subnet_id",
-    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
-    ///             },
-    ///             NodeOsVersion = "ntnx-1.0",
-    ///             NumInstances = 1,
-    ///         },
-    ///         MasterNodePool = new Nutanix.Inputs.KarbonClusterMasterNodePoolArgs
-    ///         {
-    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterMasterNodePoolAhvConfigArgs
-    ///             {
-    ///                 NetworkUuid = "my_subnet_id",
-    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
-    ///             },
-    ///             NodeOsVersion = "ntnx-1.0",
-    ///             NumInstances = 1,
-    ///         },
+    ///         Name = "example_cluster",
+    ///         Version = "1.18.15-1",
     ///         StorageClassConfig = new Nutanix.Inputs.KarbonClusterStorageClassConfigArgs
     ///         {
     ///             ReclaimPolicy = "Delete",
@@ -68,16 +44,41 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Username = "my_pe_username",
     ///             },
     ///         },
-    ///         Version = "1.18.15-1",
+    ///         CniConfig = new Nutanix.Inputs.KarbonClusterCniConfigArgs
+    ///         {
+    ///             NodeCidrMaskSize = 24,
+    ///             PodIpv4Cidr = "172.20.0.0/16",
+    ///             ServiceIpv4Cidr = "172.19.0.0/16",
+    ///         },
     ///         WorkerNodePool = new Nutanix.Inputs.KarbonClusterWorkerNodePoolArgs
     ///         {
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
     ///             AhvConfig = new Nutanix.Inputs.KarbonClusterWorkerNodePoolAhvConfigArgs
     ///             {
     ///                 NetworkUuid = "my_subnet_id",
     ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
     ///             },
+    ///         },
+    ///         EtcdNodePool = new Nutanix.Inputs.KarbonClusterEtcdNodePoolArgs
+    ///         {
     ///             NodeOsVersion = "ntnx-1.0",
     ///             NumInstances = 1,
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterEtcdNodePoolAhvConfigArgs
+    ///             {
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///             },
+    ///         },
+    ///         MasterNodePool = new Nutanix.Inputs.KarbonClusterMasterNodePoolArgs
+    ///         {
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterMasterNodePoolAhvConfigArgs
+    ///             {
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///             },
     ///         },
     ///     });
     /// 
@@ -93,34 +94,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var exampleCluster = new Nutanix.KarbonCluster("exampleCluster", new()
+    ///     var exampleCluster = new Nutanix.KarbonCluster("example_cluster", new()
     ///     {
-    ///         CniConfig = new Nutanix.Inputs.KarbonClusterCniConfigArgs
-    ///         {
-    ///             NodeCidrMaskSize = 24,
-    ///             PodIpv4Cidr = "172.20.0.0/16",
-    ///             ServiceIpv4Cidr = "172.19.0.0/16",
-    ///         },
-    ///         EtcdNodePool = new Nutanix.Inputs.KarbonClusterEtcdNodePoolArgs
-    ///         {
-    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterEtcdNodePoolAhvConfigArgs
-    ///             {
-    ///                 NetworkUuid = "my_subnet_id",
-    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
-    ///             },
-    ///             NodeOsVersion = "ntnx-1.0",
-    ///             NumInstances = 1,
-    ///         },
-    ///         MasterNodePool = new Nutanix.Inputs.KarbonClusterMasterNodePoolArgs
-    ///         {
-    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterMasterNodePoolAhvConfigArgs
-    ///             {
-    ///                 NetworkUuid = "my_subnet_id",
-    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
-    ///             },
-    ///             NodeOsVersion = "ntnx-1.0",
-    ///             NumInstances = 1,
-    ///         },
+    ///         Name = "example_cluster",
+    ///         Version = "1.18.15-1",
     ///         StorageClassConfig = new Nutanix.Inputs.KarbonClusterStorageClassConfigArgs
     ///         {
     ///             ReclaimPolicy = "Delete",
@@ -134,16 +111,41 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Username = "my_pe_username",
     ///             },
     ///         },
-    ///         Version = "1.18.15-1",
+    ///         CniConfig = new Nutanix.Inputs.KarbonClusterCniConfigArgs
+    ///         {
+    ///             NodeCidrMaskSize = 24,
+    ///             PodIpv4Cidr = "172.20.0.0/16",
+    ///             ServiceIpv4Cidr = "172.19.0.0/16",
+    ///         },
     ///         WorkerNodePool = new Nutanix.Inputs.KarbonClusterWorkerNodePoolArgs
     ///         {
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
     ///             AhvConfig = new Nutanix.Inputs.KarbonClusterWorkerNodePoolAhvConfigArgs
     ///             {
     ///                 NetworkUuid = "my_subnet_id",
     ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
     ///             },
+    ///         },
+    ///         EtcdNodePool = new Nutanix.Inputs.KarbonClusterEtcdNodePoolArgs
+    ///         {
     ///             NodeOsVersion = "ntnx-1.0",
     ///             NumInstances = 1,
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterEtcdNodePoolAhvConfigArgs
+    ///             {
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///             },
+    ///         },
+    ///         MasterNodePool = new Nutanix.Inputs.KarbonClusterMasterNodePoolArgs
+    ///         {
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterMasterNodePoolAhvConfigArgs
+    ///             {
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///             },
     ///         },
     ///     });
     /// 

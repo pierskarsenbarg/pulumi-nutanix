@@ -26,14 +26,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("test", new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT IN SERVER",
         ///         AppName = "NAME OF APP YOU WANT TO SET",
         ///         AppDescription = "DESCRIPTION OF APP",
         ///     });
         /// 
-        ///     var testSelfServiceApp = Nutanix.GetSelfServiceApp.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceApp.Invoke(new()
         ///     {
         ///         AppUuid = testSelfServiceAppProvision.Id,
         ///     });
@@ -58,14 +58,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("test", new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT IN SERVER",
         ///         AppName = "NAME OF APP YOU WANT TO SET",
         ///         AppDescription = "DESCRIPTION OF APP",
         ///     });
         /// 
-        ///     var testSelfServiceApp = Nutanix.GetSelfServiceApp.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceApp.Invoke(new()
         ///     {
         ///         AppUuid = testSelfServiceAppProvision.Id,
         ///     });
@@ -90,14 +90,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("test", new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT IN SERVER",
         ///         AppName = "NAME OF APP YOU WANT TO SET",
         ///         AppDescription = "DESCRIPTION OF APP",
         ///     });
         /// 
-        ///     var testSelfServiceApp = Nutanix.GetSelfServiceApp.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceApp.Invoke(new()
         ///     {
         ///         AppUuid = testSelfServiceAppProvision.Id,
         ///     });

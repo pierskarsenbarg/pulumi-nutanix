@@ -122,8 +122,11 @@ def get_roles_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # List all Roles
     roles = nutanix.get_roles_v2()
+    # List Roles with filter
     filtered_roles = nutanix.get_roles_v2(filter="displayName eq 'example_role'")
+    # List Roles with filter and orderby
     filtered_ordered_roles = nutanix.get_roles_v2(filter="displayName eq 'example_role'",
         order_by="createdTime desc")
     ```
@@ -198,8 +201,11 @@ def get_roles_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] 
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # List all Roles
     roles = nutanix.get_roles_v2()
+    # List Roles with filter
     filtered_roles = nutanix.get_roles_v2(filter="displayName eq 'example_role'")
+    # List Roles with filter and orderby
     filtered_ordered_roles = nutanix.get_roles_v2(filter="displayName eq 'example_role'",
         order_by="createdTime desc")
     ```

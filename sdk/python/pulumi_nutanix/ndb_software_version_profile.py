@@ -441,7 +441,8 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
 
         name = nutanix.NdbSoftwareVersionProfile("name",
             engine_type="postgres_database",
-            profile_id=resource["nutanix_ndb_profile"]["name12"]["id"],
+            profile_id=nutanix_ndb_profile["name12"]["id"],
+            name="test-tf",
             description="made  by tf",
             postgres_databases=[{
                 "source_dbserver_id": "{{ DB_Server_ID }}",
@@ -477,7 +478,8 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
 
         name = nutanix.NdbSoftwareVersionProfile("name",
             engine_type="postgres_database",
-            profile_id=resource["nutanix_ndb_profile"]["name12"]["id"],
+            profile_id=nutanix_ndb_profile["name12"]["id"],
+            name="test-tf",
             description="made  by tf",
             postgres_databases=[{
                 "source_dbserver_id": "{{ DB_Server_ID }}",

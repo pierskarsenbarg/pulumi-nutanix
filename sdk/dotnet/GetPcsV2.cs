@@ -25,8 +25,10 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Fetch all PCs (Domain Managers)
         ///     var pcs = Nutanix.GetPcsV2.Invoke();
         /// 
+        ///     // List all PCs (Domain Managers) with selected properties
         ///     var pcs_select = Nutanix.GetPcsV2.Invoke(new()
         ///     {
         ///         Select = "config,extId",
@@ -177,8 +179,10 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Fetch all PCs (Domain Managers)
         ///     var pcs = Nutanix.GetPcsV2.Invoke();
         /// 
+        ///     // List all PCs (Domain Managers) with selected properties
         ///     var pcs_select = Nutanix.GetPcsV2.Invoke(new()
         ///     {
         ///         Select = "config,extId",
@@ -329,8 +333,10 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Fetch all PCs (Domain Managers)
         ///     var pcs = Nutanix.GetPcsV2.Invoke();
         /// 
+        ///     // List all PCs (Domain Managers) with selected properties
         ///     var pcs_select = Nutanix.GetPcsV2.Invoke(new()
         ///     {
         ///         Select = "config,extId",

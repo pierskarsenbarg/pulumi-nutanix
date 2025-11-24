@@ -111,6 +111,22 @@ def get_category_key(name: Optional[_builtins.str] = None,
     """
     Describe a Nutanix Category Key and its values (if it has them).
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_key_value_category_key = nutanix.CategoryKey("test_key_value",
+        name="data_source_category_key_test_values",
+        description="Data Source CategoryKey Test with Values")
+    test_value = nutanix.CategoryValue("test_value",
+        name=test_key_value_category_key.name,
+        value="test_category_value_data_source",
+        description="Data Source CategoryValue Test with Values")
+    test_key_value = nutanix.get_category_key_output(name=test_key_value_category_key.name)
+    ```
+
 
     :param _builtins.str name: - (Required) The name for the category key.
     """
@@ -130,6 +146,22 @@ def get_category_key_output(name: Optional[pulumi.Input[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoryKeyResult]:
     """
     Describe a Nutanix Category Key and its values (if it has them).
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_key_value_category_key = nutanix.CategoryKey("test_key_value",
+        name="data_source_category_key_test_values",
+        description="Data Source CategoryKey Test with Values")
+    test_value = nutanix.CategoryValue("test_value",
+        name=test_key_value_category_key.name,
+        value="test_category_value_data_source",
+        description="Data Source CategoryValue Test with Values")
+    test_key_value = nutanix.get_category_key_output(name=test_key_value_category_key.name)
+    ```
 
 
     :param _builtins.str name: - (Required) The name for the category key.

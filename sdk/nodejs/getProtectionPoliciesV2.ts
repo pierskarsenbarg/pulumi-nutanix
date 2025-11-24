@@ -15,12 +15,15 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // with filter
  * const pps_filter = nutanix.getProtectionPoliciesV2({
  *     filter: "name eq 'example_protection_policy'",
  * });
+ * // with limit
  * const pp_limit = nutanix.getProtectionPoliciesV2({
  *     limit: 4,
  * });
+ * // with filter and limit
  * const example = nutanix.getProtectionPoliciesV2({
  *     filter: "startswith(name, 'C')",
  *     limit: 10,
@@ -191,12 +194,15 @@ export interface GetProtectionPoliciesV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // with filter
  * const pps_filter = nutanix.getProtectionPoliciesV2({
  *     filter: "name eq 'example_protection_policy'",
  * });
+ * // with limit
  * const pp_limit = nutanix.getProtectionPoliciesV2({
  *     limit: 4,
  * });
+ * // with filter and limit
  * const example = nutanix.getProtectionPoliciesV2({
  *     filter: "startswith(name, 'C')",
  *     limit: 10,

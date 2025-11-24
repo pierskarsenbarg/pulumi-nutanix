@@ -12,6 +12,60 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to add a Nutanix cluster based on the input parameters.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = Pulumi.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var clsname = new Nutanix.Index.NdbClusters("clsname", new()
+    ///     {
+    ///         Name = "{{ test-cluster }}",
+    ///         Description = "test description",
+    ///         ClusterIp = "{{ cluster_ip }}",
+    ///         Username = "{{ username of cluster }}",
+    ///         Password = "{{ password of cluster }}",
+    ///         StorageContainer = "{{ storage_container }}",
+    ///         AgentNetworkInfo = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "dns", "{{ DNS servers available in the }}" },
+    ///                 { "ntp", "{{ NTP servers available }}" },
+    ///             },
+    ///         },
+    ///         NetworksInfo = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "type", "DHCP" },
+    ///                 { "networkInfo", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "vlanName", "vlan_static" },
+    ///                         { "staticIp", "{{ static_ip }}" },
+    ///                         { "gateway", "{{ gateway }}" },
+    ///                         { "subnetMask", "{{ subnet_mask }}" },
+    ///                     },
+    ///                 } },
+    ///                 { "accessType", new[]
+    ///                 {
+    ///                     "PRISM",
+    ///                     "DSIP",
+    ///                     "DBSERVER",
+    ///                 } },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbCluster:NdbCluster")]
     public partial class NdbCluster : global::Pulumi.CustomResource

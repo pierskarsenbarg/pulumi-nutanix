@@ -12,24 +12,6 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to perform the log cactup for database instance based on the input parameters.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var name = new Nutanix.NdbLogCatchups("name", new()
-    ///     {
-    ///         DatabaseId = "{{ DatabaseID }}",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbLogCatchups:NdbLogCatchups")]
     public partial class NdbLogCatchups : global::Pulumi.CustomResource

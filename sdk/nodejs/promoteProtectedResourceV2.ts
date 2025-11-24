@@ -13,27 +13,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * // Promote a protected virtual machine on remote site
- * // This example promotes a protected virtual machine on a remote site.
- * // Steps:
- * // 1. Define the provider for the remote site
- * // 2. Create a category and a protection policy, on the local site
- * // 3. Create a virtual machine and associate it with the protection policy, on local site
- * // 4. Promote the protected virtual machine on the remote site
- * // define another alias for the provider, this time for the remote PC
- * const remote = new nutanix.Provider("remote", {
- *     username: _var.nutanix_remote_username,
- *     password: _var.nutanix_remote_password,
- *     endpoint: _var.nutanix_remote_endpoint,
- *     insecure: true,
- *     port: "9440",
- * });
  * // create a category and a protection policy on the local site
  * // promote the protected virtual machine on the remote site
- * const promote_example = new nutanix.PromoteProtectedResourceV2("promote-example", {extId: "d22529bb-f02d-4710-894b-d1de772d7832"}, {
- *     provider: nutanix.remote,
- * });
- * // protected resource (VM or VG) ext_id
+ * const promote_example = new nutanix.PromoteProtectedResourceV2("promote-example", {extId: "d22529bb-f02d-4710-894b-d1de772d7832"});
  * ```
  */
 export class PromoteProtectedResourceV2 extends pulumi.CustomResource {

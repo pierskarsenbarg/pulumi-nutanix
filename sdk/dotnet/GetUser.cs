@@ -14,18 +14,132 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Provides a datasource to retrieve a user based on the input parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var userUser = new Nutanix.User("user", new()
+        ///     {
+        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+        ///         {
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
+        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
+        ///             {
+        ///                 Uuid = "&lt;directory-service-uuid&gt;",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        ///     //Retrieve by UUID
+        ///     var user = Nutanix.GetUser.Invoke(new()
+        ///     {
+        ///         UserId = userUser.Id,
+        ///     });
+        /// 
+        ///     //Retrieve by Name
+        ///     var userbyname = Nutanix.GetUser.Invoke(new()
+        ///     {
+        ///         UserName = userUser.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetUserResult> InvokeAsync(GetUserArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserResult>("nutanix:index/getUser:getUser", args ?? new GetUserArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve a user based on the input parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var userUser = new Nutanix.User("user", new()
+        ///     {
+        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+        ///         {
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
+        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
+        ///             {
+        ///                 Uuid = "&lt;directory-service-uuid&gt;",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        ///     //Retrieve by UUID
+        ///     var user = Nutanix.GetUser.Invoke(new()
+        ///     {
+        ///         UserId = userUser.Id,
+        ///     });
+        /// 
+        ///     //Retrieve by Name
+        ///     var userbyname = Nutanix.GetUser.Invoke(new()
+        ///     {
+        ///         UserName = userUser.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetUserResult> Invoke(GetUserInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("nutanix:index/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve a user based on the input parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var userUser = new Nutanix.User("user", new()
+        ///     {
+        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+        ///         {
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
+        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
+        ///             {
+        ///                 Uuid = "&lt;directory-service-uuid&gt;",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        ///     //Retrieve by UUID
+        ///     var user = Nutanix.GetUser.Invoke(new()
+        ///     {
+        ///         UserId = userUser.Id,
+        ///     });
+        /// 
+        ///     //Retrieve by Name
+        ///     var userbyname = Nutanix.GetUser.Invoke(new()
+        ///     {
+        ///         UserName = userUser.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetUserResult> Invoke(GetUserInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("nutanix:index/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());

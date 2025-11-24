@@ -16,15 +16,15 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const example = new nutanix.NgtInstallationV2("example", {
- *     capablities: ["VSS_SNAPSHOT"],
- *     credential: {
- *         password: "pass.1234567890",
- *         username: "username",
- *     },
  *     extId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+ *     credential: {
+ *         username: "username",
+ *         password: "pass.1234567890",
+ *     },
  *     rebootPreference: {
  *         scheduleType: "IMMEDIATE",
  *     },
+ *     capablities: ["VSS_SNAPSHOT"],
  * });
  * ```
  */

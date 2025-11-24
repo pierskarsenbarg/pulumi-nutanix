@@ -23,11 +23,12 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var usrGroup = new Nutanix.UserGroupsV2("usrGroup", new()
+    ///     var usrGroup = new Nutanix.UserGroupsV2("usr_group", new()
     ///     {
-    ///         DistinguishedName = "cn=group_0664229e,ou=group,dc=devtest,dc=local",
     ///         GroupType = "LDAP",
     ///         IdpId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///         Name = "group_0664229e",
+    ///         DistinguishedName = "cn=group_0664229e,ou=group,dc=devtest,dc=local",
     ///     });
     /// 
     ///     // Saml User group
@@ -35,6 +36,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     {
     ///         GroupType = "SAML",
     ///         IdpId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+    ///         Name = "adfs19admingroup",
     ///     });
     /// 
     /// });

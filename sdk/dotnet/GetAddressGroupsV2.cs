@@ -25,13 +25,16 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all address groups
         ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
         /// 
+        ///     // filtered the address groups
         ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
+        ///     // filtered and limit the number of address groups
         ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
@@ -57,13 +60,16 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all address groups
         ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
         /// 
+        ///     // filtered the address groups
         ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
+        ///     // filtered and limit the number of address groups
         ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
@@ -89,13 +95,16 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // list all address groups
         ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
         /// 
+        ///     // filtered the address groups
         ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
+        ///     // filtered and limit the number of address groups
         ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",

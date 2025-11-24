@@ -27,16 +27,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // with filter
         ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
+        ///     // with limit
         ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
+        ///     // with filter and limit
         ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",
@@ -160,16 +163,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // with filter
         ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
+        ///     // with limit
         ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
+        ///     // with filter and limit
         ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",
@@ -293,16 +299,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // with filter
         ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
+        ///     // with limit
         ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
+        ///     // with filter and limit
         ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",

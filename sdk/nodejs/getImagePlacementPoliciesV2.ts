@@ -15,11 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all image placement policies
  * const list_ipp = nutanix.getImagePlacementPoliciesV2({});
+ * // List image placement policies with filter, page and limit
  * const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
  *     filter: "startswith(name,'ipp_name')",
- *     limit: 10,
  *     page: 0,
+ *     limit: 10,
  * });
  * ```
  */
@@ -104,11 +106,13 @@ export interface GetImagePlacementPoliciesV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all image placement policies
  * const list_ipp = nutanix.getImagePlacementPoliciesV2({});
+ * // List image placement policies with filter, page and limit
  * const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
  *     filter: "startswith(name,'ipp_name')",
- *     limit: 10,
  *     page: 0,
+ *     limit: 10,
  * });
  * ```
  */

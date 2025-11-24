@@ -122,10 +122,12 @@ def get_image_placement_policies_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # List all image placement policies
     list_ipp = nutanix.get_image_placement_policies_v2()
+    # List image placement policies with filter, page and limit
     filtered_ipp = nutanix.get_image_placement_policies_v2(filter="startswith(name,'ipp_name')",
-        limit=10,
-        page=0)
+        page=0,
+        limit=10)
     ```
 
 
@@ -183,10 +185,12 @@ def get_image_placement_policies_v2_output(filter: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # List all image placement policies
     list_ipp = nutanix.get_image_placement_policies_v2()
+    # List image placement policies with filter, page and limit
     filtered_ipp = nutanix.get_image_placement_policies_v2(filter="startswith(name,'ipp_name')",
-        limit=10,
-        page=0)
+        page=0,
+        limit=10)
     ```
 
 

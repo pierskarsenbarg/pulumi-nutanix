@@ -15,6 +15,91 @@ import (
 // Provides a resource to create an access control policy based on the input parameters.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewAccessControlPolicy(ctx, "test", &nutanix.AccessControlPolicyArgs{
+//				Name:        pulumi.String("NAME OF ACCESS CONTROL POLICY"),
+//				Description: pulumi.String("DESCRIPTION OF THE ACCESS CONTROL POLICY"),
+//				RoleReference: &nutanix.AccessControlPolicyRoleReferenceArgs{
+//					Kind: pulumi.String("role"),
+//					Uuid: pulumi.String("UUID of role"),
+//				},
+//				UserReferenceLists: nutanix.AccessControlPolicyUserReferenceListArray{
+//					&nutanix.AccessControlPolicyUserReferenceListArgs{
+//						Uuid: pulumi.String("UUID of User existent"),
+//						Name: pulumi.String("admin"),
+//					},
+//				},
+//				ContextFilterLists: nutanix.AccessControlPolicyContextFilterListArray{
+//					&nutanix.AccessControlPolicyContextFilterListArgs{
+//						EntityFilterExpressionLists: nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListArray{
+//							&nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
+//								Operator:               pulumi.String("IN"),
+//								LeftHandSideEntityType: pulumi.String("cluster"),
+//								RightHandSide: &nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
+//									UuidLists: pulumi.StringArray{
+//										pulumi.String("00058ef8-c31c-f0bc-0000-000000007b23"),
+//									},
+//								},
+//							},
+//							&nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
+//								Operator:               pulumi.String("IN"),
+//								LeftHandSideEntityType: pulumi.String("image"),
+//								RightHandSide: &nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
+//									Collection: pulumi.String("ALL"),
+//								},
+//							},
+//							&nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
+//								Operator:               pulumi.String("IN"),
+//								LeftHandSideEntityType: pulumi.String("category"),
+//								RightHandSide: &nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
+//									Collection: pulumi.String("ALL"),
+//								},
+//							},
+//							&nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
+//								Operator:               pulumi.String("IN"),
+//								LeftHandSideEntityType: pulumi.String("marketplace_item"),
+//								RightHandSide: &nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
+//									Collection: pulumi.String("SELF_OWNED"),
+//								},
+//							},
+//							&nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
+//								Operator:               pulumi.String("IN"),
+//								LeftHandSideEntityType: pulumi.String("app_task"),
+//								RightHandSide: &nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
+//									Collection: pulumi.String("SELF_OWNED"),
+//								},
+//							},
+//							&nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
+//								Operator:               pulumi.String("IN"),
+//								LeftHandSideEntityType: pulumi.String("app_variable"),
+//								RightHandSide: &nutanix.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
+//									Collection: pulumi.String("SELF_OWNED"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AccessControlPolicy struct {
 	pulumi.CustomResourceState
 

@@ -18,6 +18,107 @@ import (
 // Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewPcDeployV2(ctx, "example", &nutanix.PcDeployV2Args{
+//				Config: &nutanix.PcDeployV2ConfigArgs{
+//					BuildInfo: &nutanix.PcDeployV2ConfigBuildInfoArgs{
+//						Version: pulumi.String("pc.2024.3"),
+//					},
+//					Size: pulumi.String("STARTER"),
+//					Name: pulumi.String("PC_EXAMPLE"),
+//				},
+//				Network: &nutanix.PcDeployV2NetworkArgs{
+//					ExternalNetworks: nutanix.PcDeployV2NetworkExternalNetworkArray{
+//						&nutanix.PcDeployV2NetworkExternalNetworkArgs{
+//							NetworkExtId: pulumi.String("ba416f8d-00f2-499d-bc4c-19da8d104af9"),
+//							DefaultGateway: &nutanix.PcDeployV2NetworkExternalNetworkDefaultGatewayArgs{
+//								Ipv4s: nutanix.PcDeployV2NetworkExternalNetworkDefaultGatewayIpv4Array{
+//									&nutanix.PcDeployV2NetworkExternalNetworkDefaultGatewayIpv4Args{
+//										Value: pulumi.String("10.97.64.1"),
+//									},
+//								},
+//							},
+//							SubnetMask: &nutanix.PcDeployV2NetworkExternalNetworkSubnetMaskArgs{
+//								Ipv4s: nutanix.PcDeployV2NetworkExternalNetworkSubnetMaskIpv4Array{
+//									&nutanix.PcDeployV2NetworkExternalNetworkSubnetMaskIpv4Args{
+//										Value: pulumi.String("255.255.252.0"),
+//									},
+//								},
+//							},
+//							IpRanges: nutanix.PcDeployV2NetworkExternalNetworkIpRangeArray{
+//								&nutanix.PcDeployV2NetworkExternalNetworkIpRangeArgs{
+//									Begin: &nutanix.PcDeployV2NetworkExternalNetworkIpRangeBeginArgs{
+//										Ipv4s: nutanix.PcDeployV2NetworkExternalNetworkIpRangeBeginIpv4Array{
+//											&nutanix.PcDeployV2NetworkExternalNetworkIpRangeBeginIpv4Args{
+//												Value: pulumi.String("10.97.64.91"),
+//											},
+//										},
+//									},
+//									End: &nutanix.PcDeployV2NetworkExternalNetworkIpRangeEndArgs{
+//										Ipv4s: nutanix.PcDeployV2NetworkExternalNetworkIpRangeEndIpv4Array{
+//											&nutanix.PcDeployV2NetworkExternalNetworkIpRangeEndIpv4Args{
+//												Value: pulumi.String("10.97.64.91"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//					NameServers: nutanix.PcDeployV2NetworkNameServerArray{
+//						&nutanix.PcDeployV2NetworkNameServerArgs{
+//							Ipv4s: nutanix.PcDeployV2NetworkNameServerIpv4Array{
+//								&nutanix.PcDeployV2NetworkNameServerIpv4Args{
+//									Value: pulumi.String("10.40.64.16"),
+//								},
+//							},
+//						},
+//						&nutanix.PcDeployV2NetworkNameServerArgs{
+//							Ipv4s: nutanix.PcDeployV2NetworkNameServerIpv4Array{
+//								&nutanix.PcDeployV2NetworkNameServerIpv4Args{
+//									Value: pulumi.String("10.40.64.15"),
+//								},
+//							},
+//						},
+//					},
+//					NtpServers: nutanix.PcDeployV2NetworkNtpServerArray{
+//						&nutanix.PcDeployV2NetworkNtpServerArgs{
+//							Fqdns: nutanix.PcDeployV2NetworkNtpServerFqdnArray{
+//								&nutanix.PcDeployV2NetworkNtpServerFqdnArgs{
+//									Value: pulumi.String("2.centos.pool.ntp.org"),
+//								},
+//							},
+//						},
+//						&nutanix.PcDeployV2NetworkNtpServerArgs{
+//							Fqdns: nutanix.PcDeployV2NetworkNtpServerFqdnArray{
+//								&nutanix.PcDeployV2NetworkNtpServerFqdnArgs{
+//									Value: pulumi.String("3.centos.pool.ntp.org"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type PcDeployV2 struct {
 	pulumi.CustomResourceState
 

@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewUserGroups(ctx, "userGrp", &nutanix.UserGroupsArgs{
+//			_, err := nutanix.NewUserGroups(ctx, "user_grp", &nutanix.UserGroupsArgs{
 //				DirectoryServiceUserGroups: nutanix.UserGroupsDirectoryServiceUserGroupArray{
 //					&nutanix.UserGroupsDirectoryServiceUserGroupArgs{
 //						DistinguishedName: pulumi.String("<distinguished name for the user group>"),
@@ -55,11 +55,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewUserGroups(ctx, "userGrp", &nutanix.UserGroupsArgs{
+//			_, err := nutanix.NewUserGroups(ctx, "user_grp", &nutanix.UserGroupsArgs{
 //				SamlUserGroups: nutanix.UserGroupsSamlUserGroupArray{
 //					&nutanix.UserGroupsSamlUserGroupArgs{
-//						IdpUuid: pulumi.String("<idp uuid of the group>"),
 //						Name:    pulumi.String("<name of saml group>"),
+//						IdpUuid: pulumi.String("<idp uuid of the group>"),
 //					},
 //				},
 //			})

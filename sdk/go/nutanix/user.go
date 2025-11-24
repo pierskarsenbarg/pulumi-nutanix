@@ -29,10 +29,10 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewUser(ctx, "user", &nutanix.UserArgs{
 //				DirectoryServiceUser: &nutanix.UserDirectoryServiceUserArgs{
+//					UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
 //					DirectoryServiceReference: &nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs{
 //						Uuid: pulumi.String("<directory-service-uuid>"),
 //					},
-//					UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
 //				},
 //			})
 //			if err != nil {
@@ -58,10 +58,10 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewUser(ctx, "user", &nutanix.UserArgs{
 //				IdentityProviderUser: &nutanix.UserIdentityProviderUserArgs{
+//					Username: pulumi.String("username"),
 //					IdentityProviderReference: &nutanix.UserIdentityProviderUserIdentityProviderReferenceArgs{
 //						Uuid: pulumi.String("<identity-provider-uuid>"),
 //					},
-//					Username: pulumi.String("username"),
 //				},
 //			})
 //			if err != nil {

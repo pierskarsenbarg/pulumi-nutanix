@@ -29,11 +29,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Create key under service account, never expires
-//			_, err := nutanix.NewUserKeyV2(ctx, "createKey", &nutanix.UserKeyV2Args{
-//				AssignedTo: pulumi.String("developer_user_1"),
-//				ExpiryTime: pulumi.String("2125-01-01T00:00:00Z"),
-//				KeyType:    pulumi.String("API_KEY"),
+//			_, err := nutanix.NewUserKeyV2(ctx, "create_key", &nutanix.UserKeyV2Args{
 //				UserExtId:  pulumi.String("<SERVICE_ACCOUNT_UUID>"),
+//				Name:       pulumi.String("api_key_developers"),
+//				KeyType:    pulumi.String("API_KEY"),
+//				ExpiryTime: pulumi.String("2125-01-01T00:00:00Z"),
+//				AssignedTo: pulumi.String("developer_user_1"),
 //			})
 //			if err != nil {
 //				return err

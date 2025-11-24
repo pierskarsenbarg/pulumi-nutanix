@@ -29,19 +29,19 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Enable Auto Inventory, Add Auto Inventory Schedule and enable auto upgrade
 //			_, err := nutanix.NewLcmConfigV2(ctx, "lcm-configuration-update", &nutanix.LcmConfigV2Args{
+//				XClusterId:                  pulumi.String("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"),
+//				IsAutoInventoryEnabled:      pulumi.Bool(true),
 //				AutoInventorySchedule:       pulumi.String("16:30"),
 //				HasModuleAutoUpgradeEnabled: pulumi.Bool(true),
-//				IsAutoInventoryEnabled:      pulumi.Bool(true),
-//				XClusterId:                  pulumi.String("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			// Update the LCM url to darksite server
 //			_, err = nutanix.NewLcmConfigV2(ctx, "lcm-configuration-update-connectivity-type", &nutanix.LcmConfigV2Args{
-//				ConnectivityType: pulumi.String("DARKSITE_WEB_SERVER"),
-//				Url:              pulumi.String("https://x.x.x.x:8000/builds"),
 //				XClusterId:       pulumi.String("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"),
+//				Url:              pulumi.String("https://x.x.x.x:8000/builds"),
+//				ConnectivityType: pulumi.String("DARKSITE_WEB_SERVER"),
 //			})
 //			if err != nil {
 //				return err

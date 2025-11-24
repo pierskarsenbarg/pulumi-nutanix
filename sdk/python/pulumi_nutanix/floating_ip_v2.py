@@ -520,6 +520,7 @@ class FloatingIpV2(pulumi.CustomResource):
 
         # create Floating IP with External Subnet UUID
         fip_ext_subnet = nutanix.FloatingIpV2("fip-ext-subnet",
+            name="example-fip",
             description="example fip  description",
             external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
         ```
@@ -531,13 +532,14 @@ class FloatingIpV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         fip_ext_subnet_vm = nutanix.FloatingIpV2("fip-ext-subnet-vm",
+            name="example-fip",
+            description="example fip  description",
+            external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
             associations=[{
                 "vm_nic_associations": [{
                     "vm_nic_reference": "31e4b3b1-4b3b-4b3b-4b3b-4b3b4b3b4b3b",
                 }],
-            }],
-            description="example fip  description",
-            external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -570,6 +572,7 @@ class FloatingIpV2(pulumi.CustomResource):
 
         # create Floating IP with External Subnet UUID
         fip_ext_subnet = nutanix.FloatingIpV2("fip-ext-subnet",
+            name="example-fip",
             description="example fip  description",
             external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
         ```
@@ -581,13 +584,14 @@ class FloatingIpV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         fip_ext_subnet_vm = nutanix.FloatingIpV2("fip-ext-subnet-vm",
+            name="example-fip",
+            description="example fip  description",
+            external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
             associations=[{
                 "vm_nic_associations": [{
                     "vm_nic_reference": "31e4b3b1-4b3b-4b3b-4b3b-4b3b4b3b4b3b",
                 }],
-            }],
-            description="example fip  description",
-            external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+            }])
         ```
 
         :param str resource_name: The name of the resource.

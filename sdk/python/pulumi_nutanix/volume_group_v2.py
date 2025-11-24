@@ -617,7 +617,8 @@ class VolumeGroupV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        volume_group_example = nutanix.VolumeGroupV2("volumeGroupExample",
+        volume_group_example = nutanix.VolumeGroupV2("volume_group_example",
+            name="volume_group_test",
             description="Test Create Volume group with spec",
             should_load_balance_vm_attachments=False,
             sharing_status="SHARED",
@@ -677,7 +678,8 @@ class VolumeGroupV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        volume_group_example = nutanix.VolumeGroupV2("volumeGroupExample",
+        volume_group_example = nutanix.VolumeGroupV2("volume_group_example",
+            name="volume_group_test",
             description="Test Create Volume group with spec",
             should_load_balance_vm_attachments=False,
             sharing_status="SHARED",

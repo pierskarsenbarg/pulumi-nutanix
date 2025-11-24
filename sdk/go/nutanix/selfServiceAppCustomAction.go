@@ -30,7 +30,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "testSelfServiceAppProvision", &nutanix.SelfServiceAppProvisionArgs{
+//			test, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
 //				BpName:         pulumi.String("NAME OF BLUEPRINT"),
 //				AppName:        pulumi.String("NAME OF APPLICATION"),
 //				AppDescription: pulumi.String("DESCRIPTION OF APPLICATION"),
@@ -38,8 +38,8 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.NewSelfServiceAppCustomAction(ctx, "testSelfServiceAppCustomAction", &nutanix.SelfServiceAppCustomActionArgs{
-//				AppName:    testSelfServiceAppProvision.AppName,
+//			_, err = nutanix.NewSelfServiceAppCustomAction(ctx, "test", &nutanix.SelfServiceAppCustomActionArgs{
+//				AppName:    test.AppName,
 //				ActionName: pulumi.String("NAME OF ACTION"),
 //			})
 //			if err != nil {

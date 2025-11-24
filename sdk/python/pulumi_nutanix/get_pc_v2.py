@@ -170,6 +170,7 @@ def get_pc_v2(ext_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Fetch a single PC (Domain Manager) by its external ID
     example_2 = nutanix.get_pc_v2(ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
     ```
 
@@ -206,6 +207,7 @@ def get_pc_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Fetch a single PC (Domain Manager) by its external ID
     example_2 = nutanix.get_pc_v2(ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
     ```
 

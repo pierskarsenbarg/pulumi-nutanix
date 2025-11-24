@@ -349,6 +349,69 @@ class AccessControlPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test = nutanix.AccessControlPolicy("test",
+            name="NAME OF ACCESS CONTROL POLICY",
+            description="DESCRIPTION OF THE ACCESS CONTROL POLICY",
+            role_reference={
+                "kind": "role",
+                "uuid": "UUID of role",
+            },
+            user_reference_lists=[{
+                "uuid": "UUID of User existent",
+                "name": "admin",
+            }],
+            context_filter_lists=[{
+                "entity_filter_expression_lists": [
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "cluster",
+                        "right_hand_side": {
+                            "uuid_lists": ["00058ef8-c31c-f0bc-0000-000000007b23"],
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "image",
+                        "right_hand_side": {
+                            "collection": "ALL",
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "category",
+                        "right_hand_side": {
+                            "collection": "ALL",
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "marketplace_item",
+                        "right_hand_side": {
+                            "collection": "SELF_OWNED",
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "app_task",
+                        "right_hand_side": {
+                            "collection": "SELF_OWNED",
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "app_variable",
+                        "right_hand_side": {
+                            "collection": "SELF_OWNED",
+                        },
+                    },
+                ],
+            }])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict']]]] categories: - (Optional) Categories for the Access Control Policy.
@@ -369,6 +432,69 @@ class AccessControlPolicy(pulumi.CustomResource):
         Provides a resource to create an access control policy based on the input parameters.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test = nutanix.AccessControlPolicy("test",
+            name="NAME OF ACCESS CONTROL POLICY",
+            description="DESCRIPTION OF THE ACCESS CONTROL POLICY",
+            role_reference={
+                "kind": "role",
+                "uuid": "UUID of role",
+            },
+            user_reference_lists=[{
+                "uuid": "UUID of User existent",
+                "name": "admin",
+            }],
+            context_filter_lists=[{
+                "entity_filter_expression_lists": [
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "cluster",
+                        "right_hand_side": {
+                            "uuid_lists": ["00058ef8-c31c-f0bc-0000-000000007b23"],
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "image",
+                        "right_hand_side": {
+                            "collection": "ALL",
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "category",
+                        "right_hand_side": {
+                            "collection": "ALL",
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "marketplace_item",
+                        "right_hand_side": {
+                            "collection": "SELF_OWNED",
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "app_task",
+                        "right_hand_side": {
+                            "collection": "SELF_OWNED",
+                        },
+                    },
+                    {
+                        "operator": "IN",
+                        "left_hand_side_entity_type": "app_variable",
+                        "right_hand_side": {
+                            "collection": "SELF_OWNED",
+                        },
+                    },
+                ],
+            }])
+        ```
 
         :param str resource_name: The name of the resource.
         :param AccessControlPolicyArgs args: The arguments to use to populate this resource's properties.

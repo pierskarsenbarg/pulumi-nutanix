@@ -378,9 +378,13 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         ap_example = nutanix.AuthorizationPolicyV2("ap-example",
-            authorization_policy_type="USER_DEFINED",
-            description="authorization policy example",
+            role="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
             display_name="auth_policy_example",
+            description="authorization policy example",
+            authorization_policy_type="USER_DEFINED",
+            identities=[{
+                "reserved": "{\\"user\\":{\\"uuid\\":{\\"anyof\\":[\\"00000000-0000-0000-0000-000000000000\\"]}}}",
+            }],
             entities=[
                 {
                     "reserved": "{\\"images\\":{\\"*\\":{\\"eq\\":\\"*\\"}}}",
@@ -388,11 +392,7 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                 {
                     "reserved": "{\\"marketplace_item\\":{\\"owner_uuid\\":{\\"eq\\":\\"SELF_OWNED\\"}}}",
                 },
-            ],
-            identities=[{
-                "reserved": "{\\"user\\":{\\"uuid\\":{\\"anyof\\":[\\"00000000-0000-0000-0000-000000000000\\"]}}}",
-            }],
-            role="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+            ])
         ```
 
         :param str resource_name: The name of the resource.
@@ -426,9 +426,13 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         ap_example = nutanix.AuthorizationPolicyV2("ap-example",
-            authorization_policy_type="USER_DEFINED",
-            description="authorization policy example",
+            role="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
             display_name="auth_policy_example",
+            description="authorization policy example",
+            authorization_policy_type="USER_DEFINED",
+            identities=[{
+                "reserved": "{\\"user\\":{\\"uuid\\":{\\"anyof\\":[\\"00000000-0000-0000-0000-000000000000\\"]}}}",
+            }],
             entities=[
                 {
                     "reserved": "{\\"images\\":{\\"*\\":{\\"eq\\":\\"*\\"}}}",
@@ -436,11 +440,7 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                 {
                     "reserved": "{\\"marketplace_item\\":{\\"owner_uuid\\":{\\"eq\\":\\"SELF_OWNED\\"}}}",
                 },
-            ],
-            identities=[{
-                "reserved": "{\\"user\\":{\\"uuid\\":{\\"anyof\\":[\\"00000000-0000-0000-0000-000000000000\\"]}}}",
-            }],
-            role="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+            ])
         ```
 
         :param str resource_name: The name of the resource.

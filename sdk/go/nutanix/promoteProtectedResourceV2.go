@@ -28,28 +28,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// Promote a protected virtual machine on remote site
-//			// This example promotes a protected virtual machine on a remote site.
-//			// Steps:
-//			// 1. Define the provider for the remote site
-//			// 2. Create a category and a protection policy, on the local site
-//			// 3. Create a virtual machine and associate it with the protection policy, on local site
-//			// 4. Promote the protected virtual machine on the remote site
-//			// define another alias for the provider, this time for the remote PC
-//			_, err := nutanix.NewProvider(ctx, "remote", &nutanix.ProviderArgs{
-//				Username: pulumi.Any(_var.Nutanix_remote_username),
-//				Password: pulumi.Any(_var.Nutanix_remote_password),
-//				Endpoint: pulumi.Any(_var.Nutanix_remote_endpoint),
-//				Insecure: pulumi.Bool(true),
-//				Port:     pulumi.String("9440"),
-//			})
-//			if err != nil {
-//				return err
-//			}
+//			// create a category and a protection policy on the local site
 //			// promote the protected virtual machine on the remote site
-//			_, err = nutanix.NewPromoteProtectedResourceV2(ctx, "promote-example", &nutanix.PromoteProtectedResourceV2Args{
+//			_, err := nutanix.NewPromoteProtectedResourceV2(ctx, "promote-example", &nutanix.PromoteProtectedResourceV2Args{
 //				ExtId: pulumi.String("d22529bb-f02d-4710-894b-d1de772d7832"),
-//			}, pulumi.Provider(nutanix.Remote))
+//			})
 //			if err != nil {
 //				return err
 //			}

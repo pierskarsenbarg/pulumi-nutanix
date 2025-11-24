@@ -1429,6 +1429,146 @@ class VirtualMachineV2(pulumi.CustomResource):
         """
         Creates a Virtual Machine with the provided configuration.
 
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+        import pulumi_std as std
+
+        vm_1 = nutanix.VirtualMachineV2("vm-1",
+            name="example-vm-1",
+            description="vm desc",
+            num_cores_per_socket=1,
+            num_sockets=1,
+            clusters=[{
+                "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            }])
+        vm_2 = nutanix.VirtualMachineV2("vm-2",
+            name="example-vm-2",
+            description="vm desc",
+            num_cores_per_socket=1,
+            num_sockets=1,
+            clusters=[{
+                "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            }],
+            disks=[{
+                "disk_addresses": [{
+                    "bus_type": "SCSI",
+                    "index": 0,
+                }],
+                "backing_infos": [{
+                    "vm_disks": [{
+                        "disk_size_bytes": 1073741824,
+                        "storage_containers": [{
+                            "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+                        }],
+                    }],
+                }],
+            }],
+            boot_configs=[{
+                "uefi_boots": [{
+                    "boot_orders": [
+                        "NETWORK",
+                        "DISK",
+                        "CDROM",
+                    ],
+                }],
+            }])
+        vm_3 = nutanix.VirtualMachineV2("vm-3",
+            name="terraform-example-vm-4-disks",
+            num_cores_per_socket=1,
+            num_sockets=1,
+            clusters=[{
+                "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            }],
+            disks=[
+                {
+                    "disk_addresses": [{
+                        "bus_type": "SCSI",
+                        "index": 0,
+                    }],
+                    "backing_infos": [{
+                        "vm_disks": [{
+                            "data_sources": [{
+                                "references": [{
+                                    "image_references": [{
+                                        "image_ext_id": "59ec786c-4311-4225-affe-68b65c5ebf10",
+                                    }],
+                                }],
+                            }],
+                            "disk_size_bytes": 20 * std.pow(base=1024,
+                                exponent=3).result,
+                        }],
+                    }],
+                },
+                {
+                    "disk_addresses": [{
+                        "bus_type": "SCSI",
+                        "index": 1,
+                    }],
+                    "backing_infos": [{
+                        "vm_disks": [{
+                            "disk_size_bytes": 10 * std.pow(base=1024,
+                                exponent=3).result,
+                            "storage_containers": [{
+                                "ext_id": "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+                            }],
+                        }],
+                    }],
+                },
+                {
+                    "disk_addresses": [{
+                        "bus_type": "SCSI",
+                        "index": 2,
+                    }],
+                    "backing_infos": [{
+                        "vm_disks": [{
+                            "disk_size_bytes": 15 * std.pow(base=1024,
+                                exponent=3).result,
+                            "storage_containers": [{
+                                "ext_id": "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+                            }],
+                        }],
+                    }],
+                },
+                {
+                    "disk_addresses": [{
+                        "bus_type": "SCSI",
+                        "index": 3,
+                    }],
+                    "backing_infos": [{
+                        "vm_disks": [{
+                            "disk_size_bytes": 20 * std.pow(base=1024,
+                                exponent=3).result,
+                            "storage_containers": [{
+                                "ext_id": "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+                            }],
+                        }],
+                    }],
+                },
+            ],
+            nics=[{
+                "network_infos": [{
+                    "nic_type": "NORMAL_NIC",
+                    "subnets": [{
+                        "ext_id": "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+                    }],
+                    "vlan_mode": "ACCESS",
+                }],
+            }],
+            boot_configs=[{
+                "legacy_boots": [{
+                    "boot_orders": [
+                        "CDROM",
+                        "DISK",
+                        "NETWORK",
+                    ],
+                }],
+            }],
+            power_state="ON")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ApcConfigArgs', 'VirtualMachineV2ApcConfigArgsDict']]]] apc_configs: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
@@ -1479,6 +1619,146 @@ class VirtualMachineV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Creates a Virtual Machine with the provided configuration.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+        import pulumi_std as std
+
+        vm_1 = nutanix.VirtualMachineV2("vm-1",
+            name="example-vm-1",
+            description="vm desc",
+            num_cores_per_socket=1,
+            num_sockets=1,
+            clusters=[{
+                "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            }])
+        vm_2 = nutanix.VirtualMachineV2("vm-2",
+            name="example-vm-2",
+            description="vm desc",
+            num_cores_per_socket=1,
+            num_sockets=1,
+            clusters=[{
+                "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            }],
+            disks=[{
+                "disk_addresses": [{
+                    "bus_type": "SCSI",
+                    "index": 0,
+                }],
+                "backing_infos": [{
+                    "vm_disks": [{
+                        "disk_size_bytes": 1073741824,
+                        "storage_containers": [{
+                            "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+                        }],
+                    }],
+                }],
+            }],
+            boot_configs=[{
+                "uefi_boots": [{
+                    "boot_orders": [
+                        "NETWORK",
+                        "DISK",
+                        "CDROM",
+                    ],
+                }],
+            }])
+        vm_3 = nutanix.VirtualMachineV2("vm-3",
+            name="terraform-example-vm-4-disks",
+            num_cores_per_socket=1,
+            num_sockets=1,
+            clusters=[{
+                "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            }],
+            disks=[
+                {
+                    "disk_addresses": [{
+                        "bus_type": "SCSI",
+                        "index": 0,
+                    }],
+                    "backing_infos": [{
+                        "vm_disks": [{
+                            "data_sources": [{
+                                "references": [{
+                                    "image_references": [{
+                                        "image_ext_id": "59ec786c-4311-4225-affe-68b65c5ebf10",
+                                    }],
+                                }],
+                            }],
+                            "disk_size_bytes": 20 * std.pow(base=1024,
+                                exponent=3).result,
+                        }],
+                    }],
+                },
+                {
+                    "disk_addresses": [{
+                        "bus_type": "SCSI",
+                        "index": 1,
+                    }],
+                    "backing_infos": [{
+                        "vm_disks": [{
+                            "disk_size_bytes": 10 * std.pow(base=1024,
+                                exponent=3).result,
+                            "storage_containers": [{
+                                "ext_id": "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+                            }],
+                        }],
+                    }],
+                },
+                {
+                    "disk_addresses": [{
+                        "bus_type": "SCSI",
+                        "index": 2,
+                    }],
+                    "backing_infos": [{
+                        "vm_disks": [{
+                            "disk_size_bytes": 15 * std.pow(base=1024,
+                                exponent=3).result,
+                            "storage_containers": [{
+                                "ext_id": "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+                            }],
+                        }],
+                    }],
+                },
+                {
+                    "disk_addresses": [{
+                        "bus_type": "SCSI",
+                        "index": 3,
+                    }],
+                    "backing_infos": [{
+                        "vm_disks": [{
+                            "disk_size_bytes": 20 * std.pow(base=1024,
+                                exponent=3).result,
+                            "storage_containers": [{
+                                "ext_id": "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+                            }],
+                        }],
+                    }],
+                },
+            ],
+            nics=[{
+                "network_infos": [{
+                    "nic_type": "NORMAL_NIC",
+                    "subnets": [{
+                        "ext_id": "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+                    }],
+                    "vlan_mode": "ACCESS",
+                }],
+            }],
+            boot_configs=[{
+                "legacy_boots": [{
+                    "boot_orders": [
+                        "CDROM",
+                        "DISK",
+                        "NETWORK",
+                    ],
+                }],
+            }],
+            power_state="ON")
+        ```
 
         :param str resource_name: The name of the resource.
         :param VirtualMachineV2Args args: The arguments to use to populate this resource's properties.

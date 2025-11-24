@@ -232,11 +232,11 @@ class StaticRoutes(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         scn = nutanix.StaticRoutes("scn",
+            vpc_uuid="{{vpc_uuid}}",
             static_routes_lists=[{
                 "destination": "10.x.x.x/x",
                 "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
-            }],
-            vpc_uuid="{{vpc_uuid}}")
+            }])
         ```
 
         ## create one static route with default route for vpc name with external subnet
@@ -246,14 +246,14 @@ class StaticRoutes(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         scn = nutanix.StaticRoutes("scn",
-            default_route_nexthops=[{
-                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
-            }],
+            vpc_name="{{vpc_name}}",
             static_routes_lists=[{
                 "destination": "10.x.x.x/x",
                 "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
             }],
-            vpc_name="{{vpc_name}}")
+            default_route_nexthops=[{
+                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
+            }])
         ```
 
         #### Note: destination with 0.0.0.0/0 will be default route.
@@ -282,11 +282,11 @@ class StaticRoutes(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         scn = nutanix.StaticRoutes("scn",
+            vpc_uuid="{{vpc_uuid}}",
             static_routes_lists=[{
                 "destination": "10.x.x.x/x",
                 "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
-            }],
-            vpc_uuid="{{vpc_uuid}}")
+            }])
         ```
 
         ## create one static route with default route for vpc name with external subnet
@@ -296,14 +296,14 @@ class StaticRoutes(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         scn = nutanix.StaticRoutes("scn",
-            default_route_nexthops=[{
-                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
-            }],
+            vpc_name="{{vpc_name}}",
             static_routes_lists=[{
                 "destination": "10.x.x.x/x",
                 "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
             }],
-            vpc_name="{{vpc_name}}")
+            default_route_nexthops=[{
+                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
+            }])
         ```
 
         #### Note: destination with 0.0.0.0/0 will be default route.

@@ -34,8 +34,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
-        ///         Limit = 10,
         ///         Page = 1,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -66,8 +66,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
-        ///         Limit = 10,
         ///         Page = 1,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -98,8 +98,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
-        ///         Limit = 10,
         ///         Page = 1,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });

@@ -8,6 +8,25 @@ import * as utilities from "./utilities";
 
 /**
  * Describes an Access Control Policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const testAccessControlPolicy = new nutanix.AccessControlPolicy("test", {
+ *     name: "NAME OF ACCESS CONTROL POLICY",
+ *     description: "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+ *     roleReference: {
+ *         kind: "role",
+ *         uuid: "UUID of role",
+ *     },
+ * });
+ * const test = nutanix.getAccessControlPolicyOutput({
+ *     accessControlPolicyId: testAccessControlPolicy.id,
+ * });
+ * ```
  */
 export function getAccessControlPolicy(args?: GetAccessControlPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPolicyResult> {
     args = args || {};
@@ -92,6 +111,25 @@ export interface GetAccessControlPolicyResult {
 }
 /**
  * Describes an Access Control Policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const testAccessControlPolicy = new nutanix.AccessControlPolicy("test", {
+ *     name: "NAME OF ACCESS CONTROL POLICY",
+ *     description: "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+ *     roleReference: {
+ *         kind: "role",
+ *         uuid: "UUID of role",
+ *     },
+ * });
+ * const test = nutanix.getAccessControlPolicyOutput({
+ *     accessControlPolicyId: testAccessControlPolicy.id,
+ * });
+ * ```
  */
 export function getAccessControlPolicyOutput(args?: GetAccessControlPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessControlPolicyResult> {
     args = args || {};

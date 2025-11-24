@@ -24,12 +24,13 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Create key under service account, never expires
-    ///     var createKey = new Nutanix.UserKeyV2("createKey", new()
+    ///     var createKey = new Nutanix.UserKeyV2("create_key", new()
     ///     {
-    ///         AssignedTo = "developer_user_1",
-    ///         ExpiryTime = "2125-01-01T00:00:00Z",
-    ///         KeyType = "API_KEY",
     ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
+    ///         Name = "api_key_developers",
+    ///         KeyType = "API_KEY",
+    ///         ExpiryTime = "2125-01-01T00:00:00Z",
+    ///         AssignedTo = "developer_user_1",
     ///     });
     /// 
     /// });

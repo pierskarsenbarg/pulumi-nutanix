@@ -17,6 +17,132 @@ namespace PiersKarsenbarg.Nutanix
     /// Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Nutanix.PcDeployV2("example", new()
+    ///     {
+    ///         Config = new Nutanix.Inputs.PcDeployV2ConfigArgs
+    ///         {
+    ///             BuildInfo = new Nutanix.Inputs.PcDeployV2ConfigBuildInfoArgs
+    ///             {
+    ///                 Version = "pc.2024.3",
+    ///             },
+    ///             Size = "STARTER",
+    ///             Name = "PC_EXAMPLE",
+    ///         },
+    ///         Network = new Nutanix.Inputs.PcDeployV2NetworkArgs
+    ///         {
+    ///             ExternalNetworks = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkArgs
+    ///                 {
+    ///                     NetworkExtId = "ba416f8d-00f2-499d-bc4c-19da8d104af9",
+    ///                     DefaultGateway = new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkDefaultGatewayArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkDefaultGatewayIpv4Args
+    ///                             {
+    ///                                 Value = "10.97.64.1",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     SubnetMask = new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkSubnetMaskArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkSubnetMaskIpv4Args
+    ///                             {
+    ///                                 Value = "255.255.252.0",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     IpRanges = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkIpRangeArgs
+    ///                         {
+    ///                             Begin = new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkIpRangeBeginArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkIpRangeBeginIpv4Args
+    ///                                     {
+    ///                                         Value = "10.97.64.91",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             End = new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkIpRangeEndArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.PcDeployV2NetworkExternalNetworkIpRangeEndIpv4Args
+    ///                                     {
+    ///                                         Value = "10.97.64.91",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             NameServers = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.PcDeployV2NetworkNameServerArgs
+    ///                 {
+    ///                     Ipv4s = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcDeployV2NetworkNameServerIpv4Args
+    ///                         {
+    ///                             Value = "10.40.64.16",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 new Nutanix.Inputs.PcDeployV2NetworkNameServerArgs
+    ///                 {
+    ///                     Ipv4s = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcDeployV2NetworkNameServerIpv4Args
+    ///                         {
+    ///                             Value = "10.40.64.15",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             NtpServers = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.PcDeployV2NetworkNtpServerArgs
+    ///                 {
+    ///                     Fqdns = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcDeployV2NetworkNtpServerFqdnArgs
+    ///                         {
+    ///                             Value = "2.centos.pool.ntp.org",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 new Nutanix.Inputs.PcDeployV2NetworkNtpServerArgs
+    ///                 {
+    ///                     Fqdns = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.PcDeployV2NetworkNtpServerFqdnArgs
+    ///                         {
+    ///                             Value = "3.centos.pool.ntp.org",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/pcDeployV2:PcDeployV2")]
     public partial class PcDeployV2 : global::Pulumi.CustomResource

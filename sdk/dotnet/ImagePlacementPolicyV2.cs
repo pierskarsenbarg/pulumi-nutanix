@@ -23,6 +23,9 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var example = new Nutanix.ImagePlacementPolicyV2("example", new()
     ///     {
+    ///         Name = "image_placement_policy",
+    ///         Description = "%[2]s",
+    ///         PlacementType = "SOFT",
     ///         ClusterEntityFilters = new[]
     ///         {
     ///             new Nutanix.Inputs.ImagePlacementPolicyV2ClusterEntityFilterArgs
@@ -34,7 +37,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Type = "CATEGORIES_MATCH_ALL",
     ///             },
     ///         },
-    ///         Description = "%[2]s",
     ///         ImageEntityFilters = new[]
     ///         {
     ///             new Nutanix.Inputs.ImagePlacementPolicyV2ImageEntityFilterArgs
@@ -46,7 +48,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Type = "CATEGORIES_MATCH_ALL",
     ///             },
     ///         },
-    ///         PlacementType = "SOFT",
     ///     });
     /// 
     /// });

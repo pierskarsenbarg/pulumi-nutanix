@@ -353,6 +353,56 @@ class VpcV2(pulumi.CustomResource):
 
         ## Example
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        vpc = nutanix.VpcV2("vpc",
+            name="vpc-example",
+            description="VPC for example",
+            external_subnets=[{
+                "subnet_reference": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+            }])
+        # creating VPC with external routable prefixes
+        external_vpc_routable_vpc = nutanix.VpcV2("external-vpc-routable-vpc",
+            name="tf-vpc-example",
+            description="VPC ",
+            external_subnets=[{
+                "subnet_reference": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+                "external_ips": [
+                    {
+                        "ipv4s": [{
+                            "value": "192.168.0.24",
+                            "prefix_length": 32,
+                        }],
+                    },
+                    {
+                        "ipv4s": [{
+                            "value": "192.168.0.25",
+                            "prefix_length": 32,
+                        }],
+                    },
+                ],
+            }],
+            externally_routable_prefixes=[{
+                "ipv4s": [{
+                    "ips": [{
+                        "value": "172.30.0.0",
+                        "prefix_length": 32,
+                    }],
+                    "prefix_length": 16,
+                }],
+            }])
+        # creating VPC with transit type
+        transit_vpc = nutanix.VpcV2("transit-vpc",
+            name="vpc-transit",
+            description="VPC for transit type",
+            external_subnets=[{
+                "subnet_reference": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+            }],
+            vpc_type="TRANSIT")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]] common_dhcp_options: List of DHCP options to be configured.
@@ -373,6 +423,56 @@ class VpcV2(pulumi.CustomResource):
         Provides Nutanix resource to create VPC.
 
         ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        vpc = nutanix.VpcV2("vpc",
+            name="vpc-example",
+            description="VPC for example",
+            external_subnets=[{
+                "subnet_reference": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+            }])
+        # creating VPC with external routable prefixes
+        external_vpc_routable_vpc = nutanix.VpcV2("external-vpc-routable-vpc",
+            name="tf-vpc-example",
+            description="VPC ",
+            external_subnets=[{
+                "subnet_reference": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+                "external_ips": [
+                    {
+                        "ipv4s": [{
+                            "value": "192.168.0.24",
+                            "prefix_length": 32,
+                        }],
+                    },
+                    {
+                        "ipv4s": [{
+                            "value": "192.168.0.25",
+                            "prefix_length": 32,
+                        }],
+                    },
+                ],
+            }],
+            externally_routable_prefixes=[{
+                "ipv4s": [{
+                    "ips": [{
+                        "value": "172.30.0.0",
+                        "prefix_length": 32,
+                    }],
+                    "prefix_length": 16,
+                }],
+            }])
+        # creating VPC with transit type
+        transit_vpc = nutanix.VpcV2("transit-vpc",
+            name="vpc-transit",
+            description="VPC for transit type",
+            external_subnets=[{
+                "subnet_reference": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+            }],
+            vpc_type="TRANSIT")
+        ```
 
         :param str resource_name: The name of the resource.
         :param VpcV2Args args: The arguments to use to populate this resource's properties.

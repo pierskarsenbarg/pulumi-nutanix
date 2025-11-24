@@ -30,11 +30,11 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
         ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
         ///             {
         ///                 Uuid = "&lt;directory-service-uuid&gt;",
         ///             },
-        ///             UserPrincipalName = "test-user@ntnxlab.local",
         ///         },
         ///     });
         /// 
@@ -64,11 +64,11 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
         ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
         ///             {
         ///                 Uuid = "&lt;directory-service-uuid&gt;",
         ///             },
-        ///             UserPrincipalName = "test-user@ntnxlab.local",
         ///         },
         ///     });
         /// 
@@ -98,11 +98,11 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
         ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
         ///             {
         ///                 Uuid = "&lt;directory-service-uuid&gt;",
         ///             },
-        ///             UserPrincipalName = "test-user@ntnxlab.local",
         ///         },
         ///     });
         /// 

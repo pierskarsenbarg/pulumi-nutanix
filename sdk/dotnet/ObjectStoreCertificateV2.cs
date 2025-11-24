@@ -25,8 +25,8 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var example = Nutanix.GetCertificateV2.Invoke(new()
     ///     {
-    ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
     ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+    ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
     ///     });
     /// 
     /// });

@@ -14,6 +14,52 @@ import (
 // Describe a Nutanix Recovery Plan and its values (if it has them).
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewRecoveryPlan(ctx, "recovery_plan_test", &nutanix.RecoveryPlanArgs{
+//				Name:        pulumi.String("%s"),
+//				Description: pulumi.String("%s"),
+//				StageLists: nutanix.RecoveryPlanStageListArray{
+//					&nutanix.RecoveryPlanStageListArgs{
+//						StageWork: &nutanix.RecoveryPlanStageListStageWorkArgs{
+//							RecoverEntities: &nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesArgs{
+//								EntityInfoLists: nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArray{
+//									&nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs{
+//										Categories: nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArray{
+//											&nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs{
+//												Name:  pulumi.String("Environment"),
+//												Value: pulumi.String("Dev"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//						StageUuid:     pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+//						DelayTimeSecs: pulumi.Int(0),
+//					},
+//				},
+//				Parameters: &nutanix.RecoveryPlanParametersArgs{},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupRecoveryPlan(ctx *pulumi.Context, args *LookupRecoveryPlanArgs, opts ...pulumi.InvokeOption) (*LookupRecoveryPlanResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRecoveryPlanResult

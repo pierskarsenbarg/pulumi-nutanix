@@ -15,6 +15,121 @@ import (
 //
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewClusterV2(ctx, "cluster", &nutanix.ClusterV2Args{
+//				Name: pulumi.String("cluster-example"),
+//				Nodes: nutanix.ClusterV2NodeArray{
+//					&nutanix.ClusterV2NodeArgs{
+//						NodeLists: nutanix.ClusterV2NodeNodeListArray{
+//							&nutanix.ClusterV2NodeNodeListArgs{
+//								ControllerVmIps: nutanix.ClusterV2NodeNodeListControllerVmIpArray{
+//									&nutanix.ClusterV2NodeNodeListControllerVmIpArgs{
+//										Ipv4s: nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Array{
+//											&nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Args{
+//												Value: pulumi.String("10.xx.xx.xx"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Configs: nutanix.ClusterV2ConfigArray{
+//					&nutanix.ClusterV2ConfigArgs{
+//						ClusterFunctions: pulumi.StringArray{
+//							pulumi.String("AOS"),
+//						},
+//						RedundancyFactor: pulumi.Int(1),
+//						ClusterArch:      pulumi.String("X86_64"),
+//						FaultToleranceStates: nutanix.ClusterV2ConfigFaultToleranceStateArray{
+//							&nutanix.ClusterV2ConfigFaultToleranceStateArgs{
+//								DomainAwarenessLevel: pulumi.String("DISK"),
+//							},
+//						},
+//					},
+//				},
+//				Networks: nutanix.ClusterV2NetworkArray{
+//					&nutanix.ClusterV2NetworkArgs{
+//						ExternalAddresses: nutanix.ClusterV2NetworkExternalAddressArray{
+//							&nutanix.ClusterV2NetworkExternalAddressArgs{
+//								Ipv4s: nutanix.ClusterV2NetworkExternalAddressIpv4Array{
+//									&nutanix.ClusterV2NetworkExternalAddressIpv4Args{
+//										Value: pulumi.String("10.xx.xx.xx"),
+//									},
+//								},
+//							},
+//						},
+//						ExternalDataServicesIps: nutanix.ClusterV2NetworkExternalDataServicesIpArray{
+//							&nutanix.ClusterV2NetworkExternalDataServicesIpArgs{
+//								Ipv4s: nutanix.ClusterV2NetworkExternalDataServicesIpIpv4Array{
+//									&nutanix.ClusterV2NetworkExternalDataServicesIpIpv4Args{
+//										Value: pulumi.String("10.xx.xx.xx"),
+//									},
+//								},
+//							},
+//						},
+//						NtpServerIpLists: nutanix.ClusterV2NetworkNtpServerIpListArray{
+//							&nutanix.ClusterV2NetworkNtpServerIpListArgs{
+//								Fqdns: nutanix.ClusterV2NetworkNtpServerIpListFqdnArray{
+//									&nutanix.ClusterV2NetworkNtpServerIpListFqdnArgs{
+//										Value: pulumi.String("ntp.server.nutanix.com"),
+//									},
+//								},
+//							},
+//							&nutanix.ClusterV2NetworkNtpServerIpListArgs{
+//								Fqdns: nutanix.ClusterV2NetworkNtpServerIpListFqdnArray{
+//									&nutanix.ClusterV2NetworkNtpServerIpListFqdnArgs{
+//										Value: pulumi.String("ntp.server_1.nutanix.com"),
+//									},
+//								},
+//							},
+//						},
+//						SmtpServers: nutanix.ClusterV2NetworkSmtpServerArray{
+//							&nutanix.ClusterV2NetworkSmtpServerArgs{
+//								EmailAddress: pulumi.String("example.ex@exmple.com"),
+//								Servers: nutanix.ClusterV2NetworkSmtpServerServerArray{
+//									&nutanix.ClusterV2NetworkSmtpServerServerArgs{
+//										IpAddresses: nutanix.ClusterV2NetworkSmtpServerServerIpAddressArray{
+//											&nutanix.ClusterV2NetworkSmtpServerServerIpAddressArgs{
+//												Ipv4s: nutanix.ClusterV2NetworkSmtpServerServerIpAddressIpv4Array{
+//													&nutanix.ClusterV2NetworkSmtpServerServerIpAddressIpv4Args{
+//														Value: pulumi.String("10.xx.xx.xx"),
+//													},
+//												},
+//											},
+//										},
+//										Port:     pulumi.Int(123),
+//										Username: pulumi.String("example"),
+//										Password: pulumi.String("example!2134"),
+//									},
+//								},
+//								Type: pulumi.String("PLAIN"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,

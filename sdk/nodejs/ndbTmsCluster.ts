@@ -14,9 +14,9 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const cls = new nutanix.NdbTmsCluster("cls", {
+ *     timeMachineId: "{{ tms_id }}",
  *     nxClusterId: "{{ cluster_id }}",
  *     slaId: "{{ sla_id }}",
- *     timeMachineId: "{{ tms_id }}",
  * });
  * ```
  */

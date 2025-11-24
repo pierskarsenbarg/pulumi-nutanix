@@ -12,6 +12,40 @@ import (
 )
 
 // Describes an Access Control Policy.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			testAccessControlPolicy, err := nutanix.NewAccessControlPolicy(ctx, "test", &nutanix.AccessControlPolicyArgs{
+//				Name:        pulumi.String("NAME OF ACCESS CONTROL POLICY"),
+//				Description: pulumi.String("DESCRIPTION OF THE ACCESS CONTROL POLICY"),
+//				RoleReference: &nutanix.AccessControlPolicyRoleReferenceArgs{
+//					Kind: pulumi.String("role"),
+//					Uuid: pulumi.String("UUID of role"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_ = nutanix.LookupAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
+//				AccessControlPolicyId: testAccessControlPolicy.ID(),
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupAccessControlPolicy(ctx *pulumi.Context, args *LookupAccessControlPolicyArgs, opts ...pulumi.InvokeOption) (*LookupAccessControlPolicyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAccessControlPolicyResult

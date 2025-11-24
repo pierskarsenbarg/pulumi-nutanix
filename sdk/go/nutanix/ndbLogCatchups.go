@@ -12,32 +12,6 @@ import (
 )
 
 // Provides a resource to perform the log cactup for database instance based on the input parameters.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewNdbLogCatchups(ctx, "name", &nutanix.NdbLogCatchupsArgs{
-//				DatabaseId: pulumi.String("{{ DatabaseID }}"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type NdbLogCatchups struct {
 	pulumi.CustomResourceState
 

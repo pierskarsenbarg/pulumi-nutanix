@@ -291,8 +291,8 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example = nutanix.NgtInsertIsoV2("example",
-            capablities=["VSS_SNAPSHOT"],
             ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            capablities=["VSS_SNAPSHOT"],
             is_config_only=False)
         ```
 
@@ -318,8 +318,8 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example = nutanix.NgtInsertIsoV2("example",
-            capablities=["VSS_SNAPSHOT"],
             ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            capablities=["VSS_SNAPSHOT"],
             is_config_only=False)
         ```
 

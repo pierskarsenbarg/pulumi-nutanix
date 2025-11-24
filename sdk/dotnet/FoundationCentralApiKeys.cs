@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var newApiKey = new Nutanix.FoundationCentralApiKeys("newApiKey", new()
+    ///     var newApiKey = new Nutanix.FoundationCentralApiKeys("new_api_key", new()
     ///     {
     ///         Alias = "&lt;NAME-FOR-API-KEY&gt;",
     ///     });

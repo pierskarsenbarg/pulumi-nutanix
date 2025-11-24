@@ -20,20 +20,215 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const isolation = new nutanix.NetworkSecurityRule("isolation", {
+ *     name: "example-isolation-rule",
  *     description: "Isolation Rule Example",
  *     isolationRuleAction: "APPLY",
  *     isolationRuleFirstEntityFilterKindLists: ["vm"],
+ *     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleFirstEntityFilterParams: [{
  *         name: "Environment",
  *         values: ["Dev"],
  *     }],
- *     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleSecondEntityFilterKindLists: ["vm"],
+ *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
  *     isolationRuleSecondEntityFilterParams: [{
  *         name: "Environment",
  *         values: ["Production"],
  *     }],
- *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
+ * });
+ * ```
+ *
+ * ### App Rule Example with associated VMs.
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const clusters = nutanix.getClusters({});
+ * const clusterUuid = clusters.then(clusters => .filter(cluster => cluster.serviceList[0] != "PRISM_CENTRAL").map(cluster => (cluster.metadata?.uuid))[0]);
+ * //Create categories.
+ * const test_category_key = new nutanix.CategoryKey("test-category-key", {
+ *     name: "TIER-1",
+ *     description: "TIER Category Key",
+ * });
+ * const USER = new nutanix.CategoryKey("USER", {
+ *     name: "user",
+ *     description: "user Category Key",
+ * });
+ * const WEB = new nutanix.CategoryValue("WEB", {
+ *     name: test_category_key.id,
+ *     description: "WEB Category Value",
+ *     value: "WEB-1",
+ * });
+ * const APP = new nutanix.CategoryValue("APP", {
+ *     name: test_category_key.id,
+ *     description: "APP Category Value",
+ *     value: "APP-1",
+ * });
+ * const DB = new nutanix.CategoryValue("DB", {
+ *     name: test_category_key.id,
+ *     description: "DB Category Value",
+ *     value: "DB-1",
+ * });
+ * const group = new nutanix.CategoryValue("group", {
+ *     name: USER.id,
+ *     description: "group Category Value",
+ *     value: "group-1",
+ * });
+ * //Create a cirros image
+ * const cirros_034_disk = new nutanix.Image("cirros-034-disk", {
+ *     name: "test-image-vm-create-flow",
+ *     sourceUri: "http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img",
+ *     description: "heres a tiny linux image, not an iso, but a real disk!",
+ * });
+ * //APP-1 VM.
+ * const vm_app = new nutanix.VirtualMachine("vm-app", {
+ *     name: "test-dou-vm-flow-APP-1",
+ *     clusterUuid: clusterUuid,
+ *     numVcpusPerSocket: 1,
+ *     numSockets: 1,
+ *     memorySizeMib: 186,
+ *     nicLists: [{
+ *         subnetUuid: "c56b535c-8aff-4435-ae85-78e64a07f76d",
+ *     }],
+ *     diskLists: [{
+ *         dataSourceReference: {
+ *             kind: "image",
+ *             uuid: cirros_034_disk.id,
+ *         },
+ *         deviceProperties: {
+ *             diskAddress: {
+ *                 device_index: "0",
+ *                 adapter_type: "SCSI",
+ *             },
+ *             deviceType: "DISK",
+ *         },
+ *     }],
+ *     categories: [
+ *         {
+ *             name: "Environment",
+ *             value: "Staging",
+ *         },
+ *         {
+ *             name: "TIER-1",
+ *             value: APP.id,
+ *         },
+ *     ],
+ * });
+ * //WEB-1 VM
+ * const vm_web = new nutanix.VirtualMachine("vm-web", {
+ *     name: "test-dou-vm-flow-WEB-1",
+ *     clusterUuid: clusterUuid,
+ *     numVcpusPerSocket: 1,
+ *     numSockets: 1,
+ *     memorySizeMib: 186,
+ *     nicLists: [{
+ *         subnetUuid: "c56b535c-8aff-4435-ae85-78e64a07f76d",
+ *     }],
+ *     diskLists: [{
+ *         dataSourceReference: {
+ *             kind: "image",
+ *             uuid: cirros_034_disk.id,
+ *         },
+ *         deviceProperties: {
+ *             diskAddress: {
+ *                 device_index: "0",
+ *                 adapter_type: "SCSI",
+ *             },
+ *             deviceType: "DISK",
+ *         },
+ *     }],
+ *     categories: [
+ *         {
+ *             name: "Environment",
+ *             value: "Staging",
+ *         },
+ *         {
+ *             name: "TIER-1",
+ *             value: WEB.id,
+ *         },
+ *     ],
+ * });
+ * //DB-1 VM
+ * const vm_db = new nutanix.VirtualMachine("vm-db", {
+ *     name: "test-dou-vm-flow-DB-1",
+ *     clusterUuid: clusterUuid,
+ *     numVcpusPerSocket: 1,
+ *     numSockets: 1,
+ *     memorySizeMib: 186,
+ *     nicLists: [{
+ *         subnetUuid: "c56b535c-8aff-4435-ae85-78e64a07f76d",
+ *     }],
+ *     diskLists: [{
+ *         dataSourceReference: {
+ *             kind: "image",
+ *             uuid: cirros_034_disk.id,
+ *         },
+ *         deviceProperties: {
+ *             diskAddress: {
+ *                 device_index: "0",
+ *                 adapter_type: "SCSI",
+ *             },
+ *             deviceType: "DISK",
+ *         },
+ *     }],
+ *     categories: [
+ *         {
+ *             name: "Environment",
+ *             value: "Staging",
+ *         },
+ *         {
+ *             name: "TIER-1",
+ *             value: DB.id,
+ *         },
+ *     ],
+ * });
+ * //Create Application Network Policy.
+ * const TEST_TIER = new nutanix.NetworkSecurityRule("TEST-TIER", {
+ *     name: "RULE-1-TIERS",
+ *     description: "rule 1 tiers",
+ *     appRuleAction: "APPLY",
+ *     appRuleInboundAllowLists: [{
+ *         peerSpecificationType: "FILTER",
+ *         filterType: "CATEGORIES_MATCH_ALL",
+ *         filterKindLists: ["vm"],
+ *         filterParams: [{
+ *             name: test_category_key.id,
+ *             values: [WEB.id],
+ *         }],
+ *     }],
+ *     appRuleTargetGroupDefaultInternalPolicy: "DENY_ALL",
+ *     appRuleTargetGroupPeerSpecificationType: "FILTER",
+ *     appRuleTargetGroupFilterType: "CATEGORIES_MATCH_ALL",
+ *     appRuleTargetGroupFilterKindLists: ["vm"],
+ *     appRuleTargetGroupFilterParams: [
+ *         {
+ *             name: test_category_key.id,
+ *             values: [APP.id],
+ *         },
+ *         {
+ *             name: USER.id,
+ *             values: [group.id],
+ *         },
+ *         {
+ *             name: "AppType",
+ *             values: ["Default"],
+ *         },
+ *     ],
+ *     appRuleOutboundAllowLists: [{
+ *         peerSpecificationType: "FILTER",
+ *         filterType: "CATEGORIES_MATCH_ALL",
+ *         filterKindLists: ["vm"],
+ *         filterParams: [{
+ *             name: test_category_key.id,
+ *             values: [DB.id],
+ *         }],
+ *     }],
+ * }, {
+ *     dependsOn: [
+ *         vm_app,
+ *         vm_web,
+ *         vm_db,
+ *     ],
  * });
  * ```
  *
@@ -43,6 +238,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const service1 = new nutanix.ServiceGroup("service1", {
+ *     name: "srv-1",
  *     description: "test",
  *     serviceLists: [{
  *         protocol: "TCP",
@@ -59,6 +255,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * const address1 = new nutanix.AddressGroup("address1", {
+ *     name: "addr-1",
  *     description: "test",
  *     ipAddressBlockLists: [{
  *         ip: "10.0.0.0",
@@ -66,10 +263,12 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * const ad_group_user_1 = new nutanix.CategoryValue("ad-group-user-1", {
+ *     name: "AD",
  *     description: "group user category value",
  *     value: "AD",
  * });
- * const vDI = new nutanix.NetworkSecurityRule("vDI", {
+ * const VDI = new nutanix.NetworkSecurityRule("VDI", {
+ *     name: "nsr-1",
  *     adRuleAction: "APPLY",
  *     description: "test",
  *     adRuleInboundAllowLists: [{

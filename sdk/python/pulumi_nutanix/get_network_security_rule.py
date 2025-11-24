@@ -533,20 +533,21 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
     import pulumi_nutanix as nutanix
 
     isolation = nutanix.NetworkSecurityRule("isolation",
+        name="example-isolation-rule",
         description="Isolation Rule Example",
         isolation_rule_action="APPLY",
         isolation_rule_first_entity_filter_kind_lists=["vm"],
+        isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
         isolation_rule_first_entity_filter_params=[{
             "name": "Environment",
             "values": ["Dev"],
         }],
-        isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
         isolation_rule_second_entity_filter_kind_lists=["vm"],
+        isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL",
         isolation_rule_second_entity_filter_params=[{
             "name": "Environment",
             "values": ["Production"],
-        }],
-        isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
+        }])
     test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
     ```
 
@@ -620,20 +621,21 @@ def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[
     import pulumi_nutanix as nutanix
 
     isolation = nutanix.NetworkSecurityRule("isolation",
+        name="example-isolation-rule",
         description="Isolation Rule Example",
         isolation_rule_action="APPLY",
         isolation_rule_first_entity_filter_kind_lists=["vm"],
+        isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
         isolation_rule_first_entity_filter_params=[{
             "name": "Environment",
             "values": ["Dev"],
         }],
-        isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
         isolation_rule_second_entity_filter_kind_lists=["vm"],
+        isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL",
         isolation_rule_second_entity_filter_params=[{
             "name": "Environment",
             "values": ["Production"],
-        }],
-        isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
+        }])
     test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
     ```
 

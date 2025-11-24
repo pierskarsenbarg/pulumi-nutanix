@@ -28,16 +28,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewProtectionRule(ctx, "protectionRuleTest", &nutanix.ProtectionRuleArgs{
+//			_, err := nutanix.NewProtectionRule(ctx, "protection_rule_test", &nutanix.ProtectionRuleArgs{
+//				Name:        pulumi.String("test"),
+//				Description: pulumi.String("test"),
+//				OrderedAvailabilityZoneLists: nutanix.ProtectionRuleOrderedAvailabilityZoneListArray{
+//					&nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs{
+//						AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+//					},
+//				},
 //				AvailabilityZoneConnectivityLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListArray{
 //					&nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs{
 //						SnapshotScheduleLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArray{
 //							&nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs{
+//								RecoveryPointObjectiveSecs: pulumi.Int(3600),
+//								SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
 //								LocalSnapshotRetentionPolicy: &nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs{
 //									NumSnapshots: pulumi.Int(1),
 //								},
-//								RecoveryPointObjectiveSecs: pulumi.Int(3600),
-//								SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
 //							},
 //						},
 //					},
@@ -50,12 +57,6 @@ import (
 //								pulumi.String("Dev"),
 //							},
 //						},
-//					},
-//				},
-//				Description: pulumi.String("test"),
-//				OrderedAvailabilityZoneLists: nutanix.ProtectionRuleOrderedAvailabilityZoneListArray{
-//					&nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs{
-//						AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
 //					},
 //				},
 //			})

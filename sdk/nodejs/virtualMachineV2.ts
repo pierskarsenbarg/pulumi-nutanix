@@ -8,6 +8,157 @@ import * as utilities from "./utilities";
 
 /**
  * Creates a Virtual Machine with the provided configuration.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as std from "@pulumi/std";
+ *
+ * const vm_1 = new nutanix.VirtualMachineV2("vm-1", {
+ *     name: "example-vm-1",
+ *     description: "vm desc",
+ *     numCoresPerSocket: 1,
+ *     numSockets: 1,
+ *     clusters: [{
+ *         extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ *     }],
+ * });
+ * const vm_2 = new nutanix.VirtualMachineV2("vm-2", {
+ *     name: "example-vm-2",
+ *     description: "vm desc",
+ *     numCoresPerSocket: 1,
+ *     numSockets: 1,
+ *     clusters: [{
+ *         extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ *     }],
+ *     disks: [{
+ *         diskAddresses: [{
+ *             busType: "SCSI",
+ *             index: 0,
+ *         }],
+ *         backingInfos: [{
+ *             vmDisks: [{
+ *                 diskSizeBytes: 1073741824,
+ *                 storageContainers: [{
+ *                     extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ *     bootConfigs: [{
+ *         uefiBoots: [{
+ *             bootOrders: [
+ *                 "NETWORK",
+ *                 "DISK",
+ *                 "CDROM",
+ *             ],
+ *         }],
+ *     }],
+ * });
+ * const vm_3 = new nutanix.VirtualMachineV2("vm-3", {
+ *     name: "terraform-example-vm-4-disks",
+ *     numCoresPerSocket: 1,
+ *     numSockets: 1,
+ *     clusters: [{
+ *         extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ *     }],
+ *     disks: [
+ *         {
+ *             diskAddresses: [{
+ *                 busType: "SCSI",
+ *                 index: 0,
+ *             }],
+ *             backingInfos: [{
+ *                 vmDisks: [{
+ *                     dataSources: [{
+ *                         references: [{
+ *                             imageReferences: [{
+ *                                 imageExtId: "59ec786c-4311-4225-affe-68b65c5ebf10",
+ *                             }],
+ *                         }],
+ *                     }],
+ *                     diskSizeBytes: std.pow({
+ *                         base: 1024,
+ *                         exponent: 3,
+ *                     }).then(invoke => 20 * invoke.result),
+ *                 }],
+ *             }],
+ *         },
+ *         {
+ *             diskAddresses: [{
+ *                 busType: "SCSI",
+ *                 index: 1,
+ *             }],
+ *             backingInfos: [{
+ *                 vmDisks: [{
+ *                     diskSizeBytes: std.pow({
+ *                         base: 1024,
+ *                         exponent: 3,
+ *                     }).then(invoke => 10 * invoke.result),
+ *                     storageContainers: [{
+ *                         extId: "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+ *                     }],
+ *                 }],
+ *             }],
+ *         },
+ *         {
+ *             diskAddresses: [{
+ *                 busType: "SCSI",
+ *                 index: 2,
+ *             }],
+ *             backingInfos: [{
+ *                 vmDisks: [{
+ *                     diskSizeBytes: std.pow({
+ *                         base: 1024,
+ *                         exponent: 3,
+ *                     }).then(invoke => 15 * invoke.result),
+ *                     storageContainers: [{
+ *                         extId: "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+ *                     }],
+ *                 }],
+ *             }],
+ *         },
+ *         {
+ *             diskAddresses: [{
+ *                 busType: "SCSI",
+ *                 index: 3,
+ *             }],
+ *             backingInfos: [{
+ *                 vmDisks: [{
+ *                     diskSizeBytes: std.pow({
+ *                         base: 1024,
+ *                         exponent: 3,
+ *                     }).then(invoke => 20 * invoke.result),
+ *                     storageContainers: [{
+ *                         extId: "5d9b5941-fec3-4996-9d31-f31bed1c7735",
+ *                     }],
+ *                 }],
+ *             }],
+ *         },
+ *     ],
+ *     nics: [{
+ *         networkInfos: [{
+ *             nicType: "NORMAL_NIC",
+ *             subnets: [{
+ *                 extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+ *             }],
+ *             vlanMode: "ACCESS",
+ *         }],
+ *     }],
+ *     bootConfigs: [{
+ *         legacyBoots: [{
+ *             bootOrders: [
+ *                 "CDROM",
+ *                 "DISK",
+ *                 "NETWORK",
+ *             ],
+ *         }],
+ *     }],
+ *     powerState: "ON",
+ * });
+ * ```
  */
 export class VirtualMachineV2 extends pulumi.CustomResource {
     /**

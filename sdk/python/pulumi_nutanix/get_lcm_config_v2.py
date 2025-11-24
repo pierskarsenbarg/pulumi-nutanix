@@ -242,6 +242,7 @@ def get_lcm_config_v2(x_cluster_id: Optional[_builtins.str] = None,
     import pulumi_nutanix as nutanix
 
     lcm_configuration = nutanix.get_lcm_config_v2()
+    # Get LCM configuration for a specific cluster
     lcm_configuration_cluster = nutanix.get_lcm_config_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
     ```
 
@@ -282,6 +283,7 @@ def get_lcm_config_v2_output(x_cluster_id: Optional[pulumi.Input[Optional[_built
     import pulumi_nutanix as nutanix
 
     lcm_configuration = nutanix.get_lcm_config_v2()
+    # Get LCM configuration for a specific cluster
     lcm_configuration_cluster = nutanix.get_lcm_config_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
     ```
 

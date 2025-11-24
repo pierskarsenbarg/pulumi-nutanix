@@ -14,6 +14,105 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides Nutanix resource to create VPC.
     /// 
     /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var vpc = new Nutanix.VpcV2("vpc", new()
+    ///     {
+    ///         Name = "vpc-example",
+    ///         Description = "VPC for example",
+    ///         ExternalSubnets = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VpcV2ExternalSubnetArgs
+    ///             {
+    ///                 SubnetReference = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     // creating VPC with external routable prefixes
+    ///     var external_vpc_routable_vpc = new Nutanix.VpcV2("external-vpc-routable-vpc", new()
+    ///     {
+    ///         Name = "tf-vpc-example",
+    ///         Description = "VPC ",
+    ///         ExternalSubnets = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VpcV2ExternalSubnetArgs
+    ///             {
+    ///                 SubnetReference = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+    ///                 ExternalIps = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VpcV2ExternalSubnetExternalIpArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VpcV2ExternalSubnetExternalIpIpv4Args
+    ///                             {
+    ///                                 Value = "192.168.0.24",
+    ///                                 PrefixLength = 32,
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.VpcV2ExternalSubnetExternalIpArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VpcV2ExternalSubnetExternalIpIpv4Args
+    ///                             {
+    ///                                 Value = "192.168.0.25",
+    ///                                 PrefixLength = 32,
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         ExternallyRoutablePrefixes = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VpcV2ExternallyRoutablePrefixArgs
+    ///             {
+    ///                 Ipv4s = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VpcV2ExternallyRoutablePrefixIpv4Args
+    ///                     {
+    ///                         Ips = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VpcV2ExternallyRoutablePrefixIpv4IpArgs
+    ///                             {
+    ///                                 Value = "172.30.0.0",
+    ///                                 PrefixLength = 32,
+    ///                             },
+    ///                         },
+    ///                         PrefixLength = 16,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     // creating VPC with transit type
+    ///     var transit_vpc = new Nutanix.VpcV2("transit-vpc", new()
+    ///     {
+    ///         Name = "vpc-transit",
+    ///         Description = "VPC for transit type",
+    ///         ExternalSubnets = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VpcV2ExternalSubnetArgs
+    ///             {
+    ///                 SubnetReference = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+    ///             },
+    ///         },
+    ///         VpcType = "TRANSIT",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/vpcV2:VpcV2")]
     public partial class VpcV2 : global::Pulumi.CustomResource

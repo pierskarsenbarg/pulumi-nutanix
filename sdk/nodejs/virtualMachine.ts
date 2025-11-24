@@ -17,6 +17,7 @@ import * as utilities from "./utilities";
  *
  * const clusters = nutanix.getClusters({});
  * const vm1 = new nutanix.VirtualMachine("vm1", {
+ *     name: "test-dou",
  *     clusterUuid: clusters.then(clusters => clusters.entities?.[0]?.metadata?.uuid),
  *     categories: [{
  *         name: "Environment",
@@ -35,6 +36,7 @@ import * as utilities from "./utilities";
  *
  * const clusters = nutanix.getClusters({});
  * const vm = new nutanix.VirtualMachine("vm", {
+ *     name: "myVm",
  *     clusterUuid: clusters.then(clusters => clusters.entities?.[0]?.metadata?.uuid),
  *     numVcpusPerSocket: 1,
  *     numSockets: 1,

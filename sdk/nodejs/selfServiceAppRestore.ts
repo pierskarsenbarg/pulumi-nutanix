@@ -13,11 +13,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const testSelfServiceAppRecoveryPoint = new nutanix.SelfServiceAppRecoveryPoint("testSelfServiceAppRecoveryPoint", {
+ * const test = new nutanix.SelfServiceAppRecoveryPoint("test", {
  *     appName: "NAME OF APPLICATION",
  *     actionName: "SNAPSHOT ACTION NAME",
  *     recoveryPointName: "RECOVERY POINT NAME",
  * });
+ * // Read available recovery points in app
  * const snapshots = nutanix.getSelfServiceAppSnapshots({
  *     appName: "NAME OF APPLICATION",
  *     length: 250,
@@ -25,7 +26,7 @@ import * as utilities from "./utilities";
  * });
  * const snapshotUuid = snapshots.then(snapshots => .filter(snapshot => snapshot.name == "SNAPSHOT ACTION NAME").map(snapshot => (snapshot.uuid))[0]);
  * // Restore from recovery point
- * const testSelfServiceAppRestore = new nutanix.SelfServiceAppRestore("testSelfServiceAppRestore", {
+ * const testSelfServiceAppRestore = new nutanix.SelfServiceAppRestore("test", {
  *     restoreActionName: "RESTORE ACTION NAME",
  *     appName: "NAME OF APPLICATION",
  *     snapshotUuid: snapshotUuid,

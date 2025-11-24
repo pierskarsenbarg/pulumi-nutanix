@@ -8,6 +8,73 @@ import * as utilities from "./utilities";
 
 /**
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as std from "@pulumi/std";
+ *
+ * const example = new nutanix.ObjectStoreV2("example", {
+ *     name: "tf-example-os",
+ *     description: "terraform create object store example",
+ *     deploymentVersion: "5.1.1",
+ *     domain: "msp.pc-idbc.nutanix.com",
+ *     numWorkerNodes: 1,
+ *     clusterExtId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ *     totalCapacityGib: std.pow({
+ *         base: 1024,
+ *         exponent: 3,
+ *     }).then(invoke => 20 * invoke.result),
+ *     publicNetworkReference: "57c4caf1-67e3-457e-8265-6d872f2a3135",
+ *     publicNetworkIps: [{
+ *         ipv4: {
+ *             value: "10.44.77.123",
+ *         },
+ *     }],
+ *     storageNetworkReference: "57c4caf1-67e3-457e-8265-6d872f2a3135",
+ *     storageNetworkDnsIp: {
+ *         ipv4: {
+ *             value: "10.44.77.124",
+ *         },
+ *     },
+ *     storageNetworkVip: {
+ *         ipv4: {
+ *             value: "10.44.77.125",
+ *         },
+ *     },
+ * });
+ * // Deploying Object Store in draft state
+ * const example_draft = new nutanix.ObjectStoreV2("example-draft", {
+ *     name: "tf-draft-os",
+ *     description: "terraform deploy object store draft example",
+ *     deploymentVersion: "5.1.1",
+ *     domain: "msp.pc-idbc.nutanix.com",
+ *     numWorkerNodes: 1,
+ *     clusterExtId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ *     totalCapacityGib: std.pow({
+ *         base: 1024,
+ *         exponent: 3,
+ *     }).then(invoke => 20 * invoke.result),
+ *     publicNetworkReference: "57c4caf1-67e3-457e-8265-6d872f2a3135",
+ *     state: "UNDEPLOYED_OBJECT_STORE",
+ *     publicNetworkIps: [{
+ *         ipv4: {
+ *             value: "10.44.77.126",
+ *         },
+ *     }],
+ *     storageNetworkReference: "57c4caf1-67e3-457e-8265-6d872f2a3135",
+ *     storageNetworkDnsIp: {
+ *         ipv4: {
+ *             value: "10.44.77.127",
+ *         },
+ *     },
+ *     storageNetworkVip: {
+ *         ipv4: {
+ *             value: "10.44.77.128",
+ *         },
+ *     },
+ * });
+ * ```
  */
 export class ObjectStoreV2 extends pulumi.CustomResource {
     /**

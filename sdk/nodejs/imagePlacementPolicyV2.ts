@@ -14,16 +14,17 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const example = new nutanix.ImagePlacementPolicyV2("example", {
+ *     name: "image_placement_policy",
+ *     description: "%[2]s",
+ *     placementType: "SOFT",
  *     clusterEntityFilters: [{
  *         categoryExtIds: ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
  *         type: "CATEGORIES_MATCH_ALL",
  *     }],
- *     description: "%[2]s",
  *     imageEntityFilters: [{
  *         categoryExtIds: ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
  *         type: "CATEGORIES_MATCH_ALL",
  *     }],
- *     placementType: "SOFT",
  * });
  * ```
  */

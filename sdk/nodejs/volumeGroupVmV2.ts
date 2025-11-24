@@ -13,9 +13,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const vgVmExample = new nutanix.VolumeGroupVmV2("vgVmExample", {
- *     vmExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+ * const vgVmExample = new nutanix.VolumeGroupVmV2("vg_vm_example", {
  *     volumeGroupExtId: "1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
+ *     vmExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
  */

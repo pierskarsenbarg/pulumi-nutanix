@@ -259,14 +259,16 @@ class UserGroupsV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        usr_group = nutanix.UserGroupsV2("usrGroup",
-            distinguished_name="cn=group_0664229e,ou=group,dc=devtest,dc=local",
+        usr_group = nutanix.UserGroupsV2("usr_group",
             group_type="LDAP",
-            idp_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+            idp_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            name="group_0664229e",
+            distinguished_name="cn=group_0664229e,ou=group,dc=devtest,dc=local")
         # Saml User group
         saml_ug = nutanix.UserGroupsV2("saml-ug",
             group_type="SAML",
-            idp_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+            idp_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+            name="adfs19admingroup")
         ```
 
         :param str resource_name: The name of the resource.
@@ -292,14 +294,16 @@ class UserGroupsV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        usr_group = nutanix.UserGroupsV2("usrGroup",
-            distinguished_name="cn=group_0664229e,ou=group,dc=devtest,dc=local",
+        usr_group = nutanix.UserGroupsV2("usr_group",
             group_type="LDAP",
-            idp_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+            idp_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            name="group_0664229e",
+            distinguished_name="cn=group_0664229e,ou=group,dc=devtest,dc=local")
         # Saml User group
         saml_ug = nutanix.UserGroupsV2("saml-ug",
             group_type="SAML",
-            idp_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+            idp_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+            name="adfs19admingroup")
         ```
 
         :param str resource_name: The name of the resource.

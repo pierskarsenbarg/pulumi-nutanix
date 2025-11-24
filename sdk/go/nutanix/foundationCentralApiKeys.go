@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewFoundationCentralApiKeys(ctx, "newApiKey", &nutanix.FoundationCentralApiKeysArgs{
+//			_, err := nutanix.NewFoundationCentralApiKeys(ctx, "new_api_key", &nutanix.FoundationCentralApiKeysArgs{
 //				Alias: pulumi.String("<NAME-FOR-API-KEY>"),
 //			})
 //			if err != nil {

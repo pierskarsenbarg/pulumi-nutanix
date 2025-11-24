@@ -15,10 +15,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // resource to scale the database
  * const scale = new nutanix.NdbDatabaseScale("scale", {
  *     applicationType: "{{ Application Type }}",
- *     dataStorageSize: 1,
  *     databaseUuid: "{{ database_id }}",
+ *     dataStorageSize: 1,
  * });
  * ```
  */

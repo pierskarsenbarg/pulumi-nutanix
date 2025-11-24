@@ -13,6 +13,22 @@ import * as utilities from "./utilities";
  *
  * ### Cluster Location
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const cluster_location = new nutanix.PcBackupTargetV2("cluster-location", {
+ *     domainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+ *     location: {
+ *         clusterLocations: [{
+ *             configs: [{
+ *                 extId: "323860ca-bd10-411e-9fe0-1430b62eaf45",
+ *             }],
+ *         }],
+ *     },
+ * });
+ * ```
+ *
  * ### Object Store Location
  *
  * ```typescript

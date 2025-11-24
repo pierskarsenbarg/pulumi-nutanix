@@ -27,6 +27,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var lcm_configuration = Nutanix.GetLcmConfigV2.Invoke();
         /// 
+        ///     // Get LCM configuration for a specific cluster
         ///     var lcm_configuration_cluster = Nutanix.GetLcmConfigV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
@@ -53,6 +54,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var lcm_configuration = Nutanix.GetLcmConfigV2.Invoke();
         /// 
+        ///     // Get LCM configuration for a specific cluster
         ///     var lcm_configuration_cluster = Nutanix.GetLcmConfigV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
@@ -79,6 +81,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var lcm_configuration = Nutanix.GetLcmConfigV2.Invoke();
         /// 
+        ///     // Get LCM configuration for a specific cluster
         ///     var lcm_configuration_cluster = Nutanix.GetLcmConfigV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",

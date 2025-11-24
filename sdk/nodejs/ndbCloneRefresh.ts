@@ -23,6 +23,17 @@ import * as utilities from "./utilities";
  * ```
  *
  * ### resource to refresh clone with user pitr timestamp
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const acctest_managed = new nutanix.NdbCloneRefresh("acctest-managed", {
+ *     cloneId: "{{ clone_id }}",
+ *     userPitrStamp: "{{ timestamp }}",
+ *     timezone: "Asia/Calcutta",
+ * });
+ * ```
  */
 export class NdbCloneRefresh extends pulumi.CustomResource {
     /**

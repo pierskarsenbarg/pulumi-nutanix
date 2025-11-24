@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Fetch a single PC (Domain Manager) by its external ID
         ///     var example_2 = Nutanix.GetPcV2.Invoke(new()
         ///     {
         ///         ExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
@@ -49,6 +50,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Fetch a single PC (Domain Manager) by its external ID
         ///     var example_2 = Nutanix.GetPcV2.Invoke(new()
         ///     {
         ///         ExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
@@ -73,6 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Fetch a single PC (Domain Manager) by its external ID
         ///     var example_2 = Nutanix.GetPcV2.Invoke(new()
         ///     {
         ///         ExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",

@@ -27,12 +27,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get kubeconfig by cluster UUID
 //			_, err := nutanix.GetKarbonClusterKubeConfig(ctx, &nutanix.GetKarbonClusterKubeConfigArgs{
 //				KarbonClusterId: pulumi.StringRef("<YOUR-CLUSTER-ID>"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// Get Kubeconfig by cluster name
 //			_, err = nutanix.GetKarbonClusterKubeConfig(ctx, &nutanix.GetKarbonClusterKubeConfigArgs{
 //				KarbonClusterName: pulumi.StringRef("<YOUR-CLUSTER-NAME>"),
 //			}, nil)

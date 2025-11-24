@@ -621,16 +621,18 @@ class Image(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         test = nutanix.Image("test",
+            name="Ubuntu",
             description="Ubuntu",
             source_uri="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
         # Create image with data_source_reference
-        create_image_with_data_source_reference = nutanix.Image("createImageWithDataSourceReference",
+        create_image_with_data_source_reference = nutanix.Image("create_image_with_data_source_reference",
+            name="Sql Server Image",
+            description="Sql Server",
+            image_type="DISK_IMAGE",
             data_source_references=[{
                 "kind": "vm_disk",
                 "uuid": "<uuid of the vm disk>",
-            }],
-            description="Sql Server",
-            image_type="DISK_IMAGE")
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -665,16 +667,18 @@ class Image(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         test = nutanix.Image("test",
+            name="Ubuntu",
             description="Ubuntu",
             source_uri="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
         # Create image with data_source_reference
-        create_image_with_data_source_reference = nutanix.Image("createImageWithDataSourceReference",
+        create_image_with_data_source_reference = nutanix.Image("create_image_with_data_source_reference",
+            name="Sql Server Image",
+            description="Sql Server",
+            image_type="DISK_IMAGE",
             data_source_references=[{
                 "kind": "vm_disk",
                 "uuid": "<uuid of the vm disk>",
-            }],
-            description="Sql Server",
-            image_type="DISK_IMAGE")
+            }])
         ```
 
         :param str resource_name: The name of the resource.

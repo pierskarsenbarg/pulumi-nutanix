@@ -10,6 +10,70 @@ import * as utilities from "./utilities";
  * Provides a resource to create an access control policy based on the input parameters.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const test = new nutanix.AccessControlPolicy("test", {
+ *     name: "NAME OF ACCESS CONTROL POLICY",
+ *     description: "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+ *     roleReference: {
+ *         kind: "role",
+ *         uuid: "UUID of role",
+ *     },
+ *     userReferenceLists: [{
+ *         uuid: "UUID of User existent",
+ *         name: "admin",
+ *     }],
+ *     contextFilterLists: [{
+ *         entityFilterExpressionLists: [
+ *             {
+ *                 operator: "IN",
+ *                 leftHandSideEntityType: "cluster",
+ *                 rightHandSide: {
+ *                     uuidLists: ["00058ef8-c31c-f0bc-0000-000000007b23"],
+ *                 },
+ *             },
+ *             {
+ *                 operator: "IN",
+ *                 leftHandSideEntityType: "image",
+ *                 rightHandSide: {
+ *                     collection: "ALL",
+ *                 },
+ *             },
+ *             {
+ *                 operator: "IN",
+ *                 leftHandSideEntityType: "category",
+ *                 rightHandSide: {
+ *                     collection: "ALL",
+ *                 },
+ *             },
+ *             {
+ *                 operator: "IN",
+ *                 leftHandSideEntityType: "marketplace_item",
+ *                 rightHandSide: {
+ *                     collection: "SELF_OWNED",
+ *                 },
+ *             },
+ *             {
+ *                 operator: "IN",
+ *                 leftHandSideEntityType: "app_task",
+ *                 rightHandSide: {
+ *                     collection: "SELF_OWNED",
+ *                 },
+ *             },
+ *             {
+ *                 operator: "IN",
+ *                 leftHandSideEntityType: "app_variable",
+ *                 rightHandSide: {
+ *                     collection: "SELF_OWNED",
+ *                 },
+ *             },
+ *         ],
+ *     }],
+ * });
+ * ```
  */
 export class AccessControlPolicy extends pulumi.CustomResource {
     /**

@@ -16,6 +16,52 @@ namespace PiersKarsenbarg.Nutanix
         /// Describe a Nutanix Recovery Plan and its values (if it has them).
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
+        ///     {
+        ///         Name = "%s",
+        ///         Description = "%s",
+        ///         StageLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.RecoveryPlanStageListArgs
+        ///             {
+        ///                 StageWork = new Nutanix.Inputs.RecoveryPlanStageListStageWorkArgs
+        ///                 {
+        ///                     RecoverEntities = new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs
+        ///                     {
+        ///                         EntityInfoLists = new[]
+        ///                         {
+        ///                             new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs
+        ///                             {
+        ///                                 Categories = new[]
+        ///                                 {
+        ///                                     new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs
+        ///                                     {
+        ///                                         Name = "Environment",
+        ///                                         Value = "Dev",
+        ///                                     },
+        ///                                 },
+        ///                             },
+        ///                         },
+        ///                     },
+        ///                 },
+        ///                 StageUuid = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///                 DelayTimeSecs = 0,
+        ///             },
+        ///         },
+        ///         Parameters = null,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetRecoveryPlanResult> InvokeAsync(GetRecoveryPlanArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecoveryPlanResult>("nutanix:index/getRecoveryPlan:getRecoveryPlan", args ?? new GetRecoveryPlanArgs(), options.WithDefaults());
@@ -24,6 +70,52 @@ namespace PiersKarsenbarg.Nutanix
         /// Describe a Nutanix Recovery Plan and its values (if it has them).
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
+        ///     {
+        ///         Name = "%s",
+        ///         Description = "%s",
+        ///         StageLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.RecoveryPlanStageListArgs
+        ///             {
+        ///                 StageWork = new Nutanix.Inputs.RecoveryPlanStageListStageWorkArgs
+        ///                 {
+        ///                     RecoverEntities = new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs
+        ///                     {
+        ///                         EntityInfoLists = new[]
+        ///                         {
+        ///                             new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs
+        ///                             {
+        ///                                 Categories = new[]
+        ///                                 {
+        ///                                     new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs
+        ///                                     {
+        ///                                         Name = "Environment",
+        ///                                         Value = "Dev",
+        ///                                     },
+        ///                                 },
+        ///                             },
+        ///                         },
+        ///                     },
+        ///                 },
+        ///                 StageUuid = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///                 DelayTimeSecs = 0,
+        ///             },
+        ///         },
+        ///         Parameters = null,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetRecoveryPlanResult> Invoke(GetRecoveryPlanInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlanResult>("nutanix:index/getRecoveryPlan:getRecoveryPlan", args ?? new GetRecoveryPlanInvokeArgs(), options.WithDefaults());
@@ -32,6 +124,52 @@ namespace PiersKarsenbarg.Nutanix
         /// Describe a Nutanix Recovery Plan and its values (if it has them).
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
+        ///     {
+        ///         Name = "%s",
+        ///         Description = "%s",
+        ///         StageLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.RecoveryPlanStageListArgs
+        ///             {
+        ///                 StageWork = new Nutanix.Inputs.RecoveryPlanStageListStageWorkArgs
+        ///                 {
+        ///                     RecoverEntities = new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs
+        ///                     {
+        ///                         EntityInfoLists = new[]
+        ///                         {
+        ///                             new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs
+        ///                             {
+        ///                                 Categories = new[]
+        ///                                 {
+        ///                                     new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs
+        ///                                     {
+        ///                                         Name = "Environment",
+        ///                                         Value = "Dev",
+        ///                                     },
+        ///                                 },
+        ///                             },
+        ///                         },
+        ///                     },
+        ///                 },
+        ///                 StageUuid = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///                 DelayTimeSecs = 0,
+        ///             },
+        ///         },
+        ///         Parameters = null,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetRecoveryPlanResult> Invoke(GetRecoveryPlanInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlanResult>("nutanix:index/getRecoveryPlan:getRecoveryPlan", args ?? new GetRecoveryPlanInvokeArgs(), options.WithDefaults());

@@ -411,16 +411,17 @@ class NdbNetwork(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbNetwork("name",
+            name="test-sub",
+            type="Static",
             cluster_id="{{ cluster_id }}",
             gateway="{{ gatway for the vlan }}",
-            ip_pools=[{
-                "end_ip": "{{ ending address range }}",
-                "start_ip": "{{ starting address range}}",
-            }],
+            subnet_mask="{{ subnet mask for the vlan}}",
             primary_dns=" {{ primary dns for the vlan }}",
             secondary_dns="{{secondary dns for the vlan }}",
-            subnet_mask="{{ subnet mask for the vlan}}",
-            type="Static")
+            ip_pools=[{
+                "start_ip": "{{ starting address range}}",
+                "end_ip": "{{ ending address range }}",
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -452,16 +453,17 @@ class NdbNetwork(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         name = nutanix.NdbNetwork("name",
+            name="test-sub",
+            type="Static",
             cluster_id="{{ cluster_id }}",
             gateway="{{ gatway for the vlan }}",
-            ip_pools=[{
-                "end_ip": "{{ ending address range }}",
-                "start_ip": "{{ starting address range}}",
-            }],
+            subnet_mask="{{ subnet mask for the vlan}}",
             primary_dns=" {{ primary dns for the vlan }}",
             secondary_dns="{{secondary dns for the vlan }}",
-            subnet_mask="{{ subnet mask for the vlan}}",
-            type="Static")
+            ip_pools=[{
+                "start_ip": "{{ starting address range}}",
+                "end_ip": "{{ ending address range }}",
+            }])
         ```
 
         :param str resource_name: The name of the resource.

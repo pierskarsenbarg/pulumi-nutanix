@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const newApiKey = new nutanix.FoundationCentralApiKeys("newApiKey", {alias: "<NAME-FOR-API-KEY>"});
+ * const newApiKey = new nutanix.FoundationCentralApiKeys("new_api_key", {alias: "<NAME-FOR-API-KEY>"});
  * ```
  */
 export class FoundationCentralApiKeys extends pulumi.CustomResource {

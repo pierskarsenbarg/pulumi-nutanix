@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// filtered list operation
 //			operations_filtered_list, err := nutanix.GetOperationsV2(ctx, &nutanix.GetOperationsV2Args{
 //				Filter: pulumi.StringRef("startswith(displayName, 'Create_')"),
 //			}, nil)

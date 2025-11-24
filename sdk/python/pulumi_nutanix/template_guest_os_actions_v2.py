@@ -265,18 +265,18 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example_1 = nutanix.TemplateGuestOsActionsV2("example-1",
-            action="initiate",
             ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            action="initiate",
             version_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936")
         example_2 = nutanix.TemplateGuestOsActionsV2("example-2",
-            action="complete",
             ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
-            is_active_version="true",
+            action="complete",
+            version_name="version_name",
             version_description="version desc",
-            version_name="version_name")
+            is_active_version="true")
         example_3 = nutanix.TemplateGuestOsActionsV2("example-3",
-            action="cancel",
-            ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224")
+            ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            action="cancel")
         ```
 
         :param str resource_name: The name of the resource.
@@ -309,18 +309,18 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example_1 = nutanix.TemplateGuestOsActionsV2("example-1",
-            action="initiate",
             ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            action="initiate",
             version_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936")
         example_2 = nutanix.TemplateGuestOsActionsV2("example-2",
-            action="complete",
             ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
-            is_active_version="true",
+            action="complete",
+            version_name="version_name",
             version_description="version desc",
-            version_name="version_name")
+            is_active_version="true")
         example_3 = nutanix.TemplateGuestOsActionsV2("example-3",
-            action="cancel",
-            ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224")
+            ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            action="cancel")
         ```
 
         :param str resource_name: The name of the resource.

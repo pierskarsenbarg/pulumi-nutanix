@@ -15,7 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const volumeGroupExample = new nutanix.VolumeGroupV2("volumeGroupExample", {
+ * const volumeGroupExample = new nutanix.VolumeGroupV2("volume_group_example", {
+ *     name: "volume_group_test",
  *     description: "Test Create Volume group with spec",
  *     shouldLoadBalanceVmAttachments: false,
  *     sharingStatus: "SHARED",

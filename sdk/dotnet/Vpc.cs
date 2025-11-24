@@ -27,6 +27,12 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var vpc = new Nutanix.Vpc("vpc", new()
     ///     {
+    ///         Name = "testtNew-1",
+    ///         ExternalSubnetReferenceNames = new[]
+    ///         {
+    ///             "test-Ext1",
+    ///             "test-ext2",
+    ///         },
     ///         CommonDomainNameServerIpLists = new[]
     ///         {
     ///             new Nutanix.Inputs.VpcCommonDomainNameServerIpListArgs
@@ -37,11 +43,6 @@ namespace PiersKarsenbarg.Nutanix
     ///             {
     ///                 Ip = "8.8.8.9",
     ///             },
-    ///         },
-    ///         ExternalSubnetReferenceNames = new[]
-    ///         {
-    ///             "test-Ext1",
-    ///             "test-ext2",
     ///         },
     ///         ExternallyRoutablePrefixLists = new[]
     ///         {
@@ -68,16 +69,17 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var vpc = new Nutanix.Vpc("vpc", new()
     ///     {
+    ///         Name = "testtNew-1",
+    ///         ExternalSubnetReferenceUuids = new[]
+    ///         {
+    ///             "&lt;subnet_uuid&gt;",
+    ///         },
     ///         CommonDomainNameServerIpLists = new[]
     ///         {
     ///             new Nutanix.Inputs.VpcCommonDomainNameServerIpListArgs
     ///             {
     ///                 Ip = "8.8.8.8",
     ///             },
-    ///         },
-    ///         ExternalSubnetReferenceUuids = new[]
-    ///         {
-    ///             "&lt;subnet_uuid&gt;",
     ///         },
     ///         ExternallyRoutablePrefixLists = new[]
     ///         {

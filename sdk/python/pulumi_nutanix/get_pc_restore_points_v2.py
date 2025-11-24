@@ -145,14 +145,10 @@ def get_pc_restore_points_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    pe = nutanix.Provider("pe",
-        username=var["username"],
-        password=var["password"],
-        endpoint=var["pe_endpoint"],
-        insecure=True,
-        port=var["port"])
+    # This pe based module, so use pe provider alias
     restore_points = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0")
+    # list all the restorable pcs with select properties
     restore_points_select = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0",
         select="creationTime,domainManager,extId")
@@ -373,14 +369,10 @@ def get_pc_restore_points_v2_output(filter: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_nutanix as nutanix
 
-    pe = nutanix.Provider("pe",
-        username=var["username"],
-        password=var["password"],
-        endpoint=var["pe_endpoint"],
-        insecure=True,
-        port=var["port"])
+    # This pe based module, so use pe provider alias
     restore_points = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0")
+    # list all the restorable pcs with select properties
     restore_points_select = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0",
         select="creationTime,domainManager,extId")

@@ -14,8 +14,8 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const example = new nutanix.NgtInsertIsoV2("example", {
- *     capablities: ["VSS_SNAPSHOT"],
  *     extId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+ *     capablities: ["VSS_SNAPSHOT"],
  *     isConfigOnly: false,
  * });
  * ```

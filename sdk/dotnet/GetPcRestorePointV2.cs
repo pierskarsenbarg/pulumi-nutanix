@@ -21,25 +21,16 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Nutanix_pe_username,
-        ///         Password = @var.Nutanix_pe_password,
-        ///         Endpoint = @var.Nutanix_pe_endpoint,
-        ///         Port = "9440",
-        ///         Insecure = true,
-        ///     });
-        /// 
+        ///     // this is PE based module, so use PE provider alias
         ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
         ///     {
-        ///         RestorableDomainManagerExtId = data.Nutanix_restorable_pcs_v2.Test.Restorable_pcs[0].Ext_id,
-        ///         RestoreSourceExtId = nutanix_pc_restore_source_v2.Cluster_location.Id,
-        ///         ExtId = data.Nutanix_pc_restore_points_v2.Test.Restore_points[0].Ext_id,
+        ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
+        ///         RestoreSourceExtId = cluster_location.Id,
+        ///         ExtId = test.RestorePoints[0].ExtId,
         ///     });
         /// 
         /// });
@@ -57,25 +48,16 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Nutanix_pe_username,
-        ///         Password = @var.Nutanix_pe_password,
-        ///         Endpoint = @var.Nutanix_pe_endpoint,
-        ///         Port = "9440",
-        ///         Insecure = true,
-        ///     });
-        /// 
+        ///     // this is PE based module, so use PE provider alias
         ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
         ///     {
-        ///         RestorableDomainManagerExtId = data.Nutanix_restorable_pcs_v2.Test.Restorable_pcs[0].Ext_id,
-        ///         RestoreSourceExtId = nutanix_pc_restore_source_v2.Cluster_location.Id,
-        ///         ExtId = data.Nutanix_pc_restore_points_v2.Test.Restore_points[0].Ext_id,
+        ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
+        ///         RestoreSourceExtId = cluster_location.Id,
+        ///         ExtId = test.RestorePoints[0].ExtId,
         ///     });
         /// 
         /// });
@@ -93,25 +75,16 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Nutanix_pe_username,
-        ///         Password = @var.Nutanix_pe_password,
-        ///         Endpoint = @var.Nutanix_pe_endpoint,
-        ///         Port = "9440",
-        ///         Insecure = true,
-        ///     });
-        /// 
+        ///     // this is PE based module, so use PE provider alias
         ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
         ///     {
-        ///         RestorableDomainManagerExtId = data.Nutanix_restorable_pcs_v2.Test.Restorable_pcs[0].Ext_id,
-        ///         RestoreSourceExtId = nutanix_pc_restore_source_v2.Cluster_location.Id,
-        ///         ExtId = data.Nutanix_pc_restore_points_v2.Test.Restore_points[0].Ext_id,
+        ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
+        ///         RestoreSourceExtId = cluster_location.Id,
+        ///         ExtId = test.RestorePoints[0].ExtId,
         ///     });
         /// 
         /// });

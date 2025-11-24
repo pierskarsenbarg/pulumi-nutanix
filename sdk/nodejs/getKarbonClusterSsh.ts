@@ -13,9 +13,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get ssh credentials by cluster UUID
  * const sshbyid = nutanix.getKarbonClusterSsh({
  *     karbonClusterId: "<YOUR-CLUSTER-ID>",
  * });
+ * // Get ssh credentials by cluster name
  * const sshbyname = nutanix.getKarbonClusterSsh({
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
  * });
@@ -80,9 +82,11 @@ export interface GetKarbonClusterSshResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get ssh credentials by cluster UUID
  * const sshbyid = nutanix.getKarbonClusterSsh({
  *     karbonClusterId: "<YOUR-CLUSTER-ID>",
  * });
+ * // Get ssh credentials by cluster name
  * const sshbyname = nutanix.getKarbonClusterSsh({
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
  * });

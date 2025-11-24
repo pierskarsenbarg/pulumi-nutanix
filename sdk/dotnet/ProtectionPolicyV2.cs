@@ -25,14 +25,12 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var synchronous_protection_policy = new Nutanix.ProtectionPolicyV2("synchronous-protection-policy", new()
     ///     {
-    ///         CategoryIds = new[]
-    ///         {
-    ///             "b08ed184-6b0c-42c1-8179-7b9026fe2676",
-    ///         },
+    ///         Name = "synchronous_protection_policy",
     ///         ReplicationConfigurations = new[]
     ///         {
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationArgs
     ///             {
+    ///                 SourceLocationLabel = "source",
     ///                 RemoteLocationLabel = "target",
     ///                 Schedule = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleArgs
     ///                 {
@@ -40,10 +38,10 @@ namespace PiersKarsenbarg.Nutanix
     ///                     RecoveryPointType = "CRASH_CONSISTENT",
     ///                     SyncReplicationAutoSuspendTimeoutSeconds = 10,
     ///                 },
-    ///                 SourceLocationLabel = "source",
     ///             },
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationArgs
     ///             {
+    ///                 SourceLocationLabel = "target",
     ///                 RemoteLocationLabel = "source",
     ///                 Schedule = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleArgs
     ///                 {
@@ -51,7 +49,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                     RecoveryPointType = "CRASH_CONSISTENT",
     ///                     SyncReplicationAutoSuspendTimeoutSeconds = 10,
     ///                 },
-    ///                 SourceLocationLabel = "target",
     ///             },
     ///         },
     ///         ReplicationLocations = new[]
@@ -59,15 +56,19 @@ namespace PiersKarsenbarg.Nutanix
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationLocationArgs
     ///             {
     ///                 DomainManagerExtId = "6a44b05e-cb9b-4e7e-8d75-b1b4715369c4",
-    ///                 IsPrimary = true,
     ///                 Label = "source",
+    ///                 IsPrimary = true,
     ///             },
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationLocationArgs
     ///             {
     ///                 DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
-    ///                 IsPrimary = false,
     ///                 Label = "target",
+    ///                 IsPrimary = false,
     ///             },
+    ///         },
+    ///         CategoryIds = new[]
+    ///         {
+    ///             "b08ed184-6b0c-42c1-8179-7b9026fe2676",
     ///         },
     ///     });
     /// 
@@ -86,6 +87,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var linear_retention_protection_policy = new Nutanix.ProtectionPolicyV2("linear-retention-protection-policy", new()
     ///     {
+    ///         Name = "linear-retention-protection-policy",
     ///         ReplicationConfigurations = new[]
     ///         {
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationArgs
@@ -138,7 +140,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                     {
     ///                         ClusterExtIds = new[]
     ///                         {
-    ///                             local.ClusterExtId,
+    ///                             clusterExtId,
     ///                         },
     ///                     },
     ///                 },
@@ -172,67 +174,64 @@ namespace PiersKarsenbarg.Nutanix
     ///     // Create Auto Rollup Retention Protection Policy
     ///     var auto_rollup_retention_protection_policy = new Nutanix.ProtectionPolicyV2("auto-rollup-retention-protection-policy", new()
     ///     {
-    ///         CategoryIds = new[]
-    ///         {
-    ///             "b08ed184-6b0c-42c1-8179-7b9026fe2676",
-    ///         },
+    ///         Name = "auto_rollup_retention_protection_policy",
     ///         ReplicationConfigurations = new[]
     ///         {
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationArgs
     ///             {
+    ///                 SourceLocationLabel = "source",
     ///                 RemoteLocationLabel = "target",
     ///                 Schedule = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleArgs
     ///                 {
     ///                     RecoveryPointObjectiveTimeSeconds = 60,
     ///                     RecoveryPointType = "CRASH_CONSISTENT",
+    ///                     SyncReplicationAutoSuspendTimeoutSeconds = 20,
+    ///                     StartTime = "18h:10m",
     ///                     Retention = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs
     ///                     {
     ///                         AutoRollupRetention = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionArgs
     ///                         {
     ///                             Local = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionLocalArgs
     ///                             {
-    ///                                 Frequency = 2,
     ///                                 SnapshotIntervalType = "WEEKLY",
+    ///                                 Frequency = 2,
     ///                             },
     ///                             Remote = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionRemoteArgs
     ///                             {
-    ///                                 Frequency = 1,
     ///                                 SnapshotIntervalType = "DAILY",
+    ///                                 Frequency = 1,
     ///                             },
     ///                         },
     ///                     },
-    ///                     StartTime = "18h:10m",
-    ///                     SyncReplicationAutoSuspendTimeoutSeconds = 20,
     ///                 },
-    ///                 SourceLocationLabel = "source",
     ///             },
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationArgs
     ///             {
+    ///                 SourceLocationLabel = "target",
     ///                 RemoteLocationLabel = "source",
     ///                 Schedule = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleArgs
     ///                 {
     ///                     RecoveryPointObjectiveTimeSeconds = 60,
     ///                     RecoveryPointType = "CRASH_CONSISTENT",
+    ///                     SyncReplicationAutoSuspendTimeoutSeconds = 30,
+    ///                     StartTime = "18h:10m",
     ///                     Retention = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs
     ///                     {
     ///                         AutoRollupRetention = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionArgs
     ///                         {
     ///                             Local = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionLocalArgs
     ///                             {
-    ///                                 Frequency = 1,
     ///                                 SnapshotIntervalType = "DAILY",
+    ///                                 Frequency = 1,
     ///                             },
     ///                             Remote = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionRemoteArgs
     ///                             {
-    ///                                 Frequency = 2,
     ///                                 SnapshotIntervalType = "WEEKLY",
+    ///                                 Frequency = 2,
     ///                             },
     ///                         },
     ///                     },
-    ///                     StartTime = "18h:10m",
-    ///                     SyncReplicationAutoSuspendTimeoutSeconds = 30,
     ///                 },
-    ///                 SourceLocationLabel = "target",
     ///             },
     ///         },
     ///         ReplicationLocations = new[]
@@ -240,15 +239,19 @@ namespace PiersKarsenbarg.Nutanix
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationLocationArgs
     ///             {
     ///                 DomainManagerExtId = "6a44b05e-cb9b-4e7e-8d75-b1b4715369c4",
-    ///                 IsPrimary = true,
     ///                 Label = "source",
+    ///                 IsPrimary = true,
     ///             },
     ///             new Nutanix.Inputs.ProtectionPolicyV2ReplicationLocationArgs
     ///             {
     ///                 DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
-    ///                 IsPrimary = false,
     ///                 Label = "target",
+    ///                 IsPrimary = false,
     ///             },
+    ///         },
+    ///         CategoryIds = new[]
+    ///         {
+    ///             "b08ed184-6b0c-42c1-8179-7b9026fe2676",
     ///         },
     ///     });
     /// 

@@ -19,28 +19,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const exampleCluster = new nutanix.KarbonCluster("exampleCluster", {
- *     cniConfig: {
- *         nodeCidrMaskSize: 24,
- *         podIpv4Cidr: "172.20.0.0/16",
- *         serviceIpv4Cidr: "172.19.0.0/16",
- *     },
- *     etcdNodePool: {
- *         ahvConfig: {
- *             networkUuid: "my_subnet_id",
- *             prismElementClusterUuid: "my_pe_cluster_uuid",
- *         },
- *         nodeOsVersion: "ntnx-1.0",
- *         numInstances: 1,
- *     },
- *     masterNodePool: {
- *         ahvConfig: {
- *             networkUuid: "my_subnet_id",
- *             prismElementClusterUuid: "my_pe_cluster_uuid",
- *         },
- *         nodeOsVersion: "ntnx-1.0",
- *         numInstances: 1,
- *     },
+ * const exampleCluster = new nutanix.KarbonCluster("example_cluster", {
+ *     name: "example_cluster",
+ *     version: "1.18.15-1",
  *     storageClassConfig: {
  *         reclaimPolicy: "Delete",
  *         volumesConfig: {
@@ -52,14 +33,34 @@ import * as utilities from "./utilities";
  *             username: "my_pe_username",
  *         },
  *     },
- *     version: "1.18.15-1",
+ *     cniConfig: {
+ *         nodeCidrMaskSize: 24,
+ *         podIpv4Cidr: "172.20.0.0/16",
+ *         serviceIpv4Cidr: "172.19.0.0/16",
+ *     },
  *     workerNodePool: {
+ *         nodeOsVersion: "ntnx-1.0",
+ *         numInstances: 1,
  *         ahvConfig: {
  *             networkUuid: "my_subnet_id",
  *             prismElementClusterUuid: "my_pe_cluster_uuid",
  *         },
+ *     },
+ *     etcdNodePool: {
  *         nodeOsVersion: "ntnx-1.0",
  *         numInstances: 1,
+ *         ahvConfig: {
+ *             networkUuid: "my_subnet_id",
+ *             prismElementClusterUuid: "my_pe_cluster_uuid",
+ *         },
+ *     },
+ *     masterNodePool: {
+ *         nodeOsVersion: "ntnx-1.0",
+ *         numInstances: 1,
+ *         ahvConfig: {
+ *             networkUuid: "my_subnet_id",
+ *             prismElementClusterUuid: "my_pe_cluster_uuid",
+ *         },
  *     },
  * });
  * ```
@@ -69,28 +70,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const exampleCluster = new nutanix.KarbonCluster("exampleCluster", {
- *     cniConfig: {
- *         nodeCidrMaskSize: 24,
- *         podIpv4Cidr: "172.20.0.0/16",
- *         serviceIpv4Cidr: "172.19.0.0/16",
- *     },
- *     etcdNodePool: {
- *         ahvConfig: {
- *             networkUuid: "my_subnet_id",
- *             prismElementClusterUuid: "my_pe_cluster_uuid",
- *         },
- *         nodeOsVersion: "ntnx-1.0",
- *         numInstances: 1,
- *     },
- *     masterNodePool: {
- *         ahvConfig: {
- *             networkUuid: "my_subnet_id",
- *             prismElementClusterUuid: "my_pe_cluster_uuid",
- *         },
- *         nodeOsVersion: "ntnx-1.0",
- *         numInstances: 1,
- *     },
+ * const exampleCluster = new nutanix.KarbonCluster("example_cluster", {
+ *     name: "example_cluster",
+ *     version: "1.18.15-1",
  *     storageClassConfig: {
  *         reclaimPolicy: "Delete",
  *         volumesConfig: {
@@ -102,14 +84,34 @@ import * as utilities from "./utilities";
  *             username: "my_pe_username",
  *         },
  *     },
- *     version: "1.18.15-1",
+ *     cniConfig: {
+ *         nodeCidrMaskSize: 24,
+ *         podIpv4Cidr: "172.20.0.0/16",
+ *         serviceIpv4Cidr: "172.19.0.0/16",
+ *     },
  *     workerNodePool: {
+ *         nodeOsVersion: "ntnx-1.0",
+ *         numInstances: 1,
  *         ahvConfig: {
  *             networkUuid: "my_subnet_id",
  *             prismElementClusterUuid: "my_pe_cluster_uuid",
  *         },
+ *     },
+ *     etcdNodePool: {
  *         nodeOsVersion: "ntnx-1.0",
  *         numInstances: 1,
+ *         ahvConfig: {
+ *             networkUuid: "my_subnet_id",
+ *             prismElementClusterUuid: "my_pe_cluster_uuid",
+ *         },
+ *     },
+ *     masterNodePool: {
+ *         nodeOsVersion: "ntnx-1.0",
+ *         numInstances: 1,
+ *         ahvConfig: {
+ *             networkUuid: "my_subnet_id",
+ *             prismElementClusterUuid: "my_pe_cluster_uuid",
+ *         },
  *     },
  * });
  * ```

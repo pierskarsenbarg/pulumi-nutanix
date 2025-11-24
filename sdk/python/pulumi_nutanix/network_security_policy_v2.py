@@ -470,6 +470,28 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
 
         ## Example
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # Network Security Policy TWO_ENV_ISOLATION Rule
+        isolation_nsp = nutanix.NetworkSecurityPolicyV2("isolation-nsp",
+            name="isolation_policy",
+            description="isolation policy example",
+            state="SAVE",
+            type="ISOLATION",
+            rules=[{
+                "type": "TWO_ENV_ISOLATION",
+                "specs": [{
+                    "two_env_isolation_rule_specs": [{
+                        "first_isolation_groups": ["ba250e3e-1db1-4950-917f-a9e2ea35b8e3"],
+                        "second_isolation_groups": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
+                    }],
+                }],
+            }],
+            is_hitlog_enabled=True)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A user defined annotation for a policy.
@@ -492,6 +514,28 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         Create a Network Security Policy
 
         ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # Network Security Policy TWO_ENV_ISOLATION Rule
+        isolation_nsp = nutanix.NetworkSecurityPolicyV2("isolation-nsp",
+            name="isolation_policy",
+            description="isolation policy example",
+            state="SAVE",
+            type="ISOLATION",
+            rules=[{
+                "type": "TWO_ENV_ISOLATION",
+                "specs": [{
+                    "two_env_isolation_rule_specs": [{
+                        "first_isolation_groups": ["ba250e3e-1db1-4950-917f-a9e2ea35b8e3"],
+                        "second_isolation_groups": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
+                    }],
+                }],
+            }],
+            is_hitlog_enabled=True)
+        ```
 
         :param str resource_name: The name of the resource.
         :param NetworkSecurityPolicyV2Args args: The arguments to use to populate this resource's properties.

@@ -8,6 +8,25 @@ import * as utilities from "./utilities";
 
 /**
  * Describes a Image
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const testImage = new nutanix.Image("test", {
+ *     name: "Ubuntu",
+ *     description: "Ubuntu",
+ *     sourceUri: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+ * });
+ * const test = nutanix.getImageOutput({
+ *     imageId: testImage.id,
+ * });
+ * const testname = nutanix.getImageOutput({
+ *     imageName: testImage.name,
+ * });
+ * ```
  */
 export function getImage(args?: GetImageArgs, opts?: pulumi.InvokeOptions): Promise<GetImageResult> {
     args = args || {};
@@ -119,6 +138,25 @@ export interface GetImageResult {
 }
 /**
  * Describes a Image
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const testImage = new nutanix.Image("test", {
+ *     name: "Ubuntu",
+ *     description: "Ubuntu",
+ *     sourceUri: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+ * });
+ * const test = nutanix.getImageOutput({
+ *     imageId: testImage.id,
+ * });
+ * const testname = nutanix.getImageOutput({
+ *     imageName: testImage.name,
+ * });
+ * ```
  */
 export function getImageOutput(args?: GetImageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImageResult> {
     args = args || {};

@@ -30,6 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbTag(ctx, "name", &nutanix.NdbTagArgs{
+//				Name:        pulumi.String("testst-up"),
 //				Description: pulumi.String("this is desc ok"),
 //				EntityType:  pulumi.String("DATABASE"),
 //				Required:    pulumi.Bool(true),
@@ -57,6 +58,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbTag(ctx, "name", &nutanix.NdbTagArgs{
+//				Name:        pulumi.String("testst-up"),
 //				Description: pulumi.String("this is desc ok"),
 //				EntityType:  pulumi.String("DATABASE"),
 //				Required:    pulumi.Bool(true),

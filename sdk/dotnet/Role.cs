@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var test = new Nutanix.Role("test", new()
     ///     {
+    ///         Name = "NAME",
     ///         Description = "DESCRIPTION",
     ///         PermissionReferenceLists = new[]
     ///         {

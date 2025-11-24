@@ -25,13 +25,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all templates
         ///     var list_templates = Nutanix.GetTemplatesV2.Invoke();
         /// 
+        ///     // List templates with filter, page and limit
         ///     var filtered_templates = Nutanix.GetTemplatesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -407,13 +409,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all templates
         ///     var list_templates = Nutanix.GetTemplatesV2.Invoke();
         /// 
+        ///     // List templates with filter, page and limit
         ///     var filtered_templates = Nutanix.GetTemplatesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });
@@ -789,13 +793,15 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all templates
         ///     var list_templates = Nutanix.GetTemplatesV2.Invoke();
         /// 
+        ///     // List templates with filter, page and limit
         ///     var filtered_templates = Nutanix.GetTemplatesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
-        ///         Limit = 10,
         ///         Page = 0,
+        ///         Limit = 10,
         ///     });
         /// 
         /// });

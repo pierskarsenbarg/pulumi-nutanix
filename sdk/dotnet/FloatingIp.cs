@@ -44,8 +44,8 @@ namespace PiersKarsenbarg.Nutanix
     ///     var fip2 = new Nutanix.FloatingIp("fip2", new()
     ///     {
     ///         ExternalSubnetReferenceName = "{{ext_sub_name}}",
-    ///         PrivateIp = "{{ip_address}}",
     ///         VpcReferenceName = "{{vpc_name}}",
+    ///         PrivateIp = "{{ip_address}}",
     ///     });
     /// 
     /// });

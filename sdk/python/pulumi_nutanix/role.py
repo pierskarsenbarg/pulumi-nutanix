@@ -296,6 +296,7 @@ class Role(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         test = nutanix.Role("test",
+            name="NAME",
             description="DESCRIPTION",
             permission_reference_lists=[
                 {
@@ -338,6 +339,7 @@ class Role(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         test = nutanix.Role("test",
+            name="NAME",
             description="DESCRIPTION",
             permission_reference_lists=[
                 {

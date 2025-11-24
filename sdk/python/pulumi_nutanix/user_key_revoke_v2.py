@@ -196,8 +196,8 @@ class UserKeyRevokeV2(pulumi.CustomResource):
 
         # revoke key
         revoke_key = nutanix.UserKeyRevokeV2("revoke-key",
-            ext_id="<USER_KEY_UUID>",
-            user_ext_id="<SERVICE_ACCOUNT_UUID>")
+            user_ext_id="<SERVICE_ACCOUNT_UUID>",
+            ext_id="<USER_KEY_UUID>")
         ```
 
         ## Argument Reference
@@ -227,8 +227,8 @@ class UserKeyRevokeV2(pulumi.CustomResource):
 
         # revoke key
         revoke_key = nutanix.UserKeyRevokeV2("revoke-key",
-            ext_id="<USER_KEY_UUID>",
-            user_ext_id="<SERVICE_ACCOUNT_UUID>")
+            user_ext_id="<SERVICE_ACCOUNT_UUID>",
+            ext_id="<USER_KEY_UUID>")
         ```
 
         ## Argument Reference

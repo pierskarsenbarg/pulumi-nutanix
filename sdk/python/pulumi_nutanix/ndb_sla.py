@@ -441,12 +441,13 @@ class NdbSla(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         sla = nutanix.NdbSla("sla",
+            name="test-sla",
+            description="here goes description",
             continuous_retention=30,
             daily_retention=3,
-            description="here goes description",
+            weekly_retention=2,
             monthly_retention=1,
-            quarterly_retention=1,
-            weekly_retention=2)
+            quarterly_retention=1)
         ```
 
         :param str resource_name: The name of the resource.
@@ -476,12 +477,13 @@ class NdbSla(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         sla = nutanix.NdbSla("sla",
+            name="test-sla",
+            description="here goes description",
             continuous_retention=30,
             daily_retention=3,
-            description="here goes description",
+            weekly_retention=2,
             monthly_retention=1,
-            quarterly_retention=1,
-            weekly_retention=2)
+            quarterly_retention=1)
         ```
 
         :param str resource_name: The name of the resource.

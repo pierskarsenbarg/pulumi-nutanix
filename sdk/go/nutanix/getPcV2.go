@@ -27,6 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Fetch a single PC (Domain Manager) by its external ID
 //			_, err := nutanix.GetPcV2(ctx, &nutanix.GetPcV2Args{
 //				ExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
 //			}, nil)

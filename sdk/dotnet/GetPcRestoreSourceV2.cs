@@ -21,21 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     //defining nutanix configuration for PE
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Nutanix_pe_username,
-        ///         Password = @var.Nutanix_pe_password,
-        ///         Endpoint = @var.Nutanix_pe_endpoint,
-        ///         Insecure = true,
-        ///         Port = "9440",
-        ///     });
-        /// 
+        ///     // get the restore source
         ///     var restore_source = Nutanix.GetPcRestoreSourceV2.Invoke(new()
         ///     {
         ///         ExtId = "323860ca-bd10-411e-9fe0-1430b62eaf45",
@@ -56,21 +46,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     //defining nutanix configuration for PE
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Nutanix_pe_username,
-        ///         Password = @var.Nutanix_pe_password,
-        ///         Endpoint = @var.Nutanix_pe_endpoint,
-        ///         Insecure = true,
-        ///         Port = "9440",
-        ///     });
-        /// 
+        ///     // get the restore source
         ///     var restore_source = Nutanix.GetPcRestoreSourceV2.Invoke(new()
         ///     {
         ///         ExtId = "323860ca-bd10-411e-9fe0-1430b62eaf45",
@@ -91,21 +71,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     //defining nutanix configuration for PE
-        ///     var pe = new Nutanix.Provider("pe", new()
-        ///     {
-        ///         Username = @var.Nutanix_pe_username,
-        ///         Password = @var.Nutanix_pe_password,
-        ///         Endpoint = @var.Nutanix_pe_endpoint,
-        ///         Insecure = true,
-        ///         Port = "9440",
-        ///     });
-        /// 
+        ///     // get the restore source
         ///     var restore_source = Nutanix.GetPcRestoreSourceV2.Invoke(new()
         ///     {
         ///         ExtId = "323860ca-bd10-411e-9fe0-1430b62eaf45",

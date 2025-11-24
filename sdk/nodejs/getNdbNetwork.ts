@@ -8,17 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Describes a network in Nutanix Database Service
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const nw = nutanix.getNdbNetwork({
- *     id: "{{ id of network }}",
- * });
- * ```
  */
 export function getNdbNetwork(args?: GetNdbNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbNetworkResult> {
     args = args || {};
@@ -90,17 +79,6 @@ export interface GetNdbNetworkResult {
 }
 /**
  * Describes a network in Nutanix Database Service
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const nw = nutanix.getNdbNetwork({
- *     id: "{{ id of network }}",
- * });
- * ```
  */
 export function getNdbNetworkOutput(args?: GetNdbNetworkOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbNetworkResult> {
     args = args || {};

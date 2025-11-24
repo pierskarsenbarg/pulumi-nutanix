@@ -654,10 +654,11 @@ class NdbDatabaseScale(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
+        # resource to scale the database
         scale = nutanix.NdbDatabaseScale("scale",
             application_type="{{ Application Type }}",
-            data_storage_size=1,
-            database_uuid="{{ database_id }}")
+            database_uuid="{{ database_id }}",
+            data_storage_size=1)
         ```
 
         :param str resource_name: The name of the resource.
@@ -685,10 +686,11 @@ class NdbDatabaseScale(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
+        # resource to scale the database
         scale = nutanix.NdbDatabaseScale("scale",
             application_type="{{ Application Type }}",
-            data_storage_size=1,
-            database_uuid="{{ database_id }}")
+            database_uuid="{{ database_id }}",
+            data_storage_size=1)
         ```
 
         :param str resource_name: The name of the resource.

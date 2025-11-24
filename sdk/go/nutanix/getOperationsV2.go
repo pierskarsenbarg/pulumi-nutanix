@@ -27,19 +27,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// list operations
 //			_, err := nutanix.GetOperationsV2(ctx, &nutanix.GetOperationsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// filtered list operation
 //			_, err = nutanix.GetOperationsV2(ctx, &nutanix.GetOperationsV2Args{
 //				Filter: pulumi.StringRef("displayName eq 'Create_Role'"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			// list operations withe page and limit
 //			_, err = nutanix.GetOperationsV2(ctx, &nutanix.GetOperationsV2Args{
-//				Limit: pulumi.IntRef(10),
 //				Page:  pulumi.IntRef(1),
+//				Limit: pulumi.IntRef(10),
 //			}, nil)
 //			if err != nil {
 //				return err

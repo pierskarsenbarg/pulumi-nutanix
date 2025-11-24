@@ -29,16 +29,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNgtInstallationV2(ctx, "example", &nutanix.NgtInstallationV2Args{
-//				Capablities: pulumi.StringArray{
-//					pulumi.String("VSS_SNAPSHOT"),
-//				},
-//				Credential: &nutanix.NgtInstallationV2CredentialArgs{
-//					Password: pulumi.String("pass.1234567890"),
-//					Username: pulumi.String("username"),
-//				},
 //				ExtId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//				Credential: &nutanix.NgtInstallationV2CredentialArgs{
+//					Username: pulumi.String("username"),
+//					Password: pulumi.String("pass.1234567890"),
+//				},
 //				RebootPreference: &nutanix.NgtInstallationV2RebootPreferenceArgs{
 //					ScheduleType: pulumi.String("IMMEDIATE"),
+//				},
+//				Capablities: pulumi.StringArray{
+//					pulumi.String("VSS_SNAPSHOT"),
 //				},
 //			})
 //			if err != nil {

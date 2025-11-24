@@ -12,37 +12,6 @@ import (
 )
 
 // Describes the clone present in Nutanix Database Service
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupNdbClone(ctx, &nutanix.LookupNdbCloneArgs{
-//				CloneName: pulumi.StringRef("test-inst-tf-check"),
-//				Filters: []nutanix.GetNdbCloneFilter{
-//					{
-//						Detailed: pulumi.StringRef("true"),
-//					},
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupNdbClone(ctx *pulumi.Context, args *LookupNdbCloneArgs, opts ...pulumi.InvokeOption) (*LookupNdbCloneResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNdbCloneResult

@@ -28,13 +28,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewStaticRoutes(ctx, "scn", &nutanix.StaticRoutesArgs{
+//				VpcUuid: pulumi.String("{{vpc_uuid}}"),
 //				StaticRoutesLists: nutanix.StaticRoutesStaticRoutesListArray{
 //					&nutanix.StaticRoutesStaticRoutesListArgs{
 //						Destination:                 pulumi.String("10.x.x.x/x"),
 //						ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
 //					},
 //				},
-//				VpcUuid: pulumi.String("{{vpc_uuid}}"),
 //			})
 //			if err != nil {
 //				return err
@@ -60,18 +60,18 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewStaticRoutes(ctx, "scn", &nutanix.StaticRoutesArgs{
-//				DefaultRouteNexthops: nutanix.StaticRoutesDefaultRouteNexthopArray{
-//					&nutanix.StaticRoutesDefaultRouteNexthopArgs{
-//						ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
-//					},
-//				},
+//				VpcName: pulumi.String("{{vpc_name}}"),
 //				StaticRoutesLists: nutanix.StaticRoutesStaticRoutesListArray{
 //					&nutanix.StaticRoutesStaticRoutesListArgs{
 //						Destination:                 pulumi.String("10.x.x.x/x"),
 //						ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
 //					},
 //				},
-//				VpcName: pulumi.String("{{vpc_name}}"),
+//				DefaultRouteNexthops: nutanix.StaticRoutesDefaultRouteNexthopArray{
+//					&nutanix.StaticRoutesDefaultRouteNexthopArgs{
+//						ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err

@@ -523,10 +523,10 @@ def get_ndb_snapshot(filters: Optional[Sequence[Union['GetNdbSnapshotFilterArgs'
     import pulumi
     import pulumi_nutanix as nutanix
 
-    snaps = nutanix.get_ndb_snapshot(filters=[{
+    snaps = nutanix.get_ndb_snapshot(snapshot_id="{{ snapshot_id }}",
+        filters=[{
             "load_replicated_child_snapshots": "true",
-        }],
-        snapshot_id="{{ snapshot_id }}")
+        }])
     ```
 
 
@@ -596,10 +596,10 @@ def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_nutanix as nutanix
 
-    snaps = nutanix.get_ndb_snapshot(filters=[{
+    snaps = nutanix.get_ndb_snapshot(snapshot_id="{{ snapshot_id }}",
+        filters=[{
             "load_replicated_child_snapshots": "true",
-        }],
-        snapshot_id="{{ snapshot_id }}")
+        }])
     ```
 
 

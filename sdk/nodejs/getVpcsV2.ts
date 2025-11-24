@@ -15,14 +15,17 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get all VPCs
  * const list_vpcs = nutanix.getVpcsV2({});
+ * // Get all VPCs with filter
  * const list_vpcs_with_filter = nutanix.getVpcsV2({
  *     filter: "vpcType eq 'VLAN'",
  * });
+ * // Get all VPCs with order by and limit and filter
  * const list_vpcs_with_order_by_limit_filter = nutanix.getVpcsV2({
  *     filter: "vpcType eq 'VLAN'",
- *     limit: 10,
  *     orderBy: "name desc",
+ *     limit: 10,
  * });
  * ```
  *
@@ -145,14 +148,17 @@ export interface GetVpcsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // Get all VPCs
  * const list_vpcs = nutanix.getVpcsV2({});
+ * // Get all VPCs with filter
  * const list_vpcs_with_filter = nutanix.getVpcsV2({
  *     filter: "vpcType eq 'VLAN'",
  * });
+ * // Get all VPCs with order by and limit and filter
  * const list_vpcs_with_order_by_limit_filter = nutanix.getVpcsV2({
  *     filter: "vpcType eq 'VLAN'",
- *     limit: 10,
  *     orderBy: "name desc",
+ *     limit: 10,
  * });
  * ```
  *

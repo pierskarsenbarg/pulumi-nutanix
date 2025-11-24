@@ -19,14 +19,6 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * //defining nutanix configuration for PE
- * const pe = new nutanix.Provider("pe", {
- *     username: _var.nutanix_pe_username,
- *     password: _var.nutanix_pe_password,
- *     endpoint: _var.nutanix_pe_endpoint,
- *     insecure: true,
- *     port: "9440",
- * });
  * // restore source is auto-deleted after sometime, nutanix_pc_restore_source_v2 resource is auto-create
  * // new restore source if it was deleted, so notice that the id of the restore source will be different
  * // after recreation
@@ -36,9 +28,7 @@ import * as utilities from "./utilities";
  *             extId: "323860ca-bd10-411e-9fe0-1430b62eaf45",
  *         }],
  *     }],
- * }}, {
- *     provider: nutanix.pe,
- * });
+ * }});
  * ```
  *
  * ### Object Store Location

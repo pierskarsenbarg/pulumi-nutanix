@@ -30,6 +30,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewVpc(ctx, "vpc", &nutanix.VpcArgs{
+//				Name: pulumi.String("testtNew-1"),
+//				ExternalSubnetReferenceNames: pulumi.StringArray{
+//					pulumi.String("test-Ext1"),
+//					pulumi.String("test-ext2"),
+//				},
 //				CommonDomainNameServerIpLists: nutanix.VpcCommonDomainNameServerIpListArray{
 //					&nutanix.VpcCommonDomainNameServerIpListArgs{
 //						Ip: pulumi.String("8.8.8.8"),
@@ -37,10 +42,6 @@ import (
 //					&nutanix.VpcCommonDomainNameServerIpListArgs{
 //						Ip: pulumi.String("8.8.8.9"),
 //					},
-//				},
-//				ExternalSubnetReferenceNames: pulumi.StringArray{
-//					pulumi.String("test-Ext1"),
-//					pulumi.String("test-ext2"),
 //				},
 //				ExternallyRoutablePrefixLists: nutanix.VpcExternallyRoutablePrefixListArray{
 //					&nutanix.VpcExternallyRoutablePrefixListArgs{
@@ -73,13 +74,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewVpc(ctx, "vpc", &nutanix.VpcArgs{
+//				Name: pulumi.String("testtNew-1"),
+//				ExternalSubnetReferenceUuids: pulumi.StringArray{
+//					pulumi.String("<subnet_uuid>"),
+//				},
 //				CommonDomainNameServerIpLists: nutanix.VpcCommonDomainNameServerIpListArray{
 //					&nutanix.VpcCommonDomainNameServerIpListArgs{
 //						Ip: pulumi.String("8.8.8.8"),
 //					},
-//				},
-//				ExternalSubnetReferenceUuids: pulumi.StringArray{
-//					pulumi.String("<subnet_uuid>"),
 //				},
 //				ExternallyRoutablePrefixLists: nutanix.VpcExternallyRoutablePrefixListArray{
 //					&nutanix.VpcExternallyRoutablePrefixListArgs{

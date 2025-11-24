@@ -12,6 +12,40 @@ import (
 )
 
 // Describes a Image
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			testImage, err := nutanix.NewImage(ctx, "test", &nutanix.ImageArgs{
+//				Name:        pulumi.String("Ubuntu"),
+//				Description: pulumi.String("Ubuntu"),
+//				SourceUri:   pulumi.String("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_ = nutanix.LookupImageOutput(ctx, nutanix.GetImageOutputArgs{
+//				ImageId: testImage.ID(),
+//			}, nil)
+//			_ = nutanix.LookupImageOutput(ctx, nutanix.GetImageOutputArgs{
+//				ImageName: testImage.Name,
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupImage(ctx *pulumi.Context, args *LookupImageArgs, opts ...pulumi.InvokeOption) (*LookupImageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupImageResult

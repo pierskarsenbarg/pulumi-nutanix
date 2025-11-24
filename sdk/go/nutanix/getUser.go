@@ -12,6 +12,45 @@ import (
 )
 
 // Provides a datasource to retrieve a user based on the input parameters.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			userUser, err := nutanix.NewUser(ctx, "user", &nutanix.UserArgs{
+//				DirectoryServiceUser: &nutanix.UserDirectoryServiceUserArgs{
+//					UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
+//					DirectoryServiceReference: &nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs{
+//						Uuid: pulumi.String("<directory-service-uuid>"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// Retrieve by UUID
+//			_ = nutanix.LookupUserOutput(ctx, nutanix.GetUserOutputArgs{
+//				UserId: userUser.ID(),
+//			}, nil)
+//			// Retrieve by Name
+//			_ = nutanix.LookupUserOutput(ctx, nutanix.GetUserOutputArgs{
+//				UserName: userUser.Name,
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupUser(ctx *pulumi.Context, args *LookupUserArgs, opts ...pulumi.InvokeOption) (*LookupUserResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupUserResult

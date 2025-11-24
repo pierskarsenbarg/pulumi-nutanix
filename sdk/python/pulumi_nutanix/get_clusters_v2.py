@@ -144,8 +144,8 @@ def get_clusters_v2(apply: Optional[_builtins.str] = None,
 
     cls = nutanix.get_clusters_v2()
     filtered_cls = nutanix.get_clusters_v2(filter="name eq 'cluster-1'")
-    paged_cls = nutanix.get_clusters_v2(limit=10,
-        page=1)
+    paged_cls = nutanix.get_clusters_v2(page=1,
+        limit=10)
     ```
 
 
@@ -234,8 +234,8 @@ def get_clusters_v2_output(apply: Optional[pulumi.Input[Optional[_builtins.str]]
 
     cls = nutanix.get_clusters_v2()
     filtered_cls = nutanix.get_clusters_v2(filter="name eq 'cluster-1'")
-    paged_cls = nutanix.get_clusters_v2(limit=10,
-        page=1)
+    paged_cls = nutanix.get_clusters_v2(page=1,
+        limit=10)
     ```
 
 

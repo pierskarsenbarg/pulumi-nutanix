@@ -82,7 +82,9 @@ def get_pcs_v2(select: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Fetch all PCs (Domain Managers)
     pcs = nutanix.get_pcs_v2()
+    # List all PCs (Domain Managers) with selected properties
     pcs_select = nutanix.get_pcs_v2(select="config,extId")
     ```
 
@@ -235,7 +237,9 @@ def get_pcs_v2_output(select: Optional[pulumi.Input[Optional[_builtins.str]]] = 
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Fetch all PCs (Domain Managers)
     pcs = nutanix.get_pcs_v2()
+    # List all PCs (Domain Managers) with selected properties
     pcs_select = nutanix.get_pcs_v2(select="config,extId")
     ```
 

@@ -25,13 +25,17 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var test = new Nutanix.Image("test", new()
     ///     {
+    ///         Name = "Ubuntu",
     ///         Description = "Ubuntu",
     ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
     ///     });
     /// 
     ///     // Create image with data_source_reference
-    ///     var createImageWithDataSourceReference = new Nutanix.Image("createImageWithDataSourceReference", new()
+    ///     var createImageWithDataSourceReference = new Nutanix.Image("create_image_with_data_source_reference", new()
     ///     {
+    ///         Name = "Sql Server Image",
+    ///         Description = "Sql Server",
+    ///         ImageType = "DISK_IMAGE",
     ///         DataSourceReferences = new[]
     ///         {
     ///             new Nutanix.Inputs.ImageDataSourceReferenceArgs
@@ -40,8 +44,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Uuid = "&lt;uuid of the vm disk&gt;",
     ///             },
     ///         },
-    ///         Description = "Sql Server",
-    ///         ImageType = "DISK_IMAGE",
     ///     });
     /// 
     /// });

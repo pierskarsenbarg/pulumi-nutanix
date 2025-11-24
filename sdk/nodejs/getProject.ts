@@ -17,6 +17,7 @@ import * as utilities from "./utilities";
  *
  * const subnet = new nutanix.Subnet("subnet", {
  *     clusterUuid: "<YOUR_CLUSTER_ID>",
+ *     name: "sunet_test_name",
  *     description: "Description of my unit test VLAN",
  *     vlanId: 31,
  *     subnetType: "VLAN",
@@ -37,7 +38,8 @@ import * as utilities from "./utilities";
  *         "terraform.unit.test.com",
  *     ],
  * });
- * const projectTest = new nutanix.Project("projectTest", {
+ * const projectTest = new nutanix.Project("project_test", {
+ *     name: "my-project",
  *     description: "This is my project",
  *     categories: [{
  *         name: "Environment",
@@ -217,6 +219,7 @@ export interface GetProjectResult {
  *
  * const subnet = new nutanix.Subnet("subnet", {
  *     clusterUuid: "<YOUR_CLUSTER_ID>",
+ *     name: "sunet_test_name",
  *     description: "Description of my unit test VLAN",
  *     vlanId: 31,
  *     subnetType: "VLAN",
@@ -237,7 +240,8 @@ export interface GetProjectResult {
  *         "terraform.unit.test.com",
  *     ],
  * });
- * const projectTest = new nutanix.Project("projectTest", {
+ * const projectTest = new nutanix.Project("project_test", {
+ *     name: "my-project",
  *     description: "This is my project",
  *     categories: [{
  *         name: "Environment",

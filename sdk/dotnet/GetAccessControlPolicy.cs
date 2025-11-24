@@ -14,18 +14,108 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes an Access Control Policy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccessControlPolicy = new Nutanix.AccessControlPolicy("test", new()
+        ///     {
+        ///         Name = "NAME OF ACCESS CONTROL POLICY",
+        ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///         RoleReference = new Nutanix.Inputs.AccessControlPolicyRoleReferenceArgs
+        ///         {
+        ///             Kind = "role",
+        ///             Uuid = "UUID of role",
+        ///         },
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetAccessControlPolicy.Invoke(new()
+        ///     {
+        ///         AccessControlPolicyId = testAccessControlPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetAccessControlPolicyResult> InvokeAsync(GetAccessControlPolicyArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes an Access Control Policy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccessControlPolicy = new Nutanix.AccessControlPolicy("test", new()
+        ///     {
+        ///         Name = "NAME OF ACCESS CONTROL POLICY",
+        ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///         RoleReference = new Nutanix.Inputs.AccessControlPolicyRoleReferenceArgs
+        ///         {
+        ///             Kind = "role",
+        ///             Uuid = "UUID of role",
+        ///         },
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetAccessControlPolicy.Invoke(new()
+        ///     {
+        ///         AccessControlPolicyId = testAccessControlPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAccessControlPolicyResult> Invoke(GetAccessControlPolicyInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes an Access Control Policy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccessControlPolicy = new Nutanix.AccessControlPolicy("test", new()
+        ///     {
+        ///         Name = "NAME OF ACCESS CONTROL POLICY",
+        ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///         RoleReference = new Nutanix.Inputs.AccessControlPolicyRoleReferenceArgs
+        ///         {
+        ///             Kind = "role",
+        ///             Uuid = "UUID of role",
+        ///         },
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetAccessControlPolicy.Invoke(new()
+        ///     {
+        ///         AccessControlPolicyId = testAccessControlPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAccessControlPolicyResult> Invoke(GetAccessControlPolicyInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyInvokeArgs(), options.WithDefaults());

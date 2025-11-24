@@ -180,6 +180,30 @@ def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCatego
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    recovery_plan_test = nutanix.RecoveryPlan("recovery_plan_test",
+        name="%s",
+        description="%s",
+        stage_lists=[{
+            "stage_work": {
+                "recover_entities": {
+                    "entity_info_lists": [{
+                        "categories": [{
+                            "name": "Environment",
+                            "value": "Dev",
+                        }],
+                    }],
+                },
+            },
+            "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+            "delay_time_secs": 0,
+        }],
+        parameters={})
+    ```
+
 
     :param _builtins.str recovery_plan_id: - (Required) The `id` of the Recovery Plan.
     """
@@ -212,6 +236,30 @@ def get_recovery_plan_output(categories: Optional[pulumi.Input[Optional[Sequence
     Describe a Nutanix Recovery Plan and its values (if it has them).
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    recovery_plan_test = nutanix.RecoveryPlan("recovery_plan_test",
+        name="%s",
+        description="%s",
+        stage_lists=[{
+            "stage_work": {
+                "recover_entities": {
+                    "entity_info_lists": [{
+                        "categories": [{
+                            "name": "Environment",
+                            "value": "Dev",
+                        }],
+                    }],
+                },
+            },
+            "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+            "delay_time_secs": 0,
+        }],
+        parameters={})
+    ```
 
 
     :param _builtins.str recovery_plan_id: - (Required) The `id` of the Recovery Plan.

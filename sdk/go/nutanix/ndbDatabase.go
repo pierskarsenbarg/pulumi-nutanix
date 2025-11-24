@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbDatabase(ctx, "dbp", &nutanix.NdbDatabaseArgs{
 //				Databasetype:             pulumi.String("postgres_database"),
+//				Name:                     pulumi.String("test-inst"),
 //				Description:              pulumi.String("add description"),
 //				Softwareprofileid:        pulumi.String("{{ software_profile_id }}"),
 //				Softwareprofileversionid: pulumi.String("{{ software_profile_version_id }}"),
@@ -43,7 +44,7 @@ import (
 //					DbPassword:    pulumi.String("password"),
 //					DatabaseNames: pulumi.String("testdb1"),
 //				},
-//				Nxclusterid:  pulumi.Any(local.Clusters.EraCluster.Id),
+//				Nxclusterid:  pulumi.Any(clusters.EraCluster.Id),
 //				Sshpublickey: pulumi.String("{{ ssh-public-key }}"),
 //				Nodes: nutanix.NdbDatabaseNodeArray{
 //					&nutanix.NdbDatabaseNodeArgs{
@@ -98,6 +99,174 @@ import (
 //
 // ### NDB database resource to provision HA instance with new database server VM
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbDatabase(ctx, "dbp", &nutanix.NdbDatabaseArgs{
+//				Databasetype:             pulumi.String("postgres_database"),
+//				Name:                     pulumi.String("test-pg-inst-HA-tf"),
+//				Description:              pulumi.String("adding description"),
+//				Softwareprofileid:        pulumi.String("{{ software_profile_id }}"),
+//				Softwareprofileversionid: pulumi.String("{{ software_profile_version_id }}"),
+//				Computeprofileid:         pulumi.String("{{ compute_profile_id }}"),
+//				Networkprofileid:         pulumi.String("{{ network_profile_id }}"),
+//				Dbparameterprofileid:     pulumi.String("{{ db_parameter_profile_id }}"),
+//				Createdbserver:           pulumi.Bool(true),
+//				Clustered:                pulumi.Bool(true),
+//				Nodecount:                pulumi.Int(4),
+//				PostgresqlInfo: &nutanix.NdbDatabasePostgresqlInfoArgs{
+//					ListenerPort:  pulumi.String("5432"),
+//					DatabaseSize:  pulumi.String("200"),
+//					DbPassword:    pulumi.String("{{ database password}}"),
+//					DatabaseNames: pulumi.String("testdb1"),
+//					HaInstance: &nutanix.NdbDatabasePostgresqlInfoHaInstanceArgs{
+//						ProxyReadPort:      pulumi.String("5001"),
+//						ProxyWritePort:     pulumi.String("5000"),
+//						ClusterName:        pulumi.String("{{ cluster_name }}"),
+//						PatroniClusterName: pulumi.String(" {{ patroni_cluster_name }}"),
+//					},
+//				},
+//				Nxclusterid:  pulumi.String("1c42ca25-32f4-42d9-a2bd-6a21f925b725"),
+//				Sshpublickey: pulumi.String("{{ ssh_public_key }}"),
+//				Nodes: nutanix.NdbDatabaseNodeArray{
+//					&nutanix.NdbDatabaseNodeArgs{
+//						Properties: nutanix.NdbDatabaseNodePropertyArray{
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("node_type"),
+//								Value: pulumi.String("haproxy"),
+//							},
+//						},
+//						Vmname:      pulumi.String("{{ vm name }}"),
+//						NxClusterId: pulumi.String("{{ nx_cluster_id }}"),
+//					},
+//					&nutanix.NdbDatabaseNodeArgs{
+//						Properties: nutanix.NdbDatabaseNodePropertyArray{
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("role"),
+//								Value: pulumi.String("Primary"),
+//							},
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("failover_mode"),
+//								Value: pulumi.String("Automatic"),
+//							},
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("node_type"),
+//								Value: pulumi.String("database"),
+//							},
+//						},
+//						Vmname:           pulumi.String("{{ name of vm }}"),
+//						Networkprofileid: pulumi.String("{{ network_profile_id }}"),
+//						Computeprofileid: pulumi.String("{{ compute_profile_id }}"),
+//						NxClusterId:      pulumi.String("{{ nx_cluster_id }}"),
+//					},
+//					&nutanix.NdbDatabaseNodeArgs{
+//						Properties: nutanix.NdbDatabaseNodePropertyArray{
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("role"),
+//								Value: pulumi.String("Secondary"),
+//							},
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("failover_mode"),
+//								Value: pulumi.String("Automatic"),
+//							},
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("node_type"),
+//								Value: pulumi.String("database"),
+//							},
+//						},
+//						Vmname:           pulumi.String("{{ name of vm }}"),
+//						Networkprofileid: pulumi.String("{{ network_profile_id }}"),
+//						Computeprofileid: pulumi.String("{{ compute_profile_id }}"),
+//						NxClusterId:      pulumi.String("{{ nx_cluster_id }}"),
+//					},
+//					&nutanix.NdbDatabaseNodeArgs{
+//						Properties: nutanix.NdbDatabaseNodePropertyArray{
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("role"),
+//								Value: pulumi.String("Secondary"),
+//							},
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("failover_mode"),
+//								Value: pulumi.String("Automatic"),
+//							},
+//							&nutanix.NdbDatabaseNodePropertyArgs{
+//								Name:  pulumi.String("node_type"),
+//								Value: pulumi.String("database"),
+//							},
+//						},
+//						Vmname:           pulumi.String("{{ name of vm }}"),
+//						Networkprofileid: pulumi.String("{{ network_profile_id }}"),
+//						Computeprofileid: pulumi.String("{{ compute_profile_id }}"),
+//						NxClusterId:      pulumi.String("{{ nx_cluster_id }}"),
+//					},
+//				},
+//				Timemachineinfo: &nutanix.NdbDatabaseTimemachineinfoArgs{
+//					Name:        pulumi.String("test-pg-inst-HA"),
+//					Description: pulumi.String(""),
+//					SlaDetails: nutanix.NdbDatabaseTimemachineinfoSlaDetailArray{
+//						&nutanix.NdbDatabaseTimemachineinfoSlaDetailArgs{
+//							PrimarySlas: nutanix.NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArray{
+//								&nutanix.NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgs{
+//									SlaId: pulumi.String("{{ required SLA}}0"),
+//									NxClusterIds: pulumi.StringArray{
+//										pulumi.String("{{ nx_cluster_id}}"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//					Schedule: &nutanix.NdbDatabaseTimemachineinfoScheduleArgs{
+//						Snapshottimeofday: &nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs{
+//							Hours:   pulumi.Int(16),
+//							Minutes: pulumi.Int(0),
+//							Seconds: pulumi.Int(0),
+//						},
+//						Continuousschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs{
+//							Enabled:           pulumi.Bool(true),
+//							Logbackupinterval: pulumi.Int(30),
+//							Snapshotsperday:   pulumi.Int(1),
+//						},
+//						Weeklyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs{
+//							Enabled:   pulumi.Bool(true),
+//							Dayofweek: pulumi.String("WEDNESDAY"),
+//						},
+//						Monthlyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs{
+//							Enabled:    pulumi.Bool(true),
+//							Dayofmonth: pulumi.Int(27),
+//						},
+//						Quartelyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs{
+//							Enabled:    pulumi.Bool(true),
+//							Startmonth: pulumi.String("JANUARY"),
+//							Dayofmonth: pulumi.Int(27),
+//						},
+//						Yearlyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs{
+//							Enabled:    pulumi.Bool(false),
+//							Dayofmonth: pulumi.Int(31),
+//							Month:      pulumi.String("DECEMBER"),
+//						},
+//					},
+//				},
+//				VmPassword:           pulumi.String("{{ vm_password}}"),
+//				Autotunestagingdrive: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ### NDB database resource with registered database server VM
 //
 // ```go
@@ -113,62 +282,63 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewNdbDatabase(ctx, "dbp", &nutanix.NdbDatabaseArgs{
+//				Databasetype:         pulumi.String("postgres_database"),
+//				Name:                 pulumi.String("test-inst"),
+//				Description:          pulumi.String("add description"),
+//				Dbparameterprofileid: pulumi.String("{{ db_parameter_profile_id }}"),
+//				DbserverId:           pulumi.String("{{ dbserver_id }}"),
+//				Createdbserver:       pulumi.Bool(false),
+//				PostgresqlInfo: &nutanix.NdbDatabasePostgresqlInfoArgs{
+//					ListenerPort:  pulumi.String("{{ listner_port }}"),
+//					DatabaseSize:  pulumi.String("{{ 200 }}"),
+//					DbPassword:    pulumi.String("password"),
+//					DatabaseNames: pulumi.String("testdb1"),
+//				},
 //				Actionarguments: nutanix.NdbDatabaseActionargumentArray{
 //					&nutanix.NdbDatabaseActionargumentArgs{
 //						Name:  pulumi.String("host_ip"),
 //						Value: pulumi.String("{{ hostIP }}"),
 //					},
 //				},
-//				Createdbserver:       pulumi.Bool(false),
-//				Databasetype:         pulumi.String("postgres_database"),
-//				Dbparameterprofileid: pulumi.String("{{ db_parameter_profile_id }}"),
-//				DbserverId:           pulumi.String("{{ dbserver_id }}"),
-//				Description:          pulumi.String("add description"),
 //				Nodes: nutanix.NdbDatabaseNodeArray{
 //					&nutanix.NdbDatabaseNodeArgs{
 //						Dbserverid: pulumi.String("{{ dbserver_id }}"),
 //					},
 //				},
-//				PostgresqlInfo: &nutanix.NdbDatabasePostgresqlInfoArgs{
-//					DatabaseNames: pulumi.String("testdb1"),
-//					DatabaseSize:  pulumi.String("{{ 200 }}"),
-//					DbPassword:    pulumi.String("password"),
-//					ListenerPort:  pulumi.String("{{ listner_port }}"),
-//				},
 //				Timemachineinfo: &nutanix.NdbDatabaseTimemachineinfoArgs{
-//					Description: pulumi.String("description of time machine"),
 //					Name:        pulumi.String("test-pg-inst"),
+//					Description: pulumi.String("description of time machine"),
+//					Slaid:       pulumi.String("{{ sla_id }}"),
 //					Schedule: &nutanix.NdbDatabaseTimemachineinfoScheduleArgs{
-//						Continuousschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs{
-//							Enabled:           pulumi.Bool(true),
-//							Logbackupinterval: pulumi.Int(30),
-//							Snapshotsperday:   pulumi.Int(1),
-//						},
-//						Monthlyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs{
-//							Dayofmonth: pulumi.Int(27),
-//							Enabled:    pulumi.Bool(true),
-//						},
-//						Quartelyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs{
-//							Dayofmonth: pulumi.Int(27),
-//							Enabled:    pulumi.Bool(true),
-//							Startmonth: pulumi.String("JANUARY"),
-//						},
 //						Snapshottimeofday: &nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs{
 //							Hours:   pulumi.Int(16),
 //							Minutes: pulumi.Int(0),
 //							Seconds: pulumi.Int(0),
 //						},
+//						Continuousschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs{
+//							Enabled:           pulumi.Bool(true),
+//							Logbackupinterval: pulumi.Int(30),
+//							Snapshotsperday:   pulumi.Int(1),
+//						},
 //						Weeklyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs{
-//							Dayofweek: pulumi.String("WEDNESDAY"),
 //							Enabled:   pulumi.Bool(true),
+//							Dayofweek: pulumi.String("WEDNESDAY"),
+//						},
+//						Monthlyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs{
+//							Enabled:    pulumi.Bool(true),
+//							Dayofmonth: pulumi.Int(27),
+//						},
+//						Quartelyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs{
+//							Enabled:    pulumi.Bool(true),
+//							Startmonth: pulumi.String("JANUARY"),
+//							Dayofmonth: pulumi.Int(27),
 //						},
 //						Yearlyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs{
-//							Dayofmonth: pulumi.Int(31),
 //							Enabled:    pulumi.Bool(false),
+//							Dayofmonth: pulumi.Int(31),
 //							Month:      pulumi.String("DECEMBER"),
 //						},
 //					},
-//					Slaid: pulumi.String("{{ sla_id }}"),
 //				},
 //			})
 //			if err != nil {

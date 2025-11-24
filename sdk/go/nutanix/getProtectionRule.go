@@ -27,7 +27,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			protectionRuleTest, err := nutanix.NewProtectionRule(ctx, "protectionRuleTest", &nutanix.ProtectionRuleArgs{
+//			protectionRuleTest, err := nutanix.NewProtectionRule(ctx, "protection_rule_test", &nutanix.ProtectionRuleArgs{
+//				Name:        pulumi.String("test"),
 //				Description: pulumi.String("test"),
 //				OrderedAvailabilityZoneLists: nutanix.ProtectionRuleOrderedAvailabilityZoneListArray{
 //					&nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs{

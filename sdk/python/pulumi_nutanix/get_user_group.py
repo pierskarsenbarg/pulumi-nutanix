@@ -226,8 +226,11 @@ def get_user_group(categories: Optional[Sequence[Union['GetUserGroupCategoryArgs
     import pulumi
     import pulumi_nutanix as nutanix
 
+    #Retrieve by UUID
     usergroup = nutanix.get_user_group(user_group_id="dd30a856-8e72-4158-b716-98455ceda220")
+    #Retrieve by Name
     usergroupbyname = nutanix.get_user_group(user_group_name="example-group-1")
+    #Retrieve by Distinguished Name
     test = nutanix.get_user_group(user_group_distinguished_name="cn=example-group-1,cn=users,dc=ntnxlab,dc=local")
     ```
 
@@ -281,8 +284,11 @@ def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
     import pulumi
     import pulumi_nutanix as nutanix
 
+    #Retrieve by UUID
     usergroup = nutanix.get_user_group(user_group_id="dd30a856-8e72-4158-b716-98455ceda220")
+    #Retrieve by Name
     usergroupbyname = nutanix.get_user_group(user_group_name="example-group-1")
+    #Retrieve by Distinguished Name
     test = nutanix.get_user_group(user_group_distinguished_name="cn=example-group-1,cn=users,dc=ntnxlab,dc=local")
     ```
 

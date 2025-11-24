@@ -222,6 +222,24 @@ def get_user(categories: Optional[Sequence[Union['GetUserCategoryArgs', 'GetUser
     """
     Provides a datasource to retrieve a user based on the input parameters.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    user_user = nutanix.User("user", directory_service_user={
+        "user_principal_name": "test-user@ntnxlab.local",
+        "directory_service_reference": {
+            "uuid": "<directory-service-uuid>",
+        },
+    })
+    #Retrieve by UUID
+    user = nutanix.get_user_output(user_id=user_user.id)
+    #Retrieve by Name
+    userbyname = nutanix.get_user_output(user_name=user_user.name)
+    ```
+
 
     :param Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']] categories: - (Optional) Categories for the Access Control Policy.
     :param Mapping[str, _builtins.str] owner_reference: - (Optional) The reference to a user.
@@ -260,6 +278,24 @@ def get_user_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserResult]:
     """
     Provides a datasource to retrieve a user based on the input parameters.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    user_user = nutanix.User("user", directory_service_user={
+        "user_principal_name": "test-user@ntnxlab.local",
+        "directory_service_reference": {
+            "uuid": "<directory-service-uuid>",
+        },
+    })
+    #Retrieve by UUID
+    user = nutanix.get_user_output(user_id=user_user.id)
+    #Retrieve by Name
+    userbyname = nutanix.get_user_output(user_name=user_user.name)
+    ```
 
 
     :param Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']] categories: - (Optional) Categories for the Access Control Policy.

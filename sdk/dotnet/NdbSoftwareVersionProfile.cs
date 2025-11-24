@@ -26,7 +26,8 @@ namespace PiersKarsenbarg.Nutanix
     ///     var name = new Nutanix.NdbSoftwareVersionProfile("name", new()
     ///     {
     ///         EngineType = "postgres_database",
-    ///         ProfileId = resource.Nutanix_ndb_profile.Name12.Id,
+    ///         ProfileId = nutanixNdbProfile.Name12.Id,
+    ///         Name = "test-tf",
     ///         Description = "made  by tf",
     ///         PostgresDatabases = new[]
     ///         {

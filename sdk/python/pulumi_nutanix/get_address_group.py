@@ -121,7 +121,8 @@ def get_address_group(uuid: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    test_address = nutanix.AddressGroup("testAddress",
+    test_address = nutanix.AddressGroup("test_address",
+        name="test",
         description="test address groups resource",
         ip_address_block_lists=[{
             "ip": "10.0.0.0",
@@ -156,7 +157,8 @@ def get_address_group_output(uuid: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    test_address = nutanix.AddressGroup("testAddress",
+    test_address = nutanix.AddressGroup("test_address",
+        name="test",
         description="test address groups resource",
         ip_address_block_lists=[{
             "ip": "10.0.0.0",

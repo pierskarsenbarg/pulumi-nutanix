@@ -27,11 +27,11 @@ namespace PiersKarsenbarg.Nutanix
     ///     {
     ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
     ///         {
+    ///             UserPrincipalName = "test-user@ntnxlab.local",
     ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
     ///             {
     ///                 Uuid = "&lt;directory-service-uuid&gt;",
     ///             },
-    ///             UserPrincipalName = "test-user@ntnxlab.local",
     ///         },
     ///     });
     /// 
@@ -50,11 +50,11 @@ namespace PiersKarsenbarg.Nutanix
     ///     {
     ///         IdentityProviderUser = new Nutanix.Inputs.UserIdentityProviderUserArgs
     ///         {
+    ///             Username = "username",
     ///             IdentityProviderReference = new Nutanix.Inputs.UserIdentityProviderUserIdentityProviderReferenceArgs
     ///             {
     ///                 Uuid = "&lt;identity-provider-uuid&gt;",
     ///             },
-    ///             Username = "username",
     ///         },
     ///     });
     /// 

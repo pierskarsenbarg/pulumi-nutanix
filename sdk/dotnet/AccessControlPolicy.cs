@@ -14,6 +14,102 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a resource to create an access control policy based on the input parameters.
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Nutanix.AccessControlPolicy("test", new()
+    ///     {
+    ///         Name = "NAME OF ACCESS CONTROL POLICY",
+    ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+    ///         RoleReference = new Nutanix.Inputs.AccessControlPolicyRoleReferenceArgs
+    ///         {
+    ///             Kind = "role",
+    ///             Uuid = "UUID of role",
+    ///         },
+    ///         UserReferenceLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.AccessControlPolicyUserReferenceListArgs
+    ///             {
+    ///                 Uuid = "UUID of User existent",
+    ///                 Name = "admin",
+    ///             },
+    ///         },
+    ///         ContextFilterLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.AccessControlPolicyContextFilterListArgs
+    ///             {
+    ///                 EntityFilterExpressionLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
+    ///                     {
+    ///                         Operator = "IN",
+    ///                         LeftHandSideEntityType = "cluster",
+    ///                         RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
+    ///                         {
+    ///                             UuidLists = new[]
+    ///                             {
+    ///                                 "00058ef8-c31c-f0bc-0000-000000007b23",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
+    ///                     {
+    ///                         Operator = "IN",
+    ///                         LeftHandSideEntityType = "image",
+    ///                         RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
+    ///                         {
+    ///                             Collection = "ALL",
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
+    ///                     {
+    ///                         Operator = "IN",
+    ///                         LeftHandSideEntityType = "category",
+    ///                         RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
+    ///                         {
+    ///                             Collection = "ALL",
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
+    ///                     {
+    ///                         Operator = "IN",
+    ///                         LeftHandSideEntityType = "marketplace_item",
+    ///                         RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
+    ///                         {
+    ///                             Collection = "SELF_OWNED",
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
+    ///                     {
+    ///                         Operator = "IN",
+    ///                         LeftHandSideEntityType = "app_task",
+    ///                         RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
+    ///                         {
+    ///                             Collection = "SELF_OWNED",
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
+    ///                     {
+    ///                         Operator = "IN",
+    ///                         LeftHandSideEntityType = "app_variable",
+    ///                         RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
+    ///                         {
+    ///                             Collection = "SELF_OWNED",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/accessControlPolicy:AccessControlPolicy")]
     public partial class AccessControlPolicy : global::Pulumi.CustomResource

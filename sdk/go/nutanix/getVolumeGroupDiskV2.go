@@ -27,9 +27,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the details of a Volume Disk attached to the Volume Group.
 //			_, err := nutanix.LookupVolumeGroupDiskV2(ctx, &nutanix.LookupVolumeGroupDiskV2Args{
-//				ExtId:            "1d92110d-26b5-46c0-8c93-20b8171373e0",
 //				VolumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+//				ExtId:            "1d92110d-26b5-46c0-8c93-20b8171373e0",
 //			}, nil)
 //			if err != nil {
 //				return err

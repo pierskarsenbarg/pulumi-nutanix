@@ -29,14 +29,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewKarbonWorkerNodepool(ctx, "kworkerNp", &nutanix.KarbonWorkerNodepoolArgs{
+//				ClusterName:  pulumi.String("karbon"),
+//				Name:         pulumi.String("workerpool1"),
+//				NumInstances: pulumi.Int(1),
 //				AhvConfig: &nutanix.KarbonWorkerNodepoolAhvConfigArgs{
 //					Cpu:         pulumi.Int(4),
 //					DiskMib:     pulumi.Int(122880),
 //					MemoryMib:   pulumi.Int(8192),
 //					NetworkUuid: pulumi.String("61213511-6383-4a38-9ac8-4a552c0e5865"),
 //				},
-//				ClusterName:  pulumi.String("karbon"),
-//				NumInstances: pulumi.Int(1),
 //			})
 //			if err != nil {
 //				return err
@@ -60,18 +61,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewKarbonWorkerNodepool(ctx, "kworkerNp", &nutanix.KarbonWorkerNodepoolArgs{
+//				ClusterName:  pulumi.String("karbon"),
+//				Name:         pulumi.String("workerpool1"),
+//				NumInstances: pulumi.Int(1),
 //				AhvConfig: &nutanix.KarbonWorkerNodepoolAhvConfigArgs{
 //					Cpu:         pulumi.Int(4),
 //					DiskMib:     pulumi.Int(122880),
 //					MemoryMib:   pulumi.Int(8192),
 //					NetworkUuid: pulumi.String("61213511-6383-4a38-9ac8-4a552c0e5865"),
 //				},
-//				ClusterName: pulumi.String("karbon"),
 //				Labels: pulumi.StringMap{
 //					"k1": pulumi.String("v1"),
 //					"k2": pulumi.String("v2"),
 //				},
-//				NumInstances: pulumi.Int(1),
 //			})
 //			if err != nil {
 //				return err

@@ -271,6 +271,30 @@ class RecoveryPlan(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        recovery_plan_test = nutanix.RecoveryPlan("recovery_plan_test",
+            name="%s",
+            description="%s",
+            stage_lists=[{
+                "stage_work": {
+                    "recover_entities": {
+                        "entity_info_lists": [{
+                            "categories": [{
+                                "name": "Environment",
+                                "value": "Dev",
+                            }],
+                        }],
+                    },
+                },
+                "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+                "delay_time_secs": 0,
+            }],
+            parameters={})
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A description for Recovery Plan.
@@ -286,6 +310,30 @@ class RecoveryPlan(pulumi.CustomResource):
         Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        recovery_plan_test = nutanix.RecoveryPlan("recovery_plan_test",
+            name="%s",
+            description="%s",
+            stage_lists=[{
+                "stage_work": {
+                    "recover_entities": {
+                        "entity_info_lists": [{
+                            "categories": [{
+                                "name": "Environment",
+                                "value": "Dev",
+                            }],
+                        }],
+                    },
+                },
+                "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+                "delay_time_secs": 0,
+            }],
+            parameters={})
+        ```
 
         :param str resource_name: The name of the resource.
         :param RecoveryPlanArgs args: The arguments to use to populate this resource's properties.

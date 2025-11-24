@@ -15,26 +15,28 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //# resource for cloning using Point in time given time machine name
  * const name = new nutanix.NdbClone("name", {
- *     computeProfileId: "{{ compute_profile_id }}",
+ *     timeMachineName: "test-pg-inst",
+ *     name: "test-inst-tf-check",
+ *     nxClusterId: "{{ nx_Cluster_id }}",
+ *     sshPublicKey: "{{ sshkey }}",
+ *     userPitrTimestamp: "{{ point_in_time }}",
+ *     timeZone: "Asia/Calcutta",
  *     createDbserver: true,
- *     databaseParameterProfileId: "{{ databse_profile_id }}",
+ *     computeProfileId: "{{ compute_profile_id }}",
  *     networkProfileId: "{{ network_profile_id }}",
+ *     databaseParameterProfileId: "{{ databse_profile_id }}",
  *     nodes: [{
+ *         vmName: "test_vm_clone",
  *         computeProfileId: "{{ compute_profile_id }}",
  *         networkProfileId: "{{ network_profile_id }}",
  *         nxClusterId: "{{ nx_Cluster_id }}",
- *         vmName: "test_vm_clone",
  *     }],
- *     nxClusterId: "{{ nx_Cluster_id }}",
  *     postgresqlInfos: [{
- *         dbPassword: "pass",
  *         vmName: "test_vm_clone",
+ *         dbPassword: "pass",
  *     }],
- *     sshPublicKey: "{{ sshkey }}",
- *     timeMachineName: "test-pg-inst",
- *     timeZone: "Asia/Calcutta",
- *     userPitrTimestamp: "{{ point_in_time }}",
  * });
  * ```
  */

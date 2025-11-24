@@ -165,17 +165,18 @@ class ServiceGroup(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         test = nutanix.ServiceGroup("test",
+            name="test_service_gp",
             description="this is service group",
             service_lists=[{
                 "protocol": "TCP",
                 "tcp_port_range_lists": [
                     {
-                        "end_port": 22,
                         "start_port": 22,
+                        "end_port": 22,
                     },
                     {
-                        "end_port": 2222,
                         "start_port": 2222,
+                        "end_port": 2222,
                     },
                 ],
             }])
@@ -203,17 +204,18 @@ class ServiceGroup(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         test = nutanix.ServiceGroup("test",
+            name="test_service_gp",
             description="this is service group",
             service_lists=[{
                 "protocol": "TCP",
                 "tcp_port_range_lists": [
                     {
-                        "end_port": 22,
                         "start_port": 22,
+                        "end_port": 22,
                     },
                     {
-                        "end_port": 2222,
                         "start_port": 2222,
+                        "end_port": 2222,
                     },
                 ],
             }])

@@ -27,9 +27,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// vm recovery point details
 //			_, err := nutanix.GetVmRecoveryPointInfoV2(ctx, &nutanix.GetVmRecoveryPointInfoV2Args{
-//				ExtId:              "85ac418e-c847-45ab-9816-40a3c4de148c",
 //				RecoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+//				ExtId:              "85ac418e-c847-45ab-9816-40a3c4de148c",
 //			}, nil)
 //			if err != nil {
 //				return err

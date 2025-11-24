@@ -14,6 +14,54 @@ namespace PiersKarsenbarg.Nutanix
     /// Create a Network Security Policy
     /// 
     /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // Network Security Policy TWO_ENV_ISOLATION Rule
+    ///     var isolation_nsp = new Nutanix.NetworkSecurityPolicyV2("isolation-nsp", new()
+    ///     {
+    ///         Name = "isolation_policy",
+    ///         Description = "isolation policy example",
+    ///         State = "SAVE",
+    ///         Type = "ISOLATION",
+    ///         Rules = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityPolicyV2RuleArgs
+    ///             {
+    ///                 Type = "TWO_ENV_ISOLATION",
+    ///                 Specs = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NetworkSecurityPolicyV2RuleSpecArgs
+    ///                     {
+    ///                         TwoEnvIsolationRuleSpecs = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.NetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpecArgs
+    ///                             {
+    ///                                 FirstIsolationGroups = new[]
+    ///                                 {
+    ///                                     "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///                                 },
+    ///                                 SecondIsolationGroups = new[]
+    ///                                 {
+    ///                                     "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         IsHitlogEnabled = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2")]
     public partial class NetworkSecurityPolicyV2 : global::Pulumi.CustomResource

@@ -240,7 +240,7 @@ class UserGroups(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        user_grp = nutanix.UserGroups("userGrp", directory_service_user_groups=[{
+        user_grp = nutanix.UserGroups("user_grp", directory_service_user_groups=[{
             "distinguished_name": "<distinguished name for the user group>",
         }])
         ```
@@ -249,9 +249,9 @@ class UserGroups(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        user_grp = nutanix.UserGroups("userGrp", saml_user_groups=[{
-            "idp_uuid": "<idp uuid of the group>",
+        user_grp = nutanix.UserGroups("user_grp", saml_user_groups=[{
             "name": "<name of saml group>",
+            "idp_uuid": "<idp uuid of the group>",
         }])
         ```
 
@@ -276,7 +276,7 @@ class UserGroups(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        user_grp = nutanix.UserGroups("userGrp", directory_service_user_groups=[{
+        user_grp = nutanix.UserGroups("user_grp", directory_service_user_groups=[{
             "distinguished_name": "<distinguished name for the user group>",
         }])
         ```
@@ -285,9 +285,9 @@ class UserGroups(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        user_grp = nutanix.UserGroups("userGrp", saml_user_groups=[{
-            "idp_uuid": "<idp uuid of the group>",
+        user_grp = nutanix.UserGroups("user_grp", saml_user_groups=[{
             "name": "<name of saml group>",
+            "idp_uuid": "<idp uuid of the group>",
         }])
         ```
 

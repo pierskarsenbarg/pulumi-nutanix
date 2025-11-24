@@ -15,16 +15,16 @@ import * as utilities from "./utilities";
  *
  * // Enable Auto Inventory, Add Auto Inventory Schedule and enable auto upgrade
  * const lcm_configuration_update = new nutanix.LcmConfigV2("lcm-configuration-update", {
+ *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+ *     isAutoInventoryEnabled: true,
  *     autoInventorySchedule: "16:30",
  *     hasModuleAutoUpgradeEnabled: true,
- *     isAutoInventoryEnabled: true,
- *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
  * });
  * // Update the LCM url to darksite server
  * const lcm_configuration_update_connectivity_type = new nutanix.LcmConfigV2("lcm-configuration-update-connectivity-type", {
- *     connectivityType: "DARKSITE_WEB_SERVER",
- *     url: "https://x.x.x.x:8000/builds",
  *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+ *     url: "https://x.x.x.x:8000/builds",
+ *     connectivityType: "DARKSITE_WEB_SERVER",
  * });
  * ```
  */

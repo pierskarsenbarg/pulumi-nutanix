@@ -25,14 +25,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all virtual machines
         ///     var list_vms = Nutanix.GetVirtualMachinesV2.Invoke();
         /// 
+        ///     // List virtual machines with  page and limit
         ///     var paged_vms = Nutanix.GetVirtualMachinesV2.Invoke(new()
         ///     {
-        ///         Limit = 2,
         ///         Page = 0,
+        ///         Limit = 2,
         ///     });
         /// 
+        ///     // List virtual machines with filter
         ///     var filtered_vms = Nutanix.GetVirtualMachinesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example-vm-filter'",
@@ -361,14 +364,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all virtual machines
         ///     var list_vms = Nutanix.GetVirtualMachinesV2.Invoke();
         /// 
+        ///     // List virtual machines with  page and limit
         ///     var paged_vms = Nutanix.GetVirtualMachinesV2.Invoke(new()
         ///     {
-        ///         Limit = 2,
         ///         Page = 0,
+        ///         Limit = 2,
         ///     });
         /// 
+        ///     // List virtual machines with filter
         ///     var filtered_vms = Nutanix.GetVirtualMachinesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example-vm-filter'",
@@ -697,14 +703,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // List all virtual machines
         ///     var list_vms = Nutanix.GetVirtualMachinesV2.Invoke();
         /// 
+        ///     // List virtual machines with  page and limit
         ///     var paged_vms = Nutanix.GetVirtualMachinesV2.Invoke(new()
         ///     {
-        ///         Limit = 2,
         ///         Page = 0,
+        ///         Limit = 2,
         ///     });
         /// 
+        ///     // List virtual machines with filter
         ///     var filtered_vms = Nutanix.GetVirtualMachinesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example-vm-filter'",

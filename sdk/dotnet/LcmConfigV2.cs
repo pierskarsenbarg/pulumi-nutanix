@@ -26,18 +26,18 @@ namespace PiersKarsenbarg.Nutanix
     ///     // Enable Auto Inventory, Add Auto Inventory Schedule and enable auto upgrade
     ///     var lcm_configuration_update = new Nutanix.LcmConfigV2("lcm-configuration-update", new()
     ///     {
+    ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+    ///         IsAutoInventoryEnabled = true,
     ///         AutoInventorySchedule = "16:30",
     ///         HasModuleAutoUpgradeEnabled = true,
-    ///         IsAutoInventoryEnabled = true,
-    ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
     ///     });
     /// 
     ///     // Update the LCM url to darksite server
     ///     var lcm_configuration_update_connectivity_type = new Nutanix.LcmConfigV2("lcm-configuration-update-connectivity-type", new()
     ///     {
-    ///         ConnectivityType = "DARKSITE_WEB_SERVER",
-    ///         Url = "https://x.x.x.x:8000/builds",
     ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+    ///         Url = "https://x.x.x.x:8000/builds",
+    ///         ConnectivityType = "DARKSITE_WEB_SERVER",
     ///     });
     /// 
     /// });

@@ -26,6 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     // Associate categories to volume group
     ///     var example = new Nutanix.AssociateCategoryToVolumeGroupV2("example", new()
     ///     {
+    ///         ExtId = "f0c0a4ac-c734-4770-b5d7-eca6793eeeb7",
     ///         Categories = new[]
     ///         {
     ///             new Nutanix.Inputs.AssociateCategoryToVolumeGroupV2CategoryArgs
@@ -41,10 +42,8 @@ namespace PiersKarsenbarg.Nutanix
     ///                 ExtId = "1c6638f2-5215-4086-8f21-a30e75cb8068",
     ///             },
     ///         },
-    ///         ExtId = "f0c0a4ac-c734-4770-b5d7-eca6793eeeb7",
     ///     });
     /// 
-    ///     // Volume Group extId
     /// });
     /// ```
     /// </summary>

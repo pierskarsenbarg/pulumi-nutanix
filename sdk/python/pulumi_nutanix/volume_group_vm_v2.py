@@ -173,9 +173,9 @@ class VolumeGroupVmV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        vg_vm_example = nutanix.VolumeGroupVmV2("vgVmExample",
-            vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
-            volume_group_ext_id="1cdb5b48-fb2c-41b6-b751-b504117ee3e2")
+        vg_vm_example = nutanix.VolumeGroupVmV2("vg_vm_example",
+            volume_group_ext_id="1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
+            vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
 
         :param str resource_name: The name of the resource.
@@ -202,9 +202,9 @@ class VolumeGroupVmV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        vg_vm_example = nutanix.VolumeGroupVmV2("vgVmExample",
-            vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
-            volume_group_ext_id="1cdb5b48-fb2c-41b6-b751-b504117ee3e2")
+        vg_vm_example = nutanix.VolumeGroupVmV2("vg_vm_example",
+            volume_group_ext_id="1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
+            vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
 
         :param str resource_name: The name of the resource.

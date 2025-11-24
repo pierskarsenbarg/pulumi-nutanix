@@ -17,6 +17,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const name = new nutanix.NdbStretchedVlan("name", {
+ *     name: "test-stretcName",
  *     description: "vlan desc updated",
  *     type: "Static",
  *     vlanIds: [
@@ -32,16 +33,17 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const name = new nutanix.NdbStretchedVlan("name", {
+ *     name: "test-stretcName",
  *     description: "vlan desc updated",
- *     metadata: {
- *         gateway: "{{ gateway of vlans }}",
- *         subnetMask: "{{ subnet mask of vlans }}",
- *     },
  *     type: "Static",
  *     vlanIds: [
  *         "{{ vlan_id_1 }}",
  *         "{{ vlan_id_2 }}",
  *     ],
+ *     metadata: {
+ *         gateway: "{{ gateway of vlans }}",
+ *         subnetMask: "{{ subnet mask of vlans }}",
+ *     },
  * });
  * ```
  */

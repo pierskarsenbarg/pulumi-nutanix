@@ -16,17 +16,18 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = new nutanix.ServiceGroup("test", {
+ *     name: "test_service_gp",
  *     description: "this is service group",
  *     serviceLists: [{
  *         protocol: "TCP",
  *         tcpPortRangeLists: [
  *             {
- *                 endPort: 22,
  *                 startPort: 22,
+ *                 endPort: 22,
  *             },
  *             {
- *                 endPort: 2222,
  *                 startPort: 2222,
+ *                 endPort: 2222,
  *             },
  *         ],
  *     }],

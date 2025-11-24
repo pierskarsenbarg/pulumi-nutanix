@@ -13,15 +13,17 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const usrGroup = new nutanix.UserGroupsV2("usrGroup", {
- *     distinguishedName: "cn=group_0664229e,ou=group,dc=devtest,dc=local",
+ * const usrGroup = new nutanix.UserGroupsV2("usr_group", {
  *     groupType: "LDAP",
  *     idpId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ *     name: "group_0664229e",
+ *     distinguishedName: "cn=group_0664229e,ou=group,dc=devtest,dc=local",
  * });
  * // Saml User group
  * const saml_ug = new nutanix.UserGroupsV2("saml-ug", {
  *     groupType: "SAML",
  *     idpId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+ *     name: "adfs19admingroup",
  * });
  * ```
  */

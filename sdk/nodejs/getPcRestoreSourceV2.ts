@@ -15,14 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * //defining nutanix configuration for PE
- * const pe = new nutanix.Provider("pe", {
- *     username: _var.nutanix_pe_username,
- *     password: _var.nutanix_pe_password,
- *     endpoint: _var.nutanix_pe_endpoint,
- *     insecure: true,
- *     port: "9440",
- * });
+ * // get the restore source
  * const restore_source = nutanix.getPcRestoreSourceV2({
  *     extId: "323860ca-bd10-411e-9fe0-1430b62eaf45",
  * });
@@ -79,14 +72,7 @@ export interface GetPcRestoreSourceV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * //defining nutanix configuration for PE
- * const pe = new nutanix.Provider("pe", {
- *     username: _var.nutanix_pe_username,
- *     password: _var.nutanix_pe_password,
- *     endpoint: _var.nutanix_pe_endpoint,
- *     insecure: true,
- *     port: "9440",
- * });
+ * // get the restore source
  * const restore_source = nutanix.getPcRestoreSourceV2({
  *     extId: "323860ca-bd10-411e-9fe0-1430b62eaf45",
  * });

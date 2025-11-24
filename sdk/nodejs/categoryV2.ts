@@ -16,9 +16,9 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const example = new nutanix.CategoryV2("example", {
- *     description: "category example description",
  *     key: "category_example_key",
  *     value: "category_example_value",
+ *     description: "category example description",
  * });
  * ```
  */

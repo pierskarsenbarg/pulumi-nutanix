@@ -182,8 +182,9 @@ def get_vm_recovery_point_info_v2(disk_recovery_points: Optional[Sequence[Union[
     import pulumi
     import pulumi_nutanix as nutanix
 
-    rp_vm_info = nutanix.get_vm_recovery_point_info_v2(ext_id="85ac418e-c847-45ab-9816-40a3c4de148c",
-        recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18")
+    # vm recovery point details
+    rp_vm_info = nutanix.get_vm_recovery_point_info_v2(recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18",
+        ext_id="85ac418e-c847-45ab-9816-40a3c4de148c")
     ```
 
 
@@ -223,8 +224,9 @@ def get_vm_recovery_point_info_v2_output(disk_recovery_points: Optional[pulumi.I
     import pulumi
     import pulumi_nutanix as nutanix
 
-    rp_vm_info = nutanix.get_vm_recovery_point_info_v2(ext_id="85ac418e-c847-45ab-9816-40a3c4de148c",
-        recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18")
+    # vm recovery point details
+    rp_vm_info = nutanix.get_vm_recovery_point_info_v2(recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18",
+        ext_id="85ac418e-c847-45ab-9816-40a3c4de148c")
     ```
 
 

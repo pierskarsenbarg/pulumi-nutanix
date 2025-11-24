@@ -30,6 +30,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Add Directory Service .
 //			_, err := nutanix.NewDirectoryServicesV2(ctx, "active-directory", &nutanix.DirectoryServicesV2Args{
+//				Name:          pulumi.String("example_active_directory"),
 //				Url:           pulumi.String("ldap://10.xx.xx.xx:xxxx"),
 //				DirectoryType: pulumi.String("ACTIVE_DIRECTORY"),
 //				DomainName:    pulumi.String("nutanix.com"),

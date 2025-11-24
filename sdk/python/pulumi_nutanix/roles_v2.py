@@ -373,6 +373,7 @@ class RolesV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
+        # filtered list operation
         operations_filtered_list = nutanix.get_operations_v2(filter="startswith(displayName, 'Create_')")
         # Create role
         example_role = nutanix.RolesV2("example-role",
@@ -409,6 +410,7 @@ class RolesV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
+        # filtered list operation
         operations_filtered_list = nutanix.get_operations_v2(filter="startswith(displayName, 'Create_')")
         # Create role
         example_role = nutanix.RolesV2("example-role",

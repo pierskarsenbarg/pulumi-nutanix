@@ -14,12 +14,13 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const sla = new nutanix.NdbSla("sla", {
+ *     name: "test-sla",
+ *     description: "here goes description",
  *     continuousRetention: 30,
  *     dailyRetention: 3,
- *     description: "here goes description",
+ *     weeklyRetention: 2,
  *     monthlyRetention: 1,
  *     quarterlyRetention: 1,
- *     weeklyRetention: 2,
  * });
  * ```
  */

@@ -6,15 +6,6 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a resource to perform the log cactup for database instance based on the input parameters.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const name = new nutanix.NdbLogCatchups("name", {databaseId: "{{ DatabaseID }}"});
- * ```
  */
 export class NdbLogCatchups extends pulumi.CustomResource {
     /**

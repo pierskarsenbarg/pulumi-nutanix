@@ -32,11 +32,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			isolation, err := nutanix.NewNetworkSecurityRule(ctx, "isolation", &nutanix.NetworkSecurityRuleArgs{
+//				Name:                pulumi.String("example-isolation-rule"),
 //				Description:         pulumi.String("Isolation Rule Example"),
 //				IsolationRuleAction: pulumi.String("APPLY"),
 //				IsolationRuleFirstEntityFilterKindLists: pulumi.StringArray{
 //					pulumi.String("vm"),
 //				},
+//				IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
 //				IsolationRuleFirstEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArray{
 //					&nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs{
 //						Name: pulumi.String("Environment"),
@@ -45,10 +47,10 @@ import (
 //						},
 //					},
 //				},
-//				IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
 //				IsolationRuleSecondEntityFilterKindLists: pulumi.StringArray{
 //					pulumi.String("vm"),
 //				},
+//				IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
 //				IsolationRuleSecondEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArray{
 //					&nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs{
 //						Name: pulumi.String("Environment"),
@@ -57,7 +59,6 @@ import (
 //						},
 //					},
 //				},
-//				IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
 //			})
 //			if err != nil {
 //				return err

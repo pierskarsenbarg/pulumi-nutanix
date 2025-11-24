@@ -27,7 +27,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			testAddress, err := nutanix.NewAddressGroup(ctx, "testAddress", &nutanix.AddressGroupArgs{
+//			testAddress, err := nutanix.NewAddressGroup(ctx, "test_address", &nutanix.AddressGroupArgs{
+//				Name:        pulumi.String("test"),
 //				Description: pulumi.String("test address groups resource"),
 //				IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
 //					&nutanix.AddressGroupIpAddressBlockListArgs{

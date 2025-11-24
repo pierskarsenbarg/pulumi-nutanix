@@ -10,6 +10,31 @@ import * as utilities from "./utilities";
  * Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const recoveryPlanTest = new nutanix.RecoveryPlan("recovery_plan_test", {
+ *     name: "%s",
+ *     description: "%s",
+ *     stageLists: [{
+ *         stageWork: {
+ *             recoverEntities: {
+ *                 entityInfoLists: [{
+ *                     categories: [{
+ *                         name: "Environment",
+ *                         value: "Dev",
+ *                     }],
+ *                 }],
+ *             },
+ *         },
+ *         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+ *         delayTimeSecs: 0,
+ *     }],
+ *     parameters: {},
+ * });
+ * ```
  */
 export class RecoveryPlan extends pulumi.CustomResource {
     /**

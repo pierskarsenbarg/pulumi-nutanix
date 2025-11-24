@@ -32,12 +32,14 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
         ///     {
+        ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
         ///         IsolationRuleAction = "APPLY",
         ///         IsolationRuleFirstEntityFilterKindLists = new[]
         ///         {
         ///             "vm",
         ///         },
+        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleFirstEntityFilterParams = new[]
         ///         {
         ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
@@ -49,11 +51,11 @@ namespace PiersKarsenbarg.Nutanix
         ///                 },
         ///             },
         ///         },
-        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleSecondEntityFilterKindLists = new[]
         ///         {
         ///             "vm",
         ///         },
+        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleSecondEntityFilterParams = new[]
         ///         {
         ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
@@ -65,7 +67,6 @@ namespace PiersKarsenbarg.Nutanix
         ///                 },
         ///             },
         ///         },
-        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///     });
         /// 
         ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
@@ -99,12 +100,14 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
         ///     {
+        ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
         ///         IsolationRuleAction = "APPLY",
         ///         IsolationRuleFirstEntityFilterKindLists = new[]
         ///         {
         ///             "vm",
         ///         },
+        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleFirstEntityFilterParams = new[]
         ///         {
         ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
@@ -116,11 +119,11 @@ namespace PiersKarsenbarg.Nutanix
         ///                 },
         ///             },
         ///         },
-        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleSecondEntityFilterKindLists = new[]
         ///         {
         ///             "vm",
         ///         },
+        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleSecondEntityFilterParams = new[]
         ///         {
         ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
@@ -132,7 +135,6 @@ namespace PiersKarsenbarg.Nutanix
         ///                 },
         ///             },
         ///         },
-        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///     });
         /// 
         ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
@@ -166,12 +168,14 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
         ///     {
+        ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
         ///         IsolationRuleAction = "APPLY",
         ///         IsolationRuleFirstEntityFilterKindLists = new[]
         ///         {
         ///             "vm",
         ///         },
+        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleFirstEntityFilterParams = new[]
         ///         {
         ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
@@ -183,11 +187,11 @@ namespace PiersKarsenbarg.Nutanix
         ///                 },
         ///             },
         ///         },
-        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleSecondEntityFilterKindLists = new[]
         ///         {
         ///             "vm",
         ///         },
+        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///         IsolationRuleSecondEntityFilterParams = new[]
         ///         {
         ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
@@ -199,7 +203,6 @@ namespace PiersKarsenbarg.Nutanix
         ///                 },
         ///             },
         ///         },
-        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
         ///     });
         /// 
         ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()

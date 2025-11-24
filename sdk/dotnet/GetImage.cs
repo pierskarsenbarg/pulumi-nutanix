@@ -14,18 +14,111 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes a Image
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testImage = new Nutanix.Image("test", new()
+        ///     {
+        ///         Name = "Ubuntu",
+        ///         Description = "Ubuntu",
+        ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetImage.Invoke(new()
+        ///     {
+        ///         ImageId = testImage.Id,
+        ///     });
+        /// 
+        ///     var testname = Nutanix.GetImage.Invoke(new()
+        ///     {
+        ///         ImageName = testImage.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetImageResult> InvokeAsync(GetImageArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImageResult>("nutanix:index/getImage:getImage", args ?? new GetImageArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Image
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testImage = new Nutanix.Image("test", new()
+        ///     {
+        ///         Name = "Ubuntu",
+        ///         Description = "Ubuntu",
+        ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetImage.Invoke(new()
+        ///     {
+        ///         ImageId = testImage.Id,
+        ///     });
+        /// 
+        ///     var testname = Nutanix.GetImage.Invoke(new()
+        ///     {
+        ///         ImageName = testImage.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetImageResult> Invoke(GetImageInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageResult>("nutanix:index/getImage:getImage", args ?? new GetImageInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Image
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testImage = new Nutanix.Image("test", new()
+        ///     {
+        ///         Name = "Ubuntu",
+        ///         Description = "Ubuntu",
+        ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetImage.Invoke(new()
+        ///     {
+        ///         ImageId = testImage.Id,
+        ///     });
+        /// 
+        ///     var testname = Nutanix.GetImage.Invoke(new()
+        ///     {
+        ///         ImageName = testImage.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetImageResult> Invoke(GetImageInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageResult>("nutanix:index/getImage:getImage", args ?? new GetImageInvokeArgs(), options.WithDefaults());

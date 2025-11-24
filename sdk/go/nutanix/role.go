@@ -29,6 +29,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewRole(ctx, "test", &nutanix.RoleArgs{
+//				Name:        pulumi.String("NAME"),
 //				Description: pulumi.String("DESCRIPTION"),
 //				PermissionReferenceLists: nutanix.RolePermissionReferenceListArray{
 //					&nutanix.RolePermissionReferenceListArgs{

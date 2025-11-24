@@ -1277,6 +1277,7 @@ class NdbDatabase(pulumi.CustomResource):
 
         dbp = nutanix.NdbDatabase("dbp",
             databasetype="postgres_database",
+            name="test-inst",
             description="add description",
             softwareprofileid="{{ software_profile_id }}",
             softwareprofileversionid="{{ software_profile_version_id }}",
@@ -1289,7 +1290,7 @@ class NdbDatabase(pulumi.CustomResource):
                 "db_password": "password",
                 "database_names": "testdb1",
             },
-            nxclusterid=local["clusters"]["EraCluster"]["id"],
+            nxclusterid=clusters["EraCluster"]["id"],
             sshpublickey="{{ ssh-public-key }}",
             nodes=[{
                 "vmname": "test-era-vm1",
@@ -1334,6 +1335,150 @@ class NdbDatabase(pulumi.CustomResource):
 
         ### NDB database resource to provision HA instance with new database server VM
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        dbp = nutanix.NdbDatabase("dbp",
+            databasetype="postgres_database",
+            name="test-pg-inst-HA-tf",
+            description="adding description",
+            softwareprofileid="{{ software_profile_id }}",
+            softwareprofileversionid="{{ software_profile_version_id }}",
+            computeprofileid="{{ compute_profile_id }}",
+            networkprofileid="{{ network_profile_id }}",
+            dbparameterprofileid="{{ db_parameter_profile_id }}",
+            createdbserver=True,
+            clustered=True,
+            nodecount=4,
+            postgresql_info={
+                "listener_port": "5432",
+                "database_size": "200",
+                "db_password": "{{ database password}}",
+                "database_names": "testdb1",
+                "ha_instance": {
+                    "proxy_read_port": "5001",
+                    "proxy_write_port": "5000",
+                    "cluster_name": "{{ cluster_name }}",
+                    "patroni_cluster_name": " {{ patroni_cluster_name }}",
+                },
+            },
+            nxclusterid="1c42ca25-32f4-42d9-a2bd-6a21f925b725",
+            sshpublickey="{{ ssh_public_key }}",
+            nodes=[
+                {
+                    "properties": [{
+                        "name": "node_type",
+                        "value": "haproxy",
+                    }],
+                    "vmname": "{{ vm name }}",
+                    "nx_cluster_id": "{{ nx_cluster_id }}",
+                },
+                {
+                    "properties": [
+                        {
+                            "name": "role",
+                            "value": "Primary",
+                        },
+                        {
+                            "name": "failover_mode",
+                            "value": "Automatic",
+                        },
+                        {
+                            "name": "node_type",
+                            "value": "database",
+                        },
+                    ],
+                    "vmname": "{{ name of vm }}",
+                    "networkprofileid": "{{ network_profile_id }}",
+                    "computeprofileid": "{{ compute_profile_id }}",
+                    "nx_cluster_id": "{{ nx_cluster_id }}",
+                },
+                {
+                    "properties": [
+                        {
+                            "name": "role",
+                            "value": "Secondary",
+                        },
+                        {
+                            "name": "failover_mode",
+                            "value": "Automatic",
+                        },
+                        {
+                            "name": "node_type",
+                            "value": "database",
+                        },
+                    ],
+                    "vmname": "{{ name of vm }}",
+                    "networkprofileid": "{{ network_profile_id }}",
+                    "computeprofileid": "{{ compute_profile_id }}",
+                    "nx_cluster_id": "{{ nx_cluster_id }}",
+                },
+                {
+                    "properties": [
+                        {
+                            "name": "role",
+                            "value": "Secondary",
+                        },
+                        {
+                            "name": "failover_mode",
+                            "value": "Automatic",
+                        },
+                        {
+                            "name": "node_type",
+                            "value": "database",
+                        },
+                    ],
+                    "vmname": "{{ name of vm }}",
+                    "networkprofileid": "{{ network_profile_id }}",
+                    "computeprofileid": "{{ compute_profile_id }}",
+                    "nx_cluster_id": "{{ nx_cluster_id }}",
+                },
+            ],
+            timemachineinfo={
+                "name": "test-pg-inst-HA",
+                "description": "",
+                "sla_details": [{
+                    "primary_slas": [{
+                        "sla_id": "{{ required SLA}}0",
+                        "nx_cluster_ids": ["{{ nx_cluster_id}}"],
+                    }],
+                }],
+                "schedule": {
+                    "snapshottimeofday": {
+                        "hours": 16,
+                        "minutes": 0,
+                        "seconds": 0,
+                    },
+                    "continuousschedule": {
+                        "enabled": True,
+                        "logbackupinterval": 30,
+                        "snapshotsperday": 1,
+                    },
+                    "weeklyschedule": {
+                        "enabled": True,
+                        "dayofweek": "WEDNESDAY",
+                    },
+                    "monthlyschedule": {
+                        "enabled": True,
+                        "dayofmonth": 27,
+                    },
+                    "quartelyschedule": {
+                        "enabled": True,
+                        "startmonth": "JANUARY",
+                        "dayofmonth": 27,
+                    },
+                    "yearlyschedule": {
+                        "enabled": False,
+                        "dayofmonth": 31,
+                        "month": "DECEMBER",
+                    },
+                },
+            },
+            vm_password="{{ vm_password}}",
+            autotunestagingdrive=True)
+        ```
+
         ### NDB database resource with registered database server VM
 
         ```python
@@ -1341,58 +1486,59 @@ class NdbDatabase(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         dbp = nutanix.NdbDatabase("dbp",
+            databasetype="postgres_database",
+            name="test-inst",
+            description="add description",
+            dbparameterprofileid="{{ db_parameter_profile_id }}",
+            dbserver_id="{{ dbserver_id }}",
+            createdbserver=False,
+            postgresql_info={
+                "listener_port": "{{ listner_port }}",
+                "database_size": "{{ 200 }}",
+                "db_password": "password",
+                "database_names": "testdb1",
+            },
             actionarguments=[{
                 "name": "host_ip",
                 "value": "{{ hostIP }}",
             }],
-            createdbserver=False,
-            databasetype="postgres_database",
-            dbparameterprofileid="{{ db_parameter_profile_id }}",
-            dbserver_id="{{ dbserver_id }}",
-            description="add description",
             nodes=[{
                 "dbserverid": "{{ dbserver_id }}",
             }],
-            postgresql_info={
-                "database_names": "testdb1",
-                "database_size": "{{ 200 }}",
-                "db_password": "password",
-                "listener_port": "{{ listner_port }}",
-            },
             timemachineinfo={
-                "description": "description of time machine",
                 "name": "test-pg-inst",
+                "description": "description of time machine",
+                "slaid": "{{ sla_id }}",
                 "schedule": {
-                    "continuousschedule": {
-                        "enabled": True,
-                        "logbackupinterval": 30,
-                        "snapshotsperday": 1,
-                    },
-                    "monthlyschedule": {
-                        "dayofmonth": 27,
-                        "enabled": True,
-                    },
-                    "quartelyschedule": {
-                        "dayofmonth": 27,
-                        "enabled": True,
-                        "startmonth": "JANUARY",
-                    },
                     "snapshottimeofday": {
                         "hours": 16,
                         "minutes": 0,
                         "seconds": 0,
                     },
-                    "weeklyschedule": {
-                        "dayofweek": "WEDNESDAY",
+                    "continuousschedule": {
                         "enabled": True,
+                        "logbackupinterval": 30,
+                        "snapshotsperday": 1,
+                    },
+                    "weeklyschedule": {
+                        "enabled": True,
+                        "dayofweek": "WEDNESDAY",
+                    },
+                    "monthlyschedule": {
+                        "enabled": True,
+                        "dayofmonth": 27,
+                    },
+                    "quartelyschedule": {
+                        "enabled": True,
+                        "startmonth": "JANUARY",
+                        "dayofmonth": 27,
                     },
                     "yearlyschedule": {
-                        "dayofmonth": 31,
                         "enabled": False,
+                        "dayofmonth": 31,
                         "month": "DECEMBER",
                     },
                 },
-                "slaid": "{{ sla_id }}",
             })
         ```
 
@@ -1451,6 +1597,7 @@ class NdbDatabase(pulumi.CustomResource):
 
         dbp = nutanix.NdbDatabase("dbp",
             databasetype="postgres_database",
+            name="test-inst",
             description="add description",
             softwareprofileid="{{ software_profile_id }}",
             softwareprofileversionid="{{ software_profile_version_id }}",
@@ -1463,7 +1610,7 @@ class NdbDatabase(pulumi.CustomResource):
                 "db_password": "password",
                 "database_names": "testdb1",
             },
-            nxclusterid=local["clusters"]["EraCluster"]["id"],
+            nxclusterid=clusters["EraCluster"]["id"],
             sshpublickey="{{ ssh-public-key }}",
             nodes=[{
                 "vmname": "test-era-vm1",
@@ -1508,6 +1655,150 @@ class NdbDatabase(pulumi.CustomResource):
 
         ### NDB database resource to provision HA instance with new database server VM
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        dbp = nutanix.NdbDatabase("dbp",
+            databasetype="postgres_database",
+            name="test-pg-inst-HA-tf",
+            description="adding description",
+            softwareprofileid="{{ software_profile_id }}",
+            softwareprofileversionid="{{ software_profile_version_id }}",
+            computeprofileid="{{ compute_profile_id }}",
+            networkprofileid="{{ network_profile_id }}",
+            dbparameterprofileid="{{ db_parameter_profile_id }}",
+            createdbserver=True,
+            clustered=True,
+            nodecount=4,
+            postgresql_info={
+                "listener_port": "5432",
+                "database_size": "200",
+                "db_password": "{{ database password}}",
+                "database_names": "testdb1",
+                "ha_instance": {
+                    "proxy_read_port": "5001",
+                    "proxy_write_port": "5000",
+                    "cluster_name": "{{ cluster_name }}",
+                    "patroni_cluster_name": " {{ patroni_cluster_name }}",
+                },
+            },
+            nxclusterid="1c42ca25-32f4-42d9-a2bd-6a21f925b725",
+            sshpublickey="{{ ssh_public_key }}",
+            nodes=[
+                {
+                    "properties": [{
+                        "name": "node_type",
+                        "value": "haproxy",
+                    }],
+                    "vmname": "{{ vm name }}",
+                    "nx_cluster_id": "{{ nx_cluster_id }}",
+                },
+                {
+                    "properties": [
+                        {
+                            "name": "role",
+                            "value": "Primary",
+                        },
+                        {
+                            "name": "failover_mode",
+                            "value": "Automatic",
+                        },
+                        {
+                            "name": "node_type",
+                            "value": "database",
+                        },
+                    ],
+                    "vmname": "{{ name of vm }}",
+                    "networkprofileid": "{{ network_profile_id }}",
+                    "computeprofileid": "{{ compute_profile_id }}",
+                    "nx_cluster_id": "{{ nx_cluster_id }}",
+                },
+                {
+                    "properties": [
+                        {
+                            "name": "role",
+                            "value": "Secondary",
+                        },
+                        {
+                            "name": "failover_mode",
+                            "value": "Automatic",
+                        },
+                        {
+                            "name": "node_type",
+                            "value": "database",
+                        },
+                    ],
+                    "vmname": "{{ name of vm }}",
+                    "networkprofileid": "{{ network_profile_id }}",
+                    "computeprofileid": "{{ compute_profile_id }}",
+                    "nx_cluster_id": "{{ nx_cluster_id }}",
+                },
+                {
+                    "properties": [
+                        {
+                            "name": "role",
+                            "value": "Secondary",
+                        },
+                        {
+                            "name": "failover_mode",
+                            "value": "Automatic",
+                        },
+                        {
+                            "name": "node_type",
+                            "value": "database",
+                        },
+                    ],
+                    "vmname": "{{ name of vm }}",
+                    "networkprofileid": "{{ network_profile_id }}",
+                    "computeprofileid": "{{ compute_profile_id }}",
+                    "nx_cluster_id": "{{ nx_cluster_id }}",
+                },
+            ],
+            timemachineinfo={
+                "name": "test-pg-inst-HA",
+                "description": "",
+                "sla_details": [{
+                    "primary_slas": [{
+                        "sla_id": "{{ required SLA}}0",
+                        "nx_cluster_ids": ["{{ nx_cluster_id}}"],
+                    }],
+                }],
+                "schedule": {
+                    "snapshottimeofday": {
+                        "hours": 16,
+                        "minutes": 0,
+                        "seconds": 0,
+                    },
+                    "continuousschedule": {
+                        "enabled": True,
+                        "logbackupinterval": 30,
+                        "snapshotsperday": 1,
+                    },
+                    "weeklyschedule": {
+                        "enabled": True,
+                        "dayofweek": "WEDNESDAY",
+                    },
+                    "monthlyschedule": {
+                        "enabled": True,
+                        "dayofmonth": 27,
+                    },
+                    "quartelyschedule": {
+                        "enabled": True,
+                        "startmonth": "JANUARY",
+                        "dayofmonth": 27,
+                    },
+                    "yearlyschedule": {
+                        "enabled": False,
+                        "dayofmonth": 31,
+                        "month": "DECEMBER",
+                    },
+                },
+            },
+            vm_password="{{ vm_password}}",
+            autotunestagingdrive=True)
+        ```
+
         ### NDB database resource with registered database server VM
 
         ```python
@@ -1515,58 +1806,59 @@ class NdbDatabase(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         dbp = nutanix.NdbDatabase("dbp",
+            databasetype="postgres_database",
+            name="test-inst",
+            description="add description",
+            dbparameterprofileid="{{ db_parameter_profile_id }}",
+            dbserver_id="{{ dbserver_id }}",
+            createdbserver=False,
+            postgresql_info={
+                "listener_port": "{{ listner_port }}",
+                "database_size": "{{ 200 }}",
+                "db_password": "password",
+                "database_names": "testdb1",
+            },
             actionarguments=[{
                 "name": "host_ip",
                 "value": "{{ hostIP }}",
             }],
-            createdbserver=False,
-            databasetype="postgres_database",
-            dbparameterprofileid="{{ db_parameter_profile_id }}",
-            dbserver_id="{{ dbserver_id }}",
-            description="add description",
             nodes=[{
                 "dbserverid": "{{ dbserver_id }}",
             }],
-            postgresql_info={
-                "database_names": "testdb1",
-                "database_size": "{{ 200 }}",
-                "db_password": "password",
-                "listener_port": "{{ listner_port }}",
-            },
             timemachineinfo={
-                "description": "description of time machine",
                 "name": "test-pg-inst",
+                "description": "description of time machine",
+                "slaid": "{{ sla_id }}",
                 "schedule": {
-                    "continuousschedule": {
-                        "enabled": True,
-                        "logbackupinterval": 30,
-                        "snapshotsperday": 1,
-                    },
-                    "monthlyschedule": {
-                        "dayofmonth": 27,
-                        "enabled": True,
-                    },
-                    "quartelyschedule": {
-                        "dayofmonth": 27,
-                        "enabled": True,
-                        "startmonth": "JANUARY",
-                    },
                     "snapshottimeofday": {
                         "hours": 16,
                         "minutes": 0,
                         "seconds": 0,
                     },
-                    "weeklyschedule": {
-                        "dayofweek": "WEDNESDAY",
+                    "continuousschedule": {
                         "enabled": True,
+                        "logbackupinterval": 30,
+                        "snapshotsperday": 1,
+                    },
+                    "weeklyschedule": {
+                        "enabled": True,
+                        "dayofweek": "WEDNESDAY",
+                    },
+                    "monthlyschedule": {
+                        "enabled": True,
+                        "dayofmonth": 27,
+                    },
+                    "quartelyschedule": {
+                        "enabled": True,
+                        "startmonth": "JANUARY",
+                        "dayofmonth": 27,
                     },
                     "yearlyschedule": {
-                        "dayofmonth": 31,
                         "enabled": False,
+                        "dayofmonth": 31,
                         "month": "DECEMBER",
                     },
                 },
-                "slaid": "{{ sla_id }}",
             })
         ```
 

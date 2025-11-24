@@ -14,20 +14,20 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const example_1 = new nutanix.TemplateGuestOsActionsV2("example-1", {
- *     action: "initiate",
  *     extId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+ *     action: "initiate",
  *     versionId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
  * });
  * const example_2 = new nutanix.TemplateGuestOsActionsV2("example-2", {
- *     action: "complete",
  *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
- *     isActiveVersion: "true",
- *     versionDescription: "version desc",
+ *     action: "complete",
  *     versionName: "version_name",
+ *     versionDescription: "version desc",
+ *     isActiveVersion: "true",
  * });
  * const example_3 = new nutanix.TemplateGuestOsActionsV2("example-3", {
- *     action: "cancel",
  *     extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ *     action: "cancel",
  * });
  * ```
  */

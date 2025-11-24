@@ -29,18 +29,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewServiceGroup(ctx, "test", &nutanix.ServiceGroupArgs{
+//				Name:        pulumi.String("test_service_gp"),
 //				Description: pulumi.String("this is service group"),
 //				ServiceLists: nutanix.ServiceGroupServiceListArray{
 //					&nutanix.ServiceGroupServiceListArgs{
 //						Protocol: pulumi.String("TCP"),
 //						TcpPortRangeLists: nutanix.ServiceGroupServiceListTcpPortRangeListArray{
 //							&nutanix.ServiceGroupServiceListTcpPortRangeListArgs{
-//								EndPort:   pulumi.Int(22),
 //								StartPort: pulumi.Int(22),
+//								EndPort:   pulumi.Int(22),
 //							},
 //							&nutanix.ServiceGroupServiceListTcpPortRangeListArgs{
-//								EndPort:   pulumi.Int(2222),
 //								StartPort: pulumi.Int(2222),
+//								EndPort:   pulumi.Int(2222),
 //							},
 //						},
 //					},

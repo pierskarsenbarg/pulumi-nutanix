@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var test = new Nutanix.ServiceGroup("test", new()
     ///     {
+    ///         Name = "test_service_gp",
     ///         Description = "this is service group",
     ///         ServiceLists = new[]
     ///         {
@@ -35,13 +36,13 @@ namespace PiersKarsenbarg.Nutanix
     ///                 {
     ///                     new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
     ///                     {
-    ///                         EndPort = 22,
     ///                         StartPort = 22,
+    ///                         EndPort = 22,
     ///                     },
     ///                     new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
     ///                     {
-    ///                         EndPort = 2222,
     ///                         StartPort = 2222,
+    ///                         EndPort = 2222,
     ///                     },
     ///                 },
     ///             },

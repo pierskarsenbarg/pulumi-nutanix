@@ -426,6 +426,7 @@ class DirectoryServicesV2(pulumi.CustomResource):
 
         # Add Directory Service .
         active_directory = nutanix.DirectoryServicesV2("active-directory",
+            name="example_active_directory",
             url="ldap://10.xx.xx.xx:xxxx",
             directory_type="ACTIVE_DIRECTORY",
             domain_name="nutanix.com",
@@ -466,6 +467,7 @@ class DirectoryServicesV2(pulumi.CustomResource):
 
         # Add Directory Service .
         active_directory = nutanix.DirectoryServicesV2("active-directory",
+            name="example_active_directory",
             url="ldap://10.xx.xx.xx:xxxx",
             directory_type="ACTIVE_DIRECTORY",
             domain_name="nutanix.com",

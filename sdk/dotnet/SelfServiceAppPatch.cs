@@ -26,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -34,9 +34,9 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
-    ///         AppUuid = testSelfServiceAppProvision.Id,
+    ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
     ///         ConfigName = "NAME OF PATCH CONFIG",
     ///     });
@@ -55,7 +55,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -63,9 +63,9 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
-    ///         AppUuid = testSelfServiceAppProvision.Id,
+    ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
     ///         ConfigName = "NAME OF PATCH CONFIG",
     ///         VmConfigs = new[]
@@ -93,7 +93,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -101,9 +101,9 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
-    ///         AppUuid = testSelfServiceAppProvision.Id,
+    ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
     ///         ConfigName = "NAME OF PATCH CONFIG",
     ///         Categories = new[]
@@ -130,7 +130,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -138,9 +138,9 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
-    ///         AppUuid = testSelfServiceAppProvision.Id,
+    ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
     ///         ConfigName = "NAME OF PATCH CONFIG",
     ///         Categories = new[]
@@ -167,7 +167,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -175,9 +175,9 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
-    ///         AppUuid = testSelfServiceAppProvision.Id,
+    ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
     ///         ConfigName = "NAME OF PATCH CONFIG",
     ///         Disks = new[]
@@ -204,7 +204,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("testSelfServiceAppProvision", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -212,9 +212,9 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("testSelfServiceAppPatch", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
-    ///         AppUuid = testSelfServiceAppProvision.Id,
+    ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
     ///         ConfigName = "NAME OF PATCH CONFIG",
     ///         Nics = new[]

@@ -29,6 +29,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			subnet, err := nutanix.NewSubnet(ctx, "subnet", &nutanix.SubnetArgs{
 //				ClusterUuid:      pulumi.String("<YOUR_CLUSTER_ID>"),
+//				Name:             pulumi.String("sunet_test_name"),
 //				Description:      pulumi.String("Description of my unit test VLAN"),
 //				VlanId:           pulumi.Int(31),
 //				SubnetType:       pulumi.String("VLAN"),
@@ -52,7 +53,8 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			projectTest, err := nutanix.NewProject(ctx, "projectTest", &nutanix.ProjectArgs{
+//			projectTest, err := nutanix.NewProject(ctx, "project_test", &nutanix.ProjectArgs{
+//				Name:        pulumi.String("my-project"),
 //				Description: pulumi.String("This is my project"),
 //				Categories: nutanix.ProjectCategoryArray{
 //					&nutanix.ProjectCategoryArgs{

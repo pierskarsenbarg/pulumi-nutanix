@@ -8,18 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a resource to perform the snapshot for database instance based on the input parameters.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const name = new nutanix.NdbDatabaseSnapshot("name", {
- *     removeScheduleInDays: 1,
- *     timeMachineName: "{{ tms_name }}",
- * });
- * ```
  */
 export class NdbDatabaseSnapshot extends pulumi.CustomResource {
     /**

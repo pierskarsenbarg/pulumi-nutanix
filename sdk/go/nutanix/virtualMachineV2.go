@@ -12,6 +12,260 @@ import (
 )
 
 // Creates a Virtual Machine with the provided configuration.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi-std/sdk/go/std"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewVirtualMachineV2(ctx, "vm-1", &nutanix.VirtualMachineV2Args{
+//				Name:              pulumi.String("example-vm-1"),
+//				Description:       pulumi.String("vm desc"),
+//				NumCoresPerSocket: pulumi.Int(1),
+//				NumSockets:        pulumi.Int(1),
+//				Clusters: nutanix.VirtualMachineV2ClusterArray{
+//					&nutanix.VirtualMachineV2ClusterArgs{
+//						ExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewVirtualMachineV2(ctx, "vm-2", &nutanix.VirtualMachineV2Args{
+//				Name:              pulumi.String("example-vm-2"),
+//				Description:       pulumi.String("vm desc"),
+//				NumCoresPerSocket: pulumi.Int(1),
+//				NumSockets:        pulumi.Int(1),
+//				Clusters: nutanix.VirtualMachineV2ClusterArray{
+//					&nutanix.VirtualMachineV2ClusterArgs{
+//						ExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
+//					},
+//				},
+//				Disks: nutanix.VirtualMachineV2DiskArray{
+//					&nutanix.VirtualMachineV2DiskArgs{
+//						DiskAddresses: nutanix.VirtualMachineV2DiskDiskAddressArray{
+//							&nutanix.VirtualMachineV2DiskDiskAddressArgs{
+//								BusType: pulumi.String("SCSI"),
+//								Index:   pulumi.Int(0),
+//							},
+//						},
+//						BackingInfos: nutanix.VirtualMachineV2DiskBackingInfoArray{
+//							&nutanix.VirtualMachineV2DiskBackingInfoArgs{
+//								VmDisks: nutanix.VirtualMachineV2DiskBackingInfoVmDiskArray{
+//									&nutanix.VirtualMachineV2DiskBackingInfoVmDiskArgs{
+//										DiskSizeBytes: pulumi.Int(1073741824),
+//										StorageContainers: nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArray{
+//											&nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs{
+//												ExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				BootConfigs: nutanix.VirtualMachineV2BootConfigArray{
+//					&nutanix.VirtualMachineV2BootConfigArgs{
+//						UefiBoots: nutanix.VirtualMachineV2BootConfigUefiBootArray{
+//							&nutanix.VirtualMachineV2BootConfigUefiBootArgs{
+//								BootOrders: pulumi.StringArray{
+//									pulumi.String("NETWORK"),
+//									pulumi.String("DISK"),
+//									pulumi.String("CDROM"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			invokePow, err := std.Pow(ctx, &std.PowArgs{
+//				Base:     1024,
+//				Exponent: 3,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			invokePow1, err := std.Pow(ctx, &std.PowArgs{
+//				Base:     1024,
+//				Exponent: 3,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			invokePow2, err := std.Pow(ctx, &std.PowArgs{
+//				Base:     1024,
+//				Exponent: 3,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			invokePow3, err := std.Pow(ctx, &std.PowArgs{
+//				Base:     1024,
+//				Exponent: 3,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewVirtualMachineV2(ctx, "vm-3", &nutanix.VirtualMachineV2Args{
+//				Name:              pulumi.String("terraform-example-vm-4-disks"),
+//				NumCoresPerSocket: pulumi.Int(1),
+//				NumSockets:        pulumi.Int(1),
+//				Clusters: nutanix.VirtualMachineV2ClusterArray{
+//					&nutanix.VirtualMachineV2ClusterArgs{
+//						ExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
+//					},
+//				},
+//				Disks: nutanix.VirtualMachineV2DiskArray{
+//					&nutanix.VirtualMachineV2DiskArgs{
+//						DiskAddresses: nutanix.VirtualMachineV2DiskDiskAddressArray{
+//							&nutanix.VirtualMachineV2DiskDiskAddressArgs{
+//								BusType: pulumi.String("SCSI"),
+//								Index:   pulumi.Int(0),
+//							},
+//						},
+//						BackingInfos: nutanix.VirtualMachineV2DiskBackingInfoArray{
+//							&nutanix.VirtualMachineV2DiskBackingInfoArgs{
+//								VmDisks: nutanix.VirtualMachineV2DiskBackingInfoVmDiskArray{
+//									&nutanix.VirtualMachineV2DiskBackingInfoVmDiskArgs{
+//										DataSources: nutanix.VirtualMachineV2DiskBackingInfoVmDiskDataSourceArray{
+//											&nutanix.VirtualMachineV2DiskBackingInfoVmDiskDataSourceArgs{
+//												References: nutanix.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceArray{
+//													&nutanix.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceArgs{
+//														ImageReferences: nutanix.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArray{
+//															&nutanix.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArgs{
+//																ImageExtId: pulumi.String("59ec786c-4311-4225-affe-68b65c5ebf10"),
+//															},
+//														},
+//													},
+//												},
+//											},
+//										},
+//										DiskSizeBytes: pulumi.Int(20 * pulumi.Float64(invokePow.Result)),
+//									},
+//								},
+//							},
+//						},
+//					},
+//					&nutanix.VirtualMachineV2DiskArgs{
+//						DiskAddresses: nutanix.VirtualMachineV2DiskDiskAddressArray{
+//							&nutanix.VirtualMachineV2DiskDiskAddressArgs{
+//								BusType: pulumi.String("SCSI"),
+//								Index:   pulumi.Int(1),
+//							},
+//						},
+//						BackingInfos: nutanix.VirtualMachineV2DiskBackingInfoArray{
+//							&nutanix.VirtualMachineV2DiskBackingInfoArgs{
+//								VmDisks: nutanix.VirtualMachineV2DiskBackingInfoVmDiskArray{
+//									&nutanix.VirtualMachineV2DiskBackingInfoVmDiskArgs{
+//										DiskSizeBytes: pulumi.Int(10 * pulumi.Float64(invokePow1.Result)),
+//										StorageContainers: nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArray{
+//											&nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs{
+//												ExtId: pulumi.String("5d9b5941-fec3-4996-9d31-f31bed1c7735"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//					&nutanix.VirtualMachineV2DiskArgs{
+//						DiskAddresses: nutanix.VirtualMachineV2DiskDiskAddressArray{
+//							&nutanix.VirtualMachineV2DiskDiskAddressArgs{
+//								BusType: pulumi.String("SCSI"),
+//								Index:   pulumi.Int(2),
+//							},
+//						},
+//						BackingInfos: nutanix.VirtualMachineV2DiskBackingInfoArray{
+//							&nutanix.VirtualMachineV2DiskBackingInfoArgs{
+//								VmDisks: nutanix.VirtualMachineV2DiskBackingInfoVmDiskArray{
+//									&nutanix.VirtualMachineV2DiskBackingInfoVmDiskArgs{
+//										DiskSizeBytes: pulumi.Int(15 * pulumi.Float64(invokePow2.Result)),
+//										StorageContainers: nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArray{
+//											&nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs{
+//												ExtId: pulumi.String("5d9b5941-fec3-4996-9d31-f31bed1c7735"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//					&nutanix.VirtualMachineV2DiskArgs{
+//						DiskAddresses: nutanix.VirtualMachineV2DiskDiskAddressArray{
+//							&nutanix.VirtualMachineV2DiskDiskAddressArgs{
+//								BusType: pulumi.String("SCSI"),
+//								Index:   pulumi.Int(3),
+//							},
+//						},
+//						BackingInfos: nutanix.VirtualMachineV2DiskBackingInfoArray{
+//							&nutanix.VirtualMachineV2DiskBackingInfoArgs{
+//								VmDisks: nutanix.VirtualMachineV2DiskBackingInfoVmDiskArray{
+//									&nutanix.VirtualMachineV2DiskBackingInfoVmDiskArgs{
+//										DiskSizeBytes: pulumi.Int(20 * pulumi.Float64(invokePow3.Result)),
+//										StorageContainers: nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArray{
+//											&nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs{
+//												ExtId: pulumi.String("5d9b5941-fec3-4996-9d31-f31bed1c7735"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Nics: nutanix.VirtualMachineV2NicArray{
+//					&nutanix.VirtualMachineV2NicArgs{
+//						NetworkInfos: nutanix.VirtualMachineV2NicNetworkInfoArray{
+//							&nutanix.VirtualMachineV2NicNetworkInfoArgs{
+//								NicType: pulumi.String("NORMAL_NIC"),
+//								Subnets: nutanix.VirtualMachineV2NicNetworkInfoSubnetArray{
+//									&nutanix.VirtualMachineV2NicNetworkInfoSubnetArgs{
+//										ExtId: pulumi.String("7f66e20f-67f4-473f-96bb-c4fcfd487f16"),
+//									},
+//								},
+//								VlanMode: pulumi.String("ACCESS"),
+//							},
+//						},
+//					},
+//				},
+//				BootConfigs: nutanix.VirtualMachineV2BootConfigArray{
+//					&nutanix.VirtualMachineV2BootConfigArgs{
+//						LegacyBoots: nutanix.VirtualMachineV2BootConfigLegacyBootArray{
+//							&nutanix.VirtualMachineV2BootConfigLegacyBootArgs{
+//								BootOrders: pulumi.StringArray{
+//									pulumi.String("CDROM"),
+//									pulumi.String("DISK"),
+//									pulumi.String("NETWORK"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//				PowerState: pulumi.String("ON"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type VirtualMachineV2 struct {
 	pulumi.CustomResourceState
 

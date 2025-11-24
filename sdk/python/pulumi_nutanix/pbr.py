@@ -436,16 +436,17 @@ class Pbr(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         pbr = nutanix.Pbr("pbr",
-            action="PERMIT",
-            destination={
-                "address_type": "ALL",
-            },
+            name="test-policy-1",
             priority=123,
             protocol_type="ALL",
+            action="PERMIT",
+            vpc_name="test123",
             source={
                 "address_type": "ALL",
             },
-            vpc_name="test123")
+            destination={
+                "address_type": "ALL",
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -478,16 +479,17 @@ class Pbr(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         pbr = nutanix.Pbr("pbr",
-            action="PERMIT",
-            destination={
-                "address_type": "ALL",
-            },
+            name="test-policy-1",
             priority=123,
             protocol_type="ALL",
+            action="PERMIT",
+            vpc_name="test123",
             source={
                 "address_type": "ALL",
             },
-            vpc_name="test123")
+            destination={
+                "address_type": "ALL",
+            })
         ```
 
         :param str resource_name: The name of the resource.

@@ -14,93 +14,18 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes the clone present in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var name = Nutanix.GetNdbClone.Invoke(new()
-        ///     {
-        ///         CloneName = "test-inst-tf-check",
-        ///         Filters = new[]
-        ///         {
-        ///             new Nutanix.Inputs.GetNdbCloneFilterInputArgs
-        ///             {
-        ///                 Detailed = "true",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetNdbCloneResult> InvokeAsync(GetNdbCloneArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbCloneResult>("nutanix:index/getNdbClone:getNdbClone", args ?? new GetNdbCloneArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes the clone present in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var name = Nutanix.GetNdbClone.Invoke(new()
-        ///     {
-        ///         CloneName = "test-inst-tf-check",
-        ///         Filters = new[]
-        ///         {
-        ///             new Nutanix.Inputs.GetNdbCloneFilterInputArgs
-        ///             {
-        ///                 Detailed = "true",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetNdbCloneResult> Invoke(GetNdbCloneInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbCloneResult>("nutanix:index/getNdbClone:getNdbClone", args ?? new GetNdbCloneInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes the clone present in Nutanix Database Service
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var name = Nutanix.GetNdbClone.Invoke(new()
-        ///     {
-        ///         CloneName = "test-inst-tf-check",
-        ///         Filters = new[]
-        ///         {
-        ///             new Nutanix.Inputs.GetNdbCloneFilterInputArgs
-        ///             {
-        ///                 Detailed = "true",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetNdbCloneResult> Invoke(GetNdbCloneInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbCloneResult>("nutanix:index/getNdbClone:getNdbClone", args ?? new GetNdbCloneInvokeArgs(), options.WithDefaults());

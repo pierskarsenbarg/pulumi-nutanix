@@ -13,33 +13,6 @@ import (
 )
 
 // Provides a resource to restore the database instance based on the input parameters.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewNdbDatabaseRestore(ctx, "name", &nutanix.NdbDatabaseRestoreArgs{
-//				DatabaseId: pulumi.String("{{ database_id }}"),
-//				SnapshotId: pulumi.String("{{ snapshot id }}"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type NdbDatabaseRestore struct {
 	pulumi.CustomResourceState
 

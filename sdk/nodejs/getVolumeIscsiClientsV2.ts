@@ -15,13 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all the iSCSI clients.
  * const list_iscsi_clients = nutanix.getVolumeIscsiClientsV2({});
+ * // list iSCSI clients with a filter.
  * const list_iscsi_clients_filter = nutanix.getVolumeIscsiClientsV2({
  *     filter: "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
  * });
+ * // list iSCSI clients with a limit and pagination.
  * const list_iscsi_clients_limit = nutanix.getVolumeIscsiClientsV2({
- *     limit: 1,
  *     page: 2,
+ *     limit: 1,
  * });
  * ```
  *
@@ -154,13 +157,16 @@ export interface GetVolumeIscsiClientsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * // List all the iSCSI clients.
  * const list_iscsi_clients = nutanix.getVolumeIscsiClientsV2({});
+ * // list iSCSI clients with a filter.
  * const list_iscsi_clients_filter = nutanix.getVolumeIscsiClientsV2({
  *     filter: "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
  * });
+ * // list iSCSI clients with a limit and pagination.
  * const list_iscsi_clients_limit = nutanix.getVolumeIscsiClientsV2({
- *     limit: 1,
  *     page: 2,
+ *     limit: 1,
  * });
  * ```
  *

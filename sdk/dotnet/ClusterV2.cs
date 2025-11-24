@@ -15,6 +15,151 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var cluster = new Nutanix.ClusterV2("cluster", new()
+    ///     {
+    ///         Name = "cluster-example",
+    ///         Nodes = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterV2NodeArgs
+    ///             {
+    ///                 NodeLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NodeNodeListArgs
+    ///                     {
+    ///                         ControllerVmIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpIpv4Args
+    ///                                     {
+    ///                                         Value = "10.xx.xx.xx",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Configs = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterV2ConfigArgs
+    ///             {
+    ///                 ClusterFunctions = new[]
+    ///                 {
+    ///                     "AOS",
+    ///                 },
+    ///                 RedundancyFactor = 1,
+    ///                 ClusterArch = "X86_64",
+    ///                 FaultToleranceStates = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2ConfigFaultToleranceStateArgs
+    ///                     {
+    ///                         DomainAwarenessLevel = "DISK",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Networks = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterV2NetworkArgs
+    ///             {
+    ///                 ExternalAddresses = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NetworkExternalAddressArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkExternalAddressIpv4Args
+    ///                             {
+    ///                                 Value = "10.xx.xx.xx",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 ExternalDataServicesIps = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NetworkExternalDataServicesIpArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkExternalDataServicesIpIpv4Args
+    ///                             {
+    ///                                 Value = "10.xx.xx.xx",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 NtpServerIpLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NetworkNtpServerIpListArgs
+    ///                     {
+    ///                         Fqdns = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkNtpServerIpListFqdnArgs
+    ///                             {
+    ///                                 Value = "ntp.server.nutanix.com",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.ClusterV2NetworkNtpServerIpListArgs
+    ///                     {
+    ///                         Fqdns = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkNtpServerIpListFqdnArgs
+    ///                             {
+    ///                                 Value = "ntp.server_1.nutanix.com",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 SmtpServers = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NetworkSmtpServerArgs
+    ///                     {
+    ///                         EmailAddress = "example.ex@exmple.com",
+    ///                         Servers = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkSmtpServerServerArgs
+    ///                             {
+    ///                                 IpAddresses = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterV2NetworkSmtpServerServerIpAddressArgs
+    ///                                     {
+    ///                                         Ipv4s = new[]
+    ///                                         {
+    ///                                             new Nutanix.Inputs.ClusterV2NetworkSmtpServerServerIpAddressIpv4Args
+    ///                                             {
+    ///                                                 Value = "10.xx.xx.xx",
+    ///                                             },
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                                 Port = 123,
+    ///                                 Username = "example",
+    ///                                 Password = "example!2134",
+    ///                             },
+    ///                         },
+    ///                         Type = "PLAIN",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,

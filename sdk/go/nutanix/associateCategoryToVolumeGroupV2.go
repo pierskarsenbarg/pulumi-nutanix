@@ -30,6 +30,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Associate categories to volume group
 //			_, err := nutanix.NewAssociateCategoryToVolumeGroupV2(ctx, "example", &nutanix.AssociateCategoryToVolumeGroupV2Args{
+//				ExtId: pulumi.String("f0c0a4ac-c734-4770-b5d7-eca6793eeeb7"),
 //				Categories: nutanix.AssociateCategoryToVolumeGroupV2CategoryArray{
 //					&nutanix.AssociateCategoryToVolumeGroupV2CategoryArgs{
 //						ExtId: pulumi.String("85e68112-5b2b-4220-bc8d-e529e4bf420e"),
@@ -41,7 +42,6 @@ import (
 //						ExtId: pulumi.String("1c6638f2-5215-4086-8f21-a30e75cb8068"),
 //					},
 //				},
-//				ExtId: pulumi.String("f0c0a4ac-c734-4770-b5d7-eca6793eeeb7"),
 //			})
 //			if err != nil {
 //				return err

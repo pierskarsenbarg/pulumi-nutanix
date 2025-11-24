@@ -14,8 +14,8 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const name = new nutanix.NdbAuthorizeDbserver("name", {
- *     dbserversIds: ["{{ dbServer_IDs}}"],
  *     timeMachineName: "test-pg-inst",
+ *     dbserversIds: ["{{ dbServer_IDs}}"],
  * });
  * ```
  */

@@ -8,6 +8,22 @@ import * as utilities from "./utilities";
 
 /**
  * Attaches iSCSI initiator to a Volume Group identified by {extId}.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * //list iscsi clients
+ * const list_iscsi_clients = nutanix.getVolumeIscsiClientsV2({});
+ * // attach iscsi client to the volume group
+ * const vgIscsiExample = new nutanix.index.VolumeGroupIscsiClientsV2("vg_iscsi_example", {
+ *     vgExtId: "1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
+ *     extId: list_iscsi_clients.iscsiClients?.[0]?.extId,
+ *     iscsiInitiatorName: list_iscsi_clients.iscsiClients?.[0]?.iscsiInitiatorName,
+ * });
+ * ```
  */
 export class VolumeGroupIscsiClientV2 extends pulumi.CustomResource {
     /**

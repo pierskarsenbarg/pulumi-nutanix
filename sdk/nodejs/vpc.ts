@@ -18,6 +18,11 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const vpc = new nutanix.Vpc("vpc", {
+ *     name: "testtNew-1",
+ *     externalSubnetReferenceNames: [
+ *         "test-Ext1",
+ *         "test-ext2",
+ *     ],
  *     commonDomainNameServerIpLists: [
  *         {
  *             ip: "8.8.8.8",
@@ -25,10 +30,6 @@ import * as utilities from "./utilities";
  *         {
  *             ip: "8.8.8.9",
  *         },
- *     ],
- *     externalSubnetReferenceNames: [
- *         "test-Ext1",
- *         "test-ext2",
  *     ],
  *     externallyRoutablePrefixLists: [{
  *         ip: "192.43.0.0",
@@ -44,10 +45,11 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const vpc = new nutanix.Vpc("vpc", {
+ *     name: "testtNew-1",
+ *     externalSubnetReferenceUuids: ["<subnet_uuid>"],
  *     commonDomainNameServerIpLists: [{
  *         ip: "8.8.8.8",
  *     }],
- *     externalSubnetReferenceUuids: ["<subnet_uuid>"],
  *     externallyRoutablePrefixLists: [
  *         {
  *             ip: "192.43.0.0",

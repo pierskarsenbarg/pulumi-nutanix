@@ -122,11 +122,14 @@ def get_vpcs_v2(filter: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Get all VPCs
     list_vpcs = nutanix.get_vpcs_v2()
+    # Get all VPCs with filter
     list_vpcs_with_filter = nutanix.get_vpcs_v2(filter="vpcType eq 'VLAN'")
+    # Get all VPCs with order by and limit and filter
     list_vpcs_with_order_by_limit_filter = nutanix.get_vpcs_v2(filter="vpcType eq 'VLAN'",
-        limit=10,
-        order_by="name desc")
+        order_by="name desc",
+        limit=10)
     ```
 
     ## vpcs
@@ -222,11 +225,14 @@ def get_vpcs_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] =
     import pulumi
     import pulumi_nutanix as nutanix
 
+    # Get all VPCs
     list_vpcs = nutanix.get_vpcs_v2()
+    # Get all VPCs with filter
     list_vpcs_with_filter = nutanix.get_vpcs_v2(filter="vpcType eq 'VLAN'")
+    # Get all VPCs with order by and limit and filter
     list_vpcs_with_order_by_limit_filter = nutanix.get_vpcs_v2(filter="vpcType eq 'VLAN'",
-        limit=10,
-        order_by="name desc")
+        order_by="name desc",
+        limit=10)
     ```
 
     ## vpcs

@@ -282,13 +282,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG")
         ```
@@ -300,13 +300,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             vm_configs=[{
@@ -323,13 +323,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             categories=[{
@@ -345,13 +345,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             categories=[{
@@ -367,13 +367,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             disks=[{
@@ -389,13 +389,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             nics=[{
@@ -430,13 +430,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG")
         ```
@@ -448,13 +448,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             vm_configs=[{
@@ -471,13 +471,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             categories=[{
@@ -493,13 +493,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             categories=[{
@@ -515,13 +515,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             disks=[{
@@ -537,13 +537,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         # Provision Application
-        test_self_service_app_provision = nutanix.SelfServiceAppProvision("testSelfServiceAppProvision",
+        test = nutanix.SelfServiceAppProvision("test",
             bp_name="NAME OF BLUEPRINT",
             app_name="NAME OF APPLICATION",
             app_description="DESCRIPTION OF APPLICATION")
         # Run patch config (update config)
-        test_self_service_app_patch = nutanix.SelfServiceAppPatch("testSelfServiceAppPatch",
-            app_uuid=test_self_service_app_provision.id,
+        test_self_service_app_patch = nutanix.SelfServiceAppPatch("test",
+            app_uuid=test.id,
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             nics=[{

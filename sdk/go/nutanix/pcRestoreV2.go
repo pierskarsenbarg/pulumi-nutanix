@@ -16,6 +16,8 @@ import (
 // > -  We need to increase the timeout for restoring the PC, because the restore pc takes longer than the default timeout allows for the operation to complete.
 //
 // The restore domain manager is a task-driven operation to restore a domain manager from a cluster or object store backup location based on the selected restore point.
+//
+// ## Example Usage
 type PcRestoreV2 struct {
 	pulumi.CustomResourceState
 

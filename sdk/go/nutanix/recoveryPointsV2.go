@@ -29,9 +29,10 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// create RP with Vm Rp
 //			_, err := nutanix.NewRecoveryPointsV2(ctx, "rp-example", &nutanix.RecoveryPointsV2Args{
+//				Name:              pulumi.String("terraform-test-recovery-point"),
 //				ExpirationTime:    pulumi.String("2024-09-17T09:20:42Z"),
-//				RecoveryPointType: pulumi.String("APPLICATION_CONSISTENT"),
 //				Status:            pulumi.String("COMPLETE"),
+//				RecoveryPointType: pulumi.String("APPLICATION_CONSISTENT"),
 //				VmRecoveryPoints: nutanix.RecoveryPointsV2VmRecoveryPointArray{
 //					&nutanix.RecoveryPointsV2VmRecoveryPointArgs{
 //						VmExtId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),

@@ -26,21 +26,22 @@ namespace PiersKarsenbarg.Nutanix
     ///     // Add Service  group. with TCP and UDP
     ///     var tcp_udp_service = new Nutanix.ServiceGroupsV2("tcp-udp-service", new()
     ///     {
+    ///         Name = "service_group_tcp_udp",
     ///         Description = "service group description",
     ///         TcpServices = new[]
     ///         {
     ///             new Nutanix.Inputs.ServiceGroupsV2TcpServiceArgs
     ///             {
-    ///                 EndPort = 232,
     ///                 StartPort = 232,
+    ///                 EndPort = 232,
     ///             },
     ///         },
     ///         UdpServices = new[]
     ///         {
     ///             new Nutanix.Inputs.ServiceGroupsV2UdpServiceArgs
     ///             {
-    ///                 EndPort = 232,
     ///                 StartPort = 232,
+    ///                 EndPort = 232,
     ///             },
     ///         },
     ///     });
@@ -48,13 +49,14 @@ namespace PiersKarsenbarg.Nutanix
     ///     // service group with ICMP
     ///     var icmp_service = new Nutanix.ServiceGroupsV2("icmp-service", new()
     ///     {
+    ///         Name = "service_group_icmp",
     ///         Description = "service group description",
     ///         IcmpServices = new[]
     ///         {
     ///             new Nutanix.Inputs.ServiceGroupsV2IcmpServiceArgs
     ///             {
-    ///                 Code = 0,
     ///                 Type = 8,
+    ///                 Code = 0,
     ///             },
     ///         },
     ///     });
@@ -62,29 +64,30 @@ namespace PiersKarsenbarg.Nutanix
     ///     // service group with All TCP, UDP and ICMP
     ///     var all_service = new Nutanix.ServiceGroupsV2("all-service", new()
     ///     {
+    ///         Name = "service_group_udp_tcp_icmp",
     ///         Description = "service group description",
-    ///         IcmpServices = new[]
-    ///         {
-    ///             new Nutanix.Inputs.ServiceGroupsV2IcmpServiceArgs
-    ///             {
-    ///                 Code = 0,
-    ///                 Type = 8,
-    ///             },
-    ///         },
     ///         TcpServices = new[]
     ///         {
     ///             new Nutanix.Inputs.ServiceGroupsV2TcpServiceArgs
     ///             {
-    ///                 EndPort = 232,
     ///                 StartPort = 232,
+    ///                 EndPort = 232,
     ///             },
     ///         },
     ///         UdpServices = new[]
     ///         {
     ///             new Nutanix.Inputs.ServiceGroupsV2UdpServiceArgs
     ///             {
-    ///                 EndPort = 232,
     ///                 StartPort = 232,
+    ///                 EndPort = 232,
+    ///             },
+    ///         },
+    ///         IcmpServices = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ServiceGroupsV2IcmpServiceArgs
+    ///             {
+    ///                 Type = 8,
+    ///                 Code = 0,
     ///             },
     ///         },
     ///     });
