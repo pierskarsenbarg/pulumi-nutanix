@@ -25,7 +25,6 @@ class PcRegistrationV2Args:
                  remote_cluster: pulumi.Input['PcRegistrationV2RemoteClusterArgs']):
         """
         The set of arguments for constructing a PcRegistrationV2 resource.
-
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The display name for the Role.
         :param pulumi.Input['PcRegistrationV2RemoteClusterArgs'] remote_cluster: -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
                The remote cluster details are different based on the object type. The object type is used to determine the type of remote cluster. The object type can be one of the following:
@@ -81,7 +80,6 @@ class _PcRegistrationV2State:
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcRegistrationV2 resources.
-
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The display name for the Role.
         :param pulumi.Input['PcRegistrationV2RemoteClusterArgs'] remote_cluster: -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
                The remote cluster details are different based on the object type. The object type is used to determine the type of remote cluster. The object type can be one of the following:
@@ -234,7 +232,6 @@ class PcRegistrationV2(pulumi.CustomResource):
         """
         Provides a resource to Registers a domain manager (Prism Central) instance to other entities like PE and PC. This process is asynchronous, creating a registration task and returning its UUID.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The display name for the Role.
@@ -252,7 +249,6 @@ class PcRegistrationV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to Registers a domain manager (Prism Central) instance to other entities like PE and PC. This process is asynchronous, creating a registration task and returning its UUID.
-
 
         :param str resource_name: The name of the resource.
         :param PcRegistrationV2Args args: The arguments to use to populate this resource's properties.

@@ -24,7 +24,6 @@ class NdbAuthorizeDbserverArgs:
                  time_machine_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbAuthorizeDbserver resource.
-
         :param pulumi.Input[_builtins.str] time_machine_name: * `dbservers_id `: (Required)
         """
         if dbservers_ids is not None:
@@ -73,7 +72,6 @@ class _NdbAuthorizeDbserverState:
                  time_machine_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbAuthorizeDbserver resources.
-
         :param pulumi.Input[_builtins.str] time_machine_name: * `dbservers_id `: (Required)
         """
         if dbservers_ids is not None:
@@ -138,7 +136,6 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
             dbservers_ids=["{{ dbServer_IDs}}"])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] time_machine_name: * `dbservers_id `: (Required)
@@ -162,7 +159,6 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
             time_machine_name="test-pg-inst",
             dbservers_ids=["{{ dbServer_IDs}}"])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbAuthorizeDbserverArgs args: The arguments to use to populate this resource's properties.

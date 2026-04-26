@@ -25,7 +25,6 @@ class AssociateCategoryToVolumeGroupV2Args:
                  categories: Optional[pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]] = None):
         """
         The set of arguments for constructing a AssociateCategoryToVolumeGroupV2 resource.
-
         :param pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]] categories: -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
         """
         pulumi.set(__self__, "ext_id", ext_id)
@@ -61,7 +60,6 @@ class _AssociateCategoryToVolumeGroupV2State:
                  ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AssociateCategoryToVolumeGroupV2 resources.
-
         :param pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]] categories: -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
         """
         if categories is not None:
@@ -125,7 +123,6 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
             ])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AssociateCategoryToVolumeGroupV2CategoryArgs', 'AssociateCategoryToVolumeGroupV2CategoryArgsDict']]]] categories: -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
@@ -160,7 +157,6 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
                 },
             ])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param AssociateCategoryToVolumeGroupV2Args args: The arguments to use to populate this resource's properties.

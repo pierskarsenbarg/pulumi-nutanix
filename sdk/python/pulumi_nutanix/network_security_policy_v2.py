@@ -32,7 +32,6 @@ class NetworkSecurityPolicyV2Args:
                  vpc_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a NetworkSecurityPolicyV2 resource.
-
         :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
         :param pulumi.Input[_builtins.str] description: A user defined annotation for a policy.
         :param pulumi.Input[_builtins.bool] is_hitlog_enabled: If Hitlog is enabled.
@@ -192,7 +191,6 @@ class _NetworkSecurityPolicyV2State:
                  vpc_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering NetworkSecurityPolicyV2 resources.
-
         :param pulumi.Input[_builtins.str] created_by: created by.
         :param pulumi.Input[_builtins.str] creation_time: creation time of NSP
         :param pulumi.Input[_builtins.str] description: A user defined annotation for a policy.
@@ -494,7 +492,6 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             is_hitlog_enabled=True)
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A user defined annotation for a policy.
@@ -539,7 +536,6 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             }],
             is_hitlog_enabled=True)
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NetworkSecurityPolicyV2Args args: The arguments to use to populate this resource's properties.

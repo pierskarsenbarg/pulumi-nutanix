@@ -25,7 +25,6 @@ class SelfServiceAppCustomActionArgs:
                  runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SelfServiceAppCustomAction resource.
-
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the action to run.
                
                Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
@@ -101,7 +100,6 @@ class _SelfServiceAppCustomActionState:
                  runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppCustomAction resources.
-
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the action to run.
                
                Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
@@ -200,7 +198,6 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
             action_name="NAME OF ACTION")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the action to run.
@@ -235,7 +232,6 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
             app_name=test.app_name,
             action_name="NAME OF ACTION")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param SelfServiceAppCustomActionArgs args: The arguments to use to populate this resource's properties.

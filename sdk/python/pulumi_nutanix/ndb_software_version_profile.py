@@ -30,7 +30,6 @@ class NdbSoftwareVersionProfileArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbSoftwareVersionProfile resource.
-
         :param pulumi.Input[_builtins.str] engine_type: engine type of profile
         :param pulumi.Input[_builtins.str] profile_id: profile id
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_cluster_ids: available cluster ids
@@ -159,7 +158,6 @@ class _NdbSoftwareVersionProfileState:
                  version_cluster_associations: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]] = None):
         """
         Input properties used for looking up and filtering NdbSoftwareVersionProfile resources.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_cluster_ids: available cluster ids
         :param pulumi.Input[_builtins.str] db_version: Db version of software profile
         :param pulumi.Input[_builtins.bool] deprecated: deprecated or not
@@ -453,7 +451,6 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
             status="published")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_cluster_ids: available cluster ids
@@ -490,7 +487,6 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
             available_cluster_ids=["{{ cluster_ids }}"],
             status="published")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbSoftwareVersionProfileArgs args: The arguments to use to populate this resource's properties.

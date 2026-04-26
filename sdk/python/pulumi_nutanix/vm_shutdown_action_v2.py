@@ -26,7 +26,6 @@ class VmShutdownActionV2Args:
                  guest_power_state_transition_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VmShutdownActionV2GuestPowerStateTransitionConfigArgs']]]] = None):
         """
         The set of arguments for constructing a VmShutdownActionV2 resource.
-
         :param pulumi.Input[_builtins.str] action: It supports "shutdown", "guest_shutdown", "reboot", "guest_reboot".
         :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a VM. It should be of type UUID.
         :param pulumi.Input[Sequence[pulumi.Input['VmShutdownActionV2GuestPowerStateTransitionConfigArgs']]] guest_power_state_transition_configs: Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `guest_shutdown` or `guest_reboot`.
@@ -81,7 +80,6 @@ class _VmShutdownActionV2State:
                  guest_power_state_transition_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VmShutdownActionV2GuestPowerStateTransitionConfigArgs']]]] = None):
         """
         Input properties used for looking up and filtering VmShutdownActionV2 resources.
-
         :param pulumi.Input[_builtins.str] action: It supports "shutdown", "guest_shutdown", "reboot", "guest_reboot".
         :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a VM. It should be of type UUID.
         :param pulumi.Input[Sequence[pulumi.Input['VmShutdownActionV2GuestPowerStateTransitionConfigArgs']]] guest_power_state_transition_configs: Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `guest_shutdown` or `guest_reboot`.
@@ -143,7 +141,6 @@ class VmShutdownActionV2(pulumi.CustomResource):
         """
         Collaborative reboot or shutdown of a Virtual Machine through the ACPI support in the operating system. Also, Collaborative reboot or shutdown of a Virtual Machine, requesting Nutanix Guest Tools to trigger a reboot or shutdown from within the VM.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: It supports "shutdown", "guest_shutdown", "reboot", "guest_reboot".
@@ -158,7 +155,6 @@ class VmShutdownActionV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Collaborative reboot or shutdown of a Virtual Machine through the ACPI support in the operating system. Also, Collaborative reboot or shutdown of a Virtual Machine, requesting Nutanix Guest Tools to trigger a reboot or shutdown from within the VM.
-
 
         :param str resource_name: The name of the resource.
         :param VmShutdownActionV2Args args: The arguments to use to populate this resource's properties.

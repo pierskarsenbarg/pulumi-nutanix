@@ -25,7 +25,6 @@ class NdbLogCatchupsArgs:
                  time_machine_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbLogCatchups resource.
-
         :param pulumi.Input[_builtins.bool] for_restore: Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
         :param pulumi.Input[_builtins.int] log_catchup_version: it helps to perform same operation with same config.
                
@@ -100,7 +99,6 @@ class _NdbLogCatchupsState:
                  time_machine_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbLogCatchups resources.
-
         :param pulumi.Input[_builtins.bool] for_restore: Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
         :param pulumi.Input[_builtins.int] log_catchup_version: it helps to perform same operation with same config.
                
@@ -180,7 +178,6 @@ class NdbLogCatchups(pulumi.CustomResource):
         """
         Provides a resource to perform the log cactup for database instance based on the input parameters.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] for_restore: Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
@@ -198,7 +195,6 @@ class NdbLogCatchups(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to perform the log cactup for database instance based on the input parameters.
-
 
         :param str resource_name: The name of the resource.
         :param NdbLogCatchupsArgs args: The arguments to use to populate this resource's properties.

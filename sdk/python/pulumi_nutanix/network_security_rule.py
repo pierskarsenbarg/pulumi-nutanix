@@ -53,7 +53,6 @@ class NetworkSecurityRuleArgs:
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a NetworkSecurityRule resource.
-
         :param pulumi.Input[_builtins.str] ad_rule_action: - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleInboundAllowListArgs']]] ad_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleOutboundAllowListArgs']]] ad_rule_outbound_allow_lists: - (Optional)
@@ -536,7 +535,6 @@ class _NetworkSecurityRuleState:
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering NetworkSecurityRule resources.
-
         :param pulumi.Input[_builtins.str] ad_rule_action: - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleInboundAllowListArgs']]] ad_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleOutboundAllowListArgs']]] ad_rule_outbound_allow_lists: - (Optional)
@@ -1326,7 +1324,6 @@ class NetworkSecurityRule(pulumi.CustomResource):
             opts = pulumi.ResourceOptions(depends_on=[ad_group_user_1]))
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ad_rule_action: - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
@@ -1640,7 +1637,6 @@ class NetworkSecurityRule(pulumi.CustomResource):
             }],
             opts = pulumi.ResourceOptions(depends_on=[ad_group_user_1]))
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NetworkSecurityRuleArgs args: The arguments to use to populate this resource's properties.

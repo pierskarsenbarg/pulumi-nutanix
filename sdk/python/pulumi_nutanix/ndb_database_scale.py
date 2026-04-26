@@ -30,7 +30,6 @@ class NdbDatabaseScaleArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTagArgs']]]] = None):
         """
         The set of arguments for constructing a NdbDatabaseScale resource.
-
         :param pulumi.Input[_builtins.str] application_type: type of instance. eg: postgres_database
         :param pulumi.Input[_builtins.int] data_storage_size: data area (in GiB) to be added to the existing database.
         :param pulumi.Input[_builtins.str] database_uuid: Database id
@@ -172,7 +171,6 @@ class _NdbDatabaseScaleState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbDatabaseScale resources.
-
         :param pulumi.Input[_builtins.str] application_type: type of instance. eg: postgres_database
         :param pulumi.Input[_builtins.bool] clone: whether instance is cloned or not
         :param pulumi.Input[_builtins.int] data_storage_size: data area (in GiB) to be added to the existing database.
@@ -663,7 +661,6 @@ class NdbDatabaseScale(pulumi.CustomResource):
             data_storage_size=1)
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_type: type of instance. eg: postgres_database
@@ -695,7 +692,6 @@ class NdbDatabaseScale(pulumi.CustomResource):
             database_uuid="{{ database_id }}",
             data_storage_size=1)
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbDatabaseScaleArgs args: The arguments to use to populate this resource's properties.

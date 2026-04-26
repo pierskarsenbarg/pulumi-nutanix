@@ -32,7 +32,6 @@ class ClusterV2Args:
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]] = None):
         """
         The set of arguments for constructing a ClusterV2 resource.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]] configs: - (Optional) Cluster configuration details.
         :param pulumi.Input[_builtins.str] container_name: - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
@@ -184,7 +183,6 @@ class _ClusterV2State:
                  vm_count: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ClusterV2 resources.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]] configs: - (Optional) Cluster configuration details.
         :param pulumi.Input[_builtins.str] container_name: - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
@@ -518,7 +516,6 @@ class ClusterV2(pulumi.CustomResource):
 
         See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
@@ -620,7 +617,6 @@ class ClusterV2(pulumi.CustomResource):
         ```
 
         See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
-
 
         :param str resource_name: The name of the resource.
         :param ClusterV2Args args: The arguments to use to populate this resource's properties.

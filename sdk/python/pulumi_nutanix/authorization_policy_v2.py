@@ -30,7 +30,6 @@ class AuthorizationPolicyV2Args:
                  ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuthorizationPolicyV2 resource.
-
         :param pulumi.Input[_builtins.str] display_name: Name of the Authorization Policy.
         :param pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]] entities: The entities being qualified by the Authorization Policy.
         :param pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]] identities: The identities for which the Authorization Policy is created.
@@ -162,7 +161,6 @@ class _AuthorizationPolicyV2State:
                  role: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuthorizationPolicyV2 resources.
-
         :param pulumi.Input[_builtins.str] authorization_policy_type: Type of Authorization Policy.
                * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
                * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
@@ -397,7 +395,6 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
             ])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authorization_policy_type: Type of Authorization Policy.
@@ -445,7 +442,6 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                 },
             ])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param AuthorizationPolicyV2Args args: The arguments to use to populate this resource's properties.

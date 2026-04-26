@@ -30,7 +30,6 @@ class NdbDatabaseRestoreArgs:
                  user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbDatabaseRestore resource.
-
         :param pulumi.Input[_builtins.str] database_id: database id
         :param pulumi.Input[_builtins.str] latest_snapshot: latest snapshot id
         :param pulumi.Input[_builtins.int] restore_version: helps to restore the database with same config.
@@ -172,7 +171,6 @@ class _NdbDatabaseRestoreState:
                  user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbDatabaseRestore resources.
-
         :param pulumi.Input[_builtins.bool] clone: whether instance is cloned or not
         :param pulumi.Input[_builtins.str] database_cluster_type: database cluster type
         :param pulumi.Input[_builtins.str] database_id: database id
@@ -624,7 +622,6 @@ class NdbDatabaseRestore(pulumi.CustomResource):
         """
         Provides a resource to restore the database instance based on the input parameters.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_id: database id
@@ -643,7 +640,6 @@ class NdbDatabaseRestore(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to restore the database instance based on the input parameters.
-
 
         :param str resource_name: The name of the resource.
         :param NdbDatabaseRestoreArgs args: The arguments to use to populate this resource's properties.

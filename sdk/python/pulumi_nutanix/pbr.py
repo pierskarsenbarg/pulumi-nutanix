@@ -35,7 +35,6 @@ class PbrArgs:
                  vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Pbr resource.
-
         :param pulumi.Input[_builtins.str] action: Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
         :param pulumi.Input[_builtins.int] priority: priority of policy
         :param pulumi.Input[_builtins.str] protocol_type: Protocol type of policy based routing. Must be one of {TCP, UDP, ICMP, PROTOCOL_NUMBER, ALL} .
@@ -220,7 +219,6 @@ class _PbrState:
                  vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Pbr resources.
-
         :param pulumi.Input[_builtins.str] action: Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[_builtins.bool] is_bidirectional: Additionally create Policy in reverse direction. Should be used with {TCP, UDP with start and end port ranges and ICMP with icmp code and type}. Supported with 2022.x.
@@ -451,7 +449,6 @@ class Pbr(pulumi.CustomResource):
             })
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
@@ -494,7 +491,6 @@ class Pbr(pulumi.CustomResource):
                 "address_type": "ALL",
             })
         ```
-
 
         :param str resource_name: The name of the resource.
         :param PbrArgs args: The arguments to use to populate this resource's properties.

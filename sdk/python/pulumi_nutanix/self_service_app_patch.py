@@ -31,7 +31,6 @@ class SelfServiceAppPatchArgs:
                  vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]] = None):
         """
         The set of arguments for constructing a SelfServiceAppPatch resource.
-
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
         :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
@@ -149,7 +148,6 @@ class _SelfServiceAppPatchState:
                  vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppPatch resources.
-
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
         :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
@@ -407,7 +405,6 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
@@ -555,7 +552,6 @@ class SelfServiceAppPatch(pulumi.CustomResource):
                 "subnet_uuid": "VALID SUBNET UUID IN PROJECT ATTACHED TO APP",
             }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param SelfServiceAppPatchArgs args: The arguments to use to populate this resource's properties.

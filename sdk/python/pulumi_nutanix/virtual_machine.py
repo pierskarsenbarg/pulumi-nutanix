@@ -64,7 +64,6 @@ class VirtualMachineArgs:
                  vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a VirtualMachine resource.
-
         :param pulumi.Input[_builtins.str] cluster_uuid: - (Required) The UUID of the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] boot_device_disk_address: - (Optional) Address of disk to boot from.
@@ -731,7 +730,6 @@ class _VirtualMachineState:
                  vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering VirtualMachine resources.
-
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] boot_device_disk_address: - (Optional) Address of disk to boot from.
@@ -1557,7 +1555,6 @@ class VirtualMachine(pulumi.CustomResource):
 
         `
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
@@ -1664,7 +1661,6 @@ class VirtualMachine(pulumi.CustomResource):
         ```
 
         `
-
 
         :param str resource_name: The name of the resource.
         :param VirtualMachineArgs args: The arguments to use to populate this resource's properties.

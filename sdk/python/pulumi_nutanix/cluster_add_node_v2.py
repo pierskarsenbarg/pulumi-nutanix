@@ -29,7 +29,6 @@ class ClusterAddNodeV2Args:
                  should_skip_pre_expand_checks: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ClusterAddNodeV2 resource.
-
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) Cluster UUID.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]] node_params: -(Required) Parameters of the node to be added.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]] config_params: -(Optional) Config parameters.
@@ -132,7 +131,6 @@ class _ClusterAddNodeV2State:
                  should_skip_pre_expand_checks: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ClusterAddNodeV2 resources.
-
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) Cluster UUID.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]] config_params: -(Optional) Config parameters.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]] node_params: -(Required) Parameters of the node to be added.
@@ -348,7 +346,6 @@ class ClusterAddNodeV2(pulumi.CustomResource):
             opts = pulumi.ResourceOptions(depends_on=[node_network_info]))
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) Cluster UUID.
@@ -472,7 +469,6 @@ class ClusterAddNodeV2(pulumi.CustomResource):
             }],
             opts = pulumi.ResourceOptions(depends_on=[node_network_info]))
         ```
-
 
         :param str resource_name: The name of the resource.
         :param ClusterAddNodeV2Args args: The arguments to use to populate this resource's properties.

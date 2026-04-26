@@ -26,7 +26,6 @@ class ServiceGroupArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceGroup resource.
-
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the service group
@@ -83,7 +82,6 @@ class _ServiceGroupState:
                  system_defined: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ServiceGroup resources.
-
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the service group
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
@@ -184,7 +182,6 @@ class ServiceGroup(pulumi.CustomResource):
             }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
@@ -223,7 +220,6 @@ class ServiceGroup(pulumi.CustomResource):
                 ],
             }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param ServiceGroupArgs args: The arguments to use to populate this resource's properties.

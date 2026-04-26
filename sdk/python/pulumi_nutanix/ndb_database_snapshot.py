@@ -30,7 +30,6 @@ class NdbDatabaseSnapshotArgs:
                  time_machine_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbDatabaseSnapshot resource.
-
         :param pulumi.Input[_builtins.str] expiry_date_timezone: Default is set to Asia/Calcutta
         :param pulumi.Input[_builtins.str] name: Snapshot name. Default value is era_manual_snapshot.
         :param pulumi.Input[_builtins.int] remove_schedule_in_days: Removal schedule after which the snapshot should be removed.
@@ -186,7 +185,6 @@ class _NdbDatabaseSnapshotState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbDatabaseSnapshot resources.
-
         :param pulumi.Input[_builtins.str] app_info_version: App info version
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applicable_types: Applicable types
         :param pulumi.Input[_builtins.str] database_node_id: database node id
@@ -825,7 +823,6 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
         """
         Provides a resource to perform the snapshot for database instance based on the input parameters.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] expiry_date_timezone: Default is set to Asia/Calcutta
@@ -844,7 +841,6 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to perform the snapshot for database instance based on the input parameters.
-
 
         :param str resource_name: The name of the resource.
         :param NdbDatabaseSnapshotArgs args: The arguments to use to populate this resource's properties.

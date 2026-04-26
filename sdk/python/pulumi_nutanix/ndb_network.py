@@ -32,7 +32,6 @@ class NdbNetworkArgs:
                  subnet_mask: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbNetwork resource.
-
         :param pulumi.Input[_builtins.str] cluster_id: Select the Nutanix cluster on which you want to add the VLAN.
         :param pulumi.Input[_builtins.str] type: Vlan type. Supports [DHCP, Static]
         :param pulumi.Input[_builtins.str] dns_domain: dns domain for vlan. (Static IP address assignment only)
@@ -187,7 +186,6 @@ class _NdbNetworkState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbNetwork resources.
-
         :param pulumi.Input[_builtins.str] cluster_id: Select the Nutanix cluster on which you want to add the VLAN.
         :param pulumi.Input[_builtins.str] dns_domain: dns domain for vlan. (Static IP address assignment only)
         :param pulumi.Input[_builtins.str] gateway: Gateway for vlan. Supports in Static IP address assignment only
@@ -426,7 +424,6 @@ class NdbNetwork(pulumi.CustomResource):
             }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_id: Select the Nutanix cluster on which you want to add the VLAN.
@@ -468,7 +465,6 @@ class NdbNetwork(pulumi.CustomResource):
                 "end_ip": "{{ ending address range }}",
             }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbNetworkArgs args: The arguments to use to populate this resource's properties.

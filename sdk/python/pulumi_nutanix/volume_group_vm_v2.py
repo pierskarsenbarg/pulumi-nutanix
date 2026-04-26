@@ -24,7 +24,6 @@ class VolumeGroupVmV2Args:
                  index: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a VolumeGroupVmV2 resource.
-
         :param pulumi.Input[_builtins.str] vm_ext_id: -(Required) A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] volume_group_ext_id: -(Required) The external identifier of the volume group.
         :param pulumi.Input[_builtins.int] index: -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
@@ -86,7 +85,6 @@ class _VolumeGroupVmV2State:
                  volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupVmV2 resources.
-
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of a task.
         :param pulumi.Input[_builtins.int] index: -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
                
@@ -180,7 +178,6 @@ class VolumeGroupVmV2(pulumi.CustomResource):
             vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] index: -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
@@ -209,7 +206,6 @@ class VolumeGroupVmV2(pulumi.CustomResource):
             volume_group_ext_id="1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
             vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param VolumeGroupVmV2Args args: The arguments to use to populate this resource's properties.

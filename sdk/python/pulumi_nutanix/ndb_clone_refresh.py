@@ -25,7 +25,6 @@ class NdbCloneRefreshArgs:
                  user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbCloneRefresh resource.
-
         :param pulumi.Input[_builtins.str] clone_id: clone id
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id where clone has to be refreshed
         :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta. 
@@ -97,7 +96,6 @@ class _NdbCloneRefreshState:
                  user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbCloneRefresh resources.
-
         :param pulumi.Input[_builtins.str] clone_id: clone id
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id where clone has to be refreshed
         :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta. 
@@ -201,7 +199,6 @@ class NdbCloneRefresh(pulumi.CustomResource):
             timezone="Asia/Calcutta")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] clone_id: clone id
@@ -244,7 +241,6 @@ class NdbCloneRefresh(pulumi.CustomResource):
             user_pitr_stamp="{{ timestamp }}",
             timezone="Asia/Calcutta")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbCloneRefreshArgs args: The arguments to use to populate this resource's properties.

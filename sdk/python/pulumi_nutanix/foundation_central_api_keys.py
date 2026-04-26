@@ -22,7 +22,6 @@ class FoundationCentralApiKeysArgs:
                  alias: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a FoundationCentralApiKeys resource.
-
         :param pulumi.Input[_builtins.str] alias: - (Required) Alias for the api key to be created.
         """
         pulumi.set(__self__, "alias", alias)
@@ -50,7 +49,6 @@ class _FoundationCentralApiKeysState:
                  key_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationCentralApiKeys resources.
-
         :param pulumi.Input[_builtins.str] alias: - (Required) Alias for the api key to be created.
         :param pulumi.Input[_builtins.str] api_key: Api key in string format.
         :param pulumi.Input[_builtins.str] created_timestamp: Time when the api key was created.
@@ -149,7 +147,6 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
         new_api_key = nutanix.FoundationCentralApiKeys("new_api_key", alias="<NAME-FOR-API-KEY>")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] alias: - (Required) Alias for the api key to be created.
@@ -171,7 +168,6 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
 
         new_api_key = nutanix.FoundationCentralApiKeys("new_api_key", alias="<NAME-FOR-API-KEY>")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param FoundationCentralApiKeysArgs args: The arguments to use to populate this resource's properties.

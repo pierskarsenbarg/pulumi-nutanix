@@ -32,7 +32,6 @@ class ProtectionRuleArgs:
                  start_time: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProtectionRule resource.
-
         :param pulumi.Input[_builtins.str] description: A description for protection rule.
         :param pulumi.Input[_builtins.str] name: The name for the protection rule.
         """
@@ -158,7 +157,6 @@ class _ProtectionRuleState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectionRule resources.
-
         :param pulumi.Input[_builtins.str] description: A description for protection rule.
         :param pulumi.Input[_builtins.str] name: The name for the protection rule.
         """
@@ -350,7 +348,6 @@ class ProtectionRule(pulumi.CustomResource):
             })
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A description for protection rule.
@@ -393,7 +390,6 @@ class ProtectionRule(pulumi.CustomResource):
                 }],
             })
         ```
-
 
         :param str resource_name: The name of the resource.
         :param ProtectionRuleArgs args: The arguments to use to populate this resource's properties.

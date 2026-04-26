@@ -46,7 +46,6 @@ class SubnetArgs:
                  vswitch_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Subnet resource.
-
         :param pulumi.Input[_builtins.str] subnet_type: - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
         :param pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]] categories: - (Optional) The categories of the resource.
@@ -426,7 +425,6 @@ class _SubnetState:
                  vswitch_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Subnet resources.
-
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
         :param pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]] categories: - (Optional) The categories of the resource.
@@ -866,7 +864,6 @@ class Subnet(pulumi.CustomResource):
 
         ## Example Usage
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
@@ -903,7 +900,6 @@ class Subnet(pulumi.CustomResource):
         Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 
         ## Example Usage
-
 
         :param str resource_name: The name of the resource.
         :param SubnetArgs args: The arguments to use to populate this resource's properties.

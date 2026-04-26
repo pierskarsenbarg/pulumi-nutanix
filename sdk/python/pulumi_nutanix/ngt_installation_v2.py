@@ -28,7 +28,6 @@ class NgtInstallationV2Args:
                  reboot_preference: Optional[pulumi.Input['NgtInstallationV2RebootPreferenceArgs']] = None):
         """
         The set of arguments for constructing a NgtInstallationV2 resource.
-
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input['NgtInstallationV2CredentialArgs'] credential: Sign in credentials for the server.
@@ -124,7 +123,6 @@ class _NgtInstallationV2State:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NgtInstallationV2 resources.
-
         :param pulumi.Input[_builtins.str] available_version: Version of Nutanix Guest Tools available on the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input['NgtInstallationV2CredentialArgs'] credential: Sign in credentials for the server.
@@ -356,7 +354,6 @@ class NgtInstallationV2(pulumi.CustomResource):
             capablities=["VSS_SNAPSHOT"])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
@@ -391,7 +388,6 @@ class NgtInstallationV2(pulumi.CustomResource):
             },
             capablities=["VSS_SNAPSHOT"])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NgtInstallationV2Args args: The arguments to use to populate this resource's properties.

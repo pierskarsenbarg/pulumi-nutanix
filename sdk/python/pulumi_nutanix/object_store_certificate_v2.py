@@ -25,7 +25,6 @@ class ObjectStoreCertificateV2Args:
                  path: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ObjectStoreCertificateV2 resource.
-
         :param pulumi.Input[_builtins.str] object_store_ext_id: -(Required) The UUID of the Object store.
         :param pulumi.Input[_builtins.str] path: -(Required) Path to a JSON file which contains the public certificates, private key, and CA certificate or chain, along with a list of alternate FQDNs and alternate IPs to create a certificate for the Object store.
         """
@@ -70,7 +69,6 @@ class _ObjectStoreCertificateV2State:
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ObjectStoreCertificateV2 resources.
-
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The UUID of the certificate of an Object store.
         :param pulumi.Input[_builtins.str] object_store_ext_id: -(Required) The UUID of the Object store.
         :param pulumi.Input[_builtins.str] path: -(Required) Path to a JSON file which contains the public certificates, private key, and CA certificate or chain, along with a list of alternate FQDNs and alternate IPs to create a certificate for the Object store.
@@ -200,7 +198,6 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
 
         See detailed information in [Nutanix Create a SSL certificate for an Object store V4 ](https://developers.nutanix.com/api-reference?namespace=objects&version=v4.0#tag/ObjectStores/operation/createCertificate).
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] object_store_ext_id: -(Required) The UUID of the Object store.
@@ -228,7 +225,6 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
         ## JSON Example
 
         See detailed information in [Nutanix Create a SSL certificate for an Object store V4 ](https://developers.nutanix.com/api-reference?namespace=objects&version=v4.0#tag/ObjectStores/operation/createCertificate).
-
 
         :param str resource_name: The name of the resource.
         :param ObjectStoreCertificateV2Args args: The arguments to use to populate this resource's properties.

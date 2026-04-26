@@ -26,7 +26,6 @@ class PcDeployV2Args:
                  should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a PcDeployV2 resource.
-
         :param pulumi.Input['PcDeployV2ConfigArgs'] config: -(Required) Domain manager (Prism Central) cluster configuration details.
         :param pulumi.Input['PcDeployV2NetworkArgs'] network: -(Required) Domain manager (Prism Central) network configuration details.
         :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
@@ -81,7 +80,6 @@ class _PcDeployV2State:
                  should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering PcDeployV2 resources.
-
         :param pulumi.Input['PcDeployV2ConfigArgs'] config: -(Required) Domain manager (Prism Central) cluster configuration details.
         :param pulumi.Input['PcDeployV2NetworkArgs'] network: -(Required) Domain manager (Prism Central) network configuration details.
         :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
@@ -213,7 +211,6 @@ class PcDeployV2(pulumi.CustomResource):
             })
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
@@ -298,7 +295,6 @@ class PcDeployV2(pulumi.CustomResource):
                 ],
             })
         ```
-
 
         :param str resource_name: The name of the resource.
         :param PcDeployV2Args args: The arguments to use to populate this resource's properties.

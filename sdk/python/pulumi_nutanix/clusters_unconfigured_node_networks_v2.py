@@ -27,7 +27,6 @@ class ClustersUnconfiguredNodeNetworksV2Args:
                  request_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ClustersUnconfiguredNodeNetworksV2 resource.
-
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
         :param pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]] node_lists: -(Required) List of nodes for which the network information is required.
         :param pulumi.Input[_builtins.str] request_type: -(Optional) Request type
@@ -95,7 +94,6 @@ class _ClustersUnconfiguredNodeNetworksV2State:
                  request_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClustersUnconfiguredNodeNetworksV2 resources.
-
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
         :param pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]] node_lists: -(Required) List of nodes for which the network information is required.
         :param pulumi.Input[_builtins.str] request_type: -(Optional) Request type
@@ -204,7 +202,6 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
             }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
@@ -243,7 +240,6 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
                 }],
             }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param ClustersUnconfiguredNodeNetworksV2Args args: The arguments to use to populate this resource's properties.
