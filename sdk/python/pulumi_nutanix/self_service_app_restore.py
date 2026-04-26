@@ -25,6 +25,7 @@ class SelfServiceAppRestoreArgs:
                  app_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SelfServiceAppRestore resource.
+
         :param pulumi.Input[_builtins.str] restore_action_name: - (Required) The name of the restore action to be performed.
         :param pulumi.Input[_builtins.str] snapshot_uuid: - (Required) The UUID of the snapshot to which the application will be restored.
                
@@ -100,6 +101,7 @@ class _SelfServiceAppRestoreState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppRestore resources.
+
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
         :param pulumi.Input[_builtins.str] app_uuid: - (Optional) The UUID of the application.
         :param pulumi.Input[_builtins.str] restore_action_name: - (Required) The name of the restore action to be performed.
@@ -218,6 +220,7 @@ class SelfServiceAppRestore(pulumi.CustomResource):
             snapshot_uuid=snapshot_uuid)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
@@ -257,6 +260,7 @@ class SelfServiceAppRestore(pulumi.CustomResource):
             app_name="NAME OF APPLICATION",
             snapshot_uuid=snapshot_uuid)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SelfServiceAppRestoreArgs args: The arguments to use to populate this resource's properties.

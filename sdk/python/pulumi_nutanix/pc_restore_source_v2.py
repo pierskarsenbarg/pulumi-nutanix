@@ -24,6 +24,7 @@ class PcRestoreSourceV2Args:
                  location: pulumi.Input['PcRestoreSourceV2LocationArgs']):
         """
         The set of arguments for constructing a PcRestoreSourceV2 resource.
+
         :param pulumi.Input['PcRestoreSourceV2LocationArgs'] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
         pulumi.set(__self__, "location", location)
@@ -53,6 +54,7 @@ class _PcRestoreSourceV2State:
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcRestoreSourceV2 resources.
+
         :param pulumi.Input['PcRestoreSourceV2LocationArgs'] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
         if backup_pause_reason is not None:
@@ -194,6 +196,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
         })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
@@ -252,6 +255,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
             }],
         })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PcRestoreSourceV2Args args: The arguments to use to populate this resource's properties.

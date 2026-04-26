@@ -23,6 +23,7 @@ class PcUnregistrationV2Args:
                  pc_ext_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PcUnregistrationV2 resource.
+
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID of a remote cluster.
                
                See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
@@ -65,6 +66,7 @@ class _PcUnregistrationV2State:
                  pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcUnregistrationV2 resources.
+
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID of a remote cluster.
                
                See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
@@ -114,6 +116,7 @@ class PcUnregistrationV2(pulumi.CustomResource):
         """
         Unregister a registered remote cluster from the local cluster. This process is asynchronous, creating an un-registration task and returning its UUID.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID of a remote cluster.
@@ -129,6 +132,7 @@ class PcUnregistrationV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Unregister a registered remote cluster from the local cluster. This process is asynchronous, creating an un-registration task and returning its UUID.
+
 
         :param str resource_name: The name of the resource.
         :param PcUnregistrationV2Args args: The arguments to use to populate this resource's properties.

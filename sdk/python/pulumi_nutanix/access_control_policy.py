@@ -31,6 +31,7 @@ class AccessControlPolicyArgs:
                  user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyUserReferenceListArgs']]]] = None):
         """
         The set of arguments for constructing a AccessControlPolicy resource.
+
         :param pulumi.Input['AccessControlPolicyRoleReferenceArgs'] role_reference: - (Required) The reference to a role.
         :param pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyCategoryArgs']]] categories: - (Optional) Categories for the Access Control Policy.
         :param pulumi.Input[_builtins.str] description: - (Optional) The description of Access Control Policy.
@@ -165,6 +166,7 @@ class _AccessControlPolicyState:
                  user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyUserReferenceListArgs']]]] = None):
         """
         Input properties used for looking up and filtering AccessControlPolicy resources.
+
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyCategoryArgs']]] categories: - (Optional) Categories for the Access Control Policy.
         :param pulumi.Input[_builtins.str] description: - (Optional) The description of Access Control Policy.
@@ -412,6 +414,7 @@ class AccessControlPolicy(pulumi.CustomResource):
             }])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict']]]] categories: - (Optional) Categories for the Access Control Policy.
@@ -495,6 +498,7 @@ class AccessControlPolicy(pulumi.CustomResource):
                 ],
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AccessControlPolicyArgs args: The arguments to use to populate this resource's properties.

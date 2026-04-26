@@ -44,6 +44,7 @@ class StorageContainersV2Args:
                  replication_factor: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a StorageContainersV2 resource.
+
         :param pulumi.Input[_builtins.str] cluster_ext_id: - ext id for the cluster owning the storage container.
         :param pulumi.Input[_builtins.str] affinity_host_ext_id: -(Optional) Affinity host extId for RF 1 Storage Container.
         :param pulumi.Input[_builtins.str] cache_deduplication: -(Optional) Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
@@ -391,6 +392,7 @@ class _StorageContainersV2State:
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StorageContainersV2 resources.
+
         :param pulumi.Input[_builtins.str] affinity_host_ext_id: -(Optional) Affinity host extId for RF 1 Storage Container.
         :param pulumi.Input[_builtins.str] cache_deduplication: -(Optional) Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
         :param pulumi.Input[_builtins.str] cluster_ext_id: - ext id for the cluster owning the storage container.
@@ -883,6 +885,7 @@ class StorageContainersV2(pulumi.CustomResource):
             is_software_encryption_enabled=False)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] affinity_host_ext_id: -(Optional) Affinity host extId for RF 1 Storage Container.
@@ -941,6 +944,7 @@ class StorageContainersV2(pulumi.CustomResource):
             is_internal=False,
             is_software_encryption_enabled=False)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param StorageContainersV2Args args: The arguments to use to populate this resource's properties.

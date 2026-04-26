@@ -38,6 +38,7 @@ class UsersV2Args:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UsersV2 resource.
+
         :param pulumi.Input[_builtins.str] user_type: - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
                Type of the User.
         :param pulumi.Input[_builtins.str] username: - Identifier for the User in the form an email address.
@@ -285,6 +286,7 @@ class _UsersV2State:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UsersV2 resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]] additional_attributes: -  Any additional attribute for the User.
         :param pulumi.Input[Sequence[pulumi.Input['UsersV2BucketsAccessKeyArgs']]] buckets_access_keys: - Bucket Access Keys for the User.
         :param pulumi.Input[_builtins.str] created_by: - User or Service who created the User.
@@ -655,6 +657,7 @@ class UsersV2(pulumi.CustomResource):
 
         See detailed information in [Nutanix Users v4](https://developers.nutanix.com/api-reference?namespace=iam&version=v4.0#tag/Users/operation/createUser).
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -  Any additional attribute for the User.
@@ -698,6 +701,7 @@ class UsersV2(pulumi.CustomResource):
         ```
 
         See detailed information in [Nutanix Users v4](https://developers.nutanix.com/api-reference?namespace=iam&version=v4.0#tag/Users/operation/createUser).
+
 
         :param str resource_name: The name of the resource.
         :param UsersV2Args args: The arguments to use to populate this resource's properties.

@@ -30,6 +30,7 @@ class RecoveryPlanArgs:
                  project_reference: Optional[pulumi.Input['RecoveryPlanProjectReferenceArgs']] = None):
         """
         The set of arguments for constructing a RecoveryPlan resource.
+
         :param pulumi.Input[_builtins.str] description: A description for Recovery Plan.
         :param pulumi.Input[_builtins.str] name: The name for the Recovery Plan.
         """
@@ -131,6 +132,7 @@ class _RecoveryPlanState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RecoveryPlan resources.
+
         :param pulumi.Input[_builtins.str] description: A description for Recovery Plan.
         :param pulumi.Input[_builtins.str] name: The name for the Recovery Plan.
         """
@@ -295,6 +297,7 @@ class RecoveryPlan(pulumi.CustomResource):
             parameters={})
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A description for Recovery Plan.
@@ -334,6 +337,7 @@ class RecoveryPlan(pulumi.CustomResource):
             }],
             parameters={})
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RecoveryPlanArgs args: The arguments to use to populate this resource's properties.

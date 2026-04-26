@@ -55,6 +55,7 @@ class NdbCloneArgs:
                  vm_password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbClone resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['NdbCloneNodeArgs']]] nodes: Nodes contain info about dbservers vm
         :param pulumi.Input[_builtins.str] nx_cluster_id: cluster id on where clone will be present
         :param pulumi.Input[Sequence[pulumi.Input['NdbCloneActionargumentArgs']]] actionarguments: if any action arguments is required
@@ -588,6 +589,7 @@ class _NdbCloneState:
                  vm_password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbClone resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['NdbCloneActionargumentArgs']]] actionarguments: if any action arguments is required
         :param pulumi.Input[_builtins.bool] clone: cloned or not
         :param pulumi.Input[_builtins.bool] clustered: clone will be clustered or not
@@ -1360,6 +1362,7 @@ class NdbClone(pulumi.CustomResource):
             }])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict']]]] actionarguments: if any action arguments is required
@@ -1433,6 +1436,7 @@ class NdbClone(pulumi.CustomResource):
                 "db_password": "pass",
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NdbCloneArgs args: The arguments to use to populate this resource's properties.

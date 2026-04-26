@@ -33,6 +33,7 @@ class RoutesV2Args:
                  vpc_reference: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RoutesV2 resource.
+
         :param pulumi.Input[_builtins.str] route_table_ext_id: Route table UUID
         :param pulumi.Input[_builtins.str] route_type: Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
         :param pulumi.Input[_builtins.str] description: BGP session description.
@@ -204,6 +205,7 @@ class _RoutesV2State:
                  vpc_reference: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RoutesV2 resources.
+
         :param pulumi.Input[_builtins.str] description: BGP session description.
         :param pulumi.Input['RoutesV2DestinationArgs'] destination: Destination IP Subnet Configuration.
         :param pulumi.Input[_builtins.str] ext_id: Route UUID
@@ -483,6 +485,7 @@ class RoutesV2(pulumi.CustomResource):
             route_type="STATIC")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: BGP session description.
@@ -535,6 +538,7 @@ class RoutesV2(pulumi.CustomResource):
             },
             route_type="STATIC")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RoutesV2Args args: The arguments to use to populate this resource's properties.

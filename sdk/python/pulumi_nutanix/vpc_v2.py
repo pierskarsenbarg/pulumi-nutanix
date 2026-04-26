@@ -30,6 +30,7 @@ class VpcV2Args:
                  vpc_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a VpcV2 resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]] common_dhcp_options: List of DHCP options to be configured.
         :param pulumi.Input[_builtins.str] description: Description of the VPC.
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table
@@ -155,6 +156,7 @@ class _VpcV2State:
                  vpc_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VpcV2 resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]] common_dhcp_options: List of DHCP options to be configured.
         :param pulumi.Input[_builtins.str] description: Description of the VPC.
         :param pulumi.Input[_builtins.str] ext_id: the vpc uuid.
@@ -403,6 +405,7 @@ class VpcV2(pulumi.CustomResource):
             vpc_type="TRANSIT")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]] common_dhcp_options: List of DHCP options to be configured.
@@ -473,6 +476,7 @@ class VpcV2(pulumi.CustomResource):
             }],
             vpc_type="TRANSIT")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VpcV2Args args: The arguments to use to populate this resource's properties.

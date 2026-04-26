@@ -22,6 +22,7 @@ class PromoteProtectedResourceV2Args:
                  ext_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PromoteProtectedResourceV2 resource.
+
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
                
                
@@ -51,6 +52,7 @@ class _PromoteProtectedResourceV2State:
                  ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PromoteProtectedResourceV2 resources.
+
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
                
                
@@ -97,6 +99,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
         promote_example = nutanix.PromoteProtectedResourceV2("promote-example", ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
@@ -123,6 +126,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
         # promote the protected virtual machine on the remote site
         promote_example = nutanix.PromoteProtectedResourceV2("promote-example", ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PromoteProtectedResourceV2Args args: The arguments to use to populate this resource's properties.

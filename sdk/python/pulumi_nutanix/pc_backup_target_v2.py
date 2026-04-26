@@ -25,6 +25,7 @@ class PcBackupTargetV2Args:
                  location: pulumi.Input['PcBackupTargetV2LocationArgs']):
         """
         The set of arguments for constructing a PcBackupTargetV2 resource.
+
         :param pulumi.Input[_builtins.str] domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
         :param pulumi.Input['PcBackupTargetV2LocationArgs'] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
@@ -69,6 +70,7 @@ class _PcBackupTargetV2State:
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcBackupTargetV2 resources.
+
         :param pulumi.Input[_builtins.str] domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
         :param pulumi.Input['PcBackupTargetV2LocationArgs'] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
@@ -225,6 +227,7 @@ class PcBackupTargetV2(pulumi.CustomResource):
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
@@ -283,6 +286,7 @@ class PcBackupTargetV2(pulumi.CustomResource):
                 }],
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PcBackupTargetV2Args args: The arguments to use to populate this resource's properties.
