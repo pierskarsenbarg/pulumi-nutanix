@@ -26,6 +26,7 @@ class UserGroupsV2Args:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UserGroupsV2 resource.
+
         :param pulumi.Input[_builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         :param pulumi.Input[_builtins.str] idp_id: -(Required) Identifier of the IDP for the User Group.
         :param pulumi.Input[_builtins.str] distinguished_name: -(Optional) Identifier for the User Group in the form of a distinguished name.
@@ -115,6 +116,7 @@ class _UserGroupsV2State:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserGroupsV2 resources.
+
         :param pulumi.Input[_builtins.str] created_by: - User or Service who created the User Group.
         :param pulumi.Input[_builtins.str] created_time: - Creation time of the User Group.
         :param pulumi.Input[_builtins.str] distinguished_name: -(Optional) Identifier for the User Group in the form of a distinguished name.
@@ -271,6 +273,7 @@ class UserGroupsV2(pulumi.CustomResource):
             name="adfs19admingroup")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] distinguished_name: -(Optional) Identifier for the User Group in the form of a distinguished name.
@@ -305,6 +308,7 @@ class UserGroupsV2(pulumi.CustomResource):
             idp_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
             name="adfs19admingroup")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UserGroupsV2Args args: The arguments to use to populate this resource's properties.

@@ -25,6 +25,7 @@ class SelfServiceAppRecoveryPointArgs:
                  recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SelfServiceAppRecoveryPoint resource.
+
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the snapshot action to trigger.
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
@@ -100,6 +101,7 @@ class _SelfServiceAppRecoveryPointState:
                  recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppRecoveryPoint resources.
+
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the snapshot action to trigger.
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
@@ -193,6 +195,7 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
             recovery_point_name="RECOVERY POINT NAME")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the snapshot action to trigger.
@@ -222,6 +225,7 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
             action_name="SNAPSHOT ACTION NAME",
             recovery_point_name="RECOVERY POINT NAME")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SelfServiceAppRecoveryPointArgs args: The arguments to use to populate this resource's properties.

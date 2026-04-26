@@ -29,6 +29,7 @@ class KarbonWorkerNodepoolArgs:
                  node_os_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a KarbonWorkerNodepool resource.
+
         :param pulumi.Input[_builtins.str] cluster_name: Kubernetes cluster name
         :param pulumi.Input[_builtins.int] num_instances: number of node instances
         :param pulumi.Input['KarbonWorkerNodepoolAhvConfigArgs'] ahv_config: VM configuration in AHV.
@@ -132,6 +133,7 @@ class _KarbonWorkerNodepoolState:
                  num_instances: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering KarbonWorkerNodepool resources.
+
         :param pulumi.Input['KarbonWorkerNodepoolAhvConfigArgs'] ahv_config: VM configuration in AHV.
         :param pulumi.Input[_builtins.str] cluster_name: Kubernetes cluster name
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: labels of node
@@ -294,6 +296,7 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['KarbonWorkerNodepoolAhvConfigArgs', 'KarbonWorkerNodepoolAhvConfigArgsDict']] ahv_config: VM configuration in AHV.
@@ -349,6 +352,7 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
                 "k2": "v2",
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param KarbonWorkerNodepoolArgs args: The arguments to use to populate this resource's properties.

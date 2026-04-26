@@ -33,6 +33,7 @@ class DirectoryServicesV2Args:
                  white_listed_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DirectoryServicesV2 resource.
+
         :param pulumi.Input[_builtins.str] directory_type: -(Required) Type of Directory Service, Supported values are: "ACTIVE_DIRECTORY" (Directory Service type is Active Directory.) and "OPEN_LDAP" (Directory Service type is Open LDAP.)
         :param pulumi.Input[_builtins.str] domain_name: -(Required) Domain name for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]] service_accounts: -(Required) Information of Service account to connect to the Directory Service.
@@ -200,6 +201,7 @@ class _DirectoryServicesV2State:
                  white_listed_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering DirectoryServicesV2 resources.
+
         :param pulumi.Input[_builtins.str] created_by: - User or Service who created the Directory Service.
         :param pulumi.Input[_builtins.str] created_time: - Creation time of the Directory Service.
         :param pulumi.Input[_builtins.str] directory_type: -(Required) Type of Directory Service, Supported values are: "ACTIVE_DIRECTORY" (Directory Service type is Active Directory.) and "OPEN_LDAP" (Directory Service type is Open LDAP.)
@@ -437,6 +439,7 @@ class DirectoryServicesV2(pulumi.CustomResource):
             white_listed_groups=["example"])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] directory_type: -(Required) Type of Directory Service, Supported values are: "ACTIVE_DIRECTORY" (Directory Service type is Active Directory.) and "OPEN_LDAP" (Directory Service type is Open LDAP.)
@@ -477,6 +480,7 @@ class DirectoryServicesV2(pulumi.CustomResource):
             }],
             white_listed_groups=["example"])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DirectoryServicesV2Args args: The arguments to use to populate this resource's properties.

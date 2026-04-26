@@ -31,6 +31,7 @@ class VolumeGroupIscsiClientV2Args:
                  num_virtual_targets: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a VolumeGroupIscsiClientV2 resource.
+
         :param pulumi.Input[_builtins.str] vg_ext_id: -(Required) The external identifier of the volume group.
         :param pulumi.Input[_builtins.str] attachment_site: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
         :param pulumi.Input[_builtins.str] client_secret: -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
@@ -166,6 +167,7 @@ class _VolumeGroupIscsiClientV2State:
                  vg_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupIscsiClientV2 resources.
+
         :param pulumi.Input[_builtins.str] attachment_site: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
         :param pulumi.Input[_builtins.str] client_secret: -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
         :param pulumi.Input[_builtins.str] enabled_authentications: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
@@ -322,6 +324,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
             iscsi_initiator_name=list_iscsi_clients.iscsi_clients[0].iscsi_initiator_name)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] attachment_site: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
@@ -356,6 +359,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
             ext_id=list_iscsi_clients.iscsi_clients[0].ext_id,
             iscsi_initiator_name=list_iscsi_clients.iscsi_clients[0].iscsi_initiator_name)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VolumeGroupIscsiClientV2Args args: The arguments to use to populate this resource's properties.

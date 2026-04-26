@@ -54,6 +54,7 @@ class NdbDatabaseArgs:
                  vm_password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbDatabase resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseActionargumentArgs']]] actionarguments: - (Optional) action arguments for database. For postgress, you can use postgresql_info
         :param pulumi.Input[_builtins.bool] autotunestagingdrive: - (Optional) Enable auto tuning of staging drive. Default: true
         :param pulumi.Input[_builtins.bool] clustered: - (Optional) If clustered database. Default: false
@@ -561,6 +562,7 @@ class _NdbDatabaseState:
                  vm_password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbDatabase resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseActionargumentArgs']]] actionarguments: - (Optional) action arguments for database. For postgress, you can use postgresql_info
         :param pulumi.Input[_builtins.bool] autotunestagingdrive: - (Optional) Enable auto tuning of staging drive. Default: true
         :param pulumi.Input[_builtins.bool] clustered: - (Optional) If clustered database. Default: false
@@ -1548,6 +1550,7 @@ class NdbDatabase(pulumi.CustomResource):
 
         See detailed information in [NDB Database Instance](https://www.nutanix.dev/api_references/ndb/#/9d9eee4304496-provision-a-database).
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseActionargumentArgs', 'NdbDatabaseActionargumentArgsDict']]]] actionarguments: - (Optional) action arguments for database. For postgress, you can use postgresql_info
@@ -1867,6 +1870,7 @@ class NdbDatabase(pulumi.CustomResource):
         * `Update` : - Currently only update of instance's name and description is supported using this resource
 
         See detailed information in [NDB Database Instance](https://www.nutanix.dev/api_references/ndb/#/9d9eee4304496-provision-a-database).
+
 
         :param str resource_name: The name of the resource.
         :param NdbDatabaseArgs args: The arguments to use to populate this resource's properties.

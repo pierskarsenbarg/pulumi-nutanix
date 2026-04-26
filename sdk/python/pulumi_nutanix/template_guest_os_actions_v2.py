@@ -27,6 +27,7 @@ class TemplateGuestOsActionsV2Args:
                  version_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a TemplateGuestOsActionsV2 resource.
+
         :param pulumi.Input[_builtins.str] action: Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
         :param pulumi.Input[_builtins.str] ext_id: The identifier of a Template.
         :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
@@ -139,6 +140,7 @@ class _TemplateGuestOsActionsV2State:
                  version_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TemplateGuestOsActionsV2 resources.
+
         :param pulumi.Input[_builtins.str] action: Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
         :param pulumi.Input[_builtins.str] ext_id: The identifier of a Template.
         :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
@@ -279,6 +281,7 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
             action="cancel")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
@@ -322,6 +325,7 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
             ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             action="cancel")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TemplateGuestOsActionsV2Args args: The arguments to use to populate this resource's properties.

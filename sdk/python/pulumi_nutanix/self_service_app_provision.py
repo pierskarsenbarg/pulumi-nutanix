@@ -30,6 +30,7 @@ class SelfServiceAppProvisionArgs:
                  soft_delete: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SelfServiceAppProvision resource.
+
         :param pulumi.Input[_builtins.str] app_name: - (Required) The name of the application you want to set.
         :param pulumi.Input[_builtins.str] action: - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
         :param pulumi.Input[_builtins.str] app_description: - (Optional) The description of application.
@@ -156,6 +157,7 @@ class _SelfServiceAppProvisionState:
                  vms: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionVmArgs']]]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppProvision resources.
+
         :param pulumi.Input[_builtins.str] action: - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
         :param pulumi.Input[_builtins.str] api_version: - (Computed) API version used.
         :param pulumi.Input[_builtins.str] app_description: - (Optional) The description of application.
@@ -373,6 +375,7 @@ class SelfServiceAppProvision(pulumi.CustomResource):
                  __props__=None):
         """
         Create a SelfServiceAppProvision resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
@@ -392,6 +395,7 @@ class SelfServiceAppProvision(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a SelfServiceAppProvision resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param SelfServiceAppProvisionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

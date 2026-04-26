@@ -27,6 +27,7 @@ class LcmPrechecksV2Args:
                  x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmPrechecksV2 resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]] entity_update_specs: List of entity update objects for getting recommendations.
         :param pulumi.Input['LcmPrechecksV2ManagementServerArgs'] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] skipped_precheck_flags: List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
@@ -99,6 +100,7 @@ class _LcmPrechecksV2State:
                  x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmPrechecksV2 resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]] entity_update_specs: List of entity update objects for getting recommendations.
         :param pulumi.Input['LcmPrechecksV2ManagementServerArgs'] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] skipped_precheck_flags: List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
@@ -201,6 +203,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
             }])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]] entity_update_specs: List of entity update objects for getting recommendations.
@@ -230,6 +233,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
                 "to_version": "4.0.0",
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LcmPrechecksV2Args args: The arguments to use to populate this resource's properties.

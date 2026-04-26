@@ -28,6 +28,7 @@ class ProtectionPolicyV2Args:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProtectionPolicyV2 resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: -(Optional) Host entity with its attributes.
         :param pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationConfigurationArgs']]] replication_configurations: -(Required) Cluster reference for an entity.
         :param pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationLocationArgs']]] replication_locations: -(Required) Hypervisor details.
@@ -118,6 +119,7 @@ class _ProtectionPolicyV2State:
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectionPolicyV2 resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: -(Optional) Host entity with its attributes.
         :param pulumi.Input[_builtins.str] description: -(Optional) Description of the protection policy.
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the protection policy.
@@ -437,6 +439,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: -(Optional) Host entity with its attributes.
@@ -624,6 +627,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             ],
             category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProtectionPolicyV2Args args: The arguments to use to populate this resource's properties.

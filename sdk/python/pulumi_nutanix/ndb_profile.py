@@ -31,6 +31,7 @@ class NdbProfileArgs:
                  software_profile: Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']] = None):
         """
         The set of arguments for constructing a NdbProfile resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]] compute_profiles: Compute Profile
         :param pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]] database_parameter_profiles: Database Parameter Profile
         :param pulumi.Input[_builtins.str] description: Description of profile
@@ -176,6 +177,7 @@ class _NdbProfileState:
                  versions: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionArgs']]]] = None):
         """
         Input properties used for looking up and filtering NdbProfile resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] assoc_databases: associated databases of profiles
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] assoc_db_servers: associated database servers for associated profiles
         :param pulumi.Input[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]] cluster_availabilities: cluster availability of profile
@@ -452,6 +454,7 @@ class NdbProfile(pulumi.CustomResource):
         """
         Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]] compute_profiles: Compute Profile
@@ -471,6 +474,7 @@ class NdbProfile(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
+
 
         :param str resource_name: The name of the resource.
         :param NdbProfileArgs args: The arguments to use to populate this resource's properties.

@@ -32,6 +32,7 @@ class ImagePlacementPolicyV2Args:
                  should_cancel_running_tasks: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ImagePlacementPolicyV2 resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]] cluster_entity_filters: Category-based entity filter.
         :param pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ImageEntityFilterArgs']]] image_entity_filters: Category-based entity filter.
         :param pulumi.Input[_builtins.str] placement_type: Type of the image placement policy. Valid values "HARD", "SOFT"
@@ -176,6 +177,7 @@ class _ImagePlacementPolicyV2State:
                  should_cancel_running_tasks: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ImagePlacementPolicyV2 resources.
+
         :param pulumi.Input[_builtins.str] action: Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
         :param pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]] cluster_entity_filters: Category-based entity filter.
         :param pulumi.Input[_builtins.str] description: Description of the image placement policy.
@@ -376,6 +378,7 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
             }])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
@@ -412,6 +415,7 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
                 "type": "CATEGORIES_MATCH_ALL",
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ImagePlacementPolicyV2Args args: The arguments to use to populate this resource's properties.

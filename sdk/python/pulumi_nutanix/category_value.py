@@ -24,6 +24,7 @@ class CategoryValueArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CategoryValue resource.
+
         :param pulumi.Input[_builtins.str] value: The value for the category value.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category value.
         :param pulumi.Input[_builtins.str] name: - (Required) The category_key name for the category value.
@@ -81,6 +82,7 @@ class _CategoryValueState:
                  value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CategoryValue resources.
+
         :param pulumi.Input[_builtins.str] api_version: (Optional) The version of the API.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category value.
         :param pulumi.Input[_builtins.str] name: - (Required) The category_key name for the category value.
@@ -187,6 +189,7 @@ class CategoryValue(pulumi.CustomResource):
             value="test-value")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category value.
@@ -216,6 +219,7 @@ class CategoryValue(pulumi.CustomResource):
             description="Test Category Value",
             value="test-value")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CategoryValueArgs args: The arguments to use to populate this resource's properties.

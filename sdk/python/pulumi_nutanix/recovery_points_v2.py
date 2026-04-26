@@ -29,6 +29,7 @@ class RecoveryPointsV2Args:
                  volume_group_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]] = None):
         """
         The set of arguments for constructing a RecoveryPointsV2 resource.
+
         :param pulumi.Input[_builtins.str] expiration_time: -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
         :param pulumi.Input[_builtins.str] name: -(Optional) The name of the Recovery point.
         :param pulumi.Input[_builtins.str] recovery_point_type: -(Optional) Type of the Recovery point.
@@ -150,6 +151,7 @@ class _RecoveryPointsV2State:
                  volume_group_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]] = None):
         """
         Input properties used for looking up and filtering RecoveryPointsV2 resources.
+
         :param pulumi.Input[_builtins.str] creation_time: The UTC date and time in ISO-8601 format when the Recovery point is created.
         :param pulumi.Input[_builtins.str] expiration_time: -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
         :param pulumi.Input[_builtins.str] ext_id: recovery point UUID
@@ -391,6 +393,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
             }])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] expiration_time: -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
@@ -430,6 +433,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
                 "vm_ext_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RecoveryPointsV2Args args: The arguments to use to populate this resource's properties.

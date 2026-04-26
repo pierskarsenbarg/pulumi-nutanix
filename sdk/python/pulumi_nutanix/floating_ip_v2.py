@@ -35,6 +35,7 @@ class FloatingIpV2Args:
                  vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['FloatingIpV2VpcArgs']]]] = None):
         """
         The set of arguments for constructing a FloatingIpV2 resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2AssociationArgs']]] associations: Association of the Floating IP with either NIC or Private IP
         :param pulumi.Input[_builtins.str] description: Description for the Floating IP.
         :param pulumi.Input[_builtins.str] external_subnet_reference: External subnet reference for the Floating IP to be allocated in on-prem only.
@@ -233,6 +234,7 @@ class _FloatingIpV2State:
                  vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['FloatingIpV2VpcArgs']]]] = None):
         """
         Input properties used for looking up and filtering FloatingIpV2 resources.
+
         :param pulumi.Input[_builtins.str] association_status: Association status of floating IP.
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2AssociationArgs']]] associations: Association of the Floating IP with either NIC or Private IP
         :param pulumi.Input[_builtins.str] description: Description for the Floating IP.
@@ -542,6 +544,7 @@ class FloatingIpV2(pulumi.CustomResource):
             }])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict']]]] associations: Association of the Floating IP with either NIC or Private IP
@@ -593,6 +596,7 @@ class FloatingIpV2(pulumi.CustomResource):
                 }],
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FloatingIpV2Args args: The arguments to use to populate this resource's properties.

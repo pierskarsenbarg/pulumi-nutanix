@@ -48,6 +48,7 @@ class NdbRegisterDatabaseArgs:
                  working_directory: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbRegisterDatabase resource.
+
         :param pulumi.Input[_builtins.str] database_name: name of database
         :param pulumi.Input[_builtins.str] database_type: type of database. Required value: postgres_database
         :param pulumi.Input[_builtins.str] vm_ip: IP address of dbserver VM
@@ -476,6 +477,7 @@ class _NdbRegisterDatabaseState:
                  working_directory: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbRegisterDatabase resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]] actionarguments: action arguments
         :param pulumi.Input[_builtins.bool] auto_tune_staging_drive: auto tune staging drive. Default is true
         :param pulumi.Input[_builtins.str] category: category of database. Default is "DEFAULT"
@@ -1230,6 +1232,7 @@ class NdbRegisterDatabase(pulumi.CustomResource):
         """
         Provides a resource to register the database based on the input parameters.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]] actionarguments: action arguments
@@ -1266,6 +1269,7 @@ class NdbRegisterDatabase(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to register the database based on the input parameters.
+
 
         :param str resource_name: The name of the resource.
         :param NdbRegisterDatabaseArgs args: The arguments to use to populate this resource's properties.

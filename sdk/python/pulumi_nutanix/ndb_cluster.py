@@ -36,6 +36,7 @@ class NdbClusterArgs:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbCluster resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['NdbClusterAgentNetworkInfoArgs']]] agent_network_infos: agent network info to register cluster
         :param pulumi.Input[_builtins.str] cluster_ip: Prism Element IP address
         :param pulumi.Input[Sequence[pulumi.Input['NdbClusterNetworksInfoArgs']]] networks_infos: network segmentation to segment the network traffic of the agent VM.
@@ -248,6 +249,7 @@ class _NdbClusterState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbCluster resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['NdbClusterAgentNetworkInfoArgs']]] agent_network_infos: agent network info to register cluster
         :param pulumi.Input[_builtins.str] cloud_info: - cloud info
         :param pulumi.Input[_builtins.str] cloud_type: - cloud type
@@ -756,6 +758,7 @@ class NdbCluster(pulumi.CustomResource):
             }])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]] agent_network_infos: agent network info to register cluster
@@ -809,6 +812,7 @@ class NdbCluster(pulumi.CustomResource):
                 ],
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NdbClusterArgs args: The arguments to use to populate this resource's properties.

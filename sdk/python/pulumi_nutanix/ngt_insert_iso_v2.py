@@ -24,6 +24,7 @@ class NgtInsertIsoV2Args:
                  is_config_only: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a NgtInsertIsoV2 resource.
+
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input[_builtins.bool] is_config_only: Indicates that the Nutanix Guest Tools are already installed on the guest VM, and the ISO is being inserted to update the configuration of these tools.
@@ -88,6 +89,7 @@ class _NgtInsertIsoV2State:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NgtInsertIsoV2 resources.
+
         :param pulumi.Input[_builtins.str] available_version: Version of Nutanix Guest Tools available on the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
@@ -296,6 +298,7 @@ class NgtInsertIsoV2(pulumi.CustomResource):
             is_config_only=False)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
@@ -322,6 +325,7 @@ class NgtInsertIsoV2(pulumi.CustomResource):
             capablities=["VSS_SNAPSHOT"],
             is_config_only=False)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NgtInsertIsoV2Args args: The arguments to use to populate this resource's properties.
