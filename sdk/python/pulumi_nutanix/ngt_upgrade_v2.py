@@ -25,6 +25,7 @@ class NgtUpgradeV2Args:
                  reboot_preference: Optional[pulumi.Input['NgtUpgradeV2RebootPreferenceArgs']] = None):
         """
         The set of arguments for constructing a NgtUpgradeV2 resource.
+
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
         :param pulumi.Input['NgtUpgradeV2RebootPreferenceArgs'] reboot_preference: The restart schedule after installing or upgrading Nutanix Guest Tools.
         """
@@ -74,6 +75,7 @@ class _NgtUpgradeV2State:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NgtUpgradeV2 resources.
+
         :param pulumi.Input[_builtins.str] available_version: Version of Nutanix Guest Tools available on the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
@@ -282,6 +284,7 @@ class NgtUpgradeV2(pulumi.CustomResource):
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
@@ -308,6 +311,7 @@ class NgtUpgradeV2(pulumi.CustomResource):
                 "schedule_type": "IMMEDIATE",
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NgtUpgradeV2Args args: The arguments to use to populate this resource's properties.

@@ -36,6 +36,7 @@ class UserKeyV2Args:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UserKeyV2 resource.
+
         :param pulumi.Input[_builtins.str] key_type: - The type of key.
         :param pulumi.Input[_builtins.str] assigned_to: - External client to whom the given key is allocated.
         :param pulumi.Input[_builtins.str] created_by: - User or service who created the key.
@@ -250,6 +251,7 @@ class _UserKeyV2State:
                  user_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserKeyV2 resources.
+
         :param pulumi.Input[_builtins.str] assigned_to: - External client to whom the given key is allocated.
         :param pulumi.Input[_builtins.str] created_by: - User or service who created the key.
         :param pulumi.Input[_builtins.str] created_time: - The creation time of the key.
@@ -562,6 +564,7 @@ class UserKeyV2(pulumi.CustomResource):
               * "EXPIRED":	Key is expired.
         * `assigned_to`: - ( Optional ) External client to whom the given key is allocated.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] assigned_to: - External client to whom the given key is allocated.
@@ -620,6 +623,7 @@ class UserKeyV2(pulumi.CustomResource):
               * "VALID":	Key is valid.
               * "EXPIRED":	Key is expired.
         * `assigned_to`: - ( Optional ) External client to whom the given key is allocated.
+
 
         :param str resource_name: The name of the resource.
         :param UserKeyV2Args args: The arguments to use to populate this resource's properties.

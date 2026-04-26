@@ -47,6 +47,7 @@ class ProjectArgs:
                  vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectVpcReferenceListArgs']]]] = None):
         """
         The set of arguments for constructing a Project resource.
+
         :param pulumi.Input[_builtins.str] description: A description for project.
         :param pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
         :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using project_internal flag).
@@ -372,6 +373,7 @@ class _ProjectState:
                  vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectVpcReferenceListArgs']]]] = None):
         """
         Input properties used for looking up and filtering Project resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
         :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using project_internal flag).
         :param pulumi.Input[_builtins.str] description: A description for project.
@@ -734,6 +736,7 @@ class Project(pulumi.CustomResource):
         """
         Provides a Nutanix Project resource to Create a Project.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
@@ -752,6 +755,7 @@ class Project(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Nutanix Project resource to Create a Project.
+
 
         :param str resource_name: The name of the resource.
         :param ProjectArgs args: The arguments to use to populate this resource's properties.

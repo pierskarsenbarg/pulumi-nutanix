@@ -25,6 +25,7 @@ class NdbTmsClusterArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbTmsCluster resource.
+
         :param pulumi.Input[_builtins.str] nx_cluster_id: Nutanix cluster id on the associated registered clusters.
         :param pulumi.Input[_builtins.str] sla_id: SLA id for the associated cluster.
         :param pulumi.Input[_builtins.str] time_machine_id: time machine id
@@ -104,6 +105,7 @@ class _NdbTmsClusterState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbTmsCluster resources.
+
         :param pulumi.Input[_builtins.str] date_created: created date of time machine associated with cluster
         :param pulumi.Input[_builtins.str] date_modified: modified date of time machine associated with cluster
         :param pulumi.Input[_builtins.str] description: description of nutanix cluster associated with time machine
@@ -343,6 +345,7 @@ class NdbTmsCluster(pulumi.CustomResource):
             sla_id="{{ sla_id }}")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] nx_cluster_id: Nutanix cluster id on the associated registered clusters.
@@ -370,6 +373,7 @@ class NdbTmsCluster(pulumi.CustomResource):
             nx_cluster_id="{{ cluster_id }}",
             sla_id="{{ sla_id }}")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NdbTmsClusterArgs args: The arguments to use to populate this resource's properties.

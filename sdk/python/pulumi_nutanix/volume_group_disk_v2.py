@@ -29,6 +29,7 @@ class VolumeGroupDiskV2Args:
                  index: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a VolumeGroupDiskV2 resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]] disk_data_source_references: -(Required) Disk Data Source Reference.
         :param pulumi.Input[_builtins.int] disk_size_bytes: - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         :param pulumi.Input[_builtins.str] volume_group_ext_id: The external identifier of the volume group.
@@ -131,6 +132,7 @@ class _VolumeGroupDiskV2State:
                  volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupDiskV2 resources.
+
         :param pulumi.Input[_builtins.str] description: - Volume Disk description.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]] disk_data_source_references: -(Required) Disk Data Source Reference.
         :param pulumi.Input[_builtins.int] disk_size_bytes: - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
@@ -283,6 +285,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
             }])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - Volume Disk description.
@@ -328,6 +331,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
                 }],
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VolumeGroupDiskV2Args args: The arguments to use to populate this resource's properties.

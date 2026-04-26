@@ -28,6 +28,7 @@ class LcmConfigV2Args:
                  x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmConfigV2 resource.
+
         :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when auto_inventory_enabled is set to True. The default schedule time is 03:00(AM).
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
@@ -153,6 +154,7 @@ class _LcmConfigV2State:
                  x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmConfigV2 resources.
+
         :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when auto_inventory_enabled is set to True. The default schedule time is 03:00(AM).
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
@@ -312,6 +314,7 @@ class LcmConfigV2(pulumi.CustomResource):
             connectivity_type="DARKSITE_WEB_SERVER")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when auto_inventory_enabled is set to True. The default schedule time is 03:00(AM).
@@ -351,6 +354,7 @@ class LcmConfigV2(pulumi.CustomResource):
             url="https://x.x.x.x:8000/builds",
             connectivity_type="DARKSITE_WEB_SERVER")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LcmConfigV2Args args: The arguments to use to populate this resource's properties.

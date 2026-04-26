@@ -22,6 +22,7 @@ class LcmPerformInventoryV2Args:
                  x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmPerformInventoryV2 resource.
+
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
                
                See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
@@ -50,6 +51,7 @@ class _LcmPerformInventoryV2State:
                  x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmPerformInventoryV2 resources.
+
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
                
                See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
@@ -93,6 +95,7 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
         inventory = nutanix.LcmPerformInventoryV2("inventory", x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
@@ -117,6 +120,7 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
         # perform inventory
         inventory = nutanix.LcmPerformInventoryV2("inventory", x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LcmPerformInventoryV2Args args: The arguments to use to populate this resource's properties.

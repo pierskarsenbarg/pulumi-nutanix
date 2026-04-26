@@ -23,6 +23,7 @@ class CategoryKeyArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CategoryKey resource.
+
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category key.
         :param pulumi.Input[_builtins.str] name: - (Required) The name for the category key.
         """
@@ -65,6 +66,7 @@ class _CategoryKeyState:
                  system_defined: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering CategoryKey resources.
+
         :param pulumi.Input[_builtins.str] api_version: (Optional) The version of the API.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category key.
         :param pulumi.Input[_builtins.str] name: - (Required) The name for the category key.
@@ -151,6 +153,7 @@ class CategoryKey(pulumi.CustomResource):
             description="App Support Category Key")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category key.
@@ -175,6 +178,7 @@ class CategoryKey(pulumi.CustomResource):
             name="app-support-example",
             description="App Support Category Key")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CategoryKeyArgs args: The arguments to use to populate this resource's properties.

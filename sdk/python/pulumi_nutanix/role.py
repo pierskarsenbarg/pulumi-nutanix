@@ -29,6 +29,7 @@ class RoleArgs:
                  project_reference: Optional[pulumi.Input['RoleProjectReferenceArgs']] = None):
         """
         The set of arguments for constructing a Role resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['RolePermissionReferenceListArgs']]] permission_reference_lists: - (Required) List of permission references.
         :param pulumi.Input[Sequence[pulumi.Input['RoleCategoryArgs']]] categories: - (Optional) Categories for the role.
         :param pulumi.Input[_builtins.str] description: - (Optional) The description of the role.
@@ -135,6 +136,7 @@ class _RoleState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Role resources.
+
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['RoleCategoryArgs']]] categories: - (Optional) Categories for the role.
         :param pulumi.Input[_builtins.str] description: - (Optional) The description of the role.
@@ -314,6 +316,7 @@ class Role(pulumi.CustomResource):
             ])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]] categories: - (Optional) Categories for the role.
@@ -356,6 +359,7 @@ class Role(pulumi.CustomResource):
                 },
             ])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RoleArgs args: The arguments to use to populate this resource's properties.

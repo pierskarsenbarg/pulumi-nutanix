@@ -28,6 +28,7 @@ class StaticRoutesArgs:
                  vpc_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a StaticRoutes resource.
+
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]] default_route_nexthops: Default Route
         :param pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]] static_routes_lists: Static Routes.
@@ -117,6 +118,7 @@ class _StaticRoutesState:
                  vpc_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StaticRoutes resources.
+
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]] default_route_nexthops: Default Route
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The vpc_route_table kind metadata.
@@ -258,6 +260,7 @@ class StaticRoutes(pulumi.CustomResource):
 
         #### Note: destination with 0.0.0.0/0 will be default route.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
@@ -307,6 +310,7 @@ class StaticRoutes(pulumi.CustomResource):
         ```
 
         #### Note: destination with 0.0.0.0/0 will be default route.
+
 
         :param str resource_name: The name of the resource.
         :param StaticRoutesArgs args: The arguments to use to populate this resource's properties.

@@ -28,6 +28,7 @@ class UserArgs:
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a User resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['UserCategoryArgs']]] categories: - (Optional) Categories for the Access Control Policy.
         :param pulumi.Input['UserDirectoryServiceUserArgs'] directory_service_user: - (Optional) The directory service user configuration. See below for more information.
         :param pulumi.Input['UserIdentityProviderUserArgs'] identity_provider_user: - (Optional) (Optional) The identity provider user configuration. See below for more information.
@@ -124,6 +125,7 @@ class _UserState:
                  user_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering User resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['UserAccessControlPolicyReferenceListArgs']]] access_control_policy_reference_lists: - List of ACP references. See #reference for more details.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['UserCategoryArgs']]] categories: - (Optional) Categories for the Access Control Policy.
@@ -363,6 +365,7 @@ class User(pulumi.CustomResource):
         })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]] categories: - (Optional) Categories for the Access Control Policy.
@@ -405,6 +408,7 @@ class User(pulumi.CustomResource):
             },
         })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UserArgs args: The arguments to use to populate this resource's properties.
