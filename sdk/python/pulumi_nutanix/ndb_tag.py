@@ -26,7 +26,6 @@ class NdbTagArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbTag resource.
-
         :param pulumi.Input[_builtins.str] entity_type: entity for the tag to be associated with. Supported values [ DATABASE, TIME_MACHINE, CLONE, DATABASE_SERVER ].
         :param pulumi.Input[_builtins.str] description: description for the tag
         :param pulumi.Input[_builtins.str] name: name for the tag
@@ -118,7 +117,6 @@ class _NdbTagState:
                  values: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NdbTag resources.
-
         :param pulumi.Input[_builtins.str] date_created: date created of the tag
         :param pulumi.Input[_builtins.str] date_modified: modified date of tha tag
         :param pulumi.Input[_builtins.str] description: description for the tag
@@ -299,7 +297,6 @@ class NdbTag(pulumi.CustomResource):
             status="DEPRECATED")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: description for the tag
@@ -343,7 +340,6 @@ class NdbTag(pulumi.CustomResource):
             required=True,
             status="DEPRECATED")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbTagArgs args: The arguments to use to populate this resource's properties.

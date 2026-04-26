@@ -27,7 +27,6 @@ class NdbMaintenanceTaskArgs:
                  tasks: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskTaskArgs']]]] = None):
         """
         The set of arguments for constructing a NdbMaintenanceTask resource.
-
         :param pulumi.Input[_builtins.str] maintenance_window_id: maintenance window id which has to be associated
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with "dbserver_id"
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with "dbserver_cluster"
@@ -100,7 +99,6 @@ class _NdbMaintenanceTaskState:
                  tasks: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskTaskArgs']]]] = None):
         """
         Input properties used for looking up and filtering NdbMaintenanceTask resources.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with "dbserver_id"
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with "dbserver_cluster"
         :param pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskEntityTaskAssociationArgs']]] entity_task_associations: Entity Task Association  List.
@@ -243,7 +241,6 @@ class NdbMaintenanceTask(pulumi.CustomResource):
             ])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with "dbserver_id"
@@ -309,7 +306,6 @@ class NdbMaintenanceTask(pulumi.CustomResource):
                 },
             ])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbMaintenanceTaskArgs args: The arguments to use to populate this resource's properties.

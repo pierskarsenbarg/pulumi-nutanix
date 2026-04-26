@@ -28,7 +28,6 @@ class CategoryV2Args:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CategoryV2 resource.
-
         :param pulumi.Input[_builtins.str] key: -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
                
                - A string of maxlength of 64
@@ -171,7 +170,6 @@ class _CategoryV2State:
                  value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CategoryV2 resources.
-
         :param pulumi.Input[Sequence[pulumi.Input['CategoryV2AssociationArgs']]] associations: This field gives basic information about resources that are associated with the category.
                The results present under this field summarize the counts of various kinds of resources associated with the category.
                For more detailed information about the UUIDs of the resources, please look into the field detailedAssociations.
@@ -375,7 +373,6 @@ class CategoryV2(pulumi.CustomResource):
             description="category example description")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: -(Optional) A string consisting of the description of the category as defined by the user.
@@ -431,7 +428,6 @@ class CategoryV2(pulumi.CustomResource):
             value="category_example_value",
             description="category example description")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param CategoryV2Args args: The arguments to use to populate this resource's properties.

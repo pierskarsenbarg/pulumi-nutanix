@@ -37,7 +37,6 @@ class ImageArgs:
                  version: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Image resource.
-
         :param pulumi.Input[_builtins.str] architecture: - (Optional) The supported CPU architecture for a disk image.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
         :param pulumi.Input[Sequence[pulumi.Input['ImageCategoryArgs']]] categories: - (Optional) Categories for the image.
@@ -274,7 +273,6 @@ class _ImageState:
                  version: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Image resources.
-
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[_builtins.str] architecture: - (Optional) The supported CPU architecture for a disk image.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
@@ -637,7 +635,6 @@ class Image(pulumi.CustomResource):
             }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] architecture: - (Optional) The supported CPU architecture for a disk image.
@@ -683,7 +680,6 @@ class Image(pulumi.CustomResource):
                 "uuid": "<uuid of the vm disk>",
             }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param ImageArgs args: The arguments to use to populate this resource's properties.

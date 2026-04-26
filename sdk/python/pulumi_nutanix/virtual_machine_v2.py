@@ -64,7 +64,6 @@ class VirtualMachineV2Args:
                  vtpm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]] = None):
         """
         The set of arguments for constructing a VirtualMachineV2 resource.
-
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]] apc_configs: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
         :param pulumi.Input[_builtins.str] bios_uuid: BIOS UUID of the VM. It should be of type UUID.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]] boot_configs: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
@@ -724,7 +723,6 @@ class _VirtualMachineV2State:
                  vtpm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]] = None):
         """
         Input properties used for looking up and filtering VirtualMachineV2 resources.
-
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]] apc_configs: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
         :param pulumi.Input[_builtins.str] bios_uuid: BIOS UUID of the VM. It should be of type UUID.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]] boot_configs: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
@@ -1571,7 +1569,6 @@ class VirtualMachineV2(pulumi.CustomResource):
             power_state="ON")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ApcConfigArgs', 'VirtualMachineV2ApcConfigArgsDict']]]] apc_configs: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
@@ -1762,7 +1759,6 @@ class VirtualMachineV2(pulumi.CustomResource):
             }],
             power_state="ON")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param VirtualMachineV2Args args: The arguments to use to populate this resource's properties.

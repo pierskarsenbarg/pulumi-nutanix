@@ -39,7 +39,6 @@ class ObjectStoreV2Args:
                  total_capacity_gib: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ObjectStoreV2 resource.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] certificate_ext_ids: - A list of the UUIDs of the certificates of an Object store.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Optional) UUID of the AHV or ESXi cluster.
         :param pulumi.Input[_builtins.str] deployment_version: -(Optional) The deployment version of the Object store.
@@ -333,7 +332,6 @@ class _ObjectStoreV2State:
                  total_capacity_gib: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ObjectStoreV2 resources.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] certificate_ext_ids: - A list of the UUIDs of the certificates of an Object store.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Optional) UUID of the AHV or ESXi cluster.
         :param pulumi.Input[_builtins.str] creation_time: - The time when the Object store was created.
@@ -763,7 +761,6 @@ class ObjectStoreV2(pulumi.CustomResource):
             })
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] certificate_ext_ids: - A list of the UUIDs of the certificates of an Object store.
@@ -864,7 +861,6 @@ class ObjectStoreV2(pulumi.CustomResource):
                 },
             })
         ```
-
 
         :param str resource_name: The name of the resource.
         :param ObjectStoreV2Args args: The arguments to use to populate this resource's properties.

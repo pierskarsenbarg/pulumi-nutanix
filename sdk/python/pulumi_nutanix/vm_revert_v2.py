@@ -23,7 +23,6 @@ class VmRevertV2Args:
                  vm_recovery_point_ext_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a VmRevertV2 resource.
-
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The globally unique identifier of a VM. It should be of type UUID.
         :param pulumi.Input[_builtins.str] vm_recovery_point_ext_id: -(Required) The external identifier of the VM Recovery Point.
         """
@@ -63,7 +62,6 @@ class _VmRevertV2State:
                  vm_recovery_point_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmRevertV2 resources.
-
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The globally unique identifier of a VM. It should be of type UUID.
         :param pulumi.Input[_builtins.str] status: - The status of the Revert operation.
         :param pulumi.Input[_builtins.str] vm_recovery_point_ext_id: -(Required) The external identifier of the VM Recovery Point.
@@ -136,7 +134,6 @@ class VmRevertV2(pulumi.CustomResource):
             vm_recovery_point_ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The globally unique identifier of a VM. It should be of type UUID.
@@ -162,7 +159,6 @@ class VmRevertV2(pulumi.CustomResource):
             ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
             vm_recovery_point_ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param VmRevertV2Args args: The arguments to use to populate this resource's properties.

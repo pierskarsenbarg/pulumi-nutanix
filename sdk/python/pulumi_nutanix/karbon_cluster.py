@@ -35,7 +35,6 @@ class KarbonClusterArgs:
                  wait_timeout_minutes: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a KarbonCluster resource.
-
         :param pulumi.Input['KarbonClusterCniConfigArgs'] cni_config: - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input['KarbonClusterEtcdNodePoolArgs'] etcd_node_pool: - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
         :param pulumi.Input['KarbonClusterMasterNodePoolArgs'] master_node_pool: - (Required) Configuration of the master node pools.
@@ -233,7 +232,6 @@ class _KarbonClusterState:
                  worker_node_pool: Optional[pulumi.Input['KarbonClusterWorkerNodePoolArgs']] = None):
         """
         Input properties used for looking up and filtering KarbonCluster resources.
-
         :param pulumi.Input['KarbonClusterActivePassiveConfigArgs'] active_passive_config: - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input['KarbonClusterCniConfigArgs'] cni_config: - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input['KarbonClusterEtcdNodePoolArgs'] etcd_node_pool: - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
@@ -577,7 +575,6 @@ class KarbonCluster(pulumi.CustomResource):
             })
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']] active_passive_config: - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
@@ -705,7 +702,6 @@ class KarbonCluster(pulumi.CustomResource):
                 },
             })
         ```
-
 
         :param str resource_name: The name of the resource.
         :param KarbonClusterArgs args: The arguments to use to populate this resource's properties.

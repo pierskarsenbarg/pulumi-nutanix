@@ -24,7 +24,6 @@ class RecoveryPointReplicateV2Args:
                  cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RecoveryPointReplicateV2 resource.
-
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) External identifier of the Prism Central.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) External identifier of the cluster.
@@ -80,7 +79,6 @@ class _RecoveryPointReplicateV2State:
                  replicated_rp_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RecoveryPointReplicateV2 resources.
-
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) External identifier of the cluster.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) External identifier of the Prism Central.
@@ -170,7 +168,6 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
             pc_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) External identifier of the cluster.
@@ -198,7 +195,6 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
             cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             pc_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param RecoveryPointReplicateV2Args args: The arguments to use to populate this resource's properties.

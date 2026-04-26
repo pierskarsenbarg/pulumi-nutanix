@@ -27,7 +27,6 @@ class RecoveryPointRestoreV2Args:
                  volume_group_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]] = None):
         """
         The set of arguments for constructing a RecoveryPointRestoreV2 resource.
-
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) External identifier of the cluster.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
         :param pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]] vm_recovery_point_restore_overrides: -(Optional) List of specifications to restore a specific VM recovery point(s) that are a part of the top-level recovery point. A specific VM recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
@@ -100,7 +99,6 @@ class _RecoveryPointRestoreV2State:
                  volume_group_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]] = None):
         """
         Input properties used for looking up and filtering RecoveryPointRestoreV2 resources.
-
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) External identifier of the cluster.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vm_ext_ids: - List of external identifiers of the created(restored) VMs.
@@ -230,7 +228,6 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
             }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) External identifier of the cluster.
@@ -268,7 +265,6 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
                 }],
             }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param RecoveryPointRestoreV2Args args: The arguments to use to populate this resource's properties.

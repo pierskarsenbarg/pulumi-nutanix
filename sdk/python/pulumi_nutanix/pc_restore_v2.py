@@ -27,7 +27,6 @@ class PcRestoreV2Args:
                  restore_source_ext_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PcRestoreV2 resource.
-
         :param pulumi.Input['PcRestoreV2DomainManagerArgs'] domain_manager: -(Required) Domain manager (Prism Central) details.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Restore point ID for the backup created in cluster/object store.
         :param pulumi.Input[_builtins.str] restorable_domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
@@ -96,7 +95,6 @@ class _PcRestoreV2State:
                  restore_source_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcRestoreV2 resources.
-
         :param pulumi.Input['PcRestoreV2DomainManagerArgs'] domain_manager: -(Required) Domain manager (Prism Central) details.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Restore point ID for the backup created in cluster/object store.
         :param pulumi.Input[_builtins.str] restorable_domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
@@ -179,7 +177,6 @@ class PcRestoreV2(pulumi.CustomResource):
 
         ## Example Usage
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']] domain_manager: -(Required) Domain manager (Prism Central) details.
@@ -200,7 +197,6 @@ class PcRestoreV2(pulumi.CustomResource):
         The restore domain manager is a task-driven operation to restore a domain manager from a cluster or object store backup location based on the selected restore point.
 
         ## Example Usage
-
 
         :param str resource_name: The name of the resource.
         :param PcRestoreV2Args args: The arguments to use to populate this resource's properties.

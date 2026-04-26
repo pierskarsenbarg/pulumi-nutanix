@@ -61,7 +61,6 @@ class _UserKeyRevokeV2State:
                  user_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserKeyRevokeV2 resources.
-
         :param pulumi.Input[Sequence[pulumi.Input['UserKeyRevokeV2ArgumentsMapArgs']]] arguments_maps: - The map of argument name to value.
         :param pulumi.Input[_builtins.str] code: - The code associated with this message.This string is typically prefixed by the namespace the endpoint belongs to. For example: VMM-40000.
         :param pulumi.Input[_builtins.str] error_group: - The error group associated with this message of severity ERROR.
@@ -208,7 +207,6 @@ class UserKeyRevokeV2(pulumi.CustomResource):
         * `user_ext_id`: - ( Required ) External Identifier of the User.
         * `ext_id`: - ( Required ) External identifier of the key.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
@@ -239,7 +237,6 @@ class UserKeyRevokeV2(pulumi.CustomResource):
 
         * `user_ext_id`: - ( Required ) External Identifier of the User.
         * `ext_id`: - ( Required ) External identifier of the key.
-
 
         :param str resource_name: The name of the resource.
         :param UserKeyRevokeV2Args args: The arguments to use to populate this resource's properties.

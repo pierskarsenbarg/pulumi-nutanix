@@ -38,7 +38,6 @@ class FoundationCentralImageClusterArgs:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FoundationCentralImageCluster resource.
-
         :param pulumi.Input[_builtins.str] aos_package_sha256sum: Sha256sum of AOS package.
         :param pulumi.Input[_builtins.str] aos_package_url: URL to download AOS package. Required only if imaging is needed.
         :param pulumi.Input[_builtins.str] cluster_external_ip: External management ip of the cluster.
@@ -280,7 +279,6 @@ class _FoundationCentralImageClusterState:
                  workflow_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationCentralImageCluster resources.
-
         :param pulumi.Input[_builtins.str] aos_package_sha256sum: Sha256sum of AOS package.
         :param pulumi.Input[_builtins.str] aos_package_url: URL to download AOS package. Required only if imaging is needed.
         :param pulumi.Input[_builtins.str] cluster_external_ip: External management ip of the cluster.
@@ -620,7 +618,6 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  __props__=None):
         """
         Create a FoundationCentralImageCluster resource with the given unique name, props, and options.
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] aos_package_sha256sum: Sha256sum of AOS package.
@@ -643,7 +640,6 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a FoundationCentralImageCluster resource with the given unique name, props, and options.
-
         :param str resource_name: The name of the resource.
         :param FoundationCentralImageClusterArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

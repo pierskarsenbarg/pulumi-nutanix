@@ -39,7 +39,6 @@ class VolumeGroupV2Args:
                  usage_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a VolumeGroupV2 resource.
-
         :param pulumi.Input[_builtins.str] cluster_reference: -(Required) The UUID of the cluster that will host the Volume Group.
         :param pulumi.Input[_builtins.str] attachment_type: -(Optional) The field indicates whether a VG has a VM or an external attachment associated with it. Valid values are :
                - EXTERNAL : Volume Group has an external iSCSI or NVMf attachment.
@@ -316,7 +315,6 @@ class _VolumeGroupV2State:
                  usage_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupV2 resources.
-
         :param pulumi.Input[_builtins.str] attachment_type: -(Optional) The field indicates whether a VG has a VM or an external attachment associated with it. Valid values are :
                - EXTERNAL : Volume Group has an external iSCSI or NVMf attachment.
                - NONE : Volume Group has no attachment.
@@ -640,7 +638,6 @@ class VolumeGroupV2(pulumi.CustomResource):
             is_hidden=False)
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] attachment_type: -(Optional) The field indicates whether a VG has a VM or an external attachment associated with it. Valid values are :
@@ -701,7 +698,6 @@ class VolumeGroupV2(pulumi.CustomResource):
             usage_type="USER",
             is_hidden=False)
         ```
-
 
         :param str resource_name: The name of the resource.
         :param VolumeGroupV2Args args: The arguments to use to populate this resource's properties.

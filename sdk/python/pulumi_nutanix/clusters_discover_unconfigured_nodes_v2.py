@@ -30,7 +30,6 @@ class ClustersDiscoverUnconfiguredNodesV2Args:
                  uuid_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ClustersDiscoverUnconfiguredNodesV2 resource.
-
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
         :param pulumi.Input[_builtins.str] address_type: - (Optional) Address type.
                Valid values are:
@@ -157,7 +156,6 @@ class _ClustersDiscoverUnconfiguredNodesV2State:
                  uuid_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ClustersDiscoverUnconfiguredNodesV2 resources.
-
         :param pulumi.Input[_builtins.str] address_type: - (Optional) Address type.
                Valid values are:
                - "IPV4"	IPV4 address type.
@@ -300,7 +298,6 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
         """
         Get the unconfigured node details such as node UUID, node position, node IP, foundation version and more.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] address_type: - (Optional) Address type.
@@ -322,7 +319,6 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Get the unconfigured node details such as node UUID, node position, node IP, foundation version and more.
-
 
         :param str resource_name: The name of the resource.
         :param ClustersDiscoverUnconfiguredNodesV2Args args: The arguments to use to populate this resource's properties.

@@ -27,7 +27,6 @@ class KarbonPrivateRegistryArgs:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a KarbonPrivateRegistry resource.
-
         :param pulumi.Input[_builtins.str] url: - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[_builtins.str] cert: - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
@@ -132,7 +131,6 @@ class _KarbonPrivateRegistryState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KarbonPrivateRegistry resources.
-
         :param pulumi.Input[_builtins.str] cert: - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[_builtins.str] endpoint: - Endpoint of the private in format `url:port`.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
@@ -267,7 +265,6 @@ class KarbonPrivateRegistry(pulumi.CustomResource):
         registry = nutanix.KarbonPrivateRegistry("registry")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cert: - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
@@ -295,7 +292,6 @@ class KarbonPrivateRegistry(pulumi.CustomResource):
         registries = nutanix.get_karbon_private_registry()
         registry = nutanix.KarbonPrivateRegistry("registry")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param KarbonPrivateRegistryArgs args: The arguments to use to populate this resource's properties.

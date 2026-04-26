@@ -28,7 +28,6 @@ class RolesV2Args:
                  ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RolesV2 resource.
-
         :param pulumi.Input[_builtins.str] display_name: -(Required) The display name for the Role.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operations: -(Required) List of operations for the role.
         :param pulumi.Input[_builtins.str] client_name: - Client that created the entity.
@@ -125,7 +124,6 @@ class _RolesV2State:
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RolesV2 resources.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] accessible_clients: - List of Accessible Clients for the Role.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] accessible_entity_types: - List of Accessible Entity Types for the Role.
         :param pulumi.Input[_builtins.int] assigned_users_count: - Number of Users assigned to given Role.
@@ -389,7 +387,6 @@ class RolesV2(pulumi.CustomResource):
             ])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] client_name: - Client that created the entity.
@@ -426,7 +423,6 @@ class RolesV2(pulumi.CustomResource):
                 operations_filtered_list.operations[3].ext_id,
             ])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param RolesV2Args args: The arguments to use to populate this resource's properties.

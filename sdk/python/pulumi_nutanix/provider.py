@@ -34,7 +34,6 @@ class ProviderArgs:
                  wait_timeout: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Provider resource.
-
         :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
                note, this is never the data services VIP, and should not be an
                individual CVM address, as this would cause calls to fail during
@@ -255,7 +254,6 @@ class Provider(pulumi.ProviderResource):
         construction to achieve fine-grained programmatic control over provider settings. See the
         [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
@@ -284,7 +282,6 @@ class Provider(pulumi.ProviderResource):
         settings, however an explicit `Provider` instance may be created and passed during resource
         construction to achieve fine-grained programmatic control over provider settings. See the
         [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
-
 
         :param str resource_name: The name of the resource.
         :param ProviderArgs args: The arguments to use to populate this resource's properties.

@@ -24,7 +24,6 @@ class FoundationImageArgs:
                  source: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a FoundationImage resource.
-
         :param pulumi.Input[_builtins.str] filename: - (Required) Name of installer file to be kept in foundation vm.
         :param pulumi.Input[_builtins.str] installer_type: - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
         :param pulumi.Input[_builtins.str] source: - (Required) Complete path to the file in machine where the .tf  files runs.
@@ -81,7 +80,6 @@ class _FoundationImageState:
                  source: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationImage resources.
-
         :param pulumi.Input[_builtins.str] filename: - (Required) Name of installer file to be kept in foundation vm.
         :param pulumi.Input[_builtins.bool] in_whitelist: - If hypervisor ISO is in whitelist.
         :param pulumi.Input[_builtins.str] installer_type: - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
@@ -210,7 +208,6 @@ class FoundationImage(pulumi.CustomResource):
 
         See detailed information in [Nutanix Foundation Image](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDQ-upload-hypervisor-or-aos-image-to-foundation).
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] filename: - (Required) Name of installer file to be kept in foundation vm.
@@ -247,7 +244,6 @@ class FoundationImage(pulumi.CustomResource):
         * `Update` : - Resource will trigger new resource create call for any kind of update in resource config and delete existing image from foundation vm.
 
         See detailed information in [Nutanix Foundation Image](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDQ-upload-hypervisor-or-aos-image-to-foundation).
-
 
         :param str resource_name: The name of the resource.
         :param FoundationImageArgs args: The arguments to use to populate this resource's properties.

@@ -29,7 +29,6 @@ class UserGroupsArgs:
                  saml_user_groups: Optional[pulumi.Input[Sequence[pulumi.Input['UserGroupsSamlUserGroupArgs']]]] = None):
         """
         The set of arguments for constructing a UserGroups resource.
-
         :param pulumi.Input[Sequence[pulumi.Input['UserGroupsDirectoryServiceOusArgs']]] directory_service_ous: - (Optional) A Directory Service organizational unit.
         :param pulumi.Input[Sequence[pulumi.Input['UserGroupsDirectoryServiceUserGroupArgs']]] directory_service_user_groups: - (Optional) A Directory Service user group.
         :param pulumi.Input[Sequence[pulumi.Input['UserGroupsSamlUserGroupArgs']]] saml_user_groups: - (Optional) A SAML Service user group.
@@ -123,7 +122,6 @@ class _UserGroupsState:
                  saml_user_groups: Optional[pulumi.Input[Sequence[pulumi.Input['UserGroupsSamlUserGroupArgs']]]] = None):
         """
         Input properties used for looking up and filtering UserGroups resources.
-
         :param pulumi.Input[Sequence[pulumi.Input['UserGroupsDirectoryServiceOusArgs']]] directory_service_ous: - (Optional) A Directory Service organizational unit.
         :param pulumi.Input[Sequence[pulumi.Input['UserGroupsDirectoryServiceUserGroupArgs']]] directory_service_user_groups: - (Optional) A Directory Service user group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The user_group kind metadata.
@@ -257,7 +255,6 @@ class UserGroups(pulumi.CustomResource):
         }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict']]]] directory_service_ous: - (Optional) A Directory Service organizational unit.
@@ -293,7 +290,6 @@ class UserGroups(pulumi.CustomResource):
             "idp_uuid": "<idp uuid of the group>",
         }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param UserGroupsArgs args: The arguments to use to populate this resource's properties.

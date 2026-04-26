@@ -29,7 +29,6 @@ class VpcArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Vpc resource.
-
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['VpcCommonDomainNameServerIpListArgs']]] common_domain_name_server_ip_lists: List of domain name server IPs.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] external_subnet_reference_names: List of external subnets name attached to this VPC. Should not be used with external_subnet_reference_uuid.
@@ -136,7 +135,6 @@ class _VpcState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Vpc resources.
-
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['VpcCommonDomainNameServerIpListArgs']]] common_domain_name_server_ip_lists: List of domain name server IPs.
         :param pulumi.Input[Sequence[pulumi.Input['VpcExternalSubnetListStatusArgs']]] external_subnet_list_statuses: Status of List of external subnets attached to this VPC
@@ -328,7 +326,6 @@ class Vpc(pulumi.CustomResource):
             ])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
@@ -398,7 +395,6 @@ class Vpc(pulumi.CustomResource):
                 },
             ])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param VpcArgs args: The arguments to use to populate this resource's properties.

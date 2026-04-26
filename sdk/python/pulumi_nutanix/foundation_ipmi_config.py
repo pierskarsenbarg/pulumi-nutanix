@@ -28,7 +28,6 @@ class FoundationIpmiConfigArgs:
                  ipmi_user: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a FoundationIpmiConfig resource.
-
         :param pulumi.Input[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]] blocks: - (Required) List of blocks.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required) IPMI gateway.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required) IPMI netmask.
@@ -112,7 +111,6 @@ class _FoundationIpmiConfigState:
                  ipmi_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationIpmiConfig resources.
-
         :param pulumi.Input[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]] blocks: - (Required) List of blocks.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required) IPMI gateway.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required) IPMI netmask.
@@ -205,7 +203,6 @@ class FoundationIpmiConfig(pulumi.CustomResource):
                  __props__=None):
         """
         Create a FoundationIpmiConfig resource with the given unique name, props, and options.
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]] blocks: - (Required) List of blocks.
@@ -222,7 +219,6 @@ class FoundationIpmiConfig(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a FoundationIpmiConfig resource with the given unique name, props, and options.
-
         :param str resource_name: The name of the resource.
         :param FoundationIpmiConfigArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

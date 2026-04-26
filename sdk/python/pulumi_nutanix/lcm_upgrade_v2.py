@@ -29,7 +29,6 @@ class LcmUpgradeV2Args:
                  x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmUpgradeV2 resource.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] auto_handle_flags: List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
         :param pulumi.Input[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]] entity_update_specs: List of entity update objects for getting recommendations.
         :param pulumi.Input['LcmUpgradeV2ManagementServerArgs'] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
@@ -134,7 +133,6 @@ class _LcmUpgradeV2State:
                  x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmUpgradeV2 resources.
-
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] auto_handle_flags: List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
         :param pulumi.Input[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]] entity_update_specs: List of entity update objects for getting recommendations.
         :param pulumi.Input['LcmUpgradeV2ManagementServerArgs'] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
@@ -257,7 +255,6 @@ class LcmUpgradeV2(pulumi.CustomResource):
         }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] auto_handle_flags: List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
@@ -288,7 +285,6 @@ class LcmUpgradeV2(pulumi.CustomResource):
             "to_version": "4.0.0",
         }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param LcmUpgradeV2Args args: The arguments to use to populate this resource's properties.

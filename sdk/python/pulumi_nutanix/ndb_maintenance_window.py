@@ -32,7 +32,6 @@ class NdbMaintenanceWindowArgs:
                  week_of_month: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a NdbMaintenanceWindow resource.
-
         :param pulumi.Input[_builtins.str] recurrence: Supported values [ MONTHLY, WEEKLY ]
         :param pulumi.Input[_builtins.str] start_time: start time for maintenance window to trigger
         :param pulumi.Input[_builtins.str] day_of_week: Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
@@ -192,7 +191,6 @@ class _NdbMaintenanceWindowState:
                  week_of_month: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NdbMaintenanceWindow resources.
-
         :param pulumi.Input[_builtins.str] access_level: access level
         :param pulumi.Input[_builtins.str] date_created: created date of maintenance window
         :param pulumi.Input[_builtins.str] date_modified: modified date of maintenance window
@@ -516,7 +514,6 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
             week_of_month=4)
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] day_of_week: Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
@@ -568,7 +565,6 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
             start_time="17:04:47",
             week_of_month=4)
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbMaintenanceWindowArgs args: The arguments to use to populate this resource's properties.

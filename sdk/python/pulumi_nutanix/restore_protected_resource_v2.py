@@ -24,7 +24,6 @@ class RestoreProtectedResourceV2Args:
                  restore_time: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RestoreProtectedResourceV2 resource.
-
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) The external identifier of the cluster on which the entity has valid restorable time ranges. The restored entity will be created on the same cluster.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         :param pulumi.Input[_builtins.str] restore_time: -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
@@ -85,7 +84,6 @@ class _RestoreProtectedResourceV2State:
                  restore_time: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RestoreProtectedResourceV2 resources.
-
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) The external identifier of the cluster on which the entity has valid restorable time ranges. The restored entity will be created on the same cluster.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         :param pulumi.Input[_builtins.str] restore_time: -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
@@ -179,7 +177,6 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
             cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07")
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) The external identifier of the cluster on which the entity has valid restorable time ranges. The restored entity will be created on the same cluster.
@@ -223,7 +220,6 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
             ext_id="246c651a-1b16-4983-b5ff-204840f85e07",
             cluster_ext_id="0005b6b1-1b16-4983-b5ff-204840f85e07")
         ```
-
 
         :param str resource_name: The name of the resource.
         :param RestoreProtectedResourceV2Args args: The arguments to use to populate this resource's properties.

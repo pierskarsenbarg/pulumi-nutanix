@@ -29,7 +29,6 @@ class NdbSlaArgs:
                  yearly_retention: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a NdbSla resource.
-
         :param pulumi.Input[_builtins.int] continuous_retention: Duration in days for which transaction logs are retained in NDB.
         :param pulumi.Input[_builtins.int] daily_retention: Duration in days for which a daily snapshot must be retained in NDB.
         :param pulumi.Input[_builtins.str] description: Description of profile
@@ -174,7 +173,6 @@ class _NdbSlaState:
                  yearly_retention: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NdbSla resources.
-
         :param pulumi.Input[_builtins.int] continuous_retention: Duration in days for which transaction logs are retained in NDB.
         :param pulumi.Input[_builtins.str] current_active_frequency: slas current frequency
         :param pulumi.Input[_builtins.int] daily_retention: Duration in days for which a daily snapshot must be retained in NDB.
@@ -452,7 +450,6 @@ class NdbSla(pulumi.CustomResource):
             quarterly_retention=1)
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] continuous_retention: Duration in days for which transaction logs are retained in NDB.
@@ -488,7 +485,6 @@ class NdbSla(pulumi.CustomResource):
             monthly_retention=1,
             quarterly_retention=1)
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbSlaArgs args: The arguments to use to populate this resource's properties.

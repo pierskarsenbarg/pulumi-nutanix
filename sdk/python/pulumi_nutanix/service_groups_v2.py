@@ -28,7 +28,6 @@ class ServiceGroupsV2Args:
                  udp_services: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]] = None):
         """
         The set of arguments for constructing a ServiceGroupsV2 resource.
-
         :param pulumi.Input[_builtins.str] description: Description of the service group
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]] icmp_services: Icmp Type Code List.
         :param pulumi.Input[_builtins.str] name: Name of the service group
@@ -123,7 +122,6 @@ class _ServiceGroupsV2State:
                  udp_services: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]] = None):
         """
         Input properties used for looking up and filtering ServiceGroupsV2 resources.
-
         :param pulumi.Input[_builtins.str] created_by: created by.
         :param pulumi.Input[_builtins.str] description: Description of the service group
         :param pulumi.Input[_builtins.str] ext_id: address group uuid.
@@ -351,7 +349,6 @@ class ServiceGroupsV2(pulumi.CustomResource):
             }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of the service group
@@ -412,7 +409,6 @@ class ServiceGroupsV2(pulumi.CustomResource):
                 "code": 0,
             }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param ServiceGroupsV2Args args: The arguments to use to populate this resource's properties.

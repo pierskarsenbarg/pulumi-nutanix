@@ -42,7 +42,6 @@ class NdbRegisterDbserverArgs:
                  working_directory: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbRegisterDbserver resource.
-
         :param pulumi.Input[_builtins.str] database_type: database type i.e. postgres_database
         :param pulumi.Input[_builtins.str] vm_ip: IP address of the database server VM
         :param pulumi.Input[_builtins.bool] delete: - (Optional) Delete the VM and associated storage. Default value is false
@@ -360,7 +359,6 @@ class _NdbRegisterDbserverState:
                  working_directory: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbRegisterDbserver resources.
-
         :param pulumi.Input[_builtins.str] database_type: database type i.e. postgres_database
         :param pulumi.Input[_builtins.bool] delete: - (Optional) Delete the VM and associated storage. Default value is false
         :param pulumi.Input[_builtins.bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
@@ -839,7 +837,6 @@ class NdbRegisterDbserver(pulumi.CustomResource):
         """
         Provides a resource to register database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_type: database type i.e. postgres_database
@@ -868,7 +865,6 @@ class NdbRegisterDbserver(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to register database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
-
 
         :param str resource_name: The name of the resource.
         :param NdbRegisterDbserverArgs args: The arguments to use to populate this resource's properties.

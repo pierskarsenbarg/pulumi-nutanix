@@ -28,7 +28,6 @@ class NdbStretchedVlanArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbStretchedVlan resource.
-
         :param pulumi.Input[_builtins.str] type: type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vlan_ids: list of vlan ids to be added in NDB
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
@@ -120,7 +119,6 @@ class _NdbStretchedVlanState:
                  vlans_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListArgs']]]] = None):
         """
         Input properties used for looking up and filtering NdbStretchedVlan resources.
-
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
         :param pulumi.Input['NdbStretchedVlanMetadataArgs'] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
                * `metadata.gateway`: Update the gateway of stretched vlan
@@ -269,7 +267,6 @@ class NdbStretchedVlan(pulumi.CustomResource):
             })
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
@@ -324,7 +321,6 @@ class NdbStretchedVlan(pulumi.CustomResource):
                 "subnet_mask": "{{ subnet mask of vlans }}",
             })
         ```
-
 
         :param str resource_name: The name of the resource.
         :param NdbStretchedVlanArgs args: The arguments to use to populate this resource's properties.

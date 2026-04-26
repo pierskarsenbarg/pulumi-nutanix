@@ -26,7 +26,6 @@ class AddressGroupArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AddressGroup resource.
-
         :param pulumi.Input[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]] ip_address_block_lists: - (Required) list of IP address blocks with their prefix length
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the service group
@@ -83,7 +82,6 @@ class _AddressGroupState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddressGroup resources.
-
         :param pulumi.Input[_builtins.str] address_group_string: - (ReadOnly) Address Group string
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
         :param pulumi.Input[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]] ip_address_block_lists: - (Required) list of IP address blocks with their prefix length
@@ -175,7 +173,6 @@ class AddressGroup(pulumi.CustomResource):
             }])
         ```
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
@@ -205,7 +202,6 @@ class AddressGroup(pulumi.CustomResource):
                 "prefix_length": 24,
             }])
         ```
-
 
         :param str resource_name: The name of the resource.
         :param AddressGroupArgs args: The arguments to use to populate this resource's properties.
