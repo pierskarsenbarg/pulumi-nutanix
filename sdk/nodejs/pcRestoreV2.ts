@@ -59,9 +59,9 @@ import * as utilities from "./utilities";
  *                     value: entry.value.ipv4[0].value,
  *                 }],
  *             })),
- *             ntpServers: .map(entry => ({
+ *             ntpServers: .map(entry2 => ({
  *                 fqdns: [{
- *                     value: entry.value.fqdn[0].value,
+ *                     value: entry2.value.fqdn[0].value,
  *                 }],
  *             })),
  *             externalAddress: {
