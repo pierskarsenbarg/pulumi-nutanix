@@ -22,11 +22,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnet = new Nutanix.Subnet("subnet", new()
+        ///     var subnet = new Nutanix.Index.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
         ///         Name = "sunet_test_name",
@@ -54,7 +53,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Project("project_test", new()
+        ///     var projectTest = new Nutanix.Index.Project("project_test", new()
         ///     {
         ///         Name = "my-project",
         ///         Description = "This is my project",
@@ -84,7 +83,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         ApiVersion = "3.1",
         ///     });
         /// 
-        ///     var test = Nutanix.GetProject.Invoke(new()
+        ///     var test = Nutanix.Index.GetProject.Invoke(new()
         ///     {
         ///         ProjectId = projectTest.Id,
         ///     });
@@ -105,11 +104,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnet = new Nutanix.Subnet("subnet", new()
+        ///     var subnet = new Nutanix.Index.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
         ///         Name = "sunet_test_name",
@@ -137,7 +135,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Project("project_test", new()
+        ///     var projectTest = new Nutanix.Index.Project("project_test", new()
         ///     {
         ///         Name = "my-project",
         ///         Description = "This is my project",
@@ -167,7 +165,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         ApiVersion = "3.1",
         ///     });
         /// 
-        ///     var test = Nutanix.GetProject.Invoke(new()
+        ///     var test = Nutanix.Index.GetProject.Invoke(new()
         ///     {
         ///         ProjectId = projectTest.Id,
         ///     });
@@ -188,11 +186,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnet = new Nutanix.Subnet("subnet", new()
+        ///     var subnet = new Nutanix.Index.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
         ///         Name = "sunet_test_name",
@@ -220,7 +217,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Project("project_test", new()
+        ///     var projectTest = new Nutanix.Index.Project("project_test", new()
         ///     {
         ///         Name = "my-project",
         ///         Description = "This is my project",
@@ -250,7 +247,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         ApiVersion = "3.1",
         ///     });
         /// 
-        ///     var test = Nutanix.GetProject.Invoke(new()
+        ///     var test = Nutanix.Index.GetProject.Invoke(new()
         ///     {
         ///         ProjectId = projectTest.Id,
         ///     });

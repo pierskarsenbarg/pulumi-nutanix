@@ -26,11 +26,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
+        ///     var isolation = new Nutanix.Index.NetworkSecurityRule("isolation", new()
         ///     {
         ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
@@ -69,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
+        ///     var test = Nutanix.Index.GetNetworkSecurityRule.Invoke(new()
         ///     {
         ///         NetworkSecurityRuleId = isolation.Id,
         ///     });
@@ -94,11 +93,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
+        ///     var isolation = new Nutanix.Index.NetworkSecurityRule("isolation", new()
         ///     {
         ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
@@ -137,7 +135,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
+        ///     var test = Nutanix.Index.GetNetworkSecurityRule.Invoke(new()
         ///     {
         ///         NetworkSecurityRuleId = isolation.Id,
         ///     });
@@ -162,11 +160,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
+        ///     var isolation = new Nutanix.Index.NetworkSecurityRule("isolation", new()
         ///     {
         ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
@@ -205,7 +202,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
+        ///     var test = Nutanix.Index.GetNetworkSecurityRule.Invoke(new()
         ///     {
         ///         NetworkSecurityRuleId = isolation.Id,
         ///     });

@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.NgtUpgradeV2("example", new()
+    ///     var example = new Nutanix.Index.NgtUpgradeV2("example", new()
     ///     {
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         RebootPreference = new Nutanix.Inputs.NgtUpgradeV2RebootPreferenceArgs

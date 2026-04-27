@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vpc = new Nutanix.Vpc("vpc", new()
+    ///     var vpc = new Nutanix.Index.Vpc("vpc", new()
     ///     {
     ///         Name = "testtNew-1",
     ///         ExternalSubnetReferenceNames = new[]
@@ -67,7 +67,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vpc = new Nutanix.Vpc("vpc", new()
+    ///     var vpc = new Nutanix.Index.Vpc("vpc", new()
     ///     {
     ///         Name = "testtNew-1",
     ///         ExternalSubnetReferenceUuids = new[]

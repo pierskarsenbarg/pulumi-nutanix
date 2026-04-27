@@ -6,6 +6,134 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Images node(s) and optionally creates clusters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const batch1 = new nutanix.FoundationImageNodes("batch1", {
+ *     nosPackage: "nos_package.tar",
+ *     cvmNetmask: "10.xx.xx.xx",
+ *     cvmGateway: "10.xx.xx.xx",
+ *     hypervisorGateway: "10.xx.xx.xx",
+ *     hypervisorNetmask: "10.xx.xx.xx",
+ *     ipmiGateway: "10.xx.xx.xx",
+ *     ipmiNetmask: "10.xx.xx.xx",
+ *     hypervisorIso: {
+ *         esx: {
+ *             filename: iso,
+ *             checksum: "aasjdajkdsa8sdjnwj2902djncsdc93",
+ *         },
+ *     },
+ *     blocks: [
+ *         {
+ *             nodes: [
+ *                 {
+ *                     hypervisorHostname: "batman-1",
+ *                     cvmGbRam: 50,
+ *                     hypervisorIp: "10.xx.xx.xx",
+ *                     hypervisor: "kvm",
+ *                     imageNow: true,
+ *                     ipmiIp: "10.xx.xx.xx",
+ *                     cvmIp: "10.xx.xx.xx",
+ *                     nodePosition: "A",
+ *                     ipmiUser: "ADMIN",
+ *                     ipmiPassword: "10.xx.xx.xx",
+ *                 },
+ *                 {
+ *                     cvmNumVcpus: 10,
+ *                     cvmGbRam: 51,
+ *                     hypervisorHostname: "batman-2",
+ *                     ipv6Address: "ffff::ffff:ffff:ffff:ffff%eth0",
+ *                     currentNetworkInterface: "eth0",
+ *                     hypervisorIp: "10.xx.xx.xx",
+ *                     hypervisor: "kvm",
+ *                     imageNow: true,
+ *                     ipmiIp: "10.xx.xx.xx",
+ *                     cvmIp: "10.xx.xx.xx",
+ *                     nodePosition: "B",
+ *                     deviceHint: "vm_installer",
+ *                 },
+ *                 {
+ *                     cvmNumVcpus: 10,
+ *                     cvmGbRam: 51,
+ *                     hypervisorHostname: "batman-3",
+ *                     ipv6Address: "ffff::ffff:ffff:ffff:ffff%eth0",
+ *                     hypervisorIp: "10.xx.xx.xx",
+ *                     hypervisor: "kvm",
+ *                     imageNow: true,
+ *                     ipmiIp: "10.xx.xx.xx",
+ *                     currentNetworkInterface: "eth0",
+ *                     cvmIp: "10.xx.xx.xx",
+ *                     nodePosition: "C",
+ *                     deviceHint: "vm_installer",
+ *                 },
+ *             ],
+ *             blockId: "999999999",
+ *         },
+ *         {
+ *             nodes: [{
+ *                 cvmNumVcpus: 10,
+ *                 cvmGbRam: 51,
+ *                 ipv6Address: "ffff::ffff:ffff:ffff:ffff%eth0",
+ *                 currentNetworkInterface: "eth2",
+ *                 hypervisorHostname: "superman-1",
+ *                 hypervisorIp: "10.xx.xx.xx",
+ *                 hypervisor: "esx",
+ *                 imageNow: true,
+ *                 ipmiIp: "10.xx.xx.xx",
+ *                 cvmIp: "10.xx.xx.xx",
+ *                 nodePosition: "D",
+ *                 deviceHint: "vm_installer",
+ *             }],
+ *             blockId: "99999999",
+ *         },
+ *     ],
+ *     clusters: [
+ *         {
+ *             redundancyFactor: 1,
+ *             clusterName: "superman",
+ *             singleNodeCluster: true,
+ *             clusterInitNow: true,
+ *             clusterExternalIp: "10.xx.xx.xx",
+ *             clusterMembers: ["10.xx.xx.xx"],
+ *         },
+ *         {
+ *             redundancyFactor: 2,
+ *             clusterName: "batman",
+ *             clusterInitNow: true,
+ *             clusterExternalIp: "10.xx.xx.xx",
+ *             clusterMembers: [
+ *                 "10.xx.xx.xx",
+ *                 "10.xx.xx.xx",
+ *                 "10.xx.xx.xx",
+ *             ],
+ *             timezone: "Africa/Conakry",
+ *         },
+ *     ],
+ * });
+ * export const session = nutanixFoundationImageNodes.batch1;
+ * ```
+ *
+ * ## Defaults
+ *
+ * The attributes like `ipmiNetmask`, `ipmiGateway`, `ipmiUser` & `ipmiPassword` can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+ *
+ * ## Error
+ *
+ * Incase of error in any individual entity i.e. node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+ *
+ * ## lifecycle
+ *
+ * * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+ * * `delete` : - Delete will be a soft delete.
+ *
+ * See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
+ */
 export class FoundationImageNodes extends pulumi.CustomResource {
     /**
      * Get an existing FoundationImageNodes resource's state with the given name, ID, and optional extra
@@ -34,6 +162,9 @@ export class FoundationImageNodes extends pulumi.CustomResource {
         return obj['__pulumiType'] === FoundationImageNodes.__pulumiType;
     }
 
+    /**
+     * - (Required) Terraform blocks of Block level parameters.
+     */
     declare public readonly blocks: pulumi.Output<outputs.FoundationImageNodesBlock[]>;
     /**
      * - list containing cluster name and cluster urls for created clusters in current session
@@ -41,6 +172,9 @@ export class FoundationImageNodes extends pulumi.CustomResource {
      * * `cluster_urls.#.cluster_url` :- url to access the cluster login
      */
     declare public /*out*/ readonly clusterUrls: pulumi.Output<outputs.FoundationImageNodesClusterUrl[]>;
+    /**
+     * - Terraform blocks of clusters config
+     */
     declare public readonly clusters: pulumi.Output<outputs.FoundationImageNodesCluster[] | undefined>;
     /**
      * - (Required) CVM gateway.
@@ -299,6 +433,9 @@ export class FoundationImageNodes extends pulumi.CustomResource {
  * Input properties used for looking up and filtering FoundationImageNodes resources.
  */
 export interface FoundationImageNodesState {
+    /**
+     * - (Required) Terraform blocks of Block level parameters.
+     */
     blocks?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesBlock>[]>;
     /**
      * - list containing cluster name and cluster urls for created clusters in current session
@@ -306,6 +443,9 @@ export interface FoundationImageNodesState {
      * * `cluster_urls.#.cluster_url` :- url to access the cluster login
      */
     clusterUrls?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesClusterUrl>[]>;
+    /**
+     * - Terraform blocks of clusters config
+     */
     clusters?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesCluster>[]>;
     /**
      * - (Required) CVM gateway.
@@ -450,7 +590,13 @@ export interface FoundationImageNodesState {
  * The set of arguments for constructing a FoundationImageNodes resource.
  */
 export interface FoundationImageNodesArgs {
+    /**
+     * - (Required) Terraform blocks of Block level parameters.
+     */
     blocks: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesBlock>[]>;
+    /**
+     * - Terraform blocks of clusters config
+     */
     clusters?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesCluster>[]>;
     /**
      * - (Required) CVM gateway.

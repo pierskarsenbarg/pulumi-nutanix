@@ -12,15 +12,162 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Images node(s) and optionally creates clusters.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewFoundationImageNodes(ctx, "batch1", &nutanix.FoundationImageNodesArgs{
+//				NosPackage:        pulumi.String("nos_package.tar"),
+//				CvmNetmask:        pulumi.String("10.xx.xx.xx"),
+//				CvmGateway:        pulumi.String("10.xx.xx.xx"),
+//				HypervisorGateway: pulumi.String("10.xx.xx.xx"),
+//				HypervisorNetmask: pulumi.String("10.xx.xx.xx"),
+//				IpmiGateway:       pulumi.String("10.xx.xx.xx"),
+//				IpmiNetmask:       pulumi.String("10.xx.xx.xx"),
+//				HypervisorIso: &nutanix.FoundationImageNodesHypervisorIsoArgs{
+//					Esx: &nutanix.FoundationImageNodesHypervisorIsoEsxArgs{
+//						Filename: pulumi.Any(iso),
+//						Checksum: pulumi.String("aasjdajkdsa8sdjnwj2902djncsdc93"),
+//					},
+//				},
+//				Blocks: nutanix.FoundationImageNodesBlockArray{
+//					&nutanix.FoundationImageNodesBlockArgs{
+//						Nodes: nutanix.FoundationImageNodesBlockNodeArray{
+//							&nutanix.FoundationImageNodesBlockNodeArgs{
+//								HypervisorHostname: pulumi.String("batman-1"),
+//								CvmGbRam:           pulumi.Int(50),
+//								HypervisorIp:       pulumi.String("10.xx.xx.xx"),
+//								Hypervisor:         pulumi.String("kvm"),
+//								ImageNow:           pulumi.Bool(true),
+//								IpmiIp:             pulumi.String("10.xx.xx.xx"),
+//								CvmIp:              pulumi.String("10.xx.xx.xx"),
+//								NodePosition:       pulumi.String("A"),
+//								IpmiUser:           pulumi.String("ADMIN"),
+//								IpmiPassword:       pulumi.String("10.xx.xx.xx"),
+//							},
+//							&nutanix.FoundationImageNodesBlockNodeArgs{
+//								CvmNumVcpus:             pulumi.Int(10),
+//								CvmGbRam:                pulumi.Int(51),
+//								HypervisorHostname:      pulumi.String("batman-2"),
+//								Ipv6Address:             pulumi.String("ffff::ffff:ffff:ffff:ffff%eth0"),
+//								CurrentNetworkInterface: pulumi.String("eth0"),
+//								HypervisorIp:            pulumi.String("10.xx.xx.xx"),
+//								Hypervisor:              pulumi.String("kvm"),
+//								ImageNow:                pulumi.Bool(true),
+//								IpmiIp:                  pulumi.String("10.xx.xx.xx"),
+//								CvmIp:                   pulumi.String("10.xx.xx.xx"),
+//								NodePosition:            pulumi.String("B"),
+//								DeviceHint:              pulumi.String("vm_installer"),
+//							},
+//							&nutanix.FoundationImageNodesBlockNodeArgs{
+//								CvmNumVcpus:             pulumi.Int(10),
+//								CvmGbRam:                pulumi.Int(51),
+//								HypervisorHostname:      pulumi.String("batman-3"),
+//								Ipv6Address:             pulumi.String("ffff::ffff:ffff:ffff:ffff%eth0"),
+//								HypervisorIp:            pulumi.String("10.xx.xx.xx"),
+//								Hypervisor:              pulumi.String("kvm"),
+//								ImageNow:                pulumi.Bool(true),
+//								IpmiIp:                  pulumi.String("10.xx.xx.xx"),
+//								CurrentNetworkInterface: pulumi.String("eth0"),
+//								CvmIp:                   pulumi.String("10.xx.xx.xx"),
+//								NodePosition:            pulumi.String("C"),
+//								DeviceHint:              pulumi.String("vm_installer"),
+//							},
+//						},
+//						BlockId: pulumi.String("999999999"),
+//					},
+//					&nutanix.FoundationImageNodesBlockArgs{
+//						Nodes: nutanix.FoundationImageNodesBlockNodeArray{
+//							&nutanix.FoundationImageNodesBlockNodeArgs{
+//								CvmNumVcpus:             pulumi.Int(10),
+//								CvmGbRam:                pulumi.Int(51),
+//								Ipv6Address:             pulumi.String("ffff::ffff:ffff:ffff:ffff%eth0"),
+//								CurrentNetworkInterface: pulumi.String("eth2"),
+//								HypervisorHostname:      pulumi.String("superman-1"),
+//								HypervisorIp:            pulumi.String("10.xx.xx.xx"),
+//								Hypervisor:              pulumi.String("esx"),
+//								ImageNow:                pulumi.Bool(true),
+//								IpmiIp:                  pulumi.String("10.xx.xx.xx"),
+//								CvmIp:                   pulumi.String("10.xx.xx.xx"),
+//								NodePosition:            pulumi.String("D"),
+//								DeviceHint:              pulumi.String("vm_installer"),
+//							},
+//						},
+//						BlockId: pulumi.String("99999999"),
+//					},
+//				},
+//				Clusters: nutanix.FoundationImageNodesClusterArray{
+//					&nutanix.FoundationImageNodesClusterArgs{
+//						RedundancyFactor:  pulumi.Int(1),
+//						ClusterName:       pulumi.String("superman"),
+//						SingleNodeCluster: pulumi.Bool(true),
+//						ClusterInitNow:    pulumi.Bool(true),
+//						ClusterExternalIp: pulumi.String("10.xx.xx.xx"),
+//						ClusterMembers: pulumi.StringArray{
+//							pulumi.String("10.xx.xx.xx"),
+//						},
+//					},
+//					&nutanix.FoundationImageNodesClusterArgs{
+//						RedundancyFactor:  pulumi.Int(2),
+//						ClusterName:       pulumi.String("batman"),
+//						ClusterInitNow:    pulumi.Bool(true),
+//						ClusterExternalIp: pulumi.String("10.xx.xx.xx"),
+//						ClusterMembers: pulumi.StringArray{
+//							pulumi.String("10.xx.xx.xx"),
+//							pulumi.String("10.xx.xx.xx"),
+//							pulumi.String("10.xx.xx.xx"),
+//						},
+//						Timezone: pulumi.String("Africa/Conakry"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("session", pulumi.Any(nutanixFoundationImageNodes.Batch1))
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Defaults
+//
+// The attributes like `ipmiNetmask`, `ipmiGateway`, `ipmiUser` & `ipmiPassword` can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+//
+// ## Error
+//
+// Incase of error in any individual entity i.e. node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+//
+// ## lifecycle
+//
+// * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+// * `delete` : - Delete will be a soft delete.
+//
+// See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
 type FoundationImageNodes struct {
 	pulumi.CustomResourceState
 
+	// - (Required) Terraform blocks of Block level parameters.
 	Blocks FoundationImageNodesBlockArrayOutput `pulumi:"blocks"`
 	// - list containing cluster name and cluster urls for created clusters in current session
 	// * `cluster_urls.#.cluster_name` :- clusterName
 	// * `cluster_urls.#.cluster_url` :- url to access the cluster login
 	ClusterUrls FoundationImageNodesClusterUrlArrayOutput `pulumi:"clusterUrls"`
-	Clusters    FoundationImageNodesClusterArrayOutput    `pulumi:"clusters"`
+	// - Terraform blocks of clusters config
+	Clusters FoundationImageNodesClusterArrayOutput `pulumi:"clusters"`
 	// - (Required) CVM gateway.
 	CvmGateway pulumi.StringOutput `pulumi:"cvmGateway"`
 	// - (Required) CVM netmask.
@@ -140,12 +287,14 @@ func GetFoundationImageNodes(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FoundationImageNodes resources.
 type foundationImageNodesState struct {
+	// - (Required) Terraform blocks of Block level parameters.
 	Blocks []FoundationImageNodesBlock `pulumi:"blocks"`
 	// - list containing cluster name and cluster urls for created clusters in current session
 	// * `cluster_urls.#.cluster_name` :- clusterName
 	// * `cluster_urls.#.cluster_url` :- url to access the cluster login
 	ClusterUrls []FoundationImageNodesClusterUrl `pulumi:"clusterUrls"`
-	Clusters    []FoundationImageNodesCluster    `pulumi:"clusters"`
+	// - Terraform blocks of clusters config
+	Clusters []FoundationImageNodesCluster `pulumi:"clusters"`
 	// - (Required) CVM gateway.
 	CvmGateway *string `pulumi:"cvmGateway"`
 	// - (Required) CVM netmask.
@@ -218,12 +367,14 @@ type foundationImageNodesState struct {
 }
 
 type FoundationImageNodesState struct {
+	// - (Required) Terraform blocks of Block level parameters.
 	Blocks FoundationImageNodesBlockArrayInput
 	// - list containing cluster name and cluster urls for created clusters in current session
 	// * `cluster_urls.#.cluster_name` :- clusterName
 	// * `cluster_urls.#.cluster_url` :- url to access the cluster login
 	ClusterUrls FoundationImageNodesClusterUrlArrayInput
-	Clusters    FoundationImageNodesClusterArrayInput
+	// - Terraform blocks of clusters config
+	Clusters FoundationImageNodesClusterArrayInput
 	// - (Required) CVM gateway.
 	CvmGateway pulumi.StringPtrInput
 	// - (Required) CVM netmask.
@@ -300,7 +451,9 @@ func (FoundationImageNodesState) ElementType() reflect.Type {
 }
 
 type foundationImageNodesArgs struct {
-	Blocks   []FoundationImageNodesBlock   `pulumi:"blocks"`
+	// - (Required) Terraform blocks of Block level parameters.
+	Blocks []FoundationImageNodesBlock `pulumi:"blocks"`
+	// - Terraform blocks of clusters config
 	Clusters []FoundationImageNodesCluster `pulumi:"clusters"`
 	// - (Required) CVM gateway.
 	CvmGateway string `pulumi:"cvmGateway"`
@@ -373,7 +526,9 @@ type foundationImageNodesArgs struct {
 
 // The set of arguments for constructing a FoundationImageNodes resource.
 type FoundationImageNodesArgs struct {
-	Blocks   FoundationImageNodesBlockArrayInput
+	// - (Required) Terraform blocks of Block level parameters.
+	Blocks FoundationImageNodesBlockArrayInput
+	// - Terraform blocks of clusters config
 	Clusters FoundationImageNodesClusterArrayInput
 	// - (Required) CVM gateway.
 	CvmGateway pulumi.StringInput
@@ -531,6 +686,7 @@ func (o FoundationImageNodesOutput) ToFoundationImageNodesOutputWithContext(ctx 
 	return o
 }
 
+// - (Required) Terraform blocks of Block level parameters.
 func (o FoundationImageNodesOutput) Blocks() FoundationImageNodesBlockArrayOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) FoundationImageNodesBlockArrayOutput { return v.Blocks }).(FoundationImageNodesBlockArrayOutput)
 }
@@ -542,6 +698,7 @@ func (o FoundationImageNodesOutput) ClusterUrls() FoundationImageNodesClusterUrl
 	return o.ApplyT(func(v *FoundationImageNodes) FoundationImageNodesClusterUrlArrayOutput { return v.ClusterUrls }).(FoundationImageNodesClusterUrlArrayOutput)
 }
 
+// - Terraform blocks of clusters config
 func (o FoundationImageNodesOutput) Clusters() FoundationImageNodesClusterArrayOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) FoundationImageNodesClusterArrayOutput { return v.Clusters }).(FoundationImageNodesClusterArrayOutput)
 }

@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // create new volume group disk  and attached it to the previous volume group
-    ///     var example = new Nutanix.VolumeGroupDiskV2("example", new()
+    ///     var example = new Nutanix.Index.VolumeGroupDiskV2("example", new()
     ///     {
     ///         VolumeGroupExtId = "cf7de8b9-88ed-477d-a602-c34ab7174c01",
     ///         Index = 1,

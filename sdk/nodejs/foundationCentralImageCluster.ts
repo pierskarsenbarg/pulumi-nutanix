@@ -6,6 +6,102 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Image Nodes and Create a cluster out of nodes registered with Foundation Central.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const img2 = new nutanix.FoundationCentralImageCluster("img2", {
+ *     clusterName: "test-FC",
+ *     clusterExternalIp: "<CLUSTER-IP>",
+ *     commonNetworkSettings: {
+ *         cvmDnsServers: ["xx.x.xx.xx"],
+ *         hypervisorDnsServers: ["xx.x.xx.xx"],
+ *         cvmNtpServers: ["<cvm-ntp>"],
+ *         hypervisorNtpServers: ["<hypervisor-ntp>"],
+ *     },
+ *     redundancyFactor: 2,
+ *     nodeLists: [
+ *         {
+ *             cvmGateway: "10.xx.xx.xx",
+ *             cvmNetmask: "xx.xx.xx.xx",
+ *             cvmIp: "10.x.xx.xx",
+ *             hypervisorGateway: "10.x.x.xx",
+ *             hypervisorNetmask: "xx.xx.xx.xx",
+ *             hypervisorIp: "10.x.xx.xx",
+ *             hypervisorHostname: "HOST-1",
+ *             imagedNodeUuid: "<NODE-UUID>",
+ *             useExistingNetworkSettings: false,
+ *             ipmiGateway: "10.x.xx.xx",
+ *             ipmiNetmask: "10.x.xx.xx",
+ *             ipmiIp: "10.x.xx.xx",
+ *             imageNow: true,
+ *             hypervisorType: "kvm",
+ *             hardwareAttributesOverride: {
+ *                 default_workload: "vdi",
+ *                 lcm_family: "smc_gen_10",
+ *                 maybe_1GbE_only: "true",
+ *                 robo_mixed_hypervisor: "true",
+ *             },
+ *         },
+ *         {
+ *             cvmGateway: "10.xx.xx.xx",
+ *             cvmNetmask: "xx.xx.xx.xx",
+ *             cvmIp: "10.x.xx.xx",
+ *             hypervisorGateway: "10.x.x.xx",
+ *             hypervisorNetmask: "xx.xx.xx.xx",
+ *             hypervisorIp: "10.x.xx.xx",
+ *             hypervisorHostname: "HOST-2",
+ *             imagedNodeUuid: "<NODE-UUID>",
+ *             useExistingNetworkSettings: false,
+ *             ipmiGateway: "10.x.xx.xx",
+ *             ipmiNetmask: "10.x.xx.xx",
+ *             ipmiIp: "10.x.xx.xx",
+ *             imageNow: true,
+ *             hypervisorType: "kvm",
+ *         },
+ *         {
+ *             cvmGateway: "10.xx.xx.xx",
+ *             cvmNetmask: "xx.xx.xx.xx",
+ *             cvmIp: "10.x.xx.xx",
+ *             hypervisorGateway: "10.x.x.xx",
+ *             hypervisorNetmask: "xx.xx.xx.xx",
+ *             hypervisorIp: "10.x.xx.xx",
+ *             hypervisorHostname: "HOST-3",
+ *             imagedNodeUuid: "<NODE-UUID>",
+ *             useExistingNetworkSettings: false,
+ *             ipmiGateway: "10.x.xx.xx",
+ *             ipmiNetmask: "10.x.xx.xx",
+ *             ipmiIp: "10.x.xx.xx",
+ *             imageNow: true,
+ *             hypervisorType: "kvm",
+ *         },
+ *     ],
+ *     aosPackageUrl: "<URL>",
+ *     hypervisorIsos: {
+ *         url: "<hypervisor-installer-link>",
+ *         sha256sum: "<hypervisor-installer-checksum>",
+ *         hypervisorType: "kvm",
+ *     },
+ *     skipClusterCreation: true,
+ * });
+ * ```
+ *
+ * ## Error
+ *
+ * Incase of error in any individual node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+ *
+ * ## lifecycle
+ *
+ * * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+ * * `delete` : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
+ *
+ * See detailed information in [Nutanix Foundation Central Create a Cluster](https://www.nutanix.dev/api_references/foundation-central/#/cba507f282927-request-to-create-a-cluster).
+ */
 export class FoundationCentralImageCluster extends pulumi.CustomResource {
     /**
      * Get an existing FoundationCentralImageCluster resource's state with the given name, ID, and optional extra

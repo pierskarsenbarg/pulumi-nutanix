@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupUserGroupsV2(ctx, &nutanix.LookupUserGroupsV2Args{}, nil)
+//			_, err := nutanix.GetUserGroupsV2(ctx, &nutanix.LookupUserGroupsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}

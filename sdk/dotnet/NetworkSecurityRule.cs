@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
+    ///     var isolation = new Nutanix.Index.NetworkSecurityRule("isolation", new()
     ///     {
     ///         Name = "example-isolation-rule",
     ///         Description = "Isolation Rule Example",
@@ -75,11 +75,10 @@ namespace PiersKarsenbarg.Nutanix
     /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// using Nutanix = Pulumi.Nutanix;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var clusters = Nutanix.GetClusters.Invoke();
+    ///     var clusters = Nutanix.Index.GetClusters.Invoke();
     /// 
     ///     var clusterUuid = .Where(cluster =&gt; cluster.ServiceList[0] != "PRISM_CENTRAL").Select(cluster =&gt; 
     ///     {
@@ -87,40 +86,40 @@ namespace PiersKarsenbarg.Nutanix
     ///     }).ToList()[0];
     /// 
     ///     //Create categories.
-    ///     var test_category_key = new Nutanix.CategoryKey("test-category-key", new()
+    ///     var test_category_key = new Nutanix.Index.CategoryKey("test-category-key", new()
     ///     {
     ///         Name = "TIER-1",
     ///         Description = "TIER Category Key",
     ///     });
     /// 
-    ///     var USER = new Nutanix.CategoryKey("USER", new()
+    ///     var USER = new Nutanix.Index.CategoryKey("USER", new()
     ///     {
     ///         Name = "user",
     ///         Description = "user Category Key",
     ///     });
     /// 
-    ///     var WEB = new Nutanix.CategoryValue("WEB", new()
+    ///     var WEB = new Nutanix.Index.CategoryValue("WEB", new()
     ///     {
     ///         Name = test_category_key.Id,
     ///         Description = "WEB Category Value",
     ///         Value = "WEB-1",
     ///     });
     /// 
-    ///     var APP = new Nutanix.CategoryValue("APP", new()
+    ///     var APP = new Nutanix.Index.CategoryValue("APP", new()
     ///     {
     ///         Name = test_category_key.Id,
     ///         Description = "APP Category Value",
     ///         Value = "APP-1",
     ///     });
     /// 
-    ///     var DB = new Nutanix.CategoryValue("DB", new()
+    ///     var DB = new Nutanix.Index.CategoryValue("DB", new()
     ///     {
     ///         Name = test_category_key.Id,
     ///         Description = "DB Category Value",
     ///         Value = "DB-1",
     ///     });
     /// 
-    ///     var @group = new Nutanix.CategoryValue("group", new()
+    ///     var @group = new Nutanix.Index.CategoryValue("group", new()
     ///     {
     ///         Name = USER.Id,
     ///         Description = "group Category Value",
@@ -128,7 +127,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //Create a cirros image
-    ///     var cirros_034_disk = new Nutanix.Image("cirros-034-disk", new()
+    ///     var cirros_034_disk = new Nutanix.Index.Image("cirros-034-disk", new()
     ///     {
     ///         Name = "test-image-vm-create-flow",
     ///         SourceUri = "http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img",
@@ -136,7 +135,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //APP-1 VM.
-    ///     var vm_app = new Nutanix.VirtualMachine("vm-app", new()
+    ///     var vm_app = new Nutanix.Index.VirtualMachine("vm-app", new()
     ///     {
     ///         Name = "test-dou-vm-flow-APP-1",
     ///         ClusterUuid = clusterUuid,
@@ -186,7 +185,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //WEB-1 VM
-    ///     var vm_web = new Nutanix.VirtualMachine("vm-web", new()
+    ///     var vm_web = new Nutanix.Index.VirtualMachine("vm-web", new()
     ///     {
     ///         Name = "test-dou-vm-flow-WEB-1",
     ///         ClusterUuid = clusterUuid,
@@ -236,7 +235,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //DB-1 VM
-    ///     var vm_db = new Nutanix.VirtualMachine("vm-db", new()
+    ///     var vm_db = new Nutanix.Index.VirtualMachine("vm-db", new()
     ///     {
     ///         Name = "test-dou-vm-flow-DB-1",
     ///         ClusterUuid = clusterUuid,
@@ -286,7 +285,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //Create Application Network Policy.
-    ///     var TEST_TIER = new Nutanix.NetworkSecurityRule("TEST-TIER", new()
+    ///     var TEST_TIER = new Nutanix.Index.NetworkSecurityRule("TEST-TIER", new()
     ///     {
     ///         Name = "RULE-1-TIERS",
     ///         Description = "rule 1 tiers",
@@ -393,7 +392,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var service1 = new Nutanix.ServiceGroup("service1", new()
+    ///     var service1 = new Nutanix.Index.ServiceGroup("service1", new()
     ///     {
     ///         Name = "srv-1",
     ///         Description = "test",
@@ -419,7 +418,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
-    ///     var address1 = new Nutanix.AddressGroup("address1", new()
+    ///     var address1 = new Nutanix.Index.AddressGroup("address1", new()
     ///     {
     ///         Name = "addr-1",
     ///         Description = "test",
@@ -433,14 +432,14 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
-    ///     var ad_group_user_1 = new Nutanix.CategoryValue("ad-group-user-1", new()
+    ///     var ad_group_user_1 = new Nutanix.Index.CategoryValue("ad-group-user-1", new()
     ///     {
     ///         Name = "AD",
     ///         Description = "group user category value",
     ///         Value = "AD",
     ///     });
     /// 
-    ///     var VDI = new Nutanix.NetworkSecurityRule("VDI", new()
+    ///     var VDI = new Nutanix.Index.NetworkSecurityRule("VDI", new()
     ///     {
     ///         Name = "nsr-1",
     ///         AdRuleAction = "APPLY",

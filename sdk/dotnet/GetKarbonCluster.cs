@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cluster = Nutanix.GetKarbonCluster.Invoke(new()
+        ///     var cluster = Nutanix.Index.GetKarbonCluster.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
@@ -45,11 +45,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cluster = Nutanix.GetKarbonCluster.Invoke(new()
+        ///     var cluster = Nutanix.Index.GetKarbonCluster.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
@@ -69,11 +69,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cluster = Nutanix.GetKarbonCluster.Invoke(new()
+        ///     var cluster = Nutanix.Index.GetKarbonCluster.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });

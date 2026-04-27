@@ -20,13 +20,12 @@ namespace PiersKarsenbarg.Nutanix
     /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// using Nutanix = Pulumi.Nutanix;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var clusters = Nutanix.GetClusters.Invoke();
+    ///     var clusters = Nutanix.Index.GetClusters.Invoke();
     /// 
-    ///     var vm1 = new Nutanix.VirtualMachine("vm1", new()
+    ///     var vm1 = new Nutanix.Index.VirtualMachine("vm1", new()
     ///     {
     ///         Name = "test-dou",
     ///         ClusterUuid = clusters.Apply(getClustersResult =&gt; getClustersResult.Entities[0]?.Metadata?.Uuid),
@@ -52,13 +51,12 @@ namespace PiersKarsenbarg.Nutanix
     /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// using Nutanix = Pulumi.Nutanix;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var clusters = Nutanix.GetClusters.Invoke();
+    ///     var clusters = Nutanix.Index.GetClusters.Invoke();
     /// 
-    ///     var vm = new Nutanix.VirtualMachine("vm", new()
+    ///     var vm = new Nutanix.Index.VirtualMachine("vm", new()
     ///     {
     ///         Name = "myVm",
     ///         ClusterUuid = clusters.Apply(getClustersResult =&gt; getClustersResult.Entities[0]?.Metadata?.Uuid),
@@ -93,12 +91,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// Nutanix Virtual machines can be imported using the `UUID` eg,
     /// 
-    /// `
-    /// 
-    /// ```sh
-    /// $ pulumi import nutanix:index/virtualMachine:VirtualMachine vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
-    /// ```
-    /// 
+    /// `terraform import nutanix_virtual_machine.vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
     /// `
     /// </summary>
     [NutanixResourceType("nutanix:index/virtualMachine:VirtualMachine")]

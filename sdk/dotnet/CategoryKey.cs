@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.CategoryKey("test", new()
+    ///     var test = new Nutanix.Index.CategoryKey("test", new()
     ///     {
     ///         Name = "app-support-example",
     ///         Description = "App Support Category Key",

@@ -23,14 +23,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example_1 = new Nutanix.TemplateGuestOsActionsV2("example-1", new()
+    ///     var example_1 = new Nutanix.Index.TemplateGuestOsActionsV2("example-1", new()
     ///     {
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         Action = "initiate",
     ///         VersionId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
     ///     });
     /// 
-    ///     var example_2 = new Nutanix.TemplateGuestOsActionsV2("example-2", new()
+    ///     var example_2 = new Nutanix.Index.TemplateGuestOsActionsV2("example-2", new()
     ///     {
     ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///         Action = "complete",
@@ -39,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         IsActiveVersion = "true",
     ///     });
     /// 
-    ///     var example_3 = new Nutanix.TemplateGuestOsActionsV2("example-3", new()
+    ///     var example_3 = new Nutanix.Index.TemplateGuestOsActionsV2("example-3", new()
     ///     {
     ///         ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
     ///         Action = "cancel",

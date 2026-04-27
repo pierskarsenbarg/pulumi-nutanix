@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var acctest_managed = new Nutanix.NdbMaintenanceWindow("acctest-managed", new()
+    ///     var acctest_managed = new Nutanix.Index.NdbMaintenanceWindow("acctest-managed", new()
     ///     {
     ///         Name = "test-maintenance",
     ///         Description = "desc",
@@ -46,7 +46,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var acctest_managed = new Nutanix.NdbMaintenanceWindow("acctest-managed", new()
+    ///     var acctest_managed = new Nutanix.Index.NdbMaintenanceWindow("acctest-managed", new()
     ///     {
     ///         Name = "test-maintenance",
     ///         Description = "description",

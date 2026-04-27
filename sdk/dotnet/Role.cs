@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.Role("test", new()
+    ///     var test = new Nutanix.Index.Role("test", new()
     ///     {
     ///         Name = "NAME",
     ///         Description = "DESCRIPTION",

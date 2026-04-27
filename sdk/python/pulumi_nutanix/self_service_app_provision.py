@@ -374,7 +374,20 @@ class SelfServiceAppProvision(pulumi.CustomResource):
                  soft_delete: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a SelfServiceAppProvision resource with the given unique name, props, and options.
+        Launches a blueprint to create an application and perform system actions on application.
+
+        ## Example 1: Provision Application
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test = nutanix.SelfServiceAppProvision("test",
+            bp_name="NAME OF BLUEPRINT",
+            app_name="NAME OF APPLICATION TO SET",
+            app_description="DESCRIPTION OF APPLICATION")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -394,7 +407,20 @@ class SelfServiceAppProvision(pulumi.CustomResource):
                  args: SelfServiceAppProvisionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SelfServiceAppProvision resource with the given unique name, props, and options.
+        Launches a blueprint to create an application and perform system actions on application.
+
+        ## Example 1: Provision Application
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test = nutanix.SelfServiceAppProvision("test",
+            bp_name="NAME OF BLUEPRINT",
+            app_name="NAME OF APPLICATION TO SET",
+            app_description="DESCRIPTION OF APPLICATION")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param SelfServiceAppProvisionArgs args: The arguments to use to populate this resource's properties.

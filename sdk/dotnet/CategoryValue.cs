@@ -23,13 +23,13 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test_category_key = new Nutanix.CategoryKey("test-category-key", new()
+    ///     var test_category_key = new Nutanix.Index.CategoryKey("test-category-key", new()
     ///     {
     ///         Name = "app-support-1",
     ///         Description = "App Support Category Key",
     ///     });
     /// 
-    ///     var test = new Nutanix.CategoryValue("test", new()
+    ///     var test = new Nutanix.Index.CategoryValue("test", new()
     ///     {
     ///         Name = test_category_key.Id,
     ///         Description = "Test Category Value",

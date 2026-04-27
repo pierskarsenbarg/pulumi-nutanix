@@ -40,10 +40,10 @@ import (
 //				DisplayName: pulumi.String("example_role"),
 //				Description: pulumi.String("create example role"),
 //				Operations: pulumi.StringArray{
-//					pulumi.String(operations_filtered_list.Operations[0].ExtId),
-//					pulumi.String(operations_filtered_list.Operations[1].ExtId),
-//					pulumi.String(operations_filtered_list.Operations[2].ExtId),
-//					pulumi.String(operations_filtered_list.Operations[3].ExtId),
+//					pulumi.String(pulumi.String(operations_filtered_list.Operations[0].ExtId)),
+//					pulumi.String(pulumi.String(operations_filtered_list.Operations[1].ExtId)),
+//					pulumi.String(pulumi.String(operations_filtered_list.Operations[2].ExtId)),
+//					pulumi.String(pulumi.String(operations_filtered_list.Operations[3].ExtId)),
 //				},
 //			})
 //			if err != nil {

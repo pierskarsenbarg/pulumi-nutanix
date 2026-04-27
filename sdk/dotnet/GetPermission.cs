@@ -21,18 +21,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //Get permission by UUID
-        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
+        ///     var byuuid = Nutanix.Index.GetPermission.Invoke(new()
         ///     {
         ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
         ///     });
         /// 
         ///     //Get permission by name
-        ///     var byname = Nutanix.GetPermission.Invoke(new()
+        ///     var byname = Nutanix.Index.GetPermission.Invoke(new()
         ///     {
         ///         PermissionName = "Access_Console_Virtual_Machine",
         ///     });
@@ -52,18 +52,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //Get permission by UUID
-        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
+        ///     var byuuid = Nutanix.Index.GetPermission.Invoke(new()
         ///     {
         ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
         ///     });
         /// 
         ///     //Get permission by name
-        ///     var byname = Nutanix.GetPermission.Invoke(new()
+        ///     var byname = Nutanix.Index.GetPermission.Invoke(new()
         ///     {
         ///         PermissionName = "Access_Console_Virtual_Machine",
         ///     });
@@ -83,18 +83,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //Get permission by UUID
-        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
+        ///     var byuuid = Nutanix.Index.GetPermission.Invoke(new()
         ///     {
         ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
         ///     });
         /// 
         ///     //Get permission by name
-        ///     var byname = Nutanix.GetPermission.Invoke(new()
+        ///     var byname = Nutanix.Index.GetPermission.Invoke(new()
         ///     {
         ///         PermissionName = "Access_Console_Virtual_Machine",
         ///     });

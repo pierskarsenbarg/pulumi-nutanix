@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetDirectoryServicesV2.Invoke();
+        ///     var example = Nutanix.Index.GetDirectoryServicesV2.Invoke();
         /// 
         /// });
         /// ```
@@ -42,11 +42,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetDirectoryServicesV2.Invoke();
+        ///     var example = Nutanix.Index.GetDirectoryServicesV2.Invoke();
         /// 
         /// });
         /// ```
@@ -63,11 +63,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetDirectoryServicesV2.Invoke();
+        ///     var example = Nutanix.Index.GetDirectoryServicesV2.Invoke();
         /// 
         /// });
         /// ```

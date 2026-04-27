@@ -731,7 +731,7 @@ class NdbCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        clsname = nutanix.index.NdbClusters("clsname",
+        clsname = nutanix.NdbClusters("clsname",
             name={{ test-cluster }},
             description=test description,
             cluster_ip={{ cluster_ip }},
@@ -786,7 +786,7 @@ class NdbCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        clsname = nutanix.index.NdbClusters("clsname",
+        clsname = nutanix.NdbClusters("clsname",
             name={{ test-cluster }},
             description=test description,
             cluster_ip={{ cluster_ip }},

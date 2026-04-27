@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.GetClusters.Invoke();
+        ///     var clusters = Nutanix.Index.GetClusters.Invoke();
         /// 
         /// });
         /// ```
@@ -59,11 +59,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.GetClusters.Invoke();
+        ///     var clusters = Nutanix.Index.GetClusters.Invoke();
         /// 
         /// });
         /// ```
@@ -97,11 +97,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.GetClusters.Invoke();
+        ///     var clusters = Nutanix.Index.GetClusters.Invoke();
         /// 
         /// });
         /// ```

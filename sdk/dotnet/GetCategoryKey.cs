@@ -22,24 +22,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testKeyValueCategoryKey = new Nutanix.CategoryKey("test_key_value", new()
+        ///     var testKeyValueCategoryKey = new Nutanix.Index.CategoryKey("test_key_value", new()
         ///     {
         ///         Name = "data_source_category_key_test_values",
         ///         Description = "Data Source CategoryKey Test with Values",
         ///     });
         /// 
-        ///     var testValue = new Nutanix.CategoryValue("test_value", new()
+        ///     var testValue = new Nutanix.Index.CategoryValue("test_value", new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///         Value = "test_category_value_data_source",
         ///         Description = "Data Source CategoryValue Test with Values",
         ///     });
         /// 
-        ///     var testKeyValue = Nutanix.GetCategoryKey.Invoke(new()
+        ///     var testKeyValue = Nutanix.Index.GetCategoryKey.Invoke(new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///     });
@@ -60,24 +59,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testKeyValueCategoryKey = new Nutanix.CategoryKey("test_key_value", new()
+        ///     var testKeyValueCategoryKey = new Nutanix.Index.CategoryKey("test_key_value", new()
         ///     {
         ///         Name = "data_source_category_key_test_values",
         ///         Description = "Data Source CategoryKey Test with Values",
         ///     });
         /// 
-        ///     var testValue = new Nutanix.CategoryValue("test_value", new()
+        ///     var testValue = new Nutanix.Index.CategoryValue("test_value", new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///         Value = "test_category_value_data_source",
         ///         Description = "Data Source CategoryValue Test with Values",
         ///     });
         /// 
-        ///     var testKeyValue = Nutanix.GetCategoryKey.Invoke(new()
+        ///     var testKeyValue = Nutanix.Index.GetCategoryKey.Invoke(new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///     });
@@ -98,24 +96,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testKeyValueCategoryKey = new Nutanix.CategoryKey("test_key_value", new()
+        ///     var testKeyValueCategoryKey = new Nutanix.Index.CategoryKey("test_key_value", new()
         ///     {
         ///         Name = "data_source_category_key_test_values",
         ///         Description = "Data Source CategoryKey Test with Values",
         ///     });
         /// 
-        ///     var testValue = new Nutanix.CategoryValue("test_value", new()
+        ///     var testValue = new Nutanix.Index.CategoryValue("test_value", new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///         Value = "test_category_value_data_source",
         ///         Description = "Data Source CategoryValue Test with Values",
         ///     });
         /// 
-        ///     var testKeyValue = Nutanix.GetCategoryKey.Invoke(new()
+        ///     var testKeyValue = Nutanix.Index.GetCategoryKey.Invoke(new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///     });

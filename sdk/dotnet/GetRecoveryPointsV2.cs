@@ -21,13 +21,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var recoveryPoints = Nutanix.GetRecoveryPointsV2.Invoke();
+        ///     var recoveryPoints = Nutanix.Index.GetRecoveryPointsV2.Invoke();
         /// 
-        ///     var filteredRecoveryPoints = Nutanix.GetRecoveryPointsV2.Invoke(new()
+        ///     var filteredRecoveryPoints = Nutanix.Index.GetRecoveryPointsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'recovery_point_001'",
         ///     });
@@ -129,13 +129,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var recoveryPoints = Nutanix.GetRecoveryPointsV2.Invoke();
+        ///     var recoveryPoints = Nutanix.Index.GetRecoveryPointsV2.Invoke();
         /// 
-        ///     var filteredRecoveryPoints = Nutanix.GetRecoveryPointsV2.Invoke(new()
+        ///     var filteredRecoveryPoints = Nutanix.Index.GetRecoveryPointsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'recovery_point_001'",
         ///     });
@@ -237,13 +237,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var recoveryPoints = Nutanix.GetRecoveryPointsV2.Invoke();
+        ///     var recoveryPoints = Nutanix.Index.GetRecoveryPointsV2.Invoke();
         /// 
-        ///     var filteredRecoveryPoints = Nutanix.GetRecoveryPointsV2.Invoke(new()
+        ///     var filteredRecoveryPoints = Nutanix.Index.GetRecoveryPointsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'recovery_point_001'",
         ///     });

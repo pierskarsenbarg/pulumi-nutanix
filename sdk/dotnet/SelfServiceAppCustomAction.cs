@@ -25,14 +25,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
     ///         AppDescription = "DESCRIPTION OF APPLICATION",
     ///     });
     /// 
-    ///     var testSelfServiceAppCustomAction = new Nutanix.SelfServiceAppCustomAction("test", new()
+    ///     var testSelfServiceAppCustomAction = new Nutanix.Index.SelfServiceAppCustomAction("test", new()
     ///     {
     ///         AppName = test.AppName,
     ///         ActionName = "NAME OF ACTION",

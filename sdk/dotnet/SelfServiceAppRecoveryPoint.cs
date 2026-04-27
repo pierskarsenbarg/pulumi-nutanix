@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.SelfServiceAppRecoveryPoint("test", new()
+    ///     var test = new Nutanix.Index.SelfServiceAppRecoveryPoint("test", new()
     ///     {
     ///         AppName = "NAME OF APPLICATION",
     ///         ActionName = "SNAPSHOT ACTION NAME",

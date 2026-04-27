@@ -22,11 +22,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var userUser = new Nutanix.User("user", new()
+        ///     var userUser = new Nutanix.Index.User("user", new()
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
@@ -39,13 +38,13 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     //Retrieve by UUID
-        ///     var user = Nutanix.GetUser.Invoke(new()
+        ///     var user = Nutanix.Index.GetUser.Invoke(new()
         ///     {
         ///         UserId = userUser.Id,
         ///     });
         /// 
         ///     //Retrieve by Name
-        ///     var userbyname = Nutanix.GetUser.Invoke(new()
+        ///     var userbyname = Nutanix.Index.GetUser.Invoke(new()
         ///     {
         ///         UserName = userUser.Name,
         ///     });
@@ -66,11 +65,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var userUser = new Nutanix.User("user", new()
+        ///     var userUser = new Nutanix.Index.User("user", new()
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
@@ -83,13 +81,13 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     //Retrieve by UUID
-        ///     var user = Nutanix.GetUser.Invoke(new()
+        ///     var user = Nutanix.Index.GetUser.Invoke(new()
         ///     {
         ///         UserId = userUser.Id,
         ///     });
         /// 
         ///     //Retrieve by Name
-        ///     var userbyname = Nutanix.GetUser.Invoke(new()
+        ///     var userbyname = Nutanix.Index.GetUser.Invoke(new()
         ///     {
         ///         UserName = userUser.Name,
         ///     });
@@ -110,11 +108,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var userUser = new Nutanix.User("user", new()
+        ///     var userUser = new Nutanix.Index.User("user", new()
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
@@ -127,13 +124,13 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     //Retrieve by UUID
-        ///     var user = Nutanix.GetUser.Invoke(new()
+        ///     var user = Nutanix.Index.GetUser.Invoke(new()
         ///     {
         ///         UserId = userUser.Id,
         ///     });
         /// 
         ///     //Retrieve by Name
-        ///     var userbyname = Nutanix.GetUser.Invoke(new()
+        ///     var userbyname = Nutanix.Index.GetUser.Invoke(new()
         ///     {
         ///         UserName = userUser.Name,
         ///     });

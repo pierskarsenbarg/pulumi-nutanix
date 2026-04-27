@@ -28,12 +28,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// List all images
-//			_, err := nutanix.LookupImagesV2(ctx, &nutanix.LookupImagesV2Args{}, nil)
+//			_, err := nutanix.GetImagesV2(ctx, &nutanix.LookupImagesV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
 //			// List images with filter, page and limit
-//			_, err = nutanix.LookupImagesV2(ctx, &nutanix.LookupImagesV2Args{
+//			_, err = nutanix.GetImagesV2(ctx, &nutanix.LookupImagesV2Args{
 //				Filter: pulumi.StringRef("startswith(name,'image_name')"),
 //				Page:   pulumi.IntRef(0),
 //				Limit:  pulumi.IntRef(10),

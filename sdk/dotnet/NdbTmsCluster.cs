@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var cls = new Nutanix.NdbTmsCluster("cls", new()
+    ///     var cls = new Nutanix.Index.NdbTmsCluster("cls", new()
     ///     {
     ///         TimeMachineId = "{{ tms_id }}",
     ///         NxClusterId = "{{ cluster_id }}",

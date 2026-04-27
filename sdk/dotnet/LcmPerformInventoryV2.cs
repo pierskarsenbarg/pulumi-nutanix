@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // perform inventory
-    ///     var inventory = new Nutanix.LcmPerformInventoryV2("inventory", new()
+    ///     var inventory = new Nutanix.Index.LcmPerformInventoryV2("inventory", new()
     ///     {
     ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
     ///     });

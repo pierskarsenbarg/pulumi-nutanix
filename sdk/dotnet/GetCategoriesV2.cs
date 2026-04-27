@@ -22,24 +22,24 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var categories_list = Nutanix.GetCategoriesV2.Invoke();
+        ///     var categories_list = Nutanix.Index.GetCategoriesV2.Invoke();
         /// 
-        ///     var categories_paginated = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_paginated = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var categories_sorted = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_sorted = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         OrderBy = "key desc",
         ///     });
         /// 
-        ///     var categories_filtered = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_filtered = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         Filter = "key eq 'key_example'",
         ///     });
@@ -99,24 +99,24 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var categories_list = Nutanix.GetCategoriesV2.Invoke();
+        ///     var categories_list = Nutanix.Index.GetCategoriesV2.Invoke();
         /// 
-        ///     var categories_paginated = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_paginated = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var categories_sorted = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_sorted = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         OrderBy = "key desc",
         ///     });
         /// 
-        ///     var categories_filtered = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_filtered = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         Filter = "key eq 'key_example'",
         ///     });
@@ -176,24 +176,24 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var categories_list = Nutanix.GetCategoriesV2.Invoke();
+        ///     var categories_list = Nutanix.Index.GetCategoriesV2.Invoke();
         /// 
-        ///     var categories_paginated = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_paginated = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var categories_sorted = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_sorted = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         OrderBy = "key desc",
         ///     });
         /// 
-        ///     var categories_filtered = Nutanix.GetCategoriesV2.Invoke(new()
+        ///     var categories_filtered = Nutanix.Index.GetCategoriesV2.Invoke(new()
         ///     {
         ///         Filter = "key eq 'key_example'",
         ///     });

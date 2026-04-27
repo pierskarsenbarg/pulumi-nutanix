@@ -21,6 +21,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("nodes", required: true)]
         private InputList<Inputs.FoundationImageNodesBlockNodeArgs>? _nodes;
+
+        /// <summary>
+        /// - (Required) Terraform blocks of details of nodes
+        /// </summary>
         public InputList<Inputs.FoundationImageNodesBlockNodeArgs> Nodes
         {
             get => _nodes ?? (_nodes = new InputList<Inputs.FoundationImageNodesBlockNodeArgs>());

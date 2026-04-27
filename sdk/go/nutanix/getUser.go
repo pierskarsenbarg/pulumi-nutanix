@@ -39,11 +39,11 @@ import (
 //				return err
 //			}
 //			// Retrieve by UUID
-//			_ = nutanix.LookupUserOutput(ctx, nutanix.GetUserOutputArgs{
+//			_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
 //				UserId: userUser.ID(),
 //			}, nil)
 //			// Retrieve by Name
-//			_ = nutanix.LookupUserOutput(ctx, nutanix.GetUserOutputArgs{
+//			_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
 //				UserName: userUser.Name,
 //			}, nil)
 //			return nil

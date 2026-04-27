@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcmFrameworkStatus = Nutanix.GetLcmStatusV2.Invoke(new()
+        ///     var lcmFrameworkStatus = Nutanix.Index.GetLcmStatusV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });
@@ -45,11 +45,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcmFrameworkStatus = Nutanix.GetLcmStatusV2.Invoke(new()
+        ///     var lcmFrameworkStatus = Nutanix.Index.GetLcmStatusV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });
@@ -69,11 +69,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcmFrameworkStatus = Nutanix.GetLcmStatusV2.Invoke(new()
+        ///     var lcmFrameworkStatus = Nutanix.Index.GetLcmStatusV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });

@@ -21,14 +21,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcm_configuration = Nutanix.GetLcmConfigV2.Invoke();
+        ///     var lcm_configuration = Nutanix.Index.GetLcmConfigV2.Invoke();
         /// 
         ///     // Get LCM configuration for a specific cluster
-        ///     var lcm_configuration_cluster = Nutanix.GetLcmConfigV2.Invoke(new()
+        ///     var lcm_configuration_cluster = Nutanix.Index.GetLcmConfigV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });
@@ -48,14 +48,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcm_configuration = Nutanix.GetLcmConfigV2.Invoke();
+        ///     var lcm_configuration = Nutanix.Index.GetLcmConfigV2.Invoke();
         /// 
         ///     // Get LCM configuration for a specific cluster
-        ///     var lcm_configuration_cluster = Nutanix.GetLcmConfigV2.Invoke(new()
+        ///     var lcm_configuration_cluster = Nutanix.Index.GetLcmConfigV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });
@@ -75,14 +75,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcm_configuration = Nutanix.GetLcmConfigV2.Invoke();
+        ///     var lcm_configuration = Nutanix.Index.GetLcmConfigV2.Invoke();
         /// 
         ///     // Get LCM configuration for a specific cluster
-        ///     var lcm_configuration_cluster = Nutanix.GetLcmConfigV2.Invoke(new()
+        ///     var lcm_configuration_cluster = Nutanix.Index.GetLcmConfigV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });

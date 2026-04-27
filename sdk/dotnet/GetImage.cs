@@ -22,23 +22,22 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testImage = new Nutanix.Image("test", new()
+        ///     var testImage = new Nutanix.Index.Image("test", new()
         ///     {
         ///         Name = "Ubuntu",
         ///         Description = "Ubuntu",
         ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
         ///     });
         /// 
-        ///     var test = Nutanix.GetImage.Invoke(new()
+        ///     var test = Nutanix.Index.GetImage.Invoke(new()
         ///     {
         ///         ImageId = testImage.Id,
         ///     });
         /// 
-        ///     var testname = Nutanix.GetImage.Invoke(new()
+        ///     var testname = Nutanix.Index.GetImage.Invoke(new()
         ///     {
         ///         ImageName = testImage.Name,
         ///     });
@@ -59,23 +58,22 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testImage = new Nutanix.Image("test", new()
+        ///     var testImage = new Nutanix.Index.Image("test", new()
         ///     {
         ///         Name = "Ubuntu",
         ///         Description = "Ubuntu",
         ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
         ///     });
         /// 
-        ///     var test = Nutanix.GetImage.Invoke(new()
+        ///     var test = Nutanix.Index.GetImage.Invoke(new()
         ///     {
         ///         ImageId = testImage.Id,
         ///     });
         /// 
-        ///     var testname = Nutanix.GetImage.Invoke(new()
+        ///     var testname = Nutanix.Index.GetImage.Invoke(new()
         ///     {
         ///         ImageName = testImage.Name,
         ///     });
@@ -96,23 +94,22 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testImage = new Nutanix.Image("test", new()
+        ///     var testImage = new Nutanix.Index.Image("test", new()
         ///     {
         ///         Name = "Ubuntu",
         ///         Description = "Ubuntu",
         ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
         ///     });
         /// 
-        ///     var test = Nutanix.GetImage.Invoke(new()
+        ///     var test = Nutanix.Index.GetImage.Invoke(new()
         ///     {
         ///         ImageId = testImage.Id,
         ///     });
         /// 
-        ///     var testname = Nutanix.GetImage.Invoke(new()
+        ///     var testname = Nutanix.Index.GetImage.Invoke(new()
         ///     {
         ///         ImageName = testImage.Name,
         ///     });

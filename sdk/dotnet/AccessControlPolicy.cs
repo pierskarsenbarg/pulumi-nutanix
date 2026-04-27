@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.AccessControlPolicy("test", new()
+    ///     var test = new Nutanix.Index.AccessControlPolicy("test", new()
     ///     {
     ///         Name = "NAME OF ACCESS CONTROL POLICY",
     ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",

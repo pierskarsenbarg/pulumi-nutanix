@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // restore RP
-    ///     var rp_restore = new Nutanix.RecoveryPointRestoreV2("rp-restore", new()
+    ///     var rp_restore = new Nutanix.Index.RecoveryPointRestoreV2("rp-restore", new()
     ///     {
     ///         ExtId = "150a7ed0-9d05-4f35-a060-16dac4c835d0",
     ///         ClusterExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",

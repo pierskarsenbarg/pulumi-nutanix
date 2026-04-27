@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupVolumeGroupV2(ctx, &nutanix.LookupVolumeGroupV2Args{
+//			_, err := nutanix.GetVolumeGroupV2(ctx, &nutanix.LookupVolumeGroupV2Args{
 //				ExtId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
 //			}, nil)
 //			if err != nil {

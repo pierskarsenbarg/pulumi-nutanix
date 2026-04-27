@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var kworkerNp = new Nutanix.KarbonWorkerNodepool("kworkerNp", new()
+    ///     var kworkerNp = new Nutanix.Index.KarbonWorkerNodepool("kworkerNp", new()
     ///     {
     ///         ClusterName = "karbon",
     ///         Name = "workerpool1",
@@ -48,7 +48,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var kworkerNp = new Nutanix.KarbonWorkerNodepool("kworkerNp", new()
+    ///     var kworkerNp = new Nutanix.Index.KarbonWorkerNodepool("kworkerNp", new()
     ///     {
     ///         ClusterName = "karbon",
     ///         Name = "workerpool1",

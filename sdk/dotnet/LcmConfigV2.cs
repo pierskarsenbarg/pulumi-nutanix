@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Enable Auto Inventory, Add Auto Inventory Schedule and enable auto upgrade
-    ///     var lcm_configuration_update = new Nutanix.LcmConfigV2("lcm-configuration-update", new()
+    ///     var lcm_configuration_update = new Nutanix.Index.LcmConfigV2("lcm-configuration-update", new()
     ///     {
     ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
     ///         IsAutoInventoryEnabled = true,
@@ -33,7 +33,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Update the LCM url to darksite server
-    ///     var lcm_configuration_update_connectivity_type = new Nutanix.LcmConfigV2("lcm-configuration-update-connectivity-type", new()
+    ///     var lcm_configuration_update_connectivity_type = new Nutanix.Index.LcmConfigV2("lcm-configuration-update-connectivity-type", new()
     ///     {
     ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
     ///         Url = "https://x.x.x.x:8000/builds",

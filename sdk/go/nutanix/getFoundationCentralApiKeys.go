@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupFoundationCentralApiKeys(ctx, &nutanix.LookupFoundationCentralApiKeysArgs{
+//			_, err := nutanix.GetFoundationCentralApiKeys(ctx, &nutanix.LookupFoundationCentralApiKeysArgs{
 //				KeyUuid: "<KEY_UUID>",
 //			}, nil)
 //			if err != nil {

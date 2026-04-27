@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupImagePlacementPolicyV2(ctx, &nutanix.LookupImagePlacementPolicyV2Args{
+//			_, err := nutanix.GetImagePlacementPolicyV2(ctx, &nutanix.LookupImagePlacementPolicyV2Args{
 //				ExtId: "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
 //			}, nil)
 //			if err != nil {

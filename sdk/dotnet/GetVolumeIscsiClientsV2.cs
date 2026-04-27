@@ -22,21 +22,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all the iSCSI clients.
-        ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
+        ///     var list_iscsi_clients = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke();
         /// 
         ///     // list iSCSI clients with a filter.
-        ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_filter = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
         ///     // list iSCSI clients with a limit and pagination.
-        ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_limit = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Page = 2,
         ///         Limit = 1,
@@ -138,21 +138,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all the iSCSI clients.
-        ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
+        ///     var list_iscsi_clients = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke();
         /// 
         ///     // list iSCSI clients with a filter.
-        ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_filter = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
         ///     // list iSCSI clients with a limit and pagination.
-        ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_limit = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Page = 2,
         ///         Limit = 1,
@@ -254,21 +254,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all the iSCSI clients.
-        ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
+        ///     var list_iscsi_clients = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke();
         /// 
         ///     // list iSCSI clients with a filter.
-        ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_filter = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
         ///     // list iSCSI clients with a limit and pagination.
-        ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_limit = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Page = 2,
         ///         Limit = 1,

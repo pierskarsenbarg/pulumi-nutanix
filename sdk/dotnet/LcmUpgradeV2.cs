@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // upgrade the entity
-    ///     var upgrade = new Nutanix.LcmUpgradeV2("upgrade", new()
+    ///     var upgrade = new Nutanix.Index.LcmUpgradeV2("upgrade", new()
     ///     {
     ///         EntityUpdateSpecs = new[]
     ///         {

@@ -30,7 +30,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     // restore source is auto-deleted after sometime, nutanix_pc_restore_source_v2 resource is auto-create
     ///     // new restore source if it was deleted, so notice that the id of the restore source will be different
     ///     // after recreation
-    ///     var cluster_location = new Nutanix.PcRestoreSourceV2("cluster-location", new()
+    ///     var cluster_location = new Nutanix.Index.PcRestoreSourceV2("cluster-location", new()
     ///     {
     ///         Location = new Nutanix.Inputs.PcRestoreSourceV2LocationArgs
     ///         {
@@ -64,7 +64,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // using object store location
-    ///     var object_store_location = new Nutanix.PcRestoreSourceV2("object-store-location", new()
+    ///     var object_store_location = new Nutanix.Index.PcRestoreSourceV2("object-store-location", new()
     ///     {
     ///         Location = new Nutanix.Inputs.PcRestoreSourceV2LocationArgs
     ///         {

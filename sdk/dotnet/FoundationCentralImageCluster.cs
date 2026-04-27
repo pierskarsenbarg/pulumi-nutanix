@@ -10,6 +10,128 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Image Nodes and Create a cluster out of nodes registered with Foundation Central.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var img2 = new Nutanix.Index.FoundationCentralImageCluster("img2", new()
+    ///     {
+    ///         ClusterName = "test-FC",
+    ///         ClusterExternalIp = "&lt;CLUSTER-IP&gt;",
+    ///         CommonNetworkSettings = new Nutanix.Inputs.FoundationCentralImageClusterCommonNetworkSettingsArgs
+    ///         {
+    ///             CvmDnsServers = new[]
+    ///             {
+    ///                 "xx.x.xx.xx",
+    ///             },
+    ///             HypervisorDnsServers = new[]
+    ///             {
+    ///                 "xx.x.xx.xx",
+    ///             },
+    ///             CvmNtpServers = new[]
+    ///             {
+    ///                 "&lt;cvm-ntp&gt;",
+    ///             },
+    ///             HypervisorNtpServers = new[]
+    ///             {
+    ///                 "&lt;hypervisor-ntp&gt;",
+    ///             },
+    ///         },
+    ///         RedundancyFactor = 2,
+    ///         NodeLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.FoundationCentralImageClusterNodeListArgs
+    ///             {
+    ///                 CvmGateway = "10.xx.xx.xx",
+    ///                 CvmNetmask = "xx.xx.xx.xx",
+    ///                 CvmIp = "10.x.xx.xx",
+    ///                 HypervisorGateway = "10.x.x.xx",
+    ///                 HypervisorNetmask = "xx.xx.xx.xx",
+    ///                 HypervisorIp = "10.x.xx.xx",
+    ///                 HypervisorHostname = "HOST-1",
+    ///                 ImagedNodeUuid = "&lt;NODE-UUID&gt;",
+    ///                 UseExistingNetworkSettings = false,
+    ///                 IpmiGateway = "10.x.xx.xx",
+    ///                 IpmiNetmask = "10.x.xx.xx",
+    ///                 IpmiIp = "10.x.xx.xx",
+    ///                 ImageNow = true,
+    ///                 HypervisorType = "kvm",
+    ///                 HardwareAttributesOverride = 
+    ///                 {
+    ///                     { "default_workload", "vdi" },
+    ///                     { "lcm_family", "smc_gen_10" },
+    ///                     { "maybe_1GbE_only", "true" },
+    ///                     { "robo_mixed_hypervisor", "true" },
+    ///                 },
+    ///             },
+    ///             new Nutanix.Inputs.FoundationCentralImageClusterNodeListArgs
+    ///             {
+    ///                 CvmGateway = "10.xx.xx.xx",
+    ///                 CvmNetmask = "xx.xx.xx.xx",
+    ///                 CvmIp = "10.x.xx.xx",
+    ///                 HypervisorGateway = "10.x.x.xx",
+    ///                 HypervisorNetmask = "xx.xx.xx.xx",
+    ///                 HypervisorIp = "10.x.xx.xx",
+    ///                 HypervisorHostname = "HOST-2",
+    ///                 ImagedNodeUuid = "&lt;NODE-UUID&gt;",
+    ///                 UseExistingNetworkSettings = false,
+    ///                 IpmiGateway = "10.x.xx.xx",
+    ///                 IpmiNetmask = "10.x.xx.xx",
+    ///                 IpmiIp = "10.x.xx.xx",
+    ///                 ImageNow = true,
+    ///                 HypervisorType = "kvm",
+    ///             },
+    ///             new Nutanix.Inputs.FoundationCentralImageClusterNodeListArgs
+    ///             {
+    ///                 CvmGateway = "10.xx.xx.xx",
+    ///                 CvmNetmask = "xx.xx.xx.xx",
+    ///                 CvmIp = "10.x.xx.xx",
+    ///                 HypervisorGateway = "10.x.x.xx",
+    ///                 HypervisorNetmask = "xx.xx.xx.xx",
+    ///                 HypervisorIp = "10.x.xx.xx",
+    ///                 HypervisorHostname = "HOST-3",
+    ///                 ImagedNodeUuid = "&lt;NODE-UUID&gt;",
+    ///                 UseExistingNetworkSettings = false,
+    ///                 IpmiGateway = "10.x.xx.xx",
+    ///                 IpmiNetmask = "10.x.xx.xx",
+    ///                 IpmiIp = "10.x.xx.xx",
+    ///                 ImageNow = true,
+    ///                 HypervisorType = "kvm",
+    ///             },
+    ///         },
+    ///         AosPackageUrl = "&lt;URL&gt;",
+    ///         HypervisorIsos = new Nutanix.Inputs.FoundationCentralImageClusterHypervisorIsosArgs
+    ///         {
+    ///             Url = "&lt;hypervisor-installer-link&gt;",
+    ///             Sha256sum = "&lt;hypervisor-installer-checksum&gt;",
+    ///             HypervisorType = "kvm",
+    ///         },
+    ///         SkipClusterCreation = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Error
+    /// 
+    /// Incase of error in any individual node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+    /// 
+    /// ## lifecycle
+    /// 
+    /// * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+    /// * `Delete` : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
+    /// 
+    /// See detailed information in [Nutanix Foundation Central Create a Cluster](https://www.nutanix.dev/api_references/foundation-central/#/cba507f282927-request-to-create-a-cluster).
+    /// </summary>
     [NutanixResourceType("nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster")]
     public partial class FoundationCentralImageCluster : global::Pulumi.CustomResource
     {

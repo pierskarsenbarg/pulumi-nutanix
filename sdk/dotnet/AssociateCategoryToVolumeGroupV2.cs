@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Associate categories to volume group
-    ///     var example = new Nutanix.AssociateCategoryToVolumeGroupV2("example", new()
+    ///     var example = new Nutanix.Index.AssociateCategoryToVolumeGroupV2("example", new()
     ///     {
     ///         ExtId = "f0c0a4ac-c734-4770-b5d7-eca6793eeeb7",
     ///         Categories = new[]

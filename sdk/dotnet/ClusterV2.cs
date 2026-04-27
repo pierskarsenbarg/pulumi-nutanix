@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var cluster = new Nutanix.ClusterV2("cluster", new()
+    ///     var cluster = new Nutanix.Index.ClusterV2("cluster", new()
     ///     {
     ///         Name = "cluster-example",
     ///         Nodes = new[]
@@ -159,24 +159,6 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
-    /// 
-    /// ## Import
-    /// 
-    /// This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,
-    /// 
-    /// hcl
-    /// 
-    /// // create its configuration in the root module. For example:
-    /// 
-    /// resource "nutanix_cluster_v2" "import_cluster" {}
-    /// 
-    /// // execute this cli command
-    /// 
-    /// ```sh
-    /// $ pulumi import nutanix:index/clusterV2:ClusterV2 import_cluster &lt;UUID&gt;
-    /// ```
-    /// 
-    /// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/createCluster).
     /// </summary>
     [NutanixResourceType("nutanix:index/clusterV2:ClusterV2")]
     public partial class ClusterV2 : global::Pulumi.CustomResource

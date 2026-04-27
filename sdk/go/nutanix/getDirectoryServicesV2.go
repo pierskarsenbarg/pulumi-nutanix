@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupDirectoryServicesV2(ctx, &nutanix.LookupDirectoryServicesV2Args{}, nil)
+//			_, err := nutanix.GetDirectoryServicesV2(ctx, &nutanix.LookupDirectoryServicesV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}

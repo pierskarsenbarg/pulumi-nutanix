@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var storage_containers = Nutanix.GetStorageContainersV2.Invoke();
+        ///     var storage_containers = Nutanix.Index.GetStorageContainersV2.Invoke();
         /// 
         /// });
         /// ```
@@ -98,11 +98,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var storage_containers = Nutanix.GetStorageContainersV2.Invoke();
+        ///     var storage_containers = Nutanix.Index.GetStorageContainersV2.Invoke();
         /// 
         /// });
         /// ```
@@ -175,11 +175,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var storage_containers = Nutanix.GetStorageContainersV2.Invoke();
+        ///     var storage_containers = Nutanix.Index.GetStorageContainersV2.Invoke();
         /// 
         /// });
         /// ```

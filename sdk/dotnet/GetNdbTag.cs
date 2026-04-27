@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var tag = Nutanix.GetNdbTag.Invoke(new()
+        ///     var tag = Nutanix.Index.GetNdbTag.Invoke(new()
         ///     {
         ///         Id = "{{ tag id }}",
         ///     });
@@ -45,11 +45,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var tag = Nutanix.GetNdbTag.Invoke(new()
+        ///     var tag = Nutanix.Index.GetNdbTag.Invoke(new()
         ///     {
         ///         Id = "{{ tag id }}",
         ///     });
@@ -69,11 +69,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var tag = Nutanix.GetNdbTag.Invoke(new()
+        ///     var tag = Nutanix.Index.GetNdbTag.Invoke(new()
         ///     {
         ///         Id = "{{ tag id }}",
         ///     });

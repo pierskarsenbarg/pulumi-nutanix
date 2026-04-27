@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vpc = new Nutanix.VpcV2("vpc", new()
+    ///     var vpc = new Nutanix.Index.VpcV2("vpc", new()
     ///     {
     ///         Name = "vpc-example",
     ///         Description = "VPC for example",
@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // creating VPC with external routable prefixes
-    ///     var external_vpc_routable_vpc = new Nutanix.VpcV2("external-vpc-routable-vpc", new()
+    ///     var external_vpc_routable_vpc = new Nutanix.Index.VpcV2("external-vpc-routable-vpc", new()
     ///     {
     ///         Name = "tf-vpc-example",
     ///         Description = "VPC ",
@@ -97,7 +97,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // creating VPC with transit type
-    ///     var transit_vpc = new Nutanix.VpcV2("transit-vpc", new()
+    ///     var transit_vpc = new Nutanix.Index.VpcV2("transit-vpc", new()
     ///     {
     ///         Name = "vpc-transit",
     ///         Description = "VPC for transit type",

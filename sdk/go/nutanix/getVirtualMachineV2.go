@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupVirtualMachineV2(ctx, &nutanix.LookupVirtualMachineV2Args{
+//			_, err := nutanix.GetVirtualMachineV2(ctx, &nutanix.LookupVirtualMachineV2Args{
 //				ExtId: "{{ ext_id of vm }}",
 //			}, nil)
 //			if err != nil {
