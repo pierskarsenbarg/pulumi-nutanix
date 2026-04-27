@@ -27,12 +27,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupSamlIdentityProvidersV2(ctx, &nutanix.LookupSamlIdentityProvidersV2Args{}, nil)
+//			_, err := nutanix.GetSamlIdentityProvidersV2(ctx, &nutanix.LookupSamlIdentityProvidersV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
 //			// list saml identity providers
-//			_, err = nutanix.LookupSamlIdentityProvidersV2(ctx, &nutanix.LookupSamlIdentityProvidersV2Args{
+//			_, err = nutanix.GetSamlIdentityProvidersV2(ctx, &nutanix.LookupSamlIdentityProvidersV2Args{
 //				Filter: pulumi.StringRef("name eq 'idp_example_name'"),
 //				Limit:  pulumi.IntRef(2),
 //			}, nil)

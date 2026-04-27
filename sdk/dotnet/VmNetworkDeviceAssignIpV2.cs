@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var nicAssignIp = new Nutanix.VmNetworkDeviceAssignIpV2("nic_assign_ip", new()
+    ///     var nicAssignIp = new Nutanix.Index.VmNetworkDeviceAssignIpV2("nic_assign_ip", new()
     ///     {
     ///         VmExtId = "246f6e8a-ff05-4057-af6b-b1fd23a46d7d",
     ///         ExtId = "eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b",

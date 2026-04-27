@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var idp = new Nutanix.SamlIdentityProvidersV2("idp", new()
+    ///     var idp = new Nutanix.Index.SamlIdentityProvidersV2("idp", new()
     ///     {
     ///         Name = "example_idp_name",
     ///         IdpMetadatas = new[]

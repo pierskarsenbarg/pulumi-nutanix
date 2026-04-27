@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var deploy_temp = new Nutanix.DeployTemplatesV2("deploy-temp", new()
+    ///     var deploy_temp = new Nutanix.Index.DeployTemplatesV2("deploy-temp", new()
     ///     {
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         NumberOfVms = 1,

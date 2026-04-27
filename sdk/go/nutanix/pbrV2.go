@@ -72,12 +72,7 @@ import (
 //
 // This helps to manage existing entities which are not created through terraform. Routing Policy can be imported using the `UUID`.  eg,
 //
-// `
-//
-// ```sh
-// $ pulumi import nutanix:index/pbrV2:PbrV2 pbr_import <UUID>
-// ```
-//
+// `terraform import nutanix_pbr_v2.pbr_import <UUID>
 // `
 //
 // See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).

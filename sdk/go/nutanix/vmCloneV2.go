@@ -33,7 +33,7 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.NewVmCloneV2(ctx, "vm1", &nutanix.VmCloneV2Args{
-//				VmExtId:           pulumi.Any(vm_list.Vms[0].Data.ExtId),
+//				VmExtId:           pulumi.String(pulumi.Any(vm_list.Vms[0].Data.ExtId)),
 //				Name:              pulumi.String("test-dou"),
 //				NumCoresPerSocket: pulumi.Int(1),
 //				NumSockets:        pulumi.Int(1),

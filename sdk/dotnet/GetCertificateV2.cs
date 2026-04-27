@@ -22,11 +22,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetCertificateV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetCertificateV2.Invoke(new()
         ///     {
         ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
         ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
@@ -48,11 +48,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetCertificateV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetCertificateV2.Invoke(new()
         ///     {
         ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
         ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
@@ -74,11 +74,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetCertificateV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetCertificateV2.Invoke(new()
         ///     {
         ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
         ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",

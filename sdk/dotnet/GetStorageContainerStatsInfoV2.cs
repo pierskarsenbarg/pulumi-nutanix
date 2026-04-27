@@ -22,11 +22,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetStorageContainerStatsInfoV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetStorageContainerStatsInfoV2.Invoke(new()
         ///     {
         ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
         ///         StartTime = "2024-08-01T00:00:00Z",
@@ -51,11 +51,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetStorageContainerStatsInfoV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetStorageContainerStatsInfoV2.Invoke(new()
         ///     {
         ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
         ///         StartTime = "2024-08-01T00:00:00Z",
@@ -80,11 +80,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetStorageContainerStatsInfoV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetStorageContainerStatsInfoV2.Invoke(new()
         ///     {
         ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
         ///         StartTime = "2024-08-01T00:00:00Z",
