@@ -76,7 +76,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-          - 8.0.300
+          - 10.0.201
         goversion:
           - 1.26.x
         language:
@@ -85,7 +85,7 @@ jobs:
           - dotnet
           - go
         nodeversion:
-          - 20.x
+          - 22.x
         pythonversion:
           - "3.11"
   prerequisites:
@@ -150,11 +150,11 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-          - 8.0.300
+          - 10.0.201
         goversion:
           - 1.26.x
         nodeversion:
-          - 20.x
+          - 22.x
         pythonversion:
           - "3.12"
   publish:
@@ -189,11 +189,11 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-          - 8.0.300
+          - 10.0.201
         goversion:
           - 1.26.x
         nodeversion:
-          - 20.x
+          - 22.x
         pythonversion:
           - "3.12"
   publish_sdk:
@@ -285,11 +285,11 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-          - 8.0.300
+          - 10.0.201
         goversion:
           - 1.26.x
         nodeversion:
-          - 20.x
+          - 22.x
         pythonversion:
           - "3.11"
 name: release
