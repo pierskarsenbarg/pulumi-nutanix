@@ -35,6 +35,8 @@ jobs:
         uses: pulumi/actions@v6
         with:
           pulumi-version: latest
+      - name: Check Pulumi CLI version
+        run: pulumi version
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
@@ -114,6 +116,8 @@ jobs:
         uses: pulumi/actions@v6
         with:
           pulumi-version: latest
+      - name: Check Pulumi CLI version
+        run: pulumi version
       - if: github.event_name == 'pull_request'
         name: Install Schema Tools
         uses: jaxxstorm/action-install-gh-release@v2.1.0
@@ -178,6 +182,8 @@ jobs:
         uses: pulumi/actions@v6
         with:
           pulumi-version: latest
+      - name: Check Pulumi CLI version
+        run: pulumi version
       - name: Set Release Version
         run: echo "GORELEASER_CURRENT_TAG=v$(pulumictl get version --language generic)" >> $GITHUB_ENV
       - name: Run GoReleaser
@@ -223,6 +229,8 @@ jobs:
         uses: pulumi/actions@v6
         with:
           pulumi-version: latest
+      - name: Check Pulumi CLI version
+        run: pulumi version
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
