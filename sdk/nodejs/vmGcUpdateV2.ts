@@ -6,6 +6,30 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Nutanix Virtual Machine resource to Create a virtual machine guest customization update.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const vm_list = nutanix.getVirtualMachinesV2({});
+ * const vm_gc_update = new nutanix.VmGcUpdateV2("vm-gc-update", {
+ *     extId: vm_list.then(vm_list => vm_list.vms?.[0]?.data?.extId),
+ *     configs: [{
+ *         cloudInits: [{
+ *             cloudInitScripts: [{
+ *                 userDatas: [{
+ *                     value: "IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gV29ybGQiCg==",
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ * });
+ * ```
+ */
 export class VmGcUpdateV2 extends pulumi.CustomResource {
     /**
      * Get an existing VmGcUpdateV2 resource's state with the given name, ID, and optional extra
@@ -34,7 +58,13 @@ export class VmGcUpdateV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmGcUpdateV2.__pulumiType;
     }
 
+    /**
+     * - (Optional) The Nutanix Guest Tools customization settings.
+     */
     declare public readonly configs: pulumi.Output<outputs.VmGcUpdateV2Config[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     declare public readonly extId: pulumi.Output<string>;
 
     /**
@@ -69,7 +99,13 @@ export class VmGcUpdateV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmGcUpdateV2 resources.
  */
 export interface VmGcUpdateV2State {
+    /**
+     * - (Optional) The Nutanix Guest Tools customization settings.
+     */
     configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
@@ -77,6 +113,12 @@ export interface VmGcUpdateV2State {
  * The set of arguments for constructing a VmGcUpdateV2 resource.
  */
 export interface VmGcUpdateV2Args {
+    /**
+     * - (Optional) The Nutanix Guest Tools customization settings.
+     */
     configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     extId: pulumi.Input<string>;
 }

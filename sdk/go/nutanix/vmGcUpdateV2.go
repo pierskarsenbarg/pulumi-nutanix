@@ -12,11 +12,61 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a Nutanix Virtual Machine resource to Create a virtual machine guest customization update.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			vm_list, err := nutanix.GetVirtualMachinesV2(ctx, &nutanix.GetVirtualMachinesV2Args{}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewVmGcUpdateV2(ctx, "vm-gc-update", &nutanix.VmGcUpdateV2Args{
+//				ExtId: pulumi.Any(vm_list.Vms[0].Data.ExtId),
+//				Configs: nutanix.VmGcUpdateV2ConfigArray{
+//					&nutanix.VmGcUpdateV2ConfigArgs{
+//						CloudInits: nutanix.VmGcUpdateV2ConfigCloudInitArray{
+//							&nutanix.VmGcUpdateV2ConfigCloudInitArgs{
+//								CloudInitScripts: nutanix.VmGcUpdateV2ConfigCloudInitCloudInitScriptArray{
+//									&nutanix.VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs{
+//										UserDatas: nutanix.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArray{
+//											&nutanix.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArgs{
+//												Value: pulumi.String("IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gV29ybGQiCg=="),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type VmGcUpdateV2 struct {
 	pulumi.CustomResourceState
 
+	// - (Optional) The Nutanix Guest Tools customization settings.
 	Configs VmGcUpdateV2ConfigArrayOutput `pulumi:"configs"`
-	ExtId   pulumi.StringOutput           `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	ExtId pulumi.StringOutput `pulumi:"extId"`
 }
 
 // NewVmGcUpdateV2 registers a new resource with the given unique name, arguments, and options.
@@ -52,13 +102,17 @@ func GetVmGcUpdateV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmGcUpdateV2 resources.
 type vmGcUpdateV2State struct {
+	// - (Optional) The Nutanix Guest Tools customization settings.
 	Configs []VmGcUpdateV2Config `pulumi:"configs"`
-	ExtId   *string              `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	ExtId *string `pulumi:"extId"`
 }
 
 type VmGcUpdateV2State struct {
+	// - (Optional) The Nutanix Guest Tools customization settings.
 	Configs VmGcUpdateV2ConfigArrayInput
-	ExtId   pulumi.StringPtrInput
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	ExtId pulumi.StringPtrInput
 }
 
 func (VmGcUpdateV2State) ElementType() reflect.Type {
@@ -66,14 +120,18 @@ func (VmGcUpdateV2State) ElementType() reflect.Type {
 }
 
 type vmGcUpdateV2Args struct {
+	// - (Optional) The Nutanix Guest Tools customization settings.
 	Configs []VmGcUpdateV2Config `pulumi:"configs"`
-	ExtId   string               `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	ExtId string `pulumi:"extId"`
 }
 
 // The set of arguments for constructing a VmGcUpdateV2 resource.
 type VmGcUpdateV2Args struct {
+	// - (Optional) The Nutanix Guest Tools customization settings.
 	Configs VmGcUpdateV2ConfigArrayInput
-	ExtId   pulumi.StringInput
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	ExtId pulumi.StringInput
 }
 
 func (VmGcUpdateV2Args) ElementType() reflect.Type {
@@ -163,10 +221,12 @@ func (o VmGcUpdateV2Output) ToVmGcUpdateV2OutputWithContext(ctx context.Context)
 	return o
 }
 
+// - (Optional) The Nutanix Guest Tools customization settings.
 func (o VmGcUpdateV2Output) Configs() VmGcUpdateV2ConfigArrayOutput {
 	return o.ApplyT(func(v *VmGcUpdateV2) VmGcUpdateV2ConfigArrayOutput { return v.Configs }).(VmGcUpdateV2ConfigArrayOutput)
 }
 
+// - (Required) The globally unique identifier of a VM. It should be of type UUID.
 func (o VmGcUpdateV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmGcUpdateV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }

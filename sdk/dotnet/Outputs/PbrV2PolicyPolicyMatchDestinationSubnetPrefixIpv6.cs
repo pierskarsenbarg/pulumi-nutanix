@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6
     {
+        /// <summary>
+        /// IP of address
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip> Ips;
         public readonly int? PrefixLength;
 

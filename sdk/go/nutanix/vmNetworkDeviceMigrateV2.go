@@ -12,14 +12,62 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a Nutanix Virtual Machine resource to Migrate a nic.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewVmNetworkDeviceMigrateV2(ctx, "migrate", &nutanix.VmNetworkDeviceMigrateV2Args{
+//				VmExtId: pulumi.String("246f6e8a-ff05-4057-af6b-b1fd23a46d7d"),
+//				ExtId:   pulumi.String("eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b"),
+//				Subnets: nutanix.VmNetworkDeviceMigrateV2SubnetArray{
+//					&nutanix.VmNetworkDeviceMigrateV2SubnetArgs{
+//						ExtId: pulumi.String("6085d3ba-99ce-41fa-9866-e5d5babb62c7"),
+//					},
+//				},
+//				MigrateType: pulumi.String("ASSIGN_IP"),
+//				IpAddresses: nutanix.VmNetworkDeviceMigrateV2IpAddressArray{
+//					&nutanix.VmNetworkDeviceMigrateV2IpAddressArgs{
+//						Value:        pulumi.String("10.10.10.11"),
+//						PrefixLength: pulumi.Int(32),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type VmNetworkDeviceMigrateV2 struct {
 	pulumi.CustomResourceState
 
-	ExtId       pulumi.StringOutput                          `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId pulumi.StringOutput `pulumi:"extId"`
+	// - (Optional) Ip config settings.
 	IpAddresses VmNetworkDeviceMigrateV2IpAddressArrayOutput `pulumi:"ipAddresses"`
-	MigrateType pulumi.StringOutput                          `pulumi:"migrateType"`
-	Subnets     VmNetworkDeviceMigrateV2SubnetArrayOutput    `pulumi:"subnets"`
-	VmExtId     pulumi.StringOutput                          `pulumi:"vmExtId"`
+	// - (Required) The type of IP address management for NIC migration.
+	//   Valid values are:
+	// - `ASSIGN_IP` The type of NIC is Span-Destination.
+	// - `RELEASE_IP` The type of NIC is Normal.
+	MigrateType pulumi.StringOutput `pulumi:"migrateType"`
+	// - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	Subnets VmNetworkDeviceMigrateV2SubnetArrayOutput `pulumi:"subnets"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId pulumi.StringOutput `pulumi:"vmExtId"`
 }
 
 // NewVmNetworkDeviceMigrateV2 registers a new resource with the given unique name, arguments, and options.
@@ -64,19 +112,35 @@ func GetVmNetworkDeviceMigrateV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmNetworkDeviceMigrateV2 resources.
 type vmNetworkDeviceMigrateV2State struct {
-	ExtId       *string                             `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId *string `pulumi:"extId"`
+	// - (Optional) Ip config settings.
 	IpAddresses []VmNetworkDeviceMigrateV2IpAddress `pulumi:"ipAddresses"`
-	MigrateType *string                             `pulumi:"migrateType"`
-	Subnets     []VmNetworkDeviceMigrateV2Subnet    `pulumi:"subnets"`
-	VmExtId     *string                             `pulumi:"vmExtId"`
+	// - (Required) The type of IP address management for NIC migration.
+	//   Valid values are:
+	// - `ASSIGN_IP` The type of NIC is Span-Destination.
+	// - `RELEASE_IP` The type of NIC is Normal.
+	MigrateType *string `pulumi:"migrateType"`
+	// - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	Subnets []VmNetworkDeviceMigrateV2Subnet `pulumi:"subnets"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId *string `pulumi:"vmExtId"`
 }
 
 type VmNetworkDeviceMigrateV2State struct {
-	ExtId       pulumi.StringPtrInput
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId pulumi.StringPtrInput
+	// - (Optional) Ip config settings.
 	IpAddresses VmNetworkDeviceMigrateV2IpAddressArrayInput
+	// - (Required) The type of IP address management for NIC migration.
+	//   Valid values are:
+	// - `ASSIGN_IP` The type of NIC is Span-Destination.
+	// - `RELEASE_IP` The type of NIC is Normal.
 	MigrateType pulumi.StringPtrInput
-	Subnets     VmNetworkDeviceMigrateV2SubnetArrayInput
-	VmExtId     pulumi.StringPtrInput
+	// - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	Subnets VmNetworkDeviceMigrateV2SubnetArrayInput
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId pulumi.StringPtrInput
 }
 
 func (VmNetworkDeviceMigrateV2State) ElementType() reflect.Type {
@@ -84,20 +148,36 @@ func (VmNetworkDeviceMigrateV2State) ElementType() reflect.Type {
 }
 
 type vmNetworkDeviceMigrateV2Args struct {
-	ExtId       string                              `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId string `pulumi:"extId"`
+	// - (Optional) Ip config settings.
 	IpAddresses []VmNetworkDeviceMigrateV2IpAddress `pulumi:"ipAddresses"`
-	MigrateType string                              `pulumi:"migrateType"`
-	Subnets     []VmNetworkDeviceMigrateV2Subnet    `pulumi:"subnets"`
-	VmExtId     string                              `pulumi:"vmExtId"`
+	// - (Required) The type of IP address management for NIC migration.
+	//   Valid values are:
+	// - `ASSIGN_IP` The type of NIC is Span-Destination.
+	// - `RELEASE_IP` The type of NIC is Normal.
+	MigrateType string `pulumi:"migrateType"`
+	// - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	Subnets []VmNetworkDeviceMigrateV2Subnet `pulumi:"subnets"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId string `pulumi:"vmExtId"`
 }
 
 // The set of arguments for constructing a VmNetworkDeviceMigrateV2 resource.
 type VmNetworkDeviceMigrateV2Args struct {
-	ExtId       pulumi.StringInput
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId pulumi.StringInput
+	// - (Optional) Ip config settings.
 	IpAddresses VmNetworkDeviceMigrateV2IpAddressArrayInput
+	// - (Required) The type of IP address management for NIC migration.
+	//   Valid values are:
+	// - `ASSIGN_IP` The type of NIC is Span-Destination.
+	// - `RELEASE_IP` The type of NIC is Normal.
 	MigrateType pulumi.StringInput
-	Subnets     VmNetworkDeviceMigrateV2SubnetArrayInput
-	VmExtId     pulumi.StringInput
+	// - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	Subnets VmNetworkDeviceMigrateV2SubnetArrayInput
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId pulumi.StringInput
 }
 
 func (VmNetworkDeviceMigrateV2Args) ElementType() reflect.Type {
@@ -187,22 +267,30 @@ func (o VmNetworkDeviceMigrateV2Output) ToVmNetworkDeviceMigrateV2OutputWithCont
 	return o
 }
 
+// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
 func (o VmNetworkDeviceMigrateV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmNetworkDeviceMigrateV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// - (Optional) Ip config settings.
 func (o VmNetworkDeviceMigrateV2Output) IpAddresses() VmNetworkDeviceMigrateV2IpAddressArrayOutput {
 	return o.ApplyT(func(v *VmNetworkDeviceMigrateV2) VmNetworkDeviceMigrateV2IpAddressArrayOutput { return v.IpAddresses }).(VmNetworkDeviceMigrateV2IpAddressArrayOutput)
 }
 
+//   - (Required) The type of IP address management for NIC migration.
+//     Valid values are:
+//   - `ASSIGN_IP` The type of NIC is Span-Destination.
+//   - `RELEASE_IP` The type of NIC is Normal.
 func (o VmNetworkDeviceMigrateV2Output) MigrateType() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmNetworkDeviceMigrateV2) pulumi.StringOutput { return v.MigrateType }).(pulumi.StringOutput)
 }
 
+// - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
 func (o VmNetworkDeviceMigrateV2Output) Subnets() VmNetworkDeviceMigrateV2SubnetArrayOutput {
 	return o.ApplyT(func(v *VmNetworkDeviceMigrateV2) VmNetworkDeviceMigrateV2SubnetArrayOutput { return v.Subnets }).(VmNetworkDeviceMigrateV2SubnetArrayOutput)
 }
 
+// - (Required) The globally unique identifier of a VM. It should be of type UUID.
 func (o VmNetworkDeviceMigrateV2Output) VmExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmNetworkDeviceMigrateV2) pulumi.StringOutput { return v.VmExtId }).(pulumi.StringOutput)
 }

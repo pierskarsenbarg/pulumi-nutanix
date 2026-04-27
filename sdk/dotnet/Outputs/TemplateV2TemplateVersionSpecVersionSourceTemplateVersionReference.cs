@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference
     {
+        /// <summary>
+        /// Overrides specification for VM create from a Template.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig> OverrideVmConfigs;
+        /// <summary>
+        /// The identifier of a Template Version. by default it will be the latest version of the template.
+        /// </summary>
         public readonly string? VersionId;
 
         [OutputConstructor]

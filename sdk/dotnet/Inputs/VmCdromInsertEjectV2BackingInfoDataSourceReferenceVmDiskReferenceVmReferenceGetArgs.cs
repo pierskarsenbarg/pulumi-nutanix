@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The globally unique identifier of a CD-ROM. It should be of type UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 

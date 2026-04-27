@@ -14,7 +14,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCdromInsertEjectV2BackingInfoDataSourceReference
     {
+        /// <summary>
+        /// Image Reference
+        /// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference> ImageReferences;
+        /// <summary>
+        /// Vm Disk Reference
+        /// * `vm_disk_reference.disk_address`: (Required) Disk address.
+        /// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
+        /// 
+        /// 
+        /// See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/insertCdRomById).
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference> VmDiskReferences;
 
         [OutputConstructor]

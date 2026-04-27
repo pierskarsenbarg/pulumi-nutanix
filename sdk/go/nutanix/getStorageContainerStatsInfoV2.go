@@ -11,6 +11,37 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetStorageContainerStatsInfoV2(ctx, &nutanix.GetStorageContainerStatsInfoV2Args{
+//				ExtId:            "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+//				StartTime:        "2024-08-01T00:00:00Z",
+//				EndTime:          "2024-08-30T00:00:00Z",
+//				SamplingInterval: pulumi.IntRef(1),
+//				StatType:         pulumi.StringRef("SUM"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetStorageContainerStatsInfoV2(ctx *pulumi.Context, args *GetStorageContainerStatsInfoV2Args, opts ...pulumi.InvokeOption) (*GetStorageContainerStatsInfoV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStorageContainerStatsInfoV2Result
@@ -23,57 +54,105 @@ func GetStorageContainerStatsInfoV2(ctx *pulumi.Context, args *GetStorageContain
 
 // A collection of arguments for invoking getStorageContainerStatsInfoV2.
 type GetStorageContainerStatsInfoV2Args struct {
-	EndTime          string  `pulumi:"endTime"`
-	ExtId            string  `pulumi:"extId"`
-	SamplingInterval *int    `pulumi:"samplingInterval"`
-	StartTime        string  `pulumi:"startTime"`
-	StatType         *string `pulumi:"statType"`
+	// storage container UUID
+	EndTime string `pulumi:"endTime"`
+	// storage container UUID
+	ExtId string `pulumi:"extId"`
+	// storage container UUID
+	SamplingInterval *int `pulumi:"samplingInterval"`
+	// storage container UUID
+	StartTime string `pulumi:"startTime"`
+	// storage container UUID
+	// * available values:
+	// * `AVG`: - Aggregation indicating mean or average of all values.
+	// * `MIN`: - Aggregation containing lowest of all values.
+	// * `MAX`: - 	Aggregation containing highest of all values.
+	// * `LAST`: - Aggregation containing only the last recorded value.
+	// * `SUM`: - Aggregation with sum of all values.
+	// * `COUNT`: - Aggregation containing total count of values.
+	StatType *string `pulumi:"statType"`
 }
 
 // A collection of values returned by getStorageContainerStatsInfoV2.
 type GetStorageContainerStatsInfoV2Result struct {
-	ContainerExtId                            string                                                                   `pulumi:"containerExtId"`
-	ControllerAvgIoLatencyuSecs               []GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec               `pulumi:"controllerAvgIoLatencyuSecs"`
-	ControllerAvgReadIoLatencyuSecs           []GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec           `pulumi:"controllerAvgReadIoLatencyuSecs"`
-	ControllerAvgWriteIoLatencyuSecs          []GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec          `pulumi:"controllerAvgWriteIoLatencyuSecs"`
-	ControllerIoBandwidthKbps                 []GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp                 `pulumi:"controllerIoBandwidthKbps"`
-	ControllerNumIops                         []GetStorageContainerStatsInfoV2ControllerNumIop                         `pulumi:"controllerNumIops"`
-	ControllerNumReadIops                     []GetStorageContainerStatsInfoV2ControllerNumReadIop                     `pulumi:"controllerNumReadIops"`
-	ControllerNumWriteIops                    []GetStorageContainerStatsInfoV2ControllerNumWriteIop                    `pulumi:"controllerNumWriteIops"`
-	ControllerReadIoBandwidthKbps             []GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp             `pulumi:"controllerReadIoBandwidthKbps"`
-	ControllerReadIoRatioPpms                 []GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm                 `pulumi:"controllerReadIoRatioPpms"`
-	ControllerWriteIoBandwidthKbps            []GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp            `pulumi:"controllerWriteIoBandwidthKbps"`
-	ControllerWriteIoRatioPpms                []GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm                `pulumi:"controllerWriteIoRatioPpms"`
-	DataReductionCloneSavingRatioPpms         []GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm         `pulumi:"dataReductionCloneSavingRatioPpms"`
-	DataReductionCompressionSavingRatioPpms   []GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm   `pulumi:"dataReductionCompressionSavingRatioPpms"`
-	DataReductionDedupSavingRatioPpms         []GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm         `pulumi:"dataReductionDedupSavingRatioPpms"`
+	// - the storage container uuid
+	ContainerExtId string `pulumi:"containerExtId"`
+	// - Average I/O latency in micro secs.
+	ControllerAvgIoLatencyuSecs []GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec `pulumi:"controllerAvgIoLatencyuSecs"`
+	// - Average read I/O latency in microseconds.
+	ControllerAvgReadIoLatencyuSecs []GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec `pulumi:"controllerAvgReadIoLatencyuSecs"`
+	// - Average read I/O latency in microseconds.
+	ControllerAvgWriteIoLatencyuSecs []GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec `pulumi:"controllerAvgWriteIoLatencyuSecs"`
+	// - Total I/O bandwidth - kB per second.
+	ControllerIoBandwidthKbps []GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp `pulumi:"controllerIoBandwidthKbps"`
+	// - Number of I/O per second.
+	ControllerNumIops []GetStorageContainerStatsInfoV2ControllerNumIop `pulumi:"controllerNumIops"`
+	// - Number of read I/O per second.
+	ControllerNumReadIops []GetStorageContainerStatsInfoV2ControllerNumReadIop `pulumi:"controllerNumReadIops"`
+	// - Number of write I/O per second.
+	ControllerNumWriteIops []GetStorageContainerStatsInfoV2ControllerNumWriteIop `pulumi:"controllerNumWriteIops"`
+	// - Read I/O bandwidth - kB per second.
+	ControllerReadIoBandwidthKbps []GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp `pulumi:"controllerReadIoBandwidthKbps"`
+	// - Ratio of read I/O to total I/O in PPM.
+	ControllerReadIoRatioPpms []GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm `pulumi:"controllerReadIoRatioPpms"`
+	// - Write I/O bandwidth - kB per second.
+	ControllerWriteIoBandwidthKbps []GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp `pulumi:"controllerWriteIoBandwidthKbps"`
+	// - Ratio of read I/O to total I/O in PPM.
+	ControllerWriteIoRatioPpms []GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm `pulumi:"controllerWriteIoRatioPpms"`
+	// - Saving ratio in PPM as a result of the Cloning technique.
+	DataReductionCloneSavingRatioPpms []GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm `pulumi:"dataReductionCloneSavingRatioPpms"`
+	// - Saving ratio in PPM as a result of the Compression technique.
+	DataReductionCompressionSavingRatioPpms []GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm `pulumi:"dataReductionCompressionSavingRatioPpms"`
+	// - Saving ratio in PPM as a result of the Deduplication technique.
+	DataReductionDedupSavingRatioPpms []GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm `pulumi:"dataReductionDedupSavingRatioPpms"`
+	// - Saving ratio in PPM as a result of the Erasure Coding technique.
 	DataReductionErasureCodingSavingRatioPpms []GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpm `pulumi:"dataReductionErasureCodingSavingRatioPpms"`
-	DataReductionOverallPostReductionBytes    []GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte    `pulumi:"dataReductionOverallPostReductionBytes"`
-	DataReductionOverallPreReductionBytes     []GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte     `pulumi:"dataReductionOverallPreReductionBytes"`
-	DataReductionSavedBytes                   []GetStorageContainerStatsInfoV2DataReductionSavedByte                   `pulumi:"dataReductionSavedBytes"`
-	DataReductionSavingRatioPpms              []GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm              `pulumi:"dataReductionSavingRatioPpms"`
-	DataReductionSnapshotSavingRatioPpms      []GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm      `pulumi:"dataReductionSnapshotSavingRatioPpms"`
+	// - Usage in bytes after reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
+	DataReductionOverallPostReductionBytes []GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte `pulumi:"dataReductionOverallPostReductionBytes"`
+	// - Usage in bytes before reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
+	DataReductionOverallPreReductionBytes []GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte `pulumi:"dataReductionOverallPreReductionBytes"`
+	// - Storage savings in bytes as a result of all the techniques.
+	DataReductionSavedBytes []GetStorageContainerStatsInfoV2DataReductionSavedByte `pulumi:"dataReductionSavedBytes"`
+	// - Saving ratio in PPM as a result of Deduplication, compression and Erasure Coding.
+	DataReductionSavingRatioPpms []GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm `pulumi:"dataReductionSavingRatioPpms"`
+	// - Saving ratio in PPM as a result of Snapshot technique.
+	DataReductionSnapshotSavingRatioPpms []GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm `pulumi:"dataReductionSnapshotSavingRatioPpms"`
+	// - Saving ratio in PPM as a result of the Thin Provisioning technique.
 	DataReductionThinProvisionSavingRatioPpms []GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpm `pulumi:"dataReductionThinProvisionSavingRatioPpms"`
-	DataReductionTotalSavingRatioPpms         []GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm         `pulumi:"dataReductionTotalSavingRatioPpms"`
-	DataReductionZeroWriteSavingsBytes        []GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte        `pulumi:"dataReductionZeroWriteSavingsBytes"`
-	EndTime                                   string                                                                   `pulumi:"endTime"`
-	ExtId                                     string                                                                   `pulumi:"extId"`
-	Healths                                   []GetStorageContainerStatsInfoV2Health                                   `pulumi:"healths"`
+	// - Saving ratio in PPM consisting of Deduplication, Compression, Erasure Coding, Cloning, and Thin Provisioning.
+	DataReductionTotalSavingRatioPpms []GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm `pulumi:"dataReductionTotalSavingRatioPpms"`
+	// - Total amount of savings in bytes as a result of zero writes.
+	DataReductionZeroWriteSavingsBytes []GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte `pulumi:"dataReductionZeroWriteSavingsBytes"`
+	EndTime                            string                                                            `pulumi:"endTime"`
+	// - the storage container uuid
+	ExtId string `pulumi:"extId"`
+	// - Health of the container is represented by an integer value in the range 0-100. Higher value is indicative of better health.
+	Healths []GetStorageContainerStatsInfoV2Health `pulumi:"healths"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                              string                                                         `pulumi:"id"`
-	Links                           []GetStorageContainerStatsInfoV2Link                           `pulumi:"links"`
-	SamplingInterval                *int                                                           `pulumi:"samplingInterval"`
-	StartTime                       string                                                         `pulumi:"startTime"`
-	StatType                        *string                                                        `pulumi:"statType"`
+	Id string `pulumi:"id"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links            []GetStorageContainerStatsInfoV2Link `pulumi:"links"`
+	SamplingInterval *int                                 `pulumi:"samplingInterval"`
+	StartTime        string                               `pulumi:"startTime"`
+	StatType         *string                              `pulumi:"statType"`
+	// - Actual physical disk usage of the container without accounting for the reservation.
 	StorageActualPhysicalUsageBytes []GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByte `pulumi:"storageActualPhysicalUsageBytes"`
-	StorageCapacityBytes            []GetStorageContainerStatsInfoV2StorageCapacityByte            `pulumi:"storageCapacityBytes"`
-	StorageFreeBytes                []GetStorageContainerStatsInfoV2StorageFreeByte                `pulumi:"storageFreeBytes"`
-	StorageReplicationFactors       []GetStorageContainerStatsInfoV2StorageReplicationFactor       `pulumi:"storageReplicationFactors"`
-	StorageReservedCapacityBytes    []GetStorageContainerStatsInfoV2StorageReservedCapacityByte    `pulumi:"storageReservedCapacityBytes"`
-	StorageTierDasSataUsageBytes    []GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte    `pulumi:"storageTierDasSataUsageBytes"`
-	StorageTierSsdUsageBytes        []GetStorageContainerStatsInfoV2StorageTierSsdUsageByte        `pulumi:"storageTierSsdUsageBytes"`
-	StorageUsageBytes               []GetStorageContainerStatsInfoV2StorageUsageByte               `pulumi:"storageUsageBytes"`
-	TenantId                        string                                                         `pulumi:"tenantId"`
+	// - Storage capacity in bytes.
+	StorageCapacityBytes []GetStorageContainerStatsInfoV2StorageCapacityByte `pulumi:"storageCapacityBytes"`
+	// - Free storage in bytes.
+	StorageFreeBytes []GetStorageContainerStatsInfoV2StorageFreeByte `pulumi:"storageFreeBytes"`
+	// - Replication factor of Container.
+	StorageReplicationFactors []GetStorageContainerStatsInfoV2StorageReplicationFactor `pulumi:"storageReplicationFactors"`
+	// - Implicit physical reserved capacity(aggregated on vDisk level due to thick provisioning) in bytes.
+	StorageReservedCapacityBytes []GetStorageContainerStatsInfoV2StorageReservedCapacityByte `pulumi:"storageReservedCapacityBytes"`
+	// - Total usage on HDD tier for the Container in bytes.
+	StorageTierDasSataUsageBytes []GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte `pulumi:"storageTierDasSataUsageBytes"`
+	// - Total usage on SDD tier for the Container in bytes
+	StorageTierSsdUsageBytes []GetStorageContainerStatsInfoV2StorageTierSsdUsageByte `pulumi:"storageTierSsdUsageBytes"`
+	// - Used storage in bytes.
+	StorageUsageBytes []GetStorageContainerStatsInfoV2StorageUsageByte `pulumi:"storageUsageBytes"`
+	// - A globally unique identifier that represents the tenant that owns this entity.
+	TenantId string `pulumi:"tenantId"`
 }
 
 func GetStorageContainerStatsInfoV2Output(ctx *pulumi.Context, args GetStorageContainerStatsInfoV2OutputArgs, opts ...pulumi.InvokeOption) GetStorageContainerStatsInfoV2ResultOutput {
@@ -87,11 +166,23 @@ func GetStorageContainerStatsInfoV2Output(ctx *pulumi.Context, args GetStorageCo
 
 // A collection of arguments for invoking getStorageContainerStatsInfoV2.
 type GetStorageContainerStatsInfoV2OutputArgs struct {
-	EndTime          pulumi.StringInput    `pulumi:"endTime"`
-	ExtId            pulumi.StringInput    `pulumi:"extId"`
-	SamplingInterval pulumi.IntPtrInput    `pulumi:"samplingInterval"`
-	StartTime        pulumi.StringInput    `pulumi:"startTime"`
-	StatType         pulumi.StringPtrInput `pulumi:"statType"`
+	// storage container UUID
+	EndTime pulumi.StringInput `pulumi:"endTime"`
+	// storage container UUID
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// storage container UUID
+	SamplingInterval pulumi.IntPtrInput `pulumi:"samplingInterval"`
+	// storage container UUID
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	// storage container UUID
+	// * available values:
+	// * `AVG`: - Aggregation indicating mean or average of all values.
+	// * `MIN`: - Aggregation containing lowest of all values.
+	// * `MAX`: - 	Aggregation containing highest of all values.
+	// * `LAST`: - Aggregation containing only the last recorded value.
+	// * `SUM`: - Aggregation with sum of all values.
+	// * `COUNT`: - Aggregation containing total count of values.
+	StatType pulumi.StringPtrInput `pulumi:"statType"`
 }
 
 func (GetStorageContainerStatsInfoV2OutputArgs) ElementType() reflect.Type {
@@ -113,142 +204,166 @@ func (o GetStorageContainerStatsInfoV2ResultOutput) ToGetStorageContainerStatsIn
 	return o
 }
 
+// - the storage container uuid
 func (o GetStorageContainerStatsInfoV2ResultOutput) ContainerExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) string { return v.ContainerExtId }).(pulumi.StringOutput)
 }
 
+// - Average I/O latency in micro secs.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerAvgIoLatencyuSecs() GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec {
 		return v.ControllerAvgIoLatencyuSecs
 	}).(GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecArrayOutput)
 }
 
+// - Average read I/O latency in microseconds.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerAvgReadIoLatencyuSecs() GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec {
 		return v.ControllerAvgReadIoLatencyuSecs
 	}).(GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecArrayOutput)
 }
 
+// - Average read I/O latency in microseconds.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerAvgWriteIoLatencyuSecs() GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec {
 		return v.ControllerAvgWriteIoLatencyuSecs
 	}).(GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecArrayOutput)
 }
 
+// - Total I/O bandwidth - kB per second.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerIoBandwidthKbps() GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp {
 		return v.ControllerIoBandwidthKbps
 	}).(GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpArrayOutput)
 }
 
+// - Number of I/O per second.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerNumIops() GetStorageContainerStatsInfoV2ControllerNumIopArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerNumIop {
 		return v.ControllerNumIops
 	}).(GetStorageContainerStatsInfoV2ControllerNumIopArrayOutput)
 }
 
+// - Number of read I/O per second.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerNumReadIops() GetStorageContainerStatsInfoV2ControllerNumReadIopArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerNumReadIop {
 		return v.ControllerNumReadIops
 	}).(GetStorageContainerStatsInfoV2ControllerNumReadIopArrayOutput)
 }
 
+// - Number of write I/O per second.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerNumWriteIops() GetStorageContainerStatsInfoV2ControllerNumWriteIopArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerNumWriteIop {
 		return v.ControllerNumWriteIops
 	}).(GetStorageContainerStatsInfoV2ControllerNumWriteIopArrayOutput)
 }
 
+// - Read I/O bandwidth - kB per second.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerReadIoBandwidthKbps() GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp {
 		return v.ControllerReadIoBandwidthKbps
 	}).(GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpArrayOutput)
 }
 
+// - Ratio of read I/O to total I/O in PPM.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerReadIoRatioPpms() GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm {
 		return v.ControllerReadIoRatioPpms
 	}).(GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmArrayOutput)
 }
 
+// - Write I/O bandwidth - kB per second.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerWriteIoBandwidthKbps() GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp {
 		return v.ControllerWriteIoBandwidthKbps
 	}).(GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpArrayOutput)
 }
 
+// - Ratio of read I/O to total I/O in PPM.
 func (o GetStorageContainerStatsInfoV2ResultOutput) ControllerWriteIoRatioPpms() GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm {
 		return v.ControllerWriteIoRatioPpms
 	}).(GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmArrayOutput)
 }
 
+// - Saving ratio in PPM as a result of the Cloning technique.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionCloneSavingRatioPpms() GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm {
 		return v.DataReductionCloneSavingRatioPpms
 	}).(GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmArrayOutput)
 }
 
+// - Saving ratio in PPM as a result of the Compression technique.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionCompressionSavingRatioPpms() GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm {
 		return v.DataReductionCompressionSavingRatioPpms
 	}).(GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmArrayOutput)
 }
 
+// - Saving ratio in PPM as a result of the Deduplication technique.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionDedupSavingRatioPpms() GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm {
 		return v.DataReductionDedupSavingRatioPpms
 	}).(GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmArrayOutput)
 }
 
+// - Saving ratio in PPM as a result of the Erasure Coding technique.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionErasureCodingSavingRatioPpms() GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpm {
 		return v.DataReductionErasureCodingSavingRatioPpms
 	}).(GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmArrayOutput)
 }
 
+// - Usage in bytes after reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionOverallPostReductionBytes() GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte {
 		return v.DataReductionOverallPostReductionBytes
 	}).(GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteArrayOutput)
 }
 
+// - Usage in bytes before reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionOverallPreReductionBytes() GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte {
 		return v.DataReductionOverallPreReductionBytes
 	}).(GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteArrayOutput)
 }
 
+// - Storage savings in bytes as a result of all the techniques.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionSavedBytes() GetStorageContainerStatsInfoV2DataReductionSavedByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionSavedByte {
 		return v.DataReductionSavedBytes
 	}).(GetStorageContainerStatsInfoV2DataReductionSavedByteArrayOutput)
 }
 
+// - Saving ratio in PPM as a result of Deduplication, compression and Erasure Coding.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionSavingRatioPpms() GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm {
 		return v.DataReductionSavingRatioPpms
 	}).(GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmArrayOutput)
 }
 
+// - Saving ratio in PPM as a result of Snapshot technique.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionSnapshotSavingRatioPpms() GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm {
 		return v.DataReductionSnapshotSavingRatioPpms
 	}).(GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmArrayOutput)
 }
 
+// - Saving ratio in PPM as a result of the Thin Provisioning technique.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionThinProvisionSavingRatioPpms() GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpm {
 		return v.DataReductionThinProvisionSavingRatioPpms
 	}).(GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmArrayOutput)
 }
 
+// - Saving ratio in PPM consisting of Deduplication, Compression, Erasure Coding, Cloning, and Thin Provisioning.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionTotalSavingRatioPpms() GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm {
 		return v.DataReductionTotalSavingRatioPpms
 	}).(GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmArrayOutput)
 }
 
+// - Total amount of savings in bytes as a result of zero writes.
 func (o GetStorageContainerStatsInfoV2ResultOutput) DataReductionZeroWriteSavingsBytes() GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte {
 		return v.DataReductionZeroWriteSavingsBytes
@@ -259,10 +374,12 @@ func (o GetStorageContainerStatsInfoV2ResultOutput) EndTime() pulumi.StringOutpu
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) string { return v.EndTime }).(pulumi.StringOutput)
 }
 
+// - the storage container uuid
 func (o GetStorageContainerStatsInfoV2ResultOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) string { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// - Health of the container is represented by an integer value in the range 0-100. Higher value is indicative of better health.
 func (o GetStorageContainerStatsInfoV2ResultOutput) Healths() GetStorageContainerStatsInfoV2HealthArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2Health { return v.Healths }).(GetStorageContainerStatsInfoV2HealthArrayOutput)
 }
@@ -272,6 +389,7 @@ func (o GetStorageContainerStatsInfoV2ResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o GetStorageContainerStatsInfoV2ResultOutput) Links() GetStorageContainerStatsInfoV2LinkArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2Link { return v.Links }).(GetStorageContainerStatsInfoV2LinkArrayOutput)
 }
@@ -288,54 +406,63 @@ func (o GetStorageContainerStatsInfoV2ResultOutput) StatType() pulumi.StringPtrO
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) *string { return v.StatType }).(pulumi.StringPtrOutput)
 }
 
+// - Actual physical disk usage of the container without accounting for the reservation.
 func (o GetStorageContainerStatsInfoV2ResultOutput) StorageActualPhysicalUsageBytes() GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByte {
 		return v.StorageActualPhysicalUsageBytes
 	}).(GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteArrayOutput)
 }
 
+// - Storage capacity in bytes.
 func (o GetStorageContainerStatsInfoV2ResultOutput) StorageCapacityBytes() GetStorageContainerStatsInfoV2StorageCapacityByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2StorageCapacityByte {
 		return v.StorageCapacityBytes
 	}).(GetStorageContainerStatsInfoV2StorageCapacityByteArrayOutput)
 }
 
+// - Free storage in bytes.
 func (o GetStorageContainerStatsInfoV2ResultOutput) StorageFreeBytes() GetStorageContainerStatsInfoV2StorageFreeByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2StorageFreeByte {
 		return v.StorageFreeBytes
 	}).(GetStorageContainerStatsInfoV2StorageFreeByteArrayOutput)
 }
 
+// - Replication factor of Container.
 func (o GetStorageContainerStatsInfoV2ResultOutput) StorageReplicationFactors() GetStorageContainerStatsInfoV2StorageReplicationFactorArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2StorageReplicationFactor {
 		return v.StorageReplicationFactors
 	}).(GetStorageContainerStatsInfoV2StorageReplicationFactorArrayOutput)
 }
 
+// - Implicit physical reserved capacity(aggregated on vDisk level due to thick provisioning) in bytes.
 func (o GetStorageContainerStatsInfoV2ResultOutput) StorageReservedCapacityBytes() GetStorageContainerStatsInfoV2StorageReservedCapacityByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2StorageReservedCapacityByte {
 		return v.StorageReservedCapacityBytes
 	}).(GetStorageContainerStatsInfoV2StorageReservedCapacityByteArrayOutput)
 }
 
+// - Total usage on HDD tier for the Container in bytes.
 func (o GetStorageContainerStatsInfoV2ResultOutput) StorageTierDasSataUsageBytes() GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte {
 		return v.StorageTierDasSataUsageBytes
 	}).(GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteArrayOutput)
 }
 
+// - Total usage on SDD tier for the Container in bytes
 func (o GetStorageContainerStatsInfoV2ResultOutput) StorageTierSsdUsageBytes() GetStorageContainerStatsInfoV2StorageTierSsdUsageByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2StorageTierSsdUsageByte {
 		return v.StorageTierSsdUsageBytes
 	}).(GetStorageContainerStatsInfoV2StorageTierSsdUsageByteArrayOutput)
 }
 
+// - Used storage in bytes.
 func (o GetStorageContainerStatsInfoV2ResultOutput) StorageUsageBytes() GetStorageContainerStatsInfoV2StorageUsageByteArrayOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) []GetStorageContainerStatsInfoV2StorageUsageByte {
 		return v.StorageUsageBytes
 	}).(GetStorageContainerStatsInfoV2StorageUsageByteArrayOutput)
 }
 
+// - A globally unique identifier that represents the tenant that owns this entity.
 func (o GetStorageContainerStatsInfoV2ResultOutput) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Result) string { return v.TenantId }).(pulumi.StringOutput)
 }

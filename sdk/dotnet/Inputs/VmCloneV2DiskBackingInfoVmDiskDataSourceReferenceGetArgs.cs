@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("imageReferences")]
         private InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceGetArgs>? _imageReferences;
+
+        /// <summary>
+        /// - (Optional) Data Source Image Reference settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceGetArgs> ImageReferences
         {
             get => _imageReferences ?? (_imageReferences = new InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceGetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("vmDiskReferences")]
         private InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceGetArgs>? _vmDiskReferences;
+
+        /// <summary>
+        /// - (Optional) Data Source VM Disk Reference settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceGetArgs> VmDiskReferences
         {
             get => _vmDiskReferences ?? (_vmDiskReferences = new InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceGetArgs>());

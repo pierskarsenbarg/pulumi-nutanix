@@ -29,6 +29,11 @@ class TemplateV2Args:
                  updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]] = None):
         """
         The set of arguments for constructing a TemplateV2 resource.
+
+        :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
+        :param pulumi.Input['TemplateV2TemplateVersionSpecArgs'] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        :param pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
         """
         pulumi.set(__self__, "template_name", template_name)
         pulumi.set(__self__, "template_version_spec", template_version_spec)
@@ -44,6 +49,9 @@ class TemplateV2Args:
     @_builtins.property
     @pulumi.getter(name="templateName")
     def template_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The user defined name of a Template.
+        """
         return pulumi.get(self, "template_name")
 
     @template_name.setter
@@ -53,6 +61,9 @@ class TemplateV2Args:
     @_builtins.property
     @pulumi.getter(name="templateVersionSpec")
     def template_version_spec(self) -> pulumi.Input['TemplateV2TemplateVersionSpecArgs']:
+        """
+        A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        """
         return pulumi.get(self, "template_version_spec")
 
     @template_version_spec.setter
@@ -71,6 +82,9 @@ class TemplateV2Args:
     @_builtins.property
     @pulumi.getter(name="guestUpdateStatuses")
     def guest_update_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]:
+        """
+        Status of a guest update.
+        """
         return pulumi.get(self, "guest_update_statuses")
 
     @guest_update_statuses.setter
@@ -80,6 +94,9 @@ class TemplateV2Args:
     @_builtins.property
     @pulumi.getter(name="templateDescription")
     def template_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The user defined description of a Template.
+        """
         return pulumi.get(self, "template_description")
 
     @template_description.setter
@@ -112,6 +129,11 @@ class _TemplateV2State:
                  updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]] = None):
         """
         Input properties used for looking up and filtering TemplateV2 resources.
+
+        :param pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
+        :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
+        :param pulumi.Input['TemplateV2TemplateVersionSpecArgs'] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
@@ -166,6 +188,9 @@ class _TemplateV2State:
     @_builtins.property
     @pulumi.getter(name="guestUpdateStatuses")
     def guest_update_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]:
+        """
+        Status of a guest update.
+        """
         return pulumi.get(self, "guest_update_statuses")
 
     @guest_update_statuses.setter
@@ -184,6 +209,9 @@ class _TemplateV2State:
     @_builtins.property
     @pulumi.getter(name="templateDescription")
     def template_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The user defined description of a Template.
+        """
         return pulumi.get(self, "template_description")
 
     @template_description.setter
@@ -193,6 +221,9 @@ class _TemplateV2State:
     @_builtins.property
     @pulumi.getter(name="templateName")
     def template_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The user defined name of a Template.
+        """
         return pulumi.get(self, "template_name")
 
     @template_name.setter
@@ -202,6 +233,9 @@ class _TemplateV2State:
     @_builtins.property
     @pulumi.getter(name="templateVersionSpec")
     def template_version_spec(self) -> Optional[pulumi.Input['TemplateV2TemplateVersionSpecArgs']]:
+        """
+        A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        """
         return pulumi.get(self, "template_version_spec")
 
     @template_version_spec.setter
@@ -250,10 +284,15 @@ class TemplateV2(pulumi.CustomResource):
                  updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None,
                  __props__=None):
         """
-        Create a TemplateV2 resource with the given unique name, props, and options.
+        Create a Template from the given VM identifier. A Template stores the VM configuration and disks from the source VM.
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
+        :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
+        :param pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
         """
         ...
     @overload
@@ -262,7 +301,8 @@ class TemplateV2(pulumi.CustomResource):
                  args: TemplateV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a TemplateV2 resource with the given unique name, props, and options.
+        Create a Template from the given VM identifier. A Template stores the VM configuration and disks from the source VM.
+
 
         :param str resource_name: The name of the resource.
         :param TemplateV2Args args: The arguments to use to populate this resource's properties.
@@ -337,6 +377,10 @@ class TemplateV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
+        :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
+        :param pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -373,6 +417,9 @@ class TemplateV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="guestUpdateStatuses")
     def guest_update_statuses(self) -> pulumi.Output[Sequence['outputs.TemplateV2GuestUpdateStatus']]:
+        """
+        Status of a guest update.
+        """
         return pulumi.get(self, "guest_update_statuses")
 
     @_builtins.property
@@ -383,16 +430,25 @@ class TemplateV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="templateDescription")
     def template_description(self) -> pulumi.Output[_builtins.str]:
+        """
+        The user defined description of a Template.
+        """
         return pulumi.get(self, "template_description")
 
     @_builtins.property
     @pulumi.getter(name="templateName")
     def template_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The user defined name of a Template.
+        """
         return pulumi.get(self, "template_name")
 
     @_builtins.property
     @pulumi.getter(name="templateVersionSpec")
     def template_version_spec(self) -> pulumi.Output['outputs.TemplateV2TemplateVersionSpec']:
+        """
+        A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        """
         return pulumi.get(self, "template_version_spec")
 
     @_builtins.property

@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class AddressGroupsV2Ipv4Address
     {
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4 address belongs.
+        /// </summary>
         public readonly int? PrefixLength;
+        /// <summary>
+        /// ip of address
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic
     {
+        /// <summary>
+        /// MAC address of the emulated NIC.
+        /// </summary>
         public readonly string? MacAddress;
 
         [OutputConstructor]

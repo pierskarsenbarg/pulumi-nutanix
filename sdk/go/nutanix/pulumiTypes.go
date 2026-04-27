@@ -1630,7 +1630,9 @@ func (o AddressGroupIpAddressBlockListArrayOutput) Index(i pulumi.IntInput) Addr
 }
 
 type AddressGroupsV2IpRange struct {
-	EndIp   *string `pulumi:"endIp"`
+	// end ip
+	EndIp *string `pulumi:"endIp"`
+	// start ip
 	StartIp *string `pulumi:"startIp"`
 }
 
@@ -1646,7 +1648,9 @@ type AddressGroupsV2IpRangeInput interface {
 }
 
 type AddressGroupsV2IpRangeArgs struct {
-	EndIp   pulumi.StringPtrInput `pulumi:"endIp"`
+	// end ip
+	EndIp pulumi.StringPtrInput `pulumi:"endIp"`
+	// start ip
 	StartIp pulumi.StringPtrInput `pulumi:"startIp"`
 }
 
@@ -1701,10 +1705,12 @@ func (o AddressGroupsV2IpRangeOutput) ToAddressGroupsV2IpRangeOutputWithContext(
 	return o
 }
 
+// end ip
 func (o AddressGroupsV2IpRangeOutput) EndIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AddressGroupsV2IpRange) *string { return v.EndIp }).(pulumi.StringPtrOutput)
 }
 
+// start ip
 func (o AddressGroupsV2IpRangeOutput) StartIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AddressGroupsV2IpRange) *string { return v.StartIp }).(pulumi.StringPtrOutput)
 }
@@ -1730,8 +1736,10 @@ func (o AddressGroupsV2IpRangeArrayOutput) Index(i pulumi.IntInput) AddressGroup
 }
 
 type AddressGroupsV2Ipv4Address struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip of address
+	Value *string `pulumi:"value"`
 }
 
 // AddressGroupsV2Ipv4AddressInput is an input type that accepts AddressGroupsV2Ipv4AddressArgs and AddressGroupsV2Ipv4AddressOutput values.
@@ -1746,8 +1754,10 @@ type AddressGroupsV2Ipv4AddressInput interface {
 }
 
 type AddressGroupsV2Ipv4AddressArgs struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip of address
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (AddressGroupsV2Ipv4AddressArgs) ElementType() reflect.Type {
@@ -1801,10 +1811,12 @@ func (o AddressGroupsV2Ipv4AddressOutput) ToAddressGroupsV2Ipv4AddressOutputWith
 	return o
 }
 
+// The prefix length of the network to which this host IPv4 address belongs.
 func (o AddressGroupsV2Ipv4AddressOutput) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AddressGroupsV2Ipv4Address) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip of address
 func (o AddressGroupsV2Ipv4AddressOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AddressGroupsV2Ipv4Address) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -16562,13 +16574,20 @@ func (o ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkUplinkListA
 }
 
 type DeployTemplatesV2OverrideVmConfigMap struct {
+	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations []DeployTemplatesV2OverrideVmConfigMapGuestCustomization `pulumi:"guestCustomizations"`
-	MemorySizeBytes     *int                                                     `pulumi:"memorySizeBytes"`
-	Name                *string                                                  `pulumi:"name"`
-	Nics                []DeployTemplatesV2OverrideVmConfigMapNic                `pulumi:"nics"`
-	NumCoresPerSocket   *int                                                     `pulumi:"numCoresPerSocket"`
-	NumSockets          *int                                                     `pulumi:"numSockets"`
-	NumThreadsPerCore   *int                                                     `pulumi:"numThreadsPerCore"`
+	// Memory size in bytes.
+	MemorySizeBytes *int `pulumi:"memorySizeBytes"`
+	// VM name.
+	Name *string `pulumi:"name"`
+	// NICs attached to the VM.
+	Nics []DeployTemplatesV2OverrideVmConfigMapNic `pulumi:"nics"`
+	// Number of cores per socket.
+	NumCoresPerSocket *int `pulumi:"numCoresPerSocket"`
+	// Number of vCPU sockets.
+	NumSockets *int `pulumi:"numSockets"`
+	// Number of threads per core.
+	NumThreadsPerCore *int `pulumi:"numThreadsPerCore"`
 }
 
 // DeployTemplatesV2OverrideVmConfigMapInput is an input type that accepts DeployTemplatesV2OverrideVmConfigMap and DeployTemplatesV2OverrideVmConfigMapOutput values.
@@ -16583,13 +16602,20 @@ type DeployTemplatesV2OverrideVmConfigMapInput interface {
 }
 
 type DeployTemplatesV2OverrideVmConfigMapArgs struct {
+	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations DeployTemplatesV2OverrideVmConfigMapGuestCustomizationArrayInput `pulumi:"guestCustomizations"`
-	MemorySizeBytes     pulumi.IntPtrInput                                               `pulumi:"memorySizeBytes"`
-	Name                pulumi.StringPtrInput                                            `pulumi:"name"`
-	Nics                DeployTemplatesV2OverrideVmConfigMapNicArrayInput                `pulumi:"nics"`
-	NumCoresPerSocket   pulumi.IntPtrInput                                               `pulumi:"numCoresPerSocket"`
-	NumSockets          pulumi.IntPtrInput                                               `pulumi:"numSockets"`
-	NumThreadsPerCore   pulumi.IntPtrInput                                               `pulumi:"numThreadsPerCore"`
+	// Memory size in bytes.
+	MemorySizeBytes pulumi.IntPtrInput `pulumi:"memorySizeBytes"`
+	// VM name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// NICs attached to the VM.
+	Nics DeployTemplatesV2OverrideVmConfigMapNicArrayInput `pulumi:"nics"`
+	// Number of cores per socket.
+	NumCoresPerSocket pulumi.IntPtrInput `pulumi:"numCoresPerSocket"`
+	// Number of vCPU sockets.
+	NumSockets pulumi.IntPtrInput `pulumi:"numSockets"`
+	// Number of threads per core.
+	NumThreadsPerCore pulumi.IntPtrInput `pulumi:"numThreadsPerCore"`
 }
 
 func (DeployTemplatesV2OverrideVmConfigMapArgs) ElementType() reflect.Type {
@@ -16643,32 +16669,39 @@ func (o DeployTemplatesV2OverrideVmConfigMapOutput) ToDeployTemplatesV2OverrideV
 	return o
 }
 
+// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 func (o DeployTemplatesV2OverrideVmConfigMapOutput) GuestCustomizations() DeployTemplatesV2OverrideVmConfigMapGuestCustomizationArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMap) []DeployTemplatesV2OverrideVmConfigMapGuestCustomization {
 		return v.GuestCustomizations
 	}).(DeployTemplatesV2OverrideVmConfigMapGuestCustomizationArrayOutput)
 }
 
+// Memory size in bytes.
 func (o DeployTemplatesV2OverrideVmConfigMapOutput) MemorySizeBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMap) *int { return v.MemorySizeBytes }).(pulumi.IntPtrOutput)
 }
 
+// VM name.
 func (o DeployTemplatesV2OverrideVmConfigMapOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMap) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// NICs attached to the VM.
 func (o DeployTemplatesV2OverrideVmConfigMapOutput) Nics() DeployTemplatesV2OverrideVmConfigMapNicArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMap) []DeployTemplatesV2OverrideVmConfigMapNic { return v.Nics }).(DeployTemplatesV2OverrideVmConfigMapNicArrayOutput)
 }
 
+// Number of cores per socket.
 func (o DeployTemplatesV2OverrideVmConfigMapOutput) NumCoresPerSocket() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMap) *int { return v.NumCoresPerSocket }).(pulumi.IntPtrOutput)
 }
 
+// Number of vCPU sockets.
 func (o DeployTemplatesV2OverrideVmConfigMapOutput) NumSockets() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMap) *int { return v.NumSockets }).(pulumi.IntPtrOutput)
 }
 
+// Number of threads per core.
 func (o DeployTemplatesV2OverrideVmConfigMapOutput) NumThreadsPerCore() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMap) *int { return v.NumThreadsPerCore }).(pulumi.IntPtrOutput)
 }
@@ -16694,6 +16727,10 @@ func (o DeployTemplatesV2OverrideVmConfigMapArrayOutput) Index(i pulumi.IntInput
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomization struct {
+	// The Nutanix Guest Tools customization settings.
+	//
+	// * `config.sysprep`: (Optional) Sysprep config
+	// * `config.cloud_init`: (Optional) CloudInit Config
 	Configs []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig `pulumi:"configs"`
 }
 
@@ -16709,6 +16746,10 @@ type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationInput interface {
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationArgs struct {
+	// The Nutanix Guest Tools customization settings.
+	//
+	// * `config.sysprep`: (Optional) Sysprep config
+	// * `config.cloud_init`: (Optional) CloudInit Config
 	Configs DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigArrayInput `pulumi:"configs"`
 }
 
@@ -16763,6 +16804,10 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationOutput) ToDeployTe
 	return o
 }
 
+// The Nutanix Guest Tools customization settings.
+//
+// * `config.sysprep`: (Optional) Sysprep config
+// * `config.cloud_init`: (Optional) CloudInit Config
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationOutput) Configs() DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomization) []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig {
 		return v.Configs
@@ -16894,9 +16939,16 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigArrayOutput)
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit struct {
+	// The script to use for cloud-init.
+	// * `cloud_init_script.user_data`: (Optional) user data object
+	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+	//
+	// See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/deployTemplate).
 	CloudInitScripts []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
-	DatasourceType   *string                                                                                `pulumi:"datasourceType"`
-	Metadata         *string                                                                                `pulumi:"metadata"`
+	// Type of datasource. Default: CONFIG_DRIVE_V2
+	DatasourceType *string `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	Metadata *string `pulumi:"metadata"`
 }
 
 // DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitInput is an input type that accepts DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgs and DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitOutput values.
@@ -16911,9 +16963,16 @@ type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitInput 
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgs struct {
+	// The script to use for cloud-init.
+	// * `cloud_init_script.user_data`: (Optional) user data object
+	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+	//
+	// See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/deployTemplate).
 	CloudInitScripts DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
-	DatasourceType   pulumi.StringPtrInput                                                                          `pulumi:"datasourceType"`
-	Metadata         pulumi.StringPtrInput                                                                          `pulumi:"metadata"`
+	// Type of datasource. Default: CONFIG_DRIVE_V2
+	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
 func (DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgs) ElementType() reflect.Type {
@@ -16967,18 +17026,25 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitOut
 	return o
 }
 
+// The script to use for cloud-init.
+// * `cloud_init_script.user_data`: (Optional) user data object
+// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+//
+// See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/deployTemplate).
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitOutput) CloudInitScripts() DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit) []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript {
 		return v.CloudInitScripts
 	}).(DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptArrayOutput)
 }
 
+// Type of datasource. Default: CONFIG_DRIVE_V2
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitOutput) DatasourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit) *string {
 		return v.DatasourceType
 	}).(pulumi.StringPtrOutput)
 }
 
+// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit) *string {
 		return v.Metadata
@@ -17206,6 +17272,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitClo
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair struct {
+	// VM name.
 	Name   *string                                                                                                               `pulumi:"name"`
 	Values []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue `pulumi:"values"`
 }
@@ -17222,6 +17289,7 @@ type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudI
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairArgs struct {
+	// VM name.
 	Name   pulumi.StringPtrInput                                                                                                         `pulumi:"name"`
 	Values DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueArrayInput `pulumi:"values"`
 }
@@ -17277,6 +17345,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitClo
 	return o
 }
 
+// VM name.
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair) *string {
 		return v.Name
@@ -17646,7 +17715,11 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitClo
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprep struct {
-	InstallType    *string                                                                            `pulumi:"installType"`
+	// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+	InstallType *string `pulumi:"installType"`
+	// Object either UnattendXml or CustomKeyValues
+	// * `sysprep_script.unattend_xml`: (Optional) xml object
+	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
 
@@ -17662,7 +17735,11 @@ type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepInput in
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepArgs struct {
-	InstallType    pulumi.StringPtrInput                                                                      `pulumi:"installType"`
+	// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+	InstallType pulumi.StringPtrInput `pulumi:"installType"`
+	// Object either UnattendXml or CustomKeyValues
+	// * `sysprep_script.unattend_xml`: (Optional) xml object
+	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
 
@@ -17717,12 +17794,16 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepOutpu
 	return o
 }
 
+// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprep) *string {
 		return v.InstallType
 	}).(pulumi.StringPtrOutput)
 }
 
+// Object either UnattendXml or CustomKeyValues
+// * `sysprep_script.unattend_xml`: (Optional) xml object
+// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepOutput) SysprepScripts() DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprep) []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScript {
 		return v.SysprepScripts
@@ -17950,6 +18031,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSyspr
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair struct {
+	// VM name.
 	Name   *string                                                                                                           `pulumi:"name"`
 	Values []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue `pulumi:"values"`
 }
@@ -17966,6 +18048,7 @@ type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepS
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArgs struct {
+	// VM name.
 	Name   pulumi.StringPtrInput                                                                                                     `pulumi:"name"`
 	Values DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueArrayInput `pulumi:"values"`
 }
@@ -18021,6 +18104,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSyspr
 	return o
 }
 
+// VM name.
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair) *string {
 		return v.Name
@@ -18390,8 +18474,11 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSyspr
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNic struct {
+	// Defines a NIC emulated by the hypervisor
 	BackingInfos []DeployTemplatesV2OverrideVmConfigMapNicBackingInfo `pulumi:"backingInfos"`
-	ExtId        *string                                              `pulumi:"extId"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId *string `pulumi:"extId"`
+	// Network information for a NIC.
 	NetworkInfos []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo `pulumi:"networkInfos"`
 }
 
@@ -18407,8 +18494,11 @@ type DeployTemplatesV2OverrideVmConfigMapNicInput interface {
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicArgs struct {
+	// Defines a NIC emulated by the hypervisor
 	BackingInfos DeployTemplatesV2OverrideVmConfigMapNicBackingInfoArrayInput `pulumi:"backingInfos"`
-	ExtId        pulumi.StringPtrInput                                        `pulumi:"extId"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// Network information for a NIC.
 	NetworkInfos DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoArrayInput `pulumi:"networkInfos"`
 }
 
@@ -18463,16 +18553,19 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicOutput) ToDeployTemplatesV2Overri
 	return o
 }
 
+// Defines a NIC emulated by the hypervisor
 func (o DeployTemplatesV2OverrideVmConfigMapNicOutput) BackingInfos() DeployTemplatesV2OverrideVmConfigMapNicBackingInfoArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNic) []DeployTemplatesV2OverrideVmConfigMapNicBackingInfo {
 		return v.BackingInfos
 	}).(DeployTemplatesV2OverrideVmConfigMapNicBackingInfoArrayOutput)
 }
 
+// A globally unique identifier of an instance that is suitable for external consumption.
 func (o DeployTemplatesV2OverrideVmConfigMapNicOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNic) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// Network information for a NIC.
 func (o DeployTemplatesV2OverrideVmConfigMapNicOutput) NetworkInfos() DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNic) []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo {
 		return v.NetworkInfos
@@ -18500,10 +18593,14 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicArrayOutput) Index(i pulumi.IntIn
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicBackingInfo struct {
-	IsConnected *bool   `pulumi:"isConnected"`
-	MacAddress  *string `pulumi:"macAddress"`
-	Model       *string `pulumi:"model"`
-	NumQueues   *int    `pulumi:"numQueues"`
+	// Indicates whether the NIC is connected or not. Default is True.
+	IsConnected *bool `pulumi:"isConnected"`
+	// MAC address of the emulated NIC.
+	MacAddress *string `pulumi:"macAddress"`
+	// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+	Model *string `pulumi:"model"`
+	// The number of Tx/Rx queue pairs for this NIC. Default is 1.
+	NumQueues *int `pulumi:"numQueues"`
 }
 
 // DeployTemplatesV2OverrideVmConfigMapNicBackingInfoInput is an input type that accepts DeployTemplatesV2OverrideVmConfigMapNicBackingInfoArgs and DeployTemplatesV2OverrideVmConfigMapNicBackingInfoOutput values.
@@ -18518,10 +18615,14 @@ type DeployTemplatesV2OverrideVmConfigMapNicBackingInfoInput interface {
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicBackingInfoArgs struct {
-	IsConnected pulumi.BoolPtrInput   `pulumi:"isConnected"`
-	MacAddress  pulumi.StringPtrInput `pulumi:"macAddress"`
-	Model       pulumi.StringPtrInput `pulumi:"model"`
-	NumQueues   pulumi.IntPtrInput    `pulumi:"numQueues"`
+	// Indicates whether the NIC is connected or not. Default is True.
+	IsConnected pulumi.BoolPtrInput `pulumi:"isConnected"`
+	// MAC address of the emulated NIC.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+	Model pulumi.StringPtrInput `pulumi:"model"`
+	// The number of Tx/Rx queue pairs for this NIC. Default is 1.
+	NumQueues pulumi.IntPtrInput `pulumi:"numQueues"`
 }
 
 func (DeployTemplatesV2OverrideVmConfigMapNicBackingInfoArgs) ElementType() reflect.Type {
@@ -18575,18 +18676,22 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicBackingInfoOutput) ToDeployTempla
 	return o
 }
 
+// Indicates whether the NIC is connected or not. Default is True.
 func (o DeployTemplatesV2OverrideVmConfigMapNicBackingInfoOutput) IsConnected() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicBackingInfo) *bool { return v.IsConnected }).(pulumi.BoolPtrOutput)
 }
 
+// MAC address of the emulated NIC.
 func (o DeployTemplatesV2OverrideVmConfigMapNicBackingInfoOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicBackingInfo) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
+// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
 func (o DeployTemplatesV2OverrideVmConfigMapNicBackingInfoOutput) Model() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicBackingInfo) *string { return v.Model }).(pulumi.StringPtrOutput)
 }
 
+// The number of Tx/Rx queue pairs for this NIC. Default is 1.
 func (o DeployTemplatesV2OverrideVmConfigMapNicBackingInfoOutput) NumQueues() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicBackingInfo) *int { return v.NumQueues }).(pulumi.IntPtrOutput)
 }
@@ -18612,15 +18717,23 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicBackingInfoArrayOutput) Index(i p
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo struct {
-	Ipv4Configs            []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config           `pulumi:"ipv4Configs"`
-	Ipv4Infos              []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Info             `pulumi:"ipv4Infos"`
-	NetworkFunctionChains  []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
-	NetworkFunctionNicType *string                                                                  `pulumi:"networkFunctionNicType"`
-	NicType                *string                                                                  `pulumi:"nicType"`
-	ShouldAllowUnknownMacs *bool                                                                    `pulumi:"shouldAllowUnknownMacs"`
-	Subnets                []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet               `pulumi:"subnets"`
-	TrunkedVlans           []int                                                                    `pulumi:"trunkedVlans"`
-	VlanMode               *string                                                                  `pulumi:"vlanMode"`
+	// The IP address configurations.
+	Ipv4Configs []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
+	Ipv4Infos   []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
+	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	NetworkFunctionChains []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
+	// The type of this Network function NIC. Defaults to INGRESS.
+	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
+	// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+	NicType *string `pulumi:"nicType"`
+	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
+	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	Subnets []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet `pulumi:"subnets"`
+	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+	TrunkedVlans []int `pulumi:"trunkedVlans"`
+	// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+	VlanMode *string `pulumi:"vlanMode"`
 }
 
 // DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoInput is an input type that accepts DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoArgs and DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput values.
@@ -18635,15 +18748,23 @@ type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoInput interface {
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoArgs struct {
-	Ipv4Configs            DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4ConfigArrayInput           `pulumi:"ipv4Configs"`
-	Ipv4Infos              DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoArrayInput             `pulumi:"ipv4Infos"`
-	NetworkFunctionChains  DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
-	NetworkFunctionNicType pulumi.StringPtrInput                                                            `pulumi:"networkFunctionNicType"`
-	NicType                pulumi.StringPtrInput                                                            `pulumi:"nicType"`
-	ShouldAllowUnknownMacs pulumi.BoolPtrInput                                                              `pulumi:"shouldAllowUnknownMacs"`
-	Subnets                DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetArrayInput               `pulumi:"subnets"`
-	TrunkedVlans           pulumi.IntArrayInput                                                             `pulumi:"trunkedVlans"`
-	VlanMode               pulumi.StringPtrInput                                                            `pulumi:"vlanMode"`
+	// The IP address configurations.
+	Ipv4Configs DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
+	Ipv4Infos   DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
+	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	NetworkFunctionChains DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
+	// The type of this Network function NIC. Defaults to INGRESS.
+	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
+	// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+	NicType pulumi.StringPtrInput `pulumi:"nicType"`
+	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
+	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	Subnets DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
+	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
+	// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+	VlanMode pulumi.StringPtrInput `pulumi:"vlanMode"`
 }
 
 func (DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoArgs) ElementType() reflect.Type {
@@ -18697,6 +18818,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) ToDeployTempla
 	return o
 }
 
+// The IP address configurations.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) Ipv4Configs() DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4ConfigArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config {
 		return v.Ipv4Configs
@@ -18709,34 +18831,41 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) Ipv4Infos() De
 	}).(DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoArrayOutput)
 }
 
+// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) NetworkFunctionChains() DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
 	}).(DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainArrayOutput)
 }
 
+// The type of this Network function NIC. Defaults to INGRESS.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) NetworkFunctionNicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) *string { return v.NetworkFunctionNicType }).(pulumi.StringPtrOutput)
 }
 
+// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) NicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) *string { return v.NicType }).(pulumi.StringPtrOutput)
 }
 
+// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
+// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) Subnets() DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet {
 		return v.Subnets
 	}).(DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetArrayOutput)
 }
 
+// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) TrunkedVlans() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) []int { return v.TrunkedVlans }).(pulumi.IntArrayOutput)
 }
 
+// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) VlanMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) *string { return v.VlanMode }).(pulumi.StringPtrOutput)
 }
@@ -19278,6 +19407,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoLearnedIpAddre
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain struct {
+	// The identifier of a Template.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -19293,6 +19423,7 @@ type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainInput
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainArgs struct {
+	// The identifier of a Template.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -19347,6 +19478,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainOu
 	return o
 }
 
+// The identifier of a Template.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -19372,6 +19504,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainAr
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet struct {
+	// The identifier of a Template.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -19387,6 +19520,7 @@ type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetInput interface {
 }
 
 type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetArgs struct {
+	// The identifier of a Template.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -19441,6 +19575,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetOutput) ToDeploy
 	return o
 }
 
+// The identifier of a Template.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }

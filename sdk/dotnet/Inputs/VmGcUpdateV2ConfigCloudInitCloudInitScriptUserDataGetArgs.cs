@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) The value for the cloud-init user_data.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

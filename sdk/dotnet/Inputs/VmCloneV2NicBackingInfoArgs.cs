@@ -13,15 +13,30 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCloneV2NicBackingInfoArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Indicates whether the NIC is connected or not. Default is True.
+        /// </summary>
         [Input("isConnected")]
         public Input<bool>? IsConnected { get; set; }
 
+        /// <summary>
+        /// - (Optional) MAC address of the emulated NIC.
+        /// </summary>
         [Input("macAddress")]
         public Input<string>? MacAddress { get; set; }
 
+        /// <summary>
+        /// - (Optional) Options for the NIC emulation.
+        /// Valid values are:
+        /// - `VIRTIO` The NIC emulation model is Virtio.
+        /// - `E1000` The NIC emulation model is E1000.
+        /// </summary>
         [Input("model")]
         public Input<string>? Model { get; set; }
 
+        /// <summary>
+        /// - (Optional) The number of Tx/Rx queue pairs for this NIC.
+        /// </summary>
         [Input("numQueues")]
         public Input<int>? NumQueues { get; set; }
 

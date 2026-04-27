@@ -26,6 +26,10 @@ class VmCdromInsertEjectV2Args:
                  backing_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]] = None):
         """
         The set of arguments for constructing a VmCdromInsertEjectV2 resource.
+
+        :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a CD-ROM. It should be of type UUID.
+        :param pulumi.Input[_builtins.str] vm_ext_id: The globally unique identifier of a VM. It should be of type UUID
+        :param pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]] backing_infos: Storage provided by Nutanix ADSF
         """
         pulumi.set(__self__, "ext_id", ext_id)
         pulumi.set(__self__, "vm_ext_id", vm_ext_id)
@@ -35,6 +39,9 @@ class VmCdromInsertEjectV2Args:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The globally unique identifier of a CD-ROM. It should be of type UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -44,6 +51,9 @@ class VmCdromInsertEjectV2Args:
     @_builtins.property
     @pulumi.getter(name="vmExtId")
     def vm_ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The globally unique identifier of a VM. It should be of type UUID
+        """
         return pulumi.get(self, "vm_ext_id")
 
     @vm_ext_id.setter
@@ -53,6 +63,9 @@ class VmCdromInsertEjectV2Args:
     @_builtins.property
     @pulumi.getter(name="backingInfos")
     def backing_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]:
+        """
+        Storage provided by Nutanix ADSF
+        """
         return pulumi.get(self, "backing_infos")
 
     @backing_infos.setter
@@ -68,6 +81,10 @@ class _VmCdromInsertEjectV2State:
                  vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmCdromInsertEjectV2 resources.
+
+        :param pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]] backing_infos: Storage provided by Nutanix ADSF
+        :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a CD-ROM. It should be of type UUID.
+        :param pulumi.Input[_builtins.str] vm_ext_id: The globally unique identifier of a VM. It should be of type UUID
         """
         if backing_infos is not None:
             pulumi.set(__self__, "backing_infos", backing_infos)
@@ -79,6 +96,9 @@ class _VmCdromInsertEjectV2State:
     @_builtins.property
     @pulumi.getter(name="backingInfos")
     def backing_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]:
+        """
+        Storage provided by Nutanix ADSF
+        """
         return pulumi.get(self, "backing_infos")
 
     @backing_infos.setter
@@ -88,6 +108,9 @@ class _VmCdromInsertEjectV2State:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The globally unique identifier of a CD-ROM. It should be of type UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -97,6 +120,9 @@ class _VmCdromInsertEjectV2State:
     @_builtins.property
     @pulumi.getter(name="vmExtId")
     def vm_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The globally unique identifier of a VM. It should be of type UUID
+        """
         return pulumi.get(self, "vm_ext_id")
 
     @vm_ext_id.setter
@@ -115,10 +141,35 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
                  vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a VmCdromInsertEjectV2 resource with the given unique name, props, and options.
+        Inserts the defined ISO into a CD-ROM device attached to a Virtual Machine.
+        Ejects the ISO currently inserted into a CD-ROM device on a Virtual Machine.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        insert_cdrom = nutanix.VmCdromInsertEjectV2("insert-cdrom",
+            vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
+            ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936",
+            backing_infos=[{
+                "data_sources": [{
+                    "references": [{
+                        "image_references": [{
+                            "image_ext_id": "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+                        }],
+                    }],
+                }],
+            }])
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]] backing_infos: Storage provided by Nutanix ADSF
+        :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a CD-ROM. It should be of type UUID.
+        :param pulumi.Input[_builtins.str] vm_ext_id: The globally unique identifier of a VM. It should be of type UUID
         """
         ...
     @overload
@@ -127,7 +178,29 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
                  args: VmCdromInsertEjectV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a VmCdromInsertEjectV2 resource with the given unique name, props, and options.
+        Inserts the defined ISO into a CD-ROM device attached to a Virtual Machine.
+        Ejects the ISO currently inserted into a CD-ROM device on a Virtual Machine.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        insert_cdrom = nutanix.VmCdromInsertEjectV2("insert-cdrom",
+            vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
+            ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936",
+            backing_infos=[{
+                "data_sources": [{
+                    "references": [{
+                        "image_references": [{
+                            "image_ext_id": "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+                        }],
+                    }],
+                }],
+            }])
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param VmCdromInsertEjectV2Args args: The arguments to use to populate this resource's properties.
@@ -183,6 +256,9 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]] backing_infos: Storage provided by Nutanix ADSF
+        :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a CD-ROM. It should be of type UUID.
+        :param pulumi.Input[_builtins.str] vm_ext_id: The globally unique identifier of a VM. It should be of type UUID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -196,15 +272,24 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="backingInfos")
     def backing_infos(self) -> pulumi.Output[Optional[Sequence['outputs.VmCdromInsertEjectV2BackingInfo']]]:
+        """
+        Storage provided by Nutanix ADSF
+        """
         return pulumi.get(self, "backing_infos")
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The globally unique identifier of a CD-ROM. It should be of type UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
     @pulumi.getter(name="vmExtId")
     def vm_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The globally unique identifier of a VM. It should be of type UUID
+        """
         return pulumi.get(self, "vm_ext_id")
 

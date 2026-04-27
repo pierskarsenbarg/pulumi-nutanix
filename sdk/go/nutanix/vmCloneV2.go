@@ -12,55 +12,98 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a Nutanix Virtual Machine resource to Create a virtual machine clone.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			vm_list, err := nutanix.GetVirtualMachinesV2(ctx, &nutanix.GetVirtualMachinesV2Args{}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewVmCloneV2(ctx, "vm1", &nutanix.VmCloneV2Args{
+//				VmExtId:           pulumi.Any(vm_list.Vms[0].Data.ExtId),
+//				Name:              pulumi.String("test-dou"),
+//				NumCoresPerSocket: pulumi.Int(1),
+//				NumSockets:        pulumi.Int(1),
+//				MemorySizeMib:     2048,
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type VmCloneV2 struct {
 	pulumi.CustomResourceState
 
-	ApcConfigs                VmCloneV2ApcConfigArrayOutput             `pulumi:"apcConfigs"`
-	BiosUuid                  pulumi.StringOutput                       `pulumi:"biosUuid"`
-	BootConfigs               VmCloneV2BootConfigArrayOutput            `pulumi:"bootConfigs"`
-	Categories                VmCloneV2CategoryArrayOutput              `pulumi:"categories"`
-	CdRoms                    VmCloneV2CdRomArrayOutput                 `pulumi:"cdRoms"`
-	Clusters                  VmCloneV2ClusterArrayOutput               `pulumi:"clusters"`
-	CreateTime                pulumi.StringOutput                       `pulumi:"createTime"`
-	Description               pulumi.StringOutput                       `pulumi:"description"`
-	Disks                     VmCloneV2DiskArrayOutput                  `pulumi:"disks"`
-	EnabledCpuFeatures        pulumi.StringArrayOutput                  `pulumi:"enabledCpuFeatures"`
-	ExtId                     pulumi.StringOutput                       `pulumi:"extId"`
-	GenerationUuid            pulumi.StringOutput                       `pulumi:"generationUuid"`
-	Gpuses                    VmCloneV2GpusArrayOutput                  `pulumi:"gpuses"`
-	GuestCustomizations       VmCloneV2GuestCustomizationArrayOutput    `pulumi:"guestCustomizations"`
-	GuestTools                VmCloneV2GuestToolArrayOutput             `pulumi:"guestTools"`
-	HardwareClockTimezone     pulumi.StringOutput                       `pulumi:"hardwareClockTimezone"`
-	Hosts                     VmCloneV2HostArrayOutput                  `pulumi:"hosts"`
-	IsAgentVm                 pulumi.BoolOutput                         `pulumi:"isAgentVm"`
-	IsBrandingEnabled         pulumi.BoolOutput                         `pulumi:"isBrandingEnabled"`
-	IsCpuHotplugEnabled       pulumi.BoolOutput                         `pulumi:"isCpuHotplugEnabled"`
-	IsCpuPassthroughEnabled   pulumi.BoolOutput                         `pulumi:"isCpuPassthroughEnabled"`
-	IsGpuConsoleEnabled       pulumi.BoolOutput                         `pulumi:"isGpuConsoleEnabled"`
-	IsMemoryOvercommitEnabled pulumi.BoolOutput                         `pulumi:"isMemoryOvercommitEnabled"`
-	IsScsiControllerEnabled   pulumi.BoolOutput                         `pulumi:"isScsiControllerEnabled"`
-	IsVcpuHardPinningEnabled  pulumi.BoolOutput                         `pulumi:"isVcpuHardPinningEnabled"`
-	IsVgaConsoleEnabled       pulumi.BoolOutput                         `pulumi:"isVgaConsoleEnabled"`
-	Links                     VmCloneV2LinkArrayOutput                  `pulumi:"links"`
-	MachineType               pulumi.StringOutput                       `pulumi:"machineType"`
-	MemorySizeBytes           pulumi.IntOutput                          `pulumi:"memorySizeBytes"`
-	Name                      pulumi.StringOutput                       `pulumi:"name"`
-	Nics                      VmCloneV2NicArrayOutput                   `pulumi:"nics"`
-	NumCoresPerSocket         pulumi.IntOutput                          `pulumi:"numCoresPerSocket"`
-	NumNumaNodes              pulumi.IntOutput                          `pulumi:"numNumaNodes"`
-	NumSockets                pulumi.IntOutput                          `pulumi:"numSockets"`
-	NumThreadsPerCore         pulumi.IntOutput                          `pulumi:"numThreadsPerCore"`
-	OwnershipInfos            VmCloneV2OwnershipInfoArrayOutput         `pulumi:"ownershipInfos"`
-	PowerState                pulumi.StringOutput                       `pulumi:"powerState"`
-	ProtectionPolicyStates    VmCloneV2ProtectionPolicyStateArrayOutput `pulumi:"protectionPolicyStates"`
-	ProtectionType            pulumi.StringOutput                       `pulumi:"protectionType"`
-	SerialPorts               VmCloneV2SerialPortArrayOutput            `pulumi:"serialPorts"`
-	Sources                   VmCloneV2SourceArrayOutput                `pulumi:"sources"`
-	StorageConfigs            VmCloneV2StorageConfigArrayOutput         `pulumi:"storageConfigs"`
-	TenantId                  pulumi.StringOutput                       `pulumi:"tenantId"`
-	UpdateTime                pulumi.StringOutput                       `pulumi:"updateTime"`
-	VmExtId                   pulumi.StringOutput                       `pulumi:"vmExtId"`
-	VtpmConfigs               VmCloneV2VtpmConfigArrayOutput            `pulumi:"vtpmConfigs"`
+	ApcConfigs VmCloneV2ApcConfigArrayOutput `pulumi:"apcConfigs"`
+	BiosUuid   pulumi.StringOutput           `pulumi:"biosUuid"`
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs        VmCloneV2BootConfigArrayOutput `pulumi:"bootConfigs"`
+	Categories         VmCloneV2CategoryArrayOutput   `pulumi:"categories"`
+	CdRoms             VmCloneV2CdRomArrayOutput      `pulumi:"cdRoms"`
+	Clusters           VmCloneV2ClusterArrayOutput    `pulumi:"clusters"`
+	CreateTime         pulumi.StringOutput            `pulumi:"createTime"`
+	Description        pulumi.StringOutput            `pulumi:"description"`
+	Disks              VmCloneV2DiskArrayOutput       `pulumi:"disks"`
+	EnabledCpuFeatures pulumi.StringArrayOutput       `pulumi:"enabledCpuFeatures"`
+	ExtId              pulumi.StringOutput            `pulumi:"extId"`
+	GenerationUuid     pulumi.StringOutput            `pulumi:"generationUuid"`
+	Gpuses             VmCloneV2GpusArrayOutput       `pulumi:"gpuses"`
+	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+	GuestCustomizations       VmCloneV2GuestCustomizationArrayOutput `pulumi:"guestCustomizations"`
+	GuestTools                VmCloneV2GuestToolArrayOutput          `pulumi:"guestTools"`
+	HardwareClockTimezone     pulumi.StringOutput                    `pulumi:"hardwareClockTimezone"`
+	Hosts                     VmCloneV2HostArrayOutput               `pulumi:"hosts"`
+	IsAgentVm                 pulumi.BoolOutput                      `pulumi:"isAgentVm"`
+	IsBrandingEnabled         pulumi.BoolOutput                      `pulumi:"isBrandingEnabled"`
+	IsCpuHotplugEnabled       pulumi.BoolOutput                      `pulumi:"isCpuHotplugEnabled"`
+	IsCpuPassthroughEnabled   pulumi.BoolOutput                      `pulumi:"isCpuPassthroughEnabled"`
+	IsGpuConsoleEnabled       pulumi.BoolOutput                      `pulumi:"isGpuConsoleEnabled"`
+	IsMemoryOvercommitEnabled pulumi.BoolOutput                      `pulumi:"isMemoryOvercommitEnabled"`
+	IsScsiControllerEnabled   pulumi.BoolOutput                      `pulumi:"isScsiControllerEnabled"`
+	IsVcpuHardPinningEnabled  pulumi.BoolOutput                      `pulumi:"isVcpuHardPinningEnabled"`
+	IsVgaConsoleEnabled       pulumi.BoolOutput                      `pulumi:"isVgaConsoleEnabled"`
+	Links                     VmCloneV2LinkArrayOutput               `pulumi:"links"`
+	MachineType               pulumi.StringOutput                    `pulumi:"machineType"`
+	MemorySizeBytes           pulumi.IntOutput                       `pulumi:"memorySizeBytes"`
+	// - (Optional) The name for the vm.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Optional) NICs attached to the VM.
+	Nics VmCloneV2NicArrayOutput `pulumi:"nics"`
+	// - (Optional) Number of cores per socket.
+	NumCoresPerSocket pulumi.IntOutput `pulumi:"numCoresPerSocket"`
+	NumNumaNodes      pulumi.IntOutput `pulumi:"numNumaNodes"`
+	// - (Optional) Number of vCPU sockets.
+	NumSockets pulumi.IntOutput `pulumi:"numSockets"`
+	// - (Optional) Number of threads per core.
+	NumThreadsPerCore      pulumi.IntOutput                          `pulumi:"numThreadsPerCore"`
+	OwnershipInfos         VmCloneV2OwnershipInfoArrayOutput         `pulumi:"ownershipInfos"`
+	PowerState             pulumi.StringOutput                       `pulumi:"powerState"`
+	ProtectionPolicyStates VmCloneV2ProtectionPolicyStateArrayOutput `pulumi:"protectionPolicyStates"`
+	ProtectionType         pulumi.StringOutput                       `pulumi:"protectionType"`
+	SerialPorts            VmCloneV2SerialPortArrayOutput            `pulumi:"serialPorts"`
+	Sources                VmCloneV2SourceArrayOutput                `pulumi:"sources"`
+	StorageConfigs         VmCloneV2StorageConfigArrayOutput         `pulumi:"storageConfigs"`
+	TenantId               pulumi.StringOutput                       `pulumi:"tenantId"`
+	UpdateTime             pulumi.StringOutput                       `pulumi:"updateTime"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId     pulumi.StringOutput            `pulumi:"vmExtId"`
+	VtpmConfigs VmCloneV2VtpmConfigArrayOutput `pulumi:"vtpmConfigs"`
 }
 
 // NewVmCloneV2 registers a new resource with the given unique name, arguments, and options.
@@ -96,68 +139,78 @@ func GetVmCloneV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmCloneV2 resources.
 type vmCloneV2State struct {
-	ApcConfigs                []VmCloneV2ApcConfig             `pulumi:"apcConfigs"`
-	BiosUuid                  *string                          `pulumi:"biosUuid"`
-	BootConfigs               []VmCloneV2BootConfig            `pulumi:"bootConfigs"`
-	Categories                []VmCloneV2Category              `pulumi:"categories"`
-	CdRoms                    []VmCloneV2CdRom                 `pulumi:"cdRoms"`
-	Clusters                  []VmCloneV2Cluster               `pulumi:"clusters"`
-	CreateTime                *string                          `pulumi:"createTime"`
-	Description               *string                          `pulumi:"description"`
-	Disks                     []VmCloneV2Disk                  `pulumi:"disks"`
-	EnabledCpuFeatures        []string                         `pulumi:"enabledCpuFeatures"`
-	ExtId                     *string                          `pulumi:"extId"`
-	GenerationUuid            *string                          `pulumi:"generationUuid"`
-	Gpuses                    []VmCloneV2Gpus                  `pulumi:"gpuses"`
-	GuestCustomizations       []VmCloneV2GuestCustomization    `pulumi:"guestCustomizations"`
-	GuestTools                []VmCloneV2GuestTool             `pulumi:"guestTools"`
-	HardwareClockTimezone     *string                          `pulumi:"hardwareClockTimezone"`
-	Hosts                     []VmCloneV2Host                  `pulumi:"hosts"`
-	IsAgentVm                 *bool                            `pulumi:"isAgentVm"`
-	IsBrandingEnabled         *bool                            `pulumi:"isBrandingEnabled"`
-	IsCpuHotplugEnabled       *bool                            `pulumi:"isCpuHotplugEnabled"`
-	IsCpuPassthroughEnabled   *bool                            `pulumi:"isCpuPassthroughEnabled"`
-	IsGpuConsoleEnabled       *bool                            `pulumi:"isGpuConsoleEnabled"`
-	IsMemoryOvercommitEnabled *bool                            `pulumi:"isMemoryOvercommitEnabled"`
-	IsScsiControllerEnabled   *bool                            `pulumi:"isScsiControllerEnabled"`
-	IsVcpuHardPinningEnabled  *bool                            `pulumi:"isVcpuHardPinningEnabled"`
-	IsVgaConsoleEnabled       *bool                            `pulumi:"isVgaConsoleEnabled"`
-	Links                     []VmCloneV2Link                  `pulumi:"links"`
-	MachineType               *string                          `pulumi:"machineType"`
-	MemorySizeBytes           *int                             `pulumi:"memorySizeBytes"`
-	Name                      *string                          `pulumi:"name"`
-	Nics                      []VmCloneV2Nic                   `pulumi:"nics"`
-	NumCoresPerSocket         *int                             `pulumi:"numCoresPerSocket"`
-	NumNumaNodes              *int                             `pulumi:"numNumaNodes"`
-	NumSockets                *int                             `pulumi:"numSockets"`
-	NumThreadsPerCore         *int                             `pulumi:"numThreadsPerCore"`
-	OwnershipInfos            []VmCloneV2OwnershipInfo         `pulumi:"ownershipInfos"`
-	PowerState                *string                          `pulumi:"powerState"`
-	ProtectionPolicyStates    []VmCloneV2ProtectionPolicyState `pulumi:"protectionPolicyStates"`
-	ProtectionType            *string                          `pulumi:"protectionType"`
-	SerialPorts               []VmCloneV2SerialPort            `pulumi:"serialPorts"`
-	Sources                   []VmCloneV2Source                `pulumi:"sources"`
-	StorageConfigs            []VmCloneV2StorageConfig         `pulumi:"storageConfigs"`
-	TenantId                  *string                          `pulumi:"tenantId"`
-	UpdateTime                *string                          `pulumi:"updateTime"`
-	VmExtId                   *string                          `pulumi:"vmExtId"`
-	VtpmConfigs               []VmCloneV2VtpmConfig            `pulumi:"vtpmConfigs"`
+	ApcConfigs []VmCloneV2ApcConfig `pulumi:"apcConfigs"`
+	BiosUuid   *string              `pulumi:"biosUuid"`
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs        []VmCloneV2BootConfig `pulumi:"bootConfigs"`
+	Categories         []VmCloneV2Category   `pulumi:"categories"`
+	CdRoms             []VmCloneV2CdRom      `pulumi:"cdRoms"`
+	Clusters           []VmCloneV2Cluster    `pulumi:"clusters"`
+	CreateTime         *string               `pulumi:"createTime"`
+	Description        *string               `pulumi:"description"`
+	Disks              []VmCloneV2Disk       `pulumi:"disks"`
+	EnabledCpuFeatures []string              `pulumi:"enabledCpuFeatures"`
+	ExtId              *string               `pulumi:"extId"`
+	GenerationUuid     *string               `pulumi:"generationUuid"`
+	Gpuses             []VmCloneV2Gpus       `pulumi:"gpuses"`
+	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+	GuestCustomizations       []VmCloneV2GuestCustomization `pulumi:"guestCustomizations"`
+	GuestTools                []VmCloneV2GuestTool          `pulumi:"guestTools"`
+	HardwareClockTimezone     *string                       `pulumi:"hardwareClockTimezone"`
+	Hosts                     []VmCloneV2Host               `pulumi:"hosts"`
+	IsAgentVm                 *bool                         `pulumi:"isAgentVm"`
+	IsBrandingEnabled         *bool                         `pulumi:"isBrandingEnabled"`
+	IsCpuHotplugEnabled       *bool                         `pulumi:"isCpuHotplugEnabled"`
+	IsCpuPassthroughEnabled   *bool                         `pulumi:"isCpuPassthroughEnabled"`
+	IsGpuConsoleEnabled       *bool                         `pulumi:"isGpuConsoleEnabled"`
+	IsMemoryOvercommitEnabled *bool                         `pulumi:"isMemoryOvercommitEnabled"`
+	IsScsiControllerEnabled   *bool                         `pulumi:"isScsiControllerEnabled"`
+	IsVcpuHardPinningEnabled  *bool                         `pulumi:"isVcpuHardPinningEnabled"`
+	IsVgaConsoleEnabled       *bool                         `pulumi:"isVgaConsoleEnabled"`
+	Links                     []VmCloneV2Link               `pulumi:"links"`
+	MachineType               *string                       `pulumi:"machineType"`
+	MemorySizeBytes           *int                          `pulumi:"memorySizeBytes"`
+	// - (Optional) The name for the vm.
+	Name *string `pulumi:"name"`
+	// - (Optional) NICs attached to the VM.
+	Nics []VmCloneV2Nic `pulumi:"nics"`
+	// - (Optional) Number of cores per socket.
+	NumCoresPerSocket *int `pulumi:"numCoresPerSocket"`
+	NumNumaNodes      *int `pulumi:"numNumaNodes"`
+	// - (Optional) Number of vCPU sockets.
+	NumSockets *int `pulumi:"numSockets"`
+	// - (Optional) Number of threads per core.
+	NumThreadsPerCore      *int                             `pulumi:"numThreadsPerCore"`
+	OwnershipInfos         []VmCloneV2OwnershipInfo         `pulumi:"ownershipInfos"`
+	PowerState             *string                          `pulumi:"powerState"`
+	ProtectionPolicyStates []VmCloneV2ProtectionPolicyState `pulumi:"protectionPolicyStates"`
+	ProtectionType         *string                          `pulumi:"protectionType"`
+	SerialPorts            []VmCloneV2SerialPort            `pulumi:"serialPorts"`
+	Sources                []VmCloneV2Source                `pulumi:"sources"`
+	StorageConfigs         []VmCloneV2StorageConfig         `pulumi:"storageConfigs"`
+	TenantId               *string                          `pulumi:"tenantId"`
+	UpdateTime             *string                          `pulumi:"updateTime"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId     *string               `pulumi:"vmExtId"`
+	VtpmConfigs []VmCloneV2VtpmConfig `pulumi:"vtpmConfigs"`
 }
 
 type VmCloneV2State struct {
-	ApcConfigs                VmCloneV2ApcConfigArrayInput
-	BiosUuid                  pulumi.StringPtrInput
-	BootConfigs               VmCloneV2BootConfigArrayInput
-	Categories                VmCloneV2CategoryArrayInput
-	CdRoms                    VmCloneV2CdRomArrayInput
-	Clusters                  VmCloneV2ClusterArrayInput
-	CreateTime                pulumi.StringPtrInput
-	Description               pulumi.StringPtrInput
-	Disks                     VmCloneV2DiskArrayInput
-	EnabledCpuFeatures        pulumi.StringArrayInput
-	ExtId                     pulumi.StringPtrInput
-	GenerationUuid            pulumi.StringPtrInput
-	Gpuses                    VmCloneV2GpusArrayInput
+	ApcConfigs VmCloneV2ApcConfigArrayInput
+	BiosUuid   pulumi.StringPtrInput
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs        VmCloneV2BootConfigArrayInput
+	Categories         VmCloneV2CategoryArrayInput
+	CdRoms             VmCloneV2CdRomArrayInput
+	Clusters           VmCloneV2ClusterArrayInput
+	CreateTime         pulumi.StringPtrInput
+	Description        pulumi.StringPtrInput
+	Disks              VmCloneV2DiskArrayInput
+	EnabledCpuFeatures pulumi.StringArrayInput
+	ExtId              pulumi.StringPtrInput
+	GenerationUuid     pulumi.StringPtrInput
+	Gpuses             VmCloneV2GpusArrayInput
+	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations       VmCloneV2GuestCustomizationArrayInput
 	GuestTools                VmCloneV2GuestToolArrayInput
 	HardwareClockTimezone     pulumi.StringPtrInput
@@ -174,23 +227,29 @@ type VmCloneV2State struct {
 	Links                     VmCloneV2LinkArrayInput
 	MachineType               pulumi.StringPtrInput
 	MemorySizeBytes           pulumi.IntPtrInput
-	Name                      pulumi.StringPtrInput
-	Nics                      VmCloneV2NicArrayInput
-	NumCoresPerSocket         pulumi.IntPtrInput
-	NumNumaNodes              pulumi.IntPtrInput
-	NumSockets                pulumi.IntPtrInput
-	NumThreadsPerCore         pulumi.IntPtrInput
-	OwnershipInfos            VmCloneV2OwnershipInfoArrayInput
-	PowerState                pulumi.StringPtrInput
-	ProtectionPolicyStates    VmCloneV2ProtectionPolicyStateArrayInput
-	ProtectionType            pulumi.StringPtrInput
-	SerialPorts               VmCloneV2SerialPortArrayInput
-	Sources                   VmCloneV2SourceArrayInput
-	StorageConfigs            VmCloneV2StorageConfigArrayInput
-	TenantId                  pulumi.StringPtrInput
-	UpdateTime                pulumi.StringPtrInput
-	VmExtId                   pulumi.StringPtrInput
-	VtpmConfigs               VmCloneV2VtpmConfigArrayInput
+	// - (Optional) The name for the vm.
+	Name pulumi.StringPtrInput
+	// - (Optional) NICs attached to the VM.
+	Nics VmCloneV2NicArrayInput
+	// - (Optional) Number of cores per socket.
+	NumCoresPerSocket pulumi.IntPtrInput
+	NumNumaNodes      pulumi.IntPtrInput
+	// - (Optional) Number of vCPU sockets.
+	NumSockets pulumi.IntPtrInput
+	// - (Optional) Number of threads per core.
+	NumThreadsPerCore      pulumi.IntPtrInput
+	OwnershipInfos         VmCloneV2OwnershipInfoArrayInput
+	PowerState             pulumi.StringPtrInput
+	ProtectionPolicyStates VmCloneV2ProtectionPolicyStateArrayInput
+	ProtectionType         pulumi.StringPtrInput
+	SerialPorts            VmCloneV2SerialPortArrayInput
+	Sources                VmCloneV2SourceArrayInput
+	StorageConfigs         VmCloneV2StorageConfigArrayInput
+	TenantId               pulumi.StringPtrInput
+	UpdateTime             pulumi.StringPtrInput
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId     pulumi.StringPtrInput
+	VtpmConfigs VmCloneV2VtpmConfigArrayInput
 }
 
 func (VmCloneV2State) ElementType() reflect.Type {
@@ -198,28 +257,44 @@ func (VmCloneV2State) ElementType() reflect.Type {
 }
 
 type vmCloneV2Args struct {
-	BootConfigs         []VmCloneV2BootConfig         `pulumi:"bootConfigs"`
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs []VmCloneV2BootConfig `pulumi:"bootConfigs"`
+	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations []VmCloneV2GuestCustomization `pulumi:"guestCustomizations"`
 	MemorySizeBytes     *int                          `pulumi:"memorySizeBytes"`
-	Name                *string                       `pulumi:"name"`
-	Nics                []VmCloneV2Nic                `pulumi:"nics"`
-	NumCoresPerSocket   *int                          `pulumi:"numCoresPerSocket"`
-	NumSockets          *int                          `pulumi:"numSockets"`
-	NumThreadsPerCore   *int                          `pulumi:"numThreadsPerCore"`
-	VmExtId             string                        `pulumi:"vmExtId"`
+	// - (Optional) The name for the vm.
+	Name *string `pulumi:"name"`
+	// - (Optional) NICs attached to the VM.
+	Nics []VmCloneV2Nic `pulumi:"nics"`
+	// - (Optional) Number of cores per socket.
+	NumCoresPerSocket *int `pulumi:"numCoresPerSocket"`
+	// - (Optional) Number of vCPU sockets.
+	NumSockets *int `pulumi:"numSockets"`
+	// - (Optional) Number of threads per core.
+	NumThreadsPerCore *int `pulumi:"numThreadsPerCore"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId string `pulumi:"vmExtId"`
 }
 
 // The set of arguments for constructing a VmCloneV2 resource.
 type VmCloneV2Args struct {
-	BootConfigs         VmCloneV2BootConfigArrayInput
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs VmCloneV2BootConfigArrayInput
+	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations VmCloneV2GuestCustomizationArrayInput
 	MemorySizeBytes     pulumi.IntPtrInput
-	Name                pulumi.StringPtrInput
-	Nics                VmCloneV2NicArrayInput
-	NumCoresPerSocket   pulumi.IntPtrInput
-	NumSockets          pulumi.IntPtrInput
-	NumThreadsPerCore   pulumi.IntPtrInput
-	VmExtId             pulumi.StringInput
+	// - (Optional) The name for the vm.
+	Name pulumi.StringPtrInput
+	// - (Optional) NICs attached to the VM.
+	Nics VmCloneV2NicArrayInput
+	// - (Optional) Number of cores per socket.
+	NumCoresPerSocket pulumi.IntPtrInput
+	// - (Optional) Number of vCPU sockets.
+	NumSockets pulumi.IntPtrInput
+	// - (Optional) Number of threads per core.
+	NumThreadsPerCore pulumi.IntPtrInput
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId pulumi.StringInput
 }
 
 func (VmCloneV2Args) ElementType() reflect.Type {
@@ -317,6 +392,7 @@ func (o VmCloneV2Output) BiosUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.StringOutput { return v.BiosUuid }).(pulumi.StringOutput)
 }
 
+// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
 func (o VmCloneV2Output) BootConfigs() VmCloneV2BootConfigArrayOutput {
 	return o.ApplyT(func(v *VmCloneV2) VmCloneV2BootConfigArrayOutput { return v.BootConfigs }).(VmCloneV2BootConfigArrayOutput)
 }
@@ -361,6 +437,7 @@ func (o VmCloneV2Output) Gpuses() VmCloneV2GpusArrayOutput {
 	return o.ApplyT(func(v *VmCloneV2) VmCloneV2GpusArrayOutput { return v.Gpuses }).(VmCloneV2GpusArrayOutput)
 }
 
+// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 func (o VmCloneV2Output) GuestCustomizations() VmCloneV2GuestCustomizationArrayOutput {
 	return o.ApplyT(func(v *VmCloneV2) VmCloneV2GuestCustomizationArrayOutput { return v.GuestCustomizations }).(VmCloneV2GuestCustomizationArrayOutput)
 }
@@ -425,14 +502,17 @@ func (o VmCloneV2Output) MemorySizeBytes() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.IntOutput { return v.MemorySizeBytes }).(pulumi.IntOutput)
 }
 
+// - (Optional) The name for the vm.
 func (o VmCloneV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Optional) NICs attached to the VM.
 func (o VmCloneV2Output) Nics() VmCloneV2NicArrayOutput {
 	return o.ApplyT(func(v *VmCloneV2) VmCloneV2NicArrayOutput { return v.Nics }).(VmCloneV2NicArrayOutput)
 }
 
+// - (Optional) Number of cores per socket.
 func (o VmCloneV2Output) NumCoresPerSocket() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.IntOutput { return v.NumCoresPerSocket }).(pulumi.IntOutput)
 }
@@ -441,10 +521,12 @@ func (o VmCloneV2Output) NumNumaNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.IntOutput { return v.NumNumaNodes }).(pulumi.IntOutput)
 }
 
+// - (Optional) Number of vCPU sockets.
 func (o VmCloneV2Output) NumSockets() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.IntOutput { return v.NumSockets }).(pulumi.IntOutput)
 }
 
+// - (Optional) Number of threads per core.
 func (o VmCloneV2Output) NumThreadsPerCore() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.IntOutput { return v.NumThreadsPerCore }).(pulumi.IntOutput)
 }
@@ -485,6 +567,7 @@ func (o VmCloneV2Output) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.StringOutput { return v.UpdateTime }).(pulumi.StringOutput)
 }
 
+// - (Required) The globally unique identifier of a VM. It should be of type UUID.
 func (o VmCloneV2Output) VmExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCloneV2) pulumi.StringOutput { return v.VmExtId }).(pulumi.StringOutput)
 }

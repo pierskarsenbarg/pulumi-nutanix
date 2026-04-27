@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// protocol number
+        /// </summary>
         [Input("protocolNumber", required: true)]
         public Input<int> ProtocolNumber { get; set; } = null!;
 

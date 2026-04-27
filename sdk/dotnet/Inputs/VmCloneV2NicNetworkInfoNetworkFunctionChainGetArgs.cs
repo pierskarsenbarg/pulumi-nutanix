@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCloneV2NicNetworkInfoNetworkFunctionChainGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 

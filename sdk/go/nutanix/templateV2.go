@@ -12,20 +12,25 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Create a Template from the given VM identifier. A Template stores the VM configuration and disks from the source VM.
 type TemplateV2 struct {
 	pulumi.CustomResourceState
 
-	CreateTime          pulumi.StringOutput                    `pulumi:"createTime"`
-	CreatedBies         TemplateV2CreatedByArrayOutput         `pulumi:"createdBies"`
-	ExtId               pulumi.StringOutput                    `pulumi:"extId"`
+	CreateTime  pulumi.StringOutput            `pulumi:"createTime"`
+	CreatedBies TemplateV2CreatedByArrayOutput `pulumi:"createdBies"`
+	ExtId       pulumi.StringOutput            `pulumi:"extId"`
+	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayOutput `pulumi:"guestUpdateStatuses"`
 	Links               TemplateV2LinkArrayOutput              `pulumi:"links"`
-	TemplateDescription pulumi.StringOutput                    `pulumi:"templateDescription"`
-	TemplateName        pulumi.StringOutput                    `pulumi:"templateName"`
-	TemplateVersionSpec TemplateV2TemplateVersionSpecOutput    `pulumi:"templateVersionSpec"`
-	TenantId            pulumi.StringOutput                    `pulumi:"tenantId"`
-	UpdateTime          pulumi.StringOutput                    `pulumi:"updateTime"`
-	UpdatedBies         TemplateV2UpdatedByArrayOutput         `pulumi:"updatedBies"`
+	// The user defined description of a Template.
+	TemplateDescription pulumi.StringOutput `pulumi:"templateDescription"`
+	// The user defined name of a Template.
+	TemplateName pulumi.StringOutput `pulumi:"templateName"`
+	// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+	TemplateVersionSpec TemplateV2TemplateVersionSpecOutput `pulumi:"templateVersionSpec"`
+	TenantId            pulumi.StringOutput                 `pulumi:"tenantId"`
+	UpdateTime          pulumi.StringOutput                 `pulumi:"updateTime"`
+	UpdatedBies         TemplateV2UpdatedByArrayOutput      `pulumi:"updatedBies"`
 }
 
 // NewTemplateV2 registers a new resource with the given unique name, arguments, and options.
@@ -64,13 +69,17 @@ func GetTemplateV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering TemplateV2 resources.
 type templateV2State struct {
-	CreateTime          *string                        `pulumi:"createTime"`
-	CreatedBies         []TemplateV2CreatedBy          `pulumi:"createdBies"`
-	ExtId               *string                        `pulumi:"extId"`
-	GuestUpdateStatuses []TemplateV2GuestUpdateStatus  `pulumi:"guestUpdateStatuses"`
-	Links               []TemplateV2Link               `pulumi:"links"`
-	TemplateDescription *string                        `pulumi:"templateDescription"`
-	TemplateName        *string                        `pulumi:"templateName"`
+	CreateTime  *string               `pulumi:"createTime"`
+	CreatedBies []TemplateV2CreatedBy `pulumi:"createdBies"`
+	ExtId       *string               `pulumi:"extId"`
+	// Status of a guest update.
+	GuestUpdateStatuses []TemplateV2GuestUpdateStatus `pulumi:"guestUpdateStatuses"`
+	Links               []TemplateV2Link              `pulumi:"links"`
+	// The user defined description of a Template.
+	TemplateDescription *string `pulumi:"templateDescription"`
+	// The user defined name of a Template.
+	TemplateName *string `pulumi:"templateName"`
+	// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
 	TemplateVersionSpec *TemplateV2TemplateVersionSpec `pulumi:"templateVersionSpec"`
 	TenantId            *string                        `pulumi:"tenantId"`
 	UpdateTime          *string                        `pulumi:"updateTime"`
@@ -78,13 +87,17 @@ type templateV2State struct {
 }
 
 type TemplateV2State struct {
-	CreateTime          pulumi.StringPtrInput
-	CreatedBies         TemplateV2CreatedByArrayInput
-	ExtId               pulumi.StringPtrInput
+	CreateTime  pulumi.StringPtrInput
+	CreatedBies TemplateV2CreatedByArrayInput
+	ExtId       pulumi.StringPtrInput
+	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayInput
 	Links               TemplateV2LinkArrayInput
+	// The user defined description of a Template.
 	TemplateDescription pulumi.StringPtrInput
-	TemplateName        pulumi.StringPtrInput
+	// The user defined name of a Template.
+	TemplateName pulumi.StringPtrInput
+	// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
 	TemplateVersionSpec TemplateV2TemplateVersionSpecPtrInput
 	TenantId            pulumi.StringPtrInput
 	UpdateTime          pulumi.StringPtrInput
@@ -96,20 +109,28 @@ func (TemplateV2State) ElementType() reflect.Type {
 }
 
 type templateV2Args struct {
-	CreatedBies         []TemplateV2CreatedBy         `pulumi:"createdBies"`
+	CreatedBies []TemplateV2CreatedBy `pulumi:"createdBies"`
+	// Status of a guest update.
 	GuestUpdateStatuses []TemplateV2GuestUpdateStatus `pulumi:"guestUpdateStatuses"`
-	TemplateDescription *string                       `pulumi:"templateDescription"`
-	TemplateName        string                        `pulumi:"templateName"`
+	// The user defined description of a Template.
+	TemplateDescription *string `pulumi:"templateDescription"`
+	// The user defined name of a Template.
+	TemplateName string `pulumi:"templateName"`
+	// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
 	TemplateVersionSpec TemplateV2TemplateVersionSpec `pulumi:"templateVersionSpec"`
 	UpdatedBies         []TemplateV2UpdatedBy         `pulumi:"updatedBies"`
 }
 
 // The set of arguments for constructing a TemplateV2 resource.
 type TemplateV2Args struct {
-	CreatedBies         TemplateV2CreatedByArrayInput
+	CreatedBies TemplateV2CreatedByArrayInput
+	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayInput
+	// The user defined description of a Template.
 	TemplateDescription pulumi.StringPtrInput
-	TemplateName        pulumi.StringInput
+	// The user defined name of a Template.
+	TemplateName pulumi.StringInput
+	// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
 	TemplateVersionSpec TemplateV2TemplateVersionSpecInput
 	UpdatedBies         TemplateV2UpdatedByArrayInput
 }
@@ -213,6 +234,7 @@ func (o TemplateV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TemplateV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// Status of a guest update.
 func (o TemplateV2Output) GuestUpdateStatuses() TemplateV2GuestUpdateStatusArrayOutput {
 	return o.ApplyT(func(v *TemplateV2) TemplateV2GuestUpdateStatusArrayOutput { return v.GuestUpdateStatuses }).(TemplateV2GuestUpdateStatusArrayOutput)
 }
@@ -221,14 +243,17 @@ func (o TemplateV2Output) Links() TemplateV2LinkArrayOutput {
 	return o.ApplyT(func(v *TemplateV2) TemplateV2LinkArrayOutput { return v.Links }).(TemplateV2LinkArrayOutput)
 }
 
+// The user defined description of a Template.
 func (o TemplateV2Output) TemplateDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v *TemplateV2) pulumi.StringOutput { return v.TemplateDescription }).(pulumi.StringOutput)
 }
 
+// The user defined name of a Template.
 func (o TemplateV2Output) TemplateName() pulumi.StringOutput {
 	return o.ApplyT(func(v *TemplateV2) pulumi.StringOutput { return v.TemplateName }).(pulumi.StringOutput)
 }
 
+// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
 func (o TemplateV2Output) TemplateVersionSpec() TemplateV2TemplateVersionSpecOutput {
 	return o.ApplyT(func(v *TemplateV2) TemplateV2TemplateVersionSpecOutput { return v.TemplateVersionSpec }).(TemplateV2TemplateVersionSpecOutput)
 }

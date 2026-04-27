@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) The globally unique identifier of an image. It should be of type UUID.
+        /// </summary>
         [Input("imageExtId")]
         public Input<string>? ImageExtId { get; set; }
 

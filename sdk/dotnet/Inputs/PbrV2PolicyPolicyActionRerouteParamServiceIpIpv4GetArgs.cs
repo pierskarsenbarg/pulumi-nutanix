@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4GetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// </summary>
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
+        /// <summary>
+        /// ip value
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

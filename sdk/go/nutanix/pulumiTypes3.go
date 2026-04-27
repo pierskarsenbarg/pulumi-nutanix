@@ -117,9 +117,14 @@ func (o VirtualMachineV2VtpmConfigArrayOutput) Index(i pulumi.IntInput) VirtualM
 }
 
 type VmCdromInsertEjectV2BackingInfo struct {
-	DataSources       []VmCdromInsertEjectV2BackingInfoDataSource       `pulumi:"dataSources"`
-	DiskSizeBytes     *int                                              `pulumi:"diskSizeBytes"`
-	StorageConfigs    []VmCdromInsertEjectV2BackingInfoStorageConfig    `pulumi:"storageConfigs"`
+	// A reference to a disk or image that contains the contents of a disk.
+	DataSources []VmCdromInsertEjectV2BackingInfoDataSource `pulumi:"dataSources"`
+	// Size of the disk in Bytes
+	DiskSizeBytes *int `pulumi:"diskSizeBytes"`
+	// Storage configuration for VM disks
+	// * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
+	StorageConfigs []VmCdromInsertEjectV2BackingInfoStorageConfig `pulumi:"storageConfigs"`
+	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
 	StorageContainers []VmCdromInsertEjectV2BackingInfoStorageContainer `pulumi:"storageContainers"`
 }
 
@@ -135,9 +140,14 @@ type VmCdromInsertEjectV2BackingInfoInput interface {
 }
 
 type VmCdromInsertEjectV2BackingInfoArgs struct {
-	DataSources       VmCdromInsertEjectV2BackingInfoDataSourceArrayInput       `pulumi:"dataSources"`
-	DiskSizeBytes     pulumi.IntPtrInput                                        `pulumi:"diskSizeBytes"`
-	StorageConfigs    VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
+	// A reference to a disk or image that contains the contents of a disk.
+	DataSources VmCdromInsertEjectV2BackingInfoDataSourceArrayInput `pulumi:"dataSources"`
+	// Size of the disk in Bytes
+	DiskSizeBytes pulumi.IntPtrInput `pulumi:"diskSizeBytes"`
+	// Storage configuration for VM disks
+	// * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
+	StorageConfigs VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
+	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
 	StorageContainers VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput `pulumi:"storageContainers"`
 }
 
@@ -192,22 +202,27 @@ func (o VmCdromInsertEjectV2BackingInfoOutput) ToVmCdromInsertEjectV2BackingInfo
 	return o
 }
 
+// A reference to a disk or image that contains the contents of a disk.
 func (o VmCdromInsertEjectV2BackingInfoOutput) DataSources() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoDataSource {
 		return v.DataSources
 	}).(VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput)
 }
 
+// Size of the disk in Bytes
 func (o VmCdromInsertEjectV2BackingInfoOutput) DiskSizeBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) *int { return v.DiskSizeBytes }).(pulumi.IntPtrOutput)
 }
 
+// Storage configuration for VM disks
+// * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o VmCdromInsertEjectV2BackingInfoOutput) StorageConfigs() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoStorageConfig {
 		return v.StorageConfigs
 	}).(VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput)
 }
 
+// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
 func (o VmCdromInsertEjectV2BackingInfoOutput) StorageContainers() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoStorageContainer {
 		return v.StorageContainers
@@ -235,6 +250,7 @@ func (o VmCdromInsertEjectV2BackingInfoArrayOutput) Index(i pulumi.IntInput) VmC
 }
 
 type VmCdromInsertEjectV2BackingInfoDataSource struct {
+	// Reference to image or vm disk. Either `imageReference` or `vmDiskReference`.
 	References []VmCdromInsertEjectV2BackingInfoDataSourceReference `pulumi:"references"`
 }
 
@@ -250,6 +266,7 @@ type VmCdromInsertEjectV2BackingInfoDataSourceInput interface {
 }
 
 type VmCdromInsertEjectV2BackingInfoDataSourceArgs struct {
+	// Reference to image or vm disk. Either `imageReference` or `vmDiskReference`.
 	References VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput `pulumi:"references"`
 }
 
@@ -304,6 +321,7 @@ func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) ToVmCdromInsertEjectV2B
 	return o
 }
 
+// Reference to image or vm disk. Either `imageReference` or `vmDiskReference`.
 func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) References() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSource) []VmCdromInsertEjectV2BackingInfoDataSourceReference {
 		return v.References
@@ -331,7 +349,14 @@ func (o VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) Index(i pulumi.Int
 }
 
 type VmCdromInsertEjectV2BackingInfoDataSourceReference struct {
-	ImageReferences  []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference  `pulumi:"imageReferences"`
+	// Image Reference
+	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+	ImageReferences []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference `pulumi:"imageReferences"`
+	// Vm Disk Reference
+	// * `vm_disk_reference.disk_address`: (Required) Disk address.
+	// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
+	//
+	// See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/insertCdRomById).
 	VmDiskReferences []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
 }
 
@@ -347,7 +372,14 @@ type VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput interface {
 }
 
 type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs struct {
-	ImageReferences  VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput  `pulumi:"imageReferences"`
+	// Image Reference
+	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+	ImageReferences VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput `pulumi:"imageReferences"`
+	// Vm Disk Reference
+	// * `vm_disk_reference.disk_address`: (Required) Disk address.
+	// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
+	//
+	// See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/insertCdRomById).
 	VmDiskReferences VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
 }
 
@@ -402,12 +434,19 @@ func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ToVmCdromInser
 	return o
 }
 
+// Image Reference
+// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
 func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ImageReferences() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference {
 		return v.ImageReferences
 	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput)
 }
 
+// Vm Disk Reference
+// * `vm_disk_reference.disk_address`: (Required) Disk address.
+// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
+//
+// See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/insertCdRomById).
 func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) VmDiskReferences() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference {
 		return v.VmDiskReferences
@@ -743,6 +782,7 @@ func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAdd
 }
 
 type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference struct {
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -758,6 +798,7 @@ type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenc
 }
 
 type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs struct {
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -812,6 +853,7 @@ func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmRefer
 	return o
 }
 
+// The globally unique identifier of a CD-ROM. It should be of type UUID.
 func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference) *string {
 		return v.ExtId
@@ -933,6 +975,7 @@ func (o VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) Index(i pulumi.
 }
 
 type VmCdromInsertEjectV2BackingInfoStorageContainer struct {
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -948,6 +991,7 @@ type VmCdromInsertEjectV2BackingInfoStorageContainerInput interface {
 }
 
 type VmCdromInsertEjectV2BackingInfoStorageContainerArgs struct {
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -1002,6 +1046,7 @@ func (o VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ToVmCdromInsertEj
 	return o
 }
 
+// The globally unique identifier of a CD-ROM. It should be of type UUID.
 func (o VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoStorageContainer) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -1128,7 +1173,8 @@ func (o VmCloneV2ApcConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2ApcConf
 
 type VmCloneV2ApcConfigCpuModel struct {
 	ExtId *string `pulumi:"extId"`
-	Name  *string `pulumi:"name"`
+	// - (Optional) The name for the vm.
+	Name *string `pulumi:"name"`
 }
 
 // VmCloneV2ApcConfigCpuModelInput is an input type that accepts VmCloneV2ApcConfigCpuModelArgs and VmCloneV2ApcConfigCpuModelOutput values.
@@ -1144,7 +1190,8 @@ type VmCloneV2ApcConfigCpuModelInput interface {
 
 type VmCloneV2ApcConfigCpuModelArgs struct {
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The name for the vm.
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (VmCloneV2ApcConfigCpuModelArgs) ElementType() reflect.Type {
@@ -1202,6 +1249,7 @@ func (o VmCloneV2ApcConfigCpuModelOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2ApcConfigCpuModel) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) The name for the vm.
 func (o VmCloneV2ApcConfigCpuModelOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2ApcConfigCpuModel) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1327,8 +1375,10 @@ func (o VmCloneV2BootConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootCo
 }
 
 type VmCloneV2BootConfigLegacyBoot struct {
+	// - (Optional) The Boot Device settings.
 	BootDevices []VmCloneV2BootConfigLegacyBootBootDevice `pulumi:"bootDevices"`
-	BootOrders  []string                                  `pulumi:"bootOrders"`
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootOrders []string `pulumi:"bootOrders"`
 }
 
 // VmCloneV2BootConfigLegacyBootInput is an input type that accepts VmCloneV2BootConfigLegacyBootArgs and VmCloneV2BootConfigLegacyBootOutput values.
@@ -1343,8 +1393,10 @@ type VmCloneV2BootConfigLegacyBootInput interface {
 }
 
 type VmCloneV2BootConfigLegacyBootArgs struct {
+	// - (Optional) The Boot Device settings.
 	BootDevices VmCloneV2BootConfigLegacyBootBootDeviceArrayInput `pulumi:"bootDevices"`
-	BootOrders  pulumi.StringArrayInput                           `pulumi:"bootOrders"`
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
 }
 
 func (VmCloneV2BootConfigLegacyBootArgs) ElementType() reflect.Type {
@@ -1398,10 +1450,12 @@ func (o VmCloneV2BootConfigLegacyBootOutput) ToVmCloneV2BootConfigLegacyBootOutp
 	return o
 }
 
+// - (Optional) The Boot Device settings.
 func (o VmCloneV2BootConfigLegacyBootOutput) BootDevices() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBoot) []VmCloneV2BootConfigLegacyBootBootDevice { return v.BootDevices }).(VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput)
 }
 
+// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
 func (o VmCloneV2BootConfigLegacyBootOutput) BootOrders() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
 }
@@ -1427,8 +1481,10 @@ func (o VmCloneV2BootConfigLegacyBootArrayOutput) Index(i pulumi.IntInput) VmClo
 }
 
 type VmCloneV2BootConfigLegacyBootBootDevice struct {
+	// - (Optional) The Boot Device Disk settings.
 	BootDeviceDisks []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
-	BootDeviceNics  []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic  `pulumi:"bootDeviceNics"`
+	// - (Optional) The Boot Device Nic settings.
+	BootDeviceNics []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic `pulumi:"bootDeviceNics"`
 }
 
 // VmCloneV2BootConfigLegacyBootBootDeviceInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceArgs and VmCloneV2BootConfigLegacyBootBootDeviceOutput values.
@@ -1443,8 +1499,10 @@ type VmCloneV2BootConfigLegacyBootBootDeviceInput interface {
 }
 
 type VmCloneV2BootConfigLegacyBootBootDeviceArgs struct {
+	// - (Optional) The Boot Device Disk settings.
 	BootDeviceDisks VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
-	BootDeviceNics  VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput  `pulumi:"bootDeviceNics"`
+	// - (Optional) The Boot Device Nic settings.
+	BootDeviceNics VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput `pulumi:"bootDeviceNics"`
 }
 
 func (VmCloneV2BootConfigLegacyBootBootDeviceArgs) ElementType() reflect.Type {
@@ -1498,12 +1556,14 @@ func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) ToVmCloneV2BootConfigLega
 	return o
 }
 
+// - (Optional) The Boot Device Disk settings.
 func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) BootDeviceDisks() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDevice) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
 		return v.BootDeviceDisks
 	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
 }
 
+// - (Optional) The Boot Device Nic settings.
 func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) BootDeviceNics() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDevice) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
 		return v.BootDeviceNics
@@ -1531,6 +1591,7 @@ func (o VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) Index(i pulumi.IntIn
 }
 
 type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk struct {
+	// - (Optional) Address of disk to boot from.
 	DiskAddresses []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
 }
 
@@ -1546,6 +1607,7 @@ type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput interface {
 }
 
 type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs struct {
+	// - (Optional) Address of disk to boot from.
 	DiskAddresses VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
 }
 
@@ -1600,6 +1662,7 @@ func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2
 	return o
 }
 
+// - (Optional) Address of disk to boot from.
 func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) DiskAddresses() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
 		return v.DiskAddresses
@@ -1627,8 +1690,16 @@ func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) Index(
 }
 
 type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
 }
 
 // VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput values.
@@ -1643,8 +1714,16 @@ type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput inter
 }
 
 type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
@@ -1698,10 +1777,18 @@ func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) 
 	return o
 }
 
+//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+//     Valid values are:
+//   - `SCSI` The type of disk bus is SCSI.
+//   - `SPAPR` The type of disk bus is SPAPR.
+//   - `PCI` The type of disk bus is PCI.
+//   - `PCI` The type of disk bus is PCI.
+//   - `SATA` The type of disk bus is SATA.
 func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
@@ -1727,6 +1814,7 @@ func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOut
 }
 
 type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic struct {
+	// - (Optional) MAC address of nic to boot from.
 	MacAddress *string `pulumi:"macAddress"`
 }
 
@@ -1742,6 +1830,7 @@ type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput interface {
 }
 
 type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs struct {
+	// - (Optional) MAC address of nic to boot from.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
 }
 
@@ -1796,6 +1885,7 @@ func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToVmCloneV2B
 	return o
 }
 
+// - (Optional) MAC address of nic to boot from.
 func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
@@ -1821,10 +1911,14 @@ func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) Index(i
 }
 
 type VmCloneV2BootConfigUefiBoot struct {
-	BootDevices         []VmCloneV2BootConfigUefiBootBootDevice  `pulumi:"bootDevices"`
-	BootOrders          []string                                 `pulumi:"bootOrders"`
-	IsSecureBootEnabled *bool                                    `pulumi:"isSecureBootEnabled"`
-	NvramDevices        []VmCloneV2BootConfigUefiBootNvramDevice `pulumi:"nvramDevices"`
+	// - (Optional) The Boot Device settings.
+	BootDevices []VmCloneV2BootConfigUefiBootBootDevice `pulumi:"bootDevices"`
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootOrders []string `pulumi:"bootOrders"`
+	// - (Optional) Indicate whether to enable secure boot or not.
+	IsSecureBootEnabled *bool `pulumi:"isSecureBootEnabled"`
+	// - (Optional) Configuration for NVRAM to be presented to the VM.
+	NvramDevices []VmCloneV2BootConfigUefiBootNvramDevice `pulumi:"nvramDevices"`
 }
 
 // VmCloneV2BootConfigUefiBootInput is an input type that accepts VmCloneV2BootConfigUefiBootArgs and VmCloneV2BootConfigUefiBootOutput values.
@@ -1839,10 +1933,14 @@ type VmCloneV2BootConfigUefiBootInput interface {
 }
 
 type VmCloneV2BootConfigUefiBootArgs struct {
-	BootDevices         VmCloneV2BootConfigUefiBootBootDeviceArrayInput  `pulumi:"bootDevices"`
-	BootOrders          pulumi.StringArrayInput                          `pulumi:"bootOrders"`
-	IsSecureBootEnabled pulumi.BoolPtrInput                              `pulumi:"isSecureBootEnabled"`
-	NvramDevices        VmCloneV2BootConfigUefiBootNvramDeviceArrayInput `pulumi:"nvramDevices"`
+	// - (Optional) The Boot Device settings.
+	BootDevices VmCloneV2BootConfigUefiBootBootDeviceArrayInput `pulumi:"bootDevices"`
+	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
+	// - (Optional) Indicate whether to enable secure boot or not.
+	IsSecureBootEnabled pulumi.BoolPtrInput `pulumi:"isSecureBootEnabled"`
+	// - (Optional) Configuration for NVRAM to be presented to the VM.
+	NvramDevices VmCloneV2BootConfigUefiBootNvramDeviceArrayInput `pulumi:"nvramDevices"`
 }
 
 func (VmCloneV2BootConfigUefiBootArgs) ElementType() reflect.Type {
@@ -1896,18 +1994,22 @@ func (o VmCloneV2BootConfigUefiBootOutput) ToVmCloneV2BootConfigUefiBootOutputWi
 	return o
 }
 
+// - (Optional) The Boot Device settings.
 func (o VmCloneV2BootConfigUefiBootOutput) BootDevices() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []VmCloneV2BootConfigUefiBootBootDevice { return v.BootDevices }).(VmCloneV2BootConfigUefiBootBootDeviceArrayOutput)
 }
 
+// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
 func (o VmCloneV2BootConfigUefiBootOutput) BootOrders() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) Indicate whether to enable secure boot or not.
 func (o VmCloneV2BootConfigUefiBootOutput) IsSecureBootEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) *bool { return v.IsSecureBootEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Configuration for NVRAM to be presented to the VM.
 func (o VmCloneV2BootConfigUefiBootOutput) NvramDevices() VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []VmCloneV2BootConfigUefiBootNvramDevice { return v.NvramDevices }).(VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput)
 }
@@ -1933,8 +2035,10 @@ func (o VmCloneV2BootConfigUefiBootArrayOutput) Index(i pulumi.IntInput) VmClone
 }
 
 type VmCloneV2BootConfigUefiBootBootDevice struct {
+	// - (Optional) The Boot Device Disk settings.
 	BootDeviceDisks []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
-	BootDeviceNics  []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic  `pulumi:"bootDeviceNics"`
+	// - (Optional) The Boot Device Nic settings.
+	BootDeviceNics []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic `pulumi:"bootDeviceNics"`
 }
 
 // VmCloneV2BootConfigUefiBootBootDeviceInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceArgs and VmCloneV2BootConfigUefiBootBootDeviceOutput values.
@@ -1949,8 +2053,10 @@ type VmCloneV2BootConfigUefiBootBootDeviceInput interface {
 }
 
 type VmCloneV2BootConfigUefiBootBootDeviceArgs struct {
+	// - (Optional) The Boot Device Disk settings.
 	BootDeviceDisks VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
-	BootDeviceNics  VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput  `pulumi:"bootDeviceNics"`
+	// - (Optional) The Boot Device Nic settings.
+	BootDeviceNics VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput `pulumi:"bootDeviceNics"`
 }
 
 func (VmCloneV2BootConfigUefiBootBootDeviceArgs) ElementType() reflect.Type {
@@ -2004,12 +2110,14 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) ToVmCloneV2BootConfigUefiBo
 	return o
 }
 
+// - (Optional) The Boot Device Disk settings.
 func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) BootDeviceDisks() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDevice) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
 		return v.BootDeviceDisks
 	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
 }
 
+// - (Optional) The Boot Device Nic settings.
 func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) BootDeviceNics() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDevice) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
 		return v.BootDeviceNics
@@ -2037,6 +2145,7 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) Index(i pulumi.IntInpu
 }
 
 type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk struct {
+	// - (Optional) Address of disk to boot from.
 	DiskAddresses []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
 }
 
@@ -2052,6 +2161,7 @@ type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput interface {
 }
 
 type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs struct {
+	// - (Optional) Address of disk to boot from.
 	DiskAddresses VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
 }
 
@@ -2106,6 +2216,7 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2Bo
 	return o
 }
 
+// - (Optional) Address of disk to boot from.
 func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) DiskAddresses() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
 		return v.DiskAddresses
@@ -2133,8 +2244,16 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) Index(i 
 }
 
 type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
 }
 
 // VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput values.
@@ -2149,8 +2268,16 @@ type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput interfa
 }
 
 type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
@@ -2204,10 +2331,18 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) To
 	return o
 }
 
+//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+//     Valid values are:
+//   - `SCSI` The type of disk bus is SCSI.
+//   - `SPAPR` The type of disk bus is SPAPR.
+//   - `PCI` The type of disk bus is PCI.
+//   - `PCI` The type of disk bus is PCI.
+//   - `SATA` The type of disk bus is SATA.
 func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
@@ -2233,6 +2368,7 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutpu
 }
 
 type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic struct {
+	// - (Optional) MAC address of nic to boot from.
 	MacAddress *string `pulumi:"macAddress"`
 }
 
@@ -2248,6 +2384,7 @@ type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput interface {
 }
 
 type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs struct {
+	// - (Optional) MAC address of nic to boot from.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
 }
 
@@ -2302,6 +2439,7 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ToVmCloneV2Boo
 	return o
 }
 
+// - (Optional) MAC address of nic to boot from.
 func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
@@ -2327,6 +2465,7 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) Index(i p
 }
 
 type VmCloneV2BootConfigUefiBootNvramDevice struct {
+	// - (Optional) Storage provided by Nutanix ADSF.
 	BackingStorageInfos []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo `pulumi:"backingStorageInfos"`
 }
 
@@ -2342,6 +2481,7 @@ type VmCloneV2BootConfigUefiBootNvramDeviceInput interface {
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceArgs struct {
+	// - (Optional) Storage provided by Nutanix ADSF.
 	BackingStorageInfos VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArrayInput `pulumi:"backingStorageInfos"`
 }
 
@@ -2396,6 +2536,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceOutput) ToVmCloneV2BootConfigUefiB
 	return o
 }
 
+// - (Optional) Storage provided by Nutanix ADSF.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceOutput) BackingStorageInfos() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDevice) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
 		return v.BackingStorageInfos
@@ -2423,12 +2564,17 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput) Index(i pulumi.IntInp
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo struct {
-	DataSources           []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource       `pulumi:"dataSources"`
-	DiskExtId             *string                                                                    `pulumi:"diskExtId"`
-	DiskSizeBytes         *int                                                                       `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress *bool                                                                      `pulumi:"isMigrationInProgress"`
-	StorageConfigs        []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig    `pulumi:"storageConfigs"`
-	StorageContainers     []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer `pulumi:"storageContainers"`
+	// - (Optional) A reference to a disk or image that contains the contents of a disk.
+	DataSources []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource `pulumi:"dataSources"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId *string `pulumi:"diskExtId"`
+	// - (Optional) Size of the disk in Bytes.
+	DiskSizeBytes         *int  `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress *bool `pulumi:"isMigrationInProgress"`
+	// - (Optional) Storage configuration for VM disks.
+	StorageConfigs []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig `pulumi:"storageConfigs"`
+	// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer `pulumi:"storageContainers"`
 }
 
 // VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoInput is an input type that accepts VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs and VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput values.
@@ -2443,12 +2589,17 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoInput interface {
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs struct {
-	DataSources           VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceArrayInput       `pulumi:"dataSources"`
-	DiskExtId             pulumi.StringPtrInput                                                              `pulumi:"diskExtId"`
-	DiskSizeBytes         pulumi.IntPtrInput                                                                 `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress pulumi.BoolPtrInput                                                                `pulumi:"isMigrationInProgress"`
-	StorageConfigs        VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
-	StorageContainers     VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArrayInput `pulumi:"storageContainers"`
+	// - (Optional) A reference to a disk or image that contains the contents of a disk.
+	DataSources VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceArrayInput `pulumi:"dataSources"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId pulumi.StringPtrInput `pulumi:"diskExtId"`
+	// - (Optional) Size of the disk in Bytes.
+	DiskSizeBytes         pulumi.IntPtrInput  `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress pulumi.BoolPtrInput `pulumi:"isMigrationInProgress"`
+	// - (Optional) Storage configuration for VM disks.
+	StorageConfigs VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
+	// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArrayInput `pulumi:"storageContainers"`
 }
 
 func (VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs) ElementType() reflect.Type {
@@ -2502,16 +2653,19 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) ToVmClon
 	return o
 }
 
+// - (Optional) A reference to a disk or image that contains the contents of a disk.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) DataSources() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
 		return v.DataSources
 	}).(VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceArrayOutput)
 }
 
+// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) DiskExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Size of the disk in Bytes.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) DiskSizeBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo) *int { return v.DiskSizeBytes }).(pulumi.IntPtrOutput)
 }
@@ -2520,12 +2674,14 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) IsMigrat
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Storage configuration for VM disks.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) StorageConfigs() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
 		return v.StorageConfigs
 	}).(VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayOutput)
 }
 
+// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) StorageContainers() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
 		return v.StorageContainers
@@ -2553,6 +2709,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArrayOutput) Ind
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource struct {
+	// - (Optional) Data Source Reference settings.
 	References []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference `pulumi:"references"`
 }
 
@@ -2568,6 +2725,7 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceInput int
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceArgs struct {
+	// - (Optional) Data Source Reference settings.
 	References VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceArrayInput `pulumi:"references"`
 }
 
@@ -2622,6 +2780,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceOutput
 	return o
 }
 
+// - (Optional) Data Source Reference settings.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceOutput) References() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
 		return v.References
@@ -2649,7 +2808,9 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceArrayO
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference struct {
-	ImageReferences  []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference  `pulumi:"imageReferences"`
+	// - (Optional) Data Source Image Reference settings.
+	ImageReferences []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference `pulumi:"imageReferences"`
+	// - (Optional) Data Source VM Disk Reference settings.
 	VmDiskReferences []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
 }
 
@@ -2665,7 +2826,9 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceArgs struct {
-	ImageReferences  VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArrayInput  `pulumi:"imageReferences"`
+	// - (Optional) Data Source Image Reference settings.
+	ImageReferences VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArrayInput `pulumi:"imageReferences"`
+	// - (Optional) Data Source VM Disk Reference settings.
 	VmDiskReferences VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
 }
 
@@ -2720,12 +2883,14 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 	return o
 }
 
+// - (Optional) Data Source Image Reference settings.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceOutput) ImageReferences() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
 		return v.ImageReferences
 	}).(VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArrayOutput)
 }
 
+// - (Optional) Data Source VM Disk Reference settings.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceOutput) VmDiskReferences() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
 		return v.VmDiskReferences
@@ -2753,6 +2918,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference struct {
+	// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 	ImageExtId *string `pulumi:"imageExtId"`
 }
 
@@ -2768,6 +2934,7 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArgs struct {
+	// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 	ImageExtId pulumi.StringPtrInput `pulumi:"imageExtId"`
 }
 
@@ -2822,6 +2989,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 	return o
 }
 
+// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceOutput) ImageExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference) *string {
 		return v.ImageExtId
@@ -2849,9 +3017,12 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference struct {
+	// - (Optional) Address of disk.
 	DiskAddresses []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress `pulumi:"diskAddresses"`
-	DiskExtId     *string                                                                                                 `pulumi:"diskExtId"`
-	VmReferences  []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference `pulumi:"vmReferences"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId *string `pulumi:"diskExtId"`
+	// - (Optional) Reference to a VM.
+	VmReferences []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference `pulumi:"vmReferences"`
 }
 
 // VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceInput is an input type that accepts VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceArgs and VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceOutput values.
@@ -2866,9 +3037,12 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceArgs struct {
+	// - (Optional) Address of disk.
 	DiskAddresses VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput `pulumi:"diskAddresses"`
-	DiskExtId     pulumi.StringPtrInput                                                                                           `pulumi:"diskExtId"`
-	VmReferences  VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput `pulumi:"vmReferences"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId pulumi.StringPtrInput `pulumi:"diskExtId"`
+	// - (Optional) Reference to a VM.
+	VmReferences VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput `pulumi:"vmReferences"`
 }
 
 func (VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceArgs) ElementType() reflect.Type {
@@ -2922,18 +3096,21 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 	return o
 }
 
+// - (Optional) Address of disk.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceOutput) DiskAddresses() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
 		return v.DiskAddresses
 	}).(VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput)
 }
 
+// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceOutput) DiskExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference) *string {
 		return v.DiskExtId
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Reference to a VM.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceOutput) VmReferences() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
 		return v.VmReferences
@@ -2961,8 +3138,16 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
 }
 
 // VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressInput is an input type that accepts VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs and VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput values.
@@ -2977,8 +3162,16 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ElementType() reflect.Type {
@@ -3032,12 +3225,20 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 	return o
 }
 
+//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+//     Valid values are:
+//   - `SCSI` The type of disk bus is SCSI.
+//   - `SPAPR` The type of disk bus is SPAPR.
+//   - `PCI` The type of disk bus is PCI.
+//   - `PCI` The type of disk bus is PCI.
+//   - `SATA` The type of disk bus is SATA.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) BusType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress) *string {
 		return v.BusType
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress) *int {
 		return v.Index
@@ -3065,6 +3266,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference struct {
+	// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -3080,6 +3282,7 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs struct {
+	// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -3134,6 +3337,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 	return o
 }
 
+// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference) *string {
 		return v.ExtId
@@ -3161,6 +3365,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceRefere
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig struct {
+	// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
 }
 
@@ -3176,6 +3381,7 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigInput 
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs struct {
+	// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
 }
 
@@ -3230,6 +3436,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigOut
 	return o
 }
 
+// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig) *bool {
 		return v.IsFlashModeEnabled
@@ -3257,6 +3464,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArr
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer struct {
+	// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -3272,6 +3480,7 @@ type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerInp
 }
 
 type VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgs struct {
+	// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -3326,6 +3535,7 @@ func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer
 	return o
 }
 
+// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 func (o VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer) *string {
 		return v.ExtId
@@ -3447,6 +3657,7 @@ func (o VmCloneV2CategoryArrayOutput) Index(i pulumi.IntInput) VmCloneV2Category
 }
 
 type VmCloneV2CdRom struct {
+	// - (Optional) Defines a NIC emulated by the hypervisor
 	BackingInfos  []VmCloneV2CdRomBackingInfo `pulumi:"backingInfos"`
 	DiskAddresses []VmCloneV2CdRomDiskAddress `pulumi:"diskAddresses"`
 	ExtId         *string                     `pulumi:"extId"`
@@ -3465,6 +3676,7 @@ type VmCloneV2CdRomInput interface {
 }
 
 type VmCloneV2CdRomArgs struct {
+	// - (Optional) Defines a NIC emulated by the hypervisor
 	BackingInfos  VmCloneV2CdRomBackingInfoArrayInput `pulumi:"backingInfos"`
 	DiskAddresses VmCloneV2CdRomDiskAddressArrayInput `pulumi:"diskAddresses"`
 	ExtId         pulumi.StringPtrInput               `pulumi:"extId"`
@@ -3522,6 +3734,7 @@ func (o VmCloneV2CdRomOutput) ToVmCloneV2CdRomOutputWithContext(ctx context.Cont
 	return o
 }
 
+// - (Optional) Defines a NIC emulated by the hypervisor
 func (o VmCloneV2CdRomOutput) BackingInfos() VmCloneV2CdRomBackingInfoArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRom) []VmCloneV2CdRomBackingInfo { return v.BackingInfos }).(VmCloneV2CdRomBackingInfoArrayOutput)
 }
@@ -3559,12 +3772,17 @@ func (o VmCloneV2CdRomArrayOutput) Index(i pulumi.IntInput) VmCloneV2CdRomOutput
 }
 
 type VmCloneV2CdRomBackingInfo struct {
-	DataSources           []VmCloneV2CdRomBackingInfoDataSource       `pulumi:"dataSources"`
-	DiskExtId             *string                                     `pulumi:"diskExtId"`
-	DiskSizeBytes         *int                                        `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress *bool                                       `pulumi:"isMigrationInProgress"`
-	StorageConfigs        []VmCloneV2CdRomBackingInfoStorageConfig    `pulumi:"storageConfigs"`
-	StorageContainers     []VmCloneV2CdRomBackingInfoStorageContainer `pulumi:"storageContainers"`
+	// - (Optional) A reference to a disk or image that contains the contents of a disk.
+	DataSources []VmCloneV2CdRomBackingInfoDataSource `pulumi:"dataSources"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId *string `pulumi:"diskExtId"`
+	// - (Optional) Size of the disk in Bytes.
+	DiskSizeBytes         *int  `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress *bool `pulumi:"isMigrationInProgress"`
+	// - (Optional) Storage configuration for VM disks.
+	StorageConfigs []VmCloneV2CdRomBackingInfoStorageConfig `pulumi:"storageConfigs"`
+	// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers []VmCloneV2CdRomBackingInfoStorageContainer `pulumi:"storageContainers"`
 }
 
 // VmCloneV2CdRomBackingInfoInput is an input type that accepts VmCloneV2CdRomBackingInfoArgs and VmCloneV2CdRomBackingInfoOutput values.
@@ -3579,12 +3797,17 @@ type VmCloneV2CdRomBackingInfoInput interface {
 }
 
 type VmCloneV2CdRomBackingInfoArgs struct {
-	DataSources           VmCloneV2CdRomBackingInfoDataSourceArrayInput       `pulumi:"dataSources"`
-	DiskExtId             pulumi.StringPtrInput                               `pulumi:"diskExtId"`
-	DiskSizeBytes         pulumi.IntPtrInput                                  `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress pulumi.BoolPtrInput                                 `pulumi:"isMigrationInProgress"`
-	StorageConfigs        VmCloneV2CdRomBackingInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
-	StorageContainers     VmCloneV2CdRomBackingInfoStorageContainerArrayInput `pulumi:"storageContainers"`
+	// - (Optional) A reference to a disk or image that contains the contents of a disk.
+	DataSources VmCloneV2CdRomBackingInfoDataSourceArrayInput `pulumi:"dataSources"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId pulumi.StringPtrInput `pulumi:"diskExtId"`
+	// - (Optional) Size of the disk in Bytes.
+	DiskSizeBytes         pulumi.IntPtrInput  `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress pulumi.BoolPtrInput `pulumi:"isMigrationInProgress"`
+	// - (Optional) Storage configuration for VM disks.
+	StorageConfigs VmCloneV2CdRomBackingInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
+	// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers VmCloneV2CdRomBackingInfoStorageContainerArrayInput `pulumi:"storageContainers"`
 }
 
 func (VmCloneV2CdRomBackingInfoArgs) ElementType() reflect.Type {
@@ -3638,14 +3861,17 @@ func (o VmCloneV2CdRomBackingInfoOutput) ToVmCloneV2CdRomBackingInfoOutputWithCo
 	return o
 }
 
+// - (Optional) A reference to a disk or image that contains the contents of a disk.
 func (o VmCloneV2CdRomBackingInfoOutput) DataSources() VmCloneV2CdRomBackingInfoDataSourceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfo) []VmCloneV2CdRomBackingInfoDataSource { return v.DataSources }).(VmCloneV2CdRomBackingInfoDataSourceArrayOutput)
 }
 
+// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
 func (o VmCloneV2CdRomBackingInfoOutput) DiskExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfo) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Size of the disk in Bytes.
 func (o VmCloneV2CdRomBackingInfoOutput) DiskSizeBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfo) *int { return v.DiskSizeBytes }).(pulumi.IntPtrOutput)
 }
@@ -3654,10 +3880,12 @@ func (o VmCloneV2CdRomBackingInfoOutput) IsMigrationInProgress() pulumi.BoolPtrO
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfo) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Storage configuration for VM disks.
 func (o VmCloneV2CdRomBackingInfoOutput) StorageConfigs() VmCloneV2CdRomBackingInfoStorageConfigArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfo) []VmCloneV2CdRomBackingInfoStorageConfig { return v.StorageConfigs }).(VmCloneV2CdRomBackingInfoStorageConfigArrayOutput)
 }
 
+// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
 func (o VmCloneV2CdRomBackingInfoOutput) StorageContainers() VmCloneV2CdRomBackingInfoStorageContainerArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfo) []VmCloneV2CdRomBackingInfoStorageContainer {
 		return v.StorageContainers
@@ -3685,6 +3913,7 @@ func (o VmCloneV2CdRomBackingInfoArrayOutput) Index(i pulumi.IntInput) VmCloneV2
 }
 
 type VmCloneV2CdRomBackingInfoDataSource struct {
+	// - (Optional) Data Source Reference settings.
 	References []VmCloneV2CdRomBackingInfoDataSourceReference `pulumi:"references"`
 }
 
@@ -3700,6 +3929,7 @@ type VmCloneV2CdRomBackingInfoDataSourceInput interface {
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceArgs struct {
+	// - (Optional) Data Source Reference settings.
 	References VmCloneV2CdRomBackingInfoDataSourceReferenceArrayInput `pulumi:"references"`
 }
 
@@ -3754,6 +3984,7 @@ func (o VmCloneV2CdRomBackingInfoDataSourceOutput) ToVmCloneV2CdRomBackingInfoDa
 	return o
 }
 
+// - (Optional) Data Source Reference settings.
 func (o VmCloneV2CdRomBackingInfoDataSourceOutput) References() VmCloneV2CdRomBackingInfoDataSourceReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSource) []VmCloneV2CdRomBackingInfoDataSourceReference {
 		return v.References
@@ -3781,7 +4012,9 @@ func (o VmCloneV2CdRomBackingInfoDataSourceArrayOutput) Index(i pulumi.IntInput)
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReference struct {
-	ImageReferences  []VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference  `pulumi:"imageReferences"`
+	// - (Optional) Data Source Image Reference settings.
+	ImageReferences []VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference `pulumi:"imageReferences"`
+	// - (Optional) Data Source VM Disk Reference settings.
 	VmDiskReferences []VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
 }
 
@@ -3797,7 +4030,9 @@ type VmCloneV2CdRomBackingInfoDataSourceReferenceInput interface {
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceArgs struct {
-	ImageReferences  VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceArrayInput  `pulumi:"imageReferences"`
+	// - (Optional) Data Source Image Reference settings.
+	ImageReferences VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceArrayInput `pulumi:"imageReferences"`
+	// - (Optional) Data Source VM Disk Reference settings.
 	VmDiskReferences VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
 }
 
@@ -3852,12 +4087,14 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceOutput) ToVmCloneV2CdRomBack
 	return o
 }
 
+// - (Optional) Data Source Image Reference settings.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceOutput) ImageReferences() VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReference) []VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference {
 		return v.ImageReferences
 	}).(VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceArrayOutput)
 }
 
+// - (Optional) Data Source VM Disk Reference settings.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceOutput) VmDiskReferences() VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReference) []VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference {
 		return v.VmDiskReferences
@@ -3885,6 +4122,7 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceArrayOutput) Index(i pulumi.
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference struct {
+	// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 	ImageExtId *string `pulumi:"imageExtId"`
 }
 
@@ -3900,6 +4138,7 @@ type VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceInput interface {
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceArgs struct {
+	// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 	ImageExtId pulumi.StringPtrInput `pulumi:"imageExtId"`
 }
 
@@ -3954,6 +4193,7 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceOutput) ToVmCl
 	return o
 }
 
+// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceOutput) ImageExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference) *string { return v.ImageExtId }).(pulumi.StringPtrOutput)
 }
@@ -3979,9 +4219,12 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceImageReferenceArrayOutput) I
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference struct {
+	// - (Optional) Address of disk.
 	DiskAddresses []VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress `pulumi:"diskAddresses"`
-	DiskExtId     *string                                                                  `pulumi:"diskExtId"`
-	VmReferences  []VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference `pulumi:"vmReferences"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId *string `pulumi:"diskExtId"`
+	// - (Optional) Reference to a VM.
+	VmReferences []VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference `pulumi:"vmReferences"`
 }
 
 // VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceInput is an input type that accepts VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceArgs and VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceOutput values.
@@ -3996,9 +4239,12 @@ type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceInput interface 
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceArgs struct {
+	// - (Optional) Address of disk.
 	DiskAddresses VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput `pulumi:"diskAddresses"`
-	DiskExtId     pulumi.StringPtrInput                                                            `pulumi:"diskExtId"`
-	VmReferences  VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput `pulumi:"vmReferences"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId pulumi.StringPtrInput `pulumi:"diskExtId"`
+	// - (Optional) Reference to a VM.
+	VmReferences VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput `pulumi:"vmReferences"`
 }
 
 func (VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceArgs) ElementType() reflect.Type {
@@ -4052,16 +4298,19 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceOutput) ToVmC
 	return o
 }
 
+// - (Optional) Address of disk.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceOutput) DiskAddresses() VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference) []VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
 		return v.DiskAddresses
 	}).(VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput)
 }
 
+// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceOutput) DiskExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Reference to a VM.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceOutput) VmReferences() VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference) []VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
 		return v.VmReferences
@@ -4089,8 +4338,16 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) 
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
 }
 
 // VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput is an input type that accepts VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs and VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput values.
@@ -4105,8 +4362,16 @@ type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ElementType() reflect.Type {
@@ -4160,12 +4425,20 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOu
 	return o
 }
 
+//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+//     Valid values are:
+//   - `SCSI` The type of disk bus is SCSI.
+//   - `SPAPR` The type of disk bus is SPAPR.
+//   - `PCI` The type of disk bus is PCI.
+//   - `PCI` The type of disk bus is PCI.
+//   - `SATA` The type of disk bus is SATA.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) BusType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress) *string {
 		return v.BusType
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
@@ -4191,6 +4464,7 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressAr
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference struct {
+	// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -4206,6 +4480,7 @@ type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput
 }
 
 type VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs struct {
+	// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -4260,6 +4535,7 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOu
 	return o
 }
 
+// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -4285,6 +4561,7 @@ func (o VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReferenceAr
 }
 
 type VmCloneV2CdRomBackingInfoStorageConfig struct {
+	// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
 }
 
@@ -4300,6 +4577,7 @@ type VmCloneV2CdRomBackingInfoStorageConfigInput interface {
 }
 
 type VmCloneV2CdRomBackingInfoStorageConfigArgs struct {
+	// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
 }
 
@@ -4354,6 +4632,7 @@ func (o VmCloneV2CdRomBackingInfoStorageConfigOutput) ToVmCloneV2CdRomBackingInf
 	return o
 }
 
+// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o VmCloneV2CdRomBackingInfoStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoStorageConfig) *bool { return v.IsFlashModeEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -4379,6 +4658,7 @@ func (o VmCloneV2CdRomBackingInfoStorageConfigArrayOutput) Index(i pulumi.IntInp
 }
 
 type VmCloneV2CdRomBackingInfoStorageContainer struct {
+	// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -4394,6 +4674,7 @@ type VmCloneV2CdRomBackingInfoStorageContainerInput interface {
 }
 
 type VmCloneV2CdRomBackingInfoStorageContainerArgs struct {
+	// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -4448,6 +4729,7 @@ func (o VmCloneV2CdRomBackingInfoStorageContainerOutput) ToVmCloneV2CdRomBacking
 	return o
 }
 
+// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 func (o VmCloneV2CdRomBackingInfoStorageContainerOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomBackingInfoStorageContainer) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -4473,8 +4755,16 @@ func (o VmCloneV2CdRomBackingInfoStorageContainerArrayOutput) Index(i pulumi.Int
 }
 
 type VmCloneV2CdRomDiskAddress struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
 }
 
 // VmCloneV2CdRomDiskAddressInput is an input type that accepts VmCloneV2CdRomDiskAddressArgs and VmCloneV2CdRomDiskAddressOutput values.
@@ -4489,8 +4779,16 @@ type VmCloneV2CdRomDiskAddressInput interface {
 }
 
 type VmCloneV2CdRomDiskAddressArgs struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (VmCloneV2CdRomDiskAddressArgs) ElementType() reflect.Type {
@@ -4544,10 +4842,18 @@ func (o VmCloneV2CdRomDiskAddressOutput) ToVmCloneV2CdRomDiskAddressOutputWithCo
 	return o
 }
 
+//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+//     Valid values are:
+//   - `SCSI` The type of disk bus is SCSI.
+//   - `SPAPR` The type of disk bus is SPAPR.
+//   - `PCI` The type of disk bus is PCI.
+//   - `PCI` The type of disk bus is PCI.
+//   - `SATA` The type of disk bus is SATA.
 func (o VmCloneV2CdRomDiskAddressOutput) BusType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o VmCloneV2CdRomDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2CdRomDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
@@ -4667,6 +4973,7 @@ func (o VmCloneV2ClusterArrayOutput) Index(i pulumi.IntInput) VmCloneV2ClusterOu
 }
 
 type VmCloneV2Disk struct {
+	// - (Optional) Defines a NIC emulated by the hypervisor
 	BackingInfos  []VmCloneV2DiskBackingInfo `pulumi:"backingInfos"`
 	DiskAddresses []VmCloneV2DiskDiskAddress `pulumi:"diskAddresses"`
 	ExtId         *string                    `pulumi:"extId"`
@@ -4684,6 +4991,7 @@ type VmCloneV2DiskInput interface {
 }
 
 type VmCloneV2DiskArgs struct {
+	// - (Optional) Defines a NIC emulated by the hypervisor
 	BackingInfos  VmCloneV2DiskBackingInfoArrayInput `pulumi:"backingInfos"`
 	DiskAddresses VmCloneV2DiskDiskAddressArrayInput `pulumi:"diskAddresses"`
 	ExtId         pulumi.StringPtrInput              `pulumi:"extId"`
@@ -4740,6 +5048,7 @@ func (o VmCloneV2DiskOutput) ToVmCloneV2DiskOutputWithContext(ctx context.Contex
 	return o
 }
 
+// - (Optional) Defines a NIC emulated by the hypervisor
 func (o VmCloneV2DiskOutput) BackingInfos() VmCloneV2DiskBackingInfoArrayOutput {
 	return o.ApplyT(func(v VmCloneV2Disk) []VmCloneV2DiskBackingInfo { return v.BackingInfos }).(VmCloneV2DiskBackingInfoArrayOutput)
 }
@@ -4969,12 +5278,17 @@ func (o VmCloneV2DiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) Index(i pul
 }
 
 type VmCloneV2DiskBackingInfoVmDisk struct {
-	DataSources           []VmCloneV2DiskBackingInfoVmDiskDataSource       `pulumi:"dataSources"`
-	DiskExtId             *string                                          `pulumi:"diskExtId"`
-	DiskSizeBytes         *int                                             `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress *bool                                            `pulumi:"isMigrationInProgress"`
-	StorageConfigs        []VmCloneV2DiskBackingInfoVmDiskStorageConfig    `pulumi:"storageConfigs"`
-	StorageContainers     []VmCloneV2DiskBackingInfoVmDiskStorageContainer `pulumi:"storageContainers"`
+	// - (Optional) A reference to a disk or image that contains the contents of a disk.
+	DataSources []VmCloneV2DiskBackingInfoVmDiskDataSource `pulumi:"dataSources"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId *string `pulumi:"diskExtId"`
+	// - (Optional) Size of the disk in Bytes.
+	DiskSizeBytes         *int  `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress *bool `pulumi:"isMigrationInProgress"`
+	// - (Optional) Storage configuration for VM disks.
+	StorageConfigs []VmCloneV2DiskBackingInfoVmDiskStorageConfig `pulumi:"storageConfigs"`
+	// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers []VmCloneV2DiskBackingInfoVmDiskStorageContainer `pulumi:"storageContainers"`
 }
 
 // VmCloneV2DiskBackingInfoVmDiskInput is an input type that accepts VmCloneV2DiskBackingInfoVmDiskArgs and VmCloneV2DiskBackingInfoVmDiskOutput values.
@@ -4989,12 +5303,17 @@ type VmCloneV2DiskBackingInfoVmDiskInput interface {
 }
 
 type VmCloneV2DiskBackingInfoVmDiskArgs struct {
-	DataSources           VmCloneV2DiskBackingInfoVmDiskDataSourceArrayInput       `pulumi:"dataSources"`
-	DiskExtId             pulumi.StringPtrInput                                    `pulumi:"diskExtId"`
-	DiskSizeBytes         pulumi.IntPtrInput                                       `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress pulumi.BoolPtrInput                                      `pulumi:"isMigrationInProgress"`
-	StorageConfigs        VmCloneV2DiskBackingInfoVmDiskStorageConfigArrayInput    `pulumi:"storageConfigs"`
-	StorageContainers     VmCloneV2DiskBackingInfoVmDiskStorageContainerArrayInput `pulumi:"storageContainers"`
+	// - (Optional) A reference to a disk or image that contains the contents of a disk.
+	DataSources VmCloneV2DiskBackingInfoVmDiskDataSourceArrayInput `pulumi:"dataSources"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId pulumi.StringPtrInput `pulumi:"diskExtId"`
+	// - (Optional) Size of the disk in Bytes.
+	DiskSizeBytes         pulumi.IntPtrInput  `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress pulumi.BoolPtrInput `pulumi:"isMigrationInProgress"`
+	// - (Optional) Storage configuration for VM disks.
+	StorageConfigs VmCloneV2DiskBackingInfoVmDiskStorageConfigArrayInput `pulumi:"storageConfigs"`
+	// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers VmCloneV2DiskBackingInfoVmDiskStorageContainerArrayInput `pulumi:"storageContainers"`
 }
 
 func (VmCloneV2DiskBackingInfoVmDiskArgs) ElementType() reflect.Type {
@@ -5048,16 +5367,19 @@ func (o VmCloneV2DiskBackingInfoVmDiskOutput) ToVmCloneV2DiskBackingInfoVmDiskOu
 	return o
 }
 
+// - (Optional) A reference to a disk or image that contains the contents of a disk.
 func (o VmCloneV2DiskBackingInfoVmDiskOutput) DataSources() VmCloneV2DiskBackingInfoVmDiskDataSourceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDisk) []VmCloneV2DiskBackingInfoVmDiskDataSource {
 		return v.DataSources
 	}).(VmCloneV2DiskBackingInfoVmDiskDataSourceArrayOutput)
 }
 
+// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
 func (o VmCloneV2DiskBackingInfoVmDiskOutput) DiskExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDisk) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Size of the disk in Bytes.
 func (o VmCloneV2DiskBackingInfoVmDiskOutput) DiskSizeBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDisk) *int { return v.DiskSizeBytes }).(pulumi.IntPtrOutput)
 }
@@ -5066,12 +5388,14 @@ func (o VmCloneV2DiskBackingInfoVmDiskOutput) IsMigrationInProgress() pulumi.Boo
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDisk) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Storage configuration for VM disks.
 func (o VmCloneV2DiskBackingInfoVmDiskOutput) StorageConfigs() VmCloneV2DiskBackingInfoVmDiskStorageConfigArrayOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDisk) []VmCloneV2DiskBackingInfoVmDiskStorageConfig {
 		return v.StorageConfigs
 	}).(VmCloneV2DiskBackingInfoVmDiskStorageConfigArrayOutput)
 }
 
+// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
 func (o VmCloneV2DiskBackingInfoVmDiskOutput) StorageContainers() VmCloneV2DiskBackingInfoVmDiskStorageContainerArrayOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDisk) []VmCloneV2DiskBackingInfoVmDiskStorageContainer {
 		return v.StorageContainers
@@ -5099,6 +5423,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskArrayOutput) Index(i pulumi.IntInput) VmCl
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSource struct {
+	// - (Optional) Data Source Reference settings.
 	References []VmCloneV2DiskBackingInfoVmDiskDataSourceReference `pulumi:"references"`
 }
 
@@ -5114,6 +5439,7 @@ type VmCloneV2DiskBackingInfoVmDiskDataSourceInput interface {
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceArgs struct {
+	// - (Optional) Data Source Reference settings.
 	References VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceArrayInput `pulumi:"references"`
 }
 
@@ -5168,6 +5494,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceOutput) ToVmCloneV2DiskBackingIn
 	return o
 }
 
+// - (Optional) Data Source Reference settings.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceOutput) References() VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSource) []VmCloneV2DiskBackingInfoVmDiskDataSourceReference {
 		return v.References
@@ -5195,7 +5522,9 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceArrayOutput) Index(i pulumi.IntI
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReference struct {
-	ImageReferences  []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference  `pulumi:"imageReferences"`
+	// - (Optional) Data Source Image Reference settings.
+	ImageReferences []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference `pulumi:"imageReferences"`
+	// - (Optional) Data Source VM Disk Reference settings.
 	VmDiskReferences []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
 }
 
@@ -5211,7 +5540,9 @@ type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceInput interface {
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceArgs struct {
-	ImageReferences  VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayInput  `pulumi:"imageReferences"`
+	// - (Optional) Data Source Image Reference settings.
+	ImageReferences VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayInput `pulumi:"imageReferences"`
+	// - (Optional) Data Source VM Disk Reference settings.
 	VmDiskReferences VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
 }
 
@@ -5266,12 +5597,14 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceOutput) ToVmCloneV2Disk
 	return o
 }
 
+// - (Optional) Data Source Image Reference settings.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceOutput) ImageReferences() VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReference) []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference {
 		return v.ImageReferences
 	}).(VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayOutput)
 }
 
+// - (Optional) Data Source VM Disk Reference settings.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceOutput) VmDiskReferences() VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReference) []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
 		return v.VmDiskReferences
@@ -5299,6 +5632,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceArrayOutput) Index(i pu
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference struct {
+	// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 	ImageExtId *string `pulumi:"imageExtId"`
 }
 
@@ -5314,6 +5648,7 @@ type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceInput interf
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArgs struct {
+	// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 	ImageExtId pulumi.StringPtrInput `pulumi:"imageExtId"`
 }
 
@@ -5368,6 +5703,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceOutput) T
 	return o
 }
 
+// - (Optional) The globally unique identifier of an image. It should be of type UUID.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceOutput) ImageExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference) *string { return v.ImageExtId }).(pulumi.StringPtrOutput)
 }
@@ -5393,9 +5729,12 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayOutp
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference struct {
+	// - (Optional) Address of disk.
 	DiskAddresses []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress `pulumi:"diskAddresses"`
-	DiskExtId     *string                                                                       `pulumi:"diskExtId"`
-	VmReferences  []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference `pulumi:"vmReferences"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId *string `pulumi:"diskExtId"`
+	// - (Optional) Reference to a VM.
+	VmReferences []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference `pulumi:"vmReferences"`
 }
 
 // VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceInput is an input type that accepts VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceArgs and VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceOutput values.
@@ -5410,9 +5749,12 @@ type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceInput inter
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceArgs struct {
+	// - (Optional) Address of disk.
 	DiskAddresses VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArrayInput `pulumi:"diskAddresses"`
-	DiskExtId     pulumi.StringPtrInput                                                                 `pulumi:"diskExtId"`
-	VmReferences  VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReferenceArrayInput `pulumi:"vmReferences"`
+	// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId pulumi.StringPtrInput `pulumi:"diskExtId"`
+	// - (Optional) Reference to a VM.
+	VmReferences VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReferenceArrayInput `pulumi:"vmReferences"`
 }
 
 func (VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceArgs) ElementType() reflect.Type {
@@ -5466,16 +5808,19 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceOutput) 
 	return o
 }
 
+// - (Optional) Address of disk.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceOutput) DiskAddresses() VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference) []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
 		return v.DiskAddresses
 	}).(VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput)
 }
 
+// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceOutput) DiskExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Reference to a VM.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceOutput) VmReferences() VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference) []VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
 		return v.VmReferences
@@ -5503,8 +5848,16 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceArrayOut
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
 }
 
 // VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressInput is an input type that accepts VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArgs and VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressOutput values.
@@ -5519,8 +5872,16 @@ type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArgs struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArgs) ElementType() reflect.Type {
@@ -5574,12 +5935,20 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddr
 	return o
 }
 
+//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+//     Valid values are:
+//   - `SCSI` The type of disk bus is SCSI.
+//   - `SPAPR` The type of disk bus is SPAPR.
+//   - `PCI` The type of disk bus is PCI.
+//   - `PCI` The type of disk bus is PCI.
+//   - `SATA` The type of disk bus is SATA.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressOutput) BusType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress) *string {
 		return v.BusType
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress) *int {
 		return v.Index
@@ -5607,6 +5976,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddr
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference struct {
+	// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -5622,6 +5992,7 @@ type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference
 }
 
 type VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReferenceArgs struct {
+	// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -5676,6 +6047,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmRefere
 	return o
 }
 
+// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
 func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReferenceOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference) *string {
 		return v.ExtId
@@ -5703,6 +6075,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmRefere
 }
 
 type VmCloneV2DiskBackingInfoVmDiskStorageConfig struct {
+	// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
 }
 
@@ -5718,6 +6091,7 @@ type VmCloneV2DiskBackingInfoVmDiskStorageConfigInput interface {
 }
 
 type VmCloneV2DiskBackingInfoVmDiskStorageConfigArgs struct {
+	// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
 }
 
@@ -5772,6 +6146,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskStorageConfigOutput) ToVmCloneV2DiskBackin
 	return o
 }
 
+// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o VmCloneV2DiskBackingInfoVmDiskStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskStorageConfig) *bool { return v.IsFlashModeEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -5797,6 +6172,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskStorageConfigArrayOutput) Index(i pulumi.I
 }
 
 type VmCloneV2DiskBackingInfoVmDiskStorageContainer struct {
+	// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -5812,6 +6188,7 @@ type VmCloneV2DiskBackingInfoVmDiskStorageContainerInput interface {
 }
 
 type VmCloneV2DiskBackingInfoVmDiskStorageContainerArgs struct {
+	// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -5866,6 +6243,7 @@ func (o VmCloneV2DiskBackingInfoVmDiskStorageContainerOutput) ToVmCloneV2DiskBac
 	return o
 }
 
+// - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
 func (o VmCloneV2DiskBackingInfoVmDiskStorageContainerOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskBackingInfoVmDiskStorageContainer) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -5891,8 +6269,16 @@ func (o VmCloneV2DiskBackingInfoVmDiskStorageContainerArrayOutput) Index(i pulum
 }
 
 type VmCloneV2DiskDiskAddress struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
 }
 
 // VmCloneV2DiskDiskAddressInput is an input type that accepts VmCloneV2DiskDiskAddressArgs and VmCloneV2DiskDiskAddressOutput values.
@@ -5907,8 +6293,16 @@ type VmCloneV2DiskDiskAddressInput interface {
 }
 
 type VmCloneV2DiskDiskAddressArgs struct {
+	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	//   Valid values are:
+	// - `SCSI` The type of disk bus is SCSI.
+	// - `SPAPR` The type of disk bus is SPAPR.
+	// - `PCI` The type of disk bus is PCI.
+	// - `PCI` The type of disk bus is PCI.
+	// - `SATA` The type of disk bus is SATA.
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (VmCloneV2DiskDiskAddressArgs) ElementType() reflect.Type {
@@ -5962,10 +6356,18 @@ func (o VmCloneV2DiskDiskAddressOutput) ToVmCloneV2DiskDiskAddressOutputWithCont
 	return o
 }
 
+//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+//     Valid values are:
+//   - `SCSI` The type of disk bus is SCSI.
+//   - `SPAPR` The type of disk bus is SPAPR.
+//   - `PCI` The type of disk bus is PCI.
+//   - `PCI` The type of disk bus is PCI.
+//   - `SATA` The type of disk bus is SATA.
 func (o VmCloneV2DiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o VmCloneV2DiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2DiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
@@ -5991,12 +6393,13 @@ func (o VmCloneV2DiskDiskAddressArrayOutput) Index(i pulumi.IntInput) VmCloneV2D
 }
 
 type VmCloneV2Gpus struct {
-	DeviceId               *int                      `pulumi:"deviceId"`
-	ExtId                  *string                   `pulumi:"extId"`
-	Fraction               *int                      `pulumi:"fraction"`
-	FrameBufferSizeBytes   *int                      `pulumi:"frameBufferSizeBytes"`
-	GuestDriverVersion     *string                   `pulumi:"guestDriverVersion"`
-	Mode                   *string                   `pulumi:"mode"`
+	DeviceId             *int    `pulumi:"deviceId"`
+	ExtId                *string `pulumi:"extId"`
+	Fraction             *int    `pulumi:"fraction"`
+	FrameBufferSizeBytes *int    `pulumi:"frameBufferSizeBytes"`
+	GuestDriverVersion   *string `pulumi:"guestDriverVersion"`
+	Mode                 *string `pulumi:"mode"`
+	// - (Optional) The name for the vm.
 	Name                   *string                   `pulumi:"name"`
 	NumVirtualDisplayHeads *int                      `pulumi:"numVirtualDisplayHeads"`
 	PciAddresses           []VmCloneV2GpusPciAddress `pulumi:"pciAddresses"`
@@ -6015,12 +6418,13 @@ type VmCloneV2GpusInput interface {
 }
 
 type VmCloneV2GpusArgs struct {
-	DeviceId               pulumi.IntPtrInput                `pulumi:"deviceId"`
-	ExtId                  pulumi.StringPtrInput             `pulumi:"extId"`
-	Fraction               pulumi.IntPtrInput                `pulumi:"fraction"`
-	FrameBufferSizeBytes   pulumi.IntPtrInput                `pulumi:"frameBufferSizeBytes"`
-	GuestDriverVersion     pulumi.StringPtrInput             `pulumi:"guestDriverVersion"`
-	Mode                   pulumi.StringPtrInput             `pulumi:"mode"`
+	DeviceId             pulumi.IntPtrInput    `pulumi:"deviceId"`
+	ExtId                pulumi.StringPtrInput `pulumi:"extId"`
+	Fraction             pulumi.IntPtrInput    `pulumi:"fraction"`
+	FrameBufferSizeBytes pulumi.IntPtrInput    `pulumi:"frameBufferSizeBytes"`
+	GuestDriverVersion   pulumi.StringPtrInput `pulumi:"guestDriverVersion"`
+	Mode                 pulumi.StringPtrInput `pulumi:"mode"`
+	// - (Optional) The name for the vm.
 	Name                   pulumi.StringPtrInput             `pulumi:"name"`
 	NumVirtualDisplayHeads pulumi.IntPtrInput                `pulumi:"numVirtualDisplayHeads"`
 	PciAddresses           VmCloneV2GpusPciAddressArrayInput `pulumi:"pciAddresses"`
@@ -6102,6 +6506,7 @@ func (o VmCloneV2GpusOutput) Mode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2Gpus) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) The name for the vm.
 func (o VmCloneV2GpusOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2Gpus) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -6251,6 +6656,7 @@ func (o VmCloneV2GpusPciAddressArrayOutput) Index(i pulumi.IntInput) VmCloneV2Gp
 }
 
 type VmCloneV2GuestCustomization struct {
+	// - (Optional) The Nutanix Guest Tools customization settings.
 	Configs []VmCloneV2GuestCustomizationConfig `pulumi:"configs"`
 }
 
@@ -6266,6 +6672,7 @@ type VmCloneV2GuestCustomizationInput interface {
 }
 
 type VmCloneV2GuestCustomizationArgs struct {
+	// - (Optional) The Nutanix Guest Tools customization settings.
 	Configs VmCloneV2GuestCustomizationConfigArrayInput `pulumi:"configs"`
 }
 
@@ -6320,6 +6727,7 @@ func (o VmCloneV2GuestCustomizationOutput) ToVmCloneV2GuestCustomizationOutputWi
 	return o
 }
 
+// - (Optional) The Nutanix Guest Tools customization settings.
 func (o VmCloneV2GuestCustomizationOutput) Configs() VmCloneV2GuestCustomizationConfigArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomization) []VmCloneV2GuestCustomizationConfig { return v.Configs }).(VmCloneV2GuestCustomizationConfigArrayOutput)
 }
@@ -6345,8 +6753,10 @@ func (o VmCloneV2GuestCustomizationArrayOutput) Index(i pulumi.IntInput) VmClone
 }
 
 type VmCloneV2GuestCustomizationConfig struct {
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits []VmCloneV2GuestCustomizationConfigCloudInit `pulumi:"cloudInits"`
-	Syspreps   []VmCloneV2GuestCustomizationConfigSysprep   `pulumi:"syspreps"`
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	Syspreps []VmCloneV2GuestCustomizationConfigSysprep `pulumi:"syspreps"`
 }
 
 // VmCloneV2GuestCustomizationConfigInput is an input type that accepts VmCloneV2GuestCustomizationConfigArgs and VmCloneV2GuestCustomizationConfigOutput values.
@@ -6361,8 +6771,10 @@ type VmCloneV2GuestCustomizationConfigInput interface {
 }
 
 type VmCloneV2GuestCustomizationConfigArgs struct {
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits VmCloneV2GuestCustomizationConfigCloudInitArrayInput `pulumi:"cloudInits"`
-	Syspreps   VmCloneV2GuestCustomizationConfigSysprepArrayInput   `pulumi:"syspreps"`
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	Syspreps VmCloneV2GuestCustomizationConfigSysprepArrayInput `pulumi:"syspreps"`
 }
 
 func (VmCloneV2GuestCustomizationConfigArgs) ElementType() reflect.Type {
@@ -6416,12 +6828,14 @@ func (o VmCloneV2GuestCustomizationConfigOutput) ToVmCloneV2GuestCustomizationCo
 	return o
 }
 
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmCloneV2GuestCustomizationConfigOutput) CloudInits() VmCloneV2GuestCustomizationConfigCloudInitArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfig) []VmCloneV2GuestCustomizationConfigCloudInit {
 		return v.CloudInits
 	}).(VmCloneV2GuestCustomizationConfigCloudInitArrayOutput)
 }
 
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmCloneV2GuestCustomizationConfigOutput) Syspreps() VmCloneV2GuestCustomizationConfigSysprepArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfig) []VmCloneV2GuestCustomizationConfigSysprep {
 		return v.Syspreps
@@ -6449,9 +6863,15 @@ func (o VmCloneV2GuestCustomizationConfigArrayOutput) Index(i pulumi.IntInput) V
 }
 
 type VmCloneV2GuestCustomizationConfigCloudInit struct {
+	// - (Optional) The script to use for cloud-init.
 	CloudInitScripts []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
-	DatasourceType   *string                                                     `pulumi:"datasourceType"`
-	Metadata         *string                                                     `pulumi:"metadata"`
+	// - (Optional) Type of datasource.
+	//   Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+	//   Valid values are:
+	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+	DatasourceType *string `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	Metadata *string `pulumi:"metadata"`
 }
 
 // VmCloneV2GuestCustomizationConfigCloudInitInput is an input type that accepts VmCloneV2GuestCustomizationConfigCloudInitArgs and VmCloneV2GuestCustomizationConfigCloudInitOutput values.
@@ -6466,9 +6886,15 @@ type VmCloneV2GuestCustomizationConfigCloudInitInput interface {
 }
 
 type VmCloneV2GuestCustomizationConfigCloudInitArgs struct {
+	// - (Optional) The script to use for cloud-init.
 	CloudInitScripts VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
-	DatasourceType   pulumi.StringPtrInput                                               `pulumi:"datasourceType"`
-	Metadata         pulumi.StringPtrInput                                               `pulumi:"metadata"`
+	// - (Optional) Type of datasource.
+	//   Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+	//   Valid values are:
+	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
 func (VmCloneV2GuestCustomizationConfigCloudInitArgs) ElementType() reflect.Type {
@@ -6522,16 +6948,22 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitOutput) ToVmCloneV2GuestCustom
 	return o
 }
 
+// - (Optional) The script to use for cloud-init.
 func (o VmCloneV2GuestCustomizationConfigCloudInitOutput) CloudInitScripts() VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInit) []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript {
 		return v.CloudInitScripts
 	}).(VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArrayOutput)
 }
 
+//   - (Optional) Type of datasource.
+//     Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+//     Valid values are:
+//   - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
 func (o VmCloneV2GuestCustomizationConfigCloudInitOutput) DatasourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInit) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
+// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o VmCloneV2GuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInit) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -6558,7 +6990,8 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitArrayOutput) Index(i pulumi.In
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript struct {
 	CustomKeys []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey `pulumi:"customKeys"`
-	UserDatas  []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData  `pulumi:"userDatas"`
+	// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	UserDatas []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData `pulumi:"userDatas"`
 }
 
 // VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptInput is an input type that accepts VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs and VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptOutput values.
@@ -6574,7 +7007,8 @@ type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptInput interface {
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs struct {
 	CustomKeys VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyArrayInput `pulumi:"customKeys"`
-	UserDatas  VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArrayInput  `pulumi:"userDatas"`
+	// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	UserDatas VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArrayInput `pulumi:"userDatas"`
 }
 
 func (VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs) ElementType() reflect.Type {
@@ -6634,6 +7068,7 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptOutput) CustomK
 	}).(VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyArrayOutput)
 }
 
+// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptOutput) UserDatas() VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript) []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData {
 		return v.UserDatas
@@ -6661,6 +7096,7 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArrayOutput) In
 }
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey struct {
+	// - (Optional) The list of the individual KeyValuePair elements.
 	KeyValuePairs []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair `pulumi:"keyValuePairs"`
 }
 
@@ -6676,6 +7112,7 @@ type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyInput int
 }
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyArgs struct {
+	// - (Optional) The list of the individual KeyValuePair elements.
 	KeyValuePairs VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArrayInput `pulumi:"keyValuePairs"`
 }
 
@@ -6730,6 +7167,7 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyOutput
 	return o
 }
 
+// - (Optional) The list of the individual KeyValuePair elements.
 func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyOutput) KeyValuePairs() VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey) []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
 		return v.KeyValuePairs
@@ -6757,7 +7195,11 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyArrayO
 }
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair struct {
-	Name  *string `pulumi:"name"`
+	// - (Optional) The key of this key-value pair
+	Name *string `pulumi:"name"`
+	// - (Optional) The value associated with the key for this key-value pair.
+	//
+	// See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
 	Value *string `pulumi:"value"`
 }
 
@@ -6773,7 +7215,11 @@ type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValueP
 }
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArgs struct {
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The key of this key-value pair
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The value associated with the key for this key-value pair.
+	//
+	// See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -6828,12 +7274,16 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyVal
 	return o
 }
 
+// - (Optional) The key of this key-value pair
 func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePairOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair) *string {
 		return v.Name
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) The value associated with the key for this key-value pair.
+//
+// See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
 func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePairOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair) *string {
 		return v.Value
@@ -6861,6 +7311,7 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyVal
 }
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData struct {
+	// - (Optional) The value for the cloud-init user_data.
 	Value *string `pulumi:"value"`
 }
 
@@ -6876,6 +7327,7 @@ type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataInput inte
 }
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArgs struct {
+	// - (Optional) The value for the cloud-init user_data.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -6930,6 +7382,7 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataOutput)
 	return o
 }
 
+// - (Optional) The value for the cloud-init user_data.
 func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -6955,6 +7408,10 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArrayOu
 }
 
 type VmCloneV2GuestCustomizationConfigSysprep struct {
+	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+	//   Valid values are:
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
 	InstallType    *string                                                 `pulumi:"installType"`
 	SysprepScripts []VmCloneV2GuestCustomizationConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
@@ -6971,6 +7428,10 @@ type VmCloneV2GuestCustomizationConfigSysprepInput interface {
 }
 
 type VmCloneV2GuestCustomizationConfigSysprepArgs struct {
+	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+	//   Valid values are:
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
 	InstallType    pulumi.StringPtrInput                                           `pulumi:"installType"`
 	SysprepScripts VmCloneV2GuestCustomizationConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
@@ -7026,6 +7487,10 @@ func (o VmCloneV2GuestCustomizationConfigSysprepOutput) ToVmCloneV2GuestCustomiz
 	return o
 }
 
+//   - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+//     Valid values are:
+//   - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+//   - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
 func (o VmCloneV2GuestCustomizationConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigSysprep) *string { return v.InstallType }).(pulumi.StringPtrOutput)
 }
@@ -7057,8 +7522,10 @@ func (o VmCloneV2GuestCustomizationConfigSysprepArrayOutput) Index(i pulumi.IntI
 }
 
 type VmCloneV2GuestCustomizationConfigSysprepSysprepScript struct {
+	// - (Optional) Generic key value pair used for custom attributes in cloud init.
 	CustomKeyValues []VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue `pulumi:"customKeyValues"`
-	UnattendXmls    []VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml    `pulumi:"unattendXmls"`
+	// - (Optional) Generic key value pair used for custom attributes.
+	UnattendXmls []VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml `pulumi:"unattendXmls"`
 }
 
 // VmCloneV2GuestCustomizationConfigSysprepSysprepScriptInput is an input type that accepts VmCloneV2GuestCustomizationConfigSysprepSysprepScriptArgs and VmCloneV2GuestCustomizationConfigSysprepSysprepScriptOutput values.
@@ -7073,8 +7540,10 @@ type VmCloneV2GuestCustomizationConfigSysprepSysprepScriptInput interface {
 }
 
 type VmCloneV2GuestCustomizationConfigSysprepSysprepScriptArgs struct {
+	// - (Optional) Generic key value pair used for custom attributes in cloud init.
 	CustomKeyValues VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueArrayInput `pulumi:"customKeyValues"`
-	UnattendXmls    VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArrayInput    `pulumi:"unattendXmls"`
+	// - (Optional) Generic key value pair used for custom attributes.
+	UnattendXmls VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArrayInput `pulumi:"unattendXmls"`
 }
 
 func (VmCloneV2GuestCustomizationConfigSysprepSysprepScriptArgs) ElementType() reflect.Type {
@@ -7128,12 +7597,14 @@ func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptOutput) ToVmCloneV2
 	return o
 }
 
+// - (Optional) Generic key value pair used for custom attributes in cloud init.
 func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptOutput) CustomKeyValues() VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigSysprepSysprepScript) []VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
 		return v.CustomKeyValues
 	}).(VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueArrayOutput)
 }
 
+// - (Optional) Generic key value pair used for custom attributes.
 func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptOutput) UnattendXmls() VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigSysprepSysprepScript) []VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml {
 		return v.UnattendXmls
@@ -7161,6 +7632,7 @@ func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptArrayOutput) Index(
 }
 
 type VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue struct {
+	// - (Optional) The list of the individual KeyValuePair elements.
 	KeyValuePairs []VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair `pulumi:"keyValuePairs"`
 }
 
@@ -7176,6 +7648,7 @@ type VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueInput in
 }
 
 type VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueArgs struct {
+	// - (Optional) The list of the individual KeyValuePair elements.
 	KeyValuePairs VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArrayInput `pulumi:"keyValuePairs"`
 }
 
@@ -7230,6 +7703,7 @@ func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueOutpu
 	return o
 }
 
+// - (Optional) The list of the individual KeyValuePair elements.
 func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueOutput) KeyValuePairs() VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue) []VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
 		return v.KeyValuePairs
@@ -7257,7 +7731,11 @@ func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueArray
 }
 
 type VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair struct {
-	Name  *string `pulumi:"name"`
+	// - (Optional) The key of this key-value pair
+	Name *string `pulumi:"name"`
+	// - (Optional) The value associated with the key for this key-value pair.
+	//
+	// See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
 	Value *string `pulumi:"value"`
 }
 
@@ -7273,7 +7751,11 @@ type VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValue
 }
 
 type VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArgs struct {
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The key of this key-value pair
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The value associated with the key for this key-value pair.
+	//
+	// See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -7328,12 +7810,16 @@ func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyVa
 	return o
 }
 
+// - (Optional) The key of this key-value pair
 func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair) *string {
 		return v.Name
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) The value associated with the key for this key-value pair.
+//
+// See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
 func (o VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair) *string {
 		return v.Value
@@ -7797,8 +8283,11 @@ func (o VmCloneV2LinkArrayOutput) Index(i pulumi.IntInput) VmCloneV2LinkOutput {
 }
 
 type VmCloneV2Nic struct {
+	// - (Optional) Defines a NIC emulated by the hypervisor
 	BackingInfos []VmCloneV2NicBackingInfo `pulumi:"backingInfos"`
-	ExtId        *string                   `pulumi:"extId"`
+	// - (Optional) A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId *string `pulumi:"extId"`
+	// - (Optional) Network information for a NIC.
 	NetworkInfos []VmCloneV2NicNetworkInfo `pulumi:"networkInfos"`
 }
 
@@ -7814,8 +8303,11 @@ type VmCloneV2NicInput interface {
 }
 
 type VmCloneV2NicArgs struct {
+	// - (Optional) Defines a NIC emulated by the hypervisor
 	BackingInfos VmCloneV2NicBackingInfoArrayInput `pulumi:"backingInfos"`
-	ExtId        pulumi.StringPtrInput             `pulumi:"extId"`
+	// - (Optional) A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// - (Optional) Network information for a NIC.
 	NetworkInfos VmCloneV2NicNetworkInfoArrayInput `pulumi:"networkInfos"`
 }
 
@@ -7870,14 +8362,17 @@ func (o VmCloneV2NicOutput) ToVmCloneV2NicOutputWithContext(ctx context.Context)
 	return o
 }
 
+// - (Optional) Defines a NIC emulated by the hypervisor
 func (o VmCloneV2NicOutput) BackingInfos() VmCloneV2NicBackingInfoArrayOutput {
 	return o.ApplyT(func(v VmCloneV2Nic) []VmCloneV2NicBackingInfo { return v.BackingInfos }).(VmCloneV2NicBackingInfoArrayOutput)
 }
 
+// - (Optional) A globally unique identifier of an instance that is suitable for external consumption.
 func (o VmCloneV2NicOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2Nic) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Network information for a NIC.
 func (o VmCloneV2NicOutput) NetworkInfos() VmCloneV2NicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v VmCloneV2Nic) []VmCloneV2NicNetworkInfo { return v.NetworkInfos }).(VmCloneV2NicNetworkInfoArrayOutput)
 }
@@ -7903,10 +8398,17 @@ func (o VmCloneV2NicArrayOutput) Index(i pulumi.IntInput) VmCloneV2NicOutput {
 }
 
 type VmCloneV2NicBackingInfo struct {
-	IsConnected *bool   `pulumi:"isConnected"`
-	MacAddress  *string `pulumi:"macAddress"`
-	Model       *string `pulumi:"model"`
-	NumQueues   *int    `pulumi:"numQueues"`
+	// - (Optional) Indicates whether the NIC is connected or not. Default is True.
+	IsConnected *bool `pulumi:"isConnected"`
+	// - (Optional) MAC address of the emulated NIC.
+	MacAddress *string `pulumi:"macAddress"`
+	// - (Optional) Options for the NIC emulation.
+	//   Valid values are:
+	// - `VIRTIO` The NIC emulation model is Virtio.
+	// - `E1000` The NIC emulation model is E1000.
+	Model *string `pulumi:"model"`
+	// - (Optional) The number of Tx/Rx queue pairs for this NIC.
+	NumQueues *int `pulumi:"numQueues"`
 }
 
 // VmCloneV2NicBackingInfoInput is an input type that accepts VmCloneV2NicBackingInfoArgs and VmCloneV2NicBackingInfoOutput values.
@@ -7921,10 +8423,17 @@ type VmCloneV2NicBackingInfoInput interface {
 }
 
 type VmCloneV2NicBackingInfoArgs struct {
-	IsConnected pulumi.BoolPtrInput   `pulumi:"isConnected"`
-	MacAddress  pulumi.StringPtrInput `pulumi:"macAddress"`
-	Model       pulumi.StringPtrInput `pulumi:"model"`
-	NumQueues   pulumi.IntPtrInput    `pulumi:"numQueues"`
+	// - (Optional) Indicates whether the NIC is connected or not. Default is True.
+	IsConnected pulumi.BoolPtrInput `pulumi:"isConnected"`
+	// - (Optional) MAC address of the emulated NIC.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// - (Optional) Options for the NIC emulation.
+	//   Valid values are:
+	// - `VIRTIO` The NIC emulation model is Virtio.
+	// - `E1000` The NIC emulation model is E1000.
+	Model pulumi.StringPtrInput `pulumi:"model"`
+	// - (Optional) The number of Tx/Rx queue pairs for this NIC.
+	NumQueues pulumi.IntPtrInput `pulumi:"numQueues"`
 }
 
 func (VmCloneV2NicBackingInfoArgs) ElementType() reflect.Type {
@@ -7978,18 +8487,25 @@ func (o VmCloneV2NicBackingInfoOutput) ToVmCloneV2NicBackingInfoOutputWithContex
 	return o
 }
 
+// - (Optional) Indicates whether the NIC is connected or not. Default is True.
 func (o VmCloneV2NicBackingInfoOutput) IsConnected() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicBackingInfo) *bool { return v.IsConnected }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) MAC address of the emulated NIC.
 func (o VmCloneV2NicBackingInfoOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicBackingInfo) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
+//   - (Optional) Options for the NIC emulation.
+//     Valid values are:
+//   - `VIRTIO` The NIC emulation model is Virtio.
+//   - `E1000` The NIC emulation model is E1000.
 func (o VmCloneV2NicBackingInfoOutput) Model() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicBackingInfo) *string { return v.Model }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) The number of Tx/Rx queue pairs for this NIC.
 func (o VmCloneV2NicBackingInfoOutput) NumQueues() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicBackingInfo) *int { return v.NumQueues }).(pulumi.IntPtrOutput)
 }
@@ -8015,14 +8531,36 @@ func (o VmCloneV2NicBackingInfoArrayOutput) Index(i pulumi.IntInput) VmCloneV2Ni
 }
 
 type VmCloneV2NicNetworkInfo struct {
-	Ipv4Configs            []VmCloneV2NicNetworkInfoIpv4Config           `pulumi:"ipv4Configs"`
-	NetworkFunctionChains  []VmCloneV2NicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
-	NetworkFunctionNicType *string                                       `pulumi:"networkFunctionNicType"`
-	NicType                *string                                       `pulumi:"nicType"`
-	ShouldAllowUnknownMacs *bool                                         `pulumi:"shouldAllowUnknownMacs"`
-	Subnets                []VmCloneV2NicNetworkInfoSubnet               `pulumi:"subnets"`
-	TrunkedVlans           []int                                         `pulumi:"trunkedVlans"`
-	VlanMode               *string                                       `pulumi:"vlanMode"`
+	// - (Optional) The IP address configurations.
+	Ipv4Configs []VmCloneV2NicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
+	// - (Optional)The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	NetworkFunctionChains []VmCloneV2NicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
+	// - (Optional) The type of this Network function NIC.
+	//   Defaults to INGRESS.
+	//   Valid values are:
+	// - `TAP` The type of Network-Function NIC is Tap.
+	// - `EGRESS` The type of Network-Function NIC is Egress.
+	// - `INGRESS` The type of Network-Function NIC is Ingress.
+	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
+	// - (Optional) NIC type.
+	//   Defaults to NORMAL_NIC.
+	//   Valid values are:
+	// - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
+	// - `NORMAL_NIC` The type of NIC is Normal.
+	// - `DIRECT_NIC` The type of NIC is Direct.
+	// - `NETWORK_FUNCTION_NIC` The type of NIC is Network-Function.
+	NicType *string `pulumi:"nicType"`
+	// - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
+	// - (Optional) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	Subnets []VmCloneV2NicNetworkInfoSubnet `pulumi:"subnets"`
+	// - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+	TrunkedVlans []int `pulumi:"trunkedVlans"`
+	// - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+	//   Valid values are:
+	// - `TRUNK` The virtual NIC is created in TRUNKED mode.
+	// - `ACCESS` The virtual NIC is created in ACCESS mode.
+	VlanMode *string `pulumi:"vlanMode"`
 }
 
 // VmCloneV2NicNetworkInfoInput is an input type that accepts VmCloneV2NicNetworkInfoArgs and VmCloneV2NicNetworkInfoOutput values.
@@ -8037,14 +8575,36 @@ type VmCloneV2NicNetworkInfoInput interface {
 }
 
 type VmCloneV2NicNetworkInfoArgs struct {
-	Ipv4Configs            VmCloneV2NicNetworkInfoIpv4ConfigArrayInput           `pulumi:"ipv4Configs"`
-	NetworkFunctionChains  VmCloneV2NicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
-	NetworkFunctionNicType pulumi.StringPtrInput                                 `pulumi:"networkFunctionNicType"`
-	NicType                pulumi.StringPtrInput                                 `pulumi:"nicType"`
-	ShouldAllowUnknownMacs pulumi.BoolPtrInput                                   `pulumi:"shouldAllowUnknownMacs"`
-	Subnets                VmCloneV2NicNetworkInfoSubnetArrayInput               `pulumi:"subnets"`
-	TrunkedVlans           pulumi.IntArrayInput                                  `pulumi:"trunkedVlans"`
-	VlanMode               pulumi.StringPtrInput                                 `pulumi:"vlanMode"`
+	// - (Optional) The IP address configurations.
+	Ipv4Configs VmCloneV2NicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
+	// - (Optional)The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	NetworkFunctionChains VmCloneV2NicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
+	// - (Optional) The type of this Network function NIC.
+	//   Defaults to INGRESS.
+	//   Valid values are:
+	// - `TAP` The type of Network-Function NIC is Tap.
+	// - `EGRESS` The type of Network-Function NIC is Egress.
+	// - `INGRESS` The type of Network-Function NIC is Ingress.
+	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
+	// - (Optional) NIC type.
+	//   Defaults to NORMAL_NIC.
+	//   Valid values are:
+	// - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
+	// - `NORMAL_NIC` The type of NIC is Normal.
+	// - `DIRECT_NIC` The type of NIC is Direct.
+	// - `NETWORK_FUNCTION_NIC` The type of NIC is Network-Function.
+	NicType pulumi.StringPtrInput `pulumi:"nicType"`
+	// - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
+	// - (Optional) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	Subnets VmCloneV2NicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
+	// - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
+	// - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+	//   Valid values are:
+	// - `TRUNK` The virtual NIC is created in TRUNKED mode.
+	// - `ACCESS` The virtual NIC is created in ACCESS mode.
+	VlanMode pulumi.StringPtrInput `pulumi:"vlanMode"`
 }
 
 func (VmCloneV2NicNetworkInfoArgs) ElementType() reflect.Type {
@@ -8098,36 +8658,58 @@ func (o VmCloneV2NicNetworkInfoOutput) ToVmCloneV2NicNetworkInfoOutputWithContex
 	return o
 }
 
+// - (Optional) The IP address configurations.
 func (o VmCloneV2NicNetworkInfoOutput) Ipv4Configs() VmCloneV2NicNetworkInfoIpv4ConfigArrayOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) []VmCloneV2NicNetworkInfoIpv4Config { return v.Ipv4Configs }).(VmCloneV2NicNetworkInfoIpv4ConfigArrayOutput)
 }
 
+// - (Optional)The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
 func (o VmCloneV2NicNetworkInfoOutput) NetworkFunctionChains() VmCloneV2NicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) []VmCloneV2NicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
 	}).(VmCloneV2NicNetworkInfoNetworkFunctionChainArrayOutput)
 }
 
+//   - (Optional) The type of this Network function NIC.
+//     Defaults to INGRESS.
+//     Valid values are:
+//   - `TAP` The type of Network-Function NIC is Tap.
+//   - `EGRESS` The type of Network-Function NIC is Egress.
+//   - `INGRESS` The type of Network-Function NIC is Ingress.
 func (o VmCloneV2NicNetworkInfoOutput) NetworkFunctionNicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) *string { return v.NetworkFunctionNicType }).(pulumi.StringPtrOutput)
 }
 
+//   - (Optional) NIC type.
+//     Defaults to NORMAL_NIC.
+//     Valid values are:
+//   - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
+//   - `NORMAL_NIC` The type of NIC is Normal.
+//   - `DIRECT_NIC` The type of NIC is Direct.
+//   - `NETWORK_FUNCTION_NIC` The type of NIC is Network-Function.
 func (o VmCloneV2NicNetworkInfoOutput) NicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) *string { return v.NicType }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 func (o VmCloneV2NicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
 func (o VmCloneV2NicNetworkInfoOutput) Subnets() VmCloneV2NicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) []VmCloneV2NicNetworkInfoSubnet { return v.Subnets }).(VmCloneV2NicNetworkInfoSubnetArrayOutput)
 }
 
+// - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 func (o VmCloneV2NicNetworkInfoOutput) TrunkedVlans() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) []int { return v.TrunkedVlans }).(pulumi.IntArrayOutput)
 }
 
+//   - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+//     Valid values are:
+//   - `TRUNK` The virtual NIC is created in TRUNKED mode.
+//   - `ACCESS` The virtual NIC is created in ACCESS mode.
 func (o VmCloneV2NicNetworkInfoOutput) VlanMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) *string { return v.VlanMode }).(pulumi.StringPtrOutput)
 }
@@ -8155,7 +8737,10 @@ func (o VmCloneV2NicNetworkInfoArrayOutput) Index(i pulumi.IntInput) VmCloneV2Ni
 type VmCloneV2NicNetworkInfoIpv4Config struct {
 	IpAddresses             []VmCloneV2NicNetworkInfoIpv4ConfigIpAddress              `pulumi:"ipAddresses"`
 	SecondaryIpAddressLists []VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList `pulumi:"secondaryIpAddressLists"`
-	ShouldAssignIp          *bool                                                     `pulumi:"shouldAssignIp"`
+	// - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+	//   `ipAddress`: - (Optional) Ip config settings.
+	//   `secondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
+	ShouldAssignIp *bool `pulumi:"shouldAssignIp"`
 }
 
 // VmCloneV2NicNetworkInfoIpv4ConfigInput is an input type that accepts VmCloneV2NicNetworkInfoIpv4ConfigArgs and VmCloneV2NicNetworkInfoIpv4ConfigOutput values.
@@ -8172,7 +8757,10 @@ type VmCloneV2NicNetworkInfoIpv4ConfigInput interface {
 type VmCloneV2NicNetworkInfoIpv4ConfigArgs struct {
 	IpAddresses             VmCloneV2NicNetworkInfoIpv4ConfigIpAddressArrayInput              `pulumi:"ipAddresses"`
 	SecondaryIpAddressLists VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArrayInput `pulumi:"secondaryIpAddressLists"`
-	ShouldAssignIp          pulumi.BoolPtrInput                                               `pulumi:"shouldAssignIp"`
+	// - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+	//   `ipAddress`: - (Optional) Ip config settings.
+	//   `secondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
+	ShouldAssignIp pulumi.BoolPtrInput `pulumi:"shouldAssignIp"`
 }
 
 func (VmCloneV2NicNetworkInfoIpv4ConfigArgs) ElementType() reflect.Type {
@@ -8238,6 +8826,9 @@ func (o VmCloneV2NicNetworkInfoIpv4ConfigOutput) SecondaryIpAddressLists() VmClo
 	}).(VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArrayOutput)
 }
 
+//   - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+//     `ipAddress`: - (Optional) Ip config settings.
+//     `secondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
 func (o VmCloneV2NicNetworkInfoIpv4ConfigOutput) ShouldAssignIp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfoIpv4Config) *bool { return v.ShouldAssignIp }).(pulumi.BoolPtrOutput)
 }
@@ -8263,8 +8854,10 @@ func (o VmCloneV2NicNetworkInfoIpv4ConfigArrayOutput) Index(i pulumi.IntInput) V
 }
 
 type VmCloneV2NicNetworkInfoIpv4ConfigIpAddress struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - Ip address.
+	Value *string `pulumi:"value"`
 }
 
 // VmCloneV2NicNetworkInfoIpv4ConfigIpAddressInput is an input type that accepts VmCloneV2NicNetworkInfoIpv4ConfigIpAddressArgs and VmCloneV2NicNetworkInfoIpv4ConfigIpAddressOutput values.
@@ -8279,8 +8872,10 @@ type VmCloneV2NicNetworkInfoIpv4ConfigIpAddressInput interface {
 }
 
 type VmCloneV2NicNetworkInfoIpv4ConfigIpAddressArgs struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - Ip address.
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (VmCloneV2NicNetworkInfoIpv4ConfigIpAddressArgs) ElementType() reflect.Type {
@@ -8334,10 +8929,12 @@ func (o VmCloneV2NicNetworkInfoIpv4ConfigIpAddressOutput) ToVmCloneV2NicNetworkI
 	return o
 }
 
+// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 func (o VmCloneV2NicNetworkInfoIpv4ConfigIpAddressOutput) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfoIpv4ConfigIpAddress) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// - Ip address.
 func (o VmCloneV2NicNetworkInfoIpv4ConfigIpAddressOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfoIpv4ConfigIpAddress) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -8363,8 +8960,10 @@ func (o VmCloneV2NicNetworkInfoIpv4ConfigIpAddressArrayOutput) Index(i pulumi.In
 }
 
 type VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - Ip address.
+	Value *string `pulumi:"value"`
 }
 
 // VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListInput is an input type that accepts VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArgs and VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListOutput values.
@@ -8379,8 +8978,10 @@ type VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListInput interface {
 }
 
 type VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArgs struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - Ip address.
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArgs) ElementType() reflect.Type {
@@ -8434,10 +9035,12 @@ func (o VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListOutput) ToVmClone
 	return o
 }
 
+// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 func (o VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListOutput) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// - Ip address.
 func (o VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -8463,6 +9066,7 @@ func (o VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArrayOutput) Inde
 }
 
 type VmCloneV2NicNetworkInfoNetworkFunctionChain struct {
+	// - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -8478,6 +9082,7 @@ type VmCloneV2NicNetworkInfoNetworkFunctionChainInput interface {
 }
 
 type VmCloneV2NicNetworkInfoNetworkFunctionChainArgs struct {
+	// - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -8532,6 +9137,7 @@ func (o VmCloneV2NicNetworkInfoNetworkFunctionChainOutput) ToVmCloneV2NicNetwork
 	return o
 }
 
+// - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
 func (o VmCloneV2NicNetworkInfoNetworkFunctionChainOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfoNetworkFunctionChain) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -8557,6 +9163,7 @@ func (o VmCloneV2NicNetworkInfoNetworkFunctionChainArrayOutput) Index(i pulumi.I
 }
 
 type VmCloneV2NicNetworkInfoSubnet struct {
+	// - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -8572,6 +9179,7 @@ type VmCloneV2NicNetworkInfoSubnetInput interface {
 }
 
 type VmCloneV2NicNetworkInfoSubnetArgs struct {
+	// - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -8626,6 +9234,7 @@ func (o VmCloneV2NicNetworkInfoSubnetOutput) ToVmCloneV2NicNetworkInfoSubnetOutp
 	return o
 }
 
+// - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
 func (o VmCloneV2NicNetworkInfoSubnetOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfoSubnet) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -9027,9 +9636,11 @@ func (o VmCloneV2ProtectionPolicyStatePolicyArrayOutput) Index(i pulumi.IntInput
 }
 
 type VmCloneV2SerialPort struct {
-	ExtId       *string `pulumi:"extId"`
-	Index       *int    `pulumi:"index"`
-	IsConnected *bool   `pulumi:"isConnected"`
+	ExtId *string `pulumi:"extId"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
+	// - (Optional) Indicates whether the NIC is connected or not. Default is True.
+	IsConnected *bool `pulumi:"isConnected"`
 }
 
 // VmCloneV2SerialPortInput is an input type that accepts VmCloneV2SerialPortArgs and VmCloneV2SerialPortOutput values.
@@ -9044,9 +9655,11 @@ type VmCloneV2SerialPortInput interface {
 }
 
 type VmCloneV2SerialPortArgs struct {
-	ExtId       pulumi.StringPtrInput `pulumi:"extId"`
-	Index       pulumi.IntPtrInput    `pulumi:"index"`
-	IsConnected pulumi.BoolPtrInput   `pulumi:"isConnected"`
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
+	// - (Optional) Indicates whether the NIC is connected or not. Default is True.
+	IsConnected pulumi.BoolPtrInput `pulumi:"isConnected"`
 }
 
 func (VmCloneV2SerialPortArgs) ElementType() reflect.Type {
@@ -9104,10 +9717,12 @@ func (o VmCloneV2SerialPortOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2SerialPort) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o VmCloneV2SerialPortOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmCloneV2SerialPort) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
 
+// - (Optional) Indicates whether the NIC is connected or not. Default is True.
 func (o VmCloneV2SerialPortOutput) IsConnected() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2SerialPort) *bool { return v.IsConnected }).(pulumi.BoolPtrOutput)
 }
@@ -9233,6 +9848,7 @@ func (o VmCloneV2SourceArrayOutput) Index(i pulumi.IntInput) VmCloneV2SourceOutp
 }
 
 type VmCloneV2StorageConfig struct {
+	// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled *bool                             `pulumi:"isFlashModeEnabled"`
 	QosConfigs         []VmCloneV2StorageConfigQosConfig `pulumi:"qosConfigs"`
 }
@@ -9249,6 +9865,7 @@ type VmCloneV2StorageConfigInput interface {
 }
 
 type VmCloneV2StorageConfigArgs struct {
+	// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled pulumi.BoolPtrInput                       `pulumi:"isFlashModeEnabled"`
 	QosConfigs         VmCloneV2StorageConfigQosConfigArrayInput `pulumi:"qosConfigs"`
 }
@@ -9304,6 +9921,7 @@ func (o VmCloneV2StorageConfigOutput) ToVmCloneV2StorageConfigOutputWithContext(
 	return o
 }
 
+// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o VmCloneV2StorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2StorageConfig) *bool { return v.IsFlashModeEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -9527,8 +10145,10 @@ func (o VmCloneV2VtpmConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2VtpmCo
 }
 
 type VmGcUpdateV2Config struct {
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits []VmGcUpdateV2ConfigCloudInit `pulumi:"cloudInits"`
-	Syspreps   []VmGcUpdateV2ConfigSysprep   `pulumi:"syspreps"`
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	Syspreps []VmGcUpdateV2ConfigSysprep `pulumi:"syspreps"`
 }
 
 // VmGcUpdateV2ConfigInput is an input type that accepts VmGcUpdateV2ConfigArgs and VmGcUpdateV2ConfigOutput values.
@@ -9543,8 +10163,10 @@ type VmGcUpdateV2ConfigInput interface {
 }
 
 type VmGcUpdateV2ConfigArgs struct {
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits VmGcUpdateV2ConfigCloudInitArrayInput `pulumi:"cloudInits"`
-	Syspreps   VmGcUpdateV2ConfigSysprepArrayInput   `pulumi:"syspreps"`
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	Syspreps VmGcUpdateV2ConfigSysprepArrayInput `pulumi:"syspreps"`
 }
 
 func (VmGcUpdateV2ConfigArgs) ElementType() reflect.Type {
@@ -9598,10 +10220,12 @@ func (o VmGcUpdateV2ConfigOutput) ToVmGcUpdateV2ConfigOutputWithContext(ctx cont
 	return o
 }
 
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmGcUpdateV2ConfigOutput) CloudInits() VmGcUpdateV2ConfigCloudInitArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2Config) []VmGcUpdateV2ConfigCloudInit { return v.CloudInits }).(VmGcUpdateV2ConfigCloudInitArrayOutput)
 }
 
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmGcUpdateV2ConfigOutput) Syspreps() VmGcUpdateV2ConfigSysprepArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2Config) []VmGcUpdateV2ConfigSysprep { return v.Syspreps }).(VmGcUpdateV2ConfigSysprepArrayOutput)
 }
@@ -9627,9 +10251,15 @@ func (o VmGcUpdateV2ConfigArrayOutput) Index(i pulumi.IntInput) VmGcUpdateV2Conf
 }
 
 type VmGcUpdateV2ConfigCloudInit struct {
+	// - (Optional) The script to use for cloud-init.
 	CloudInitScripts []VmGcUpdateV2ConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
-	DatasourceType   *string                                      `pulumi:"datasourceType"`
-	Metadata         *string                                      `pulumi:"metadata"`
+	// - (Optional) Type of datasource.
+	//   Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+	//   Valid values are:
+	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+	DatasourceType *string `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	Metadata *string `pulumi:"metadata"`
 }
 
 // VmGcUpdateV2ConfigCloudInitInput is an input type that accepts VmGcUpdateV2ConfigCloudInitArgs and VmGcUpdateV2ConfigCloudInitOutput values.
@@ -9644,9 +10274,15 @@ type VmGcUpdateV2ConfigCloudInitInput interface {
 }
 
 type VmGcUpdateV2ConfigCloudInitArgs struct {
+	// - (Optional) The script to use for cloud-init.
 	CloudInitScripts VmGcUpdateV2ConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
-	DatasourceType   pulumi.StringPtrInput                                `pulumi:"datasourceType"`
-	Metadata         pulumi.StringPtrInput                                `pulumi:"metadata"`
+	// - (Optional) Type of datasource.
+	//   Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+	//   Valid values are:
+	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
 func (VmGcUpdateV2ConfigCloudInitArgs) ElementType() reflect.Type {
@@ -9700,16 +10336,22 @@ func (o VmGcUpdateV2ConfigCloudInitOutput) ToVmGcUpdateV2ConfigCloudInitOutputWi
 	return o
 }
 
+// - (Optional) The script to use for cloud-init.
 func (o VmGcUpdateV2ConfigCloudInitOutput) CloudInitScripts() VmGcUpdateV2ConfigCloudInitCloudInitScriptArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInit) []VmGcUpdateV2ConfigCloudInitCloudInitScript {
 		return v.CloudInitScripts
 	}).(VmGcUpdateV2ConfigCloudInitCloudInitScriptArrayOutput)
 }
 
+//   - (Optional) Type of datasource.
+//     Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+//     Valid values are:
+//   - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
 func (o VmGcUpdateV2ConfigCloudInitOutput) DatasourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInit) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
+// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o VmGcUpdateV2ConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInit) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -9736,7 +10378,8 @@ func (o VmGcUpdateV2ConfigCloudInitArrayOutput) Index(i pulumi.IntInput) VmGcUpd
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScript struct {
 	CustomKeys []VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey `pulumi:"customKeys"`
-	UserDatas  []VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData  `pulumi:"userDatas"`
+	// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	UserDatas []VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData `pulumi:"userDatas"`
 }
 
 // VmGcUpdateV2ConfigCloudInitCloudInitScriptInput is an input type that accepts VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs and VmGcUpdateV2ConfigCloudInitCloudInitScriptOutput values.
@@ -9752,7 +10395,8 @@ type VmGcUpdateV2ConfigCloudInitCloudInitScriptInput interface {
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs struct {
 	CustomKeys VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyArrayInput `pulumi:"customKeys"`
-	UserDatas  VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayInput  `pulumi:"userDatas"`
+	// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	UserDatas VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayInput `pulumi:"userDatas"`
 }
 
 func (VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs) ElementType() reflect.Type {
@@ -9812,6 +10456,7 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptOutput) CustomKeys() VmGcUpdat
 	}).(VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyArrayOutput)
 }
 
+// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptOutput) UserDatas() VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInitCloudInitScript) []VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData {
 		return v.UserDatas
@@ -9839,6 +10484,7 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptArrayOutput) Index(i pulumi.In
 }
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey struct {
+	// - (Optional) The list of the individual KeyValuePair elements.
 	KeyValuePairs []VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair `pulumi:"keyValuePairs"`
 }
 
@@ -9854,6 +10500,7 @@ type VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyInput interface {
 }
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyArgs struct {
+	// - (Optional) The list of the individual KeyValuePair elements.
 	KeyValuePairs VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArrayInput `pulumi:"keyValuePairs"`
 }
 
@@ -9908,6 +10555,7 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyOutput) ToVmGcUpdateV
 	return o
 }
 
+// - (Optional) The list of the individual KeyValuePair elements.
 func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyOutput) KeyValuePairs() VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey) []VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
 		return v.KeyValuePairs
@@ -9935,7 +10583,11 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyArrayOutput) Index(i 
 }
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair struct {
-	Name  *string `pulumi:"name"`
+	// - (Optional) The key of this key-value pair
+	Name *string `pulumi:"name"`
+	// - (Optional) The value associated with the key for this key-value pair.
+	//
+	// See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
 	Value *string `pulumi:"value"`
 }
 
@@ -9951,7 +10603,11 @@ type VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairInput interf
 }
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArgs struct {
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The key of this key-value pair
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The value associated with the key for this key-value pair.
+	//
+	// See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -10006,10 +10662,14 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairOutput) T
 	return o
 }
 
+// - (Optional) The key of this key-value pair
 func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) The value associated with the key for this key-value pair.
+//
+// See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
 func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -10035,6 +10695,7 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArrayOutp
 }
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData struct {
+	// - (Optional) The value for the cloud-init user_data.
 	Value *string `pulumi:"value"`
 }
 
@@ -10050,6 +10711,7 @@ type VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataInput interface {
 }
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArgs struct {
+	// - (Optional) The value for the cloud-init user_data.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -10104,6 +10766,7 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataOutput) ToVmGcUpdateV2
 	return o
 }
 
+// - (Optional) The value for the cloud-init user_data.
 func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -10129,6 +10792,10 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayOutput) Index(i p
 }
 
 type VmGcUpdateV2ConfigSysprep struct {
+	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+	//   Valid values are:
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
 	InstallType    *string                                  `pulumi:"installType"`
 	SysprepScripts []VmGcUpdateV2ConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
@@ -10145,6 +10812,10 @@ type VmGcUpdateV2ConfigSysprepInput interface {
 }
 
 type VmGcUpdateV2ConfigSysprepArgs struct {
+	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+	//   Valid values are:
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
 	InstallType    pulumi.StringPtrInput                            `pulumi:"installType"`
 	SysprepScripts VmGcUpdateV2ConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
@@ -10200,6 +10871,10 @@ func (o VmGcUpdateV2ConfigSysprepOutput) ToVmGcUpdateV2ConfigSysprepOutputWithCo
 	return o
 }
 
+//   - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+//     Valid values are:
+//   - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+//   - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
 func (o VmGcUpdateV2ConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigSysprep) *string { return v.InstallType }).(pulumi.StringPtrOutput)
 }
@@ -10229,8 +10904,10 @@ func (o VmGcUpdateV2ConfigSysprepArrayOutput) Index(i pulumi.IntInput) VmGcUpdat
 }
 
 type VmGcUpdateV2ConfigSysprepSysprepScript struct {
+	// - (Optional) Generic key value pair used for custom attributes in cloud init.
 	CustomKeyValues []VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue `pulumi:"customKeyValues"`
-	UnattendXmls    []VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml    `pulumi:"unattendXmls"`
+	// - (Optional) Generic key value pair used for custom attributes.
+	UnattendXmls []VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml `pulumi:"unattendXmls"`
 }
 
 // VmGcUpdateV2ConfigSysprepSysprepScriptInput is an input type that accepts VmGcUpdateV2ConfigSysprepSysprepScriptArgs and VmGcUpdateV2ConfigSysprepSysprepScriptOutput values.
@@ -10245,8 +10922,10 @@ type VmGcUpdateV2ConfigSysprepSysprepScriptInput interface {
 }
 
 type VmGcUpdateV2ConfigSysprepSysprepScriptArgs struct {
+	// - (Optional) Generic key value pair used for custom attributes in cloud init.
 	CustomKeyValues VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueArrayInput `pulumi:"customKeyValues"`
-	UnattendXmls    VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXmlArrayInput    `pulumi:"unattendXmls"`
+	// - (Optional) Generic key value pair used for custom attributes.
+	UnattendXmls VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXmlArrayInput `pulumi:"unattendXmls"`
 }
 
 func (VmGcUpdateV2ConfigSysprepSysprepScriptArgs) ElementType() reflect.Type {
@@ -10300,12 +10979,14 @@ func (o VmGcUpdateV2ConfigSysprepSysprepScriptOutput) ToVmGcUpdateV2ConfigSyspre
 	return o
 }
 
+// - (Optional) Generic key value pair used for custom attributes in cloud init.
 func (o VmGcUpdateV2ConfigSysprepSysprepScriptOutput) CustomKeyValues() VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigSysprepSysprepScript) []VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue {
 		return v.CustomKeyValues
 	}).(VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueArrayOutput)
 }
 
+// - (Optional) Generic key value pair used for custom attributes.
 func (o VmGcUpdateV2ConfigSysprepSysprepScriptOutput) UnattendXmls() VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXmlArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigSysprepSysprepScript) []VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml {
 		return v.UnattendXmls
@@ -10333,6 +11014,7 @@ func (o VmGcUpdateV2ConfigSysprepSysprepScriptArrayOutput) Index(i pulumi.IntInp
 }
 
 type VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue struct {
+	// - (Optional) The list of the individual KeyValuePair elements.
 	KeyValuePairs []VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair `pulumi:"keyValuePairs"`
 }
 
@@ -10348,6 +11030,7 @@ type VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueInput interface {
 }
 
 type VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueArgs struct {
+	// - (Optional) The list of the individual KeyValuePair elements.
 	KeyValuePairs VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArrayInput `pulumi:"keyValuePairs"`
 }
 
@@ -10402,6 +11085,7 @@ func (o VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueOutput) ToVmGcUpdate
 	return o
 }
 
+// - (Optional) The list of the individual KeyValuePair elements.
 func (o VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueOutput) KeyValuePairs() VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue) []VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
 		return v.KeyValuePairs
@@ -10429,7 +11113,11 @@ func (o VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueArrayOutput) Index(i
 }
 
 type VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair struct {
-	Name  *string `pulumi:"name"`
+	// - (Optional) The key of this key-value pair
+	Name *string `pulumi:"name"`
+	// - (Optional) The value associated with the key for this key-value pair.
+	//
+	// See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
 	Value *string `pulumi:"value"`
 }
 
@@ -10445,7 +11133,11 @@ type VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairInput inter
 }
 
 type VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArgs struct {
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The key of this key-value pair
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The value associated with the key for this key-value pair.
+	//
+	// See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -10500,10 +11192,14 @@ func (o VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairOutput) 
 	return o
 }
 
+// - (Optional) The key of this key-value pair
 func (o VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) The value associated with the key for this key-value pair.
+//
+// See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
 func (o VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -10623,8 +11319,12 @@ func (o VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXmlArrayOutput) Index(i pu
 }
 
 type VmNetworkDeviceAssignIpV2IpAddress struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
+	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - Ip address.
+	//
+	// See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/assignIpById).
+	Value string `pulumi:"value"`
 }
 
 // VmNetworkDeviceAssignIpV2IpAddressInput is an input type that accepts VmNetworkDeviceAssignIpV2IpAddressArgs and VmNetworkDeviceAssignIpV2IpAddressOutput values.
@@ -10639,8 +11339,12 @@ type VmNetworkDeviceAssignIpV2IpAddressInput interface {
 }
 
 type VmNetworkDeviceAssignIpV2IpAddressArgs struct {
+	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
+	// - Ip address.
+	//
+	// See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/assignIpById).
+	Value pulumi.StringInput `pulumi:"value"`
 }
 
 func (VmNetworkDeviceAssignIpV2IpAddressArgs) ElementType() reflect.Type {
@@ -10694,10 +11398,14 @@ func (o VmNetworkDeviceAssignIpV2IpAddressOutput) ToVmNetworkDeviceAssignIpV2IpA
 	return o
 }
 
+// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 func (o VmNetworkDeviceAssignIpV2IpAddressOutput) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmNetworkDeviceAssignIpV2IpAddress) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// - Ip address.
+//
+// See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/assignIpById).
 func (o VmNetworkDeviceAssignIpV2IpAddressOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v VmNetworkDeviceAssignIpV2IpAddress) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -10723,8 +11431,12 @@ func (o VmNetworkDeviceAssignIpV2IpAddressArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type VmNetworkDeviceMigrateV2IpAddress struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
+	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - Ip address.
+	//
+	// See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/migrateNicById).
+	Value string `pulumi:"value"`
 }
 
 // VmNetworkDeviceMigrateV2IpAddressInput is an input type that accepts VmNetworkDeviceMigrateV2IpAddressArgs and VmNetworkDeviceMigrateV2IpAddressOutput values.
@@ -10739,8 +11451,12 @@ type VmNetworkDeviceMigrateV2IpAddressInput interface {
 }
 
 type VmNetworkDeviceMigrateV2IpAddressArgs struct {
+	// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
+	// - Ip address.
+	//
+	// See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/migrateNicById).
+	Value pulumi.StringInput `pulumi:"value"`
 }
 
 func (VmNetworkDeviceMigrateV2IpAddressArgs) ElementType() reflect.Type {
@@ -10794,10 +11510,14 @@ func (o VmNetworkDeviceMigrateV2IpAddressOutput) ToVmNetworkDeviceMigrateV2IpAdd
 	return o
 }
 
+// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
 func (o VmNetworkDeviceMigrateV2IpAddressOutput) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VmNetworkDeviceMigrateV2IpAddress) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// - Ip address.
+//
+// See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/migrateNicById).
 func (o VmNetworkDeviceMigrateV2IpAddressOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v VmNetworkDeviceMigrateV2IpAddress) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -10823,6 +11543,7 @@ func (o VmNetworkDeviceMigrateV2IpAddressArrayOutput) Index(i pulumi.IntInput) V
 }
 
 type VmNetworkDeviceMigrateV2Subnet struct {
+	// - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
 	ExtId *string `pulumi:"extId"`
 }
 
@@ -10838,6 +11559,7 @@ type VmNetworkDeviceMigrateV2SubnetInput interface {
 }
 
 type VmNetworkDeviceMigrateV2SubnetArgs struct {
+	// - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 }
 
@@ -10892,6 +11614,7 @@ func (o VmNetworkDeviceMigrateV2SubnetOutput) ToVmNetworkDeviceMigrateV2SubnetOu
 	return o
 }
 
+// - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
 func (o VmNetworkDeviceMigrateV2SubnetOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmNetworkDeviceMigrateV2Subnet) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -22915,6 +23638,7 @@ func (o GetCategoryV2LinkArrayOutput) Index(i pulumi.IntInput) GetCategoryV2Link
 }
 
 type GetCertificateV2AlternateFqdn struct {
+	// - The IPv4/IPv6 address of the host.
 	Value string `pulumi:"value"`
 }
 
@@ -22930,6 +23654,7 @@ type GetCertificateV2AlternateFqdnInput interface {
 }
 
 type GetCertificateV2AlternateFqdnArgs struct {
+	// - The IPv4/IPv6 address of the host.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -22984,6 +23709,7 @@ func (o GetCertificateV2AlternateFqdnOutput) ToGetCertificateV2AlternateFqdnOutp
 	return o
 }
 
+// - The IPv4/IPv6 address of the host.
 func (o GetCertificateV2AlternateFqdnOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2AlternateFqdn) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -23009,7 +23735,9 @@ func (o GetCertificateV2AlternateFqdnArrayOutput) Index(i pulumi.IntInput) GetCe
 }
 
 type GetCertificateV2AlternateIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
 	Ipv4 GetCertificateV2AlternateIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
 	Ipv6 GetCertificateV2AlternateIpIpv6 `pulumi:"ipv6"`
 }
 
@@ -23025,7 +23753,9 @@ type GetCertificateV2AlternateIpInput interface {
 }
 
 type GetCertificateV2AlternateIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
 	Ipv4 GetCertificateV2AlternateIpIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
 	Ipv6 GetCertificateV2AlternateIpIpv6Input `pulumi:"ipv6"`
 }
 
@@ -23080,10 +23810,12 @@ func (o GetCertificateV2AlternateIpOutput) ToGetCertificateV2AlternateIpOutputWi
 	return o
 }
 
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
 func (o GetCertificateV2AlternateIpOutput) Ipv4() GetCertificateV2AlternateIpIpv4Output {
 	return o.ApplyT(func(v GetCertificateV2AlternateIp) GetCertificateV2AlternateIpIpv4 { return v.Ipv4 }).(GetCertificateV2AlternateIpIpv4Output)
 }
 
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
 func (o GetCertificateV2AlternateIpOutput) Ipv6() GetCertificateV2AlternateIpIpv6Output {
 	return o.ApplyT(func(v GetCertificateV2AlternateIp) GetCertificateV2AlternateIpIpv6 { return v.Ipv6 }).(GetCertificateV2AlternateIpIpv6Output)
 }
@@ -23109,8 +23841,10 @@ func (o GetCertificateV2AlternateIpArrayOutput) Index(i pulumi.IntInput) GetCert
 }
 
 type GetCertificateV2AlternateIpIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
 }
 
 // GetCertificateV2AlternateIpIpv4Input is an input type that accepts GetCertificateV2AlternateIpIpv4Args and GetCertificateV2AlternateIpIpv4Output values.
@@ -23125,8 +23859,10 @@ type GetCertificateV2AlternateIpIpv4Input interface {
 }
 
 type GetCertificateV2AlternateIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
 }
 
 func (GetCertificateV2AlternateIpIpv4Args) ElementType() reflect.Type {
@@ -23155,17 +23891,21 @@ func (o GetCertificateV2AlternateIpIpv4Output) ToGetCertificateV2AlternateIpIpv4
 	return o
 }
 
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
 func (o GetCertificateV2AlternateIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetCertificateV2AlternateIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// - The IPv4/IPv6 address of the host.
 func (o GetCertificateV2AlternateIpIpv4Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2AlternateIpIpv4) string { return v.Value }).(pulumi.StringOutput)
 }
 
 type GetCertificateV2AlternateIpIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
 }
 
 // GetCertificateV2AlternateIpIpv6Input is an input type that accepts GetCertificateV2AlternateIpIpv6Args and GetCertificateV2AlternateIpIpv6Output values.
@@ -23180,8 +23920,10 @@ type GetCertificateV2AlternateIpIpv6Input interface {
 }
 
 type GetCertificateV2AlternateIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
 }
 
 func (GetCertificateV2AlternateIpIpv6Args) ElementType() reflect.Type {
@@ -23210,17 +23952,21 @@ func (o GetCertificateV2AlternateIpIpv6Output) ToGetCertificateV2AlternateIpIpv6
 	return o
 }
 
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
 func (o GetCertificateV2AlternateIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetCertificateV2AlternateIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// - The IPv4/IPv6 address of the host.
 func (o GetCertificateV2AlternateIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2AlternateIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
 
 type GetCertificateV2Link struct {
+	// - The URL at which the entity described by the link can be accessed.
 	Href string `pulumi:"href"`
-	Rel  string `pulumi:"rel"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
 }
 
 // GetCertificateV2LinkInput is an input type that accepts GetCertificateV2LinkArgs and GetCertificateV2LinkOutput values.
@@ -23235,8 +23981,10 @@ type GetCertificateV2LinkInput interface {
 }
 
 type GetCertificateV2LinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
 	Href pulumi.StringInput `pulumi:"href"`
-	Rel  pulumi.StringInput `pulumi:"rel"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
 }
 
 func (GetCertificateV2LinkArgs) ElementType() reflect.Type {
@@ -23290,10 +24038,12 @@ func (o GetCertificateV2LinkOutput) ToGetCertificateV2LinkOutputWithContext(ctx 
 	return o
 }
 
+// - The URL at which the entity described by the link can be accessed.
 func (o GetCertificateV2LinkOutput) Href() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Link) string { return v.Href }).(pulumi.StringOutput)
 }
 
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 func (o GetCertificateV2LinkOutput) Rel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Link) string { return v.Rel }).(pulumi.StringOutput)
 }
@@ -23319,11 +24069,16 @@ func (o GetCertificateV2LinkArrayOutput) Index(i pulumi.IntInput) GetCertificate
 }
 
 type GetCertificateV2Metadata struct {
-	CategoryIds        []string `pulumi:"categoryIds"`
-	OwnerReferenceId   string   `pulumi:"ownerReferenceId"`
-	OwnerUserName      string   `pulumi:"ownerUserName"`
-	ProjectName        string   `pulumi:"projectName"`
-	ProjectReferenceId string   `pulumi:"projectReferenceId"`
+	// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds []string `pulumi:"categoryIds"`
+	// - A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId string `pulumi:"ownerReferenceId"`
+	// - The userName of the owner of this resource.
+	OwnerUserName string `pulumi:"ownerUserName"`
+	// - The name of the project this resource belongs to.
+	ProjectName string `pulumi:"projectName"`
+	// - A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId string `pulumi:"projectReferenceId"`
 }
 
 // GetCertificateV2MetadataInput is an input type that accepts GetCertificateV2MetadataArgs and GetCertificateV2MetadataOutput values.
@@ -23338,11 +24093,16 @@ type GetCertificateV2MetadataInput interface {
 }
 
 type GetCertificateV2MetadataArgs struct {
-	CategoryIds        pulumi.StringArrayInput `pulumi:"categoryIds"`
-	OwnerReferenceId   pulumi.StringInput      `pulumi:"ownerReferenceId"`
-	OwnerUserName      pulumi.StringInput      `pulumi:"ownerUserName"`
-	ProjectName        pulumi.StringInput      `pulumi:"projectName"`
-	ProjectReferenceId pulumi.StringInput      `pulumi:"projectReferenceId"`
+	// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds pulumi.StringArrayInput `pulumi:"categoryIds"`
+	// - A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId pulumi.StringInput `pulumi:"ownerReferenceId"`
+	// - The userName of the owner of this resource.
+	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	// - The name of the project this resource belongs to.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// - A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId pulumi.StringInput `pulumi:"projectReferenceId"`
 }
 
 func (GetCertificateV2MetadataArgs) ElementType() reflect.Type {
@@ -23396,22 +24156,27 @@ func (o GetCertificateV2MetadataOutput) ToGetCertificateV2MetadataOutputWithCont
 	return o
 }
 
+// - A list of globally unique identifiers that represent all the categories the resource is associated with.
 func (o GetCertificateV2MetadataOutput) CategoryIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCertificateV2Metadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
 }
 
+// - A globally unique identifier that represents the owner of this resource.
 func (o GetCertificateV2MetadataOutput) OwnerReferenceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Metadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
 }
 
+// - The userName of the owner of this resource.
 func (o GetCertificateV2MetadataOutput) OwnerUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Metadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
 }
 
+// - The name of the project this resource belongs to.
 func (o GetCertificateV2MetadataOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Metadata) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
+// - A globally unique identifier that represents the project this resource belongs to.
 func (o GetCertificateV2MetadataOutput) ProjectReferenceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Metadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
 }
@@ -23437,13 +24202,20 @@ func (o GetCertificateV2MetadataArrayOutput) Index(i pulumi.IntInput) GetCertifi
 }
 
 type GetCertificatesV2Certificate struct {
-	AlternateFqdns   []GetCertificatesV2CertificateAlternateFqdn `pulumi:"alternateFqdns"`
-	AlternateIps     []GetCertificatesV2CertificateAlternateIp   `pulumi:"alternateIps"`
-	ExtId            string                                      `pulumi:"extId"`
-	Links            []GetCertificatesV2CertificateLink          `pulumi:"links"`
-	Metadatas        []GetCertificatesV2CertificateMetadata      `pulumi:"metadatas"`
-	ObjectStoreExtId string                                      `pulumi:"objectStoreExtId"`
-	TenantId         string                                      `pulumi:"tenantId"`
+	// - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
+	AlternateFqdns []GetCertificatesV2CertificateAlternateFqdn `pulumi:"alternateFqdns"`
+	// - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
+	AlternateIps []GetCertificatesV2CertificateAlternateIp `pulumi:"alternateIps"`
+	// - A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId string `pulumi:"extId"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetCertificatesV2CertificateLink `pulumi:"links"`
+	// - Metadata associated with this resource.
+	Metadatas []GetCertificatesV2CertificateMetadata `pulumi:"metadatas"`
+	// -(Required) The UUID of the Object store.
+	ObjectStoreExtId string `pulumi:"objectStoreExtId"`
+	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId string `pulumi:"tenantId"`
 }
 
 // GetCertificatesV2CertificateInput is an input type that accepts GetCertificatesV2CertificateArgs and GetCertificatesV2CertificateOutput values.
@@ -23458,13 +24230,20 @@ type GetCertificatesV2CertificateInput interface {
 }
 
 type GetCertificatesV2CertificateArgs struct {
-	AlternateFqdns   GetCertificatesV2CertificateAlternateFqdnArrayInput `pulumi:"alternateFqdns"`
-	AlternateIps     GetCertificatesV2CertificateAlternateIpArrayInput   `pulumi:"alternateIps"`
-	ExtId            pulumi.StringInput                                  `pulumi:"extId"`
-	Links            GetCertificatesV2CertificateLinkArrayInput          `pulumi:"links"`
-	Metadatas        GetCertificatesV2CertificateMetadataArrayInput      `pulumi:"metadatas"`
-	ObjectStoreExtId pulumi.StringInput                                  `pulumi:"objectStoreExtId"`
-	TenantId         pulumi.StringInput                                  `pulumi:"tenantId"`
+	// - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
+	AlternateFqdns GetCertificatesV2CertificateAlternateFqdnArrayInput `pulumi:"alternateFqdns"`
+	// - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
+	AlternateIps GetCertificatesV2CertificateAlternateIpArrayInput `pulumi:"alternateIps"`
+	// - A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links GetCertificatesV2CertificateLinkArrayInput `pulumi:"links"`
+	// - Metadata associated with this resource.
+	Metadatas GetCertificatesV2CertificateMetadataArrayInput `pulumi:"metadatas"`
+	// -(Required) The UUID of the Object store.
+	ObjectStoreExtId pulumi.StringInput `pulumi:"objectStoreExtId"`
+	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
 }
 
 func (GetCertificatesV2CertificateArgs) ElementType() reflect.Type {
@@ -23518,32 +24297,39 @@ func (o GetCertificatesV2CertificateOutput) ToGetCertificatesV2CertificateOutput
 	return o
 }
 
+// - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
 func (o GetCertificatesV2CertificateOutput) AlternateFqdns() GetCertificatesV2CertificateAlternateFqdnArrayOutput {
 	return o.ApplyT(func(v GetCertificatesV2Certificate) []GetCertificatesV2CertificateAlternateFqdn {
 		return v.AlternateFqdns
 	}).(GetCertificatesV2CertificateAlternateFqdnArrayOutput)
 }
 
+// - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
 func (o GetCertificatesV2CertificateOutput) AlternateIps() GetCertificatesV2CertificateAlternateIpArrayOutput {
 	return o.ApplyT(func(v GetCertificatesV2Certificate) []GetCertificatesV2CertificateAlternateIp { return v.AlternateIps }).(GetCertificatesV2CertificateAlternateIpArrayOutput)
 }
 
+// - A globally unique identifier of an instance that is suitable for external consumption.
 func (o GetCertificatesV2CertificateOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2Certificate) string { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o GetCertificatesV2CertificateOutput) Links() GetCertificatesV2CertificateLinkArrayOutput {
 	return o.ApplyT(func(v GetCertificatesV2Certificate) []GetCertificatesV2CertificateLink { return v.Links }).(GetCertificatesV2CertificateLinkArrayOutput)
 }
 
+// - Metadata associated with this resource.
 func (o GetCertificatesV2CertificateOutput) Metadatas() GetCertificatesV2CertificateMetadataArrayOutput {
 	return o.ApplyT(func(v GetCertificatesV2Certificate) []GetCertificatesV2CertificateMetadata { return v.Metadatas }).(GetCertificatesV2CertificateMetadataArrayOutput)
 }
 
+// -(Required) The UUID of the Object store.
 func (o GetCertificatesV2CertificateOutput) ObjectStoreExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2Certificate) string { return v.ObjectStoreExtId }).(pulumi.StringOutput)
 }
 
+// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
 func (o GetCertificatesV2CertificateOutput) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2Certificate) string { return v.TenantId }).(pulumi.StringOutput)
 }
@@ -23569,6 +24355,7 @@ func (o GetCertificatesV2CertificateArrayOutput) Index(i pulumi.IntInput) GetCer
 }
 
 type GetCertificatesV2CertificateAlternateFqdn struct {
+	// - The IPv4/IPv6 address of the host.
 	Value string `pulumi:"value"`
 }
 
@@ -23584,6 +24371,7 @@ type GetCertificatesV2CertificateAlternateFqdnInput interface {
 }
 
 type GetCertificatesV2CertificateAlternateFqdnArgs struct {
+	// - The IPv4/IPv6 address of the host.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -23638,6 +24426,7 @@ func (o GetCertificatesV2CertificateAlternateFqdnOutput) ToGetCertificatesV2Cert
 	return o
 }
 
+// - The IPv4/IPv6 address of the host.
 func (o GetCertificatesV2CertificateAlternateFqdnOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateFqdn) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -23663,7 +24452,9 @@ func (o GetCertificatesV2CertificateAlternateFqdnArrayOutput) Index(i pulumi.Int
 }
 
 type GetCertificatesV2CertificateAlternateIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
 	Ipv4 GetCertificatesV2CertificateAlternateIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
 	Ipv6 GetCertificatesV2CertificateAlternateIpIpv6 `pulumi:"ipv6"`
 }
 
@@ -23679,7 +24470,9 @@ type GetCertificatesV2CertificateAlternateIpInput interface {
 }
 
 type GetCertificatesV2CertificateAlternateIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
 	Ipv4 GetCertificatesV2CertificateAlternateIpIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
 	Ipv6 GetCertificatesV2CertificateAlternateIpIpv6Input `pulumi:"ipv6"`
 }
 
@@ -23734,12 +24527,14 @@ func (o GetCertificatesV2CertificateAlternateIpOutput) ToGetCertificatesV2Certif
 	return o
 }
 
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
 func (o GetCertificatesV2CertificateAlternateIpOutput) Ipv4() GetCertificatesV2CertificateAlternateIpIpv4Output {
 	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIp) GetCertificatesV2CertificateAlternateIpIpv4 {
 		return v.Ipv4
 	}).(GetCertificatesV2CertificateAlternateIpIpv4Output)
 }
 
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
 func (o GetCertificatesV2CertificateAlternateIpOutput) Ipv6() GetCertificatesV2CertificateAlternateIpIpv6Output {
 	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIp) GetCertificatesV2CertificateAlternateIpIpv6 {
 		return v.Ipv6
@@ -23767,8 +24562,10 @@ func (o GetCertificatesV2CertificateAlternateIpArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetCertificatesV2CertificateAlternateIpIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
 }
 
 // GetCertificatesV2CertificateAlternateIpIpv4Input is an input type that accepts GetCertificatesV2CertificateAlternateIpIpv4Args and GetCertificatesV2CertificateAlternateIpIpv4Output values.
@@ -23783,8 +24580,10 @@ type GetCertificatesV2CertificateAlternateIpIpv4Input interface {
 }
 
 type GetCertificatesV2CertificateAlternateIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
 }
 
 func (GetCertificatesV2CertificateAlternateIpIpv4Args) ElementType() reflect.Type {
@@ -23813,17 +24612,21 @@ func (o GetCertificatesV2CertificateAlternateIpIpv4Output) ToGetCertificatesV2Ce
 	return o
 }
 
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
 func (o GetCertificatesV2CertificateAlternateIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// - The IPv4/IPv6 address of the host.
 func (o GetCertificatesV2CertificateAlternateIpIpv4Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIpIpv4) string { return v.Value }).(pulumi.StringOutput)
 }
 
 type GetCertificatesV2CertificateAlternateIpIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
 }
 
 // GetCertificatesV2CertificateAlternateIpIpv6Input is an input type that accepts GetCertificatesV2CertificateAlternateIpIpv6Args and GetCertificatesV2CertificateAlternateIpIpv6Output values.
@@ -23838,8 +24641,10 @@ type GetCertificatesV2CertificateAlternateIpIpv6Input interface {
 }
 
 type GetCertificatesV2CertificateAlternateIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
 }
 
 func (GetCertificatesV2CertificateAlternateIpIpv6Args) ElementType() reflect.Type {
@@ -23868,17 +24673,21 @@ func (o GetCertificatesV2CertificateAlternateIpIpv6Output) ToGetCertificatesV2Ce
 	return o
 }
 
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
 func (o GetCertificatesV2CertificateAlternateIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// - The IPv4/IPv6 address of the host.
 func (o GetCertificatesV2CertificateAlternateIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateAlternateIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
 
 type GetCertificatesV2CertificateLink struct {
+	// - The URL at which the entity described by the link can be accessed.
 	Href string `pulumi:"href"`
-	Rel  string `pulumi:"rel"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
 }
 
 // GetCertificatesV2CertificateLinkInput is an input type that accepts GetCertificatesV2CertificateLinkArgs and GetCertificatesV2CertificateLinkOutput values.
@@ -23893,8 +24702,10 @@ type GetCertificatesV2CertificateLinkInput interface {
 }
 
 type GetCertificatesV2CertificateLinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
 	Href pulumi.StringInput `pulumi:"href"`
-	Rel  pulumi.StringInput `pulumi:"rel"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
 }
 
 func (GetCertificatesV2CertificateLinkArgs) ElementType() reflect.Type {
@@ -23948,10 +24759,12 @@ func (o GetCertificatesV2CertificateLinkOutput) ToGetCertificatesV2CertificateLi
 	return o
 }
 
+// - The URL at which the entity described by the link can be accessed.
 func (o GetCertificatesV2CertificateLinkOutput) Href() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateLink) string { return v.Href }).(pulumi.StringOutput)
 }
 
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 func (o GetCertificatesV2CertificateLinkOutput) Rel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateLink) string { return v.Rel }).(pulumi.StringOutput)
 }
@@ -23977,11 +24790,16 @@ func (o GetCertificatesV2CertificateLinkArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetCertificatesV2CertificateMetadata struct {
-	CategoryIds        []string `pulumi:"categoryIds"`
-	OwnerReferenceId   string   `pulumi:"ownerReferenceId"`
-	OwnerUserName      string   `pulumi:"ownerUserName"`
-	ProjectName        string   `pulumi:"projectName"`
-	ProjectReferenceId string   `pulumi:"projectReferenceId"`
+	// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds []string `pulumi:"categoryIds"`
+	// - A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId string `pulumi:"ownerReferenceId"`
+	// - The userName of the owner of this resource.
+	OwnerUserName string `pulumi:"ownerUserName"`
+	// - The name of the project this resource belongs to.
+	ProjectName string `pulumi:"projectName"`
+	// - A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId string `pulumi:"projectReferenceId"`
 }
 
 // GetCertificatesV2CertificateMetadataInput is an input type that accepts GetCertificatesV2CertificateMetadataArgs and GetCertificatesV2CertificateMetadataOutput values.
@@ -23996,11 +24814,16 @@ type GetCertificatesV2CertificateMetadataInput interface {
 }
 
 type GetCertificatesV2CertificateMetadataArgs struct {
-	CategoryIds        pulumi.StringArrayInput `pulumi:"categoryIds"`
-	OwnerReferenceId   pulumi.StringInput      `pulumi:"ownerReferenceId"`
-	OwnerUserName      pulumi.StringInput      `pulumi:"ownerUserName"`
-	ProjectName        pulumi.StringInput      `pulumi:"projectName"`
-	ProjectReferenceId pulumi.StringInput      `pulumi:"projectReferenceId"`
+	// - A list of globally unique identifiers that represent all the categories the resource is associated with.
+	CategoryIds pulumi.StringArrayInput `pulumi:"categoryIds"`
+	// - A globally unique identifier that represents the owner of this resource.
+	OwnerReferenceId pulumi.StringInput `pulumi:"ownerReferenceId"`
+	// - The userName of the owner of this resource.
+	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	// - The name of the project this resource belongs to.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// - A globally unique identifier that represents the project this resource belongs to.
+	ProjectReferenceId pulumi.StringInput `pulumi:"projectReferenceId"`
 }
 
 func (GetCertificatesV2CertificateMetadataArgs) ElementType() reflect.Type {
@@ -24054,22 +24877,27 @@ func (o GetCertificatesV2CertificateMetadataOutput) ToGetCertificatesV2Certifica
 	return o
 }
 
+// - A list of globally unique identifiers that represent all the categories the resource is associated with.
 func (o GetCertificatesV2CertificateMetadataOutput) CategoryIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
 }
 
+// - A globally unique identifier that represents the owner of this resource.
 func (o GetCertificatesV2CertificateMetadataOutput) OwnerReferenceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) string { return v.OwnerReferenceId }).(pulumi.StringOutput)
 }
 
+// - The userName of the owner of this resource.
 func (o GetCertificatesV2CertificateMetadataOutput) OwnerUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) string { return v.OwnerUserName }).(pulumi.StringOutput)
 }
 
+// - The name of the project this resource belongs to.
 func (o GetCertificatesV2CertificateMetadataOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
+// - A globally unique identifier that represents the project this resource belongs to.
 func (o GetCertificatesV2CertificateMetadataOutput) ProjectReferenceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesV2CertificateMetadata) string { return v.ProjectReferenceId }).(pulumi.StringOutput)
 }

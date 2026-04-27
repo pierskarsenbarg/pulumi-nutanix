@@ -15,6 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress
     {
         public readonly string? BusType;
+        /// <summary>
+        /// Index of the serial port.
+        /// </summary>
         public readonly int? Index;
 
         [OutputConstructor]

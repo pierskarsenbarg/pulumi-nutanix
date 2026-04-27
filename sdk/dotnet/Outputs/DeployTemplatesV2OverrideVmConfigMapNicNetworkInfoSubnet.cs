@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet
     {
+        /// <summary>
+        /// The identifier of a Template.
+        /// </summary>
         public readonly string? ExtId;
 
         [OutputConstructor]

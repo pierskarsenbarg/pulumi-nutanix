@@ -15,12 +15,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("overrideVmConfigs", required: true)]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArgs>? _overrideVmConfigs;
+
+        /// <summary>
+        /// Overrides specification for VM create from a Template.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArgs> OverrideVmConfigs
         {
             get => _overrideVmConfigs ?? (_overrideVmConfigs = new InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArgs>());
             set => _overrideVmConfigs = value;
         }
 
+        /// <summary>
+        /// The identifier of a Template Version. by default it will be the latest version of the template.
+        /// </summary>
         [Input("versionId")]
         public Input<string>? VersionId { get; set; }
 

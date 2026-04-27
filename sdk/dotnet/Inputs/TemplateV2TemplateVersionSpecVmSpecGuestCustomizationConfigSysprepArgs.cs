@@ -13,11 +13,20 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+        /// </summary>
         [Input("installType")]
         public Input<string>? InstallType { get; set; }
 
         [Input("sysprepScripts")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptArgs>? _sysprepScripts;
+
+        /// <summary>
+        /// Object either UnattendXml or CustomKeyValues
+        /// * `sysprep_script.unattend_xml`: (Optional) xml object
+        /// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptArgs> SysprepScripts
         {
             get => _sysprepScripts ?? (_sysprepScripts = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptArgs>());

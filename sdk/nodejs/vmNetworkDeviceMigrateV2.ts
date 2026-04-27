@@ -6,6 +6,29 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Nutanix Virtual Machine resource to Migrate a nic.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const migrate = new nutanix.VmNetworkDeviceMigrateV2("migrate", {
+ *     vmExtId: "246f6e8a-ff05-4057-af6b-b1fd23a46d7d",
+ *     extId: "eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b",
+ *     subnets: [{
+ *         extId: "6085d3ba-99ce-41fa-9866-e5d5babb62c7",
+ *     }],
+ *     migrateType: "ASSIGN_IP",
+ *     ipAddresses: [{
+ *         value: "10.10.10.11",
+ *         prefixLength: 32,
+ *     }],
+ * });
+ * ```
+ */
 export class VmNetworkDeviceMigrateV2 extends pulumi.CustomResource {
     /**
      * Get an existing VmNetworkDeviceMigrateV2 resource's state with the given name, ID, and optional extra
@@ -34,10 +57,28 @@ export class VmNetworkDeviceMigrateV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmNetworkDeviceMigrateV2.__pulumiType;
     }
 
+    /**
+     * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+     */
     declare public readonly extId: pulumi.Output<string>;
+    /**
+     * - (Optional) Ip config settings.
+     */
     declare public readonly ipAddresses: pulumi.Output<outputs.VmNetworkDeviceMigrateV2IpAddress[]>;
+    /**
+     * - (Required) The type of IP address management for NIC migration.
+     * Valid values are:
+     * - `ASSIGN_IP` The type of NIC is Span-Destination.
+     * - `RELEASE_IP` The type of NIC is Normal.
+     */
     declare public readonly migrateType: pulumi.Output<string>;
+    /**
+     * - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+     */
     declare public readonly subnets: pulumi.Output<outputs.VmNetworkDeviceMigrateV2Subnet[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     declare public readonly vmExtId: pulumi.Output<string>;
 
     /**
@@ -87,10 +128,28 @@ export class VmNetworkDeviceMigrateV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmNetworkDeviceMigrateV2 resources.
  */
 export interface VmNetworkDeviceMigrateV2State {
+    /**
+     * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Ip config settings.
+     */
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2IpAddress>[]>;
+    /**
+     * - (Required) The type of IP address management for NIC migration.
+     * Valid values are:
+     * - `ASSIGN_IP` The type of NIC is Span-Destination.
+     * - `RELEASE_IP` The type of NIC is Normal.
+     */
     migrateType?: pulumi.Input<string>;
+    /**
+     * - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+     */
     subnets?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2Subnet>[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     vmExtId?: pulumi.Input<string>;
 }
 
@@ -98,9 +157,27 @@ export interface VmNetworkDeviceMigrateV2State {
  * The set of arguments for constructing a VmNetworkDeviceMigrateV2 resource.
  */
 export interface VmNetworkDeviceMigrateV2Args {
+    /**
+     * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+     */
     extId: pulumi.Input<string>;
+    /**
+     * - (Optional) Ip config settings.
+     */
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2IpAddress>[]>;
+    /**
+     * - (Required) The type of IP address management for NIC migration.
+     * Valid values are:
+     * - `ASSIGN_IP` The type of NIC is Span-Destination.
+     * - `RELEASE_IP` The type of NIC is Normal.
+     */
     migrateType: pulumi.Input<string>;
+    /**
+     * - (Required) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+     */
     subnets: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2Subnet>[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     vmExtId: pulumi.Input<string>;
 }

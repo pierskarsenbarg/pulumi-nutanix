@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic
     {
+        /// <summary>
+        /// - (Optional) MAC address of nic to boot from.
+        /// </summary>
         public readonly string? MacAddress;
 
         [OutputConstructor]

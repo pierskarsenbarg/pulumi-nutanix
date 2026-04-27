@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// VM name.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

@@ -14,13 +14,51 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2NicNetworkInfo
     {
+        /// <summary>
+        /// - (Optional) The IP address configurations.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Config> Ipv4Configs;
+        /// <summary>
+        /// - (Optional)The network function chain associates with the NIC. Only valid if NicType is NORMAL_NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain> NetworkFunctionChains;
+        /// <summary>
+        /// - (Optional) The type of this Network function NIC.
+        /// Defaults to INGRESS.
+        /// Valid values are:
+        /// - `TAP` The type of Network-Function NIC is Tap.
+        /// - `EGRESS` The type of Network-Function NIC is Egress.
+        /// - `INGRESS` The type of Network-Function NIC is Ingress.
+        /// </summary>
         public readonly string? NetworkFunctionNicType;
+        /// <summary>
+        /// - (Optional) NIC type.
+        /// Defaults to NORMAL_NIC.
+        /// Valid values are:
+        /// - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
+        /// - `NORMAL_NIC` The type of NIC is Normal.
+        /// - `DIRECT_NIC` The type of NIC is Direct.
+        /// - `NETWORK_FUNCTION_NIC` The type of NIC is Network-Function.
+        /// </summary>
         public readonly string? NicType;
+        /// <summary>
+        /// - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+        /// </summary>
         public readonly bool? ShouldAllowUnknownMacs;
+        /// <summary>
+        /// - (Optional) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoSubnet> Subnets;
+        /// <summary>
+        /// - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+        /// </summary>
         public readonly ImmutableArray<int> TrunkedVlans;
+        /// <summary>
+        /// - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+        /// Valid values are:
+        /// - `TRUNK` The virtual NIC is created in TRUNKED mode.
+        /// - `ACCESS` The virtual NIC is created in ACCESS mode.
+        /// </summary>
         public readonly string? VlanMode;
 
         [OutputConstructor]

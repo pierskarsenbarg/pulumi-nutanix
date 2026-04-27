@@ -6,6 +6,29 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Deploy one or more VMs from a Template. Number of VMs to be deployed and their corresponding VM configuration overrides can be provided.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const deploy_temp = new nutanix.DeployTemplatesV2("deploy-temp", {
+ *     extId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+ *     numberOfVms: 1,
+ *     clusterReference: "0005b6b8-7b3b-4b0b-8b3b-7b3b4b0b8b3b",
+ *     overrideVmConfigMaps: [{
+ *         name: "example-tf-temp",
+ *         memorySizeBytes: 4294967296,
+ *         numSockets: 2,
+ *         numCoresPerSocket: 1,
+ *         numThreadsPerCore: 1,
+ *     }],
+ * });
+ * ```
+ */
 export class DeployTemplatesV2 extends pulumi.CustomResource {
     /**
      * Get an existing DeployTemplatesV2 resource's state with the given name, ID, and optional extra
@@ -34,10 +57,25 @@ export class DeployTemplatesV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === DeployTemplatesV2.__pulumiType;
     }
 
+    /**
+     * The identifier of the Cluster where the VM(s) will be created using a Template.
+     */
     declare public readonly clusterReference: pulumi.Output<string>;
+    /**
+     * The identifier of a Template.
+     */
     declare public readonly extId: pulumi.Output<string>;
+    /**
+     * Number of VMs to be deployed.
+     */
     declare public readonly numberOfVms: pulumi.Output<number>;
+    /**
+     * The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
+     */
     declare public readonly overrideVmConfigMaps: pulumi.Output<outputs.DeployTemplatesV2OverrideVmConfigMap[] | undefined>;
+    /**
+     * The identifier of a Template Version.
+     */
     declare public readonly versionId: pulumi.Output<string | undefined>;
 
     /**
@@ -84,10 +122,25 @@ export class DeployTemplatesV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DeployTemplatesV2 resources.
  */
 export interface DeployTemplatesV2State {
+    /**
+     * The identifier of the Cluster where the VM(s) will be created using a Template.
+     */
     clusterReference?: pulumi.Input<string>;
+    /**
+     * The identifier of a Template.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * Number of VMs to be deployed.
+     */
     numberOfVms?: pulumi.Input<number>;
+    /**
+     * The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
+     */
     overrideVmConfigMaps?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMap>[]>;
+    /**
+     * The identifier of a Template Version.
+     */
     versionId?: pulumi.Input<string>;
 }
 
@@ -95,9 +148,24 @@ export interface DeployTemplatesV2State {
  * The set of arguments for constructing a DeployTemplatesV2 resource.
  */
 export interface DeployTemplatesV2Args {
+    /**
+     * The identifier of the Cluster where the VM(s) will be created using a Template.
+     */
     clusterReference: pulumi.Input<string>;
+    /**
+     * The identifier of a Template.
+     */
     extId: pulumi.Input<string>;
+    /**
+     * Number of VMs to be deployed.
+     */
     numberOfVms: pulumi.Input<number>;
+    /**
+     * The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
+     */
     overrideVmConfigMaps?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMap>[]>;
+    /**
+     * The identifier of a Template Version.
+     */
     versionId?: pulumi.Input<string>;
 }

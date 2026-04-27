@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("assignedDeviceInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoGetArgs>? _assignedDeviceInfos;
+
+        /// <summary>
+        /// Information about the attached PCIe device to the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoGetArgs> AssignedDeviceInfos
         {
             get => _assignedDeviceInfos ?? (_assignedDeviceInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoGetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("backingInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoGetArgs>? _backingInfos;
+
+        /// <summary>
+        /// Indicates the way a PCIe device is associated to the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoGetArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoGetArgs>());

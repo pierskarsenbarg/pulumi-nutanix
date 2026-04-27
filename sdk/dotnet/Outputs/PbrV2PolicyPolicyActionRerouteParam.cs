@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyActionRerouteParam
     {
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIp> EgressServiceIps;
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIp> IngressServiceIps;
+        /// <summary>
+        /// Type of fallback action in reroute case when service VM is down. Acceptable values are "PASSTHROUGH", "NO_ACTION", "ALLOW", "DENY".
+        /// </summary>
         public readonly string? RerouteFallbackAction;
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyActionRerouteParamServiceIp> ServiceIps;
 
         [OutputConstructor]

@@ -16,6 +16,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.TemplateV2UpdatedByAdditionalAttribute> AdditionalAttributes;
         public readonly string? CreationType;
+        /// <summary>
+        /// VM description
+        /// </summary>
         public readonly string? Description;
         public readonly string? DisplayName;
         public readonly string? EmailId;

@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Globally unique identifier denoting PCIe device label. It should be of type UUID.
+        /// </summary>
         [Input("deviceExtId")]
         public Input<string>? DeviceExtId { get; set; }
 

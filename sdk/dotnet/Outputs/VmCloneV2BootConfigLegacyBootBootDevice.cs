@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigLegacyBootBootDevice
     {
+        /// <summary>
+        /// - (Optional) The Boot Device Disk settings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk> BootDeviceDisks;
+        /// <summary>
+        /// - (Optional) The Boot Device Nic settings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic> BootDeviceNics;
 
         [OutputConstructor]

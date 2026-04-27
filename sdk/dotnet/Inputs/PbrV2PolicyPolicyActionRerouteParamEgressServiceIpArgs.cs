@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ipv4s")]
         private InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Args>? _ipv4s;
+
+        /// <summary>
+        /// IPv4 Object.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Args> Ipv4s
         {
             get => _ipv4s ?? (_ipv4s = new InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Args>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("ipv6s")]
         private InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Args>? _ipv6s;
+
+        /// <summary>
+        /// IPv6 Object.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Args> Ipv6s
         {
             get => _ipv6s ?? (_ipv6s = new InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Args>());

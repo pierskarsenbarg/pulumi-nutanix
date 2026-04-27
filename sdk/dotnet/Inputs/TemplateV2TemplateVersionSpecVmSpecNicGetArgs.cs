@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfoGetArgs>? _backingInfos;
+
+        /// <summary>
+        /// Defines a NIC emulated by the hypervisor
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfoGetArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfoGetArgs>());
@@ -34,6 +38,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("networkInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoGetArgs>? _networkInfos;
+
+        /// <summary>
+        /// Network information for a NIC.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoGetArgs> NetworkInfos
         {
             get => _networkInfos ?? (_networkInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoGetArgs>());

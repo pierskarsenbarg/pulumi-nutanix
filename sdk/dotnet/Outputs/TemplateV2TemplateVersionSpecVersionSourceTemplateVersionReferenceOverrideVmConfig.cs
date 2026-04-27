@@ -14,12 +14,33 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig
     {
+        /// <summary>
+        /// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization> GuestCustomizations;
+        /// <summary>
+        /// Memory size in bytes.
+        /// </summary>
         public readonly int? MemorySizeBytes;
+        /// <summary>
+        /// VM name.
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// NICs attached to the VM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic> Nics;
+        /// <summary>
+        /// Number of cores per socket.
+        /// </summary>
         public readonly int? NumCoresPerSocket;
+        /// <summary>
+        /// Number of vCPU sockets.
+        /// </summary>
         public readonly int? NumSockets;
+        /// <summary>
+        /// Number of threads per core.
+        /// </summary>
         public readonly int? NumThreadsPerCore;
 
         [OutputConstructor]

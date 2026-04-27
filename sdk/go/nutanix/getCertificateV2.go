@@ -11,6 +11,34 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Get the details of the SSL certificate which can be used to connect to an Object store.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetCertificateV2(ctx, &nutanix.GetCertificateV2Args{
+//				ObjectStoreExtId: "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+//				ExtId:            "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetCertificateV2(ctx *pulumi.Context, args *GetCertificateV2Args, opts ...pulumi.InvokeOption) (*GetCertificateV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCertificateV2Result
@@ -23,21 +51,29 @@ func GetCertificateV2(ctx *pulumi.Context, args *GetCertificateV2Args, opts ...p
 
 // A collection of arguments for invoking getCertificateV2.
 type GetCertificateV2Args struct {
-	ExtId            string `pulumi:"extId"`
+	// -(Required) The UUID of the certificate of an Object store.
+	ExtId string `pulumi:"extId"`
+	// -(Required) The UUID of the Object store.
 	ObjectStoreExtId string `pulumi:"objectStoreExtId"`
 }
 
 // A collection of values returned by getCertificateV2.
 type GetCertificateV2Result struct {
+	// - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
 	AlternateFqdns []GetCertificateV2AlternateFqdn `pulumi:"alternateFqdns"`
-	AlternateIps   []GetCertificateV2AlternateIp   `pulumi:"alternateIps"`
-	ExtId          string                          `pulumi:"extId"`
+	// - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
+	AlternateIps []GetCertificateV2AlternateIp `pulumi:"alternateIps"`
+	// - A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId string `pulumi:"extId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id               string                     `pulumi:"id"`
-	Links            []GetCertificateV2Link     `pulumi:"links"`
+	Id string `pulumi:"id"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetCertificateV2Link `pulumi:"links"`
+	// - Metadata associated with this resource.
 	Metadatas        []GetCertificateV2Metadata `pulumi:"metadatas"`
 	ObjectStoreExtId string                     `pulumi:"objectStoreExtId"`
-	TenantId         string                     `pulumi:"tenantId"`
+	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId string `pulumi:"tenantId"`
 }
 
 func GetCertificateV2Output(ctx *pulumi.Context, args GetCertificateV2OutputArgs, opts ...pulumi.InvokeOption) GetCertificateV2ResultOutput {
@@ -51,7 +87,9 @@ func GetCertificateV2Output(ctx *pulumi.Context, args GetCertificateV2OutputArgs
 
 // A collection of arguments for invoking getCertificateV2.
 type GetCertificateV2OutputArgs struct {
-	ExtId            pulumi.StringInput `pulumi:"extId"`
+	// -(Required) The UUID of the certificate of an Object store.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// -(Required) The UUID of the Object store.
 	ObjectStoreExtId pulumi.StringInput `pulumi:"objectStoreExtId"`
 }
 
@@ -74,14 +112,17 @@ func (o GetCertificateV2ResultOutput) ToGetCertificateV2ResultOutputWithContext(
 	return o
 }
 
+// - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
 func (o GetCertificateV2ResultOutput) AlternateFqdns() GetCertificateV2AlternateFqdnArrayOutput {
 	return o.ApplyT(func(v GetCertificateV2Result) []GetCertificateV2AlternateFqdn { return v.AlternateFqdns }).(GetCertificateV2AlternateFqdnArrayOutput)
 }
 
+// - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
 func (o GetCertificateV2ResultOutput) AlternateIps() GetCertificateV2AlternateIpArrayOutput {
 	return o.ApplyT(func(v GetCertificateV2Result) []GetCertificateV2AlternateIp { return v.AlternateIps }).(GetCertificateV2AlternateIpArrayOutput)
 }
 
+// - A globally unique identifier of an instance that is suitable for external consumption.
 func (o GetCertificateV2ResultOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Result) string { return v.ExtId }).(pulumi.StringOutput)
 }
@@ -91,10 +132,12 @@ func (o GetCertificateV2ResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Result) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o GetCertificateV2ResultOutput) Links() GetCertificateV2LinkArrayOutput {
 	return o.ApplyT(func(v GetCertificateV2Result) []GetCertificateV2Link { return v.Links }).(GetCertificateV2LinkArrayOutput)
 }
 
+// - Metadata associated with this resource.
 func (o GetCertificateV2ResultOutput) Metadatas() GetCertificateV2MetadataArrayOutput {
 	return o.ApplyT(func(v GetCertificateV2Result) []GetCertificateV2Metadata { return v.Metadatas }).(GetCertificateV2MetadataArrayOutput)
 }
@@ -103,6 +146,7 @@ func (o GetCertificateV2ResultOutput) ObjectStoreExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Result) string { return v.ObjectStoreExtId }).(pulumi.StringOutput)
 }
 
+// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
 func (o GetCertificateV2ResultOutput) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateV2Result) string { return v.TenantId }).(pulumi.StringOutput)
 }

@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchProtocolParameterIcmpObject
     {
+        /// <summary>
+        /// icmp code
+        /// </summary>
         public readonly int? IcmpCode;
+        /// <summary>
+        /// icmp type
+        /// </summary>
         public readonly int? IcmpType;
 
         [OutputConstructor]

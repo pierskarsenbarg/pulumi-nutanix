@@ -10,33 +10,111 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Create an Address Group
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // Create Address group with ipv4 addresses
+    ///     var ipv4_address = new Nutanix.AddressGroupsV2("ipv4-address", new()
+    ///     {
+    ///         Name = "address_group_ipv4_address",
+    ///         Description = "address group description",
+    ///         Ipv4Addresses = new[]
+    ///         {
+    ///             new Nutanix.Inputs.AddressGroupsV2Ipv4AddressArgs
+    ///             {
+    ///                 Value = "10.0.0.0",
+    ///                 PrefixLength = 24,
+    ///             },
+    ///             new Nutanix.Inputs.AddressGroupsV2Ipv4AddressArgs
+    ///             {
+    ///                 Value = "172.0.0.0",
+    ///                 PrefixLength = 24,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     // Create Address group. with ip range
+    ///     var ip_ranges = new Nutanix.AddressGroupsV2("ip-ranges", new()
+    ///     {
+    ///         Name = "address_group_ip_ranges",
+    ///         Description = "address group description",
+    ///         IpRanges = new[]
+    ///         {
+    ///             new Nutanix.Inputs.AddressGroupsV2IpRangeArgs
+    ///             {
+    ///                 StartIp = "10.0.0.1",
+    ///                 EndIp = "10.0.0.10",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/addressGroupsV2:AddressGroupsV2")]
     public partial class AddressGroupsV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// created by.
+        /// </summary>
         [Output("createdBy")]
         public Output<string> CreatedBy { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Description of the Address group
+        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// address group uuid.
+        /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) List of IP range containing start and end IP.
+        /// </summary>
         [Output("ipRanges")]
         public Output<ImmutableArray<Outputs.AddressGroupsV2IpRange>> IpRanges { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) List of CIDR blocks in the Address Group.
+        /// </summary>
         [Output("ipv4Addresses")]
         public Output<ImmutableArray<Outputs.AddressGroupsV2Ipv4Address>> Ipv4Addresses { get; private set; } = null!;
 
+        /// <summary>
+        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         [Output("links")]
         public Output<ImmutableArray<Outputs.AddressGroupsV2Link>> Links { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Name of the Address group
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// Reference to policy associated with Address Group.
+        /// </summary>
         [Output("policyReferences")]
         public Output<ImmutableArray<string>> PolicyReferences { get; private set; } = null!;
 
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity.
+        /// </summary>
         [Output("tenantId")]
         public Output<string> TenantId { get; private set; } = null!;
 
@@ -87,11 +165,18 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class AddressGroupsV2Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Description of the Address group
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("ipRanges")]
         private InputList<Inputs.AddressGroupsV2IpRangeArgs>? _ipRanges;
+
+        /// <summary>
+        /// - (Optional) List of IP range containing start and end IP.
+        /// </summary>
         public InputList<Inputs.AddressGroupsV2IpRangeArgs> IpRanges
         {
             get => _ipRanges ?? (_ipRanges = new InputList<Inputs.AddressGroupsV2IpRangeArgs>());
@@ -100,12 +185,19 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("ipv4Addresses")]
         private InputList<Inputs.AddressGroupsV2Ipv4AddressArgs>? _ipv4Addresses;
+
+        /// <summary>
+        /// - (Optional) List of CIDR blocks in the Address Group.
+        /// </summary>
         public InputList<Inputs.AddressGroupsV2Ipv4AddressArgs> Ipv4Addresses
         {
             get => _ipv4Addresses ?? (_ipv4Addresses = new InputList<Inputs.AddressGroupsV2Ipv4AddressArgs>());
             set => _ipv4Addresses = value;
         }
 
+        /// <summary>
+        /// - (Required) Name of the Address group
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -117,17 +209,30 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class AddressGroupsV2State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// created by.
+        /// </summary>
         [Input("createdBy")]
         public Input<string>? CreatedBy { get; set; }
 
+        /// <summary>
+        /// - (Optional) Description of the Address group
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// address group uuid.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("ipRanges")]
         private InputList<Inputs.AddressGroupsV2IpRangeGetArgs>? _ipRanges;
+
+        /// <summary>
+        /// - (Optional) List of IP range containing start and end IP.
+        /// </summary>
         public InputList<Inputs.AddressGroupsV2IpRangeGetArgs> IpRanges
         {
             get => _ipRanges ?? (_ipRanges = new InputList<Inputs.AddressGroupsV2IpRangeGetArgs>());
@@ -136,6 +241,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("ipv4Addresses")]
         private InputList<Inputs.AddressGroupsV2Ipv4AddressGetArgs>? _ipv4Addresses;
+
+        /// <summary>
+        /// - (Optional) List of CIDR blocks in the Address Group.
+        /// </summary>
         public InputList<Inputs.AddressGroupsV2Ipv4AddressGetArgs> Ipv4Addresses
         {
             get => _ipv4Addresses ?? (_ipv4Addresses = new InputList<Inputs.AddressGroupsV2Ipv4AddressGetArgs>());
@@ -144,23 +253,37 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("links")]
         private InputList<Inputs.AddressGroupsV2LinkGetArgs>? _links;
+
+        /// <summary>
+        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public InputList<Inputs.AddressGroupsV2LinkGetArgs> Links
         {
             get => _links ?? (_links = new InputList<Inputs.AddressGroupsV2LinkGetArgs>());
             set => _links = value;
         }
 
+        /// <summary>
+        /// - (Required) Name of the Address group
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("policyReferences")]
         private InputList<string>? _policyReferences;
+
+        /// <summary>
+        /// Reference to policy associated with Address Group.
+        /// </summary>
         public InputList<string> PolicyReferences
         {
             get => _policyReferences ?? (_policyReferences = new InputList<string>());
             set => _policyReferences = value;
         }
 
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity.
+        /// </summary>
         [Input("tenantId")]
         public Input<string>? TenantId { get; set; }
 

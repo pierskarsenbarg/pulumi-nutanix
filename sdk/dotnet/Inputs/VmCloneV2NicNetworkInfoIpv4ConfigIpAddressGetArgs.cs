@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCloneV2NicNetworkInfoIpv4ConfigIpAddressGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+        /// </summary>
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
+        /// <summary>
+        /// - Ip address.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

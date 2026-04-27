@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Get the details of the SSL certificate which can be used to connect to an Object store.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const example = nutanix.getCertificateV2({
+ *     objectStoreExtId: "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+ *     extId: "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
+ * });
+ * ```
+ */
 export function getCertificateV2(args: GetCertificateV2Args, opts?: pulumi.InvokeOptions): Promise<GetCertificateV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getCertificateV2:getCertificateV2", {
@@ -18,7 +33,13 @@ export function getCertificateV2(args: GetCertificateV2Args, opts?: pulumi.Invok
  * A collection of arguments for invoking getCertificateV2.
  */
 export interface GetCertificateV2Args {
+    /**
+     * -(Required) The UUID of the certificate of an Object store.
+     */
     extId: string;
+    /**
+     * -(Required) The UUID of the Object store.
+     */
     objectStoreExtId: string;
 }
 
@@ -26,18 +47,51 @@ export interface GetCertificateV2Args {
  * A collection of values returned by getCertificateV2.
  */
 export interface GetCertificateV2Result {
+    /**
+     * - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
+     */
     readonly alternateFqdns: outputs.GetCertificateV2AlternateFqdn[];
+    /**
+     * - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
+     */
     readonly alternateIps: outputs.GetCertificateV2AlternateIp[];
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
     readonly extId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
     readonly links: outputs.GetCertificateV2Link[];
+    /**
+     * - Metadata associated with this resource.
+     */
     readonly metadatas: outputs.GetCertificateV2Metadata[];
     readonly objectStoreExtId: string;
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
     readonly tenantId: string;
 }
+/**
+ * Get the details of the SSL certificate which can be used to connect to an Object store.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const example = nutanix.getCertificateV2({
+ *     objectStoreExtId: "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+ *     extId: "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
+ * });
+ * ```
+ */
 export function getCertificateV2Output(args: GetCertificateV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCertificateV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getCertificateV2:getCertificateV2", {
@@ -50,6 +104,12 @@ export function getCertificateV2Output(args: GetCertificateV2OutputArgs, opts?: 
  * A collection of arguments for invoking getCertificateV2.
  */
 export interface GetCertificateV2OutputArgs {
+    /**
+     * -(Required) The UUID of the certificate of an Object store.
+     */
     extId: pulumi.Input<string>;
+    /**
+     * -(Required) The UUID of the Object store.
+     */
     objectStoreExtId: pulumi.Input<string>;
 }

@@ -12,12 +12,61 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Inserts the defined ISO into a CD-ROM device attached to a Virtual Machine.
+// Ejects the ISO currently inserted into a CD-ROM device on a Virtual Machine.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewVmCdromInsertEjectV2(ctx, "insert-cdrom", &nutanix.VmCdromInsertEjectV2Args{
+//				VmExtId: pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
+//				ExtId:   pulumi.String("c2c249b0-98a0-43fa-9ff6-dcde578d3936"),
+//				BackingInfos: nutanix.VmCdromInsertEjectV2BackingInfoArray{
+//					&nutanix.VmCdromInsertEjectV2BackingInfoArgs{
+//						DataSources: nutanix.VmCdromInsertEjectV2BackingInfoDataSourceArray{
+//							&nutanix.VmCdromInsertEjectV2BackingInfoDataSourceArgs{
+//								References: nutanix.VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray{
+//									&nutanix.VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs{
+//										ImageReferences: nutanix.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray{
+//											&nutanix.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs{
+//												ImageExtId: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type VmCdromInsertEjectV2 struct {
 	pulumi.CustomResourceState
 
+	// Storage provided by Nutanix ADSF
 	BackingInfos VmCdromInsertEjectV2BackingInfoArrayOutput `pulumi:"backingInfos"`
-	ExtId        pulumi.StringOutput                        `pulumi:"extId"`
-	VmExtId      pulumi.StringOutput                        `pulumi:"vmExtId"`
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
+	ExtId pulumi.StringOutput `pulumi:"extId"`
+	// The globally unique identifier of a VM. It should be of type UUID
+	VmExtId pulumi.StringOutput `pulumi:"vmExtId"`
 }
 
 // NewVmCdromInsertEjectV2 registers a new resource with the given unique name, arguments, and options.
@@ -56,15 +105,21 @@ func GetVmCdromInsertEjectV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmCdromInsertEjectV2 resources.
 type vmCdromInsertEjectV2State struct {
+	// Storage provided by Nutanix ADSF
 	BackingInfos []VmCdromInsertEjectV2BackingInfo `pulumi:"backingInfos"`
-	ExtId        *string                           `pulumi:"extId"`
-	VmExtId      *string                           `pulumi:"vmExtId"`
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
+	ExtId *string `pulumi:"extId"`
+	// The globally unique identifier of a VM. It should be of type UUID
+	VmExtId *string `pulumi:"vmExtId"`
 }
 
 type VmCdromInsertEjectV2State struct {
+	// Storage provided by Nutanix ADSF
 	BackingInfos VmCdromInsertEjectV2BackingInfoArrayInput
-	ExtId        pulumi.StringPtrInput
-	VmExtId      pulumi.StringPtrInput
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
+	ExtId pulumi.StringPtrInput
+	// The globally unique identifier of a VM. It should be of type UUID
+	VmExtId pulumi.StringPtrInput
 }
 
 func (VmCdromInsertEjectV2State) ElementType() reflect.Type {
@@ -72,16 +127,22 @@ func (VmCdromInsertEjectV2State) ElementType() reflect.Type {
 }
 
 type vmCdromInsertEjectV2Args struct {
+	// Storage provided by Nutanix ADSF
 	BackingInfos []VmCdromInsertEjectV2BackingInfo `pulumi:"backingInfos"`
-	ExtId        string                            `pulumi:"extId"`
-	VmExtId      string                            `pulumi:"vmExtId"`
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
+	ExtId string `pulumi:"extId"`
+	// The globally unique identifier of a VM. It should be of type UUID
+	VmExtId string `pulumi:"vmExtId"`
 }
 
 // The set of arguments for constructing a VmCdromInsertEjectV2 resource.
 type VmCdromInsertEjectV2Args struct {
+	// Storage provided by Nutanix ADSF
 	BackingInfos VmCdromInsertEjectV2BackingInfoArrayInput
-	ExtId        pulumi.StringInput
-	VmExtId      pulumi.StringInput
+	// The globally unique identifier of a CD-ROM. It should be of type UUID.
+	ExtId pulumi.StringInput
+	// The globally unique identifier of a VM. It should be of type UUID
+	VmExtId pulumi.StringInput
 }
 
 func (VmCdromInsertEjectV2Args) ElementType() reflect.Type {
@@ -171,14 +232,17 @@ func (o VmCdromInsertEjectV2Output) ToVmCdromInsertEjectV2OutputWithContext(ctx 
 	return o
 }
 
+// Storage provided by Nutanix ADSF
 func (o VmCdromInsertEjectV2Output) BackingInfos() VmCdromInsertEjectV2BackingInfoArrayOutput {
 	return o.ApplyT(func(v *VmCdromInsertEjectV2) VmCdromInsertEjectV2BackingInfoArrayOutput { return v.BackingInfos }).(VmCdromInsertEjectV2BackingInfoArrayOutput)
 }
 
+// The globally unique identifier of a CD-ROM. It should be of type UUID.
 func (o VmCdromInsertEjectV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// The globally unique identifier of a VM. It should be of type UUID
 func (o VmCdromInsertEjectV2Output) VmExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringOutput { return v.VmExtId }).(pulumi.StringOutput)
 }

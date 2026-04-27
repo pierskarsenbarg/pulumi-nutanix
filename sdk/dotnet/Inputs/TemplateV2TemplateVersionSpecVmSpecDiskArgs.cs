@@ -15,6 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArgs>? _backingInfos;
+
+        /// <summary>
+        /// Supporting storage to create virtual disk on.
+        /// * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
+        /// * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
+        /// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArgs>());
@@ -23,6 +30,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("diskAddresses")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressArgs>? _diskAddresses;
+
+        /// <summary>
+        /// Disk address.
+        /// * `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+        /// * `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressArgs> DiskAddresses
         {
             get => _diskAddresses ?? (_diskAddresses = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressArgs>());

@@ -15,32 +15,55 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("guestCustomizations")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationGetArgs>? _guestCustomizations;
+
+        /// <summary>
+        /// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationGetArgs> GuestCustomizations
         {
             get => _guestCustomizations ?? (_guestCustomizations = new InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationGetArgs>());
             set => _guestCustomizations = value;
         }
 
+        /// <summary>
+        /// Memory size in bytes.
+        /// </summary>
         [Input("memorySizeBytes")]
         public Input<int>? MemorySizeBytes { get; set; }
 
+        /// <summary>
+        /// VM name.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("nics")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicGetArgs>? _nics;
+
+        /// <summary>
+        /// NICs attached to the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicGetArgs> Nics
         {
             get => _nics ?? (_nics = new InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicGetArgs>());
             set => _nics = value;
         }
 
+        /// <summary>
+        /// Number of cores per socket.
+        /// </summary>
         [Input("numCoresPerSocket")]
         public Input<int>? NumCoresPerSocket { get; set; }
 
+        /// <summary>
+        /// Number of vCPU sockets.
+        /// </summary>
         [Input("numSockets")]
         public Input<int>? NumSockets { get; set; }
 
+        /// <summary>
+        /// Number of threads per core.
+        /// </summary>
         [Input("numThreadsPerCore")]
         public Input<int>? NumThreadsPerCore { get; set; }
 

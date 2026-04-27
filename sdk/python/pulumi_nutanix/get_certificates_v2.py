@@ -53,6 +53,9 @@ class GetCertificatesV2Result:
     @_builtins.property
     @pulumi.getter
     def certificates(self) -> Sequence['outputs.GetCertificatesV2CertificateResult']:
+        """
+        - list of the SSL certificates which can be used to access an Object store.
+        """
         return pulumi.get(self, "certificates")
 
     @_builtins.property
@@ -111,7 +114,29 @@ def get_certificates_v2(filter: Optional[_builtins.str] = None,
                         select: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificatesV2Result:
     """
-    Use this data source to access information about an existing resource.
+    Get a list of the SSL certificates which can be used to access an Object store.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    example = nutanix.get_certificates_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4")
+    ```
+
+
+    :param _builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+           - alternateFqdns/value
+           - alternateIps/ipv4/value
+    :param _builtins.int limit: -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set. Default value is 50.
+    :param _builtins.str object_store_ext_id: -(Required) The UUID of the Object store.
+    :param _builtins.int page: -(Optional) A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results. Default value is 0.
+    :param _builtins.str select: -(Optional)  URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
+           - alternateFqdns
+           - alternateFqdns/value
+           - alternateIps
+           - alternateIps/ipv4/value
     """
     __args__ = dict()
     __args__['filter'] = filter
@@ -137,7 +162,29 @@ def get_certificates_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.
                                select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificatesV2Result]:
     """
-    Use this data source to access information about an existing resource.
+    Get a list of the SSL certificates which can be used to access an Object store.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    example = nutanix.get_certificates_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4")
+    ```
+
+
+    :param _builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+           - alternateFqdns/value
+           - alternateIps/ipv4/value
+    :param _builtins.int limit: -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set. Default value is 50.
+    :param _builtins.str object_store_ext_id: -(Required) The UUID of the Object store.
+    :param _builtins.int page: -(Optional) A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results. Default value is 0.
+    :param _builtins.str select: -(Optional)  URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
+           - alternateFqdns
+           - alternateFqdns/value
+           - alternateIps
+           - alternateIps/ipv4/value
     """
     __args__ = dict()
     __args__['filter'] = filter

@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference
     {
+        /// <summary>
+        /// - (Optional) The globally unique identifier of an image. It should be of type UUID.
+        /// </summary>
         public readonly string? ImageExtId;
 
         [OutputConstructor]

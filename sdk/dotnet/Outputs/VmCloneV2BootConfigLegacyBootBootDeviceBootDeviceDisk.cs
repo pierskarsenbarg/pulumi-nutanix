@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk
     {
+        /// <summary>
+        /// - (Optional) Address of disk to boot from.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress> DiskAddresses;
 
         [OutputConstructor]

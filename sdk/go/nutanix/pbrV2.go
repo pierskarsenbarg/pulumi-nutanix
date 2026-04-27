@@ -12,19 +12,98 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Create a Routing Policy.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// create PBR with vpc name with any source or destination or protocol with permit action
+//			_, err := nutanix.NewPbrV2(ctx, "any-source-destination", &nutanix.PbrV2Args{
+//				Name:        pulumi.String("routing_policy_any_source_destination"),
+//				Description: pulumi.String("routing policy with any source and destination"),
+//				VpcExtId:    pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//				Priority:    pulumi.Int(11),
+//				Policies: nutanix.PbrV2PolicyArray{
+//					&nutanix.PbrV2PolicyArgs{
+//						PolicyMatches: nutanix.PbrV2PolicyPolicyMatchArray{
+//							&nutanix.PbrV2PolicyPolicyMatchArgs{
+//								Sources: nutanix.PbrV2PolicyPolicyMatchSourceArray{
+//									&nutanix.PbrV2PolicyPolicyMatchSourceArgs{
+//										AddressType: pulumi.String("ANY"),
+//									},
+//								},
+//								Destinations: nutanix.PbrV2PolicyPolicyMatchDestinationArray{
+//									&nutanix.PbrV2PolicyPolicyMatchDestinationArgs{
+//										AddressType: pulumi.String("ANY"),
+//									},
+//								},
+//								ProtocolType: pulumi.String("UDP"),
+//							},
+//						},
+//						PolicyActions: nutanix.PbrV2PolicyPolicyActionArray{
+//							&nutanix.PbrV2PolicyPolicyActionArgs{
+//								ActionType: pulumi.String("PERMIT"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Import
+//
+// This helps to manage existing entities which are not created through terraform. Routing Policy can be imported using the `UUID`.  eg,
+//
+// `
+//
+// ```sh
+// $ pulumi import nutanix:index/pbrV2:PbrV2 pbr_import <UUID>
+// ```
+//
+// `
+//
+// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
 type PbrV2 struct {
 	pulumi.CustomResourceState
 
-	Description pulumi.StringOutput      `pulumi:"description"`
-	ExtId       pulumi.StringOutput      `pulumi:"extId"`
-	Links       PbrV2LinkArrayOutput     `pulumi:"links"`
-	Metadatas   PbrV2MetadataArrayOutput `pulumi:"metadatas"`
-	Name        pulumi.StringOutput      `pulumi:"name"`
-	Policies    PbrV2PolicyArrayOutput   `pulumi:"policies"`
-	Priority    pulumi.IntOutput         `pulumi:"priority"`
-	TenantId    pulumi.StringOutput      `pulumi:"tenantId"`
-	VpcExtId    pulumi.StringOutput      `pulumi:"vpcExtId"`
-	Vpcs        PbrV2VpcArrayOutput      `pulumi:"vpcs"`
+	// A description of the routing policy.
+	Description pulumi.StringOutput `pulumi:"description"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringOutput `pulumi:"extId"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links PbrV2LinkArrayOutput `pulumi:"links"`
+	// Metadata associated with this resource.
+	Metadatas PbrV2MetadataArrayOutput `pulumi:"metadatas"`
+	// Name of the routing policy.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// Routing Policies.
+	Policies PbrV2PolicyArrayOutput `pulumi:"policies"`
+	// Priority of the routing policy.
+	Priority pulumi.IntOutput `pulumi:"priority"`
+	// A globally unique identifier that represents the tenant that owns this entity
+	TenantId pulumi.StringOutput `pulumi:"tenantId"`
+	// ExtId of the VPC extId to which the routing policy belongs.
+	VpcExtId pulumi.StringOutput `pulumi:"vpcExtId"`
+	// VPC name for projections
+	Vpcs PbrV2VpcArrayOutput `pulumi:"vpcs"`
 }
 
 // NewPbrV2 registers a new resource with the given unique name, arguments, and options.
@@ -66,29 +145,49 @@ func GetPbrV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PbrV2 resources.
 type pbrV2State struct {
-	Description *string         `pulumi:"description"`
-	ExtId       *string         `pulumi:"extId"`
-	Links       []PbrV2Link     `pulumi:"links"`
-	Metadatas   []PbrV2Metadata `pulumi:"metadatas"`
-	Name        *string         `pulumi:"name"`
-	Policies    []PbrV2Policy   `pulumi:"policies"`
-	Priority    *int            `pulumi:"priority"`
-	TenantId    *string         `pulumi:"tenantId"`
-	VpcExtId    *string         `pulumi:"vpcExtId"`
-	Vpcs        []PbrV2Vpc      `pulumi:"vpcs"`
+	// A description of the routing policy.
+	Description *string `pulumi:"description"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId *string `pulumi:"extId"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []PbrV2Link `pulumi:"links"`
+	// Metadata associated with this resource.
+	Metadatas []PbrV2Metadata `pulumi:"metadatas"`
+	// Name of the routing policy.
+	Name *string `pulumi:"name"`
+	// Routing Policies.
+	Policies []PbrV2Policy `pulumi:"policies"`
+	// Priority of the routing policy.
+	Priority *int `pulumi:"priority"`
+	// A globally unique identifier that represents the tenant that owns this entity
+	TenantId *string `pulumi:"tenantId"`
+	// ExtId of the VPC extId to which the routing policy belongs.
+	VpcExtId *string `pulumi:"vpcExtId"`
+	// VPC name for projections
+	Vpcs []PbrV2Vpc `pulumi:"vpcs"`
 }
 
 type PbrV2State struct {
+	// A description of the routing policy.
 	Description pulumi.StringPtrInput
-	ExtId       pulumi.StringPtrInput
-	Links       PbrV2LinkArrayInput
-	Metadatas   PbrV2MetadataArrayInput
-	Name        pulumi.StringPtrInput
-	Policies    PbrV2PolicyArrayInput
-	Priority    pulumi.IntPtrInput
-	TenantId    pulumi.StringPtrInput
-	VpcExtId    pulumi.StringPtrInput
-	Vpcs        PbrV2VpcArrayInput
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringPtrInput
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links PbrV2LinkArrayInput
+	// Metadata associated with this resource.
+	Metadatas PbrV2MetadataArrayInput
+	// Name of the routing policy.
+	Name pulumi.StringPtrInput
+	// Routing Policies.
+	Policies PbrV2PolicyArrayInput
+	// Priority of the routing policy.
+	Priority pulumi.IntPtrInput
+	// A globally unique identifier that represents the tenant that owns this entity
+	TenantId pulumi.StringPtrInput
+	// ExtId of the VPC extId to which the routing policy belongs.
+	VpcExtId pulumi.StringPtrInput
+	// VPC name for projections
+	Vpcs PbrV2VpcArrayInput
 }
 
 func (PbrV2State) ElementType() reflect.Type {
@@ -96,22 +195,34 @@ func (PbrV2State) ElementType() reflect.Type {
 }
 
 type pbrV2Args struct {
-	Description *string       `pulumi:"description"`
-	ExtId       *string       `pulumi:"extId"`
-	Name        *string       `pulumi:"name"`
-	Policies    []PbrV2Policy `pulumi:"policies"`
-	Priority    int           `pulumi:"priority"`
-	VpcExtId    string        `pulumi:"vpcExtId"`
+	// A description of the routing policy.
+	Description *string `pulumi:"description"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId *string `pulumi:"extId"`
+	// Name of the routing policy.
+	Name *string `pulumi:"name"`
+	// Routing Policies.
+	Policies []PbrV2Policy `pulumi:"policies"`
+	// Priority of the routing policy.
+	Priority int `pulumi:"priority"`
+	// ExtId of the VPC extId to which the routing policy belongs.
+	VpcExtId string `pulumi:"vpcExtId"`
 }
 
 // The set of arguments for constructing a PbrV2 resource.
 type PbrV2Args struct {
+	// A description of the routing policy.
 	Description pulumi.StringPtrInput
-	ExtId       pulumi.StringPtrInput
-	Name        pulumi.StringPtrInput
-	Policies    PbrV2PolicyArrayInput
-	Priority    pulumi.IntInput
-	VpcExtId    pulumi.StringInput
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringPtrInput
+	// Name of the routing policy.
+	Name pulumi.StringPtrInput
+	// Routing Policies.
+	Policies PbrV2PolicyArrayInput
+	// Priority of the routing policy.
+	Priority pulumi.IntInput
+	// ExtId of the VPC extId to which the routing policy belongs.
+	VpcExtId pulumi.StringInput
 }
 
 func (PbrV2Args) ElementType() reflect.Type {
@@ -201,42 +312,52 @@ func (o PbrV2Output) ToPbrV2OutputWithContext(ctx context.Context) PbrV2Output {
 	return o
 }
 
+// A description of the routing policy.
 func (o PbrV2Output) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *PbrV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// A globally unique identifier of an instance that is suitable for external consumption.
 func (o PbrV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PbrV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o PbrV2Output) Links() PbrV2LinkArrayOutput {
 	return o.ApplyT(func(v *PbrV2) PbrV2LinkArrayOutput { return v.Links }).(PbrV2LinkArrayOutput)
 }
 
+// Metadata associated with this resource.
 func (o PbrV2Output) Metadatas() PbrV2MetadataArrayOutput {
 	return o.ApplyT(func(v *PbrV2) PbrV2MetadataArrayOutput { return v.Metadatas }).(PbrV2MetadataArrayOutput)
 }
 
+// Name of the routing policy.
 func (o PbrV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *PbrV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// Routing Policies.
 func (o PbrV2Output) Policies() PbrV2PolicyArrayOutput {
 	return o.ApplyT(func(v *PbrV2) PbrV2PolicyArrayOutput { return v.Policies }).(PbrV2PolicyArrayOutput)
 }
 
+// Priority of the routing policy.
 func (o PbrV2Output) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v *PbrV2) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
 }
 
+// A globally unique identifier that represents the tenant that owns this entity
 func (o PbrV2Output) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PbrV2) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
+// ExtId of the VPC extId to which the routing policy belongs.
 func (o PbrV2Output) VpcExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PbrV2) pulumi.StringOutput { return v.VpcExtId }).(pulumi.StringOutput)
 }
 
+// VPC name for projections
 func (o PbrV2Output) Vpcs() PbrV2VpcArrayOutput {
 	return o.ApplyT(func(v *PbrV2) PbrV2VpcArrayOutput { return v.Vpcs }).(PbrV2VpcArrayOutput)
 }

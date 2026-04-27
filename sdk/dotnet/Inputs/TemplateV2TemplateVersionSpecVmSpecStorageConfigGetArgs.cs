@@ -13,11 +13,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class TemplateV2TemplateVersionSpecVmSpecStorageConfigGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Indicates whether the virtual disk is pinned to the hot tier or not.
+        /// </summary>
         [Input("isFlashModeEnabled")]
         public Input<bool>? IsFlashModeEnabled { get; set; }
 
         [Input("qosConfigs")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfigGetArgs>? _qosConfigs;
+
+        /// <summary>
+        /// QoS parameters to be enforced.
+        /// * `qos_config.throttled_iops`: (Optional) Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfigGetArgs> QosConfigs
         {
             get => _qosConfigs ?? (_qosConfigs = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfigGetArgs>());

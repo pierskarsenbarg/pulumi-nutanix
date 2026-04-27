@@ -6,6 +6,25 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Nutanix Virtual Machine resource to Create a virtual machine clone.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const vm_list = nutanix.getVirtualMachinesV2({});
+ * const vm1 = new nutanix.VmCloneV2("vm1", {
+ *     vmExtId: vm_list.then(vm_list => vm_list.vms?.[0]?.data?.extId),
+ *     name: "test-dou",
+ *     numCoresPerSocket: 1,
+ *     numSockets: 1,
+ *     memorySizeMib: 2048,
+ * });
+ * ```
+ */
 export class VmCloneV2 extends pulumi.CustomResource {
     /**
      * Get an existing VmCloneV2 resource's state with the given name, ID, and optional extra
@@ -36,6 +55,9 @@ export class VmCloneV2 extends pulumi.CustomResource {
 
     declare public /*out*/ readonly apcConfigs: pulumi.Output<outputs.VmCloneV2ApcConfig[]>;
     declare public /*out*/ readonly biosUuid: pulumi.Output<string>;
+    /**
+     * - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     declare public readonly bootConfigs: pulumi.Output<outputs.VmCloneV2BootConfig[]>;
     declare public /*out*/ readonly categories: pulumi.Output<outputs.VmCloneV2Category[]>;
     declare public /*out*/ readonly cdRoms: pulumi.Output<outputs.VmCloneV2CdRom[]>;
@@ -47,6 +69,9 @@ export class VmCloneV2 extends pulumi.CustomResource {
     declare public /*out*/ readonly extId: pulumi.Output<string>;
     declare public /*out*/ readonly generationUuid: pulumi.Output<string>;
     declare public /*out*/ readonly gpuses: pulumi.Output<outputs.VmCloneV2Gpus[]>;
+    /**
+     * - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     declare public readonly guestCustomizations: pulumi.Output<outputs.VmCloneV2GuestCustomization[]>;
     declare public /*out*/ readonly guestTools: pulumi.Output<outputs.VmCloneV2GuestTool[]>;
     declare public /*out*/ readonly hardwareClockTimezone: pulumi.Output<string>;
@@ -63,11 +88,26 @@ export class VmCloneV2 extends pulumi.CustomResource {
     declare public /*out*/ readonly links: pulumi.Output<outputs.VmCloneV2Link[]>;
     declare public /*out*/ readonly machineType: pulumi.Output<string>;
     declare public readonly memorySizeBytes: pulumi.Output<number>;
+    /**
+     * - (Optional) The name for the vm.
+     */
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * - (Optional) NICs attached to the VM.
+     */
     declare public readonly nics: pulumi.Output<outputs.VmCloneV2Nic[]>;
+    /**
+     * - (Optional) Number of cores per socket.
+     */
     declare public readonly numCoresPerSocket: pulumi.Output<number>;
     declare public /*out*/ readonly numNumaNodes: pulumi.Output<number>;
+    /**
+     * - (Optional) Number of vCPU sockets.
+     */
     declare public readonly numSockets: pulumi.Output<number>;
+    /**
+     * - (Optional) Number of threads per core.
+     */
     declare public readonly numThreadsPerCore: pulumi.Output<number>;
     declare public /*out*/ readonly ownershipInfos: pulumi.Output<outputs.VmCloneV2OwnershipInfo[]>;
     declare public /*out*/ readonly powerState: pulumi.Output<string>;
@@ -78,6 +118,9 @@ export class VmCloneV2 extends pulumi.CustomResource {
     declare public /*out*/ readonly storageConfigs: pulumi.Output<outputs.VmCloneV2StorageConfig[]>;
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     declare public /*out*/ readonly updateTime: pulumi.Output<string>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     declare public readonly vmExtId: pulumi.Output<string>;
     declare public /*out*/ readonly vtpmConfigs: pulumi.Output<outputs.VmCloneV2VtpmConfig[]>;
 
@@ -203,6 +246,9 @@ export class VmCloneV2 extends pulumi.CustomResource {
 export interface VmCloneV2State {
     apcConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2ApcConfig>[]>;
     biosUuid?: pulumi.Input<string>;
+    /**
+     * - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     bootConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfig>[]>;
     categories?: pulumi.Input<pulumi.Input<inputs.VmCloneV2Category>[]>;
     cdRoms?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRom>[]>;
@@ -214,6 +260,9 @@ export interface VmCloneV2State {
     extId?: pulumi.Input<string>;
     generationUuid?: pulumi.Input<string>;
     gpuses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2Gpus>[]>;
+    /**
+     * - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     guestCustomizations?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomization>[]>;
     guestTools?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestTool>[]>;
     hardwareClockTimezone?: pulumi.Input<string>;
@@ -230,11 +279,26 @@ export interface VmCloneV2State {
     links?: pulumi.Input<pulumi.Input<inputs.VmCloneV2Link>[]>;
     machineType?: pulumi.Input<string>;
     memorySizeBytes?: pulumi.Input<number>;
+    /**
+     * - (Optional) The name for the vm.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) NICs attached to the VM.
+     */
     nics?: pulumi.Input<pulumi.Input<inputs.VmCloneV2Nic>[]>;
+    /**
+     * - (Optional) Number of cores per socket.
+     */
     numCoresPerSocket?: pulumi.Input<number>;
     numNumaNodes?: pulumi.Input<number>;
+    /**
+     * - (Optional) Number of vCPU sockets.
+     */
     numSockets?: pulumi.Input<number>;
+    /**
+     * - (Optional) Number of threads per core.
+     */
     numThreadsPerCore?: pulumi.Input<number>;
     ownershipInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2OwnershipInfo>[]>;
     powerState?: pulumi.Input<string>;
@@ -245,6 +309,9 @@ export interface VmCloneV2State {
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2StorageConfig>[]>;
     tenantId?: pulumi.Input<string>;
     updateTime?: pulumi.Input<string>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     vmExtId?: pulumi.Input<string>;
     vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2VtpmConfig>[]>;
 }
@@ -253,13 +320,37 @@ export interface VmCloneV2State {
  * The set of arguments for constructing a VmCloneV2 resource.
  */
 export interface VmCloneV2Args {
+    /**
+     * - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     bootConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfig>[]>;
+    /**
+     * - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     guestCustomizations?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomization>[]>;
     memorySizeBytes?: pulumi.Input<number>;
+    /**
+     * - (Optional) The name for the vm.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) NICs attached to the VM.
+     */
     nics?: pulumi.Input<pulumi.Input<inputs.VmCloneV2Nic>[]>;
+    /**
+     * - (Optional) Number of cores per socket.
+     */
     numCoresPerSocket?: pulumi.Input<number>;
+    /**
+     * - (Optional) Number of vCPU sockets.
+     */
     numSockets?: pulumi.Input<number>;
+    /**
+     * - (Optional) Number of threads per core.
+     */
     numThreadsPerCore?: pulumi.Input<number>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     vmExtId: pulumi.Input<string>;
 }

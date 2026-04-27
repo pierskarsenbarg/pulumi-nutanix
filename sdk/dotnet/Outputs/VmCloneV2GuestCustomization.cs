@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2GuestCustomization
     {
+        /// <summary>
+        /// - (Optional) The Nutanix Guest Tools customization settings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2GuestCustomizationConfig> Configs;
 
         [OutputConstructor]

@@ -183,12 +183,24 @@ export interface AddressGroupIpAddressBlockList {
 }
 
 export interface AddressGroupsV2IpRange {
+    /**
+     * end ip
+     */
     endIp?: pulumi.Input<string>;
+    /**
+     * start ip
+     */
     startIp?: pulumi.Input<string>;
 }
 
 export interface AddressGroupsV2Ipv4Address {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip of address
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -2005,16 +2017,43 @@ export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkUp
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMap {
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     guestCustomizations?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomization>[]>;
+    /**
+     * Memory size in bytes.
+     */
     memorySizeBytes?: pulumi.Input<number>;
+    /**
+     * VM name.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * NICs attached to the VM.
+     */
     nics?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNic>[]>;
+    /**
+     * Number of cores per socket.
+     */
     numCoresPerSocket?: pulumi.Input<number>;
+    /**
+     * Number of vCPU sockets.
+     */
     numSockets?: pulumi.Input<number>;
+    /**
+     * Number of threads per core.
+     */
     numThreadsPerCore?: pulumi.Input<number>;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
     configs?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig>[]>;
 }
 
@@ -2024,8 +2063,23 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig {
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/deployTemplate).
+     */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript>[]>;
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
     datasourceType?: pulumi.Input<string>;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
     metadata?: pulumi.Input<string>;
 }
 
@@ -2039,6 +2093,9 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * VM name.
+     */
     name?: pulumi.Input<string>;
     values?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue>[]>;
 }
@@ -2062,7 +2119,15 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
     installType?: pulumi.Input<string>;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
     sysprepScripts?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScript>[]>;
 }
 
@@ -2076,6 +2141,9 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSys
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * VM name.
+     */
     name?: pulumi.Input<string>;
     values?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue>[]>;
 }
@@ -2099,27 +2167,72 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSys
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfo>[]>;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * Network information for a NIC.
+     */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo>[]>;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicBackingInfo {
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
     isConnected?: pulumi.Input<boolean>;
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress?: pulumi.Input<string>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
     model?: pulumi.Input<string>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
     numQueues?: pulumi.Input<number>;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
     ipv4Configs?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config>[]>;
     ipv4Infos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Info>[]>;
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
     networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain>[]>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
     networkFunctionNicType?: pulumi.Input<string>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
     nicType?: pulumi.Input<string>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
     shouldAllowUnknownMacs?: pulumi.Input<boolean>;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
     subnets?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet>[]>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
     trunkedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
     vlanMode?: pulumi.Input<string>;
 }
 
@@ -2149,10 +2262,16 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoLearn
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain {
+    /**
+     * The identifier of a Template.
+     */
     extId?: pulumi.Input<string>;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet {
+    /**
+     * The identifier of a Template.
+     */
     extId?: pulumi.Input<string>;
 }
 
@@ -10999,182 +11118,377 @@ export interface PbrV2Metadata {
 }
 
 export interface PbrV2Policy {
+    /**
+     * If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
+     */
     isBidirectional?: pulumi.Input<boolean>;
+    /**
+     * The action to be taken on the traffic matching the routing policy.
+     */
     policyActions: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyAction>[]>;
+    /**
+     * Match condition for the traffic that is entering the VPC.
+     */
     policyMatches: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatch>[]>;
 }
 
 export interface PbrV2PolicyPolicyAction {
+    /**
+     * Routing policy action type.
+     */
     actionType: pulumi.Input<string>;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
     nexthopIpAddresses?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionNexthopIpAddress>[]>;
+    /**
+     * Routing policy Reroute params.
+     */
     rerouteParams?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParam>[]>;
 }
 
 export interface PbrV2PolicyPolicyActionNexthopIpAddress {
+    /**
+     * IPv4 Object.
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionNexthopIpAddressIpv4>[]>;
+    /**
+     * IPv6 Object.
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionNexthopIpAddressIpv6>[]>;
 }
 
 export interface PbrV2PolicyPolicyActionNexthopIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyActionNexthopIpAddressIpv6 {
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParam {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
     egressServiceIps?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIp>[]>;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
     ingressServiceIps?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIp>[]>;
+    /**
+     * Type of fallback action in reroute case when service VM is down. Acceptable values are "PASSTHROUGH", "NO_ACTION", "ALLOW", "DENY".
+     */
     rerouteFallbackAction?: pulumi.Input<string>;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
     serviceIps?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamServiceIp>[]>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIp {
+    /**
+     * IPv4 Object.
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4>[]>;
+    /**
+     * IPv6 Object.
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6>[]>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6 {
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIp {
+    /**
+     * IPv4 Object.
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4>[]>;
+    /**
+     * IPv6 Object.
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6>[]>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6 {
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamServiceIp {
+    /**
+     * IPv4 Object.
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4>[]>;
+    /**
+     * IPv6 Object.
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6>[]>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6 {
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyMatch {
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
     destinations: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchDestination>[]>;
+    /**
+     * Protocol Params Object.
+     */
     protocolParameters?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchProtocolParameter>[]>;
+    /**
+     * Routing Policy IP protocol type. Acceptable values are "TCP", "UDP", "PROTOCOL_NUMBER", "ANY", "ICMP" .
+     */
     protocolType: pulumi.Input<string>;
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
     sources: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchSource>[]>;
 }
 
 export interface PbrV2PolicyPolicyMatchDestination {
+    /**
+     * Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+     */
     addressType: pulumi.Input<string>;
+    /**
+     * Subnet Prefix
+     */
     subnetPrefixes?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefix>[]>;
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefix {
+    /**
+     * IPv4 Object.
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4>[]>;
+    /**
+     * IPv6 Object.
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6>[]>;
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 {
+    /**
+     * IP of address
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip>[]>;
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 {
+    /**
+     * IP of address
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip>[]>;
     prefixLength?: pulumi.Input<number>;
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip {
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameter {
+    /**
+     * ICMP object
+     */
     icmpObjects?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchProtocolParameterIcmpObject>[]>;
+    /**
+     * Layer Four Protocol Object.
+     */
     layerFourProtocolObjects?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject>[]>;
+    /**
+     * Protocol Number Object.
+     */
     protocolNumberObjects?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject>[]>;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterIcmpObject {
+    /**
+     * icmp code
+     */
     icmpCode?: pulumi.Input<number>;
+    /**
+     * icmp type
+     */
     icmpType?: pulumi.Input<number>;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject {
+    /**
+     * Start and end port ranges object.
+     */
     destinationPortRanges?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange>[]>;
+    /**
+     * Start and end port ranges object.
+     */
     sourcePortRanges?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange>[]>;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange {
+    /**
+     * End Port.
+     */
     endPort: pulumi.Input<number>;
+    /**
+     * Start Port.
+     */
     startPort: pulumi.Input<number>;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange {
+    /**
+     * End Port.
+     */
     endPort: pulumi.Input<number>;
+    /**
+     * Start Port.
+     */
     startPort: pulumi.Input<number>;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject {
+    /**
+     * protocol number
+     */
     protocolNumber: pulumi.Input<number>;
 }
 
 export interface PbrV2PolicyPolicyMatchSource {
+    /**
+     * Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+     */
     addressType: pulumi.Input<string>;
+    /**
+     * Subnet Prefix
+     */
     subnetPrefixes?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefix>[]>;
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefix {
+    /**
+     * IPv4 Object.
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4>[]>;
+    /**
+     * IPv6 Object.
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6>[]>;
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 {
+    /**
+     * IP of address
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip>[]>;
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 {
+    /**
+     * IP of address
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip>[]>;
     prefixLength?: pulumi.Input<number>;
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip {
     prefixLength?: pulumi.Input<number>;
+    /**
+     * ip value
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface PbrV2Vpc {
+    /**
+     * Name of the routing policy.
+     */
     name?: pulumi.Input<string>;
 }
 
@@ -14775,11 +15089,31 @@ export interface RoutesV2NextHopNextHopIpAddressIpv6 {
 }
 
 export interface SamlIdentityProvidersV2IdpMetadata {
+    /**
+     * - Certificate for verification.
+     */
     certificate: pulumi.Input<string>;
+    /**
+     * - Entity Identifier of Identity provider.
+     */
     entityId: pulumi.Input<string>;
+    /**
+     * - Error URL of the Identity provider.
+     */
     errorUrl?: pulumi.Input<string>;
+    /**
+     * - Login URL of the Identity provider.
+     */
     loginUrl: pulumi.Input<string>;
+    /**
+     * - Logout URL of the Identity provider.
+     */
     logoutUrl?: pulumi.Input<string>;
+    /**
+     * - Name ID Policy format.
+     * * supported values:
+     * * `emailAddress`: -  Uses email address as NameID format
+     */
     nameIdPolicyFormat?: pulumi.Input<string>;
 }
 
@@ -15835,6 +16169,9 @@ export interface SubnetV2VpcSnatIpIpv6 {
 export interface TemplateV2CreatedBy {
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedByAdditionalAttribute>[]>;
     creationType?: pulumi.Input<string>;
+    /**
+     * VM description
+     */
     description?: pulumi.Input<string>;
     displayName?: pulumi.Input<string>;
     emailId?: pulumi.Input<string>;
@@ -15884,20 +16221,46 @@ export interface TemplateV2TemplateVersionSpec {
     createTime?: pulumi.Input<string>;
     createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecCreatedBy>[]>;
     extId?: pulumi.Input<string>;
+    /**
+     * Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+     */
     isActiveVersion?: pulumi.Input<boolean>;
+    /**
+     * Allow or disallow overriding guest customization during template deployment.
+     * * `version_source.template_vm_reference`: (Optional) Template VM Reference
+     * * `version_source.template_version_reference`: (Optional) Template Version Reference
+     */
     isGcOverrideEnabled?: pulumi.Input<boolean>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecLink>[]>;
     tenantId?: pulumi.Input<string>;
+    /**
+     * The user defined description of a Template Version. Version description `Required` when updating a Template Version.
+     */
     versionDescription?: pulumi.Input<string>;
+    /**
+     * The user defined name of a Template Version. Version name `Required` when updating a Template Version.
+     */
     versionName?: pulumi.Input<string>;
+    /**
+     * Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
+     */
     versionSource: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSource>;
+    /**
+     * Source type of the template version created. It can be either a VM or a template version.
+     */
     versionSourceDiscriminator?: pulumi.Input<string>;
+    /**
+     * Specification for a VM.
+     */
     vmSpecs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpec>[]>;
 }
 
 export interface TemplateV2TemplateVersionSpecCreatedBy {
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecCreatedByAdditionalAttribute>[]>;
     creationType?: pulumi.Input<string>;
+    /**
+     * VM description
+     */
     description?: pulumi.Input<string>;
     displayName?: pulumi.Input<string>;
     emailId?: pulumi.Input<string>;
@@ -15945,21 +16308,54 @@ export interface TemplateV2TemplateVersionSpecVersionSource {
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference {
+    /**
+     * Overrides specification for VM create from a Template.
+     */
     overrideVmConfigs: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig>[]>;
+    /**
+     * The identifier of a Template Version. by default it will be the latest version of the template.
+     */
     versionId?: pulumi.Input<string>;
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig {
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     guestCustomizations?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization>[]>;
+    /**
+     * Memory size in bytes.
+     */
     memorySizeBytes?: pulumi.Input<number>;
+    /**
+     * VM name.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * NICs attached to the VM.
+     */
     nics?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic>[]>;
+    /**
+     * Number of cores per socket.
+     */
     numCoresPerSocket?: pulumi.Input<number>;
+    /**
+     * Number of vCPU sockets.
+     */
     numSockets?: pulumi.Input<number>;
+    /**
+     * Number of threads per core.
+     */
     numThreadsPerCore?: pulumi.Input<number>;
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
     configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig>[]>;
 }
 
@@ -15969,8 +16365,23 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
+     */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript>[]>;
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
     datasourceType?: pulumi.Input<string>;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
     metadata?: pulumi.Input<string>;
 }
 
@@ -16007,7 +16418,15 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
     installType?: pulumi.Input<string>;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
     sysprepScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript>[]>;
 }
 
@@ -16044,17 +16463,32 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo>[]>;
     extId?: pulumi.Input<string>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink>[]>;
+    /**
+     * Network information for a NIC.
+     */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo>[]>;
     tenantId?: pulumi.Input<string>;
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo {
     isConnected?: pulumi.Input<boolean>;
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress?: pulumi.Input<string>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
     model?: pulumi.Input<string>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
     numQueues?: pulumi.Input<number>;
 }
 
@@ -16064,14 +16498,38 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
     ipv4Configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config>[]>;
     ipv4Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info>[]>;
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
     networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain>[]>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
     networkFunctionNicType?: pulumi.Input<string>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
     nicType?: pulumi.Input<string>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
     shouldAllowUnknownMacs?: pulumi.Input<boolean>;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
     subnets?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet>[]>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
     trunkedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
     vlanMode?: pulumi.Input<string>;
 }
 
@@ -16114,6 +16572,12 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReference {
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
     configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig>[]>;
 }
 
@@ -16123,8 +16587,23 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
+     */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript>[]>;
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
     datasourceType?: pulumi.Input<string>;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
     metadata?: pulumi.Input<string>;
 }
 
@@ -16161,7 +16640,15 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
     installType?: pulumi.Input<string>;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
     sysprepScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript>[]>;
 }
 
@@ -16198,59 +16685,186 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpec {
+    /**
+     * Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+     */
     apcConfigs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecApcConfig>[]>;
+    /**
+     * Reference to an availability zone.
+     */
     availabilityZones?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecAvailabilityZone>[]>;
+    /**
+     * BIOS UUID of the VM. It should be of type UUID.
+     */
     biosUuid?: pulumi.Input<string>;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     bootConfigs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfig>[]>;
+    /**
+     * Categories for the VM.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCategory>[]>;
+    /**
+     * CD-ROMs attached to the VM.
+     */
     cdRoms?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRom>[]>;
+    /**
+     * Reference to a cluster.
+     */
     clusters?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCluster>[]>;
     createTime?: pulumi.Input<string>;
+    /**
+     * VM description
+     */
     description?: pulumi.Input<string>;
+    /**
+     * Disks attached to the VM.
+     */
     disks?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDisk>[]>;
+    /**
+     * The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
+     */
     enabledCpuFeatures?: pulumi.Input<pulumi.Input<string>[]>;
     extId?: pulumi.Input<string>;
+    /**
+     * Generation UUID of the VM. It should be of type UUID.
+     */
     generationUuid?: pulumi.Input<string>;
+    /**
+     * GPUs attached to the VM.
+     */
     gpuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGpus>[]>;
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     guestCustomizations?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomization>[]>;
+    /**
+     * The details about Nutanix Guest Tools for a VM.
+     */
     guestTools?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGuestTool>[]>;
+    /**
+     * VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
     hardwareClockTimezone?: pulumi.Input<string>;
+    /**
+     * Reference to the host, the VM is running on.
+     */
     hosts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecHost>[]>;
+    /**
+     * Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+     */
     isAgentVm?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether to remove AHV branding from VM firmware tables or not.
+     */
     isBrandingEnabled?: pulumi.Input<boolean>;
     isCpuHotplugEnabled?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+     */
     isCpuPassthroughEnabled?: pulumi.Input<boolean>;
     isCrossClusterMigrationInProgress?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether the vGPU console is enabled or not.
+     */
     isGpuConsoleEnabled?: pulumi.Input<boolean>;
     isLiveMigrateCapable?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+     */
     isMemoryOvercommitEnabled?: pulumi.Input<boolean>;
     isScsiControllerEnabled?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+     */
     isVcpuHardPinningEnabled?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether the VGA console should be disabled or not.
+     */
     isVgaConsoleEnabled?: pulumi.Input<boolean>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecLink>[]>;
+    /**
+     * Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
+     */
     machineType?: pulumi.Input<string>;
+    /**
+     * Memory size in bytes.
+     */
     memorySizeBytes?: pulumi.Input<number>;
+    /**
+     * VM name.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * NICs attached to the VM.
+     */
     nics?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNic>[]>;
+    /**
+     * Number of cores per socket. Value should be at least 1.
+     */
     numCoresPerSocket?: pulumi.Input<number>;
+    /**
+     * Number of NUMA nodes. 0 means NUMA is disabled.
+     */
     numNumaNodes?: pulumi.Input<number>;
+    /**
+     * Number of vCPU sockets. Value should be at least 1.
+     */
     numSockets?: pulumi.Input<number>;
+    /**
+     * Number of threads per core. Value should be at least 1.
+     */
     numThreadsPerCore?: pulumi.Input<number>;
+    /**
+     * Ownership information for the VM.
+     */
     ownershipInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecOwnershipInfo>[]>;
+    /**
+     * PCI devices attached to the VM.
+     */
     pciDevices?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecPciDevice>[]>;
+    /**
+     * The current power state of the VM.
+     */
     powerState?: pulumi.Input<string>;
+    /**
+     * Status of protection policy applied to this VM.
+     */
     protectionPolicyStates?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState>[]>;
+    /**
+     * The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
+     */
     protectionType?: pulumi.Input<string>;
+    /**
+     * Serial ports configured on the VM.
+     */
     serialPorts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecSerialPort>[]>;
+    /**
+     * Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
+     */
     sources?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecSource>[]>;
+    /**
+     * Storage configuration for VM.
+     */
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecStorageConfig>[]>;
     tenantId?: pulumi.Input<string>;
     updateTime?: pulumi.Input<string>;
+    /**
+     * Indicates how the vTPM for the VM should be configured.
+     */
     vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecVtpmConfig>[]>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecApcConfig {
+    /**
+     * CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+     * * `cpu_model.name`: (Required) Name of the CPU model associated with the VM.
+     */
     cpuModels?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel>[]>;
+    /**
+     * If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+     */
     isApcEnabled?: pulumi.Input<boolean>;
 }
 
@@ -16264,12 +16878,30 @@ export interface TemplateV2TemplateVersionSpecVmSpecAvailabilityZone {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfig {
+    /**
+     * LegacyBoot config Object
+     */
     legacyBoots?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot>[]>;
+    /**
+     * UefiBoot config Object
+     */
     uefiBoots?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot>[]>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot {
+    /**
+     * Boot Device object
+     * * `boot_device.boot_device_disk`: (Optional) Disk address.
+     * * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+     * * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+     * * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+     */
     bootDevices?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice>[]>;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+     */
     bootOrders?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -16284,17 +16916,42 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevi
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
     busType?: pulumi.Input<string>;
+    /**
+     * Index of the serial port.
+     */
     index?: pulumi.Input<number>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress?: pulumi.Input<string>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot {
+    /**
+     * Boot Device object
+     * * `boot_device.boot_device_disk`: (Optional) Disk address.
+     * * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+     * * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+     * * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+     */
     bootDevices?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice>[]>;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+     */
     bootOrders?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicate whether to enable secure boot or not
+     */
     isSecureBootEnabled?: pulumi.Input<boolean>;
+    /**
+     * Configuration for NVRAM to be presented to the VM.
+     * * `nvram_device.backing_storage_info`: (Required) Storage provided by Nutanix ADSF
+     */
     nvramDevices?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice>[]>;
 }
 
@@ -16309,10 +16966,16 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
     busType?: pulumi.Input<string>;
+    /**
+     * Index of the serial port.
+     */
     index?: pulumi.Input<number>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress?: pulumi.Input<string>;
 }
 
@@ -16330,11 +16993,24 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevic
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
     references?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference>[]>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageReferences?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference>[]>;
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
     vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference>[]>;
 }
 
@@ -16350,6 +17026,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevic
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
     busType?: pulumi.Input<string>;
+    /**
+     * Index of the serial port.
+     */
     index?: pulumi.Input<number>;
 }
 
@@ -16358,6 +17037,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevic
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled?: pulumi.Input<boolean>;
 }
 
@@ -16370,29 +17052,64 @@ export interface TemplateV2TemplateVersionSpecVmSpecCategory {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRom {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo>[]>;
+    /**
+     * Virtual Machine disk (VM disk).
+     */
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress>[]>;
     extId?: pulumi.Input<string>;
+    /**
+     * Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+     */
     isoType?: pulumi.Input<string>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomLink>[]>;
     tenantId?: pulumi.Input<string>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource>[]>;
     diskExtId?: pulumi.Input<string>;
+    /**
+     * Size of the disk in Bytes
+     */
     diskSizeBytes?: pulumi.Input<number>;
     isMigrationInProgress?: pulumi.Input<boolean>;
+    /**
+     * Storage configuration for VM disks
+     * * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig>[]>;
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer>[]>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
     references?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference>[]>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageReferences?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference>[]>;
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
     vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference>[]>;
 }
 
@@ -16408,6 +17125,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceRe
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
     busType?: pulumi.Input<string>;
+    /**
+     * Index of the serial port.
+     */
     index?: pulumi.Input<number>;
 }
 
@@ -16416,6 +17136,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceRe
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled?: pulumi.Input<boolean>;
 }
 
@@ -16425,6 +17148,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConta
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress {
     busType?: pulumi.Input<string>;
+    /**
+     * Index of the serial port.
+     */
     index?: pulumi.Input<number>;
 }
 
@@ -16438,7 +17164,18 @@ export interface TemplateV2TemplateVersionSpecVmSpecCluster {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecDisk {
+    /**
+     * Supporting storage to create virtual disk on.
+     * * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
+     * * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
+     * * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfo>[]>;
+    /**
+     * Disk address.
+     * * `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * * `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress>[]>;
     extId?: pulumi.Input<string>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDiskLink>[]>;
@@ -16464,11 +17201,24 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource {
+    /**
+     * Reference to image or vm disk
+     */
     references?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference>[]>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageReferences?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference>[]>;
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
     vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference>[]>;
 }
 
@@ -16484,6 +17234,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSou
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
     busType?: pulumi.Input<string>;
+    /**
+     * Index of the serial port.
+     */
     index?: pulumi.Input<number>;
 }
 
@@ -16492,6 +17245,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSou
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled?: pulumi.Input<boolean>;
 }
 
@@ -16501,6 +17257,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorage
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress {
     busType?: pulumi.Input<string>;
+    /**
+     * Index of the serial port.
+     */
     index?: pulumi.Input<number>;
 }
 
@@ -16510,17 +17269,29 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskLink {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecGpus {
+    /**
+     * The device Id of the GPU.
+     */
     deviceId?: pulumi.Input<number>;
     extId?: pulumi.Input<string>;
     fraction?: pulumi.Input<number>;
     frameBufferSizeBytes?: pulumi.Input<number>;
     guestDriverVersion?: pulumi.Input<string>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGpusLink>[]>;
+    /**
+     * The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+     */
     mode?: pulumi.Input<string>;
     name?: pulumi.Input<string>;
     numVirtualDisplayHeads?: pulumi.Input<number>;
+    /**
+     * The (S)egment:(B)us:(D)evice.(F)unction hardware address.
+     */
     pciAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGpusPciAddress>[]>;
     tenantId?: pulumi.Input<string>;
+    /**
+     * The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
+     */
     vendor?: pulumi.Input<string>;
 }
 
@@ -16537,6 +17308,12 @@ export interface TemplateV2TemplateVersionSpecVmSpecGpusPciAddress {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
     configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig>[]>;
 }
 
@@ -16546,8 +17323,23 @@ export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
+     */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript>[]>;
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
     datasourceType?: pulumi.Input<string>;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
     metadata?: pulumi.Input<string>;
 }
 
@@ -16584,7 +17376,15 @@ export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigClou
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
     installType?: pulumi.Input<string>;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
     sysprepScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript>[]>;
 }
 
@@ -16622,8 +17422,14 @@ export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysp
 
 export interface TemplateV2TemplateVersionSpecVmSpecGuestTool {
     availableVersion?: pulumi.Input<string>;
+    /**
+     * The list of the application names that are enabled on the guest VM.
+     */
     capabilities?: pulumi.Input<pulumi.Input<string>[]>;
     guestOsVersion?: pulumi.Input<string>;
+    /**
+     * Indicates whether Nutanix Guest Tools is enabled or not.
+     */
     isEnabled?: pulumi.Input<boolean>;
     isInstalled?: pulumi.Input<boolean>;
     isIsoInserted?: pulumi.Input<boolean>;
@@ -16643,17 +17449,32 @@ export interface TemplateV2TemplateVersionSpecVmSpecLink {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfo>[]>;
     extId?: pulumi.Input<string>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicLink>[]>;
+    /**
+     * Network information for a NIC.
+     */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo>[]>;
     tenantId?: pulumi.Input<string>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNicBackingInfo {
     isConnected?: pulumi.Input<boolean>;
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress?: pulumi.Input<string>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
     model?: pulumi.Input<string>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
     numQueues?: pulumi.Input<number>;
 }
 
@@ -16663,14 +17484,38 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicLink {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
     ipv4Configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config>[]>;
     ipv4Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info>[]>;
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
     networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain>[]>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
     networkFunctionNicType?: pulumi.Input<string>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
     nicType?: pulumi.Input<string>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
     shouldAllowUnknownMacs?: pulumi.Input<boolean>;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
     subnets?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet>[]>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
     trunkedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
     vlanMode?: pulumi.Input<string>;
 }
 
@@ -16716,7 +17561,13 @@ export interface TemplateV2TemplateVersionSpecVmSpecOwnershipInfoOwner {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecPciDevice {
+    /**
+     * Information about the attached PCIe device to the VM.
+     */
     assignedDeviceInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo>[]>;
+    /**
+     * Indicates the way a PCIe device is associated to the VM.
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo>[]>;
     extId?: pulumi.Input<string>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceLink>[]>;
@@ -16728,14 +17579,23 @@ export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo 
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice {
+    /**
+     * Globally unique identifier denoting PCIe device label. It should be of type UUID.
+     */
     deviceExtId?: pulumi.Input<string>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo {
+    /**
+     * Reference to a PCIe device.
+     */
     pcieDeviceReferences?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference>[]>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference {
+    /**
+     * Globally unique identifier denoting PCIe device label. It should be of type UUID.
+     */
     deviceExtId?: pulumi.Input<string>;
 }
 
@@ -16745,6 +17605,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceLink {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState {
+    /**
+     * Reference to a protection policy.
+     */
     policies?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy>[]>;
 }
 
@@ -16754,7 +17617,13 @@ export interface TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy 
 
 export interface TemplateV2TemplateVersionSpecVmSpecSerialPort {
     extId?: pulumi.Input<string>;
+    /**
+     * Index of the serial port.
+     */
     index?: pulumi.Input<number>;
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
     isConnected?: pulumi.Input<boolean>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecSerialPortLink>[]>;
     tenantId?: pulumi.Input<string>;
@@ -16771,7 +17640,14 @@ export interface TemplateV2TemplateVersionSpecVmSpecSource {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled?: pulumi.Input<boolean>;
+    /**
+     * QoS parameters to be enforced.
+     * * `qos_config.throttled_iops`: (Optional) Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+     */
     qosConfigs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig>[]>;
 }
 
@@ -16780,6 +17656,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecVtpmConfig {
+    /**
+     * Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+     */
     isVtpmEnabled?: pulumi.Input<boolean>;
     version?: pulumi.Input<string>;
 }
@@ -16787,6 +17666,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecVtpmConfig {
 export interface TemplateV2UpdatedBy {
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.TemplateV2UpdatedByAdditionalAttribute>[]>;
     creationType?: pulumi.Input<string>;
+    /**
+     * VM description
+     */
     description?: pulumi.Input<string>;
     displayName?: pulumi.Input<string>;
     emailId?: pulumi.Input<string>;
@@ -18129,18 +19011,46 @@ export interface VirtualMachineV2VtpmConfig {
 }
 
 export interface VmCdromInsertEjectV2BackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfoDataSource>[]>;
+    /**
+     * Size of the disk in Bytes
+     */
     diskSizeBytes?: pulumi.Input<number>;
+    /**
+     * Storage configuration for VM disks
+     * * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfoStorageConfig>[]>;
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfoStorageContainer>[]>;
 }
 
 export interface VmCdromInsertEjectV2BackingInfoDataSource {
+    /**
+     * Reference to image or vm disk. Either `imageReference` or `vmDiskReference`.
+     */
     references?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfoDataSourceReference>[]>;
 }
 
 export interface VmCdromInsertEjectV2BackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageReferences?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference>[]>;
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_address`: (Required) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
+     *
+     *
+     * See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/insertCdRomById).
+     */
     vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference>[]>;
 }
 
@@ -18160,6 +19070,9 @@ export interface VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferen
 }
 
 export interface VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * The globally unique identifier of a CD-ROM. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
@@ -18168,6 +19081,9 @@ export interface VmCdromInsertEjectV2BackingInfoStorageConfig {
 }
 
 export interface VmCdromInsertEjectV2BackingInfoStorageContainer {
+    /**
+     * The globally unique identifier of a CD-ROM. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
@@ -18178,6 +19094,9 @@ export interface VmCloneV2ApcConfig {
 
 export interface VmCloneV2ApcConfigCpuModel {
     extId?: pulumi.Input<string>;
+    /**
+     * - (Optional) The name for the vm.
+     */
     name?: pulumi.Input<string>;
 }
 
@@ -18187,99 +19106,225 @@ export interface VmCloneV2BootConfig {
 }
 
 export interface VmCloneV2BootConfigLegacyBoot {
+    /**
+     * - (Optional) The Boot Device settings.
+     */
     bootDevices?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigLegacyBootBootDevice>[]>;
+    /**
+     * - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     bootOrders?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface VmCloneV2BootConfigLegacyBootBootDevice {
+    /**
+     * - (Optional) The Boot Device Disk settings.
+     */
     bootDeviceDisks?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk>[]>;
+    /**
+     * - (Optional) The Boot Device Nic settings.
+     */
     bootDeviceNics?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic>[]>;
 }
 
 export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
+    /**
+     * - (Optional) Address of disk to boot from.
+     */
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress>[]>;
 }
 
 export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index?: pulumi.Input<number>;
 }
 
 export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * - (Optional) MAC address of nic to boot from.
+     */
     macAddress?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2BootConfigUefiBoot {
+    /**
+     * - (Optional) The Boot Device settings.
+     */
     bootDevices?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootBootDevice>[]>;
+    /**
+     * - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     bootOrders?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional) Indicate whether to enable secure boot or not.
+     */
     isSecureBootEnabled?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Configuration for NVRAM to be presented to the VM.
+     */
     nvramDevices?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDevice>[]>;
 }
 
 export interface VmCloneV2BootConfigUefiBootBootDevice {
+    /**
+     * - (Optional) The Boot Device Disk settings.
+     */
     bootDeviceDisks?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk>[]>;
+    /**
+     * - (Optional) The Boot Device Nic settings.
+     */
     bootDeviceNics?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic>[]>;
 }
 
 export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
+    /**
+     * - (Optional) Address of disk to boot from.
+     */
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress>[]>;
 }
 
 export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index?: pulumi.Input<number>;
 }
 
 export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
+    /**
+     * - (Optional) MAC address of nic to boot from.
+     */
     macAddress?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDevice {
+    /**
+     * - (Optional) Storage provided by Nutanix ADSF.
+     */
     backingStorageInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo>[]>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
+    /**
+     * - (Optional) A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource>[]>;
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Size of the disk in Bytes.
+     */
     diskSizeBytes?: pulumi.Input<number>;
     isMigrationInProgress?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Storage configuration for VM disks.
+     */
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig>[]>;
+    /**
+     * - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer>[]>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * - (Optional) Data Source Reference settings.
+     */
     references?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference>[]>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * - (Optional) Data Source Image Reference settings.
+     */
     imageReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference>[]>;
+    /**
+     * - (Optional) Data Source VM Disk Reference settings.
+     */
     vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference>[]>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    /**
+     * - (Optional) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageExtId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    /**
+     * - (Optional) Address of disk.
+     */
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress>[]>;
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Reference to a VM.
+     */
     vmReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference>[]>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index?: pulumi.Input<number>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * - (Optional) The globally unique identifier of a VM. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled?: pulumi.Input<boolean>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    /**
+     * - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
@@ -18288,6 +19333,9 @@ export interface VmCloneV2Category {
 }
 
 export interface VmCloneV2CdRom {
+    /**
+     * - (Optional) Defines a NIC emulated by the hypervisor
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfo>[]>;
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomDiskAddress>[]>;
     extId?: pulumi.Input<string>;
@@ -18295,52 +19343,121 @@ export interface VmCloneV2CdRom {
 }
 
 export interface VmCloneV2CdRomBackingInfo {
+    /**
+     * - (Optional) A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfoDataSource>[]>;
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Size of the disk in Bytes.
+     */
     diskSizeBytes?: pulumi.Input<number>;
     isMigrationInProgress?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Storage configuration for VM disks.
+     */
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfoStorageConfig>[]>;
+    /**
+     * - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfoStorageContainer>[]>;
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSource {
+    /**
+     * - (Optional) Data Source Reference settings.
+     */
     references?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfoDataSourceReference>[]>;
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReference {
+    /**
+     * - (Optional) Data Source Image Reference settings.
+     */
     imageReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference>[]>;
+    /**
+     * - (Optional) Data Source VM Disk Reference settings.
+     */
     vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference>[]>;
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference {
+    /**
+     * - (Optional) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageExtId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference {
+    /**
+     * - (Optional) Address of disk.
+     */
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress>[]>;
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Reference to a VM.
+     */
     vmReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference>[]>;
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index?: pulumi.Input<number>;
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * - (Optional) The globally unique identifier of a VM. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2CdRomBackingInfoStorageConfig {
+    /**
+     * - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled?: pulumi.Input<boolean>;
 }
 
 export interface VmCloneV2CdRomBackingInfoStorageContainer {
+    /**
+     * - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2CdRomDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index?: pulumi.Input<number>;
 }
 
@@ -18349,6 +19466,9 @@ export interface VmCloneV2Cluster {
 }
 
 export interface VmCloneV2Disk {
+    /**
+     * - (Optional) Defines a NIC emulated by the hypervisor
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfo>[]>;
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskDiskAddress>[]>;
     extId?: pulumi.Input<string>;
@@ -18364,52 +19484,121 @@ export interface VmCloneV2DiskBackingInfoAdfsVolumeGroupReference {
 }
 
 export interface VmCloneV2DiskBackingInfoVmDisk {
+    /**
+     * - (Optional) A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfoVmDiskDataSource>[]>;
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Size of the disk in Bytes.
+     */
     diskSizeBytes?: pulumi.Input<number>;
     isMigrationInProgress?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Storage configuration for VM disks.
+     */
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfoVmDiskStorageConfig>[]>;
+    /**
+     * - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfoVmDiskStorageContainer>[]>;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSource {
+    /**
+     * - (Optional) Data Source Reference settings.
+     */
     references?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReference>[]>;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * - (Optional) Data Source Image Reference settings.
+     */
     imageReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference>[]>;
+    /**
+     * - (Optional) Data Source VM Disk Reference settings.
+     */
     vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference>[]>;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    /**
+     * - (Optional) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageExtId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    /**
+     * - (Optional) Address of disk.
+     */
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress>[]>;
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Reference to a VM.
+     */
     vmReferences?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference>[]>;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index?: pulumi.Input<number>;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * - (Optional) The globally unique identifier of a VM. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskStorageConfig {
+    /**
+     * - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled?: pulumi.Input<boolean>;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskStorageContainer {
+    /**
+     * - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2DiskDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index?: pulumi.Input<number>;
 }
 
@@ -18420,6 +19609,9 @@ export interface VmCloneV2Gpus {
     frameBufferSizeBytes?: pulumi.Input<number>;
     guestDriverVersion?: pulumi.Input<string>;
     mode?: pulumi.Input<string>;
+    /**
+     * - (Optional) The name for the vm.
+     */
     name?: pulumi.Input<string>;
     numVirtualDisplayHeads?: pulumi.Input<number>;
     pciAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GpusPciAddress>[]>;
@@ -18434,54 +19626,115 @@ export interface VmCloneV2GpusPciAddress {
 }
 
 export interface VmCloneV2GuestCustomization {
+    /**
+     * - (Optional) The Nutanix Guest Tools customization settings.
+     */
     configs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfig>[]>;
 }
 
 export interface VmCloneV2GuestCustomizationConfig {
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     cloudInits?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigCloudInit>[]>;
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     syspreps?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigSysprep>[]>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInit {
+    /**
+     * - (Optional) The script to use for cloud-init.
+     */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript>[]>;
+    /**
+     * - (Optional) Type of datasource.
+     * Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+     * Valid values are:
+     * - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+     */
     datasourceType?: pulumi.Input<string>;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
     metadata?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript {
     customKeys?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey>[]>;
+    /**
+     * - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     */
     userDatas?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData>[]>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey {
+    /**
+     * - (Optional) The list of the individual KeyValuePair elements.
+     */
     keyValuePairs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair>[]>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
+    /**
+     * - (Optional) The key of this key-value pair
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The value associated with the key for this key-value pair.
+     *
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    /**
+     * - (Optional) The value for the cloud-init user_data.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprep {
+    /**
+     * - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+     * Valid values are:
+     * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+     * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+     */
     installType?: pulumi.Input<string>;
     sysprepScripts?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScript>[]>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScript {
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in cloud init.
+     */
     customKeyValues?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue>[]>;
+    /**
+     * - (Optional) Generic key value pair used for custom attributes.
+     */
     unattendXmls?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml>[]>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    /**
+     * - (Optional) The list of the individual KeyValuePair elements.
+     */
     keyValuePairs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair>[]>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * - (Optional) The key of this key-value pair
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The value associated with the key for this key-value pair.
+     *
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -18512,50 +19765,135 @@ export interface VmCloneV2Link {
 }
 
 export interface VmCloneV2Nic {
+    /**
+     * - (Optional) Defines a NIC emulated by the hypervisor
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicBackingInfo>[]>;
+    /**
+     * - (Optional) A globally unique identifier of an instance that is suitable for external consumption.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Network information for a NIC.
+     */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfo>[]>;
 }
 
 export interface VmCloneV2NicBackingInfo {
+    /**
+     * - (Optional) Indicates whether the NIC is connected or not. Default is True.
+     */
     isConnected?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) MAC address of the emulated NIC.
+     */
     macAddress?: pulumi.Input<string>;
+    /**
+     * - (Optional) Options for the NIC emulation.
+     * Valid values are:
+     * - `VIRTIO` The NIC emulation model is Virtio.
+     * - `E1000` The NIC emulation model is E1000.
+     */
     model?: pulumi.Input<string>;
+    /**
+     * - (Optional) The number of Tx/Rx queue pairs for this NIC.
+     */
     numQueues?: pulumi.Input<number>;
 }
 
 export interface VmCloneV2NicNetworkInfo {
+    /**
+     * - (Optional) The IP address configurations.
+     */
     ipv4Configs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfoIpv4Config>[]>;
+    /**
+     * - (Optional)The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
     networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfoNetworkFunctionChain>[]>;
+    /**
+     * - (Optional) The type of this Network function NIC.
+     * Defaults to INGRESS.
+     * Valid values are:
+     * - `TAP` The type of Network-Function NIC is Tap.
+     * - `EGRESS` The type of Network-Function NIC is Egress.
+     * - `INGRESS` The type of Network-Function NIC is Ingress.
+     */
     networkFunctionNicType?: pulumi.Input<string>;
+    /**
+     * - (Optional) NIC type.
+     * Defaults to NORMAL_NIC.
+     * Valid values are:
+     * - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
+     * - `NORMAL_NIC` The type of NIC is Normal.
+     * - `DIRECT_NIC` The type of NIC is Direct.
+     * - `NETWORK_FUNCTION_NIC` The type of NIC is Network-Function.
+     */
     nicType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
     shouldAllowUnknownMacs?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+     */
     subnets?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfoSubnet>[]>;
+    /**
+     * - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
     trunkedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     * Valid values are:
+     * - `TRUNK` The virtual NIC is created in TRUNKED mode.
+     * - `ACCESS` The virtual NIC is created in ACCESS mode.
+     */
     vlanMode?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2NicNetworkInfoIpv4Config {
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfoIpv4ConfigIpAddress>[]>;
     secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList>[]>;
+    /**
+     * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     * `ipAddress`: - (Optional) Ip config settings.
+     * `secondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
+     */
     shouldAssignIp?: pulumi.Input<boolean>;
 }
 
 export interface VmCloneV2NicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * - Ip address.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * - Ip address.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2NicNetworkInfoNetworkFunctionChain {
+    /**
+     * - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2NicNetworkInfoSubnet {
+    /**
+     * - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 
@@ -18577,7 +19915,13 @@ export interface VmCloneV2ProtectionPolicyStatePolicy {
 
 export interface VmCloneV2SerialPort {
     extId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index?: pulumi.Input<number>;
+    /**
+     * - (Optional) Indicates whether the NIC is connected or not. Default is True.
+     */
     isConnected?: pulumi.Input<boolean>;
 }
 
@@ -18587,6 +19931,9 @@ export interface VmCloneV2Source {
 }
 
 export interface VmCloneV2StorageConfig {
+    /**
+     * - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled?: pulumi.Input<boolean>;
     qosConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2StorageConfigQosConfig>[]>;
 }
@@ -18601,50 +19948,108 @@ export interface VmCloneV2VtpmConfig {
 }
 
 export interface VmGcUpdateV2Config {
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     cloudInits?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigCloudInit>[]>;
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     syspreps?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigSysprep>[]>;
 }
 
 export interface VmGcUpdateV2ConfigCloudInit {
+    /**
+     * - (Optional) The script to use for cloud-init.
+     */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigCloudInitCloudInitScript>[]>;
+    /**
+     * - (Optional) Type of datasource.
+     * Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+     * Valid values are:
+     * - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+     */
     datasourceType?: pulumi.Input<string>;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
     metadata?: pulumi.Input<string>;
 }
 
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScript {
     customKeys?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey>[]>;
+    /**
+     * - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     */
     userDatas?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData>[]>;
 }
 
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey {
+    /**
+     * - (Optional) The list of the individual KeyValuePair elements.
+     */
     keyValuePairs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair>[]>;
 }
 
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
+    /**
+     * - (Optional) The key of this key-value pair
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The value associated with the key for this key-value pair.
+     *
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData {
+    /**
+     * - (Optional) The value for the cloud-init user_data.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface VmGcUpdateV2ConfigSysprep {
+    /**
+     * - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+     * Valid values are:
+     * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+     * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+     */
     installType?: pulumi.Input<string>;
     sysprepScripts?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigSysprepSysprepScript>[]>;
 }
 
 export interface VmGcUpdateV2ConfigSysprepSysprepScript {
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in cloud init.
+     */
     customKeyValues?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue>[]>;
+    /**
+     * - (Optional) Generic key value pair used for custom attributes.
+     */
     unattendXmls?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml>[]>;
 }
 
 export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue {
+    /**
+     * - (Optional) The list of the individual KeyValuePair elements.
+     */
     keyValuePairs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair>[]>;
 }
 
 export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * - (Optional) The key of this key-value pair
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The value associated with the key for this key-value pair.
+     *
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -18653,16 +20058,35 @@ export interface VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml {
 }
 
 export interface VmNetworkDeviceAssignIpV2IpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * - Ip address.
+     *
+     * See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/assignIpById).
+     */
     value: pulumi.Input<string>;
 }
 
 export interface VmNetworkDeviceMigrateV2IpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * - Ip address.
+     *
+     * See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/migrateNicById).
+     */
     value: pulumi.Input<string>;
 }
 
 export interface VmNetworkDeviceMigrateV2Subnet {
+    /**
+     * - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
 }
 

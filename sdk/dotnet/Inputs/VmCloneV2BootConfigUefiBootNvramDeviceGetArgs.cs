@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingStorageInfos")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoGetArgs>? _backingStorageInfos;
+
+        /// <summary>
+        /// - (Optional) Storage provided by Nutanix ADSF.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoGetArgs> BackingStorageInfos
         {
             get => _backingStorageInfos ?? (_backingStorageInfos = new InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoGetArgs>());

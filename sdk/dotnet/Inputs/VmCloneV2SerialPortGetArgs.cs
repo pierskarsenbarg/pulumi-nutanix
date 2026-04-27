@@ -16,9 +16,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+        /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }
 
+        /// <summary>
+        /// - (Optional) Indicates whether the NIC is connected or not. Default is True.
+        /// </summary>
         [Input("isConnected")]
         public Input<bool>? IsConnected { get; set; }
 

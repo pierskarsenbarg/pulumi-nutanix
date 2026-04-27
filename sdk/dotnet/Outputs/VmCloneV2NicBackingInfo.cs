@@ -14,9 +14,24 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2NicBackingInfo
     {
+        /// <summary>
+        /// - (Optional) Indicates whether the NIC is connected or not. Default is True.
+        /// </summary>
         public readonly bool? IsConnected;
+        /// <summary>
+        /// - (Optional) MAC address of the emulated NIC.
+        /// </summary>
         public readonly string? MacAddress;
+        /// <summary>
+        /// - (Optional) Options for the NIC emulation.
+        /// Valid values are:
+        /// - `VIRTIO` The NIC emulation model is Virtio.
+        /// - `E1000` The NIC emulation model is E1000.
+        /// </summary>
         public readonly string? Model;
+        /// <summary>
+        /// - (Optional) The number of Tx/Rx queue pairs for this NIC.
+        /// </summary>
         public readonly int? NumQueues;
 
         [OutputConstructor]

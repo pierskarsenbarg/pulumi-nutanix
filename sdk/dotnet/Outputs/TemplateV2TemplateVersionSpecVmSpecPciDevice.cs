@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecPciDevice
     {
+        /// <summary>
+        /// Information about the attached PCIe device to the VM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo> AssignedDeviceInfos;
+        /// <summary>
+        /// Indicates the way a PCIe device is associated to the VM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo> BackingInfos;
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceLink> Links;

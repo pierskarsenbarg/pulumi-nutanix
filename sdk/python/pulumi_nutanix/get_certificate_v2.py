@@ -56,16 +56,25 @@ class GetCertificateV2Result:
     @_builtins.property
     @pulumi.getter(name="alternateFqdns")
     def alternate_fqdns(self) -> Sequence['outputs.GetCertificateV2AlternateFqdnResult']:
+        """
+        - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
+        """
         return pulumi.get(self, "alternate_fqdns")
 
     @_builtins.property
     @pulumi.getter(name="alternateIps")
     def alternate_ips(self) -> Sequence['outputs.GetCertificateV2AlternateIpResult']:
+        """
+        - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
+        """
         return pulumi.get(self, "alternate_ips")
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> _builtins.str:
+        """
+        - A globally unique identifier of an instance that is suitable for external consumption.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -79,11 +88,17 @@ class GetCertificateV2Result:
     @_builtins.property
     @pulumi.getter
     def links(self) -> Sequence['outputs.GetCertificateV2LinkResult']:
+        """
+        - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        """
         return pulumi.get(self, "links")
 
     @_builtins.property
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetCertificateV2MetadataResult']:
+        """
+        - Metadata associated with this resource.
+        """
         return pulumi.get(self, "metadatas")
 
     @_builtins.property
@@ -94,6 +109,9 @@ class GetCertificateV2Result:
     @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
+        """
+        - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        """
         return pulumi.get(self, "tenant_id")
 
 
@@ -117,7 +135,21 @@ def get_certificate_v2(ext_id: Optional[_builtins.str] = None,
                        object_store_ext_id: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateV2Result:
     """
-    Use this data source to access information about an existing resource.
+    Get the details of the SSL certificate which can be used to connect to an Object store.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    example = nutanix.get_certificate_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+        ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea")
+    ```
+
+
+    :param _builtins.str ext_id: -(Required) The UUID of the certificate of an Object store.
+    :param _builtins.str object_store_ext_id: -(Required) The UUID of the Object store.
     """
     __args__ = dict()
     __args__['extId'] = ext_id
@@ -138,7 +170,21 @@ def get_certificate_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = No
                               object_store_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateV2Result]:
     """
-    Use this data source to access information about an existing resource.
+    Get the details of the SSL certificate which can be used to connect to an Object store.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    example = nutanix.get_certificate_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+        ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea")
+    ```
+
+
+    :param _builtins.str ext_id: -(Required) The UUID of the certificate of an Object store.
+    :param _builtins.str object_store_ext_id: -(Required) The UUID of the Object store.
     """
     __args__ = dict()
     __args__['extId'] = ext_id

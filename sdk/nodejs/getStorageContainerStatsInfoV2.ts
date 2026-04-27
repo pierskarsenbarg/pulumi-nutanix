@@ -6,6 +6,24 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const example = nutanix.getStorageContainerStatsInfoV2({
+ *     extId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+ *     startTime: "2024-08-01T00:00:00Z",
+ *     endTime: "2024-08-30T00:00:00Z",
+ *     samplingInterval: 1,
+ *     statType: "SUM",
+ * });
+ * ```
+ */
 export function getStorageContainerStatsInfoV2(args: GetStorageContainerStatsInfoV2Args, opts?: pulumi.InvokeOptions): Promise<GetStorageContainerStatsInfoV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getStorageContainerStatsInfoV2:getStorageContainerStatsInfoV2", {
@@ -21,10 +39,32 @@ export function getStorageContainerStatsInfoV2(args: GetStorageContainerStatsInf
  * A collection of arguments for invoking getStorageContainerStatsInfoV2.
  */
 export interface GetStorageContainerStatsInfoV2Args {
+    /**
+     * storage container UUID
+     */
     endTime: string;
+    /**
+     * storage container UUID
+     */
     extId: string;
+    /**
+     * storage container UUID
+     */
     samplingInterval?: number;
+    /**
+     * storage container UUID
+     */
     startTime: string;
+    /**
+     * storage container UUID
+     * * available values:
+     * * `AVG`: - Aggregation indicating mean or average of all values.
+     * * `MIN`: - Aggregation containing lowest of all values.
+     * * `MAX`: - 	Aggregation containing highest of all values.
+     * * `LAST`: - Aggregation containing only the last recorded value.
+     * * `SUM`: - Aggregation with sum of all values.
+     * * `COUNT`: - Aggregation containing total count of values.
+     */
     statType?: string;
 }
 
@@ -32,51 +72,177 @@ export interface GetStorageContainerStatsInfoV2Args {
  * A collection of values returned by getStorageContainerStatsInfoV2.
  */
 export interface GetStorageContainerStatsInfoV2Result {
+    /**
+     * - the storage container uuid
+     */
     readonly containerExtId: string;
+    /**
+     * - Average I/O latency in micro secs.
+     */
     readonly controllerAvgIoLatencyuSecs: outputs.GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec[];
+    /**
+     * - Average read I/O latency in microseconds.
+     */
     readonly controllerAvgReadIoLatencyuSecs: outputs.GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec[];
+    /**
+     * - Average read I/O latency in microseconds.
+     */
     readonly controllerAvgWriteIoLatencyuSecs: outputs.GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec[];
+    /**
+     * - Total I/O bandwidth - kB per second.
+     */
     readonly controllerIoBandwidthKbps: outputs.GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp[];
+    /**
+     * - Number of I/O per second.
+     */
     readonly controllerNumIops: outputs.GetStorageContainerStatsInfoV2ControllerNumIop[];
+    /**
+     * - Number of read I/O per second.
+     */
     readonly controllerNumReadIops: outputs.GetStorageContainerStatsInfoV2ControllerNumReadIop[];
+    /**
+     * - Number of write I/O per second.
+     */
     readonly controllerNumWriteIops: outputs.GetStorageContainerStatsInfoV2ControllerNumWriteIop[];
+    /**
+     * - Read I/O bandwidth - kB per second.
+     */
     readonly controllerReadIoBandwidthKbps: outputs.GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp[];
+    /**
+     * - Ratio of read I/O to total I/O in PPM.
+     */
     readonly controllerReadIoRatioPpms: outputs.GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm[];
+    /**
+     * - Write I/O bandwidth - kB per second.
+     */
     readonly controllerWriteIoBandwidthKbps: outputs.GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp[];
+    /**
+     * - Ratio of read I/O to total I/O in PPM.
+     */
     readonly controllerWriteIoRatioPpms: outputs.GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm[];
+    /**
+     * - Saving ratio in PPM as a result of the Cloning technique.
+     */
     readonly dataReductionCloneSavingRatioPpms: outputs.GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm[];
+    /**
+     * - Saving ratio in PPM as a result of the Compression technique.
+     */
     readonly dataReductionCompressionSavingRatioPpms: outputs.GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm[];
+    /**
+     * - Saving ratio in PPM as a result of the Deduplication technique.
+     */
     readonly dataReductionDedupSavingRatioPpms: outputs.GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm[];
+    /**
+     * - Saving ratio in PPM as a result of the Erasure Coding technique.
+     */
     readonly dataReductionErasureCodingSavingRatioPpms: outputs.GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpm[];
+    /**
+     * - Usage in bytes after reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
+     */
     readonly dataReductionOverallPostReductionBytes: outputs.GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte[];
+    /**
+     * - Usage in bytes before reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
+     */
     readonly dataReductionOverallPreReductionBytes: outputs.GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte[];
+    /**
+     * - Storage savings in bytes as a result of all the techniques.
+     */
     readonly dataReductionSavedBytes: outputs.GetStorageContainerStatsInfoV2DataReductionSavedByte[];
+    /**
+     * - Saving ratio in PPM as a result of Deduplication, compression and Erasure Coding.
+     */
     readonly dataReductionSavingRatioPpms: outputs.GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm[];
+    /**
+     * - Saving ratio in PPM as a result of Snapshot technique.
+     */
     readonly dataReductionSnapshotSavingRatioPpms: outputs.GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm[];
+    /**
+     * - Saving ratio in PPM as a result of the Thin Provisioning technique.
+     */
     readonly dataReductionThinProvisionSavingRatioPpms: outputs.GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpm[];
+    /**
+     * - Saving ratio in PPM consisting of Deduplication, Compression, Erasure Coding, Cloning, and Thin Provisioning.
+     */
     readonly dataReductionTotalSavingRatioPpms: outputs.GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm[];
+    /**
+     * - Total amount of savings in bytes as a result of zero writes.
+     */
     readonly dataReductionZeroWriteSavingsBytes: outputs.GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte[];
     readonly endTime: string;
+    /**
+     * - the storage container uuid
+     */
     readonly extId: string;
+    /**
+     * - Health of the container is represented by an integer value in the range 0-100. Higher value is indicative of better health.
+     */
     readonly healths: outputs.GetStorageContainerStatsInfoV2Health[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
     readonly links: outputs.GetStorageContainerStatsInfoV2Link[];
     readonly samplingInterval?: number;
     readonly startTime: string;
     readonly statType?: string;
+    /**
+     * - Actual physical disk usage of the container without accounting for the reservation.
+     */
     readonly storageActualPhysicalUsageBytes: outputs.GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByte[];
+    /**
+     * - Storage capacity in bytes.
+     */
     readonly storageCapacityBytes: outputs.GetStorageContainerStatsInfoV2StorageCapacityByte[];
+    /**
+     * - Free storage in bytes.
+     */
     readonly storageFreeBytes: outputs.GetStorageContainerStatsInfoV2StorageFreeByte[];
+    /**
+     * - Replication factor of Container.
+     */
     readonly storageReplicationFactors: outputs.GetStorageContainerStatsInfoV2StorageReplicationFactor[];
+    /**
+     * - Implicit physical reserved capacity(aggregated on vDisk level due to thick provisioning) in bytes.
+     */
     readonly storageReservedCapacityBytes: outputs.GetStorageContainerStatsInfoV2StorageReservedCapacityByte[];
+    /**
+     * - Total usage on HDD tier for the Container in bytes.
+     */
     readonly storageTierDasSataUsageBytes: outputs.GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte[];
+    /**
+     * - Total usage on SDD tier for the Container in bytes
+     */
     readonly storageTierSsdUsageBytes: outputs.GetStorageContainerStatsInfoV2StorageTierSsdUsageByte[];
+    /**
+     * - Used storage in bytes.
+     */
     readonly storageUsageBytes: outputs.GetStorageContainerStatsInfoV2StorageUsageByte[];
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity.
+     */
     readonly tenantId: string;
 }
+/**
+ * Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const example = nutanix.getStorageContainerStatsInfoV2({
+ *     extId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+ *     startTime: "2024-08-01T00:00:00Z",
+ *     endTime: "2024-08-30T00:00:00Z",
+ *     samplingInterval: 1,
+ *     statType: "SUM",
+ * });
+ * ```
+ */
 export function getStorageContainerStatsInfoV2Output(args: GetStorageContainerStatsInfoV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStorageContainerStatsInfoV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getStorageContainerStatsInfoV2:getStorageContainerStatsInfoV2", {
@@ -92,9 +258,31 @@ export function getStorageContainerStatsInfoV2Output(args: GetStorageContainerSt
  * A collection of arguments for invoking getStorageContainerStatsInfoV2.
  */
 export interface GetStorageContainerStatsInfoV2OutputArgs {
+    /**
+     * storage container UUID
+     */
     endTime: pulumi.Input<string>;
+    /**
+     * storage container UUID
+     */
     extId: pulumi.Input<string>;
+    /**
+     * storage container UUID
+     */
     samplingInterval?: pulumi.Input<number>;
+    /**
+     * storage container UUID
+     */
     startTime: pulumi.Input<string>;
+    /**
+     * storage container UUID
+     * * available values:
+     * * `AVG`: - Aggregation indicating mean or average of all values.
+     * * `MIN`: - Aggregation containing lowest of all values.
+     * * `MAX`: - 	Aggregation containing highest of all values.
+     * * `LAST`: - Aggregation containing only the last recorded value.
+     * * `SUM`: - Aggregation with sum of all values.
+     * * `COUNT`: - Aggregation containing total count of values.
+     */
     statType?: pulumi.Input<string>;
 }

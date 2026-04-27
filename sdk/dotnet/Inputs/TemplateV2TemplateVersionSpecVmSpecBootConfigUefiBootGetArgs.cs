@@ -15,6 +15,16 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("bootDevices")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceGetArgs>? _bootDevices;
+
+        /// <summary>
+        /// Boot Device object
+        /// * `boot_device.boot_device_disk`: (Optional) Disk address.
+        /// * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+        /// * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+        /// 
+        /// * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+        /// * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceGetArgs> BootDevices
         {
             get => _bootDevices ?? (_bootDevices = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceGetArgs>());
@@ -23,17 +33,29 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("bootOrders")]
         private InputList<string>? _bootOrders;
+
+        /// <summary>
+        /// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+        /// </summary>
         public InputList<string> BootOrders
         {
             get => _bootOrders ?? (_bootOrders = new InputList<string>());
             set => _bootOrders = value;
         }
 
+        /// <summary>
+        /// Indicate whether to enable secure boot or not
+        /// </summary>
         [Input("isSecureBootEnabled")]
         public Input<bool>? IsSecureBootEnabled { get; set; }
 
         [Input("nvramDevices")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceGetArgs>? _nvramDevices;
+
+        /// <summary>
+        /// Configuration for NVRAM to be presented to the VM.
+        /// * `nvram_device.backing_storage_info`: (Required) Storage provided by Nutanix ADSF
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceGetArgs> NvramDevices
         {
             get => _nvramDevices ?? (_nvramDevices = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceGetArgs>());

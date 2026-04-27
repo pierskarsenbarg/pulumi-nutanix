@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchSourceSubnetPrefix
     {
+        /// <summary>
+        /// IPv4 Object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4> Ipv4s;
+        /// <summary>
+        /// IPv6 Object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6> Ipv6s;
 
         [OutputConstructor]

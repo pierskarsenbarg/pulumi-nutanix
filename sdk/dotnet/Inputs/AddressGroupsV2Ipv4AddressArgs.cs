@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class AddressGroupsV2Ipv4AddressArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4 address belongs.
+        /// </summary>
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
+        /// <summary>
+        /// ip of address
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

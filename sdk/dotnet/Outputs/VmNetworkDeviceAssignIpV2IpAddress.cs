@@ -14,7 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmNetworkDeviceAssignIpV2IpAddress
     {
+        /// <summary>
+        /// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+        /// </summary>
         public readonly int? PrefixLength;
+        /// <summary>
+        /// - Ip address.
+        /// 
+        /// See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/assignIpById).
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -18,6 +18,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("capabilities")]
         private InputList<string>? _capabilities;
+
+        /// <summary>
+        /// The list of the application names that are enabled on the guest VM.
+        /// </summary>
         public InputList<string> Capabilities
         {
             get => _capabilities ?? (_capabilities = new InputList<string>());
@@ -27,6 +31,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("guestOsVersion")]
         public Input<string>? GuestOsVersion { get; set; }
 
+        /// <summary>
+        /// Indicates whether Nutanix Guest Tools is enabled or not.
+        /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
 

@@ -15,17 +15,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingInfos")]
         private InputList<Inputs.VmCloneV2NicBackingInfoArgs>? _backingInfos;
+
+        /// <summary>
+        /// - (Optional) Defines a NIC emulated by the hypervisor
+        /// </summary>
         public InputList<Inputs.VmCloneV2NicBackingInfoArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.VmCloneV2NicBackingInfoArgs>());
             set => _backingInfos = value;
         }
 
+        /// <summary>
+        /// - (Optional) A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("networkInfos")]
         private InputList<Inputs.VmCloneV2NicNetworkInfoArgs>? _networkInfos;
+
+        /// <summary>
+        /// - (Optional) Network information for a NIC.
+        /// </summary>
         public InputList<Inputs.VmCloneV2NicNetworkInfoArgs> NetworkInfos
         {
             get => _networkInfos ?? (_networkInfos = new InputList<Inputs.VmCloneV2NicNetworkInfoArgs>());

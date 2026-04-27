@@ -32,6 +32,15 @@ class VmCloneV2Args:
                  num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a VmCloneV2 resource.
+
+        :param pulumi.Input[_builtins.str] vm_ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2BootConfigArgs']]] boot_configs: - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2GuestCustomizationArgs']]] guest_customizations: - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        :param pulumi.Input[_builtins.str] name: - (Optional) The name for the vm.
+        :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicArgs']]] nics: - (Optional) NICs attached to the VM.
+        :param pulumi.Input[_builtins.int] num_cores_per_socket: - (Optional) Number of cores per socket.
+        :param pulumi.Input[_builtins.int] num_sockets: - (Optional) Number of vCPU sockets.
+        :param pulumi.Input[_builtins.int] num_threads_per_core: - (Optional) Number of threads per core.
         """
         pulumi.set(__self__, "vm_ext_id", vm_ext_id)
         if boot_configs is not None:
@@ -54,6 +63,9 @@ class VmCloneV2Args:
     @_builtins.property
     @pulumi.getter(name="vmExtId")
     def vm_ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        """
         return pulumi.get(self, "vm_ext_id")
 
     @vm_ext_id.setter
@@ -63,6 +75,9 @@ class VmCloneV2Args:
     @_builtins.property
     @pulumi.getter(name="bootConfigs")
     def boot_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCloneV2BootConfigArgs']]]]:
+        """
+        - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        """
         return pulumi.get(self, "boot_configs")
 
     @boot_configs.setter
@@ -72,6 +87,9 @@ class VmCloneV2Args:
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
     def guest_customizations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCloneV2GuestCustomizationArgs']]]]:
+        """
+        - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        """
         return pulumi.get(self, "guest_customizations")
 
     @guest_customizations.setter
@@ -90,6 +108,9 @@ class VmCloneV2Args:
     @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Optional) The name for the vm.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -99,6 +120,9 @@ class VmCloneV2Args:
     @_builtins.property
     @pulumi.getter
     def nics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicArgs']]]]:
+        """
+        - (Optional) NICs attached to the VM.
+        """
         return pulumi.get(self, "nics")
 
     @nics.setter
@@ -108,6 +132,9 @@ class VmCloneV2Args:
     @_builtins.property
     @pulumi.getter(name="numCoresPerSocket")
     def num_cores_per_socket(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        - (Optional) Number of cores per socket.
+        """
         return pulumi.get(self, "num_cores_per_socket")
 
     @num_cores_per_socket.setter
@@ -117,6 +144,9 @@ class VmCloneV2Args:
     @_builtins.property
     @pulumi.getter(name="numSockets")
     def num_sockets(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        - (Optional) Number of vCPU sockets.
+        """
         return pulumi.get(self, "num_sockets")
 
     @num_sockets.setter
@@ -126,6 +156,9 @@ class VmCloneV2Args:
     @_builtins.property
     @pulumi.getter(name="numThreadsPerCore")
     def num_threads_per_core(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        - (Optional) Number of threads per core.
+        """
         return pulumi.get(self, "num_threads_per_core")
 
     @num_threads_per_core.setter
@@ -184,6 +217,15 @@ class _VmCloneV2State:
                  vtpm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VmCloneV2VtpmConfigArgs']]]] = None):
         """
         Input properties used for looking up and filtering VmCloneV2 resources.
+
+        :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2BootConfigArgs']]] boot_configs: - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2GuestCustomizationArgs']]] guest_customizations: - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        :param pulumi.Input[_builtins.str] name: - (Optional) The name for the vm.
+        :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicArgs']]] nics: - (Optional) NICs attached to the VM.
+        :param pulumi.Input[_builtins.int] num_cores_per_socket: - (Optional) Number of cores per socket.
+        :param pulumi.Input[_builtins.int] num_sockets: - (Optional) Number of vCPU sockets.
+        :param pulumi.Input[_builtins.int] num_threads_per_core: - (Optional) Number of threads per core.
+        :param pulumi.Input[_builtins.str] vm_ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         if apc_configs is not None:
             pulumi.set(__self__, "apc_configs", apc_configs)
@@ -299,6 +341,9 @@ class _VmCloneV2State:
     @_builtins.property
     @pulumi.getter(name="bootConfigs")
     def boot_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCloneV2BootConfigArgs']]]]:
+        """
+        - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        """
         return pulumi.get(self, "boot_configs")
 
     @boot_configs.setter
@@ -398,6 +443,9 @@ class _VmCloneV2State:
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
     def guest_customizations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCloneV2GuestCustomizationArgs']]]]:
+        """
+        - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        """
         return pulumi.get(self, "guest_customizations")
 
     @guest_customizations.setter
@@ -542,6 +590,9 @@ class _VmCloneV2State:
     @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Optional) The name for the vm.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -551,6 +602,9 @@ class _VmCloneV2State:
     @_builtins.property
     @pulumi.getter
     def nics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicArgs']]]]:
+        """
+        - (Optional) NICs attached to the VM.
+        """
         return pulumi.get(self, "nics")
 
     @nics.setter
@@ -560,6 +614,9 @@ class _VmCloneV2State:
     @_builtins.property
     @pulumi.getter(name="numCoresPerSocket")
     def num_cores_per_socket(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        - (Optional) Number of cores per socket.
+        """
         return pulumi.get(self, "num_cores_per_socket")
 
     @num_cores_per_socket.setter
@@ -578,6 +635,9 @@ class _VmCloneV2State:
     @_builtins.property
     @pulumi.getter(name="numSockets")
     def num_sockets(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        - (Optional) Number of vCPU sockets.
+        """
         return pulumi.get(self, "num_sockets")
 
     @num_sockets.setter
@@ -587,6 +647,9 @@ class _VmCloneV2State:
     @_builtins.property
     @pulumi.getter(name="numThreadsPerCore")
     def num_threads_per_core(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        - (Optional) Number of threads per core.
+        """
         return pulumi.get(self, "num_threads_per_core")
 
     @num_threads_per_core.setter
@@ -677,6 +740,9 @@ class _VmCloneV2State:
     @_builtins.property
     @pulumi.getter(name="vmExtId")
     def vm_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        """
         return pulumi.get(self, "vm_ext_id")
 
     @vm_ext_id.setter
@@ -710,10 +776,34 @@ class VmCloneV2(pulumi.CustomResource):
                  vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a VmCloneV2 resource with the given unique name, props, and options.
+        Provides a Nutanix Virtual Machine resource to Create a virtual machine clone.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        vm_list = nutanix.get_virtual_machines_v2()
+        vm1 = nutanix.VmCloneV2("vm1",
+            vm_ext_id=vm_list.vms[0].data["extId"],
+            name="test-dou",
+            num_cores_per_socket=1,
+            num_sockets=1,
+            memory_size_mib=2048)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict']]]] boot_configs: - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict']]]] guest_customizations: - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        :param pulumi.Input[_builtins.str] name: - (Optional) The name for the vm.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict']]]] nics: - (Optional) NICs attached to the VM.
+        :param pulumi.Input[_builtins.int] num_cores_per_socket: - (Optional) Number of cores per socket.
+        :param pulumi.Input[_builtins.int] num_sockets: - (Optional) Number of vCPU sockets.
+        :param pulumi.Input[_builtins.int] num_threads_per_core: - (Optional) Number of threads per core.
+        :param pulumi.Input[_builtins.str] vm_ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         ...
     @overload
@@ -722,7 +812,23 @@ class VmCloneV2(pulumi.CustomResource):
                  args: VmCloneV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a VmCloneV2 resource with the given unique name, props, and options.
+        Provides a Nutanix Virtual Machine resource to Create a virtual machine clone.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        vm_list = nutanix.get_virtual_machines_v2()
+        vm1 = nutanix.VmCloneV2("vm1",
+            vm_ext_id=vm_list.vms[0].data["extId"],
+            name="test-dou",
+            num_cores_per_socket=1,
+            num_sockets=1,
+            memory_size_mib=2048)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param VmCloneV2Args args: The arguments to use to populate this resource's properties.
@@ -868,6 +974,14 @@ class VmCloneV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict']]]] boot_configs: - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict']]]] guest_customizations: - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        :param pulumi.Input[_builtins.str] name: - (Optional) The name for the vm.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict']]]] nics: - (Optional) NICs attached to the VM.
+        :param pulumi.Input[_builtins.int] num_cores_per_socket: - (Optional) Number of cores per socket.
+        :param pulumi.Input[_builtins.int] num_sockets: - (Optional) Number of vCPU sockets.
+        :param pulumi.Input[_builtins.int] num_threads_per_core: - (Optional) Number of threads per core.
+        :param pulumi.Input[_builtins.str] vm_ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -934,6 +1048,9 @@ class VmCloneV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="bootConfigs")
     def boot_configs(self) -> pulumi.Output[Sequence['outputs.VmCloneV2BootConfig']]:
+        """
+        - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        """
         return pulumi.get(self, "boot_configs")
 
     @_builtins.property
@@ -989,6 +1106,9 @@ class VmCloneV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
     def guest_customizations(self) -> pulumi.Output[Sequence['outputs.VmCloneV2GuestCustomization']]:
+        """
+        - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        """
         return pulumi.get(self, "guest_customizations")
 
     @_builtins.property
@@ -1069,16 +1189,25 @@ class VmCloneV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
+        """
+        - (Optional) The name for the vm.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
     @pulumi.getter
     def nics(self) -> pulumi.Output[Sequence['outputs.VmCloneV2Nic']]:
+        """
+        - (Optional) NICs attached to the VM.
+        """
         return pulumi.get(self, "nics")
 
     @_builtins.property
     @pulumi.getter(name="numCoresPerSocket")
     def num_cores_per_socket(self) -> pulumi.Output[_builtins.int]:
+        """
+        - (Optional) Number of cores per socket.
+        """
         return pulumi.get(self, "num_cores_per_socket")
 
     @_builtins.property
@@ -1089,11 +1218,17 @@ class VmCloneV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="numSockets")
     def num_sockets(self) -> pulumi.Output[_builtins.int]:
+        """
+        - (Optional) Number of vCPU sockets.
+        """
         return pulumi.get(self, "num_sockets")
 
     @_builtins.property
     @pulumi.getter(name="numThreadsPerCore")
     def num_threads_per_core(self) -> pulumi.Output[_builtins.int]:
+        """
+        - (Optional) Number of threads per core.
+        """
         return pulumi.get(self, "num_threads_per_core")
 
     @_builtins.property
@@ -1144,6 +1279,9 @@ class VmCloneV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="vmExtId")
     def vm_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        """
         return pulumi.get(self, "vm_ext_id")
 
     @_builtins.property

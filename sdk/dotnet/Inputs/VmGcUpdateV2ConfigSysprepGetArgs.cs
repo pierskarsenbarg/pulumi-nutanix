@@ -13,6 +13,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmGcUpdateV2ConfigSysprepGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+        /// Valid values are:
+        /// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `UnattendXml` parameter
+        /// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `UnattendXml` parameter
+        /// </summary>
         [Input("installType")]
         public Input<string>? InstallType { get; set; }
 

@@ -17,14 +17,37 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? CreateTime;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecCreatedBy> CreatedBies;
         public readonly string? ExtId;
+        /// <summary>
+        /// Default: `True`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+        /// </summary>
         public readonly bool? IsActiveVersion;
+        /// <summary>
+        /// Allow or disallow overriding guest customization during template deployment.
+        /// * `version_source.template_vm_reference`: (Optional) Template VM Reference
+        /// * `version_source.template_version_reference`: (Optional) Template Version Reference
+        /// </summary>
         public readonly bool? IsGcOverrideEnabled;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecLink> Links;
         public readonly string? TenantId;
+        /// <summary>
+        /// The user defined description of a Template Version. Version description `Required` when updating a Template Version.
+        /// </summary>
         public readonly string? VersionDescription;
+        /// <summary>
+        /// The user defined name of a Template Version. Version name `Required` when updating a Template Version.
+        /// </summary>
         public readonly string? VersionName;
+        /// <summary>
+        /// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `TemplateVmReference` or `TemplateVersionReference` .
+        /// </summary>
         public readonly Outputs.TemplateV2TemplateVersionSpecVersionSource VersionSource;
+        /// <summary>
+        /// Source type of the template version created. It can be either a VM or a template version.
+        /// </summary>
         public readonly string? VersionSourceDiscriminator;
+        /// <summary>
+        /// Specification for a VM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpec> VmSpecs;
 
         [OutputConstructor]

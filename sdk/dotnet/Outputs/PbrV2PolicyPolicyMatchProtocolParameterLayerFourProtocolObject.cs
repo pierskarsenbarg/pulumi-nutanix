@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject
     {
+        /// <summary>
+        /// Start and end port ranges object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange> DestinationPortRanges;
+        /// <summary>
+        /// Start and end port ranges object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange> SourcePortRanges;
 
         [OutputConstructor]

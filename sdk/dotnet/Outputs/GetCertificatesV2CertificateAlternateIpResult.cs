@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetCertificatesV2CertificateAlternateIpResult
     {
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// </summary>
         public readonly Outputs.GetCertificatesV2CertificateAlternateIpIpv4Result Ipv4;
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// </summary>
         public readonly Outputs.GetCertificatesV2CertificateAlternateIpIpv6Result Ipv6;
 
         [OutputConstructor]

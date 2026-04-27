@@ -15,17 +15,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("diskAddresses")]
         private InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressGetArgs>? _diskAddresses;
+
+        /// <summary>
+        /// - (Optional) Address of disk.
+        /// </summary>
         public InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressGetArgs> DiskAddresses
         {
             get => _diskAddresses ?? (_diskAddresses = new InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressGetArgs>());
             set => _diskAddresses = value;
         }
 
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+        /// </summary>
         [Input("diskExtId")]
         public Input<string>? DiskExtId { get; set; }
 
         [Input("vmReferences")]
         private InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReferenceGetArgs>? _vmReferences;
+
+        /// <summary>
+        /// - (Optional) Reference to a VM.
+        /// </summary>
         public InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReferenceGetArgs> VmReferences
         {
             get => _vmReferences ?? (_vmReferences = new InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReferenceGetArgs>());

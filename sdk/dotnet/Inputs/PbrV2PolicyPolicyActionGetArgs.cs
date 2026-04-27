@@ -13,11 +13,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PbrV2PolicyPolicyActionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Routing policy action type.
+        /// </summary>
         [Input("actionType", required: true)]
         public Input<string> ActionType { get; set; } = null!;
 
         [Input("nexthopIpAddresses")]
         private InputList<Inputs.PbrV2PolicyPolicyActionNexthopIpAddressGetArgs>? _nexthopIpAddresses;
+
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyActionNexthopIpAddressGetArgs> NexthopIpAddresses
         {
             get => _nexthopIpAddresses ?? (_nexthopIpAddresses = new InputList<Inputs.PbrV2PolicyPolicyActionNexthopIpAddressGetArgs>());
@@ -26,6 +33,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("rerouteParams")]
         private InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamGetArgs>? _rerouteParams;
+
+        /// <summary>
+        /// Routing policy Reroute params.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamGetArgs> RerouteParams
         {
             get => _rerouteParams ?? (_rerouteParams = new InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamGetArgs>());

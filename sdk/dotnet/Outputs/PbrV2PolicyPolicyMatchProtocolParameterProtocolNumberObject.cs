@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject
     {
+        /// <summary>
+        /// protocol number
+        /// </summary>
         public readonly int ProtocolNumber;
 
         [OutputConstructor]

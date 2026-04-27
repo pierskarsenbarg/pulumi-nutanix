@@ -6,6 +6,41 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Create an Address Group
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // Create Address group with ipv4 addresses
+ * const ipv4_address = new nutanix.AddressGroupsV2("ipv4-address", {
+ *     name: "address_group_ipv4_address",
+ *     description: "address group description",
+ *     ipv4Addresses: [
+ *         {
+ *             value: "10.0.0.0",
+ *             prefixLength: 24,
+ *         },
+ *         {
+ *             value: "172.0.0.0",
+ *             prefixLength: 24,
+ *         },
+ *     ],
+ * });
+ * // Create Address group. with ip range
+ * const ip_ranges = new nutanix.AddressGroupsV2("ip-ranges", {
+ *     name: "address_group_ip_ranges",
+ *     description: "address group description",
+ *     ipRanges: [{
+ *         startIp: "10.0.0.1",
+ *         endIp: "10.0.0.10",
+ *     }],
+ * });
+ * ```
+ */
 export class AddressGroupsV2 extends pulumi.CustomResource {
     /**
      * Get an existing AddressGroupsV2 resource's state with the given name, ID, and optional extra
@@ -34,14 +69,41 @@ export class AddressGroupsV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === AddressGroupsV2.__pulumiType;
     }
 
+    /**
+     * created by.
+     */
     declare public /*out*/ readonly createdBy: pulumi.Output<string>;
+    /**
+     * - (Optional) Description of the Address group
+     */
     declare public readonly description: pulumi.Output<string | undefined>;
+    /**
+     * address group uuid.
+     */
     declare public /*out*/ readonly extId: pulumi.Output<string>;
+    /**
+     * - (Optional) List of IP range containing start and end IP.
+     */
     declare public readonly ipRanges: pulumi.Output<outputs.AddressGroupsV2IpRange[]>;
+    /**
+     * - (Optional) List of CIDR blocks in the Address Group.
+     */
     declare public readonly ipv4Addresses: pulumi.Output<outputs.AddressGroupsV2Ipv4Address[]>;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
     declare public /*out*/ readonly links: pulumi.Output<outputs.AddressGroupsV2Link[]>;
+    /**
+     * - (Required) Name of the Address group
+     */
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * Reference to policy associated with Address Group.
+     */
     declare public /*out*/ readonly policyReferences: pulumi.Output<string[]>;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
 
     /**
@@ -87,14 +149,41 @@ export class AddressGroupsV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AddressGroupsV2 resources.
  */
 export interface AddressGroupsV2State {
+    /**
+     * created by.
+     */
     createdBy?: pulumi.Input<string>;
+    /**
+     * - (Optional) Description of the Address group
+     */
     description?: pulumi.Input<string>;
+    /**
+     * address group uuid.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * - (Optional) List of IP range containing start and end IP.
+     */
     ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[]>;
+    /**
+     * - (Optional) List of CIDR blocks in the Address Group.
+     */
     ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[]>;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
     links?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Link>[]>;
+    /**
+     * - (Required) Name of the Address group
+     */
     name?: pulumi.Input<string>;
+    /**
+     * Reference to policy associated with Address Group.
+     */
     policyReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
     tenantId?: pulumi.Input<string>;
 }
 
@@ -102,8 +191,20 @@ export interface AddressGroupsV2State {
  * The set of arguments for constructing a AddressGroupsV2 resource.
  */
 export interface AddressGroupsV2Args {
+    /**
+     * - (Optional) Description of the Address group
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Optional) List of IP range containing start and end IP.
+     */
     ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[]>;
+    /**
+     * - (Optional) List of CIDR blocks in the Address Group.
+     */
     ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[]>;
+    /**
+     * - (Required) Name of the Address group
+     */
     name?: pulumi.Input<string>;
 }

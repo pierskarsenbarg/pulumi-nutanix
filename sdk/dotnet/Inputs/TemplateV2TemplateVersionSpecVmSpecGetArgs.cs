@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("apcConfigs")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecApcConfigGetArgs>? _apcConfigs;
+
+        /// <summary>
+        /// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecApcConfigGetArgs> ApcConfigs
         {
             get => _apcConfigs ?? (_apcConfigs = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecApcConfigGetArgs>());
@@ -23,17 +27,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("availabilityZones")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecAvailabilityZoneGetArgs>? _availabilityZones;
+
+        /// <summary>
+        /// Reference to an availability zone.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecAvailabilityZoneGetArgs> AvailabilityZones
         {
             get => _availabilityZones ?? (_availabilityZones = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecAvailabilityZoneGetArgs>());
             set => _availabilityZones = value;
         }
 
+        /// <summary>
+        /// BIOS UUID of the VM. It should be of type UUID.
+        /// </summary>
         [Input("biosUuid")]
         public Input<string>? BiosUuid { get; set; }
 
         [Input("bootConfigs")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigGetArgs>? _bootConfigs;
+
+        /// <summary>
+        /// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigGetArgs> BootConfigs
         {
             get => _bootConfigs ?? (_bootConfigs = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigGetArgs>());
@@ -42,6 +57,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("categories")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCategoryGetArgs>? _categories;
+
+        /// <summary>
+        /// Categories for the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCategoryGetArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCategoryGetArgs>());
@@ -50,6 +69,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("cdRoms")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomGetArgs>? _cdRoms;
+
+        /// <summary>
+        /// CD-ROMs attached to the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomGetArgs> CdRoms
         {
             get => _cdRoms ?? (_cdRoms = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomGetArgs>());
@@ -58,6 +81,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("clusters")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecClusterGetArgs>? _clusters;
+
+        /// <summary>
+        /// Reference to a cluster.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecClusterGetArgs> Clusters
         {
             get => _clusters ?? (_clusters = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecClusterGetArgs>());
@@ -67,11 +94,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
+        /// <summary>
+        /// VM description
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("disks")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskGetArgs>? _disks;
+
+        /// <summary>
+        /// Disks attached to the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskGetArgs> Disks
         {
             get => _disks ?? (_disks = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskGetArgs>());
@@ -80,6 +114,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("enabledCpuFeatures")]
         private InputList<string>? _enabledCpuFeatures;
+
+        /// <summary>
+        /// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
+        /// </summary>
         public InputList<string> EnabledCpuFeatures
         {
             get => _enabledCpuFeatures ?? (_enabledCpuFeatures = new InputList<string>());
@@ -89,11 +127,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Generation UUID of the VM. It should be of type UUID.
+        /// </summary>
         [Input("generationUuid")]
         public Input<string>? GenerationUuid { get; set; }
 
         [Input("gpuses")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGpusGetArgs>? _gpuses;
+
+        /// <summary>
+        /// GPUs attached to the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGpusGetArgs> Gpuses
         {
             get => _gpuses ?? (_gpuses = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGpusGetArgs>());
@@ -102,6 +147,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("guestCustomizations")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationGetArgs>? _guestCustomizations;
+
+        /// <summary>
+        /// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationGetArgs> GuestCustomizations
         {
             get => _guestCustomizations ?? (_guestCustomizations = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationGetArgs>());
@@ -110,53 +159,85 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("guestTools")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestToolGetArgs>? _guestTools;
+
+        /// <summary>
+        /// The details about Nutanix Guest Tools for a VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestToolGetArgs> GuestTools
         {
             get => _guestTools ?? (_guestTools = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestToolGetArgs>());
             set => _guestTools = value;
         }
 
+        /// <summary>
+        /// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+        /// </summary>
         [Input("hardwareClockTimezone")]
         public Input<string>? HardwareClockTimezone { get; set; }
 
         [Input("hosts")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecHostGetArgs>? _hosts;
+
+        /// <summary>
+        /// Reference to the host, the VM is running on.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecHostGetArgs> Hosts
         {
             get => _hosts ?? (_hosts = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecHostGetArgs>());
             set => _hosts = value;
         }
 
+        /// <summary>
+        /// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+        /// </summary>
         [Input("isAgentVm")]
         public Input<bool>? IsAgentVm { get; set; }
 
+        /// <summary>
+        /// Indicates whether to remove AHV branding from VM firmware tables or not.
+        /// </summary>
         [Input("isBrandingEnabled")]
         public Input<bool>? IsBrandingEnabled { get; set; }
 
         [Input("isCpuHotplugEnabled")]
         public Input<bool>? IsCpuHotplugEnabled { get; set; }
 
+        /// <summary>
+        /// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+        /// </summary>
         [Input("isCpuPassthroughEnabled")]
         public Input<bool>? IsCpuPassthroughEnabled { get; set; }
 
         [Input("isCrossClusterMigrationInProgress")]
         public Input<bool>? IsCrossClusterMigrationInProgress { get; set; }
 
+        /// <summary>
+        /// Indicates whether the vGPU console is enabled or not.
+        /// </summary>
         [Input("isGpuConsoleEnabled")]
         public Input<bool>? IsGpuConsoleEnabled { get; set; }
 
         [Input("isLiveMigrateCapable")]
         public Input<bool>? IsLiveMigrateCapable { get; set; }
 
+        /// <summary>
+        /// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+        /// </summary>
         [Input("isMemoryOvercommitEnabled")]
         public Input<bool>? IsMemoryOvercommitEnabled { get; set; }
 
         [Input("isScsiControllerEnabled")]
         public Input<bool>? IsScsiControllerEnabled { get; set; }
 
+        /// <summary>
+        /// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+        /// </summary>
         [Input("isVcpuHardPinningEnabled")]
         public Input<bool>? IsVcpuHardPinningEnabled { get; set; }
 
+        /// <summary>
+        /// Indicates whether the VGA console should be disabled or not.
+        /// </summary>
         [Input("isVgaConsoleEnabled")]
         public Input<bool>? IsVgaConsoleEnabled { get; set; }
 
@@ -168,37 +249,66 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _links = value;
         }
 
+        /// <summary>
+        /// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
+        /// </summary>
         [Input("machineType")]
         public Input<string>? MachineType { get; set; }
 
+        /// <summary>
+        /// Memory size in bytes.
+        /// </summary>
         [Input("memorySizeBytes")]
         public Input<int>? MemorySizeBytes { get; set; }
 
+        /// <summary>
+        /// VM name.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("nics")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicGetArgs>? _nics;
+
+        /// <summary>
+        /// NICs attached to the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicGetArgs> Nics
         {
             get => _nics ?? (_nics = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicGetArgs>());
             set => _nics = value;
         }
 
+        /// <summary>
+        /// Number of cores per socket. Value should be at least 1.
+        /// </summary>
         [Input("numCoresPerSocket")]
         public Input<int>? NumCoresPerSocket { get; set; }
 
+        /// <summary>
+        /// Number of NUMA nodes. 0 means NUMA is disabled.
+        /// </summary>
         [Input("numNumaNodes")]
         public Input<int>? NumNumaNodes { get; set; }
 
+        /// <summary>
+        /// Number of vCPU sockets. Value should be at least 1.
+        /// </summary>
         [Input("numSockets")]
         public Input<int>? NumSockets { get; set; }
 
+        /// <summary>
+        /// Number of threads per core. Value should be at least 1.
+        /// </summary>
         [Input("numThreadsPerCore")]
         public Input<int>? NumThreadsPerCore { get; set; }
 
         [Input("ownershipInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecOwnershipInfoGetArgs>? _ownershipInfos;
+
+        /// <summary>
+        /// Ownership information for the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecOwnershipInfoGetArgs> OwnershipInfos
         {
             get => _ownershipInfos ?? (_ownershipInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecOwnershipInfoGetArgs>());
@@ -207,28 +317,46 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("pciDevices")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceGetArgs>? _pciDevices;
+
+        /// <summary>
+        /// PCI devices attached to the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceGetArgs> PciDevices
         {
             get => _pciDevices ?? (_pciDevices = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceGetArgs>());
             set => _pciDevices = value;
         }
 
+        /// <summary>
+        /// The current power state of the VM.
+        /// </summary>
         [Input("powerState")]
         public Input<string>? PowerState { get; set; }
 
         [Input("protectionPolicyStates")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateGetArgs>? _protectionPolicyStates;
+
+        /// <summary>
+        /// Status of protection policy applied to this VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateGetArgs> ProtectionPolicyStates
         {
             get => _protectionPolicyStates ?? (_protectionPolicyStates = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateGetArgs>());
             set => _protectionPolicyStates = value;
         }
 
+        /// <summary>
+        /// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
+        /// </summary>
         [Input("protectionType")]
         public Input<string>? ProtectionType { get; set; }
 
         [Input("serialPorts")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecSerialPortGetArgs>? _serialPorts;
+
+        /// <summary>
+        /// Serial ports configured on the VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecSerialPortGetArgs> SerialPorts
         {
             get => _serialPorts ?? (_serialPorts = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecSerialPortGetArgs>());
@@ -237,6 +365,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("sources")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecSourceGetArgs>? _sources;
+
+        /// <summary>
+        /// Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecSourceGetArgs> Sources
         {
             get => _sources ?? (_sources = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecSourceGetArgs>());
@@ -245,6 +377,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("storageConfigs")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigGetArgs>? _storageConfigs;
+
+        /// <summary>
+        /// Storage configuration for VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigGetArgs> StorageConfigs
         {
             get => _storageConfigs ?? (_storageConfigs = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigGetArgs>());
@@ -259,6 +395,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("vtpmConfigs")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecVtpmConfigGetArgs>? _vtpmConfigs;
+
+        /// <summary>
+        /// Indicates how the vTPM for the VM should be configured.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecVtpmConfigGetArgs> VtpmConfigs
         {
             get => _vtpmConfigs ?? (_vtpmConfigs = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecVtpmConfigGetArgs>());

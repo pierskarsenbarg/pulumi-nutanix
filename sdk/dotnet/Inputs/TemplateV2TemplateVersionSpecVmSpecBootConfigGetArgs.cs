@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("legacyBoots")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootGetArgs>? _legacyBoots;
+
+        /// <summary>
+        /// LegacyBoot config Object
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootGetArgs> LegacyBoots
         {
             get => _legacyBoots ?? (_legacyBoots = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootGetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("uefiBoots")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootGetArgs>? _uefiBoots;
+
+        /// <summary>
+        /// UefiBoot config Object
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootGetArgs> UefiBoots
         {
             get => _uefiBoots ?? (_uefiBoots = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootGetArgs>());

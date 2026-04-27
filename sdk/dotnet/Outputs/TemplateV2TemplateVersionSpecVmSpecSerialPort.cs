@@ -15,7 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class TemplateV2TemplateVersionSpecVmSpecSerialPort
     {
         public readonly string? ExtId;
+        /// <summary>
+        /// Index of the serial port.
+        /// </summary>
         public readonly int? Index;
+        /// <summary>
+        /// Indicates whether the serial port is connected or not.
+        /// </summary>
         public readonly bool? IsConnected;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecSerialPortLink> Links;
         public readonly string? TenantId;

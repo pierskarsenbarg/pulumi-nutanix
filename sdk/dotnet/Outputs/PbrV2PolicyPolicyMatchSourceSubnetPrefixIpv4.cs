@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4
     {
+        /// <summary>
+        /// IP of address
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip> Ips;
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// </summary>
         public readonly int? PrefixLength;
 
         [OutputConstructor]

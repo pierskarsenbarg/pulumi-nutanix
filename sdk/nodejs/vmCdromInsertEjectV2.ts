@@ -6,6 +6,31 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Inserts the defined ISO into a CD-ROM device attached to a Virtual Machine.
+ * Ejects the ISO currently inserted into a CD-ROM device on a Virtual Machine.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const insert_cdrom = new nutanix.VmCdromInsertEjectV2("insert-cdrom", {
+ *     vmExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+ *     extId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
+ *     backingInfos: [{
+ *         dataSources: [{
+ *             references: [{
+ *                 imageReferences: [{
+ *                     imageExtId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ * });
+ * ```
+ */
 export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
     /**
      * Get an existing VmCdromInsertEjectV2 resource's state with the given name, ID, and optional extra
@@ -34,8 +59,17 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmCdromInsertEjectV2.__pulumiType;
     }
 
+    /**
+     * Storage provided by Nutanix ADSF
+     */
     declare public readonly backingInfos: pulumi.Output<outputs.VmCdromInsertEjectV2BackingInfo[] | undefined>;
+    /**
+     * The globally unique identifier of a CD-ROM. It should be of type UUID.
+     */
     declare public readonly extId: pulumi.Output<string>;
+    /**
+     * The globally unique identifier of a VM. It should be of type UUID
+     */
     declare public readonly vmExtId: pulumi.Output<string>;
 
     /**
@@ -75,8 +109,17 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmCdromInsertEjectV2 resources.
  */
 export interface VmCdromInsertEjectV2State {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[]>;
+    /**
+     * The globally unique identifier of a CD-ROM. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * The globally unique identifier of a VM. It should be of type UUID
+     */
     vmExtId?: pulumi.Input<string>;
 }
 
@@ -84,7 +127,16 @@ export interface VmCdromInsertEjectV2State {
  * The set of arguments for constructing a VmCdromInsertEjectV2 resource.
  */
 export interface VmCdromInsertEjectV2Args {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[]>;
+    /**
+     * The globally unique identifier of a CD-ROM. It should be of type UUID.
+     */
     extId: pulumi.Input<string>;
+    /**
+     * The globally unique identifier of a VM. It should be of type UUID
+     */
     vmExtId: pulumi.Input<string>;
 }

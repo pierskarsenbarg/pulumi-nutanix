@@ -12,14 +12,57 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Deploy one or more VMs from a Template. Number of VMs to be deployed and their corresponding VM configuration overrides can be provided.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewDeployTemplatesV2(ctx, "deploy-temp", &nutanix.DeployTemplatesV2Args{
+//				ExtId:            pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//				NumberOfVms:      pulumi.Int(1),
+//				ClusterReference: pulumi.String("0005b6b8-7b3b-4b0b-8b3b-7b3b4b0b8b3b"),
+//				OverrideVmConfigMaps: nutanix.DeployTemplatesV2OverrideVmConfigMapArray{
+//					&nutanix.DeployTemplatesV2OverrideVmConfigMapArgs{
+//						Name:              pulumi.String("example-tf-temp"),
+//						MemorySizeBytes:   pulumi.Int(4294967296),
+//						NumSockets:        pulumi.Int(2),
+//						NumCoresPerSocket: pulumi.Int(1),
+//						NumThreadsPerCore: pulumi.Int(1),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type DeployTemplatesV2 struct {
 	pulumi.CustomResourceState
 
-	ClusterReference     pulumi.StringOutput                             `pulumi:"clusterReference"`
-	ExtId                pulumi.StringOutput                             `pulumi:"extId"`
-	NumberOfVms          pulumi.IntOutput                                `pulumi:"numberOfVms"`
+	// The identifier of the Cluster where the VM(s) will be created using a Template.
+	ClusterReference pulumi.StringOutput `pulumi:"clusterReference"`
+	// The identifier of a Template.
+	ExtId pulumi.StringOutput `pulumi:"extId"`
+	// Number of VMs to be deployed.
+	NumberOfVms pulumi.IntOutput `pulumi:"numberOfVms"`
+	// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
 	OverrideVmConfigMaps DeployTemplatesV2OverrideVmConfigMapArrayOutput `pulumi:"overrideVmConfigMaps"`
-	VersionId            pulumi.StringPtrOutput                          `pulumi:"versionId"`
+	// The identifier of a Template Version.
+	VersionId pulumi.StringPtrOutput `pulumi:"versionId"`
 }
 
 // NewDeployTemplatesV2 registers a new resource with the given unique name, arguments, and options.
@@ -61,19 +104,29 @@ func GetDeployTemplatesV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DeployTemplatesV2 resources.
 type deployTemplatesV2State struct {
-	ClusterReference     *string                                `pulumi:"clusterReference"`
-	ExtId                *string                                `pulumi:"extId"`
-	NumberOfVms          *int                                   `pulumi:"numberOfVms"`
+	// The identifier of the Cluster where the VM(s) will be created using a Template.
+	ClusterReference *string `pulumi:"clusterReference"`
+	// The identifier of a Template.
+	ExtId *string `pulumi:"extId"`
+	// Number of VMs to be deployed.
+	NumberOfVms *int `pulumi:"numberOfVms"`
+	// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
 	OverrideVmConfigMaps []DeployTemplatesV2OverrideVmConfigMap `pulumi:"overrideVmConfigMaps"`
-	VersionId            *string                                `pulumi:"versionId"`
+	// The identifier of a Template Version.
+	VersionId *string `pulumi:"versionId"`
 }
 
 type DeployTemplatesV2State struct {
-	ClusterReference     pulumi.StringPtrInput
-	ExtId                pulumi.StringPtrInput
-	NumberOfVms          pulumi.IntPtrInput
+	// The identifier of the Cluster where the VM(s) will be created using a Template.
+	ClusterReference pulumi.StringPtrInput
+	// The identifier of a Template.
+	ExtId pulumi.StringPtrInput
+	// Number of VMs to be deployed.
+	NumberOfVms pulumi.IntPtrInput
+	// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
 	OverrideVmConfigMaps DeployTemplatesV2OverrideVmConfigMapArrayInput
-	VersionId            pulumi.StringPtrInput
+	// The identifier of a Template Version.
+	VersionId pulumi.StringPtrInput
 }
 
 func (DeployTemplatesV2State) ElementType() reflect.Type {
@@ -81,20 +134,30 @@ func (DeployTemplatesV2State) ElementType() reflect.Type {
 }
 
 type deployTemplatesV2Args struct {
-	ClusterReference     string                                 `pulumi:"clusterReference"`
-	ExtId                string                                 `pulumi:"extId"`
-	NumberOfVms          int                                    `pulumi:"numberOfVms"`
+	// The identifier of the Cluster where the VM(s) will be created using a Template.
+	ClusterReference string `pulumi:"clusterReference"`
+	// The identifier of a Template.
+	ExtId string `pulumi:"extId"`
+	// Number of VMs to be deployed.
+	NumberOfVms int `pulumi:"numberOfVms"`
+	// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
 	OverrideVmConfigMaps []DeployTemplatesV2OverrideVmConfigMap `pulumi:"overrideVmConfigMaps"`
-	VersionId            *string                                `pulumi:"versionId"`
+	// The identifier of a Template Version.
+	VersionId *string `pulumi:"versionId"`
 }
 
 // The set of arguments for constructing a DeployTemplatesV2 resource.
 type DeployTemplatesV2Args struct {
-	ClusterReference     pulumi.StringInput
-	ExtId                pulumi.StringInput
-	NumberOfVms          pulumi.IntInput
+	// The identifier of the Cluster where the VM(s) will be created using a Template.
+	ClusterReference pulumi.StringInput
+	// The identifier of a Template.
+	ExtId pulumi.StringInput
+	// Number of VMs to be deployed.
+	NumberOfVms pulumi.IntInput
+	// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
 	OverrideVmConfigMaps DeployTemplatesV2OverrideVmConfigMapArrayInput
-	VersionId            pulumi.StringPtrInput
+	// The identifier of a Template Version.
+	VersionId pulumi.StringPtrInput
 }
 
 func (DeployTemplatesV2Args) ElementType() reflect.Type {
@@ -184,24 +247,29 @@ func (o DeployTemplatesV2Output) ToDeployTemplatesV2OutputWithContext(ctx contex
 	return o
 }
 
+// The identifier of the Cluster where the VM(s) will be created using a Template.
 func (o DeployTemplatesV2Output) ClusterReference() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployTemplatesV2) pulumi.StringOutput { return v.ClusterReference }).(pulumi.StringOutput)
 }
 
+// The identifier of a Template.
 func (o DeployTemplatesV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployTemplatesV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// Number of VMs to be deployed.
 func (o DeployTemplatesV2Output) NumberOfVms() pulumi.IntOutput {
 	return o.ApplyT(func(v *DeployTemplatesV2) pulumi.IntOutput { return v.NumberOfVms }).(pulumi.IntOutput)
 }
 
+// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
 func (o DeployTemplatesV2Output) OverrideVmConfigMaps() DeployTemplatesV2OverrideVmConfigMapArrayOutput {
 	return o.ApplyT(func(v *DeployTemplatesV2) DeployTemplatesV2OverrideVmConfigMapArrayOutput {
 		return v.OverrideVmConfigMaps
 	}).(DeployTemplatesV2OverrideVmConfigMapArrayOutput)
 }
 
+// The identifier of a Template Version.
 func (o DeployTemplatesV2Output) VersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployTemplatesV2) pulumi.StringPtrOutput { return v.VersionId }).(pulumi.StringPtrOutput)
 }

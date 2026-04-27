@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("diskAddresses")]
         private InputList<Inputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressGetArgs>? _diskAddresses;
+
+        /// <summary>
+        /// - (Optional) Address of disk to boot from.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressGetArgs> DiskAddresses
         {
             get => _diskAddresses ?? (_diskAddresses = new InputList<Inputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressGetArgs>());

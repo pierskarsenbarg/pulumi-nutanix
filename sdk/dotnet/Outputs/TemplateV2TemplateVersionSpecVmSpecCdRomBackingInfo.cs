@@ -14,11 +14,24 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo
     {
+        /// <summary>
+        /// A reference to a disk or image that contains the contents of a disk.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource> DataSources;
         public readonly string? DiskExtId;
+        /// <summary>
+        /// Size of the disk in Bytes
+        /// </summary>
         public readonly int? DiskSizeBytes;
         public readonly bool? IsMigrationInProgress;
+        /// <summary>
+        /// Storage configuration for VM disks
+        /// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig> StorageConfigs;
+        /// <summary>
+        /// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer> StorageContainers;
 
         [OutputConstructor]

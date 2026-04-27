@@ -15,17 +15,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("diskAddresses")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs>? _diskAddresses;
+
+        /// <summary>
+        /// - (Optional) Address of disk.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs> DiskAddresses
         {
             get => _diskAddresses ?? (_diskAddresses = new InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs>());
             set => _diskAddresses = value;
         }
 
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+        /// </summary>
         [Input("diskExtId")]
         public Input<string>? DiskExtId { get; set; }
 
         [Input("vmReferences")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs>? _vmReferences;
+
+        /// <summary>
+        /// - (Optional) Reference to a VM.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs> VmReferences
         {
             get => _vmReferences ?? (_vmReferences = new InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs>());

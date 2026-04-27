@@ -10,21 +10,77 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a Nutanix Virtual Machine resource to Migrate a nic.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var migrate = new Nutanix.VmNetworkDeviceMigrateV2("migrate", new()
+    ///     {
+    ///         VmExtId = "246f6e8a-ff05-4057-af6b-b1fd23a46d7d",
+    ///         ExtId = "eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b",
+    ///         Subnets = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VmNetworkDeviceMigrateV2SubnetArgs
+    ///             {
+    ///                 ExtId = "6085d3ba-99ce-41fa-9866-e5d5babb62c7",
+    ///             },
+    ///         },
+    ///         MigrateType = "ASSIGN_IP",
+    ///         IpAddresses = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VmNetworkDeviceMigrateV2IpAddressArgs
+    ///             {
+    ///                 Value = "10.10.10.11",
+    ///                 PrefixLength = 32,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/vmNetworkDeviceMigrateV2:VmNetworkDeviceMigrateV2")]
     public partial class VmNetworkDeviceMigrateV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+        /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Ip config settings.
+        /// </summary>
         [Output("ipAddresses")]
         public Output<ImmutableArray<Outputs.VmNetworkDeviceMigrateV2IpAddress>> IpAddresses { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The type of IP address management for NIC migration.
+        /// Valid values are:
+        /// - `ASSIGN_IP` The type of NIC is Span-Destination.
+        /// - `RELEASE_IP` The type of NIC is Normal.
+        /// </summary>
         [Output("migrateType")]
         public Output<string> MigrateType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// </summary>
         [Output("subnets")]
         public Output<ImmutableArray<Outputs.VmNetworkDeviceMigrateV2Subnet>> Subnets { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Output("vmExtId")]
         public Output<string> VmExtId { get; private set; } = null!;
 
@@ -75,28 +131,48 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class VmNetworkDeviceMigrateV2Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
         [Input("ipAddresses")]
         private InputList<Inputs.VmNetworkDeviceMigrateV2IpAddressArgs>? _ipAddresses;
+
+        /// <summary>
+        /// - (Optional) Ip config settings.
+        /// </summary>
         public InputList<Inputs.VmNetworkDeviceMigrateV2IpAddressArgs> IpAddresses
         {
             get => _ipAddresses ?? (_ipAddresses = new InputList<Inputs.VmNetworkDeviceMigrateV2IpAddressArgs>());
             set => _ipAddresses = value;
         }
 
+        /// <summary>
+        /// - (Required) The type of IP address management for NIC migration.
+        /// Valid values are:
+        /// - `ASSIGN_IP` The type of NIC is Span-Destination.
+        /// - `RELEASE_IP` The type of NIC is Normal.
+        /// </summary>
         [Input("migrateType", required: true)]
         public Input<string> MigrateType { get; set; } = null!;
 
         [Input("subnets", required: true)]
         private InputList<Inputs.VmNetworkDeviceMigrateV2SubnetArgs>? _subnets;
+
+        /// <summary>
+        /// - (Required) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// </summary>
         public InputList<Inputs.VmNetworkDeviceMigrateV2SubnetArgs> Subnets
         {
             get => _subnets ?? (_subnets = new InputList<Inputs.VmNetworkDeviceMigrateV2SubnetArgs>());
             set => _subnets = value;
         }
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Input("vmExtId", required: true)]
         public Input<string> VmExtId { get; set; } = null!;
 
@@ -108,28 +184,48 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class VmNetworkDeviceMigrateV2State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("ipAddresses")]
         private InputList<Inputs.VmNetworkDeviceMigrateV2IpAddressGetArgs>? _ipAddresses;
+
+        /// <summary>
+        /// - (Optional) Ip config settings.
+        /// </summary>
         public InputList<Inputs.VmNetworkDeviceMigrateV2IpAddressGetArgs> IpAddresses
         {
             get => _ipAddresses ?? (_ipAddresses = new InputList<Inputs.VmNetworkDeviceMigrateV2IpAddressGetArgs>());
             set => _ipAddresses = value;
         }
 
+        /// <summary>
+        /// - (Required) The type of IP address management for NIC migration.
+        /// Valid values are:
+        /// - `ASSIGN_IP` The type of NIC is Span-Destination.
+        /// - `RELEASE_IP` The type of NIC is Normal.
+        /// </summary>
         [Input("migrateType")]
         public Input<string>? MigrateType { get; set; }
 
         [Input("subnets")]
         private InputList<Inputs.VmNetworkDeviceMigrateV2SubnetGetArgs>? _subnets;
+
+        /// <summary>
+        /// - (Required) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// </summary>
         public InputList<Inputs.VmNetworkDeviceMigrateV2SubnetGetArgs> Subnets
         {
             get => _subnets ?? (_subnets = new InputList<Inputs.VmNetworkDeviceMigrateV2SubnetGetArgs>());
             set => _subnets = value;
         }
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Input("vmExtId")]
         public Input<string>? VmExtId { get; set; }
 

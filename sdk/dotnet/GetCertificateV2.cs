@@ -12,12 +12,81 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetCertificateV2
     {
+        /// <summary>
+        /// Get the details of the SSL certificate which can be used to connect to an Object store.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetCertificateV2.Invoke(new()
+        ///     {
+        ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+        ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetCertificateV2Result> InvokeAsync(GetCertificateV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificateV2Result>("nutanix:index/getCertificateV2:getCertificateV2", args ?? new GetCertificateV2Args(), options.WithDefaults());
 
+        /// <summary>
+        /// Get the details of the SSL certificate which can be used to connect to an Object store.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetCertificateV2.Invoke(new()
+        ///     {
+        ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+        ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetCertificateV2Result> Invoke(GetCertificateV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateV2Result>("nutanix:index/getCertificateV2:getCertificateV2", args ?? new GetCertificateV2InvokeArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Get the details of the SSL certificate which can be used to connect to an Object store.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetCertificateV2.Invoke(new()
+        ///     {
+        ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+        ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetCertificateV2Result> Invoke(GetCertificateV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateV2Result>("nutanix:index/getCertificateV2:getCertificateV2", args ?? new GetCertificateV2InvokeArgs(), options.WithDefaults());
     }
@@ -25,9 +94,15 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetCertificateV2Args : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// -(Required) The UUID of the certificate of an Object store.
+        /// </summary>
         [Input("extId", required: true)]
         public string ExtId { get; set; } = null!;
 
+        /// <summary>
+        /// -(Required) The UUID of the Object store.
+        /// </summary>
         [Input("objectStoreExtId", required: true)]
         public string ObjectStoreExtId { get; set; } = null!;
 
@@ -39,9 +114,15 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetCertificateV2InvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// -(Required) The UUID of the certificate of an Object store.
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
+        /// <summary>
+        /// -(Required) The UUID of the Object store.
+        /// </summary>
         [Input("objectStoreExtId", required: true)]
         public Input<string> ObjectStoreExtId { get; set; } = null!;
 
@@ -55,16 +136,34 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetCertificateV2Result
     {
+        /// <summary>
+        /// - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificateV2AlternateFqdnResult> AlternateFqdns;
+        /// <summary>
+        /// - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificateV2AlternateIpResult> AlternateIps;
+        /// <summary>
+        /// - A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         public readonly string ExtId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificateV2LinkResult> Links;
+        /// <summary>
+        /// - Metadata associated with this resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificateV2MetadataResult> Metadatas;
         public readonly string ObjectStoreExtId;
+        /// <summary>
+        /// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// </summary>
         public readonly string TenantId;
 
         [OutputConstructor]

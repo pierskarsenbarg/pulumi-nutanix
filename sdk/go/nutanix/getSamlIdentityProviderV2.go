@@ -11,6 +11,39 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a datasource to View a SAML Identity Provider.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetSamlIdentityProviderV2(ctx, &nutanix.GetSamlIdentityProviderV2Args{
+//				ExtId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Argument Reference
+//
+// The following arguments are supported:
+//
+// * `extId`: - External identifier of the SAML Identity Provider.
 func GetSamlIdentityProviderV2(ctx *pulumi.Context, args *GetSamlIdentityProviderV2Args, opts ...pulumi.InvokeOption) (*GetSamlIdentityProviderV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSamlIdentityProviderV2Result
@@ -23,26 +56,36 @@ func GetSamlIdentityProviderV2(ctx *pulumi.Context, args *GetSamlIdentityProvide
 
 // A collection of arguments for invoking getSamlIdentityProviderV2.
 type GetSamlIdentityProviderV2Args struct {
+	// The External Identifier of the User Group.
 	ExtId string `pulumi:"extId"`
 }
 
 // A collection of values returned by getSamlIdentityProviderV2.
 type GetSamlIdentityProviderV2Result struct {
-	CreatedBy        string   `pulumi:"createdBy"`
+	// - User or Service who created the SAML Identity Provider.
+	CreatedBy string `pulumi:"createdBy"`
+	// - Creation time of the SAML Identity Provider.
 	CreatedTime      string   `pulumi:"createdTime"`
 	CustomAttributes []string `pulumi:"customAttributes"`
 	EmailAttribute   string   `pulumi:"emailAttribute"`
-	EntityIssuer     string   `pulumi:"entityIssuer"`
-	ExtId            string   `pulumi:"extId"`
-	GroupsAttribute  string   `pulumi:"groupsAttribute"`
-	GroupsDelim      string   `pulumi:"groupsDelim"`
+	// - It will be used as Issuer in SAML authnRequest.
+	EntityIssuer string `pulumi:"entityIssuer"`
+	// The External Identifier of the User Group.
+	ExtId           string `pulumi:"extId"`
+	GroupsAttribute string `pulumi:"groupsAttribute"`
+	// - Delimiter is used to split the value of attribute into multiple groups.
+	GroupsDelim string `pulumi:"groupsDelim"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                      string                                 `pulumi:"id"`
-	IdpMetadatas            []GetSamlIdentityProviderV2IdpMetadata `pulumi:"idpMetadatas"`
-	IsSignedAuthnReqEnabled bool                                   `pulumi:"isSignedAuthnReqEnabled"`
-	LastUpdatedTime         string                                 `pulumi:"lastUpdatedTime"`
-	Name                    string                                 `pulumi:"name"`
-	UsernameAttribute       string                                 `pulumi:"usernameAttribute"`
+	Id string `pulumi:"id"`
+	// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	IdpMetadatas []GetSamlIdentityProviderV2IdpMetadata `pulumi:"idpMetadatas"`
+	// - Flag indicating signing of SAML authnRequests.
+	IsSignedAuthnReqEnabled bool `pulumi:"isSignedAuthnReqEnabled"`
+	// - Last updated time of the SAML Identity Provider.
+	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
+	// - Unique name of the IDP.
+	Name              string `pulumi:"name"`
+	UsernameAttribute string `pulumi:"usernameAttribute"`
 }
 
 func GetSamlIdentityProviderV2Output(ctx *pulumi.Context, args GetSamlIdentityProviderV2OutputArgs, opts ...pulumi.InvokeOption) GetSamlIdentityProviderV2ResultOutput {
@@ -56,6 +99,7 @@ func GetSamlIdentityProviderV2Output(ctx *pulumi.Context, args GetSamlIdentityPr
 
 // A collection of arguments for invoking getSamlIdentityProviderV2.
 type GetSamlIdentityProviderV2OutputArgs struct {
+	// The External Identifier of the User Group.
 	ExtId pulumi.StringInput `pulumi:"extId"`
 }
 
@@ -78,10 +122,12 @@ func (o GetSamlIdentityProviderV2ResultOutput) ToGetSamlIdentityProviderV2Result
 	return o
 }
 
+// - User or Service who created the SAML Identity Provider.
 func (o GetSamlIdentityProviderV2ResultOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// - Creation time of the SAML Identity Provider.
 func (o GetSamlIdentityProviderV2ResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -94,10 +140,12 @@ func (o GetSamlIdentityProviderV2ResultOutput) EmailAttribute() pulumi.StringOut
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.EmailAttribute }).(pulumi.StringOutput)
 }
 
+// - It will be used as Issuer in SAML authnRequest.
 func (o GetSamlIdentityProviderV2ResultOutput) EntityIssuer() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.EntityIssuer }).(pulumi.StringOutput)
 }
 
+// The External Identifier of the User Group.
 func (o GetSamlIdentityProviderV2ResultOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.ExtId }).(pulumi.StringOutput)
 }
@@ -106,6 +154,7 @@ func (o GetSamlIdentityProviderV2ResultOutput) GroupsAttribute() pulumi.StringOu
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.GroupsAttribute }).(pulumi.StringOutput)
 }
 
+// - Delimiter is used to split the value of attribute into multiple groups.
 func (o GetSamlIdentityProviderV2ResultOutput) GroupsDelim() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.GroupsDelim }).(pulumi.StringOutput)
 }
@@ -115,18 +164,22 @@ func (o GetSamlIdentityProviderV2ResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
 func (o GetSamlIdentityProviderV2ResultOutput) IdpMetadatas() GetSamlIdentityProviderV2IdpMetadataArrayOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) []GetSamlIdentityProviderV2IdpMetadata { return v.IdpMetadatas }).(GetSamlIdentityProviderV2IdpMetadataArrayOutput)
 }
 
+// - Flag indicating signing of SAML authnRequests.
 func (o GetSamlIdentityProviderV2ResultOutput) IsSignedAuthnReqEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) bool { return v.IsSignedAuthnReqEnabled }).(pulumi.BoolOutput)
 }
 
+// - Last updated time of the SAML Identity Provider.
 func (o GetSamlIdentityProviderV2ResultOutput) LastUpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
+// - Unique name of the IDP.
 func (o GetSamlIdentityProviderV2ResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.Name }).(pulumi.StringOutput)
 }

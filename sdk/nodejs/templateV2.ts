@@ -6,6 +6,9 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Create a Template from the given VM identifier. A Template stores the VM configuration and disks from the source VM.
+ */
 export class TemplateV2 extends pulumi.CustomResource {
     /**
      * Get an existing TemplateV2 resource's state with the given name, ID, and optional extra
@@ -37,10 +40,22 @@ export class TemplateV2 extends pulumi.CustomResource {
     declare public /*out*/ readonly createTime: pulumi.Output<string>;
     declare public readonly createdBies: pulumi.Output<outputs.TemplateV2CreatedBy[]>;
     declare public /*out*/ readonly extId: pulumi.Output<string>;
+    /**
+     * Status of a guest update.
+     */
     declare public readonly guestUpdateStatuses: pulumi.Output<outputs.TemplateV2GuestUpdateStatus[]>;
     declare public /*out*/ readonly links: pulumi.Output<outputs.TemplateV2Link[]>;
+    /**
+     * The user defined description of a Template.
+     */
     declare public readonly templateDescription: pulumi.Output<string>;
+    /**
+     * The user defined name of a Template.
+     */
     declare public readonly templateName: pulumi.Output<string>;
+    /**
+     * A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+     */
     declare public readonly templateVersionSpec: pulumi.Output<outputs.TemplateV2TemplateVersionSpec>;
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     declare public /*out*/ readonly updateTime: pulumi.Output<string>;
@@ -102,10 +117,22 @@ export interface TemplateV2State {
     createTime?: pulumi.Input<string>;
     createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedBy>[]>;
     extId?: pulumi.Input<string>;
+    /**
+     * Status of a guest update.
+     */
     guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[]>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2Link>[]>;
+    /**
+     * The user defined description of a Template.
+     */
     templateDescription?: pulumi.Input<string>;
+    /**
+     * The user defined name of a Template.
+     */
     templateName?: pulumi.Input<string>;
+    /**
+     * A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+     */
     templateVersionSpec?: pulumi.Input<inputs.TemplateV2TemplateVersionSpec>;
     tenantId?: pulumi.Input<string>;
     updateTime?: pulumi.Input<string>;
@@ -117,9 +144,21 @@ export interface TemplateV2State {
  */
 export interface TemplateV2Args {
     createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedBy>[]>;
+    /**
+     * Status of a guest update.
+     */
     guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[]>;
+    /**
+     * The user defined description of a Template.
+     */
     templateDescription?: pulumi.Input<string>;
+    /**
+     * The user defined name of a Template.
+     */
     templateName: pulumi.Input<string>;
+    /**
+     * A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+     */
     templateVersionSpec: pulumi.Input<inputs.TemplateV2TemplateVersionSpec>;
     updatedBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2UpdatedBy>[]>;
 }

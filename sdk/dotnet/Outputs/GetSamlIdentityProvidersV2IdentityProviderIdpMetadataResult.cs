@@ -14,11 +14,30 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSamlIdentityProvidersV2IdentityProviderIdpMetadataResult
     {
+        /// <summary>
+        /// - Certificate for verification.
+        /// </summary>
         public readonly string Certificate;
+        /// <summary>
+        /// - Entity Identifier of Identity provider.
+        /// </summary>
         public readonly string EntityId;
+        /// <summary>
+        /// - Error URL of the Identity provider.
+        /// </summary>
         public readonly string ErrorUrl;
+        /// <summary>
+        /// - Login URL of the Identity provider.
+        /// </summary>
         public readonly string LoginUrl;
+        /// <summary>
+        /// - Logout URL of the Identity provider.
+        /// </summary>
         public readonly string LogoutUrl;
+        /// <summary>
+        /// - Name ID Policy format. supported values:
+        /// * `emailAddress`: -  Uses email address as NameID format
+        /// </summary>
         public readonly string NameIdPolicyFormat;
 
         [OutputConstructor]

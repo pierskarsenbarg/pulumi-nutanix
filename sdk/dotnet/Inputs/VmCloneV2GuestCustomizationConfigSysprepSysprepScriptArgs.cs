@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("customKeyValues")]
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueArgs>? _customKeyValues;
+
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes in cloud init.
+        /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueArgs> CustomKeyValues
         {
             get => _customKeyValues ?? (_customKeyValues = new InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("unattendXmls")]
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs>? _unattendXmls;
+
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes.
+        /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs> UnattendXmls
         {
             get => _unattendXmls ?? (_unattendXmls = new InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs>());

@@ -74,11 +74,17 @@ class GetSamlIdentityProviderV2Result:
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> _builtins.str:
+        """
+        - User or Service who created the SAML Identity Provider.
+        """
         return pulumi.get(self, "created_by")
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
     def created_time(self) -> _builtins.str:
+        """
+        - Creation time of the SAML Identity Provider.
+        """
         return pulumi.get(self, "created_time")
 
     @_builtins.property
@@ -94,11 +100,17 @@ class GetSamlIdentityProviderV2Result:
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
     def entity_issuer(self) -> _builtins.str:
+        """
+        - It will be used as Issuer in SAML authnRequest.
+        """
         return pulumi.get(self, "entity_issuer")
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> _builtins.str:
+        """
+        The External Identifier of the User Group.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -109,6 +121,9 @@ class GetSamlIdentityProviderV2Result:
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
     def groups_delim(self) -> _builtins.str:
+        """
+        - Delimiter is used to split the value of attribute into multiple groups.
+        """
         return pulumi.get(self, "groups_delim")
 
     @_builtins.property
@@ -122,21 +137,33 @@ class GetSamlIdentityProviderV2Result:
     @_builtins.property
     @pulumi.getter(name="idpMetadatas")
     def idp_metadatas(self) -> Sequence['outputs.GetSamlIdentityProviderV2IdpMetadataResult']:
+        """
+        - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        """
         return pulumi.get(self, "idp_metadatas")
 
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
     def is_signed_authn_req_enabled(self) -> _builtins.bool:
+        """
+        - Flag indicating signing of SAML authnRequests.
+        """
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
     def last_updated_time(self) -> _builtins.str:
+        """
+        - Last updated time of the SAML Identity Provider.
+        """
         return pulumi.get(self, "last_updated_time")
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        - Unique name of the IDP.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -170,7 +197,25 @@ class AwaitableGetSamlIdentityProviderV2Result(GetSamlIdentityProviderV2Result):
 def get_saml_identity_provider_v2(ext_id: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSamlIdentityProviderV2Result:
     """
-    Use this data source to access information about an existing resource.
+    Provides a datasource to View a SAML Identity Provider.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    idp = nutanix.get_saml_identity_provider_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+    ```
+
+    ## Argument Reference
+
+    The following arguments are supported:
+
+    * `ext_id`: - External identifier of the SAML Identity Provider.
+
+
+    :param _builtins.str ext_id: The External Identifier of the User Group.
     """
     __args__ = dict()
     __args__['extId'] = ext_id
@@ -195,7 +240,25 @@ def get_saml_identity_provider_v2(ext_id: Optional[_builtins.str] = None,
 def get_saml_identity_provider_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSamlIdentityProviderV2Result]:
     """
-    Use this data source to access information about an existing resource.
+    Provides a datasource to View a SAML Identity Provider.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    idp = nutanix.get_saml_identity_provider_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+    ```
+
+    ## Argument Reference
+
+    The following arguments are supported:
+
+    * `ext_id`: - External identifier of the SAML Identity Provider.
+
+
+    :param _builtins.str ext_id: The External Identifier of the User Group.
     """
     __args__ = dict()
     __args__['extId'] = ext_id

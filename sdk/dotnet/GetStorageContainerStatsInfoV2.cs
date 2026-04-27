@@ -12,12 +12,90 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetStorageContainerStatsInfoV2
     {
+        /// <summary>
+        /// Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetStorageContainerStatsInfoV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        ///         StartTime = "2024-08-01T00:00:00Z",
+        ///         EndTime = "2024-08-30T00:00:00Z",
+        ///         SamplingInterval = 1,
+        ///         StatType = "SUM",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetStorageContainerStatsInfoV2Result> InvokeAsync(GetStorageContainerStatsInfoV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStorageContainerStatsInfoV2Result>("nutanix:index/getStorageContainerStatsInfoV2:getStorageContainerStatsInfoV2", args ?? new GetStorageContainerStatsInfoV2Args(), options.WithDefaults());
 
+        /// <summary>
+        /// Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetStorageContainerStatsInfoV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        ///         StartTime = "2024-08-01T00:00:00Z",
+        ///         EndTime = "2024-08-30T00:00:00Z",
+        ///         SamplingInterval = 1,
+        ///         StatType = "SUM",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetStorageContainerStatsInfoV2Result> Invoke(GetStorageContainerStatsInfoV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStorageContainerStatsInfoV2Result>("nutanix:index/getStorageContainerStatsInfoV2:getStorageContainerStatsInfoV2", args ?? new GetStorageContainerStatsInfoV2InvokeArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetStorageContainerStatsInfoV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        ///         StartTime = "2024-08-01T00:00:00Z",
+        ///         EndTime = "2024-08-30T00:00:00Z",
+        ///         SamplingInterval = 1,
+        ///         StatType = "SUM",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetStorageContainerStatsInfoV2Result> Invoke(GetStorageContainerStatsInfoV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetStorageContainerStatsInfoV2Result>("nutanix:index/getStorageContainerStatsInfoV2:getStorageContainerStatsInfoV2", args ?? new GetStorageContainerStatsInfoV2InvokeArgs(), options.WithDefaults());
     }
@@ -25,18 +103,40 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetStorageContainerStatsInfoV2Args : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// storage container UUID
+        /// </summary>
         [Input("endTime", required: true)]
         public string EndTime { get; set; } = null!;
 
+        /// <summary>
+        /// storage container UUID
+        /// </summary>
         [Input("extId", required: true)]
         public string ExtId { get; set; } = null!;
 
+        /// <summary>
+        /// storage container UUID
+        /// </summary>
         [Input("samplingInterval")]
         public int? SamplingInterval { get; set; }
 
+        /// <summary>
+        /// storage container UUID
+        /// </summary>
         [Input("startTime", required: true)]
         public string StartTime { get; set; } = null!;
 
+        /// <summary>
+        /// storage container UUID
+        /// * available values:
+        /// * `AVG`: - Aggregation indicating mean or average of all values.
+        /// * `MIN`: - Aggregation containing lowest of all values.
+        /// * `MAX`: - 	Aggregation containing highest of all values.
+        /// * `LAST`: - Aggregation containing only the last recorded value.
+        /// * `SUM`: - Aggregation with sum of all values.
+        /// * `COUNT`: - Aggregation containing total count of values.
+        /// </summary>
         [Input("statType")]
         public string? StatType { get; set; }
 
@@ -48,18 +148,40 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetStorageContainerStatsInfoV2InvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// storage container UUID
+        /// </summary>
         [Input("endTime", required: true)]
         public Input<string> EndTime { get; set; } = null!;
 
+        /// <summary>
+        /// storage container UUID
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
+        /// <summary>
+        /// storage container UUID
+        /// </summary>
         [Input("samplingInterval")]
         public Input<int>? SamplingInterval { get; set; }
 
+        /// <summary>
+        /// storage container UUID
+        /// </summary>
         [Input("startTime", required: true)]
         public Input<string> StartTime { get; set; } = null!;
 
+        /// <summary>
+        /// storage container UUID
+        /// * available values:
+        /// * `AVG`: - Aggregation indicating mean or average of all values.
+        /// * `MIN`: - Aggregation containing lowest of all values.
+        /// * `MAX`: - 	Aggregation containing highest of all values.
+        /// * `LAST`: - Aggregation containing only the last recorded value.
+        /// * `SUM`: - Aggregation with sum of all values.
+        /// * `COUNT`: - Aggregation containing total count of values.
+        /// </summary>
         [Input("statType")]
         public Input<string>? StatType { get; set; }
 
@@ -73,49 +195,157 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetStorageContainerStatsInfoV2Result
     {
+        /// <summary>
+        /// - the storage container uuid
+        /// </summary>
         public readonly string ContainerExtId;
+        /// <summary>
+        /// - Average I/O latency in micro secs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecResult> ControllerAvgIoLatencyuSecs;
+        /// <summary>
+        /// - Average read I/O latency in microseconds.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecResult> ControllerAvgReadIoLatencyuSecs;
+        /// <summary>
+        /// - Average read I/O latency in microseconds.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecResult> ControllerAvgWriteIoLatencyuSecs;
+        /// <summary>
+        /// - Total I/O bandwidth - kB per second.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpResult> ControllerIoBandwidthKbps;
+        /// <summary>
+        /// - Number of I/O per second.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerNumIopResult> ControllerNumIops;
+        /// <summary>
+        /// - Number of read I/O per second.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerNumReadIopResult> ControllerNumReadIops;
+        /// <summary>
+        /// - Number of write I/O per second.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerNumWriteIopResult> ControllerNumWriteIops;
+        /// <summary>
+        /// - Read I/O bandwidth - kB per second.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpResult> ControllerReadIoBandwidthKbps;
+        /// <summary>
+        /// - Ratio of read I/O to total I/O in PPM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmResult> ControllerReadIoRatioPpms;
+        /// <summary>
+        /// - Write I/O bandwidth - kB per second.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpResult> ControllerWriteIoBandwidthKbps;
+        /// <summary>
+        /// - Ratio of read I/O to total I/O in PPM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmResult> ControllerWriteIoRatioPpms;
+        /// <summary>
+        /// - Saving ratio in PPM as a result of the Cloning technique.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmResult> DataReductionCloneSavingRatioPpms;
+        /// <summary>
+        /// - Saving ratio in PPM as a result of the Compression technique.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmResult> DataReductionCompressionSavingRatioPpms;
+        /// <summary>
+        /// - Saving ratio in PPM as a result of the Deduplication technique.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmResult> DataReductionDedupSavingRatioPpms;
+        /// <summary>
+        /// - Saving ratio in PPM as a result of the Erasure Coding technique.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmResult> DataReductionErasureCodingSavingRatioPpms;
+        /// <summary>
+        /// - Usage in bytes after reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteResult> DataReductionOverallPostReductionBytes;
+        /// <summary>
+        /// - Usage in bytes before reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteResult> DataReductionOverallPreReductionBytes;
+        /// <summary>
+        /// - Storage savings in bytes as a result of all the techniques.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionSavedByteResult> DataReductionSavedBytes;
+        /// <summary>
+        /// - Saving ratio in PPM as a result of Deduplication, compression and Erasure Coding.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmResult> DataReductionSavingRatioPpms;
+        /// <summary>
+        /// - Saving ratio in PPM as a result of Snapshot technique.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmResult> DataReductionSnapshotSavingRatioPpms;
+        /// <summary>
+        /// - Saving ratio in PPM as a result of the Thin Provisioning technique.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmResult> DataReductionThinProvisionSavingRatioPpms;
+        /// <summary>
+        /// - Saving ratio in PPM consisting of Deduplication, Compression, Erasure Coding, Cloning, and Thin Provisioning.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmResult> DataReductionTotalSavingRatioPpms;
+        /// <summary>
+        /// - Total amount of savings in bytes as a result of zero writes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteResult> DataReductionZeroWriteSavingsBytes;
         public readonly string EndTime;
+        /// <summary>
+        /// - the storage container uuid
+        /// </summary>
         public readonly string ExtId;
+        /// <summary>
+        /// - Health of the container is represented by an integer value in the range 0-100. Higher value is indicative of better health.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2HealthResult> Healths;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2LinkResult> Links;
         public readonly int? SamplingInterval;
         public readonly string StartTime;
         public readonly string? StatType;
+        /// <summary>
+        /// - Actual physical disk usage of the container without accounting for the reservation.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteResult> StorageActualPhysicalUsageBytes;
+        /// <summary>
+        /// - Storage capacity in bytes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2StorageCapacityByteResult> StorageCapacityBytes;
+        /// <summary>
+        /// - Free storage in bytes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2StorageFreeByteResult> StorageFreeBytes;
+        /// <summary>
+        /// - Replication factor of Container.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2StorageReplicationFactorResult> StorageReplicationFactors;
+        /// <summary>
+        /// - Implicit physical reserved capacity(aggregated on vDisk level due to thick provisioning) in bytes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2StorageReservedCapacityByteResult> StorageReservedCapacityBytes;
+        /// <summary>
+        /// - Total usage on HDD tier for the Container in bytes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteResult> StorageTierDasSataUsageBytes;
+        /// <summary>
+        /// - Total usage on SDD tier for the Container in bytes
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2StorageTierSsdUsageByteResult> StorageTierSsdUsageBytes;
+        /// <summary>
+        /// - Used storage in bytes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainerStatsInfoV2StorageUsageByteResult> StorageUsageBytes;
+        /// <summary>
+        /// - A globally unique identifier that represents the tenant that owns this entity.
+        /// </summary>
         public readonly string TenantId;
 
         [OutputConstructor]

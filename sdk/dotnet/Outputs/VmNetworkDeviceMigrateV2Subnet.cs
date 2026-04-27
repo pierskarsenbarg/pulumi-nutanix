@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmNetworkDeviceMigrateV2Subnet
     {
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
+        /// </summary>
         public readonly string? ExtId;
 
         [OutputConstructor]

@@ -31,6 +31,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("mode")]
         public Input<string>? Mode { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name for the vm.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

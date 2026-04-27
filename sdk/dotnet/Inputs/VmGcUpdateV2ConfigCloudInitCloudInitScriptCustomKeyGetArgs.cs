@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("keyValuePairs")]
         private InputList<Inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairGetArgs>? _keyValuePairs;
+
+        /// <summary>
+        /// - (Optional) The list of the individual KeyValuePair elements.
+        /// </summary>
         public InputList<Inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairGetArgs> KeyValuePairs
         {
             get => _keyValuePairs ?? (_keyValuePairs = new InputList<Inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairGetArgs>());

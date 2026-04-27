@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("bootDeviceDisks")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs>? _bootDeviceDisks;
+
+        /// <summary>
+        /// - (Optional) The Boot Device Disk settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs> BootDeviceDisks
         {
             get => _bootDeviceDisks ?? (_bootDeviceDisks = new InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("bootDeviceNics")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs>? _bootDeviceNics;
+
+        /// <summary>
+        /// - (Optional) The Boot Device Nic settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs> BootDeviceNics
         {
             get => _bootDeviceNics ?? (_bootDeviceNics = new InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs>());

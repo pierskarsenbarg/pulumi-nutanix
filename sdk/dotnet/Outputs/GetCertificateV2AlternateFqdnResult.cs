@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetCertificateV2AlternateFqdnResult
     {
+        /// <summary>
+        /// - The IPv4/IPv6 address of the host.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

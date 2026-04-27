@@ -14,17 +14,29 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecGpus
     {
+        /// <summary>
+        /// The device Id of the GPU.
+        /// </summary>
         public readonly int? DeviceId;
         public readonly string? ExtId;
         public readonly int? Fraction;
         public readonly int? FrameBufferSizeBytes;
         public readonly string? GuestDriverVersion;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecGpusLink> Links;
+        /// <summary>
+        /// The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+        /// </summary>
         public readonly string? Mode;
         public readonly string? Name;
         public readonly int? NumVirtualDisplayHeads;
+        /// <summary>
+        /// The (S)egment:(B)us:(D)evice.(F)unction hardware address.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecGpusPciAddress> PciAddresses;
         public readonly string? TenantId;
+        /// <summary>
+        /// The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
+        /// </summary>
         public readonly string? Vendor;
 
         [OutputConstructor]

@@ -15,15 +15,31 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("cloudInitScripts")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptArgs>? _cloudInitScripts;
+
+        /// <summary>
+        /// The script to use for cloud-init.
+        /// * `cloud_init_script.user_data`: (Optional) user data object
+        /// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+        /// 
+        /// 
+        /// 
+        /// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/createTemplate).
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptArgs> CloudInitScripts
         {
             get => _cloudInitScripts ?? (_cloudInitScripts = new InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptArgs>());
             set => _cloudInitScripts = value;
         }
 
+        /// <summary>
+        /// Type of datasource. Default: CONFIG_DRIVE_V2
+        /// </summary>
         [Input("datasourceType")]
         public Input<string>? DatasourceType { get; set; }
 
+        /// <summary>
+        /// The contents of the MetaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+        /// </summary>
         [Input("metadata")]
         public Input<string>? Metadata { get; set; }
 

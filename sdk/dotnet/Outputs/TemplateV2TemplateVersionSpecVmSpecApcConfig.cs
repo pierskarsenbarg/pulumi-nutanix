@@ -14,7 +14,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecApcConfig
     {
+        /// <summary>
+        /// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+        /// * `cpu_model.name`: (Required) Name of the CPU model associated with the VM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel> CpuModels;
+        /// <summary>
+        /// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+        /// </summary>
         public readonly bool? IsApcEnabled;
 
         [OutputConstructor]

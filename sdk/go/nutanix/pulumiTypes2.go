@@ -14447,11 +14447,19 @@ func (o RoutesV2NextHopNextHopIpAddressIpv6Output) Value() pulumi.StringOutput {
 }
 
 type SamlIdentityProvidersV2IdpMetadata struct {
-	Certificate        string  `pulumi:"certificate"`
-	EntityId           string  `pulumi:"entityId"`
-	ErrorUrl           *string `pulumi:"errorUrl"`
-	LoginUrl           string  `pulumi:"loginUrl"`
-	LogoutUrl          *string `pulumi:"logoutUrl"`
+	// - Certificate for verification.
+	Certificate string `pulumi:"certificate"`
+	// - Entity Identifier of Identity provider.
+	EntityId string `pulumi:"entityId"`
+	// - Error URL of the Identity provider.
+	ErrorUrl *string `pulumi:"errorUrl"`
+	// - Login URL of the Identity provider.
+	LoginUrl string `pulumi:"loginUrl"`
+	// - Logout URL of the Identity provider.
+	LogoutUrl *string `pulumi:"logoutUrl"`
+	// - Name ID Policy format.
+	// * supported values:
+	// * `emailAddress`: -  Uses email address as NameID format
 	NameIdPolicyFormat *string `pulumi:"nameIdPolicyFormat"`
 }
 
@@ -14467,11 +14475,19 @@ type SamlIdentityProvidersV2IdpMetadataInput interface {
 }
 
 type SamlIdentityProvidersV2IdpMetadataArgs struct {
-	Certificate        pulumi.StringInput    `pulumi:"certificate"`
-	EntityId           pulumi.StringInput    `pulumi:"entityId"`
-	ErrorUrl           pulumi.StringPtrInput `pulumi:"errorUrl"`
-	LoginUrl           pulumi.StringInput    `pulumi:"loginUrl"`
-	LogoutUrl          pulumi.StringPtrInput `pulumi:"logoutUrl"`
+	// - Certificate for verification.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// - Entity Identifier of Identity provider.
+	EntityId pulumi.StringInput `pulumi:"entityId"`
+	// - Error URL of the Identity provider.
+	ErrorUrl pulumi.StringPtrInput `pulumi:"errorUrl"`
+	// - Login URL of the Identity provider.
+	LoginUrl pulumi.StringInput `pulumi:"loginUrl"`
+	// - Logout URL of the Identity provider.
+	LogoutUrl pulumi.StringPtrInput `pulumi:"logoutUrl"`
+	// - Name ID Policy format.
+	// * supported values:
+	// * `emailAddress`: -  Uses email address as NameID format
 	NameIdPolicyFormat pulumi.StringPtrInput `pulumi:"nameIdPolicyFormat"`
 }
 
@@ -14526,26 +14542,34 @@ func (o SamlIdentityProvidersV2IdpMetadataOutput) ToSamlIdentityProvidersV2IdpMe
 	return o
 }
 
+// - Certificate for verification.
 func (o SamlIdentityProvidersV2IdpMetadataOutput) Certificate() pulumi.StringOutput {
 	return o.ApplyT(func(v SamlIdentityProvidersV2IdpMetadata) string { return v.Certificate }).(pulumi.StringOutput)
 }
 
+// - Entity Identifier of Identity provider.
 func (o SamlIdentityProvidersV2IdpMetadataOutput) EntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v SamlIdentityProvidersV2IdpMetadata) string { return v.EntityId }).(pulumi.StringOutput)
 }
 
+// - Error URL of the Identity provider.
 func (o SamlIdentityProvidersV2IdpMetadataOutput) ErrorUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SamlIdentityProvidersV2IdpMetadata) *string { return v.ErrorUrl }).(pulumi.StringPtrOutput)
 }
 
+// - Login URL of the Identity provider.
 func (o SamlIdentityProvidersV2IdpMetadataOutput) LoginUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v SamlIdentityProvidersV2IdpMetadata) string { return v.LoginUrl }).(pulumi.StringOutput)
 }
 
+// - Logout URL of the Identity provider.
 func (o SamlIdentityProvidersV2IdpMetadataOutput) LogoutUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SamlIdentityProvidersV2IdpMetadata) *string { return v.LogoutUrl }).(pulumi.StringPtrOutput)
 }
 
+// - Name ID Policy format.
+// * supported values:
+// * `emailAddress`: -  Uses email address as NameID format
 func (o SamlIdentityProvidersV2IdpMetadataOutput) NameIdPolicyFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SamlIdentityProvidersV2IdpMetadata) *string { return v.NameIdPolicyFormat }).(pulumi.StringPtrOutput)
 }
@@ -26117,23 +26141,24 @@ func (o SubnetV2VpcSnatIpIpv6ArrayOutput) Index(i pulumi.IntInput) SubnetV2VpcSn
 }
 
 type TemplateV2CreatedBy struct {
-	AdditionalAttributes        []TemplateV2CreatedByAdditionalAttribute `pulumi:"additionalAttributes"`
-	CreationType                *string                                  `pulumi:"creationType"`
-	Description                 *string                                  `pulumi:"description"`
-	DisplayName                 *string                                  `pulumi:"displayName"`
-	EmailId                     *string                                  `pulumi:"emailId"`
-	ExtId                       *string                                  `pulumi:"extId"`
-	FirstName                   *string                                  `pulumi:"firstName"`
-	IdpId                       *string                                  `pulumi:"idpId"`
-	IsForceResetPasswordEnabled *bool                                    `pulumi:"isForceResetPasswordEnabled"`
-	LastName                    *string                                  `pulumi:"lastName"`
-	Locale                      *string                                  `pulumi:"locale"`
-	MiddleInitial               *string                                  `pulumi:"middleInitial"`
-	Password                    *string                                  `pulumi:"password"`
-	Region                      *string                                  `pulumi:"region"`
-	Status                      *string                                  `pulumi:"status"`
-	UserType                    string                                   `pulumi:"userType"`
-	Username                    string                                   `pulumi:"username"`
+	AdditionalAttributes []TemplateV2CreatedByAdditionalAttribute `pulumi:"additionalAttributes"`
+	CreationType         *string                                  `pulumi:"creationType"`
+	// VM description
+	Description                 *string `pulumi:"description"`
+	DisplayName                 *string `pulumi:"displayName"`
+	EmailId                     *string `pulumi:"emailId"`
+	ExtId                       *string `pulumi:"extId"`
+	FirstName                   *string `pulumi:"firstName"`
+	IdpId                       *string `pulumi:"idpId"`
+	IsForceResetPasswordEnabled *bool   `pulumi:"isForceResetPasswordEnabled"`
+	LastName                    *string `pulumi:"lastName"`
+	Locale                      *string `pulumi:"locale"`
+	MiddleInitial               *string `pulumi:"middleInitial"`
+	Password                    *string `pulumi:"password"`
+	Region                      *string `pulumi:"region"`
+	Status                      *string `pulumi:"status"`
+	UserType                    string  `pulumi:"userType"`
+	Username                    string  `pulumi:"username"`
 }
 
 // TemplateV2CreatedByInput is an input type that accepts TemplateV2CreatedByArgs and TemplateV2CreatedByOutput values.
@@ -26148,23 +26173,24 @@ type TemplateV2CreatedByInput interface {
 }
 
 type TemplateV2CreatedByArgs struct {
-	AdditionalAttributes        TemplateV2CreatedByAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
-	CreationType                pulumi.StringPtrInput                            `pulumi:"creationType"`
-	Description                 pulumi.StringPtrInput                            `pulumi:"description"`
-	DisplayName                 pulumi.StringPtrInput                            `pulumi:"displayName"`
-	EmailId                     pulumi.StringPtrInput                            `pulumi:"emailId"`
-	ExtId                       pulumi.StringPtrInput                            `pulumi:"extId"`
-	FirstName                   pulumi.StringPtrInput                            `pulumi:"firstName"`
-	IdpId                       pulumi.StringPtrInput                            `pulumi:"idpId"`
-	IsForceResetPasswordEnabled pulumi.BoolPtrInput                              `pulumi:"isForceResetPasswordEnabled"`
-	LastName                    pulumi.StringPtrInput                            `pulumi:"lastName"`
-	Locale                      pulumi.StringPtrInput                            `pulumi:"locale"`
-	MiddleInitial               pulumi.StringPtrInput                            `pulumi:"middleInitial"`
-	Password                    pulumi.StringPtrInput                            `pulumi:"password"`
-	Region                      pulumi.StringPtrInput                            `pulumi:"region"`
-	Status                      pulumi.StringPtrInput                            `pulumi:"status"`
-	UserType                    pulumi.StringInput                               `pulumi:"userType"`
-	Username                    pulumi.StringInput                               `pulumi:"username"`
+	AdditionalAttributes TemplateV2CreatedByAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
+	CreationType         pulumi.StringPtrInput                            `pulumi:"creationType"`
+	// VM description
+	Description                 pulumi.StringPtrInput `pulumi:"description"`
+	DisplayName                 pulumi.StringPtrInput `pulumi:"displayName"`
+	EmailId                     pulumi.StringPtrInput `pulumi:"emailId"`
+	ExtId                       pulumi.StringPtrInput `pulumi:"extId"`
+	FirstName                   pulumi.StringPtrInput `pulumi:"firstName"`
+	IdpId                       pulumi.StringPtrInput `pulumi:"idpId"`
+	IsForceResetPasswordEnabled pulumi.BoolPtrInput   `pulumi:"isForceResetPasswordEnabled"`
+	LastName                    pulumi.StringPtrInput `pulumi:"lastName"`
+	Locale                      pulumi.StringPtrInput `pulumi:"locale"`
+	MiddleInitial               pulumi.StringPtrInput `pulumi:"middleInitial"`
+	Password                    pulumi.StringPtrInput `pulumi:"password"`
+	Region                      pulumi.StringPtrInput `pulumi:"region"`
+	Status                      pulumi.StringPtrInput `pulumi:"status"`
+	UserType                    pulumi.StringInput    `pulumi:"userType"`
+	Username                    pulumi.StringInput    `pulumi:"username"`
 }
 
 func (TemplateV2CreatedByArgs) ElementType() reflect.Type {
@@ -26226,6 +26252,7 @@ func (o TemplateV2CreatedByOutput) CreationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2CreatedBy) *string { return v.CreationType }).(pulumi.StringPtrOutput)
 }
 
+// VM description
 func (o TemplateV2CreatedByOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2CreatedBy) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -26829,18 +26856,27 @@ func (o TemplateV2LinkArrayOutput) Index(i pulumi.IntInput) TemplateV2LinkOutput
 }
 
 type TemplateV2TemplateVersionSpec struct {
-	CreateTime                 *string                                    `pulumi:"createTime"`
-	CreatedBies                []TemplateV2TemplateVersionSpecCreatedBy   `pulumi:"createdBies"`
-	ExtId                      *string                                    `pulumi:"extId"`
-	IsActiveVersion            *bool                                      `pulumi:"isActiveVersion"`
-	IsGcOverrideEnabled        *bool                                      `pulumi:"isGcOverrideEnabled"`
-	Links                      []TemplateV2TemplateVersionSpecLink        `pulumi:"links"`
-	TenantId                   *string                                    `pulumi:"tenantId"`
-	VersionDescription         *string                                    `pulumi:"versionDescription"`
-	VersionName                *string                                    `pulumi:"versionName"`
-	VersionSource              TemplateV2TemplateVersionSpecVersionSource `pulumi:"versionSource"`
-	VersionSourceDiscriminator *string                                    `pulumi:"versionSourceDiscriminator"`
-	VmSpecs                    []TemplateV2TemplateVersionSpecVmSpec      `pulumi:"vmSpecs"`
+	CreateTime  *string                                  `pulumi:"createTime"`
+	CreatedBies []TemplateV2TemplateVersionSpecCreatedBy `pulumi:"createdBies"`
+	ExtId       *string                                  `pulumi:"extId"`
+	// Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+	IsActiveVersion *bool `pulumi:"isActiveVersion"`
+	// Allow or disallow overriding guest customization during template deployment.
+	// * `version_source.template_vm_reference`: (Optional) Template VM Reference
+	// * `version_source.template_version_reference`: (Optional) Template Version Reference
+	IsGcOverrideEnabled *bool                               `pulumi:"isGcOverrideEnabled"`
+	Links               []TemplateV2TemplateVersionSpecLink `pulumi:"links"`
+	TenantId            *string                             `pulumi:"tenantId"`
+	// The user defined description of a Template Version. Version description `Required` when updating a Template Version.
+	VersionDescription *string `pulumi:"versionDescription"`
+	// The user defined name of a Template Version. Version name `Required` when updating a Template Version.
+	VersionName *string `pulumi:"versionName"`
+	// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
+	VersionSource TemplateV2TemplateVersionSpecVersionSource `pulumi:"versionSource"`
+	// Source type of the template version created. It can be either a VM or a template version.
+	VersionSourceDiscriminator *string `pulumi:"versionSourceDiscriminator"`
+	// Specification for a VM.
+	VmSpecs []TemplateV2TemplateVersionSpecVmSpec `pulumi:"vmSpecs"`
 }
 
 // TemplateV2TemplateVersionSpecInput is an input type that accepts TemplateV2TemplateVersionSpecArgs and TemplateV2TemplateVersionSpecOutput values.
@@ -26855,18 +26891,27 @@ type TemplateV2TemplateVersionSpecInput interface {
 }
 
 type TemplateV2TemplateVersionSpecArgs struct {
-	CreateTime                 pulumi.StringPtrInput                            `pulumi:"createTime"`
-	CreatedBies                TemplateV2TemplateVersionSpecCreatedByArrayInput `pulumi:"createdBies"`
-	ExtId                      pulumi.StringPtrInput                            `pulumi:"extId"`
-	IsActiveVersion            pulumi.BoolPtrInput                              `pulumi:"isActiveVersion"`
-	IsGcOverrideEnabled        pulumi.BoolPtrInput                              `pulumi:"isGcOverrideEnabled"`
-	Links                      TemplateV2TemplateVersionSpecLinkArrayInput      `pulumi:"links"`
-	TenantId                   pulumi.StringPtrInput                            `pulumi:"tenantId"`
-	VersionDescription         pulumi.StringPtrInput                            `pulumi:"versionDescription"`
-	VersionName                pulumi.StringPtrInput                            `pulumi:"versionName"`
-	VersionSource              TemplateV2TemplateVersionSpecVersionSourceInput  `pulumi:"versionSource"`
-	VersionSourceDiscriminator pulumi.StringPtrInput                            `pulumi:"versionSourceDiscriminator"`
-	VmSpecs                    TemplateV2TemplateVersionSpecVmSpecArrayInput    `pulumi:"vmSpecs"`
+	CreateTime  pulumi.StringPtrInput                            `pulumi:"createTime"`
+	CreatedBies TemplateV2TemplateVersionSpecCreatedByArrayInput `pulumi:"createdBies"`
+	ExtId       pulumi.StringPtrInput                            `pulumi:"extId"`
+	// Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+	IsActiveVersion pulumi.BoolPtrInput `pulumi:"isActiveVersion"`
+	// Allow or disallow overriding guest customization during template deployment.
+	// * `version_source.template_vm_reference`: (Optional) Template VM Reference
+	// * `version_source.template_version_reference`: (Optional) Template Version Reference
+	IsGcOverrideEnabled pulumi.BoolPtrInput                         `pulumi:"isGcOverrideEnabled"`
+	Links               TemplateV2TemplateVersionSpecLinkArrayInput `pulumi:"links"`
+	TenantId            pulumi.StringPtrInput                       `pulumi:"tenantId"`
+	// The user defined description of a Template Version. Version description `Required` when updating a Template Version.
+	VersionDescription pulumi.StringPtrInput `pulumi:"versionDescription"`
+	// The user defined name of a Template Version. Version name `Required` when updating a Template Version.
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
+	// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
+	VersionSource TemplateV2TemplateVersionSpecVersionSourceInput `pulumi:"versionSource"`
+	// Source type of the template version created. It can be either a VM or a template version.
+	VersionSourceDiscriminator pulumi.StringPtrInput `pulumi:"versionSourceDiscriminator"`
+	// Specification for a VM.
+	VmSpecs TemplateV2TemplateVersionSpecVmSpecArrayInput `pulumi:"vmSpecs"`
 }
 
 func (TemplateV2TemplateVersionSpecArgs) ElementType() reflect.Type {
@@ -26958,10 +27003,14 @@ func (o TemplateV2TemplateVersionSpecOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
 func (o TemplateV2TemplateVersionSpecOutput) IsActiveVersion() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *bool { return v.IsActiveVersion }).(pulumi.BoolPtrOutput)
 }
 
+// Allow or disallow overriding guest customization during template deployment.
+// * `version_source.template_vm_reference`: (Optional) Template VM Reference
+// * `version_source.template_version_reference`: (Optional) Template Version Reference
 func (o TemplateV2TemplateVersionSpecOutput) IsGcOverrideEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *bool { return v.IsGcOverrideEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -26974,24 +27023,29 @@ func (o TemplateV2TemplateVersionSpecOutput) TenantId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
+// The user defined description of a Template Version. Version description `Required` when updating a Template Version.
 func (o TemplateV2TemplateVersionSpecOutput) VersionDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *string { return v.VersionDescription }).(pulumi.StringPtrOutput)
 }
 
+// The user defined name of a Template Version. Version name `Required` when updating a Template Version.
 func (o TemplateV2TemplateVersionSpecOutput) VersionName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
+// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
 func (o TemplateV2TemplateVersionSpecOutput) VersionSource() TemplateV2TemplateVersionSpecVersionSourceOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) TemplateV2TemplateVersionSpecVersionSource {
 		return v.VersionSource
 	}).(TemplateV2TemplateVersionSpecVersionSourceOutput)
 }
 
+// Source type of the template version created. It can be either a VM or a template version.
 func (o TemplateV2TemplateVersionSpecOutput) VersionSourceDiscriminator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *string { return v.VersionSourceDiscriminator }).(pulumi.StringPtrOutput)
 }
 
+// Specification for a VM.
 func (o TemplateV2TemplateVersionSpecOutput) VmSpecs() TemplateV2TemplateVersionSpecVmSpecArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) []TemplateV2TemplateVersionSpecVmSpec { return v.VmSpecs }).(TemplateV2TemplateVersionSpecVmSpecArrayOutput)
 }
@@ -27047,6 +27101,7 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) ExtId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
 func (o TemplateV2TemplateVersionSpecPtrOutput) IsActiveVersion() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) *bool {
 		if v == nil {
@@ -27056,6 +27111,9 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) IsActiveVersion() pulumi.BoolPtr
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Allow or disallow overriding guest customization during template deployment.
+// * `version_source.template_vm_reference`: (Optional) Template VM Reference
+// * `version_source.template_version_reference`: (Optional) Template Version Reference
 func (o TemplateV2TemplateVersionSpecPtrOutput) IsGcOverrideEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) *bool {
 		if v == nil {
@@ -27083,6 +27141,7 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) TenantId() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
+// The user defined description of a Template Version. Version description `Required` when updating a Template Version.
 func (o TemplateV2TemplateVersionSpecPtrOutput) VersionDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) *string {
 		if v == nil {
@@ -27092,6 +27151,7 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) VersionDescription() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
+// The user defined name of a Template Version. Version name `Required` when updating a Template Version.
 func (o TemplateV2TemplateVersionSpecPtrOutput) VersionName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) *string {
 		if v == nil {
@@ -27101,6 +27161,7 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) VersionName() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
 func (o TemplateV2TemplateVersionSpecPtrOutput) VersionSource() TemplateV2TemplateVersionSpecVersionSourcePtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) *TemplateV2TemplateVersionSpecVersionSource {
 		if v == nil {
@@ -27110,6 +27171,7 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) VersionSource() TemplateV2Templa
 	}).(TemplateV2TemplateVersionSpecVersionSourcePtrOutput)
 }
 
+// Source type of the template version created. It can be either a VM or a template version.
 func (o TemplateV2TemplateVersionSpecPtrOutput) VersionSourceDiscriminator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) *string {
 		if v == nil {
@@ -27119,6 +27181,7 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) VersionSourceDiscriminator() pul
 	}).(pulumi.StringPtrOutput)
 }
 
+// Specification for a VM.
 func (o TemplateV2TemplateVersionSpecPtrOutput) VmSpecs() TemplateV2TemplateVersionSpecVmSpecArrayOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) []TemplateV2TemplateVersionSpecVmSpec {
 		if v == nil {
@@ -27129,23 +27192,24 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) VmSpecs() TemplateV2TemplateVers
 }
 
 type TemplateV2TemplateVersionSpecCreatedBy struct {
-	AdditionalAttributes        []TemplateV2TemplateVersionSpecCreatedByAdditionalAttribute `pulumi:"additionalAttributes"`
-	CreationType                *string                                                     `pulumi:"creationType"`
-	Description                 *string                                                     `pulumi:"description"`
-	DisplayName                 *string                                                     `pulumi:"displayName"`
-	EmailId                     *string                                                     `pulumi:"emailId"`
-	ExtId                       *string                                                     `pulumi:"extId"`
-	FirstName                   *string                                                     `pulumi:"firstName"`
-	IdpId                       *string                                                     `pulumi:"idpId"`
-	IsForceResetPasswordEnabled *bool                                                       `pulumi:"isForceResetPasswordEnabled"`
-	LastName                    *string                                                     `pulumi:"lastName"`
-	Locale                      *string                                                     `pulumi:"locale"`
-	MiddleInitial               *string                                                     `pulumi:"middleInitial"`
-	Password                    *string                                                     `pulumi:"password"`
-	Region                      *string                                                     `pulumi:"region"`
-	Status                      *string                                                     `pulumi:"status"`
-	UserType                    string                                                      `pulumi:"userType"`
-	Username                    string                                                      `pulumi:"username"`
+	AdditionalAttributes []TemplateV2TemplateVersionSpecCreatedByAdditionalAttribute `pulumi:"additionalAttributes"`
+	CreationType         *string                                                     `pulumi:"creationType"`
+	// VM description
+	Description                 *string `pulumi:"description"`
+	DisplayName                 *string `pulumi:"displayName"`
+	EmailId                     *string `pulumi:"emailId"`
+	ExtId                       *string `pulumi:"extId"`
+	FirstName                   *string `pulumi:"firstName"`
+	IdpId                       *string `pulumi:"idpId"`
+	IsForceResetPasswordEnabled *bool   `pulumi:"isForceResetPasswordEnabled"`
+	LastName                    *string `pulumi:"lastName"`
+	Locale                      *string `pulumi:"locale"`
+	MiddleInitial               *string `pulumi:"middleInitial"`
+	Password                    *string `pulumi:"password"`
+	Region                      *string `pulumi:"region"`
+	Status                      *string `pulumi:"status"`
+	UserType                    string  `pulumi:"userType"`
+	Username                    string  `pulumi:"username"`
 }
 
 // TemplateV2TemplateVersionSpecCreatedByInput is an input type that accepts TemplateV2TemplateVersionSpecCreatedByArgs and TemplateV2TemplateVersionSpecCreatedByOutput values.
@@ -27160,23 +27224,24 @@ type TemplateV2TemplateVersionSpecCreatedByInput interface {
 }
 
 type TemplateV2TemplateVersionSpecCreatedByArgs struct {
-	AdditionalAttributes        TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
-	CreationType                pulumi.StringPtrInput                                               `pulumi:"creationType"`
-	Description                 pulumi.StringPtrInput                                               `pulumi:"description"`
-	DisplayName                 pulumi.StringPtrInput                                               `pulumi:"displayName"`
-	EmailId                     pulumi.StringPtrInput                                               `pulumi:"emailId"`
-	ExtId                       pulumi.StringPtrInput                                               `pulumi:"extId"`
-	FirstName                   pulumi.StringPtrInput                                               `pulumi:"firstName"`
-	IdpId                       pulumi.StringPtrInput                                               `pulumi:"idpId"`
-	IsForceResetPasswordEnabled pulumi.BoolPtrInput                                                 `pulumi:"isForceResetPasswordEnabled"`
-	LastName                    pulumi.StringPtrInput                                               `pulumi:"lastName"`
-	Locale                      pulumi.StringPtrInput                                               `pulumi:"locale"`
-	MiddleInitial               pulumi.StringPtrInput                                               `pulumi:"middleInitial"`
-	Password                    pulumi.StringPtrInput                                               `pulumi:"password"`
-	Region                      pulumi.StringPtrInput                                               `pulumi:"region"`
-	Status                      pulumi.StringPtrInput                                               `pulumi:"status"`
-	UserType                    pulumi.StringInput                                                  `pulumi:"userType"`
-	Username                    pulumi.StringInput                                                  `pulumi:"username"`
+	AdditionalAttributes TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
+	CreationType         pulumi.StringPtrInput                                               `pulumi:"creationType"`
+	// VM description
+	Description                 pulumi.StringPtrInput `pulumi:"description"`
+	DisplayName                 pulumi.StringPtrInput `pulumi:"displayName"`
+	EmailId                     pulumi.StringPtrInput `pulumi:"emailId"`
+	ExtId                       pulumi.StringPtrInput `pulumi:"extId"`
+	FirstName                   pulumi.StringPtrInput `pulumi:"firstName"`
+	IdpId                       pulumi.StringPtrInput `pulumi:"idpId"`
+	IsForceResetPasswordEnabled pulumi.BoolPtrInput   `pulumi:"isForceResetPasswordEnabled"`
+	LastName                    pulumi.StringPtrInput `pulumi:"lastName"`
+	Locale                      pulumi.StringPtrInput `pulumi:"locale"`
+	MiddleInitial               pulumi.StringPtrInput `pulumi:"middleInitial"`
+	Password                    pulumi.StringPtrInput `pulumi:"password"`
+	Region                      pulumi.StringPtrInput `pulumi:"region"`
+	Status                      pulumi.StringPtrInput `pulumi:"status"`
+	UserType                    pulumi.StringInput    `pulumi:"userType"`
+	Username                    pulumi.StringInput    `pulumi:"username"`
 }
 
 func (TemplateV2TemplateVersionSpecCreatedByArgs) ElementType() reflect.Type {
@@ -27240,6 +27305,7 @@ func (o TemplateV2TemplateVersionSpecCreatedByOutput) CreationType() pulumi.Stri
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecCreatedBy) *string { return v.CreationType }).(pulumi.StringPtrOutput)
 }
 
+// VM description
 func (o TemplateV2TemplateVersionSpecCreatedByOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecCreatedBy) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -27905,8 +27971,10 @@ func (o TemplateV2TemplateVersionSpecVersionSourcePtrOutput) TemplateVmReference
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference struct {
+	// Overrides specification for VM create from a Template.
 	OverrideVmConfigs []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig `pulumi:"overrideVmConfigs"`
-	VersionId         *string                                                                              `pulumi:"versionId"`
+	// The identifier of a Template Version. by default it will be the latest version of the template.
+	VersionId *string `pulumi:"versionId"`
 }
 
 // TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceInput is an input type that accepts TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceArgs and TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOutput values.
@@ -27921,8 +27989,10 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceInput int
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceArgs struct {
+	// Overrides specification for VM create from a Template.
 	OverrideVmConfigs TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArrayInput `pulumi:"overrideVmConfigs"`
-	VersionId         pulumi.StringPtrInput                                                                        `pulumi:"versionId"`
+	// The identifier of a Template Version. by default it will be the latest version of the template.
+	VersionId pulumi.StringPtrInput `pulumi:"versionId"`
 }
 
 func (TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceArgs) ElementType() reflect.Type {
@@ -28002,12 +28072,14 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOutput
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferencePtrOutput)
 }
 
+// Overrides specification for VM create from a Template.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOutput) OverrideVmConfigs() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig {
 		return v.OverrideVmConfigs
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArrayOutput)
 }
 
+// The identifier of a Template Version. by default it will be the latest version of the template.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOutput) VersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference) *string { return v.VersionId }).(pulumi.StringPtrOutput)
 }
@@ -28036,6 +28108,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferencePtrOut
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOutput)
 }
 
+// Overrides specification for VM create from a Template.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferencePtrOutput) OverrideVmConfigs() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArrayOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig {
 		if v == nil {
@@ -28045,6 +28118,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferencePtrOut
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArrayOutput)
 }
 
+// The identifier of a Template Version. by default it will be the latest version of the template.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferencePtrOutput) VersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference) *string {
 		if v == nil {
@@ -28055,13 +28129,20 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferencePtrOut
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig struct {
+	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization `pulumi:"guestCustomizations"`
-	MemorySizeBytes     *int                                                                                                   `pulumi:"memorySizeBytes"`
-	Name                *string                                                                                                `pulumi:"name"`
-	Nics                []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic                `pulumi:"nics"`
-	NumCoresPerSocket   *int                                                                                                   `pulumi:"numCoresPerSocket"`
-	NumSockets          *int                                                                                                   `pulumi:"numSockets"`
-	NumThreadsPerCore   *int                                                                                                   `pulumi:"numThreadsPerCore"`
+	// Memory size in bytes.
+	MemorySizeBytes *int `pulumi:"memorySizeBytes"`
+	// VM name.
+	Name *string `pulumi:"name"`
+	// NICs attached to the VM.
+	Nics []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic `pulumi:"nics"`
+	// Number of cores per socket.
+	NumCoresPerSocket *int `pulumi:"numCoresPerSocket"`
+	// Number of vCPU sockets.
+	NumSockets *int `pulumi:"numSockets"`
+	// Number of threads per core.
+	NumThreadsPerCore *int `pulumi:"numThreadsPerCore"`
 }
 
 // TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigInput is an input type that accepts TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArgs and TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigOutput values.
@@ -28076,13 +28157,20 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArgs struct {
+	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationArrayInput `pulumi:"guestCustomizations"`
-	MemorySizeBytes     pulumi.IntPtrInput                                                                                             `pulumi:"memorySizeBytes"`
-	Name                pulumi.StringPtrInput                                                                                          `pulumi:"name"`
-	Nics                TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicArrayInput                `pulumi:"nics"`
-	NumCoresPerSocket   pulumi.IntPtrInput                                                                                             `pulumi:"numCoresPerSocket"`
-	NumSockets          pulumi.IntPtrInput                                                                                             `pulumi:"numSockets"`
-	NumThreadsPerCore   pulumi.IntPtrInput                                                                                             `pulumi:"numThreadsPerCore"`
+	// Memory size in bytes.
+	MemorySizeBytes pulumi.IntPtrInput `pulumi:"memorySizeBytes"`
+	// VM name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// NICs attached to the VM.
+	Nics TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicArrayInput `pulumi:"nics"`
+	// Number of cores per socket.
+	NumCoresPerSocket pulumi.IntPtrInput `pulumi:"numCoresPerSocket"`
+	// Number of vCPU sockets.
+	NumSockets pulumi.IntPtrInput `pulumi:"numSockets"`
+	// Number of threads per core.
+	NumThreadsPerCore pulumi.IntPtrInput `pulumi:"numThreadsPerCore"`
 }
 
 func (TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigArgs) ElementType() reflect.Type {
@@ -28136,42 +28224,49 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	return o
 }
 
+// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigOutput) GuestCustomizations() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization {
 		return v.GuestCustomizations
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationArrayOutput)
 }
 
+// Memory size in bytes.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigOutput) MemorySizeBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig) *int {
 		return v.MemorySizeBytes
 	}).(pulumi.IntPtrOutput)
 }
 
+// VM name.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig) *string {
 		return v.Name
 	}).(pulumi.StringPtrOutput)
 }
 
+// NICs attached to the VM.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigOutput) Nics() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic {
 		return v.Nics
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicArrayOutput)
 }
 
+// Number of cores per socket.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigOutput) NumCoresPerSocket() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig) *int {
 		return v.NumCoresPerSocket
 	}).(pulumi.IntPtrOutput)
 }
 
+// Number of vCPU sockets.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigOutput) NumSockets() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig) *int {
 		return v.NumSockets
 	}).(pulumi.IntPtrOutput)
 }
 
+// Number of threads per core.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigOutput) NumThreadsPerCore() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig) *int {
 		return v.NumThreadsPerCore
@@ -28199,6 +28294,10 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization struct {
+	// The Nutanix Guest Tools customization settings.
+	//
+	// * `config.sysprep`: (Optional) Sysprep config
+	// * `config.cloud_init`: (Optional) CloudInit Config
 	Configs []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig `pulumi:"configs"`
 }
 
@@ -28214,6 +28313,10 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationArgs struct {
+	// The Nutanix Guest Tools customization settings.
+	//
+	// * `config.sysprep`: (Optional) Sysprep config
+	// * `config.cloud_init`: (Optional) CloudInit Config
 	Configs TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigArrayInput `pulumi:"configs"`
 }
 
@@ -28268,6 +28371,10 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	return o
 }
 
+// The Nutanix Guest Tools customization settings.
+//
+// * `config.sysprep`: (Optional) Sysprep config
+// * `config.cloud_init`: (Optional) CloudInit Config
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationOutput) Configs() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig {
 		return v.Configs
@@ -28399,9 +28506,16 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit struct {
+	// The script to use for cloud-init.
+	// * `cloud_init_script.user_data`: (Optional) user data object
+	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+	//
+	// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 	CloudInitScripts []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
-	DatasourceType   *string                                                                                                                              `pulumi:"datasourceType"`
-	Metadata         *string                                                                                                                              `pulumi:"metadata"`
+	// Type of datasource. Default: CONFIG_DRIVE_V2
+	DatasourceType *string `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	Metadata *string `pulumi:"metadata"`
 }
 
 // TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitInput is an input type that accepts TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitArgs and TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitOutput values.
@@ -28416,9 +28530,16 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitArgs struct {
+	// The script to use for cloud-init.
+	// * `cloud_init_script.user_data`: (Optional) user data object
+	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+	//
+	// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 	CloudInitScripts TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
-	DatasourceType   pulumi.StringPtrInput                                                                                                                        `pulumi:"datasourceType"`
-	Metadata         pulumi.StringPtrInput                                                                                                                        `pulumi:"metadata"`
+	// Type of datasource. Default: CONFIG_DRIVE_V2
+	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
 func (TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitArgs) ElementType() reflect.Type {
@@ -28472,18 +28593,25 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	return o
 }
 
+// The script to use for cloud-init.
+// * `cloud_init_script.user_data`: (Optional) user data object
+// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+//
+// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitOutput) CloudInitScripts() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript {
 		return v.CloudInitScripts
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptArrayOutput)
 }
 
+// Type of datasource. Default: CONFIG_DRIVE_V2
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitOutput) DatasourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit) *string {
 		return v.DatasourceType
 	}).(pulumi.StringPtrOutput)
 }
 
+// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit) *string {
 		return v.Metadata
@@ -29151,7 +29279,11 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep struct {
-	InstallType    *string                                                                                                                          `pulumi:"installType"`
+	// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+	InstallType *string `pulumi:"installType"`
+	// Object either UnattendXml or CustomKeyValues
+	// * `sysprep_script.unattend_xml`: (Optional) xml object
+	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
 
@@ -29167,7 +29299,11 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepArgs struct {
-	InstallType    pulumi.StringPtrInput                                                                                                                    `pulumi:"installType"`
+	// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+	InstallType pulumi.StringPtrInput `pulumi:"installType"`
+	// Object either UnattendXml or CustomKeyValues
+	// * `sysprep_script.unattend_xml`: (Optional) xml object
+	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
 
@@ -29222,12 +29358,16 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	return o
 }
 
+// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep) *string {
 		return v.InstallType
 	}).(pulumi.StringPtrOutput)
 }
 
+// Object either UnattendXml or CustomKeyValues
+// * `sysprep_script.unattend_xml`: (Optional) xml object
+// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepOutput) SysprepScripts() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript {
 		return v.SysprepScripts
@@ -29895,9 +30035,11 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic struct {
+	// Defines a NIC emulated by the hypervisor
 	BackingInfos []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo `pulumi:"backingInfos"`
 	ExtId        *string                                                                                            `pulumi:"extId"`
 	Links        []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink        `pulumi:"links"`
+	// Network information for a NIC.
 	NetworkInfos []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo `pulumi:"networkInfos"`
 	TenantId     *string                                                                                            `pulumi:"tenantId"`
 }
@@ -29914,9 +30056,11 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicArgs struct {
+	// Defines a NIC emulated by the hypervisor
 	BackingInfos TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoArrayInput `pulumi:"backingInfos"`
 	ExtId        pulumi.StringPtrInput                                                                                      `pulumi:"extId"`
 	Links        TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLinkArrayInput        `pulumi:"links"`
+	// Network information for a NIC.
 	NetworkInfos TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoArrayInput `pulumi:"networkInfos"`
 	TenantId     pulumi.StringPtrInput                                                                                      `pulumi:"tenantId"`
 }
@@ -29972,6 +30116,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	return o
 }
 
+// Defines a NIC emulated by the hypervisor
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicOutput) BackingInfos() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo {
 		return v.BackingInfos
@@ -29990,6 +30135,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLinkArrayOutput)
 }
 
+// Network information for a NIC.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicOutput) NetworkInfos() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo {
 		return v.NetworkInfos
@@ -30023,10 +30169,13 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo struct {
-	IsConnected *bool   `pulumi:"isConnected"`
-	MacAddress  *string `pulumi:"macAddress"`
-	Model       *string `pulumi:"model"`
-	NumQueues   *int    `pulumi:"numQueues"`
+	IsConnected *bool `pulumi:"isConnected"`
+	// MAC address of the emulated NIC.
+	MacAddress *string `pulumi:"macAddress"`
+	// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+	Model *string `pulumi:"model"`
+	// The number of Tx/Rx queue pairs for this NIC. Default is 1.
+	NumQueues *int `pulumi:"numQueues"`
 }
 
 // TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoInput is an input type that accepts TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoArgs and TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoOutput values.
@@ -30041,10 +30190,13 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoArgs struct {
-	IsConnected pulumi.BoolPtrInput   `pulumi:"isConnected"`
-	MacAddress  pulumi.StringPtrInput `pulumi:"macAddress"`
-	Model       pulumi.StringPtrInput `pulumi:"model"`
-	NumQueues   pulumi.IntPtrInput    `pulumi:"numQueues"`
+	IsConnected pulumi.BoolPtrInput `pulumi:"isConnected"`
+	// MAC address of the emulated NIC.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+	Model pulumi.StringPtrInput `pulumi:"model"`
+	// The number of Tx/Rx queue pairs for this NIC. Default is 1.
+	NumQueues pulumi.IntPtrInput `pulumi:"numQueues"`
 }
 
 func (TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoArgs) ElementType() reflect.Type {
@@ -30104,18 +30256,21 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	}).(pulumi.BoolPtrOutput)
 }
 
+// MAC address of the emulated NIC.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo) *string {
 		return v.MacAddress
 	}).(pulumi.StringPtrOutput)
 }
 
+// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoOutput) Model() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo) *string {
 		return v.Model
 	}).(pulumi.StringPtrOutput)
 }
 
+// The number of Tx/Rx queue pairs for this NIC. Default is 1.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoOutput) NumQueues() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo) *int {
 		return v.NumQueues
@@ -30247,15 +30402,23 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo struct {
-	Ipv4Configs            []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config           `pulumi:"ipv4Configs"`
-	Ipv4Infos              []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info             `pulumi:"ipv4Infos"`
-	NetworkFunctionChains  []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
-	NetworkFunctionNicType *string                                                                                                                `pulumi:"networkFunctionNicType"`
-	NicType                *string                                                                                                                `pulumi:"nicType"`
-	ShouldAllowUnknownMacs *bool                                                                                                                  `pulumi:"shouldAllowUnknownMacs"`
-	Subnets                []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet               `pulumi:"subnets"`
-	TrunkedVlans           []int                                                                                                                  `pulumi:"trunkedVlans"`
-	VlanMode               *string                                                                                                                `pulumi:"vlanMode"`
+	// The IP address configurations.
+	Ipv4Configs []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
+	Ipv4Infos   []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
+	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	NetworkFunctionChains []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
+	// The type of this Network function NIC. Defaults to INGRESS.
+	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
+	// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+	NicType *string `pulumi:"nicType"`
+	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
+	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	Subnets []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet `pulumi:"subnets"`
+	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+	TrunkedVlans []int `pulumi:"trunkedVlans"`
+	// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+	VlanMode *string `pulumi:"vlanMode"`
 }
 
 // TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoInput is an input type that accepts TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoArgs and TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput values.
@@ -30270,15 +30433,23 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoArgs struct {
-	Ipv4Configs            TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigArrayInput           `pulumi:"ipv4Configs"`
-	Ipv4Infos              TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoArrayInput             `pulumi:"ipv4Infos"`
-	NetworkFunctionChains  TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
-	NetworkFunctionNicType pulumi.StringPtrInput                                                                                                          `pulumi:"networkFunctionNicType"`
-	NicType                pulumi.StringPtrInput                                                                                                          `pulumi:"nicType"`
-	ShouldAllowUnknownMacs pulumi.BoolPtrInput                                                                                                            `pulumi:"shouldAllowUnknownMacs"`
-	Subnets                TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnetArrayInput               `pulumi:"subnets"`
-	TrunkedVlans           pulumi.IntArrayInput                                                                                                           `pulumi:"trunkedVlans"`
-	VlanMode               pulumi.StringPtrInput                                                                                                          `pulumi:"vlanMode"`
+	// The IP address configurations.
+	Ipv4Configs TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
+	Ipv4Infos   TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
+	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	NetworkFunctionChains TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
+	// The type of this Network function NIC. Defaults to INGRESS.
+	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
+	// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+	NicType pulumi.StringPtrInput `pulumi:"nicType"`
+	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
+	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	Subnets TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
+	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
+	// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+	VlanMode pulumi.StringPtrInput `pulumi:"vlanMode"`
 }
 
 func (TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoArgs) ElementType() reflect.Type {
@@ -30332,6 +30503,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	return o
 }
 
+// The IP address configurations.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) Ipv4Configs() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config {
 		return v.Ipv4Configs
@@ -30344,42 +30516,49 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoArrayOutput)
 }
 
+// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) NetworkFunctionChains() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChainArrayOutput)
 }
 
+// The type of this Network function NIC. Defaults to INGRESS.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) NetworkFunctionNicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) *string {
 		return v.NetworkFunctionNicType
 	}).(pulumi.StringPtrOutput)
 }
 
+// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) NicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) *string {
 		return v.NicType
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) *bool {
 		return v.ShouldAllowUnknownMacs
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) Subnets() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet {
 		return v.Subnets
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnetArrayOutput)
 }
 
+// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) TrunkedVlans() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) []int {
 		return v.TrunkedVlans
 	}).(pulumi.IntArrayOutput)
 }
 
+// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) VlanMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) *string {
 		return v.VlanMode
@@ -31269,6 +31448,10 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferencePtrOutput) 
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization struct {
+	// The Nutanix Guest Tools customization settings.
+	//
+	// * `config.sysprep`: (Optional) Sysprep config
+	// * `config.cloud_init`: (Optional) CloudInit Config
 	Configs []TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig `pulumi:"configs"`
 }
 
@@ -31284,6 +31467,10 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomiza
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationArgs struct {
+	// The Nutanix Guest Tools customization settings.
+	//
+	// * `config.sysprep`: (Optional) Sysprep config
+	// * `config.cloud_init`: (Optional) CloudInit Config
 	Configs TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigArrayInput `pulumi:"configs"`
 }
 
@@ -31338,6 +31525,10 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustom
 	return o
 }
 
+// The Nutanix Guest Tools customization settings.
+//
+// * `config.sysprep`: (Optional) Sysprep config
+// * `config.cloud_init`: (Optional) CloudInit Config
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationOutput) Configs() TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization) []TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig {
 		return v.Configs
@@ -31469,9 +31660,16 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustom
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit struct {
+	// The script to use for cloud-init.
+	// * `cloud_init_script.user_data`: (Optional) user data object
+	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+	//
+	// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 	CloudInitScripts []TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
-	DatasourceType   *string                                                                                                         `pulumi:"datasourceType"`
-	Metadata         *string                                                                                                         `pulumi:"metadata"`
+	// Type of datasource. Default: CONFIG_DRIVE_V2
+	DatasourceType *string `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	Metadata *string `pulumi:"metadata"`
 }
 
 // TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitInput is an input type that accepts TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitArgs and TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitOutput values.
@@ -31486,9 +31684,16 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomiza
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitArgs struct {
+	// The script to use for cloud-init.
+	// * `cloud_init_script.user_data`: (Optional) user data object
+	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+	//
+	// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 	CloudInitScripts TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
-	DatasourceType   pulumi.StringPtrInput                                                                                                   `pulumi:"datasourceType"`
-	Metadata         pulumi.StringPtrInput                                                                                                   `pulumi:"metadata"`
+	// Type of datasource. Default: CONFIG_DRIVE_V2
+	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
 func (TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitArgs) ElementType() reflect.Type {
@@ -31542,18 +31747,25 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustom
 	return o
 }
 
+// The script to use for cloud-init.
+// * `cloud_init_script.user_data`: (Optional) user data object
+// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+//
+// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitOutput) CloudInitScripts() TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit) []TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript {
 		return v.CloudInitScripts
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptArrayOutput)
 }
 
+// Type of datasource. Default: CONFIG_DRIVE_V2
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitOutput) DatasourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit) *string {
 		return v.DatasourceType
 	}).(pulumi.StringPtrOutput)
 }
 
+// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit) *string {
 		return v.Metadata
@@ -32221,7 +32433,11 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustom
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep struct {
-	InstallType    *string                                                                                                     `pulumi:"installType"`
+	// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+	InstallType *string `pulumi:"installType"`
+	// Object either UnattendXml or CustomKeyValues
+	// * `sysprep_script.unattend_xml`: (Optional) xml object
+	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts []TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
 
@@ -32237,7 +32453,11 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomiza
 }
 
 type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepArgs struct {
-	InstallType    pulumi.StringPtrInput                                                                                               `pulumi:"installType"`
+	// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+	InstallType pulumi.StringPtrInput `pulumi:"installType"`
+	// Object either UnattendXml or CustomKeyValues
+	// * `sysprep_script.unattend_xml`: (Optional) xml object
+	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
 
@@ -32292,12 +32512,16 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustom
 	return o
 }
 
+// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep) *string {
 		return v.InstallType
 	}).(pulumi.StringPtrOutput)
 }
 
+// Object either UnattendXml or CustomKeyValues
+// * `sysprep_script.unattend_xml`: (Optional) xml object
+// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepOutput) SysprepScripts() TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep) []TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript {
 		return v.SysprepScripts
@@ -32965,55 +33189,95 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustom
 }
 
 type TemplateV2TemplateVersionSpecVmSpec struct {
-	ApcConfigs                        []TemplateV2TemplateVersionSpecVmSpecApcConfig             `pulumi:"apcConfigs"`
-	AvailabilityZones                 []TemplateV2TemplateVersionSpecVmSpecAvailabilityZone      `pulumi:"availabilityZones"`
-	BiosUuid                          *string                                                    `pulumi:"biosUuid"`
-	BootConfigs                       []TemplateV2TemplateVersionSpecVmSpecBootConfig            `pulumi:"bootConfigs"`
-	Categories                        []TemplateV2TemplateVersionSpecVmSpecCategory              `pulumi:"categories"`
-	CdRoms                            []TemplateV2TemplateVersionSpecVmSpecCdRom                 `pulumi:"cdRoms"`
-	Clusters                          []TemplateV2TemplateVersionSpecVmSpecCluster               `pulumi:"clusters"`
-	CreateTime                        *string                                                    `pulumi:"createTime"`
-	Description                       *string                                                    `pulumi:"description"`
-	Disks                             []TemplateV2TemplateVersionSpecVmSpecDisk                  `pulumi:"disks"`
-	EnabledCpuFeatures                []string                                                   `pulumi:"enabledCpuFeatures"`
-	ExtId                             *string                                                    `pulumi:"extId"`
-	GenerationUuid                    *string                                                    `pulumi:"generationUuid"`
-	Gpuses                            []TemplateV2TemplateVersionSpecVmSpecGpus                  `pulumi:"gpuses"`
-	GuestCustomizations               []TemplateV2TemplateVersionSpecVmSpecGuestCustomization    `pulumi:"guestCustomizations"`
-	GuestTools                        []TemplateV2TemplateVersionSpecVmSpecGuestTool             `pulumi:"guestTools"`
-	HardwareClockTimezone             *string                                                    `pulumi:"hardwareClockTimezone"`
-	Hosts                             []TemplateV2TemplateVersionSpecVmSpecHost                  `pulumi:"hosts"`
-	IsAgentVm                         *bool                                                      `pulumi:"isAgentVm"`
-	IsBrandingEnabled                 *bool                                                      `pulumi:"isBrandingEnabled"`
-	IsCpuHotplugEnabled               *bool                                                      `pulumi:"isCpuHotplugEnabled"`
-	IsCpuPassthroughEnabled           *bool                                                      `pulumi:"isCpuPassthroughEnabled"`
-	IsCrossClusterMigrationInProgress *bool                                                      `pulumi:"isCrossClusterMigrationInProgress"`
-	IsGpuConsoleEnabled               *bool                                                      `pulumi:"isGpuConsoleEnabled"`
-	IsLiveMigrateCapable              *bool                                                      `pulumi:"isLiveMigrateCapable"`
-	IsMemoryOvercommitEnabled         *bool                                                      `pulumi:"isMemoryOvercommitEnabled"`
-	IsScsiControllerEnabled           *bool                                                      `pulumi:"isScsiControllerEnabled"`
-	IsVcpuHardPinningEnabled          *bool                                                      `pulumi:"isVcpuHardPinningEnabled"`
-	IsVgaConsoleEnabled               *bool                                                      `pulumi:"isVgaConsoleEnabled"`
-	Links                             []TemplateV2TemplateVersionSpecVmSpecLink                  `pulumi:"links"`
-	MachineType                       *string                                                    `pulumi:"machineType"`
-	MemorySizeBytes                   *int                                                       `pulumi:"memorySizeBytes"`
-	Name                              *string                                                    `pulumi:"name"`
-	Nics                              []TemplateV2TemplateVersionSpecVmSpecNic                   `pulumi:"nics"`
-	NumCoresPerSocket                 *int                                                       `pulumi:"numCoresPerSocket"`
-	NumNumaNodes                      *int                                                       `pulumi:"numNumaNodes"`
-	NumSockets                        *int                                                       `pulumi:"numSockets"`
-	NumThreadsPerCore                 *int                                                       `pulumi:"numThreadsPerCore"`
-	OwnershipInfos                    []TemplateV2TemplateVersionSpecVmSpecOwnershipInfo         `pulumi:"ownershipInfos"`
-	PciDevices                        []TemplateV2TemplateVersionSpecVmSpecPciDevice             `pulumi:"pciDevices"`
-	PowerState                        *string                                                    `pulumi:"powerState"`
-	ProtectionPolicyStates            []TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState `pulumi:"protectionPolicyStates"`
-	ProtectionType                    *string                                                    `pulumi:"protectionType"`
-	SerialPorts                       []TemplateV2TemplateVersionSpecVmSpecSerialPort            `pulumi:"serialPorts"`
-	Sources                           []TemplateV2TemplateVersionSpecVmSpecSource                `pulumi:"sources"`
-	StorageConfigs                    []TemplateV2TemplateVersionSpecVmSpecStorageConfig         `pulumi:"storageConfigs"`
-	TenantId                          *string                                                    `pulumi:"tenantId"`
-	UpdateTime                        *string                                                    `pulumi:"updateTime"`
-	VtpmConfigs                       []TemplateV2TemplateVersionSpecVmSpecVtpmConfig            `pulumi:"vtpmConfigs"`
+	// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+	ApcConfigs []TemplateV2TemplateVersionSpecVmSpecApcConfig `pulumi:"apcConfigs"`
+	// Reference to an availability zone.
+	AvailabilityZones []TemplateV2TemplateVersionSpecVmSpecAvailabilityZone `pulumi:"availabilityZones"`
+	// BIOS UUID of the VM. It should be of type UUID.
+	BiosUuid *string `pulumi:"biosUuid"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs []TemplateV2TemplateVersionSpecVmSpecBootConfig `pulumi:"bootConfigs"`
+	// Categories for the VM.
+	Categories []TemplateV2TemplateVersionSpecVmSpecCategory `pulumi:"categories"`
+	// CD-ROMs attached to the VM.
+	CdRoms []TemplateV2TemplateVersionSpecVmSpecCdRom `pulumi:"cdRoms"`
+	// Reference to a cluster.
+	Clusters   []TemplateV2TemplateVersionSpecVmSpecCluster `pulumi:"clusters"`
+	CreateTime *string                                      `pulumi:"createTime"`
+	// VM description
+	Description *string `pulumi:"description"`
+	// Disks attached to the VM.
+	Disks []TemplateV2TemplateVersionSpecVmSpecDisk `pulumi:"disks"`
+	// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
+	EnabledCpuFeatures []string `pulumi:"enabledCpuFeatures"`
+	ExtId              *string  `pulumi:"extId"`
+	// Generation UUID of the VM. It should be of type UUID.
+	GenerationUuid *string `pulumi:"generationUuid"`
+	// GPUs attached to the VM.
+	Gpuses []TemplateV2TemplateVersionSpecVmSpecGpus `pulumi:"gpuses"`
+	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+	GuestCustomizations []TemplateV2TemplateVersionSpecVmSpecGuestCustomization `pulumi:"guestCustomizations"`
+	// The details about Nutanix Guest Tools for a VM.
+	GuestTools []TemplateV2TemplateVersionSpecVmSpecGuestTool `pulumi:"guestTools"`
+	// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+	HardwareClockTimezone *string `pulumi:"hardwareClockTimezone"`
+	// Reference to the host, the VM is running on.
+	Hosts []TemplateV2TemplateVersionSpecVmSpecHost `pulumi:"hosts"`
+	// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+	IsAgentVm *bool `pulumi:"isAgentVm"`
+	// Indicates whether to remove AHV branding from VM firmware tables or not.
+	IsBrandingEnabled   *bool `pulumi:"isBrandingEnabled"`
+	IsCpuHotplugEnabled *bool `pulumi:"isCpuHotplugEnabled"`
+	// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+	IsCpuPassthroughEnabled           *bool `pulumi:"isCpuPassthroughEnabled"`
+	IsCrossClusterMigrationInProgress *bool `pulumi:"isCrossClusterMigrationInProgress"`
+	// Indicates whether the vGPU console is enabled or not.
+	IsGpuConsoleEnabled  *bool `pulumi:"isGpuConsoleEnabled"`
+	IsLiveMigrateCapable *bool `pulumi:"isLiveMigrateCapable"`
+	// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+	IsMemoryOvercommitEnabled *bool `pulumi:"isMemoryOvercommitEnabled"`
+	IsScsiControllerEnabled   *bool `pulumi:"isScsiControllerEnabled"`
+	// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+	IsVcpuHardPinningEnabled *bool `pulumi:"isVcpuHardPinningEnabled"`
+	// Indicates whether the VGA console should be disabled or not.
+	IsVgaConsoleEnabled *bool                                     `pulumi:"isVgaConsoleEnabled"`
+	Links               []TemplateV2TemplateVersionSpecVmSpecLink `pulumi:"links"`
+	// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
+	MachineType *string `pulumi:"machineType"`
+	// Memory size in bytes.
+	MemorySizeBytes *int `pulumi:"memorySizeBytes"`
+	// VM name.
+	Name *string `pulumi:"name"`
+	// NICs attached to the VM.
+	Nics []TemplateV2TemplateVersionSpecVmSpecNic `pulumi:"nics"`
+	// Number of cores per socket. Value should be at least 1.
+	NumCoresPerSocket *int `pulumi:"numCoresPerSocket"`
+	// Number of NUMA nodes. 0 means NUMA is disabled.
+	NumNumaNodes *int `pulumi:"numNumaNodes"`
+	// Number of vCPU sockets. Value should be at least 1.
+	NumSockets *int `pulumi:"numSockets"`
+	// Number of threads per core. Value should be at least 1.
+	NumThreadsPerCore *int `pulumi:"numThreadsPerCore"`
+	// Ownership information for the VM.
+	OwnershipInfos []TemplateV2TemplateVersionSpecVmSpecOwnershipInfo `pulumi:"ownershipInfos"`
+	// PCI devices attached to the VM.
+	PciDevices []TemplateV2TemplateVersionSpecVmSpecPciDevice `pulumi:"pciDevices"`
+	// The current power state of the VM.
+	PowerState *string `pulumi:"powerState"`
+	// Status of protection policy applied to this VM.
+	ProtectionPolicyStates []TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState `pulumi:"protectionPolicyStates"`
+	// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
+	ProtectionType *string `pulumi:"protectionType"`
+	// Serial ports configured on the VM.
+	SerialPorts []TemplateV2TemplateVersionSpecVmSpecSerialPort `pulumi:"serialPorts"`
+	// Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
+	Sources []TemplateV2TemplateVersionSpecVmSpecSource `pulumi:"sources"`
+	// Storage configuration for VM.
+	StorageConfigs []TemplateV2TemplateVersionSpecVmSpecStorageConfig `pulumi:"storageConfigs"`
+	TenantId       *string                                            `pulumi:"tenantId"`
+	UpdateTime     *string                                            `pulumi:"updateTime"`
+	// Indicates how the vTPM for the VM should be configured.
+	VtpmConfigs []TemplateV2TemplateVersionSpecVmSpecVtpmConfig `pulumi:"vtpmConfigs"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecArgs and TemplateV2TemplateVersionSpecVmSpecOutput values.
@@ -33028,55 +33292,95 @@ type TemplateV2TemplateVersionSpecVmSpecInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecArgs struct {
-	ApcConfigs                        TemplateV2TemplateVersionSpecVmSpecApcConfigArrayInput             `pulumi:"apcConfigs"`
-	AvailabilityZones                 TemplateV2TemplateVersionSpecVmSpecAvailabilityZoneArrayInput      `pulumi:"availabilityZones"`
-	BiosUuid                          pulumi.StringPtrInput                                              `pulumi:"biosUuid"`
-	BootConfigs                       TemplateV2TemplateVersionSpecVmSpecBootConfigArrayInput            `pulumi:"bootConfigs"`
-	Categories                        TemplateV2TemplateVersionSpecVmSpecCategoryArrayInput              `pulumi:"categories"`
-	CdRoms                            TemplateV2TemplateVersionSpecVmSpecCdRomArrayInput                 `pulumi:"cdRoms"`
-	Clusters                          TemplateV2TemplateVersionSpecVmSpecClusterArrayInput               `pulumi:"clusters"`
-	CreateTime                        pulumi.StringPtrInput                                              `pulumi:"createTime"`
-	Description                       pulumi.StringPtrInput                                              `pulumi:"description"`
-	Disks                             TemplateV2TemplateVersionSpecVmSpecDiskArrayInput                  `pulumi:"disks"`
-	EnabledCpuFeatures                pulumi.StringArrayInput                                            `pulumi:"enabledCpuFeatures"`
-	ExtId                             pulumi.StringPtrInput                                              `pulumi:"extId"`
-	GenerationUuid                    pulumi.StringPtrInput                                              `pulumi:"generationUuid"`
-	Gpuses                            TemplateV2TemplateVersionSpecVmSpecGpusArrayInput                  `pulumi:"gpuses"`
-	GuestCustomizations               TemplateV2TemplateVersionSpecVmSpecGuestCustomizationArrayInput    `pulumi:"guestCustomizations"`
-	GuestTools                        TemplateV2TemplateVersionSpecVmSpecGuestToolArrayInput             `pulumi:"guestTools"`
-	HardwareClockTimezone             pulumi.StringPtrInput                                              `pulumi:"hardwareClockTimezone"`
-	Hosts                             TemplateV2TemplateVersionSpecVmSpecHostArrayInput                  `pulumi:"hosts"`
-	IsAgentVm                         pulumi.BoolPtrInput                                                `pulumi:"isAgentVm"`
-	IsBrandingEnabled                 pulumi.BoolPtrInput                                                `pulumi:"isBrandingEnabled"`
-	IsCpuHotplugEnabled               pulumi.BoolPtrInput                                                `pulumi:"isCpuHotplugEnabled"`
-	IsCpuPassthroughEnabled           pulumi.BoolPtrInput                                                `pulumi:"isCpuPassthroughEnabled"`
-	IsCrossClusterMigrationInProgress pulumi.BoolPtrInput                                                `pulumi:"isCrossClusterMigrationInProgress"`
-	IsGpuConsoleEnabled               pulumi.BoolPtrInput                                                `pulumi:"isGpuConsoleEnabled"`
-	IsLiveMigrateCapable              pulumi.BoolPtrInput                                                `pulumi:"isLiveMigrateCapable"`
-	IsMemoryOvercommitEnabled         pulumi.BoolPtrInput                                                `pulumi:"isMemoryOvercommitEnabled"`
-	IsScsiControllerEnabled           pulumi.BoolPtrInput                                                `pulumi:"isScsiControllerEnabled"`
-	IsVcpuHardPinningEnabled          pulumi.BoolPtrInput                                                `pulumi:"isVcpuHardPinningEnabled"`
-	IsVgaConsoleEnabled               pulumi.BoolPtrInput                                                `pulumi:"isVgaConsoleEnabled"`
-	Links                             TemplateV2TemplateVersionSpecVmSpecLinkArrayInput                  `pulumi:"links"`
-	MachineType                       pulumi.StringPtrInput                                              `pulumi:"machineType"`
-	MemorySizeBytes                   pulumi.IntPtrInput                                                 `pulumi:"memorySizeBytes"`
-	Name                              pulumi.StringPtrInput                                              `pulumi:"name"`
-	Nics                              TemplateV2TemplateVersionSpecVmSpecNicArrayInput                   `pulumi:"nics"`
-	NumCoresPerSocket                 pulumi.IntPtrInput                                                 `pulumi:"numCoresPerSocket"`
-	NumNumaNodes                      pulumi.IntPtrInput                                                 `pulumi:"numNumaNodes"`
-	NumSockets                        pulumi.IntPtrInput                                                 `pulumi:"numSockets"`
-	NumThreadsPerCore                 pulumi.IntPtrInput                                                 `pulumi:"numThreadsPerCore"`
-	OwnershipInfos                    TemplateV2TemplateVersionSpecVmSpecOwnershipInfoArrayInput         `pulumi:"ownershipInfos"`
-	PciDevices                        TemplateV2TemplateVersionSpecVmSpecPciDeviceArrayInput             `pulumi:"pciDevices"`
-	PowerState                        pulumi.StringPtrInput                                              `pulumi:"powerState"`
-	ProtectionPolicyStates            TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateArrayInput `pulumi:"protectionPolicyStates"`
-	ProtectionType                    pulumi.StringPtrInput                                              `pulumi:"protectionType"`
-	SerialPorts                       TemplateV2TemplateVersionSpecVmSpecSerialPortArrayInput            `pulumi:"serialPorts"`
-	Sources                           TemplateV2TemplateVersionSpecVmSpecSourceArrayInput                `pulumi:"sources"`
-	StorageConfigs                    TemplateV2TemplateVersionSpecVmSpecStorageConfigArrayInput         `pulumi:"storageConfigs"`
-	TenantId                          pulumi.StringPtrInput                                              `pulumi:"tenantId"`
-	UpdateTime                        pulumi.StringPtrInput                                              `pulumi:"updateTime"`
-	VtpmConfigs                       TemplateV2TemplateVersionSpecVmSpecVtpmConfigArrayInput            `pulumi:"vtpmConfigs"`
+	// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+	ApcConfigs TemplateV2TemplateVersionSpecVmSpecApcConfigArrayInput `pulumi:"apcConfigs"`
+	// Reference to an availability zone.
+	AvailabilityZones TemplateV2TemplateVersionSpecVmSpecAvailabilityZoneArrayInput `pulumi:"availabilityZones"`
+	// BIOS UUID of the VM. It should be of type UUID.
+	BiosUuid pulumi.StringPtrInput `pulumi:"biosUuid"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs TemplateV2TemplateVersionSpecVmSpecBootConfigArrayInput `pulumi:"bootConfigs"`
+	// Categories for the VM.
+	Categories TemplateV2TemplateVersionSpecVmSpecCategoryArrayInput `pulumi:"categories"`
+	// CD-ROMs attached to the VM.
+	CdRoms TemplateV2TemplateVersionSpecVmSpecCdRomArrayInput `pulumi:"cdRoms"`
+	// Reference to a cluster.
+	Clusters   TemplateV2TemplateVersionSpecVmSpecClusterArrayInput `pulumi:"clusters"`
+	CreateTime pulumi.StringPtrInput                                `pulumi:"createTime"`
+	// VM description
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Disks attached to the VM.
+	Disks TemplateV2TemplateVersionSpecVmSpecDiskArrayInput `pulumi:"disks"`
+	// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
+	EnabledCpuFeatures pulumi.StringArrayInput `pulumi:"enabledCpuFeatures"`
+	ExtId              pulumi.StringPtrInput   `pulumi:"extId"`
+	// Generation UUID of the VM. It should be of type UUID.
+	GenerationUuid pulumi.StringPtrInput `pulumi:"generationUuid"`
+	// GPUs attached to the VM.
+	Gpuses TemplateV2TemplateVersionSpecVmSpecGpusArrayInput `pulumi:"gpuses"`
+	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+	GuestCustomizations TemplateV2TemplateVersionSpecVmSpecGuestCustomizationArrayInput `pulumi:"guestCustomizations"`
+	// The details about Nutanix Guest Tools for a VM.
+	GuestTools TemplateV2TemplateVersionSpecVmSpecGuestToolArrayInput `pulumi:"guestTools"`
+	// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+	HardwareClockTimezone pulumi.StringPtrInput `pulumi:"hardwareClockTimezone"`
+	// Reference to the host, the VM is running on.
+	Hosts TemplateV2TemplateVersionSpecVmSpecHostArrayInput `pulumi:"hosts"`
+	// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+	IsAgentVm pulumi.BoolPtrInput `pulumi:"isAgentVm"`
+	// Indicates whether to remove AHV branding from VM firmware tables or not.
+	IsBrandingEnabled   pulumi.BoolPtrInput `pulumi:"isBrandingEnabled"`
+	IsCpuHotplugEnabled pulumi.BoolPtrInput `pulumi:"isCpuHotplugEnabled"`
+	// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+	IsCpuPassthroughEnabled           pulumi.BoolPtrInput `pulumi:"isCpuPassthroughEnabled"`
+	IsCrossClusterMigrationInProgress pulumi.BoolPtrInput `pulumi:"isCrossClusterMigrationInProgress"`
+	// Indicates whether the vGPU console is enabled or not.
+	IsGpuConsoleEnabled  pulumi.BoolPtrInput `pulumi:"isGpuConsoleEnabled"`
+	IsLiveMigrateCapable pulumi.BoolPtrInput `pulumi:"isLiveMigrateCapable"`
+	// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+	IsMemoryOvercommitEnabled pulumi.BoolPtrInput `pulumi:"isMemoryOvercommitEnabled"`
+	IsScsiControllerEnabled   pulumi.BoolPtrInput `pulumi:"isScsiControllerEnabled"`
+	// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+	IsVcpuHardPinningEnabled pulumi.BoolPtrInput `pulumi:"isVcpuHardPinningEnabled"`
+	// Indicates whether the VGA console should be disabled or not.
+	IsVgaConsoleEnabled pulumi.BoolPtrInput                               `pulumi:"isVgaConsoleEnabled"`
+	Links               TemplateV2TemplateVersionSpecVmSpecLinkArrayInput `pulumi:"links"`
+	// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
+	MachineType pulumi.StringPtrInput `pulumi:"machineType"`
+	// Memory size in bytes.
+	MemorySizeBytes pulumi.IntPtrInput `pulumi:"memorySizeBytes"`
+	// VM name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// NICs attached to the VM.
+	Nics TemplateV2TemplateVersionSpecVmSpecNicArrayInput `pulumi:"nics"`
+	// Number of cores per socket. Value should be at least 1.
+	NumCoresPerSocket pulumi.IntPtrInput `pulumi:"numCoresPerSocket"`
+	// Number of NUMA nodes. 0 means NUMA is disabled.
+	NumNumaNodes pulumi.IntPtrInput `pulumi:"numNumaNodes"`
+	// Number of vCPU sockets. Value should be at least 1.
+	NumSockets pulumi.IntPtrInput `pulumi:"numSockets"`
+	// Number of threads per core. Value should be at least 1.
+	NumThreadsPerCore pulumi.IntPtrInput `pulumi:"numThreadsPerCore"`
+	// Ownership information for the VM.
+	OwnershipInfos TemplateV2TemplateVersionSpecVmSpecOwnershipInfoArrayInput `pulumi:"ownershipInfos"`
+	// PCI devices attached to the VM.
+	PciDevices TemplateV2TemplateVersionSpecVmSpecPciDeviceArrayInput `pulumi:"pciDevices"`
+	// The current power state of the VM.
+	PowerState pulumi.StringPtrInput `pulumi:"powerState"`
+	// Status of protection policy applied to this VM.
+	ProtectionPolicyStates TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateArrayInput `pulumi:"protectionPolicyStates"`
+	// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
+	ProtectionType pulumi.StringPtrInput `pulumi:"protectionType"`
+	// Serial ports configured on the VM.
+	SerialPorts TemplateV2TemplateVersionSpecVmSpecSerialPortArrayInput `pulumi:"serialPorts"`
+	// Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
+	Sources TemplateV2TemplateVersionSpecVmSpecSourceArrayInput `pulumi:"sources"`
+	// Storage configuration for VM.
+	StorageConfigs TemplateV2TemplateVersionSpecVmSpecStorageConfigArrayInput `pulumi:"storageConfigs"`
+	TenantId       pulumi.StringPtrInput                                      `pulumi:"tenantId"`
+	UpdateTime     pulumi.StringPtrInput                                      `pulumi:"updateTime"`
+	// Indicates how the vTPM for the VM should be configured.
+	VtpmConfigs TemplateV2TemplateVersionSpecVmSpecVtpmConfigArrayInput `pulumi:"vtpmConfigs"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecArgs) ElementType() reflect.Type {
@@ -33130,40 +33434,47 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) ToTemplateV2TemplateVersionSp
 	return o
 }
 
+// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) ApcConfigs() TemplateV2TemplateVersionSpecVmSpecApcConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecApcConfig {
 		return v.ApcConfigs
 	}).(TemplateV2TemplateVersionSpecVmSpecApcConfigArrayOutput)
 }
 
+// Reference to an availability zone.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) AvailabilityZones() TemplateV2TemplateVersionSpecVmSpecAvailabilityZoneArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecAvailabilityZone {
 		return v.AvailabilityZones
 	}).(TemplateV2TemplateVersionSpecVmSpecAvailabilityZoneArrayOutput)
 }
 
+// BIOS UUID of the VM. It should be of type UUID.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) BiosUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.BiosUuid }).(pulumi.StringPtrOutput)
 }
 
+// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) BootConfigs() TemplateV2TemplateVersionSpecVmSpecBootConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecBootConfig {
 		return v.BootConfigs
 	}).(TemplateV2TemplateVersionSpecVmSpecBootConfigArrayOutput)
 }
 
+// Categories for the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Categories() TemplateV2TemplateVersionSpecVmSpecCategoryArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecCategory {
 		return v.Categories
 	}).(TemplateV2TemplateVersionSpecVmSpecCategoryArrayOutput)
 }
 
+// CD-ROMs attached to the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) CdRoms() TemplateV2TemplateVersionSpecVmSpecCdRomArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecCdRom {
 		return v.CdRoms
 	}).(TemplateV2TemplateVersionSpecVmSpecCdRomArrayOutput)
 }
 
+// Reference to a cluster.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Clusters() TemplateV2TemplateVersionSpecVmSpecClusterArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecCluster {
 		return v.Clusters
@@ -33174,14 +33485,17 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) CreateTime() pulumi.StringPtr
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
 }
 
+// VM description
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Disks attached to the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Disks() TemplateV2TemplateVersionSpecVmSpecDiskArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecDisk { return v.Disks }).(TemplateV2TemplateVersionSpecVmSpecDiskArrayOutput)
 }
 
+// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) EnabledCpuFeatures() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []string { return v.EnabledCpuFeatures }).(pulumi.StringArrayOutput)
 }
@@ -33190,38 +33504,46 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) ExtId() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// Generation UUID of the VM. It should be of type UUID.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) GenerationUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.GenerationUuid }).(pulumi.StringPtrOutput)
 }
 
+// GPUs attached to the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Gpuses() TemplateV2TemplateVersionSpecVmSpecGpusArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecGpus { return v.Gpuses }).(TemplateV2TemplateVersionSpecVmSpecGpusArrayOutput)
 }
 
+// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) GuestCustomizations() TemplateV2TemplateVersionSpecVmSpecGuestCustomizationArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecGuestCustomization {
 		return v.GuestCustomizations
 	}).(TemplateV2TemplateVersionSpecVmSpecGuestCustomizationArrayOutput)
 }
 
+// The details about Nutanix Guest Tools for a VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) GuestTools() TemplateV2TemplateVersionSpecVmSpecGuestToolArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecGuestTool {
 		return v.GuestTools
 	}).(TemplateV2TemplateVersionSpecVmSpecGuestToolArrayOutput)
 }
 
+// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) HardwareClockTimezone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.HardwareClockTimezone }).(pulumi.StringPtrOutput)
 }
 
+// Reference to the host, the VM is running on.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Hosts() TemplateV2TemplateVersionSpecVmSpecHostArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecHost { return v.Hosts }).(TemplateV2TemplateVersionSpecVmSpecHostArrayOutput)
 }
 
+// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsAgentVm() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsAgentVm }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates whether to remove AHV branding from VM firmware tables or not.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsBrandingEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsBrandingEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -33230,6 +33552,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsCpuHotplugEnabled() pulumi.
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsCpuHotplugEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsCpuPassthroughEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsCpuPassthroughEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -33238,6 +33561,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsCrossClusterMigrationInProg
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsCrossClusterMigrationInProgress }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates whether the vGPU console is enabled or not.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsGpuConsoleEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsGpuConsoleEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -33246,6 +33570,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsLiveMigrateCapable() pulumi
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsLiveMigrateCapable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsMemoryOvercommitEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsMemoryOvercommitEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -33254,10 +33579,12 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsScsiControllerEnabled() pul
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsScsiControllerEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsVcpuHardPinningEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsVcpuHardPinningEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates whether the VGA console should be disabled or not.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) IsVgaConsoleEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *bool { return v.IsVgaConsoleEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -33266,76 +33593,92 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) Links() TemplateV2TemplateVer
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecLink { return v.Links }).(TemplateV2TemplateVersionSpecVmSpecLinkArrayOutput)
 }
 
+// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) MachineType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.MachineType }).(pulumi.StringPtrOutput)
 }
 
+// Memory size in bytes.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) MemorySizeBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *int { return v.MemorySizeBytes }).(pulumi.IntPtrOutput)
 }
 
+// VM name.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// NICs attached to the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Nics() TemplateV2TemplateVersionSpecVmSpecNicArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecNic { return v.Nics }).(TemplateV2TemplateVersionSpecVmSpecNicArrayOutput)
 }
 
+// Number of cores per socket. Value should be at least 1.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) NumCoresPerSocket() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *int { return v.NumCoresPerSocket }).(pulumi.IntPtrOutput)
 }
 
+// Number of NUMA nodes. 0 means NUMA is disabled.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) NumNumaNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *int { return v.NumNumaNodes }).(pulumi.IntPtrOutput)
 }
 
+// Number of vCPU sockets. Value should be at least 1.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) NumSockets() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *int { return v.NumSockets }).(pulumi.IntPtrOutput)
 }
 
+// Number of threads per core. Value should be at least 1.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) NumThreadsPerCore() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *int { return v.NumThreadsPerCore }).(pulumi.IntPtrOutput)
 }
 
+// Ownership information for the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) OwnershipInfos() TemplateV2TemplateVersionSpecVmSpecOwnershipInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecOwnershipInfo {
 		return v.OwnershipInfos
 	}).(TemplateV2TemplateVersionSpecVmSpecOwnershipInfoArrayOutput)
 }
 
+// PCI devices attached to the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) PciDevices() TemplateV2TemplateVersionSpecVmSpecPciDeviceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecPciDevice {
 		return v.PciDevices
 	}).(TemplateV2TemplateVersionSpecVmSpecPciDeviceArrayOutput)
 }
 
+// The current power state of the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) PowerState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.PowerState }).(pulumi.StringPtrOutput)
 }
 
+// Status of protection policy applied to this VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) ProtectionPolicyStates() TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState {
 		return v.ProtectionPolicyStates
 	}).(TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateArrayOutput)
 }
 
+// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) ProtectionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.ProtectionType }).(pulumi.StringPtrOutput)
 }
 
+// Serial ports configured on the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) SerialPorts() TemplateV2TemplateVersionSpecVmSpecSerialPortArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecSerialPort {
 		return v.SerialPorts
 	}).(TemplateV2TemplateVersionSpecVmSpecSerialPortArrayOutput)
 }
 
+// Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) Sources() TemplateV2TemplateVersionSpecVmSpecSourceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecSource {
 		return v.Sources
 	}).(TemplateV2TemplateVersionSpecVmSpecSourceArrayOutput)
 }
 
+// Storage configuration for VM.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) StorageConfigs() TemplateV2TemplateVersionSpecVmSpecStorageConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecStorageConfig {
 		return v.StorageConfigs
@@ -33350,6 +33693,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecOutput) UpdateTime() pulumi.StringPtr
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) *string { return v.UpdateTime }).(pulumi.StringPtrOutput)
 }
 
+// Indicates how the vTPM for the VM should be configured.
 func (o TemplateV2TemplateVersionSpecVmSpecOutput) VtpmConfigs() TemplateV2TemplateVersionSpecVmSpecVtpmConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpec) []TemplateV2TemplateVersionSpecVmSpecVtpmConfig {
 		return v.VtpmConfigs
@@ -33377,8 +33721,11 @@ func (o TemplateV2TemplateVersionSpecVmSpecArrayOutput) Index(i pulumi.IntInput)
 }
 
 type TemplateV2TemplateVersionSpecVmSpecApcConfig struct {
-	CpuModels    []TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel `pulumi:"cpuModels"`
-	IsApcEnabled *bool                                                  `pulumi:"isApcEnabled"`
+	// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+	// * `cpu_model.name`: (Required) Name of the CPU model associated with the VM.
+	CpuModels []TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel `pulumi:"cpuModels"`
+	// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+	IsApcEnabled *bool `pulumi:"isApcEnabled"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecApcConfigInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecApcConfigArgs and TemplateV2TemplateVersionSpecVmSpecApcConfigOutput values.
@@ -33393,8 +33740,11 @@ type TemplateV2TemplateVersionSpecVmSpecApcConfigInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecApcConfigArgs struct {
-	CpuModels    TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModelArrayInput `pulumi:"cpuModels"`
-	IsApcEnabled pulumi.BoolPtrInput                                            `pulumi:"isApcEnabled"`
+	// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+	// * `cpu_model.name`: (Required) Name of the CPU model associated with the VM.
+	CpuModels TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModelArrayInput `pulumi:"cpuModels"`
+	// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+	IsApcEnabled pulumi.BoolPtrInput `pulumi:"isApcEnabled"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecApcConfigArgs) ElementType() reflect.Type {
@@ -33448,12 +33798,15 @@ func (o TemplateV2TemplateVersionSpecVmSpecApcConfigOutput) ToTemplateV2Template
 	return o
 }
 
+// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+// * `cpu_model.name`: (Required) Name of the CPU model associated with the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecApcConfigOutput) CpuModels() TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModelArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecApcConfig) []TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel {
 		return v.CpuModels
 	}).(TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModelArrayOutput)
 }
 
+// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecApcConfigOutput) IsApcEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecApcConfig) *bool { return v.IsApcEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -33673,8 +34026,10 @@ func (o TemplateV2TemplateVersionSpecVmSpecAvailabilityZoneArrayOutput) Index(i 
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfig struct {
+	// LegacyBoot config Object
 	LegacyBoots []TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot `pulumi:"legacyBoots"`
-	UefiBoots   []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot   `pulumi:"uefiBoots"`
+	// UefiBoot config Object
+	UefiBoots []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot `pulumi:"uefiBoots"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecBootConfigInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecBootConfigArgs and TemplateV2TemplateVersionSpecVmSpecBootConfigOutput values.
@@ -33689,8 +34044,10 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigArgs struct {
+	// LegacyBoot config Object
 	LegacyBoots TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootArrayInput `pulumi:"legacyBoots"`
-	UefiBoots   TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootArrayInput   `pulumi:"uefiBoots"`
+	// UefiBoot config Object
+	UefiBoots TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootArrayInput `pulumi:"uefiBoots"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecBootConfigArgs) ElementType() reflect.Type {
@@ -33744,12 +34101,14 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigOutput) ToTemplateV2Templat
 	return o
 }
 
+// LegacyBoot config Object
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigOutput) LegacyBoots() TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfig) []TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot {
 		return v.LegacyBoots
 	}).(TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootArrayOutput)
 }
 
+// UefiBoot config Object
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigOutput) UefiBoots() TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfig) []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot {
 		return v.UefiBoots
@@ -33777,8 +34136,16 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigArrayOutput) Index(i pulumi
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot struct {
+	// Boot Device object
+	// * `boot_device.boot_device_disk`: (Optional) Disk address.
+	// * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+	// * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+	//
+	// * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+	// * `boot_device.boot_device_nic.mac_address`: (Required) mac address
 	BootDevices []TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice `pulumi:"bootDevices"`
-	BootOrders  []string                                                            `pulumi:"bootOrders"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+	BootOrders []string `pulumi:"bootOrders"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootArgs and TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootOutput values.
@@ -33793,8 +34160,16 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootArgs struct {
+	// Boot Device object
+	// * `boot_device.boot_device_disk`: (Optional) Disk address.
+	// * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+	// * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+	//
+	// * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+	// * `boot_device.boot_device_nic.mac_address`: (Required) mac address
 	BootDevices TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceArrayInput `pulumi:"bootDevices"`
-	BootOrders  pulumi.StringArrayInput                                                     `pulumi:"bootOrders"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootArgs) ElementType() reflect.Type {
@@ -33848,12 +34223,20 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootOutput) ToTemplat
 	return o
 }
 
+// Boot Device object
+// * `boot_device.boot_device_disk`: (Optional) Disk address.
+// * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+// * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+//
+// * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+// * `boot_device.boot_device_nic.mac_address`: (Required) mac address
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootOutput) BootDevices() TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot) []TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice {
 		return v.BootDevices
 	}).(TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceArrayOutput)
 }
 
+// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootOutput) BootOrders() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
 }
@@ -34080,7 +34463,8 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDev
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress struct {
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// Index of the serial port.
+	Index *int `pulumi:"index"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs and TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput values.
@@ -34096,7 +34480,8 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDevice
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// Index of the serial port.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
@@ -34156,6 +34541,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDev
 	}).(pulumi.StringPtrOutput)
 }
 
+// Index of the serial port.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *int {
 		return v.Index
@@ -34183,6 +34569,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDev
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic struct {
+	// MAC address of the emulated NIC.
 	MacAddress *string `pulumi:"macAddress"`
 }
 
@@ -34198,6 +34585,7 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDevice
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNicArgs struct {
+	// MAC address of the emulated NIC.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
 }
 
@@ -34252,6 +34640,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDev
 	return o
 }
 
+// MAC address of the emulated NIC.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic) *string {
 		return v.MacAddress
@@ -34279,10 +34668,21 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDev
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot struct {
-	BootDevices         []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice  `pulumi:"bootDevices"`
-	BootOrders          []string                                                           `pulumi:"bootOrders"`
-	IsSecureBootEnabled *bool                                                              `pulumi:"isSecureBootEnabled"`
-	NvramDevices        []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice `pulumi:"nvramDevices"`
+	// Boot Device object
+	// * `boot_device.boot_device_disk`: (Optional) Disk address.
+	// * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+	// * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+	//
+	// * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+	// * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+	BootDevices []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice `pulumi:"bootDevices"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+	BootOrders []string `pulumi:"bootOrders"`
+	// Indicate whether to enable secure boot or not
+	IsSecureBootEnabled *bool `pulumi:"isSecureBootEnabled"`
+	// Configuration for NVRAM to be presented to the VM.
+	// * `nvram_device.backing_storage_info`: (Required) Storage provided by Nutanix ADSF
+	NvramDevices []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice `pulumi:"nvramDevices"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootArgs and TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootOutput values.
@@ -34297,10 +34697,21 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootArgs struct {
-	BootDevices         TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceArrayInput  `pulumi:"bootDevices"`
-	BootOrders          pulumi.StringArrayInput                                                    `pulumi:"bootOrders"`
-	IsSecureBootEnabled pulumi.BoolPtrInput                                                        `pulumi:"isSecureBootEnabled"`
-	NvramDevices        TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceArrayInput `pulumi:"nvramDevices"`
+	// Boot Device object
+	// * `boot_device.boot_device_disk`: (Optional) Disk address.
+	// * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+	// * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+	//
+	// * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+	// * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+	BootDevices TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceArrayInput `pulumi:"bootDevices"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
+	// Indicate whether to enable secure boot or not
+	IsSecureBootEnabled pulumi.BoolPtrInput `pulumi:"isSecureBootEnabled"`
+	// Configuration for NVRAM to be presented to the VM.
+	// * `nvram_device.backing_storage_info`: (Required) Storage provided by Nutanix ADSF
+	NvramDevices TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceArrayInput `pulumi:"nvramDevices"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootArgs) ElementType() reflect.Type {
@@ -34354,20 +34765,31 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootOutput) ToTemplateV
 	return o
 }
 
+// Boot Device object
+// * `boot_device.boot_device_disk`: (Optional) Disk address.
+// * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+// * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+//
+// * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+// * `boot_device.boot_device_nic.mac_address`: (Required) mac address
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootOutput) BootDevices() TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot) []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice {
 		return v.BootDevices
 	}).(TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceArrayOutput)
 }
 
+// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootOutput) BootOrders() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
 }
 
+// Indicate whether to enable secure boot or not
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootOutput) IsSecureBootEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot) *bool { return v.IsSecureBootEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// Configuration for NVRAM to be presented to the VM.
+// * `nvram_device.backing_storage_info`: (Required) Storage provided by Nutanix ADSF
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootOutput) NvramDevices() TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot) []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice {
 		return v.NvramDevices
@@ -34596,7 +35018,8 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDevic
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress struct {
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// Index of the serial port.
+	Index *int `pulumi:"index"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs and TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput values.
@@ -34612,7 +35035,8 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDi
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// Index of the serial port.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
@@ -34672,6 +35096,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDevic
 	}).(pulumi.StringPtrOutput)
 }
 
+// Index of the serial port.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress) *int {
 		return v.Index
@@ -34699,6 +35124,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDevic
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic struct {
+	// MAC address of the emulated NIC.
 	MacAddress *string `pulumi:"macAddress"`
 }
 
@@ -34714,6 +35140,7 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNi
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNicArgs struct {
+	// MAC address of the emulated NIC.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
 }
 
@@ -34768,6 +35195,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDevic
 	return o
 }
 
+// MAC address of the emulated NIC.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic) *string {
 		return v.MacAddress
@@ -35027,6 +35455,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource struct {
+	// Reference to image or vm disk
 	References []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference `pulumi:"references"`
 }
 
@@ -35042,6 +35471,7 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStor
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceArgs struct {
+	// Reference to image or vm disk
 	References TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceArrayInput `pulumi:"references"`
 }
 
@@ -35096,6 +35526,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 	return o
 }
 
+// Reference to image or vm disk
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceOutput) References() TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource) []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
 		return v.References
@@ -35123,7 +35554,13 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference struct {
-	ImageReferences  []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference  `pulumi:"imageReferences"`
+	// Image Reference
+	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+	ImageReferences []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference `pulumi:"imageReferences"`
+	// Vm Disk Reference
+	// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+	// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 	VmDiskReferences []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
 }
 
@@ -35139,7 +35576,13 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStor
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceArgs struct {
-	ImageReferences  TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArrayInput  `pulumi:"imageReferences"`
+	// Image Reference
+	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+	ImageReferences TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArrayInput `pulumi:"imageReferences"`
+	// Vm Disk Reference
+	// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+	// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 	VmDiskReferences TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
 }
 
@@ -35194,12 +35637,18 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 	return o
 }
 
+// Image Reference
+// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceOutput) ImageReferences() TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference) []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
 		return v.ImageReferences
 	}).(TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReferenceArrayOutput)
 }
 
+// Vm Disk Reference
+// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceOutput) VmDiskReferences() TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference) []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
 		return v.VmDiskReferences
@@ -35436,7 +35885,8 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress struct {
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// Index of the serial port.
+	Index *int `pulumi:"index"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs and TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput values.
@@ -35452,7 +35902,8 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStor
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs struct {
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// Index of the serial port.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ElementType() reflect.Type {
@@ -35512,6 +35963,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 	}).(pulumi.StringPtrOutput)
 }
 
+// Index of the serial port.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress) *int {
 		return v.Index
@@ -35635,6 +36087,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig struct {
+	// Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
 }
 
@@ -35650,6 +36103,7 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStor
 }
 
 type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs struct {
+	// Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
 }
 
@@ -35704,6 +36158,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 	return o
 }
 
+// Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig) *bool {
 		return v.IsFlashModeEnabled
@@ -35921,12 +36376,15 @@ func (o TemplateV2TemplateVersionSpecVmSpecCategoryArrayOutput) Index(i pulumi.I
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRom struct {
-	BackingInfos  []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo `pulumi:"backingInfos"`
+	// Storage provided by Nutanix ADSF
+	BackingInfos []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo `pulumi:"backingInfos"`
+	// Virtual Machine disk (VM disk).
 	DiskAddresses []TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress `pulumi:"diskAddresses"`
 	ExtId         *string                                               `pulumi:"extId"`
-	IsoType       *string                                               `pulumi:"isoType"`
-	Links         []TemplateV2TemplateVersionSpecVmSpecCdRomLink        `pulumi:"links"`
-	TenantId      *string                                               `pulumi:"tenantId"`
+	// Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+	IsoType  *string                                        `pulumi:"isoType"`
+	Links    []TemplateV2TemplateVersionSpecVmSpecCdRomLink `pulumi:"links"`
+	TenantId *string                                        `pulumi:"tenantId"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecCdRomInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecCdRomArgs and TemplateV2TemplateVersionSpecVmSpecCdRomOutput values.
@@ -35941,12 +36399,15 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomArgs struct {
-	BackingInfos  TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArrayInput `pulumi:"backingInfos"`
+	// Storage provided by Nutanix ADSF
+	BackingInfos TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArrayInput `pulumi:"backingInfos"`
+	// Virtual Machine disk (VM disk).
 	DiskAddresses TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressArrayInput `pulumi:"diskAddresses"`
 	ExtId         pulumi.StringPtrInput                                         `pulumi:"extId"`
-	IsoType       pulumi.StringPtrInput                                         `pulumi:"isoType"`
-	Links         TemplateV2TemplateVersionSpecVmSpecCdRomLinkArrayInput        `pulumi:"links"`
-	TenantId      pulumi.StringPtrInput                                         `pulumi:"tenantId"`
+	// Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+	IsoType  pulumi.StringPtrInput                                  `pulumi:"isoType"`
+	Links    TemplateV2TemplateVersionSpecVmSpecCdRomLinkArrayInput `pulumi:"links"`
+	TenantId pulumi.StringPtrInput                                  `pulumi:"tenantId"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecCdRomArgs) ElementType() reflect.Type {
@@ -36000,12 +36461,14 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomOutput) ToTemplateV2TemplateVers
 	return o
 }
 
+// Storage provided by Nutanix ADSF
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomOutput) BackingInfos() TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRom) []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo {
 		return v.BackingInfos
 	}).(TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArrayOutput)
 }
 
+// Virtual Machine disk (VM disk).
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomOutput) DiskAddresses() TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRom) []TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress {
 		return v.DiskAddresses
@@ -36016,6 +36479,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomOutput) ExtId() pulumi.StringPtr
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRom) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomOutput) IsoType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRom) *string { return v.IsoType }).(pulumi.StringPtrOutput)
 }
@@ -36051,12 +36515,17 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomArrayOutput) Index(i pulumi.IntI
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo struct {
-	DataSources           []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource       `pulumi:"dataSources"`
-	DiskExtId             *string                                                               `pulumi:"diskExtId"`
-	DiskSizeBytes         *int                                                                  `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress *bool                                                                 `pulumi:"isMigrationInProgress"`
-	StorageConfigs        []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig    `pulumi:"storageConfigs"`
-	StorageContainers     []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer `pulumi:"storageContainers"`
+	// A reference to a disk or image that contains the contents of a disk.
+	DataSources []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource `pulumi:"dataSources"`
+	DiskExtId   *string                                                         `pulumi:"diskExtId"`
+	// Size of the disk in Bytes
+	DiskSizeBytes         *int  `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress *bool `pulumi:"isMigrationInProgress"`
+	// Storage configuration for VM disks
+	// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+	StorageConfigs []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig `pulumi:"storageConfigs"`
+	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer `pulumi:"storageContainers"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArgs and TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput values.
@@ -36071,12 +36540,17 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArgs struct {
-	DataSources           TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArrayInput       `pulumi:"dataSources"`
-	DiskExtId             pulumi.StringPtrInput                                                         `pulumi:"diskExtId"`
-	DiskSizeBytes         pulumi.IntPtrInput                                                            `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress pulumi.BoolPtrInput                                                           `pulumi:"isMigrationInProgress"`
-	StorageConfigs        TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
-	StorageContainers     TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArrayInput `pulumi:"storageContainers"`
+	// A reference to a disk or image that contains the contents of a disk.
+	DataSources TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArrayInput `pulumi:"dataSources"`
+	DiskExtId   pulumi.StringPtrInput                                                   `pulumi:"diskExtId"`
+	// Size of the disk in Bytes
+	DiskSizeBytes         pulumi.IntPtrInput  `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress pulumi.BoolPtrInput `pulumi:"isMigrationInProgress"`
+	// Storage configuration for VM disks
+	// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+	StorageConfigs TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
+	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArrayInput `pulumi:"storageContainers"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArgs) ElementType() reflect.Type {
@@ -36130,6 +36604,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) ToTemplateV2T
 	return o
 }
 
+// A reference to a disk or image that contains the contents of a disk.
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) DataSources() TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo) []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource {
 		return v.DataSources
@@ -36140,6 +36615,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) DiskExtId() p
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
 }
 
+// Size of the disk in Bytes
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) DiskSizeBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo) *int { return v.DiskSizeBytes }).(pulumi.IntPtrOutput)
 }
@@ -36148,12 +36624,15 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) IsMigrationIn
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
 }
 
+// Storage configuration for VM disks
+// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) StorageConfigs() TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo) []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig {
 		return v.StorageConfigs
 	}).(TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArrayOutput)
 }
 
+// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) StorageContainers() TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo) []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer {
 		return v.StorageContainers
@@ -36181,6 +36660,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArrayOutput) Index(i 
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource struct {
+	// Reference to image or vm disk
 	References []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference `pulumi:"references"`
 }
 
@@ -36196,6 +36676,7 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceInput interfac
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArgs struct {
+	// Reference to image or vm disk
 	References TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceArrayInput `pulumi:"references"`
 }
 
@@ -36250,6 +36731,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceOutput) ToT
 	return o
 }
 
+// Reference to image or vm disk
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceOutput) References() TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource) []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference {
 		return v.References
@@ -36277,7 +36759,13 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArrayOutput
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference struct {
-	ImageReferences  []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference  `pulumi:"imageReferences"`
+	// Image Reference
+	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+	ImageReferences []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference `pulumi:"imageReferences"`
+	// Vm Disk Reference
+	// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+	// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 	VmDiskReferences []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
 }
 
@@ -36293,7 +36781,13 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceInput
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceArgs struct {
-	ImageReferences  TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReferenceArrayInput  `pulumi:"imageReferences"`
+	// Image Reference
+	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+	ImageReferences TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReferenceArrayInput `pulumi:"imageReferences"`
+	// Vm Disk Reference
+	// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+	// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 	VmDiskReferences TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
 }
 
@@ -36348,12 +36842,18 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceOu
 	return o
 }
 
+// Image Reference
+// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceOutput) ImageReferences() TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference) []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference {
 		return v.ImageReferences
 	}).(TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReferenceArrayOutput)
 }
 
+// Vm Disk Reference
+// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceOutput) VmDiskReferences() TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference) []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference {
 		return v.VmDiskReferences
@@ -36590,7 +37090,8 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVm
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress struct {
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// Index of the serial port.
+	Index *int `pulumi:"index"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs and TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput values.
@@ -36606,7 +37107,8 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDis
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs struct {
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// Index of the serial port.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ElementType() reflect.Type {
@@ -36666,6 +37168,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVm
 	}).(pulumi.StringPtrOutput)
 }
 
+// Index of the serial port.
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress) *int {
 		return v.Index
@@ -36789,6 +37292,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVm
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig struct {
+	// Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
 }
 
@@ -36804,6 +37308,7 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigInput inter
 }
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArgs struct {
+	// Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
 }
 
@@ -36858,6 +37363,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigOutput) 
 	return o
 }
 
+// Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig) *bool {
 		return v.IsFlashModeEnabled
@@ -36980,7 +37486,8 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArray
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress struct {
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// Index of the serial port.
+	Index *int `pulumi:"index"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressArgs and TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressOutput values.
@@ -36996,7 +37503,8 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressInput interface {
 
 type TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressArgs struct {
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// Index of the serial port.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressArgs) ElementType() reflect.Type {
@@ -37054,6 +37562,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressOutput) BusType() pul
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
 }
 
+// Index of the serial port.
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
@@ -37273,7 +37782,14 @@ func (o TemplateV2TemplateVersionSpecVmSpecClusterArrayOutput) Index(i pulumi.In
 }
 
 type TemplateV2TemplateVersionSpecVmSpecDisk struct {
-	BackingInfos  []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfo `pulumi:"backingInfos"`
+	// Supporting storage to create virtual disk on.
+	// * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
+	// * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
+	// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+	BackingInfos []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfo `pulumi:"backingInfos"`
+	// Disk address.
+	// * `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	// * `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
 	DiskAddresses []TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress `pulumi:"diskAddresses"`
 	ExtId         *string                                              `pulumi:"extId"`
 	Links         []TemplateV2TemplateVersionSpecVmSpecDiskLink        `pulumi:"links"`
@@ -37292,7 +37808,14 @@ type TemplateV2TemplateVersionSpecVmSpecDiskInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecDiskArgs struct {
-	BackingInfos  TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArrayInput `pulumi:"backingInfos"`
+	// Supporting storage to create virtual disk on.
+	// * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
+	// * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
+	// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+	BackingInfos TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArrayInput `pulumi:"backingInfos"`
+	// Disk address.
+	// * `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+	// * `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
 	DiskAddresses TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
 	ExtId         pulumi.StringPtrInput                                        `pulumi:"extId"`
 	Links         TemplateV2TemplateVersionSpecVmSpecDiskLinkArrayInput        `pulumi:"links"`
@@ -37350,12 +37873,19 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskOutput) ToTemplateV2TemplateVersi
 	return o
 }
 
+// Supporting storage to create virtual disk on.
+// * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
+// * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
+// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
 func (o TemplateV2TemplateVersionSpecVmSpecDiskOutput) BackingInfos() TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDisk) []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfo {
 		return v.BackingInfos
 	}).(TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArrayOutput)
 }
 
+// Disk address.
+// * `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+// * `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
 func (o TemplateV2TemplateVersionSpecVmSpecDiskOutput) DiskAddresses() TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDisk) []TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress {
 		return v.DiskAddresses
@@ -37727,6 +38257,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) Ind
 }
 
 type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource struct {
+	// Reference to image or vm disk
 	References []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference `pulumi:"references"`
 }
 
@@ -37742,6 +38273,7 @@ type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceInput int
 }
 
 type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArgs struct {
+	// Reference to image or vm disk
 	References TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceArrayInput `pulumi:"references"`
 }
 
@@ -37796,6 +38328,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceOutput
 	return o
 }
 
+// Reference to image or vm disk
 func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceOutput) References() TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource) []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference {
 		return v.References
@@ -37823,7 +38356,13 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayO
 }
 
 type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference struct {
-	ImageReferences  []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference  `pulumi:"imageReferences"`
+	// Image Reference
+	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+	ImageReferences []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference `pulumi:"imageReferences"`
+	// Vm Disk Reference
+	// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+	// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 	VmDiskReferences []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
 }
 
@@ -37839,7 +38378,13 @@ type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference
 }
 
 type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceArgs struct {
-	ImageReferences  TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayInput  `pulumi:"imageReferences"`
+	// Image Reference
+	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+	ImageReferences TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayInput `pulumi:"imageReferences"`
+	// Vm Disk Reference
+	// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+	// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+	// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 	VmDiskReferences TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
 }
 
@@ -37894,12 +38439,18 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceRefere
 	return o
 }
 
+// Image Reference
+// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
 func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceOutput) ImageReferences() TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference) []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference {
 		return v.ImageReferences
 	}).(TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReferenceArrayOutput)
 }
 
+// Vm Disk Reference
+// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
 func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceOutput) VmDiskReferences() TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference) []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
 		return v.VmDiskReferences
@@ -38136,7 +38687,8 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceRefere
 
 type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress struct {
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// Index of the serial port.
+	Index *int `pulumi:"index"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArgs and TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressOutput values.
@@ -38152,7 +38704,8 @@ type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference
 
 type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArgs struct {
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// Index of the serial port.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressArgs) ElementType() reflect.Type {
@@ -38212,6 +38765,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceRefere
 	}).(pulumi.StringPtrOutput)
 }
 
+// Index of the serial port.
 func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress) *int {
 		return v.Index
@@ -38335,6 +38889,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceRefere
 }
 
 type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig struct {
+	// Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
 }
 
@@ -38350,6 +38905,7 @@ type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigInput 
 }
 
 type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArgs struct {
+	// Indicates whether the virtual disk is pinned to the hot tier or not.
 	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
 }
 
@@ -38404,6 +38960,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigOut
 	return o
 }
 
+// Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig) *bool {
 		return v.IsFlashModeEnabled
@@ -38528,7 +39085,8 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer
 
 type TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress struct {
 	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
+	// Index of the serial port.
+	Index *int `pulumi:"index"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressArgs and TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressOutput values.
@@ -38544,7 +39102,8 @@ type TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressInput interface {
 
 type TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressArgs struct {
 	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
+	// Index of the serial port.
+	Index pulumi.IntPtrInput `pulumi:"index"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressArgs) ElementType() reflect.Type {
@@ -38602,6 +39161,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressOutput) BusType() pulu
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
 }
 
+// Index of the serial port.
 func (o TemplateV2TemplateVersionSpecVmSpecDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
@@ -38727,18 +39287,22 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskLinkArrayOutput) Index(i pulumi.I
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGpus struct {
-	DeviceId               *int                                                `pulumi:"deviceId"`
-	ExtId                  *string                                             `pulumi:"extId"`
-	Fraction               *int                                                `pulumi:"fraction"`
-	FrameBufferSizeBytes   *int                                                `pulumi:"frameBufferSizeBytes"`
-	GuestDriverVersion     *string                                             `pulumi:"guestDriverVersion"`
-	Links                  []TemplateV2TemplateVersionSpecVmSpecGpusLink       `pulumi:"links"`
-	Mode                   *string                                             `pulumi:"mode"`
-	Name                   *string                                             `pulumi:"name"`
-	NumVirtualDisplayHeads *int                                                `pulumi:"numVirtualDisplayHeads"`
-	PciAddresses           []TemplateV2TemplateVersionSpecVmSpecGpusPciAddress `pulumi:"pciAddresses"`
-	TenantId               *string                                             `pulumi:"tenantId"`
-	Vendor                 *string                                             `pulumi:"vendor"`
+	// The device Id of the GPU.
+	DeviceId             *int                                          `pulumi:"deviceId"`
+	ExtId                *string                                       `pulumi:"extId"`
+	Fraction             *int                                          `pulumi:"fraction"`
+	FrameBufferSizeBytes *int                                          `pulumi:"frameBufferSizeBytes"`
+	GuestDriverVersion   *string                                       `pulumi:"guestDriverVersion"`
+	Links                []TemplateV2TemplateVersionSpecVmSpecGpusLink `pulumi:"links"`
+	// The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+	Mode                   *string `pulumi:"mode"`
+	Name                   *string `pulumi:"name"`
+	NumVirtualDisplayHeads *int    `pulumi:"numVirtualDisplayHeads"`
+	// The (S)egment:(B)us:(D)evice.(F)unction hardware address.
+	PciAddresses []TemplateV2TemplateVersionSpecVmSpecGpusPciAddress `pulumi:"pciAddresses"`
+	TenantId     *string                                             `pulumi:"tenantId"`
+	// The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
+	Vendor *string `pulumi:"vendor"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecGpusInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecGpusArgs and TemplateV2TemplateVersionSpecVmSpecGpusOutput values.
@@ -38753,18 +39317,22 @@ type TemplateV2TemplateVersionSpecVmSpecGpusInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGpusArgs struct {
-	DeviceId               pulumi.IntPtrInput                                          `pulumi:"deviceId"`
-	ExtId                  pulumi.StringPtrInput                                       `pulumi:"extId"`
-	Fraction               pulumi.IntPtrInput                                          `pulumi:"fraction"`
-	FrameBufferSizeBytes   pulumi.IntPtrInput                                          `pulumi:"frameBufferSizeBytes"`
-	GuestDriverVersion     pulumi.StringPtrInput                                       `pulumi:"guestDriverVersion"`
-	Links                  TemplateV2TemplateVersionSpecVmSpecGpusLinkArrayInput       `pulumi:"links"`
-	Mode                   pulumi.StringPtrInput                                       `pulumi:"mode"`
-	Name                   pulumi.StringPtrInput                                       `pulumi:"name"`
-	NumVirtualDisplayHeads pulumi.IntPtrInput                                          `pulumi:"numVirtualDisplayHeads"`
-	PciAddresses           TemplateV2TemplateVersionSpecVmSpecGpusPciAddressArrayInput `pulumi:"pciAddresses"`
-	TenantId               pulumi.StringPtrInput                                       `pulumi:"tenantId"`
-	Vendor                 pulumi.StringPtrInput                                       `pulumi:"vendor"`
+	// The device Id of the GPU.
+	DeviceId             pulumi.IntPtrInput                                    `pulumi:"deviceId"`
+	ExtId                pulumi.StringPtrInput                                 `pulumi:"extId"`
+	Fraction             pulumi.IntPtrInput                                    `pulumi:"fraction"`
+	FrameBufferSizeBytes pulumi.IntPtrInput                                    `pulumi:"frameBufferSizeBytes"`
+	GuestDriverVersion   pulumi.StringPtrInput                                 `pulumi:"guestDriverVersion"`
+	Links                TemplateV2TemplateVersionSpecVmSpecGpusLinkArrayInput `pulumi:"links"`
+	// The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+	Mode                   pulumi.StringPtrInput `pulumi:"mode"`
+	Name                   pulumi.StringPtrInput `pulumi:"name"`
+	NumVirtualDisplayHeads pulumi.IntPtrInput    `pulumi:"numVirtualDisplayHeads"`
+	// The (S)egment:(B)us:(D)evice.(F)unction hardware address.
+	PciAddresses TemplateV2TemplateVersionSpecVmSpecGpusPciAddressArrayInput `pulumi:"pciAddresses"`
+	TenantId     pulumi.StringPtrInput                                       `pulumi:"tenantId"`
+	// The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
+	Vendor pulumi.StringPtrInput `pulumi:"vendor"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecGpusArgs) ElementType() reflect.Type {
@@ -38818,6 +39386,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecGpusOutput) ToTemplateV2TemplateVersi
 	return o
 }
 
+// The device Id of the GPU.
 func (o TemplateV2TemplateVersionSpecVmSpecGpusOutput) DeviceId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGpus) *int { return v.DeviceId }).(pulumi.IntPtrOutput)
 }
@@ -38844,6 +39413,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecGpusOutput) Links() TemplateV2Templat
 	}).(TemplateV2TemplateVersionSpecVmSpecGpusLinkArrayOutput)
 }
 
+// The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
 func (o TemplateV2TemplateVersionSpecVmSpecGpusOutput) Mode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGpus) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
@@ -38856,6 +39426,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecGpusOutput) NumVirtualDisplayHeads() 
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGpus) *int { return v.NumVirtualDisplayHeads }).(pulumi.IntPtrOutput)
 }
 
+// The (S)egment:(B)us:(D)evice.(F)unction hardware address.
 func (o TemplateV2TemplateVersionSpecVmSpecGpusOutput) PciAddresses() TemplateV2TemplateVersionSpecVmSpecGpusPciAddressArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGpus) []TemplateV2TemplateVersionSpecVmSpecGpusPciAddress {
 		return v.PciAddresses
@@ -38866,6 +39437,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecGpusOutput) TenantId() pulumi.StringP
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGpus) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
+// The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
 func (o TemplateV2TemplateVersionSpecVmSpecGpusOutput) Vendor() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGpus) *string { return v.Vendor }).(pulumi.StringPtrOutput)
 }
@@ -39103,6 +39675,10 @@ func (o TemplateV2TemplateVersionSpecVmSpecGpusPciAddressArrayOutput) Index(i pu
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGuestCustomization struct {
+	// The Nutanix Guest Tools customization settings.
+	//
+	// * `config.sysprep`: (Optional) Sysprep config
+	// * `config.cloud_init`: (Optional) CloudInit Config
 	Configs []TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig `pulumi:"configs"`
 }
 
@@ -39118,6 +39694,10 @@ type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationArgs struct {
+	// The Nutanix Guest Tools customization settings.
+	//
+	// * `config.sysprep`: (Optional) Sysprep config
+	// * `config.cloud_init`: (Optional) CloudInit Config
 	Configs TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigArrayInput `pulumi:"configs"`
 }
 
@@ -39172,6 +39752,10 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationOutput) ToTemplateV
 	return o
 }
 
+// The Nutanix Guest Tools customization settings.
+//
+// * `config.sysprep`: (Optional) Sysprep config
+// * `config.cloud_init`: (Optional) CloudInit Config
 func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationOutput) Configs() TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestCustomization) []TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig {
 		return v.Configs
@@ -39303,9 +39887,16 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigArrayOutput) 
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit struct {
+	// The script to use for cloud-init.
+	// * `cloud_init_script.user_data`: (Optional) user data object
+	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+	//
+	// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 	CloudInitScripts []TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
-	DatasourceType   *string                                                                               `pulumi:"datasourceType"`
-	Metadata         *string                                                                               `pulumi:"metadata"`
+	// Type of datasource. Default: CONFIG_DRIVE_V2
+	DatasourceType *string `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	Metadata *string `pulumi:"metadata"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitArgs and TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutput values.
@@ -39320,9 +39911,16 @@ type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitInput i
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitArgs struct {
+	// The script to use for cloud-init.
+	// * `cloud_init_script.user_data`: (Optional) user data object
+	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+	//
+	// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 	CloudInitScripts TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
-	DatasourceType   pulumi.StringPtrInput                                                                         `pulumi:"datasourceType"`
-	Metadata         pulumi.StringPtrInput                                                                         `pulumi:"metadata"`
+	// Type of datasource. Default: CONFIG_DRIVE_V2
+	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
+	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitArgs) ElementType() reflect.Type {
@@ -39376,18 +39974,25 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutp
 	return o
 }
 
+// The script to use for cloud-init.
+// * `cloud_init_script.user_data`: (Optional) user data object
+// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+//
+// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
 func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutput) CloudInitScripts() TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit) []TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript {
 		return v.CloudInitScripts
 	}).(TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptArrayOutput)
 }
 
+// Type of datasource. Default: CONFIG_DRIVE_V2
 func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutput) DatasourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit) *string {
 		return v.DatasourceType
 	}).(pulumi.StringPtrOutput)
 }
 
+// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit) *string {
 		return v.Metadata
@@ -40055,7 +40660,11 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitClou
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep struct {
-	InstallType    *string                                                                           `pulumi:"installType"`
+	// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+	InstallType *string `pulumi:"installType"`
+	// Object either UnattendXml or CustomKeyValues
+	// * `sysprep_script.unattend_xml`: (Optional) xml object
+	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts []TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
 
@@ -40071,7 +40680,11 @@ type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepInput int
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepArgs struct {
-	InstallType    pulumi.StringPtrInput                                                                     `pulumi:"installType"`
+	// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+	InstallType pulumi.StringPtrInput `pulumi:"installType"`
+	// Object either UnattendXml or CustomKeyValues
+	// * `sysprep_script.unattend_xml`: (Optional) xml object
+	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
 
@@ -40126,12 +40739,16 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepOutput
 	return o
 }
 
+// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
 func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep) *string {
 		return v.InstallType
 	}).(pulumi.StringPtrOutput)
 }
 
+// Object either UnattendXml or CustomKeyValues
+// * `sysprep_script.unattend_xml`: (Optional) xml object
+// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepOutput) SysprepScripts() TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep) []TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript {
 		return v.SysprepScripts
@@ -40799,16 +41416,18 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSyspre
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGuestTool struct {
-	AvailableVersion             *string  `pulumi:"availableVersion"`
-	Capabilities                 []string `pulumi:"capabilities"`
-	GuestOsVersion               *string  `pulumi:"guestOsVersion"`
-	IsEnabled                    *bool    `pulumi:"isEnabled"`
-	IsInstalled                  *bool    `pulumi:"isInstalled"`
-	IsIsoInserted                *bool    `pulumi:"isIsoInserted"`
-	IsReachable                  *bool    `pulumi:"isReachable"`
-	IsVmMobilityDriversInstalled *bool    `pulumi:"isVmMobilityDriversInstalled"`
-	IsVssSnapshotCapable         *bool    `pulumi:"isVssSnapshotCapable"`
-	Version                      *string  `pulumi:"version"`
+	AvailableVersion *string `pulumi:"availableVersion"`
+	// The list of the application names that are enabled on the guest VM.
+	Capabilities   []string `pulumi:"capabilities"`
+	GuestOsVersion *string  `pulumi:"guestOsVersion"`
+	// Indicates whether Nutanix Guest Tools is enabled or not.
+	IsEnabled                    *bool   `pulumi:"isEnabled"`
+	IsInstalled                  *bool   `pulumi:"isInstalled"`
+	IsIsoInserted                *bool   `pulumi:"isIsoInserted"`
+	IsReachable                  *bool   `pulumi:"isReachable"`
+	IsVmMobilityDriversInstalled *bool   `pulumi:"isVmMobilityDriversInstalled"`
+	IsVssSnapshotCapable         *bool   `pulumi:"isVssSnapshotCapable"`
+	Version                      *string `pulumi:"version"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecGuestToolInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecGuestToolArgs and TemplateV2TemplateVersionSpecVmSpecGuestToolOutput values.
@@ -40823,16 +41442,18 @@ type TemplateV2TemplateVersionSpecVmSpecGuestToolInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecGuestToolArgs struct {
-	AvailableVersion             pulumi.StringPtrInput   `pulumi:"availableVersion"`
-	Capabilities                 pulumi.StringArrayInput `pulumi:"capabilities"`
-	GuestOsVersion               pulumi.StringPtrInput   `pulumi:"guestOsVersion"`
-	IsEnabled                    pulumi.BoolPtrInput     `pulumi:"isEnabled"`
-	IsInstalled                  pulumi.BoolPtrInput     `pulumi:"isInstalled"`
-	IsIsoInserted                pulumi.BoolPtrInput     `pulumi:"isIsoInserted"`
-	IsReachable                  pulumi.BoolPtrInput     `pulumi:"isReachable"`
-	IsVmMobilityDriversInstalled pulumi.BoolPtrInput     `pulumi:"isVmMobilityDriversInstalled"`
-	IsVssSnapshotCapable         pulumi.BoolPtrInput     `pulumi:"isVssSnapshotCapable"`
-	Version                      pulumi.StringPtrInput   `pulumi:"version"`
+	AvailableVersion pulumi.StringPtrInput `pulumi:"availableVersion"`
+	// The list of the application names that are enabled on the guest VM.
+	Capabilities   pulumi.StringArrayInput `pulumi:"capabilities"`
+	GuestOsVersion pulumi.StringPtrInput   `pulumi:"guestOsVersion"`
+	// Indicates whether Nutanix Guest Tools is enabled or not.
+	IsEnabled                    pulumi.BoolPtrInput   `pulumi:"isEnabled"`
+	IsInstalled                  pulumi.BoolPtrInput   `pulumi:"isInstalled"`
+	IsIsoInserted                pulumi.BoolPtrInput   `pulumi:"isIsoInserted"`
+	IsReachable                  pulumi.BoolPtrInput   `pulumi:"isReachable"`
+	IsVmMobilityDriversInstalled pulumi.BoolPtrInput   `pulumi:"isVmMobilityDriversInstalled"`
+	IsVssSnapshotCapable         pulumi.BoolPtrInput   `pulumi:"isVssSnapshotCapable"`
+	Version                      pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecGuestToolArgs) ElementType() reflect.Type {
@@ -40890,6 +41511,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestToolOutput) AvailableVersion() p
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestTool) *string { return v.AvailableVersion }).(pulumi.StringPtrOutput)
 }
 
+// The list of the application names that are enabled on the guest VM.
 func (o TemplateV2TemplateVersionSpecVmSpecGuestToolOutput) Capabilities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestTool) []string { return v.Capabilities }).(pulumi.StringArrayOutput)
 }
@@ -40898,6 +41520,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestToolOutput) GuestOsVersion() pul
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestTool) *string { return v.GuestOsVersion }).(pulumi.StringPtrOutput)
 }
 
+// Indicates whether Nutanix Guest Tools is enabled or not.
 func (o TemplateV2TemplateVersionSpecVmSpecGuestToolOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestTool) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -41141,9 +41764,11 @@ func (o TemplateV2TemplateVersionSpecVmSpecLinkArrayOutput) Index(i pulumi.IntIn
 }
 
 type TemplateV2TemplateVersionSpecVmSpecNic struct {
+	// Defines a NIC emulated by the hypervisor
 	BackingInfos []TemplateV2TemplateVersionSpecVmSpecNicBackingInfo `pulumi:"backingInfos"`
 	ExtId        *string                                             `pulumi:"extId"`
 	Links        []TemplateV2TemplateVersionSpecVmSpecNicLink        `pulumi:"links"`
+	// Network information for a NIC.
 	NetworkInfos []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo `pulumi:"networkInfos"`
 	TenantId     *string                                             `pulumi:"tenantId"`
 }
@@ -41160,9 +41785,11 @@ type TemplateV2TemplateVersionSpecVmSpecNicInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecNicArgs struct {
+	// Defines a NIC emulated by the hypervisor
 	BackingInfos TemplateV2TemplateVersionSpecVmSpecNicBackingInfoArrayInput `pulumi:"backingInfos"`
 	ExtId        pulumi.StringPtrInput                                       `pulumi:"extId"`
 	Links        TemplateV2TemplateVersionSpecVmSpecNicLinkArrayInput        `pulumi:"links"`
+	// Network information for a NIC.
 	NetworkInfos TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArrayInput `pulumi:"networkInfos"`
 	TenantId     pulumi.StringPtrInput                                       `pulumi:"tenantId"`
 }
@@ -41218,6 +41845,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicOutput) ToTemplateV2TemplateVersio
 	return o
 }
 
+// Defines a NIC emulated by the hypervisor
 func (o TemplateV2TemplateVersionSpecVmSpecNicOutput) BackingInfos() TemplateV2TemplateVersionSpecVmSpecNicBackingInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNic) []TemplateV2TemplateVersionSpecVmSpecNicBackingInfo {
 		return v.BackingInfos
@@ -41234,6 +41862,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicOutput) Links() TemplateV2Template
 	}).(TemplateV2TemplateVersionSpecVmSpecNicLinkArrayOutput)
 }
 
+// Network information for a NIC.
 func (o TemplateV2TemplateVersionSpecVmSpecNicOutput) NetworkInfos() TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNic) []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
 		return v.NetworkInfos
@@ -41265,10 +41894,13 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicArrayOutput) Index(i pulumi.IntInp
 }
 
 type TemplateV2TemplateVersionSpecVmSpecNicBackingInfo struct {
-	IsConnected *bool   `pulumi:"isConnected"`
-	MacAddress  *string `pulumi:"macAddress"`
-	Model       *string `pulumi:"model"`
-	NumQueues   *int    `pulumi:"numQueues"`
+	IsConnected *bool `pulumi:"isConnected"`
+	// MAC address of the emulated NIC.
+	MacAddress *string `pulumi:"macAddress"`
+	// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+	Model *string `pulumi:"model"`
+	// The number of Tx/Rx queue pairs for this NIC. Default is 1.
+	NumQueues *int `pulumi:"numQueues"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecNicBackingInfoInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecNicBackingInfoArgs and TemplateV2TemplateVersionSpecVmSpecNicBackingInfoOutput values.
@@ -41283,10 +41915,13 @@ type TemplateV2TemplateVersionSpecVmSpecNicBackingInfoInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecNicBackingInfoArgs struct {
-	IsConnected pulumi.BoolPtrInput   `pulumi:"isConnected"`
-	MacAddress  pulumi.StringPtrInput `pulumi:"macAddress"`
-	Model       pulumi.StringPtrInput `pulumi:"model"`
-	NumQueues   pulumi.IntPtrInput    `pulumi:"numQueues"`
+	IsConnected pulumi.BoolPtrInput `pulumi:"isConnected"`
+	// MAC address of the emulated NIC.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+	Model pulumi.StringPtrInput `pulumi:"model"`
+	// The number of Tx/Rx queue pairs for this NIC. Default is 1.
+	NumQueues pulumi.IntPtrInput `pulumi:"numQueues"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecNicBackingInfoArgs) ElementType() reflect.Type {
@@ -41344,14 +41979,17 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicBackingInfoOutput) IsConnected() p
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicBackingInfo) *bool { return v.IsConnected }).(pulumi.BoolPtrOutput)
 }
 
+// MAC address of the emulated NIC.
 func (o TemplateV2TemplateVersionSpecVmSpecNicBackingInfoOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicBackingInfo) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
+// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
 func (o TemplateV2TemplateVersionSpecVmSpecNicBackingInfoOutput) Model() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicBackingInfo) *string { return v.Model }).(pulumi.StringPtrOutput)
 }
 
+// The number of Tx/Rx queue pairs for this NIC. Default is 1.
 func (o TemplateV2TemplateVersionSpecVmSpecNicBackingInfoOutput) NumQueues() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicBackingInfo) *int { return v.NumQueues }).(pulumi.IntPtrOutput)
 }
@@ -41477,15 +42115,23 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicLinkArrayOutput) Index(i pulumi.In
 }
 
 type TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo struct {
-	Ipv4Configs            []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config           `pulumi:"ipv4Configs"`
-	Ipv4Infos              []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info             `pulumi:"ipv4Infos"`
-	NetworkFunctionChains  []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
-	NetworkFunctionNicType *string                                                                 `pulumi:"networkFunctionNicType"`
-	NicType                *string                                                                 `pulumi:"nicType"`
-	ShouldAllowUnknownMacs *bool                                                                   `pulumi:"shouldAllowUnknownMacs"`
-	Subnets                []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet               `pulumi:"subnets"`
-	TrunkedVlans           []int                                                                   `pulumi:"trunkedVlans"`
-	VlanMode               *string                                                                 `pulumi:"vlanMode"`
+	// The IP address configurations.
+	Ipv4Configs []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
+	Ipv4Infos   []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
+	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	NetworkFunctionChains []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
+	// The type of this Network function NIC. Defaults to INGRESS.
+	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
+	// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+	NicType *string `pulumi:"nicType"`
+	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
+	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	Subnets []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet `pulumi:"subnets"`
+	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+	TrunkedVlans []int `pulumi:"trunkedVlans"`
+	// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+	VlanMode *string `pulumi:"vlanMode"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs and TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput values.
@@ -41500,15 +42146,23 @@ type TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs struct {
-	Ipv4Configs            TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigArrayInput           `pulumi:"ipv4Configs"`
-	Ipv4Infos              TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayInput             `pulumi:"ipv4Infos"`
-	NetworkFunctionChains  TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
-	NetworkFunctionNicType pulumi.StringPtrInput                                                           `pulumi:"networkFunctionNicType"`
-	NicType                pulumi.StringPtrInput                                                           `pulumi:"nicType"`
-	ShouldAllowUnknownMacs pulumi.BoolPtrInput                                                             `pulumi:"shouldAllowUnknownMacs"`
-	Subnets                TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayInput               `pulumi:"subnets"`
-	TrunkedVlans           pulumi.IntArrayInput                                                            `pulumi:"trunkedVlans"`
-	VlanMode               pulumi.StringPtrInput                                                           `pulumi:"vlanMode"`
+	// The IP address configurations.
+	Ipv4Configs TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
+	Ipv4Infos   TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
+	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	NetworkFunctionChains TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
+	// The type of this Network function NIC. Defaults to INGRESS.
+	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
+	// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+	NicType pulumi.StringPtrInput `pulumi:"nicType"`
+	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
+	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	Subnets TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
+	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
+	// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+	VlanMode pulumi.StringPtrInput `pulumi:"vlanMode"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs) ElementType() reflect.Type {
@@ -41562,6 +42216,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) ToTemplateV2Tem
 	return o
 }
 
+// The IP address configurations.
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Ipv4Configs() TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config {
 		return v.Ipv4Configs
@@ -41574,34 +42229,41 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Ipv4Infos() Tem
 	}).(TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayOutput)
 }
 
+// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) NetworkFunctionChains() TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
 	}).(TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayOutput)
 }
 
+// The type of this Network function NIC. Defaults to INGRESS.
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) NetworkFunctionNicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) *string { return v.NetworkFunctionNicType }).(pulumi.StringPtrOutput)
 }
 
+// NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) NicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) *string { return v.NicType }).(pulumi.StringPtrOutput)
 }
 
+// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
+// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Subnets() TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet {
 		return v.Subnets
 	}).(TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayOutput)
 }
 
+// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) TrunkedVlans() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []int { return v.TrunkedVlans }).(pulumi.IntArrayOutput)
 }
 
+// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) VlanMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) *string { return v.VlanMode }).(pulumi.StringPtrOutput)
 }
@@ -42521,11 +43183,13 @@ func (o TemplateV2TemplateVersionSpecVmSpecOwnershipInfoOwnerArrayOutput) Index(
 }
 
 type TemplateV2TemplateVersionSpecVmSpecPciDevice struct {
+	// Information about the attached PCIe device to the VM.
 	AssignedDeviceInfos []TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo `pulumi:"assignedDeviceInfos"`
-	BackingInfos        []TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo        `pulumi:"backingInfos"`
-	ExtId               *string                                                          `pulumi:"extId"`
-	Links               []TemplateV2TemplateVersionSpecVmSpecPciDeviceLink               `pulumi:"links"`
-	TenantId            *string                                                          `pulumi:"tenantId"`
+	// Indicates the way a PCIe device is associated to the VM.
+	BackingInfos []TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo `pulumi:"backingInfos"`
+	ExtId        *string                                                   `pulumi:"extId"`
+	Links        []TemplateV2TemplateVersionSpecVmSpecPciDeviceLink        `pulumi:"links"`
+	TenantId     *string                                                   `pulumi:"tenantId"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecPciDeviceInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecPciDeviceArgs and TemplateV2TemplateVersionSpecVmSpecPciDeviceOutput values.
@@ -42540,11 +43204,13 @@ type TemplateV2TemplateVersionSpecVmSpecPciDeviceInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecPciDeviceArgs struct {
+	// Information about the attached PCIe device to the VM.
 	AssignedDeviceInfos TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoArrayInput `pulumi:"assignedDeviceInfos"`
-	BackingInfos        TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoArrayInput        `pulumi:"backingInfos"`
-	ExtId               pulumi.StringPtrInput                                                    `pulumi:"extId"`
-	Links               TemplateV2TemplateVersionSpecVmSpecPciDeviceLinkArrayInput               `pulumi:"links"`
-	TenantId            pulumi.StringPtrInput                                                    `pulumi:"tenantId"`
+	// Indicates the way a PCIe device is associated to the VM.
+	BackingInfos TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoArrayInput `pulumi:"backingInfos"`
+	ExtId        pulumi.StringPtrInput                                             `pulumi:"extId"`
+	Links        TemplateV2TemplateVersionSpecVmSpecPciDeviceLinkArrayInput        `pulumi:"links"`
+	TenantId     pulumi.StringPtrInput                                             `pulumi:"tenantId"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecPciDeviceArgs) ElementType() reflect.Type {
@@ -42598,12 +43264,14 @@ func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceOutput) ToTemplateV2Template
 	return o
 }
 
+// Information about the attached PCIe device to the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceOutput) AssignedDeviceInfos() TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecPciDevice) []TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo {
 		return v.AssignedDeviceInfos
 	}).(TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoArrayOutput)
 }
 
+// Indicates the way a PCIe device is associated to the VM.
 func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceOutput) BackingInfos() TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecPciDevice) []TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo {
 		return v.BackingInfos
@@ -42741,6 +43409,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoArrayOutpu
 }
 
 type TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice struct {
+	// Globally unique identifier denoting PCIe device label. It should be of type UUID.
 	DeviceExtId *string `pulumi:"deviceExtId"`
 }
 
@@ -42756,6 +43425,7 @@ type TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDeviceInput i
 }
 
 type TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDeviceArgs struct {
+	// Globally unique identifier denoting PCIe device label. It should be of type UUID.
 	DeviceExtId pulumi.StringPtrInput `pulumi:"deviceExtId"`
 }
 
@@ -42810,6 +43480,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDeviceOutp
 	return o
 }
 
+// Globally unique identifier denoting PCIe device label. It should be of type UUID.
 func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDeviceOutput) DeviceExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice) *string {
 		return v.DeviceExtId
@@ -42837,6 +43508,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDeviceArra
 }
 
 type TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo struct {
+	// Reference to a PCIe device.
 	PcieDeviceReferences []TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference `pulumi:"pcieDeviceReferences"`
 }
 
@@ -42852,6 +43524,7 @@ type TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoArgs struct {
+	// Reference to a PCIe device.
 	PcieDeviceReferences TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceArrayInput `pulumi:"pcieDeviceReferences"`
 }
 
@@ -42906,6 +43579,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoOutput) ToTemplat
 	return o
 }
 
+// Reference to a PCIe device.
 func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoOutput) PcieDeviceReferences() TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo) []TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference {
 		return v.PcieDeviceReferences
@@ -42933,6 +43607,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoArrayOutput) Inde
 }
 
 type TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference struct {
+	// Globally unique identifier denoting PCIe device label. It should be of type UUID.
 	DeviceExtId *string `pulumi:"deviceExtId"`
 }
 
@@ -42948,6 +43623,7 @@ type TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceI
 }
 
 type TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceArgs struct {
+	// Globally unique identifier denoting PCIe device label. It should be of type UUID.
 	DeviceExtId pulumi.StringPtrInput `pulumi:"deviceExtId"`
 }
 
@@ -43002,6 +43678,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferen
 	return o
 }
 
+// Globally unique identifier denoting PCIe device label. It should be of type UUID.
 func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceOutput) DeviceExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference) *string {
 		return v.DeviceExtId
@@ -43129,6 +43806,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecPciDeviceLinkArrayOutput) Index(i pul
 }
 
 type TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState struct {
+	// Reference to a protection policy.
 	Policies []TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy `pulumi:"policies"`
 }
 
@@ -43144,6 +43822,7 @@ type TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateArgs struct {
+	// Reference to a protection policy.
 	Policies TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicyArrayInput `pulumi:"policies"`
 }
 
@@ -43198,6 +43877,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateOutput) ToTempla
 	return o
 }
 
+// Reference to a protection policy.
 func (o TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStateOutput) Policies() TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicyArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState) []TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy {
 		return v.Policies
@@ -43319,8 +43999,10 @@ func (o TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicyArrayOutpu
 }
 
 type TemplateV2TemplateVersionSpecVmSpecSerialPort struct {
-	ExtId       *string                                             `pulumi:"extId"`
-	Index       *int                                                `pulumi:"index"`
+	ExtId *string `pulumi:"extId"`
+	// Index of the serial port.
+	Index *int `pulumi:"index"`
+	// Indicates whether the serial port is connected or not.
 	IsConnected *bool                                               `pulumi:"isConnected"`
 	Links       []TemplateV2TemplateVersionSpecVmSpecSerialPortLink `pulumi:"links"`
 	TenantId    *string                                             `pulumi:"tenantId"`
@@ -43338,8 +44020,10 @@ type TemplateV2TemplateVersionSpecVmSpecSerialPortInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecSerialPortArgs struct {
-	ExtId       pulumi.StringPtrInput                                       `pulumi:"extId"`
-	Index       pulumi.IntPtrInput                                          `pulumi:"index"`
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// Index of the serial port.
+	Index pulumi.IntPtrInput `pulumi:"index"`
+	// Indicates whether the serial port is connected or not.
 	IsConnected pulumi.BoolPtrInput                                         `pulumi:"isConnected"`
 	Links       TemplateV2TemplateVersionSpecVmSpecSerialPortLinkArrayInput `pulumi:"links"`
 	TenantId    pulumi.StringPtrInput                                       `pulumi:"tenantId"`
@@ -43400,10 +44084,12 @@ func (o TemplateV2TemplateVersionSpecVmSpecSerialPortOutput) ExtId() pulumi.Stri
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecSerialPort) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// Index of the serial port.
 func (o TemplateV2TemplateVersionSpecVmSpecSerialPortOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecSerialPort) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
 
+// Indicates whether the serial port is connected or not.
 func (o TemplateV2TemplateVersionSpecVmSpecSerialPortOutput) IsConnected() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecSerialPort) *bool { return v.IsConnected }).(pulumi.BoolPtrOutput)
 }
@@ -43639,8 +44325,11 @@ func (o TemplateV2TemplateVersionSpecVmSpecSourceArrayOutput) Index(i pulumi.Int
 }
 
 type TemplateV2TemplateVersionSpecVmSpecStorageConfig struct {
-	IsFlashModeEnabled *bool                                                       `pulumi:"isFlashModeEnabled"`
-	QosConfigs         []TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig `pulumi:"qosConfigs"`
+	// Indicates whether the virtual disk is pinned to the hot tier or not.
+	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
+	// QoS parameters to be enforced.
+	// * `qos_config.throttled_iops`: (Optional) Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+	QosConfigs []TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig `pulumi:"qosConfigs"`
 }
 
 // TemplateV2TemplateVersionSpecVmSpecStorageConfigInput is an input type that accepts TemplateV2TemplateVersionSpecVmSpecStorageConfigArgs and TemplateV2TemplateVersionSpecVmSpecStorageConfigOutput values.
@@ -43655,8 +44344,11 @@ type TemplateV2TemplateVersionSpecVmSpecStorageConfigInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecStorageConfigArgs struct {
-	IsFlashModeEnabled pulumi.BoolPtrInput                                                 `pulumi:"isFlashModeEnabled"`
-	QosConfigs         TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfigArrayInput `pulumi:"qosConfigs"`
+	// Indicates whether the virtual disk is pinned to the hot tier or not.
+	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
+	// QoS parameters to be enforced.
+	// * `qos_config.throttled_iops`: (Optional) Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+	QosConfigs TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfigArrayInput `pulumi:"qosConfigs"`
 }
 
 func (TemplateV2TemplateVersionSpecVmSpecStorageConfigArgs) ElementType() reflect.Type {
@@ -43710,10 +44402,13 @@ func (o TemplateV2TemplateVersionSpecVmSpecStorageConfigOutput) ToTemplateV2Temp
 	return o
 }
 
+// Indicates whether the virtual disk is pinned to the hot tier or not.
 func (o TemplateV2TemplateVersionSpecVmSpecStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecStorageConfig) *bool { return v.IsFlashModeEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// QoS parameters to be enforced.
+// * `qos_config.throttled_iops`: (Optional) Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
 func (o TemplateV2TemplateVersionSpecVmSpecStorageConfigOutput) QosConfigs() TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfigArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecStorageConfig) []TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig {
 		return v.QosConfigs
@@ -43835,6 +44530,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfigArrayOutput) In
 }
 
 type TemplateV2TemplateVersionSpecVmSpecVtpmConfig struct {
+	// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
 	IsVtpmEnabled *bool   `pulumi:"isVtpmEnabled"`
 	Version       *string `pulumi:"version"`
 }
@@ -43851,6 +44547,7 @@ type TemplateV2TemplateVersionSpecVmSpecVtpmConfigInput interface {
 }
 
 type TemplateV2TemplateVersionSpecVmSpecVtpmConfigArgs struct {
+	// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
 	IsVtpmEnabled pulumi.BoolPtrInput   `pulumi:"isVtpmEnabled"`
 	Version       pulumi.StringPtrInput `pulumi:"version"`
 }
@@ -43906,6 +44603,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecVtpmConfigOutput) ToTemplateV2Templat
 	return o
 }
 
+// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
 func (o TemplateV2TemplateVersionSpecVmSpecVtpmConfigOutput) IsVtpmEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecVtpmConfig) *bool { return v.IsVtpmEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -43935,23 +44633,24 @@ func (o TemplateV2TemplateVersionSpecVmSpecVtpmConfigArrayOutput) Index(i pulumi
 }
 
 type TemplateV2UpdatedBy struct {
-	AdditionalAttributes        []TemplateV2UpdatedByAdditionalAttribute `pulumi:"additionalAttributes"`
-	CreationType                *string                                  `pulumi:"creationType"`
-	Description                 *string                                  `pulumi:"description"`
-	DisplayName                 *string                                  `pulumi:"displayName"`
-	EmailId                     *string                                  `pulumi:"emailId"`
-	ExtId                       *string                                  `pulumi:"extId"`
-	FirstName                   *string                                  `pulumi:"firstName"`
-	IdpId                       *string                                  `pulumi:"idpId"`
-	IsForceResetPasswordEnabled *bool                                    `pulumi:"isForceResetPasswordEnabled"`
-	LastName                    *string                                  `pulumi:"lastName"`
-	Locale                      *string                                  `pulumi:"locale"`
-	MiddleInitial               *string                                  `pulumi:"middleInitial"`
-	Password                    *string                                  `pulumi:"password"`
-	Region                      *string                                  `pulumi:"region"`
-	Status                      *string                                  `pulumi:"status"`
-	UserType                    string                                   `pulumi:"userType"`
-	Username                    string                                   `pulumi:"username"`
+	AdditionalAttributes []TemplateV2UpdatedByAdditionalAttribute `pulumi:"additionalAttributes"`
+	CreationType         *string                                  `pulumi:"creationType"`
+	// VM description
+	Description                 *string `pulumi:"description"`
+	DisplayName                 *string `pulumi:"displayName"`
+	EmailId                     *string `pulumi:"emailId"`
+	ExtId                       *string `pulumi:"extId"`
+	FirstName                   *string `pulumi:"firstName"`
+	IdpId                       *string `pulumi:"idpId"`
+	IsForceResetPasswordEnabled *bool   `pulumi:"isForceResetPasswordEnabled"`
+	LastName                    *string `pulumi:"lastName"`
+	Locale                      *string `pulumi:"locale"`
+	MiddleInitial               *string `pulumi:"middleInitial"`
+	Password                    *string `pulumi:"password"`
+	Region                      *string `pulumi:"region"`
+	Status                      *string `pulumi:"status"`
+	UserType                    string  `pulumi:"userType"`
+	Username                    string  `pulumi:"username"`
 }
 
 // TemplateV2UpdatedByInput is an input type that accepts TemplateV2UpdatedByArgs and TemplateV2UpdatedByOutput values.
@@ -43966,23 +44665,24 @@ type TemplateV2UpdatedByInput interface {
 }
 
 type TemplateV2UpdatedByArgs struct {
-	AdditionalAttributes        TemplateV2UpdatedByAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
-	CreationType                pulumi.StringPtrInput                            `pulumi:"creationType"`
-	Description                 pulumi.StringPtrInput                            `pulumi:"description"`
-	DisplayName                 pulumi.StringPtrInput                            `pulumi:"displayName"`
-	EmailId                     pulumi.StringPtrInput                            `pulumi:"emailId"`
-	ExtId                       pulumi.StringPtrInput                            `pulumi:"extId"`
-	FirstName                   pulumi.StringPtrInput                            `pulumi:"firstName"`
-	IdpId                       pulumi.StringPtrInput                            `pulumi:"idpId"`
-	IsForceResetPasswordEnabled pulumi.BoolPtrInput                              `pulumi:"isForceResetPasswordEnabled"`
-	LastName                    pulumi.StringPtrInput                            `pulumi:"lastName"`
-	Locale                      pulumi.StringPtrInput                            `pulumi:"locale"`
-	MiddleInitial               pulumi.StringPtrInput                            `pulumi:"middleInitial"`
-	Password                    pulumi.StringPtrInput                            `pulumi:"password"`
-	Region                      pulumi.StringPtrInput                            `pulumi:"region"`
-	Status                      pulumi.StringPtrInput                            `pulumi:"status"`
-	UserType                    pulumi.StringInput                               `pulumi:"userType"`
-	Username                    pulumi.StringInput                               `pulumi:"username"`
+	AdditionalAttributes TemplateV2UpdatedByAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
+	CreationType         pulumi.StringPtrInput                            `pulumi:"creationType"`
+	// VM description
+	Description                 pulumi.StringPtrInput `pulumi:"description"`
+	DisplayName                 pulumi.StringPtrInput `pulumi:"displayName"`
+	EmailId                     pulumi.StringPtrInput `pulumi:"emailId"`
+	ExtId                       pulumi.StringPtrInput `pulumi:"extId"`
+	FirstName                   pulumi.StringPtrInput `pulumi:"firstName"`
+	IdpId                       pulumi.StringPtrInput `pulumi:"idpId"`
+	IsForceResetPasswordEnabled pulumi.BoolPtrInput   `pulumi:"isForceResetPasswordEnabled"`
+	LastName                    pulumi.StringPtrInput `pulumi:"lastName"`
+	Locale                      pulumi.StringPtrInput `pulumi:"locale"`
+	MiddleInitial               pulumi.StringPtrInput `pulumi:"middleInitial"`
+	Password                    pulumi.StringPtrInput `pulumi:"password"`
+	Region                      pulumi.StringPtrInput `pulumi:"region"`
+	Status                      pulumi.StringPtrInput `pulumi:"status"`
+	UserType                    pulumi.StringInput    `pulumi:"userType"`
+	Username                    pulumi.StringInput    `pulumi:"username"`
 }
 
 func (TemplateV2UpdatedByArgs) ElementType() reflect.Type {
@@ -44044,6 +44744,7 @@ func (o TemplateV2UpdatedByOutput) CreationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2UpdatedBy) *string { return v.CreationType }).(pulumi.StringPtrOutput)
 }
 
+// VM description
 func (o TemplateV2UpdatedByOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2UpdatedBy) *string { return v.Description }).(pulumi.StringPtrOutput)
 }

@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ipv4Configs")]
         private InputList<Inputs.VmCloneV2NicNetworkInfoIpv4ConfigArgs>? _ipv4Configs;
+
+        /// <summary>
+        /// - (Optional) The IP address configurations.
+        /// </summary>
         public InputList<Inputs.VmCloneV2NicNetworkInfoIpv4ConfigArgs> Ipv4Configs
         {
             get => _ipv4Configs ?? (_ipv4Configs = new InputList<Inputs.VmCloneV2NicNetworkInfoIpv4ConfigArgs>());
@@ -23,23 +27,51 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("networkFunctionChains")]
         private InputList<Inputs.VmCloneV2NicNetworkInfoNetworkFunctionChainArgs>? _networkFunctionChains;
+
+        /// <summary>
+        /// - (Optional)The network function chain associates with the NIC. Only valid if NicType is NORMAL_NIC.
+        /// </summary>
         public InputList<Inputs.VmCloneV2NicNetworkInfoNetworkFunctionChainArgs> NetworkFunctionChains
         {
             get => _networkFunctionChains ?? (_networkFunctionChains = new InputList<Inputs.VmCloneV2NicNetworkInfoNetworkFunctionChainArgs>());
             set => _networkFunctionChains = value;
         }
 
+        /// <summary>
+        /// - (Optional) The type of this Network function NIC.
+        /// Defaults to INGRESS.
+        /// Valid values are:
+        /// - `TAP` The type of Network-Function NIC is Tap.
+        /// - `EGRESS` The type of Network-Function NIC is Egress.
+        /// - `INGRESS` The type of Network-Function NIC is Ingress.
+        /// </summary>
         [Input("networkFunctionNicType")]
         public Input<string>? NetworkFunctionNicType { get; set; }
 
+        /// <summary>
+        /// - (Optional) NIC type.
+        /// Defaults to NORMAL_NIC.
+        /// Valid values are:
+        /// - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
+        /// - `NORMAL_NIC` The type of NIC is Normal.
+        /// - `DIRECT_NIC` The type of NIC is Direct.
+        /// - `NETWORK_FUNCTION_NIC` The type of NIC is Network-Function.
+        /// </summary>
         [Input("nicType")]
         public Input<string>? NicType { get; set; }
 
+        /// <summary>
+        /// - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+        /// </summary>
         [Input("shouldAllowUnknownMacs")]
         public Input<bool>? ShouldAllowUnknownMacs { get; set; }
 
         [Input("subnets")]
         private InputList<Inputs.VmCloneV2NicNetworkInfoSubnetArgs>? _subnets;
+
+        /// <summary>
+        /// - (Optional) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// </summary>
         public InputList<Inputs.VmCloneV2NicNetworkInfoSubnetArgs> Subnets
         {
             get => _subnets ?? (_subnets = new InputList<Inputs.VmCloneV2NicNetworkInfoSubnetArgs>());
@@ -48,12 +80,22 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("trunkedVlans")]
         private InputList<int>? _trunkedVlans;
+
+        /// <summary>
+        /// - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+        /// </summary>
         public InputList<int> TrunkedVlans
         {
             get => _trunkedVlans ?? (_trunkedVlans = new InputList<int>());
             set => _trunkedVlans = value;
         }
 
+        /// <summary>
+        /// - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+        /// Valid values are:
+        /// - `TRUNK` The virtual NIC is created in TRUNKED mode.
+        /// - `ACCESS` The virtual NIC is created in ACCESS mode.
+        /// </summary>
         [Input("vlanMode")]
         public Input<string>? VlanMode { get; set; }
 

@@ -15,15 +15,25 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("dataSources")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceGetArgs>? _dataSources;
+
+        /// <summary>
+        /// - (Optional) A reference to a disk or image that contains the contents of a disk.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceGetArgs> DataSources
         {
             get => _dataSources ?? (_dataSources = new InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceGetArgs>());
             set => _dataSources = value;
         }
 
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+        /// </summary>
         [Input("diskExtId")]
         public Input<string>? DiskExtId { get; set; }
 
+        /// <summary>
+        /// - (Optional) Size of the disk in Bytes.
+        /// </summary>
         [Input("diskSizeBytes")]
         public Input<int>? DiskSizeBytes { get; set; }
 
@@ -32,6 +42,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("storageConfigs")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigGetArgs>? _storageConfigs;
+
+        /// <summary>
+        /// - (Optional) Storage configuration for VM disks.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigGetArgs> StorageConfigs
         {
             get => _storageConfigs ?? (_storageConfigs = new InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigGetArgs>());
@@ -40,6 +54,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("storageContainers")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerGetArgs>? _storageContainers;
+
+        /// <summary>
+        /// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerGetArgs> StorageContainers
         {
             get => _storageContainers ?? (_storageContainers = new InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerGetArgs>());

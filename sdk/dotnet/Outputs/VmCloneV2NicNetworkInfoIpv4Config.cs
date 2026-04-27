@@ -16,6 +16,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4ConfigIpAddress> IpAddresses;
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList> SecondaryIpAddressLists;
+        /// <summary>
+        /// - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+        /// `IpAddress`: - (Optional) Ip config settings.
+        /// `SecondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
+        /// </summary>
         public readonly bool? ShouldAssignIp;
 
         [OutputConstructor]

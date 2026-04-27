@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyAction
     {
+        /// <summary>
+        /// Routing policy action type.
+        /// </summary>
         public readonly string ActionType;
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyActionNexthopIpAddress> NexthopIpAddresses;
+        /// <summary>
+        /// Routing policy Reroute params.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyActionRerouteParam> RerouteParams;
 
         [OutputConstructor]

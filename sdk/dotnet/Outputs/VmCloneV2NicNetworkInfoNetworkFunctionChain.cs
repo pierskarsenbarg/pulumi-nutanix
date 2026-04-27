@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2NicNetworkInfoNetworkFunctionChain
     {
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
+        /// </summary>
         public readonly string? ExtId;
 
         [OutputConstructor]

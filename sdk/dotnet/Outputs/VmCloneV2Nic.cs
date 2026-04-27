@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2Nic
     {
+        /// <summary>
+        /// - (Optional) Defines a NIC emulated by the hypervisor
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicBackingInfo> BackingInfos;
+        /// <summary>
+        /// - (Optional) A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         public readonly string? ExtId;
+        /// <summary>
+        /// - (Optional) Network information for a NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfo> NetworkInfos;
 
         [OutputConstructor]

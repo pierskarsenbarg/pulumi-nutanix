@@ -15,6 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip
     {
         public readonly int? PrefixLength;
+        /// <summary>
+        /// ip value
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

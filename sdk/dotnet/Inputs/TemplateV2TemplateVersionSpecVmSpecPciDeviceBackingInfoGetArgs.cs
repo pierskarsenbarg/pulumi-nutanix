@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("pcieDeviceReferences")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceGetArgs>? _pcieDeviceReferences;
+
+        /// <summary>
+        /// Reference to a PCIe device.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceGetArgs> PcieDeviceReferences
         {
             get => _pcieDeviceReferences ?? (_pcieDeviceReferences = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReferenceGetArgs>());

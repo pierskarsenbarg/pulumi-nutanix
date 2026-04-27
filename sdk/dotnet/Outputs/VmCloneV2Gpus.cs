@@ -20,6 +20,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly int? FrameBufferSizeBytes;
         public readonly string? GuestDriverVersion;
         public readonly string? Mode;
+        /// <summary>
+        /// - (Optional) The name for the vm.
+        /// </summary>
         public readonly string? Name;
         public readonly int? NumVirtualDisplayHeads;
         public readonly ImmutableArray<Outputs.VmCloneV2GpusPciAddress> PciAddresses;

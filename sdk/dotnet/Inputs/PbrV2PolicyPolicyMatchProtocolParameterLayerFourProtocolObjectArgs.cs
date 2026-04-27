@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("destinationPortRanges")]
         private InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeArgs>? _destinationPortRanges;
+
+        /// <summary>
+        /// Start and end port ranges object.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeArgs> DestinationPortRanges
         {
             get => _destinationPortRanges ?? (_destinationPortRanges = new InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("sourcePortRanges")]
         private InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeArgs>? _sourcePortRanges;
+
+        /// <summary>
+        /// Start and end port ranges object.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeArgs> SourcePortRanges
         {
             get => _sourcePortRanges ?? (_sourcePortRanges = new InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeArgs>());

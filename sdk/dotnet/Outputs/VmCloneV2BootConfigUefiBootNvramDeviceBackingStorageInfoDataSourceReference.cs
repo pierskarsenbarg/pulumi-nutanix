@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference
     {
+        /// <summary>
+        /// - (Optional) Data Source Image Reference settings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference> ImageReferences;
+        /// <summary>
+        /// - (Optional) Data Source VM Disk Reference settings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference> VmDiskReferences;
 
         [OutputConstructor]

@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2CdRomBackingInfoDataSource
     {
+        /// <summary>
+        /// - (Optional) Data Source Reference settings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2CdRomBackingInfoDataSourceReference> References;
 
         [OutputConstructor]

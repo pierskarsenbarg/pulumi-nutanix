@@ -31592,11 +31592,19 @@ func (o GetRoutesV2RouteNextHopNextHopIpAddressIpv6Output) Value() pulumi.String
 }
 
 type GetSamlIdentityProviderV2IdpMetadata struct {
-	Certificate        string `pulumi:"certificate"`
-	EntityId           string `pulumi:"entityId"`
-	ErrorUrl           string `pulumi:"errorUrl"`
-	LoginUrl           string `pulumi:"loginUrl"`
-	LogoutUrl          string `pulumi:"logoutUrl"`
+	// - Certificate for verification.
+	Certificate string `pulumi:"certificate"`
+	// - Entity Identifier of Identity provider.
+	EntityId string `pulumi:"entityId"`
+	// - Error URL of the Identity provider.
+	ErrorUrl string `pulumi:"errorUrl"`
+	// - Login URL of the Identity provider.
+	LoginUrl string `pulumi:"loginUrl"`
+	// - Logout URL of the Identity provider.
+	LogoutUrl string `pulumi:"logoutUrl"`
+	// - Name ID Policy format.
+	// * supported values:
+	// * `emailAddress`: -  Uses email address as NameID format
 	NameIdPolicyFormat string `pulumi:"nameIdPolicyFormat"`
 }
 
@@ -31612,11 +31620,19 @@ type GetSamlIdentityProviderV2IdpMetadataInput interface {
 }
 
 type GetSamlIdentityProviderV2IdpMetadataArgs struct {
-	Certificate        pulumi.StringInput `pulumi:"certificate"`
-	EntityId           pulumi.StringInput `pulumi:"entityId"`
-	ErrorUrl           pulumi.StringInput `pulumi:"errorUrl"`
-	LoginUrl           pulumi.StringInput `pulumi:"loginUrl"`
-	LogoutUrl          pulumi.StringInput `pulumi:"logoutUrl"`
+	// - Certificate for verification.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// - Entity Identifier of Identity provider.
+	EntityId pulumi.StringInput `pulumi:"entityId"`
+	// - Error URL of the Identity provider.
+	ErrorUrl pulumi.StringInput `pulumi:"errorUrl"`
+	// - Login URL of the Identity provider.
+	LoginUrl pulumi.StringInput `pulumi:"loginUrl"`
+	// - Logout URL of the Identity provider.
+	LogoutUrl pulumi.StringInput `pulumi:"logoutUrl"`
+	// - Name ID Policy format.
+	// * supported values:
+	// * `emailAddress`: -  Uses email address as NameID format
 	NameIdPolicyFormat pulumi.StringInput `pulumi:"nameIdPolicyFormat"`
 }
 
@@ -31671,26 +31687,34 @@ func (o GetSamlIdentityProviderV2IdpMetadataOutput) ToGetSamlIdentityProviderV2I
 	return o
 }
 
+// - Certificate for verification.
 func (o GetSamlIdentityProviderV2IdpMetadataOutput) Certificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2IdpMetadata) string { return v.Certificate }).(pulumi.StringOutput)
 }
 
+// - Entity Identifier of Identity provider.
 func (o GetSamlIdentityProviderV2IdpMetadataOutput) EntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2IdpMetadata) string { return v.EntityId }).(pulumi.StringOutput)
 }
 
+// - Error URL of the Identity provider.
 func (o GetSamlIdentityProviderV2IdpMetadataOutput) ErrorUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2IdpMetadata) string { return v.ErrorUrl }).(pulumi.StringOutput)
 }
 
+// - Login URL of the Identity provider.
 func (o GetSamlIdentityProviderV2IdpMetadataOutput) LoginUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2IdpMetadata) string { return v.LoginUrl }).(pulumi.StringOutput)
 }
 
+// - Logout URL of the Identity provider.
 func (o GetSamlIdentityProviderV2IdpMetadataOutput) LogoutUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2IdpMetadata) string { return v.LogoutUrl }).(pulumi.StringOutput)
 }
 
+// - Name ID Policy format.
+// * supported values:
+// * `emailAddress`: -  Uses email address as NameID format
 func (o GetSamlIdentityProviderV2IdpMetadataOutput) NameIdPolicyFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2IdpMetadata) string { return v.NameIdPolicyFormat }).(pulumi.StringOutput)
 }
@@ -31716,19 +31740,28 @@ func (o GetSamlIdentityProviderV2IdpMetadataArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetSamlIdentityProvidersV2IdentityProvider struct {
-	CreatedBy               string                                                  `pulumi:"createdBy"`
-	CreatedTime             string                                                  `pulumi:"createdTime"`
-	CustomAttributes        []string                                                `pulumi:"customAttributes"`
-	EmailAttribute          string                                                  `pulumi:"emailAttribute"`
-	EntityIssuer            string                                                  `pulumi:"entityIssuer"`
-	ExtId                   string                                                  `pulumi:"extId"`
-	GroupsAttribute         string                                                  `pulumi:"groupsAttribute"`
-	GroupsDelim             string                                                  `pulumi:"groupsDelim"`
-	IdpMetadatas            []GetSamlIdentityProvidersV2IdentityProviderIdpMetadata `pulumi:"idpMetadatas"`
-	IsSignedAuthnReqEnabled bool                                                    `pulumi:"isSignedAuthnReqEnabled"`
-	LastUpdatedTime         string                                                  `pulumi:"lastUpdatedTime"`
-	Name                    string                                                  `pulumi:"name"`
-	UsernameAttribute       string                                                  `pulumi:"usernameAttribute"`
+	// - User or Service who created the SAML Identity Provider.
+	CreatedBy string `pulumi:"createdBy"`
+	// - Creation time of the SAML Identity Provider.
+	CreatedTime      string   `pulumi:"createdTime"`
+	CustomAttributes []string `pulumi:"customAttributes"`
+	EmailAttribute   string   `pulumi:"emailAttribute"`
+	// - It will be used as Issuer in SAML authnRequest.
+	EntityIssuer string `pulumi:"entityIssuer"`
+	// The External Identifier of the User Group.
+	ExtId           string `pulumi:"extId"`
+	GroupsAttribute string `pulumi:"groupsAttribute"`
+	// - Delimiter is used to split the value of attribute into multiple groups.
+	GroupsDelim string `pulumi:"groupsDelim"`
+	// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	IdpMetadatas []GetSamlIdentityProvidersV2IdentityProviderIdpMetadata `pulumi:"idpMetadatas"`
+	// - Flag indicating signing of SAML authnRequests.
+	IsSignedAuthnReqEnabled bool `pulumi:"isSignedAuthnReqEnabled"`
+	// - Last updated time of the SAML Identity Provider.
+	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
+	// - Unique name of the IDP.
+	Name              string `pulumi:"name"`
+	UsernameAttribute string `pulumi:"usernameAttribute"`
 }
 
 // GetSamlIdentityProvidersV2IdentityProviderInput is an input type that accepts GetSamlIdentityProvidersV2IdentityProviderArgs and GetSamlIdentityProvidersV2IdentityProviderOutput values.
@@ -31743,19 +31776,28 @@ type GetSamlIdentityProvidersV2IdentityProviderInput interface {
 }
 
 type GetSamlIdentityProvidersV2IdentityProviderArgs struct {
-	CreatedBy               pulumi.StringInput                                              `pulumi:"createdBy"`
-	CreatedTime             pulumi.StringInput                                              `pulumi:"createdTime"`
-	CustomAttributes        pulumi.StringArrayInput                                         `pulumi:"customAttributes"`
-	EmailAttribute          pulumi.StringInput                                              `pulumi:"emailAttribute"`
-	EntityIssuer            pulumi.StringInput                                              `pulumi:"entityIssuer"`
-	ExtId                   pulumi.StringInput                                              `pulumi:"extId"`
-	GroupsAttribute         pulumi.StringInput                                              `pulumi:"groupsAttribute"`
-	GroupsDelim             pulumi.StringInput                                              `pulumi:"groupsDelim"`
-	IdpMetadatas            GetSamlIdentityProvidersV2IdentityProviderIdpMetadataArrayInput `pulumi:"idpMetadatas"`
-	IsSignedAuthnReqEnabled pulumi.BoolInput                                                `pulumi:"isSignedAuthnReqEnabled"`
-	LastUpdatedTime         pulumi.StringInput                                              `pulumi:"lastUpdatedTime"`
-	Name                    pulumi.StringInput                                              `pulumi:"name"`
-	UsernameAttribute       pulumi.StringInput                                              `pulumi:"usernameAttribute"`
+	// - User or Service who created the SAML Identity Provider.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// - Creation time of the SAML Identity Provider.
+	CreatedTime      pulumi.StringInput      `pulumi:"createdTime"`
+	CustomAttributes pulumi.StringArrayInput `pulumi:"customAttributes"`
+	EmailAttribute   pulumi.StringInput      `pulumi:"emailAttribute"`
+	// - It will be used as Issuer in SAML authnRequest.
+	EntityIssuer pulumi.StringInput `pulumi:"entityIssuer"`
+	// The External Identifier of the User Group.
+	ExtId           pulumi.StringInput `pulumi:"extId"`
+	GroupsAttribute pulumi.StringInput `pulumi:"groupsAttribute"`
+	// - Delimiter is used to split the value of attribute into multiple groups.
+	GroupsDelim pulumi.StringInput `pulumi:"groupsDelim"`
+	// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	IdpMetadatas GetSamlIdentityProvidersV2IdentityProviderIdpMetadataArrayInput `pulumi:"idpMetadatas"`
+	// - Flag indicating signing of SAML authnRequests.
+	IsSignedAuthnReqEnabled pulumi.BoolInput `pulumi:"isSignedAuthnReqEnabled"`
+	// - Last updated time of the SAML Identity Provider.
+	LastUpdatedTime pulumi.StringInput `pulumi:"lastUpdatedTime"`
+	// - Unique name of the IDP.
+	Name              pulumi.StringInput `pulumi:"name"`
+	UsernameAttribute pulumi.StringInput `pulumi:"usernameAttribute"`
 }
 
 func (GetSamlIdentityProvidersV2IdentityProviderArgs) ElementType() reflect.Type {
@@ -31809,10 +31851,12 @@ func (o GetSamlIdentityProvidersV2IdentityProviderOutput) ToGetSamlIdentityProvi
 	return o
 }
 
+// - User or Service who created the SAML Identity Provider.
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// - Creation time of the SAML Identity Provider.
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -31825,10 +31869,12 @@ func (o GetSamlIdentityProvidersV2IdentityProviderOutput) EmailAttribute() pulum
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.EmailAttribute }).(pulumi.StringOutput)
 }
 
+// - It will be used as Issuer in SAML authnRequest.
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) EntityIssuer() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.EntityIssuer }).(pulumi.StringOutput)
 }
 
+// The External Identifier of the User Group.
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.ExtId }).(pulumi.StringOutput)
 }
@@ -31837,24 +31883,29 @@ func (o GetSamlIdentityProvidersV2IdentityProviderOutput) GroupsAttribute() pulu
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.GroupsAttribute }).(pulumi.StringOutput)
 }
 
+// - Delimiter is used to split the value of attribute into multiple groups.
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) GroupsDelim() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.GroupsDelim }).(pulumi.StringOutput)
 }
 
+// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) IdpMetadatas() GetSamlIdentityProvidersV2IdentityProviderIdpMetadataArrayOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) []GetSamlIdentityProvidersV2IdentityProviderIdpMetadata {
 		return v.IdpMetadatas
 	}).(GetSamlIdentityProvidersV2IdentityProviderIdpMetadataArrayOutput)
 }
 
+// - Flag indicating signing of SAML authnRequests.
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) IsSignedAuthnReqEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) bool { return v.IsSignedAuthnReqEnabled }).(pulumi.BoolOutput)
 }
 
+// - Last updated time of the SAML Identity Provider.
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) LastUpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
+// - Unique name of the IDP.
 func (o GetSamlIdentityProvidersV2IdentityProviderOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProvider) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -31884,11 +31935,18 @@ func (o GetSamlIdentityProvidersV2IdentityProviderArrayOutput) Index(i pulumi.In
 }
 
 type GetSamlIdentityProvidersV2IdentityProviderIdpMetadata struct {
-	Certificate        string `pulumi:"certificate"`
-	EntityId           string `pulumi:"entityId"`
-	ErrorUrl           string `pulumi:"errorUrl"`
-	LoginUrl           string `pulumi:"loginUrl"`
-	LogoutUrl          string `pulumi:"logoutUrl"`
+	// - Certificate for verification.
+	Certificate string `pulumi:"certificate"`
+	// - Entity Identifier of Identity provider.
+	EntityId string `pulumi:"entityId"`
+	// - Error URL of the Identity provider.
+	ErrorUrl string `pulumi:"errorUrl"`
+	// - Login URL of the Identity provider.
+	LoginUrl string `pulumi:"loginUrl"`
+	// - Logout URL of the Identity provider.
+	LogoutUrl string `pulumi:"logoutUrl"`
+	// - Name ID Policy format. supported values:
+	// * `emailAddress`: -  Uses email address as NameID format
 	NameIdPolicyFormat string `pulumi:"nameIdPolicyFormat"`
 }
 
@@ -31904,11 +31962,18 @@ type GetSamlIdentityProvidersV2IdentityProviderIdpMetadataInput interface {
 }
 
 type GetSamlIdentityProvidersV2IdentityProviderIdpMetadataArgs struct {
-	Certificate        pulumi.StringInput `pulumi:"certificate"`
-	EntityId           pulumi.StringInput `pulumi:"entityId"`
-	ErrorUrl           pulumi.StringInput `pulumi:"errorUrl"`
-	LoginUrl           pulumi.StringInput `pulumi:"loginUrl"`
-	LogoutUrl          pulumi.StringInput `pulumi:"logoutUrl"`
+	// - Certificate for verification.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// - Entity Identifier of Identity provider.
+	EntityId pulumi.StringInput `pulumi:"entityId"`
+	// - Error URL of the Identity provider.
+	ErrorUrl pulumi.StringInput `pulumi:"errorUrl"`
+	// - Login URL of the Identity provider.
+	LoginUrl pulumi.StringInput `pulumi:"loginUrl"`
+	// - Logout URL of the Identity provider.
+	LogoutUrl pulumi.StringInput `pulumi:"logoutUrl"`
+	// - Name ID Policy format. supported values:
+	// * `emailAddress`: -  Uses email address as NameID format
 	NameIdPolicyFormat pulumi.StringInput `pulumi:"nameIdPolicyFormat"`
 }
 
@@ -31963,26 +32028,33 @@ func (o GetSamlIdentityProvidersV2IdentityProviderIdpMetadataOutput) ToGetSamlId
 	return o
 }
 
+// - Certificate for verification.
 func (o GetSamlIdentityProvidersV2IdentityProviderIdpMetadataOutput) Certificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProviderIdpMetadata) string { return v.Certificate }).(pulumi.StringOutput)
 }
 
+// - Entity Identifier of Identity provider.
 func (o GetSamlIdentityProvidersV2IdentityProviderIdpMetadataOutput) EntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProviderIdpMetadata) string { return v.EntityId }).(pulumi.StringOutput)
 }
 
+// - Error URL of the Identity provider.
 func (o GetSamlIdentityProvidersV2IdentityProviderIdpMetadataOutput) ErrorUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProviderIdpMetadata) string { return v.ErrorUrl }).(pulumi.StringOutput)
 }
 
+// - Login URL of the Identity provider.
 func (o GetSamlIdentityProvidersV2IdentityProviderIdpMetadataOutput) LoginUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProviderIdpMetadata) string { return v.LoginUrl }).(pulumi.StringOutput)
 }
 
+// - Logout URL of the Identity provider.
 func (o GetSamlIdentityProvidersV2IdentityProviderIdpMetadataOutput) LogoutUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProviderIdpMetadata) string { return v.LogoutUrl }).(pulumi.StringOutput)
 }
 
+// - Name ID Policy format. supported values:
+// * `emailAddress`: -  Uses email address as NameID format
 func (o GetSamlIdentityProvidersV2IdentityProviderIdpMetadataOutput) NameIdPolicyFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProvidersV2IdentityProviderIdpMetadata) string { return v.NameIdPolicyFormat }).(pulumi.StringOutput)
 }
@@ -37604,8 +37676,10 @@ func (o GetStaticRoutesStatusResourceStaticRoutesListNexthopArrayOutput) Index(i
 }
 
 type GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecArgs and GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecOutput values.
@@ -37620,8 +37694,10 @@ type GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecInput interface {
 }
 
 type GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecArgs) ElementType() reflect.Type {
@@ -37675,10 +37751,12 @@ func (o GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecOutput) ToGetSto
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -37704,8 +37782,10 @@ func (o GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecArrayOutput) Ind
 }
 
 type GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecArgs and GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecOutput values.
@@ -37720,8 +37800,10 @@ type GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecInput interface
 }
 
 type GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecArgs) ElementType() reflect.Type {
@@ -37775,10 +37857,12 @@ func (o GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecOutput) ToGe
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -37804,8 +37888,10 @@ func (o GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecArrayOutput)
 }
 
 type GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecArgs and GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecOutput values.
@@ -37820,8 +37906,10 @@ type GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecInput interfac
 }
 
 type GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecArgs) ElementType() reflect.Type {
@@ -37875,10 +37963,12 @@ func (o GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecOutput) ToG
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -37904,8 +37994,10 @@ func (o GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecArrayOutput
 }
 
 type GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpArgs and GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpOutput values.
@@ -37920,8 +38012,10 @@ type GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpInput interface {
 }
 
 type GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpArgs) ElementType() reflect.Type {
@@ -37975,10 +38069,12 @@ func (o GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpOutput) ToGetStora
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38004,8 +38100,10 @@ func (o GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpArrayOutput) Index
 }
 
 type GetStorageContainerStatsInfoV2ControllerNumIop struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerNumIopInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerNumIopArgs and GetStorageContainerStatsInfoV2ControllerNumIopOutput values.
@@ -38020,8 +38118,10 @@ type GetStorageContainerStatsInfoV2ControllerNumIopInput interface {
 }
 
 type GetStorageContainerStatsInfoV2ControllerNumIopArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerNumIopArgs) ElementType() reflect.Type {
@@ -38075,10 +38175,12 @@ func (o GetStorageContainerStatsInfoV2ControllerNumIopOutput) ToGetStorageContai
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerNumIopOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerNumIop) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerNumIopOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerNumIop) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38104,8 +38206,10 @@ func (o GetStorageContainerStatsInfoV2ControllerNumIopArrayOutput) Index(i pulum
 }
 
 type GetStorageContainerStatsInfoV2ControllerNumReadIop struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerNumReadIopInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerNumReadIopArgs and GetStorageContainerStatsInfoV2ControllerNumReadIopOutput values.
@@ -38120,8 +38224,10 @@ type GetStorageContainerStatsInfoV2ControllerNumReadIopInput interface {
 }
 
 type GetStorageContainerStatsInfoV2ControllerNumReadIopArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerNumReadIopArgs) ElementType() reflect.Type {
@@ -38175,10 +38281,12 @@ func (o GetStorageContainerStatsInfoV2ControllerNumReadIopOutput) ToGetStorageCo
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerNumReadIopOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerNumReadIop) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerNumReadIopOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerNumReadIop) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38204,8 +38312,10 @@ func (o GetStorageContainerStatsInfoV2ControllerNumReadIopArrayOutput) Index(i p
 }
 
 type GetStorageContainerStatsInfoV2ControllerNumWriteIop struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerNumWriteIopInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerNumWriteIopArgs and GetStorageContainerStatsInfoV2ControllerNumWriteIopOutput values.
@@ -38220,8 +38330,10 @@ type GetStorageContainerStatsInfoV2ControllerNumWriteIopInput interface {
 }
 
 type GetStorageContainerStatsInfoV2ControllerNumWriteIopArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerNumWriteIopArgs) ElementType() reflect.Type {
@@ -38275,10 +38387,12 @@ func (o GetStorageContainerStatsInfoV2ControllerNumWriteIopOutput) ToGetStorageC
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerNumWriteIopOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerNumWriteIop) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerNumWriteIopOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerNumWriteIop) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38304,8 +38418,10 @@ func (o GetStorageContainerStatsInfoV2ControllerNumWriteIopArrayOutput) Index(i 
 }
 
 type GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpArgs and GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpOutput values.
@@ -38320,8 +38436,10 @@ type GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpInput interface {
 }
 
 type GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpArgs) ElementType() reflect.Type {
@@ -38375,10 +38493,12 @@ func (o GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpOutput) ToGetS
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38404,8 +38524,10 @@ func (o GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpArrayOutput) I
 }
 
 type GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmArgs and GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmOutput values.
@@ -38420,8 +38542,10 @@ type GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmInput interface {
 }
 
 type GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmArgs) ElementType() reflect.Type {
@@ -38475,10 +38599,12 @@ func (o GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmOutput) ToGetStora
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38504,8 +38630,10 @@ func (o GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmArrayOutput) Index
 }
 
 type GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpArgs and GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpOutput values.
@@ -38520,8 +38648,10 @@ type GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpInput interface 
 }
 
 type GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpArgs) ElementType() reflect.Type {
@@ -38575,10 +38705,12 @@ func (o GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpOutput) ToGet
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38604,8 +38736,10 @@ func (o GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpArrayOutput) 
 }
 
 type GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmArgs and GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmOutput values.
@@ -38620,8 +38754,10 @@ type GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmInput interface {
 }
 
 type GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmArgs) ElementType() reflect.Type {
@@ -38675,10 +38811,12 @@ func (o GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmOutput) ToGetStor
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38704,8 +38842,10 @@ func (o GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmArrayOutput) Inde
 }
 
 type GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmArgs and GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmOutput values.
@@ -38720,8 +38860,10 @@ type GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmInput interfa
 }
 
 type GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmArgs) ElementType() reflect.Type {
@@ -38775,10 +38917,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmOutput) To
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38804,8 +38948,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmArrayOutpu
 }
 
 type GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmArgs and GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmOutput values.
@@ -38820,8 +38966,10 @@ type GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmInput i
 }
 
 type GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmArgs) ElementType() reflect.Type {
@@ -38875,12 +39023,14 @@ func (o GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmOutp
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm) string {
 		return v.Timestamp
 	}).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -38906,8 +39056,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmArra
 }
 
 type GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmArgs and GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmOutput values.
@@ -38922,8 +39074,10 @@ type GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmInput interfa
 }
 
 type GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmArgs) ElementType() reflect.Type {
@@ -38977,10 +39131,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmOutput) To
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39006,8 +39162,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmArrayOutpu
 }
 
 type GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmArgs and GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmOutput values.
@@ -39022,8 +39180,10 @@ type GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmInput
 }
 
 type GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmArgs) ElementType() reflect.Type {
@@ -39077,12 +39237,14 @@ func (o GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmOu
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpm) string {
 		return v.Timestamp
 	}).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39108,8 +39270,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmAr
 }
 
 type GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteArgs and GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteOutput values.
@@ -39124,8 +39288,10 @@ type GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteInput in
 }
 
 type GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteArgs) ElementType() reflect.Type {
@@ -39179,10 +39345,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteOutpu
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39208,8 +39376,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteArray
 }
 
 type GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteArgs and GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteOutput values.
@@ -39224,8 +39394,10 @@ type GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteInput int
 }
 
 type GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteArgs) ElementType() reflect.Type {
@@ -39279,10 +39451,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteOutput
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39308,8 +39482,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteArrayO
 }
 
 type GetStorageContainerStatsInfoV2DataReductionSavedByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionSavedByteInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionSavedByteArgs and GetStorageContainerStatsInfoV2DataReductionSavedByteOutput values.
@@ -39324,8 +39500,10 @@ type GetStorageContainerStatsInfoV2DataReductionSavedByteInput interface {
 }
 
 type GetStorageContainerStatsInfoV2DataReductionSavedByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionSavedByteArgs) ElementType() reflect.Type {
@@ -39379,10 +39557,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionSavedByteOutput) ToGetStorage
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionSavedByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionSavedByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionSavedByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionSavedByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39408,8 +39588,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionSavedByteArrayOutput) Index(i
 }
 
 type GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmArgs and GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmOutput values.
@@ -39424,8 +39606,10 @@ type GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmInput interface {
 }
 
 type GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmArgs) ElementType() reflect.Type {
@@ -39479,10 +39663,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmOutput) ToGetSt
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39508,8 +39694,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmArrayOutput) In
 }
 
 type GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmArgs and GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmOutput values.
@@ -39524,8 +39712,10 @@ type GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmInput inte
 }
 
 type GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmArgs) ElementType() reflect.Type {
@@ -39579,10 +39769,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmOutput)
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39608,8 +39800,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmArrayOu
 }
 
 type GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmArgs and GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmOutput values.
@@ -39624,8 +39818,10 @@ type GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmInput
 }
 
 type GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmArgs) ElementType() reflect.Type {
@@ -39679,12 +39875,14 @@ func (o GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmOu
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpm) string {
 		return v.Timestamp
 	}).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39710,8 +39908,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmAr
 }
 
 type GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmArgs and GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmOutput values.
@@ -39726,8 +39926,10 @@ type GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmInput interfa
 }
 
 type GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmArgs) ElementType() reflect.Type {
@@ -39781,10 +39983,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmOutput) To
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39810,8 +40014,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmArrayOutpu
 }
 
 type GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteInput is an input type that accepts GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteArgs and GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteOutput values.
@@ -39826,8 +40032,10 @@ type GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteInput interf
 }
 
 type GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteArgs) ElementType() reflect.Type {
@@ -39881,10 +40089,12 @@ func (o GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteOutput) T
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -39910,8 +40120,10 @@ func (o GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteArrayOutp
 }
 
 type GetStorageContainerStatsInfoV2Health struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2HealthInput is an input type that accepts GetStorageContainerStatsInfoV2HealthArgs and GetStorageContainerStatsInfoV2HealthOutput values.
@@ -39926,8 +40138,10 @@ type GetStorageContainerStatsInfoV2HealthInput interface {
 }
 
 type GetStorageContainerStatsInfoV2HealthArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2HealthArgs) ElementType() reflect.Type {
@@ -39981,10 +40195,12 @@ func (o GetStorageContainerStatsInfoV2HealthOutput) ToGetStorageContainerStatsIn
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2HealthOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Health) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2HealthOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2Health) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -40110,8 +40326,10 @@ func (o GetStorageContainerStatsInfoV2LinkArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteInput is an input type that accepts GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteArgs and GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteOutput values.
@@ -40126,8 +40344,10 @@ type GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteInput interface
 }
 
 type GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteArgs) ElementType() reflect.Type {
@@ -40181,10 +40401,12 @@ func (o GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteOutput) ToGe
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -40210,8 +40432,10 @@ func (o GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteArrayOutput)
 }
 
 type GetStorageContainerStatsInfoV2StorageCapacityByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2StorageCapacityByteInput is an input type that accepts GetStorageContainerStatsInfoV2StorageCapacityByteArgs and GetStorageContainerStatsInfoV2StorageCapacityByteOutput values.
@@ -40226,8 +40450,10 @@ type GetStorageContainerStatsInfoV2StorageCapacityByteInput interface {
 }
 
 type GetStorageContainerStatsInfoV2StorageCapacityByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2StorageCapacityByteArgs) ElementType() reflect.Type {
@@ -40281,10 +40507,12 @@ func (o GetStorageContainerStatsInfoV2StorageCapacityByteOutput) ToGetStorageCon
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2StorageCapacityByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageCapacityByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2StorageCapacityByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageCapacityByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -40310,8 +40538,10 @@ func (o GetStorageContainerStatsInfoV2StorageCapacityByteArrayOutput) Index(i pu
 }
 
 type GetStorageContainerStatsInfoV2StorageFreeByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2StorageFreeByteInput is an input type that accepts GetStorageContainerStatsInfoV2StorageFreeByteArgs and GetStorageContainerStatsInfoV2StorageFreeByteOutput values.
@@ -40326,8 +40556,10 @@ type GetStorageContainerStatsInfoV2StorageFreeByteInput interface {
 }
 
 type GetStorageContainerStatsInfoV2StorageFreeByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2StorageFreeByteArgs) ElementType() reflect.Type {
@@ -40381,10 +40613,12 @@ func (o GetStorageContainerStatsInfoV2StorageFreeByteOutput) ToGetStorageContain
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2StorageFreeByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageFreeByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2StorageFreeByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageFreeByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -40410,8 +40644,10 @@ func (o GetStorageContainerStatsInfoV2StorageFreeByteArrayOutput) Index(i pulumi
 }
 
 type GetStorageContainerStatsInfoV2StorageReplicationFactor struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2StorageReplicationFactorInput is an input type that accepts GetStorageContainerStatsInfoV2StorageReplicationFactorArgs and GetStorageContainerStatsInfoV2StorageReplicationFactorOutput values.
@@ -40426,8 +40662,10 @@ type GetStorageContainerStatsInfoV2StorageReplicationFactorInput interface {
 }
 
 type GetStorageContainerStatsInfoV2StorageReplicationFactorArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2StorageReplicationFactorArgs) ElementType() reflect.Type {
@@ -40481,10 +40719,12 @@ func (o GetStorageContainerStatsInfoV2StorageReplicationFactorOutput) ToGetStora
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2StorageReplicationFactorOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageReplicationFactor) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2StorageReplicationFactorOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageReplicationFactor) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -40510,8 +40750,10 @@ func (o GetStorageContainerStatsInfoV2StorageReplicationFactorArrayOutput) Index
 }
 
 type GetStorageContainerStatsInfoV2StorageReservedCapacityByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2StorageReservedCapacityByteInput is an input type that accepts GetStorageContainerStatsInfoV2StorageReservedCapacityByteArgs and GetStorageContainerStatsInfoV2StorageReservedCapacityByteOutput values.
@@ -40526,8 +40768,10 @@ type GetStorageContainerStatsInfoV2StorageReservedCapacityByteInput interface {
 }
 
 type GetStorageContainerStatsInfoV2StorageReservedCapacityByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2StorageReservedCapacityByteArgs) ElementType() reflect.Type {
@@ -40581,10 +40825,12 @@ func (o GetStorageContainerStatsInfoV2StorageReservedCapacityByteOutput) ToGetSt
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2StorageReservedCapacityByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageReservedCapacityByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2StorageReservedCapacityByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageReservedCapacityByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -40610,8 +40856,10 @@ func (o GetStorageContainerStatsInfoV2StorageReservedCapacityByteArrayOutput) In
 }
 
 type GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteInput is an input type that accepts GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteArgs and GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteOutput values.
@@ -40626,8 +40874,10 @@ type GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteInput interface {
 }
 
 type GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteArgs) ElementType() reflect.Type {
@@ -40681,10 +40931,12 @@ func (o GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteOutput) ToGetSt
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -40710,8 +40962,10 @@ func (o GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteArrayOutput) In
 }
 
 type GetStorageContainerStatsInfoV2StorageTierSsdUsageByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2StorageTierSsdUsageByteInput is an input type that accepts GetStorageContainerStatsInfoV2StorageTierSsdUsageByteArgs and GetStorageContainerStatsInfoV2StorageTierSsdUsageByteOutput values.
@@ -40726,8 +40980,10 @@ type GetStorageContainerStatsInfoV2StorageTierSsdUsageByteInput interface {
 }
 
 type GetStorageContainerStatsInfoV2StorageTierSsdUsageByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2StorageTierSsdUsageByteArgs) ElementType() reflect.Type {
@@ -40781,10 +41037,12 @@ func (o GetStorageContainerStatsInfoV2StorageTierSsdUsageByteOutput) ToGetStorag
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2StorageTierSsdUsageByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageTierSsdUsageByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2StorageTierSsdUsageByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageTierSsdUsageByte) int { return v.Value }).(pulumi.IntOutput)
 }
@@ -40810,8 +41068,10 @@ func (o GetStorageContainerStatsInfoV2StorageTierSsdUsageByteArrayOutput) Index(
 }
 
 type GetStorageContainerStatsInfoV2StorageUsageByte struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp string `pulumi:"timestamp"`
-	Value     int    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value int `pulumi:"value"`
 }
 
 // GetStorageContainerStatsInfoV2StorageUsageByteInput is an input type that accepts GetStorageContainerStatsInfoV2StorageUsageByteArgs and GetStorageContainerStatsInfoV2StorageUsageByteOutput values.
@@ -40826,8 +41086,10 @@ type GetStorageContainerStatsInfoV2StorageUsageByteInput interface {
 }
 
 type GetStorageContainerStatsInfoV2StorageUsageByteArgs struct {
+	// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 	Timestamp pulumi.StringInput `pulumi:"timestamp"`
-	Value     pulumi.IntInput    `pulumi:"value"`
+	// Value of the stat at the recorded date and time in extended ISO-8601 format."
+	Value pulumi.IntInput `pulumi:"value"`
 }
 
 func (GetStorageContainerStatsInfoV2StorageUsageByteArgs) ElementType() reflect.Type {
@@ -40881,10 +41143,12 @@ func (o GetStorageContainerStatsInfoV2StorageUsageByteOutput) ToGetStorageContai
 	return o
 }
 
+// The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
 func (o GetStorageContainerStatsInfoV2StorageUsageByteOutput) Timestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageUsageByte) string { return v.Timestamp }).(pulumi.StringOutput)
 }
 
+// Value of the stat at the recorded date and time in extended ISO-8601 format."
 func (o GetStorageContainerStatsInfoV2StorageUsageByteOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v GetStorageContainerStatsInfoV2StorageUsageByte) int { return v.Value }).(pulumi.IntOutput)
 }

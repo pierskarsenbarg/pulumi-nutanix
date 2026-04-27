@@ -10,6 +10,34 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a Nutanix Virtual Machine resource to Create a virtual machine clone.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// using Nutanix = Pulumi.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var vm_list = Nutanix.GetVirtualMachinesV2.Invoke();
+    /// 
+    ///     var vm1 = new Nutanix.VmCloneV2("vm1", new()
+    ///     {
+    ///         VmExtId = vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId)),
+    ///         Name = "test-dou",
+    ///         NumCoresPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         MemorySizeMib = 2048,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/vmCloneV2:VmCloneV2")]
     public partial class VmCloneV2 : global::Pulumi.CustomResource
     {
@@ -19,6 +47,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("biosUuid")]
         public Output<string> BiosUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
         [Output("bootConfigs")]
         public Output<ImmutableArray<Outputs.VmCloneV2BootConfig>> BootConfigs { get; private set; } = null!;
 
@@ -52,6 +83,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("gpuses")]
         public Output<ImmutableArray<Outputs.VmCloneV2Gpus>> Gpuses { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        /// </summary>
         [Output("guestCustomizations")]
         public Output<ImmutableArray<Outputs.VmCloneV2GuestCustomization>> GuestCustomizations { get; private set; } = null!;
 
@@ -100,21 +134,36 @@ namespace PiersKarsenbarg.Nutanix
         [Output("memorySizeBytes")]
         public Output<int> MemorySizeBytes { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The name for the vm.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) NICs attached to the VM.
+        /// </summary>
         [Output("nics")]
         public Output<ImmutableArray<Outputs.VmCloneV2Nic>> Nics { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Number of cores per socket.
+        /// </summary>
         [Output("numCoresPerSocket")]
         public Output<int> NumCoresPerSocket { get; private set; } = null!;
 
         [Output("numNumaNodes")]
         public Output<int> NumNumaNodes { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Number of vCPU sockets.
+        /// </summary>
         [Output("numSockets")]
         public Output<int> NumSockets { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Number of threads per core.
+        /// </summary>
         [Output("numThreadsPerCore")]
         public Output<int> NumThreadsPerCore { get; private set; } = null!;
 
@@ -145,6 +194,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Output("vmExtId")]
         public Output<string> VmExtId { get; private set; } = null!;
 
@@ -200,6 +252,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("bootConfigs")]
         private InputList<Inputs.VmCloneV2BootConfigArgs>? _bootConfigs;
+
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigArgs> BootConfigs
         {
             get => _bootConfigs ?? (_bootConfigs = new InputList<Inputs.VmCloneV2BootConfigArgs>());
@@ -208,6 +264,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("guestCustomizations")]
         private InputList<Inputs.VmCloneV2GuestCustomizationArgs>? _guestCustomizations;
+
+        /// <summary>
+        /// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationArgs> GuestCustomizations
         {
             get => _guestCustomizations ?? (_guestCustomizations = new InputList<Inputs.VmCloneV2GuestCustomizationArgs>());
@@ -217,26 +277,45 @@ namespace PiersKarsenbarg.Nutanix
         [Input("memorySizeBytes")]
         public Input<int>? MemorySizeBytes { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name for the vm.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("nics")]
         private InputList<Inputs.VmCloneV2NicArgs>? _nics;
+
+        /// <summary>
+        /// - (Optional) NICs attached to the VM.
+        /// </summary>
         public InputList<Inputs.VmCloneV2NicArgs> Nics
         {
             get => _nics ?? (_nics = new InputList<Inputs.VmCloneV2NicArgs>());
             set => _nics = value;
         }
 
+        /// <summary>
+        /// - (Optional) Number of cores per socket.
+        /// </summary>
         [Input("numCoresPerSocket")]
         public Input<int>? NumCoresPerSocket { get; set; }
 
+        /// <summary>
+        /// - (Optional) Number of vCPU sockets.
+        /// </summary>
         [Input("numSockets")]
         public Input<int>? NumSockets { get; set; }
 
+        /// <summary>
+        /// - (Optional) Number of threads per core.
+        /// </summary>
         [Input("numThreadsPerCore")]
         public Input<int>? NumThreadsPerCore { get; set; }
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Input("vmExtId", required: true)]
         public Input<string> VmExtId { get; set; } = null!;
 
@@ -261,6 +340,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("bootConfigs")]
         private InputList<Inputs.VmCloneV2BootConfigGetArgs>? _bootConfigs;
+
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigGetArgs> BootConfigs
         {
             get => _bootConfigs ?? (_bootConfigs = new InputList<Inputs.VmCloneV2BootConfigGetArgs>());
@@ -329,6 +412,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("guestCustomizations")]
         private InputList<Inputs.VmCloneV2GuestCustomizationGetArgs>? _guestCustomizations;
+
+        /// <summary>
+        /// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationGetArgs> GuestCustomizations
         {
             get => _guestCustomizations ?? (_guestCustomizations = new InputList<Inputs.VmCloneV2GuestCustomizationGetArgs>());
@@ -395,26 +482,42 @@ namespace PiersKarsenbarg.Nutanix
         [Input("memorySizeBytes")]
         public Input<int>? MemorySizeBytes { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name for the vm.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("nics")]
         private InputList<Inputs.VmCloneV2NicGetArgs>? _nics;
+
+        /// <summary>
+        /// - (Optional) NICs attached to the VM.
+        /// </summary>
         public InputList<Inputs.VmCloneV2NicGetArgs> Nics
         {
             get => _nics ?? (_nics = new InputList<Inputs.VmCloneV2NicGetArgs>());
             set => _nics = value;
         }
 
+        /// <summary>
+        /// - (Optional) Number of cores per socket.
+        /// </summary>
         [Input("numCoresPerSocket")]
         public Input<int>? NumCoresPerSocket { get; set; }
 
         [Input("numNumaNodes")]
         public Input<int>? NumNumaNodes { get; set; }
 
+        /// <summary>
+        /// - (Optional) Number of vCPU sockets.
+        /// </summary>
         [Input("numSockets")]
         public Input<int>? NumSockets { get; set; }
 
+        /// <summary>
+        /// - (Optional) Number of threads per core.
+        /// </summary>
         [Input("numThreadsPerCore")]
         public Input<int>? NumThreadsPerCore { get; set; }
 
@@ -470,6 +573,9 @@ namespace PiersKarsenbarg.Nutanix
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Input("vmExtId")]
         public Input<string>? VmExtId { get; set; }
 

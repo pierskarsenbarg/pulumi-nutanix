@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("policies")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicyGetArgs>? _policies;
+
+        /// <summary>
+        /// Reference to a protection policy.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicyGetArgs> Policies
         {
             get => _policies ?? (_policies = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicyGetArgs>());

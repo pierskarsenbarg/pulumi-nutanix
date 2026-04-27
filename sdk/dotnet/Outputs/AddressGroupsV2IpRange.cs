@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class AddressGroupsV2IpRange
     {
+        /// <summary>
+        /// end ip
+        /// </summary>
         public readonly string? EndIp;
+        /// <summary>
+        /// start ip
+        /// </summary>
         public readonly string? StartIp;
 
         [OutputConstructor]

@@ -6,6 +6,25 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Nutanix Virtual Machine resource to Assign IP.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const nicAssignIp = new nutanix.VmNetworkDeviceAssignIpV2("nic_assign_ip", {
+ *     vmExtId: "246f6e8a-ff05-4057-af6b-b1fd23a46d7d",
+ *     extId: "eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b",
+ *     ipAddresses: [{
+ *         value: "10.10.10.10",
+ *         prefixLength: 32,
+ *     }],
+ * });
+ * ```
+ */
 export class VmNetworkDeviceAssignIpV2 extends pulumi.CustomResource {
     /**
      * Get an existing VmNetworkDeviceAssignIpV2 resource's state with the given name, ID, and optional extra
@@ -34,8 +53,17 @@ export class VmNetworkDeviceAssignIpV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmNetworkDeviceAssignIpV2.__pulumiType;
     }
 
+    /**
+     * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+     */
     declare public readonly extId: pulumi.Output<string>;
+    /**
+     * - (Optional) Ip config settings.
+     */
     declare public readonly ipAddresses: pulumi.Output<outputs.VmNetworkDeviceAssignIpV2IpAddress[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     declare public readonly vmExtId: pulumi.Output<string>;
 
     /**
@@ -75,8 +103,17 @@ export class VmNetworkDeviceAssignIpV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmNetworkDeviceAssignIpV2 resources.
  */
 export interface VmNetworkDeviceAssignIpV2State {
+    /**
+     * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Ip config settings.
+     */
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     vmExtId?: pulumi.Input<string>;
 }
 
@@ -84,7 +121,16 @@ export interface VmNetworkDeviceAssignIpV2State {
  * The set of arguments for constructing a VmNetworkDeviceAssignIpV2 resource.
  */
 export interface VmNetworkDeviceAssignIpV2Args {
+    /**
+     * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+     */
     extId: pulumi.Input<string>;
+    /**
+     * - (Optional) Ip config settings.
+     */
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[]>;
+    /**
+     * - (Required) The globally unique identifier of a VM. It should be of type UUID.
+     */
     vmExtId: pulumi.Input<string>;
 }

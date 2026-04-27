@@ -15,15 +15,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("cloudInitScripts")]
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs>? _cloudInitScripts;
+
+        /// <summary>
+        /// - (Optional) The script to use for cloud-init.
+        /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs> CloudInitScripts
         {
             get => _cloudInitScripts ?? (_cloudInitScripts = new InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs>());
             set => _cloudInitScripts = value;
         }
 
+        /// <summary>
+        /// - (Optional) Type of datasource.
+        /// Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+        /// Valid values are:
+        /// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+        /// </summary>
         [Input("datasourceType")]
         public Input<string>? DatasourceType { get; set; }
 
+        /// <summary>
+        /// The contents of the MetaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        /// </summary>
         [Input("metadata")]
         public Input<string>? Metadata { get; set; }
 

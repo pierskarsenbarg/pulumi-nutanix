@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo
     {
+        /// <summary>
+        /// Reference to a PCIe device.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference> PcieDeviceReferences;
 
         [OutputConstructor]

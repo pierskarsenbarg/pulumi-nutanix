@@ -27,9 +27,17 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Default: `True`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+        /// </summary>
         [Input("isActiveVersion")]
         public Input<bool>? IsActiveVersion { get; set; }
 
+        /// <summary>
+        /// Allow or disallow overriding guest customization during template deployment.
+        /// * `version_source.template_vm_reference`: (Optional) Template VM Reference
+        /// * `version_source.template_version_reference`: (Optional) Template Version Reference
+        /// </summary>
         [Input("isGcOverrideEnabled")]
         public Input<bool>? IsGcOverrideEnabled { get; set; }
 
@@ -44,20 +52,36 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("tenantId")]
         public Input<string>? TenantId { get; set; }
 
+        /// <summary>
+        /// The user defined description of a Template Version. Version description `Required` when updating a Template Version.
+        /// </summary>
         [Input("versionDescription")]
         public Input<string>? VersionDescription { get; set; }
 
+        /// <summary>
+        /// The user defined name of a Template Version. Version name `Required` when updating a Template Version.
+        /// </summary>
         [Input("versionName")]
         public Input<string>? VersionName { get; set; }
 
+        /// <summary>
+        /// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `TemplateVmReference` or `TemplateVersionReference` .
+        /// </summary>
         [Input("versionSource", required: true)]
         public Input<Inputs.TemplateV2TemplateVersionSpecVersionSourceArgs> VersionSource { get; set; } = null!;
 
+        /// <summary>
+        /// Source type of the template version created. It can be either a VM or a template version.
+        /// </summary>
         [Input("versionSourceDiscriminator")]
         public Input<string>? VersionSourceDiscriminator { get; set; }
 
         [Input("vmSpecs")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecArgs>? _vmSpecs;
+
+        /// <summary>
+        /// Specification for a VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecArgs> VmSpecs
         {
             get => _vmSpecs ?? (_vmSpecs = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecArgs>());
