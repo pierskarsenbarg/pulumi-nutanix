@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // ## fetch Network info for unconfigured node
-    ///     var node_network_info = new Nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info", new()
+    ///     var node_network_info = new Nutanix.Index.ClustersUnconfiguredNodeNetworksV2("node-network-info", new()
     ///     {
     ///         ExtId = "0005b6b0-0b0b-0000-0000-000000000000",
     ///         RequestType = "expand_cluster",

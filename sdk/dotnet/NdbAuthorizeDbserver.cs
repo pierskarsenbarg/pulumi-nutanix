@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbAuthorizeDbserver("name", new()
+    ///     var name = new Nutanix.Index.NdbAuthorizeDbserver("name", new()
     ///     {
     ///         TimeMachineName = "test-pg-inst",
     ///         DbserversIds = new[]

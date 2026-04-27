@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // resource to scale the database
-    ///     var scale = new Nutanix.NdbDatabaseScale("scale", new()
+    ///     var scale = new Nutanix.Index.NdbDatabaseScale("scale", new()
     ///     {
     ///         ApplicationType = "{{ Application Type }}",
     ///         DatabaseUuid = "{{ database_id }}",

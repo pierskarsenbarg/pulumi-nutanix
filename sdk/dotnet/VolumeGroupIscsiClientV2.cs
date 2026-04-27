@@ -19,12 +19,12 @@ namespace PiersKarsenbarg.Nutanix
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
-    /// using Nutanix = Pulumi.Nutanix;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     //list iscsi clients
-    ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
+    ///     var list_iscsi_clients = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke();
     /// 
     ///     // attach iscsi client to the volume group
     ///     var vgIscsiExample = new Nutanix.Index.VolumeGroupIscsiClientsV2("vg_iscsi_example", new()

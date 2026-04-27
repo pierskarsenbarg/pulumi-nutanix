@@ -21,18 +21,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get ssh credentials by cluster UUID
-        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyid = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get ssh credentials by cluster name
-        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyname = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
@@ -52,18 +52,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get ssh credentials by cluster UUID
-        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyid = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get ssh credentials by cluster name
-        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyname = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
@@ -83,18 +83,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get ssh credentials by cluster UUID
-        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyid = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get ssh credentials by cluster name
-        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyname = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });

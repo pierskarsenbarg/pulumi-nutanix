@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
+    ///     var protectionRuleTest = new Nutanix.Index.ProtectionRule("protection_rule_test", new()
     ///     {
     ///         Name = "test",
     ///         Description = "test",

@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			profile1, err := nutanix.LookupNdbProfile(ctx, &nutanix.LookupNdbProfileArgs{
+//			profile1, err := nutanix.GetNdbProfile(ctx, &nutanix.LookupNdbProfileArgs{
 //				ProfileType: pulumi.StringRef("Network"),
 //				ProfileName: pulumi.StringRef("TEST_NETWORK_PROFILE"),
 //			}, nil)

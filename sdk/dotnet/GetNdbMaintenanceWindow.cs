@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var window = Nutanix.GetNdbMaintenanceWindow.Invoke(new()
+        ///     var window = Nutanix.Index.GetNdbMaintenanceWindow.Invoke(new()
         ///     {
         ///         Id = "{{ maintenance_window_id }}",
         ///     });
@@ -45,11 +45,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var window = Nutanix.GetNdbMaintenanceWindow.Invoke(new()
+        ///     var window = Nutanix.Index.GetNdbMaintenanceWindow.Invoke(new()
         ///     {
         ///         Id = "{{ maintenance_window_id }}",
         ///     });
@@ -69,11 +69,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var window = Nutanix.GetNdbMaintenanceWindow.Invoke(new()
+        ///     var window = Nutanix.Index.GetNdbMaintenanceWindow.Invoke(new()
         ///     {
         ///         Id = "{{ maintenance_window_id }}",
         ///     });

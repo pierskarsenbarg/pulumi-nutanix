@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetProtectionPolicyV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetProtectionPolicyV2.Invoke(new()
         ///     {
         ///         ExtId = "00000000-0000-0000-0000-000000000000",
         ///     });
@@ -45,11 +45,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetProtectionPolicyV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetProtectionPolicyV2.Invoke(new()
         ///     {
         ///         ExtId = "00000000-0000-0000-0000-000000000000",
         ///     });
@@ -69,11 +69,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetProtectionPolicyV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetProtectionPolicyV2.Invoke(new()
         ///     {
         ///         ExtId = "00000000-0000-0000-0000-000000000000",
         ///     });

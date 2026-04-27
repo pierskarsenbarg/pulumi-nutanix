@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
+        ///     var snaps = Nutanix.Index.GetNdbSnapshot.Invoke(new()
         ///     {
         ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]
@@ -52,11 +52,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
+        ///     var snaps = Nutanix.Index.GetNdbSnapshot.Invoke(new()
         ///     {
         ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]
@@ -83,11 +83,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
+        ///     var snaps = Nutanix.Index.GetNdbSnapshot.Invoke(new()
         ///     {
         ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]

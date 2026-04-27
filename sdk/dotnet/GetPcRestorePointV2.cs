@@ -21,12 +21,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // this is PE based module, so use PE provider alias
-        ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
+        ///     var getRestorePoint = Nutanix.Index.GetPcRestorePointV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
         ///         RestoreSourceExtId = cluster_location.Id,
@@ -48,12 +48,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // this is PE based module, so use PE provider alias
-        ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
+        ///     var getRestorePoint = Nutanix.Index.GetPcRestorePointV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
         ///         RestoreSourceExtId = cluster_location.Id,
@@ -75,12 +75,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // this is PE based module, so use PE provider alias
-        ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
+        ///     var getRestorePoint = Nutanix.Index.GetPcRestorePointV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
         ///         RestoreSourceExtId = cluster_location.Id,

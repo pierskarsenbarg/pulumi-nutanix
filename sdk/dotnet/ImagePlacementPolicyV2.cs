@@ -21,7 +21,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.ImagePlacementPolicyV2("example", new()
+    ///     var example = new Nutanix.Index.ImagePlacementPolicyV2("example", new()
     ///     {
     ///         Name = "image_placement_policy",
     ///         Description = "%[2]s",

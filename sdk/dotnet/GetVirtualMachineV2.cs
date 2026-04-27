@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vm = Nutanix.GetVirtualMachineV2.Invoke(new()
+        ///     var vm = Nutanix.Index.GetVirtualMachineV2.Invoke(new()
         ///     {
         ///         ExtId = "{{ ext_id of vm }}",
         ///     });
@@ -45,11 +45,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vm = Nutanix.GetVirtualMachineV2.Invoke(new()
+        ///     var vm = Nutanix.Index.GetVirtualMachineV2.Invoke(new()
         ///     {
         ///         ExtId = "{{ ext_id of vm }}",
         ///     });
@@ -69,11 +69,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vm = Nutanix.GetVirtualMachineV2.Invoke(new()
+        ///     var vm = Nutanix.Index.GetVirtualMachineV2.Invoke(new()
         ///     {
         ///         ExtId = "{{ ext_id of vm }}",
         ///     });

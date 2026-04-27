@@ -28,18 +28,18 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// list all users
-//			_, err := nutanix.LookupUsersV2(ctx, &nutanix.LookupUsersV2Args{}, nil)
+//			_, err := nutanix.GetUsersV2(ctx, &nutanix.LookupUsersV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.LookupUsersV2(ctx, &nutanix.LookupUsersV2Args{
+//			_, err = nutanix.GetUsersV2(ctx, &nutanix.LookupUsersV2Args{
 //				Filter: pulumi.StringRef("username eq 'username-example'"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
 //			// list users of user_type SERVICE_ACCOUNT
-//			_, err = nutanix.LookupUsersV2(ctx, &nutanix.LookupUsersV2Args{
+//			_, err = nutanix.GetUsersV2(ctx, &nutanix.LookupUsersV2Args{
 //				Filter: pulumi.StringRef("userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'"),
 //			}, nil)
 //			if err != nil {

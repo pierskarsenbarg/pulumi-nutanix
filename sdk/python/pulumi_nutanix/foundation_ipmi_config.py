@@ -204,7 +204,47 @@ class FoundationIpmiConfig(pulumi.CustomResource):
                  ipmi_user: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a FoundationIpmiConfig resource with the given unique name, props, and options.
+        Configures IPMI IP address on BMC of nodes.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        impi_1 = nutanix.FoundationIpmiConfig("impi-1",
+            ipmi_user="username",
+            ipmi_netmask="10.xx.xx.xx",
+            blocks=[{
+                "nodes": [
+                    {
+                        "ipmi_mac": "ff:ff:ff:ff:ff:ff",
+                        "ipmi_configure_now": True,
+                        "ipmi_ip": "10.xx.xx.xx",
+                    },
+                    {
+                        "ipmi_mac": "ff:ff:ff:ff:ff:ff",
+                        "ipmi_configure_now": True,
+                        "ipmi_ip": "10.xx.xx.xx",
+                    },
+                ],
+                "block_id": "xyz",
+            }],
+            ipmi_gateway="10.xx.xx.xx",
+            ipmi_password="XXXXX")
+        ```
+
+        ## Error
+
+        Incase of error, terraform will error out and display error for every failed ipmi configuration respective to its ipmi_ip.
+
+        ## lifecycle
+
+        * `Update` : - Resource will trigger new resource create call for any kind of update in resource block.
+        * `Delete` : - Delete will be a soft delete.
+
+        See detailed information in [Nutanix Foundation IPMI Config](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzNzI-configure-bmc-i-pv4).
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -221,7 +261,47 @@ class FoundationIpmiConfig(pulumi.CustomResource):
                  args: FoundationIpmiConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a FoundationIpmiConfig resource with the given unique name, props, and options.
+        Configures IPMI IP address on BMC of nodes.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        impi_1 = nutanix.FoundationIpmiConfig("impi-1",
+            ipmi_user="username",
+            ipmi_netmask="10.xx.xx.xx",
+            blocks=[{
+                "nodes": [
+                    {
+                        "ipmi_mac": "ff:ff:ff:ff:ff:ff",
+                        "ipmi_configure_now": True,
+                        "ipmi_ip": "10.xx.xx.xx",
+                    },
+                    {
+                        "ipmi_mac": "ff:ff:ff:ff:ff:ff",
+                        "ipmi_configure_now": True,
+                        "ipmi_ip": "10.xx.xx.xx",
+                    },
+                ],
+                "block_id": "xyz",
+            }],
+            ipmi_gateway="10.xx.xx.xx",
+            ipmi_password="XXXXX")
+        ```
+
+        ## Error
+
+        Incase of error, terraform will error out and display error for every failed ipmi configuration respective to its ipmi_ip.
+
+        ## lifecycle
+
+        * `Update` : - Resource will trigger new resource create call for any kind of update in resource block.
+        * `Delete` : - Delete will be a soft delete.
+
+        See detailed information in [Nutanix Foundation IPMI Config](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzNzI-configure-bmc-i-pv4).
+
 
         :param str resource_name: The name of the resource.
         :param FoundationIpmiConfigArgs args: The arguments to use to populate this resource's properties.

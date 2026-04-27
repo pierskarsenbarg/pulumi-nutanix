@@ -21,15 +21,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Fetch all PCs (Domain Managers)
-        ///     var pcs = Nutanix.GetPcsV2.Invoke();
+        ///     var pcs = Nutanix.Index.GetPcsV2.Invoke();
         /// 
         ///     // List all PCs (Domain Managers) with selected properties
-        ///     var pcs_select = Nutanix.GetPcsV2.Invoke(new()
+        ///     var pcs_select = Nutanix.Index.GetPcsV2.Invoke(new()
         ///     {
         ///         Select = "config,extId",
         ///     });
@@ -175,15 +175,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Fetch all PCs (Domain Managers)
-        ///     var pcs = Nutanix.GetPcsV2.Invoke();
+        ///     var pcs = Nutanix.Index.GetPcsV2.Invoke();
         /// 
         ///     // List all PCs (Domain Managers) with selected properties
-        ///     var pcs_select = Nutanix.GetPcsV2.Invoke(new()
+        ///     var pcs_select = Nutanix.Index.GetPcsV2.Invoke(new()
         ///     {
         ///         Select = "config,extId",
         ///     });
@@ -329,15 +329,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Fetch all PCs (Domain Managers)
-        ///     var pcs = Nutanix.GetPcsV2.Invoke();
+        ///     var pcs = Nutanix.Index.GetPcsV2.Invoke();
         /// 
         ///     // List all PCs (Domain Managers) with selected properties
-        ///     var pcs_select = Nutanix.GetPcsV2.Invoke(new()
+        ///     var pcs_select = Nutanix.Index.GetPcsV2.Invoke(new()
         ///     {
         ///         Select = "config,extId",
         ///     });

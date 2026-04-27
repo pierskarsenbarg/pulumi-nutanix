@@ -63,7 +63,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_ = nutanix.LookupNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
+//			_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
 //				NetworkSecurityRuleId: isolation.ID(),
 //			}, nil)
 //			return nil

@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupPcBackupTargetV2(ctx, &nutanix.LookupPcBackupTargetV2Args{
+//			_, err := nutanix.GetPcBackupTargetV2(ctx, &nutanix.LookupPcBackupTargetV2Args{
 //				DomainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
 //				ExtId:              "00062d3d-5d07-0da6-0000-000000028f57",
 //			}, nil)

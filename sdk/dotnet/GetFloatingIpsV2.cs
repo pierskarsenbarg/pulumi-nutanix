@@ -21,23 +21,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
+        ///     var floating_ips = Nutanix.Index.GetFloatingIpsV2.Invoke();
         /// 
-        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///     });
         /// 
-        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///         Limit = 10,
@@ -58,23 +58,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
+        ///     var floating_ips = Nutanix.Index.GetFloatingIpsV2.Invoke();
         /// 
-        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///     });
         /// 
-        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///         Limit = 10,
@@ -95,23 +95,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
+        ///     var floating_ips = Nutanix.Index.GetFloatingIpsV2.Invoke();
         /// 
-        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///     });
         /// 
-        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///         Limit = 10,

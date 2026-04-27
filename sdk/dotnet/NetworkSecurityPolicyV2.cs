@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Network Security Policy TWO_ENV_ISOLATION Rule
-    ///     var isolation_nsp = new Nutanix.NetworkSecurityPolicyV2("isolation-nsp", new()
+    ///     var isolation_nsp = new Nutanix.Index.NetworkSecurityPolicyV2("isolation-nsp", new()
     ///     {
     ///         Name = "isolation_policy",
     ///         Description = "isolation policy example",

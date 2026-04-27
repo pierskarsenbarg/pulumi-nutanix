@@ -21,18 +21,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get kubeconfig by cluster UUID
-        ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyid = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get Kubeconfig by cluster name
-        ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyname = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
@@ -52,18 +52,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get kubeconfig by cluster UUID
-        ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyid = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get Kubeconfig by cluster name
-        ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyname = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
@@ -83,18 +83,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get kubeconfig by cluster UUID
-        ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyid = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get Kubeconfig by cluster name
-        ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyname = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });

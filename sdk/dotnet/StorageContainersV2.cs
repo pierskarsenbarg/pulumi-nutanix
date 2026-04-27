@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var storage_container = new Nutanix.StorageContainersV2("storage-container", new()
+    ///     var storage_container = new Nutanix.Index.StorageContainersV2("storage-container", new()
     ///     {
     ///         Name = "example-storage-container",
     ///         LogicalAdvertisedCapacityBytes = 1073741824000,

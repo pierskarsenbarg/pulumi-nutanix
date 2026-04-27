@@ -21,21 +21,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all Roles
-        ///     var roles = Nutanix.GetRolesV2.Invoke();
+        ///     var roles = Nutanix.Index.GetRolesV2.Invoke();
         /// 
         ///     // List Roles with filter
-        ///     var filtered_roles = Nutanix.GetRolesV2.Invoke(new()
+        ///     var filtered_roles = Nutanix.Index.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///     });
         /// 
         ///     // List Roles with filter and orderby
-        ///     var filtered_ordered_roles = Nutanix.GetRolesV2.Invoke(new()
+        ///     var filtered_ordered_roles = Nutanix.Index.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///         OrderBy = "createdTime desc",
@@ -94,21 +94,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all Roles
-        ///     var roles = Nutanix.GetRolesV2.Invoke();
+        ///     var roles = Nutanix.Index.GetRolesV2.Invoke();
         /// 
         ///     // List Roles with filter
-        ///     var filtered_roles = Nutanix.GetRolesV2.Invoke(new()
+        ///     var filtered_roles = Nutanix.Index.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///     });
         /// 
         ///     // List Roles with filter and orderby
-        ///     var filtered_ordered_roles = Nutanix.GetRolesV2.Invoke(new()
+        ///     var filtered_ordered_roles = Nutanix.Index.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///         OrderBy = "createdTime desc",
@@ -167,21 +167,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all Roles
-        ///     var roles = Nutanix.GetRolesV2.Invoke();
+        ///     var roles = Nutanix.Index.GetRolesV2.Invoke();
         /// 
         ///     // List Roles with filter
-        ///     var filtered_roles = Nutanix.GetRolesV2.Invoke(new()
+        ///     var filtered_roles = Nutanix.Index.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///     });
         /// 
         ///     // List Roles with filter and orderby
-        ///     var filtered_ordered_roles = Nutanix.GetRolesV2.Invoke(new()
+        ///     var filtered_ordered_roles = Nutanix.Index.GetRolesV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'example_role'",
         ///         OrderBy = "createdTime desc",

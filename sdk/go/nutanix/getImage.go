@@ -35,10 +35,10 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_ = nutanix.LookupImageOutput(ctx, nutanix.GetImageOutputArgs{
+//			_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
 //				ImageId: testImage.ID(),
 //			}, nil)
-//			_ = nutanix.LookupImageOutput(ctx, nutanix.GetImageOutputArgs{
+//			_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
 //				ImageName: testImage.Name,
 //			}, nil)
 //			return nil

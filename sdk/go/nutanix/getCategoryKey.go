@@ -42,7 +42,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_ = nutanix.LookupCategoryKeyOutput(ctx, nutanix.GetCategoryKeyOutputArgs{
+//			_ = nutanix.GetCategoryKeyOutput(ctx, nutanix.GetCategoryKeyOutputArgs{
 //				Name: testKeyValueCategoryKey.Name,
 //			}, nil)
 //			return nil

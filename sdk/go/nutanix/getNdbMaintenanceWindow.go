@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupNdbMaintenanceWindow(ctx, &nutanix.LookupNdbMaintenanceWindowArgs{
+//			_, err := nutanix.GetNdbMaintenanceWindow(ctx, &nutanix.LookupNdbMaintenanceWindowArgs{
 //				Id: "{{ maintenance_window_id }}",
 //			}, nil)
 //			if err != nil {

@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // create a route
-    ///     var route = new Nutanix.RoutesV2("route", new()
+    ///     var route = new Nutanix.Index.RoutesV2("route", new()
     ///     {
     ///         Name = "terraform_example_route",
     ///         Description = "terraform example route to example create route",

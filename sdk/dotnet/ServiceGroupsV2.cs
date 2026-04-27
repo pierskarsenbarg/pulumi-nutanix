@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Add Service  group. with TCP and UDP
-    ///     var tcp_udp_service = new Nutanix.ServiceGroupsV2("tcp-udp-service", new()
+    ///     var tcp_udp_service = new Nutanix.Index.ServiceGroupsV2("tcp-udp-service", new()
     ///     {
     ///         Name = "service_group_tcp_udp",
     ///         Description = "service group description",
@@ -47,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // service group with ICMP
-    ///     var icmp_service = new Nutanix.ServiceGroupsV2("icmp-service", new()
+    ///     var icmp_service = new Nutanix.Index.ServiceGroupsV2("icmp-service", new()
     ///     {
     ///         Name = "service_group_icmp",
     ///         Description = "service group description",
@@ -62,7 +62,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // service group with All TCP, UDP and ICMP
-    ///     var all_service = new Nutanix.ServiceGroupsV2("all-service", new()
+    ///     var all_service = new Nutanix.Index.ServiceGroupsV2("all-service", new()
     ///     {
     ///         Name = "service_group_udp_tcp_icmp",
     ///         Description = "service group description",

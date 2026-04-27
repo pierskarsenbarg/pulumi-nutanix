@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			sla1, err := nutanix.LookupNdbSla(ctx, &nutanix.LookupNdbSlaArgs{
+//			sla1, err := nutanix.GetNdbSla(ctx, &nutanix.LookupNdbSlaArgs{
 //				SlaName: pulumi.StringRef("test-sla"),
 //			}, nil)
 //			if err != nil {

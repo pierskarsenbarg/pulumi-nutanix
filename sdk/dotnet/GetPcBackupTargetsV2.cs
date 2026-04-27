@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetPcBackupTargetsV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetPcBackupTargetsV2.Invoke(new()
         ///     {
         ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///     });
@@ -107,11 +107,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetPcBackupTargetsV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetPcBackupTargetsV2.Invoke(new()
         ///     {
         ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///     });
@@ -193,11 +193,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetPcBackupTargetsV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetPcBackupTargetsV2.Invoke(new()
         ///     {
         ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///     });

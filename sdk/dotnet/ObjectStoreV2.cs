@@ -11,6 +11,15 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
+    /// Run the prechecks, create and start the deployment of an Object store on Prism Central.
+    /// 
+    /// &gt; ⚠️ **Warning:** Before deleting the Object Store, make sure to delete all buckets inside it manually.
+    /// Currently, the Terraform provider does not support the Delete Bucket API.
+    /// 
+    /// &gt; ⚠️ **Warning:** The Object Store **update** operation is intended **only** to resume a failed deployment.
+    /// It should be used when the Object Store is in the `OBJECT_STORE_DEPLOYMENT_FAILED` state.
+    /// Triggering an update in this state will attempt to resume the deployment process.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -22,7 +31,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.ObjectStoreV2("example", new()
+    ///     var example = new Nutanix.Index.ObjectStoreV2("example", new()
     ///     {
     ///         Name = "tf-example-os",
     ///         Description = "terraform create object store example",
@@ -30,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         Domain = "msp.pc-idbc.nutanix.com",
     ///         NumWorkerNodes = 1,
     ///         ClusterExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-    ///         TotalCapacityGib = Std.Pow.Invoke(new()
+    ///         TotalCapacityGib = Std.Index.Pow.Invoke(new()
     ///         {
     ///             Base = 1024,
     ///             Exponent = 3,
@@ -64,7 +73,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Deploying Object Store in draft state
-    ///     var example_draft = new Nutanix.ObjectStoreV2("example-draft", new()
+    ///     var example_draft = new Nutanix.Index.ObjectStoreV2("example-draft", new()
     ///     {
     ///         Name = "tf-draft-os",
     ///         Description = "terraform deploy object store draft example",
@@ -72,7 +81,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         Domain = "msp.pc-idbc.nutanix.com",
     ///         NumWorkerNodes = 1,
     ///         ClusterExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-    ///         TotalCapacityGib = Std.Pow.Invoke(new()
+    ///         TotalCapacityGib = Std.Index.Pow.Invoke(new()
     ///         {
     ///             Base = 1024,
     ///             Exponent = 3,

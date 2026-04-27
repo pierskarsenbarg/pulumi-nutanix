@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupPbrV2(ctx, &nutanix.LookupPbrV2Args{
+//			_, err := nutanix.GetPbrV2(ctx, &nutanix.LookupPbrV2Args{
 //				ExtId: "96a22c81-ed58-4bed-96bc-46b488626612",
 //			}, nil)
 //			if err != nil {

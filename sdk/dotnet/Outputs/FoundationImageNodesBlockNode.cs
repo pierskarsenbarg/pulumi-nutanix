@@ -145,6 +145,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// * `ucsm_params.vlan_name` :- Name of vlan.
         /// </summary>
         public readonly Outputs.FoundationImageNodesBlockNodeUcsmParams? UcsmParams;
+        /// <summary>
+        /// - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
+        /// * `vswitches.lacp` :- Status of LACP.
+        /// * `vswitches.bond_mode` :- BondMode such as balance-tcp, active-backup, etc.
+        /// * `vswitches.name` :- Name of the vswitch.
+        /// * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
+        /// * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
+        /// * `vswitches.mtu` :- MTU of the vswitch. Applicable only for AHV.
+        /// </summary>
         public readonly ImmutableArray<Outputs.FoundationImageNodesBlockNodeVswitch> Vswitches;
 
         [OutputConstructor]

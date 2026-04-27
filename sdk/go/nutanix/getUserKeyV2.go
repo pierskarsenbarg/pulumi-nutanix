@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Get key
-//			_, err := nutanix.LookupUserKeyV2(ctx, &nutanix.LookupUserKeyV2Args{
+//			_, err := nutanix.GetUserKeyV2(ctx, &nutanix.LookupUserKeyV2Args{
 //				UserExtId: "<SERVICE_ACCOUNT_UUID>",
 //				ExtId:     "<USER_KEY_UUID>",
 //			}, nil)

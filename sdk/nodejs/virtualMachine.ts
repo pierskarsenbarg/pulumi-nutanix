@@ -58,12 +58,7 @@ import * as utilities from "./utilities";
  *
  * Nutanix Virtual machines can be imported using the `UUID` eg,
  *
- * `
- *
- * ```sh
- * $ pulumi import nutanix:index/virtualMachine:VirtualMachine vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
- * ```
- *
+ * `terraform import nutanix_virtual_machine.vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
  * `
  */
 export class VirtualMachine extends pulumi.CustomResource {

@@ -21,22 +21,22 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all the Volume Groups.
-        ///     var volumeGroups = Nutanix.GetVolumeGroupsV2.Invoke();
+        ///     var volumeGroups = Nutanix.Index.GetVolumeGroupsV2.Invoke();
         /// 
         ///     // list all the Volume Groups with pagination.
-        ///     var vg_pagination = Nutanix.GetVolumeGroupsV2.Invoke(new()
+        ///     var vg_pagination = Nutanix.Index.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
         ///     });
         /// 
         ///     // list all the Volume Groups with filter.
-        ///     var vg_filter = Nutanix.GetVolumeGroupsV2.Invoke(new()
+        ///     var vg_filter = Nutanix.Index.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'volume_group_test'",
         ///     });
@@ -125,22 +125,22 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all the Volume Groups.
-        ///     var volumeGroups = Nutanix.GetVolumeGroupsV2.Invoke();
+        ///     var volumeGroups = Nutanix.Index.GetVolumeGroupsV2.Invoke();
         /// 
         ///     // list all the Volume Groups with pagination.
-        ///     var vg_pagination = Nutanix.GetVolumeGroupsV2.Invoke(new()
+        ///     var vg_pagination = Nutanix.Index.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
         ///     });
         /// 
         ///     // list all the Volume Groups with filter.
-        ///     var vg_filter = Nutanix.GetVolumeGroupsV2.Invoke(new()
+        ///     var vg_filter = Nutanix.Index.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'volume_group_test'",
         ///     });
@@ -229,22 +229,22 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all the Volume Groups.
-        ///     var volumeGroups = Nutanix.GetVolumeGroupsV2.Invoke();
+        ///     var volumeGroups = Nutanix.Index.GetVolumeGroupsV2.Invoke();
         /// 
         ///     // list all the Volume Groups with pagination.
-        ///     var vg_pagination = Nutanix.GetVolumeGroupsV2.Invoke(new()
+        ///     var vg_pagination = Nutanix.Index.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
         ///     });
         /// 
         ///     // list all the Volume Groups with filter.
-        ///     var vg_filter = Nutanix.GetVolumeGroupsV2.Invoke(new()
+        ///     var vg_filter = Nutanix.Index.GetVolumeGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'volume_group_test'",
         ///     });

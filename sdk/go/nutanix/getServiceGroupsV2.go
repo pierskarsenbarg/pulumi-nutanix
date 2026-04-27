@@ -27,11 +27,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupServiceGroupsV2(ctx, &nutanix.LookupServiceGroupsV2Args{}, nil)
+//			_, err := nutanix.GetServiceGroupsV2(ctx, &nutanix.LookupServiceGroupsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.LookupServiceGroupsV2(ctx, &nutanix.LookupServiceGroupsV2Args{
+//			_, err = nutanix.GetServiceGroupsV2(ctx, &nutanix.LookupServiceGroupsV2Args{
 //				Filter: pulumi.StringRef("name eq 'service_group_name'"),
 //			}, nil)
 //			if err != nil {

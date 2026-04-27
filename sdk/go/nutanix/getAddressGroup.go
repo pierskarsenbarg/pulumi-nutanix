@@ -40,7 +40,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_ = nutanix.LookupAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
+//			_ = nutanix.GetAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
 //				Uuid: testAddress.ID(),
 //			}, nil)
 //			return nil

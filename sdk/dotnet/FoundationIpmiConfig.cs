@@ -10,6 +10,63 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Configures IPMI IP address on BMC of nodes.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var impi_1 = new Nutanix.Index.FoundationIpmiConfig("impi-1", new()
+    ///     {
+    ///         IpmiUser = "username",
+    ///         IpmiNetmask = "10.xx.xx.xx",
+    ///         Blocks = new[]
+    ///         {
+    ///             new Nutanix.Inputs.FoundationIpmiConfigBlockArgs
+    ///             {
+    ///                 Nodes = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.FoundationIpmiConfigBlockNodeArgs
+    ///                     {
+    ///                         IpmiMac = "ff:ff:ff:ff:ff:ff",
+    ///                         IpmiConfigureNow = true,
+    ///                         IpmiIp = "10.xx.xx.xx",
+    ///                     },
+    ///                     new Nutanix.Inputs.FoundationIpmiConfigBlockNodeArgs
+    ///                     {
+    ///                         IpmiMac = "ff:ff:ff:ff:ff:ff",
+    ///                         IpmiConfigureNow = true,
+    ///                         IpmiIp = "10.xx.xx.xx",
+    ///                     },
+    ///                 },
+    ///                 BlockId = "xyz",
+    ///             },
+    ///         },
+    ///         IpmiGateway = "10.xx.xx.xx",
+    ///         IpmiPassword = "XXXXX",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Error
+    /// 
+    /// Incase of error, terraform will error out and display error for every failed ipmi configuration respective to its ipmi_ip.
+    /// 
+    /// ## lifecycle
+    /// 
+    /// * `Update` : - Resource will trigger new resource create call for any kind of update in resource block.
+    /// * `Delete` : - Delete will be a soft delete.
+    /// 
+    /// See detailed information in [Nutanix Foundation IPMI Config](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzNzI-configure-bmc-i-pv4).
+    /// </summary>
     [NutanixResourceType("nutanix:index/foundationIpmiConfig:FoundationIpmiConfig")]
     public partial class FoundationIpmiConfig : global::Pulumi.CustomResource
     {

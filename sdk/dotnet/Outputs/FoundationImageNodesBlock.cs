@@ -18,6 +18,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - Block ID.
         /// </summary>
         public readonly string? BlockId;
+        /// <summary>
+        /// - (Required) Terraform blocks of details of nodes
+        /// </summary>
         public readonly ImmutableArray<Outputs.FoundationImageNodesBlockNode> Nodes;
 
         [OutputConstructor]

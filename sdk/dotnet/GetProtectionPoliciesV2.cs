@@ -23,24 +23,24 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // with filter
-        ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pps_filter = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
         ///     // with limit
-        ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pp_limit = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
         ///     // with filter and limit
-        ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",
         ///         Limit = 10,
@@ -159,24 +159,24 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // with filter
-        ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pps_filter = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
         ///     // with limit
-        ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pp_limit = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
         ///     // with filter and limit
-        ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",
         ///         Limit = 10,
@@ -295,24 +295,24 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // with filter
-        ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pps_filter = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
         ///     // with limit
-        ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pp_limit = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
         ///     // with filter and limit
-        ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",
         ///         Limit = 10,

@@ -10,6 +10,29 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Launches a blueprint to create an application and perform system actions on application.
+    /// 
+    /// ## Example 1: Provision Application
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     {
+    ///         BpName = "NAME OF BLUEPRINT",
+    ///         AppName = "NAME OF APPLICATION TO SET",
+    ///         AppDescription = "DESCRIPTION OF APPLICATION",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/selfServiceAppProvision:SelfServiceAppProvision")]
     public partial class SelfServiceAppProvision : global::Pulumi.CustomResource
     {

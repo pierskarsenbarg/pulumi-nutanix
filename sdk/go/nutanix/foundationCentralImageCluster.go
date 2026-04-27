@@ -11,6 +11,123 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Image Nodes and Create a cluster out of nodes registered with Foundation Central.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewFoundationCentralImageCluster(ctx, "img2", &nutanix.FoundationCentralImageClusterArgs{
+//				ClusterName:       pulumi.String("test-FC"),
+//				ClusterExternalIp: pulumi.String("<CLUSTER-IP>"),
+//				CommonNetworkSettings: &nutanix.FoundationCentralImageClusterCommonNetworkSettingsArgs{
+//					CvmDnsServers: pulumi.StringArray{
+//						pulumi.String("xx.x.xx.xx"),
+//					},
+//					HypervisorDnsServers: pulumi.StringArray{
+//						pulumi.String("xx.x.xx.xx"),
+//					},
+//					CvmNtpServers: pulumi.StringArray{
+//						pulumi.String("<cvm-ntp>"),
+//					},
+//					HypervisorNtpServers: pulumi.StringArray{
+//						pulumi.String("<hypervisor-ntp>"),
+//					},
+//				},
+//				RedundancyFactor: pulumi.Int(2),
+//				NodeLists: nutanix.FoundationCentralImageClusterNodeListArray{
+//					&nutanix.FoundationCentralImageClusterNodeListArgs{
+//						CvmGateway:                 pulumi.String("10.xx.xx.xx"),
+//						CvmNetmask:                 pulumi.String("xx.xx.xx.xx"),
+//						CvmIp:                      pulumi.String("10.x.xx.xx"),
+//						HypervisorGateway:          pulumi.String("10.x.x.xx"),
+//						HypervisorNetmask:          pulumi.String("xx.xx.xx.xx"),
+//						HypervisorIp:               pulumi.String("10.x.xx.xx"),
+//						HypervisorHostname:         pulumi.String("HOST-1"),
+//						ImagedNodeUuid:             pulumi.String("<NODE-UUID>"),
+//						UseExistingNetworkSettings: pulumi.Bool(false),
+//						IpmiGateway:                pulumi.String("10.x.xx.xx"),
+//						IpmiNetmask:                pulumi.String("10.x.xx.xx"),
+//						IpmiIp:                     pulumi.String("10.x.xx.xx"),
+//						ImageNow:                   pulumi.Bool(true),
+//						HypervisorType:             pulumi.String("kvm"),
+//						HardwareAttributesOverride: pulumi.StringMap{
+//							"default_workload":      pulumi.String("vdi"),
+//							"lcm_family":            pulumi.String("smc_gen_10"),
+//							"maybe_1GbE_only":       pulumi.String("true"),
+//							"robo_mixed_hypervisor": pulumi.String("true"),
+//						},
+//					},
+//					&nutanix.FoundationCentralImageClusterNodeListArgs{
+//						CvmGateway:                 pulumi.String("10.xx.xx.xx"),
+//						CvmNetmask:                 pulumi.String("xx.xx.xx.xx"),
+//						CvmIp:                      pulumi.String("10.x.xx.xx"),
+//						HypervisorGateway:          pulumi.String("10.x.x.xx"),
+//						HypervisorNetmask:          pulumi.String("xx.xx.xx.xx"),
+//						HypervisorIp:               pulumi.String("10.x.xx.xx"),
+//						HypervisorHostname:         pulumi.String("HOST-2"),
+//						ImagedNodeUuid:             pulumi.String("<NODE-UUID>"),
+//						UseExistingNetworkSettings: pulumi.Bool(false),
+//						IpmiGateway:                pulumi.String("10.x.xx.xx"),
+//						IpmiNetmask:                pulumi.String("10.x.xx.xx"),
+//						IpmiIp:                     pulumi.String("10.x.xx.xx"),
+//						ImageNow:                   pulumi.Bool(true),
+//						HypervisorType:             pulumi.String("kvm"),
+//					},
+//					&nutanix.FoundationCentralImageClusterNodeListArgs{
+//						CvmGateway:                 pulumi.String("10.xx.xx.xx"),
+//						CvmNetmask:                 pulumi.String("xx.xx.xx.xx"),
+//						CvmIp:                      pulumi.String("10.x.xx.xx"),
+//						HypervisorGateway:          pulumi.String("10.x.x.xx"),
+//						HypervisorNetmask:          pulumi.String("xx.xx.xx.xx"),
+//						HypervisorIp:               pulumi.String("10.x.xx.xx"),
+//						HypervisorHostname:         pulumi.String("HOST-3"),
+//						ImagedNodeUuid:             pulumi.String("<NODE-UUID>"),
+//						UseExistingNetworkSettings: pulumi.Bool(false),
+//						IpmiGateway:                pulumi.String("10.x.xx.xx"),
+//						IpmiNetmask:                pulumi.String("10.x.xx.xx"),
+//						IpmiIp:                     pulumi.String("10.x.xx.xx"),
+//						ImageNow:                   pulumi.Bool(true),
+//						HypervisorType:             pulumi.String("kvm"),
+//					},
+//				},
+//				AosPackageUrl: pulumi.String("<URL>"),
+//				HypervisorIsos: &nutanix.FoundationCentralImageClusterHypervisorIsosArgs{
+//					Url:            pulumi.String("<hypervisor-installer-link>"),
+//					Sha256sum:      pulumi.String("<hypervisor-installer-checksum>"),
+//					HypervisorType: pulumi.String("kvm"),
+//				},
+//				SkipClusterCreation: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Error
+//
+// Incase of error in any individual node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+//
+// ## lifecycle
+//
+// * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+// * `delete` : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
+//
+// See detailed information in [Nutanix Foundation Central Create a Cluster](https://www.nutanix.dev/api_references/foundation-central/#/cba507f282927-request-to-create-a-cluster).
 type FoundationCentralImageCluster struct {
 	pulumi.CustomResourceState
 

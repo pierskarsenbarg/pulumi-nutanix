@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // revoke key
-    ///     var revoke_key = new Nutanix.UserKeyRevokeV2("revoke-key", new()
+    ///     var revoke_key = new Nutanix.Index.UserKeyRevokeV2("revoke-key", new()
     ///     {
     ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
     ///         ExtId = "&lt;USER_KEY_UUID&gt;",

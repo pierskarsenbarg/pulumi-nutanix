@@ -38,7 +38,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.LookupUser(ctx, &nutanix.LookupUserArgs{}, nil)
+//			_, err = nutanix.GetUser(ctx, &nutanix.LookupUserArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

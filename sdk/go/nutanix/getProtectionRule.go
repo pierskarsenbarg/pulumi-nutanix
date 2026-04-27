@@ -62,7 +62,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_ = nutanix.LookupProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
+//			_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
 //				ProtectionRuleId: protectionRuleTest.ID(),
 //			}, nil)
 //			return nil

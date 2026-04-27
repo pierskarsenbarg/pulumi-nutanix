@@ -500,24 +500,6 @@ class ClusterV2(pulumi.CustomResource):
             }])
         ```
 
-        ## Import
-
-        This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,
-
-        hcl
-
-        // create its configuration in the root module. For example:
-
-        resource "nutanix_cluster_v2" "import_cluster" {}
-
-        // execute this cli command
-
-        ```sh
-        $ pulumi import nutanix:index/clusterV2:ClusterV2 import_cluster <UUID>
-        ```
-
-        See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
-
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -602,24 +584,6 @@ class ClusterV2(pulumi.CustomResource):
                 }],
             }])
         ```
-
-        ## Import
-
-        This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,
-
-        hcl
-
-        // create its configuration in the root module. For example:
-
-        resource "nutanix_cluster_v2" "import_cluster" {}
-
-        // execute this cli command
-
-        ```sh
-        $ pulumi import nutanix:index/clusterV2:ClusterV2 import_cluster <UUID>
-        ```
-
-        See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 
 
         :param str resource_name: The name of the resource.

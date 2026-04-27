@@ -21,12 +21,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get the details of a Volume Disk attached to the Volume Group.
-        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetVolumeGroupDiskV2.Invoke(new()
         ///     {
         ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
@@ -47,12 +47,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get the details of a Volume Disk attached to the Volume Group.
-        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetVolumeGroupDiskV2.Invoke(new()
         ///     {
         ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
@@ -73,12 +73,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get the details of a Volume Disk attached to the Volume Group.
-        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetVolumeGroupDiskV2.Invoke(new()
         ///     {
         ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",

@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var usrGroup = new Nutanix.UserGroupsV2("usr_group", new()
+    ///     var usrGroup = new Nutanix.Index.UserGroupsV2("usr_group", new()
     ///     {
     ///         GroupType = "LDAP",
     ///         IdpId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
@@ -32,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Saml User group
-    ///     var saml_ug = new Nutanix.UserGroupsV2("saml-ug", new()
+    ///     var saml_ug = new Nutanix.Index.UserGroupsV2("saml-ug", new()
     ///     {
     ///         GroupType = "SAML",
     ///         IdpId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
