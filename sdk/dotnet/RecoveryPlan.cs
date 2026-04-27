@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
+    ///     var recoveryPlanTest = new Nutanix.Index.RecoveryPlan("recovery_plan_test", new()
     ///     {
     ///         Name = "%s",
     ///         Description = "%s",

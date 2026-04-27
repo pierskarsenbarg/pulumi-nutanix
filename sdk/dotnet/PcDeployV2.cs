@@ -26,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.PcDeployV2("example", new()
+    ///     var example = new Nutanix.Index.PcDeployV2("example", new()
     ///     {
     ///         Config = new Nutanix.Inputs.PcDeployV2ConfigArgs
     ///         {

@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var c1 = Nutanix.GetNdbCluster.Invoke(new()
+        ///     var c1 = Nutanix.Index.GetNdbCluster.Invoke(new()
         ///     {
         ///         ClusterName = "&lt;era-cluster-name&gt;",
         ///     });
@@ -49,11 +49,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var c1 = Nutanix.GetNdbCluster.Invoke(new()
+        ///     var c1 = Nutanix.Index.GetNdbCluster.Invoke(new()
         ///     {
         ///         ClusterName = "&lt;era-cluster-name&gt;",
         ///     });
@@ -77,11 +77,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var c1 = Nutanix.GetNdbCluster.Invoke(new()
+        ///     var c1 = Nutanix.Index.GetNdbCluster.Invoke(new()
         ///     {
         ///         ClusterName = "&lt;era-cluster-name&gt;",
         ///     });

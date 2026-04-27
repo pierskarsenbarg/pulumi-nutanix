@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.CategoryV2("example", new()
+    ///     var example = new Nutanix.Index.CategoryV2("example", new()
     ///     {
     ///         Key = "category_example_key",
     ///         Value = "category_example_value",

@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// get the restore source
-//			_, err := nutanix.LookupPcRestoreSourceV2(ctx, &nutanix.LookupPcRestoreSourceV2Args{
+//			_, err := nutanix.GetPcRestoreSourceV2(ctx, &nutanix.LookupPcRestoreSourceV2Args{
 //				ExtId: "323860ca-bd10-411e-9fe0-1430b62eaf45",
 //			}, nil)
 //			if err != nil {

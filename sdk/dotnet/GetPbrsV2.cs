@@ -21,23 +21,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
+        ///     var pbrs = Nutanix.Index.GetPbrsV2.Invoke();
         /// 
-        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///     });
         /// 
-        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///         Limit = 10,
@@ -58,23 +58,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
+        ///     var pbrs = Nutanix.Index.GetPbrsV2.Invoke();
         /// 
-        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///     });
         /// 
-        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///         Limit = 10,
@@ -95,23 +95,23 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
+        ///     var pbrs = Nutanix.Index.GetPbrsV2.Invoke();
         /// 
-        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///     });
         /// 
-        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///         Limit = 10,

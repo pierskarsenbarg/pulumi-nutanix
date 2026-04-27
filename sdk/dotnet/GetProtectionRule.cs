@@ -22,11 +22,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
+        ///     var protectionRuleTest = new Nutanix.Index.ProtectionRule("protection_rule_test", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test",
@@ -71,7 +70,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
+        ///     var test = Nutanix.Index.GetProtectionRule.Invoke(new()
         ///     {
         ///         ProtectionRuleId = protectionRuleTest.Id,
         ///     });
@@ -92,11 +91,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
+        ///     var protectionRuleTest = new Nutanix.Index.ProtectionRule("protection_rule_test", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test",
@@ -141,7 +139,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
+        ///     var test = Nutanix.Index.GetProtectionRule.Invoke(new()
         ///     {
         ///         ProtectionRuleId = protectionRuleTest.Id,
         ///     });
@@ -162,11 +160,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
+        ///     var protectionRuleTest = new Nutanix.Index.ProtectionRule("protection_rule_test", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test",
@@ -211,7 +208,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
+        ///     var test = Nutanix.Index.GetProtectionRule.Invoke(new()
         ///     {
         ///         ProtectionRuleId = protectionRuleTest.Id,
         ///     });

@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var sla = new Nutanix.NdbSla("sla", new()
+    ///     var sla = new Nutanix.Index.NdbSla("sla", new()
     ///     {
     ///         Name = "test-sla",
     ///         Description = "here goes description",

@@ -21,18 +21,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var list = Nutanix.GetObjectStoresV2.Invoke();
+        ///     var list = Nutanix.Index.GetObjectStoresV2.Invoke();
         /// 
-        ///     var filter = Nutanix.GetObjectStoresV2.Invoke(new()
+        ///     var filter = Nutanix.Index.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'object_store_example'",
         ///     });
         /// 
-        ///     var limit = Nutanix.GetObjectStoresV2.Invoke(new()
+        ///     var limit = Nutanix.Index.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
@@ -52,18 +52,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var list = Nutanix.GetObjectStoresV2.Invoke();
+        ///     var list = Nutanix.Index.GetObjectStoresV2.Invoke();
         /// 
-        ///     var filter = Nutanix.GetObjectStoresV2.Invoke(new()
+        ///     var filter = Nutanix.Index.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'object_store_example'",
         ///     });
         /// 
-        ///     var limit = Nutanix.GetObjectStoresV2.Invoke(new()
+        ///     var limit = Nutanix.Index.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
@@ -83,18 +83,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var list = Nutanix.GetObjectStoresV2.Invoke();
+        ///     var list = Nutanix.Index.GetObjectStoresV2.Invoke();
         /// 
-        ///     var filter = Nutanix.GetObjectStoresV2.Invoke(new()
+        ///     var filter = Nutanix.Index.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'object_store_example'",
         ///     });
         /// 
-        ///     var limit = Nutanix.GetObjectStoresV2.Invoke(new()
+        ///     var limit = Nutanix.Index.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });

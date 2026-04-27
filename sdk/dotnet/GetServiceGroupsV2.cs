@@ -21,13 +21,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var serviceGroup = Nutanix.GetServiceGroupsV2.Invoke();
+        ///     var serviceGroup = Nutanix.Index.GetServiceGroupsV2.Invoke();
         /// 
-        ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
+        ///     var serviceGroupFiltered = Nutanix.Index.GetServiceGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'service_group_name'",
         ///     });
@@ -47,13 +47,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var serviceGroup = Nutanix.GetServiceGroupsV2.Invoke();
+        ///     var serviceGroup = Nutanix.Index.GetServiceGroupsV2.Invoke();
         /// 
-        ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
+        ///     var serviceGroupFiltered = Nutanix.Index.GetServiceGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'service_group_name'",
         ///     });
@@ -73,13 +73,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var serviceGroup = Nutanix.GetServiceGroupsV2.Invoke();
+        ///     var serviceGroup = Nutanix.Index.GetServiceGroupsV2.Invoke();
         /// 
-        ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
+        ///     var serviceGroupFiltered = Nutanix.Index.GetServiceGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'service_group_name'",
         ///     });

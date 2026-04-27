@@ -21,15 +21,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all templates
-        ///     var list_templates = Nutanix.GetTemplatesV2.Invoke();
+        ///     var list_templates = Nutanix.Index.GetTemplatesV2.Invoke();
         /// 
         ///     // List templates with filter, page and limit
-        ///     var filtered_templates = Nutanix.GetTemplatesV2.Invoke(new()
+        ///     var filtered_templates = Nutanix.Index.GetTemplatesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
         ///         Page = 0,
@@ -405,15 +405,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all templates
-        ///     var list_templates = Nutanix.GetTemplatesV2.Invoke();
+        ///     var list_templates = Nutanix.Index.GetTemplatesV2.Invoke();
         /// 
         ///     // List templates with filter, page and limit
-        ///     var filtered_templates = Nutanix.GetTemplatesV2.Invoke(new()
+        ///     var filtered_templates = Nutanix.Index.GetTemplatesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
         ///         Page = 0,
@@ -789,15 +789,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all templates
-        ///     var list_templates = Nutanix.GetTemplatesV2.Invoke();
+        ///     var list_templates = Nutanix.Index.GetTemplatesV2.Invoke();
         /// 
         ///     // List templates with filter, page and limit
-        ///     var filtered_templates = Nutanix.GetTemplatesV2.Invoke(new()
+        ///     var filtered_templates = Nutanix.Index.GetTemplatesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
         ///         Page = 0,

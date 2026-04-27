@@ -21,18 +21,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cls = Nutanix.GetClustersV2.Invoke();
+        ///     var cls = Nutanix.Index.GetClustersV2.Invoke();
         /// 
-        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     var filtered_cls = Nutanix.Index.GetClustersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'cluster-1'",
         ///     });
         /// 
-        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     var paged_cls = Nutanix.Index.GetClustersV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
@@ -53,18 +53,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cls = Nutanix.GetClustersV2.Invoke();
+        ///     var cls = Nutanix.Index.GetClustersV2.Invoke();
         /// 
-        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     var filtered_cls = Nutanix.Index.GetClustersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'cluster-1'",
         ///     });
         /// 
-        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     var paged_cls = Nutanix.Index.GetClustersV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
@@ -85,18 +85,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cls = Nutanix.GetClustersV2.Invoke();
+        ///     var cls = Nutanix.Index.GetClustersV2.Invoke();
         /// 
-        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     var filtered_cls = Nutanix.Index.GetClustersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'cluster-1'",
         ///     });
         /// 
-        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     var paged_cls = Nutanix.Index.GetClustersV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,

@@ -7,6 +7,15 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
+ * Run the prechecks, create and start the deployment of an Object store on Prism Central.
+ *
+ * > ⚠️ **Warning:** Before deleting the Object Store, make sure to delete all buckets inside it manually.
+ * Currently, the Terraform provider does not support the Delete Bucket API.
+ *
+ * > ⚠️ **Warning:** The Object Store **update** operation is intended **only** to resume a failed deployment.
+ * It should be used when the Object Store is in the `OBJECT_STORE_DEPLOYMENT_FAILED` state.
+ * Triggering an update in this state will attempt to resume the deployment process.
+ *
  * ## Example Usage
  *
  * ```typescript

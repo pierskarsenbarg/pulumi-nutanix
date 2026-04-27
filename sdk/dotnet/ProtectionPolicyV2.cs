@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var synchronous_protection_policy = new Nutanix.ProtectionPolicyV2("synchronous-protection-policy", new()
+    ///     var synchronous_protection_policy = new Nutanix.Index.ProtectionPolicyV2("synchronous-protection-policy", new()
     ///     {
     ///         Name = "synchronous_protection_policy",
     ///         ReplicationConfigurations = new[]
@@ -85,7 +85,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var linear_retention_protection_policy = new Nutanix.ProtectionPolicyV2("linear-retention-protection-policy", new()
+    ///     var linear_retention_protection_policy = new Nutanix.Index.ProtectionPolicyV2("linear-retention-protection-policy", new()
     ///     {
     ///         Name = "linear-retention-protection-policy",
     ///         ReplicationConfigurations = new[]
@@ -172,7 +172,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Create Auto Rollup Retention Protection Policy
-    ///     var auto_rollup_retention_protection_policy = new Nutanix.ProtectionPolicyV2("auto-rollup-retention-protection-policy", new()
+    ///     var auto_rollup_retention_protection_policy = new Nutanix.Index.ProtectionPolicyV2("auto-rollup-retention-protection-policy", new()
     ///     {
     ///         Name = "auto_rollup_retention_protection_policy",
     ///         ReplicationConfigurations = new[]

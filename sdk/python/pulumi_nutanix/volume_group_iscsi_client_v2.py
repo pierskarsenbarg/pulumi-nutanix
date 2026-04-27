@@ -318,7 +318,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
         #list iscsi clients
         list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
         # attach iscsi client to the volume group
-        vg_iscsi_example = nutanix.index.VolumeGroupIscsiClientsV2("vg_iscsi_example",
+        vg_iscsi_example = nutanix.VolumeGroupIscsiClientsV2("vg_iscsi_example",
             vg_ext_id=1cdb5b48-fb2c-41b6-b751-b504117ee3e2,
             ext_id=list_iscsi_clients.iscsi_clients[0].ext_id,
             iscsi_initiator_name=list_iscsi_clients.iscsi_clients[0].iscsi_initiator_name)
@@ -354,7 +354,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
         #list iscsi clients
         list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
         # attach iscsi client to the volume group
-        vg_iscsi_example = nutanix.index.VolumeGroupIscsiClientsV2("vg_iscsi_example",
+        vg_iscsi_example = nutanix.VolumeGroupIscsiClientsV2("vg_iscsi_example",
             vg_ext_id=1cdb5b48-fb2c-41b6-b751-b504117ee3e2,
             ext_id=list_iscsi_clients.iscsi_clients[0].ext_id,
             iscsi_initiator_name=list_iscsi_clients.iscsi_clients[0].iscsi_initiator_name)

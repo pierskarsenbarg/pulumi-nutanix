@@ -21,18 +21,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Data source to fetch the list of keys
-        ///     var getKeys = Nutanix.GetUserKeysV2.Invoke(new()
+        ///     var getKeys = Nutanix.Index.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///     });
         /// 
         ///     // Data source to fetch the key by name
-        ///     var getKeysFilter = Nutanix.GetUserKeysV2.Invoke(new()
+        ///     var getKeysFilter = Nutanix.Index.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",
@@ -96,18 +96,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Data source to fetch the list of keys
-        ///     var getKeys = Nutanix.GetUserKeysV2.Invoke(new()
+        ///     var getKeys = Nutanix.Index.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///     });
         /// 
         ///     // Data source to fetch the key by name
-        ///     var getKeysFilter = Nutanix.GetUserKeysV2.Invoke(new()
+        ///     var getKeysFilter = Nutanix.Index.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",
@@ -171,18 +171,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Data source to fetch the list of keys
-        ///     var getKeys = Nutanix.GetUserKeysV2.Invoke(new()
+        ///     var getKeys = Nutanix.Index.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///     });
         /// 
         ///     // Data source to fetch the key by name
-        ///     var getKeysFilter = Nutanix.GetUserKeysV2.Invoke(new()
+        ///     var getKeysFilter = Nutanix.Index.GetUserKeysV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///         Filter = "name eq '&lt;NAME_OF_API_KEY&gt;'",

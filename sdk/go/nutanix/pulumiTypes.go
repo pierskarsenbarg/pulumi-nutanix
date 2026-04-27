@@ -33350,8 +33350,9 @@ func (o FoundationCentralImageClusterNodeListArrayOutput) Index(i pulumi.IntInpu
 
 type FoundationImageNodesBlock struct {
 	// - Block ID.
-	BlockId *string                         `pulumi:"blockId"`
-	Nodes   []FoundationImageNodesBlockNode `pulumi:"nodes"`
+	BlockId *string `pulumi:"blockId"`
+	// - (Required) Terraform blocks of details of nodes
+	Nodes []FoundationImageNodesBlockNode `pulumi:"nodes"`
 }
 
 // FoundationImageNodesBlockInput is an input type that accepts FoundationImageNodesBlockArgs and FoundationImageNodesBlockOutput values.
@@ -33367,8 +33368,9 @@ type FoundationImageNodesBlockInput interface {
 
 type FoundationImageNodesBlockArgs struct {
 	// - Block ID.
-	BlockId pulumi.StringPtrInput                   `pulumi:"blockId"`
-	Nodes   FoundationImageNodesBlockNodeArrayInput `pulumi:"nodes"`
+	BlockId pulumi.StringPtrInput `pulumi:"blockId"`
+	// - (Required) Terraform blocks of details of nodes
+	Nodes FoundationImageNodesBlockNodeArrayInput `pulumi:"nodes"`
 }
 
 func (FoundationImageNodesBlockArgs) ElementType() reflect.Type {
@@ -33427,6 +33429,7 @@ func (o FoundationImageNodesBlockOutput) BlockId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlock) *string { return v.BlockId }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) Terraform blocks of details of nodes
 func (o FoundationImageNodesBlockOutput) Nodes() FoundationImageNodesBlockNodeArrayOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlock) []FoundationImageNodesBlockNode { return v.Nodes }).(FoundationImageNodesBlockNodeArrayOutput)
 }
@@ -33521,7 +33524,14 @@ type FoundationImageNodesBlockNode struct {
 	// * `ucsm_params.mac_pool` :- Mac address pool.
 	// * `ucsm_params.vlan_name` :- Name of vlan.
 	UcsmParams *FoundationImageNodesBlockNodeUcsmParams `pulumi:"ucsmParams"`
-	Vswitches  []FoundationImageNodesBlockNodeVswitch   `pulumi:"vswitches"`
+	// - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
+	// * `vswitches.lacp` :- Status of LACP.
+	// * `vswitches.bond_mode` :- bondMode such as balance-tcp, active-backup, etc.
+	// * `vswitches.name` :- Name of the vswitch.
+	// * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
+	// * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
+	// * `vswitches.mtu` :- MTU of the vswitch. Applicable only for AHV.
+	Vswitches []FoundationImageNodesBlockNodeVswitch `pulumi:"vswitches"`
 }
 
 // FoundationImageNodesBlockNodeInput is an input type that accepts FoundationImageNodesBlockNodeArgs and FoundationImageNodesBlockNodeOutput values.
@@ -33605,7 +33615,14 @@ type FoundationImageNodesBlockNodeArgs struct {
 	// * `ucsm_params.mac_pool` :- Mac address pool.
 	// * `ucsm_params.vlan_name` :- Name of vlan.
 	UcsmParams FoundationImageNodesBlockNodeUcsmParamsPtrInput `pulumi:"ucsmParams"`
-	Vswitches  FoundationImageNodesBlockNodeVswitchArrayInput  `pulumi:"vswitches"`
+	// - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
+	// * `vswitches.lacp` :- Status of LACP.
+	// * `vswitches.bond_mode` :- bondMode such as balance-tcp, active-backup, etc.
+	// * `vswitches.name` :- Name of the vswitch.
+	// * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
+	// * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
+	// * `vswitches.mtu` :- MTU of the vswitch. Applicable only for AHV.
+	Vswitches FoundationImageNodesBlockNodeVswitchArrayInput `pulumi:"vswitches"`
 }
 
 func (FoundationImageNodesBlockNodeArgs) ElementType() reflect.Type {
@@ -33830,6 +33847,13 @@ func (o FoundationImageNodesBlockNodeOutput) UcsmParams() FoundationImageNodesBl
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *FoundationImageNodesBlockNodeUcsmParams { return v.UcsmParams }).(FoundationImageNodesBlockNodeUcsmParamsPtrOutput)
 }
 
+// - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
+// * `vswitches.lacp` :- Status of LACP.
+// * `vswitches.bond_mode` :- bondMode such as balance-tcp, active-backup, etc.
+// * `vswitches.name` :- Name of the vswitch.
+// * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
+// * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
+// * `vswitches.mtu` :- MTU of the vswitch. Applicable only for AHV.
 func (o FoundationImageNodesBlockNodeOutput) Vswitches() FoundationImageNodesBlockNodeVswitchArrayOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) []FoundationImageNodesBlockNodeVswitch { return v.Vswitches }).(FoundationImageNodesBlockNodeVswitchArrayOutput)
 }

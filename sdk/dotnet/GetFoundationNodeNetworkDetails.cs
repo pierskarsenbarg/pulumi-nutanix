@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
+        ///     var networkDetails = Nutanix.Index.GetFoundationNodeNetworkDetails.Invoke(new()
         ///     {
         ///         Ipv6Addresses = new[]
         ///         {
@@ -50,11 +50,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
+        ///     var networkDetails = Nutanix.Index.GetFoundationNodeNetworkDetails.Invoke(new()
         ///     {
         ///         Ipv6Addresses = new[]
         ///         {
@@ -79,11 +79,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
+        ///     var networkDetails = Nutanix.Index.GetFoundationNodeNetworkDetails.Invoke(new()
         ///     {
         ///         Ipv6Addresses = new[]
         ///         {

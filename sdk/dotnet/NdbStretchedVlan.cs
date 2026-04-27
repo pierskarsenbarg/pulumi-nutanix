@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbStretchedVlan("name", new()
+    ///     var name = new Nutanix.Index.NdbStretchedVlan("name", new()
     ///     {
     ///         Name = "test-stretcName",
     ///         Description = "vlan desc updated",
@@ -48,7 +48,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbStretchedVlan("name", new()
+    ///     var name = new Nutanix.Index.NdbStretchedVlan("name", new()
     ///     {
     ///         Name = "test-stretcName",
     ///         Description = "vlan desc updated",

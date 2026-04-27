@@ -21,12 +21,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // vm recovery point details
-        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.Index.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
         ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",
@@ -47,12 +47,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // vm recovery point details
-        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.Index.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
         ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",
@@ -73,12 +73,12 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // vm recovery point details
-        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.Index.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
         ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",

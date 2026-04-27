@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
+    ///     var testAddress = new Nutanix.Index.AddressGroup("test_address", new()
     ///     {
     ///         Name = "test",
     ///         Description = "test address groups resource",

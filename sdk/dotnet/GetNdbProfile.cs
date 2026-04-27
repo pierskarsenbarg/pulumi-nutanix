@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var profile1 = Nutanix.GetNdbProfile.Invoke(new()
+        ///     var profile1 = Nutanix.Index.GetNdbProfile.Invoke(new()
         ///     {
         ///         ProfileType = "Network",
         ///         ProfileName = "TEST_NETWORK_PROFILE",
@@ -50,11 +50,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var profile1 = Nutanix.GetNdbProfile.Invoke(new()
+        ///     var profile1 = Nutanix.Index.GetNdbProfile.Invoke(new()
         ///     {
         ///         ProfileType = "Network",
         ///         ProfileName = "TEST_NETWORK_PROFILE",
@@ -79,11 +79,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var profile1 = Nutanix.GetNdbProfile.Invoke(new()
+        ///     var profile1 = Nutanix.Index.GetNdbProfile.Invoke(new()
         ///     {
         ///         ProfileType = "Network",
         ///         ProfileName = "TEST_NETWORK_PROFILE",

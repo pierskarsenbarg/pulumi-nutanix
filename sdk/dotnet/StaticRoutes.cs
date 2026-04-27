@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var scn = new Nutanix.StaticRoutes("scn", new()
+    ///     var scn = new Nutanix.Index.StaticRoutes("scn", new()
     ///     {
     ///         VpcUuid = "{{vpc_uuid}}",
     ///         StaticRoutesLists = new[]
@@ -49,7 +49,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var scn = new Nutanix.StaticRoutes("scn", new()
+    ///     var scn = new Nutanix.Index.StaticRoutes("scn", new()
     ///     {
     ///         VpcName = "{{vpc_name}}",
     ///         StaticRoutesLists = new[]

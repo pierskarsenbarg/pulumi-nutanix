@@ -21,21 +21,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all address groups
-        ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
+        ///     var list_addr_groups = Nutanix.Index.GetAddressGroupsV2.Invoke();
         /// 
         ///     // filtered the address groups
-        ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_group_filtered = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
         ///     // filtered and limit the number of address groups
-        ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_groups_filter_limit = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///         Limit = 1,
@@ -56,21 +56,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all address groups
-        ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
+        ///     var list_addr_groups = Nutanix.Index.GetAddressGroupsV2.Invoke();
         /// 
         ///     // filtered the address groups
-        ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_group_filtered = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
         ///     // filtered and limit the number of address groups
-        ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_groups_filter_limit = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///         Limit = 1,
@@ -91,21 +91,21 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all address groups
-        ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
+        ///     var list_addr_groups = Nutanix.Index.GetAddressGroupsV2.Invoke();
         /// 
         ///     // filtered the address groups
-        ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_group_filtered = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
         ///     // filtered and limit the number of address groups
-        ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_groups_filter_limit = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///         Limit = 1,

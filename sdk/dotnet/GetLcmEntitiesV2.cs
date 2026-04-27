@@ -22,18 +22,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var entities = Nutanix.GetLcmEntityV2.Invoke();
+        ///     var entities = Nutanix.Index.GetLcmEntityV2.Invoke();
         /// 
-        ///     var lcm_entities_filtered = Nutanix.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_filtered = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Filter = "entityModel eq 'Calm Policy Engine'",
         ///     });
         /// 
-        ///     var lcm_entities_limit = Nutanix.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_limit = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Limit = 5,
         ///     });
@@ -54,18 +54,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var entities = Nutanix.GetLcmEntityV2.Invoke();
+        ///     var entities = Nutanix.Index.GetLcmEntityV2.Invoke();
         /// 
-        ///     var lcm_entities_filtered = Nutanix.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_filtered = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Filter = "entityModel eq 'Calm Policy Engine'",
         ///     });
         /// 
-        ///     var lcm_entities_limit = Nutanix.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_limit = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Limit = 5,
         ///     });
@@ -86,18 +86,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var entities = Nutanix.GetLcmEntityV2.Invoke();
+        ///     var entities = Nutanix.Index.GetLcmEntityV2.Invoke();
         /// 
-        ///     var lcm_entities_filtered = Nutanix.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_filtered = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Filter = "entityModel eq 'Calm Policy Engine'",
         ///     });
         /// 
-        ///     var lcm_entities_limit = Nutanix.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_limit = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Limit = 5,
         ///     });

@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			c1, err := nutanix.LookupNdbCluster(ctx, &nutanix.LookupNdbClusterArgs{
+//			c1, err := nutanix.GetNdbCluster(ctx, &nutanix.LookupNdbClusterArgs{
 //				ClusterName: pulumi.StringRef("<era-cluster-name>"),
 //			}, nil)
 //			if err != nil {

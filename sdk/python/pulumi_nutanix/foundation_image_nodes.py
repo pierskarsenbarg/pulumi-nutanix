@@ -60,11 +60,13 @@ class FoundationImageNodesArgs:
         """
         The set of arguments for constructing a FoundationImageNodes resource.
 
+        :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]] blocks: - (Required) Terraform blocks of Block level parameters.
         :param pulumi.Input[_builtins.str] cvm_gateway: - (Required) CVM gateway.
         :param pulumi.Input[_builtins.str] cvm_netmask: - (Required) CVM netmask.
         :param pulumi.Input[_builtins.str] hypervisor_gateway: - (Required) Hypervisor gateway.
         :param pulumi.Input[_builtins.str] hypervisor_netmask: - (Required) Hypervisor netmask.
         :param pulumi.Input[_builtins.str] nos_package: - (Required) NOS package.
+        :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]] clusters: - Terraform blocks of clusters config
         :param pulumi.Input['FoundationImageNodesEosMetadataArgs'] eos_metadata: - Contains user data from Eos portal.
         :param pulumi.Input['FoundationImageNodesFcSettingsArgs'] fc_settings: - Foundation Central specific settings.
         :param pulumi.Input[_builtins.str] hyperv_external_vnic: - Hyperv External virtual network adapter name.
@@ -164,6 +166,9 @@ class FoundationImageNodesArgs:
     @_builtins.property
     @pulumi.getter
     def blocks(self) -> pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]]:
+        """
+        - (Required) Terraform blocks of Block level parameters.
+        """
         return pulumi.get(self, "blocks")
 
     @blocks.setter
@@ -233,6 +238,9 @@ class FoundationImageNodesArgs:
     @_builtins.property
     @pulumi.getter
     def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]:
+        """
+        - Terraform blocks of clusters config
+        """
         return pulumi.get(self, "clusters")
 
     @clusters.setter
@@ -629,9 +637,11 @@ class _FoundationImageNodesState:
         """
         Input properties used for looking up and filtering FoundationImageNodes resources.
 
+        :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]] blocks: - (Required) Terraform blocks of Block level parameters.
         :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterUrlArgs']]] cluster_urls: - list containing cluster name and cluster urls for created clusters in current session
                * `cluster_urls.#.cluster_name` :- cluster_name
                * `cluster_urls.#.cluster_url` :- url to access the cluster login
+        :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]] clusters: - Terraform blocks of clusters config
         :param pulumi.Input[_builtins.str] cvm_gateway: - (Required) CVM gateway.
         :param pulumi.Input[_builtins.str] cvm_netmask: - (Required) CVM netmask.
         :param pulumi.Input['FoundationImageNodesEosMetadataArgs'] eos_metadata: - Contains user data from Eos portal.
@@ -747,6 +757,9 @@ class _FoundationImageNodesState:
     @_builtins.property
     @pulumi.getter
     def blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]]]:
+        """
+        - (Required) Terraform blocks of Block level parameters.
+        """
         return pulumi.get(self, "blocks")
 
     @blocks.setter
@@ -770,6 +783,9 @@ class _FoundationImageNodesState:
     @_builtins.property
     @pulumi.getter
     def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]:
+        """
+        - Terraform blocks of clusters config
+        """
         return pulumi.get(self, "clusters")
 
     @clusters.setter
@@ -1238,10 +1254,137 @@ class FoundationImageNodes(pulumi.CustomResource):
                  xs_master_username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a FoundationImageNodes resource with the given unique name, props, and options.
+        Images node(s) and optionally creates clusters.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        batch1 = nutanix.FoundationImageNodes("batch1",
+            nos_package="nos_package.tar",
+            cvm_netmask="10.xx.xx.xx",
+            cvm_gateway="10.xx.xx.xx",
+            hypervisor_gateway="10.xx.xx.xx",
+            hypervisor_netmask="10.xx.xx.xx",
+            ipmi_gateway="10.xx.xx.xx",
+            ipmi_netmask="10.xx.xx.xx",
+            hypervisor_iso={
+                "esx": {
+                    "filename": iso,
+                    "checksum": "aasjdajkdsa8sdjnwj2902djncsdc93",
+                },
+            },
+            blocks=[
+                {
+                    "nodes": [
+                        {
+                            "hypervisor_hostname": "batman-1",
+                            "cvm_gb_ram": 50,
+                            "hypervisor_ip": "10.xx.xx.xx",
+                            "hypervisor": "kvm",
+                            "image_now": True,
+                            "ipmi_ip": "10.xx.xx.xx",
+                            "cvm_ip": "10.xx.xx.xx",
+                            "node_position": "A",
+                            "ipmi_user": "ADMIN",
+                            "ipmi_password": "10.xx.xx.xx",
+                        },
+                        {
+                            "cvm_num_vcpus": 10,
+                            "cvm_gb_ram": 51,
+                            "hypervisor_hostname": "batman-2",
+                            "ipv6_address": "ffff::ffff:ffff:ffff:ffff%eth0",
+                            "current_network_interface": "eth0",
+                            "hypervisor_ip": "10.xx.xx.xx",
+                            "hypervisor": "kvm",
+                            "image_now": True,
+                            "ipmi_ip": "10.xx.xx.xx",
+                            "cvm_ip": "10.xx.xx.xx",
+                            "node_position": "B",
+                            "device_hint": "vm_installer",
+                        },
+                        {
+                            "cvm_num_vcpus": 10,
+                            "cvm_gb_ram": 51,
+                            "hypervisor_hostname": "batman-3",
+                            "ipv6_address": "ffff::ffff:ffff:ffff:ffff%eth0",
+                            "hypervisor_ip": "10.xx.xx.xx",
+                            "hypervisor": "kvm",
+                            "image_now": True,
+                            "ipmi_ip": "10.xx.xx.xx",
+                            "current_network_interface": "eth0",
+                            "cvm_ip": "10.xx.xx.xx",
+                            "node_position": "C",
+                            "device_hint": "vm_installer",
+                        },
+                    ],
+                    "block_id": "999999999",
+                },
+                {
+                    "nodes": [{
+                        "cvm_num_vcpus": 10,
+                        "cvm_gb_ram": 51,
+                        "ipv6_address": "ffff::ffff:ffff:ffff:ffff%eth0",
+                        "current_network_interface": "eth2",
+                        "hypervisor_hostname": "superman-1",
+                        "hypervisor_ip": "10.xx.xx.xx",
+                        "hypervisor": "esx",
+                        "image_now": True,
+                        "ipmi_ip": "10.xx.xx.xx",
+                        "cvm_ip": "10.xx.xx.xx",
+                        "node_position": "D",
+                        "device_hint": "vm_installer",
+                    }],
+                    "block_id": "99999999",
+                },
+            ],
+            clusters=[
+                {
+                    "redundancy_factor": 1,
+                    "cluster_name": "superman",
+                    "single_node_cluster": True,
+                    "cluster_init_now": True,
+                    "cluster_external_ip": "10.xx.xx.xx",
+                    "cluster_members": ["10.xx.xx.xx"],
+                },
+                {
+                    "redundancy_factor": 2,
+                    "cluster_name": "batman",
+                    "cluster_init_now": True,
+                    "cluster_external_ip": "10.xx.xx.xx",
+                    "cluster_members": [
+                        "10.xx.xx.xx",
+                        "10.xx.xx.xx",
+                        "10.xx.xx.xx",
+                    ],
+                    "timezone": "Africa/Conakry",
+                },
+            ])
+        pulumi.export("session", nutanix_foundation_image_nodes["batch1"])
+        ```
+
+        ## Defaults
+
+        The attributes like `ipmi_netmask`, `ipmi_gateway`, `ipmi_user` & `ipmi_password` can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+
+        ## Error
+
+        Incase of error in any individual entity i.e. node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+
+        ## lifecycle
+
+        * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+        * `delete` : - Delete will be a soft delete.
+
+        See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]] blocks: - (Required) Terraform blocks of Block level parameters.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]] clusters: - Terraform blocks of clusters config
         :param pulumi.Input[_builtins.str] cvm_gateway: - (Required) CVM gateway.
         :param pulumi.Input[_builtins.str] cvm_netmask: - (Required) CVM netmask.
         :param pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']] eos_metadata: - Contains user data from Eos portal.
@@ -1283,7 +1426,132 @@ class FoundationImageNodes(pulumi.CustomResource):
                  args: FoundationImageNodesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a FoundationImageNodes resource with the given unique name, props, and options.
+        Images node(s) and optionally creates clusters.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        batch1 = nutanix.FoundationImageNodes("batch1",
+            nos_package="nos_package.tar",
+            cvm_netmask="10.xx.xx.xx",
+            cvm_gateway="10.xx.xx.xx",
+            hypervisor_gateway="10.xx.xx.xx",
+            hypervisor_netmask="10.xx.xx.xx",
+            ipmi_gateway="10.xx.xx.xx",
+            ipmi_netmask="10.xx.xx.xx",
+            hypervisor_iso={
+                "esx": {
+                    "filename": iso,
+                    "checksum": "aasjdajkdsa8sdjnwj2902djncsdc93",
+                },
+            },
+            blocks=[
+                {
+                    "nodes": [
+                        {
+                            "hypervisor_hostname": "batman-1",
+                            "cvm_gb_ram": 50,
+                            "hypervisor_ip": "10.xx.xx.xx",
+                            "hypervisor": "kvm",
+                            "image_now": True,
+                            "ipmi_ip": "10.xx.xx.xx",
+                            "cvm_ip": "10.xx.xx.xx",
+                            "node_position": "A",
+                            "ipmi_user": "ADMIN",
+                            "ipmi_password": "10.xx.xx.xx",
+                        },
+                        {
+                            "cvm_num_vcpus": 10,
+                            "cvm_gb_ram": 51,
+                            "hypervisor_hostname": "batman-2",
+                            "ipv6_address": "ffff::ffff:ffff:ffff:ffff%eth0",
+                            "current_network_interface": "eth0",
+                            "hypervisor_ip": "10.xx.xx.xx",
+                            "hypervisor": "kvm",
+                            "image_now": True,
+                            "ipmi_ip": "10.xx.xx.xx",
+                            "cvm_ip": "10.xx.xx.xx",
+                            "node_position": "B",
+                            "device_hint": "vm_installer",
+                        },
+                        {
+                            "cvm_num_vcpus": 10,
+                            "cvm_gb_ram": 51,
+                            "hypervisor_hostname": "batman-3",
+                            "ipv6_address": "ffff::ffff:ffff:ffff:ffff%eth0",
+                            "hypervisor_ip": "10.xx.xx.xx",
+                            "hypervisor": "kvm",
+                            "image_now": True,
+                            "ipmi_ip": "10.xx.xx.xx",
+                            "current_network_interface": "eth0",
+                            "cvm_ip": "10.xx.xx.xx",
+                            "node_position": "C",
+                            "device_hint": "vm_installer",
+                        },
+                    ],
+                    "block_id": "999999999",
+                },
+                {
+                    "nodes": [{
+                        "cvm_num_vcpus": 10,
+                        "cvm_gb_ram": 51,
+                        "ipv6_address": "ffff::ffff:ffff:ffff:ffff%eth0",
+                        "current_network_interface": "eth2",
+                        "hypervisor_hostname": "superman-1",
+                        "hypervisor_ip": "10.xx.xx.xx",
+                        "hypervisor": "esx",
+                        "image_now": True,
+                        "ipmi_ip": "10.xx.xx.xx",
+                        "cvm_ip": "10.xx.xx.xx",
+                        "node_position": "D",
+                        "device_hint": "vm_installer",
+                    }],
+                    "block_id": "99999999",
+                },
+            ],
+            clusters=[
+                {
+                    "redundancy_factor": 1,
+                    "cluster_name": "superman",
+                    "single_node_cluster": True,
+                    "cluster_init_now": True,
+                    "cluster_external_ip": "10.xx.xx.xx",
+                    "cluster_members": ["10.xx.xx.xx"],
+                },
+                {
+                    "redundancy_factor": 2,
+                    "cluster_name": "batman",
+                    "cluster_init_now": True,
+                    "cluster_external_ip": "10.xx.xx.xx",
+                    "cluster_members": [
+                        "10.xx.xx.xx",
+                        "10.xx.xx.xx",
+                        "10.xx.xx.xx",
+                    ],
+                    "timezone": "Africa/Conakry",
+                },
+            ])
+        pulumi.export("session", nutanix_foundation_image_nodes["batch1"])
+        ```
+
+        ## Defaults
+
+        The attributes like `ipmi_netmask`, `ipmi_gateway`, `ipmi_user` & `ipmi_password` can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+
+        ## Error
+
+        Incase of error in any individual entity i.e. node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+
+        ## lifecycle
+
+        * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+        * `delete` : - Delete will be a soft delete.
+
+        See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
+
 
         :param str resource_name: The name of the resource.
         :param FoundationImageNodesArgs args: The arguments to use to populate this resource's properties.
@@ -1450,9 +1718,11 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]] blocks: - (Required) Terraform blocks of Block level parameters.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterUrlArgs', 'FoundationImageNodesClusterUrlArgsDict']]]] cluster_urls: - list containing cluster name and cluster urls for created clusters in current session
                * `cluster_urls.#.cluster_name` :- cluster_name
                * `cluster_urls.#.cluster_url` :- url to access the cluster login
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]] clusters: - Terraform blocks of clusters config
         :param pulumi.Input[_builtins.str] cvm_gateway: - (Required) CVM gateway.
         :param pulumi.Input[_builtins.str] cvm_netmask: - (Required) CVM netmask.
         :param pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']] eos_metadata: - Contains user data from Eos portal.
@@ -1535,6 +1805,9 @@ class FoundationImageNodes(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def blocks(self) -> pulumi.Output[Sequence['outputs.FoundationImageNodesBlock']]:
+        """
+        - (Required) Terraform blocks of Block level parameters.
+        """
         return pulumi.get(self, "blocks")
 
     @_builtins.property
@@ -1550,6 +1823,9 @@ class FoundationImageNodes(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def clusters(self) -> pulumi.Output[Optional[Sequence['outputs.FoundationImageNodesCluster']]]:
+        """
+        - Terraform blocks of clusters config
+        """
         return pulumi.get(self, "clusters")
 
     @_builtins.property

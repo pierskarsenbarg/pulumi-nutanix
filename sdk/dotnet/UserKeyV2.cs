@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Create key under service account, never expires
-    ///     var createKey = new Nutanix.UserKeyV2("create_key", new()
+    ///     var createKey = new Nutanix.Index.UserKeyV2("create_key", new()
     ///     {
     ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
     ///         Name = "api_key_developers",

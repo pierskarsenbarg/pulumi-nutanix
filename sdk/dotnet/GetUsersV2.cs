@@ -21,20 +21,20 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all users
-        ///     var list_users = Nutanix.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.Index.GetUsersV2.Invoke();
         /// 
-        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
+        ///     var filtered_users = Nutanix.Index.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
         ///     // list users of user_type SERVICE_ACCOUNT
-        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
+        ///     var listServiceAccount = Nutanix.Index.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
         ///     });
@@ -107,20 +107,20 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all users
-        ///     var list_users = Nutanix.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.Index.GetUsersV2.Invoke();
         /// 
-        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
+        ///     var filtered_users = Nutanix.Index.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
         ///     // list users of user_type SERVICE_ACCOUNT
-        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
+        ///     var listServiceAccount = Nutanix.Index.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
         ///     });
@@ -193,20 +193,20 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all users
-        ///     var list_users = Nutanix.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.Index.GetUsersV2.Invoke();
         /// 
-        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
+        ///     var filtered_users = Nutanix.Index.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
         ///     // list users of user_type SERVICE_ACCOUNT
-        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
+        ///     var listServiceAccount = Nutanix.Index.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
         ///     });

@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbNetwork("name", new()
+    ///     var name = new Nutanix.Index.NdbNetwork("name", new()
     ///     {
     ///         Name = "test-sub",
     ///         Type = "Static",

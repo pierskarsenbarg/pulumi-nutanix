@@ -34,7 +34,7 @@ import (
 //			}
 //			_, err = nutanix.NewVirtualMachine(ctx, "vm1", &nutanix.VirtualMachineArgs{
 //				Name:        pulumi.String("test-dou"),
-//				ClusterUuid: pulumi.String(clusters.Entities[0].Metadata.Uuid),
+//				ClusterUuid: pulumi.String(pulumi.String(clusters.Entities[0].Metadata.Uuid)),
 //				Categories: nutanix.VirtualMachineCategoryArray{
 //					&nutanix.VirtualMachineCategoryArgs{
 //						Name:  pulumi.String("Environment"),
@@ -73,7 +73,7 @@ import (
 //			}
 //			_, err = nutanix.NewVirtualMachine(ctx, "vm", &nutanix.VirtualMachineArgs{
 //				Name:              pulumi.String("myVm"),
-//				ClusterUuid:       pulumi.String(clusters.Entities[0].Metadata.Uuid),
+//				ClusterUuid:       pulumi.String(pulumi.String(clusters.Entities[0].Metadata.Uuid)),
 //				NumVcpusPerSocket: pulumi.Int(1),
 //				NumSockets:        pulumi.Int(1),
 //				MemorySizeMib:     pulumi.Int(186),
@@ -105,12 +105,7 @@ import (
 //
 // Nutanix Virtual machines can be imported using the `UUID` eg,
 //
-// `
-//
-// ```sh
-// $ pulumi import nutanix:index/virtualMachine:VirtualMachine vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
-// ```
-//
+// `terraform import nutanix_virtual_machine.vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
 // `
 type VirtualMachine struct {
 	pulumi.CustomResourceState

@@ -6,6 +6,22 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Launches a blueprint to create an application and perform system actions on application.
+ *
+ * ## Example 1: Provision Application
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const test = new nutanix.SelfServiceAppProvision("test", {
+ *     bpName: "NAME OF BLUEPRINT",
+ *     appName: "NAME OF APPLICATION TO SET",
+ *     appDescription: "DESCRIPTION OF APPLICATION",
+ * });
+ * ```
+ */
 export class SelfServiceAppProvision extends pulumi.CustomResource {
     /**
      * Get an existing SelfServiceAppProvision resource's state with the given name, ID, and optional extra

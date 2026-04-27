@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var ap_example = new Nutanix.AuthorizationPolicyV2("ap-example", new()
+    ///     var ap_example = new Nutanix.Index.AuthorizationPolicyV2("ap-example", new()
     ///     {
     ///         Role = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
     ///         DisplayName = "auth_policy_example",

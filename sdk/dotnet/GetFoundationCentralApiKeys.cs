@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
+        ///     var apiKeysList = Nutanix.Index.GetFoundationCentralApiKeys.Invoke(new()
         ///     {
         ///         KeyUuid = "&lt;KEY_UUID&gt;",
         ///     });
@@ -45,11 +45,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
+        ///     var apiKeysList = Nutanix.Index.GetFoundationCentralApiKeys.Invoke(new()
         ///     {
         ///         KeyUuid = "&lt;KEY_UUID&gt;",
         ///     });
@@ -69,11 +69,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
+        ///     var apiKeysList = Nutanix.Index.GetFoundationCentralApiKeys.Invoke(new()
         ///     {
         ///         KeyUuid = "&lt;KEY_UUID&gt;",
         ///     });

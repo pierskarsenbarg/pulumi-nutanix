@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var acctest_managed = new Nutanix.NdbCloneRefresh("acctest-managed", new()
+    ///     var acctest_managed = new Nutanix.Index.NdbCloneRefresh("acctest-managed", new()
     ///     {
     ///         CloneId = "{{ clone_id }}",
     ///         SnapshotId = "{{ snapshot_id }}",
@@ -45,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var acctest_managed = new Nutanix.NdbCloneRefresh("acctest-managed", new()
+    ///     var acctest_managed = new Nutanix.Index.NdbCloneRefresh("acctest-managed", new()
     ///     {
     ///         CloneId = "{{ clone_id }}",
     ///         UserPitrStamp = "{{ timestamp }}",

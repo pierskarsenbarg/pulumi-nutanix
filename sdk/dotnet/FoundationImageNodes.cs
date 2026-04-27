@@ -10,9 +10,170 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Images node(s) and optionally creates clusters.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var batch1 = new Nutanix.Index.FoundationImageNodes("batch1", new()
+    ///     {
+    ///         NosPackage = "nos_package.tar",
+    ///         CvmNetmask = "10.xx.xx.xx",
+    ///         CvmGateway = "10.xx.xx.xx",
+    ///         HypervisorGateway = "10.xx.xx.xx",
+    ///         HypervisorNetmask = "10.xx.xx.xx",
+    ///         IpmiGateway = "10.xx.xx.xx",
+    ///         IpmiNetmask = "10.xx.xx.xx",
+    ///         HypervisorIso = new Nutanix.Inputs.FoundationImageNodesHypervisorIsoArgs
+    ///         {
+    ///             Esx = new Nutanix.Inputs.FoundationImageNodesHypervisorIsoEsxArgs
+    ///             {
+    ///                 Filename = iso,
+    ///                 Checksum = "aasjdajkdsa8sdjnwj2902djncsdc93",
+    ///             },
+    ///         },
+    ///         Blocks = new[]
+    ///         {
+    ///             new Nutanix.Inputs.FoundationImageNodesBlockArgs
+    ///             {
+    ///                 Nodes = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.FoundationImageNodesBlockNodeArgs
+    ///                     {
+    ///                         HypervisorHostname = "batman-1",
+    ///                         CvmGbRam = 50,
+    ///                         HypervisorIp = "10.xx.xx.xx",
+    ///                         Hypervisor = "kvm",
+    ///                         ImageNow = true,
+    ///                         IpmiIp = "10.xx.xx.xx",
+    ///                         CvmIp = "10.xx.xx.xx",
+    ///                         NodePosition = "A",
+    ///                         IpmiUser = "ADMIN",
+    ///                         IpmiPassword = "10.xx.xx.xx",
+    ///                     },
+    ///                     new Nutanix.Inputs.FoundationImageNodesBlockNodeArgs
+    ///                     {
+    ///                         CvmNumVcpus = 10,
+    ///                         CvmGbRam = 51,
+    ///                         HypervisorHostname = "batman-2",
+    ///                         Ipv6Address = "ffff::ffff:ffff:ffff:ffff%eth0",
+    ///                         CurrentNetworkInterface = "eth0",
+    ///                         HypervisorIp = "10.xx.xx.xx",
+    ///                         Hypervisor = "kvm",
+    ///                         ImageNow = true,
+    ///                         IpmiIp = "10.xx.xx.xx",
+    ///                         CvmIp = "10.xx.xx.xx",
+    ///                         NodePosition = "B",
+    ///                         DeviceHint = "vm_installer",
+    ///                     },
+    ///                     new Nutanix.Inputs.FoundationImageNodesBlockNodeArgs
+    ///                     {
+    ///                         CvmNumVcpus = 10,
+    ///                         CvmGbRam = 51,
+    ///                         HypervisorHostname = "batman-3",
+    ///                         Ipv6Address = "ffff::ffff:ffff:ffff:ffff%eth0",
+    ///                         HypervisorIp = "10.xx.xx.xx",
+    ///                         Hypervisor = "kvm",
+    ///                         ImageNow = true,
+    ///                         IpmiIp = "10.xx.xx.xx",
+    ///                         CurrentNetworkInterface = "eth0",
+    ///                         CvmIp = "10.xx.xx.xx",
+    ///                         NodePosition = "C",
+    ///                         DeviceHint = "vm_installer",
+    ///                     },
+    ///                 },
+    ///                 BlockId = "999999999",
+    ///             },
+    ///             new Nutanix.Inputs.FoundationImageNodesBlockArgs
+    ///             {
+    ///                 Nodes = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.FoundationImageNodesBlockNodeArgs
+    ///                     {
+    ///                         CvmNumVcpus = 10,
+    ///                         CvmGbRam = 51,
+    ///                         Ipv6Address = "ffff::ffff:ffff:ffff:ffff%eth0",
+    ///                         CurrentNetworkInterface = "eth2",
+    ///                         HypervisorHostname = "superman-1",
+    ///                         HypervisorIp = "10.xx.xx.xx",
+    ///                         Hypervisor = "esx",
+    ///                         ImageNow = true,
+    ///                         IpmiIp = "10.xx.xx.xx",
+    ///                         CvmIp = "10.xx.xx.xx",
+    ///                         NodePosition = "D",
+    ///                         DeviceHint = "vm_installer",
+    ///                     },
+    ///                 },
+    ///                 BlockId = "99999999",
+    ///             },
+    ///         },
+    ///         Clusters = new[]
+    ///         {
+    ///             new Nutanix.Inputs.FoundationImageNodesClusterArgs
+    ///             {
+    ///                 RedundancyFactor = 1,
+    ///                 ClusterName = "superman",
+    ///                 SingleNodeCluster = true,
+    ///                 ClusterInitNow = true,
+    ///                 ClusterExternalIp = "10.xx.xx.xx",
+    ///                 ClusterMembers = new[]
+    ///                 {
+    ///                     "10.xx.xx.xx",
+    ///                 },
+    ///             },
+    ///             new Nutanix.Inputs.FoundationImageNodesClusterArgs
+    ///             {
+    ///                 RedundancyFactor = 2,
+    ///                 ClusterName = "batman",
+    ///                 ClusterInitNow = true,
+    ///                 ClusterExternalIp = "10.xx.xx.xx",
+    ///                 ClusterMembers = new[]
+    ///                 {
+    ///                     "10.xx.xx.xx",
+    ///                     "10.xx.xx.xx",
+    ///                     "10.xx.xx.xx",
+    ///                 },
+    ///                 Timezone = "Africa/Conakry",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["session"] = nutanixFoundationImageNodes.Batch1,
+    ///     };
+    /// });
+    /// ```
+    /// 
+    /// ## Defaults
+    /// 
+    /// The attributes like `IpmiNetmask`, `IpmiGateway`, `IpmiUser` &amp; `IpmiPassword` can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+    /// 
+    /// ## Error
+    /// 
+    /// Incase of error in any individual entity i.e. node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+    /// 
+    /// ## lifecycle
+    /// 
+    /// * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+    /// * `Delete` : - Delete will be a soft delete.
+    /// 
+    /// See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
+    /// </summary>
     [NutanixResourceType("nutanix:index/foundationImageNodes:FoundationImageNodes")]
     public partial class FoundationImageNodes : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Required) Terraform blocks of Block level parameters.
+        /// </summary>
         [Output("blocks")]
         public Output<ImmutableArray<Outputs.FoundationImageNodesBlock>> Blocks { get; private set; } = null!;
 
@@ -24,6 +185,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("clusterUrls")]
         public Output<ImmutableArray<Outputs.FoundationImageNodesClusterUrl>> ClusterUrls { get; private set; } = null!;
 
+        /// <summary>
+        /// - Terraform blocks of clusters config
+        /// </summary>
         [Output("clusters")]
         public Output<ImmutableArray<Outputs.FoundationImageNodesCluster>> Clusters { get; private set; } = null!;
 
@@ -283,6 +447,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("blocks", required: true)]
         private InputList<Inputs.FoundationImageNodesBlockArgs>? _blocks;
+
+        /// <summary>
+        /// - (Required) Terraform blocks of Block level parameters.
+        /// </summary>
         public InputList<Inputs.FoundationImageNodesBlockArgs> Blocks
         {
             get => _blocks ?? (_blocks = new InputList<Inputs.FoundationImageNodesBlockArgs>());
@@ -291,6 +459,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("clusters")]
         private InputList<Inputs.FoundationImageNodesClusterArgs>? _clusters;
+
+        /// <summary>
+        /// - Terraform blocks of clusters config
+        /// </summary>
         public InputList<Inputs.FoundationImageNodesClusterArgs> Clusters
         {
             get => _clusters ?? (_clusters = new InputList<Inputs.FoundationImageNodesClusterArgs>());
@@ -514,6 +686,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("blocks")]
         private InputList<Inputs.FoundationImageNodesBlockGetArgs>? _blocks;
+
+        /// <summary>
+        /// - (Required) Terraform blocks of Block level parameters.
+        /// </summary>
         public InputList<Inputs.FoundationImageNodesBlockGetArgs> Blocks
         {
             get => _blocks ?? (_blocks = new InputList<Inputs.FoundationImageNodesBlockGetArgs>());
@@ -536,6 +712,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("clusters")]
         private InputList<Inputs.FoundationImageNodesClusterGetArgs>? _clusters;
+
+        /// <summary>
+        /// - Terraform blocks of clusters config
+        /// </summary>
         public InputList<Inputs.FoundationImageNodesClusterGetArgs> Clusters
         {
             get => _clusters ?? (_clusters = new InputList<Inputs.FoundationImageNodesClusterGetArgs>());

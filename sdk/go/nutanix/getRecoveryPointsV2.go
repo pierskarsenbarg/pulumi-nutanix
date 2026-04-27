@@ -27,11 +27,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupRecoveryPointsV2(ctx, &nutanix.LookupRecoveryPointsV2Args{}, nil)
+//			_, err := nutanix.GetRecoveryPointsV2(ctx, &nutanix.LookupRecoveryPointsV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.LookupRecoveryPointsV2(ctx, &nutanix.LookupRecoveryPointsV2Args{
+//			_, err = nutanix.GetRecoveryPointsV2(ctx, &nutanix.LookupRecoveryPointsV2Args{
 //				Filter: pulumi.StringRef("name eq 'recovery_point_001'"),
 //			}, nil)
 //			if err != nil {

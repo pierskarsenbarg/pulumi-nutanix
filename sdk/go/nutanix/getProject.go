@@ -72,7 +72,7 @@ import (
 //				},
 //				DefaultSubnetReference: &nutanix.ProjectDefaultSubnetReferenceArgs{
 //					Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
-//						return metadata.Uuid, nil
+//						return metadata["uuid"], nil
 //					}).(pulumi.StringOutput),
 //				},
 //				ApiVersion: pulumi.String("3.1"),
@@ -80,7 +80,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_ = nutanix.LookupProjectOutput(ctx, nutanix.GetProjectOutputArgs{
+//			_ = nutanix.GetProjectOutput(ctx, nutanix.GetProjectOutputArgs{
 //				ProjectId: projectTest.ID(),
 //			}, nil)
 //			return nil

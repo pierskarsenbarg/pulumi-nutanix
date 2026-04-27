@@ -214,6 +214,16 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("vswitches")]
         private InputList<Inputs.FoundationImageNodesBlockNodeVswitchGetArgs>? _vswitches;
+
+        /// <summary>
+        /// - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
+        /// * `vswitches.lacp` :- Status of LACP.
+        /// * `vswitches.bond_mode` :- BondMode such as balance-tcp, active-backup, etc.
+        /// * `vswitches.name` :- Name of the vswitch.
+        /// * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
+        /// * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
+        /// * `vswitches.mtu` :- MTU of the vswitch. Applicable only for AHV.
+        /// </summary>
         public InputList<Inputs.FoundationImageNodesBlockNodeVswitchGetArgs> Vswitches
         {
             get => _vswitches ?? (_vswitches = new InputList<Inputs.FoundationImageNodesBlockNodeVswitchGetArgs>());

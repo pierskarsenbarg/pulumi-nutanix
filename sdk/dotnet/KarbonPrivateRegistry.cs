@@ -20,13 +20,12 @@ namespace PiersKarsenbarg.Nutanix
     /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// using Nutanix = Pulumi.Nutanix;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var registries = Nutanix.GetKarbonPrivateRegistry.Invoke();
+    ///     var registries = Nutanix.Index.GetKarbonPrivateRegistry.Invoke();
     /// 
-    ///     var registry = new Nutanix.KarbonPrivateRegistry("registry");
+    ///     var registry = new Nutanix.Index.KarbonPrivateRegistry("registry");
     /// 
     /// });
     /// ```

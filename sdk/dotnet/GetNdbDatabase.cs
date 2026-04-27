@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var db1 = Nutanix.GetNdbDatabase.Invoke(new()
+        ///     var db1 = Nutanix.Index.GetNdbDatabase.Invoke(new()
         ///     {
         ///         DatabaseId = "&lt;sample-id&gt;",
         ///     });
@@ -49,11 +49,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var db1 = Nutanix.GetNdbDatabase.Invoke(new()
+        ///     var db1 = Nutanix.Index.GetNdbDatabase.Invoke(new()
         ///     {
         ///         DatabaseId = "&lt;sample-id&gt;",
         ///     });
@@ -77,11 +77,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var db1 = Nutanix.GetNdbDatabase.Invoke(new()
+        ///     var db1 = Nutanix.Index.GetNdbDatabase.Invoke(new()
         ///     {
         ///         DatabaseId = "&lt;sample-id&gt;",
         ///     });

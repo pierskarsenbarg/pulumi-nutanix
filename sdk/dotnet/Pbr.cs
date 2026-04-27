@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var pbr = new Nutanix.Pbr("pbr", new()
+    ///     var pbr = new Nutanix.Index.Pbr("pbr", new()
     ///     {
     ///         Name = "test-policy-1",
     ///         Priority = 123,

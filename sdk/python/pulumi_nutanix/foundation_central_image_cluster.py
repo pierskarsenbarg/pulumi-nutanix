@@ -619,7 +619,100 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  timezone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a FoundationCentralImageCluster resource with the given unique name, props, and options.
+        Image Nodes and Create a cluster out of nodes registered with Foundation Central.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        img2 = nutanix.FoundationCentralImageCluster("img2",
+            cluster_name="test-FC",
+            cluster_external_ip="<CLUSTER-IP>",
+            common_network_settings={
+                "cvm_dns_servers": ["xx.x.xx.xx"],
+                "hypervisor_dns_servers": ["xx.x.xx.xx"],
+                "cvm_ntp_servers": ["<cvm-ntp>"],
+                "hypervisor_ntp_servers": ["<hypervisor-ntp>"],
+            },
+            redundancy_factor=2,
+            node_lists=[
+                {
+                    "cvm_gateway": "10.xx.xx.xx",
+                    "cvm_netmask": "xx.xx.xx.xx",
+                    "cvm_ip": "10.x.xx.xx",
+                    "hypervisor_gateway": "10.x.x.xx",
+                    "hypervisor_netmask": "xx.xx.xx.xx",
+                    "hypervisor_ip": "10.x.xx.xx",
+                    "hypervisor_hostname": "HOST-1",
+                    "imaged_node_uuid": "<NODE-UUID>",
+                    "use_existing_network_settings": False,
+                    "ipmi_gateway": "10.x.xx.xx",
+                    "ipmi_netmask": "10.x.xx.xx",
+                    "ipmi_ip": "10.x.xx.xx",
+                    "image_now": True,
+                    "hypervisor_type": "kvm",
+                    "hardware_attributes_override": {
+                        "default_workload": "vdi",
+                        "lcm_family": "smc_gen_10",
+                        "maybe_1GbE_only": "true",
+                        "robo_mixed_hypervisor": "true",
+                    },
+                },
+                {
+                    "cvm_gateway": "10.xx.xx.xx",
+                    "cvm_netmask": "xx.xx.xx.xx",
+                    "cvm_ip": "10.x.xx.xx",
+                    "hypervisor_gateway": "10.x.x.xx",
+                    "hypervisor_netmask": "xx.xx.xx.xx",
+                    "hypervisor_ip": "10.x.xx.xx",
+                    "hypervisor_hostname": "HOST-2",
+                    "imaged_node_uuid": "<NODE-UUID>",
+                    "use_existing_network_settings": False,
+                    "ipmi_gateway": "10.x.xx.xx",
+                    "ipmi_netmask": "10.x.xx.xx",
+                    "ipmi_ip": "10.x.xx.xx",
+                    "image_now": True,
+                    "hypervisor_type": "kvm",
+                },
+                {
+                    "cvm_gateway": "10.xx.xx.xx",
+                    "cvm_netmask": "xx.xx.xx.xx",
+                    "cvm_ip": "10.x.xx.xx",
+                    "hypervisor_gateway": "10.x.x.xx",
+                    "hypervisor_netmask": "xx.xx.xx.xx",
+                    "hypervisor_ip": "10.x.xx.xx",
+                    "hypervisor_hostname": "HOST-3",
+                    "imaged_node_uuid": "<NODE-UUID>",
+                    "use_existing_network_settings": False,
+                    "ipmi_gateway": "10.x.xx.xx",
+                    "ipmi_netmask": "10.x.xx.xx",
+                    "ipmi_ip": "10.x.xx.xx",
+                    "image_now": True,
+                    "hypervisor_type": "kvm",
+                },
+            ],
+            aos_package_url="<URL>",
+            hypervisor_isos={
+                "url": "<hypervisor-installer-link>",
+                "sha256sum": "<hypervisor-installer-checksum>",
+                "hypervisor_type": "kvm",
+            },
+            skip_cluster_creation=True)
+        ```
+
+        ## Error
+
+        Incase of error in any individual node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+
+        ## lifecycle
+
+        * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+        * `delete` : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
+
+        See detailed information in [Nutanix Foundation Central Create a Cluster](https://www.nutanix.dev/api_references/foundation-central/#/cba507f282927-request-to-create-a-cluster).
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -642,7 +735,100 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  args: Optional[FoundationCentralImageClusterArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a FoundationCentralImageCluster resource with the given unique name, props, and options.
+        Image Nodes and Create a cluster out of nodes registered with Foundation Central.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        img2 = nutanix.FoundationCentralImageCluster("img2",
+            cluster_name="test-FC",
+            cluster_external_ip="<CLUSTER-IP>",
+            common_network_settings={
+                "cvm_dns_servers": ["xx.x.xx.xx"],
+                "hypervisor_dns_servers": ["xx.x.xx.xx"],
+                "cvm_ntp_servers": ["<cvm-ntp>"],
+                "hypervisor_ntp_servers": ["<hypervisor-ntp>"],
+            },
+            redundancy_factor=2,
+            node_lists=[
+                {
+                    "cvm_gateway": "10.xx.xx.xx",
+                    "cvm_netmask": "xx.xx.xx.xx",
+                    "cvm_ip": "10.x.xx.xx",
+                    "hypervisor_gateway": "10.x.x.xx",
+                    "hypervisor_netmask": "xx.xx.xx.xx",
+                    "hypervisor_ip": "10.x.xx.xx",
+                    "hypervisor_hostname": "HOST-1",
+                    "imaged_node_uuid": "<NODE-UUID>",
+                    "use_existing_network_settings": False,
+                    "ipmi_gateway": "10.x.xx.xx",
+                    "ipmi_netmask": "10.x.xx.xx",
+                    "ipmi_ip": "10.x.xx.xx",
+                    "image_now": True,
+                    "hypervisor_type": "kvm",
+                    "hardware_attributes_override": {
+                        "default_workload": "vdi",
+                        "lcm_family": "smc_gen_10",
+                        "maybe_1GbE_only": "true",
+                        "robo_mixed_hypervisor": "true",
+                    },
+                },
+                {
+                    "cvm_gateway": "10.xx.xx.xx",
+                    "cvm_netmask": "xx.xx.xx.xx",
+                    "cvm_ip": "10.x.xx.xx",
+                    "hypervisor_gateway": "10.x.x.xx",
+                    "hypervisor_netmask": "xx.xx.xx.xx",
+                    "hypervisor_ip": "10.x.xx.xx",
+                    "hypervisor_hostname": "HOST-2",
+                    "imaged_node_uuid": "<NODE-UUID>",
+                    "use_existing_network_settings": False,
+                    "ipmi_gateway": "10.x.xx.xx",
+                    "ipmi_netmask": "10.x.xx.xx",
+                    "ipmi_ip": "10.x.xx.xx",
+                    "image_now": True,
+                    "hypervisor_type": "kvm",
+                },
+                {
+                    "cvm_gateway": "10.xx.xx.xx",
+                    "cvm_netmask": "xx.xx.xx.xx",
+                    "cvm_ip": "10.x.xx.xx",
+                    "hypervisor_gateway": "10.x.x.xx",
+                    "hypervisor_netmask": "xx.xx.xx.xx",
+                    "hypervisor_ip": "10.x.xx.xx",
+                    "hypervisor_hostname": "HOST-3",
+                    "imaged_node_uuid": "<NODE-UUID>",
+                    "use_existing_network_settings": False,
+                    "ipmi_gateway": "10.x.xx.xx",
+                    "ipmi_netmask": "10.x.xx.xx",
+                    "ipmi_ip": "10.x.xx.xx",
+                    "image_now": True,
+                    "hypervisor_type": "kvm",
+                },
+            ],
+            aos_package_url="<URL>",
+            hypervisor_isos={
+                "url": "<hypervisor-installer-link>",
+                "sha256sum": "<hypervisor-installer-checksum>",
+                "hypervisor_type": "kvm",
+            },
+            skip_cluster_creation=True)
+        ```
+
+        ## Error
+
+        Incase of error in any individual node or cluster, terraform will error our after full imaging process is completed. Error will be shown for every failed node and cluster.
+
+        ## lifecycle
+
+        * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
+        * `delete` : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
+
+        See detailed information in [Nutanix Foundation Central Create a Cluster](https://www.nutanix.dev/api_references/foundation-central/#/cba507f282927-request-to-create-a-cluster).
+
 
         :param str resource_name: The name of the resource.
         :param FoundationCentralImageClusterArgs args: The arguments to use to populate this resource's properties.

@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbSoftwareVersionProfile("name", new()
+    ///     var name = new Nutanix.Index.NdbSoftwareVersionProfile("name", new()
     ///     {
     ///         EngineType = "postgres_database",
     ///         ProfileId = nutanixNdbProfile.Name12.Id,

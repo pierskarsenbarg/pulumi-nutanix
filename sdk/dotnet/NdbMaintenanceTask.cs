@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbMaintenanceTask("name", new()
+    ///     var name = new Nutanix.Index.NdbMaintenanceTask("name", new()
     ///     {
     ///         DbserverIds = new[]
     ///         {
@@ -52,7 +52,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbMaintenanceTask("name", new()
+    ///     var name = new Nutanix.Index.NdbMaintenanceTask("name", new()
     ///     {
     ///         DbserverIds = new[]
     ///         {
@@ -80,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbMaintenanceTask("name", new()
+    ///     var name = new Nutanix.Index.NdbMaintenanceTask("name", new()
     ///     {
     ///         DbserverIds = new[]
     ///         {

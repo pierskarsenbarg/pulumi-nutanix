@@ -38,7 +38,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_ = nutanix.LookupAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
+//			_ = nutanix.GetAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
 //				AccessControlPolicyId: testAccessControlPolicy.ID(),
 //			}, nil)
 //			return nil

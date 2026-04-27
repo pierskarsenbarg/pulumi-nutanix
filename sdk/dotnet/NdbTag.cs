@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbTag("name", new()
+    ///     var name = new Nutanix.Index.NdbTag("name", new()
     ///     {
     ///         Name = "testst-up",
     ///         Description = "this is desc ok",
@@ -44,7 +44,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.NdbTag("name", new()
+    ///     var name = new Nutanix.Index.NdbTag("name", new()
     ///     {
     ///         Name = "testst-up",
     ///         Description = "this is desc ok",

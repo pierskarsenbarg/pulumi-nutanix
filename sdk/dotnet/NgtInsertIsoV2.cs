@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.NgtInsertIsoV2("example", new()
+    ///     var example = new Nutanix.Index.NgtInsertIsoV2("example", new()
     ///     {
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         Capablities = new[]

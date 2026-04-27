@@ -21,15 +21,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all images
-        ///     var list_images = Nutanix.GetImagesV2.Invoke();
+        ///     var list_images = Nutanix.Index.GetImagesV2.Invoke();
         /// 
         ///     // List images with filter, page and limit
-        ///     var filtered_images = Nutanix.GetImagesV2.Invoke(new()
+        ///     var filtered_images = Nutanix.Index.GetImagesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'image_name')",
         ///         Page = 0,
@@ -88,15 +88,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all images
-        ///     var list_images = Nutanix.GetImagesV2.Invoke();
+        ///     var list_images = Nutanix.Index.GetImagesV2.Invoke();
         /// 
         ///     // List images with filter, page and limit
-        ///     var filtered_images = Nutanix.GetImagesV2.Invoke(new()
+        ///     var filtered_images = Nutanix.Index.GetImagesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'image_name')",
         ///         Page = 0,
@@ -155,15 +155,15 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all images
-        ///     var list_images = Nutanix.GetImagesV2.Invoke();
+        ///     var list_images = Nutanix.Index.GetImagesV2.Invoke();
         /// 
         ///     // List images with filter, page and limit
-        ///     var filtered_images = Nutanix.GetImagesV2.Invoke(new()
+        ///     var filtered_images = Nutanix.Index.GetImagesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'image_name')",
         ///         Page = 0,

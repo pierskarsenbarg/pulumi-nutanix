@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var user = new Nutanix.User("user", new()
+    ///     var user = new Nutanix.Index.User("user", new()
     ///     {
     ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
     ///         {
@@ -46,7 +46,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var user = new Nutanix.User("user", new()
+    ///     var user = new Nutanix.Index.User("user", new()
     ///     {
     ///         IdentityProviderUser = new Nutanix.Inputs.UserIdentityProviderUserArgs
     ///         {

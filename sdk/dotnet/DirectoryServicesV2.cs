@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Add Directory Service .
-    ///     var active_directory = new Nutanix.DirectoryServicesV2("active-directory", new()
+    ///     var active_directory = new Nutanix.Index.DirectoryServicesV2("active-directory", new()
     ///     {
     ///         Name = "example_active_directory",
     ///         Url = "ldap://10.xx.xx.xx:xxxx",

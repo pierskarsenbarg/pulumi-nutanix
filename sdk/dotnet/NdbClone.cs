@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     //# resource for cloning using Point in time given time machine name
-    ///     var name = new Nutanix.NdbClone("name", new()
+    ///     var name = new Nutanix.Index.NdbClone("name", new()
     ///     {
     ///         TimeMachineName = "test-pg-inst",
     ///         Name = "test-inst-tf-check",

@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vm_1 = new Nutanix.VirtualMachineV2("vm-1", new()
+    ///     var vm_1 = new Nutanix.Index.VirtualMachineV2("vm-1", new()
     ///     {
     ///         Name = "example-vm-1",
     ///         Description = "vm desc",
@@ -39,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
-    ///     var vm_2 = new Nutanix.VirtualMachineV2("vm-2", new()
+    ///     var vm_2 = new Nutanix.Index.VirtualMachineV2("vm-2", new()
     ///     {
     ///         Name = "example-vm-2",
     ///         Description = "vm desc",
@@ -106,7 +106,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
-    ///     var vm_3 = new Nutanix.VirtualMachineV2("vm-3", new()
+    ///     var vm_3 = new Nutanix.Index.VirtualMachineV2("vm-3", new()
     ///     {
     ///         Name = "terraform-example-vm-4-disks",
     ///         NumCoresPerSocket = 1,
@@ -157,7 +157,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                                         },
     ///                                     },
     ///                                 },
-    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 DiskSizeBytes = Std.Index.Pow.Invoke(new()
     ///                                 {
     ///                                     Base = 1024,
     ///                                     Exponent = 3,
@@ -185,7 +185,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                         {
     ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
     ///                             {
-    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 DiskSizeBytes = Std.Index.Pow.Invoke(new()
     ///                                 {
     ///                                     Base = 1024,
     ///                                     Exponent = 3,
@@ -220,7 +220,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                         {
     ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
     ///                             {
-    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 DiskSizeBytes = Std.Index.Pow.Invoke(new()
     ///                                 {
     ///                                     Base = 1024,
     ///                                     Exponent = 3,
@@ -255,7 +255,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                         {
     ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
     ///                             {
-    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 DiskSizeBytes = Std.Index.Pow.Invoke(new()
     ///                                 {
     ///                                     Base = 1024,
     ///                                     Exponent = 3,

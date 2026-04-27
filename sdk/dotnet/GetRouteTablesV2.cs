@@ -21,18 +21,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var all_tables = Nutanix.GetRouteTablesV2.Invoke();
+        ///     var all_tables = Nutanix.Index.GetRouteTablesV2.Invoke();
         /// 
-        ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_filter = Nutanix.Index.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
         ///     });
         /// 
-        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_orderby = Nutanix.Index.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         OrderBy = "vpcReference",
         ///     });
@@ -52,18 +52,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var all_tables = Nutanix.GetRouteTablesV2.Invoke();
+        ///     var all_tables = Nutanix.Index.GetRouteTablesV2.Invoke();
         /// 
-        ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_filter = Nutanix.Index.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
         ///     });
         /// 
-        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_orderby = Nutanix.Index.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         OrderBy = "vpcReference",
         ///     });
@@ -83,18 +83,18 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var all_tables = Nutanix.GetRouteTablesV2.Invoke();
+        ///     var all_tables = Nutanix.Index.GetRouteTablesV2.Invoke();
         /// 
-        ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_filter = Nutanix.Index.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
         ///     });
         /// 
-        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_orderby = Nutanix.Index.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         OrderBy = "vpcReference",
         ///     });

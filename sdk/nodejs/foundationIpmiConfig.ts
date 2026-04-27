@@ -6,6 +6,49 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Configures IPMI IP address on BMC of nodes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const impi_1 = new nutanix.FoundationIpmiConfig("impi-1", {
+ *     ipmiUser: "username",
+ *     ipmiNetmask: "10.xx.xx.xx",
+ *     blocks: [{
+ *         nodes: [
+ *             {
+ *                 ipmiMac: "ff:ff:ff:ff:ff:ff",
+ *                 ipmiConfigureNow: true,
+ *                 ipmiIp: "10.xx.xx.xx",
+ *             },
+ *             {
+ *                 ipmiMac: "ff:ff:ff:ff:ff:ff",
+ *                 ipmiConfigureNow: true,
+ *                 ipmiIp: "10.xx.xx.xx",
+ *             },
+ *         ],
+ *         blockId: "xyz",
+ *     }],
+ *     ipmiGateway: "10.xx.xx.xx",
+ *     ipmiPassword: "XXXXX",
+ * });
+ * ```
+ *
+ * ## Error
+ *
+ * Incase of error, terraform will error out and display error for every failed ipmi configuration respective to its ipmi_ip.
+ *
+ * ## lifecycle
+ *
+ * * `Update` : - Resource will trigger new resource create call for any kind of update in resource block.
+ * * `Delete` : - Delete will be a soft delete.
+ *
+ * See detailed information in [Nutanix Foundation IPMI Config](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzNzI-configure-bmc-i-pv4).
+ */
 export class FoundationIpmiConfig extends pulumi.CustomResource {
     /**
      * Get an existing FoundationIpmiConfig resource's state with the given name, ID, and optional extra

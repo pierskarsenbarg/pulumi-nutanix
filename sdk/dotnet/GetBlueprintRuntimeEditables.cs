@@ -23,17 +23,17 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Text.Json;
         /// using Pulumi;
         /// using Local = Pulumi.Local;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetBlueprintRuntimeEditables.Invoke(new()
+        ///     var example = Nutanix.Index.GetBlueprintRuntimeEditables.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
+        ///     var dumpRuntimeValue = new Local.Index.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",
@@ -56,17 +56,17 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Text.Json;
         /// using Pulumi;
         /// using Local = Pulumi.Local;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetBlueprintRuntimeEditables.Invoke(new()
+        ///     var example = Nutanix.Index.GetBlueprintRuntimeEditables.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
+        ///     var dumpRuntimeValue = new Local.Index.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",
@@ -89,17 +89,17 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Text.Json;
         /// using Pulumi;
         /// using Local = Pulumi.Local;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetBlueprintRuntimeEditables.Invoke(new()
+        ///     var example = Nutanix.Index.GetBlueprintRuntimeEditables.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
+        ///     var dumpRuntimeValue = new Local.Index.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",

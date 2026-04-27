@@ -12,6 +12,35 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Launches a blueprint to create an application and perform system actions on application.
+//
+// ## Example 1: Provision Application
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &nutanix.SelfServiceAppProvisionArgs{
+//				BpName:         pulumi.String("NAME OF BLUEPRINT"),
+//				AppName:        pulumi.String("NAME OF APPLICATION TO SET"),
+//				AppDescription: pulumi.String("DESCRIPTION OF APPLICATION"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type SelfServiceAppProvision struct {
 	pulumi.CustomResourceState
 

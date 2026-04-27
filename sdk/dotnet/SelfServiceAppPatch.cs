@@ -26,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -34,7 +34,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -55,7 +55,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -63,7 +63,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -93,7 +93,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -101,7 +101,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -130,7 +130,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -138,7 +138,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -167,7 +167,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -175,7 +175,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -204,7 +204,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -212,7 +212,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",

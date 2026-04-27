@@ -21,11 +21,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.GetSelfServiceSnapshotPolicyList.Invoke(new()
+        ///     var test = Nutanix.Index.GetSelfServiceSnapshotPolicyList.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///         Length = 250,
@@ -47,11 +47,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.GetSelfServiceSnapshotPolicyList.Invoke(new()
+        ///     var test = Nutanix.Index.GetSelfServiceSnapshotPolicyList.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///         Length = 250,
@@ -73,11 +73,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.GetSelfServiceSnapshotPolicyList.Invoke(new()
+        ///     var test = Nutanix.Index.GetSelfServiceSnapshotPolicyList.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///         Length = 250,

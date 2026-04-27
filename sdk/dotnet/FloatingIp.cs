@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var fip1 = new Nutanix.FloatingIp("fip1", new()
+    ///     var fip1 = new Nutanix.Index.FloatingIp("fip1", new()
     ///     {
     ///         ExternalSubnetReferenceUuid = "{{ext_sub_uuid}}",
     ///     });
@@ -41,7 +41,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var fip2 = new Nutanix.FloatingIp("fip2", new()
+    ///     var fip2 = new Nutanix.Index.FloatingIp("fip2", new()
     ///     {
     ///         ExternalSubnetReferenceName = "{{ext_sub_name}}",
     ///         VpcReferenceName = "{{vpc_name}}",

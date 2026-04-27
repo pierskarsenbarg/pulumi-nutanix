@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupKarbonCluster(ctx, &nutanix.LookupKarbonClusterArgs{
+//			_, err := nutanix.GetKarbonCluster(ctx, &nutanix.LookupKarbonClusterArgs{
 //				KarbonClusterId: pulumi.StringRef("<YOUR-CLUSTER-ID>"),
 //			}, nil)
 //			if err != nil {

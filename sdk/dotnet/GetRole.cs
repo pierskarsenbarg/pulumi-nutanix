@@ -22,11 +22,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testRole = new Nutanix.Role("test", new()
+        ///     var testRole = new Nutanix.Index.Role("test", new()
         ///     {
         ///         Name = "NAME",
         ///         Description = "DESCRIPTION",
@@ -40,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetRole.Invoke(new()
+        ///     var test = Nutanix.Index.GetRole.Invoke(new()
         ///     {
         ///         RoleId = testRole.Id,
         ///     });
@@ -61,11 +60,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testRole = new Nutanix.Role("test", new()
+        ///     var testRole = new Nutanix.Index.Role("test", new()
         ///     {
         ///         Name = "NAME",
         ///         Description = "DESCRIPTION",
@@ -79,7 +77,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetRole.Invoke(new()
+        ///     var test = Nutanix.Index.GetRole.Invoke(new()
         ///     {
         ///         RoleId = testRole.Id,
         ///     });
@@ -100,11 +98,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testRole = new Nutanix.Role("test", new()
+        ///     var testRole = new Nutanix.Index.Role("test", new()
         ///     {
         ///         Name = "NAME",
         ///         Description = "DESCRIPTION",
@@ -118,7 +115,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.GetRole.Invoke(new()
+        ///     var test = Nutanix.Index.GetRole.Invoke(new()
         ///     {
         ///         RoleId = testRole.Id,
         ///     });

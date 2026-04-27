@@ -22,11 +22,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
+        ///     var testAddress = new Nutanix.Index.AddressGroup("test_address", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test address groups resource",
@@ -40,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
+        ///     var addrGroup = Nutanix.Index.GetAddressGroup.Invoke(new()
         ///     {
         ///         Uuid = testAddress.Id,
         ///     });
@@ -61,11 +60,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
+        ///     var testAddress = new Nutanix.Index.AddressGroup("test_address", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test address groups resource",
@@ -79,7 +77,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
+        ///     var addrGroup = Nutanix.Index.GetAddressGroup.Invoke(new()
         ///     {
         ///         Uuid = testAddress.Id,
         ///     });
@@ -100,11 +98,10 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
+        ///     var testAddress = new Nutanix.Index.AddressGroup("test_address", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test address groups resource",
@@ -118,7 +115,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
+        ///     var addrGroup = Nutanix.Index.GetAddressGroup.Invoke(new()
         ///     {
         ///         Uuid = testAddress.Id,
         ///     });

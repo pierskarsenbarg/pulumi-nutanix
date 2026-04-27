@@ -12,6 +12,64 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Configures IPMI IP address on BMC of nodes.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewFoundationIpmiConfig(ctx, "impi-1", &nutanix.FoundationIpmiConfigArgs{
+//				IpmiUser:    pulumi.String("username"),
+//				IpmiNetmask: pulumi.String("10.xx.xx.xx"),
+//				Blocks: nutanix.FoundationIpmiConfigBlockArray{
+//					&nutanix.FoundationIpmiConfigBlockArgs{
+//						Nodes: nutanix.FoundationIpmiConfigBlockNodeArray{
+//							&nutanix.FoundationIpmiConfigBlockNodeArgs{
+//								IpmiMac:          pulumi.String("ff:ff:ff:ff:ff:ff"),
+//								IpmiConfigureNow: pulumi.Bool(true),
+//								IpmiIp:           pulumi.String("10.xx.xx.xx"),
+//							},
+//							&nutanix.FoundationIpmiConfigBlockNodeArgs{
+//								IpmiMac:          pulumi.String("ff:ff:ff:ff:ff:ff"),
+//								IpmiConfigureNow: pulumi.Bool(true),
+//								IpmiIp:           pulumi.String("10.xx.xx.xx"),
+//							},
+//						},
+//						BlockId: pulumi.String("xyz"),
+//					},
+//				},
+//				IpmiGateway:  pulumi.String("10.xx.xx.xx"),
+//				IpmiPassword: pulumi.String("XXXXX"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Error
+//
+// Incase of error, terraform will error out and display error for every failed ipmi configuration respective to its ipmi_ip.
+//
+// ## lifecycle
+//
+// * `Update` : - Resource will trigger new resource create call for any kind of update in resource block.
+// * `Delete` : - Delete will be a soft delete.
+//
+// See detailed information in [Nutanix Foundation IPMI Config](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzNzI-configure-bmc-i-pv4).
 type FoundationIpmiConfig struct {
 	pulumi.CustomResourceState
 

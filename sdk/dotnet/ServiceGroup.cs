@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.ServiceGroup("test", new()
+    ///     var test = new Nutanix.Index.ServiceGroup("test", new()
     ///     {
     ///         Name = "test_service_gp",
     ///         Description = "this is service group",

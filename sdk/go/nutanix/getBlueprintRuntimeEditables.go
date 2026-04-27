@@ -43,7 +43,7 @@ import (
 //			json0 := string(tmpJSON0)
 //			// dumps read value into a readable json file
 //			_, err = local.NewFile(ctx, "dump_runtime_value", &local.FileArgs{
-//				Content:  pulumi.String(json0),
+//				Content:  json0,
 //				Filename: pulumi.String("runtime_value.json"),
 //			})
 //			if err != nil {

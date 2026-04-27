@@ -21,13 +21,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnets = Nutanix.GetSubnets.Invoke();
+        ///     var subnets = Nutanix.Index.GetSubnets.Invoke();
         /// 
-        ///     var test = Nutanix.GetSubnets.Invoke(new()
+        ///     var test = Nutanix.Index.GetSubnets.Invoke(new()
         ///     {
         ///         Metadatas = new[]
         ///         {
@@ -53,13 +53,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnets = Nutanix.GetSubnets.Invoke();
+        ///     var subnets = Nutanix.Index.GetSubnets.Invoke();
         /// 
-        ///     var test = Nutanix.GetSubnets.Invoke(new()
+        ///     var test = Nutanix.Index.GetSubnets.Invoke(new()
         ///     {
         ///         Metadatas = new[]
         ///         {
@@ -85,13 +85,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnets = Nutanix.GetSubnets.Invoke();
+        ///     var subnets = Nutanix.Index.GetSubnets.Invoke();
         /// 
-        ///     var test = Nutanix.GetSubnets.Invoke(new()
+        ///     var test = Nutanix.Index.GetSubnets.Invoke(new()
         ///     {
         ///         Metadatas = new[]
         ///         {

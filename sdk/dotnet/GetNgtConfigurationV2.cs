@@ -22,11 +22,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetNgtConfigurationV2.Invoke(new()
         ///     {
         ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
         ///     });
@@ -47,11 +47,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetNgtConfigurationV2.Invoke(new()
         ///     {
         ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
         ///     });
@@ -72,11 +72,11 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
+        ///     var example = Nutanix.Index.GetNgtConfigurationV2.Invoke(new()
         ///     {
         ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
         ///     });

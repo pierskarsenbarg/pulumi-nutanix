@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
+    ///     var dbp = new Nutanix.Index.NdbDatabase("dbp", new()
     ///     {
     ///         Databasetype = "postgres_database",
     ///         Name = "test-inst",
@@ -110,7 +110,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
+    ///     var dbp = new Nutanix.Index.NdbDatabase("dbp", new()
     ///     {
     ///         Databasetype = "postgres_database",
     ///         Name = "test-pg-inst-HA-tf",
@@ -306,7 +306,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
+    ///     var dbp = new Nutanix.Index.NdbDatabase("dbp", new()
     ///     {
     ///         Databasetype = "postgres_database",
     ///         Name = "test-inst",

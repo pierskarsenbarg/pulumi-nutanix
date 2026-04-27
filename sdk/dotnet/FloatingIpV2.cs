@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // create Floating IP with External Subnet UUID
-    ///     var fip_ext_subnet = new Nutanix.FloatingIpV2("fip-ext-subnet", new()
+    ///     var fip_ext_subnet = new Nutanix.Index.FloatingIpV2("fip-ext-subnet", new()
     ///     {
     ///         Name = "example-fip",
     ///         Description = "example fip  description",
@@ -44,7 +44,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var fip_ext_subnet_vm = new Nutanix.FloatingIpV2("fip-ext-subnet-vm", new()
+    ///     var fip_ext_subnet_vm = new Nutanix.Index.FloatingIpV2("fip-ext-subnet-vm", new()
     ///     {
     ///         Name = "example-fip",
     ///         Description = "example fip  description",
