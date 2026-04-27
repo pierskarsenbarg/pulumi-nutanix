@@ -21,14 +21,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var idps_list = Nutanix.GetSamlIdentityProvidersV2.Invoke();
+        ///     var idps_list = Nutanix.Index.GetSamlIdentityProvidersV2.Invoke();
         /// 
         ///     // list saml identity providers
-        ///     var filtered_idps = Nutanix.GetSamlIdentityProvidersV2.Invoke(new()
+        ///     var filtered_idps = Nutanix.Index.GetSamlIdentityProvidersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'idp_example_name'",
         ///         Limit = 2,
@@ -85,14 +85,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var idps_list = Nutanix.GetSamlIdentityProvidersV2.Invoke();
+        ///     var idps_list = Nutanix.Index.GetSamlIdentityProvidersV2.Invoke();
         /// 
         ///     // list saml identity providers
-        ///     var filtered_idps = Nutanix.GetSamlIdentityProvidersV2.Invoke(new()
+        ///     var filtered_idps = Nutanix.Index.GetSamlIdentityProvidersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'idp_example_name'",
         ///         Limit = 2,
@@ -149,14 +149,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var idps_list = Nutanix.GetSamlIdentityProvidersV2.Invoke();
+        ///     var idps_list = Nutanix.Index.GetSamlIdentityProvidersV2.Invoke();
         /// 
         ///     // list saml identity providers
-        ///     var filtered_idps = Nutanix.GetSamlIdentityProvidersV2.Invoke(new()
+        ///     var filtered_idps = Nutanix.Index.GetSamlIdentityProvidersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'idp_example_name'",
         ///         Limit = 2,

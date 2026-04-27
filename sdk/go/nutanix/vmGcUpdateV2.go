@@ -33,7 +33,7 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.NewVmGcUpdateV2(ctx, "vm-gc-update", &nutanix.VmGcUpdateV2Args{
-//				ExtId: pulumi.Any(vm_list.Vms[0].Data.ExtId),
+//				ExtId: pulumi.String(pulumi.Any(vm_list.Vms[0].Data.ExtId)),
 //				Configs: nutanix.VmGcUpdateV2ConfigArray{
 //					&nutanix.VmGcUpdateV2ConfigArgs{
 //						CloudInits: nutanix.VmGcUpdateV2ConfigCloudInitArray{

@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // create PBR with vpc name with any source or destination or protocol with permit action
-    ///     var any_source_destination = new Nutanix.PbrV2("any-source-destination", new()
+    ///     var any_source_destination = new Nutanix.Index.PbrV2("any-source-destination", new()
     ///     {
     ///         Name = "routing_policy_any_source_destination",
     ///         Description = "routing policy with any source and destination",
@@ -73,12 +73,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// This helps to manage existing entities which are not created through terraform. Routing Policy can be imported using the `UUID`.  eg,
     /// 
-    /// `
-    /// 
-    /// ```sh
-    /// $ pulumi import nutanix:index/pbrV2:PbrV2 pbr_import &lt;UUID&gt;
-    /// ```
-    /// 
+    /// `terraform import nutanix_pbr_v2.pbr_import &lt;UUID&gt;
     /// `
     /// 
     /// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0).

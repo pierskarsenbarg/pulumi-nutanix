@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Create Address group with ipv4 addresses
-    ///     var ipv4_address = new Nutanix.AddressGroupsV2("ipv4-address", new()
+    ///     var ipv4_address = new Nutanix.Index.AddressGroupsV2("ipv4-address", new()
     ///     {
     ///         Name = "address_group_ipv4_address",
     ///         Description = "address group description",
@@ -44,7 +44,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Create Address group. with ip range
-    ///     var ip_ranges = new Nutanix.AddressGroupsV2("ip-ranges", new()
+    ///     var ip_ranges = new Nutanix.Index.AddressGroupsV2("ip-ranges", new()
     ///     {
     ///         Name = "address_group_ip_ranges",
     ///         Description = "address group description",

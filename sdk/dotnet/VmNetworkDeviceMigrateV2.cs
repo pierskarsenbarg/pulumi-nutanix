@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var migrate = new Nutanix.VmNetworkDeviceMigrateV2("migrate", new()
+    ///     var migrate = new Nutanix.Index.VmNetworkDeviceMigrateV2("migrate", new()
     ///     {
     ///         VmExtId = "246f6e8a-ff05-4057-af6b-b1fd23a46d7d",
     ///         ExtId = "eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b",

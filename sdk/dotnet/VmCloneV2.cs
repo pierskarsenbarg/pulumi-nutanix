@@ -20,13 +20,12 @@ namespace PiersKarsenbarg.Nutanix
     /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// using Nutanix = Pulumi.Nutanix;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vm_list = Nutanix.GetVirtualMachinesV2.Invoke();
+    ///     var vm_list = Nutanix.Index.GetVirtualMachinesV2.Invoke();
     /// 
-    ///     var vm1 = new Nutanix.VmCloneV2("vm1", new()
+    ///     var vm1 = new Nutanix.Index.VmCloneV2("vm1", new()
     ///     {
     ///         VmExtId = vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId)),
     ///         Name = "test-dou",
