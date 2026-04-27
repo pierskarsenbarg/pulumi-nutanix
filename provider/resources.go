@@ -94,6 +94,18 @@ func Provider() tfbridge.ProviderInfo {
 		},
 		PreConfigureCallback: preConfigureCallback,
 		Resources: map[string]*tfbridge.ResourceInfo{
+			"nutanix_address_groups_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "AddressGroupsV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "address_group_v2.html.markdown",
+				},
+			},
+			"nutanix_deploy_templates_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "DeployTemplatesV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "deploy_template_v2.html.markdown",
+				},
+			},
 			"nutanix_foundation_central_api_keys": {
 				Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationCentralApiKeys"),
 				Docs: &tfbridge.DocInfo{
@@ -104,6 +116,12 @@ func Provider() tfbridge.ProviderInfo {
 				Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationCentralImageCluster"),
 				Docs: &tfbridge.DocInfo{
 					Source: "foundation_central_image_cluster.html.markdown",
+				},
+			},
+			"nutanix_images_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "ImagesV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "images_v2.html.markdown",
 				},
 			},
 			"nutanix_karbon_worker_nodepool": {
@@ -160,12 +178,90 @@ func Provider() tfbridge.ProviderInfo {
 					Source: "ndb_time_machine_cluster.html.markdown",
 				},
 			},
+			"nutanix_pbr_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "PbrV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "pbrs_v2.html.markdown",
+				},
+			},
+			"nutanix_saml_identity_providers_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "SamlIdentityProvidersV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "saml_idps_v2.html.markdown",
+				},
+			},
+			"nutanix_subnet_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "SubnetV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "subnet_v2.html.markdown",
+				},
+			},
+			"nutanix_template_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "TemplateV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "templates_v2.html.markdown",
+				},
+			},
+			"nutanix_vm_cdrom_insert_eject_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "VmCdromInsertEjectV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "vm_cdroms_insert_eject_v2.html.markdown",
+				},
+			},
+			"nutanix_vm_clone_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "VmCloneV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "virtual_machine_clone_v2.html.markdown",
+				},
+			},
+			"nutanix_vm_gc_update_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "VmGcUpdateV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "virtual_machine_gc_update_v2.html.markdown",
+				},
+			},
+			"nutanix_vm_network_device_assign_ip_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "VmNetworkDeviceAssignIpV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "virtual_machine_network_device_assign_ip_v2.html.markdown",
+				},
+			},
+			"nutanix_vm_network_device_migrate_v2": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "VmNetworkDeviceMigrateV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "virtual_machine_network_device_migrate_v2.html.markdown",
+				},
+			},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"nutanix_assert_helper": {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAssertHelper"),
 				Docs: &tfbridge.DocInfo{
 					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_authorization_policies_v2": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAuthorizationPoliciesV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "authorization_policies_v2.html.markdown",
+				},
+			},
+			"nutanix_authorization_policy_v2": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAuthorizationPolicyV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "authorization_policy_v2.html.markdown",
+				},
+			},
+			"nutanix_certificates_v2": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getCertificatesV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "object_store_certificates_v2.html.markdown",
+				},
+			},
+			"nutanix_certificate_v2": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getCertificateV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "object_store_certificate_v2.html.markdown",
 				},
 			},
 			"nutanix_foundation_central_api_keys": {
@@ -204,6 +300,18 @@ func Provider() tfbridge.ProviderInfo {
 					Markdown: []byte(" "), // no upstream docs
 				},
 			},
+			"nutanix_saml_identity_provider_v2": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getSamlIdentityProviderV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "saml_idp_v2.html.markdown",
+				},
+			},
+			"nutanix_saml_identity_providers_v2": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getSamlIdentityProvidersV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "saml_idps_v2.html.markdown",
+				},
+			},
 			"nutanix_service_group": {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getServiceGroup"),
 				Docs: &tfbridge.DocInfo{
@@ -214,6 +322,12 @@ func Provider() tfbridge.ProviderInfo {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getServiceGroups"),
 				Docs: &tfbridge.DocInfo{
 					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_storage_container_stats_info_v2": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getStorageContainerStatsInfoV2"),
+				Docs: &tfbridge.DocInfo{
+					Source: "storage_stats_info_v2.html.markdown",
 				},
 			},
 			"nutanix_karbon_cluster_kubeconfig": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKarbonClusterKubeConfig")},
