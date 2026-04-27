@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange
     {
+        /// <summary>
+        /// End Port.
+        /// </summary>
         public readonly int EndPort;
+        /// <summary>
+        /// Start Port.
+        /// </summary>
         public readonly int StartPort;
 
         [OutputConstructor]

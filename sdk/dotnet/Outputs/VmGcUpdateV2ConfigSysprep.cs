@@ -14,6 +14,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmGcUpdateV2ConfigSysprep
     {
+        /// <summary>
+        /// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+        /// Valid values are:
+        /// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `UnattendXml` parameter
+        /// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `UnattendXml` parameter
+        /// </summary>
         public readonly string? InstallType;
         public readonly ImmutableArray<Outputs.VmGcUpdateV2ConfigSysprepSysprepScript> SysprepScripts;
 

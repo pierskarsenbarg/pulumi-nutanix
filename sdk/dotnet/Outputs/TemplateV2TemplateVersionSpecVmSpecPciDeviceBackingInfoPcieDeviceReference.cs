@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference
     {
+        /// <summary>
+        /// Globally unique identifier denoting PCIe device label. It should be of type UUID.
+        /// </summary>
         public readonly string? DeviceExtId;
 
         [OutputConstructor]

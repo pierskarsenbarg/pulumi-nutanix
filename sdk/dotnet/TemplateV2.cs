@@ -10,6 +10,9 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Create a Template from the given VM identifier. A Template stores the VM configuration and disks from the source VM.
+    /// </summary>
     [NutanixResourceType("nutanix:index/templateV2:TemplateV2")]
     public partial class TemplateV2 : global::Pulumi.CustomResource
     {
@@ -22,18 +25,30 @@ namespace PiersKarsenbarg.Nutanix
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// Status of a guest update.
+        /// </summary>
         [Output("guestUpdateStatuses")]
         public Output<ImmutableArray<Outputs.TemplateV2GuestUpdateStatus>> GuestUpdateStatuses { get; private set; } = null!;
 
         [Output("links")]
         public Output<ImmutableArray<Outputs.TemplateV2Link>> Links { get; private set; } = null!;
 
+        /// <summary>
+        /// The user defined description of a Template.
+        /// </summary>
         [Output("templateDescription")]
         public Output<string> TemplateDescription { get; private set; } = null!;
 
+        /// <summary>
+        /// The user defined name of a Template.
+        /// </summary>
         [Output("templateName")]
         public Output<string> TemplateName { get; private set; } = null!;
 
+        /// <summary>
+        /// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        /// </summary>
         [Output("templateVersionSpec")]
         public Output<Outputs.TemplateV2TemplateVersionSpec> TemplateVersionSpec { get; private set; } = null!;
 
@@ -103,18 +118,31 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("guestUpdateStatuses")]
         private InputList<Inputs.TemplateV2GuestUpdateStatusArgs>? _guestUpdateStatuses;
+
+        /// <summary>
+        /// Status of a guest update.
+        /// </summary>
         public InputList<Inputs.TemplateV2GuestUpdateStatusArgs> GuestUpdateStatuses
         {
             get => _guestUpdateStatuses ?? (_guestUpdateStatuses = new InputList<Inputs.TemplateV2GuestUpdateStatusArgs>());
             set => _guestUpdateStatuses = value;
         }
 
+        /// <summary>
+        /// The user defined description of a Template.
+        /// </summary>
         [Input("templateDescription")]
         public Input<string>? TemplateDescription { get; set; }
 
+        /// <summary>
+        /// The user defined name of a Template.
+        /// </summary>
         [Input("templateName", required: true)]
         public Input<string> TemplateName { get; set; } = null!;
 
+        /// <summary>
+        /// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        /// </summary>
         [Input("templateVersionSpec", required: true)]
         public Input<Inputs.TemplateV2TemplateVersionSpecArgs> TemplateVersionSpec { get; set; } = null!;
 
@@ -150,6 +178,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("guestUpdateStatuses")]
         private InputList<Inputs.TemplateV2GuestUpdateStatusGetArgs>? _guestUpdateStatuses;
+
+        /// <summary>
+        /// Status of a guest update.
+        /// </summary>
         public InputList<Inputs.TemplateV2GuestUpdateStatusGetArgs> GuestUpdateStatuses
         {
             get => _guestUpdateStatuses ?? (_guestUpdateStatuses = new InputList<Inputs.TemplateV2GuestUpdateStatusGetArgs>());
@@ -164,12 +196,21 @@ namespace PiersKarsenbarg.Nutanix
             set => _links = value;
         }
 
+        /// <summary>
+        /// The user defined description of a Template.
+        /// </summary>
         [Input("templateDescription")]
         public Input<string>? TemplateDescription { get; set; }
 
+        /// <summary>
+        /// The user defined name of a Template.
+        /// </summary>
         [Input("templateName")]
         public Input<string>? TemplateName { get; set; }
 
+        /// <summary>
+        /// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        /// </summary>
         [Input("templateVersionSpec")]
         public Input<Inputs.TemplateV2TemplateVersionSpecGetArgs>? TemplateVersionSpec { get; set; }
 

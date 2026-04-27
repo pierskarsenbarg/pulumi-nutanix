@@ -6,6 +6,52 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Create a Routing Policy.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // create PBR with vpc name with any source or destination or protocol with permit action
+ * const any_source_destination = new nutanix.PbrV2("any-source-destination", {
+ *     name: "routing_policy_any_source_destination",
+ *     description: "routing policy with any source and destination",
+ *     vpcExtId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ *     priority: 11,
+ *     policies: [{
+ *         policyMatches: [{
+ *             sources: [{
+ *                 addressType: "ANY",
+ *             }],
+ *             destinations: [{
+ *                 addressType: "ANY",
+ *             }],
+ *             protocolType: "UDP",
+ *         }],
+ *         policyActions: [{
+ *             actionType: "PERMIT",
+ *         }],
+ *     }],
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * This helps to manage existing entities which are not created through terraform. Routing Policy can be imported using the `UUID`.  eg,
+ *
+ * `
+ *
+ * ```sh
+ * $ pulumi import nutanix:index/pbrV2:PbrV2 pbr_import <UUID>
+ * ```
+ *
+ * `
+ *
+ * See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+ */
 export class PbrV2 extends pulumi.CustomResource {
     /**
      * Get an existing PbrV2 resource's state with the given name, ID, and optional extra
@@ -34,15 +80,45 @@ export class PbrV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === PbrV2.__pulumiType;
     }
 
+    /**
+     * A description of the routing policy.
+     */
     declare public readonly description: pulumi.Output<string>;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
     declare public readonly extId: pulumi.Output<string>;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
     declare public /*out*/ readonly links: pulumi.Output<outputs.PbrV2Link[]>;
+    /**
+     * Metadata associated with this resource.
+     */
     declare public /*out*/ readonly metadatas: pulumi.Output<outputs.PbrV2Metadata[]>;
+    /**
+     * Name of the routing policy.
+     */
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * Routing Policies.
+     */
     declare public readonly policies: pulumi.Output<outputs.PbrV2Policy[]>;
+    /**
+     * Priority of the routing policy.
+     */
     declare public readonly priority: pulumi.Output<number>;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
+    /**
+     * ExtId of the VPC extId to which the routing policy belongs.
+     */
     declare public readonly vpcExtId: pulumi.Output<string>;
+    /**
+     * VPC name for projections
+     */
     declare public /*out*/ readonly vpcs: pulumi.Output<outputs.PbrV2Vpc[]>;
 
     /**
@@ -99,15 +175,45 @@ export class PbrV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PbrV2 resources.
  */
 export interface PbrV2State {
+    /**
+     * A description of the routing policy.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
     links?: pulumi.Input<pulumi.Input<inputs.PbrV2Link>[]>;
+    /**
+     * Metadata associated with this resource.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.PbrV2Metadata>[]>;
+    /**
+     * Name of the routing policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * Routing Policies.
+     */
     policies?: pulumi.Input<pulumi.Input<inputs.PbrV2Policy>[]>;
+    /**
+     * Priority of the routing policy.
+     */
     priority?: pulumi.Input<number>;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
     tenantId?: pulumi.Input<string>;
+    /**
+     * ExtId of the VPC extId to which the routing policy belongs.
+     */
     vpcExtId?: pulumi.Input<string>;
+    /**
+     * VPC name for projections
+     */
     vpcs?: pulumi.Input<pulumi.Input<inputs.PbrV2Vpc>[]>;
 }
 
@@ -115,10 +221,28 @@ export interface PbrV2State {
  * The set of arguments for constructing a PbrV2 resource.
  */
 export interface PbrV2Args {
+    /**
+     * A description of the routing policy.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
     extId?: pulumi.Input<string>;
+    /**
+     * Name of the routing policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * Routing Policies.
+     */
     policies: pulumi.Input<pulumi.Input<inputs.PbrV2Policy>[]>;
+    /**
+     * Priority of the routing policy.
+     */
     priority: pulumi.Input<number>;
+    /**
+     * ExtId of the VPC extId to which the routing policy belongs.
+     */
     vpcExtId: pulumi.Input<string>;
 }

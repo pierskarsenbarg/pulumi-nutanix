@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoGetArgs>? _backingInfos;
+
+        /// <summary>
+        /// Storage provided by Nutanix ADSF
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoGetArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoGetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("diskAddresses")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressGetArgs>? _diskAddresses;
+
+        /// <summary>
+        /// Virtual Machine disk (VM disk).
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressGetArgs> DiskAddresses
         {
             get => _diskAddresses ?? (_diskAddresses = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddressGetArgs>());
@@ -32,6 +40,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+        /// </summary>
         [Input("isoType")]
         public Input<string>? IsoType { get; set; }
 

@@ -35,6 +35,13 @@ class SamlIdentityProvidersV2Args:
                  username_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SamlIdentityProvidersV2 resource.
+
+        :param pulumi.Input[_builtins.str] entity_issuer: - It will be used as Issuer in SAML authnRequest.
+        :param pulumi.Input[_builtins.str] ext_id: The External Identifier of the User Group.
+        :param pulumi.Input[_builtins.str] groups_delim: - Delimiter is used to split the value of attribute into multiple groups.
+        :param pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]] idp_metadatas: - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        :param pulumi.Input[_builtins.bool] is_signed_authn_req_enabled: - Flag indicating signing of SAML authnRequests.
+        :param pulumi.Input[_builtins.str] name: - Unique name of the IDP.
         """
         if custom_attributes is not None:
             pulumi.set(__self__, "custom_attributes", custom_attributes)
@@ -82,6 +89,9 @@ class SamlIdentityProvidersV2Args:
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
     def entity_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - It will be used as Issuer in SAML authnRequest.
+        """
         return pulumi.get(self, "entity_issuer")
 
     @entity_issuer.setter
@@ -91,6 +101,9 @@ class SamlIdentityProvidersV2Args:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The External Identifier of the User Group.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -109,6 +122,9 @@ class SamlIdentityProvidersV2Args:
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
     def groups_delim(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - Delimiter is used to split the value of attribute into multiple groups.
+        """
         return pulumi.get(self, "groups_delim")
 
     @groups_delim.setter
@@ -136,6 +152,9 @@ class SamlIdentityProvidersV2Args:
     @_builtins.property
     @pulumi.getter(name="idpMetadatas")
     def idp_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
+        """
+        - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        """
         return pulumi.get(self, "idp_metadatas")
 
     @idp_metadatas.setter
@@ -145,6 +164,9 @@ class SamlIdentityProvidersV2Args:
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
     def is_signed_authn_req_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        - Flag indicating signing of SAML authnRequests.
+        """
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @is_signed_authn_req_enabled.setter
@@ -154,6 +176,9 @@ class SamlIdentityProvidersV2Args:
     @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - Unique name of the IDP.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -190,6 +215,16 @@ class _SamlIdentityProvidersV2State:
                  username_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SamlIdentityProvidersV2 resources.
+
+        :param pulumi.Input[_builtins.str] created_by: - User or Service who created the SAML Identity Provider.
+        :param pulumi.Input[_builtins.str] created_time: - Creation time of the SAML Identity Provider.
+        :param pulumi.Input[_builtins.str] entity_issuer: - It will be used as Issuer in SAML authnRequest.
+        :param pulumi.Input[_builtins.str] ext_id: The External Identifier of the User Group.
+        :param pulumi.Input[_builtins.str] groups_delim: - Delimiter is used to split the value of attribute into multiple groups.
+        :param pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]] idp_metadatas: - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        :param pulumi.Input[_builtins.bool] is_signed_authn_req_enabled: - Flag indicating signing of SAML authnRequests.
+        :param pulumi.Input[_builtins.str] last_updated_time: - Last updated time of the SAML Identity Provider.
+        :param pulumi.Input[_builtins.str] name: - Unique name of the IDP.
         """
         if created_by is not None:
             pulumi.set(__self__, "created_by", created_by)
@@ -225,6 +260,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - User or Service who created the SAML Identity Provider.
+        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -234,6 +272,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - Creation time of the SAML Identity Provider.
+        """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
@@ -261,6 +302,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
     def entity_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - It will be used as Issuer in SAML authnRequest.
+        """
         return pulumi.get(self, "entity_issuer")
 
     @entity_issuer.setter
@@ -270,6 +314,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The External Identifier of the User Group.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -288,6 +335,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
     def groups_delim(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - Delimiter is used to split the value of attribute into multiple groups.
+        """
         return pulumi.get(self, "groups_delim")
 
     @groups_delim.setter
@@ -315,6 +365,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter(name="idpMetadatas")
     def idp_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
+        """
+        - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        """
         return pulumi.get(self, "idp_metadatas")
 
     @idp_metadatas.setter
@@ -324,6 +377,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
     def is_signed_authn_req_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        - Flag indicating signing of SAML authnRequests.
+        """
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @is_signed_authn_req_enabled.setter
@@ -333,6 +389,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
     def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - Last updated time of the SAML Identity Provider.
+        """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
@@ -342,6 +401,9 @@ class _SamlIdentityProvidersV2State:
     @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - Unique name of the IDP.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -378,10 +440,83 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
                  username_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a SamlIdentityProvidersV2 resource with the given unique name, props, and options.
+        Provides a resource to Create a SAML Identity Provider.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        idp = nutanix.SamlIdentityProvidersV2("idp",
+            name="example_idp_name",
+            idp_metadatas=[{
+                "entity_id": "entity_id",
+                "login_url": "login_url",
+                "logout_url": "logout_url",
+                "error_url": "error_url",
+                "certificate": "certificate",
+            }],
+            username_attribute="username",
+            email_attribute="email",
+            groups_attribute="groups",
+            groups_delim=",",
+            idp_metadata_xml="<IDENTITY_PROVIDER_METADATA_XML content>",
+            entity_issuer="entity_issuer_issuer",
+            is_signed_authn_req_enabled=True,
+            custom_attributes=[
+                "custom1",
+                "custom2",
+            ])
+        ```
+
+        ## Argument Reference
+
+        The following arguments are supported:
+
+        * `ext_id`: -(Optional) External identifier of the SAML Identity Provider.
+        * `idp_metadata_url`: -(Optional) Metadata url that provides IDP details.
+        * `idp_metadata_xml`: -(Optional) Base64 encoded metadata in XML format with IDP details.
+        * `idp_metadata`: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        * `name`: -(Required) Unique name of the IDP.
+        * `username_attr`: -(Optional) SAML assertion Username attribute element.
+        * `email_attr`: -(Optional) SAML assertion email attribute element.
+        * `groups_attr`: -(Optional) SAML assertion groups attribute element.
+        * `groups_delim`: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
+        * `custom_attr`: -(Optional) SAML assertions for list of custom attribute elements.
+        * `entity_issuer`: -(Optional) It will be used as Issuer in SAML authnRequest.
+        * `is_signed_authn_req_enabled`: -(Optional) Flag indicating signing of SAML authnRequests.
+
+        ### Idp Metadata
+
+        The idp_metadata attribute supports the following:
+
+        * `entity_id`: -(Required) Entity Identifier of Identity provider.
+        * `login_url`: -(Required) Login URL of the Identity provider.
+        * `logout_url`: -(Optional) Logout URL of the Identity provider.
+        * `error_url`: - (Optional) Error URL of the Identity provider.
+        * `certificate`: -(Required) Certificate for verification.
+        * `name_id_policy_format`: -(Optional) Name ID Policy format.
+          * supported values:
+            * `emailAddress`: -  Uses email address as NameID format
+            * `encrypted`: -  Uses encrypted as NameID format.
+            * `unspecified`: -  NameID format is left to individual implementations.
+            * `transient`: -  	Uses identifier with transient semantics as NameID format.
+            * `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
+            * `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
+            * `kerberos`: -  	Uses kerberos principal name as NameID format.
+            * `persistent`: -  Uses persistent name identifier as NameID format.
+            * `entity`: -  Uses identifier of an entity as NameID format.
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] entity_issuer: - It will be used as Issuer in SAML authnRequest.
+        :param pulumi.Input[_builtins.str] ext_id: The External Identifier of the User Group.
+        :param pulumi.Input[_builtins.str] groups_delim: - Delimiter is used to split the value of attribute into multiple groups.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]] idp_metadatas: - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        :param pulumi.Input[_builtins.bool] is_signed_authn_req_enabled: - Flag indicating signing of SAML authnRequests.
+        :param pulumi.Input[_builtins.str] name: - Unique name of the IDP.
         """
         ...
     @overload
@@ -390,7 +525,74 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
                  args: Optional[SamlIdentityProvidersV2Args] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SamlIdentityProvidersV2 resource with the given unique name, props, and options.
+        Provides a resource to Create a SAML Identity Provider.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        idp = nutanix.SamlIdentityProvidersV2("idp",
+            name="example_idp_name",
+            idp_metadatas=[{
+                "entity_id": "entity_id",
+                "login_url": "login_url",
+                "logout_url": "logout_url",
+                "error_url": "error_url",
+                "certificate": "certificate",
+            }],
+            username_attribute="username",
+            email_attribute="email",
+            groups_attribute="groups",
+            groups_delim=",",
+            idp_metadata_xml="<IDENTITY_PROVIDER_METADATA_XML content>",
+            entity_issuer="entity_issuer_issuer",
+            is_signed_authn_req_enabled=True,
+            custom_attributes=[
+                "custom1",
+                "custom2",
+            ])
+        ```
+
+        ## Argument Reference
+
+        The following arguments are supported:
+
+        * `ext_id`: -(Optional) External identifier of the SAML Identity Provider.
+        * `idp_metadata_url`: -(Optional) Metadata url that provides IDP details.
+        * `idp_metadata_xml`: -(Optional) Base64 encoded metadata in XML format with IDP details.
+        * `idp_metadata`: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        * `name`: -(Required) Unique name of the IDP.
+        * `username_attr`: -(Optional) SAML assertion Username attribute element.
+        * `email_attr`: -(Optional) SAML assertion email attribute element.
+        * `groups_attr`: -(Optional) SAML assertion groups attribute element.
+        * `groups_delim`: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
+        * `custom_attr`: -(Optional) SAML assertions for list of custom attribute elements.
+        * `entity_issuer`: -(Optional) It will be used as Issuer in SAML authnRequest.
+        * `is_signed_authn_req_enabled`: -(Optional) Flag indicating signing of SAML authnRequests.
+
+        ### Idp Metadata
+
+        The idp_metadata attribute supports the following:
+
+        * `entity_id`: -(Required) Entity Identifier of Identity provider.
+        * `login_url`: -(Required) Login URL of the Identity provider.
+        * `logout_url`: -(Optional) Logout URL of the Identity provider.
+        * `error_url`: - (Optional) Error URL of the Identity provider.
+        * `certificate`: -(Required) Certificate for verification.
+        * `name_id_policy_format`: -(Optional) Name ID Policy format.
+          * supported values:
+            * `emailAddress`: -  Uses email address as NameID format
+            * `encrypted`: -  Uses encrypted as NameID format.
+            * `unspecified`: -  NameID format is left to individual implementations.
+            * `transient`: -  	Uses identifier with transient semantics as NameID format.
+            * `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
+            * `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
+            * `kerberos`: -  	Uses kerberos principal name as NameID format.
+            * `persistent`: -  Uses persistent name identifier as NameID format.
+            * `entity`: -  Uses identifier of an entity as NameID format.
+
 
         :param str resource_name: The name of the resource.
         :param SamlIdentityProvidersV2Args args: The arguments to use to populate this resource's properties.
@@ -475,6 +677,15 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] created_by: - User or Service who created the SAML Identity Provider.
+        :param pulumi.Input[_builtins.str] created_time: - Creation time of the SAML Identity Provider.
+        :param pulumi.Input[_builtins.str] entity_issuer: - It will be used as Issuer in SAML authnRequest.
+        :param pulumi.Input[_builtins.str] ext_id: The External Identifier of the User Group.
+        :param pulumi.Input[_builtins.str] groups_delim: - Delimiter is used to split the value of attribute into multiple groups.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]] idp_metadatas: - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        :param pulumi.Input[_builtins.bool] is_signed_authn_req_enabled: - Flag indicating signing of SAML authnRequests.
+        :param pulumi.Input[_builtins.str] last_updated_time: - Last updated time of the SAML Identity Provider.
+        :param pulumi.Input[_builtins.str] name: - Unique name of the IDP.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -500,11 +711,17 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:
+        """
+        - User or Service who created the SAML Identity Provider.
+        """
         return pulumi.get(self, "created_by")
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[_builtins.str]:
+        """
+        - Creation time of the SAML Identity Provider.
+        """
         return pulumi.get(self, "created_time")
 
     @_builtins.property
@@ -520,11 +737,17 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
     def entity_issuer(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        - It will be used as Issuer in SAML authnRequest.
+        """
         return pulumi.get(self, "entity_issuer")
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The External Identifier of the User Group.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -535,6 +758,9 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
     def groups_delim(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        - Delimiter is used to split the value of attribute into multiple groups.
+        """
         return pulumi.get(self, "groups_delim")
 
     @_builtins.property
@@ -550,21 +776,33 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="idpMetadatas")
     def idp_metadatas(self) -> pulumi.Output[Sequence['outputs.SamlIdentityProvidersV2IdpMetadata']]:
+        """
+        - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        """
         return pulumi.get(self, "idp_metadatas")
 
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
     def is_signed_authn_req_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        - Flag indicating signing of SAML authnRequests.
+        """
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
     def last_updated_time(self) -> pulumi.Output[_builtins.str]:
+        """
+        - Last updated time of the SAML Identity Provider.
+        """
         return pulumi.get(self, "last_updated_time")
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
+        """
+        - Unique name of the IDP.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property

@@ -13,11 +13,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PbrV2PolicyGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
+        /// </summary>
         [Input("isBidirectional")]
         public Input<bool>? IsBidirectional { get; set; }
 
         [Input("policyActions", required: true)]
         private InputList<Inputs.PbrV2PolicyPolicyActionGetArgs>? _policyActions;
+
+        /// <summary>
+        /// The action to be taken on the traffic matching the routing policy.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyActionGetArgs> PolicyActions
         {
             get => _policyActions ?? (_policyActions = new InputList<Inputs.PbrV2PolicyPolicyActionGetArgs>());
@@ -26,6 +33,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("policyMatches", required: true)]
         private InputList<Inputs.PbrV2PolicyPolicyMatchGetArgs>? _policyMatches;
+
+        /// <summary>
+        /// Match condition for the traffic that is entering the VPC.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchGetArgs> PolicyMatches
         {
             get => _policyMatches ?? (_policyMatches = new InputList<Inputs.PbrV2PolicyPolicyMatchGetArgs>());

@@ -23,6 +23,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("userDatas")]
         private InputList<Inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataGetArgs>? _userDatas;
+
+        /// <summary>
+        /// - (Optional) The contents of the UserData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// </summary>
         public InputList<Inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataGetArgs> UserDatas
         {
             get => _userDatas ?? (_userDatas = new InputList<Inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataGetArgs>());

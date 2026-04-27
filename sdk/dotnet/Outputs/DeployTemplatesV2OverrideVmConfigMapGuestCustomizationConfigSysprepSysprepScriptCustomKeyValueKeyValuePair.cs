@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair
     {
+        /// <summary>
+        /// VM name.
+        /// </summary>
         public readonly string? Name;
         public readonly ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue> Values;
 

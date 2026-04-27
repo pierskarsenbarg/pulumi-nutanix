@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2Disk
     {
+        /// <summary>
+        /// - (Optional) Defines a NIC emulated by the hypervisor
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2DiskBackingInfo> BackingInfos;
         public readonly ImmutableArray<Outputs.VmCloneV2DiskDiskAddress> DiskAddresses;
         public readonly string? ExtId;

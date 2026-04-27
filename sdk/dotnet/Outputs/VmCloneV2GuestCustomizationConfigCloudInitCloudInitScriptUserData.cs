@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData
     {
+        /// <summary>
+        /// - (Optional) The value for the cloud-init user_data.
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

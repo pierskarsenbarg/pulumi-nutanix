@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2Vpc
     {
+        /// <summary>
+        /// Name of the routing policy.
+        /// </summary>
         public readonly string? Name;
 
         [OutputConstructor]

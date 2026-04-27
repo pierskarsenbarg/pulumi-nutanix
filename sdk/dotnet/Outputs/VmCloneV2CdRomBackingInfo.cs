@@ -14,11 +14,26 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2CdRomBackingInfo
     {
+        /// <summary>
+        /// - (Optional) A reference to a disk or image that contains the contents of a disk.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2CdRomBackingInfoDataSource> DataSources;
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+        /// </summary>
         public readonly string? DiskExtId;
+        /// <summary>
+        /// - (Optional) Size of the disk in Bytes.
+        /// </summary>
         public readonly int? DiskSizeBytes;
         public readonly bool? IsMigrationInProgress;
+        /// <summary>
+        /// - (Optional) Storage configuration for VM disks.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2CdRomBackingInfoStorageConfig> StorageConfigs;
+        /// <summary>
+        /// - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2CdRomBackingInfoStorageContainer> StorageContainers;
 
         [OutputConstructor]

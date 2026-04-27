@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("references")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs>? _references;
+
+        /// <summary>
+        /// Reference to image or vm disk. Either `ImageReference` or `VmDiskReference`.
+        /// </summary>
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs> References
         {
             get => _references ?? (_references = new InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs>());

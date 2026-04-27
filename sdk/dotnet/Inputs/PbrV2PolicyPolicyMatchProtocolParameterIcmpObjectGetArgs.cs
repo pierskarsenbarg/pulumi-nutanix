@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// icmp code
+        /// </summary>
         [Input("icmpCode")]
         public Input<int>? IcmpCode { get; set; }
 
+        /// <summary>
+        /// icmp type
+        /// </summary>
         [Input("icmpType")]
         public Input<int>? IcmpType { get; set; }
 

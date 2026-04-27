@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("cloudInits")]
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitArgs>? _cloudInits;
+
+        /// <summary>
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or CloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitArgs> CloudInits
         {
             get => _cloudInits ?? (_cloudInits = new InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("syspreps")]
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepArgs>? _syspreps;
+
+        /// <summary>
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or CloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepArgs> Syspreps
         {
             get => _syspreps ?? (_syspreps = new InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepArgs>());

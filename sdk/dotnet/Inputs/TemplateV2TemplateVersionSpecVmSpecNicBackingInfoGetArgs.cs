@@ -16,12 +16,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("isConnected")]
         public Input<bool>? IsConnected { get; set; }
 
+        /// <summary>
+        /// MAC address of the emulated NIC.
+        /// </summary>
         [Input("macAddress")]
         public Input<string>? MacAddress { get; set; }
 
+        /// <summary>
+        /// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+        /// </summary>
         [Input("model")]
         public Input<string>? Model { get; set; }
 
+        /// <summary>
+        /// The number of Tx/Rx queue pairs for this NIC. Default is 1.
+        /// </summary>
         [Input("numQueues")]
         public Input<int>? NumQueues { get; set; }
 

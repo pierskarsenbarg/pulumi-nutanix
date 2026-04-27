@@ -14,6 +14,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class DeployTemplatesV2OverrideVmConfigMapGuestCustomization
     {
+        /// <summary>
+        /// The Nutanix Guest Tools customization settings.
+        /// 
+        /// * `config.sysprep`: (Optional) Sysprep config
+        /// * `config.cloud_init`: (Optional) CloudInit Config
+        /// </summary>
         public readonly ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig> Configs;
 
         [OutputConstructor]

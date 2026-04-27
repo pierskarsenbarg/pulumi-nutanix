@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class DeployTemplatesV2OverrideVmConfigMapNic
     {
+        /// <summary>
+        /// Defines a NIC emulated by the hypervisor
+        /// </summary>
         public readonly ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfo> BackingInfos;
+        /// <summary>
+        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         public readonly string? ExtId;
+        /// <summary>
+        /// Network information for a NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo> NetworkInfos;
 
         [OutputConstructor]

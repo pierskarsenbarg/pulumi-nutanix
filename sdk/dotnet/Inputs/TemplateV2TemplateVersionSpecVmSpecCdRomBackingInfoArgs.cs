@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("dataSources")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArgs>? _dataSources;
+
+        /// <summary>
+        /// A reference to a disk or image that contains the contents of a disk.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArgs> DataSources
         {
             get => _dataSources ?? (_dataSources = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArgs>());
@@ -24,6 +28,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("diskExtId")]
         public Input<string>? DiskExtId { get; set; }
 
+        /// <summary>
+        /// Size of the disk in Bytes
+        /// </summary>
         [Input("diskSizeBytes")]
         public Input<int>? DiskSizeBytes { get; set; }
 
@@ -32,6 +39,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("storageConfigs")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArgs>? _storageConfigs;
+
+        /// <summary>
+        /// Storage configuration for VM disks
+        /// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArgs> StorageConfigs
         {
             get => _storageConfigs ?? (_storageConfigs = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArgs>());
@@ -40,6 +52,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("storageContainers")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArgs>? _storageContainers;
+
+        /// <summary>
+        /// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArgs> StorageContainers
         {
             get => _storageContainers ?? (_storageContainers = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArgs>());

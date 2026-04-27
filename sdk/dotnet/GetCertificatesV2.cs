@@ -12,12 +12,84 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetCertificatesV2
     {
+        /// <summary>
+        /// Get a list of the SSL certificates which can be used to access an Object store.
+        /// 
+        /// 
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetCertificatesV2.Invoke(new()
+        ///     {
+        ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetCertificatesV2Result> InvokeAsync(GetCertificatesV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificatesV2Result>("nutanix:index/getCertificatesV2:getCertificatesV2", args ?? new GetCertificatesV2Args(), options.WithDefaults());
 
+        /// <summary>
+        /// Get a list of the SSL certificates which can be used to access an Object store.
+        /// 
+        /// 
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetCertificatesV2.Invoke(new()
+        ///     {
+        ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetCertificatesV2Result> Invoke(GetCertificatesV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificatesV2Result>("nutanix:index/getCertificatesV2:getCertificatesV2", args ?? new GetCertificatesV2InvokeArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Get a list of the SSL certificates which can be used to access an Object store.
+        /// 
+        /// 
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetCertificatesV2.Invoke(new()
+        ///     {
+        ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetCertificatesV2Result> Invoke(GetCertificatesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificatesV2Result>("nutanix:index/getCertificatesV2:getCertificatesV2", args ?? new GetCertificatesV2InvokeArgs(), options.WithDefaults());
     }
@@ -25,18 +97,39 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetCertificatesV2Args : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+        /// - alternateFqdns/value
+        /// - alternateIps/ipv4/value
+        /// </summary>
         [Input("filter")]
         public string? Filter { get; set; }
 
+        /// <summary>
+        /// -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set. Default value is 50.
+        /// </summary>
         [Input("limit")]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// -(Required) The UUID of the Object store.
+        /// </summary>
         [Input("objectStoreExtId", required: true)]
         public string ObjectStoreExtId { get; set; } = null!;
 
+        /// <summary>
+        /// -(Optional) A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results. Default value is 0.
+        /// </summary>
         [Input("page")]
         public int? Page { get; set; }
 
+        /// <summary>
+        /// -(Optional)  URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
+        /// - alternateFqdns
+        /// - alternateFqdns/value
+        /// - alternateIps
+        /// - alternateIps/ipv4/value
+        /// </summary>
         [Input("select")]
         public string? Select { get; set; }
 
@@ -48,18 +141,39 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetCertificatesV2InvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+        /// - alternateFqdns/value
+        /// - alternateIps/ipv4/value
+        /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
 
+        /// <summary>
+        /// -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set. Default value is 50.
+        /// </summary>
         [Input("limit")]
         public Input<int>? Limit { get; set; }
 
+        /// <summary>
+        /// -(Required) The UUID of the Object store.
+        /// </summary>
         [Input("objectStoreExtId", required: true)]
         public Input<string> ObjectStoreExtId { get; set; } = null!;
 
+        /// <summary>
+        /// -(Optional) A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results. Default value is 0.
+        /// </summary>
         [Input("page")]
         public Input<int>? Page { get; set; }
 
+        /// <summary>
+        /// -(Optional)  URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
+        /// - alternateFqdns
+        /// - alternateFqdns/value
+        /// - alternateIps
+        /// - alternateIps/ipv4/value
+        /// </summary>
         [Input("select")]
         public Input<string>? Select { get; set; }
 
@@ -73,6 +187,9 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetCertificatesV2Result
     {
+        /// <summary>
+        /// - list of the SSL certificates which can be used to access an Object store.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificatesV2CertificateResult> Certificates;
         public readonly string? Filter;
         /// <summary>

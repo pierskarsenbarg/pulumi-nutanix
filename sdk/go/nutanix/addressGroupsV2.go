@@ -11,18 +11,80 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Create an Address Group
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Create Address group with ipv4 addresses
+//			_, err := nutanix.NewAddressGroupsV2(ctx, "ipv4-address", &nutanix.AddressGroupsV2Args{
+//				Name:        pulumi.String("address_group_ipv4_address"),
+//				Description: pulumi.String("address group description"),
+//				Ipv4Addresses: nutanix.AddressGroupsV2Ipv4AddressArray{
+//					&nutanix.AddressGroupsV2Ipv4AddressArgs{
+//						Value:        pulumi.String("10.0.0.0"),
+//						PrefixLength: pulumi.Int(24),
+//					},
+//					&nutanix.AddressGroupsV2Ipv4AddressArgs{
+//						Value:        pulumi.String("172.0.0.0"),
+//						PrefixLength: pulumi.Int(24),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// Create Address group. with ip range
+//			_, err = nutanix.NewAddressGroupsV2(ctx, "ip-ranges", &nutanix.AddressGroupsV2Args{
+//				Name:        pulumi.String("address_group_ip_ranges"),
+//				Description: pulumi.String("address group description"),
+//				IpRanges: nutanix.AddressGroupsV2IpRangeArray{
+//					&nutanix.AddressGroupsV2IpRangeArgs{
+//						StartIp: pulumi.String("10.0.0.1"),
+//						EndIp:   pulumi.String("10.0.0.10"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AddressGroupsV2 struct {
 	pulumi.CustomResourceState
 
-	CreatedBy        pulumi.StringOutput                   `pulumi:"createdBy"`
-	Description      pulumi.StringPtrOutput                `pulumi:"description"`
-	ExtId            pulumi.StringOutput                   `pulumi:"extId"`
-	IpRanges         AddressGroupsV2IpRangeArrayOutput     `pulumi:"ipRanges"`
-	Ipv4Addresses    AddressGroupsV2Ipv4AddressArrayOutput `pulumi:"ipv4Addresses"`
-	Links            AddressGroupsV2LinkArrayOutput        `pulumi:"links"`
-	Name             pulumi.StringOutput                   `pulumi:"name"`
-	PolicyReferences pulumi.StringArrayOutput              `pulumi:"policyReferences"`
-	TenantId         pulumi.StringOutput                   `pulumi:"tenantId"`
+	// created by.
+	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	// - (Optional) Description of the Address group
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// address group uuid.
+	ExtId pulumi.StringOutput `pulumi:"extId"`
+	// - (Optional) List of IP range containing start and end IP.
+	IpRanges AddressGroupsV2IpRangeArrayOutput `pulumi:"ipRanges"`
+	// - (Optional) List of CIDR blocks in the Address Group.
+	Ipv4Addresses AddressGroupsV2Ipv4AddressArrayOutput `pulumi:"ipv4Addresses"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links AddressGroupsV2LinkArrayOutput `pulumi:"links"`
+	// - (Required) Name of the Address group
+	Name pulumi.StringOutput `pulumi:"name"`
+	// Reference to policy associated with Address Group.
+	PolicyReferences pulumi.StringArrayOutput `pulumi:"policyReferences"`
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 }
 
 // NewAddressGroupsV2 registers a new resource with the given unique name, arguments, and options.
@@ -55,27 +117,45 @@ func GetAddressGroupsV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AddressGroupsV2 resources.
 type addressGroupsV2State struct {
-	CreatedBy        *string                      `pulumi:"createdBy"`
-	Description      *string                      `pulumi:"description"`
-	ExtId            *string                      `pulumi:"extId"`
-	IpRanges         []AddressGroupsV2IpRange     `pulumi:"ipRanges"`
-	Ipv4Addresses    []AddressGroupsV2Ipv4Address `pulumi:"ipv4Addresses"`
-	Links            []AddressGroupsV2Link        `pulumi:"links"`
-	Name             *string                      `pulumi:"name"`
-	PolicyReferences []string                     `pulumi:"policyReferences"`
-	TenantId         *string                      `pulumi:"tenantId"`
+	// created by.
+	CreatedBy *string `pulumi:"createdBy"`
+	// - (Optional) Description of the Address group
+	Description *string `pulumi:"description"`
+	// address group uuid.
+	ExtId *string `pulumi:"extId"`
+	// - (Optional) List of IP range containing start and end IP.
+	IpRanges []AddressGroupsV2IpRange `pulumi:"ipRanges"`
+	// - (Optional) List of CIDR blocks in the Address Group.
+	Ipv4Addresses []AddressGroupsV2Ipv4Address `pulumi:"ipv4Addresses"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []AddressGroupsV2Link `pulumi:"links"`
+	// - (Required) Name of the Address group
+	Name *string `pulumi:"name"`
+	// Reference to policy associated with Address Group.
+	PolicyReferences []string `pulumi:"policyReferences"`
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId *string `pulumi:"tenantId"`
 }
 
 type AddressGroupsV2State struct {
-	CreatedBy        pulumi.StringPtrInput
-	Description      pulumi.StringPtrInput
-	ExtId            pulumi.StringPtrInput
-	IpRanges         AddressGroupsV2IpRangeArrayInput
-	Ipv4Addresses    AddressGroupsV2Ipv4AddressArrayInput
-	Links            AddressGroupsV2LinkArrayInput
-	Name             pulumi.StringPtrInput
+	// created by.
+	CreatedBy pulumi.StringPtrInput
+	// - (Optional) Description of the Address group
+	Description pulumi.StringPtrInput
+	// address group uuid.
+	ExtId pulumi.StringPtrInput
+	// - (Optional) List of IP range containing start and end IP.
+	IpRanges AddressGroupsV2IpRangeArrayInput
+	// - (Optional) List of CIDR blocks in the Address Group.
+	Ipv4Addresses AddressGroupsV2Ipv4AddressArrayInput
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links AddressGroupsV2LinkArrayInput
+	// - (Required) Name of the Address group
+	Name pulumi.StringPtrInput
+	// Reference to policy associated with Address Group.
 	PolicyReferences pulumi.StringArrayInput
-	TenantId         pulumi.StringPtrInput
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId pulumi.StringPtrInput
 }
 
 func (AddressGroupsV2State) ElementType() reflect.Type {
@@ -83,18 +163,26 @@ func (AddressGroupsV2State) ElementType() reflect.Type {
 }
 
 type addressGroupsV2Args struct {
-	Description   *string                      `pulumi:"description"`
-	IpRanges      []AddressGroupsV2IpRange     `pulumi:"ipRanges"`
+	// - (Optional) Description of the Address group
+	Description *string `pulumi:"description"`
+	// - (Optional) List of IP range containing start and end IP.
+	IpRanges []AddressGroupsV2IpRange `pulumi:"ipRanges"`
+	// - (Optional) List of CIDR blocks in the Address Group.
 	Ipv4Addresses []AddressGroupsV2Ipv4Address `pulumi:"ipv4Addresses"`
-	Name          *string                      `pulumi:"name"`
+	// - (Required) Name of the Address group
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a AddressGroupsV2 resource.
 type AddressGroupsV2Args struct {
-	Description   pulumi.StringPtrInput
-	IpRanges      AddressGroupsV2IpRangeArrayInput
+	// - (Optional) Description of the Address group
+	Description pulumi.StringPtrInput
+	// - (Optional) List of IP range containing start and end IP.
+	IpRanges AddressGroupsV2IpRangeArrayInput
+	// - (Optional) List of CIDR blocks in the Address Group.
 	Ipv4Addresses AddressGroupsV2Ipv4AddressArrayInput
-	Name          pulumi.StringPtrInput
+	// - (Required) Name of the Address group
+	Name pulumi.StringPtrInput
 }
 
 func (AddressGroupsV2Args) ElementType() reflect.Type {
@@ -184,38 +272,47 @@ func (o AddressGroupsV2Output) ToAddressGroupsV2OutputWithContext(ctx context.Co
 	return o
 }
 
+// created by.
 func (o AddressGroupsV2Output) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// - (Optional) Description of the Address group
 func (o AddressGroupsV2Output) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// address group uuid.
 func (o AddressGroupsV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// - (Optional) List of IP range containing start and end IP.
 func (o AddressGroupsV2Output) IpRanges() AddressGroupsV2IpRangeArrayOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) AddressGroupsV2IpRangeArrayOutput { return v.IpRanges }).(AddressGroupsV2IpRangeArrayOutput)
 }
 
+// - (Optional) List of CIDR blocks in the Address Group.
 func (o AddressGroupsV2Output) Ipv4Addresses() AddressGroupsV2Ipv4AddressArrayOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) AddressGroupsV2Ipv4AddressArrayOutput { return v.Ipv4Addresses }).(AddressGroupsV2Ipv4AddressArrayOutput)
 }
 
+// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o AddressGroupsV2Output) Links() AddressGroupsV2LinkArrayOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) AddressGroupsV2LinkArrayOutput { return v.Links }).(AddressGroupsV2LinkArrayOutput)
 }
 
+// - (Required) Name of the Address group
 func (o AddressGroupsV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// Reference to policy associated with Address Group.
 func (o AddressGroupsV2Output) PolicyReferences() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) pulumi.StringArrayOutput { return v.PolicyReferences }).(pulumi.StringArrayOutput)
 }
 
+// A globally unique identifier that represents the tenant that owns this entity.
 func (o AddressGroupsV2Output) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }

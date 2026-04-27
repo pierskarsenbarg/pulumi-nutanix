@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue
     {
+        /// <summary>
+        /// - (Optional) The list of the individual KeyValuePair elements.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair> KeyValuePairs;
 
         [OutputConstructor]

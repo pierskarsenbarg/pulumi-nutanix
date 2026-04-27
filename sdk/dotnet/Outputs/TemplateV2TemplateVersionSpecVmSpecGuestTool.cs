@@ -15,8 +15,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class TemplateV2TemplateVersionSpecVmSpecGuestTool
     {
         public readonly string? AvailableVersion;
+        /// <summary>
+        /// The list of the application names that are enabled on the guest VM.
+        /// </summary>
         public readonly ImmutableArray<string> Capabilities;
         public readonly string? GuestOsVersion;
+        /// <summary>
+        /// Indicates whether Nutanix Guest Tools is enabled or not.
+        /// </summary>
         public readonly bool? IsEnabled;
         public readonly bool? IsInstalled;
         public readonly bool? IsIsoInserted;

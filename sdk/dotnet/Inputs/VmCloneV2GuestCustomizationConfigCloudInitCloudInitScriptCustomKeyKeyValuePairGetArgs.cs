@@ -13,9 +13,17 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePairGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) The key of this key-value pair
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Optional) The value associated with the key for this key-value pair.
+        /// 
+        /// See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/cloneVm).
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

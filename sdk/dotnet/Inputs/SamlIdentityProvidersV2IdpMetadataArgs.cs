@@ -13,21 +13,41 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class SamlIdentityProvidersV2IdpMetadataArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - Certificate for verification.
+        /// </summary>
         [Input("certificate", required: true)]
         public Input<string> Certificate { get; set; } = null!;
 
+        /// <summary>
+        /// - Entity Identifier of Identity provider.
+        /// </summary>
         [Input("entityId", required: true)]
         public Input<string> EntityId { get; set; } = null!;
 
+        /// <summary>
+        /// - Error URL of the Identity provider.
+        /// </summary>
         [Input("errorUrl")]
         public Input<string>? ErrorUrl { get; set; }
 
+        /// <summary>
+        /// - Login URL of the Identity provider.
+        /// </summary>
         [Input("loginUrl", required: true)]
         public Input<string> LoginUrl { get; set; } = null!;
 
+        /// <summary>
+        /// - Logout URL of the Identity provider.
+        /// </summary>
         [Input("logoutUrl")]
         public Input<string>? LogoutUrl { get; set; }
 
+        /// <summary>
+        /// - Name ID Policy format.
+        /// * supported values:
+        /// * `emailAddress`: -  Uses email address as NameID format
+        /// </summary>
         [Input("nameIdPolicyFormat")]
         public Input<string>? NameIdPolicyFormat { get; set; }
 

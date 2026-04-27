@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCdromInsertEjectV2BackingInfoDataSource
     {
+        /// <summary>
+        /// Reference to image or vm disk. Either `ImageReference` or `VmDiskReference`.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoDataSourceReference> References;
 
         [OutputConstructor]

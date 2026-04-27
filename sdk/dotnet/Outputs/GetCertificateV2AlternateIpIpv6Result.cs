@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetCertificateV2AlternateIpIpv6Result
     {
+        /// <summary>
+        /// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+        /// </summary>
         public readonly int? PrefixLength;
+        /// <summary>
+        /// - The IPv4/IPv6 address of the host.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

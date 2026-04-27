@@ -183,12 +183,24 @@ export interface AddressGroupIpAddressBlockList {
 }
 
 export interface AddressGroupsV2IpRange {
+    /**
+     * end ip
+     */
     endIp: string;
+    /**
+     * start ip
+     */
     startIp: string;
 }
 
 export interface AddressGroupsV2Ipv4Address {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength: number;
+    /**
+     * ip of address
+     */
     value: string;
 }
 
@@ -2005,16 +2017,43 @@ export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkUp
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMap {
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     guestCustomizations: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomization[];
+    /**
+     * Memory size in bytes.
+     */
     memorySizeBytes?: number;
+    /**
+     * VM name.
+     */
     name?: string;
+    /**
+     * NICs attached to the VM.
+     */
     nics?: outputs.DeployTemplatesV2OverrideVmConfigMapNic[];
+    /**
+     * Number of cores per socket.
+     */
     numCoresPerSocket?: number;
+    /**
+     * Number of vCPU sockets.
+     */
     numSockets?: number;
+    /**
+     * Number of threads per core.
+     */
     numThreadsPerCore?: number;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
     configs: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig[];
 }
 
@@ -2024,8 +2063,23 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig {
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/deployTemplate).
+     */
     cloudInitScripts: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
     datasourceType?: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
     metadata: string;
 }
 
@@ -2039,6 +2093,9 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * VM name.
+     */
     name: string;
     values: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
 }
@@ -2062,7 +2119,15 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
     installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
     sysprepScripts: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScript[];
 }
 
@@ -2076,6 +2141,9 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSys
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * VM name.
+     */
     name: string;
     values: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
 }
@@ -2099,27 +2167,72 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSys
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
     backingInfos?: outputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfo[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
     extId: string;
+    /**
+     * Network information for a NIC.
+     */
     networkInfos?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo[];
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicBackingInfo {
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
     isConnected?: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress?: string;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
     model?: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
     numQueues?: number;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
     ipv4Configs?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
     networkFunctionChains?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
     networkFunctionNicType?: string;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
     nicType?: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
     shouldAllowUnknownMacs?: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
     subnets?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
     trunkedVlans?: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
     vlanMode?: string;
 }
 
@@ -2149,10 +2262,16 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoLearn
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain {
+    /**
+     * The identifier of a Template.
+     */
     extId?: string;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet {
+    /**
+     * The identifier of a Template.
+     */
     extId?: string;
 }
 
@@ -4942,76 +5061,181 @@ export interface GetCategoryV2Link {
 }
 
 export interface GetCertificateV2AlternateFqdn {
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
     value: string;
 }
 
 export interface GetCertificateV2AlternateIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
     ipv4: outputs.GetCertificateV2AlternateIpIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
     ipv6: outputs.GetCertificateV2AlternateIpIpv6;
 }
 
 export interface GetCertificateV2AlternateIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
     prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
     value: string;
 }
 
 export interface GetCertificateV2AlternateIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
     prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
     value: string;
 }
 
 export interface GetCertificateV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
     href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
     rel: string;
 }
 
 export interface GetCertificateV2Metadata {
+    /**
+     * - A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
     categoryIds: string[];
+    /**
+     * - A globally unique identifier that represents the owner of this resource.
+     */
     ownerReferenceId: string;
+    /**
+     * - The userName of the owner of this resource.
+     */
     ownerUserName: string;
+    /**
+     * - The name of the project this resource belongs to.
+     */
     projectName: string;
+    /**
+     * - A globally unique identifier that represents the project this resource belongs to.
+     */
     projectReferenceId: string;
 }
 
 export interface GetCertificatesV2Certificate {
+    /**
+     * - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
+     */
     alternateFqdns: outputs.GetCertificatesV2CertificateAlternateFqdn[];
+    /**
+     * - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
+     */
     alternateIps: outputs.GetCertificatesV2CertificateAlternateIp[];
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
     extId: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
     links: outputs.GetCertificatesV2CertificateLink[];
+    /**
+     * - Metadata associated with this resource.
+     */
     metadatas: outputs.GetCertificatesV2CertificateMetadata[];
+    /**
+     * -(Required) The UUID of the Object store.
+     */
     objectStoreExtId: string;
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
     tenantId: string;
 }
 
 export interface GetCertificatesV2CertificateAlternateFqdn {
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
     value: string;
 }
 
 export interface GetCertificatesV2CertificateAlternateIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
     ipv4: outputs.GetCertificatesV2CertificateAlternateIpIpv4;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
     ipv6: outputs.GetCertificatesV2CertificateAlternateIpIpv6;
 }
 
 export interface GetCertificatesV2CertificateAlternateIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
     prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
     value: string;
 }
 
 export interface GetCertificatesV2CertificateAlternateIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+     */
     prefixLength?: number;
+    /**
+     * - The IPv4/IPv6 address of the host.
+     */
     value: string;
 }
 
 export interface GetCertificatesV2CertificateLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
     href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
     rel: string;
 }
 
 export interface GetCertificatesV2CertificateMetadata {
+    /**
+     * - A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
     categoryIds: string[];
+    /**
+     * - A globally unique identifier that represents the owner of this resource.
+     */
     ownerReferenceId: string;
+    /**
+     * - The userName of the owner of this resource.
+     */
     ownerUserName: string;
+    /**
+     * - The name of the project this resource belongs to.
+     */
     projectName: string;
+    /**
+     * - A globally unique identifier that represents the project this resource belongs to.
+     */
     projectReferenceId: string;
 }
 
@@ -24688,36 +24912,102 @@ export interface GetRoutesV2RouteNextHopNextHopIpAddressIpv6 {
 }
 
 export interface GetSamlIdentityProviderV2IdpMetadata {
+    /**
+     * - Certificate for verification.
+     */
     certificate: string;
+    /**
+     * - Entity Identifier of Identity provider.
+     */
     entityId: string;
+    /**
+     * - Error URL of the Identity provider.
+     */
     errorUrl: string;
+    /**
+     * - Login URL of the Identity provider.
+     */
     loginUrl: string;
+    /**
+     * - Logout URL of the Identity provider.
+     */
     logoutUrl: string;
+    /**
+     * - Name ID Policy format.
+     * * supported values:
+     * * `emailAddress`: -  Uses email address as NameID format
+     */
     nameIdPolicyFormat: string;
 }
 
 export interface GetSamlIdentityProvidersV2IdentityProvider {
+    /**
+     * - User or Service who created the SAML Identity Provider.
+     */
     createdBy: string;
+    /**
+     * - Creation time of the SAML Identity Provider.
+     */
     createdTime: string;
     customAttributes: string[];
     emailAttribute: string;
+    /**
+     * - It will be used as Issuer in SAML authnRequest.
+     */
     entityIssuer: string;
+    /**
+     * The External Identifier of the User Group.
+     */
     extId: string;
     groupsAttribute: string;
+    /**
+     * - Delimiter is used to split the value of attribute into multiple groups.
+     */
     groupsDelim: string;
+    /**
+     * - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+     */
     idpMetadatas: outputs.GetSamlIdentityProvidersV2IdentityProviderIdpMetadata[];
+    /**
+     * - Flag indicating signing of SAML authnRequests.
+     */
     isSignedAuthnReqEnabled: boolean;
+    /**
+     * - Last updated time of the SAML Identity Provider.
+     */
     lastUpdatedTime: string;
+    /**
+     * - Unique name of the IDP.
+     */
     name: string;
     usernameAttribute: string;
 }
 
 export interface GetSamlIdentityProvidersV2IdentityProviderIdpMetadata {
+    /**
+     * - Certificate for verification.
+     */
     certificate: string;
+    /**
+     * - Entity Identifier of Identity provider.
+     */
     entityId: string;
+    /**
+     * - Error URL of the Identity provider.
+     */
     errorUrl: string;
+    /**
+     * - Login URL of the Identity provider.
+     */
     loginUrl: string;
+    /**
+     * - Logout URL of the Identity provider.
+     */
     logoutUrl: string;
+    /**
+     * - Name ID Policy format. supported values:
+     * * `emailAddress`: -  Uses email address as NameID format
+     */
     nameIdPolicyFormat: string;
 }
 
@@ -25432,122 +25722,266 @@ export interface GetStaticRoutesStatusResourceStaticRoutesListNexthop {
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerNumIop {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerNumReadIop {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerNumWriteIop {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionSavedByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2Health {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
@@ -25557,42 +25991,90 @@ export interface GetStorageContainerStatsInfoV2Link {
 }
 
 export interface GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2StorageCapacityByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2StorageFreeByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2StorageReplicationFactor {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2StorageReservedCapacityByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2StorageTierSsdUsageByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
 export interface GetStorageContainerStatsInfoV2StorageUsageByte {
+    /**
+     * The date and time at which the stat was recorded.The value should be in extended ISO-8601 format. For example, start time of 2022-04-23T01:23:45.678+09:00 would consider all stats starting at 1:23:45.678 on the 23rd of April 2022. Details around ISO-8601 format can be found at https://www.iso.org/standard/70907.html
+     */
     timestamp: string;
+    /**
+     * Value of the stat at the recorded date and time in extended ISO-8601 format."
+     */
     value: number;
 }
 
@@ -38684,182 +39166,377 @@ export interface PbrV2Metadata {
 }
 
 export interface PbrV2Policy {
+    /**
+     * If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
+     */
     isBidirectional: boolean;
+    /**
+     * The action to be taken on the traffic matching the routing policy.
+     */
     policyActions: outputs.PbrV2PolicyPolicyAction[];
+    /**
+     * Match condition for the traffic that is entering the VPC.
+     */
     policyMatches: outputs.PbrV2PolicyPolicyMatch[];
 }
 
 export interface PbrV2PolicyPolicyAction {
+    /**
+     * Routing policy action type.
+     */
     actionType: string;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
     nexthopIpAddresses: outputs.PbrV2PolicyPolicyActionNexthopIpAddress[];
+    /**
+     * Routing policy Reroute params.
+     */
     rerouteParams: outputs.PbrV2PolicyPolicyActionRerouteParam[];
 }
 
 export interface PbrV2PolicyPolicyActionNexthopIpAddress {
+    /**
+     * IPv4 Object.
+     */
     ipv4s: outputs.PbrV2PolicyPolicyActionNexthopIpAddressIpv4[];
+    /**
+     * IPv6 Object.
+     */
     ipv6s: outputs.PbrV2PolicyPolicyActionNexthopIpAddressIpv6[];
 }
 
 export interface PbrV2PolicyPolicyActionNexthopIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyActionNexthopIpAddressIpv6 {
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParam {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
     egressServiceIps: outputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIp[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
     ingressServiceIps: outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIp[];
+    /**
+     * Type of fallback action in reroute case when service VM is down. Acceptable values are "PASSTHROUGH", "NO_ACTION", "ALLOW", "DENY".
+     */
     rerouteFallbackAction: string;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
     serviceIps: outputs.PbrV2PolicyPolicyActionRerouteParamServiceIp[];
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIp {
+    /**
+     * IPv4 Object.
+     */
     ipv4s: outputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4[];
+    /**
+     * IPv6 Object.
+     */
     ipv6s: outputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6[];
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6 {
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIp {
+    /**
+     * IPv4 Object.
+     */
     ipv4s: outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4[];
+    /**
+     * IPv6 Object.
+     */
     ipv6s: outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6[];
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6 {
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamServiceIp {
+    /**
+     * IPv4 Object.
+     */
     ipv4s: outputs.PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4[];
+    /**
+     * IPv6 Object.
+     */
     ipv6s: outputs.PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6[];
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6 {
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyMatch {
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
     destinations: outputs.PbrV2PolicyPolicyMatchDestination[];
+    /**
+     * Protocol Params Object.
+     */
     protocolParameters: outputs.PbrV2PolicyPolicyMatchProtocolParameter[];
+    /**
+     * Routing Policy IP protocol type. Acceptable values are "TCP", "UDP", "PROTOCOL_NUMBER", "ANY", "ICMP" .
+     */
     protocolType: string;
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
     sources: outputs.PbrV2PolicyPolicyMatchSource[];
 }
 
 export interface PbrV2PolicyPolicyMatchDestination {
+    /**
+     * Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+     */
     addressType: string;
+    /**
+     * Subnet Prefix
+     */
     subnetPrefixes: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefix[];
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefix {
+    /**
+     * IPv4 Object.
+     */
     ipv4s: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4[];
+    /**
+     * IPv6 Object.
+     */
     ipv6s: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6[];
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 {
+    /**
+     * IP of address
+     */
     ips: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength: number;
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 {
+    /**
+     * IP of address
+     */
     ips: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip[];
     prefixLength: number;
 }
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip {
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameter {
+    /**
+     * ICMP object
+     */
     icmpObjects: outputs.PbrV2PolicyPolicyMatchProtocolParameterIcmpObject[];
+    /**
+     * Layer Four Protocol Object.
+     */
     layerFourProtocolObjects: outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject[];
+    /**
+     * Protocol Number Object.
+     */
     protocolNumberObjects: outputs.PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject[];
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterIcmpObject {
+    /**
+     * icmp code
+     */
     icmpCode: number;
+    /**
+     * icmp type
+     */
     icmpType: number;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject {
+    /**
+     * Start and end port ranges object.
+     */
     destinationPortRanges: outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange[];
+    /**
+     * Start and end port ranges object.
+     */
     sourcePortRanges: outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange[];
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange {
+    /**
+     * End Port.
+     */
     endPort: number;
+    /**
+     * Start Port.
+     */
     startPort: number;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange {
+    /**
+     * End Port.
+     */
     endPort: number;
+    /**
+     * Start Port.
+     */
     startPort: number;
 }
 
 export interface PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject {
+    /**
+     * protocol number
+     */
     protocolNumber: number;
 }
 
 export interface PbrV2PolicyPolicyMatchSource {
+    /**
+     * Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+     */
     addressType: string;
+    /**
+     * Subnet Prefix
+     */
     subnetPrefixes: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefix[];
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefix {
+    /**
+     * IPv4 Object.
+     */
     ipv4s: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4[];
+    /**
+     * IPv6 Object.
+     */
     ipv6s: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6[];
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 {
+    /**
+     * IP of address
+     */
     ips: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
     prefixLength: number;
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 {
+    /**
+     * IP of address
+     */
     ips: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip[];
     prefixLength: number;
 }
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip {
     prefixLength: number;
+    /**
+     * ip value
+     */
     value: string;
 }
 
 export interface PbrV2Vpc {
+    /**
+     * Name of the routing policy.
+     */
     name: string;
 }
 
@@ -42460,11 +43137,31 @@ export interface RoutesV2NextHopNextHopIpAddressIpv6 {
 }
 
 export interface SamlIdentityProvidersV2IdpMetadata {
+    /**
+     * - Certificate for verification.
+     */
     certificate: string;
+    /**
+     * - Entity Identifier of Identity provider.
+     */
     entityId: string;
+    /**
+     * - Error URL of the Identity provider.
+     */
     errorUrl?: string;
+    /**
+     * - Login URL of the Identity provider.
+     */
     loginUrl: string;
+    /**
+     * - Logout URL of the Identity provider.
+     */
     logoutUrl?: string;
+    /**
+     * - Name ID Policy format.
+     * * supported values:
+     * * `emailAddress`: -  Uses email address as NameID format
+     */
     nameIdPolicyFormat?: string;
 }
 
@@ -43520,6 +44217,9 @@ export interface SubnetV2VpcSnatIpIpv6 {
 export interface TemplateV2CreatedBy {
     additionalAttributes: outputs.TemplateV2CreatedByAdditionalAttribute[];
     creationType: string;
+    /**
+     * VM description
+     */
     description: string;
     displayName: string;
     emailId: string;
@@ -43569,20 +44269,46 @@ export interface TemplateV2TemplateVersionSpec {
     createTime: string;
     createdBies: outputs.TemplateV2TemplateVersionSpecCreatedBy[];
     extId: string;
+    /**
+     * Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+     */
     isActiveVersion?: boolean;
+    /**
+     * Allow or disallow overriding guest customization during template deployment.
+     * * `version_source.template_vm_reference`: (Optional) Template VM Reference
+     * * `version_source.template_version_reference`: (Optional) Template Version Reference
+     */
     isGcOverrideEnabled: boolean;
     links: outputs.TemplateV2TemplateVersionSpecLink[];
     tenantId: string;
+    /**
+     * The user defined description of a Template Version. Version description `Required` when updating a Template Version.
+     */
     versionDescription: string;
+    /**
+     * The user defined name of a Template Version. Version name `Required` when updating a Template Version.
+     */
     versionName: string;
+    /**
+     * Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
+     */
     versionSource: outputs.TemplateV2TemplateVersionSpecVersionSource;
+    /**
+     * Source type of the template version created. It can be either a VM or a template version.
+     */
     versionSourceDiscriminator: string;
+    /**
+     * Specification for a VM.
+     */
     vmSpecs: outputs.TemplateV2TemplateVersionSpecVmSpec[];
 }
 
 export interface TemplateV2TemplateVersionSpecCreatedBy {
     additionalAttributes: outputs.TemplateV2TemplateVersionSpecCreatedByAdditionalAttribute[];
     creationType: string;
+    /**
+     * VM description
+     */
     description: string;
     displayName: string;
     emailId: string;
@@ -43630,21 +44356,54 @@ export interface TemplateV2TemplateVersionSpecVersionSource {
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference {
+    /**
+     * Overrides specification for VM create from a Template.
+     */
     overrideVmConfigs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig[];
+    /**
+     * The identifier of a Template Version. by default it will be the latest version of the template.
+     */
     versionId: string;
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig {
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     guestCustomizations: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization[];
+    /**
+     * Memory size in bytes.
+     */
     memorySizeBytes?: number;
+    /**
+     * VM name.
+     */
     name: string;
+    /**
+     * NICs attached to the VM.
+     */
     nics: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic[];
+    /**
+     * Number of cores per socket.
+     */
     numCoresPerSocket: number;
+    /**
+     * Number of vCPU sockets.
+     */
     numSockets: number;
+    /**
+     * Number of threads per core.
+     */
     numThreadsPerCore: number;
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
     configs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig[];
 }
 
@@ -43654,8 +44413,23 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
+     */
     cloudInitScripts: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
     datasourceType: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
     metadata: string;
 }
 
@@ -43692,7 +44466,15 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
     installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
     sysprepScripts: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript[];
 }
 
@@ -43729,17 +44511,32 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
     backingInfos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo[];
     extId: string;
     links: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink[];
+    /**
+     * Network information for a NIC.
+     */
     networkInfos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo[];
     tenantId: string;
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo {
     isConnected?: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress: string;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
     model: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
     numQueues?: number;
 }
 
@@ -43749,14 +44546,38 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
     ipv4Configs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
     networkFunctionChains: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
     networkFunctionNicType: string;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
     nicType: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
     shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
     subnets: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
     trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
     vlanMode: string;
 }
 
@@ -43799,6 +44620,12 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReference {
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
     configs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig[];
 }
 
@@ -43808,8 +44635,23 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
+     */
     cloudInitScripts: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
     datasourceType: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
     metadata: string;
 }
 
@@ -43846,7 +44688,15 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
     installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
     sysprepScripts: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript[];
 }
 
@@ -43883,59 +44733,186 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpec {
+    /**
+     * Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+     */
     apcConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecApcConfig[];
+    /**
+     * Reference to an availability zone.
+     */
     availabilityZones: outputs.TemplateV2TemplateVersionSpecVmSpecAvailabilityZone[];
+    /**
+     * BIOS UUID of the VM. It should be of type UUID.
+     */
     biosUuid: string;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     bootConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfig[];
+    /**
+     * Categories for the VM.
+     */
     categories: outputs.TemplateV2TemplateVersionSpecVmSpecCategory[];
+    /**
+     * CD-ROMs attached to the VM.
+     */
     cdRoms: outputs.TemplateV2TemplateVersionSpecVmSpecCdRom[];
+    /**
+     * Reference to a cluster.
+     */
     clusters: outputs.TemplateV2TemplateVersionSpecVmSpecCluster[];
     createTime: string;
+    /**
+     * VM description
+     */
     description: string;
+    /**
+     * Disks attached to the VM.
+     */
     disks: outputs.TemplateV2TemplateVersionSpecVmSpecDisk[];
+    /**
+     * The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
+     */
     enabledCpuFeatures: string[];
     extId: string;
+    /**
+     * Generation UUID of the VM. It should be of type UUID.
+     */
     generationUuid: string;
+    /**
+     * GPUs attached to the VM.
+     */
     gpuses: outputs.TemplateV2TemplateVersionSpecVmSpecGpus[];
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
     guestCustomizations: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomization[];
+    /**
+     * The details about Nutanix Guest Tools for a VM.
+     */
     guestTools: outputs.TemplateV2TemplateVersionSpecVmSpecGuestTool[];
+    /**
+     * VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
     hardwareClockTimezone: string;
+    /**
+     * Reference to the host, the VM is running on.
+     */
     hosts: outputs.TemplateV2TemplateVersionSpecVmSpecHost[];
+    /**
+     * Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+     */
     isAgentVm: boolean;
+    /**
+     * Indicates whether to remove AHV branding from VM firmware tables or not.
+     */
     isBrandingEnabled: boolean;
     isCpuHotplugEnabled: boolean;
+    /**
+     * Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+     */
     isCpuPassthroughEnabled: boolean;
     isCrossClusterMigrationInProgress: boolean;
+    /**
+     * Indicates whether the vGPU console is enabled or not.
+     */
     isGpuConsoleEnabled: boolean;
     isLiveMigrateCapable: boolean;
+    /**
+     * Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+     */
     isMemoryOvercommitEnabled: boolean;
     isScsiControllerEnabled: boolean;
+    /**
+     * Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+     */
     isVcpuHardPinningEnabled: boolean;
+    /**
+     * Indicates whether the VGA console should be disabled or not.
+     */
     isVgaConsoleEnabled: boolean;
     links: outputs.TemplateV2TemplateVersionSpecVmSpecLink[];
+    /**
+     * Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
+     */
     machineType: string;
+    /**
+     * Memory size in bytes.
+     */
     memorySizeBytes: number;
+    /**
+     * VM name.
+     */
     name: string;
+    /**
+     * NICs attached to the VM.
+     */
     nics: outputs.TemplateV2TemplateVersionSpecVmSpecNic[];
+    /**
+     * Number of cores per socket. Value should be at least 1.
+     */
     numCoresPerSocket: number;
+    /**
+     * Number of NUMA nodes. 0 means NUMA is disabled.
+     */
     numNumaNodes: number;
+    /**
+     * Number of vCPU sockets. Value should be at least 1.
+     */
     numSockets: number;
+    /**
+     * Number of threads per core. Value should be at least 1.
+     */
     numThreadsPerCore: number;
+    /**
+     * Ownership information for the VM.
+     */
     ownershipInfos: outputs.TemplateV2TemplateVersionSpecVmSpecOwnershipInfo[];
+    /**
+     * PCI devices attached to the VM.
+     */
     pciDevices: outputs.TemplateV2TemplateVersionSpecVmSpecPciDevice[];
+    /**
+     * The current power state of the VM.
+     */
     powerState: string;
+    /**
+     * Status of protection policy applied to this VM.
+     */
     protectionPolicyStates: outputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState[];
+    /**
+     * The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
+     */
     protectionType: string;
+    /**
+     * Serial ports configured on the VM.
+     */
     serialPorts: outputs.TemplateV2TemplateVersionSpecVmSpecSerialPort[];
+    /**
+     * Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
+     */
     sources: outputs.TemplateV2TemplateVersionSpecVmSpecSource[];
+    /**
+     * Storage configuration for VM.
+     */
     storageConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecStorageConfig[];
     tenantId: string;
     updateTime: string;
+    /**
+     * Indicates how the vTPM for the VM should be configured.
+     */
     vtpmConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecVtpmConfig[];
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecApcConfig {
+    /**
+     * CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+     * * `cpu_model.name`: (Required) Name of the CPU model associated with the VM.
+     */
     cpuModels: outputs.TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel[];
+    /**
+     * If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+     */
     isApcEnabled: boolean;
 }
 
@@ -43949,12 +44926,30 @@ export interface TemplateV2TemplateVersionSpecVmSpecAvailabilityZone {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfig {
+    /**
+     * LegacyBoot config Object
+     */
     legacyBoots: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot[];
+    /**
+     * UefiBoot config Object
+     */
     uefiBoots: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot[];
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot {
+    /**
+     * Boot Device object
+     * * `boot_device.boot_device_disk`: (Optional) Disk address.
+     * * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+     * * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+     * * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+     */
     bootDevices: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice[];
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+     */
     bootOrders: string[];
 }
 
@@ -43969,17 +44964,42 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevi
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
     busType: string;
+    /**
+     * Index of the serial port.
+     */
     index: number;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress: string;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot {
+    /**
+     * Boot Device object
+     * * `boot_device.boot_device_disk`: (Optional) Disk address.
+     * * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+     * * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+     * * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+     */
     bootDevices: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice[];
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+     */
     bootOrders: string[];
+    /**
+     * Indicate whether to enable secure boot or not
+     */
     isSecureBootEnabled: boolean;
+    /**
+     * Configuration for NVRAM to be presented to the VM.
+     * * `nvram_device.backing_storage_info`: (Required) Storage provided by Nutanix ADSF
+     */
     nvramDevices: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice[];
 }
 
@@ -43994,10 +45014,16 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
     busType: string;
+    /**
+     * Index of the serial port.
+     */
     index: number;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress: string;
 }
 
@@ -44015,11 +45041,24 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevic
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
     references: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageReferences: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
     vmDiskReferences: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
 }
 
@@ -44035,6 +45074,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevic
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
     busType: string;
+    /**
+     * Index of the serial port.
+     */
     index: number;
 }
 
@@ -44043,6 +45085,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevic
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled: boolean;
 }
 
@@ -44055,29 +45100,64 @@ export interface TemplateV2TemplateVersionSpecVmSpecCategory {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRom {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
     backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo[];
+    /**
+     * Virtual Machine disk (VM disk).
+     */
     diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress[];
     extId: string;
+    /**
+     * Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+     */
     isoType: string;
     links: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomLink[];
     tenantId: string;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource[];
     diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     * * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     storageConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer[];
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
     references: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference[];
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageReferences: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
     vmDiskReferences: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference[];
 }
 
@@ -44093,6 +45173,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceRe
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
     busType: string;
+    /**
+     * Index of the serial port.
+     */
     index: number;
 }
 
@@ -44101,6 +45184,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceRe
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled: boolean;
 }
 
@@ -44110,6 +45196,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConta
 
 export interface TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress {
     busType: string;
+    /**
+     * Index of the serial port.
+     */
     index: number;
 }
 
@@ -44123,7 +45212,18 @@ export interface TemplateV2TemplateVersionSpecVmSpecCluster {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecDisk {
+    /**
+     * Supporting storage to create virtual disk on.
+     * * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
+     * * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
+     * * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     */
     backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfo[];
+    /**
+     * Disk address.
+     * * `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * * `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress[];
     extId: string;
     links: outputs.TemplateV2TemplateVersionSpecVmSpecDiskLink[];
@@ -44149,11 +45249,24 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource {
+    /**
+     * Reference to image or vm disk
+     */
     references: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference[];
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageReferences: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
     vmDiskReferences: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
 }
 
@@ -44169,6 +45282,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSou
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
     busType: string;
+    /**
+     * Index of the serial port.
+     */
     index: number;
 }
 
@@ -44177,6 +45293,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSou
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled: boolean;
 }
 
@@ -44186,6 +45305,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorage
 
 export interface TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress {
     busType: string;
+    /**
+     * Index of the serial port.
+     */
     index: number;
 }
 
@@ -44195,17 +45317,29 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskLink {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecGpus {
+    /**
+     * The device Id of the GPU.
+     */
     deviceId: number;
     extId: string;
     fraction: number;
     frameBufferSizeBytes: number;
     guestDriverVersion: string;
     links: outputs.TemplateV2TemplateVersionSpecVmSpecGpusLink[];
+    /**
+     * The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+     */
     mode: string;
     name: string;
     numVirtualDisplayHeads: number;
+    /**
+     * The (S)egment:(B)us:(D)evice.(F)unction hardware address.
+     */
     pciAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecGpusPciAddress[];
     tenantId: string;
+    /**
+     * The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
+     */
     vendor: string;
 }
 
@@ -44222,6 +45356,12 @@ export interface TemplateV2TemplateVersionSpecVmSpecGpusPciAddress {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
     configs: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig[];
 }
 
@@ -44231,8 +45371,23 @@ export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
+     */
     cloudInitScripts: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
     datasourceType: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
     metadata: string;
 }
 
@@ -44269,7 +45424,15 @@ export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigClou
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
     installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
     sysprepScripts: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript[];
 }
 
@@ -44307,8 +45470,14 @@ export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysp
 
 export interface TemplateV2TemplateVersionSpecVmSpecGuestTool {
     availableVersion: string;
+    /**
+     * The list of the application names that are enabled on the guest VM.
+     */
     capabilities: string[];
     guestOsVersion: string;
+    /**
+     * Indicates whether Nutanix Guest Tools is enabled or not.
+     */
     isEnabled: boolean;
     isInstalled: boolean;
     isIsoInserted: boolean;
@@ -44328,17 +45497,32 @@ export interface TemplateV2TemplateVersionSpecVmSpecLink {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
     backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfo[];
     extId: string;
     links: outputs.TemplateV2TemplateVersionSpecVmSpecNicLink[];
+    /**
+     * Network information for a NIC.
+     */
     networkInfos: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo[];
     tenantId: string;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNicBackingInfo {
     isConnected?: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
     macAddress: string;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
     model: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
     numQueues?: number;
 }
 
@@ -44348,14 +45532,38 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicLink {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
     ipv4Configs: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
     networkFunctionChains: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
     networkFunctionNicType: string;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
     nicType: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
     shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
     subnets: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
     trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
     vlanMode: string;
 }
 
@@ -44401,7 +45609,13 @@ export interface TemplateV2TemplateVersionSpecVmSpecOwnershipInfoOwner {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecPciDevice {
+    /**
+     * Information about the attached PCIe device to the VM.
+     */
     assignedDeviceInfos: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo[];
+    /**
+     * Indicates the way a PCIe device is associated to the VM.
+     */
     backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo[];
     extId: string;
     links: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceLink[];
@@ -44413,14 +45627,23 @@ export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo 
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice {
+    /**
+     * Globally unique identifier denoting PCIe device label. It should be of type UUID.
+     */
     deviceExtId: string;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo {
+    /**
+     * Reference to a PCIe device.
+     */
     pcieDeviceReferences: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference[];
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference {
+    /**
+     * Globally unique identifier denoting PCIe device label. It should be of type UUID.
+     */
     deviceExtId: string;
 }
 
@@ -44430,6 +45653,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceLink {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState {
+    /**
+     * Reference to a protection policy.
+     */
     policies: outputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy[];
 }
 
@@ -44439,7 +45665,13 @@ export interface TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy 
 
 export interface TemplateV2TemplateVersionSpecVmSpecSerialPort {
     extId: string;
+    /**
+     * Index of the serial port.
+     */
     index: number;
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
     isConnected: boolean;
     links: outputs.TemplateV2TemplateVersionSpecVmSpecSerialPortLink[];
     tenantId: string;
@@ -44456,7 +45688,14 @@ export interface TemplateV2TemplateVersionSpecVmSpecSource {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled: boolean;
+    /**
+     * QoS parameters to be enforced.
+     * * `qos_config.throttled_iops`: (Optional) Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+     */
     qosConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig[];
 }
 
@@ -44465,6 +45704,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig {
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecVtpmConfig {
+    /**
+     * Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+     */
     isVtpmEnabled: boolean;
     version: string;
 }
@@ -44472,6 +45714,9 @@ export interface TemplateV2TemplateVersionSpecVmSpecVtpmConfig {
 export interface TemplateV2UpdatedBy {
     additionalAttributes: outputs.TemplateV2UpdatedByAdditionalAttribute[];
     creationType: string;
+    /**
+     * VM description
+     */
     description: string;
     displayName: string;
     emailId: string;
@@ -45814,18 +47059,46 @@ export interface VirtualMachineV2VtpmConfig {
 }
 
 export interface VmCdromInsertEjectV2BackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources?: outputs.VmCdromInsertEjectV2BackingInfoDataSource[];
+    /**
+     * Size of the disk in Bytes
+     */
     diskSizeBytes?: number;
+    /**
+     * Storage configuration for VM disks
+     * * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     storageConfigs?: outputs.VmCdromInsertEjectV2BackingInfoStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers: outputs.VmCdromInsertEjectV2BackingInfoStorageContainer[];
 }
 
 export interface VmCdromInsertEjectV2BackingInfoDataSource {
+    /**
+     * Reference to image or vm disk. Either `imageReference` or `vmDiskReference`.
+     */
     references?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReference[];
 }
 
 export interface VmCdromInsertEjectV2BackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageReferences?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_address`: (Required) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
+     *
+     *
+     * See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/insertCdRomById).
+     */
     vmDiskReferences?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference[];
 }
 
@@ -45845,6 +47118,9 @@ export interface VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferen
 }
 
 export interface VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * The globally unique identifier of a CD-ROM. It should be of type UUID.
+     */
     extId?: string;
 }
 
@@ -45853,6 +47129,9 @@ export interface VmCdromInsertEjectV2BackingInfoStorageConfig {
 }
 
 export interface VmCdromInsertEjectV2BackingInfoStorageContainer {
+    /**
+     * The globally unique identifier of a CD-ROM. It should be of type UUID.
+     */
     extId?: string;
 }
 
@@ -45863,6 +47142,9 @@ export interface VmCloneV2ApcConfig {
 
 export interface VmCloneV2ApcConfigCpuModel {
     extId: string;
+    /**
+     * - (Optional) The name for the vm.
+     */
     name: string;
 }
 
@@ -45872,99 +47154,225 @@ export interface VmCloneV2BootConfig {
 }
 
 export interface VmCloneV2BootConfigLegacyBoot {
+    /**
+     * - (Optional) The Boot Device settings.
+     */
     bootDevices: outputs.VmCloneV2BootConfigLegacyBootBootDevice[];
+    /**
+     * - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     bootOrders: string[];
 }
 
 export interface VmCloneV2BootConfigLegacyBootBootDevice {
+    /**
+     * - (Optional) The Boot Device Disk settings.
+     */
     bootDeviceDisks: outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    /**
+     * - (Optional) The Boot Device Nic settings.
+     */
     bootDeviceNics: outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic[];
 }
 
 export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
+    /**
+     * - (Optional) Address of disk to boot from.
+     */
     diskAddresses: outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType: string;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index: number;
 }
 
 export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * - (Optional) MAC address of nic to boot from.
+     */
     macAddress: string;
 }
 
 export interface VmCloneV2BootConfigUefiBoot {
+    /**
+     * - (Optional) The Boot Device settings.
+     */
     bootDevices: outputs.VmCloneV2BootConfigUefiBootBootDevice[];
+    /**
+     * - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
     bootOrders: string[];
+    /**
+     * - (Optional) Indicate whether to enable secure boot or not.
+     */
     isSecureBootEnabled: boolean;
+    /**
+     * - (Optional) Configuration for NVRAM to be presented to the VM.
+     */
     nvramDevices: outputs.VmCloneV2BootConfigUefiBootNvramDevice[];
 }
 
 export interface VmCloneV2BootConfigUefiBootBootDevice {
+    /**
+     * - (Optional) The Boot Device Disk settings.
+     */
     bootDeviceDisks: outputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk[];
+    /**
+     * - (Optional) The Boot Device Nic settings.
+     */
     bootDeviceNics: outputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic[];
 }
 
 export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
+    /**
+     * - (Optional) Address of disk to boot from.
+     */
     diskAddresses: outputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType: string;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index: number;
 }
 
 export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
+    /**
+     * - (Optional) MAC address of nic to boot from.
+     */
     macAddress: string;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDevice {
+    /**
+     * - (Optional) Storage provided by Nutanix ADSF.
+     */
     backingStorageInfos: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo[];
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
+    /**
+     * - (Optional) A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource[];
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId: string;
+    /**
+     * - (Optional) Size of the disk in Bytes.
+     */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    /**
+     * - (Optional) Storage configuration for VM disks.
+     */
     storageConfigs: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
+    /**
+     * - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * - (Optional) Data Source Reference settings.
+     */
     references: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * - (Optional) Data Source Image Reference settings.
+     */
     imageReferences: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    /**
+     * - (Optional) Data Source VM Disk Reference settings.
+     */
     vmDiskReferences: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    /**
+     * - (Optional) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageExtId: string;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    /**
+     * - (Optional) Address of disk.
+     */
     diskAddresses: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId: string;
+    /**
+     * - (Optional) Reference to a VM.
+     */
     vmReferences: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference[];
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType: string;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index: number;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * - (Optional) The globally unique identifier of a VM. It should be of type UUID.
+     */
     extId: string;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled: boolean;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    /**
+     * - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
+     */
     extId: string;
 }
 
@@ -45973,6 +47381,9 @@ export interface VmCloneV2Category {
 }
 
 export interface VmCloneV2CdRom {
+    /**
+     * - (Optional) Defines a NIC emulated by the hypervisor
+     */
     backingInfos: outputs.VmCloneV2CdRomBackingInfo[];
     diskAddresses: outputs.VmCloneV2CdRomDiskAddress[];
     extId: string;
@@ -45980,52 +47391,121 @@ export interface VmCloneV2CdRom {
 }
 
 export interface VmCloneV2CdRomBackingInfo {
+    /**
+     * - (Optional) A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources: outputs.VmCloneV2CdRomBackingInfoDataSource[];
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId: string;
+    /**
+     * - (Optional) Size of the disk in Bytes.
+     */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    /**
+     * - (Optional) Storage configuration for VM disks.
+     */
     storageConfigs: outputs.VmCloneV2CdRomBackingInfoStorageConfig[];
+    /**
+     * - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers: outputs.VmCloneV2CdRomBackingInfoStorageContainer[];
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSource {
+    /**
+     * - (Optional) Data Source Reference settings.
+     */
     references: outputs.VmCloneV2CdRomBackingInfoDataSourceReference[];
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReference {
+    /**
+     * - (Optional) Data Source Image Reference settings.
+     */
     imageReferences: outputs.VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference[];
+    /**
+     * - (Optional) Data Source VM Disk Reference settings.
+     */
     vmDiskReferences: outputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference[];
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference {
+    /**
+     * - (Optional) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageExtId: string;
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference {
+    /**
+     * - (Optional) Address of disk.
+     */
     diskAddresses: outputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId: string;
+    /**
+     * - (Optional) Reference to a VM.
+     */
     vmReferences: outputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType: string;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index: number;
 }
 
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * - (Optional) The globally unique identifier of a VM. It should be of type UUID.
+     */
     extId: string;
 }
 
 export interface VmCloneV2CdRomBackingInfoStorageConfig {
+    /**
+     * - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled: boolean;
 }
 
 export interface VmCloneV2CdRomBackingInfoStorageContainer {
+    /**
+     * - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
+     */
     extId: string;
 }
 
 export interface VmCloneV2CdRomDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType: string;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index: number;
 }
 
@@ -46034,6 +47514,9 @@ export interface VmCloneV2Cluster {
 }
 
 export interface VmCloneV2Disk {
+    /**
+     * - (Optional) Defines a NIC emulated by the hypervisor
+     */
     backingInfos: outputs.VmCloneV2DiskBackingInfo[];
     diskAddresses: outputs.VmCloneV2DiskDiskAddress[];
     extId: string;
@@ -46049,52 +47532,121 @@ export interface VmCloneV2DiskBackingInfoAdfsVolumeGroupReference {
 }
 
 export interface VmCloneV2DiskBackingInfoVmDisk {
+    /**
+     * - (Optional) A reference to a disk or image that contains the contents of a disk.
+     */
     dataSources: outputs.VmCloneV2DiskBackingInfoVmDiskDataSource[];
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId: string;
+    /**
+     * - (Optional) Size of the disk in Bytes.
+     */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    /**
+     * - (Optional) Storage configuration for VM disks.
+     */
     storageConfigs: outputs.VmCloneV2DiskBackingInfoVmDiskStorageConfig[];
+    /**
+     * - (Optional) This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
     storageContainers: outputs.VmCloneV2DiskBackingInfoVmDiskStorageContainer[];
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSource {
+    /**
+     * - (Optional) Data Source Reference settings.
+     */
     references: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReference[];
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * - (Optional) Data Source Image Reference settings.
+     */
     imageReferences: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    /**
+     * - (Optional) Data Source VM Disk Reference settings.
+     */
     vmDiskReferences: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    /**
+     * - (Optional) The globally unique identifier of an image. It should be of type UUID.
+     */
     imageExtId: string;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    /**
+     * - (Optional) Address of disk.
+     */
     diskAddresses: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     */
     diskExtId: string;
+    /**
+     * - (Optional) Reference to a VM.
+     */
     vmReferences: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference[];
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType: string;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index: number;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * - (Optional) The globally unique identifier of a VM. It should be of type UUID.
+     */
     extId: string;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskStorageConfig {
+    /**
+     * - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled: boolean;
 }
 
 export interface VmCloneV2DiskBackingInfoVmDiskStorageContainer {
+    /**
+     * - (Optional) The globally unique identifier of a VM disk container. It should be of type UUID.
+     */
     extId: string;
 }
 
 export interface VmCloneV2DiskDiskAddress {
+    /**
+     * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * Valid values are:
+     * - `SCSI` The type of disk bus is SCSI.
+     * - `SPAPR` The type of disk bus is SPAPR.
+     * - `PCI` The type of disk bus is PCI.
+     * - `PCI` The type of disk bus is PCI.
+     * - `SATA` The type of disk bus is SATA.
+     */
     busType: string;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index: number;
 }
 
@@ -46105,6 +47657,9 @@ export interface VmCloneV2Gpus {
     frameBufferSizeBytes: number;
     guestDriverVersion: string;
     mode: string;
+    /**
+     * - (Optional) The name for the vm.
+     */
     name: string;
     numVirtualDisplayHeads: number;
     pciAddresses: outputs.VmCloneV2GpusPciAddress[];
@@ -46119,54 +47674,115 @@ export interface VmCloneV2GpusPciAddress {
 }
 
 export interface VmCloneV2GuestCustomization {
+    /**
+     * - (Optional) The Nutanix Guest Tools customization settings.
+     */
     configs: outputs.VmCloneV2GuestCustomizationConfig[];
 }
 
 export interface VmCloneV2GuestCustomizationConfig {
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     cloudInits: outputs.VmCloneV2GuestCustomizationConfigCloudInit[];
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     syspreps: outputs.VmCloneV2GuestCustomizationConfigSysprep[];
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInit {
+    /**
+     * - (Optional) The script to use for cloud-init.
+     */
     cloudInitScripts: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * - (Optional) Type of datasource.
+     * Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+     * Valid values are:
+     * - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+     */
     datasourceType?: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
     metadata: string;
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript {
     customKeys: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey[];
+    /**
+     * - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     */
     userDatas: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData[];
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey {
+    /**
+     * - (Optional) The list of the individual KeyValuePair elements.
+     */
     keyValuePairs: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair[];
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
+    /**
+     * - (Optional) The key of this key-value pair
+     */
     name: string;
+    /**
+     * - (Optional) The value associated with the key for this key-value pair.
+     *
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
+     */
     value: string;
 }
 
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    /**
+     * - (Optional) The value for the cloud-init user_data.
+     */
     value: string;
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprep {
+    /**
+     * - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+     * Valid values are:
+     * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+     * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+     */
     installType: string;
     sysprepScripts: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScript[];
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScript {
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in cloud init.
+     */
     customKeyValues: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    /**
+     * - (Optional) Generic key value pair used for custom attributes.
+     */
     unattendXmls: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    /**
+     * - (Optional) The list of the individual KeyValuePair elements.
+     */
     keyValuePairs: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * - (Optional) The key of this key-value pair
+     */
     name: string;
+    /**
+     * - (Optional) The value associated with the key for this key-value pair.
+     *
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
+     */
     value: string;
 }
 
@@ -46197,50 +47813,135 @@ export interface VmCloneV2Link {
 }
 
 export interface VmCloneV2Nic {
+    /**
+     * - (Optional) Defines a NIC emulated by the hypervisor
+     */
     backingInfos: outputs.VmCloneV2NicBackingInfo[];
+    /**
+     * - (Optional) A globally unique identifier of an instance that is suitable for external consumption.
+     */
     extId: string;
+    /**
+     * - (Optional) Network information for a NIC.
+     */
     networkInfos: outputs.VmCloneV2NicNetworkInfo[];
 }
 
 export interface VmCloneV2NicBackingInfo {
+    /**
+     * - (Optional) Indicates whether the NIC is connected or not. Default is True.
+     */
     isConnected: boolean;
+    /**
+     * - (Optional) MAC address of the emulated NIC.
+     */
     macAddress: string;
+    /**
+     * - (Optional) Options for the NIC emulation.
+     * Valid values are:
+     * - `VIRTIO` The NIC emulation model is Virtio.
+     * - `E1000` The NIC emulation model is E1000.
+     */
     model: string;
+    /**
+     * - (Optional) The number of Tx/Rx queue pairs for this NIC.
+     */
     numQueues?: number;
 }
 
 export interface VmCloneV2NicNetworkInfo {
+    /**
+     * - (Optional) The IP address configurations.
+     */
     ipv4Configs: outputs.VmCloneV2NicNetworkInfoIpv4Config[];
+    /**
+     * - (Optional)The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
     networkFunctionChains: outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain[];
+    /**
+     * - (Optional) The type of this Network function NIC.
+     * Defaults to INGRESS.
+     * Valid values are:
+     * - `TAP` The type of Network-Function NIC is Tap.
+     * - `EGRESS` The type of Network-Function NIC is Egress.
+     * - `INGRESS` The type of Network-Function NIC is Ingress.
+     */
     networkFunctionNicType: string;
+    /**
+     * - (Optional) NIC type.
+     * Defaults to NORMAL_NIC.
+     * Valid values are:
+     * - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
+     * - `NORMAL_NIC` The type of NIC is Normal.
+     * - `DIRECT_NIC` The type of NIC is Direct.
+     * - `NETWORK_FUNCTION_NIC` The type of NIC is Network-Function.
+     */
     nicType: string;
+    /**
+     * - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
     shouldAllowUnknownMacs: boolean;
+    /**
+     * - (Optional) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+     */
     subnets: outputs.VmCloneV2NicNetworkInfoSubnet[];
+    /**
+     * - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
     trunkedVlans: number[];
+    /**
+     * - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     * Valid values are:
+     * - `TRUNK` The virtual NIC is created in TRUNKED mode.
+     * - `ACCESS` The virtual NIC is created in ACCESS mode.
+     */
     vlanMode: string;
 }
 
 export interface VmCloneV2NicNetworkInfoIpv4Config {
     ipAddresses: outputs.VmCloneV2NicNetworkInfoIpv4ConfigIpAddress[];
     secondaryIpAddressLists: outputs.VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    /**
+     * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     * `ipAddress`: - (Optional) Ip config settings.
+     * `secondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
+     */
     shouldAssignIp: boolean;
 }
 
 export interface VmCloneV2NicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength: number;
+    /**
+     * - Ip address.
+     */
     value: string;
 }
 
 export interface VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength: number;
+    /**
+     * - Ip address.
+     */
     value: string;
 }
 
 export interface VmCloneV2NicNetworkInfoNetworkFunctionChain {
+    /**
+     * - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
+     */
     extId: string;
 }
 
 export interface VmCloneV2NicNetworkInfoSubnet {
+    /**
+     * - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
+     */
     extId: string;
 }
 
@@ -46262,7 +47963,13 @@ export interface VmCloneV2ProtectionPolicyStatePolicy {
 
 export interface VmCloneV2SerialPort {
     extId: string;
+    /**
+     * - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
     index: number;
+    /**
+     * - (Optional) Indicates whether the NIC is connected or not. Default is True.
+     */
     isConnected: boolean;
 }
 
@@ -46272,6 +47979,9 @@ export interface VmCloneV2Source {
 }
 
 export interface VmCloneV2StorageConfig {
+    /**
+     * - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
     isFlashModeEnabled: boolean;
     qosConfigs: outputs.VmCloneV2StorageConfigQosConfig[];
 }
@@ -46286,50 +47996,108 @@ export interface VmCloneV2VtpmConfig {
 }
 
 export interface VmGcUpdateV2Config {
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     cloudInits: outputs.VmGcUpdateV2ConfigCloudInit[];
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     syspreps: outputs.VmGcUpdateV2ConfigSysprep[];
 }
 
 export interface VmGcUpdateV2ConfigCloudInit {
+    /**
+     * - (Optional) The script to use for cloud-init.
+     */
     cloudInitScripts: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScript[];
+    /**
+     * - (Optional) Type of datasource.
+     * Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+     * Valid values are:
+     * - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+     */
     datasourceType?: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
     metadata: string;
 }
 
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScript {
     customKeys: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey[];
+    /**
+     * - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     */
     userDatas: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData[];
 }
 
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey {
+    /**
+     * - (Optional) The list of the individual KeyValuePair elements.
+     */
     keyValuePairs: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair[];
 }
 
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
+    /**
+     * - (Optional) The key of this key-value pair
+     */
     name: string;
+    /**
+     * - (Optional) The value associated with the key for this key-value pair.
+     *
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
+     */
     value: string;
 }
 
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData {
+    /**
+     * - (Optional) The value for the cloud-init user_data.
+     */
     value: string;
 }
 
 export interface VmGcUpdateV2ConfigSysprep {
+    /**
+     * - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
+     * Valid values are:
+     * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
+     * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+     */
     installType: string;
     sysprepScripts: outputs.VmGcUpdateV2ConfigSysprepSysprepScript[];
 }
 
 export interface VmGcUpdateV2ConfigSysprepSysprepScript {
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in cloud init.
+     */
     customKeyValues: outputs.VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue[];
+    /**
+     * - (Optional) Generic key value pair used for custom attributes.
+     */
     unattendXmls: outputs.VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml[];
 }
 
 export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue {
+    /**
+     * - (Optional) The list of the individual KeyValuePair elements.
+     */
     keyValuePairs: outputs.VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
 }
 
 export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * - (Optional) The key of this key-value pair
+     */
     name: string;
+    /**
+     * - (Optional) The value associated with the key for this key-value pair.
+     *
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
+     */
     value: string;
 }
 
@@ -46338,16 +48106,35 @@ export interface VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml {
 }
 
 export interface VmNetworkDeviceAssignIpV2IpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: number;
+    /**
+     * - Ip address.
+     *
+     * See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/assignIpById).
+     */
     value: string;
 }
 
 export interface VmNetworkDeviceMigrateV2IpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: number;
+    /**
+     * - Ip address.
+     *
+     * See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/migrateNicById).
+     */
     value: string;
 }
 
 export interface VmNetworkDeviceMigrateV2Subnet {
+    /**
+     * - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
+     */
     extId?: string;
 }
 

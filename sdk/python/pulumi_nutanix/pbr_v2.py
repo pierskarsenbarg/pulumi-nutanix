@@ -29,6 +29,13 @@ class PbrV2Args:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PbrV2 resource.
+
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyArgs']]] policies: Routing Policies.
+        :param pulumi.Input[_builtins.int] priority: Priority of the routing policy.
+        :param pulumi.Input[_builtins.str] vpc_ext_id: ExtId of the VPC extId to which the routing policy belongs.
+        :param pulumi.Input[_builtins.str] description: A description of the routing policy.
+        :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
+        :param pulumi.Input[_builtins.str] name: Name of the routing policy.
         """
         pulumi.set(__self__, "policies", policies)
         pulumi.set(__self__, "priority", priority)
@@ -43,6 +50,9 @@ class PbrV2Args:
     @_builtins.property
     @pulumi.getter
     def policies(self) -> pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyArgs']]]:
+        """
+        Routing Policies.
+        """
         return pulumi.get(self, "policies")
 
     @policies.setter
@@ -52,6 +62,9 @@ class PbrV2Args:
     @_builtins.property
     @pulumi.getter
     def priority(self) -> pulumi.Input[_builtins.int]:
+        """
+        Priority of the routing policy.
+        """
         return pulumi.get(self, "priority")
 
     @priority.setter
@@ -61,6 +74,9 @@ class PbrV2Args:
     @_builtins.property
     @pulumi.getter(name="vpcExtId")
     def vpc_ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        ExtId of the VPC extId to which the routing policy belongs.
+        """
         return pulumi.get(self, "vpc_ext_id")
 
     @vpc_ext_id.setter
@@ -70,6 +86,9 @@ class PbrV2Args:
     @_builtins.property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A description of the routing policy.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -79,6 +98,9 @@ class PbrV2Args:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A globally unique identifier of an instance that is suitable for external consumption.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -88,6 +110,9 @@ class PbrV2Args:
     @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the routing policy.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -110,6 +135,17 @@ class _PbrV2State:
                  vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2VpcArgs']]]] = None):
         """
         Input properties used for looking up and filtering PbrV2 resources.
+
+        :param pulumi.Input[_builtins.str] description: A description of the routing policy.
+        :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2MetadataArgs']]] metadatas: Metadata associated with this resource.
+        :param pulumi.Input[_builtins.str] name: Name of the routing policy.
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyArgs']]] policies: Routing Policies.
+        :param pulumi.Input[_builtins.int] priority: Priority of the routing policy.
+        :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity
+        :param pulumi.Input[_builtins.str] vpc_ext_id: ExtId of the VPC extId to which the routing policy belongs.
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2VpcArgs']]] vpcs: VPC name for projections
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -135,6 +171,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A description of the routing policy.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -144,6 +183,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A globally unique identifier of an instance that is suitable for external consumption.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -153,6 +195,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter
     def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2LinkArgs']]]]:
+        """
+        A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        """
         return pulumi.get(self, "links")
 
     @links.setter
@@ -162,6 +207,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2MetadataArgs']]]]:
+        """
+        Metadata associated with this resource.
+        """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
@@ -171,6 +219,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the routing policy.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -180,6 +231,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter
     def policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyArgs']]]]:
+        """
+        Routing Policies.
+        """
         return pulumi.get(self, "policies")
 
     @policies.setter
@@ -189,6 +243,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Priority of the routing policy.
+        """
         return pulumi.get(self, "priority")
 
     @priority.setter
@@ -198,6 +255,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A globally unique identifier that represents the tenant that owns this entity
+        """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
@@ -207,6 +267,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter(name="vpcExtId")
     def vpc_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        ExtId of the VPC extId to which the routing policy belongs.
+        """
         return pulumi.get(self, "vpc_ext_id")
 
     @vpc_ext_id.setter
@@ -216,6 +279,9 @@ class _PbrV2State:
     @_builtins.property
     @pulumi.getter
     def vpcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2VpcArgs']]]]:
+        """
+        VPC name for projections
+        """
         return pulumi.get(self, "vpcs")
 
     @vpcs.setter
@@ -237,10 +303,59 @@ class PbrV2(pulumi.CustomResource):
                  vpc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a PbrV2 resource with the given unique name, props, and options.
+        Create a Routing Policy.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # create PBR with vpc name with any source or destination or protocol with permit action
+        any_source_destination = nutanix.PbrV2("any-source-destination",
+            name="routing_policy_any_source_destination",
+            description="routing policy with any source and destination",
+            vpc_ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            priority=11,
+            policies=[{
+                "policy_matches": [{
+                    "sources": [{
+                        "address_type": "ANY",
+                    }],
+                    "destinations": [{
+                        "address_type": "ANY",
+                    }],
+                    "protocol_type": "UDP",
+                }],
+                "policy_actions": [{
+                    "action_type": "PERMIT",
+                }],
+            }])
+        ```
+
+        ## Import
+
+        This helps to manage existing entities which are not created through terraform. Routing Policy can be imported using the `UUID`.  eg,
+
+        `
+
+        ```sh
+        $ pulumi import nutanix:index/pbrV2:PbrV2 pbr_import <UUID>
+        ```
+
+        `
+
+        See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: A description of the routing policy.
+        :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
+        :param pulumi.Input[_builtins.str] name: Name of the routing policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]] policies: Routing Policies.
+        :param pulumi.Input[_builtins.int] priority: Priority of the routing policy.
+        :param pulumi.Input[_builtins.str] vpc_ext_id: ExtId of the VPC extId to which the routing policy belongs.
         """
         ...
     @overload
@@ -249,7 +364,50 @@ class PbrV2(pulumi.CustomResource):
                  args: PbrV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a PbrV2 resource with the given unique name, props, and options.
+        Create a Routing Policy.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # create PBR with vpc name with any source or destination or protocol with permit action
+        any_source_destination = nutanix.PbrV2("any-source-destination",
+            name="routing_policy_any_source_destination",
+            description="routing policy with any source and destination",
+            vpc_ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+            priority=11,
+            policies=[{
+                "policy_matches": [{
+                    "sources": [{
+                        "address_type": "ANY",
+                    }],
+                    "destinations": [{
+                        "address_type": "ANY",
+                    }],
+                    "protocol_type": "UDP",
+                }],
+                "policy_actions": [{
+                    "action_type": "PERMIT",
+                }],
+            }])
+        ```
+
+        ## Import
+
+        This helps to manage existing entities which are not created through terraform. Routing Policy can be imported using the `UUID`.  eg,
+
+        `
+
+        ```sh
+        $ pulumi import nutanix:index/pbrV2:PbrV2 pbr_import <UUID>
+        ```
+
+        `
+
+        See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+
 
         :param str resource_name: The name of the resource.
         :param PbrV2Args args: The arguments to use to populate this resource's properties.
@@ -324,6 +482,16 @@ class PbrV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: A description of the routing policy.
+        :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2LinkArgs', 'PbrV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2MetadataArgs', 'PbrV2MetadataArgsDict']]]] metadatas: Metadata associated with this resource.
+        :param pulumi.Input[_builtins.str] name: Name of the routing policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]] policies: Routing Policies.
+        :param pulumi.Input[_builtins.int] priority: Priority of the routing policy.
+        :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity
+        :param pulumi.Input[_builtins.str] vpc_ext_id: ExtId of the VPC extId to which the routing policy belongs.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2VpcArgs', 'PbrV2VpcArgsDict']]]] vpcs: VPC name for projections
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -344,50 +512,80 @@ class PbrV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:
+        """
+        A description of the routing policy.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        A globally unique identifier of an instance that is suitable for external consumption.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
     @pulumi.getter
     def links(self) -> pulumi.Output[Sequence['outputs.PbrV2Link']]:
+        """
+        A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        """
         return pulumi.get(self, "links")
 
     @_builtins.property
     @pulumi.getter
     def metadatas(self) -> pulumi.Output[Sequence['outputs.PbrV2Metadata']]:
+        """
+        Metadata associated with this resource.
+        """
         return pulumi.get(self, "metadatas")
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
+        """
+        Name of the routing policy.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
     @pulumi.getter
     def policies(self) -> pulumi.Output[Sequence['outputs.PbrV2Policy']]:
+        """
+        Routing Policies.
+        """
         return pulumi.get(self, "policies")
 
     @_builtins.property
     @pulumi.getter
     def priority(self) -> pulumi.Output[_builtins.int]:
+        """
+        Priority of the routing policy.
+        """
         return pulumi.get(self, "priority")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        A globally unique identifier that represents the tenant that owns this entity
+        """
         return pulumi.get(self, "tenant_id")
 
     @_builtins.property
     @pulumi.getter(name="vpcExtId")
     def vpc_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        ExtId of the VPC extId to which the routing policy belongs.
+        """
         return pulumi.get(self, "vpc_ext_id")
 
     @_builtins.property
     @pulumi.getter
     def vpcs(self) -> pulumi.Output[Sequence['outputs.PbrV2Vpc']]:
+        """
+        VPC name for projections
+        """
         return pulumi.get(self, "vpcs")
 

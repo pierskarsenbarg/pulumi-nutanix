@@ -10,12 +10,67 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a Nutanix Virtual Machine resource to Create a virtual machine guest customization update.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// using Nutanix = Pulumi.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var vm_list = Nutanix.GetVirtualMachinesV2.Invoke();
+    /// 
+    ///     var vm_gc_update = new Nutanix.VmGcUpdateV2("vm-gc-update", new()
+    ///     {
+    ///         ExtId = vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId)),
+    ///         Configs = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VmGcUpdateV2ConfigArgs
+    ///             {
+    ///                 CloudInits = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VmGcUpdateV2ConfigCloudInitArgs
+    ///                     {
+    ///                         CloudInitScripts = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs
+    ///                             {
+    ///                                 UserDatas = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArgs
+    ///                                     {
+    ///                                         Value = "IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gV29ybGQiCg==",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/vmGcUpdateV2:VmGcUpdateV2")]
     public partial class VmGcUpdateV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Optional) The Nutanix Guest Tools customization settings.
+        /// </summary>
         [Output("configs")]
         public Output<ImmutableArray<Outputs.VmGcUpdateV2Config>> Configs { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
@@ -68,12 +123,19 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("configs")]
         private InputList<Inputs.VmGcUpdateV2ConfigArgs>? _configs;
+
+        /// <summary>
+        /// - (Optional) The Nutanix Guest Tools customization settings.
+        /// </summary>
         public InputList<Inputs.VmGcUpdateV2ConfigArgs> Configs
         {
             get => _configs ?? (_configs = new InputList<Inputs.VmGcUpdateV2ConfigArgs>());
             set => _configs = value;
         }
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
@@ -87,12 +149,19 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("configs")]
         private InputList<Inputs.VmGcUpdateV2ConfigGetArgs>? _configs;
+
+        /// <summary>
+        /// - (Optional) The Nutanix Guest Tools customization settings.
+        /// </summary>
         public InputList<Inputs.VmGcUpdateV2ConfigGetArgs> Configs
         {
             get => _configs ?? (_configs = new InputList<Inputs.VmGcUpdateV2ConfigGetArgs>());
             set => _configs = value;
         }
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 

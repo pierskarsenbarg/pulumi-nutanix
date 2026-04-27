@@ -11,24 +11,118 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to Create a SAML Identity Provider.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewSamlIdentityProvidersV2(ctx, "idp", &nutanix.SamlIdentityProvidersV2Args{
+//				Name: pulumi.String("example_idp_name"),
+//				IdpMetadatas: nutanix.SamlIdentityProvidersV2IdpMetadataArray{
+//					&nutanix.SamlIdentityProvidersV2IdpMetadataArgs{
+//						EntityId:    pulumi.String("entity_id"),
+//						LoginUrl:    pulumi.String("login_url"),
+//						LogoutUrl:   pulumi.String("logout_url"),
+//						ErrorUrl:    pulumi.String("error_url"),
+//						Certificate: pulumi.String("certificate"),
+//					},
+//				},
+//				UsernameAttribute:       pulumi.String("username"),
+//				EmailAttribute:          pulumi.String("email"),
+//				GroupsAttribute:         pulumi.String("groups"),
+//				GroupsDelim:             pulumi.String(","),
+//				IdpMetadataXml:          pulumi.String("<IDENTITY_PROVIDER_METADATA_XML content>"),
+//				EntityIssuer:            pulumi.String("entity_issuer_issuer"),
+//				IsSignedAuthnReqEnabled: pulumi.Bool(true),
+//				CustomAttributes: pulumi.StringArray{
+//					pulumi.String("custom1"),
+//					pulumi.String("custom2"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Argument Reference
+//
+// The following arguments are supported:
+//
+// * `extId`: -(Optional) External identifier of the SAML Identity Provider.
+// * `idpMetadataUrl`: -(Optional) Metadata url that provides IDP details.
+// * `idpMetadataXml`: -(Optional) Base64 encoded metadata in XML format with IDP details.
+// * `idpMetadata`: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+// * `name`: -(Required) Unique name of the IDP.
+// * `usernameAttr`: -(Optional) SAML assertion Username attribute element.
+// * `emailAttr`: -(Optional) SAML assertion email attribute element.
+// * `groupsAttr`: -(Optional) SAML assertion groups attribute element.
+// * `groupsDelim`: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
+// * `customAttr`: -(Optional) SAML assertions for list of custom attribute elements.
+// * `entityIssuer`: -(Optional) It will be used as Issuer in SAML authnRequest.
+// * `isSignedAuthnReqEnabled`: -(Optional) Flag indicating signing of SAML authnRequests.
+//
+// ### Idp Metadata
+//
+// The idpMetadata attribute supports the following:
+//
+// * `entityId`: -(Required) Entity Identifier of Identity provider.
+// * `loginUrl`: -(Required) Login URL of the Identity provider.
+// * `logoutUrl`: -(Optional) Logout URL of the Identity provider.
+// * `errorUrl`: - (Optional) Error URL of the Identity provider.
+// * `certificate`: -(Required) Certificate for verification.
+// * `nameIdPolicyFormat`: -(Optional) Name ID Policy format.
+//   - supported values:
+//   - `emailAddress`: -  Uses email address as NameID format
+//   - `encrypted`: -  Uses encrypted as NameID format.
+//   - `unspecified`: -  NameID format is left to individual implementations.
+//   - `transient`: -  	Uses identifier with transient semantics as NameID format.
+//   - `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
+//   - `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
+//   - `kerberos`: -  	Uses kerberos principal name as NameID format.
+//   - `persistent`: -  Uses persistent name identifier as NameID format.
+//   - `entity`: -  Uses identifier of an entity as NameID format.
 type SamlIdentityProvidersV2 struct {
 	pulumi.CustomResourceState
 
-	CreatedBy               pulumi.StringOutput                           `pulumi:"createdBy"`
-	CreatedTime             pulumi.StringOutput                           `pulumi:"createdTime"`
-	CustomAttributes        pulumi.StringArrayOutput                      `pulumi:"customAttributes"`
-	EmailAttribute          pulumi.StringPtrOutput                        `pulumi:"emailAttribute"`
-	EntityIssuer            pulumi.StringPtrOutput                        `pulumi:"entityIssuer"`
-	ExtId                   pulumi.StringOutput                           `pulumi:"extId"`
-	GroupsAttribute         pulumi.StringPtrOutput                        `pulumi:"groupsAttribute"`
-	GroupsDelim             pulumi.StringPtrOutput                        `pulumi:"groupsDelim"`
-	IdpMetadataUrl          pulumi.StringOutput                           `pulumi:"idpMetadataUrl"`
-	IdpMetadataXml          pulumi.StringOutput                           `pulumi:"idpMetadataXml"`
-	IdpMetadatas            SamlIdentityProvidersV2IdpMetadataArrayOutput `pulumi:"idpMetadatas"`
-	IsSignedAuthnReqEnabled pulumi.BoolPtrOutput                          `pulumi:"isSignedAuthnReqEnabled"`
-	LastUpdatedTime         pulumi.StringOutput                           `pulumi:"lastUpdatedTime"`
-	Name                    pulumi.StringOutput                           `pulumi:"name"`
-	UsernameAttribute       pulumi.StringPtrOutput                        `pulumi:"usernameAttribute"`
+	// - User or Service who created the SAML Identity Provider.
+	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	// - Creation time of the SAML Identity Provider.
+	CreatedTime      pulumi.StringOutput      `pulumi:"createdTime"`
+	CustomAttributes pulumi.StringArrayOutput `pulumi:"customAttributes"`
+	EmailAttribute   pulumi.StringPtrOutput   `pulumi:"emailAttribute"`
+	// - It will be used as Issuer in SAML authnRequest.
+	EntityIssuer pulumi.StringPtrOutput `pulumi:"entityIssuer"`
+	// The External Identifier of the User Group.
+	ExtId           pulumi.StringOutput    `pulumi:"extId"`
+	GroupsAttribute pulumi.StringPtrOutput `pulumi:"groupsAttribute"`
+	// - Delimiter is used to split the value of attribute into multiple groups.
+	GroupsDelim    pulumi.StringPtrOutput `pulumi:"groupsDelim"`
+	IdpMetadataUrl pulumi.StringOutput    `pulumi:"idpMetadataUrl"`
+	IdpMetadataXml pulumi.StringOutput    `pulumi:"idpMetadataXml"`
+	// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	IdpMetadatas SamlIdentityProvidersV2IdpMetadataArrayOutput `pulumi:"idpMetadatas"`
+	// - Flag indicating signing of SAML authnRequests.
+	IsSignedAuthnReqEnabled pulumi.BoolPtrOutput `pulumi:"isSignedAuthnReqEnabled"`
+	// - Last updated time of the SAML Identity Provider.
+	LastUpdatedTime pulumi.StringOutput `pulumi:"lastUpdatedTime"`
+	// - Unique name of the IDP.
+	Name              pulumi.StringOutput    `pulumi:"name"`
+	UsernameAttribute pulumi.StringPtrOutput `pulumi:"usernameAttribute"`
 }
 
 // NewSamlIdentityProvidersV2 registers a new resource with the given unique name, arguments, and options.
@@ -61,39 +155,57 @@ func GetSamlIdentityProvidersV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SamlIdentityProvidersV2 resources.
 type samlIdentityProvidersV2State struct {
-	CreatedBy               *string                              `pulumi:"createdBy"`
-	CreatedTime             *string                              `pulumi:"createdTime"`
-	CustomAttributes        []string                             `pulumi:"customAttributes"`
-	EmailAttribute          *string                              `pulumi:"emailAttribute"`
-	EntityIssuer            *string                              `pulumi:"entityIssuer"`
-	ExtId                   *string                              `pulumi:"extId"`
-	GroupsAttribute         *string                              `pulumi:"groupsAttribute"`
-	GroupsDelim             *string                              `pulumi:"groupsDelim"`
-	IdpMetadataUrl          *string                              `pulumi:"idpMetadataUrl"`
-	IdpMetadataXml          *string                              `pulumi:"idpMetadataXml"`
-	IdpMetadatas            []SamlIdentityProvidersV2IdpMetadata `pulumi:"idpMetadatas"`
-	IsSignedAuthnReqEnabled *bool                                `pulumi:"isSignedAuthnReqEnabled"`
-	LastUpdatedTime         *string                              `pulumi:"lastUpdatedTime"`
-	Name                    *string                              `pulumi:"name"`
-	UsernameAttribute       *string                              `pulumi:"usernameAttribute"`
+	// - User or Service who created the SAML Identity Provider.
+	CreatedBy *string `pulumi:"createdBy"`
+	// - Creation time of the SAML Identity Provider.
+	CreatedTime      *string  `pulumi:"createdTime"`
+	CustomAttributes []string `pulumi:"customAttributes"`
+	EmailAttribute   *string  `pulumi:"emailAttribute"`
+	// - It will be used as Issuer in SAML authnRequest.
+	EntityIssuer *string `pulumi:"entityIssuer"`
+	// The External Identifier of the User Group.
+	ExtId           *string `pulumi:"extId"`
+	GroupsAttribute *string `pulumi:"groupsAttribute"`
+	// - Delimiter is used to split the value of attribute into multiple groups.
+	GroupsDelim    *string `pulumi:"groupsDelim"`
+	IdpMetadataUrl *string `pulumi:"idpMetadataUrl"`
+	IdpMetadataXml *string `pulumi:"idpMetadataXml"`
+	// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	IdpMetadatas []SamlIdentityProvidersV2IdpMetadata `pulumi:"idpMetadatas"`
+	// - Flag indicating signing of SAML authnRequests.
+	IsSignedAuthnReqEnabled *bool `pulumi:"isSignedAuthnReqEnabled"`
+	// - Last updated time of the SAML Identity Provider.
+	LastUpdatedTime *string `pulumi:"lastUpdatedTime"`
+	// - Unique name of the IDP.
+	Name              *string `pulumi:"name"`
+	UsernameAttribute *string `pulumi:"usernameAttribute"`
 }
 
 type SamlIdentityProvidersV2State struct {
-	CreatedBy               pulumi.StringPtrInput
-	CreatedTime             pulumi.StringPtrInput
-	CustomAttributes        pulumi.StringArrayInput
-	EmailAttribute          pulumi.StringPtrInput
-	EntityIssuer            pulumi.StringPtrInput
-	ExtId                   pulumi.StringPtrInput
-	GroupsAttribute         pulumi.StringPtrInput
-	GroupsDelim             pulumi.StringPtrInput
-	IdpMetadataUrl          pulumi.StringPtrInput
-	IdpMetadataXml          pulumi.StringPtrInput
-	IdpMetadatas            SamlIdentityProvidersV2IdpMetadataArrayInput
+	// - User or Service who created the SAML Identity Provider.
+	CreatedBy pulumi.StringPtrInput
+	// - Creation time of the SAML Identity Provider.
+	CreatedTime      pulumi.StringPtrInput
+	CustomAttributes pulumi.StringArrayInput
+	EmailAttribute   pulumi.StringPtrInput
+	// - It will be used as Issuer in SAML authnRequest.
+	EntityIssuer pulumi.StringPtrInput
+	// The External Identifier of the User Group.
+	ExtId           pulumi.StringPtrInput
+	GroupsAttribute pulumi.StringPtrInput
+	// - Delimiter is used to split the value of attribute into multiple groups.
+	GroupsDelim    pulumi.StringPtrInput
+	IdpMetadataUrl pulumi.StringPtrInput
+	IdpMetadataXml pulumi.StringPtrInput
+	// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	IdpMetadatas SamlIdentityProvidersV2IdpMetadataArrayInput
+	// - Flag indicating signing of SAML authnRequests.
 	IsSignedAuthnReqEnabled pulumi.BoolPtrInput
-	LastUpdatedTime         pulumi.StringPtrInput
-	Name                    pulumi.StringPtrInput
-	UsernameAttribute       pulumi.StringPtrInput
+	// - Last updated time of the SAML Identity Provider.
+	LastUpdatedTime pulumi.StringPtrInput
+	// - Unique name of the IDP.
+	Name              pulumi.StringPtrInput
+	UsernameAttribute pulumi.StringPtrInput
 }
 
 func (SamlIdentityProvidersV2State) ElementType() reflect.Type {
@@ -101,34 +213,46 @@ func (SamlIdentityProvidersV2State) ElementType() reflect.Type {
 }
 
 type samlIdentityProvidersV2Args struct {
-	CustomAttributes        []string                             `pulumi:"customAttributes"`
-	EmailAttribute          *string                              `pulumi:"emailAttribute"`
-	EntityIssuer            *string                              `pulumi:"entityIssuer"`
-	ExtId                   *string                              `pulumi:"extId"`
-	GroupsAttribute         *string                              `pulumi:"groupsAttribute"`
-	GroupsDelim             *string                              `pulumi:"groupsDelim"`
-	IdpMetadataUrl          *string                              `pulumi:"idpMetadataUrl"`
-	IdpMetadataXml          *string                              `pulumi:"idpMetadataXml"`
-	IdpMetadatas            []SamlIdentityProvidersV2IdpMetadata `pulumi:"idpMetadatas"`
-	IsSignedAuthnReqEnabled *bool                                `pulumi:"isSignedAuthnReqEnabled"`
-	Name                    *string                              `pulumi:"name"`
-	UsernameAttribute       *string                              `pulumi:"usernameAttribute"`
+	CustomAttributes []string `pulumi:"customAttributes"`
+	EmailAttribute   *string  `pulumi:"emailAttribute"`
+	// - It will be used as Issuer in SAML authnRequest.
+	EntityIssuer *string `pulumi:"entityIssuer"`
+	// The External Identifier of the User Group.
+	ExtId           *string `pulumi:"extId"`
+	GroupsAttribute *string `pulumi:"groupsAttribute"`
+	// - Delimiter is used to split the value of attribute into multiple groups.
+	GroupsDelim    *string `pulumi:"groupsDelim"`
+	IdpMetadataUrl *string `pulumi:"idpMetadataUrl"`
+	IdpMetadataXml *string `pulumi:"idpMetadataXml"`
+	// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	IdpMetadatas []SamlIdentityProvidersV2IdpMetadata `pulumi:"idpMetadatas"`
+	// - Flag indicating signing of SAML authnRequests.
+	IsSignedAuthnReqEnabled *bool `pulumi:"isSignedAuthnReqEnabled"`
+	// - Unique name of the IDP.
+	Name              *string `pulumi:"name"`
+	UsernameAttribute *string `pulumi:"usernameAttribute"`
 }
 
 // The set of arguments for constructing a SamlIdentityProvidersV2 resource.
 type SamlIdentityProvidersV2Args struct {
-	CustomAttributes        pulumi.StringArrayInput
-	EmailAttribute          pulumi.StringPtrInput
-	EntityIssuer            pulumi.StringPtrInput
-	ExtId                   pulumi.StringPtrInput
-	GroupsAttribute         pulumi.StringPtrInput
-	GroupsDelim             pulumi.StringPtrInput
-	IdpMetadataUrl          pulumi.StringPtrInput
-	IdpMetadataXml          pulumi.StringPtrInput
-	IdpMetadatas            SamlIdentityProvidersV2IdpMetadataArrayInput
+	CustomAttributes pulumi.StringArrayInput
+	EmailAttribute   pulumi.StringPtrInput
+	// - It will be used as Issuer in SAML authnRequest.
+	EntityIssuer pulumi.StringPtrInput
+	// The External Identifier of the User Group.
+	ExtId           pulumi.StringPtrInput
+	GroupsAttribute pulumi.StringPtrInput
+	// - Delimiter is used to split the value of attribute into multiple groups.
+	GroupsDelim    pulumi.StringPtrInput
+	IdpMetadataUrl pulumi.StringPtrInput
+	IdpMetadataXml pulumi.StringPtrInput
+	// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	IdpMetadatas SamlIdentityProvidersV2IdpMetadataArrayInput
+	// - Flag indicating signing of SAML authnRequests.
 	IsSignedAuthnReqEnabled pulumi.BoolPtrInput
-	Name                    pulumi.StringPtrInput
-	UsernameAttribute       pulumi.StringPtrInput
+	// - Unique name of the IDP.
+	Name              pulumi.StringPtrInput
+	UsernameAttribute pulumi.StringPtrInput
 }
 
 func (SamlIdentityProvidersV2Args) ElementType() reflect.Type {
@@ -218,10 +342,12 @@ func (o SamlIdentityProvidersV2Output) ToSamlIdentityProvidersV2OutputWithContex
 	return o
 }
 
+// - User or Service who created the SAML Identity Provider.
 func (o SamlIdentityProvidersV2Output) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// - Creation time of the SAML Identity Provider.
 func (o SamlIdentityProvidersV2Output) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -234,10 +360,12 @@ func (o SamlIdentityProvidersV2Output) EmailAttribute() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.EmailAttribute }).(pulumi.StringPtrOutput)
 }
 
+// - It will be used as Issuer in SAML authnRequest.
 func (o SamlIdentityProvidersV2Output) EntityIssuer() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.EntityIssuer }).(pulumi.StringPtrOutput)
 }
 
+// The External Identifier of the User Group.
 func (o SamlIdentityProvidersV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
@@ -246,6 +374,7 @@ func (o SamlIdentityProvidersV2Output) GroupsAttribute() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.GroupsAttribute }).(pulumi.StringPtrOutput)
 }
 
+// - Delimiter is used to split the value of attribute into multiple groups.
 func (o SamlIdentityProvidersV2Output) GroupsDelim() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.GroupsDelim }).(pulumi.StringPtrOutput)
 }
@@ -258,18 +387,22 @@ func (o SamlIdentityProvidersV2Output) IdpMetadataXml() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.IdpMetadataXml }).(pulumi.StringOutput)
 }
 
+// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
 func (o SamlIdentityProvidersV2Output) IdpMetadatas() SamlIdentityProvidersV2IdpMetadataArrayOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) SamlIdentityProvidersV2IdpMetadataArrayOutput { return v.IdpMetadatas }).(SamlIdentityProvidersV2IdpMetadataArrayOutput)
 }
 
+// - Flag indicating signing of SAML authnRequests.
 func (o SamlIdentityProvidersV2Output) IsSignedAuthnReqEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.BoolPtrOutput { return v.IsSignedAuthnReqEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// - Last updated time of the SAML Identity Provider.
 func (o SamlIdentityProvidersV2Output) LastUpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
+// - Unique name of the IDP.
 func (o SamlIdentityProvidersV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

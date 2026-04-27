@@ -16,6 +16,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("busType")]
         public Input<string>? BusType { get; set; }
 
+        /// <summary>
+        /// Index of the serial port.
+        /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }
 

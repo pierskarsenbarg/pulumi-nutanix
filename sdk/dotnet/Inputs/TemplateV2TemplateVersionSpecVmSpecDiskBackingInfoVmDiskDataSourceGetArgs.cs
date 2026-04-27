@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("references")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceGetArgs>? _references;
+
+        /// <summary>
+        /// Reference to image or vm disk
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceGetArgs> References
         {
             get => _references ?? (_references = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceGetArgs>());

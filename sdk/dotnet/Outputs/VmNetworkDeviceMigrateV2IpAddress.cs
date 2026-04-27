@@ -14,7 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmNetworkDeviceMigrateV2IpAddress
     {
+        /// <summary>
+        /// - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+        /// </summary>
         public readonly int? PrefixLength;
+        /// <summary>
+        /// - Ip address.
+        /// 
+        /// See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/migrateNicById).
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

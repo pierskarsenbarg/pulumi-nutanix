@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class AddressGroupsV2IpRangeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// end ip
+        /// </summary>
         [Input("endIp")]
         public Input<string>? EndIp { get; set; }
 
+        /// <summary>
+        /// start ip
+        /// </summary>
         [Input("startIp")]
         public Input<string>? StartIp { get; set; }
 

@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState
     {
+        /// <summary>
+        /// Reference to a protection policy.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy> Policies;
 
         [OutputConstructor]

@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ips")]
         private InputList<Inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpGetArgs>? _ips;
+
+        /// <summary>
+        /// IP of address
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpGetArgs> Ips
         {
             get => _ips ?? (_ips = new InputList<Inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpGetArgs>());

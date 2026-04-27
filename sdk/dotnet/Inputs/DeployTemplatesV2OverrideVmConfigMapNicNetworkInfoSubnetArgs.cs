@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The identifier of a Template.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 

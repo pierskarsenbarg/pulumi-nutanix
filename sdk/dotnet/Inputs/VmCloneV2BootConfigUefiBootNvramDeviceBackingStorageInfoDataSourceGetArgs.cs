@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("references")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceGetArgs>? _references;
+
+        /// <summary>
+        /// - (Optional) Data Source Reference settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceGetArgs> References
         {
             get => _references ?? (_references = new InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceGetArgs>());

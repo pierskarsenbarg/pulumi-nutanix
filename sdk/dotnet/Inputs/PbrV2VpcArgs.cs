@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PbrV2VpcArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of the routing policy.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

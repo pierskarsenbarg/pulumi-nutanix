@@ -24,6 +24,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("creationType")]
         public Input<string>? CreationType { get; set; }
 
+        /// <summary>
+        /// VM description
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 

@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigUefiBoot
     {
+        /// <summary>
+        /// - (Optional) The Boot Device settings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootBootDevice> BootDevices;
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
         public readonly ImmutableArray<string> BootOrders;
+        /// <summary>
+        /// - (Optional) Indicate whether to enable secure boot or not.
+        /// </summary>
         public readonly bool? IsSecureBootEnabled;
+        /// <summary>
+        /// - (Optional) Configuration for NVRAM to be presented to the VM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDevice> NvramDevices;
 
         [OutputConstructor]

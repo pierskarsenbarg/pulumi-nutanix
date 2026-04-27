@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigUefiBootNvramDevice
     {
+        /// <summary>
+        /// - (Optional) Storage provided by Nutanix ADSF.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo> BackingStorageInfos;
 
         [OutputConstructor]

@@ -14,7 +14,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot
     {
+        /// <summary>
+        /// Boot Device object
+        /// * `boot_device.boot_device_disk`: (Optional) Disk address.
+        /// * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+        /// * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+        /// 
+        /// * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+        /// * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice> BootDevices;
+        /// <summary>
+        /// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+        /// </summary>
         public readonly ImmutableArray<string> BootOrders;
 
         [OutputConstructor]

@@ -12,12 +12,93 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetSamlIdentityProviderV2
     {
+        /// <summary>
+        /// Provides a datasource to View a SAML Identity Provider.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var idp = Nutanix.GetSamlIdentityProviderV2.Invoke(new()
+        ///     {
+        ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ##  Argument Reference
+        /// 
+        /// The following arguments are supported:
+        /// 
+        /// * `ExtId`: - External identifier of the SAML Identity Provider.
+        /// </summary>
         public static Task<GetSamlIdentityProviderV2Result> InvokeAsync(GetSamlIdentityProviderV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2Args(), options.WithDefaults());
 
+        /// <summary>
+        /// Provides a datasource to View a SAML Identity Provider.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var idp = Nutanix.GetSamlIdentityProviderV2.Invoke(new()
+        ///     {
+        ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ##  Argument Reference
+        /// 
+        /// The following arguments are supported:
+        /// 
+        /// * `ExtId`: - External identifier of the SAML Identity Provider.
+        /// </summary>
         public static Output<GetSamlIdentityProviderV2Result> Invoke(GetSamlIdentityProviderV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2InvokeArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Provides a datasource to View a SAML Identity Provider.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var idp = Nutanix.GetSamlIdentityProviderV2.Invoke(new()
+        ///     {
+        ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ##  Argument Reference
+        /// 
+        /// The following arguments are supported:
+        /// 
+        /// * `ExtId`: - External identifier of the SAML Identity Provider.
+        /// </summary>
         public static Output<GetSamlIdentityProviderV2Result> Invoke(GetSamlIdentityProviderV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2InvokeArgs(), options.WithDefaults());
     }
@@ -25,6 +106,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetSamlIdentityProviderV2Args : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The External Identifier of the User Group.
+        /// </summary>
         [Input("extId", required: true)]
         public string ExtId { get; set; } = null!;
 
@@ -36,6 +120,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetSamlIdentityProviderV2InvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The External Identifier of the User Group.
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
@@ -49,21 +136,48 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetSamlIdentityProviderV2Result
     {
+        /// <summary>
+        /// - User or Service who created the SAML Identity Provider.
+        /// </summary>
         public readonly string CreatedBy;
+        /// <summary>
+        /// - Creation time of the SAML Identity Provider.
+        /// </summary>
         public readonly string CreatedTime;
         public readonly ImmutableArray<string> CustomAttributes;
         public readonly string EmailAttribute;
+        /// <summary>
+        /// - It will be used as Issuer in SAML authnRequest.
+        /// </summary>
         public readonly string EntityIssuer;
+        /// <summary>
+        /// The External Identifier of the User Group.
+        /// </summary>
         public readonly string ExtId;
         public readonly string GroupsAttribute;
+        /// <summary>
+        /// - Delimiter is used to split the value of attribute into multiple groups.
+        /// </summary>
         public readonly string GroupsDelim;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSamlIdentityProviderV2IdpMetadataResult> IdpMetadatas;
+        /// <summary>
+        /// - Flag indicating signing of SAML authnRequests.
+        /// </summary>
         public readonly bool IsSignedAuthnReqEnabled;
+        /// <summary>
+        /// - Last updated time of the SAML Identity Provider.
+        /// </summary>
         public readonly string LastUpdatedTime;
+        /// <summary>
+        /// - Unique name of the IDP.
+        /// </summary>
         public readonly string Name;
         public readonly string UsernameAttribute;
 

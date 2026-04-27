@@ -14,8 +14,20 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2GuestCustomizationConfigCloudInit
     {
+        /// <summary>
+        /// - (Optional) The script to use for cloud-init.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript> CloudInitScripts;
+        /// <summary>
+        /// - (Optional) Type of datasource.
+        /// Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+        /// Valid values are:
+        /// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
+        /// </summary>
         public readonly string? DatasourceType;
+        /// <summary>
+        /// The contents of the MetaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        /// </summary>
         public readonly string? Metadata;
 
         [OutputConstructor]

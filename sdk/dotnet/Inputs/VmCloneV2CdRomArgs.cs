@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingInfos")]
         private InputList<Inputs.VmCloneV2CdRomBackingInfoArgs>? _backingInfos;
+
+        /// <summary>
+        /// - (Optional) Defines a NIC emulated by the hypervisor
+        /// </summary>
         public InputList<Inputs.VmCloneV2CdRomBackingInfoArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.VmCloneV2CdRomBackingInfoArgs>());

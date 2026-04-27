@@ -12,12 +12,49 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a Nutanix Virtual Machine resource to Assign IP.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewVmNetworkDeviceAssignIpV2(ctx, "nic_assign_ip", &nutanix.VmNetworkDeviceAssignIpV2Args{
+//				VmExtId: pulumi.String("246f6e8a-ff05-4057-af6b-b1fd23a46d7d"),
+//				ExtId:   pulumi.String("eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b"),
+//				IpAddresses: nutanix.VmNetworkDeviceAssignIpV2IpAddressArray{
+//					&nutanix.VmNetworkDeviceAssignIpV2IpAddressArgs{
+//						Value:        pulumi.String("10.10.10.10"),
+//						PrefixLength: pulumi.Int(32),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type VmNetworkDeviceAssignIpV2 struct {
 	pulumi.CustomResourceState
 
-	ExtId       pulumi.StringOutput                           `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId pulumi.StringOutput `pulumi:"extId"`
+	// - (Optional) Ip config settings.
 	IpAddresses VmNetworkDeviceAssignIpV2IpAddressArrayOutput `pulumi:"ipAddresses"`
-	VmExtId     pulumi.StringOutput                           `pulumi:"vmExtId"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId pulumi.StringOutput `pulumi:"vmExtId"`
 }
 
 // NewVmNetworkDeviceAssignIpV2 registers a new resource with the given unique name, arguments, and options.
@@ -56,15 +93,21 @@ func GetVmNetworkDeviceAssignIpV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmNetworkDeviceAssignIpV2 resources.
 type vmNetworkDeviceAssignIpV2State struct {
-	ExtId       *string                              `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId *string `pulumi:"extId"`
+	// - (Optional) Ip config settings.
 	IpAddresses []VmNetworkDeviceAssignIpV2IpAddress `pulumi:"ipAddresses"`
-	VmExtId     *string                              `pulumi:"vmExtId"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId *string `pulumi:"vmExtId"`
 }
 
 type VmNetworkDeviceAssignIpV2State struct {
-	ExtId       pulumi.StringPtrInput
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId pulumi.StringPtrInput
+	// - (Optional) Ip config settings.
 	IpAddresses VmNetworkDeviceAssignIpV2IpAddressArrayInput
-	VmExtId     pulumi.StringPtrInput
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId pulumi.StringPtrInput
 }
 
 func (VmNetworkDeviceAssignIpV2State) ElementType() reflect.Type {
@@ -72,16 +115,22 @@ func (VmNetworkDeviceAssignIpV2State) ElementType() reflect.Type {
 }
 
 type vmNetworkDeviceAssignIpV2Args struct {
-	ExtId       string                               `pulumi:"extId"`
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId string `pulumi:"extId"`
+	// - (Optional) Ip config settings.
 	IpAddresses []VmNetworkDeviceAssignIpV2IpAddress `pulumi:"ipAddresses"`
-	VmExtId     string                               `pulumi:"vmExtId"`
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId string `pulumi:"vmExtId"`
 }
 
 // The set of arguments for constructing a VmNetworkDeviceAssignIpV2 resource.
 type VmNetworkDeviceAssignIpV2Args struct {
-	ExtId       pulumi.StringInput
+	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+	ExtId pulumi.StringInput
+	// - (Optional) Ip config settings.
 	IpAddresses VmNetworkDeviceAssignIpV2IpAddressArrayInput
-	VmExtId     pulumi.StringInput
+	// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+	VmExtId pulumi.StringInput
 }
 
 func (VmNetworkDeviceAssignIpV2Args) ElementType() reflect.Type {
@@ -171,14 +220,17 @@ func (o VmNetworkDeviceAssignIpV2Output) ToVmNetworkDeviceAssignIpV2OutputWithCo
 	return o
 }
 
+// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
 func (o VmNetworkDeviceAssignIpV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmNetworkDeviceAssignIpV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// - (Optional) Ip config settings.
 func (o VmNetworkDeviceAssignIpV2Output) IpAddresses() VmNetworkDeviceAssignIpV2IpAddressArrayOutput {
 	return o.ApplyT(func(v *VmNetworkDeviceAssignIpV2) VmNetworkDeviceAssignIpV2IpAddressArrayOutput { return v.IpAddresses }).(VmNetworkDeviceAssignIpV2IpAddressArrayOutput)
 }
 
+// - (Required) The globally unique identifier of a VM. It should be of type UUID.
 func (o VmNetworkDeviceAssignIpV2Output) VmExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmNetworkDeviceAssignIpV2) pulumi.StringOutput { return v.VmExtId }).(pulumi.StringOutput)
 }

@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatch
     {
+        /// <summary>
+        /// Address Type like "EXTERNAL" or "ANY".
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchDestination> Destinations;
+        /// <summary>
+        /// Protocol Params Object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchProtocolParameter> ProtocolParameters;
+        /// <summary>
+        /// Routing Policy IP protocol type. Acceptable values are "TCP", "UDP", "PROTOCOL_NUMBER", "ANY", "ICMP" .
+        /// </summary>
         public readonly string ProtocolType;
+        /// <summary>
+        /// Address Type like "EXTERNAL" or "ANY".
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchSource> Sources;
 
         [OutputConstructor]

@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource
     {
+        /// <summary>
+        /// Reference to image or vm disk
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference> References;
 
         [OutputConstructor]

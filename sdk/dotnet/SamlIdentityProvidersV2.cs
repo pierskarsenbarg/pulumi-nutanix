@@ -10,12 +10,100 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to Create a SAML Identity Provider.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var idp = new Nutanix.SamlIdentityProvidersV2("idp", new()
+    ///     {
+    ///         Name = "example_idp_name",
+    ///         IdpMetadatas = new[]
+    ///         {
+    ///             new Nutanix.Inputs.SamlIdentityProvidersV2IdpMetadataArgs
+    ///             {
+    ///                 EntityId = "entity_id",
+    ///                 LoginUrl = "login_url",
+    ///                 LogoutUrl = "logout_url",
+    ///                 ErrorUrl = "error_url",
+    ///                 Certificate = "certificate",
+    ///             },
+    ///         },
+    ///         UsernameAttribute = "username",
+    ///         EmailAttribute = "email",
+    ///         GroupsAttribute = "groups",
+    ///         GroupsDelim = ",",
+    ///         IdpMetadataXml = "&lt;IDENTITY_PROVIDER_METADATA_XML content&gt;",
+    ///         EntityIssuer = "entity_issuer_issuer",
+    ///         IsSignedAuthnReqEnabled = true,
+    ///         CustomAttributes = new[]
+    ///         {
+    ///             "custom1",
+    ///             "custom2",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Argument Reference
+    /// 
+    /// The following arguments are supported:
+    /// 
+    /// * `ExtId`: -(Optional) External identifier of the SAML Identity Provider.
+    /// * `IdpMetadataUrl`: -(Optional) Metadata url that provides IDP details.
+    /// * `IdpMetadataXml`: -(Optional) Base64 encoded metadata in XML format with IDP details.
+    /// * `IdpMetadata`: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+    /// * `Name`: -(Required) Unique name of the IDP.
+    /// * `UsernameAttr`: -(Optional) SAML assertion Username attribute element.
+    /// * `EmailAttr`: -(Optional) SAML assertion email attribute element.
+    /// * `GroupsAttr`: -(Optional) SAML assertion groups attribute element.
+    /// * `GroupsDelim`: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
+    /// * `CustomAttr`: -(Optional) SAML assertions for list of custom attribute elements.
+    /// * `EntityIssuer`: -(Optional) It will be used as Issuer in SAML authnRequest.
+    /// * `IsSignedAuthnReqEnabled`: -(Optional) Flag indicating signing of SAML authnRequests.
+    /// 
+    /// ### Idp Metadata
+    /// 
+    /// The IdpMetadata attribute supports the following:
+    /// 
+    /// * `EntityId`: -(Required) Entity Identifier of Identity provider.
+    /// * `LoginUrl`: -(Required) Login URL of the Identity provider.
+    /// * `LogoutUrl`: -(Optional) Logout URL of the Identity provider.
+    /// * `ErrorUrl`: - (Optional) Error URL of the Identity provider.
+    /// * `Certificate`: -(Required) Certificate for verification.
+    /// * `NameIdPolicyFormat`: -(Optional) Name ID Policy format.
+    ///   * supported values:
+    ///     * `emailAddress`: -  Uses email address as NameID format
+    ///     * `Encrypted`: -  Uses encrypted as NameID format.
+    ///     * `Unspecified`: -  NameID format is left to individual implementations.
+    ///     * `Transient`: -  	Uses identifier with transient semantics as NameID format.
+    ///     * `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
+    ///     * `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
+    ///     * `Kerberos`: -  	Uses kerberos principal name as NameID format.
+    ///     * `Persistent`: -  Uses persistent name identifier as NameID format.
+    ///     * `Entity`: -  Uses identifier of an entity as NameID format.
+    /// </summary>
     [NutanixResourceType("nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2")]
     public partial class SamlIdentityProvidersV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - User or Service who created the SAML Identity Provider.
+        /// </summary>
         [Output("createdBy")]
         public Output<string> CreatedBy { get; private set; } = null!;
 
+        /// <summary>
+        /// - Creation time of the SAML Identity Provider.
+        /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
@@ -25,15 +113,24 @@ namespace PiersKarsenbarg.Nutanix
         [Output("emailAttribute")]
         public Output<string?> EmailAttribute { get; private set; } = null!;
 
+        /// <summary>
+        /// - It will be used as Issuer in SAML authnRequest.
+        /// </summary>
         [Output("entityIssuer")]
         public Output<string?> EntityIssuer { get; private set; } = null!;
 
+        /// <summary>
+        /// The External Identifier of the User Group.
+        /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
         [Output("groupsAttribute")]
         public Output<string?> GroupsAttribute { get; private set; } = null!;
 
+        /// <summary>
+        /// - Delimiter is used to split the value of attribute into multiple groups.
+        /// </summary>
         [Output("groupsDelim")]
         public Output<string?> GroupsDelim { get; private set; } = null!;
 
@@ -43,15 +140,27 @@ namespace PiersKarsenbarg.Nutanix
         [Output("idpMetadataXml")]
         public Output<string> IdpMetadataXml { get; private set; } = null!;
 
+        /// <summary>
+        /// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        /// </summary>
         [Output("idpMetadatas")]
         public Output<ImmutableArray<Outputs.SamlIdentityProvidersV2IdpMetadata>> IdpMetadatas { get; private set; } = null!;
 
+        /// <summary>
+        /// - Flag indicating signing of SAML authnRequests.
+        /// </summary>
         [Output("isSignedAuthnReqEnabled")]
         public Output<bool?> IsSignedAuthnReqEnabled { get; private set; } = null!;
 
+        /// <summary>
+        /// - Last updated time of the SAML Identity Provider.
+        /// </summary>
         [Output("lastUpdatedTime")]
         public Output<string> LastUpdatedTime { get; private set; } = null!;
 
+        /// <summary>
+        /// - Unique name of the IDP.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
@@ -116,15 +225,24 @@ namespace PiersKarsenbarg.Nutanix
         [Input("emailAttribute")]
         public Input<string>? EmailAttribute { get; set; }
 
+        /// <summary>
+        /// - It will be used as Issuer in SAML authnRequest.
+        /// </summary>
         [Input("entityIssuer")]
         public Input<string>? EntityIssuer { get; set; }
 
+        /// <summary>
+        /// The External Identifier of the User Group.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("groupsAttribute")]
         public Input<string>? GroupsAttribute { get; set; }
 
+        /// <summary>
+        /// - Delimiter is used to split the value of attribute into multiple groups.
+        /// </summary>
         [Input("groupsDelim")]
         public Input<string>? GroupsDelim { get; set; }
 
@@ -136,15 +254,25 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("idpMetadatas")]
         private InputList<Inputs.SamlIdentityProvidersV2IdpMetadataArgs>? _idpMetadatas;
+
+        /// <summary>
+        /// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        /// </summary>
         public InputList<Inputs.SamlIdentityProvidersV2IdpMetadataArgs> IdpMetadatas
         {
             get => _idpMetadatas ?? (_idpMetadatas = new InputList<Inputs.SamlIdentityProvidersV2IdpMetadataArgs>());
             set => _idpMetadatas = value;
         }
 
+        /// <summary>
+        /// - Flag indicating signing of SAML authnRequests.
+        /// </summary>
         [Input("isSignedAuthnReqEnabled")]
         public Input<bool>? IsSignedAuthnReqEnabled { get; set; }
 
+        /// <summary>
+        /// - Unique name of the IDP.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -159,9 +287,15 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class SamlIdentityProvidersV2State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - User or Service who created the SAML Identity Provider.
+        /// </summary>
         [Input("createdBy")]
         public Input<string>? CreatedBy { get; set; }
 
+        /// <summary>
+        /// - Creation time of the SAML Identity Provider.
+        /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
@@ -176,15 +310,24 @@ namespace PiersKarsenbarg.Nutanix
         [Input("emailAttribute")]
         public Input<string>? EmailAttribute { get; set; }
 
+        /// <summary>
+        /// - It will be used as Issuer in SAML authnRequest.
+        /// </summary>
         [Input("entityIssuer")]
         public Input<string>? EntityIssuer { get; set; }
 
+        /// <summary>
+        /// The External Identifier of the User Group.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("groupsAttribute")]
         public Input<string>? GroupsAttribute { get; set; }
 
+        /// <summary>
+        /// - Delimiter is used to split the value of attribute into multiple groups.
+        /// </summary>
         [Input("groupsDelim")]
         public Input<string>? GroupsDelim { get; set; }
 
@@ -196,18 +339,31 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("idpMetadatas")]
         private InputList<Inputs.SamlIdentityProvidersV2IdpMetadataGetArgs>? _idpMetadatas;
+
+        /// <summary>
+        /// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        /// </summary>
         public InputList<Inputs.SamlIdentityProvidersV2IdpMetadataGetArgs> IdpMetadatas
         {
             get => _idpMetadatas ?? (_idpMetadatas = new InputList<Inputs.SamlIdentityProvidersV2IdpMetadataGetArgs>());
             set => _idpMetadatas = value;
         }
 
+        /// <summary>
+        /// - Flag indicating signing of SAML authnRequests.
+        /// </summary>
         [Input("isSignedAuthnReqEnabled")]
         public Input<bool>? IsSignedAuthnReqEnabled { get; set; }
 
+        /// <summary>
+        /// - Last updated time of the SAML Identity Provider.
+        /// </summary>
         [Input("lastUpdatedTime")]
         public Input<string>? LastUpdatedTime { get; set; }
 
+        /// <summary>
+        /// - Unique name of the IDP.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

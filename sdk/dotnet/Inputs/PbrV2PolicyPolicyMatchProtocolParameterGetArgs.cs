@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("icmpObjects")]
         private InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectGetArgs>? _icmpObjects;
+
+        /// <summary>
+        /// ICMP object
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectGetArgs> IcmpObjects
         {
             get => _icmpObjects ?? (_icmpObjects = new InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectGetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("layerFourProtocolObjects")]
         private InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectGetArgs>? _layerFourProtocolObjects;
+
+        /// <summary>
+        /// Layer Four Protocol Object.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectGetArgs> LayerFourProtocolObjects
         {
             get => _layerFourProtocolObjects ?? (_layerFourProtocolObjects = new InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectGetArgs>());
@@ -31,6 +39,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("protocolNumberObjects")]
         private InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectGetArgs>? _protocolNumberObjects;
+
+        /// <summary>
+        /// Protocol Number Object.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectGetArgs> ProtocolNumberObjects
         {
             get => _protocolNumberObjects ?? (_protocolNumberObjects = new InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectGetArgs>());

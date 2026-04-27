@@ -15,6 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("imageReferences")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReferenceArgs>? _imageReferences;
+
+        /// <summary>
+        /// Image Reference
+        /// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReferenceArgs> ImageReferences
         {
             get => _imageReferences ?? (_imageReferences = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReferenceArgs>());
@@ -23,6 +28,13 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("vmDiskReferences")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceArgs>? _vmDiskReferences;
+
+        /// <summary>
+        /// Vm Disk Reference
+        /// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+        /// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+        /// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceArgs> VmDiskReferences
         {
             get => _vmDiskReferences ?? (_vmDiskReferences = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceArgs>());

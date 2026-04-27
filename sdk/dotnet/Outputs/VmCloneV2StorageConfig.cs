@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2StorageConfig
     {
+        /// <summary>
+        /// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+        /// </summary>
         public readonly bool? IsFlashModeEnabled;
         public readonly ImmutableArray<Outputs.VmCloneV2StorageConfigQosConfig> QosConfigs;
 

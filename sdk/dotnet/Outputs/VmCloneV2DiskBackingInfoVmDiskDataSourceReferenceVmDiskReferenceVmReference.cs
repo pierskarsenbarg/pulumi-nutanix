@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference
     {
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         public readonly string? ExtId;
 
         [OutputConstructor]

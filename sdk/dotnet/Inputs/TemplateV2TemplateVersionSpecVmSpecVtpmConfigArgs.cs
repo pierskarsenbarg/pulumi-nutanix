@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class TemplateV2TemplateVersionSpecVmSpecVtpmConfigArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+        /// </summary>
         [Input("isVtpmEnabled")]
         public Input<bool>? IsVtpmEnabled { get; set; }
 

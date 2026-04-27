@@ -10,15 +10,54 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a Nutanix Virtual Machine resource to Assign IP.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var nicAssignIp = new Nutanix.VmNetworkDeviceAssignIpV2("nic_assign_ip", new()
+    ///     {
+    ///         VmExtId = "246f6e8a-ff05-4057-af6b-b1fd23a46d7d",
+    ///         ExtId = "eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b",
+    ///         IpAddresses = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VmNetworkDeviceAssignIpV2IpAddressArgs
+    ///             {
+    ///                 Value = "10.10.10.10",
+    ///                 PrefixLength = 32,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/vmNetworkDeviceAssignIpV2:VmNetworkDeviceAssignIpV2")]
     public partial class VmNetworkDeviceAssignIpV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+        /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Ip config settings.
+        /// </summary>
         [Output("ipAddresses")]
         public Output<ImmutableArray<Outputs.VmNetworkDeviceAssignIpV2IpAddress>> IpAddresses { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Output("vmExtId")]
         public Output<string> VmExtId { get; private set; } = null!;
 
@@ -69,17 +108,27 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class VmNetworkDeviceAssignIpV2Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
         [Input("ipAddresses")]
         private InputList<Inputs.VmNetworkDeviceAssignIpV2IpAddressArgs>? _ipAddresses;
+
+        /// <summary>
+        /// - (Optional) Ip config settings.
+        /// </summary>
         public InputList<Inputs.VmNetworkDeviceAssignIpV2IpAddressArgs> IpAddresses
         {
             get => _ipAddresses ?? (_ipAddresses = new InputList<Inputs.VmNetworkDeviceAssignIpV2IpAddressArgs>());
             set => _ipAddresses = value;
         }
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Input("vmExtId", required: true)]
         public Input<string> VmExtId { get; set; } = null!;
 
@@ -91,17 +140,27 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class VmNetworkDeviceAssignIpV2State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("ipAddresses")]
         private InputList<Inputs.VmNetworkDeviceAssignIpV2IpAddressGetArgs>? _ipAddresses;
+
+        /// <summary>
+        /// - (Optional) Ip config settings.
+        /// </summary>
         public InputList<Inputs.VmNetworkDeviceAssignIpV2IpAddressGetArgs> IpAddresses
         {
             get => _ipAddresses ?? (_ipAddresses = new InputList<Inputs.VmNetworkDeviceAssignIpV2IpAddressGetArgs>());
             set => _ipAddresses = value;
         }
 
+        /// <summary>
+        /// - (Required) The globally unique identifier of a VM. It should be of type UUID.
+        /// </summary>
         [Input("vmExtId")]
         public Input<string>? VmExtId { get; set; }
 

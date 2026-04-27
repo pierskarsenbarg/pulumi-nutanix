@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCloneV2DiskBackingInfoVmDiskStorageConfigArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Indicates whether the virtual disk is pinned to the hot tier or not.
+        /// </summary>
         [Input("isFlashModeEnabled")]
         public Input<bool>? IsFlashModeEnabled { get; set; }
 

@@ -27,6 +27,11 @@ class AddressGroupsV2Args:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AddressGroupsV2 resource.
+
+        :param pulumi.Input[_builtins.str] description: - (Optional) Description of the Address group
+        :param pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]] ip_ranges: - (Optional) List of IP range containing start and end IP.
+        :param pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
+        :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -40,6 +45,9 @@ class AddressGroupsV2Args:
     @_builtins.property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Optional) Description of the Address group
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -49,6 +57,9 @@ class AddressGroupsV2Args:
     @_builtins.property
     @pulumi.getter(name="ipRanges")
     def ip_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]:
+        """
+        - (Optional) List of IP range containing start and end IP.
+        """
         return pulumi.get(self, "ip_ranges")
 
     @ip_ranges.setter
@@ -58,6 +69,9 @@ class AddressGroupsV2Args:
     @_builtins.property
     @pulumi.getter(name="ipv4Addresses")
     def ipv4_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]:
+        """
+        - (Optional) List of CIDR blocks in the Address Group.
+        """
         return pulumi.get(self, "ipv4_addresses")
 
     @ipv4_addresses.setter
@@ -67,6 +81,9 @@ class AddressGroupsV2Args:
     @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Required) Name of the Address group
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -88,6 +105,16 @@ class _AddressGroupsV2State:
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddressGroupsV2 resources.
+
+        :param pulumi.Input[_builtins.str] created_by: created by.
+        :param pulumi.Input[_builtins.str] description: - (Optional) Description of the Address group
+        :param pulumi.Input[_builtins.str] ext_id: address group uuid.
+        :param pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]] ip_ranges: - (Optional) List of IP range containing start and end IP.
+        :param pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
+        :param pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_references: Reference to policy associated with Address Group.
+        :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         """
         if created_by is not None:
             pulumi.set(__self__, "created_by", created_by)
@@ -111,6 +138,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        created by.
+        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -120,6 +150,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Optional) Description of the Address group
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -129,6 +162,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        address group uuid.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -138,6 +174,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter(name="ipRanges")
     def ip_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]:
+        """
+        - (Optional) List of IP range containing start and end IP.
+        """
         return pulumi.get(self, "ip_ranges")
 
     @ip_ranges.setter
@@ -147,6 +186,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter(name="ipv4Addresses")
     def ipv4_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]:
+        """
+        - (Optional) List of CIDR blocks in the Address Group.
+        """
         return pulumi.get(self, "ipv4_addresses")
 
     @ipv4_addresses.setter
@@ -156,6 +198,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter
     def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]]]:
+        """
+        A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        """
         return pulumi.get(self, "links")
 
     @links.setter
@@ -165,6 +210,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Required) Name of the Address group
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -174,6 +222,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter(name="policyReferences")
     def policy_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Reference to policy associated with Address Group.
+        """
         return pulumi.get(self, "policy_references")
 
     @policy_references.setter
@@ -183,6 +234,9 @@ class _AddressGroupsV2State:
     @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A globally unique identifier that represents the tenant that owns this entity.
+        """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
@@ -202,10 +256,45 @@ class AddressGroupsV2(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AddressGroupsV2 resource with the given unique name, props, and options.
+        Create an Address Group
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # Create Address group with ipv4 addresses
+        ipv4_address = nutanix.AddressGroupsV2("ipv4-address",
+            name="address_group_ipv4_address",
+            description="address group description",
+            ipv4_addresses=[
+                {
+                    "value": "10.0.0.0",
+                    "prefix_length": 24,
+                },
+                {
+                    "value": "172.0.0.0",
+                    "prefix_length": 24,
+                },
+            ])
+        # Create Address group. with ip range
+        ip_ranges = nutanix.AddressGroupsV2("ip-ranges",
+            name="address_group_ip_ranges",
+            description="address group description",
+            ip_ranges=[{
+                "start_ip": "10.0.0.1",
+                "end_ip": "10.0.0.10",
+            }])
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: - (Optional) Description of the Address group
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]] ip_ranges: - (Optional) List of IP range containing start and end IP.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
+        :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
         """
         ...
     @overload
@@ -214,7 +303,38 @@ class AddressGroupsV2(pulumi.CustomResource):
                  args: Optional[AddressGroupsV2Args] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AddressGroupsV2 resource with the given unique name, props, and options.
+        Create an Address Group
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # Create Address group with ipv4 addresses
+        ipv4_address = nutanix.AddressGroupsV2("ipv4-address",
+            name="address_group_ipv4_address",
+            description="address group description",
+            ipv4_addresses=[
+                {
+                    "value": "10.0.0.0",
+                    "prefix_length": 24,
+                },
+                {
+                    "value": "172.0.0.0",
+                    "prefix_length": 24,
+                },
+            ])
+        # Create Address group. with ip range
+        ip_ranges = nutanix.AddressGroupsV2("ip-ranges",
+            name="address_group_ip_ranges",
+            description="address group description",
+            ip_ranges=[{
+                "start_ip": "10.0.0.1",
+                "end_ip": "10.0.0.10",
+            }])
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param AddressGroupsV2Args args: The arguments to use to populate this resource's properties.
@@ -279,6 +399,15 @@ class AddressGroupsV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] created_by: created by.
+        :param pulumi.Input[_builtins.str] description: - (Optional) Description of the Address group
+        :param pulumi.Input[_builtins.str] ext_id: address group uuid.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]] ip_ranges: - (Optional) List of IP range containing start and end IP.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_references: Reference to policy associated with Address Group.
+        :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -298,45 +427,72 @@ class AddressGroupsV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:
+        """
+        created by.
+        """
         return pulumi.get(self, "created_by")
 
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        - (Optional) Description of the Address group
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        address group uuid.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
     @pulumi.getter(name="ipRanges")
     def ip_ranges(self) -> pulumi.Output[Sequence['outputs.AddressGroupsV2IpRange']]:
+        """
+        - (Optional) List of IP range containing start and end IP.
+        """
         return pulumi.get(self, "ip_ranges")
 
     @_builtins.property
     @pulumi.getter(name="ipv4Addresses")
     def ipv4_addresses(self) -> pulumi.Output[Sequence['outputs.AddressGroupsV2Ipv4Address']]:
+        """
+        - (Optional) List of CIDR blocks in the Address Group.
+        """
         return pulumi.get(self, "ipv4_addresses")
 
     @_builtins.property
     @pulumi.getter
     def links(self) -> pulumi.Output[Sequence['outputs.AddressGroupsV2Link']]:
+        """
+        A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        """
         return pulumi.get(self, "links")
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
+        """
+        - (Required) Name of the Address group
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
     @pulumi.getter(name="policyReferences")
     def policy_references(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        Reference to policy associated with Address Group.
+        """
         return pulumi.get(self, "policy_references")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        A globally unique identifier that represents the tenant that owns this entity.
+        """
         return pulumi.get(self, "tenant_id")
 

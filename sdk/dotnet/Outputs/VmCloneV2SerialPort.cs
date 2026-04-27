@@ -15,7 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VmCloneV2SerialPort
     {
         public readonly string? ExtId;
+        /// <summary>
+        /// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+        /// </summary>
         public readonly int? Index;
+        /// <summary>
+        /// - (Optional) Indicates whether the NIC is connected or not. Default is True.
+        /// </summary>
         public readonly bool? IsConnected;
 
         [OutputConstructor]

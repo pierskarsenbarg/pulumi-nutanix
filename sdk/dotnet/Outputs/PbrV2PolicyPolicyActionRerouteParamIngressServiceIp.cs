@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyActionRerouteParamIngressServiceIp
     {
+        /// <summary>
+        /// IPv4 Object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4> Ipv4s;
+        /// <summary>
+        /// IPv6 Object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6> Ipv6s;
 
         [OutputConstructor]

@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2Policy
     {
+        /// <summary>
+        /// If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
+        /// </summary>
         public readonly bool? IsBidirectional;
+        /// <summary>
+        /// The action to be taken on the traffic matching the routing policy.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyAction> PolicyActions;
+        /// <summary>
+        /// Match condition for the traffic that is entering the VPC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatch> PolicyMatches;
 
         [OutputConstructor]

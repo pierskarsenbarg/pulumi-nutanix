@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey
     {
+        /// <summary>
+        /// - (Optional) The list of the individual KeyValuePair elements.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair> KeyValuePairs;
 
         [OutputConstructor]

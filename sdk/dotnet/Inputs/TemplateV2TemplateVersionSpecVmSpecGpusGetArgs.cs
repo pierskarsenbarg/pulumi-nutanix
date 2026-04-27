@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class TemplateV2TemplateVersionSpecVmSpecGpusGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The device Id of the GPU.
+        /// </summary>
         [Input("deviceId")]
         public Input<int>? DeviceId { get; set; }
 
@@ -36,6 +39,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _links = value;
         }
 
+        /// <summary>
+        /// The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+        /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
 
@@ -47,6 +53,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("pciAddresses")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGpusPciAddressGetArgs>? _pciAddresses;
+
+        /// <summary>
+        /// The (S)egment:(B)us:(D)evice.(F)unction hardware address.
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGpusPciAddressGetArgs> PciAddresses
         {
             get => _pciAddresses ?? (_pciAddresses = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGpusPciAddressGetArgs>());
@@ -56,6 +66,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("tenantId")]
         public Input<string>? TenantId { get; set; }
 
+        /// <summary>
+        /// The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
+        /// </summary>
         [Input("vendor")]
         public Input<string>? Vendor { get; set; }
 

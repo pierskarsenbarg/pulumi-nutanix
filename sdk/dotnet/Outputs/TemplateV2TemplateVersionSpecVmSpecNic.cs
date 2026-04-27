@@ -14,9 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecNic
     {
+        /// <summary>
+        /// Defines a NIC emulated by the hypervisor
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfo> BackingInfos;
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicLink> Links;
+        /// <summary>
+        /// Network information for a NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo> NetworkInfos;
         public readonly string? TenantId;
 

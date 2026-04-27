@@ -16,6 +16,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name for the vm.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

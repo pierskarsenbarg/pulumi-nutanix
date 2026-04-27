@@ -14,12 +14,33 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetCertificatesV2CertificateResult
     {
+        /// <summary>
+        /// - The list of alternate FQDNs for accessing the Object store. The FQDNs must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens or underscores but must begin and end with a letter. Each part can be up to 63 characters long. For e.g 'objects-0.pc_nutanix.com'.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificatesV2CertificateAlternateFqdnResult> AlternateFqdns;
+        /// <summary>
+        /// - A list of the IPs included as Subject Alternative Names (SANs) in the certificate. The IPs must be among the public IPs of the Object store (publicNetworkIps).
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificatesV2CertificateAlternateIpResult> AlternateIps;
+        /// <summary>
+        /// - A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         public readonly string ExtId;
+        /// <summary>
+        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificatesV2CertificateLinkResult> Links;
+        /// <summary>
+        /// - Metadata associated with this resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificatesV2CertificateMetadataResult> Metadatas;
+        /// <summary>
+        /// -(Required) The UUID of the Object store.
+        /// </summary>
         public readonly string ObjectStoreExtId;
+        /// <summary>
+        /// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// </summary>
         public readonly string TenantId;
 
         [OutputConstructor]

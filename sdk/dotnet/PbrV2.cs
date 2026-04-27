@@ -10,36 +10,139 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Create a Routing Policy.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // create PBR with vpc name with any source or destination or protocol with permit action
+    ///     var any_source_destination = new Nutanix.PbrV2("any-source-destination", new()
+    ///     {
+    ///         Name = "routing_policy_any_source_destination",
+    ///         Description = "routing policy with any source and destination",
+    ///         VpcExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///         Priority = 11,
+    ///         Policies = new[]
+    ///         {
+    ///             new Nutanix.Inputs.PbrV2PolicyArgs
+    ///             {
+    ///                 PolicyMatches = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.PbrV2PolicyPolicyMatchArgs
+    ///                     {
+    ///                         Sources = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.PbrV2PolicyPolicyMatchSourceArgs
+    ///                             {
+    ///                                 AddressType = "ANY",
+    ///                             },
+    ///                         },
+    ///                         Destinations = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.PbrV2PolicyPolicyMatchDestinationArgs
+    ///                             {
+    ///                                 AddressType = "ANY",
+    ///                             },
+    ///                         },
+    ///                         ProtocolType = "UDP",
+    ///                     },
+    ///                 },
+    ///                 PolicyActions = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.PbrV2PolicyPolicyActionArgs
+    ///                     {
+    ///                         ActionType = "PERMIT",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// This helps to manage existing entities which are not created through terraform. Routing Policy can be imported using the `UUID`.  eg,
+    /// 
+    /// `
+    /// 
+    /// ```sh
+    /// $ pulumi import nutanix:index/pbrV2:PbrV2 pbr_import &lt;UUID&gt;
+    /// ```
+    /// 
+    /// `
+    /// 
+    /// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0).
+    /// </summary>
     [NutanixResourceType("nutanix:index/pbrV2:PbrV2")]
     public partial class PbrV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// A description of the routing policy.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         [Output("links")]
         public Output<ImmutableArray<Outputs.PbrV2Link>> Links { get; private set; } = null!;
 
+        /// <summary>
+        /// Metadata associated with this resource.
+        /// </summary>
         [Output("metadatas")]
         public Output<ImmutableArray<Outputs.PbrV2Metadata>> Metadatas { get; private set; } = null!;
 
+        /// <summary>
+        /// Name of the routing policy.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// Routing Policies.
+        /// </summary>
         [Output("policies")]
         public Output<ImmutableArray<Outputs.PbrV2Policy>> Policies { get; private set; } = null!;
 
+        /// <summary>
+        /// Priority of the routing policy.
+        /// </summary>
         [Output("priority")]
         public Output<int> Priority { get; private set; } = null!;
 
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity
+        /// </summary>
         [Output("tenantId")]
         public Output<string> TenantId { get; private set; } = null!;
 
+        /// <summary>
+        /// ExtId of the VPC extId to which the routing policy belongs.
+        /// </summary>
         [Output("vpcExtId")]
         public Output<string> VpcExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// VPC name for projections
+        /// </summary>
         [Output("vpcs")]
         public Output<ImmutableArray<Outputs.PbrV2Vpc>> Vpcs { get; private set; } = null!;
 
@@ -90,26 +193,45 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class PbrV2Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A description of the routing policy.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Name of the routing policy.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("policies", required: true)]
         private InputList<Inputs.PbrV2PolicyArgs>? _policies;
+
+        /// <summary>
+        /// Routing Policies.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyArgs> Policies
         {
             get => _policies ?? (_policies = new InputList<Inputs.PbrV2PolicyArgs>());
             set => _policies = value;
         }
 
+        /// <summary>
+        /// Priority of the routing policy.
+        /// </summary>
         [Input("priority", required: true)]
         public Input<int> Priority { get; set; } = null!;
 
+        /// <summary>
+        /// ExtId of the VPC extId to which the routing policy belongs.
+        /// </summary>
         [Input("vpcExtId", required: true)]
         public Input<string> VpcExtId { get; set; } = null!;
 
@@ -121,14 +243,24 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class PbrV2State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A description of the routing policy.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("links")]
         private InputList<Inputs.PbrV2LinkGetArgs>? _links;
+
+        /// <summary>
+        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public InputList<Inputs.PbrV2LinkGetArgs> Links
         {
             get => _links ?? (_links = new InputList<Inputs.PbrV2LinkGetArgs>());
@@ -137,34 +269,58 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("metadatas")]
         private InputList<Inputs.PbrV2MetadataGetArgs>? _metadatas;
+
+        /// <summary>
+        /// Metadata associated with this resource.
+        /// </summary>
         public InputList<Inputs.PbrV2MetadataGetArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.PbrV2MetadataGetArgs>());
             set => _metadatas = value;
         }
 
+        /// <summary>
+        /// Name of the routing policy.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("policies")]
         private InputList<Inputs.PbrV2PolicyGetArgs>? _policies;
+
+        /// <summary>
+        /// Routing Policies.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyGetArgs> Policies
         {
             get => _policies ?? (_policies = new InputList<Inputs.PbrV2PolicyGetArgs>());
             set => _policies = value;
         }
 
+        /// <summary>
+        /// Priority of the routing policy.
+        /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
 
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity
+        /// </summary>
         [Input("tenantId")]
         public Input<string>? TenantId { get; set; }
 
+        /// <summary>
+        /// ExtId of the VPC extId to which the routing policy belongs.
+        /// </summary>
         [Input("vpcExtId")]
         public Input<string>? VpcExtId { get; set; }
 
         [Input("vpcs")]
         private InputList<Inputs.PbrV2VpcGetArgs>? _vpcs;
+
+        /// <summary>
+        /// VPC name for projections
+        /// </summary>
         public InputList<Inputs.PbrV2VpcGetArgs> Vpcs
         {
             get => _vpcs ?? (_vpcs = new InputList<Inputs.PbrV2VpcGetArgs>());

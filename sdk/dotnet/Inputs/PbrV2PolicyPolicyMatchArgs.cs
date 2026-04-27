@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("destinations", required: true)]
         private InputList<Inputs.PbrV2PolicyPolicyMatchDestinationArgs>? _destinations;
+
+        /// <summary>
+        /// Address Type like "EXTERNAL" or "ANY".
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchDestinationArgs> Destinations
         {
             get => _destinations ?? (_destinations = new InputList<Inputs.PbrV2PolicyPolicyMatchDestinationArgs>());
@@ -23,17 +27,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("protocolParameters")]
         private InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterArgs>? _protocolParameters;
+
+        /// <summary>
+        /// Protocol Params Object.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterArgs> ProtocolParameters
         {
             get => _protocolParameters ?? (_protocolParameters = new InputList<Inputs.PbrV2PolicyPolicyMatchProtocolParameterArgs>());
             set => _protocolParameters = value;
         }
 
+        /// <summary>
+        /// Routing Policy IP protocol type. Acceptable values are "TCP", "UDP", "PROTOCOL_NUMBER", "ANY", "ICMP" .
+        /// </summary>
         [Input("protocolType", required: true)]
         public Input<string> ProtocolType { get; set; } = null!;
 
         [Input("sources", required: true)]
         private InputList<Inputs.PbrV2PolicyPolicyMatchSourceArgs>? _sources;
+
+        /// <summary>
+        /// Address Type like "EXTERNAL" or "ANY".
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchSourceArgs> Sources
         {
             get => _sources ?? (_sources = new InputList<Inputs.PbrV2PolicyPolicyMatchSourceArgs>());

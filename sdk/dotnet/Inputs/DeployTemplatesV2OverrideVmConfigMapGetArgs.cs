@@ -15,32 +15,55 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("guestCustomizations")]
         private InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationGetArgs>? _guestCustomizations;
+
+        /// <summary>
+        /// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        /// </summary>
         public InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationGetArgs> GuestCustomizations
         {
             get => _guestCustomizations ?? (_guestCustomizations = new InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationGetArgs>());
             set => _guestCustomizations = value;
         }
 
+        /// <summary>
+        /// Memory size in bytes.
+        /// </summary>
         [Input("memorySizeBytes")]
         public Input<int>? MemorySizeBytes { get; set; }
 
+        /// <summary>
+        /// VM name.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("nics")]
         private InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicGetArgs>? _nics;
+
+        /// <summary>
+        /// NICs attached to the VM.
+        /// </summary>
         public InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicGetArgs> Nics
         {
             get => _nics ?? (_nics = new InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicGetArgs>());
             set => _nics = value;
         }
 
+        /// <summary>
+        /// Number of cores per socket.
+        /// </summary>
         [Input("numCoresPerSocket")]
         public Input<int>? NumCoresPerSocket { get; set; }
 
+        /// <summary>
+        /// Number of vCPU sockets.
+        /// </summary>
         [Input("numSockets")]
         public Input<int>? NumSockets { get; set; }
 
+        /// <summary>
+        /// Number of threads per core.
+        /// </summary>
         [Input("numThreadsPerCore")]
         public Input<int>? NumThreadsPerCore { get; set; }
 

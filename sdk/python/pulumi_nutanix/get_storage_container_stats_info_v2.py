@@ -155,121 +155,193 @@ class GetStorageContainerStatsInfoV2Result:
     @_builtins.property
     @pulumi.getter(name="containerExtId")
     def container_ext_id(self) -> _builtins.str:
+        """
+        - the storage container uuid
+        """
         return pulumi.get(self, "container_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="controllerAvgIoLatencyuSecs")
     def controller_avg_io_latencyu_secs(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSecResult']:
+        """
+        - Average I/O latency in micro secs.
+        """
         return pulumi.get(self, "controller_avg_io_latencyu_secs")
 
     @_builtins.property
     @pulumi.getter(name="controllerAvgReadIoLatencyuSecs")
     def controller_avg_read_io_latencyu_secs(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSecResult']:
+        """
+        - Average read I/O latency in microseconds.
+        """
         return pulumi.get(self, "controller_avg_read_io_latencyu_secs")
 
     @_builtins.property
     @pulumi.getter(name="controllerAvgWriteIoLatencyuSecs")
     def controller_avg_write_io_latencyu_secs(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSecResult']:
+        """
+        - Average read I/O latency in microseconds.
+        """
         return pulumi.get(self, "controller_avg_write_io_latencyu_secs")
 
     @_builtins.property
     @pulumi.getter(name="controllerIoBandwidthKbps")
     def controller_io_bandwidth_kbps(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerIoBandwidthKbpResult']:
+        """
+        - Total I/O bandwidth - kB per second.
+        """
         return pulumi.get(self, "controller_io_bandwidth_kbps")
 
     @_builtins.property
     @pulumi.getter(name="controllerNumIops")
     def controller_num_iops(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerNumIopResult']:
+        """
+        - Number of I/O per second.
+        """
         return pulumi.get(self, "controller_num_iops")
 
     @_builtins.property
     @pulumi.getter(name="controllerNumReadIops")
     def controller_num_read_iops(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerNumReadIopResult']:
+        """
+        - Number of read I/O per second.
+        """
         return pulumi.get(self, "controller_num_read_iops")
 
     @_builtins.property
     @pulumi.getter(name="controllerNumWriteIops")
     def controller_num_write_iops(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerNumWriteIopResult']:
+        """
+        - Number of write I/O per second.
+        """
         return pulumi.get(self, "controller_num_write_iops")
 
     @_builtins.property
     @pulumi.getter(name="controllerReadIoBandwidthKbps")
     def controller_read_io_bandwidth_kbps(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbpResult']:
+        """
+        - Read I/O bandwidth - kB per second.
+        """
         return pulumi.get(self, "controller_read_io_bandwidth_kbps")
 
     @_builtins.property
     @pulumi.getter(name="controllerReadIoRatioPpms")
     def controller_read_io_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerReadIoRatioPpmResult']:
+        """
+        - Ratio of read I/O to total I/O in PPM.
+        """
         return pulumi.get(self, "controller_read_io_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="controllerWriteIoBandwidthKbps")
     def controller_write_io_bandwidth_kbps(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbpResult']:
+        """
+        - Write I/O bandwidth - kB per second.
+        """
         return pulumi.get(self, "controller_write_io_bandwidth_kbps")
 
     @_builtins.property
     @pulumi.getter(name="controllerWriteIoRatioPpms")
     def controller_write_io_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpmResult']:
+        """
+        - Ratio of read I/O to total I/O in PPM.
+        """
         return pulumi.get(self, "controller_write_io_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionCloneSavingRatioPpms")
     def data_reduction_clone_saving_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpmResult']:
+        """
+        - Saving ratio in PPM as a result of the Cloning technique.
+        """
         return pulumi.get(self, "data_reduction_clone_saving_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionCompressionSavingRatioPpms")
     def data_reduction_compression_saving_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpmResult']:
+        """
+        - Saving ratio in PPM as a result of the Compression technique.
+        """
         return pulumi.get(self, "data_reduction_compression_saving_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionDedupSavingRatioPpms")
     def data_reduction_dedup_saving_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpmResult']:
+        """
+        - Saving ratio in PPM as a result of the Deduplication technique.
+        """
         return pulumi.get(self, "data_reduction_dedup_saving_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionErasureCodingSavingRatioPpms")
     def data_reduction_erasure_coding_saving_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpmResult']:
+        """
+        - Saving ratio in PPM as a result of the Erasure Coding technique.
+        """
         return pulumi.get(self, "data_reduction_erasure_coding_saving_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionOverallPostReductionBytes")
     def data_reduction_overall_post_reduction_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByteResult']:
+        """
+        - Usage in bytes after reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
+        """
         return pulumi.get(self, "data_reduction_overall_post_reduction_bytes")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionOverallPreReductionBytes")
     def data_reduction_overall_pre_reduction_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByteResult']:
+        """
+        - Usage in bytes before reduction of Deduplication, Compression, Erasure Coding, Cloning, and Thin provisioning.
+        """
         return pulumi.get(self, "data_reduction_overall_pre_reduction_bytes")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionSavedBytes")
     def data_reduction_saved_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionSavedByteResult']:
+        """
+        - Storage savings in bytes as a result of all the techniques.
+        """
         return pulumi.get(self, "data_reduction_saved_bytes")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionSavingRatioPpms")
     def data_reduction_saving_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionSavingRatioPpmResult']:
+        """
+        - Saving ratio in PPM as a result of Deduplication, compression and Erasure Coding.
+        """
         return pulumi.get(self, "data_reduction_saving_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionSnapshotSavingRatioPpms")
     def data_reduction_snapshot_saving_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpmResult']:
+        """
+        - Saving ratio in PPM as a result of Snapshot technique.
+        """
         return pulumi.get(self, "data_reduction_snapshot_saving_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionThinProvisionSavingRatioPpms")
     def data_reduction_thin_provision_saving_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpmResult']:
+        """
+        - Saving ratio in PPM as a result of the Thin Provisioning technique.
+        """
         return pulumi.get(self, "data_reduction_thin_provision_saving_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionTotalSavingRatioPpms")
     def data_reduction_total_saving_ratio_ppms(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpmResult']:
+        """
+        - Saving ratio in PPM consisting of Deduplication, Compression, Erasure Coding, Cloning, and Thin Provisioning.
+        """
         return pulumi.get(self, "data_reduction_total_saving_ratio_ppms")
 
     @_builtins.property
     @pulumi.getter(name="dataReductionZeroWriteSavingsBytes")
     def data_reduction_zero_write_savings_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByteResult']:
+        """
+        - Total amount of savings in bytes as a result of zero writes.
+        """
         return pulumi.get(self, "data_reduction_zero_write_savings_bytes")
 
     @_builtins.property
@@ -280,11 +352,17 @@ class GetStorageContainerStatsInfoV2Result:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> _builtins.str:
+        """
+        - the storage container uuid
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
     @pulumi.getter
     def healths(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2HealthResult']:
+        """
+        - Health of the container is represented by an integer value in the range 0-100. Higher value is indicative of better health.
+        """
         return pulumi.get(self, "healths")
 
     @_builtins.property
@@ -298,6 +376,9 @@ class GetStorageContainerStatsInfoV2Result:
     @_builtins.property
     @pulumi.getter
     def links(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2LinkResult']:
+        """
+        - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        """
         return pulumi.get(self, "links")
 
     @_builtins.property
@@ -318,46 +399,73 @@ class GetStorageContainerStatsInfoV2Result:
     @_builtins.property
     @pulumi.getter(name="storageActualPhysicalUsageBytes")
     def storage_actual_physical_usage_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByteResult']:
+        """
+        - Actual physical disk usage of the container without accounting for the reservation.
+        """
         return pulumi.get(self, "storage_actual_physical_usage_bytes")
 
     @_builtins.property
     @pulumi.getter(name="storageCapacityBytes")
     def storage_capacity_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2StorageCapacityByteResult']:
+        """
+        - Storage capacity in bytes.
+        """
         return pulumi.get(self, "storage_capacity_bytes")
 
     @_builtins.property
     @pulumi.getter(name="storageFreeBytes")
     def storage_free_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2StorageFreeByteResult']:
+        """
+        - Free storage in bytes.
+        """
         return pulumi.get(self, "storage_free_bytes")
 
     @_builtins.property
     @pulumi.getter(name="storageReplicationFactors")
     def storage_replication_factors(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2StorageReplicationFactorResult']:
+        """
+        - Replication factor of Container.
+        """
         return pulumi.get(self, "storage_replication_factors")
 
     @_builtins.property
     @pulumi.getter(name="storageReservedCapacityBytes")
     def storage_reserved_capacity_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2StorageReservedCapacityByteResult']:
+        """
+        - Implicit physical reserved capacity(aggregated on vDisk level due to thick provisioning) in bytes.
+        """
         return pulumi.get(self, "storage_reserved_capacity_bytes")
 
     @_builtins.property
     @pulumi.getter(name="storageTierDasSataUsageBytes")
     def storage_tier_das_sata_usage_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2StorageTierDasSataUsageByteResult']:
+        """
+        - Total usage on HDD tier for the Container in bytes.
+        """
         return pulumi.get(self, "storage_tier_das_sata_usage_bytes")
 
     @_builtins.property
     @pulumi.getter(name="storageTierSsdUsageBytes")
     def storage_tier_ssd_usage_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2StorageTierSsdUsageByteResult']:
+        """
+        - Total usage on SDD tier for the Container in bytes
+        """
         return pulumi.get(self, "storage_tier_ssd_usage_bytes")
 
     @_builtins.property
     @pulumi.getter(name="storageUsageBytes")
     def storage_usage_bytes(self) -> Sequence['outputs.GetStorageContainerStatsInfoV2StorageUsageByteResult']:
+        """
+        - Used storage in bytes.
+        """
         return pulumi.get(self, "storage_usage_bytes")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
+        """
+        - A globally unique identifier that represents the tenant that owns this entity.
+        """
         return pulumi.get(self, "tenant_id")
 
 
@@ -417,7 +525,34 @@ def get_storage_container_stats_info_v2(end_time: Optional[_builtins.str] = None
                                         stat_type: Optional[_builtins.str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStorageContainerStatsInfoV2Result:
     """
-    Use this data source to access information about an existing resource.
+    Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    example = nutanix.get_storage_container_stats_info_v2(ext_id="1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        start_time="2024-08-01T00:00:00Z",
+        end_time="2024-08-30T00:00:00Z",
+        sampling_interval=1,
+        stat_type="SUM")
+    ```
+
+
+    :param _builtins.str end_time: storage container UUID
+    :param _builtins.str ext_id: storage container UUID
+    :param _builtins.int sampling_interval: storage container UUID
+    :param _builtins.str start_time: storage container UUID
+    :param _builtins.str stat_type: storage container UUID
+           * available values:
+           * `AVG`: - Aggregation indicating mean or average of all values.
+           * `MIN`: - Aggregation containing lowest of all values.
+           * `MAX`: - 	Aggregation containing highest of all values.
+           * `LAST`: - Aggregation containing only the last recorded value.
+           * `SUM`: - Aggregation with sum of all values.
+           * `COUNT`: - Aggregation containing total count of values.
     """
     __args__ = dict()
     __args__['endTime'] = end_time
@@ -477,7 +612,34 @@ def get_storage_container_stats_info_v2_output(end_time: Optional[pulumi.Input[_
                                                stat_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStorageContainerStatsInfoV2Result]:
     """
-    Use this data source to access information about an existing resource.
+    Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    example = nutanix.get_storage_container_stats_info_v2(ext_id="1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        start_time="2024-08-01T00:00:00Z",
+        end_time="2024-08-30T00:00:00Z",
+        sampling_interval=1,
+        stat_type="SUM")
+    ```
+
+
+    :param _builtins.str end_time: storage container UUID
+    :param _builtins.str ext_id: storage container UUID
+    :param _builtins.int sampling_interval: storage container UUID
+    :param _builtins.str start_time: storage container UUID
+    :param _builtins.str stat_type: storage container UUID
+           * available values:
+           * `AVG`: - Aggregation indicating mean or average of all values.
+           * `MIN`: - Aggregation containing lowest of all values.
+           * `MAX`: - 	Aggregation containing highest of all values.
+           * `LAST`: - Aggregation containing only the last recorded value.
+           * `SUM`: - Aggregation with sum of all values.
+           * `COUNT`: - Aggregation containing total count of values.
     """
     __args__ = dict()
     __args__['endTime'] = end_time

@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) MAC address of nic to boot from.
+        /// </summary>
         [Input("macAddress")]
         public Input<string>? MacAddress { get; set; }
 

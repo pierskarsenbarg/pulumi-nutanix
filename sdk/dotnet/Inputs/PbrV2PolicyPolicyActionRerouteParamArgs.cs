@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("egressServiceIps")]
         private InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArgs>? _egressServiceIps;
+
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArgs> EgressServiceIps
         {
             get => _egressServiceIps ?? (_egressServiceIps = new InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArgs>());
@@ -23,17 +27,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("ingressServiceIps")]
         private InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArgs>? _ingressServiceIps;
+
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArgs> IngressServiceIps
         {
             get => _ingressServiceIps ?? (_ingressServiceIps = new InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArgs>());
             set => _ingressServiceIps = value;
         }
 
+        /// <summary>
+        /// Type of fallback action in reroute case when service VM is down. Acceptable values are "PASSTHROUGH", "NO_ACTION", "ALLOW", "DENY".
+        /// </summary>
         [Input("rerouteFallbackAction")]
         public Input<string>? RerouteFallbackAction { get; set; }
 
         [Input("serviceIps")]
         private InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamServiceIpArgs>? _serviceIps;
+
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamServiceIpArgs> ServiceIps
         {
             get => _serviceIps ?? (_serviceIps = new InputList<Inputs.PbrV2PolicyPolicyActionRerouteParamServiceIpArgs>());

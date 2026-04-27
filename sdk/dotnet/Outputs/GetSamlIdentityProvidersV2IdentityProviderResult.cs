@@ -14,17 +14,44 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSamlIdentityProvidersV2IdentityProviderResult
     {
+        /// <summary>
+        /// - User or Service who created the SAML Identity Provider.
+        /// </summary>
         public readonly string CreatedBy;
+        /// <summary>
+        /// - Creation time of the SAML Identity Provider.
+        /// </summary>
         public readonly string CreatedTime;
         public readonly ImmutableArray<string> CustomAttributes;
         public readonly string EmailAttribute;
+        /// <summary>
+        /// - It will be used as Issuer in SAML authnRequest.
+        /// </summary>
         public readonly string EntityIssuer;
+        /// <summary>
+        /// The External Identifier of the User Group.
+        /// </summary>
         public readonly string ExtId;
         public readonly string GroupsAttribute;
+        /// <summary>
+        /// - Delimiter is used to split the value of attribute into multiple groups.
+        /// </summary>
         public readonly string GroupsDelim;
+        /// <summary>
+        /// - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSamlIdentityProvidersV2IdentityProviderIdpMetadataResult> IdpMetadatas;
+        /// <summary>
+        /// - Flag indicating signing of SAML authnRequests.
+        /// </summary>
         public readonly bool IsSignedAuthnReqEnabled;
+        /// <summary>
+        /// - Last updated time of the SAML Identity Provider.
+        /// </summary>
         public readonly string LastUpdatedTime;
+        /// <summary>
+        /// - Unique name of the IDP.
+        /// </summary>
         public readonly string Name;
         public readonly string UsernameAttribute;
 

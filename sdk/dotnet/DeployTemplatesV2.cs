@@ -10,21 +10,70 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Deploy one or more VMs from a Template. Number of VMs to be deployed and their corresponding VM configuration overrides can be provided.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var deploy_temp = new Nutanix.DeployTemplatesV2("deploy-temp", new()
+    ///     {
+    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///         NumberOfVms = 1,
+    ///         ClusterReference = "0005b6b8-7b3b-4b0b-8b3b-7b3b4b0b8b3b",
+    ///         OverrideVmConfigMaps = new[]
+    ///         {
+    ///             new Nutanix.Inputs.DeployTemplatesV2OverrideVmConfigMapArgs
+    ///             {
+    ///                 Name = "example-tf-temp",
+    ///                 MemorySizeBytes = 4294967296,
+    ///                 NumSockets = 2,
+    ///                 NumCoresPerSocket = 1,
+    ///                 NumThreadsPerCore = 1,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/deployTemplatesV2:DeployTemplatesV2")]
     public partial class DeployTemplatesV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The identifier of the Cluster where the VM(s) will be created using a Template.
+        /// </summary>
         [Output("clusterReference")]
         public Output<string> ClusterReference { get; private set; } = null!;
 
+        /// <summary>
+        /// The identifier of a Template.
+        /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// Number of VMs to be deployed.
+        /// </summary>
         [Output("numberOfVms")]
         public Output<int> NumberOfVms { get; private set; } = null!;
 
+        /// <summary>
+        /// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
+        /// </summary>
         [Output("overrideVmConfigMaps")]
         public Output<ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMap>> OverrideVmConfigMaps { get; private set; } = null!;
 
+        /// <summary>
+        /// The identifier of a Template Version.
+        /// </summary>
         [Output("versionId")]
         public Output<string?> VersionId { get; private set; } = null!;
 
@@ -75,23 +124,39 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class DeployTemplatesV2Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The identifier of the Cluster where the VM(s) will be created using a Template.
+        /// </summary>
         [Input("clusterReference", required: true)]
         public Input<string> ClusterReference { get; set; } = null!;
 
+        /// <summary>
+        /// The identifier of a Template.
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
+        /// <summary>
+        /// Number of VMs to be deployed.
+        /// </summary>
         [Input("numberOfVms", required: true)]
         public Input<int> NumberOfVms { get; set; } = null!;
 
         [Input("overrideVmConfigMaps")]
         private InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapArgs>? _overrideVmConfigMaps;
+
+        /// <summary>
+        /// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
+        /// </summary>
         public InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapArgs> OverrideVmConfigMaps
         {
             get => _overrideVmConfigMaps ?? (_overrideVmConfigMaps = new InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapArgs>());
             set => _overrideVmConfigMaps = value;
         }
 
+        /// <summary>
+        /// The identifier of a Template Version.
+        /// </summary>
         [Input("versionId")]
         public Input<string>? VersionId { get; set; }
 
@@ -103,23 +168,39 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class DeployTemplatesV2State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The identifier of the Cluster where the VM(s) will be created using a Template.
+        /// </summary>
         [Input("clusterReference")]
         public Input<string>? ClusterReference { get; set; }
 
+        /// <summary>
+        /// The identifier of a Template.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Number of VMs to be deployed.
+        /// </summary>
         [Input("numberOfVms")]
         public Input<int>? NumberOfVms { get; set; }
 
         [Input("overrideVmConfigMaps")]
         private InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapGetArgs>? _overrideVmConfigMaps;
+
+        /// <summary>
+        /// The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
+        /// </summary>
         public InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapGetArgs> OverrideVmConfigMaps
         {
             get => _overrideVmConfigMaps ?? (_overrideVmConfigMaps = new InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapGetArgs>());
             set => _overrideVmConfigMaps = value;
         }
 
+        /// <summary>
+        /// The identifier of a Template Version.
+        /// </summary>
         [Input("versionId")]
         public Input<string>? VersionId { get; set; }
 

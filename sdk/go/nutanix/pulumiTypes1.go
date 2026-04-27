@@ -33087,9 +33087,12 @@ func (o PbrV2MetadataArrayOutput) Index(i pulumi.IntInput) PbrV2MetadataOutput {
 }
 
 type PbrV2Policy struct {
-	IsBidirectional *bool                     `pulumi:"isBidirectional"`
-	PolicyActions   []PbrV2PolicyPolicyAction `pulumi:"policyActions"`
-	PolicyMatches   []PbrV2PolicyPolicyMatch  `pulumi:"policyMatches"`
+	// If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
+	IsBidirectional *bool `pulumi:"isBidirectional"`
+	// The action to be taken on the traffic matching the routing policy.
+	PolicyActions []PbrV2PolicyPolicyAction `pulumi:"policyActions"`
+	// Match condition for the traffic that is entering the VPC.
+	PolicyMatches []PbrV2PolicyPolicyMatch `pulumi:"policyMatches"`
 }
 
 // PbrV2PolicyInput is an input type that accepts PbrV2PolicyArgs and PbrV2PolicyOutput values.
@@ -33104,9 +33107,12 @@ type PbrV2PolicyInput interface {
 }
 
 type PbrV2PolicyArgs struct {
-	IsBidirectional pulumi.BoolPtrInput               `pulumi:"isBidirectional"`
-	PolicyActions   PbrV2PolicyPolicyActionArrayInput `pulumi:"policyActions"`
-	PolicyMatches   PbrV2PolicyPolicyMatchArrayInput  `pulumi:"policyMatches"`
+	// If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
+	IsBidirectional pulumi.BoolPtrInput `pulumi:"isBidirectional"`
+	// The action to be taken on the traffic matching the routing policy.
+	PolicyActions PbrV2PolicyPolicyActionArrayInput `pulumi:"policyActions"`
+	// Match condition for the traffic that is entering the VPC.
+	PolicyMatches PbrV2PolicyPolicyMatchArrayInput `pulumi:"policyMatches"`
 }
 
 func (PbrV2PolicyArgs) ElementType() reflect.Type {
@@ -33160,14 +33166,17 @@ func (o PbrV2PolicyOutput) ToPbrV2PolicyOutputWithContext(ctx context.Context) P
 	return o
 }
 
+// If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
 func (o PbrV2PolicyOutput) IsBidirectional() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v PbrV2Policy) *bool { return v.IsBidirectional }).(pulumi.BoolPtrOutput)
 }
 
+// The action to be taken on the traffic matching the routing policy.
 func (o PbrV2PolicyOutput) PolicyActions() PbrV2PolicyPolicyActionArrayOutput {
 	return o.ApplyT(func(v PbrV2Policy) []PbrV2PolicyPolicyAction { return v.PolicyActions }).(PbrV2PolicyPolicyActionArrayOutput)
 }
 
+// Match condition for the traffic that is entering the VPC.
 func (o PbrV2PolicyOutput) PolicyMatches() PbrV2PolicyPolicyMatchArrayOutput {
 	return o.ApplyT(func(v PbrV2Policy) []PbrV2PolicyPolicyMatch { return v.PolicyMatches }).(PbrV2PolicyPolicyMatchArrayOutput)
 }
@@ -33193,9 +33202,12 @@ func (o PbrV2PolicyArrayOutput) Index(i pulumi.IntInput) PbrV2PolicyOutput {
 }
 
 type PbrV2PolicyPolicyAction struct {
-	ActionType         string                                    `pulumi:"actionType"`
+	// Routing policy action type.
+	ActionType string `pulumi:"actionType"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
 	NexthopIpAddresses []PbrV2PolicyPolicyActionNexthopIpAddress `pulumi:"nexthopIpAddresses"`
-	RerouteParams      []PbrV2PolicyPolicyActionRerouteParam     `pulumi:"rerouteParams"`
+	// Routing policy Reroute params.
+	RerouteParams []PbrV2PolicyPolicyActionRerouteParam `pulumi:"rerouteParams"`
 }
 
 // PbrV2PolicyPolicyActionInput is an input type that accepts PbrV2PolicyPolicyActionArgs and PbrV2PolicyPolicyActionOutput values.
@@ -33210,9 +33222,12 @@ type PbrV2PolicyPolicyActionInput interface {
 }
 
 type PbrV2PolicyPolicyActionArgs struct {
-	ActionType         pulumi.StringInput                                `pulumi:"actionType"`
+	// Routing policy action type.
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
 	NexthopIpAddresses PbrV2PolicyPolicyActionNexthopIpAddressArrayInput `pulumi:"nexthopIpAddresses"`
-	RerouteParams      PbrV2PolicyPolicyActionRerouteParamArrayInput     `pulumi:"rerouteParams"`
+	// Routing policy Reroute params.
+	RerouteParams PbrV2PolicyPolicyActionRerouteParamArrayInput `pulumi:"rerouteParams"`
 }
 
 func (PbrV2PolicyPolicyActionArgs) ElementType() reflect.Type {
@@ -33266,14 +33281,17 @@ func (o PbrV2PolicyPolicyActionOutput) ToPbrV2PolicyPolicyActionOutputWithContex
 	return o
 }
 
+// Routing policy action type.
 func (o PbrV2PolicyPolicyActionOutput) ActionType() pulumi.StringOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyAction) string { return v.ActionType }).(pulumi.StringOutput)
 }
 
+// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
 func (o PbrV2PolicyPolicyActionOutput) NexthopIpAddresses() PbrV2PolicyPolicyActionNexthopIpAddressArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyAction) []PbrV2PolicyPolicyActionNexthopIpAddress { return v.NexthopIpAddresses }).(PbrV2PolicyPolicyActionNexthopIpAddressArrayOutput)
 }
 
+// Routing policy Reroute params.
 func (o PbrV2PolicyPolicyActionOutput) RerouteParams() PbrV2PolicyPolicyActionRerouteParamArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyAction) []PbrV2PolicyPolicyActionRerouteParam { return v.RerouteParams }).(PbrV2PolicyPolicyActionRerouteParamArrayOutput)
 }
@@ -33299,7 +33317,9 @@ func (o PbrV2PolicyPolicyActionArrayOutput) Index(i pulumi.IntInput) PbrV2Policy
 }
 
 type PbrV2PolicyPolicyActionNexthopIpAddress struct {
+	// IPv4 Object.
 	Ipv4s []PbrV2PolicyPolicyActionNexthopIpAddressIpv4 `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s []PbrV2PolicyPolicyActionNexthopIpAddressIpv6 `pulumi:"ipv6s"`
 }
 
@@ -33315,7 +33335,9 @@ type PbrV2PolicyPolicyActionNexthopIpAddressInput interface {
 }
 
 type PbrV2PolicyPolicyActionNexthopIpAddressArgs struct {
+	// IPv4 Object.
 	Ipv4s PbrV2PolicyPolicyActionNexthopIpAddressIpv4ArrayInput `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s PbrV2PolicyPolicyActionNexthopIpAddressIpv6ArrayInput `pulumi:"ipv6s"`
 }
 
@@ -33370,12 +33392,14 @@ func (o PbrV2PolicyPolicyActionNexthopIpAddressOutput) ToPbrV2PolicyPolicyAction
 	return o
 }
 
+// IPv4 Object.
 func (o PbrV2PolicyPolicyActionNexthopIpAddressOutput) Ipv4s() PbrV2PolicyPolicyActionNexthopIpAddressIpv4ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionNexthopIpAddress) []PbrV2PolicyPolicyActionNexthopIpAddressIpv4 {
 		return v.Ipv4s
 	}).(PbrV2PolicyPolicyActionNexthopIpAddressIpv4ArrayOutput)
 }
 
+// IPv6 Object.
 func (o PbrV2PolicyPolicyActionNexthopIpAddressOutput) Ipv6s() PbrV2PolicyPolicyActionNexthopIpAddressIpv6ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionNexthopIpAddress) []PbrV2PolicyPolicyActionNexthopIpAddressIpv6 {
 		return v.Ipv6s
@@ -33403,8 +33427,10 @@ func (o PbrV2PolicyPolicyActionNexthopIpAddressArrayOutput) Index(i pulumi.IntIn
 }
 
 type PbrV2PolicyPolicyActionNexthopIpAddressIpv4 struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyActionNexthopIpAddressIpv4Input is an input type that accepts PbrV2PolicyPolicyActionNexthopIpAddressIpv4Args and PbrV2PolicyPolicyActionNexthopIpAddressIpv4Output values.
@@ -33419,8 +33445,10 @@ type PbrV2PolicyPolicyActionNexthopIpAddressIpv4Input interface {
 }
 
 type PbrV2PolicyPolicyActionNexthopIpAddressIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyActionNexthopIpAddressIpv4Args) ElementType() reflect.Type {
@@ -33474,10 +33502,12 @@ func (o PbrV2PolicyPolicyActionNexthopIpAddressIpv4Output) ToPbrV2PolicyPolicyAc
 	return o
 }
 
+// The prefix length of the network to which this host IPv4/IPv6 address belongs.
 func (o PbrV2PolicyPolicyActionNexthopIpAddressIpv4Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionNexthopIpAddressIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyActionNexthopIpAddressIpv4Output) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionNexthopIpAddressIpv4) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -33503,8 +33533,9 @@ func (o PbrV2PolicyPolicyActionNexthopIpAddressIpv4ArrayOutput) Index(i pulumi.I
 }
 
 type PbrV2PolicyPolicyActionNexthopIpAddressIpv6 struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyActionNexthopIpAddressIpv6Input is an input type that accepts PbrV2PolicyPolicyActionNexthopIpAddressIpv6Args and PbrV2PolicyPolicyActionNexthopIpAddressIpv6Output values.
@@ -33519,8 +33550,9 @@ type PbrV2PolicyPolicyActionNexthopIpAddressIpv6Input interface {
 }
 
 type PbrV2PolicyPolicyActionNexthopIpAddressIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyActionNexthopIpAddressIpv6Args) ElementType() reflect.Type {
@@ -33578,6 +33610,7 @@ func (o PbrV2PolicyPolicyActionNexthopIpAddressIpv6Output) PrefixLength() pulumi
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionNexthopIpAddressIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyActionNexthopIpAddressIpv6Output) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionNexthopIpAddressIpv6) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -33603,10 +33636,14 @@ func (o PbrV2PolicyPolicyActionNexthopIpAddressIpv6ArrayOutput) Index(i pulumi.I
 }
 
 type PbrV2PolicyPolicyActionRerouteParam struct {
-	EgressServiceIps      []PbrV2PolicyPolicyActionRerouteParamEgressServiceIp  `pulumi:"egressServiceIps"`
-	IngressServiceIps     []PbrV2PolicyPolicyActionRerouteParamIngressServiceIp `pulumi:"ingressServiceIps"`
-	RerouteFallbackAction *string                                               `pulumi:"rerouteFallbackAction"`
-	ServiceIps            []PbrV2PolicyPolicyActionRerouteParamServiceIp        `pulumi:"serviceIps"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	EgressServiceIps []PbrV2PolicyPolicyActionRerouteParamEgressServiceIp `pulumi:"egressServiceIps"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	IngressServiceIps []PbrV2PolicyPolicyActionRerouteParamIngressServiceIp `pulumi:"ingressServiceIps"`
+	// Type of fallback action in reroute case when service VM is down. Acceptable values are "PASSTHROUGH", "NO_ACTION", "ALLOW", "DENY".
+	RerouteFallbackAction *string `pulumi:"rerouteFallbackAction"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	ServiceIps []PbrV2PolicyPolicyActionRerouteParamServiceIp `pulumi:"serviceIps"`
 }
 
 // PbrV2PolicyPolicyActionRerouteParamInput is an input type that accepts PbrV2PolicyPolicyActionRerouteParamArgs and PbrV2PolicyPolicyActionRerouteParamOutput values.
@@ -33621,10 +33658,14 @@ type PbrV2PolicyPolicyActionRerouteParamInput interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamArgs struct {
-	EgressServiceIps      PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArrayInput  `pulumi:"egressServiceIps"`
-	IngressServiceIps     PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArrayInput `pulumi:"ingressServiceIps"`
-	RerouteFallbackAction pulumi.StringPtrInput                                         `pulumi:"rerouteFallbackAction"`
-	ServiceIps            PbrV2PolicyPolicyActionRerouteParamServiceIpArrayInput        `pulumi:"serviceIps"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	EgressServiceIps PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArrayInput `pulumi:"egressServiceIps"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	IngressServiceIps PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArrayInput `pulumi:"ingressServiceIps"`
+	// Type of fallback action in reroute case when service VM is down. Acceptable values are "PASSTHROUGH", "NO_ACTION", "ALLOW", "DENY".
+	RerouteFallbackAction pulumi.StringPtrInput `pulumi:"rerouteFallbackAction"`
+	// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	ServiceIps PbrV2PolicyPolicyActionRerouteParamServiceIpArrayInput `pulumi:"serviceIps"`
 }
 
 func (PbrV2PolicyPolicyActionRerouteParamArgs) ElementType() reflect.Type {
@@ -33678,22 +33719,26 @@ func (o PbrV2PolicyPolicyActionRerouteParamOutput) ToPbrV2PolicyPolicyActionRero
 	return o
 }
 
+// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
 func (o PbrV2PolicyPolicyActionRerouteParamOutput) EgressServiceIps() PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParam) []PbrV2PolicyPolicyActionRerouteParamEgressServiceIp {
 		return v.EgressServiceIps
 	}).(PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArrayOutput)
 }
 
+// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
 func (o PbrV2PolicyPolicyActionRerouteParamOutput) IngressServiceIps() PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParam) []PbrV2PolicyPolicyActionRerouteParamIngressServiceIp {
 		return v.IngressServiceIps
 	}).(PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArrayOutput)
 }
 
+// Type of fallback action in reroute case when service VM is down. Acceptable values are "PASSTHROUGH", "NO_ACTION", "ALLOW", "DENY".
 func (o PbrV2PolicyPolicyActionRerouteParamOutput) RerouteFallbackAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParam) *string { return v.RerouteFallbackAction }).(pulumi.StringPtrOutput)
 }
 
+// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
 func (o PbrV2PolicyPolicyActionRerouteParamOutput) ServiceIps() PbrV2PolicyPolicyActionRerouteParamServiceIpArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParam) []PbrV2PolicyPolicyActionRerouteParamServiceIp {
 		return v.ServiceIps
@@ -33721,7 +33766,9 @@ func (o PbrV2PolicyPolicyActionRerouteParamArrayOutput) Index(i pulumi.IntInput)
 }
 
 type PbrV2PolicyPolicyActionRerouteParamEgressServiceIp struct {
+	// IPv4 Object.
 	Ipv4s []PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4 `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s []PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6 `pulumi:"ipv6s"`
 }
 
@@ -33737,7 +33784,9 @@ type PbrV2PolicyPolicyActionRerouteParamEgressServiceIpInput interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArgs struct {
+	// IPv4 Object.
 	Ipv4s PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6ArrayInput `pulumi:"ipv6s"`
 }
 
@@ -33792,12 +33841,14 @@ func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpOutput) ToPbrV2PolicyP
 	return o
 }
 
+// IPv4 Object.
 func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpOutput) Ipv4s() PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamEgressServiceIp) []PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4 {
 		return v.Ipv4s
 	}).(PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4ArrayOutput)
 }
 
+// IPv6 Object.
 func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpOutput) Ipv6s() PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamEgressServiceIp) []PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6 {
 		return v.Ipv6s
@@ -33825,8 +33876,10 @@ func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpArrayOutput) Index(i p
 }
 
 type PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4 struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Input is an input type that accepts PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Args and PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Output values.
@@ -33841,8 +33894,10 @@ type PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Input interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Args) ElementType() reflect.Type {
@@ -33896,10 +33951,12 @@ func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Output) ToPbrV2Pol
 	return o
 }
 
+// The prefix length of the network to which this host IPv4/IPv6 address belongs.
 func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4Output) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -33925,8 +33982,9 @@ func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4ArrayOutput) Index
 }
 
 type PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6 struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Input is an input type that accepts PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Args and PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Output values.
@@ -33941,8 +33999,9 @@ type PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Input interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Args) ElementType() reflect.Type {
@@ -34000,6 +34059,7 @@ func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Output) PrefixLeng
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6Output) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -34025,7 +34085,9 @@ func (o PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6ArrayOutput) Index
 }
 
 type PbrV2PolicyPolicyActionRerouteParamIngressServiceIp struct {
+	// IPv4 Object.
 	Ipv4s []PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4 `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s []PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6 `pulumi:"ipv6s"`
 }
 
@@ -34041,7 +34103,9 @@ type PbrV2PolicyPolicyActionRerouteParamIngressServiceIpInput interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArgs struct {
+	// IPv4 Object.
 	Ipv4s PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6ArrayInput `pulumi:"ipv6s"`
 }
 
@@ -34096,12 +34160,14 @@ func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpOutput) ToPbrV2Policy
 	return o
 }
 
+// IPv4 Object.
 func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpOutput) Ipv4s() PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamIngressServiceIp) []PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4 {
 		return v.Ipv4s
 	}).(PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4ArrayOutput)
 }
 
+// IPv6 Object.
 func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpOutput) Ipv6s() PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamIngressServiceIp) []PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6 {
 		return v.Ipv6s
@@ -34129,8 +34195,10 @@ func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpArrayOutput) Index(i 
 }
 
 type PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4 struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Input is an input type that accepts PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Args and PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Output values.
@@ -34145,8 +34213,10 @@ type PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Input interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Args) ElementType() reflect.Type {
@@ -34200,10 +34270,12 @@ func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Output) ToPbrV2Po
 	return o
 }
 
+// The prefix length of the network to which this host IPv4/IPv6 address belongs.
 func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4Output) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -34229,8 +34301,9 @@ func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4ArrayOutput) Inde
 }
 
 type PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6 struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6Input is an input type that accepts PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6Args and PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6Output values.
@@ -34245,8 +34318,9 @@ type PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6Input interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6Args) ElementType() reflect.Type {
@@ -34304,6 +34378,7 @@ func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6Output) PrefixLen
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6Output) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -34329,7 +34404,9 @@ func (o PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6ArrayOutput) Inde
 }
 
 type PbrV2PolicyPolicyActionRerouteParamServiceIp struct {
+	// IPv4 Object.
 	Ipv4s []PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4 `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s []PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6 `pulumi:"ipv6s"`
 }
 
@@ -34345,7 +34422,9 @@ type PbrV2PolicyPolicyActionRerouteParamServiceIpInput interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamServiceIpArgs struct {
+	// IPv4 Object.
 	Ipv4s PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6ArrayInput `pulumi:"ipv6s"`
 }
 
@@ -34400,12 +34479,14 @@ func (o PbrV2PolicyPolicyActionRerouteParamServiceIpOutput) ToPbrV2PolicyPolicyA
 	return o
 }
 
+// IPv4 Object.
 func (o PbrV2PolicyPolicyActionRerouteParamServiceIpOutput) Ipv4s() PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamServiceIp) []PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4 {
 		return v.Ipv4s
 	}).(PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4ArrayOutput)
 }
 
+// IPv6 Object.
 func (o PbrV2PolicyPolicyActionRerouteParamServiceIpOutput) Ipv6s() PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamServiceIp) []PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6 {
 		return v.Ipv6s
@@ -34433,8 +34514,10 @@ func (o PbrV2PolicyPolicyActionRerouteParamServiceIpArrayOutput) Index(i pulumi.
 }
 
 type PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4 struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Input is an input type that accepts PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Args and PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Output values.
@@ -34449,8 +34532,10 @@ type PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Input interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Args) ElementType() reflect.Type {
@@ -34504,10 +34589,12 @@ func (o PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Output) ToPbrV2PolicyPol
 	return o
 }
 
+// The prefix length of the network to which this host IPv4/IPv6 address belongs.
 func (o PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4Output) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -34533,8 +34620,9 @@ func (o PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4ArrayOutput) Index(i pul
 }
 
 type PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6 struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6Input is an input type that accepts PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6Args and PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6Output values.
@@ -34549,8 +34637,9 @@ type PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6Input interface {
 }
 
 type PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6Args) ElementType() reflect.Type {
@@ -34608,6 +34697,7 @@ func (o PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6Output) PrefixLength() p
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6Output) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -34633,10 +34723,14 @@ func (o PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6ArrayOutput) Index(i pul
 }
 
 type PbrV2PolicyPolicyMatch struct {
-	Destinations       []PbrV2PolicyPolicyMatchDestination       `pulumi:"destinations"`
+	// Address Type like "EXTERNAL" or "ANY".
+	Destinations []PbrV2PolicyPolicyMatchDestination `pulumi:"destinations"`
+	// Protocol Params Object.
 	ProtocolParameters []PbrV2PolicyPolicyMatchProtocolParameter `pulumi:"protocolParameters"`
-	ProtocolType       string                                    `pulumi:"protocolType"`
-	Sources            []PbrV2PolicyPolicyMatchSource            `pulumi:"sources"`
+	// Routing Policy IP protocol type. Acceptable values are "TCP", "UDP", "PROTOCOL_NUMBER", "ANY", "ICMP" .
+	ProtocolType string `pulumi:"protocolType"`
+	// Address Type like "EXTERNAL" or "ANY".
+	Sources []PbrV2PolicyPolicyMatchSource `pulumi:"sources"`
 }
 
 // PbrV2PolicyPolicyMatchInput is an input type that accepts PbrV2PolicyPolicyMatchArgs and PbrV2PolicyPolicyMatchOutput values.
@@ -34651,10 +34745,14 @@ type PbrV2PolicyPolicyMatchInput interface {
 }
 
 type PbrV2PolicyPolicyMatchArgs struct {
-	Destinations       PbrV2PolicyPolicyMatchDestinationArrayInput       `pulumi:"destinations"`
+	// Address Type like "EXTERNAL" or "ANY".
+	Destinations PbrV2PolicyPolicyMatchDestinationArrayInput `pulumi:"destinations"`
+	// Protocol Params Object.
 	ProtocolParameters PbrV2PolicyPolicyMatchProtocolParameterArrayInput `pulumi:"protocolParameters"`
-	ProtocolType       pulumi.StringInput                                `pulumi:"protocolType"`
-	Sources            PbrV2PolicyPolicyMatchSourceArrayInput            `pulumi:"sources"`
+	// Routing Policy IP protocol type. Acceptable values are "TCP", "UDP", "PROTOCOL_NUMBER", "ANY", "ICMP" .
+	ProtocolType pulumi.StringInput `pulumi:"protocolType"`
+	// Address Type like "EXTERNAL" or "ANY".
+	Sources PbrV2PolicyPolicyMatchSourceArrayInput `pulumi:"sources"`
 }
 
 func (PbrV2PolicyPolicyMatchArgs) ElementType() reflect.Type {
@@ -34708,18 +34806,22 @@ func (o PbrV2PolicyPolicyMatchOutput) ToPbrV2PolicyPolicyMatchOutputWithContext(
 	return o
 }
 
+// Address Type like "EXTERNAL" or "ANY".
 func (o PbrV2PolicyPolicyMatchOutput) Destinations() PbrV2PolicyPolicyMatchDestinationArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatch) []PbrV2PolicyPolicyMatchDestination { return v.Destinations }).(PbrV2PolicyPolicyMatchDestinationArrayOutput)
 }
 
+// Protocol Params Object.
 func (o PbrV2PolicyPolicyMatchOutput) ProtocolParameters() PbrV2PolicyPolicyMatchProtocolParameterArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatch) []PbrV2PolicyPolicyMatchProtocolParameter { return v.ProtocolParameters }).(PbrV2PolicyPolicyMatchProtocolParameterArrayOutput)
 }
 
+// Routing Policy IP protocol type. Acceptable values are "TCP", "UDP", "PROTOCOL_NUMBER", "ANY", "ICMP" .
 func (o PbrV2PolicyPolicyMatchOutput) ProtocolType() pulumi.StringOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatch) string { return v.ProtocolType }).(pulumi.StringOutput)
 }
 
+// Address Type like "EXTERNAL" or "ANY".
 func (o PbrV2PolicyPolicyMatchOutput) Sources() PbrV2PolicyPolicyMatchSourceArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatch) []PbrV2PolicyPolicyMatchSource { return v.Sources }).(PbrV2PolicyPolicyMatchSourceArrayOutput)
 }
@@ -34745,7 +34847,9 @@ func (o PbrV2PolicyPolicyMatchArrayOutput) Index(i pulumi.IntInput) PbrV2PolicyP
 }
 
 type PbrV2PolicyPolicyMatchDestination struct {
-	AddressType    string                                          `pulumi:"addressType"`
+	// Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+	AddressType string `pulumi:"addressType"`
+	// Subnet Prefix
 	SubnetPrefixes []PbrV2PolicyPolicyMatchDestinationSubnetPrefix `pulumi:"subnetPrefixes"`
 }
 
@@ -34761,7 +34865,9 @@ type PbrV2PolicyPolicyMatchDestinationInput interface {
 }
 
 type PbrV2PolicyPolicyMatchDestinationArgs struct {
-	AddressType    pulumi.StringInput                                      `pulumi:"addressType"`
+	// Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+	AddressType pulumi.StringInput `pulumi:"addressType"`
+	// Subnet Prefix
 	SubnetPrefixes PbrV2PolicyPolicyMatchDestinationSubnetPrefixArrayInput `pulumi:"subnetPrefixes"`
 }
 
@@ -34816,10 +34922,12 @@ func (o PbrV2PolicyPolicyMatchDestinationOutput) ToPbrV2PolicyPolicyMatchDestina
 	return o
 }
 
+// Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
 func (o PbrV2PolicyPolicyMatchDestinationOutput) AddressType() pulumi.StringOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestination) string { return v.AddressType }).(pulumi.StringOutput)
 }
 
+// Subnet Prefix
 func (o PbrV2PolicyPolicyMatchDestinationOutput) SubnetPrefixes() PbrV2PolicyPolicyMatchDestinationSubnetPrefixArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestination) []PbrV2PolicyPolicyMatchDestinationSubnetPrefix {
 		return v.SubnetPrefixes
@@ -34847,7 +34955,9 @@ func (o PbrV2PolicyPolicyMatchDestinationArrayOutput) Index(i pulumi.IntInput) P
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefix struct {
+	// IPv4 Object.
 	Ipv4s []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 `pulumi:"ipv6s"`
 }
 
@@ -34863,7 +34973,9 @@ type PbrV2PolicyPolicyMatchDestinationSubnetPrefixInput interface {
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixArgs struct {
+	// IPv4 Object.
 	Ipv4s PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4ArrayInput `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6ArrayInput `pulumi:"ipv6s"`
 }
 
@@ -34918,12 +35030,14 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixOutput) ToPbrV2PolicyPolicy
 	return o
 }
 
+// IPv4 Object.
 func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixOutput) Ipv4s() PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefix) []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 {
 		return v.Ipv4s
 	}).(PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4ArrayOutput)
 }
 
+// IPv6 Object.
 func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixOutput) Ipv6s() PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefix) []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 {
 		return v.Ipv6s
@@ -34951,8 +35065,10 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixArrayOutput) Index(i pulumi
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 struct {
-	Ips          []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip `pulumi:"ips"`
-	PrefixLength *int                                                  `pulumi:"prefixLength"`
+	// IP of address
+	Ips []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip `pulumi:"ips"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
 }
 
 // PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Input is an input type that accepts PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Args and PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Output values.
@@ -34967,8 +35083,10 @@ type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Input interface {
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Args struct {
-	Ips          PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArrayInput `pulumi:"ips"`
-	PrefixLength pulumi.IntPtrInput                                            `pulumi:"prefixLength"`
+	// IP of address
+	Ips PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArrayInput `pulumi:"ips"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 }
 
 func (PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Args) ElementType() reflect.Type {
@@ -35022,12 +35140,14 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Output) ToPbrV2PolicyPo
 	return o
 }
 
+// IP of address
 func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Output) Ips() PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4) []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
 		return v.Ips
 	}).(PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArrayOutput)
 }
 
+// The prefix length of the network to which this host IPv4/IPv6 address belongs.
 func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
@@ -35053,8 +35173,9 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4ArrayOutput) Index(i pu
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpInput is an input type that accepts PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgs and PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpOutput values.
@@ -35069,8 +35190,9 @@ type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpInput interface {
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgs struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgs) ElementType() reflect.Type {
@@ -35128,6 +35250,7 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpOutput) PrefixLength(
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -35153,6 +35276,7 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArrayOutput) Index(i 
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 struct {
+	// IP of address
 	Ips          []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip `pulumi:"ips"`
 	PrefixLength *int                                                  `pulumi:"prefixLength"`
 }
@@ -35169,6 +35293,7 @@ type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Input interface {
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Args struct {
+	// IP of address
 	Ips          PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArrayInput `pulumi:"ips"`
 	PrefixLength pulumi.IntPtrInput                                            `pulumi:"prefixLength"`
 }
@@ -35224,6 +35349,7 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Output) ToPbrV2PolicyPo
 	return o
 }
 
+// IP of address
 func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Output) Ips() PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6) []PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip {
 		return v.Ips
@@ -35255,8 +35381,9 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6ArrayOutput) Index(i pu
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpInput is an input type that accepts PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArgs and PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpOutput values.
@@ -35271,8 +35398,9 @@ type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpInput interface {
 }
 
 type PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArgs struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArgs) ElementType() reflect.Type {
@@ -35330,6 +35458,7 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpOutput) PrefixLength(
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -35355,9 +35484,12 @@ func (o PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArrayOutput) Index(i 
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameter struct {
-	IcmpObjects              []PbrV2PolicyPolicyMatchProtocolParameterIcmpObject              `pulumi:"icmpObjects"`
+	// ICMP object
+	IcmpObjects []PbrV2PolicyPolicyMatchProtocolParameterIcmpObject `pulumi:"icmpObjects"`
+	// Layer Four Protocol Object.
 	LayerFourProtocolObjects []PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject `pulumi:"layerFourProtocolObjects"`
-	ProtocolNumberObjects    []PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject    `pulumi:"protocolNumberObjects"`
+	// Protocol Number Object.
+	ProtocolNumberObjects []PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject `pulumi:"protocolNumberObjects"`
 }
 
 // PbrV2PolicyPolicyMatchProtocolParameterInput is an input type that accepts PbrV2PolicyPolicyMatchProtocolParameterArgs and PbrV2PolicyPolicyMatchProtocolParameterOutput values.
@@ -35372,9 +35504,12 @@ type PbrV2PolicyPolicyMatchProtocolParameterInput interface {
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterArgs struct {
-	IcmpObjects              PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectArrayInput              `pulumi:"icmpObjects"`
+	// ICMP object
+	IcmpObjects PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectArrayInput `pulumi:"icmpObjects"`
+	// Layer Four Protocol Object.
 	LayerFourProtocolObjects PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectArrayInput `pulumi:"layerFourProtocolObjects"`
-	ProtocolNumberObjects    PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectArrayInput    `pulumi:"protocolNumberObjects"`
+	// Protocol Number Object.
+	ProtocolNumberObjects PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectArrayInput `pulumi:"protocolNumberObjects"`
 }
 
 func (PbrV2PolicyPolicyMatchProtocolParameterArgs) ElementType() reflect.Type {
@@ -35428,18 +35563,21 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterOutput) ToPbrV2PolicyPolicyMatchP
 	return o
 }
 
+// ICMP object
 func (o PbrV2PolicyPolicyMatchProtocolParameterOutput) IcmpObjects() PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameter) []PbrV2PolicyPolicyMatchProtocolParameterIcmpObject {
 		return v.IcmpObjects
 	}).(PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectArrayOutput)
 }
 
+// Layer Four Protocol Object.
 func (o PbrV2PolicyPolicyMatchProtocolParameterOutput) LayerFourProtocolObjects() PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameter) []PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject {
 		return v.LayerFourProtocolObjects
 	}).(PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectArrayOutput)
 }
 
+// Protocol Number Object.
 func (o PbrV2PolicyPolicyMatchProtocolParameterOutput) ProtocolNumberObjects() PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameter) []PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject {
 		return v.ProtocolNumberObjects
@@ -35467,7 +35605,9 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterArrayOutput) Index(i pulumi.IntIn
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterIcmpObject struct {
+	// icmp code
 	IcmpCode *int `pulumi:"icmpCode"`
+	// icmp type
 	IcmpType *int `pulumi:"icmpType"`
 }
 
@@ -35483,7 +35623,9 @@ type PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectInput interface {
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectArgs struct {
+	// icmp code
 	IcmpCode pulumi.IntPtrInput `pulumi:"icmpCode"`
+	// icmp type
 	IcmpType pulumi.IntPtrInput `pulumi:"icmpType"`
 }
 
@@ -35538,10 +35680,12 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectOutput) ToPbrV2PolicyPo
 	return o
 }
 
+// icmp code
 func (o PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectOutput) IcmpCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterIcmpObject) *int { return v.IcmpCode }).(pulumi.IntPtrOutput)
 }
 
+// icmp type
 func (o PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectOutput) IcmpType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterIcmpObject) *int { return v.IcmpType }).(pulumi.IntPtrOutput)
 }
@@ -35567,8 +35711,10 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterIcmpObjectArrayOutput) Index(i pu
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject struct {
+	// Start and end port ranges object.
 	DestinationPortRanges []PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange `pulumi:"destinationPortRanges"`
-	SourcePortRanges      []PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange      `pulumi:"sourcePortRanges"`
+	// Start and end port ranges object.
+	SourcePortRanges []PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange `pulumi:"sourcePortRanges"`
 }
 
 // PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectInput is an input type that accepts PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectArgs and PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectOutput values.
@@ -35583,8 +35729,10 @@ type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectInput interfa
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectArgs struct {
+	// Start and end port ranges object.
 	DestinationPortRanges PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeArrayInput `pulumi:"destinationPortRanges"`
-	SourcePortRanges      PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeArrayInput      `pulumi:"sourcePortRanges"`
+	// Start and end port ranges object.
+	SourcePortRanges PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeArrayInput `pulumi:"sourcePortRanges"`
 }
 
 func (PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectArgs) ElementType() reflect.Type {
@@ -35638,12 +35786,14 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectOutput) To
 	return o
 }
 
+// Start and end port ranges object.
 func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectOutput) DestinationPortRanges() PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject) []PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange {
 		return v.DestinationPortRanges
 	}).(PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeArrayOutput)
 }
 
+// Start and end port ranges object.
 func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectOutput) SourcePortRanges() PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject) []PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange {
 		return v.SourcePortRanges
@@ -35671,7 +35821,9 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectArrayOutpu
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange struct {
-	EndPort   int `pulumi:"endPort"`
+	// End Port.
+	EndPort int `pulumi:"endPort"`
+	// Start Port.
 	StartPort int `pulumi:"startPort"`
 }
 
@@ -35687,7 +35839,9 @@ type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPo
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeArgs struct {
-	EndPort   pulumi.IntInput `pulumi:"endPort"`
+	// End Port.
+	EndPort pulumi.IntInput `pulumi:"endPort"`
+	// Start Port.
 	StartPort pulumi.IntInput `pulumi:"startPort"`
 }
 
@@ -35742,12 +35896,14 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinatio
 	return o
 }
 
+// End Port.
 func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeOutput) EndPort() pulumi.IntOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange) int {
 		return v.EndPort
 	}).(pulumi.IntOutput)
 }
 
+// Start Port.
 func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRangeOutput) StartPort() pulumi.IntOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange) int {
 		return v.StartPort
@@ -35775,7 +35931,9 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinatio
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange struct {
-	EndPort   int `pulumi:"endPort"`
+	// End Port.
+	EndPort int `pulumi:"endPort"`
+	// Start Port.
 	StartPort int `pulumi:"startPort"`
 }
 
@@ -35791,7 +35949,9 @@ type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRan
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeArgs struct {
-	EndPort   pulumi.IntInput `pulumi:"endPort"`
+	// End Port.
+	EndPort pulumi.IntInput `pulumi:"endPort"`
+	// Start Port.
 	StartPort pulumi.IntInput `pulumi:"startPort"`
 }
 
@@ -35846,12 +36006,14 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePort
 	return o
 }
 
+// End Port.
 func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeOutput) EndPort() pulumi.IntOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange) int {
 		return v.EndPort
 	}).(pulumi.IntOutput)
 }
 
+// Start Port.
 func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeOutput) StartPort() pulumi.IntOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange) int {
 		return v.StartPort
@@ -35879,6 +36041,7 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePort
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject struct {
+	// protocol number
 	ProtocolNumber int `pulumi:"protocolNumber"`
 }
 
@@ -35894,6 +36057,7 @@ type PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectInput interface 
 }
 
 type PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectArgs struct {
+	// protocol number
 	ProtocolNumber pulumi.IntInput `pulumi:"protocolNumber"`
 }
 
@@ -35948,6 +36112,7 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectOutput) ToPbr
 	return o
 }
 
+// protocol number
 func (o PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectOutput) ProtocolNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject) int { return v.ProtocolNumber }).(pulumi.IntOutput)
 }
@@ -35973,7 +36138,9 @@ func (o PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObjectArrayOutput) 
 }
 
 type PbrV2PolicyPolicyMatchSource struct {
-	AddressType    string                                     `pulumi:"addressType"`
+	// Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+	AddressType string `pulumi:"addressType"`
+	// Subnet Prefix
 	SubnetPrefixes []PbrV2PolicyPolicyMatchSourceSubnetPrefix `pulumi:"subnetPrefixes"`
 }
 
@@ -35989,7 +36156,9 @@ type PbrV2PolicyPolicyMatchSourceInput interface {
 }
 
 type PbrV2PolicyPolicyMatchSourceArgs struct {
-	AddressType    pulumi.StringInput                                 `pulumi:"addressType"`
+	// Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+	AddressType pulumi.StringInput `pulumi:"addressType"`
+	// Subnet Prefix
 	SubnetPrefixes PbrV2PolicyPolicyMatchSourceSubnetPrefixArrayInput `pulumi:"subnetPrefixes"`
 }
 
@@ -36044,10 +36213,12 @@ func (o PbrV2PolicyPolicyMatchSourceOutput) ToPbrV2PolicyPolicyMatchSourceOutput
 	return o
 }
 
+// Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
 func (o PbrV2PolicyPolicyMatchSourceOutput) AddressType() pulumi.StringOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSource) string { return v.AddressType }).(pulumi.StringOutput)
 }
 
+// Subnet Prefix
 func (o PbrV2PolicyPolicyMatchSourceOutput) SubnetPrefixes() PbrV2PolicyPolicyMatchSourceSubnetPrefixArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSource) []PbrV2PolicyPolicyMatchSourceSubnetPrefix {
 		return v.SubnetPrefixes
@@ -36075,7 +36246,9 @@ func (o PbrV2PolicyPolicyMatchSourceArrayOutput) Index(i pulumi.IntInput) PbrV2P
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefix struct {
+	// IPv4 Object.
 	Ipv4s []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 `pulumi:"ipv6s"`
 }
 
@@ -36091,7 +36264,9 @@ type PbrV2PolicyPolicyMatchSourceSubnetPrefixInput interface {
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixArgs struct {
+	// IPv4 Object.
 	Ipv4s PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4ArrayInput `pulumi:"ipv4s"`
+	// IPv6 Object.
 	Ipv6s PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6ArrayInput `pulumi:"ipv6s"`
 }
 
@@ -36146,12 +36321,14 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixOutput) ToPbrV2PolicyPolicyMatch
 	return o
 }
 
+// IPv4 Object.
 func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixOutput) Ipv4s() PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefix) []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 {
 		return v.Ipv4s
 	}).(PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4ArrayOutput)
 }
 
+// IPv6 Object.
 func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixOutput) Ipv6s() PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6ArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefix) []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 {
 		return v.Ipv6s
@@ -36179,8 +36356,10 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixArrayOutput) Index(i pulumi.IntI
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 struct {
-	Ips          []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip `pulumi:"ips"`
-	PrefixLength *int                                             `pulumi:"prefixLength"`
+	// IP of address
+	Ips []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip `pulumi:"ips"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
 }
 
 // PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Input is an input type that accepts PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Args and PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Output values.
@@ -36195,8 +36374,10 @@ type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Input interface {
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Args struct {
-	Ips          PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArrayInput `pulumi:"ips"`
-	PrefixLength pulumi.IntPtrInput                                       `pulumi:"prefixLength"`
+	// IP of address
+	Ips PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArrayInput `pulumi:"ips"`
+	// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 }
 
 func (PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Args) ElementType() reflect.Type {
@@ -36250,12 +36431,14 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Output) ToPbrV2PolicyPolicyM
 	return o
 }
 
+// IP of address
 func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Output) Ips() PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4) []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
 		return v.Ips
 	}).(PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArrayOutput)
 }
 
+// The prefix length of the network to which this host IPv4/IPv6 address belongs.
 func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Output) PrefixLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
@@ -36281,8 +36464,9 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4ArrayOutput) Index(i pulumi.
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpInput is an input type that accepts PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgs and PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpOutput values.
@@ -36297,8 +36481,9 @@ type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpInput interface {
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgs struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgs) ElementType() reflect.Type {
@@ -36356,6 +36541,7 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpOutput) PrefixLength() pul
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -36381,6 +36567,7 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArrayOutput) Index(i pulum
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 struct {
+	// IP of address
 	Ips          []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip `pulumi:"ips"`
 	PrefixLength *int                                             `pulumi:"prefixLength"`
 }
@@ -36397,6 +36584,7 @@ type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Input interface {
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Args struct {
+	// IP of address
 	Ips          PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArrayInput `pulumi:"ips"`
 	PrefixLength pulumi.IntPtrInput                                       `pulumi:"prefixLength"`
 }
@@ -36452,6 +36640,7 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Output) ToPbrV2PolicyPolicyM
 	return o
 }
 
+// IP of address
 func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Output) Ips() PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArrayOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6) []PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip {
 		return v.Ips
@@ -36483,8 +36672,9 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6ArrayOutput) Index(i pulumi.
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
+	PrefixLength *int `pulumi:"prefixLength"`
+	// ip value
+	Value *string `pulumi:"value"`
 }
 
 // PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpInput is an input type that accepts PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArgs and PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpOutput values.
@@ -36499,8 +36689,9 @@ type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpInput interface {
 }
 
 type PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArgs struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// ip value
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArgs) ElementType() reflect.Type {
@@ -36558,6 +36749,7 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpOutput) PrefixLength() pul
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
 }
 
+// ip value
 func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -36583,6 +36775,7 @@ func (o PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArrayOutput) Index(i pulum
 }
 
 type PbrV2Vpc struct {
+	// Name of the routing policy.
 	Name *string `pulumi:"name"`
 }
 
@@ -36598,6 +36791,7 @@ type PbrV2VpcInput interface {
 }
 
 type PbrV2VpcArgs struct {
+	// Name of the routing policy.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -36652,6 +36846,7 @@ func (o PbrV2VpcOutput) ToPbrV2VpcOutputWithContext(ctx context.Context) PbrV2Vp
 	return o
 }
 
+// Name of the routing policy.
 func (o PbrV2VpcOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PbrV2Vpc) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

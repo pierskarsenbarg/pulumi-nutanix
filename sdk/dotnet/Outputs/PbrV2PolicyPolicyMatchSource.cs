@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchSource
     {
+        /// <summary>
+        /// Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+        /// </summary>
         public readonly string AddressType;
+        /// <summary>
+        /// Subnet Prefix
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefix> SubnetPrefixes;
 
         [OutputConstructor]

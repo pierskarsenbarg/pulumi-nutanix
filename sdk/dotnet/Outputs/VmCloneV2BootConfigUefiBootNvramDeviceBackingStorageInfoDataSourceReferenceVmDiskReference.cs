@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference
     {
+        /// <summary>
+        /// - (Optional) Address of disk.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress> DiskAddresses;
+        /// <summary>
+        /// - (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+        /// </summary>
         public readonly string? DiskExtId;
+        /// <summary>
+        /// - (Optional) Reference to a VM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference> VmReferences;
 
         [OutputConstructor]

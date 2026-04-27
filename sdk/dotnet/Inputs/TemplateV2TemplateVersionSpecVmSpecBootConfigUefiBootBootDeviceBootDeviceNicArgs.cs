@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNicArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// MAC address of the emulated NIC.
+        /// </summary>
         [Input("macAddress")]
         public Input<string>? MacAddress { get; set; }
 

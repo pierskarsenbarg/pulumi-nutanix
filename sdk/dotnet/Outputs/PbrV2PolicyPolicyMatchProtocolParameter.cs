@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyMatchProtocolParameter
     {
+        /// <summary>
+        /// ICMP object
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchProtocolParameterIcmpObject> IcmpObjects;
+        /// <summary>
+        /// Layer Four Protocol Object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject> LayerFourProtocolObjects;
+        /// <summary>
+        /// Protocol Number Object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject> ProtocolNumberObjects;
 
         [OutputConstructor]

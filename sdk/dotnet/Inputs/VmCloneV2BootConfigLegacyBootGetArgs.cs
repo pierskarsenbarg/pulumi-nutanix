@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("bootDevices")]
         private InputList<Inputs.VmCloneV2BootConfigLegacyBootBootDeviceGetArgs>? _bootDevices;
+
+        /// <summary>
+        /// - (Optional) The Boot Device settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigLegacyBootBootDeviceGetArgs> BootDevices
         {
             get => _bootDevices ?? (_bootDevices = new InputList<Inputs.VmCloneV2BootConfigLegacyBootBootDeviceGetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("bootOrders")]
         private InputList<string>? _bootOrders;
+
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
         public InputList<string> BootOrders
         {
             get => _bootOrders ?? (_bootOrders = new InputList<string>());

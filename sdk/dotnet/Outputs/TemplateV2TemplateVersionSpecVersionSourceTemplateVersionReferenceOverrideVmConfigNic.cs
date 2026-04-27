@@ -14,9 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic
     {
+        /// <summary>
+        /// Defines a NIC emulated by the hypervisor
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo> BackingInfos;
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink> Links;
+        /// <summary>
+        /// Network information for a NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo> NetworkInfos;
         public readonly string? TenantId;
 

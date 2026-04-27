@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PbrV2PolicyPolicyActionNexthopIpAddressIpv4
     {
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// </summary>
         public readonly int? PrefixLength;
+        /// <summary>
+        /// ip value
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

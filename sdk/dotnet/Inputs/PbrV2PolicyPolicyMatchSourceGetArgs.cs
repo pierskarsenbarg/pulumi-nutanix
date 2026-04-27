@@ -13,11 +13,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PbrV2PolicyPolicyMatchSourceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Address Type. Acceptable values are "SUBNET", "EXTERNAL", "ANY" .
+        /// </summary>
         [Input("addressType", required: true)]
         public Input<string> AddressType { get; set; } = null!;
 
         [Input("subnetPrefixes")]
         private InputList<Inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixGetArgs>? _subnetPrefixes;
+
+        /// <summary>
+        /// Subnet Prefix
+        /// </summary>
         public InputList<Inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixGetArgs> SubnetPrefixes
         {
             get => _subnetPrefixes ?? (_subnetPrefixes = new InputList<Inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixGetArgs>());

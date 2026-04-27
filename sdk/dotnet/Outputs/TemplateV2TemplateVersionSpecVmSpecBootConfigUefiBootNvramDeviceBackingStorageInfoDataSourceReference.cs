@@ -14,7 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference
     {
+        /// <summary>
+        /// Image Reference
+        /// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference> ImageReferences;
+        /// <summary>
+        /// Vm Disk Reference
+        /// * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+        /// * `vm_disk_reference.disk_address`: (Optional) Disk address.
+        /// * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference> VmDiskReferences;
 
         [OutputConstructor]

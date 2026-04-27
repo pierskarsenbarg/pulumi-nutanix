@@ -14,7 +14,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress
     {
+        /// <summary>
+        /// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+        /// Valid values are:
+        /// - `SCSI` The type of disk bus is SCSI.
+        /// - `SPAPR` The type of disk bus is SPAPR.
+        /// - `PCI` The type of disk bus is PCI.
+        /// - `PCI` The type of disk bus is PCI.
+        /// - `SATA` The type of disk bus is SATA.
+        /// </summary>
         public readonly string? BusType;
+        /// <summary>
+        /// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
+        /// </summary>
         public readonly int? Index;
 
         [OutputConstructor]

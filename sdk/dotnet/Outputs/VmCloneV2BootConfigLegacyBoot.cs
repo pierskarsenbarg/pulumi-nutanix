@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2BootConfigLegacyBoot
     {
+        /// <summary>
+        /// - (Optional) The Boot Device settings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigLegacyBootBootDevice> BootDevices;
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
         public readonly ImmutableArray<string> BootOrders;
 
         [OutputConstructor]

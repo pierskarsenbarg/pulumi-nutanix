@@ -6,6 +6,26 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a datasource to View a SAML Identity Provider.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const idp = nutanix.getSamlIdentityProviderV2({
+ *     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+ * });
+ * ```
+ *
+ * ## Argument Reference
+ *
+ * The following arguments are supported:
+ *
+ * * `extId`: - External identifier of the SAML Identity Provider.
+ */
 export function getSamlIdentityProviderV2(args: GetSamlIdentityProviderV2Args, opts?: pulumi.InvokeOptions): Promise<GetSamlIdentityProviderV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", {
@@ -17,6 +37,9 @@ export function getSamlIdentityProviderV2(args: GetSamlIdentityProviderV2Args, o
  * A collection of arguments for invoking getSamlIdentityProviderV2.
  */
 export interface GetSamlIdentityProviderV2Args {
+    /**
+     * The External Identifier of the User Group.
+     */
     extId: string;
 }
 
@@ -24,24 +47,71 @@ export interface GetSamlIdentityProviderV2Args {
  * A collection of values returned by getSamlIdentityProviderV2.
  */
 export interface GetSamlIdentityProviderV2Result {
+    /**
+     * - User or Service who created the SAML Identity Provider.
+     */
     readonly createdBy: string;
+    /**
+     * - Creation time of the SAML Identity Provider.
+     */
     readonly createdTime: string;
     readonly customAttributes: string[];
     readonly emailAttribute: string;
+    /**
+     * - It will be used as Issuer in SAML authnRequest.
+     */
     readonly entityIssuer: string;
+    /**
+     * The External Identifier of the User Group.
+     */
     readonly extId: string;
     readonly groupsAttribute: string;
+    /**
+     * - Delimiter is used to split the value of attribute into multiple groups.
+     */
     readonly groupsDelim: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+     */
     readonly idpMetadatas: outputs.GetSamlIdentityProviderV2IdpMetadata[];
+    /**
+     * - Flag indicating signing of SAML authnRequests.
+     */
     readonly isSignedAuthnReqEnabled: boolean;
+    /**
+     * - Last updated time of the SAML Identity Provider.
+     */
     readonly lastUpdatedTime: string;
+    /**
+     * - Unique name of the IDP.
+     */
     readonly name: string;
     readonly usernameAttribute: string;
 }
+/**
+ * Provides a datasource to View a SAML Identity Provider.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const idp = nutanix.getSamlIdentityProviderV2({
+ *     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+ * });
+ * ```
+ *
+ * ## Argument Reference
+ *
+ * The following arguments are supported:
+ *
+ * * `extId`: - External identifier of the SAML Identity Provider.
+ */
 export function getSamlIdentityProviderV2Output(args: GetSamlIdentityProviderV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSamlIdentityProviderV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", {
@@ -53,5 +123,8 @@ export function getSamlIdentityProviderV2Output(args: GetSamlIdentityProviderV2O
  * A collection of arguments for invoking getSamlIdentityProviderV2.
  */
 export interface GetSamlIdentityProviderV2OutputArgs {
+    /**
+     * The External Identifier of the User Group.
+     */
     extId: pulumi.Input<string>;
 }

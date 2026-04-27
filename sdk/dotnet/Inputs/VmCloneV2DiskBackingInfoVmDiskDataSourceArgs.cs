@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("references")]
         private InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceArgs>? _references;
+
+        /// <summary>
+        /// - (Optional) Data Source Reference settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceArgs> References
         {
             get => _references ?? (_references = new InputList<Inputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceArgs>());

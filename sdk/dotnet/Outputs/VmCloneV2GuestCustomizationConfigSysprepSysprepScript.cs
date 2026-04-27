@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VmCloneV2GuestCustomizationConfigSysprepSysprepScript
     {
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes in cloud init.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue> CustomKeyValues;
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml> UnattendXmls;
 
         [OutputConstructor]

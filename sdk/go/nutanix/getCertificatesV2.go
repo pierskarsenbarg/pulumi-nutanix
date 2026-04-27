@@ -11,6 +11,33 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Get a list of the SSL certificates which can be used to access an Object store.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetCertificatesV2(ctx, &nutanix.GetCertificatesV2Args{
+//				ObjectStoreExtId: "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetCertificatesV2(ctx *pulumi.Context, args *GetCertificatesV2Args, opts ...pulumi.InvokeOption) (*GetCertificatesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCertificatesV2Result
@@ -23,15 +50,27 @@ func GetCertificatesV2(ctx *pulumi.Context, args *GetCertificatesV2Args, opts ..
 
 // A collection of arguments for invoking getCertificatesV2.
 type GetCertificatesV2Args struct {
-	Filter           *string `pulumi:"filter"`
-	Limit            *int    `pulumi:"limit"`
-	ObjectStoreExtId string  `pulumi:"objectStoreExtId"`
-	Page             *int    `pulumi:"page"`
-	Select           *string `pulumi:"select"`
+	// -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+	// - alternateFqdns/value
+	// - alternateIps/ipv4/value
+	Filter *string `pulumi:"filter"`
+	// -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set. Default value is 50.
+	Limit *int `pulumi:"limit"`
+	// -(Required) The UUID of the Object store.
+	ObjectStoreExtId string `pulumi:"objectStoreExtId"`
+	// -(Optional) A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results. Default value is 0.
+	Page *int `pulumi:"page"`
+	// -(Optional)  URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
+	// - alternateFqdns
+	// - alternateFqdns/value
+	// - alternateIps
+	// - alternateIps/ipv4/value
+	Select *string `pulumi:"select"`
 }
 
 // A collection of values returned by getCertificatesV2.
 type GetCertificatesV2Result struct {
+	// - list of the SSL certificates which can be used to access an Object store.
 	Certificates []GetCertificatesV2Certificate `pulumi:"certificates"`
 	Filter       *string                        `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
@@ -53,11 +92,22 @@ func GetCertificatesV2Output(ctx *pulumi.Context, args GetCertificatesV2OutputAr
 
 // A collection of arguments for invoking getCertificatesV2.
 type GetCertificatesV2OutputArgs struct {
-	Filter           pulumi.StringPtrInput `pulumi:"filter"`
-	Limit            pulumi.IntPtrInput    `pulumi:"limit"`
-	ObjectStoreExtId pulumi.StringInput    `pulumi:"objectStoreExtId"`
-	Page             pulumi.IntPtrInput    `pulumi:"page"`
-	Select           pulumi.StringPtrInput `pulumi:"select"`
+	// -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+	// - alternateFqdns/value
+	// - alternateIps/ipv4/value
+	Filter pulumi.StringPtrInput `pulumi:"filter"`
+	// -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set. Default value is 50.
+	Limit pulumi.IntPtrInput `pulumi:"limit"`
+	// -(Required) The UUID of the Object store.
+	ObjectStoreExtId pulumi.StringInput `pulumi:"objectStoreExtId"`
+	// -(Optional) A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results. Default value is 0.
+	Page pulumi.IntPtrInput `pulumi:"page"`
+	// -(Optional)  URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
+	// - alternateFqdns
+	// - alternateFqdns/value
+	// - alternateIps
+	// - alternateIps/ipv4/value
+	Select pulumi.StringPtrInput `pulumi:"select"`
 }
 
 func (GetCertificatesV2OutputArgs) ElementType() reflect.Type {
@@ -79,6 +129,7 @@ func (o GetCertificatesV2ResultOutput) ToGetCertificatesV2ResultOutputWithContex
 	return o
 }
 
+// - list of the SSL certificates which can be used to access an Object store.
 func (o GetCertificatesV2ResultOutput) Certificates() GetCertificatesV2CertificateArrayOutput {
 	return o.ApplyT(func(v GetCertificatesV2Result) []GetCertificatesV2Certificate { return v.Certificates }).(GetCertificatesV2CertificateArrayOutput)
 }

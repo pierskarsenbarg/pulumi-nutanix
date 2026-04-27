@@ -15,6 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("configs")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigGetArgs>? _configs;
+
+        /// <summary>
+        /// The Nutanix Guest Tools customization settings.
+        /// 
+        /// * `config.sysprep`: (Optional) Sysprep config
+        /// * `config.cloud_init`: (Optional) CloudInit Config
+        /// </summary>
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigGetArgs> Configs
         {
             get => _configs ?? (_configs = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigGetArgs>());

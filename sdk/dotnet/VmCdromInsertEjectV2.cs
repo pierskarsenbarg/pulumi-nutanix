@@ -10,15 +10,72 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Inserts the defined ISO into a CD-ROM device attached to a Virtual Machine.
+    /// Ejects the ISO currently inserted into a CD-ROM device on a Virtual Machine.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var insert_cdrom = new Nutanix.VmCdromInsertEjectV2("insert-cdrom", new()
+    ///     {
+    ///         VmExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
+    ///         ExtId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
+    ///         BackingInfos = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VmCdromInsertEjectV2BackingInfoArgs
+    ///             {
+    ///                 DataSources = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.VmCdromInsertEjectV2BackingInfoDataSourceArgs
+    ///                     {
+    ///                         References = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs
+    ///                             {
+    ///                                 ImageReferences = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs
+    ///                                     {
+    ///                                         ImageExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2")]
     public partial class VmCdromInsertEjectV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Storage provided by Nutanix ADSF
+        /// </summary>
         [Output("backingInfos")]
         public Output<ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfo>> BackingInfos { get; private set; } = null!;
 
+        /// <summary>
+        /// The globally unique identifier of a CD-ROM. It should be of type UUID.
+        /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// The globally unique identifier of a VM. It should be of type UUID
+        /// </summary>
         [Output("vmExtId")]
         public Output<string> VmExtId { get; private set; } = null!;
 
@@ -71,15 +128,25 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("backingInfos")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoArgs>? _backingInfos;
+
+        /// <summary>
+        /// Storage provided by Nutanix ADSF
+        /// </summary>
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.VmCdromInsertEjectV2BackingInfoArgs>());
             set => _backingInfos = value;
         }
 
+        /// <summary>
+        /// The globally unique identifier of a CD-ROM. It should be of type UUID.
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
+        /// <summary>
+        /// The globally unique identifier of a VM. It should be of type UUID
+        /// </summary>
         [Input("vmExtId", required: true)]
         public Input<string> VmExtId { get; set; } = null!;
 
@@ -93,15 +160,25 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("backingInfos")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoGetArgs>? _backingInfos;
+
+        /// <summary>
+        /// Storage provided by Nutanix ADSF
+        /// </summary>
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoGetArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.VmCdromInsertEjectV2BackingInfoGetArgs>());
             set => _backingInfos = value;
         }
 
+        /// <summary>
+        /// The globally unique identifier of a CD-ROM. It should be of type UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// The globally unique identifier of a VM. It should be of type UUID
+        /// </summary>
         [Input("vmExtId")]
         public Input<string>? VmExtId { get; set; }
 

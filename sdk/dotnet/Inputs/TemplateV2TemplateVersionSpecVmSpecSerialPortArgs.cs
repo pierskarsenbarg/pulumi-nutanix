@@ -16,9 +16,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Index of the serial port.
+        /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }
 
+        /// <summary>
+        /// Indicates whether the serial port is connected or not.
+        /// </summary>
         [Input("isConnected")]
         public Input<bool>? IsConnected { get; set; }
 

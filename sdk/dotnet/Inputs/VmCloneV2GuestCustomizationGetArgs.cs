@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("configs")]
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigGetArgs>? _configs;
+
+        /// <summary>
+        /// - (Optional) The Nutanix Guest Tools customization settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigGetArgs> Configs
         {
             get => _configs ?? (_configs = new InputList<Inputs.VmCloneV2GuestCustomizationConfigGetArgs>());

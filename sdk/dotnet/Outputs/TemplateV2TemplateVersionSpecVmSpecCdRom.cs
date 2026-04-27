@@ -14,9 +14,18 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class TemplateV2TemplateVersionSpecVmSpecCdRom
     {
+        /// <summary>
+        /// Storage provided by Nutanix ADSF
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo> BackingInfos;
+        /// <summary>
+        /// Virtual Machine disk (VM disk).
+        /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress> DiskAddresses;
         public readonly string? ExtId;
+        /// <summary>
+        /// Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+        /// </summary>
         public readonly string? IsoType;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecCdRomLink> Links;
         public readonly string? TenantId;

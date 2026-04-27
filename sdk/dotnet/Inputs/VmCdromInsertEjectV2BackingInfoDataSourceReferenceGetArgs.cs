@@ -15,6 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("imageReferences")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceGetArgs>? _imageReferences;
+
+        /// <summary>
+        /// Image Reference
+        /// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+        /// </summary>
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceGetArgs> ImageReferences
         {
             get => _imageReferences ?? (_imageReferences = new InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceGetArgs>());
@@ -23,6 +28,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("vmDiskReferences")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceGetArgs>? _vmDiskReferences;
+
+        /// <summary>
+        /// Vm Disk Reference
+        /// * `vm_disk_reference.disk_address`: (Required) Disk address.
+        /// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
+        /// 
+        /// 
+        /// See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/insertCdRomById).
+        /// </summary>
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceGetArgs> VmDiskReferences
         {
             get => _vmDiskReferences ?? (_vmDiskReferences = new InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceGetArgs>());

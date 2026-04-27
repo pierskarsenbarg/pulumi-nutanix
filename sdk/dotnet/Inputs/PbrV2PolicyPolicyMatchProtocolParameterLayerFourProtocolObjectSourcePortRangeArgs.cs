@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRangeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// End Port.
+        /// </summary>
         [Input("endPort", required: true)]
         public Input<int> EndPort { get; set; } = null!;
 
+        /// <summary>
+        /// Start Port.
+        /// </summary>
         [Input("startPort", required: true)]
         public Input<int> StartPort { get; set; } = null!;
 

@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("bootDevices")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceArgs>? _bootDevices;
+
+        /// <summary>
+        /// - (Optional) The Boot Device settings.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceArgs> BootDevices
         {
             get => _bootDevices ?? (_bootDevices = new InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceArgs>());
@@ -23,17 +27,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("bootOrders")]
         private InputList<string>? _bootOrders;
+
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
         public InputList<string> BootOrders
         {
             get => _bootOrders ?? (_bootOrders = new InputList<string>());
             set => _bootOrders = value;
         }
 
+        /// <summary>
+        /// - (Optional) Indicate whether to enable secure boot or not.
+        /// </summary>
         [Input("isSecureBootEnabled")]
         public Input<bool>? IsSecureBootEnabled { get; set; }
 
         [Input("nvramDevices")]
         private InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceArgs>? _nvramDevices;
+
+        /// <summary>
+        /// - (Optional) Configuration for NVRAM to be presented to the VM.
+        /// </summary>
         public InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceArgs> NvramDevices
         {
             get => _nvramDevices ?? (_nvramDevices = new InputList<Inputs.VmCloneV2BootConfigUefiBootNvramDeviceArgs>());

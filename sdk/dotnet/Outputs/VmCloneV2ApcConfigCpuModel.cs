@@ -15,6 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VmCloneV2ApcConfigCpuModel
     {
         public readonly string? ExtId;
+        /// <summary>
+        /// - (Optional) The name for the vm.
+        /// </summary>
         public readonly string? Name;
 
         [OutputConstructor]
