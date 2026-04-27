@@ -25,7 +25,7 @@ class LcmPerformInventoryV2Args:
 
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
                
-               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         if x_cluster_id is not None:
             pulumi.set(__self__, "x_cluster_id", x_cluster_id)
@@ -36,7 +36,7 @@ class LcmPerformInventoryV2Args:
         """
         Cluster uuid on which the resource is present or operation is being performed.
 
-        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         return pulumi.get(self, "x_cluster_id")
 
@@ -54,7 +54,7 @@ class _LcmPerformInventoryV2State:
 
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
                
-               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         if x_cluster_id is not None:
             pulumi.set(__self__, "x_cluster_id", x_cluster_id)
@@ -65,7 +65,7 @@ class _LcmPerformInventoryV2State:
         """
         Cluster uuid on which the resource is present or operation is being performed.
 
-        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         return pulumi.get(self, "x_cluster_id")
 
@@ -100,7 +100,7 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
                
-               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         ...
     @overload
@@ -168,7 +168,7 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
                
-               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -183,7 +183,7 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
         """
         Cluster uuid on which the resource is present or operation is being performed.
 
-        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         return pulumi.get(self, "x_cluster_id")
 

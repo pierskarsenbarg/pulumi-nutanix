@@ -11,6 +11,8 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
+    /// &gt; **Authentication:** The `nutanix.ProtectionPolicyV2` resource does **not** support API key authentication for multi-site protection policy operations. Use `Username` and `Password` in the provider configuration—do not use `ApiKey`. Using API key will result in authorization errors (DPO-10600).
+    /// 
     /// Creates a protection policy to automate the recovery point creation and replication process.
     /// 
     /// ## Example—Synchronous Protection Policy

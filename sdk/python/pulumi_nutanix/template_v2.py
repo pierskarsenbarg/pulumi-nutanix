@@ -23,6 +23,7 @@ class TemplateV2Args:
     def __init__(__self__, *,
                  template_name: pulumi.Input[_builtins.str],
                  template_version_spec: pulumi.Input['TemplateV2TemplateVersionSpecArgs'],
+                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]] = None,
                  guest_update_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]] = None,
                  template_description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -32,6 +33,8 @@ class TemplateV2Args:
         """
         pulumi.set(__self__, "template_name", template_name)
         pulumi.set(__self__, "template_version_spec", template_version_spec)
+        if category_ext_ids is not None:
+            pulumi.set(__self__, "category_ext_ids", category_ext_ids)
         if created_bies is not None:
             pulumi.set(__self__, "created_bies", created_bies)
         if guest_update_statuses is not None:
@@ -58,6 +61,15 @@ class TemplateV2Args:
     @template_version_spec.setter
     def template_version_spec(self, value: pulumi.Input['TemplateV2TemplateVersionSpecArgs']):
         pulumi.set(self, "template_version_spec", value)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryExtIds")
+    def category_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "category_ext_ids")
+
+    @category_ext_ids.setter
+    def category_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "category_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBies")
@@ -99,6 +111,7 @@ class TemplateV2Args:
 @pulumi.input_type
 class _TemplateV2State:
     def __init__(__self__, *,
+                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  create_time: Optional[pulumi.Input[_builtins.str]] = None,
                  created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]] = None,
                  ext_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -113,6 +126,8 @@ class _TemplateV2State:
         """
         Input properties used for looking up and filtering TemplateV2 resources.
         """
+        if category_ext_ids is not None:
+            pulumi.set(__self__, "category_ext_ids", category_ext_ids)
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
         if created_bies is not None:
@@ -135,6 +150,15 @@ class _TemplateV2State:
             pulumi.set(__self__, "update_time", update_time)
         if updated_bies is not None:
             pulumi.set(__self__, "updated_bies", updated_bies)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryExtIds")
+    def category_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "category_ext_ids")
+
+    @category_ext_ids.setter
+    def category_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "category_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="createTime")
@@ -242,6 +266,7 @@ class TemplateV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
                  guest_update_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
                  template_description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -279,6 +304,7 @@ class TemplateV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
                  guest_update_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
                  template_description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -294,6 +320,7 @@ class TemplateV2(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = TemplateV2Args.__new__(TemplateV2Args)
 
+            __props__.__dict__["category_ext_ids"] = category_ext_ids
             __props__.__dict__["created_bies"] = created_bies
             __props__.__dict__["guest_update_statuses"] = guest_update_statuses
             __props__.__dict__["template_description"] = template_description
@@ -319,6 +346,7 @@ class TemplateV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             create_time: Optional[pulumi.Input[_builtins.str]] = None,
             created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
             ext_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -342,6 +370,7 @@ class TemplateV2(pulumi.CustomResource):
 
         __props__ = _TemplateV2State.__new__(_TemplateV2State)
 
+        __props__.__dict__["category_ext_ids"] = category_ext_ids
         __props__.__dict__["create_time"] = create_time
         __props__.__dict__["created_bies"] = created_bies
         __props__.__dict__["ext_id"] = ext_id
@@ -354,6 +383,11 @@ class TemplateV2(pulumi.CustomResource):
         __props__.__dict__["update_time"] = update_time
         __props__.__dict__["updated_bies"] = updated_bies
         return TemplateV2(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryExtIds")
+    def category_ext_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        return pulumi.get(self, "category_ext_ids")
 
     @_builtins.property
     @pulumi.getter(name="createTime")

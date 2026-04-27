@@ -27,7 +27,10 @@ class GetTemplateV2Result:
     """
     A collection of values returned by getTemplateV2.
     """
-    def __init__(__self__, create_time=None, created_bies=None, ext_id=None, guest_update_statuses=None, id=None, links=None, template_description=None, template_name=None, template_version_specs=None, tenant_id=None, update_time=None, updated_bies=None):
+    def __init__(__self__, category_ext_ids=None, create_time=None, created_bies=None, ext_id=None, guest_update_statuses=None, id=None, links=None, template_description=None, template_name=None, template_version_specs=None, tenant_id=None, update_time=None, updated_bies=None):
+        if category_ext_ids and not isinstance(category_ext_ids, list):
+            raise TypeError("Expected argument 'category_ext_ids' to be a list")
+        pulumi.set(__self__, "category_ext_ids", category_ext_ids)
         if create_time and not isinstance(create_time, str):
             raise TypeError("Expected argument 'create_time' to be a str")
         pulumi.set(__self__, "create_time", create_time)
@@ -64,6 +67,11 @@ class GetTemplateV2Result:
         if updated_bies and not isinstance(updated_bies, list):
             raise TypeError("Expected argument 'updated_bies' to be a list")
         pulumi.set(__self__, "updated_bies", updated_bies)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryExtIds")
+    def category_ext_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "category_ext_ids")
 
     @_builtins.property
     @pulumi.getter(name="createTime")
@@ -168,6 +176,7 @@ class AwaitableGetTemplateV2Result(GetTemplateV2Result):
         if False:
             yield self
         return GetTemplateV2Result(
+            category_ext_ids=self.category_ext_ids,
             create_time=self.create_time,
             created_bies=self.created_bies,
             ext_id=self.ext_id,
@@ -205,6 +214,7 @@ def get_template_v2(ext_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('nutanix:index/getTemplateV2:getTemplateV2', __args__, opts=opts, typ=GetTemplateV2Result).value
 
     return AwaitableGetTemplateV2Result(
+        category_ext_ids=pulumi.get(__ret__, 'category_ext_ids'),
         create_time=pulumi.get(__ret__, 'create_time'),
         created_bies=pulumi.get(__ret__, 'created_bies'),
         ext_id=pulumi.get(__ret__, 'ext_id'),
@@ -239,6 +249,7 @@ def get_template_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getTemplateV2:getTemplateV2', __args__, opts=opts, typ=GetTemplateV2Result)
     return __ret__.apply(lambda __response__: GetTemplateV2Result(
+        category_ext_ids=pulumi.get(__response__, 'category_ext_ids'),
         create_time=pulumi.get(__response__, 'create_time'),
         created_bies=pulumi.get(__response__, 'created_bies'),
         ext_id=pulumi.get(__response__, 'ext_id'),

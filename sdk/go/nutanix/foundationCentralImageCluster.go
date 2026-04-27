@@ -144,10 +144,12 @@ type FoundationCentralImageCluster struct {
 	ClusterSize   pulumi.IntOutput                                 `pulumi:"clusterSize"`
 	ClusterStatus FoundationCentralImageClusterClusterStatusOutput `pulumi:"clusterStatus"`
 	// Common network settings across the nodes in the cluster.
-	CommonNetworkSettings  FoundationCentralImageClusterCommonNetworkSettingsOutput     `pulumi:"commonNetworkSettings"`
-	CreatedTimestamp       pulumi.StringOutput                                          `pulumi:"createdTimestamp"`
-	CurrentTime            pulumi.StringOutput                                          `pulumi:"currentTime"`
-	Destroyed              pulumi.BoolOutput                                            `pulumi:"destroyed"`
+	CommonNetworkSettings FoundationCentralImageClusterCommonNetworkSettingsOutput `pulumi:"commonNetworkSettings"`
+	CreatedTimestamp      pulumi.StringOutput                                      `pulumi:"createdTimestamp"`
+	CurrentTime           pulumi.StringOutput                                      `pulumi:"currentTime"`
+	Destroyed             pulumi.BoolOutput                                        `pulumi:"destroyed"`
+	// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+	FcApiKeyUuid           pulumi.StringPtrOutput                                       `pulumi:"fcApiKeyUuid"`
 	FoundationInitConfigs  FoundationCentralImageClusterFoundationInitConfigArrayOutput `pulumi:"foundationInitConfigs"`
 	FoundationInitNodeUuid pulumi.StringOutput                                          `pulumi:"foundationInitNodeUuid"`
 	// Details of the hypervisor iso. (Deprecated)
@@ -160,8 +162,10 @@ type FoundationCentralImageCluster struct {
 	ImagedNodeUuidLists pulumi.StringArrayOutput                         `pulumi:"imagedNodeUuidLists"`
 	NodeLists           FoundationCentralImageClusterNodeListArrayOutput `pulumi:"nodeLists"`
 	// Redundancy factor of the cluster.
-	RedundancyFactor    pulumi.IntOutput     `pulumi:"redundancyFactor"`
-	SkipClusterCreation pulumi.BoolPtrOutput `pulumi:"skipClusterCreation"`
+	RedundancyFactor pulumi.IntOutput `pulumi:"redundancyFactor"`
+	// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+	ServerConfigurationData pulumi.StringPtrOutput `pulumi:"serverConfigurationData"`
+	SkipClusterCreation     pulumi.BoolPtrOutput   `pulumi:"skipClusterCreation"`
 	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
 	StorageNodeCount pulumi.IntOutput `pulumi:"storageNodeCount"`
 	// Timezone to be set on the cluster.
@@ -212,10 +216,12 @@ type foundationCentralImageClusterState struct {
 	ClusterSize   *int                                        `pulumi:"clusterSize"`
 	ClusterStatus *FoundationCentralImageClusterClusterStatus `pulumi:"clusterStatus"`
 	// Common network settings across the nodes in the cluster.
-	CommonNetworkSettings  *FoundationCentralImageClusterCommonNetworkSettings `pulumi:"commonNetworkSettings"`
-	CreatedTimestamp       *string                                             `pulumi:"createdTimestamp"`
-	CurrentTime            *string                                             `pulumi:"currentTime"`
-	Destroyed              *bool                                               `pulumi:"destroyed"`
+	CommonNetworkSettings *FoundationCentralImageClusterCommonNetworkSettings `pulumi:"commonNetworkSettings"`
+	CreatedTimestamp      *string                                             `pulumi:"createdTimestamp"`
+	CurrentTime           *string                                             `pulumi:"currentTime"`
+	Destroyed             *bool                                               `pulumi:"destroyed"`
+	// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+	FcApiKeyUuid           *string                                             `pulumi:"fcApiKeyUuid"`
 	FoundationInitConfigs  []FoundationCentralImageClusterFoundationInitConfig `pulumi:"foundationInitConfigs"`
 	FoundationInitNodeUuid *string                                             `pulumi:"foundationInitNodeUuid"`
 	// Details of the hypervisor iso. (Deprecated)
@@ -228,8 +234,10 @@ type foundationCentralImageClusterState struct {
 	ImagedNodeUuidLists []string                                `pulumi:"imagedNodeUuidLists"`
 	NodeLists           []FoundationCentralImageClusterNodeList `pulumi:"nodeLists"`
 	// Redundancy factor of the cluster.
-	RedundancyFactor    *int  `pulumi:"redundancyFactor"`
-	SkipClusterCreation *bool `pulumi:"skipClusterCreation"`
+	RedundancyFactor *int `pulumi:"redundancyFactor"`
+	// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+	ServerConfigurationData *string `pulumi:"serverConfigurationData"`
+	SkipClusterCreation     *bool   `pulumi:"skipClusterCreation"`
 	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
 	StorageNodeCount *int `pulumi:"storageNodeCount"`
 	// Timezone to be set on the cluster.
@@ -251,10 +259,12 @@ type FoundationCentralImageClusterState struct {
 	ClusterSize   pulumi.IntPtrInput
 	ClusterStatus FoundationCentralImageClusterClusterStatusPtrInput
 	// Common network settings across the nodes in the cluster.
-	CommonNetworkSettings  FoundationCentralImageClusterCommonNetworkSettingsPtrInput
-	CreatedTimestamp       pulumi.StringPtrInput
-	CurrentTime            pulumi.StringPtrInput
-	Destroyed              pulumi.BoolPtrInput
+	CommonNetworkSettings FoundationCentralImageClusterCommonNetworkSettingsPtrInput
+	CreatedTimestamp      pulumi.StringPtrInput
+	CurrentTime           pulumi.StringPtrInput
+	Destroyed             pulumi.BoolPtrInput
+	// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+	FcApiKeyUuid           pulumi.StringPtrInput
 	FoundationInitConfigs  FoundationCentralImageClusterFoundationInitConfigArrayInput
 	FoundationInitNodeUuid pulumi.StringPtrInput
 	// Details of the hypervisor iso. (Deprecated)
@@ -267,8 +277,10 @@ type FoundationCentralImageClusterState struct {
 	ImagedNodeUuidLists pulumi.StringArrayInput
 	NodeLists           FoundationCentralImageClusterNodeListArrayInput
 	// Redundancy factor of the cluster.
-	RedundancyFactor    pulumi.IntPtrInput
-	SkipClusterCreation pulumi.BoolPtrInput
+	RedundancyFactor pulumi.IntPtrInput
+	// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+	ServerConfigurationData pulumi.StringPtrInput
+	SkipClusterCreation     pulumi.BoolPtrInput
 	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
 	StorageNodeCount pulumi.IntPtrInput
 	// Timezone to be set on the cluster.
@@ -294,6 +306,8 @@ type foundationCentralImageClusterArgs struct {
 	ClusterStatus *FoundationCentralImageClusterClusterStatus `pulumi:"clusterStatus"`
 	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings *FoundationCentralImageClusterCommonNetworkSettings `pulumi:"commonNetworkSettings"`
+	// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+	FcApiKeyUuid *string `pulumi:"fcApiKeyUuid"`
 	// Details of the hypervisor iso. (Deprecated)
 	HypervisorIsoDetails *FoundationCentralImageClusterHypervisorIsoDetails `pulumi:"hypervisorIsoDetails"`
 	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
@@ -301,8 +315,10 @@ type foundationCentralImageClusterArgs struct {
 	ImageClusterUuid *string                                      `pulumi:"imageClusterUuid"`
 	NodeLists        []FoundationCentralImageClusterNodeList      `pulumi:"nodeLists"`
 	// Redundancy factor of the cluster.
-	RedundancyFactor    *int  `pulumi:"redundancyFactor"`
-	SkipClusterCreation *bool `pulumi:"skipClusterCreation"`
+	RedundancyFactor *int `pulumi:"redundancyFactor"`
+	// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+	ServerConfigurationData *string `pulumi:"serverConfigurationData"`
+	SkipClusterCreation     *bool   `pulumi:"skipClusterCreation"`
 	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
 	StorageNodeCount *int `pulumi:"storageNodeCount"`
 	// Timezone to be set on the cluster.
@@ -324,6 +340,8 @@ type FoundationCentralImageClusterArgs struct {
 	ClusterStatus FoundationCentralImageClusterClusterStatusPtrInput
 	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings FoundationCentralImageClusterCommonNetworkSettingsPtrInput
+	// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+	FcApiKeyUuid pulumi.StringPtrInput
 	// Details of the hypervisor iso. (Deprecated)
 	HypervisorIsoDetails FoundationCentralImageClusterHypervisorIsoDetailsPtrInput
 	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
@@ -331,8 +349,10 @@ type FoundationCentralImageClusterArgs struct {
 	ImageClusterUuid pulumi.StringPtrInput
 	NodeLists        FoundationCentralImageClusterNodeListArrayInput
 	// Redundancy factor of the cluster.
-	RedundancyFactor    pulumi.IntPtrInput
-	SkipClusterCreation pulumi.BoolPtrInput
+	RedundancyFactor pulumi.IntPtrInput
+	// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+	ServerConfigurationData pulumi.StringPtrInput
+	SkipClusterCreation     pulumi.BoolPtrInput
 	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
 	StorageNodeCount pulumi.IntPtrInput
 	// Timezone to be set on the cluster.
@@ -480,6 +500,11 @@ func (o FoundationCentralImageClusterOutput) Destroyed() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.BoolOutput { return v.Destroyed }).(pulumi.BoolOutput)
 }
 
+// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+func (o FoundationCentralImageClusterOutput) FcApiKeyUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringPtrOutput { return v.FcApiKeyUuid }).(pulumi.StringPtrOutput)
+}
+
 func (o FoundationCentralImageClusterOutput) FoundationInitConfigs() FoundationCentralImageClusterFoundationInitConfigArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) FoundationCentralImageClusterFoundationInitConfigArrayOutput {
 		return v.FoundationInitConfigs
@@ -526,6 +551,11 @@ func (o FoundationCentralImageClusterOutput) NodeLists() FoundationCentralImageC
 // Redundancy factor of the cluster.
 func (o FoundationCentralImageClusterOutput) RedundancyFactor() pulumi.IntOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.IntOutput { return v.RedundancyFactor }).(pulumi.IntOutput)
+}
+
+// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+func (o FoundationCentralImageClusterOutput) ServerConfigurationData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringPtrOutput { return v.ServerConfigurationData }).(pulumi.StringPtrOutput)
 }
 
 func (o FoundationCentralImageClusterOutput) SkipClusterCreation() pulumi.BoolPtrOutput {

@@ -59,7 +59,7 @@ type UserGroupsV2 struct {
 	// - Creation time of the User Group.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
 	// -(Optional) Identifier for the User Group in the form of a distinguished name.
-	DistinguishedName pulumi.StringPtrOutput `pulumi:"distinguishedName"`
+	DistinguishedName pulumi.StringOutput `pulumi:"distinguishedName"`
 	// The External Identifier of the User Group.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
@@ -274,8 +274,8 @@ func (o UserGroupsV2Output) CreatedTime() pulumi.StringOutput {
 }
 
 // -(Optional) Identifier for the User Group in the form of a distinguished name.
-func (o UserGroupsV2Output) DistinguishedName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *UserGroupsV2) pulumi.StringPtrOutput { return v.DistinguishedName }).(pulumi.StringPtrOutput)
+func (o UserGroupsV2Output) DistinguishedName() pulumi.StringOutput {
+	return o.ApplyT(func(v *UserGroupsV2) pulumi.StringOutput { return v.DistinguishedName }).(pulumi.StringOutput)
 }
 
 // The External Identifier of the User Group.

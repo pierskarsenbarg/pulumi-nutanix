@@ -145,7 +145,7 @@ def get_pc_backup_targets_v2(domain_manager_ext_id: Optional[_builtins.str] = No
 
     - `rpo_in_minutes`: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
 
-    See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listBackupTargets).
+    See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listBackupTargets).
 
 
     :param _builtins.str domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
@@ -233,7 +233,7 @@ def get_pc_backup_targets_v2_output(domain_manager_ext_id: Optional[pulumi.Input
 
     - `rpo_in_minutes`: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
 
-    See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listBackupTargets).
+    See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listBackupTargets).
 
 
     :param _builtins.str domain_manager_ext_id: -(Required) A unique identifier for the domain manager.

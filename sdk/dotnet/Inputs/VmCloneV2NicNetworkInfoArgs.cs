@@ -21,6 +21,14 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _ipv4Configs = value;
         }
 
+        [Input("ipv4Infos")]
+        private InputList<Inputs.VmCloneV2NicNetworkInfoIpv4InfoArgs>? _ipv4Infos;
+        public InputList<Inputs.VmCloneV2NicNetworkInfoIpv4InfoArgs> Ipv4Infos
+        {
+            get => _ipv4Infos ?? (_ipv4Infos = new InputList<Inputs.VmCloneV2NicNetworkInfoIpv4InfoArgs>());
+            set => _ipv4Infos = value;
+        }
+
         [Input("networkFunctionChains")]
         private InputList<Inputs.VmCloneV2NicNetworkInfoNetworkFunctionChainArgs>? _networkFunctionChains;
         public InputList<Inputs.VmCloneV2NicNetworkInfoNetworkFunctionChainArgs> NetworkFunctionChains

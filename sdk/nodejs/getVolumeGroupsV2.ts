@@ -95,7 +95,7 @@ import * as utilities from "./utilities";
  *
  * * `isEnabled`: - Indicates whether the flash mode is enabled for the Volume Group.
  *
- * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+ * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
  */
 export function getVolumeGroupsV2(args?: GetVolumeGroupsV2Args, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupsV2Result> {
     args = args || {};
@@ -227,7 +227,7 @@ export interface GetVolumeGroupsV2Result {
  *
  * * `isEnabled`: - Indicates whether the flash mode is enabled for the Volume Group.
  *
- * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+ * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
  */
 export function getVolumeGroupsV2Output(args?: GetVolumeGroupsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeGroupsV2Result> {
     args = args || {};

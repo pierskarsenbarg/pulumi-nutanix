@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class SubnetV2VpcExternalSubnetExternalIpIpv4Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+        /// </summary>
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
+        /// <summary>
+        /// value of address
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

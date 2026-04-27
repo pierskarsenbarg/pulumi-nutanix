@@ -856,7 +856,7 @@ class StorageContainersV2(pulumi.CustomResource):
                  replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        Provides Nutanix resource to create VPC.
+        Provides Nutanix resource to create Storage Containers
 
         ## Example
 
@@ -916,7 +916,7 @@ class StorageContainersV2(pulumi.CustomResource):
                  args: StorageContainersV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Provides Nutanix resource to create VPC.
+        Provides Nutanix resource to create Storage Containers
 
         ## Example
 
@@ -1315,7 +1315,7 @@ class StorageContainersV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="nfsWhitelistAddresses")
-    def nfs_whitelist_addresses(self) -> pulumi.Output[Optional[Sequence['outputs.StorageContainersV2NfsWhitelistAddress']]]:
+    def nfs_whitelist_addresses(self) -> pulumi.Output[Sequence['outputs.StorageContainersV2NfsWhitelistAddress']]:
         """
         -(Optional) List of NFS addresses which need to be whitelisted.
         """

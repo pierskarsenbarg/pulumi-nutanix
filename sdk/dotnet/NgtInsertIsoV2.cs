@@ -23,6 +23,16 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
+    ///     //#############################################
+    ///     // ------------------------------------------------
+    ///     // This resource allows inserting a NGT ISO into
+    ///     // a VM’s CD-ROM device.
+    ///     //
+    ///     // You can manage both:
+    ///     // 1. **Insertion** — via `apply`
+    ///     // 2. **Ejection** — automatically on `delete`
+    ///     //  You can also eject the NGT ISO by setting `action = "eject"` → triggers eject operation explicitly.
+    ///     //#############################################
     ///     var example = new Nutanix.Index.NgtInsertIsoV2("example", new()
     ///     {
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
@@ -40,6 +50,12 @@ namespace PiersKarsenbarg.Nutanix
     public partial class NgtInsertIsoV2 : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        /// </summary>
+        [Output("action")]
+        public Output<string?> Action { get; private set; } = null!;
+
+        /// <summary>
         /// Version of Nutanix Guest Tools available on the cluster.
         /// </summary>
         [Output("availableVersion")]
@@ -50,6 +66,9 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("capablities")]
         public Output<ImmutableArray<string>> Capablities { get; private set; } = null!;
+
+        [Output("cdromExtId")]
+        public Output<string> CdromExtId { get; private set; } = null!;
 
         /// <summary>
         /// uuid of the Virtual Machine.
@@ -111,6 +130,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
 
+        [Output("vmExtId")]
+        public Output<string> VmExtId { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a NgtInsertIsoV2 resource with the given unique name, arguments, and options.
@@ -158,6 +180,12 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class NgtInsertIsoV2Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        /// </summary>
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         [Input("capablities")]
         private InputList<string>? _capablities;
 
@@ -191,6 +219,12 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class NgtInsertIsoV2State : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        /// </summary>
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
+        /// <summary>
         /// Version of Nutanix Guest Tools available on the cluster.
         /// </summary>
         [Input("availableVersion")]
@@ -207,6 +241,9 @@ namespace PiersKarsenbarg.Nutanix
             get => _capablities ?? (_capablities = new InputList<string>());
             set => _capablities = value;
         }
+
+        [Input("cdromExtId")]
+        public Input<string>? CdromExtId { get; set; }
 
         /// <summary>
         /// uuid of the Virtual Machine.
@@ -267,6 +304,9 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }
+
+        [Input("vmExtId")]
+        public Input<string>? VmExtId { get; set; }
 
         public NgtInsertIsoV2State()
         {

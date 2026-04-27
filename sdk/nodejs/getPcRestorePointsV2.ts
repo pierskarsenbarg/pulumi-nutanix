@@ -186,7 +186,7 @@ import * as utilities from "./utilities";
  *
  * - `value`: - The fully qualified domain name of the host.
  *
- * See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listRestorePoints).
+ * See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listRestorePoints).
  */
 export function getPcRestorePointsV2(args: GetPcRestorePointsV2Args, opts?: pulumi.InvokeOptions): Promise<GetPcRestorePointsV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -443,7 +443,7 @@ export interface GetPcRestorePointsV2Result {
  *
  * - `value`: - The fully qualified domain name of the host.
  *
- * See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listRestorePoints).
+ * See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listRestorePoints).
  */
 export function getPcRestorePointsV2Output(args: GetPcRestorePointsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPcRestorePointsV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

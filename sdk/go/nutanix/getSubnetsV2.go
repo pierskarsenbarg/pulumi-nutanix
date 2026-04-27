@@ -97,7 +97,7 @@ import (
 // - `value`: value of address
 // - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
 //
-// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Subnets/operation/listSubnets).
+// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Subnets/operation/listSubnets).
 func GetSubnetsV2(ctx *pulumi.Context, args *GetSubnetsV2Args, opts ...pulumi.InvokeOption) (*GetSubnetsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSubnetsV2Result

@@ -9,6 +9,8 @@ import * as utilities from "./utilities";
 /**
  * Add node on a cluster identified by {extId}.
  *
+ * > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the `nutanix.ClusterV2` resource, which offers a more consistent and automated approach to managing cluster scaling operations.
+ *
  * ## Example Usage
  *
  * ```typescript

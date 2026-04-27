@@ -93,7 +93,7 @@ import * as utilities from "./utilities";
  * - `value`: value of address
  * - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
  *
- * See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Subnets/operation/listSubnets).
+ * See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Subnets/operation/listSubnets).
  */
 export function getSubnetsV2(args?: GetSubnetsV2Args, opts?: pulumi.InvokeOptions): Promise<GetSubnetsV2Result> {
     args = args || {};
@@ -257,7 +257,7 @@ export interface GetSubnetsV2Result {
  * - `value`: value of address
  * - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
  *
- * See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Subnets/operation/listSubnets).
+ * See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Subnets/operation/listSubnets).
  */
 export function getSubnetsV2Output(args?: GetSubnetsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubnetsV2Result> {
     args = args || {};

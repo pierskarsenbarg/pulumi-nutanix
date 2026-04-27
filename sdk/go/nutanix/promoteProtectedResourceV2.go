@@ -46,7 +46,7 @@ type PromoteProtectedResourceV2 struct {
 
 	// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 	//
-	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/promoteProtectedResource).
+	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 }
 
@@ -85,14 +85,14 @@ func GetPromoteProtectedResourceV2(ctx *pulumi.Context,
 type promoteProtectedResourceV2State struct {
 	// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 	//
-	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/promoteProtectedResource).
+	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
 	ExtId *string `pulumi:"extId"`
 }
 
 type PromoteProtectedResourceV2State struct {
 	// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 	//
-	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/promoteProtectedResource).
+	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
 	ExtId pulumi.StringPtrInput
 }
 
@@ -103,7 +103,7 @@ func (PromoteProtectedResourceV2State) ElementType() reflect.Type {
 type promoteProtectedResourceV2Args struct {
 	// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 	//
-	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/promoteProtectedResource).
+	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
 	ExtId string `pulumi:"extId"`
 }
 
@@ -111,7 +111,7 @@ type promoteProtectedResourceV2Args struct {
 type PromoteProtectedResourceV2Args struct {
 	// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 	//
-	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/promoteProtectedResource).
+	// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
 	ExtId pulumi.StringInput
 }
 
@@ -204,7 +204,7 @@ func (o PromoteProtectedResourceV2Output) ToPromoteProtectedResourceV2OutputWith
 
 // -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 //
-// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/promoteProtectedResource).
+// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
 func (o PromoteProtectedResourceV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PromoteProtectedResourceV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }

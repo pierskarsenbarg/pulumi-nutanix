@@ -55,6 +55,7 @@ import * as utilities from "./utilities";
  * - `generationUuid`: Generation UUID of the VM. It should be of type UUID.
  * - `biosUuid`: BIOS UUID of the VM. It should be of type UUID.
  * - `categories`: Categories for the VM.
+ * * `project`: Reference to a project.
  * - `ownershipInfo`: Ownership information for the VM.
  * - `host`: Reference to the host, the VM is running on.
  * - `cluster`: Reference to a cluster.
@@ -97,6 +98,11 @@ import * as utilities from "./utilities";
  * The `categories` attribute supports the following:
  *
  * * `extId`: A globally unique identifier of a VM category of type UUID.
+ *
+ * ### Project
+ * The `project` attribute supports the following:
+ *
+ * * `extId`: The globally unique identifier of an instance of type UUID.
  *
  * ### Ownership Info
  * The `ownershipInfo` attribute supports the following:
@@ -252,8 +258,10 @@ import * as utilities from "./utilities";
  * The `nics` attribute supports the following:
  *
  * * `extId`: A globally unique identifier of an instance that is suitable for external consumption
- * * `backingInfo`: Defines a NIC emulated by the hypervisor
- * * `networkInfo`: Network information for a NIC.
+ * * `nicBackingInfo`: New NIC backing info (v2.4.1+). One of `virtualEthernetNic`, `sriovNic`, `dpOffloadNic`.
+ * * `nicNetworkInfo`: New NIC network info (v2.4.1+). One of `virtualEthernetNicNetworkInfo`, `sriovNicNetworkInfo`, `dpOffloadNicNetworkInfo`.
+ * * `backingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+ * * `networkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
  *
  * ### nics.backing_info
  * * `model`: Options for the NIC emulation.
@@ -316,7 +324,7 @@ import * as utilities from "./utilities";
  * ### protectionPolicyState
  * * `policy`: Reference to the policy object in use.
  *
- * See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/listVms).
+ * See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/listVms).
  */
 export function getVirtualMachinesV2(args?: GetVirtualMachinesV2Args, opts?: pulumi.InvokeOptions): Promise<GetVirtualMachinesV2Result> {
     args = args || {};
@@ -506,6 +514,7 @@ export interface GetVirtualMachinesV2Result {
  * - `generationUuid`: Generation UUID of the VM. It should be of type UUID.
  * - `biosUuid`: BIOS UUID of the VM. It should be of type UUID.
  * - `categories`: Categories for the VM.
+ * * `project`: Reference to a project.
  * - `ownershipInfo`: Ownership information for the VM.
  * - `host`: Reference to the host, the VM is running on.
  * - `cluster`: Reference to a cluster.
@@ -548,6 +557,11 @@ export interface GetVirtualMachinesV2Result {
  * The `categories` attribute supports the following:
  *
  * * `extId`: A globally unique identifier of a VM category of type UUID.
+ *
+ * ### Project
+ * The `project` attribute supports the following:
+ *
+ * * `extId`: The globally unique identifier of an instance of type UUID.
  *
  * ### Ownership Info
  * The `ownershipInfo` attribute supports the following:
@@ -703,8 +717,10 @@ export interface GetVirtualMachinesV2Result {
  * The `nics` attribute supports the following:
  *
  * * `extId`: A globally unique identifier of an instance that is suitable for external consumption
- * * `backingInfo`: Defines a NIC emulated by the hypervisor
- * * `networkInfo`: Network information for a NIC.
+ * * `nicBackingInfo`: New NIC backing info (v2.4.1+). One of `virtualEthernetNic`, `sriovNic`, `dpOffloadNic`.
+ * * `nicNetworkInfo`: New NIC network info (v2.4.1+). One of `virtualEthernetNicNetworkInfo`, `sriovNicNetworkInfo`, `dpOffloadNicNetworkInfo`.
+ * * `backingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+ * * `networkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
  *
  * ### nics.backing_info
  * * `model`: Options for the NIC emulation.
@@ -767,7 +783,7 @@ export interface GetVirtualMachinesV2Result {
  * ### protectionPolicyState
  * * `policy`: Reference to the policy object in use.
  *
- * See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/listVms).
+ * See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/listVms).
  */
 export function getVirtualMachinesV2Output(args?: GetVirtualMachinesV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualMachinesV2Result> {
     args = args || {};

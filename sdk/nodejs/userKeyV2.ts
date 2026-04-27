@@ -24,26 +24,26 @@ import * as utilities from "./utilities";
  *     assignedTo: "developer_user_1",
  * });
  * ```
- * ## Argument Reference
  *
- * The following arguments are supported:
+ * ## Lifecycle Behavior
  *
- * * `userExtId`: - ( Required ) External Identifier of the User.
- * * `name`: - ( Required ) Identifier for the key in the form of a name.
- * * `description`: - ( Optional ) Brief description of the key.
- * * `keyType`: - ( Required ) The type of key. Enum Values:
- *       * "API_KEY":	A key type that is used to identify a service.
- *       * "OBJECT_KEY":	A combination of access key and secret key to sign an API request.
- * * `creationType`: - ( Optional ) The creation mechanism of this entity. Enum Values:
- *       * "PREDEFINED":	Predefined creator workflow type is for entity created by the system.
- *       * "SERVICEDEFINED":	Servicedefined creator workflow type is for entity created by the service.
- *       * "USERDEFINED":	Userdefined creator workflow type is for entity created by the users.
- * * `expiryTime`: - ( Optional ) The time when the key will expire.
- * * `status`: - ( Optional ) The status of the key. Enum Values:
- *       * "REVOKED":	Key is revoked.
- *       * "VALID":	Key is valid.
- *       * "EXPIRED":	Key is expired.
- * * `assignedTo`: - ( Optional ) External client to whom the given key is allocated.
+ * > Important: The nutanix.UserKeyV2 resource does not support in-place updates.
+ *
+ * Changes to the following arguments will force the resource to be replaced:
+ *
+ * - name
+ *
+ * - description
+ *
+ * - keyType
+ *
+ * - expiryTime
+ *
+ * - assignedTo
+ *
+ * When any of these arguments are modified, Terraform will destroy the existing user key and create a new one. This results in a new key being generated.
+ *
+ * > Note: Replacing the resource invalidates the previously generated key. Ensure that any dependent systems are updated before applying the changes.
  */
 export class UserKeyV2 extends pulumi.CustomResource {
     /**
@@ -74,7 +74,7 @@ export class UserKeyV2 extends pulumi.CustomResource {
     }
 
     /**
-     * - External client to whom the given key is allocated.
+     * - ( Optional ) External client to whom the given key is allocated.
      */
     declare public readonly assignedTo: pulumi.Output<string>;
     /**
@@ -86,15 +86,18 @@ export class UserKeyV2 extends pulumi.CustomResource {
      */
     declare public readonly createdTime: pulumi.Output<string>;
     /**
-     * - The creation mechanism of this entity.
+     * - ( Optional ) The creation mechanism of this entity. Enum Values:
+     * _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+     * _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+     * _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
      */
     declare public readonly creationType: pulumi.Output<string>;
     /**
-     * - Brief description of the key.
+     * - ( Optional ) Brief description of the key.
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * - The time when the key will expire.
+     * - ( Optional ) The time when the key will expire.
      */
     declare public readonly expiryTime: pulumi.Output<string>;
     /**
@@ -106,7 +109,9 @@ export class UserKeyV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly keyDetails: pulumi.Output<outputs.UserKeyV2KeyDetail[]>;
     /**
-     * - The type of key.
+     * - ( Required ) The type of key. Enum Values:
+     * _ "API_KEY": A key type that is used to identify a service.
+     * _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
      */
     declare public readonly keyType: pulumi.Output<string>;
     /**
@@ -126,17 +131,23 @@ export class UserKeyV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly links: pulumi.Output<outputs.UserKeyV2Link[]>;
     /**
-     * - Identifier for the key in the form of a name.
+     * - ( Required ) Identifier for the key in the form of a name.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * - The status of the key.
+     * - ( Optional ) The status of the key. Enum Values:
+     * _ "REVOKED": Key is revoked.
+     * _ "VALID": Key is valid.
+     * _ "EXPIRED": Key is expired.
      */
     declare public readonly status: pulumi.Output<string>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
+    /**
+     * - ( Required ) External Identifier of the User.
+     */
     declare public readonly userExtId: pulumi.Output<string>;
 
     /**
@@ -205,7 +216,7 @@ export class UserKeyV2 extends pulumi.CustomResource {
  */
 export interface UserKeyV2State {
     /**
-     * - External client to whom the given key is allocated.
+     * - ( Optional ) External client to whom the given key is allocated.
      */
     assignedTo?: pulumi.Input<string>;
     /**
@@ -217,15 +228,18 @@ export interface UserKeyV2State {
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * - The creation mechanism of this entity.
+     * - ( Optional ) The creation mechanism of this entity. Enum Values:
+     * _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+     * _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+     * _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
      */
     creationType?: pulumi.Input<string>;
     /**
-     * - Brief description of the key.
+     * - ( Optional ) Brief description of the key.
      */
     description?: pulumi.Input<string>;
     /**
-     * - The time when the key will expire.
+     * - ( Optional ) The time when the key will expire.
      */
     expiryTime?: pulumi.Input<string>;
     /**
@@ -237,7 +251,9 @@ export interface UserKeyV2State {
      */
     keyDetails?: pulumi.Input<pulumi.Input<inputs.UserKeyV2KeyDetail>[]>;
     /**
-     * - The type of key.
+     * - ( Required ) The type of key. Enum Values:
+     * _ "API_KEY": A key type that is used to identify a service.
+     * _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
      */
     keyType?: pulumi.Input<string>;
     /**
@@ -257,17 +273,23 @@ export interface UserKeyV2State {
      */
     links?: pulumi.Input<pulumi.Input<inputs.UserKeyV2Link>[]>;
     /**
-     * - Identifier for the key in the form of a name.
+     * - ( Required ) Identifier for the key in the form of a name.
      */
     name?: pulumi.Input<string>;
     /**
-     * - The status of the key.
+     * - ( Optional ) The status of the key. Enum Values:
+     * _ "REVOKED": Key is revoked.
+     * _ "VALID": Key is valid.
+     * _ "EXPIRED": Key is expired.
      */
     status?: pulumi.Input<string>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
     tenantId?: pulumi.Input<string>;
+    /**
+     * - ( Required ) External Identifier of the User.
+     */
     userExtId?: pulumi.Input<string>;
 }
 
@@ -276,7 +298,7 @@ export interface UserKeyV2State {
  */
 export interface UserKeyV2Args {
     /**
-     * - External client to whom the given key is allocated.
+     * - ( Optional ) External client to whom the given key is allocated.
      */
     assignedTo?: pulumi.Input<string>;
     /**
@@ -288,19 +310,24 @@ export interface UserKeyV2Args {
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * - The creation mechanism of this entity.
+     * - ( Optional ) The creation mechanism of this entity. Enum Values:
+     * _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+     * _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+     * _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
      */
     creationType?: pulumi.Input<string>;
     /**
-     * - Brief description of the key.
+     * - ( Optional ) Brief description of the key.
      */
     description?: pulumi.Input<string>;
     /**
-     * - The time when the key will expire.
+     * - ( Optional ) The time when the key will expire.
      */
     expiryTime?: pulumi.Input<string>;
     /**
-     * - The type of key.
+     * - ( Required ) The type of key. Enum Values:
+     * _ "API_KEY": A key type that is used to identify a service.
+     * _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
      */
     keyType: pulumi.Input<string>;
     /**
@@ -316,12 +343,18 @@ export interface UserKeyV2Args {
      */
     lastUsedTime?: pulumi.Input<string>;
     /**
-     * - Identifier for the key in the form of a name.
+     * - ( Required ) Identifier for the key in the form of a name.
      */
     name?: pulumi.Input<string>;
     /**
-     * - The status of the key.
+     * - ( Optional ) The status of the key. Enum Values:
+     * _ "REVOKED": Key is revoked.
+     * _ "VALID": Key is valid.
+     * _ "EXPIRED": Key is expired.
      */
     status?: pulumi.Input<string>;
+    /**
+     * - ( Required ) External Identifier of the User.
+     */
     userExtId: pulumi.Input<string>;
 }

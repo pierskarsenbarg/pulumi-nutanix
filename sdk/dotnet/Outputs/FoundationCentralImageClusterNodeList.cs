@@ -80,6 +80,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly bool? RdmaPassthrough;
         /// <summary>
+        /// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+        /// ```
+        /// server_configuration_data = jsonencode({
+        /// intersight_data = {
+        /// organization = "default"
+        /// }
+        /// })
+        /// ```
+        /// </summary>
+        public readonly string? ServerConfigurationData;
+        /// <summary>
         /// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
         /// </summary>
         public readonly bool? UseExistingNetworkSettings;
@@ -120,6 +131,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool? rdmaPassthrough,
 
+            string? serverConfigurationData,
+
             bool? useExistingNetworkSettings)
         {
             CvmGateway = cvmGateway;
@@ -139,6 +152,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             IpmiIp = ipmiIp;
             IpmiNetmask = ipmiNetmask;
             RdmaPassthrough = rdmaPassthrough;
+            ServerConfigurationData = serverConfigurationData;
             UseExistingNetworkSettings = useExistingNetworkSettings;
         }
     }

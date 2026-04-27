@@ -11,7 +11,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Describes the Fetches the protection policy identified by an external identifier.
+// > **Authentication:** Protection policy operations do **not** support API key authentication. Use `username` and `password` in the provider configuration.
+//
+// Fetches the protection policy identified by an external identifier.
 //
 // ## Example Usage
 //

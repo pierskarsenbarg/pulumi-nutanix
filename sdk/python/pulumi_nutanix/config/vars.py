@@ -21,6 +21,26 @@ __config__ = pulumi.Config('nutanix')
 
 class _ExportableConfig(types.ModuleType):
     @_builtins.property
+    def api_key(self) -> Optional[str]:
+        """
+        API key for Nutanix Prism authentication. Can be used as an
+        alternative to username/password. When set, the X-Ntnx-Api-Key header
+        will be used instead of Basic Authentication.
+        """
+        return __config__.get('apiKey')
+
+    @_builtins.property
+    def custom_headers(self) -> Optional[str]:
+        """
+        Custom HTTP headers to add to all API requests. Useful for
+        environments that require additional headers such as Cloudflare Access
+        service tokens. Headers can also be set via environment variables with
+        the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+        becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+        """
+        return __config__.get('customHeaders')
+
+    @_builtins.property
     def endpoint(self) -> Optional[str]:
         """
         URL for Nutanix Prism (e.g IP or FQDN for cluster VIP

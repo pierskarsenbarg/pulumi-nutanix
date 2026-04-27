@@ -102,7 +102,7 @@ import * as utilities from "./utilities";
  * * `numVirtualTargets`: - Number of virtual targets generated for the iSCSI target. This field is immutable.
  * * `iscsiTargetName`: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
  *
- * See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/IscsiClients/operation/listIscsiClients).
+ * See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/IscsiClients/operation/listIscsiClients).
  */
 export function getVolumeIscsiClientsV2(args?: GetVolumeIscsiClientsV2Args, opts?: pulumi.InvokeOptions): Promise<GetVolumeIscsiClientsV2Result> {
     args = args || {};
@@ -244,7 +244,7 @@ export interface GetVolumeIscsiClientsV2Result {
  * * `numVirtualTargets`: - Number of virtual targets generated for the iSCSI target. This field is immutable.
  * * `iscsiTargetName`: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
  *
- * See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/IscsiClients/operation/listIscsiClients).
+ * See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/IscsiClients/operation/listIscsiClients).
  */
 export function getVolumeIscsiClientsV2Output(args?: GetVolumeIscsiClientsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeIscsiClientsV2Result> {
     args = args || {};

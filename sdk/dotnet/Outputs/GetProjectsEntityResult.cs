@@ -63,7 +63,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableDictionary<string, string> OwnerReference;
         public readonly ImmutableDictionary<string, string> ProjectReference;
         /// <summary>
-        /// The status for a resource domain (limits and values)
+        /// (Deprecated) Not supported starting from provider version `2.4.0` and expected to be empty.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntityResourceDomainResult> ResourceDomains;
         public readonly string State;

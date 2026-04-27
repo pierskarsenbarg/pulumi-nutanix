@@ -14,6 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateResult
     {
+        public readonly ImmutableArray<string> CategoryExtIds;
         public readonly string CreateTime;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateCreatedByResult> CreatedBies;
         public readonly string ExtId;
@@ -28,6 +29,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetTemplatesV2TemplateResult(
+            ImmutableArray<string> categoryExtIds,
+
             string createTime,
 
             ImmutableArray<Outputs.GetTemplatesV2TemplateCreatedByResult> createdBies,
@@ -50,6 +53,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetTemplatesV2TemplateUpdatedByResult> updatedBies)
         {
+            CategoryExtIds = categoryExtIds;
             CreateTime = createTime;
             CreatedBies = createdBies;
             ExtId = extId;

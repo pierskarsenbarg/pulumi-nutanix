@@ -52,18 +52,18 @@ class ObjectStoreV2Args:
         :param pulumi.Input[_builtins.str] public_network_reference: -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input[_builtins.str] region: -(Optional) The region in which the Object store is deployed.
         :param pulumi.Input[_builtins.str] state: -(Optional) Enum for the state of the Object store.
-               | Enum                                   | Description                                                     |
+               | Enum | Description |
                |----------------------------------------|-----------------------------------------------------------------|
-               | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-               | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-               | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-               | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-               | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-               | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-               | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-               | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-               | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-               | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+               | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+               | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+               | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+               | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+               | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+               | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+               | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+               | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+               | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+               | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         :param pulumi.Input['ObjectStoreV2StorageNetworkDnsIpArgs'] storage_network_dns_ip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param pulumi.Input[_builtins.str] storage_network_reference: -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input['ObjectStoreV2StorageNetworkVipArgs'] storage_network_vip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
@@ -239,18 +239,18 @@ class ObjectStoreV2Args:
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Enum for the state of the Object store.
-        | Enum                                   | Description                                                     |
+        | Enum | Description |
         |----------------------------------------|-----------------------------------------------------------------|
-        | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-        | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-        | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-        | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-        | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-        | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-        | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-        | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-        | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-        | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+        | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+        | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+        | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+        | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+        | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+        | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+        | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+        | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+        | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+        | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         """
         return pulumi.get(self, "state")
 
@@ -350,18 +350,18 @@ class _ObjectStoreV2State:
         :param pulumi.Input[_builtins.str] public_network_reference: -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input[_builtins.str] region: -(Optional) The region in which the Object store is deployed.
         :param pulumi.Input[_builtins.str] state: -(Optional) Enum for the state of the Object store.
-               | Enum                                   | Description                                                     |
+               | Enum | Description |
                |----------------------------------------|-----------------------------------------------------------------|
-               | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-               | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-               | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-               | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-               | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-               | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-               | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-               | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-               | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-               | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+               | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+               | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+               | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+               | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+               | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+               | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+               | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+               | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+               | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+               | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         :param pulumi.Input['ObjectStoreV2StorageNetworkDnsIpArgs'] storage_network_dns_ip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param pulumi.Input[_builtins.str] storage_network_reference: -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input['ObjectStoreV2StorageNetworkVipArgs'] storage_network_vip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
@@ -596,18 +596,18 @@ class _ObjectStoreV2State:
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Enum for the state of the Object store.
-        | Enum                                   | Description                                                     |
+        | Enum | Description |
         |----------------------------------------|-----------------------------------------------------------------|
-        | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-        | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-        | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-        | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-        | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-        | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-        | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-        | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-        | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-        | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+        | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+        | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+        | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+        | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+        | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+        | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+        | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+        | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+        | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+        | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         """
         return pulumi.get(self, "state")
 
@@ -705,7 +705,7 @@ class ObjectStoreV2(pulumi.CustomResource):
         > ⚠️ **Warning:** Before deleting the Object Store, make sure to delete all buckets inside it manually.
         Currently, the Terraform provider does not support the Delete Bucket API.
 
-        > ⚠️ **Warning:** The Object Store **update** operation is intended **only** to resume a failed deployment.
+        > ⚠️ **Warning:** The Object Store **update** operation does **not** allow modification of any configuration parameters (including `name` and `description`). As per the API design, the update operation is supported exclusively for retrying a failed deployment. No other changes can be performed through update.
         It should be used when the Object Store is in the `OBJECT_STORE_DEPLOYMENT_FAILED` state.
         Triggering an update in this state will attempt to resume the deployment process.
 
@@ -787,18 +787,18 @@ class ObjectStoreV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] public_network_reference: -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input[_builtins.str] region: -(Optional) The region in which the Object store is deployed.
         :param pulumi.Input[_builtins.str] state: -(Optional) Enum for the state of the Object store.
-               | Enum                                   | Description                                                     |
+               | Enum | Description |
                |----------------------------------------|-----------------------------------------------------------------|
-               | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-               | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-               | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-               | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-               | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-               | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-               | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-               | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-               | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-               | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+               | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+               | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+               | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+               | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+               | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+               | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+               | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+               | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+               | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+               | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         :param pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']] storage_network_dns_ip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param pulumi.Input[_builtins.str] storage_network_reference: -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']] storage_network_vip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
@@ -816,7 +816,7 @@ class ObjectStoreV2(pulumi.CustomResource):
         > ⚠️ **Warning:** Before deleting the Object Store, make sure to delete all buckets inside it manually.
         Currently, the Terraform provider does not support the Delete Bucket API.
 
-        > ⚠️ **Warning:** The Object Store **update** operation is intended **only** to resume a failed deployment.
+        > ⚠️ **Warning:** The Object Store **update** operation does **not** allow modification of any configuration parameters (including `name` and `description`). As per the API design, the update operation is supported exclusively for retrying a failed deployment. No other changes can be performed through update.
         It should be used when the Object Store is in the `OBJECT_STORE_DEPLOYMENT_FAILED` state.
         Triggering an update in this state will attempt to resume the deployment process.
 
@@ -999,18 +999,18 @@ class ObjectStoreV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] public_network_reference: -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input[_builtins.str] region: -(Optional) The region in which the Object store is deployed.
         :param pulumi.Input[_builtins.str] state: -(Optional) Enum for the state of the Object store.
-               | Enum                                   | Description                                                     |
+               | Enum | Description |
                |----------------------------------------|-----------------------------------------------------------------|
-               | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-               | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-               | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-               | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-               | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-               | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-               | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-               | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-               | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-               | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+               | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+               | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+               | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+               | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+               | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+               | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+               | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+               | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+               | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+               | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         :param pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']] storage_network_dns_ip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param pulumi.Input[_builtins.str] storage_network_reference: -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']] storage_network_vip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
@@ -1169,18 +1169,18 @@ class ObjectStoreV2(pulumi.CustomResource):
     def state(self) -> pulumi.Output[_builtins.str]:
         """
         -(Optional) Enum for the state of the Object store.
-        | Enum                                   | Description                                                     |
+        | Enum | Description |
         |----------------------------------------|-----------------------------------------------------------------|
-        | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-        | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-        | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-        | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-        | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-        | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-        | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-        | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-        | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-        | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+        | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+        | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+        | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+        | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+        | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+        | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+        | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+        | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+        | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+        | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         """
         return pulumi.get(self, "state")
 

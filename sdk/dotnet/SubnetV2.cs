@@ -10,81 +10,326 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to create a subnet based on the input parameters.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     //creating subnet with IP pool
+    ///     var vlan_112 = new Nutanix.Index.SubnetV2("vlan-112", new()
+    ///     {
+    ///         Name = "vlan-112",
+    ///         Description = "subnet VLAN 112 managed by Terraform with IP pool",
+    ///         ClusterReference = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+    ///         SubnetType = "VLAN",
+    ///         NetworkId = 122,
+    ///         IsExternal = true,
+    ///         IpConfigs = new[]
+    ///         {
+    ///             new Nutanix.Inputs.SubnetV2IpConfigArgs
+    ///             {
+    ///                 Ipv4s = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.SubnetV2IpConfigIpv4Args
+    ///                     {
+    ///                         IpSubnets = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.SubnetV2IpConfigIpv4IpSubnetArgs
+    ///                             {
+    ///                                 Ips = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.SubnetV2IpConfigIpv4IpSubnetIpArgs
+    ///                                     {
+    ///                                         Value = "192.168.0.0",
+    ///                                     },
+    ///                                 },
+    ///                                 PrefixLength = 24,
+    ///                             },
+    ///                         },
+    ///                         DefaultGatewayIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.SubnetV2IpConfigIpv4DefaultGatewayIpArgs
+    ///                             {
+    ///                                 Value = "192.168.0.1",
+    ///                             },
+    ///                         },
+    ///                         PoolLists = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.SubnetV2IpConfigIpv4PoolListArgs
+    ///                             {
+    ///                                 StartIps = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.SubnetV2IpConfigIpv4PoolListStartIpArgs
+    ///                                     {
+    ///                                         Value = "192.168.0.20",
+    ///                                     },
+    ///                                 },
+    ///                                 EndIps = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.SubnetV2IpConfigIpv4PoolListEndIpArgs
+    ///                                     {
+    ///                                         Value = "192.168.0.30",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     //creating subnet without IP pool
+    ///     var vlan_113 = new Nutanix.Index.SubnetV2("vlan-113", new()
+    ///     {
+    ///         Name = "vlan-113",
+    ///         Description = "subnet VLAN 113 managed by Terraform",
+    ///         ClusterReference = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+    ///         SubnetType = "VLAN",
+    ///         NetworkId = 113,
+    ///     });
+    /// 
+    ///     // creating subnet with IP pool and DHCP options
+    ///     var van_114 = new Nutanix.Index.SubnetV2("van-114", new()
+    ///     {
+    ///         Name = "vlan-114",
+    ///         Description = "subnet VLAN 114 managed by Terraform",
+    ///         ClusterReference = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+    ///         SubnetType = "VLAN",
+    ///         NetworkId = 114,
+    ///         IpConfigs = new[]
+    ///         {
+    ///             new Nutanix.Inputs.SubnetV2IpConfigArgs
+    ///             {
+    ///                 Ipv4s = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.SubnetV2IpConfigIpv4Args
+    ///                     {
+    ///                         IpSubnets = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.SubnetV2IpConfigIpv4IpSubnetArgs
+    ///                             {
+    ///                                 Ips = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.SubnetV2IpConfigIpv4IpSubnetIpArgs
+    ///                                     {
+    ///                                         Value = "192.168.0.0",
+    ///                                     },
+    ///                                 },
+    ///                                 PrefixLength = 24,
+    ///                             },
+    ///                         },
+    ///                         DefaultGatewayIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.SubnetV2IpConfigIpv4DefaultGatewayIpArgs
+    ///                             {
+    ///                                 Value = "192.168.0.1",
+    ///                             },
+    ///                         },
+    ///                         PoolLists = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.SubnetV2IpConfigIpv4PoolListArgs
+    ///                             {
+    ///                                 StartIps = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.SubnetV2IpConfigIpv4PoolListStartIpArgs
+    ///                                     {
+    ///                                         Value = "192.168.0.20",
+    ///                                     },
+    ///                                 },
+    ///                                 EndIps = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.SubnetV2IpConfigIpv4PoolListEndIpArgs
+    ///                                     {
+    ///                                         Value = "192.168.0.30",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         DhcpOptions = new[]
+    ///         {
+    ///             new Nutanix.Inputs.SubnetV2DhcpOptionArgs
+    ///             {
+    ///                 DomainNameServers = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.SubnetV2DhcpOptionDomainNameServerArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.SubnetV2DhcpOptionDomainNameServerIpv4Args
+    ///                             {
+    ///                                 Value = "8.8.8.8",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 SearchDomains = new[]
+    ///                 {
+    ///                     "eng.nutanix.com",
+    ///                 },
+    ///                 DomainName = "nutanix.com",
+    ///                 TftpServerName = "10.5.0.10",
+    ///                 BootFileName = "pxelinux.0",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/subnetV2:SubnetV2")]
     public partial class SubnetV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Name of the bridge on the host for the subnet.
+        /// </summary>
         [Output("bridgeName")]
         public Output<string> BridgeName { get; private set; } = null!;
 
+        /// <summary>
+        /// Cluster Name
+        /// </summary>
         [Output("clusterName")]
         public Output<string> ClusterName { get; private set; } = null!;
 
+        /// <summary>
+        /// UUID of the cluster this subnet belongs to.
+        /// </summary>
         [Output("clusterReference")]
         public Output<string> ClusterReference { get; private set; } = null!;
 
+        /// <summary>
+        /// Description of the subnet.
+        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// List of DHCP options to be configured.
+        /// </summary>
         [Output("dhcpOptions")]
         public Output<ImmutableArray<Outputs.SubnetV2DhcpOption>> DhcpOptions { get; private set; } = null!;
 
+        /// <summary>
+        /// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+        /// </summary>
         [Output("dynamicIpAddresses")]
         public Output<ImmutableArray<Outputs.SubnetV2DynamicIpAddress>> DynamicIpAddresses { get; private set; } = null!;
 
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// Hypervisor Type
+        /// </summary>
         [Output("hypervisorType")]
         public Output<string> HypervisorType { get; private set; } = null!;
 
+        /// <summary>
+        /// IP configuration for the subnet.
+        /// </summary>
         [Output("ipConfigs")]
         public Output<ImmutableArray<Outputs.SubnetV2IpConfig>> IpConfigs { get; private set; } = null!;
 
+        /// <summary>
+        /// IP Prefix in CIDR format.
+        /// </summary>
         [Output("ipPrefix")]
         public Output<string> IpPrefix { get; private set; } = null!;
 
         [Output("ipUsages")]
         public Output<ImmutableArray<Outputs.SubnetV2IpUsage>> IpUsages { get; private set; } = null!;
 
+        /// <summary>
+        /// Indicates whether the subnet is used for advanced networking.
+        /// </summary>
         [Output("isAdvancedNetworking")]
         public Output<bool> IsAdvancedNetworking { get; private set; } = null!;
 
+        /// <summary>
+        /// Indicates whether the subnet is used for external connectivity.
+        /// </summary>
         [Output("isExternal")]
         public Output<bool> IsExternal { get; private set; } = null!;
 
+        /// <summary>
+        /// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+        /// </summary>
         [Output("isNatEnabled")]
         public Output<bool> IsNatEnabled { get; private set; } = null!;
 
         [Output("links")]
         public Output<ImmutableArray<Outputs.SubnetV2Link>> Links { get; private set; } = null!;
 
+        [Output("metadatas")]
+        public Output<ImmutableArray<Outputs.SubnetV2Metadata>> Metadatas { get; private set; } = null!;
+
         [Output("migrationState")]
         public Output<string> MigrationState { get; private set; } = null!;
 
+        /// <summary>
+        /// Name of the subnet.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+        /// </summary>
         [Output("networkFunctionChainReference")]
         public Output<string> NetworkFunctionChainReference { get; private set; } = null!;
 
+        /// <summary>
+        /// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+        /// </summary>
         [Output("networkId")]
         public Output<int?> NetworkId { get; private set; } = null!;
 
+        /// <summary>
+        /// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
+        /// </summary>
         [Output("reservedIpAddresses")]
         public Output<ImmutableArray<Outputs.SubnetV2ReservedIpAddress>> ReservedIpAddresses { get; private set; } = null!;
 
+        /// <summary>
+        /// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
+        /// </summary>
         [Output("subnetType")]
         public Output<string> SubnetType { get; private set; } = null!;
 
+        /// <summary>
+        /// UUID of the virtual switch this subnet belongs to (type VLAN only).
+        /// </summary>
         [Output("virtualSwitchReference")]
         public Output<string> VirtualSwitchReference { get; private set; } = null!;
 
+        /// <summary>
+        /// Schema to configure a virtual switch
+        /// </summary>
         [Output("virtualSwitches")]
         public Output<ImmutableArray<Outputs.SubnetV2VirtualSwitch>> VirtualSwitches { get; private set; } = null!;
 
+        /// <summary>
+        /// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+        /// </summary>
         [Output("vpcReference")]
         public Output<string> VpcReference { get; private set; } = null!;
 
+        /// <summary>
+        /// Networking common base object
+        /// </summary>
         [Output("vpcs")]
         public Output<ImmutableArray<Outputs.SubnetV2Vpc>> Vpcs { get; private set; } = null!;
 
@@ -135,20 +380,36 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class SubnetV2Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of the bridge on the host for the subnet.
+        /// </summary>
         [Input("bridgeName")]
         public Input<string>? BridgeName { get; set; }
 
+        /// <summary>
+        /// Cluster Name
+        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
+        /// <summary>
+        /// UUID of the cluster this subnet belongs to.
+        /// </summary>
         [Input("clusterReference")]
         public Input<string>? ClusterReference { get; set; }
 
+        /// <summary>
+        /// Description of the subnet.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("dhcpOptions")]
         private InputList<Inputs.SubnetV2DhcpOptionArgs>? _dhcpOptions;
+
+        /// <summary>
+        /// List of DHCP options to be configured.
+        /// </summary>
         public InputList<Inputs.SubnetV2DhcpOptionArgs> DhcpOptions
         {
             get => _dhcpOptions ?? (_dhcpOptions = new InputList<Inputs.SubnetV2DhcpOptionArgs>());
@@ -157,6 +418,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dynamicIpAddresses")]
         private InputList<Inputs.SubnetV2DynamicIpAddressArgs>? _dynamicIpAddresses;
+
+        /// <summary>
+        /// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+        /// </summary>
         public InputList<Inputs.SubnetV2DynamicIpAddressArgs> DynamicIpAddresses
         {
             get => _dynamicIpAddresses ?? (_dynamicIpAddresses = new InputList<Inputs.SubnetV2DynamicIpAddressArgs>());
@@ -166,17 +431,27 @@ namespace PiersKarsenbarg.Nutanix
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Hypervisor Type
+        /// </summary>
         [Input("hypervisorType")]
         public Input<string>? HypervisorType { get; set; }
 
         [Input("ipConfigs")]
         private InputList<Inputs.SubnetV2IpConfigArgs>? _ipConfigs;
+
+        /// <summary>
+        /// IP configuration for the subnet.
+        /// </summary>
         public InputList<Inputs.SubnetV2IpConfigArgs> IpConfigs
         {
             get => _ipConfigs ?? (_ipConfigs = new InputList<Inputs.SubnetV2IpConfigArgs>());
             set => _ipConfigs = value;
         }
 
+        /// <summary>
+        /// IP Prefix in CIDR format.
+        /// </summary>
         [Input("ipPrefix")]
         public Input<string>? IpPrefix { get; set; }
 
@@ -188,51 +463,98 @@ namespace PiersKarsenbarg.Nutanix
             set => _ipUsages = value;
         }
 
+        /// <summary>
+        /// Indicates whether the subnet is used for advanced networking.
+        /// </summary>
         [Input("isAdvancedNetworking")]
         public Input<bool>? IsAdvancedNetworking { get; set; }
 
+        /// <summary>
+        /// Indicates whether the subnet is used for external connectivity.
+        /// </summary>
         [Input("isExternal")]
         public Input<bool>? IsExternal { get; set; }
 
+        /// <summary>
+        /// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+        /// </summary>
         [Input("isNatEnabled")]
         public Input<bool>? IsNatEnabled { get; set; }
 
+        [Input("metadatas")]
+        private InputList<Inputs.SubnetV2MetadataArgs>? _metadatas;
+        public InputList<Inputs.SubnetV2MetadataArgs> Metadatas
+        {
+            get => _metadatas ?? (_metadatas = new InputList<Inputs.SubnetV2MetadataArgs>());
+            set => _metadatas = value;
+        }
+
+        /// <summary>
+        /// Name of the subnet.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+        /// </summary>
         [Input("networkFunctionChainReference")]
         public Input<string>? NetworkFunctionChainReference { get; set; }
 
+        /// <summary>
+        /// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+        /// </summary>
         [Input("networkId")]
         public Input<int>? NetworkId { get; set; }
 
         [Input("reservedIpAddresses")]
         private InputList<Inputs.SubnetV2ReservedIpAddressArgs>? _reservedIpAddresses;
+
+        /// <summary>
+        /// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2ReservedIpAddressArgs> ReservedIpAddresses
         {
             get => _reservedIpAddresses ?? (_reservedIpAddresses = new InputList<Inputs.SubnetV2ReservedIpAddressArgs>());
             set => _reservedIpAddresses = value;
         }
 
+        /// <summary>
+        /// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
+        /// </summary>
         [Input("subnetType", required: true)]
         public Input<string> SubnetType { get; set; } = null!;
 
+        /// <summary>
+        /// UUID of the virtual switch this subnet belongs to (type VLAN only).
+        /// </summary>
         [Input("virtualSwitchReference")]
         public Input<string>? VirtualSwitchReference { get; set; }
 
         [Input("virtualSwitches")]
         private InputList<Inputs.SubnetV2VirtualSwitchArgs>? _virtualSwitches;
+
+        /// <summary>
+        /// Schema to configure a virtual switch
+        /// </summary>
         public InputList<Inputs.SubnetV2VirtualSwitchArgs> VirtualSwitches
         {
             get => _virtualSwitches ?? (_virtualSwitches = new InputList<Inputs.SubnetV2VirtualSwitchArgs>());
             set => _virtualSwitches = value;
         }
 
+        /// <summary>
+        /// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+        /// </summary>
         [Input("vpcReference")]
         public Input<string>? VpcReference { get; set; }
 
         [Input("vpcs")]
         private InputList<Inputs.SubnetV2VpcArgs>? _vpcs;
+
+        /// <summary>
+        /// Networking common base object
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcArgs> Vpcs
         {
             get => _vpcs ?? (_vpcs = new InputList<Inputs.SubnetV2VpcArgs>());
@@ -247,20 +569,36 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class SubnetV2State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of the bridge on the host for the subnet.
+        /// </summary>
         [Input("bridgeName")]
         public Input<string>? BridgeName { get; set; }
 
+        /// <summary>
+        /// Cluster Name
+        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
+        /// <summary>
+        /// UUID of the cluster this subnet belongs to.
+        /// </summary>
         [Input("clusterReference")]
         public Input<string>? ClusterReference { get; set; }
 
+        /// <summary>
+        /// Description of the subnet.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("dhcpOptions")]
         private InputList<Inputs.SubnetV2DhcpOptionGetArgs>? _dhcpOptions;
+
+        /// <summary>
+        /// List of DHCP options to be configured.
+        /// </summary>
         public InputList<Inputs.SubnetV2DhcpOptionGetArgs> DhcpOptions
         {
             get => _dhcpOptions ?? (_dhcpOptions = new InputList<Inputs.SubnetV2DhcpOptionGetArgs>());
@@ -269,6 +607,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dynamicIpAddresses")]
         private InputList<Inputs.SubnetV2DynamicIpAddressGetArgs>? _dynamicIpAddresses;
+
+        /// <summary>
+        /// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+        /// </summary>
         public InputList<Inputs.SubnetV2DynamicIpAddressGetArgs> DynamicIpAddresses
         {
             get => _dynamicIpAddresses ?? (_dynamicIpAddresses = new InputList<Inputs.SubnetV2DynamicIpAddressGetArgs>());
@@ -278,17 +620,27 @@ namespace PiersKarsenbarg.Nutanix
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Hypervisor Type
+        /// </summary>
         [Input("hypervisorType")]
         public Input<string>? HypervisorType { get; set; }
 
         [Input("ipConfigs")]
         private InputList<Inputs.SubnetV2IpConfigGetArgs>? _ipConfigs;
+
+        /// <summary>
+        /// IP configuration for the subnet.
+        /// </summary>
         public InputList<Inputs.SubnetV2IpConfigGetArgs> IpConfigs
         {
             get => _ipConfigs ?? (_ipConfigs = new InputList<Inputs.SubnetV2IpConfigGetArgs>());
             set => _ipConfigs = value;
         }
 
+        /// <summary>
+        /// IP Prefix in CIDR format.
+        /// </summary>
         [Input("ipPrefix")]
         public Input<string>? IpPrefix { get; set; }
 
@@ -300,12 +652,21 @@ namespace PiersKarsenbarg.Nutanix
             set => _ipUsages = value;
         }
 
+        /// <summary>
+        /// Indicates whether the subnet is used for advanced networking.
+        /// </summary>
         [Input("isAdvancedNetworking")]
         public Input<bool>? IsAdvancedNetworking { get; set; }
 
+        /// <summary>
+        /// Indicates whether the subnet is used for external connectivity.
+        /// </summary>
         [Input("isExternal")]
         public Input<bool>? IsExternal { get; set; }
 
+        /// <summary>
+        /// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+        /// </summary>
         [Input("isNatEnabled")]
         public Input<bool>? IsNatEnabled { get; set; }
 
@@ -317,45 +678,83 @@ namespace PiersKarsenbarg.Nutanix
             set => _links = value;
         }
 
+        [Input("metadatas")]
+        private InputList<Inputs.SubnetV2MetadataGetArgs>? _metadatas;
+        public InputList<Inputs.SubnetV2MetadataGetArgs> Metadatas
+        {
+            get => _metadatas ?? (_metadatas = new InputList<Inputs.SubnetV2MetadataGetArgs>());
+            set => _metadatas = value;
+        }
+
         [Input("migrationState")]
         public Input<string>? MigrationState { get; set; }
 
+        /// <summary>
+        /// Name of the subnet.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+        /// </summary>
         [Input("networkFunctionChainReference")]
         public Input<string>? NetworkFunctionChainReference { get; set; }
 
+        /// <summary>
+        /// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+        /// </summary>
         [Input("networkId")]
         public Input<int>? NetworkId { get; set; }
 
         [Input("reservedIpAddresses")]
         private InputList<Inputs.SubnetV2ReservedIpAddressGetArgs>? _reservedIpAddresses;
+
+        /// <summary>
+        /// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2ReservedIpAddressGetArgs> ReservedIpAddresses
         {
             get => _reservedIpAddresses ?? (_reservedIpAddresses = new InputList<Inputs.SubnetV2ReservedIpAddressGetArgs>());
             set => _reservedIpAddresses = value;
         }
 
+        /// <summary>
+        /// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
+        /// </summary>
         [Input("subnetType")]
         public Input<string>? SubnetType { get; set; }
 
+        /// <summary>
+        /// UUID of the virtual switch this subnet belongs to (type VLAN only).
+        /// </summary>
         [Input("virtualSwitchReference")]
         public Input<string>? VirtualSwitchReference { get; set; }
 
         [Input("virtualSwitches")]
         private InputList<Inputs.SubnetV2VirtualSwitchGetArgs>? _virtualSwitches;
+
+        /// <summary>
+        /// Schema to configure a virtual switch
+        /// </summary>
         public InputList<Inputs.SubnetV2VirtualSwitchGetArgs> VirtualSwitches
         {
             get => _virtualSwitches ?? (_virtualSwitches = new InputList<Inputs.SubnetV2VirtualSwitchGetArgs>());
             set => _virtualSwitches = value;
         }
 
+        /// <summary>
+        /// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+        /// </summary>
         [Input("vpcReference")]
         public Input<string>? VpcReference { get; set; }
 
         [Input("vpcs")]
         private InputList<Inputs.SubnetV2VpcGetArgs>? _vpcs;
+
+        /// <summary>
+        /// Networking common base object
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcGetArgs> Vpcs
         {
             get => _vpcs ?? (_vpcs = new InputList<Inputs.SubnetV2VpcGetArgs>());

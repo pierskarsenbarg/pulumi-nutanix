@@ -31,6 +31,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("destAllowSpec")]
         public Input<string>? DestAllowSpec { get; set; }
 
+        /// <summary>
+        /// Entity type for the destination category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        [Input("destCategoryAssociatedEntityType")]
+        public Input<string>? DestCategoryAssociatedEntityType { get; set; }
+
         [Input("destCategoryReferences")]
         private InputList<string>? _destCategoryReferences;
 
@@ -42,6 +48,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             get => _destCategoryReferences ?? (_destCategoryReferences = new InputList<string>());
             set => _destCategoryReferences = value;
         }
+
+        /// <summary>
+        /// Reference to the destination entity group.
+        /// </summary>
+        [Input("destEntityGroupReference")]
+        public Input<string>? DestEntityGroupReference { get; set; }
 
         [Input("destSubnets")]
         private InputList<Inputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnetGetArgs>? _destSubnets;
@@ -79,6 +91,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("networkFunctionChainReference")]
         public Input<string>? NetworkFunctionChainReference { get; set; }
 
+        /// <summary>
+        /// A reference to the network function in the rule.
+        /// </summary>
+        [Input("networkFunctionReference")]
+        public Input<string>? NetworkFunctionReference { get; set; }
+
+        /// <summary>
+        /// Entity type for the secured group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        [Input("securedGroupCategoryAssociatedEntityType")]
+        public Input<string>? SecuredGroupCategoryAssociatedEntityType { get; set; }
+
         [Input("securedGroupCategoryReferences", required: true)]
         private InputList<string>? _securedGroupCategoryReferences;
 
@@ -90,6 +114,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             get => _securedGroupCategoryReferences ?? (_securedGroupCategoryReferences = new InputList<string>());
             set => _securedGroupCategoryReferences = value;
         }
+
+        /// <summary>
+        /// Reference to the secured group entity group.
+        /// </summary>
+        [Input("securedGroupEntityGroupReference")]
+        public Input<string>? SecuredGroupEntityGroupReference { get; set; }
 
         [Input("serviceGroupReferences")]
         private InputList<string>? _serviceGroupReferences;
@@ -121,6 +151,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("srcAllowSpec")]
         public Input<string>? SrcAllowSpec { get; set; }
 
+        /// <summary>
+        /// Entity type for the source category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        [Input("srcCategoryAssociatedEntityType")]
+        public Input<string>? SrcCategoryAssociatedEntityType { get; set; }
+
         [Input("srcCategoryReferences")]
         private InputList<string>? _srcCategoryReferences;
 
@@ -132,6 +168,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             get => _srcCategoryReferences ?? (_srcCategoryReferences = new InputList<string>());
             set => _srcCategoryReferences = value;
         }
+
+        /// <summary>
+        /// Reference to the source entity group.
+        /// </summary>
+        [Input("srcEntityGroupReference")]
+        public Input<string>? SrcEntityGroupReference { get; set; }
 
         [Input("srcSubnets")]
         private InputList<Inputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnetGetArgs>? _srcSubnets;

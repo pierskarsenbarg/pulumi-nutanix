@@ -20,6 +20,14 @@ namespace PiersKarsenbarg.Nutanix
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
+        /// API key for Nutanix Prism authentication. Can be used as an
+        /// alternative to username/password. When set, the X-Ntnx-Api-Key header
+        /// will be used instead of Basic Authentication.
+        /// </summary>
+        [Output("apiKey")]
+        public Output<string?> ApiKey { get; private set; } = null!;
+
+        /// <summary>
         /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
         /// note, this is never the data services VIP, and should not be an
         /// individual CVM address, as this would cause calls to fail during
@@ -93,6 +101,10 @@ namespace PiersKarsenbarg.Nutanix
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-nutanix",
+                AdditionalSecretOutputs =
+                {
+                    "apiKey",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -109,6 +121,44 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
+        [Input("apiKey")]
+        private Input<string>? _apiKey;
+
+        /// <summary>
+        /// API key for Nutanix Prism authentication. Can be used as an
+        /// alternative to username/password. When set, the X-Ntnx-Api-Key header
+        /// will be used instead of Basic Authentication.
+        /// </summary>
+        public Input<string>? ApiKey
+        {
+            get => _apiKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _apiKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("customHeaders", json: true)]
+        private InputMap<string>? _customHeaders;
+
+        /// <summary>
+        /// Custom HTTP headers to add to all API requests. Useful for
+        /// environments that require additional headers such as Cloudflare Access
+        /// service tokens. Headers can also be set via environment variables with
+        /// the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+        /// becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+        /// </summary>
+        public InputMap<string> CustomHeaders
+        {
+            get => _customHeaders ?? (_customHeaders = new InputMap<string>());
+            set
+            {
+                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, string>());
+                _customHeaders = Output.All(value, emptySecret).Apply(v => v[0]);
+            }
+        }
+
         /// <summary>
         /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
         /// note, this is never the data services VIP, and should not be an

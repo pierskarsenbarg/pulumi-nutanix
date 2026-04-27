@@ -64,7 +64,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Indicates if LCM is enabled to auto-upgrade products. The default value is False.
         /// 
-        /// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.0#tag/Config/operation/updateConfig)
+        /// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Config/operation/updateConfig)
         /// </summary>
         [Output("hasModuleAutoUpgradeEnabled")]
         public Output<bool?> HasModuleAutoUpgradeEnabled { get; private set; } = null!;
@@ -155,7 +155,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Indicates if LCM is enabled to auto-upgrade products. The default value is False.
         /// 
-        /// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.0#tag/Config/operation/updateConfig)
+        /// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Config/operation/updateConfig)
         /// </summary>
         [Input("hasModuleAutoUpgradeEnabled")]
         public Input<bool>? HasModuleAutoUpgradeEnabled { get; set; }
@@ -210,7 +210,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Indicates if LCM is enabled to auto-upgrade products. The default value is False.
         /// 
-        /// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.0#tag/Config/operation/updateConfig)
+        /// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Config/operation/updateConfig)
         /// </summary>
         [Input("hasModuleAutoUpgradeEnabled")]
         public Input<bool>? HasModuleAutoUpgradeEnabled { get; set; }

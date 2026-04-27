@@ -17,8 +17,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VirtualMachineV2NicBackingInfoArgs>? _backingInfos;
 
         /// <summary>
-        /// Defines a NIC emulated by the hypervisor
+        /// Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
+        [Obsolete(@"The `BackingInfo` attribute is deprecated. Use `NicBackingInfo` instead. This field will be removed in a future release.")]
         public InputList<Inputs.VirtualMachineV2NicBackingInfoArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.VirtualMachineV2NicBackingInfoArgs>());
@@ -35,13 +36,26 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VirtualMachineV2NicNetworkInfoArgs>? _networkInfos;
 
         /// <summary>
-        /// Network information for a NIC.
+        /// Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// </summary>
+        [Obsolete(@"The `NetworkInfo` attribute is deprecated. Use `NicNetworkInfo` instead. This field will be removed in a future release.")]
         public InputList<Inputs.VirtualMachineV2NicNetworkInfoArgs> NetworkInfos
         {
             get => _networkInfos ?? (_networkInfos = new InputList<Inputs.VirtualMachineV2NicNetworkInfoArgs>());
             set => _networkInfos = value;
         }
+
+        /// <summary>
+        /// New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// </summary>
+        [Input("nicBackingInfo")]
+        public Input<Inputs.VirtualMachineV2NicNicBackingInfoArgs>? NicBackingInfo { get; set; }
+
+        /// <summary>
+        /// New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// </summary>
+        [Input("nicNetworkInfo")]
+        public Input<Inputs.VirtualMachineV2NicNicNetworkInfoArgs>? NicNetworkInfo { get; set; }
 
         public VirtualMachineV2NicArgs()
         {

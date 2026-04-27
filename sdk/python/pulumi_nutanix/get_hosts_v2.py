@@ -299,7 +299,7 @@ def get_hosts_v2(apply: Optional[_builtins.str] = None,
     * `value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
     * `prefix_length`: - The prefix length of the network to which this host IPv6 address belongs.
 
-    See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+    See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/listHostsByClusterId).
 
 
     :param _builtins.str apply: -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\\$apply=groupby((templateName))' would get all templates grouped by templateName. The groupby can be applied on the following fields:
@@ -534,7 +534,7 @@ def get_hosts_v2_output(apply: Optional[pulumi.Input[Optional[_builtins.str]]] =
     * `value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
     * `prefix_length`: - The prefix length of the network to which this host IPv6 address belongs.
 
-    See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+    See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/listHostsByClusterId).
 
 
     :param _builtins.str apply: -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\\$apply=groupby((templateName))' would get all templates grouped by templateName. The groupby can be applied on the following fields:

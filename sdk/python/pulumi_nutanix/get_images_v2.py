@@ -163,7 +163,7 @@ def get_images_v2(filter: Optional[_builtins.str] = None,
     * `enforced_cluster_ext_ids`: List of cluster external identifiers for the enforced placement policy.
     * `conflicting_policy_ext_ids`: List of image placement policy external identifier that conflict with the current one.
 
-    See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
+    See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Images)
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
@@ -266,7 +266,7 @@ def get_images_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]]
     * `enforced_cluster_ext_ids`: List of cluster external identifiers for the enforced placement policy.
     * `conflicting_policy_ext_ids`: List of image placement policy external identifier that conflict with the current one.
 
-    See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
+    See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Images)
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:

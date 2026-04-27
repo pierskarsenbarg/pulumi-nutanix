@@ -18,6 +18,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicLink> Links;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo> NetworkInfos;
+        public readonly Outputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo? NicBackingInfo;
+        public readonly Outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo? NicNetworkInfo;
         public readonly string? TenantId;
 
         [OutputConstructor]
@@ -30,12 +32,18 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo> networkInfos,
 
+            Outputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo? nicBackingInfo,
+
+            Outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo? nicNetworkInfo,
+
             string? tenantId)
         {
             BackingInfos = backingInfos;
             ExtId = extId;
             Links = links;
             NetworkInfos = networkInfos;
+            NicBackingInfo = nicBackingInfo;
+            NicNetworkInfo = nicNetworkInfo;
             TenantId = tenantId;
         }
     }

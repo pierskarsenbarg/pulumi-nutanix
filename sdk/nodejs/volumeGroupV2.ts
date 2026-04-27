@@ -71,7 +71,7 @@ export class VolumeGroupV2 extends pulumi.CustomResource {
      * - NONE : Volume Group has no attachment.
      * - DIRECT : Volume Group has a VM attachment.
      */
-    declare public readonly attachmentType: pulumi.Output<string | undefined>;
+    declare public readonly attachmentType: pulumi.Output<string>;
     /**
      * -(Required) The UUID of the cluster that will host the Volume Group.
      */
@@ -79,15 +79,15 @@ export class VolumeGroupV2 extends pulumi.CustomResource {
     /**
      * -(Optional) Service/user who created this Volume Group.
      */
-    declare public readonly createdBy: pulumi.Output<string | undefined>;
+    declare public readonly createdBy: pulumi.Output<string>;
     /**
      * -(Optional) Volume Group description. This is an optional field.
      */
-    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * -(Optional) A list of Volume Disks to be attached to the Volume Group.
      */
-    declare public readonly disks: pulumi.Output<outputs.VolumeGroupV2Disk[] | undefined>;
+    declare public readonly disks: pulumi.Output<outputs.VolumeGroupV2Disk[]>;
     /**
      * -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
      */
@@ -99,7 +99,7 @@ export class VolumeGroupV2 extends pulumi.CustomResource {
     /**
      * -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
      */
-    declare public readonly isHidden: pulumi.Output<boolean | undefined>;
+    declare public readonly isHidden: pulumi.Output<boolean>;
     /**
      * -(Optional) iSCSI specific settings for the Volume Group.
      */
@@ -110,23 +110,23 @@ export class VolumeGroupV2 extends pulumi.CustomResource {
     declare public readonly name: pulumi.Output<string>;
     /**
      * -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-     * - NOT_ASSIGNED :  Volume Group does not use any protocol.
+     * - NOT_ASSIGNED : Volume Group does not use any protocol.
      * - ISCSI : Volume Group uses iSCSI protocol.
      * - NVMF : Volume Group uses NVMf protocol.
      */
-    declare public readonly protocol: pulumi.Output<string | undefined>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
      */
-    declare public readonly sharingStatus: pulumi.Output<string | undefined>;
+    declare public readonly sharingStatus: pulumi.Output<string>;
     /**
      * -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
      */
-    declare public readonly shouldLoadBalanceVmAttachments: pulumi.Output<boolean | undefined>;
+    declare public readonly shouldLoadBalanceVmAttachments: pulumi.Output<boolean>;
     /**
      * -(Optional) Storage optimization features which must be enabled on the Volume Group.
      */
-    declare public readonly storageFeatures: pulumi.Output<outputs.VolumeGroupV2StorageFeature[] | undefined>;
+    declare public readonly storageFeatures: pulumi.Output<outputs.VolumeGroupV2StorageFeature[]>;
     /**
      * -(Optional) Name of the external client target that will be visible and accessible to the client.
      */
@@ -134,11 +134,11 @@ export class VolumeGroupV2 extends pulumi.CustomResource {
     /**
      * The specifications contain the target prefix for external clients as the value. This is an optional field.
      */
-    declare public readonly targetPrefix: pulumi.Output<string | undefined>;
+    declare public readonly targetPrefix: pulumi.Output<string>;
     /**
-     * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+     * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
      */
-    declare public readonly usageType: pulumi.Output<string | undefined>;
+    declare public readonly usageType: pulumi.Output<string>;
 
     /**
      * Create a VolumeGroupV2 resource with the given unique name, arguments, and options.
@@ -247,7 +247,7 @@ export interface VolumeGroupV2State {
     name?: pulumi.Input<string>;
     /**
      * -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-     * - NOT_ASSIGNED :  Volume Group does not use any protocol.
+     * - NOT_ASSIGNED : Volume Group does not use any protocol.
      * - ISCSI : Volume Group uses iSCSI protocol.
      * - NVMF : Volume Group uses NVMf protocol.
      */
@@ -273,7 +273,7 @@ export interface VolumeGroupV2State {
      */
     targetPrefix?: pulumi.Input<string>;
     /**
-     * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+     * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
      */
     usageType?: pulumi.Input<string>;
 }
@@ -323,7 +323,7 @@ export interface VolumeGroupV2Args {
     name?: pulumi.Input<string>;
     /**
      * -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-     * - NOT_ASSIGNED :  Volume Group does not use any protocol.
+     * - NOT_ASSIGNED : Volume Group does not use any protocol.
      * - ISCSI : Volume Group uses iSCSI protocol.
      * - NVMF : Volume Group uses NVMf protocol.
      */
@@ -349,7 +349,7 @@ export interface VolumeGroupV2Args {
      */
     targetPrefix?: pulumi.Input<string>;
     /**
-     * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+     * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
      */
     usageType?: pulumi.Input<string>;
 }

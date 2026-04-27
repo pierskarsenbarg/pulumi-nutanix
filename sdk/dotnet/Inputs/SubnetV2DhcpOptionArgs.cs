@@ -13,14 +13,24 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class SubnetV2DhcpOptionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Boot file name
+        /// </summary>
         [Input("bootFileName")]
         public Input<string>? BootFileName { get; set; }
 
+        /// <summary>
+        /// The DNS domain name of the client.
+        /// </summary>
         [Input("domainName")]
         public Input<string>? DomainName { get; set; }
 
         [Input("domainNameServers")]
         private InputList<Inputs.SubnetV2DhcpOptionDomainNameServerArgs>? _domainNameServers;
+
+        /// <summary>
+        /// List of Domain Name Server addresses.
+        /// </summary>
         public InputList<Inputs.SubnetV2DhcpOptionDomainNameServerArgs> DomainNameServers
         {
             get => _domainNameServers ?? (_domainNameServers = new InputList<Inputs.SubnetV2DhcpOptionDomainNameServerArgs>());
@@ -29,6 +39,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("ntpServers")]
         private InputList<Inputs.SubnetV2DhcpOptionNtpServerArgs>? _ntpServers;
+
+        /// <summary>
+        /// List of NTP server addresses
+        /// </summary>
         public InputList<Inputs.SubnetV2DhcpOptionNtpServerArgs> NtpServers
         {
             get => _ntpServers ?? (_ntpServers = new InputList<Inputs.SubnetV2DhcpOptionNtpServerArgs>());
@@ -37,12 +51,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("searchDomains")]
         private InputList<string>? _searchDomains;
+
+        /// <summary>
+        /// The DNS domain search list.
+        /// </summary>
         public InputList<string> SearchDomains
         {
             get => _searchDomains ?? (_searchDomains = new InputList<string>());
             set => _searchDomains = value;
         }
 
+        /// <summary>
+        /// TFTP server name
+        /// </summary>
         [Input("tftpServerName")]
         public Input<string>? TftpServerName { get; set; }
 

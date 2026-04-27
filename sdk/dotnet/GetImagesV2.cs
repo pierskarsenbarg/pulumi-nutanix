@@ -74,7 +74,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `EnforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
         /// * `ConflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
         /// 
-        /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Images)
+        /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Images)
         /// </summary>
         public static Task<GetImagesV2Result> InvokeAsync(GetImagesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImagesV2Result>("nutanix:index/getImagesV2:getImagesV2", args ?? new GetImagesV2Args(), options.WithDefaults());
@@ -141,7 +141,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `EnforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
         /// * `ConflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
         /// 
-        /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Images)
+        /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Images)
         /// </summary>
         public static Output<GetImagesV2Result> Invoke(GetImagesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImagesV2Result>("nutanix:index/getImagesV2:getImagesV2", args ?? new GetImagesV2InvokeArgs(), options.WithDefaults());
@@ -208,7 +208,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `EnforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
         /// * `ConflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
         /// 
-        /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Images)
+        /// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Images)
         /// </summary>
         public static Output<GetImagesV2Result> Invoke(GetImagesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetImagesV2Result>("nutanix:index/getImagesV2:getImagesV2", args ?? new GetImagesV2InvokeArgs(), options.WithDefaults());

@@ -15,6 +15,7 @@ import (
 type TemplateV2 struct {
 	pulumi.CustomResourceState
 
+	CategoryExtIds      pulumi.StringArrayOutput               `pulumi:"categoryExtIds"`
 	CreateTime          pulumi.StringOutput                    `pulumi:"createTime"`
 	CreatedBies         TemplateV2CreatedByArrayOutput         `pulumi:"createdBies"`
 	ExtId               pulumi.StringOutput                    `pulumi:"extId"`
@@ -64,6 +65,7 @@ func GetTemplateV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering TemplateV2 resources.
 type templateV2State struct {
+	CategoryExtIds      []string                       `pulumi:"categoryExtIds"`
 	CreateTime          *string                        `pulumi:"createTime"`
 	CreatedBies         []TemplateV2CreatedBy          `pulumi:"createdBies"`
 	ExtId               *string                        `pulumi:"extId"`
@@ -78,6 +80,7 @@ type templateV2State struct {
 }
 
 type TemplateV2State struct {
+	CategoryExtIds      pulumi.StringArrayInput
 	CreateTime          pulumi.StringPtrInput
 	CreatedBies         TemplateV2CreatedByArrayInput
 	ExtId               pulumi.StringPtrInput
@@ -96,6 +99,7 @@ func (TemplateV2State) ElementType() reflect.Type {
 }
 
 type templateV2Args struct {
+	CategoryExtIds      []string                      `pulumi:"categoryExtIds"`
 	CreatedBies         []TemplateV2CreatedBy         `pulumi:"createdBies"`
 	GuestUpdateStatuses []TemplateV2GuestUpdateStatus `pulumi:"guestUpdateStatuses"`
 	TemplateDescription *string                       `pulumi:"templateDescription"`
@@ -106,6 +110,7 @@ type templateV2Args struct {
 
 // The set of arguments for constructing a TemplateV2 resource.
 type TemplateV2Args struct {
+	CategoryExtIds      pulumi.StringArrayInput
 	CreatedBies         TemplateV2CreatedByArrayInput
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayInput
 	TemplateDescription pulumi.StringPtrInput
@@ -199,6 +204,10 @@ func (o TemplateV2Output) ToTemplateV2Output() TemplateV2Output {
 
 func (o TemplateV2Output) ToTemplateV2OutputWithContext(ctx context.Context) TemplateV2Output {
 	return o
+}
+
+func (o TemplateV2Output) CategoryExtIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TemplateV2) pulumi.StringArrayOutput { return v.CategoryExtIds }).(pulumi.StringArrayOutput)
 }
 
 func (o TemplateV2Output) CreateTime() pulumi.StringOutput {

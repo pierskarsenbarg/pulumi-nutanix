@@ -189,7 +189,7 @@ import (
 // * `value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
 // * `prefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
 //
-// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/listHostsByClusterId).
 func GetHostsV2(ctx *pulumi.Context, args *GetHostsV2Args, opts ...pulumi.InvokeOption) (*GetHostsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostsV2Result

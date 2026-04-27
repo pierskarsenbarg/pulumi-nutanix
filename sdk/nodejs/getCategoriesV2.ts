@@ -59,7 +59,7 @@ import * as utilities from "./utilities";
  *   Resources can be organized into either an entity or a policy.
  * * `resourceId`: The UUID of the entity or policy associated with the particular category.
  *
- * See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/Categories/operation/listCategories).
+ * See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/listCategories).
  */
 export function getCategoriesV2(args?: GetCategoriesV2Args, opts?: pulumi.InvokeOptions): Promise<GetCategoriesV2Result> {
     args = args || {};
@@ -191,7 +191,7 @@ export interface GetCategoriesV2Result {
  *   Resources can be organized into either an entity or a policy.
  * * `resourceId`: The UUID of the entity or policy associated with the particular category.
  *
- * See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/Categories/operation/listCategories).
+ * See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/listCategories).
  */
 export function getCategoriesV2Output(args?: GetCategoriesV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoriesV2Result> {
     args = args || {};

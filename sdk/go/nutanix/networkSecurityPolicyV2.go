@@ -58,6 +58,39 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			// Network Security Policy with GLOBAL scope (VMs resolved by category across all VPCs)
+//			_, err = nutanix.NewNetworkSecurityPolicyV2(ctx, "global-nsp", &nutanix.NetworkSecurityPolicyV2Args{
+//				Name:        pulumi.String("my-global-policy"),
+//				Description: pulumi.String("Application policy with global scope"),
+//				State:       pulumi.String("SAVE"),
+//				Type:        pulumi.String("APPLICATION"),
+//				Scope:       pulumi.String("GLOBAL"),
+//				Rules: nutanix.NetworkSecurityPolicyV2RuleArray{
+//					&nutanix.NetworkSecurityPolicyV2RuleArgs{
+//						Type: pulumi.String("APPLICATION"),
+//						Specs: nutanix.NetworkSecurityPolicyV2RuleSpecArray{
+//							&nutanix.NetworkSecurityPolicyV2RuleSpecArgs{
+//								ApplicationRuleSpecs: nutanix.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArray{
+//									&nutanix.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs{
+//										SecuredGroupCategoryReferences: pulumi.StringArray{
+//											example.Id,
+//										},
+//										ServiceGroupReferences: pulumi.StringArray{
+//											exampleNutanixServiceGroupsV2.Id,
+//										},
+//										SrcAddressGroupReferences: pulumi.StringArray{
+//											exampleNutanixAddressGroupsV2.Id,
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
@@ -88,7 +121,7 @@ type NetworkSecurityPolicyV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
 	Rules NetworkSecurityPolicyV2RuleArrayOutput `pulumi:"rules"`
-	// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
 	Scope pulumi.StringOutput `pulumi:"scope"`
 	// Uuids of the secured groups in the NSP.
 	SecuredGroups pulumi.StringArrayOutput `pulumi:"securedGroups"`
@@ -96,7 +129,7 @@ type NetworkSecurityPolicyV2 struct {
 	State pulumi.StringPtrOutput `pulumi:"state"`
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
 	Type pulumi.StringOutput `pulumi:"type"`
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences pulumi.StringArrayOutput `pulumi:"vpcReferences"`
@@ -157,7 +190,7 @@ type networkSecurityPolicyV2State struct {
 	Name *string `pulumi:"name"`
 	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
 	Rules []NetworkSecurityPolicyV2Rule `pulumi:"rules"`
-	// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
 	Scope *string `pulumi:"scope"`
 	// Uuids of the secured groups in the NSP.
 	SecuredGroups []string `pulumi:"securedGroups"`
@@ -165,7 +198,7 @@ type networkSecurityPolicyV2State struct {
 	State *string `pulumi:"state"`
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId *string `pulumi:"tenantId"`
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
 	Type *string `pulumi:"type"`
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences []string `pulumi:"vpcReferences"`
@@ -194,7 +227,7 @@ type NetworkSecurityPolicyV2State struct {
 	Name pulumi.StringPtrInput
 	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
 	Rules NetworkSecurityPolicyV2RuleArrayInput
-	// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
 	Scope pulumi.StringPtrInput
 	// Uuids of the secured groups in the NSP.
 	SecuredGroups pulumi.StringArrayInput
@@ -202,7 +235,7 @@ type NetworkSecurityPolicyV2State struct {
 	State pulumi.StringPtrInput
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId pulumi.StringPtrInput
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
 	Type pulumi.StringPtrInput
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences pulumi.StringArrayInput
@@ -223,11 +256,11 @@ type networkSecurityPolicyV2Args struct {
 	Name *string `pulumi:"name"`
 	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
 	Rules []NetworkSecurityPolicyV2Rule `pulumi:"rules"`
-	// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
 	Scope *string `pulumi:"scope"`
 	// Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
 	State *string `pulumi:"state"`
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
 	Type string `pulumi:"type"`
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences []string `pulumi:"vpcReferences"`
@@ -245,11 +278,11 @@ type NetworkSecurityPolicyV2Args struct {
 	Name pulumi.StringPtrInput
 	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
 	Rules NetworkSecurityPolicyV2RuleArrayInput
-	// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
 	Scope pulumi.StringPtrInput
 	// Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
 	State pulumi.StringPtrInput
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
 	Type pulumi.StringInput
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences pulumi.StringArrayInput
@@ -397,7 +430,7 @@ func (o NetworkSecurityPolicyV2Output) Rules() NetworkSecurityPolicyV2RuleArrayO
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) NetworkSecurityPolicyV2RuleArrayOutput { return v.Rules }).(NetworkSecurityPolicyV2RuleArrayOutput)
 }
 
-// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
 func (o NetworkSecurityPolicyV2Output) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
@@ -417,7 +450,7 @@ func (o NetworkSecurityPolicyV2Output) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
-// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
 func (o NetworkSecurityPolicyV2Output) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

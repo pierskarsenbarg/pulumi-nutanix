@@ -22,6 +22,7 @@ __all__ = ['ClusterV2Args', 'ClusterV2']
 class ClusterV2Args:
     def __init__(__self__, *,
                  categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_profile_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  configs: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]] = None,
                  container_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -34,15 +35,18 @@ class ClusterV2Args:
         The set of arguments for constructing a ClusterV2 resource.
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
+        :param pulumi.Input[_builtins.str] cluster_profile_ext_id: - (Optional) The reference to a cluster profile.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]] configs: - (Optional) Cluster configuration details.
         :param pulumi.Input[_builtins.str] container_name: - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
         :param pulumi.Input[_builtins.bool] dryrun: - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
         :param pulumi.Input[_builtins.str] name: - (Required) The name for the vm.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]] networks: - (Optional) Network details of a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]] nodes: - (Optional) The reference to a node.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]] nodes: - (Optional) The reference to a node and remove node parameters.
         """
         if categories is not None:
             pulumi.set(__self__, "categories", categories)
+        if cluster_profile_ext_id is not None:
+            pulumi.set(__self__, "cluster_profile_ext_id", cluster_profile_ext_id)
         if configs is not None:
             pulumi.set(__self__, "configs", configs)
         if container_name is not None:
@@ -71,6 +75,18 @@ class ClusterV2Args:
     @categories.setter
     def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "categories", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterProfileExtId")
+    def cluster_profile_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Optional) The reference to a cluster profile.
+        """
+        return pulumi.get(self, "cluster_profile_ext_id")
+
+    @cluster_profile_ext_id.setter
+    def cluster_profile_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_profile_ext_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -154,7 +170,7 @@ class ClusterV2Args:
     @pulumi.getter
     def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]:
         """
-        - (Optional) The reference to a node.
+        - (Optional) The reference to a node and remove node parameters.
         """
         return pulumi.get(self, "nodes")
 
@@ -186,13 +202,14 @@ class _ClusterV2State:
         Input properties used for looking up and filtering ClusterV2 resources.
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
+        :param pulumi.Input[_builtins.str] cluster_profile_ext_id: - (Optional) The reference to a cluster profile.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]] configs: - (Optional) Cluster configuration details.
         :param pulumi.Input[_builtins.str] container_name: - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
         :param pulumi.Input[_builtins.bool] dryrun: - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
         :param pulumi.Input[_builtins.str] name: - (Required) The name for the vm.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]] networks: - (Optional) Network details of a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]] nodes: - (Optional) The reference to a node.
-        :param pulumi.Input[_builtins.str] upgrade_status: - (Optional) The reference to a project.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]] nodes: - (Optional) The reference to a node and remove node parameters.
+        :param pulumi.Input[_builtins.str] upgrade_status: - (Optional) Upgrade status of a cluster.
                Valid values are:
                - "CANCELLED"	The cluster upgrade is cancelled.
                - "FAILED"	The cluster upgrade failed.
@@ -261,6 +278,9 @@ class _ClusterV2State:
     @_builtins.property
     @pulumi.getter(name="clusterProfileExtId")
     def cluster_profile_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        - (Optional) The reference to a cluster profile.
+        """
         return pulumi.get(self, "cluster_profile_ext_id")
 
     @cluster_profile_ext_id.setter
@@ -367,7 +387,7 @@ class _ClusterV2State:
     @pulumi.getter
     def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]:
         """
-        - (Optional) The reference to a node.
+        - (Optional) The reference to a node and remove node parameters.
         """
         return pulumi.get(self, "nodes")
 
@@ -388,7 +408,7 @@ class _ClusterV2State:
     @pulumi.getter(name="upgradeStatus")
     def upgrade_status(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - (Optional) The reference to a project.
+        - (Optional) Upgrade status of a cluster.
         Valid values are:
         - "CANCELLED"	The cluster upgrade is cancelled.
         - "FAILED"	The cluster upgrade failed.
@@ -423,6 +443,7 @@ class ClusterV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_profile_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
                  container_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -435,7 +456,19 @@ class ClusterV2(pulumi.CustomResource):
         """
         Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
 
+        > **Recommendations:** It is recommended to create and register the cluster with Prism Central as part of the same workflow. Cluster updates, importing, and destruction through Terraform are supported only when the cluster is registered with Prism Central. To register a cluster with Prism Central use Terraform resource nutanix_pc_registration_v2.
+
+        > **Note:**: Cluster resource supports add/remove node operations. However, these operations require cluster to be registered with Prism Central.
+
+        > **Note:**: TThe cluster resource supports both associating and disassociating categories, allowing you to attach or detach categories on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+
+        **Note:**: The cluster resource supports both associating and disassociating cluster profile, allowing you to attach or detach cluster profile on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+
         ## Example Usage
+
+        ### 
+
+        ### Example 1: 1 Node Cluster Creation Example
 
         ```python
         import pulumi
@@ -500,16 +533,129 @@ class ClusterV2(pulumi.CustomResource):
             }])
         ```
 
+        ### Example 2: 3 Node Cluster Creation Example and Adding Nodes Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cluster_3nodes = nutanix.ClusterV2("cluster-3nodes",
+            name="tf-cluster-3nodes",
+            dryrun=False,
+            nodes=[{
+                "node_lists": [
+                    {
+                        "controller_vm_ips": [{
+                            "ipv4s": [{
+                                "value": "10.00.00.1",
+                            }],
+                        }],
+                    },
+                    {
+                        "controller_vm_ips": [{
+                            "ipv4s": [{
+                                "value": "10.00.00.2",
+                            }],
+                        }],
+                    },
+                    {
+                        "controller_vm_ips": [{
+                            "ipv4s": [{
+                                "value": "10.00.00.3",
+                            }],
+                        }],
+                    },
+                ],
+            }],
+            configs=[{
+                "cluster_functions": clusters["config"]["clusterFunctions"],
+                "cluster_arch": clusters["config"]["clusterArch"],
+                "fault_tolerance_states": [{
+                    "domain_awareness_level": "NODE",
+                }],
+            }])
+        ```
+
+        ### Example 3: Creating a cluster with categories
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cluster_with_categories = nutanix.ClusterV2("cluster-with-categories",
+            name="cluster-example",
+            nodes=[{
+                "node_lists": [{
+                    "controller_vm_ips": [{
+                        "ipv4s": [{
+                            "value": "10.xx.xx.xx",
+                        }],
+                    }],
+                }],
+            }],
+            configs=[{
+                "cluster_functions": ["AOS"],
+                "redundancy_factor": 1,
+                "cluster_arch": "X86_64",
+                "fault_tolerance_states": [{
+                    "domain_awareness_level": "DISK",
+                }],
+            }],
+            networks=[{
+                "external_addresses": [{
+                    "ipv4s": [{
+                        "value": "10.xx.xx.xx",
+                    }],
+                }],
+                "external_data_services_ips": [{
+                    "ipv4s": [{
+                        "value": "10.xx.xx.xx",
+                    }],
+                }],
+                "ntp_server_ip_lists": [
+                    {
+                        "fqdns": [{
+                            "value": "ntp.server.nutanix.com",
+                        }],
+                    },
+                    {
+                        "fqdns": [{
+                            "value": "ntp.server_1.nutanix.com",
+                        }],
+                    },
+                ],
+                "smtp_servers": [{
+                    "email_address": "example.ex@exmple.com",
+                    "servers": [{
+                        "ip_addresses": [{
+                            "ipv4s": [{
+                                "value": "10.xx.xx.xx",
+                            }],
+                        }],
+                        "port": 123,
+                        "username": "example",
+                        "password": "example!2134",
+                    }],
+                    "type": "PLAIN",
+                }],
+            }])
+        ```
+
+        ## What happens when you do terraform destroy for nutanix_clusters_v2?  First thing, inorder to destroy the cluster from Terraform it need to be registered.
+
+        See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/createCluster).
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
+        :param pulumi.Input[_builtins.str] cluster_profile_ext_id: - (Optional) The reference to a cluster profile.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]] configs: - (Optional) Cluster configuration details.
         :param pulumi.Input[_builtins.str] container_name: - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
         :param pulumi.Input[_builtins.bool] dryrun: - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
         :param pulumi.Input[_builtins.str] name: - (Required) The name for the vm.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]] networks: - (Optional) Network details of a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]] nodes: - (Optional) The reference to a node.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]] nodes: - (Optional) The reference to a node and remove node parameters.
         """
         ...
     @overload
@@ -520,7 +666,19 @@ class ClusterV2(pulumi.CustomResource):
         """
         Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
 
+        > **Recommendations:** It is recommended to create and register the cluster with Prism Central as part of the same workflow. Cluster updates, importing, and destruction through Terraform are supported only when the cluster is registered with Prism Central. To register a cluster with Prism Central use Terraform resource nutanix_pc_registration_v2.
+
+        > **Note:**: Cluster resource supports add/remove node operations. However, these operations require cluster to be registered with Prism Central.
+
+        > **Note:**: TThe cluster resource supports both associating and disassociating categories, allowing you to attach or detach categories on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+
+        **Note:**: The cluster resource supports both associating and disassociating cluster profile, allowing you to attach or detach cluster profile on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+
         ## Example Usage
+
+        ### 
+
+        ### Example 1: 1 Node Cluster Creation Example
 
         ```python
         import pulumi
@@ -584,6 +742,118 @@ class ClusterV2(pulumi.CustomResource):
                 }],
             }])
         ```
+
+        ### Example 2: 3 Node Cluster Creation Example and Adding Nodes Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cluster_3nodes = nutanix.ClusterV2("cluster-3nodes",
+            name="tf-cluster-3nodes",
+            dryrun=False,
+            nodes=[{
+                "node_lists": [
+                    {
+                        "controller_vm_ips": [{
+                            "ipv4s": [{
+                                "value": "10.00.00.1",
+                            }],
+                        }],
+                    },
+                    {
+                        "controller_vm_ips": [{
+                            "ipv4s": [{
+                                "value": "10.00.00.2",
+                            }],
+                        }],
+                    },
+                    {
+                        "controller_vm_ips": [{
+                            "ipv4s": [{
+                                "value": "10.00.00.3",
+                            }],
+                        }],
+                    },
+                ],
+            }],
+            configs=[{
+                "cluster_functions": clusters["config"]["clusterFunctions"],
+                "cluster_arch": clusters["config"]["clusterArch"],
+                "fault_tolerance_states": [{
+                    "domain_awareness_level": "NODE",
+                }],
+            }])
+        ```
+
+        ### Example 3: Creating a cluster with categories
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cluster_with_categories = nutanix.ClusterV2("cluster-with-categories",
+            name="cluster-example",
+            nodes=[{
+                "node_lists": [{
+                    "controller_vm_ips": [{
+                        "ipv4s": [{
+                            "value": "10.xx.xx.xx",
+                        }],
+                    }],
+                }],
+            }],
+            configs=[{
+                "cluster_functions": ["AOS"],
+                "redundancy_factor": 1,
+                "cluster_arch": "X86_64",
+                "fault_tolerance_states": [{
+                    "domain_awareness_level": "DISK",
+                }],
+            }],
+            networks=[{
+                "external_addresses": [{
+                    "ipv4s": [{
+                        "value": "10.xx.xx.xx",
+                    }],
+                }],
+                "external_data_services_ips": [{
+                    "ipv4s": [{
+                        "value": "10.xx.xx.xx",
+                    }],
+                }],
+                "ntp_server_ip_lists": [
+                    {
+                        "fqdns": [{
+                            "value": "ntp.server.nutanix.com",
+                        }],
+                    },
+                    {
+                        "fqdns": [{
+                            "value": "ntp.server_1.nutanix.com",
+                        }],
+                    },
+                ],
+                "smtp_servers": [{
+                    "email_address": "example.ex@exmple.com",
+                    "servers": [{
+                        "ip_addresses": [{
+                            "ipv4s": [{
+                                "value": "10.xx.xx.xx",
+                            }],
+                        }],
+                        "port": 123,
+                        "username": "example",
+                        "password": "example!2134",
+                    }],
+                    "type": "PLAIN",
+                }],
+            }])
+        ```
+
+        ## What happens when you do terraform destroy for nutanix_clusters_v2?  First thing, inorder to destroy the cluster from Terraform it need to be registered.
+
+        See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/createCluster).
 
 
         :param str resource_name: The name of the resource.
@@ -602,6 +872,7 @@ class ClusterV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_profile_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
                  container_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -620,6 +891,7 @@ class ClusterV2(pulumi.CustomResource):
             __props__ = ClusterV2Args.__new__(ClusterV2Args)
 
             __props__.__dict__["categories"] = categories
+            __props__.__dict__["cluster_profile_ext_id"] = cluster_profile_ext_id
             __props__.__dict__["configs"] = configs
             __props__.__dict__["container_name"] = container_name
             __props__.__dict__["dryrun"] = dryrun
@@ -629,7 +901,6 @@ class ClusterV2(pulumi.CustomResource):
             __props__.__dict__["networks"] = networks
             __props__.__dict__["nodes"] = nodes
             __props__.__dict__["backup_eligibility_score"] = None
-            __props__.__dict__["cluster_profile_ext_id"] = None
             __props__.__dict__["inefficient_vm_count"] = None
             __props__.__dict__["links"] = None
             __props__.__dict__["tenant_id"] = None
@@ -669,13 +940,14 @@ class ClusterV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
+        :param pulumi.Input[_builtins.str] cluster_profile_ext_id: - (Optional) The reference to a cluster profile.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]] configs: - (Optional) Cluster configuration details.
         :param pulumi.Input[_builtins.str] container_name: - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
         :param pulumi.Input[_builtins.bool] dryrun: - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
         :param pulumi.Input[_builtins.str] name: - (Required) The name for the vm.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]] networks: - (Optional) Network details of a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]] nodes: - (Optional) The reference to a node.
-        :param pulumi.Input[_builtins.str] upgrade_status: - (Optional) The reference to a project.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]] nodes: - (Optional) The reference to a node and remove node parameters.
+        :param pulumi.Input[_builtins.str] upgrade_status: - (Optional) Upgrade status of a cluster.
                Valid values are:
                - "CANCELLED"	The cluster upgrade is cancelled.
                - "FAILED"	The cluster upgrade failed.
@@ -725,6 +997,9 @@ class ClusterV2(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="clusterProfileExtId")
     def cluster_profile_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        - (Optional) The reference to a cluster profile.
+        """
         return pulumi.get(self, "cluster_profile_ext_id")
 
     @_builtins.property
@@ -791,7 +1066,7 @@ class ClusterV2(pulumi.CustomResource):
     @pulumi.getter
     def nodes(self) -> pulumi.Output[Sequence['outputs.ClusterV2Node']]:
         """
-        - (Optional) The reference to a node.
+        - (Optional) The reference to a node and remove node parameters.
         """
         return pulumi.get(self, "nodes")
 
@@ -804,7 +1079,7 @@ class ClusterV2(pulumi.CustomResource):
     @pulumi.getter(name="upgradeStatus")
     def upgrade_status(self) -> pulumi.Output[_builtins.str]:
         """
-        - (Optional) The reference to a project.
+        - (Optional) Upgrade status of a cluster.
         Valid values are:
         - "CANCELLED"	The cluster upgrade is cancelled.
         - "FAILED"	The cluster upgrade failed.

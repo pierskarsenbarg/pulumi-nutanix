@@ -67,9 +67,9 @@ type TemplateGuestOsActionsV2 struct {
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
 	//
-	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/completeGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/cancelGuestUpdate).
 	IsActiveVersion pulumi.StringPtrOutput `pulumi:"isActiveVersion"`
 	// The user defined description of a Template Version. (Required) Only applicable with `complete` action.
 	VersionDescription pulumi.StringPtrOutput `pulumi:"versionDescription"`
@@ -121,9 +121,9 @@ type templateGuestOsActionsV2State struct {
 	ExtId *string `pulumi:"extId"`
 	// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
 	//
-	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/completeGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/cancelGuestUpdate).
 	IsActiveVersion *string `pulumi:"isActiveVersion"`
 	// The user defined description of a Template Version. (Required) Only applicable with `complete` action.
 	VersionDescription *string `pulumi:"versionDescription"`
@@ -140,9 +140,9 @@ type TemplateGuestOsActionsV2State struct {
 	ExtId pulumi.StringPtrInput
 	// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
 	//
-	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/completeGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/cancelGuestUpdate).
 	IsActiveVersion pulumi.StringPtrInput
 	// The user defined description of a Template Version. (Required) Only applicable with `complete` action.
 	VersionDescription pulumi.StringPtrInput
@@ -163,9 +163,9 @@ type templateGuestOsActionsV2Args struct {
 	ExtId string `pulumi:"extId"`
 	// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
 	//
-	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/completeGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/cancelGuestUpdate).
 	IsActiveVersion *string `pulumi:"isActiveVersion"`
 	// The user defined description of a Template Version. (Required) Only applicable with `complete` action.
 	VersionDescription *string `pulumi:"versionDescription"`
@@ -183,9 +183,9 @@ type TemplateGuestOsActionsV2Args struct {
 	ExtId pulumi.StringInput
 	// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
 	//
-	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
-	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/completeGuestUpdate).
+	// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/cancelGuestUpdate).
 	IsActiveVersion pulumi.StringPtrInput
 	// The user defined description of a Template Version. (Required) Only applicable with `complete` action.
 	VersionDescription pulumi.StringPtrInput
@@ -294,9 +294,9 @@ func (o TemplateGuestOsActionsV2Output) ExtId() pulumi.StringOutput {
 
 // Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
 //
-// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
-// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
-// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
+// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
+// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/completeGuestUpdate).
+// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/cancelGuestUpdate).
 func (o TemplateGuestOsActionsV2Output) IsActiveVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TemplateGuestOsActionsV2) pulumi.StringPtrOutput { return v.IsActiveVersion }).(pulumi.StringPtrOutput)
 }

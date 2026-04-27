@@ -158,6 +158,7 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
     - `generation_uuid`: Generation UUID of the VM. It should be of type UUID.
     - `bios_uuid`: BIOS UUID of the VM. It should be of type UUID.
     - `categories`: Categories for the VM.
+    * `project`: Reference to a project.
     - `ownership_info`: Ownership information for the VM.
     - `host`: Reference to the host, the VM is running on.
     - `cluster`: Reference to a cluster.
@@ -200,6 +201,11 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
     The `categories` attribute supports the following:
 
     * `ext_id`: A globally unique identifier of a VM category of type UUID.
+
+    ### Project
+    The `project` attribute supports the following:
+
+    * `ext_id`: The globally unique identifier of an instance of type UUID.
 
     ### Ownership Info
     The `ownership_info` attribute supports the following:
@@ -355,8 +361,10 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
     The `nics` attribute supports the following:
 
     * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption
-    * `backing_info`: Defines a NIC emulated by the hypervisor
-    * `network_info`: Network information for a NIC.
+    * `nic_backing_info`: New NIC backing info (v2.4.1+). One of `virtual_ethernet_nic`, `sriov_nic`, `dp_offload_nic`.
+    * `nic_network_info`: New NIC network info (v2.4.1+). One of `virtual_ethernet_nic_network_info`, `sriov_nic_network_info`, `dp_offload_nic_network_info`.
+    * `backing_info`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+    * `network_info`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 
     ### nics.backing_info
     * `model`: Options for the NIC emulation.
@@ -419,7 +427,7 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
     ### protection_policy_state
     * `policy`: Reference to the policy object in use.
 
-    See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/listVms).
+    See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/listVms).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
@@ -579,6 +587,7 @@ def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_built
     - `generation_uuid`: Generation UUID of the VM. It should be of type UUID.
     - `bios_uuid`: BIOS UUID of the VM. It should be of type UUID.
     - `categories`: Categories for the VM.
+    * `project`: Reference to a project.
     - `ownership_info`: Ownership information for the VM.
     - `host`: Reference to the host, the VM is running on.
     - `cluster`: Reference to a cluster.
@@ -621,6 +630,11 @@ def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_built
     The `categories` attribute supports the following:
 
     * `ext_id`: A globally unique identifier of a VM category of type UUID.
+
+    ### Project
+    The `project` attribute supports the following:
+
+    * `ext_id`: The globally unique identifier of an instance of type UUID.
 
     ### Ownership Info
     The `ownership_info` attribute supports the following:
@@ -776,8 +790,10 @@ def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_built
     The `nics` attribute supports the following:
 
     * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption
-    * `backing_info`: Defines a NIC emulated by the hypervisor
-    * `network_info`: Network information for a NIC.
+    * `nic_backing_info`: New NIC backing info (v2.4.1+). One of `virtual_ethernet_nic`, `sriov_nic`, `dp_offload_nic`.
+    * `nic_network_info`: New NIC network info (v2.4.1+). One of `virtual_ethernet_nic_network_info`, `sriov_nic_network_info`, `dp_offload_nic_network_info`.
+    * `backing_info`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+    * `network_info`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 
     ### nics.backing_info
     * `model`: Options for the NIC emulation.
@@ -840,7 +856,7 @@ def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_built
     ### protection_policy_state
     * `policy`: Reference to the policy object in use.
 
-    See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/listVms).
+    See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/listVms).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:

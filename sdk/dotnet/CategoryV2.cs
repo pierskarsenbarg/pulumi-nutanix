@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
-    /// Fetch a category
+    /// Create, Update and Delete category (key - value pair).
     /// 
     /// ## Example
     /// 
@@ -32,6 +32,20 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// This helps to manage existing entities which are not created through terraform. Category (key - value pair) can be imported using the `UUID` (ext_id in v4 terms).  eg,
+    /// 
+    /// `terraform import nutanix_category_v2.&lt;resource_name&gt; &lt;UUID&gt;
+    /// `
+    /// 
+    /// Note:
+    /// We have two resources separately for category key (nutanix_category_key) and value (nutanix_category_key). Using v4 API, `nutanix.CategoryV2` represents category key value pair as one entity.
+    /// 
+    /// Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
+    /// 
+    /// See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/Categories/operation/createCategory).
     /// </summary>
     [NutanixResourceType("nutanix:index/categoryV2:CategoryV2")]
     public partial class CategoryV2 : global::Pulumi.CustomResource

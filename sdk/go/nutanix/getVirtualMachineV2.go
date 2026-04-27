@@ -130,6 +130,8 @@ type LookupVirtualMachineV2Result struct {
 	// Ownership information for the VM.
 	OwnershipInfos []GetVirtualMachineV2OwnershipInfo `pulumi:"ownershipInfos"`
 	PowerState     string                             `pulumi:"powerState"`
+	// Reference to a project.
+	Projects []GetVirtualMachineV2Project `pulumi:"projects"`
 	// Status of protection policy applied to this VM.
 	ProtectionPolicyStates []GetVirtualMachineV2ProtectionPolicyState `pulumi:"protectionPolicyStates"`
 	// The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
@@ -368,6 +370,11 @@ func (o LookupVirtualMachineV2ResultOutput) OwnershipInfos() GetVirtualMachineV2
 
 func (o LookupVirtualMachineV2ResultOutput) PowerState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineV2Result) string { return v.PowerState }).(pulumi.StringOutput)
+}
+
+// Reference to a project.
+func (o LookupVirtualMachineV2ResultOutput) Projects() GetVirtualMachineV2ProjectArrayOutput {
+	return o.ApplyT(func(v LookupVirtualMachineV2Result) []GetVirtualMachineV2Project { return v.Projects }).(GetVirtualMachineV2ProjectArrayOutput)
 }
 
 // Status of protection policy applied to this VM.

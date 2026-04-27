@@ -183,7 +183,7 @@ def get_vpcs_v2(filter: Optional[_builtins.str] = None,
     - `value`: value of address
     - `prefix_length`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
 
-    See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Vpcs/operation/listVpcs).
+    See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Vpcs/operation/listVpcs).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
@@ -286,7 +286,7 @@ def get_vpcs_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] =
     - `value`: value of address
     - `prefix_length`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
 
-    See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Vpcs/operation/listVpcs).
+    See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Vpcs/operation/listVpcs).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:

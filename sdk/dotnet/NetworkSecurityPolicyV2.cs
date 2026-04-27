@@ -60,6 +60,47 @@ namespace PiersKarsenbarg.Nutanix
     ///         IsHitlogEnabled = true,
     ///     });
     /// 
+    ///     // Network Security Policy with GLOBAL scope (VMs resolved by category across all VPCs)
+    ///     var global_nsp = new Nutanix.Index.NetworkSecurityPolicyV2("global-nsp", new()
+    ///     {
+    ///         Name = "my-global-policy",
+    ///         Description = "Application policy with global scope",
+    ///         State = "SAVE",
+    ///         Type = "APPLICATION",
+    ///         Scope = "GLOBAL",
+    ///         Rules = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityPolicyV2RuleArgs
+    ///             {
+    ///                 Type = "APPLICATION",
+    ///                 Specs = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NetworkSecurityPolicyV2RuleSpecArgs
+    ///                     {
+    ///                         ApplicationRuleSpecs = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs
+    ///                             {
+    ///                                 SecuredGroupCategoryReferences = new[]
+    ///                                 {
+    ///                                     example.Id,
+    ///                                 },
+    ///                                 ServiceGroupReferences = new[]
+    ///                                 {
+    ///                                     exampleNutanixServiceGroupsV2.Id,
+    ///                                 },
+    ///                                 SrcAddressGroupReferences = new[]
+    ///                                 {
+    ///                                     exampleNutanixAddressGroupsV2.Id,
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
     /// });
     /// ```
     /// </summary>
@@ -133,7 +174,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.NetworkSecurityPolicyV2Rule>> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         /// </summary>
         [Output("scope")]
         public Output<string> Scope { get; private set; } = null!;
@@ -157,7 +198,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> TenantId { get; private set; } = null!;
 
         /// <summary>
-        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -252,7 +293,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -264,7 +305,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -368,7 +409,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -398,7 +439,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TenantId { get; set; }
 
         /// <summary>
-        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

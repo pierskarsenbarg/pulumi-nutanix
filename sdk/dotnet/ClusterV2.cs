@@ -13,7 +13,19 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
     /// 
+    /// &gt; **Recommendations:** It is recommended to create and register the cluster with Prism Central as part of the same workflow. Cluster updates, importing, and destruction through Terraform are supported only when the cluster is registered with Prism Central. To register a cluster with Prism Central use Terraform resource nutanix_pc_registration_v2.
+    /// 
+    /// &gt; **Note:**: Cluster resource supports add/remove node operations. However, these operations require cluster to be registered with Prism Central.
+    /// 
+    /// &gt; **Note:**: TThe cluster resource supports both associating and disassociating categories, allowing you to attach or detach categories on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+    /// 
+    /// **Note:**: The cluster resource supports both associating and disassociating cluster profile, allowing you to attach or detach cluster profile on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+    /// 
     /// ## Example Usage
+    /// 
+    /// ### 
+    /// 
+    /// ### Example 1: 1 Node Cluster Creation Example
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
@@ -159,6 +171,248 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
+    /// ### Example 2: 3 Node Cluster Creation Example and Adding Nodes Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var cluster_3nodes = new Nutanix.Index.ClusterV2("cluster-3nodes", new()
+    ///     {
+    ///         Name = "tf-cluster-3nodes",
+    ///         Dryrun = false,
+    ///         Nodes = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterV2NodeArgs
+    ///             {
+    ///                 NodeLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NodeNodeListArgs
+    ///                     {
+    ///                         ControllerVmIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpIpv4Args
+    ///                                     {
+    ///                                         Value = "10.00.00.1",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.ClusterV2NodeNodeListArgs
+    ///                     {
+    ///                         ControllerVmIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpIpv4Args
+    ///                                     {
+    ///                                         Value = "10.00.00.2",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.ClusterV2NodeNodeListArgs
+    ///                     {
+    ///                         ControllerVmIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpIpv4Args
+    ///                                     {
+    ///                                         Value = "10.00.00.3",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Configs = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterV2ConfigArgs
+    ///             {
+    ///                 ClusterFunctions = clusters.Config.ClusterFunctions,
+    ///                 ClusterArch = clusters.Config.ClusterArch,
+    ///                 FaultToleranceStates = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2ConfigFaultToleranceStateArgs
+    ///                     {
+    ///                         DomainAwarenessLevel = "NODE",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ### Example 3: Creating a cluster with categories
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var cluster_with_categories = new Nutanix.Index.ClusterV2("cluster-with-categories", new()
+    ///     {
+    ///         Name = "cluster-example",
+    ///         Nodes = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterV2NodeArgs
+    ///             {
+    ///                 NodeLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NodeNodeListArgs
+    ///                     {
+    ///                         ControllerVmIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterV2NodeNodeListControllerVmIpIpv4Args
+    ///                                     {
+    ///                                         Value = "10.xx.xx.xx",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Configs = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterV2ConfigArgs
+    ///             {
+    ///                 ClusterFunctions = new[]
+    ///                 {
+    ///                     "AOS",
+    ///                 },
+    ///                 RedundancyFactor = 1,
+    ///                 ClusterArch = "X86_64",
+    ///                 FaultToleranceStates = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2ConfigFaultToleranceStateArgs
+    ///                     {
+    ///                         DomainAwarenessLevel = "DISK",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Networks = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterV2NetworkArgs
+    ///             {
+    ///                 ExternalAddresses = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NetworkExternalAddressArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkExternalAddressIpv4Args
+    ///                             {
+    ///                                 Value = "10.xx.xx.xx",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 ExternalDataServicesIps = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NetworkExternalDataServicesIpArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkExternalDataServicesIpIpv4Args
+    ///                             {
+    ///                                 Value = "10.xx.xx.xx",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 NtpServerIpLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NetworkNtpServerIpListArgs
+    ///                     {
+    ///                         Fqdns = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkNtpServerIpListFqdnArgs
+    ///                             {
+    ///                                 Value = "ntp.server.nutanix.com",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Nutanix.Inputs.ClusterV2NetworkNtpServerIpListArgs
+    ///                     {
+    ///                         Fqdns = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkNtpServerIpListFqdnArgs
+    ///                             {
+    ///                                 Value = "ntp.server_1.nutanix.com",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 SmtpServers = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterV2NetworkSmtpServerArgs
+    ///                     {
+    ///                         EmailAddress = "example.ex@exmple.com",
+    ///                         Servers = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterV2NetworkSmtpServerServerArgs
+    ///                             {
+    ///                                 IpAddresses = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterV2NetworkSmtpServerServerIpAddressArgs
+    ///                                     {
+    ///                                         Ipv4s = new[]
+    ///                                         {
+    ///                                             new Nutanix.Inputs.ClusterV2NetworkSmtpServerServerIpAddressIpv4Args
+    ///                                             {
+    ///                                                 Value = "10.xx.xx.xx",
+    ///                                             },
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                                 Port = 123,
+    ///                                 Username = "example",
+    ///                                 Password = "example!2134",
+    ///                             },
+    ///                         },
+    ///                         Type = "PLAIN",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## What happens when you do terraform destroy for nutanix_clusters_v2?  First thing, inorder to destroy the cluster from Terraform it need to be registered.
+    /// 
+    /// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/createCluster).
     /// </summary>
     [NutanixResourceType("nutanix:index/clusterV2:ClusterV2")]
     public partial class ClusterV2 : global::Pulumi.CustomResource
@@ -172,6 +426,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("categories")]
         public Output<ImmutableArray<string>> Categories { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a cluster profile.
+        /// </summary>
         [Output("clusterProfileExtId")]
         public Output<string> ClusterProfileExtId { get; private set; } = null!;
 
@@ -218,7 +475,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.ClusterV2Network>> Networks { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) The reference to a node.
+        /// - (Optional) The reference to a node and remove node parameters.
         /// </summary>
         [Output("nodes")]
         public Output<ImmutableArray<Outputs.ClusterV2Node>> Nodes { get; private set; } = null!;
@@ -227,7 +484,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> TenantId { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) The reference to a project.
+        /// - (Optional) Upgrade status of a cluster.
         /// Valid values are:
         /// - "CANCELLED"	The cluster upgrade is cancelled.
         /// - "FAILED"	The cluster upgrade failed.
@@ -304,6 +561,12 @@ namespace PiersKarsenbarg.Nutanix
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The reference to a cluster profile.
+        /// </summary>
+        [Input("clusterProfileExtId")]
+        public Input<string>? ClusterProfileExtId { get; set; }
+
         [Input("configs")]
         private InputList<Inputs.ClusterV2ConfigArgs>? _configs;
 
@@ -356,7 +619,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.ClusterV2NodeArgs>? _nodes;
 
         /// <summary>
-        /// - (Optional) The reference to a node.
+        /// - (Optional) The reference to a node and remove node parameters.
         /// </summary>
         public InputList<Inputs.ClusterV2NodeArgs> Nodes
         {
@@ -387,6 +650,9 @@ namespace PiersKarsenbarg.Nutanix
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The reference to a cluster profile.
+        /// </summary>
         [Input("clusterProfileExtId")]
         public Input<string>? ClusterProfileExtId { get; set; }
 
@@ -453,7 +719,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.ClusterV2NodeGetArgs>? _nodes;
 
         /// <summary>
-        /// - (Optional) The reference to a node.
+        /// - (Optional) The reference to a node and remove node parameters.
         /// </summary>
         public InputList<Inputs.ClusterV2NodeGetArgs> Nodes
         {
@@ -465,7 +731,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TenantId { get; set; }
 
         /// <summary>
-        /// - (Optional) The reference to a project.
+        /// - (Optional) Upgrade status of a cluster.
         /// Valid values are:
         /// - "CANCELLED"	The cluster upgrade is cancelled.
         /// - "FAILED"	The cluster upgrade failed.

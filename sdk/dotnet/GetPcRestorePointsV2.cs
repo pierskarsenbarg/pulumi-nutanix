@@ -201,7 +201,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// - `Value`: - The fully qualified domain name of the host.
         /// 
-        /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listRestorePoints).
+        /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listRestorePoints).
         /// </summary>
         public static Task<GetPcRestorePointsV2Result> InvokeAsync(GetPcRestorePointsV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPcRestorePointsV2Result>("nutanix:index/getPcRestorePointsV2:getPcRestorePointsV2", args ?? new GetPcRestorePointsV2Args(), options.WithDefaults());
@@ -395,7 +395,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// - `Value`: - The fully qualified domain name of the host.
         /// 
-        /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listRestorePoints).
+        /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listRestorePoints).
         /// </summary>
         public static Output<GetPcRestorePointsV2Result> Invoke(GetPcRestorePointsV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcRestorePointsV2Result>("nutanix:index/getPcRestorePointsV2:getPcRestorePointsV2", args ?? new GetPcRestorePointsV2InvokeArgs(), options.WithDefaults());
@@ -589,7 +589,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// - `Value`: - The fully qualified domain name of the host.
         /// 
-        /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listRestorePoints).
+        /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listRestorePoints).
         /// </summary>
         public static Output<GetPcRestorePointsV2Result> Invoke(GetPcRestorePointsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcRestorePointsV2Result>("nutanix:index/getPcRestorePointsV2:getPcRestorePointsV2", args ?? new GetPcRestorePointsV2InvokeArgs(), options.WithDefaults());

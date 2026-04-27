@@ -31,7 +31,7 @@ class VolumeGroupDiskV2Args:
         The set of arguments for constructing a VolumeGroupDiskV2 resource.
 
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]] disk_data_source_references: -(Required) Disk Data Source Reference.
-        :param pulumi.Input[_builtins.int] disk_size_bytes: - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        :param pulumi.Input[_builtins.int] disk_size_bytes: - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         :param pulumi.Input[_builtins.str] volume_group_ext_id: The external identifier of the volume group.
         :param pulumi.Input[_builtins.str] description: - Volume Disk description.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
@@ -63,7 +63,7 @@ class VolumeGroupDiskV2Args:
     @pulumi.getter(name="diskSizeBytes")
     def disk_size_bytes(self) -> pulumi.Input[_builtins.int]:
         """
-        - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         """
         return pulumi.get(self, "disk_size_bytes")
 
@@ -135,7 +135,7 @@ class _VolumeGroupDiskV2State:
 
         :param pulumi.Input[_builtins.str] description: - Volume Disk description.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]] disk_data_source_references: -(Required) Disk Data Source Reference.
-        :param pulumi.Input[_builtins.int] disk_size_bytes: - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        :param pulumi.Input[_builtins.int] disk_size_bytes: - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.int] index: - Index of the disk in a Volume Group. This field is optional and immutable.
@@ -184,7 +184,7 @@ class _VolumeGroupDiskV2State:
     @pulumi.getter(name="diskSizeBytes")
     def disk_size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         """
         return pulumi.get(self, "disk_size_bytes")
 
@@ -290,7 +290,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - Volume Disk description.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict']]]] disk_data_source_references: -(Required) Disk Data Source Reference.
-        :param pulumi.Input[_builtins.int] disk_size_bytes: - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        :param pulumi.Input[_builtins.int] disk_size_bytes: - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict']]]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         :param pulumi.Input[_builtins.int] index: - Index of the disk in a Volume Group. This field is optional and immutable.
         :param pulumi.Input[_builtins.str] volume_group_ext_id: The external identifier of the volume group.
@@ -402,7 +402,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - Volume Disk description.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict']]]] disk_data_source_references: -(Required) Disk Data Source Reference.
-        :param pulumi.Input[_builtins.int] disk_size_bytes: - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        :param pulumi.Input[_builtins.int] disk_size_bytes: - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict']]]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.int] index: - Index of the disk in a Volume Group. This field is optional and immutable.
@@ -423,7 +423,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def description(self) -> pulumi.Output[_builtins.str]:
         """
         - Volume Disk description.
         """
@@ -441,13 +441,13 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
     @pulumi.getter(name="diskSizeBytes")
     def disk_size_bytes(self) -> pulumi.Output[_builtins.int]:
         """
-        - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         """
         return pulumi.get(self, "disk_size_bytes")
 
     @_builtins.property
     @pulumi.getter(name="diskStorageFeatures")
-    def disk_storage_features(self) -> pulumi.Output[Optional[Sequence['outputs.VolumeGroupDiskV2DiskStorageFeature']]]:
+    def disk_storage_features(self) -> pulumi.Output[Sequence['outputs.VolumeGroupDiskV2DiskStorageFeature']]:
         """
         - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         """

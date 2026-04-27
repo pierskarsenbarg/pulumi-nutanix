@@ -22,7 +22,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Version to upgrade to.
         /// 
         /// 
-        /// See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.0#tag/Upgrades/operation/performUpgrade).
+        /// See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Upgrades/operation/performUpgrade).
         /// </summary>
         public readonly string ToVersion;
 

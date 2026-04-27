@@ -15,11 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class UsersV2AdditionalAttribute
     {
         /// <summary>
-        /// - The URL at which the entity described by the link can be accessed.
+        /// -(Optional) The URL at which the entity described by the link can be accessed.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// -(Optional) A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// </summary>
         public readonly int? Value;
 

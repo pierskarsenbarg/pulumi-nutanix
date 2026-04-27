@@ -80,6 +80,7 @@ import (
 // - `generationUuid`: Generation UUID of the VM. It should be of type UUID.
 // - `biosUuid`: BIOS UUID of the VM. It should be of type UUID.
 // - `categories`: Categories for the VM.
+// * `project`: Reference to a project.
 // - `ownershipInfo`: Ownership information for the VM.
 // - `host`: Reference to the host, the VM is running on.
 // - `cluster`: Reference to a cluster.
@@ -123,6 +124,11 @@ import (
 // The `categories` attribute supports the following:
 //
 // * `extId`: A globally unique identifier of a VM category of type UUID.
+//
+// ### Project
+// The `project` attribute supports the following:
+//
+// * `extId`: The globally unique identifier of an instance of type UUID.
 //
 // ### Ownership Info
 // The `ownershipInfo` attribute supports the following:
@@ -278,8 +284,10 @@ import (
 // The `nics` attribute supports the following:
 //
 // * `extId`: A globally unique identifier of an instance that is suitable for external consumption
-// * `backingInfo`: Defines a NIC emulated by the hypervisor
-// * `networkInfo`: Network information for a NIC.
+// * `nicBackingInfo`: New NIC backing info (v2.4.1+). One of `virtualEthernetNic`, `sriovNic`, `dpOffloadNic`.
+// * `nicNetworkInfo`: New NIC network info (v2.4.1+). One of `virtualEthernetNicNetworkInfo`, `sriovNicNetworkInfo`, `dpOffloadNicNetworkInfo`.
+// * `backingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+// * `networkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 //
 // ### nics.backing_info
 // * `model`: Options for the NIC emulation.
@@ -342,7 +350,7 @@ import (
 // ### protectionPolicyState
 // * `policy`: Reference to the policy object in use.
 //
-// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/listVms).
+// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/listVms).
 func GetVirtualMachinesV2(ctx *pulumi.Context, args *GetVirtualMachinesV2Args, opts ...pulumi.InvokeOption) (*GetVirtualMachinesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualMachinesV2Result

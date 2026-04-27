@@ -148,6 +148,8 @@ class PcRestoreSourceV2(pulumi.CustomResource):
                  location: Optional[pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
                  __props__=None):
         """
+        > **Authentication:** The `PcRestoreSourceV2` resource does **not** support API key authentication. The CreateRestoreSource API routes requests to the target cluster (Prism Element), which only supports basic auth (username/password). Use `username` and `password` in the provider configuration—do not use `api_key`. Using API key will result in "Invalid cookies present in the request" errors.
+
         > The restore source is auto-deleted after sometime, PcRestoreSourceV2 resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
 
         Create a restore source pointing to a cluster or object store to restore the domain manager. The created restore source is intended to be deleted after use. If the restore source is not deleted using the deleteRestoreSource API, then it is auto-deleted after sometime. Also note that a restore source will not contain a backup policy. It is only used to access the backup data at the location from where the Prism Central may be restored. Credentials used to access the restore source are not validated at the time of creation of the restore source. They are validated when the restore source is used to fetch data.
@@ -208,6 +210,8 @@ class PcRestoreSourceV2(pulumi.CustomResource):
                  args: PcRestoreSourceV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > **Authentication:** The `PcRestoreSourceV2` resource does **not** support API key authentication. The CreateRestoreSource API routes requests to the target cluster (Prism Element), which only supports basic auth (username/password). Use `username` and `password` in the provider configuration—do not use `api_key`. Using API key will result in "Invalid cookies present in the request" errors.
+
         > The restore source is auto-deleted after sometime, PcRestoreSourceV2 resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
 
         Create a restore source pointing to a cluster or object store to restore the domain manager. The created restore source is intended to be deleted after use. If the restore source is not deleted using the deleteRestoreSource API, then it is auto-deleted after sometime. Also note that a restore source will not contain a backup policy. It is only used to access the backup data at the location from where the Prism Central may be restored. Credentials used to access the restore source are not validated at the time of creation of the restore source. They are validated when the restore source is used to fetch data.

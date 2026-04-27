@@ -12,21 +12,109 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Create an image using the provided request body. Name, type and source are mandatory fields to create an image.
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewImagesV2(ctx, "img-1", &nutanix.ImagesV2Args{
+//				Name:        pulumi.String("test-image"),
+//				Description: pulumi.String("img desc"),
+//				Type:        pulumi.String("ISO_IMAGE"),
+//				Sources: nutanix.ImagesV2SourceArray{
+//					&nutanix.ImagesV2SourceArgs{
+//						UrlSources: nutanix.ImagesV2SourceUrlSourceArray{
+//							&nutanix.ImagesV2SourceUrlSourceArgs{
+//								Url: pulumi.String("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewImagesV2(ctx, "img-2", &nutanix.ImagesV2Args{
+//				Name:        pulumi.String("test-image"),
+//				Description: pulumi.String("img desc"),
+//				Type:        pulumi.String("DISK_IMAGE"),
+//				Sources: nutanix.ImagesV2SourceArray{
+//					&nutanix.ImagesV2SourceArgs{
+//						UrlSources: nutanix.ImagesV2SourceUrlSourceArray{
+//							&nutanix.ImagesV2SourceUrlSourceArgs{
+//								Url: pulumi.String("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"),
+//							},
+//						},
+//					},
+//				},
+//				ClusterLocationExtIds: pulumi.StringArray{
+//					pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewImagesV2(ctx, "object-liteStore-img", &nutanix.ImagesV2Args{
+//				Name:        pulumi.String("image-object-lite-example"),
+//				Description: pulumi.String("Image created from object store"),
+//				Type:        pulumi.String("DISK_IMAGE"),
+//				Sources: nutanix.ImagesV2SourceArray{
+//					&nutanix.ImagesV2SourceArgs{
+//						ObjectLiteSources: nutanix.ImagesV2SourceObjectLiteSourceArray{
+//							&nutanix.ImagesV2SourceObjectLiteSourceArgs{
+//								Key: pulumi.String("img-lite-key-example"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ImagesV2 struct {
 	pulumi.CustomResourceState
 
-	CategoryExtIds          pulumi.StringArrayOutput                 `pulumi:"categoryExtIds"`
-	Checksums               ImagesV2ChecksumArrayOutput              `pulumi:"checksums"`
-	ClusterLocationExtIds   pulumi.StringArrayOutput                 `pulumi:"clusterLocationExtIds"`
-	CreateTime              pulumi.StringOutput                      `pulumi:"createTime"`
-	Description             pulumi.StringPtrOutput                   `pulumi:"description"`
-	LastUpdateTime          pulumi.StringOutput                      `pulumi:"lastUpdateTime"`
-	Name                    pulumi.StringOutput                      `pulumi:"name"`
-	OwnerExtId              pulumi.StringOutput                      `pulumi:"ownerExtId"`
+	// List of category external identifiers for an image.
+	CategoryExtIds pulumi.StringArrayOutput `pulumi:"categoryExtIds"`
+	// The checksum of an image.
+	Checksums ImagesV2ChecksumArrayOutput `pulumi:"checksums"`
+	// List of cluster external identifiers where the image is located.
+	ClusterLocationExtIds pulumi.StringArrayOutput `pulumi:"clusterLocationExtIds"`
+	// Create time of an image.
+	CreateTime pulumi.StringOutput `pulumi:"createTime"`
+	// The user defined description of an image.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	ExtId       pulumi.StringOutput    `pulumi:"extId"`
+	// Last update time of an image.
+	LastUpdateTime pulumi.StringOutput     `pulumi:"lastUpdateTime"`
+	Links          ImagesV2LinkArrayOutput `pulumi:"links"`
+	// The user defined name of an image.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// External identifier of the owner of the image
+	OwnerExtId pulumi.StringOutput `pulumi:"ownerExtId"`
+	// Status of an image placement policy.
 	PlacementPolicyStatuses ImagesV2PlacementPolicyStatusArrayOutput `pulumi:"placementPolicyStatuses"`
-	SizeBytes               pulumi.IntOutput                         `pulumi:"sizeBytes"`
-	Sources                 ImagesV2SourceArrayOutput                `pulumi:"sources"`
-	Type                    pulumi.StringOutput                      `pulumi:"type"`
+	// The size in bytes of an image file.
+	SizeBytes pulumi.IntOutput `pulumi:"sizeBytes"`
+	// The source of an image. It can be a VM disk or a URL.
+	Sources  ImagesV2SourceArrayOutput `pulumi:"sources"`
+	TenantId pulumi.StringOutput       `pulumi:"tenantId"`
+	// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+	Type pulumi.StringOutput `pulumi:"type"`
 }
 
 // NewImagesV2 registers a new resource with the given unique name, arguments, and options.
@@ -62,33 +150,63 @@ func GetImagesV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ImagesV2 resources.
 type imagesV2State struct {
-	CategoryExtIds          []string                        `pulumi:"categoryExtIds"`
-	Checksums               []ImagesV2Checksum              `pulumi:"checksums"`
-	ClusterLocationExtIds   []string                        `pulumi:"clusterLocationExtIds"`
-	CreateTime              *string                         `pulumi:"createTime"`
-	Description             *string                         `pulumi:"description"`
-	LastUpdateTime          *string                         `pulumi:"lastUpdateTime"`
-	Name                    *string                         `pulumi:"name"`
-	OwnerExtId              *string                         `pulumi:"ownerExtId"`
+	// List of category external identifiers for an image.
+	CategoryExtIds []string `pulumi:"categoryExtIds"`
+	// The checksum of an image.
+	Checksums []ImagesV2Checksum `pulumi:"checksums"`
+	// List of cluster external identifiers where the image is located.
+	ClusterLocationExtIds []string `pulumi:"clusterLocationExtIds"`
+	// Create time of an image.
+	CreateTime *string `pulumi:"createTime"`
+	// The user defined description of an image.
+	Description *string `pulumi:"description"`
+	ExtId       *string `pulumi:"extId"`
+	// Last update time of an image.
+	LastUpdateTime *string        `pulumi:"lastUpdateTime"`
+	Links          []ImagesV2Link `pulumi:"links"`
+	// The user defined name of an image.
+	Name *string `pulumi:"name"`
+	// External identifier of the owner of the image
+	OwnerExtId *string `pulumi:"ownerExtId"`
+	// Status of an image placement policy.
 	PlacementPolicyStatuses []ImagesV2PlacementPolicyStatus `pulumi:"placementPolicyStatuses"`
-	SizeBytes               *int                            `pulumi:"sizeBytes"`
-	Sources                 []ImagesV2Source                `pulumi:"sources"`
-	Type                    *string                         `pulumi:"type"`
+	// The size in bytes of an image file.
+	SizeBytes *int `pulumi:"sizeBytes"`
+	// The source of an image. It can be a VM disk or a URL.
+	Sources  []ImagesV2Source `pulumi:"sources"`
+	TenantId *string          `pulumi:"tenantId"`
+	// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+	Type *string `pulumi:"type"`
 }
 
 type ImagesV2State struct {
-	CategoryExtIds          pulumi.StringArrayInput
-	Checksums               ImagesV2ChecksumArrayInput
-	ClusterLocationExtIds   pulumi.StringArrayInput
-	CreateTime              pulumi.StringPtrInput
-	Description             pulumi.StringPtrInput
-	LastUpdateTime          pulumi.StringPtrInput
-	Name                    pulumi.StringPtrInput
-	OwnerExtId              pulumi.StringPtrInput
+	// List of category external identifiers for an image.
+	CategoryExtIds pulumi.StringArrayInput
+	// The checksum of an image.
+	Checksums ImagesV2ChecksumArrayInput
+	// List of cluster external identifiers where the image is located.
+	ClusterLocationExtIds pulumi.StringArrayInput
+	// Create time of an image.
+	CreateTime pulumi.StringPtrInput
+	// The user defined description of an image.
+	Description pulumi.StringPtrInput
+	ExtId       pulumi.StringPtrInput
+	// Last update time of an image.
+	LastUpdateTime pulumi.StringPtrInput
+	Links          ImagesV2LinkArrayInput
+	// The user defined name of an image.
+	Name pulumi.StringPtrInput
+	// External identifier of the owner of the image
+	OwnerExtId pulumi.StringPtrInput
+	// Status of an image placement policy.
 	PlacementPolicyStatuses ImagesV2PlacementPolicyStatusArrayInput
-	SizeBytes               pulumi.IntPtrInput
-	Sources                 ImagesV2SourceArrayInput
-	Type                    pulumi.StringPtrInput
+	// The size in bytes of an image file.
+	SizeBytes pulumi.IntPtrInput
+	// The source of an image. It can be a VM disk or a URL.
+	Sources  ImagesV2SourceArrayInput
+	TenantId pulumi.StringPtrInput
+	// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+	Type pulumi.StringPtrInput
 }
 
 func (ImagesV2State) ElementType() reflect.Type {
@@ -96,24 +214,38 @@ func (ImagesV2State) ElementType() reflect.Type {
 }
 
 type imagesV2Args struct {
-	CategoryExtIds        []string           `pulumi:"categoryExtIds"`
-	Checksums             []ImagesV2Checksum `pulumi:"checksums"`
-	ClusterLocationExtIds []string           `pulumi:"clusterLocationExtIds"`
-	Description           *string            `pulumi:"description"`
-	Name                  *string            `pulumi:"name"`
-	Sources               []ImagesV2Source   `pulumi:"sources"`
-	Type                  string             `pulumi:"type"`
+	// List of category external identifiers for an image.
+	CategoryExtIds []string `pulumi:"categoryExtIds"`
+	// The checksum of an image.
+	Checksums []ImagesV2Checksum `pulumi:"checksums"`
+	// List of cluster external identifiers where the image is located.
+	ClusterLocationExtIds []string `pulumi:"clusterLocationExtIds"`
+	// The user defined description of an image.
+	Description *string `pulumi:"description"`
+	// The user defined name of an image.
+	Name *string `pulumi:"name"`
+	// The source of an image. It can be a VM disk or a URL.
+	Sources []ImagesV2Source `pulumi:"sources"`
+	// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+	Type string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a ImagesV2 resource.
 type ImagesV2Args struct {
-	CategoryExtIds        pulumi.StringArrayInput
-	Checksums             ImagesV2ChecksumArrayInput
+	// List of category external identifiers for an image.
+	CategoryExtIds pulumi.StringArrayInput
+	// The checksum of an image.
+	Checksums ImagesV2ChecksumArrayInput
+	// List of cluster external identifiers where the image is located.
 	ClusterLocationExtIds pulumi.StringArrayInput
-	Description           pulumi.StringPtrInput
-	Name                  pulumi.StringPtrInput
-	Sources               ImagesV2SourceArrayInput
-	Type                  pulumi.StringInput
+	// The user defined description of an image.
+	Description pulumi.StringPtrInput
+	// The user defined name of an image.
+	Name pulumi.StringPtrInput
+	// The source of an image. It can be a VM disk or a URL.
+	Sources ImagesV2SourceArrayInput
+	// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+	Type pulumi.StringInput
 }
 
 func (ImagesV2Args) ElementType() reflect.Type {
@@ -203,50 +335,74 @@ func (o ImagesV2Output) ToImagesV2OutputWithContext(ctx context.Context) ImagesV
 	return o
 }
 
+// List of category external identifiers for an image.
 func (o ImagesV2Output) CategoryExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.StringArrayOutput { return v.CategoryExtIds }).(pulumi.StringArrayOutput)
 }
 
+// The checksum of an image.
 func (o ImagesV2Output) Checksums() ImagesV2ChecksumArrayOutput {
 	return o.ApplyT(func(v *ImagesV2) ImagesV2ChecksumArrayOutput { return v.Checksums }).(ImagesV2ChecksumArrayOutput)
 }
 
+// List of cluster external identifiers where the image is located.
 func (o ImagesV2Output) ClusterLocationExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.StringArrayOutput { return v.ClusterLocationExtIds }).(pulumi.StringArrayOutput)
 }
 
+// Create time of an image.
 func (o ImagesV2Output) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.StringOutput { return v.CreateTime }).(pulumi.StringOutput)
 }
 
+// The user defined description of an image.
 func (o ImagesV2Output) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+func (o ImagesV2Output) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ImagesV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// Last update time of an image.
 func (o ImagesV2Output) LastUpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.StringOutput { return v.LastUpdateTime }).(pulumi.StringOutput)
 }
 
+func (o ImagesV2Output) Links() ImagesV2LinkArrayOutput {
+	return o.ApplyT(func(v *ImagesV2) ImagesV2LinkArrayOutput { return v.Links }).(ImagesV2LinkArrayOutput)
+}
+
+// The user defined name of an image.
 func (o ImagesV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// External identifier of the owner of the image
 func (o ImagesV2Output) OwnerExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.StringOutput { return v.OwnerExtId }).(pulumi.StringOutput)
 }
 
+// Status of an image placement policy.
 func (o ImagesV2Output) PlacementPolicyStatuses() ImagesV2PlacementPolicyStatusArrayOutput {
 	return o.ApplyT(func(v *ImagesV2) ImagesV2PlacementPolicyStatusArrayOutput { return v.PlacementPolicyStatuses }).(ImagesV2PlacementPolicyStatusArrayOutput)
 }
 
+// The size in bytes of an image file.
 func (o ImagesV2Output) SizeBytes() pulumi.IntOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.IntOutput { return v.SizeBytes }).(pulumi.IntOutput)
 }
 
+// The source of an image. It can be a VM disk or a URL.
 func (o ImagesV2Output) Sources() ImagesV2SourceArrayOutput {
 	return o.ApplyT(func(v *ImagesV2) ImagesV2SourceArrayOutput { return v.Sources }).(ImagesV2SourceArrayOutput)
 }
 
+func (o ImagesV2Output) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ImagesV2) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
 func (o ImagesV2Output) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *ImagesV2) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

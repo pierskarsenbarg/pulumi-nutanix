@@ -182,7 +182,7 @@ import * as utilities from "./utilities";
  * * `value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
  * * `prefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
  *
- * See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+ * See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/listHostsByClusterId).
  */
 export function getHostsV2(args?: GetHostsV2Args, opts?: pulumi.InvokeOptions): Promise<GetHostsV2Result> {
     args = args || {};
@@ -443,7 +443,7 @@ export interface GetHostsV2Result {
  * * `value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
  * * `prefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
  *
- * See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+ * See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/listHostsByClusterId).
  */
 export function getHostsV2Output(args?: GetHostsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHostsV2Result> {
     args = args || {};

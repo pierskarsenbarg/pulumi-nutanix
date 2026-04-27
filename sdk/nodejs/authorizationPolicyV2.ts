@@ -64,13 +64,13 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
 
     /**
      * Type of Authorization Policy.
-     * * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-     * * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-     * * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-     * * `SERVICE_DEFINED` : ACP defined by a service.
-     * * `USER_DEFINED` : ACP defined by an User.
+     * - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+     * - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+     * - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+     * - `SERVICE_DEFINED` : ACP defined by a service.
+     * - `USER_DEFINED` : ACP defined by an User.
      */
-    declare public readonly authorizationPolicyType: pulumi.Output<string | undefined>;
+    declare public readonly authorizationPolicyType: pulumi.Output<string>;
     /**
      * Client that created the entity.
      */
@@ -86,7 +86,7 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
     /**
      * Description of the Authorization Policy.
      */
-    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Name of the Authorization Policy.
      */
@@ -179,11 +179,11 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
 export interface AuthorizationPolicyV2State {
     /**
      * Type of Authorization Policy.
-     * * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-     * * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-     * * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-     * * `SERVICE_DEFINED` : ACP defined by a service.
-     * * `USER_DEFINED` : ACP defined by an User.
+     * - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+     * - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+     * - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+     * - `SERVICE_DEFINED` : ACP defined by a service.
+     * - `USER_DEFINED` : ACP defined by an User.
      */
     authorizationPolicyType?: pulumi.Input<string>;
     /**
@@ -238,11 +238,11 @@ export interface AuthorizationPolicyV2State {
 export interface AuthorizationPolicyV2Args {
     /**
      * Type of Authorization Policy.
-     * * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-     * * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-     * * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-     * * `SERVICE_DEFINED` : ACP defined by a service.
-     * * `USER_DEFINED` : ACP defined by an User.
+     * - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+     * - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+     * - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+     * - `SERVICE_DEFINED` : ACP defined by a service.
+     * - `USER_DEFINED` : ACP defined by an User.
      */
     authorizationPolicyType?: pulumi.Input<string>;
     /**

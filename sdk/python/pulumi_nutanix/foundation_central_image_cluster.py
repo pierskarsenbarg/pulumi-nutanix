@@ -28,11 +28,13 @@ class FoundationCentralImageClusterArgs:
                  cluster_size: Optional[pulumi.Input[_builtins.int]] = None,
                  cluster_status: Optional[pulumi.Input['FoundationCentralImageClusterClusterStatusArgs']] = None,
                  common_network_settings: Optional[pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs']] = None,
+                 fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                  hypervisor_iso_details: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']] = None,
                  hypervisor_isos: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']] = None,
                  image_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                  node_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]] = None,
                  redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
+                 server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
                  skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
                  storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
@@ -45,9 +47,18 @@ class FoundationCentralImageClusterArgs:
         :param pulumi.Input[_builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[_builtins.int] cluster_size: Number of nodes in the cluster.
         :param pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs'] common_network_settings: Common network settings across the nodes in the cluster.
+        :param pulumi.Input[_builtins.str] fc_api_key_uuid: UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
         :param pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs'] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
         :param pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs'] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[_builtins.int] redundancy_factor: Redundancy factor of the cluster.
+        :param pulumi.Input[_builtins.str] server_configuration_data: JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+               ```
+               server_configuration_data = jsonencode({
+               intersight_data = {
+               organization = "default"
+               }
+               })
+               ```
         :param pulumi.Input[_builtins.int] storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
         :param pulumi.Input[_builtins.str] timezone: Timezone to be set on the cluster.
         """
@@ -65,6 +76,8 @@ class FoundationCentralImageClusterArgs:
             pulumi.set(__self__, "cluster_status", cluster_status)
         if common_network_settings is not None:
             pulumi.set(__self__, "common_network_settings", common_network_settings)
+        if fc_api_key_uuid is not None:
+            pulumi.set(__self__, "fc_api_key_uuid", fc_api_key_uuid)
         if hypervisor_iso_details is not None:
             pulumi.set(__self__, "hypervisor_iso_details", hypervisor_iso_details)
         if hypervisor_isos is not None:
@@ -75,6 +88,8 @@ class FoundationCentralImageClusterArgs:
             pulumi.set(__self__, "node_lists", node_lists)
         if redundancy_factor is not None:
             pulumi.set(__self__, "redundancy_factor", redundancy_factor)
+        if server_configuration_data is not None:
+            pulumi.set(__self__, "server_configuration_data", server_configuration_data)
         if skip_cluster_creation is not None:
             pulumi.set(__self__, "skip_cluster_creation", skip_cluster_creation)
         if storage_node_count is not None:
@@ -164,6 +179,18 @@ class FoundationCentralImageClusterArgs:
         pulumi.set(self, "common_network_settings", value)
 
     @_builtins.property
+    @pulumi.getter(name="fcApiKeyUuid")
+    def fc_api_key_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+        """
+        return pulumi.get(self, "fc_api_key_uuid")
+
+    @fc_api_key_uuid.setter
+    def fc_api_key_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "fc_api_key_uuid", value)
+
+    @_builtins.property
     @pulumi.getter(name="hypervisorIsoDetails")
     def hypervisor_iso_details(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]:
         """
@@ -218,6 +245,25 @@ class FoundationCentralImageClusterArgs:
         pulumi.set(self, "redundancy_factor", value)
 
     @_builtins.property
+    @pulumi.getter(name="serverConfigurationData")
+    def server_configuration_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+        ```
+        server_configuration_data = jsonencode({
+        intersight_data = {
+        organization = "default"
+        }
+        })
+        ```
+        """
+        return pulumi.get(self, "server_configuration_data")
+
+    @server_configuration_data.setter
+    def server_configuration_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "server_configuration_data", value)
+
+    @_builtins.property
     @pulumi.getter(name="skipClusterCreation")
     def skip_cluster_creation(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "skip_cluster_creation")
@@ -265,6 +311,7 @@ class _FoundationCentralImageClusterState:
                  created_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
                  current_time: Optional[pulumi.Input[_builtins.str]] = None,
                  destroyed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                  foundation_init_configs: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]] = None,
                  foundation_init_node_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                  hypervisor_iso_details: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']] = None,
@@ -274,6 +321,7 @@ class _FoundationCentralImageClusterState:
                  imaged_node_uuid_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  node_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]] = None,
                  redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
+                 server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
                  skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
                  storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  timezone: Optional[pulumi.Input[_builtins.str]] = None,
@@ -287,10 +335,19 @@ class _FoundationCentralImageClusterState:
         :param pulumi.Input[_builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[_builtins.int] cluster_size: Number of nodes in the cluster.
         :param pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs'] common_network_settings: Common network settings across the nodes in the cluster.
+        :param pulumi.Input[_builtins.str] fc_api_key_uuid: UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
         :param pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs'] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
         :param pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs'] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[_builtins.str] imaged_cluster_uuid: Unique id of the cluster.
         :param pulumi.Input[_builtins.int] redundancy_factor: Redundancy factor of the cluster.
+        :param pulumi.Input[_builtins.str] server_configuration_data: JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+               ```
+               server_configuration_data = jsonencode({
+               intersight_data = {
+               organization = "default"
+               }
+               })
+               ```
         :param pulumi.Input[_builtins.int] storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
         :param pulumi.Input[_builtins.str] timezone: Timezone to be set on the cluster.
         """
@@ -316,6 +373,8 @@ class _FoundationCentralImageClusterState:
             pulumi.set(__self__, "current_time", current_time)
         if destroyed is not None:
             pulumi.set(__self__, "destroyed", destroyed)
+        if fc_api_key_uuid is not None:
+            pulumi.set(__self__, "fc_api_key_uuid", fc_api_key_uuid)
         if foundation_init_configs is not None:
             pulumi.set(__self__, "foundation_init_configs", foundation_init_configs)
         if foundation_init_node_uuid is not None:
@@ -334,6 +393,8 @@ class _FoundationCentralImageClusterState:
             pulumi.set(__self__, "node_lists", node_lists)
         if redundancy_factor is not None:
             pulumi.set(__self__, "redundancy_factor", redundancy_factor)
+        if server_configuration_data is not None:
+            pulumi.set(__self__, "server_configuration_data", server_configuration_data)
         if skip_cluster_creation is not None:
             pulumi.set(__self__, "skip_cluster_creation", skip_cluster_creation)
         if storage_node_count is not None:
@@ -461,6 +522,18 @@ class _FoundationCentralImageClusterState:
         pulumi.set(self, "destroyed", value)
 
     @_builtins.property
+    @pulumi.getter(name="fcApiKeyUuid")
+    def fc_api_key_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+        """
+        return pulumi.get(self, "fc_api_key_uuid")
+
+    @fc_api_key_uuid.setter
+    def fc_api_key_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "fc_api_key_uuid", value)
+
+    @_builtins.property
     @pulumi.getter(name="foundationInitConfigs")
     def foundation_init_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]]:
         return pulumi.get(self, "foundation_init_configs")
@@ -554,6 +627,25 @@ class _FoundationCentralImageClusterState:
         pulumi.set(self, "redundancy_factor", value)
 
     @_builtins.property
+    @pulumi.getter(name="serverConfigurationData")
+    def server_configuration_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+        ```
+        server_configuration_data = jsonencode({
+        intersight_data = {
+        organization = "default"
+        }
+        })
+        ```
+        """
+        return pulumi.get(self, "server_configuration_data")
+
+    @server_configuration_data.setter
+    def server_configuration_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "server_configuration_data", value)
+
+    @_builtins.property
     @pulumi.getter(name="skipClusterCreation")
     def skip_cluster_creation(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "skip_cluster_creation")
@@ -609,11 +701,13 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  cluster_size: Optional[pulumi.Input[_builtins.int]] = None,
                  cluster_status: Optional[pulumi.Input[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
                  common_network_settings: Optional[pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
+                 fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                  hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
                  hypervisor_isos: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
                  image_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                  node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
                  redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
+                 server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
                  skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
                  storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  timezone: Optional[pulumi.Input[_builtins.str]] = None,
@@ -722,9 +816,18 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[_builtins.int] cluster_size: Number of nodes in the cluster.
         :param pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']] common_network_settings: Common network settings across the nodes in the cluster.
+        :param pulumi.Input[_builtins.str] fc_api_key_uuid: UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
         :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
         :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[_builtins.int] redundancy_factor: Redundancy factor of the cluster.
+        :param pulumi.Input[_builtins.str] server_configuration_data: JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+               ```
+               server_configuration_data = jsonencode({
+               intersight_data = {
+               organization = "default"
+               }
+               })
+               ```
         :param pulumi.Input[_builtins.int] storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
         :param pulumi.Input[_builtins.str] timezone: Timezone to be set on the cluster.
         """
@@ -852,11 +955,13 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  cluster_size: Optional[pulumi.Input[_builtins.int]] = None,
                  cluster_status: Optional[pulumi.Input[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
                  common_network_settings: Optional[pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
+                 fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                  hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
                  hypervisor_isos: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
                  image_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                  node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
                  redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
+                 server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
                  skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
                  storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  timezone: Optional[pulumi.Input[_builtins.str]] = None,
@@ -876,11 +981,13 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
             __props__.__dict__["cluster_size"] = cluster_size
             __props__.__dict__["cluster_status"] = cluster_status
             __props__.__dict__["common_network_settings"] = common_network_settings
+            __props__.__dict__["fc_api_key_uuid"] = fc_api_key_uuid
             __props__.__dict__["hypervisor_iso_details"] = hypervisor_iso_details
             __props__.__dict__["hypervisor_isos"] = hypervisor_isos
             __props__.__dict__["image_cluster_uuid"] = image_cluster_uuid
             __props__.__dict__["node_lists"] = node_lists
             __props__.__dict__["redundancy_factor"] = redundancy_factor
+            __props__.__dict__["server_configuration_data"] = server_configuration_data
             __props__.__dict__["skip_cluster_creation"] = skip_cluster_creation
             __props__.__dict__["storage_node_count"] = storage_node_count
             __props__.__dict__["timezone"] = timezone
@@ -914,6 +1021,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
             created_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
             current_time: Optional[pulumi.Input[_builtins.str]] = None,
             destroyed: Optional[pulumi.Input[_builtins.bool]] = None,
+            fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
             foundation_init_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterFoundationInitConfigArgs', 'FoundationCentralImageClusterFoundationInitConfigArgsDict']]]]] = None,
             foundation_init_node_uuid: Optional[pulumi.Input[_builtins.str]] = None,
             hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
@@ -923,6 +1031,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
             imaged_node_uuid_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
             redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
+            server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
             skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
             storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
             timezone: Optional[pulumi.Input[_builtins.str]] = None,
@@ -940,10 +1049,19 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[_builtins.int] cluster_size: Number of nodes in the cluster.
         :param pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']] common_network_settings: Common network settings across the nodes in the cluster.
+        :param pulumi.Input[_builtins.str] fc_api_key_uuid: UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
         :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
         :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[_builtins.str] imaged_cluster_uuid: Unique id of the cluster.
         :param pulumi.Input[_builtins.int] redundancy_factor: Redundancy factor of the cluster.
+        :param pulumi.Input[_builtins.str] server_configuration_data: JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+               ```
+               server_configuration_data = jsonencode({
+               intersight_data = {
+               organization = "default"
+               }
+               })
+               ```
         :param pulumi.Input[_builtins.int] storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
         :param pulumi.Input[_builtins.str] timezone: Timezone to be set on the cluster.
         """
@@ -962,6 +1080,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         __props__.__dict__["created_timestamp"] = created_timestamp
         __props__.__dict__["current_time"] = current_time
         __props__.__dict__["destroyed"] = destroyed
+        __props__.__dict__["fc_api_key_uuid"] = fc_api_key_uuid
         __props__.__dict__["foundation_init_configs"] = foundation_init_configs
         __props__.__dict__["foundation_init_node_uuid"] = foundation_init_node_uuid
         __props__.__dict__["hypervisor_iso_details"] = hypervisor_iso_details
@@ -971,6 +1090,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         __props__.__dict__["imaged_node_uuid_lists"] = imaged_node_uuid_lists
         __props__.__dict__["node_lists"] = node_lists
         __props__.__dict__["redundancy_factor"] = redundancy_factor
+        __props__.__dict__["server_configuration_data"] = server_configuration_data
         __props__.__dict__["skip_cluster_creation"] = skip_cluster_creation
         __props__.__dict__["storage_node_count"] = storage_node_count
         __props__.__dict__["timezone"] = timezone
@@ -1051,6 +1171,14 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         return pulumi.get(self, "destroyed")
 
     @_builtins.property
+    @pulumi.getter(name="fcApiKeyUuid")
+    def fc_api_key_uuid(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+        """
+        return pulumi.get(self, "fc_api_key_uuid")
+
+    @_builtins.property
     @pulumi.getter(name="foundationInitConfigs")
     def foundation_init_configs(self) -> pulumi.Output[Sequence['outputs.FoundationCentralImageClusterFoundationInitConfig']]:
         return pulumi.get(self, "foundation_init_configs")
@@ -1106,6 +1234,21 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         Redundancy factor of the cluster.
         """
         return pulumi.get(self, "redundancy_factor")
+
+    @_builtins.property
+    @pulumi.getter(name="serverConfigurationData")
+    def server_configuration_data(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+        ```
+        server_configuration_data = jsonencode({
+        intersight_data = {
+        organization = "default"
+        }
+        })
+        ```
+        """
+        return pulumi.get(self, "server_configuration_data")
 
     @_builtins.property
     @pulumi.getter(name="skipClusterCreation")

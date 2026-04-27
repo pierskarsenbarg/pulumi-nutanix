@@ -265,6 +265,10 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2OwnershipInfoResult> OwnershipInfos;
         public readonly string PowerState;
         /// <summary>
+        /// Reference to a project.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVirtualMachineV2ProjectResult> Projects;
+        /// <summary>
         /// Status of protection policy applied to this VM.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2ProtectionPolicyStateResult> ProtectionPolicyStates;
@@ -371,6 +375,8 @@ namespace PiersKarsenbarg.Nutanix
 
             string powerState,
 
+            ImmutableArray<Outputs.GetVirtualMachineV2ProjectResult> projects,
+
             ImmutableArray<Outputs.GetVirtualMachineV2ProtectionPolicyStateResult> protectionPolicyStates,
 
             string protectionType,
@@ -423,6 +429,7 @@ namespace PiersKarsenbarg.Nutanix
             NumThreadsPerCore = numThreadsPerCore;
             OwnershipInfos = ownershipInfos;
             PowerState = powerState;
+            Projects = projects;
             ProtectionPolicyStates = protectionPolicyStates;
             ProtectionType = protectionType;
             SerialPorts = serialPorts;

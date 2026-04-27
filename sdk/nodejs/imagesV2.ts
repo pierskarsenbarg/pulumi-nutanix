@@ -6,6 +6,46 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Create an image using the provided request body. Name, type and source are mandatory fields to create an image.
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const img_1 = new nutanix.ImagesV2("img-1", {
+ *     name: "test-image",
+ *     description: "img desc",
+ *     type: "ISO_IMAGE",
+ *     sources: [{
+ *         urlSources: [{
+ *             url: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+ *         }],
+ *     }],
+ * });
+ * const img_2 = new nutanix.ImagesV2("img-2", {
+ *     name: "test-image",
+ *     description: "img desc",
+ *     type: "DISK_IMAGE",
+ *     sources: [{
+ *         urlSources: [{
+ *             url: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+ *         }],
+ *     }],
+ *     clusterLocationExtIds: ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
+ * });
+ * const object_liteStore_img = new nutanix.ImagesV2("object-liteStore-img", {
+ *     name: "image-object-lite-example",
+ *     description: "Image created from object store",
+ *     type: "DISK_IMAGE",
+ *     sources: [{
+ *         objectLiteSources: [{
+ *             key: "img-lite-key-example",
+ *         }],
+ *     }],
+ * });
+ * ```
+ */
 export class ImagesV2 extends pulumi.CustomResource {
     /**
      * Get an existing ImagesV2 resource's state with the given name, ID, and optional extra
@@ -34,17 +74,56 @@ export class ImagesV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === ImagesV2.__pulumiType;
     }
 
+    /**
+     * List of category external identifiers for an image.
+     */
     declare public readonly categoryExtIds: pulumi.Output<string[]>;
+    /**
+     * The checksum of an image.
+     */
     declare public readonly checksums: pulumi.Output<outputs.ImagesV2Checksum[] | undefined>;
+    /**
+     * List of cluster external identifiers where the image is located.
+     */
     declare public readonly clusterLocationExtIds: pulumi.Output<string[]>;
+    /**
+     * Create time of an image.
+     */
     declare public /*out*/ readonly createTime: pulumi.Output<string>;
+    /**
+     * The user defined description of an image.
+     */
     declare public readonly description: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
+    /**
+     * Last update time of an image.
+     */
     declare public /*out*/ readonly lastUpdateTime: pulumi.Output<string>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.ImagesV2Link[]>;
+    /**
+     * The user defined name of an image.
+     */
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * External identifier of the owner of the image
+     */
     declare public /*out*/ readonly ownerExtId: pulumi.Output<string>;
+    /**
+     * Status of an image placement policy.
+     */
     declare public /*out*/ readonly placementPolicyStatuses: pulumi.Output<outputs.ImagesV2PlacementPolicyStatus[]>;
+    /**
+     * The size in bytes of an image file.
+     */
     declare public /*out*/ readonly sizeBytes: pulumi.Output<number>;
-    declare public readonly sources: pulumi.Output<outputs.ImagesV2Source[] | undefined>;
+    /**
+     * The source of an image. It can be a VM disk or a URL.
+     */
+    declare public readonly sources: pulumi.Output<outputs.ImagesV2Source[]>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
+    /**
+     * The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+     */
     declare public readonly type: pulumi.Output<string>;
 
     /**
@@ -65,12 +144,15 @@ export class ImagesV2 extends pulumi.CustomResource {
             resourceInputs["clusterLocationExtIds"] = state?.clusterLocationExtIds;
             resourceInputs["createTime"] = state?.createTime;
             resourceInputs["description"] = state?.description;
+            resourceInputs["extId"] = state?.extId;
             resourceInputs["lastUpdateTime"] = state?.lastUpdateTime;
+            resourceInputs["links"] = state?.links;
             resourceInputs["name"] = state?.name;
             resourceInputs["ownerExtId"] = state?.ownerExtId;
             resourceInputs["placementPolicyStatuses"] = state?.placementPolicyStatuses;
             resourceInputs["sizeBytes"] = state?.sizeBytes;
             resourceInputs["sources"] = state?.sources;
+            resourceInputs["tenantId"] = state?.tenantId;
             resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as ImagesV2Args | undefined;
@@ -85,10 +167,13 @@ export class ImagesV2 extends pulumi.CustomResource {
             resourceInputs["sources"] = args?.sources;
             resourceInputs["type"] = args?.type;
             resourceInputs["createTime"] = undefined /*out*/;
+            resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["lastUpdateTime"] = undefined /*out*/;
+            resourceInputs["links"] = undefined /*out*/;
             resourceInputs["ownerExtId"] = undefined /*out*/;
             resourceInputs["placementPolicyStatuses"] = undefined /*out*/;
             resourceInputs["sizeBytes"] = undefined /*out*/;
+            resourceInputs["tenantId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ImagesV2.__pulumiType, name, resourceInputs, opts);
@@ -99,17 +184,56 @@ export class ImagesV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ImagesV2 resources.
  */
 export interface ImagesV2State {
+    /**
+     * List of category external identifiers for an image.
+     */
     categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The checksum of an image.
+     */
     checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[]>;
+    /**
+     * List of cluster external identifiers where the image is located.
+     */
     clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Create time of an image.
+     */
     createTime?: pulumi.Input<string>;
+    /**
+     * The user defined description of an image.
+     */
     description?: pulumi.Input<string>;
+    extId?: pulumi.Input<string>;
+    /**
+     * Last update time of an image.
+     */
     lastUpdateTime?: pulumi.Input<string>;
+    links?: pulumi.Input<pulumi.Input<inputs.ImagesV2Link>[]>;
+    /**
+     * The user defined name of an image.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * External identifier of the owner of the image
+     */
     ownerExtId?: pulumi.Input<string>;
+    /**
+     * Status of an image placement policy.
+     */
     placementPolicyStatuses?: pulumi.Input<pulumi.Input<inputs.ImagesV2PlacementPolicyStatus>[]>;
+    /**
+     * The size in bytes of an image file.
+     */
     sizeBytes?: pulumi.Input<number>;
+    /**
+     * The source of an image. It can be a VM disk or a URL.
+     */
     sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[]>;
+    tenantId?: pulumi.Input<string>;
+    /**
+     * The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+     */
     type?: pulumi.Input<string>;
 }
 
@@ -117,11 +241,32 @@ export interface ImagesV2State {
  * The set of arguments for constructing a ImagesV2 resource.
  */
 export interface ImagesV2Args {
+    /**
+     * List of category external identifiers for an image.
+     */
     categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The checksum of an image.
+     */
     checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[]>;
+    /**
+     * List of cluster external identifiers where the image is located.
+     */
     clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The user defined description of an image.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * The user defined name of an image.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * The source of an image. It can be a VM disk or a URL.
+     */
     sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[]>;
+    /**
+     * The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+     */
     type: pulumi.Input<string>;
 }

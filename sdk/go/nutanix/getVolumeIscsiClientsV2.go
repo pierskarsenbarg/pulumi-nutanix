@@ -130,7 +130,7 @@ import (
 // * `numVirtualTargets`: - Number of virtual targets generated for the iSCSI target. This field is immutable.
 // * `iscsiTargetName`: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
 //
-// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/IscsiClients/operation/listIscsiClients).
+// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/IscsiClients/operation/listIscsiClients).
 func GetVolumeIscsiClientsV2(ctx *pulumi.Context, args *GetVolumeIscsiClientsV2Args, opts ...pulumi.InvokeOption) (*GetVolumeIscsiClientsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumeIscsiClientsV2Result

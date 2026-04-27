@@ -19,15 +19,22 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ClusterV2NodeNodeList> NodeLists;
         public readonly int? NumberOfNodes;
+        /// <summary>
+        /// - (Optional) Parameters for removing nodes. Supports:
+        /// </summary>
+        public readonly ImmutableArray<Outputs.ClusterV2NodeRemoveNodeParam> RemoveNodeParams;
 
         [OutputConstructor]
         private ClusterV2Node(
             ImmutableArray<Outputs.ClusterV2NodeNodeList> nodeLists,
 
-            int? numberOfNodes)
+            int? numberOfNodes,
+
+            ImmutableArray<Outputs.ClusterV2NodeRemoveNodeParam> removeNodeParams)
         {
             NodeLists = nodeLists;
             NumberOfNodes = numberOfNodes;
+            RemoveNodeParams = removeNodeParams;
         }
     }
 }

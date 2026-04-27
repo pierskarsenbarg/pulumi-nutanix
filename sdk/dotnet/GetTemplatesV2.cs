@@ -302,8 +302,10 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Nics` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption
-        /// * `BackingInfo`: Defines a NIC emulated by the hypervisor
-        /// * `NetworkInfo`: Network information for a NIC.
+        /// * `NicBackingInfo`: New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// * `NicNetworkInfo`: New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// * `BackingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+        /// * `NetworkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// 
         /// ### nics.backing_info
         /// * `Model`: Options for the NIC emulation.
@@ -391,7 +393,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/listTemplates).
+        /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/listTemplates).
         /// </summary>
         public static Task<GetTemplatesV2Result> InvokeAsync(GetTemplatesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTemplatesV2Result>("nutanix:index/getTemplatesV2:getTemplatesV2", args ?? new GetTemplatesV2Args(), options.WithDefaults());
@@ -686,8 +688,10 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Nics` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption
-        /// * `BackingInfo`: Defines a NIC emulated by the hypervisor
-        /// * `NetworkInfo`: Network information for a NIC.
+        /// * `NicBackingInfo`: New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// * `NicNetworkInfo`: New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// * `BackingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+        /// * `NetworkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// 
         /// ### nics.backing_info
         /// * `Model`: Options for the NIC emulation.
@@ -775,7 +779,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/listTemplates).
+        /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/listTemplates).
         /// </summary>
         public static Output<GetTemplatesV2Result> Invoke(GetTemplatesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTemplatesV2Result>("nutanix:index/getTemplatesV2:getTemplatesV2", args ?? new GetTemplatesV2InvokeArgs(), options.WithDefaults());
@@ -1070,8 +1074,10 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Nics` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption
-        /// * `BackingInfo`: Defines a NIC emulated by the hypervisor
-        /// * `NetworkInfo`: Network information for a NIC.
+        /// * `NicBackingInfo`: New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// * `NicNetworkInfo`: New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// * `BackingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+        /// * `NetworkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// 
         /// ### nics.backing_info
         /// * `Model`: Options for the NIC emulation.
@@ -1159,7 +1165,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/listTemplates).
+        /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/listTemplates).
         /// </summary>
         public static Output<GetTemplatesV2Result> Invoke(GetTemplatesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetTemplatesV2Result>("nutanix:index/getTemplatesV2:getTemplatesV2", args ?? new GetTemplatesV2InvokeArgs(), options.WithDefaults());

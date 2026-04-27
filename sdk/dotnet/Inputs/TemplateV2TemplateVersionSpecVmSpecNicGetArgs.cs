@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfoGetArgs>? _backingInfos;
+        [Obsolete(@"The `BackingInfo` attribute is deprecated. Use `NicBackingInfo` instead. This field will be removed in a future release.")]
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfoGetArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfoGetArgs>());
@@ -34,11 +35,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("networkInfos")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoGetArgs>? _networkInfos;
+        [Obsolete(@"The `NetworkInfo` attribute is deprecated. Use `NicNetworkInfo` instead. This field will be removed in a future release.")]
         public InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoGetArgs> NetworkInfos
         {
             get => _networkInfos ?? (_networkInfos = new InputList<Inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoGetArgs>());
             set => _networkInfos = value;
         }
+
+        [Input("nicBackingInfo")]
+        public Input<Inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoGetArgs>? NicBackingInfo { get; set; }
+
+        [Input("nicNetworkInfo")]
+        public Input<Inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoGetArgs>? NicNetworkInfo { get; set; }
 
         [Input("tenantId")]
         public Input<string>? TenantId { get; set; }

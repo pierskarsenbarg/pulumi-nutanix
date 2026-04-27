@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("objectLiteSources")]
         private InputList<Inputs.ImagesV2SourceObjectLiteSourceGetArgs>? _objectLiteSources;
+
+        /// <summary>
+        /// The URL for creating an image.
+        /// </summary>
         public InputList<Inputs.ImagesV2SourceObjectLiteSourceGetArgs> ObjectLiteSources
         {
             get => _objectLiteSources ?? (_objectLiteSources = new InputList<Inputs.ImagesV2SourceObjectLiteSourceGetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("urlSources")]
         private InputList<Inputs.ImagesV2SourceUrlSourceGetArgs>? _urlSources;
+
+        /// <summary>
+        /// The URL for creating an image.
+        /// </summary>
         public InputList<Inputs.ImagesV2SourceUrlSourceGetArgs> UrlSources
         {
             get => _urlSources ?? (_urlSources = new InputList<Inputs.ImagesV2SourceUrlSourceGetArgs>());
@@ -31,6 +39,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("vmDiskSources")]
         private InputList<Inputs.ImagesV2SourceVmDiskSourceGetArgs>? _vmDiskSources;
+
+        /// <summary>
+        /// The URL for creating an image.
+        /// </summary>
         public InputList<Inputs.ImagesV2SourceVmDiskSourceGetArgs> VmDiskSources
         {
             get => _vmDiskSources ?? (_vmDiskSources = new InputList<Inputs.ImagesV2SourceVmDiskSourceGetArgs>());

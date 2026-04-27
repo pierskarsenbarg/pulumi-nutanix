@@ -59,12 +59,12 @@ type AuthorizationPolicyV2 struct {
 	pulumi.CustomResourceState
 
 	// Type of Authorization Policy.
-	// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-	// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-	// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-	// * `SERVICE_DEFINED` : ACP defined by a service.
-	// * `USER_DEFINED` : ACP defined by an User.
-	AuthorizationPolicyType pulumi.StringPtrOutput `pulumi:"authorizationPolicyType"`
+	// - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+	// - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+	// - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+	// - `SERVICE_DEFINED` : ACP defined by a service.
+	// - `USER_DEFINED` : ACP defined by an User.
+	AuthorizationPolicyType pulumi.StringOutput `pulumi:"authorizationPolicyType"`
 	// Client that created the entity.
 	ClientName pulumi.StringOutput `pulumi:"clientName"`
 	// User or Service Name that created the Authorization Policy.
@@ -72,7 +72,7 @@ type AuthorizationPolicyV2 struct {
 	// The creation time of the Authorization Policy.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
 	// Description of the Authorization Policy.
-	Description pulumi.StringPtrOutput `pulumi:"description"`
+	Description pulumi.StringOutput `pulumi:"description"`
 	// Name of the Authorization Policy.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The entities being qualified by the Authorization Policy.
@@ -132,11 +132,11 @@ func GetAuthorizationPolicyV2(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AuthorizationPolicyV2 resources.
 type authorizationPolicyV2State struct {
 	// Type of Authorization Policy.
-	// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-	// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-	// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-	// * `SERVICE_DEFINED` : ACP defined by a service.
-	// * `USER_DEFINED` : ACP defined by an User.
+	// - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+	// - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+	// - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+	// - `SERVICE_DEFINED` : ACP defined by a service.
+	// - `USER_DEFINED` : ACP defined by an User.
 	AuthorizationPolicyType *string `pulumi:"authorizationPolicyType"`
 	// Client that created the entity.
 	ClientName *string `pulumi:"clientName"`
@@ -164,11 +164,11 @@ type authorizationPolicyV2State struct {
 
 type AuthorizationPolicyV2State struct {
 	// Type of Authorization Policy.
-	// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-	// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-	// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-	// * `SERVICE_DEFINED` : ACP defined by a service.
-	// * `USER_DEFINED` : ACP defined by an User.
+	// - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+	// - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+	// - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+	// - `SERVICE_DEFINED` : ACP defined by a service.
+	// - `USER_DEFINED` : ACP defined by an User.
 	AuthorizationPolicyType pulumi.StringPtrInput
 	// Client that created the entity.
 	ClientName pulumi.StringPtrInput
@@ -200,11 +200,11 @@ func (AuthorizationPolicyV2State) ElementType() reflect.Type {
 
 type authorizationPolicyV2Args struct {
 	// Type of Authorization Policy.
-	// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-	// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-	// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-	// * `SERVICE_DEFINED` : ACP defined by a service.
-	// * `USER_DEFINED` : ACP defined by an User.
+	// - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+	// - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+	// - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+	// - `SERVICE_DEFINED` : ACP defined by a service.
+	// - `USER_DEFINED` : ACP defined by an User.
 	AuthorizationPolicyType *string `pulumi:"authorizationPolicyType"`
 	// Description of the Authorization Policy.
 	Description *string `pulumi:"description"`
@@ -223,11 +223,11 @@ type authorizationPolicyV2Args struct {
 // The set of arguments for constructing a AuthorizationPolicyV2 resource.
 type AuthorizationPolicyV2Args struct {
 	// Type of Authorization Policy.
-	// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-	// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-	// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-	// * `SERVICE_DEFINED` : ACP defined by a service.
-	// * `USER_DEFINED` : ACP defined by an User.
+	// - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+	// - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+	// - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+	// - `SERVICE_DEFINED` : ACP defined by a service.
+	// - `USER_DEFINED` : ACP defined by an User.
 	AuthorizationPolicyType pulumi.StringPtrInput
 	// Description of the Authorization Policy.
 	Description pulumi.StringPtrInput
@@ -331,13 +331,13 @@ func (o AuthorizationPolicyV2Output) ToAuthorizationPolicyV2OutputWithContext(ct
 }
 
 // Type of Authorization Policy.
-// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-// * `SERVICE_DEFINED` : ACP defined by a service.
-// * `USER_DEFINED` : ACP defined by an User.
-func (o AuthorizationPolicyV2Output) AuthorizationPolicyType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.StringPtrOutput { return v.AuthorizationPolicyType }).(pulumi.StringPtrOutput)
+// - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+// - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+// - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+// - `SERVICE_DEFINED` : ACP defined by a service.
+// - `USER_DEFINED` : ACP defined by an User.
+func (o AuthorizationPolicyV2Output) AuthorizationPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.StringOutput { return v.AuthorizationPolicyType }).(pulumi.StringOutput)
 }
 
 // Client that created the entity.
@@ -356,8 +356,8 @@ func (o AuthorizationPolicyV2Output) CreatedTime() pulumi.StringOutput {
 }
 
 // Description of the Authorization Policy.
-func (o AuthorizationPolicyV2Output) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+func (o AuthorizationPolicyV2Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // Name of the Authorization Policy.

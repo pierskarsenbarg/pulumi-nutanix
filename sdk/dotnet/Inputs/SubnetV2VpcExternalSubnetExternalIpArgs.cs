@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ipv4s")]
         private InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpIpv4Args>? _ipv4s;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpIpv4Args> Ipv4s
         {
             get => _ipv4s ?? (_ipv4s = new InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpIpv4Args>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("ipv6s")]
         private InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpIpv6Args>? _ipv6s;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpIpv6Args> Ipv6s
         {
             get => _ipv6s ?? (_ipv6s = new InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpIpv6Args>());

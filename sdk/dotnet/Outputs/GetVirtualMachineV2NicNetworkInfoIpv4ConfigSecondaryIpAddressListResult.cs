@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// The prefix length of the IP address.
         /// </summary>
-        public readonly int PrefixLength;
+        public readonly int? PrefixLength;
         /// <summary>
         /// The IPv4 address of the host.
         /// </summary>
@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetVirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListResult(
-            int prefixLength,
+            int? prefixLength,
 
             string value)
         {

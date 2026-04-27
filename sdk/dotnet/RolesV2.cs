@@ -95,7 +95,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - Description of the Role.
         /// </summary>
         [Output("description")]
-        public Output<string?> Description { get; private set; } = null!;
+        public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// -(Required) The display name for the Role.

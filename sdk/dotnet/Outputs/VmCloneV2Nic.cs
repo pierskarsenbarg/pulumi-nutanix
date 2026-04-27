@@ -17,6 +17,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.VmCloneV2NicBackingInfo> BackingInfos;
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfo> NetworkInfos;
+        public readonly Outputs.VmCloneV2NicNicBackingInfo? NicBackingInfo;
+        public readonly Outputs.VmCloneV2NicNicNetworkInfo? NicNetworkInfo;
 
         [OutputConstructor]
         private VmCloneV2Nic(
@@ -24,11 +26,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string? extId,
 
-            ImmutableArray<Outputs.VmCloneV2NicNetworkInfo> networkInfos)
+            ImmutableArray<Outputs.VmCloneV2NicNetworkInfo> networkInfos,
+
+            Outputs.VmCloneV2NicNicBackingInfo? nicBackingInfo,
+
+            Outputs.VmCloneV2NicNicNetworkInfo? nicNetworkInfo)
         {
             BackingInfos = backingInfos;
             ExtId = extId;
             NetworkInfos = networkInfos;
+            NicBackingInfo = nicBackingInfo;
+            NicNetworkInfo = nicNetworkInfo;
         }
     }
 }

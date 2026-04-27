@@ -18,6 +18,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("activeGatewayNodes")]
         private InputList<Inputs.SubnetV2VpcExternalSubnetActiveGatewayNodeArgs>? _activeGatewayNodes;
+
+        /// <summary>
+        /// Reference of gateway nodes
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternalSubnetActiveGatewayNodeArgs> ActiveGatewayNodes
         {
             get => _activeGatewayNodes ?? (_activeGatewayNodes = new InputList<Inputs.SubnetV2VpcExternalSubnetActiveGatewayNodeArgs>());
@@ -26,6 +30,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("externalIps")]
         private InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpArgs>? _externalIps;
+
+        /// <summary>
+        /// List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpArgs> ExternalIps
         {
             get => _externalIps ?? (_externalIps = new InputList<Inputs.SubnetV2VpcExternalSubnetExternalIpArgs>());
@@ -34,12 +42,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("gatewayNodes")]
         private InputList<string>? _gatewayNodes;
+
+        /// <summary>
+        /// List of gateway nodes that can be used for external connectivity.
+        /// </summary>
         public InputList<string> GatewayNodes
         {
             get => _gatewayNodes ?? (_gatewayNodes = new InputList<string>());
             set => _gatewayNodes = value;
         }
 
+        /// <summary>
+        /// External subnet reference.
+        /// </summary>
         [Input("subnetReference")]
         public Input<string>? SubnetReference { get; set; }
 

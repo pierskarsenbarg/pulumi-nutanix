@@ -65,17 +65,6 @@ namespace PiersKarsenbarg.Nutanix
         ///                 Value = "Staging",
         ///             },
         ///         },
-        ///         ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
-        ///         {
-        ///             Resources = new[]
-        ///             {
-        ///                 new Nutanix.Inputs.ProjectResourceDomainResourceArgs
-        ///                 {
-        ///                     Limit = 4,
-        ///                     ResourceType = "STORAGE",
-        ///                 },
-        ///             },
-        ///         },
         ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
         ///         {
         ///             Uuid = subnet.Metadata.Apply(metadata =&gt; metadata.Uuid),
@@ -147,17 +136,6 @@ namespace PiersKarsenbarg.Nutanix
         ///                 Value = "Staging",
         ///             },
         ///         },
-        ///         ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
-        ///         {
-        ///             Resources = new[]
-        ///             {
-        ///                 new Nutanix.Inputs.ProjectResourceDomainResourceArgs
-        ///                 {
-        ///                     Limit = 4,
-        ///                     ResourceType = "STORAGE",
-        ///                 },
-        ///             },
-        ///         },
         ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
         ///         {
         ///             Uuid = subnet.Metadata.Apply(metadata =&gt; metadata.Uuid),
@@ -227,17 +205,6 @@ namespace PiersKarsenbarg.Nutanix
         ///             {
         ///                 Name = "Environment",
         ///                 Value = "Staging",
-        ///             },
-        ///         },
-        ///         ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
-        ///         {
-        ///             Resources = new[]
-        ///             {
-        ///                 new Nutanix.Inputs.ProjectResourceDomainResourceArgs
-        ///                 {
-        ///                     Limit = 4,
-        ///                     ResourceType = "STORAGE",
-        ///                 },
         ///             },
         ///         },
         ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
@@ -473,7 +440,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string? ProjectName;
         public readonly ImmutableDictionary<string, string> ProjectReference;
         /// <summary>
-        /// The status for a resource domain (limits and values)
+        /// (Deprecated) Not supported starting from provider version `2.4.0` and expected to be empty. Remove any usage from configuration/scripts.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectResourceDomainResult> ResourceDomains;
         public readonly string State;

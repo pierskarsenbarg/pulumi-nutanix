@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VirtualMachineV2Nic
     {
         /// <summary>
-        /// Defines a NIC emulated by the hypervisor
+        /// Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2NicBackingInfo> BackingInfos;
         /// <summary>
@@ -23,9 +23,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? ExtId;
         /// <summary>
-        /// Network information for a NIC.
+        /// Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2NicNetworkInfo> NetworkInfos;
+        /// <summary>
+        /// New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// </summary>
+        public readonly Outputs.VirtualMachineV2NicNicBackingInfo? NicBackingInfo;
+        /// <summary>
+        /// New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// </summary>
+        public readonly Outputs.VirtualMachineV2NicNicNetworkInfo? NicNetworkInfo;
 
         [OutputConstructor]
         private VirtualMachineV2Nic(
@@ -33,11 +41,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string? extId,
 
-            ImmutableArray<Outputs.VirtualMachineV2NicNetworkInfo> networkInfos)
+            ImmutableArray<Outputs.VirtualMachineV2NicNetworkInfo> networkInfos,
+
+            Outputs.VirtualMachineV2NicNicBackingInfo? nicBackingInfo,
+
+            Outputs.VirtualMachineV2NicNicNetworkInfo? nicNetworkInfo)
         {
             BackingInfos = backingInfos;
             ExtId = extId;
             NetworkInfos = networkInfos;
+            NicBackingInfo = nicBackingInfo;
+            NicNetworkInfo = nicNetworkInfo;
         }
     }
 }

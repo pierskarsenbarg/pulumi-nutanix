@@ -96,7 +96,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `Value`: value of address
         /// - `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Task<GetVpcsV2Result> InvokeAsync(GetVpcsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2Args(), options.WithDefaults());
@@ -185,7 +185,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `Value`: value of address
         /// - `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Output<GetVpcsV2Result> Invoke(GetVpcsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2InvokeArgs(), options.WithDefaults());
@@ -274,7 +274,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `Value`: value of address
         /// - `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Output<GetVpcsV2Result> Invoke(GetVpcsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2InvokeArgs(), options.WithDefaults());

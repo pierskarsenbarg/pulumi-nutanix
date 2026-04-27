@@ -87,7 +87,7 @@ import (
 //     Resources can be organized into either an entity or a policy.
 //   - `resourceId`: The UUID of the entity or policy associated with the particular category.
 //
-// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/Categories/operation/listCategories).
+// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/listCategories).
 func GetCategoriesV2(ctx *pulumi.Context, args *GetCategoriesV2Args, opts ...pulumi.InvokeOption) (*GetCategoriesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCategoriesV2Result

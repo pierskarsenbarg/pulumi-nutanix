@@ -266,6 +266,8 @@ class ProtectionPolicyV2(pulumi.CustomResource):
                  replication_locations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
                  __props__=None):
         """
+        > **Authentication:** The `ProtectionPolicyV2` resource does **not** support API key authentication for multi-site protection policy operations. Use `username` and `password` in the provider configuration—do not use `api_key`. Using API key will result in authorization errors (DPO-10600).
+
         Creates a protection policy to automate the recovery point creation and replication process.
 
         ## Example—Synchronous Protection Policy
@@ -455,6 +457,8 @@ class ProtectionPolicyV2(pulumi.CustomResource):
                  args: ProtectionPolicyV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > **Authentication:** The `ProtectionPolicyV2` resource does **not** support API key authentication for multi-site protection policy operations. Use `username` and `password` in the provider configuration—do not use `api_key`. Using API key will result in authorization errors (DPO-10600).
+
         Creates a protection policy to automate the recovery point creation and replication process.
 
         ## Example—Synchronous Protection Policy

@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VmCloneV2NicNetworkInfo
     {
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Config> Ipv4Configs;
+        public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Info> Ipv4Infos;
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain> NetworkFunctionChains;
         public readonly string? NetworkFunctionNicType;
         public readonly string? NicType;
@@ -26,6 +27,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         [OutputConstructor]
         private VmCloneV2NicNetworkInfo(
             ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Config> ipv4Configs,
+
+            ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Info> ipv4Infos,
 
             ImmutableArray<Outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain> networkFunctionChains,
 
@@ -42,6 +45,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             string? vlanMode)
         {
             Ipv4Configs = ipv4Configs;
+            Ipv4Infos = ipv4Infos;
             NetworkFunctionChains = networkFunctionChains;
             NetworkFunctionNicType = networkFunctionNicType;
             NicType = nicType;

@@ -33,6 +33,9 @@ import * as utilities from "./utilities";
  *     clusters: [{
  *         extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
  *     }],
+ *     projects: [{
+ *         extId: "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
+ *     }],
  *     disks: [{
  *         diskAddresses: [{
  *             busType: "SCSI",
@@ -63,6 +66,9 @@ import * as utilities from "./utilities";
  *     numSockets: 1,
  *     clusters: [{
  *         extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ *     }],
+ *     projects: [{
+ *         extId: "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
  *     }],
  *     disks: [
  *         {
@@ -139,13 +145,15 @@ import * as utilities from "./utilities";
  *         },
  *     ],
  *     nics: [{
- *         networkInfos: [{
- *             nicType: "NORMAL_NIC",
- *             subnets: [{
- *                 extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
- *             }],
- *             vlanMode: "ACCESS",
- *         }],
+ *         nicNetworkInfo: {
+ *             virtualEthernetNicNetworkInfo: {
+ *                 nicType: "NORMAL_NIC",
+ *                 subnets: [{
+ *                     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+ *                 }],
+ *                 vlanMode: "ACCESS",
+ *             },
+ *         },
  *     }],
  *     bootConfigs: [{
  *         legacyBoots: [{
@@ -159,6 +167,21 @@ import * as utilities from "./utilities";
  *     powerState: "ON",
  * });
  * ```
+ *
+ * ## Lifecycle Behavior
+ *
+ * > Important: Updates to `guestCustomization` are treated as create-time only changes and will force the VM to be replaced.
+ *
+ * Guest customization settings such as `config.cloud_init` and `config.sysprep` are consumed during the initial boot of the virtual machine and are not re-applied on later updates.
+ *
+ * As a result, changing the `guestCustomization` block causes Terraform to destroy and recreate the `nutanix.VirtualMachineV2` resource instead of performing an in-place update.
+ *
+ * This behavior applies to both:
+ *
+ * - Sysprep-based guest customization for Windows VMs
+ * - cloud-init based guest customization for Linux VMs
+ *
+ * > Note: Replacing the VM creates a new virtual machine instance. Make sure any dependent systems, references, or post-provisioning steps are updated accordingly before applying the change.
  */
 export class VirtualMachineV2 extends pulumi.CustomResource {
     /**
@@ -331,6 +354,10 @@ export class VirtualMachineV2 extends pulumi.CustomResource {
     declare public readonly ownershipInfos: pulumi.Output<outputs.VirtualMachineV2OwnershipInfo[]>;
     declare public readonly powerState: pulumi.Output<string | undefined>;
     /**
+     * Reference to a project.
+     */
+    declare public readonly projects: pulumi.Output<outputs.VirtualMachineV2Project[]>;
+    /**
      * Status of protection policy applied to this VM.
      */
     declare public readonly protectionPolicyStates: pulumi.Output<outputs.VirtualMachineV2ProtectionPolicyState[]>;
@@ -409,6 +436,7 @@ export class VirtualMachineV2 extends pulumi.CustomResource {
             resourceInputs["numThreadsPerCore"] = state?.numThreadsPerCore;
             resourceInputs["ownershipInfos"] = state?.ownershipInfos;
             resourceInputs["powerState"] = state?.powerState;
+            resourceInputs["projects"] = state?.projects;
             resourceInputs["protectionPolicyStates"] = state?.protectionPolicyStates;
             resourceInputs["protectionType"] = state?.protectionType;
             resourceInputs["serialPorts"] = state?.serialPorts;
@@ -453,6 +481,7 @@ export class VirtualMachineV2 extends pulumi.CustomResource {
             resourceInputs["numThreadsPerCore"] = args?.numThreadsPerCore;
             resourceInputs["ownershipInfos"] = args?.ownershipInfos;
             resourceInputs["powerState"] = args?.powerState;
+            resourceInputs["projects"] = args?.projects;
             resourceInputs["protectionPolicyStates"] = args?.protectionPolicyStates;
             resourceInputs["protectionType"] = args?.protectionType;
             resourceInputs["serialPorts"] = args?.serialPorts;
@@ -614,6 +643,10 @@ export interface VirtualMachineV2State {
      */
     ownershipInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2OwnershipInfo>[]>;
     powerState?: pulumi.Input<string>;
+    /**
+     * Reference to a project.
+     */
+    projects?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Project>[]>;
     /**
      * Status of protection policy applied to this VM.
      */
@@ -782,6 +815,10 @@ export interface VirtualMachineV2Args {
      */
     ownershipInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2OwnershipInfo>[]>;
     powerState?: pulumi.Input<string>;
+    /**
+     * Reference to a project.
+     */
+    projects?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Project>[]>;
     /**
      * Status of protection policy applied to this VM.
      */

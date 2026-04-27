@@ -15,7 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VmCdromInsertEjectV2BackingInfo
     {
         public readonly ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoDataSource> DataSources;
+        public readonly string? DiskExtId;
         public readonly int? DiskSizeBytes;
+        public readonly bool? IsMigrationInProgress;
         public readonly ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoStorageConfig> StorageConfigs;
         public readonly ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoStorageContainer> StorageContainers;
 
@@ -23,14 +25,20 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private VmCdromInsertEjectV2BackingInfo(
             ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoDataSource> dataSources,
 
+            string? diskExtId,
+
             int? diskSizeBytes,
+
+            bool? isMigrationInProgress,
 
             ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoStorageConfig> storageConfigs,
 
             ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoStorageContainer> storageContainers)
         {
             DataSources = dataSources;
+            DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
+            IsMigrationInProgress = isMigrationInProgress;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

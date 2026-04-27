@@ -210,7 +210,7 @@ def get_subnets_v2(expand: Optional[_builtins.str] = None,
     - `value`: value of address
     - `prefix_length`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
 
-    See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Subnets/operation/listSubnets).
+    See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Subnets/operation/listSubnets).
 
 
     :param _builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
@@ -346,7 +346,7 @@ def get_subnets_v2_output(expand: Optional[pulumi.Input[Optional[_builtins.str]]
     - `value`: value of address
     - `prefix_length`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
 
-    See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Subnets/operation/listSubnets).
+    See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Subnets/operation/listSubnets).
 
 
     :param _builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:

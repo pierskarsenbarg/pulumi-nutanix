@@ -74,7 +74,7 @@ namespace PiersKarsenbarg.Nutanix
         /// -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
         /// 
         /// 
-        /// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+        /// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
         /// </summary>
         [Output("restoreTime")]
         public Output<string?> RestoreTime { get; private set; } = null!;
@@ -142,7 +142,7 @@ namespace PiersKarsenbarg.Nutanix
         /// -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
         /// 
         /// 
-        /// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+        /// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
         /// </summary>
         [Input("restoreTime")]
         public Input<string>? RestoreTime { get; set; }
@@ -171,7 +171,7 @@ namespace PiersKarsenbarg.Nutanix
         /// -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
         /// 
         /// 
-        /// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+        /// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
         /// </summary>
         [Input("restoreTime")]
         public Input<string>? RestoreTime { get; set; }

@@ -52,6 +52,13 @@ namespace PiersKarsenbarg.Nutanix
     ///                 ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
     ///             },
     ///         },
+    ///         Projects = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2ProjectArgs
+    ///             {
+    ///                 ExtId = "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
+    ///             },
+    ///         },
     ///         Disks = new[]
     ///         {
     ///             new Nutanix.Inputs.VirtualMachineV2DiskArgs
@@ -116,6 +123,13 @@ namespace PiersKarsenbarg.Nutanix
     ///             new Nutanix.Inputs.VirtualMachineV2ClusterArgs
     ///             {
     ///                 ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///             },
+    ///         },
+    ///         Projects = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineV2ProjectArgs
+    ///             {
+    ///                 ExtId = "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
     ///             },
     ///         },
     ///         Disks = new[]
@@ -277,14 +291,14 @@ namespace PiersKarsenbarg.Nutanix
     ///         {
     ///             new Nutanix.Inputs.VirtualMachineV2NicArgs
     ///             {
-    ///                 NetworkInfos = new[]
+    ///                 NicNetworkInfo = new Nutanix.Inputs.VirtualMachineV2NicNicNetworkInfoArgs
     ///                 {
-    ///                     new Nutanix.Inputs.VirtualMachineV2NicNetworkInfoArgs
+    ///                     VirtualEthernetNicNetworkInfo = new Nutanix.Inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs
     ///                     {
     ///                         NicType = "NORMAL_NIC",
     ///                         Subnets = new[]
     ///                         {
-    ///                             new Nutanix.Inputs.VirtualMachineV2NicNetworkInfoSubnetArgs
+    ///                             new Nutanix.Inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArgs
     ///                             {
     ///                                 ExtId = "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
     ///                             },
@@ -317,6 +331,21 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
+    /// ## Lifecycle Behavior
+    /// 
+    /// &gt; Important: Updates to `GuestCustomization` are treated as create-time only changes and will force the VM to be replaced.
+    /// 
+    /// Guest customization settings such as `config.cloud_init` and `config.sysprep` are consumed during the initial boot of the virtual machine and are not re-applied on later updates.
+    /// 
+    /// As a result, changing the `GuestCustomization` block causes Terraform to destroy and recreate the `nutanix.VirtualMachineV2` resource instead of performing an in-place update.
+    /// 
+    /// This behavior applies to both:
+    /// 
+    /// - Sysprep-based guest customization for Windows VMs
+    /// - cloud-init based guest customization for Linux VMs
+    /// 
+    /// &gt; Note: Replacing the VM creates a new virtual machine instance. Make sure any dependent systems, references, or post-provisioning steps are updated accordingly before applying the change.
     /// </summary>
     [NutanixResourceType("nutanix:index/virtualMachineV2:VirtualMachineV2")]
     public partial class VirtualMachineV2 : global::Pulumi.CustomResource
@@ -536,6 +565,12 @@ namespace PiersKarsenbarg.Nutanix
 
         [Output("powerState")]
         public Output<string?> PowerState { get; private set; } = null!;
+
+        /// <summary>
+        /// Reference to a project.
+        /// </summary>
+        [Output("projects")]
+        public Output<ImmutableArray<Outputs.VirtualMachineV2Project>> Projects { get; private set; } = null!;
 
         /// <summary>
         /// Status of protection policy applied to this VM.
@@ -913,6 +948,18 @@ namespace PiersKarsenbarg.Nutanix
         [Input("powerState")]
         public Input<string>? PowerState { get; set; }
 
+        [Input("projects")]
+        private InputList<Inputs.VirtualMachineV2ProjectArgs>? _projects;
+
+        /// <summary>
+        /// Reference to a project.
+        /// </summary>
+        public InputList<Inputs.VirtualMachineV2ProjectArgs> Projects
+        {
+            get => _projects ?? (_projects = new InputList<Inputs.VirtualMachineV2ProjectArgs>());
+            set => _projects = value;
+        }
+
         [Input("protectionPolicyStates")]
         private InputList<Inputs.VirtualMachineV2ProtectionPolicyStateArgs>? _protectionPolicyStates;
 
@@ -1285,6 +1332,18 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("powerState")]
         public Input<string>? PowerState { get; set; }
+
+        [Input("projects")]
+        private InputList<Inputs.VirtualMachineV2ProjectGetArgs>? _projects;
+
+        /// <summary>
+        /// Reference to a project.
+        /// </summary>
+        public InputList<Inputs.VirtualMachineV2ProjectGetArgs> Projects
+        {
+            get => _projects ?? (_projects = new InputList<Inputs.VirtualMachineV2ProjectGetArgs>());
+            set => _projects = value;
+        }
 
         [Input("protectionPolicyStates")]
         private InputList<Inputs.VirtualMachineV2ProtectionPolicyStateGetArgs>? _protectionPolicyStates;

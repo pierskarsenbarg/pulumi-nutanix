@@ -188,6 +188,10 @@ export interface GetVirtualMachineV2Result {
     readonly ownershipInfos: outputs.GetVirtualMachineV2OwnershipInfo[];
     readonly powerState: string;
     /**
+     * Reference to a project.
+     */
+    readonly projects: outputs.GetVirtualMachineV2Project[];
+    /**
      * Status of protection policy applied to this VM.
      */
     readonly protectionPolicyStates: outputs.GetVirtualMachineV2ProtectionPolicyState[];

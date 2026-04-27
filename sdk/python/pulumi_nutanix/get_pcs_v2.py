@@ -212,7 +212,7 @@ def get_pcs_v2(select: Optional[_builtins.str] = None,
 
     * `value`: - The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listDomainManagers).
+    See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listDomainManagers).
 
 
     :param _builtins.str select: - URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. supported values are:
@@ -367,7 +367,7 @@ def get_pcs_v2_output(select: Optional[pulumi.Input[Optional[_builtins.str]]] = 
 
     * `value`: - The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listDomainManagers).
+    See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listDomainManagers).
 
 
     :param _builtins.str select: - URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. supported values are:

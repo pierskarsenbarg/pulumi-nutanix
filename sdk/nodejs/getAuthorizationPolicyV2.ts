@@ -6,6 +6,20 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a datasource to retrieve authorization policy with  authorization policy uuid .
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const get_acp = nutanix.getAuthorizationPolicyV2({
+ *     extId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ * });
+ * ```
+ */
 export function getAuthorizationPolicyV2(args: GetAuthorizationPolicyV2Args, opts?: pulumi.InvokeOptions): Promise<GetAuthorizationPolicyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAuthorizationPolicyV2:getAuthorizationPolicyV2", {
@@ -17,6 +31,9 @@ export function getAuthorizationPolicyV2(args: GetAuthorizationPolicyV2Args, opt
  * A collection of arguments for invoking getAuthorizationPolicyV2.
  */
 export interface GetAuthorizationPolicyV2Args {
+    /**
+     * Authorization Policy UUID
+     */
     extId: string;
 }
 
@@ -24,23 +41,78 @@ export interface GetAuthorizationPolicyV2Args {
  * A collection of values returned by getAuthorizationPolicyV2.
  */
 export interface GetAuthorizationPolicyV2Result {
+    /**
+     * Type of Authorization Policy.
+     * * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+     * * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+     * * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+     * * `SERVICE_DEFINED` : ACP defined by a service.
+     * * `USER_DEFINED` : ACP defined by an User.
+     */
     readonly authorizationPolicyType: string;
+    /**
+     * Client that created the entity.
+     */
     readonly clientName: string;
+    /**
+     * User or Service Name that created the Authorization Policy.
+     */
     readonly createdBy: string;
+    /**
+     * The creation time of the Authorization Policy.
+     */
     readonly createdTime: string;
+    /**
+     * Description of the Authorization Policy.
+     */
     readonly description: string;
+    /**
+     * Name of the Authorization Policy.
+     */
     readonly displayName: string;
+    /**
+     * The entities being qualified by the Authorization Policy.
+     */
     readonly entities: outputs.GetAuthorizationPolicyV2Entity[];
+    /**
+     * ext_id of Authorization policy.
+     */
     readonly extId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The identities for which the Authorization Policy is created.
+     */
     readonly identities: outputs.GetAuthorizationPolicyV2Identity[];
+    /**
+     * Flag identifying if the Authorization Policy is system defined or not.
+     */
     readonly isSystemDefined: boolean;
+    /**
+     * The time when the Authorization Policy was last updated.
+     */
     readonly lastUpdatedTime: string;
+    /**
+     * The Role associated with the Authorization Policy.
+     */
     readonly role: string;
 }
+/**
+ * Provides a datasource to retrieve authorization policy with  authorization policy uuid .
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const get_acp = nutanix.getAuthorizationPolicyV2({
+ *     extId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ * });
+ * ```
+ */
 export function getAuthorizationPolicyV2Output(args: GetAuthorizationPolicyV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuthorizationPolicyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getAuthorizationPolicyV2:getAuthorizationPolicyV2", {
@@ -52,5 +124,8 @@ export function getAuthorizationPolicyV2Output(args: GetAuthorizationPolicyV2Out
  * A collection of arguments for invoking getAuthorizationPolicyV2.
  */
 export interface GetAuthorizationPolicyV2OutputArgs {
+    /**
+     * Authorization Policy UUID
+     */
     extId: pulumi.Input<string>;
 }

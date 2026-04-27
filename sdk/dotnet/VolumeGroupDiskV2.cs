@@ -69,7 +69,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - Volume Disk description.
         /// </summary>
         [Output("description")]
-        public Output<string?> Description { get; private set; } = null!;
+        public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// -(Required) Disk Data Source Reference.
@@ -78,7 +78,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.VolumeGroupDiskV2DiskDataSourceReference>> DiskDataSourceReferences { get; private set; } = null!;
 
         /// <summary>
-        /// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        /// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         /// </summary>
         [Output("diskSizeBytes")]
         public Output<int> DiskSizeBytes { get; private set; } = null!;
@@ -173,7 +173,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        /// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         /// </summary>
         [Input("diskSizeBytes", required: true)]
         public Input<int> DiskSizeBytes { get; set; } = null!;
@@ -229,7 +229,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        /// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         /// </summary>
         [Input("diskSizeBytes")]
         public Input<int>? DiskSizeBytes { get; set; }

@@ -251,7 +251,7 @@ class GetProjectResult:
     @pulumi.getter(name="resourceDomains")
     def resource_domains(self) -> Sequence['outputs.GetProjectResourceDomainResult']:
         """
-        The status for a resource domain (limits and values)
+        (Deprecated) Not supported starting from provider version `2.4.0` and expected to be empty. Remove any usage from configuration/scripts.
         """
         return pulumi.get(self, "resource_domains")
 
@@ -380,12 +380,6 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
             "name": "Environment",
             "value": "Staging",
         }],
-        resource_domain={
-            "resources": [{
-                "limit": 4,
-                "resource_type": "STORAGE",
-            }],
-        },
         default_subnet_reference={
             "uuid": subnet.metadata["uuid"],
         },
@@ -487,12 +481,6 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union
             "name": "Environment",
             "value": "Staging",
         }],
-        resource_domain={
-            "resources": [{
-                "limit": 4,
-                "resource_type": "STORAGE",
-            }],
-        },
         default_subnet_reference={
             "uuid": subnet.metadata["uuid"],
         },

@@ -17,18 +17,18 @@ type SamlIdentityProvidersV2 struct {
 	CreatedBy               pulumi.StringOutput                           `pulumi:"createdBy"`
 	CreatedTime             pulumi.StringOutput                           `pulumi:"createdTime"`
 	CustomAttributes        pulumi.StringArrayOutput                      `pulumi:"customAttributes"`
-	EmailAttribute          pulumi.StringPtrOutput                        `pulumi:"emailAttribute"`
-	EntityIssuer            pulumi.StringPtrOutput                        `pulumi:"entityIssuer"`
+	EmailAttribute          pulumi.StringOutput                           `pulumi:"emailAttribute"`
+	EntityIssuer            pulumi.StringOutput                           `pulumi:"entityIssuer"`
 	ExtId                   pulumi.StringOutput                           `pulumi:"extId"`
-	GroupsAttribute         pulumi.StringPtrOutput                        `pulumi:"groupsAttribute"`
-	GroupsDelim             pulumi.StringPtrOutput                        `pulumi:"groupsDelim"`
+	GroupsAttribute         pulumi.StringOutput                           `pulumi:"groupsAttribute"`
+	GroupsDelim             pulumi.StringOutput                           `pulumi:"groupsDelim"`
 	IdpMetadataUrl          pulumi.StringOutput                           `pulumi:"idpMetadataUrl"`
 	IdpMetadataXml          pulumi.StringOutput                           `pulumi:"idpMetadataXml"`
 	IdpMetadatas            SamlIdentityProvidersV2IdpMetadataArrayOutput `pulumi:"idpMetadatas"`
-	IsSignedAuthnReqEnabled pulumi.BoolPtrOutput                          `pulumi:"isSignedAuthnReqEnabled"`
+	IsSignedAuthnReqEnabled pulumi.BoolOutput                             `pulumi:"isSignedAuthnReqEnabled"`
 	LastUpdatedTime         pulumi.StringOutput                           `pulumi:"lastUpdatedTime"`
 	Name                    pulumi.StringOutput                           `pulumi:"name"`
-	UsernameAttribute       pulumi.StringPtrOutput                        `pulumi:"usernameAttribute"`
+	UsernameAttribute       pulumi.StringOutput                           `pulumi:"usernameAttribute"`
 }
 
 // NewSamlIdentityProvidersV2 registers a new resource with the given unique name, arguments, and options.
@@ -230,24 +230,24 @@ func (o SamlIdentityProvidersV2Output) CustomAttributes() pulumi.StringArrayOutp
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringArrayOutput { return v.CustomAttributes }).(pulumi.StringArrayOutput)
 }
 
-func (o SamlIdentityProvidersV2Output) EmailAttribute() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.EmailAttribute }).(pulumi.StringPtrOutput)
+func (o SamlIdentityProvidersV2Output) EmailAttribute() pulumi.StringOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.EmailAttribute }).(pulumi.StringOutput)
 }
 
-func (o SamlIdentityProvidersV2Output) EntityIssuer() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.EntityIssuer }).(pulumi.StringPtrOutput)
+func (o SamlIdentityProvidersV2Output) EntityIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.EntityIssuer }).(pulumi.StringOutput)
 }
 
 func (o SamlIdentityProvidersV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
-func (o SamlIdentityProvidersV2Output) GroupsAttribute() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.GroupsAttribute }).(pulumi.StringPtrOutput)
+func (o SamlIdentityProvidersV2Output) GroupsAttribute() pulumi.StringOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.GroupsAttribute }).(pulumi.StringOutput)
 }
 
-func (o SamlIdentityProvidersV2Output) GroupsDelim() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.GroupsDelim }).(pulumi.StringPtrOutput)
+func (o SamlIdentityProvidersV2Output) GroupsDelim() pulumi.StringOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.GroupsDelim }).(pulumi.StringOutput)
 }
 
 func (o SamlIdentityProvidersV2Output) IdpMetadataUrl() pulumi.StringOutput {
@@ -262,8 +262,8 @@ func (o SamlIdentityProvidersV2Output) IdpMetadatas() SamlIdentityProvidersV2Idp
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) SamlIdentityProvidersV2IdpMetadataArrayOutput { return v.IdpMetadatas }).(SamlIdentityProvidersV2IdpMetadataArrayOutput)
 }
 
-func (o SamlIdentityProvidersV2Output) IsSignedAuthnReqEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.BoolPtrOutput { return v.IsSignedAuthnReqEnabled }).(pulumi.BoolPtrOutput)
+func (o SamlIdentityProvidersV2Output) IsSignedAuthnReqEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.BoolOutput { return v.IsSignedAuthnReqEnabled }).(pulumi.BoolOutput)
 }
 
 func (o SamlIdentityProvidersV2Output) LastUpdatedTime() pulumi.StringOutput {
@@ -274,8 +274,8 @@ func (o SamlIdentityProvidersV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o SamlIdentityProvidersV2Output) UsernameAttribute() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringPtrOutput { return v.UsernameAttribute }).(pulumi.StringPtrOutput)
+func (o SamlIdentityProvidersV2Output) UsernameAttribute() pulumi.StringOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.UsernameAttribute }).(pulumi.StringOutput)
 }
 
 type SamlIdentityProvidersV2ArrayOutput struct{ *pulumi.OutputState }

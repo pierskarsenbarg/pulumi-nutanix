@@ -11,6 +11,74 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a datasource to retrieve the list of existing Authorization Policies.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// list of authorization policies, with limit and filter
+//			_, err := nutanix.GetAuthorizationPoliciesV2(ctx, &nutanix.GetAuthorizationPoliciesV2Args{
+//				Filter: pulumi.StringRef("displayName eq 'auth_policy_example'"),
+//				Limit:  pulumi.IntRef(2),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			// list of authorization policies, with select
+//			_, err = nutanix.GetAuthorizationPoliciesV2(ctx, &nutanix.GetAuthorizationPoliciesV2Args{
+//				Select: pulumi.StringRef("extId,displayName,description,authorizationPolicyType"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Authorization Policies
+//
+// The following attributes are exported for each Authorization Policy:
+//
+// - `extId`: extId of Authorization policy.
+// - `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+// - `displayName`: Name of the Authorization Policy.
+// - `description`: Description of the Authorization Policy.
+// - `clientName`: Client that created the entity.
+// - `identities`: The identities for which the Authorization Policy is created.
+// - `entities`: The entities being qualified by the Authorization Policy.
+// - `role`: The Role associated with the Authorization Policy.
+// - `createdTime`: The creation time of the Authorization Policy.
+// - `lastUpdatedTime`: The time when the Authorization Policy was last updated.
+// - `createdBy`: User or Service Name that created the Authorization Policy.
+// - `isSystemDefined`: Flag identifying if the Authorization Policy is system defined or not.
+// - `authorizationPolicyType`: Type of Authorization Policy.
+//   - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+//   - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+//   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+//   - `SERVICE_DEFINED` : ACP defined by a service.
+//   - `USER_DEFINED` : ACP defined by an User.
+//
+// ### Links
+//
+// The links attribute supports the following:
+//
+// - `href`: - The URL at which the entity described by the link can be accessed.
+// - `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
+//
+// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
 func GetAuthorizationPoliciesV2(ctx *pulumi.Context, args *GetAuthorizationPoliciesV2Args, opts ...pulumi.InvokeOption) (*GetAuthorizationPoliciesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuthorizationPoliciesV2Result
@@ -23,16 +91,53 @@ func GetAuthorizationPoliciesV2(ctx *pulumi.Context, args *GetAuthorizationPolic
 
 // A collection of arguments for invoking getAuthorizationPoliciesV2.
 type GetAuthorizationPoliciesV2Args struct {
-	Expand  *string `pulumi:"expand"`
-	Filter  *string `pulumi:"filter"`
-	Limit   *int    `pulumi:"limit"`
+	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+	// - role
+	Expand *string `pulumi:"expand"`
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - authorizationPolicyType
+	// - clientName
+	// - createdBy
+	// - createdTime
+	// - displayName
+	// - extId
+	// - isSystemDefined
+	// - lastUpdatedTime
+	// - role
+	Filter *string `pulumi:"filter"`
+	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+	Limit *int `pulumi:"limit"`
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+	// - createdTime
+	// - displayName
+	// - extId
+	// - lastUpdatedTime
+	// - role
 	OrderBy *string `pulumi:"orderBy"`
-	Page    *int    `pulumi:"page"`
-	Select  *string `pulumi:"select"`
+	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+	Page *int `pulumi:"page"`
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+	// - authorizationPolicyType
+	// - authorizationPolicyType
+	// - clientName
+	// - createdBy
+	// - createdTime
+	// - description
+	// - displayName
+	// - entities
+	// - extId
+	// - identities
+	// - isSystemDefined
+	// - lastUpdatedTime
+	// - links
+	// - role
+	// - tenantId
+	Select *string `pulumi:"select"`
 }
 
 // A collection of values returned by getAuthorizationPoliciesV2.
 type GetAuthorizationPoliciesV2Result struct {
+	// List of all existing Authorization Policies.
 	AuthPolicies []GetAuthorizationPoliciesV2AuthPolicy `pulumi:"authPolicies"`
 	Expand       *string                                `pulumi:"expand"`
 	Filter       *string                                `pulumi:"filter"`
@@ -55,12 +160,48 @@ func GetAuthorizationPoliciesV2Output(ctx *pulumi.Context, args GetAuthorization
 
 // A collection of arguments for invoking getAuthorizationPoliciesV2.
 type GetAuthorizationPoliciesV2OutputArgs struct {
-	Expand  pulumi.StringPtrInput `pulumi:"expand"`
-	Filter  pulumi.StringPtrInput `pulumi:"filter"`
-	Limit   pulumi.IntPtrInput    `pulumi:"limit"`
+	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+	// - role
+	Expand pulumi.StringPtrInput `pulumi:"expand"`
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - authorizationPolicyType
+	// - clientName
+	// - createdBy
+	// - createdTime
+	// - displayName
+	// - extId
+	// - isSystemDefined
+	// - lastUpdatedTime
+	// - role
+	Filter pulumi.StringPtrInput `pulumi:"filter"`
+	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+	Limit pulumi.IntPtrInput `pulumi:"limit"`
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+	// - createdTime
+	// - displayName
+	// - extId
+	// - lastUpdatedTime
+	// - role
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
-	Page    pulumi.IntPtrInput    `pulumi:"page"`
-	Select  pulumi.StringPtrInput `pulumi:"select"`
+	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+	Page pulumi.IntPtrInput `pulumi:"page"`
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+	// - authorizationPolicyType
+	// - authorizationPolicyType
+	// - clientName
+	// - createdBy
+	// - createdTime
+	// - description
+	// - displayName
+	// - entities
+	// - extId
+	// - identities
+	// - isSystemDefined
+	// - lastUpdatedTime
+	// - links
+	// - role
+	// - tenantId
+	Select pulumi.StringPtrInput `pulumi:"select"`
 }
 
 func (GetAuthorizationPoliciesV2OutputArgs) ElementType() reflect.Type {
@@ -82,6 +223,7 @@ func (o GetAuthorizationPoliciesV2ResultOutput) ToGetAuthorizationPoliciesV2Resu
 	return o
 }
 
+// List of all existing Authorization Policies.
 func (o GetAuthorizationPoliciesV2ResultOutput) AuthPolicies() GetAuthorizationPoliciesV2AuthPolicyArrayOutput {
 	return o.ApplyT(func(v GetAuthorizationPoliciesV2Result) []GetAuthorizationPoliciesV2AuthPolicy { return v.AuthPolicies }).(GetAuthorizationPoliciesV2AuthPolicyArrayOutput)
 }

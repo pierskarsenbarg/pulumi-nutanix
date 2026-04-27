@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VpcExternallyRoutablePrefixIpv4
     {
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternallyRoutablePrefixIpv4Ip> Ips;
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+        /// </summary>
         public readonly int? PrefixLength;
 
         [OutputConstructor]

@@ -159,6 +159,10 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
     declare public /*out*/ readonly createdTimestamp: pulumi.Output<string>;
     declare public /*out*/ readonly currentTime: pulumi.Output<string>;
     declare public /*out*/ readonly destroyed: pulumi.Output<boolean>;
+    /**
+     * UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+     */
+    declare public readonly fcApiKeyUuid: pulumi.Output<string | undefined>;
     declare public /*out*/ readonly foundationInitConfigs: pulumi.Output<outputs.FoundationCentralImageClusterFoundationInitConfig[]>;
     declare public /*out*/ readonly foundationInitNodeUuid: pulumi.Output<string>;
     /**
@@ -180,6 +184,17 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
      * Redundancy factor of the cluster.
      */
     declare public readonly redundancyFactor: pulumi.Output<number>;
+    /**
+     * JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+     * ```
+     * server_configuration_data = jsonencode({
+     * intersight_data = {
+     * organization = "default"
+     * }
+     * })
+     * ```
+     */
+    declare public readonly serverConfigurationData: pulumi.Output<string | undefined>;
     declare public readonly skipClusterCreation: pulumi.Output<boolean | undefined>;
     /**
      * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
@@ -215,6 +230,7 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
             resourceInputs["createdTimestamp"] = state?.createdTimestamp;
             resourceInputs["currentTime"] = state?.currentTime;
             resourceInputs["destroyed"] = state?.destroyed;
+            resourceInputs["fcApiKeyUuid"] = state?.fcApiKeyUuid;
             resourceInputs["foundationInitConfigs"] = state?.foundationInitConfigs;
             resourceInputs["foundationInitNodeUuid"] = state?.foundationInitNodeUuid;
             resourceInputs["hypervisorIsoDetails"] = state?.hypervisorIsoDetails;
@@ -224,6 +240,7 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
             resourceInputs["imagedNodeUuidLists"] = state?.imagedNodeUuidLists;
             resourceInputs["nodeLists"] = state?.nodeLists;
             resourceInputs["redundancyFactor"] = state?.redundancyFactor;
+            resourceInputs["serverConfigurationData"] = state?.serverConfigurationData;
             resourceInputs["skipClusterCreation"] = state?.skipClusterCreation;
             resourceInputs["storageNodeCount"] = state?.storageNodeCount;
             resourceInputs["timezone"] = state?.timezone;
@@ -237,11 +254,13 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
             resourceInputs["clusterSize"] = args?.clusterSize;
             resourceInputs["clusterStatus"] = args?.clusterStatus;
             resourceInputs["commonNetworkSettings"] = args?.commonNetworkSettings;
+            resourceInputs["fcApiKeyUuid"] = args?.fcApiKeyUuid;
             resourceInputs["hypervisorIsoDetails"] = args?.hypervisorIsoDetails;
             resourceInputs["hypervisorIsos"] = args?.hypervisorIsos;
             resourceInputs["imageClusterUuid"] = args?.imageClusterUuid;
             resourceInputs["nodeLists"] = args?.nodeLists;
             resourceInputs["redundancyFactor"] = args?.redundancyFactor;
+            resourceInputs["serverConfigurationData"] = args?.serverConfigurationData;
             resourceInputs["skipClusterCreation"] = args?.skipClusterCreation;
             resourceInputs["storageNodeCount"] = args?.storageNodeCount;
             resourceInputs["timezone"] = args?.timezone;
@@ -293,6 +312,10 @@ export interface FoundationCentralImageClusterState {
     createdTimestamp?: pulumi.Input<string>;
     currentTime?: pulumi.Input<string>;
     destroyed?: pulumi.Input<boolean>;
+    /**
+     * UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+     */
+    fcApiKeyUuid?: pulumi.Input<string>;
     foundationInitConfigs?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfig>[]>;
     foundationInitNodeUuid?: pulumi.Input<string>;
     /**
@@ -314,6 +337,17 @@ export interface FoundationCentralImageClusterState {
      * Redundancy factor of the cluster.
      */
     redundancyFactor?: pulumi.Input<number>;
+    /**
+     * JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+     * ```
+     * server_configuration_data = jsonencode({
+     * intersight_data = {
+     * organization = "default"
+     * }
+     * })
+     * ```
+     */
+    serverConfigurationData?: pulumi.Input<string>;
     skipClusterCreation?: pulumi.Input<boolean>;
     /**
      * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
@@ -356,6 +390,10 @@ export interface FoundationCentralImageClusterArgs {
      */
     commonNetworkSettings?: pulumi.Input<inputs.FoundationCentralImageClusterCommonNetworkSettings>;
     /**
+     * UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+     */
+    fcApiKeyUuid?: pulumi.Input<string>;
+    /**
      * Details of the hypervisor iso. (Deprecated)
      */
     hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails>;
@@ -369,6 +407,17 @@ export interface FoundationCentralImageClusterArgs {
      * Redundancy factor of the cluster.
      */
     redundancyFactor?: pulumi.Input<number>;
+    /**
+     * JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+     * ```
+     * server_configuration_data = jsonencode({
+     * intersight_data = {
+     * organization = "default"
+     * }
+     * })
+     * ```
+     */
+    serverConfigurationData?: pulumi.Input<string>;
     skipClusterCreation?: pulumi.Input<boolean>;
     /**
      * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.

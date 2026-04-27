@@ -23,19 +23,19 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<string>> CustomAttributes { get; private set; } = null!;
 
         [Output("emailAttribute")]
-        public Output<string?> EmailAttribute { get; private set; } = null!;
+        public Output<string> EmailAttribute { get; private set; } = null!;
 
         [Output("entityIssuer")]
-        public Output<string?> EntityIssuer { get; private set; } = null!;
+        public Output<string> EntityIssuer { get; private set; } = null!;
 
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
         [Output("groupsAttribute")]
-        public Output<string?> GroupsAttribute { get; private set; } = null!;
+        public Output<string> GroupsAttribute { get; private set; } = null!;
 
         [Output("groupsDelim")]
-        public Output<string?> GroupsDelim { get; private set; } = null!;
+        public Output<string> GroupsDelim { get; private set; } = null!;
 
         [Output("idpMetadataUrl")]
         public Output<string> IdpMetadataUrl { get; private set; } = null!;
@@ -47,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.SamlIdentityProvidersV2IdpMetadata>> IdpMetadatas { get; private set; } = null!;
 
         [Output("isSignedAuthnReqEnabled")]
-        public Output<bool?> IsSignedAuthnReqEnabled { get; private set; } = null!;
+        public Output<bool> IsSignedAuthnReqEnabled { get; private set; } = null!;
 
         [Output("lastUpdatedTime")]
         public Output<string> LastUpdatedTime { get; private set; } = null!;
@@ -56,7 +56,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> Name { get; private set; } = null!;
 
         [Output("usernameAttribute")]
-        public Output<string?> UsernameAttribute { get; private set; } = null!;
+        public Output<string> UsernameAttribute { get; private set; } = null!;
 
 
         /// <summary>

@@ -186,6 +186,12 @@ namespace PiersKarsenbarg.Nutanix
         [Output("destroyed")]
         public Output<bool> Destroyed { get; private set; } = null!;
 
+        /// <summary>
+        /// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+        /// </summary>
+        [Output("fcApiKeyUuid")]
+        public Output<string?> FcApiKeyUuid { get; private set; } = null!;
+
         [Output("foundationInitConfigs")]
         public Output<ImmutableArray<Outputs.FoundationCentralImageClusterFoundationInitConfig>> FoundationInitConfigs { get; private set; } = null!;
 
@@ -224,6 +230,19 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("redundancyFactor")]
         public Output<int> RedundancyFactor { get; private set; } = null!;
+
+        /// <summary>
+        /// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+        /// ```
+        /// server_configuration_data = jsonencode({
+        /// intersight_data = {
+        /// organization = "default"
+        /// }
+        /// })
+        /// ```
+        /// </summary>
+        [Output("serverConfigurationData")]
+        public Output<string?> ServerConfigurationData { get; private set; } = null!;
 
         [Output("skipClusterCreation")]
         public Output<bool?> SkipClusterCreation { get; private set; } = null!;
@@ -330,6 +349,12 @@ namespace PiersKarsenbarg.Nutanix
         public Input<Inputs.FoundationCentralImageClusterCommonNetworkSettingsArgs>? CommonNetworkSettings { get; set; }
 
         /// <summary>
+        /// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+        /// </summary>
+        [Input("fcApiKeyUuid")]
+        public Input<string>? FcApiKeyUuid { get; set; }
+
+        /// <summary>
         /// Details of the hypervisor iso. (Deprecated)
         /// </summary>
         [Input("hypervisorIsoDetails")]
@@ -357,6 +382,19 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("redundancyFactor")]
         public Input<int>? RedundancyFactor { get; set; }
+
+        /// <summary>
+        /// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+        /// ```
+        /// server_configuration_data = jsonencode({
+        /// intersight_data = {
+        /// organization = "default"
+        /// }
+        /// })
+        /// ```
+        /// </summary>
+        [Input("serverConfigurationData")]
+        public Input<string>? ServerConfigurationData { get; set; }
 
         [Input("skipClusterCreation")]
         public Input<bool>? SkipClusterCreation { get; set; }
@@ -432,6 +470,12 @@ namespace PiersKarsenbarg.Nutanix
         [Input("destroyed")]
         public Input<bool>? Destroyed { get; set; }
 
+        /// <summary>
+        /// UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
+        /// </summary>
+        [Input("fcApiKeyUuid")]
+        public Input<string>? FcApiKeyUuid { get; set; }
+
         [Input("foundationInitConfigs")]
         private InputList<Inputs.FoundationCentralImageClusterFoundationInitConfigGetArgs>? _foundationInitConfigs;
         public InputList<Inputs.FoundationCentralImageClusterFoundationInitConfigGetArgs> FoundationInitConfigs
@@ -485,6 +529,19 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("redundancyFactor")]
         public Input<int>? RedundancyFactor { get; set; }
+
+        /// <summary>
+        /// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+        /// ```
+        /// server_configuration_data = jsonencode({
+        /// intersight_data = {
+        /// organization = "default"
+        /// }
+        /// })
+        /// ```
+        /// </summary>
+        [Input("serverConfigurationData")]
+        public Input<string>? ServerConfigurationData { get; set; }
 
         [Input("skipClusterCreation")]
         public Input<bool>? SkipClusterCreation { get; set; }

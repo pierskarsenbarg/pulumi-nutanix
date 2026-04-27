@@ -37,18 +37,18 @@ export class SamlIdentityProvidersV2 extends pulumi.CustomResource {
     declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     declare public readonly customAttributes: pulumi.Output<string[]>;
-    declare public readonly emailAttribute: pulumi.Output<string | undefined>;
-    declare public readonly entityIssuer: pulumi.Output<string | undefined>;
+    declare public readonly emailAttribute: pulumi.Output<string>;
+    declare public readonly entityIssuer: pulumi.Output<string>;
     declare public readonly extId: pulumi.Output<string>;
-    declare public readonly groupsAttribute: pulumi.Output<string | undefined>;
-    declare public readonly groupsDelim: pulumi.Output<string | undefined>;
+    declare public readonly groupsAttribute: pulumi.Output<string>;
+    declare public readonly groupsDelim: pulumi.Output<string>;
     declare public readonly idpMetadataUrl: pulumi.Output<string>;
     declare public readonly idpMetadataXml: pulumi.Output<string>;
     declare public readonly idpMetadatas: pulumi.Output<outputs.SamlIdentityProvidersV2IdpMetadata[]>;
-    declare public readonly isSignedAuthnReqEnabled: pulumi.Output<boolean | undefined>;
+    declare public readonly isSignedAuthnReqEnabled: pulumi.Output<boolean>;
     declare public /*out*/ readonly lastUpdatedTime: pulumi.Output<string>;
     declare public readonly name: pulumi.Output<string>;
-    declare public readonly usernameAttribute: pulumi.Output<string | undefined>;
+    declare public readonly usernameAttribute: pulumi.Output<string>;
 
     /**
      * Create a SamlIdentityProvidersV2 resource with the given unique name, arguments, and options.

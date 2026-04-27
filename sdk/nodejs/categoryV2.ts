@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Fetch a category
+ * Create, Update and Delete category (key - value pair).
  *
  * ## Example
  *
@@ -21,6 +21,20 @@ import * as utilities from "./utilities";
  *     description: "category example description",
  * });
  * ```
+ *
+ * ## Import
+ *
+ * This helps to manage existing entities which are not created through terraform. Category (key - value pair) can be imported using the `UUID` (ext_id in v4 terms).  eg,
+ *
+ * `terraform import nutanix_category_v2.<resource_name> <UUID>
+ * `
+ *
+ * Note:
+ * We have two resources separately for category key (nutanix_category_key) and value (nutanix_category_key). Using v4 API, `nutanix.CategoryV2` represents category key value pair as one entity.
+ *
+ * Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
+ *
+ * See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/createCategory).
  */
 export class CategoryV2 extends pulumi.CustomResource {
     /**

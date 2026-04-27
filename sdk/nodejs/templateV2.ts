@@ -34,6 +34,7 @@ export class TemplateV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === TemplateV2.__pulumiType;
     }
 
+    declare public readonly categoryExtIds: pulumi.Output<string[]>;
     declare public /*out*/ readonly createTime: pulumi.Output<string>;
     declare public readonly createdBies: pulumi.Output<outputs.TemplateV2CreatedBy[]>;
     declare public /*out*/ readonly extId: pulumi.Output<string>;
@@ -59,6 +60,7 @@ export class TemplateV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TemplateV2State | undefined;
+            resourceInputs["categoryExtIds"] = state?.categoryExtIds;
             resourceInputs["createTime"] = state?.createTime;
             resourceInputs["createdBies"] = state?.createdBies;
             resourceInputs["extId"] = state?.extId;
@@ -78,6 +80,7 @@ export class TemplateV2 extends pulumi.CustomResource {
             if (args?.templateVersionSpec === undefined && !opts.urn) {
                 throw new Error("Missing required property 'templateVersionSpec'");
             }
+            resourceInputs["categoryExtIds"] = args?.categoryExtIds;
             resourceInputs["createdBies"] = args?.createdBies;
             resourceInputs["guestUpdateStatuses"] = args?.guestUpdateStatuses;
             resourceInputs["templateDescription"] = args?.templateDescription;
@@ -99,6 +102,7 @@ export class TemplateV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering TemplateV2 resources.
  */
 export interface TemplateV2State {
+    categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
     createTime?: pulumi.Input<string>;
     createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedBy>[]>;
     extId?: pulumi.Input<string>;
@@ -116,6 +120,7 @@ export interface TemplateV2State {
  * The set of arguments for constructing a TemplateV2 resource.
  */
 export interface TemplateV2Args {
+    categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
     createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedBy>[]>;
     guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[]>;
     templateDescription?: pulumi.Input<string>;

@@ -16,9 +16,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// Array of strings
-        /// 
-        /// 
-        /// See detailed information in [Nutanix Create Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/ImagePlacementPolicies/operation/createPlacementPolicy)
         /// </summary>
         public readonly ImmutableArray<string> CategoryExtIds;
         /// <summary>

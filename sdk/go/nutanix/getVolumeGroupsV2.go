@@ -123,7 +123,7 @@ import (
 //
 // * `isEnabled`: - Indicates whether the flash mode is enabled for the Volume Group.
 //
-// See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+// See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
 func GetVolumeGroupsV2(ctx *pulumi.Context, args *GetVolumeGroupsV2Args, opts ...pulumi.InvokeOption) (*GetVolumeGroupsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumeGroupsV2Result

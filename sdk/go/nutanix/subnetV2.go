@@ -12,34 +12,204 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to create a subnet based on the input parameters.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// creating subnet with IP pool
+//			_, err := nutanix.NewSubnetV2(ctx, "vlan-112", &nutanix.SubnetV2Args{
+//				Name:             pulumi.String("vlan-112"),
+//				Description:      pulumi.String("subnet VLAN 112 managed by Terraform with IP pool"),
+//				ClusterReference: pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
+//				SubnetType:       pulumi.String("VLAN"),
+//				NetworkId:        pulumi.Int(122),
+//				IsExternal:       pulumi.Bool(true),
+//				IpConfigs: nutanix.SubnetV2IpConfigArray{
+//					&nutanix.SubnetV2IpConfigArgs{
+//						Ipv4s: nutanix.SubnetV2IpConfigIpv4Array{
+//							&nutanix.SubnetV2IpConfigIpv4Args{
+//								IpSubnets: nutanix.SubnetV2IpConfigIpv4IpSubnetArray{
+//									&nutanix.SubnetV2IpConfigIpv4IpSubnetArgs{
+//										Ips: nutanix.SubnetV2IpConfigIpv4IpSubnetIpArray{
+//											&nutanix.SubnetV2IpConfigIpv4IpSubnetIpArgs{
+//												Value: pulumi.String("192.168.0.0"),
+//											},
+//										},
+//										PrefixLength: pulumi.Int(24),
+//									},
+//								},
+//								DefaultGatewayIps: nutanix.SubnetV2IpConfigIpv4DefaultGatewayIpArray{
+//									&nutanix.SubnetV2IpConfigIpv4DefaultGatewayIpArgs{
+//										Value: pulumi.String("192.168.0.1"),
+//									},
+//								},
+//								PoolLists: nutanix.SubnetV2IpConfigIpv4PoolListArray{
+//									&nutanix.SubnetV2IpConfigIpv4PoolListArgs{
+//										StartIps: nutanix.SubnetV2IpConfigIpv4PoolListStartIpArray{
+//											&nutanix.SubnetV2IpConfigIpv4PoolListStartIpArgs{
+//												Value: pulumi.String("192.168.0.20"),
+//											},
+//										},
+//										EndIps: nutanix.SubnetV2IpConfigIpv4PoolListEndIpArray{
+//											&nutanix.SubnetV2IpConfigIpv4PoolListEndIpArgs{
+//												Value: pulumi.String("192.168.0.30"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// creating subnet without IP pool
+//			_, err = nutanix.NewSubnetV2(ctx, "vlan-113", &nutanix.SubnetV2Args{
+//				Name:             pulumi.String("vlan-113"),
+//				Description:      pulumi.String("subnet VLAN 113 managed by Terraform"),
+//				ClusterReference: pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
+//				SubnetType:       pulumi.String("VLAN"),
+//				NetworkId:        pulumi.Int(113),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// creating subnet with IP pool and DHCP options
+//			_, err = nutanix.NewSubnetV2(ctx, "van-114", &nutanix.SubnetV2Args{
+//				Name:             pulumi.String("vlan-114"),
+//				Description:      pulumi.String("subnet VLAN 114 managed by Terraform"),
+//				ClusterReference: pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
+//				SubnetType:       pulumi.String("VLAN"),
+//				NetworkId:        pulumi.Int(114),
+//				IpConfigs: nutanix.SubnetV2IpConfigArray{
+//					&nutanix.SubnetV2IpConfigArgs{
+//						Ipv4s: nutanix.SubnetV2IpConfigIpv4Array{
+//							&nutanix.SubnetV2IpConfigIpv4Args{
+//								IpSubnets: nutanix.SubnetV2IpConfigIpv4IpSubnetArray{
+//									&nutanix.SubnetV2IpConfigIpv4IpSubnetArgs{
+//										Ips: nutanix.SubnetV2IpConfigIpv4IpSubnetIpArray{
+//											&nutanix.SubnetV2IpConfigIpv4IpSubnetIpArgs{
+//												Value: pulumi.String("192.168.0.0"),
+//											},
+//										},
+//										PrefixLength: pulumi.Int(24),
+//									},
+//								},
+//								DefaultGatewayIps: nutanix.SubnetV2IpConfigIpv4DefaultGatewayIpArray{
+//									&nutanix.SubnetV2IpConfigIpv4DefaultGatewayIpArgs{
+//										Value: pulumi.String("192.168.0.1"),
+//									},
+//								},
+//								PoolLists: nutanix.SubnetV2IpConfigIpv4PoolListArray{
+//									&nutanix.SubnetV2IpConfigIpv4PoolListArgs{
+//										StartIps: nutanix.SubnetV2IpConfigIpv4PoolListStartIpArray{
+//											&nutanix.SubnetV2IpConfigIpv4PoolListStartIpArgs{
+//												Value: pulumi.String("192.168.0.20"),
+//											},
+//										},
+//										EndIps: nutanix.SubnetV2IpConfigIpv4PoolListEndIpArray{
+//											&nutanix.SubnetV2IpConfigIpv4PoolListEndIpArgs{
+//												Value: pulumi.String("192.168.0.30"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				DhcpOptions: nutanix.SubnetV2DhcpOptionArray{
+//					&nutanix.SubnetV2DhcpOptionArgs{
+//						DomainNameServers: nutanix.SubnetV2DhcpOptionDomainNameServerArray{
+//							&nutanix.SubnetV2DhcpOptionDomainNameServerArgs{
+//								Ipv4s: nutanix.SubnetV2DhcpOptionDomainNameServerIpv4Array{
+//									&nutanix.SubnetV2DhcpOptionDomainNameServerIpv4Args{
+//										Value: pulumi.String("8.8.8.8"),
+//									},
+//								},
+//							},
+//						},
+//						SearchDomains: pulumi.StringArray{
+//							pulumi.String("eng.nutanix.com"),
+//						},
+//						DomainName:     pulumi.String("nutanix.com"),
+//						TftpServerName: pulumi.String("10.5.0.10"),
+//						BootFileName:   pulumi.String("pxelinux.0"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type SubnetV2 struct {
 	pulumi.CustomResourceState
 
-	BridgeName                    pulumi.StringOutput                  `pulumi:"bridgeName"`
-	ClusterName                   pulumi.StringOutput                  `pulumi:"clusterName"`
-	ClusterReference              pulumi.StringOutput                  `pulumi:"clusterReference"`
-	Description                   pulumi.StringPtrOutput               `pulumi:"description"`
-	DhcpOptions                   SubnetV2DhcpOptionArrayOutput        `pulumi:"dhcpOptions"`
-	DynamicIpAddresses            SubnetV2DynamicIpAddressArrayOutput  `pulumi:"dynamicIpAddresses"`
-	ExtId                         pulumi.StringOutput                  `pulumi:"extId"`
-	HypervisorType                pulumi.StringOutput                  `pulumi:"hypervisorType"`
-	IpConfigs                     SubnetV2IpConfigArrayOutput          `pulumi:"ipConfigs"`
-	IpPrefix                      pulumi.StringOutput                  `pulumi:"ipPrefix"`
-	IpUsages                      SubnetV2IpUsageArrayOutput           `pulumi:"ipUsages"`
-	IsAdvancedNetworking          pulumi.BoolOutput                    `pulumi:"isAdvancedNetworking"`
-	IsExternal                    pulumi.BoolOutput                    `pulumi:"isExternal"`
-	IsNatEnabled                  pulumi.BoolOutput                    `pulumi:"isNatEnabled"`
-	Links                         SubnetV2LinkArrayOutput              `pulumi:"links"`
-	MigrationState                pulumi.StringOutput                  `pulumi:"migrationState"`
-	Name                          pulumi.StringOutput                  `pulumi:"name"`
-	NetworkFunctionChainReference pulumi.StringOutput                  `pulumi:"networkFunctionChainReference"`
-	NetworkId                     pulumi.IntPtrOutput                  `pulumi:"networkId"`
-	ReservedIpAddresses           SubnetV2ReservedIpAddressArrayOutput `pulumi:"reservedIpAddresses"`
-	SubnetType                    pulumi.StringOutput                  `pulumi:"subnetType"`
-	VirtualSwitchReference        pulumi.StringOutput                  `pulumi:"virtualSwitchReference"`
-	VirtualSwitches               SubnetV2VirtualSwitchArrayOutput     `pulumi:"virtualSwitches"`
-	VpcReference                  pulumi.StringOutput                  `pulumi:"vpcReference"`
-	Vpcs                          SubnetV2VpcArrayOutput               `pulumi:"vpcs"`
+	// Name of the bridge on the host for the subnet.
+	BridgeName pulumi.StringOutput `pulumi:"bridgeName"`
+	// Cluster Name
+	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
+	// UUID of the cluster this subnet belongs to.
+	ClusterReference pulumi.StringOutput `pulumi:"clusterReference"`
+	// Description of the subnet.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// List of DHCP options to be configured.
+	DhcpOptions SubnetV2DhcpOptionArrayOutput `pulumi:"dhcpOptions"`
+	// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+	DynamicIpAddresses SubnetV2DynamicIpAddressArrayOutput `pulumi:"dynamicIpAddresses"`
+	ExtId              pulumi.StringOutput                 `pulumi:"extId"`
+	// Hypervisor Type
+	HypervisorType pulumi.StringOutput `pulumi:"hypervisorType"`
+	// IP configuration for the subnet.
+	IpConfigs SubnetV2IpConfigArrayOutput `pulumi:"ipConfigs"`
+	// IP Prefix in CIDR format.
+	IpPrefix pulumi.StringOutput        `pulumi:"ipPrefix"`
+	IpUsages SubnetV2IpUsageArrayOutput `pulumi:"ipUsages"`
+	// Indicates whether the subnet is used for advanced networking.
+	IsAdvancedNetworking pulumi.BoolOutput `pulumi:"isAdvancedNetworking"`
+	// Indicates whether the subnet is used for external connectivity.
+	IsExternal pulumi.BoolOutput `pulumi:"isExternal"`
+	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+	IsNatEnabled   pulumi.BoolOutput           `pulumi:"isNatEnabled"`
+	Links          SubnetV2LinkArrayOutput     `pulumi:"links"`
+	Metadatas      SubnetV2MetadataArrayOutput `pulumi:"metadatas"`
+	MigrationState pulumi.StringOutput         `pulumi:"migrationState"`
+	// Name of the subnet.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+	NetworkFunctionChainReference pulumi.StringOutput `pulumi:"networkFunctionChainReference"`
+	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+	NetworkId pulumi.IntPtrOutput `pulumi:"networkId"`
+	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
+	ReservedIpAddresses SubnetV2ReservedIpAddressArrayOutput `pulumi:"reservedIpAddresses"`
+	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
+	SubnetType pulumi.StringOutput `pulumi:"subnetType"`
+	// UUID of the virtual switch this subnet belongs to (type VLAN only).
+	VirtualSwitchReference pulumi.StringOutput `pulumi:"virtualSwitchReference"`
+	// Schema to configure a virtual switch
+	VirtualSwitches SubnetV2VirtualSwitchArrayOutput `pulumi:"virtualSwitches"`
+	// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+	VpcReference pulumi.StringOutput `pulumi:"vpcReference"`
+	// Networking common base object
+	Vpcs SubnetV2VpcArrayOutput `pulumi:"vpcs"`
 }
 
 // NewSubnetV2 registers a new resource with the given unique name, arguments, and options.
@@ -75,59 +245,103 @@ func GetSubnetV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SubnetV2 resources.
 type subnetV2State struct {
-	BridgeName                    *string                     `pulumi:"bridgeName"`
-	ClusterName                   *string                     `pulumi:"clusterName"`
-	ClusterReference              *string                     `pulumi:"clusterReference"`
-	Description                   *string                     `pulumi:"description"`
-	DhcpOptions                   []SubnetV2DhcpOption        `pulumi:"dhcpOptions"`
-	DynamicIpAddresses            []SubnetV2DynamicIpAddress  `pulumi:"dynamicIpAddresses"`
-	ExtId                         *string                     `pulumi:"extId"`
-	HypervisorType                *string                     `pulumi:"hypervisorType"`
-	IpConfigs                     []SubnetV2IpConfig          `pulumi:"ipConfigs"`
-	IpPrefix                      *string                     `pulumi:"ipPrefix"`
-	IpUsages                      []SubnetV2IpUsage           `pulumi:"ipUsages"`
-	IsAdvancedNetworking          *bool                       `pulumi:"isAdvancedNetworking"`
-	IsExternal                    *bool                       `pulumi:"isExternal"`
-	IsNatEnabled                  *bool                       `pulumi:"isNatEnabled"`
-	Links                         []SubnetV2Link              `pulumi:"links"`
-	MigrationState                *string                     `pulumi:"migrationState"`
-	Name                          *string                     `pulumi:"name"`
-	NetworkFunctionChainReference *string                     `pulumi:"networkFunctionChainReference"`
-	NetworkId                     *int                        `pulumi:"networkId"`
-	ReservedIpAddresses           []SubnetV2ReservedIpAddress `pulumi:"reservedIpAddresses"`
-	SubnetType                    *string                     `pulumi:"subnetType"`
-	VirtualSwitchReference        *string                     `pulumi:"virtualSwitchReference"`
-	VirtualSwitches               []SubnetV2VirtualSwitch     `pulumi:"virtualSwitches"`
-	VpcReference                  *string                     `pulumi:"vpcReference"`
-	Vpcs                          []SubnetV2Vpc               `pulumi:"vpcs"`
+	// Name of the bridge on the host for the subnet.
+	BridgeName *string `pulumi:"bridgeName"`
+	// Cluster Name
+	ClusterName *string `pulumi:"clusterName"`
+	// UUID of the cluster this subnet belongs to.
+	ClusterReference *string `pulumi:"clusterReference"`
+	// Description of the subnet.
+	Description *string `pulumi:"description"`
+	// List of DHCP options to be configured.
+	DhcpOptions []SubnetV2DhcpOption `pulumi:"dhcpOptions"`
+	// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+	DynamicIpAddresses []SubnetV2DynamicIpAddress `pulumi:"dynamicIpAddresses"`
+	ExtId              *string                    `pulumi:"extId"`
+	// Hypervisor Type
+	HypervisorType *string `pulumi:"hypervisorType"`
+	// IP configuration for the subnet.
+	IpConfigs []SubnetV2IpConfig `pulumi:"ipConfigs"`
+	// IP Prefix in CIDR format.
+	IpPrefix *string           `pulumi:"ipPrefix"`
+	IpUsages []SubnetV2IpUsage `pulumi:"ipUsages"`
+	// Indicates whether the subnet is used for advanced networking.
+	IsAdvancedNetworking *bool `pulumi:"isAdvancedNetworking"`
+	// Indicates whether the subnet is used for external connectivity.
+	IsExternal *bool `pulumi:"isExternal"`
+	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+	IsNatEnabled   *bool              `pulumi:"isNatEnabled"`
+	Links          []SubnetV2Link     `pulumi:"links"`
+	Metadatas      []SubnetV2Metadata `pulumi:"metadatas"`
+	MigrationState *string            `pulumi:"migrationState"`
+	// Name of the subnet.
+	Name *string `pulumi:"name"`
+	// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+	NetworkFunctionChainReference *string `pulumi:"networkFunctionChainReference"`
+	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+	NetworkId *int `pulumi:"networkId"`
+	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
+	ReservedIpAddresses []SubnetV2ReservedIpAddress `pulumi:"reservedIpAddresses"`
+	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
+	SubnetType *string `pulumi:"subnetType"`
+	// UUID of the virtual switch this subnet belongs to (type VLAN only).
+	VirtualSwitchReference *string `pulumi:"virtualSwitchReference"`
+	// Schema to configure a virtual switch
+	VirtualSwitches []SubnetV2VirtualSwitch `pulumi:"virtualSwitches"`
+	// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+	VpcReference *string `pulumi:"vpcReference"`
+	// Networking common base object
+	Vpcs []SubnetV2Vpc `pulumi:"vpcs"`
 }
 
 type SubnetV2State struct {
-	BridgeName                    pulumi.StringPtrInput
-	ClusterName                   pulumi.StringPtrInput
-	ClusterReference              pulumi.StringPtrInput
-	Description                   pulumi.StringPtrInput
-	DhcpOptions                   SubnetV2DhcpOptionArrayInput
-	DynamicIpAddresses            SubnetV2DynamicIpAddressArrayInput
-	ExtId                         pulumi.StringPtrInput
-	HypervisorType                pulumi.StringPtrInput
-	IpConfigs                     SubnetV2IpConfigArrayInput
-	IpPrefix                      pulumi.StringPtrInput
-	IpUsages                      SubnetV2IpUsageArrayInput
-	IsAdvancedNetworking          pulumi.BoolPtrInput
-	IsExternal                    pulumi.BoolPtrInput
-	IsNatEnabled                  pulumi.BoolPtrInput
-	Links                         SubnetV2LinkArrayInput
-	MigrationState                pulumi.StringPtrInput
-	Name                          pulumi.StringPtrInput
+	// Name of the bridge on the host for the subnet.
+	BridgeName pulumi.StringPtrInput
+	// Cluster Name
+	ClusterName pulumi.StringPtrInput
+	// UUID of the cluster this subnet belongs to.
+	ClusterReference pulumi.StringPtrInput
+	// Description of the subnet.
+	Description pulumi.StringPtrInput
+	// List of DHCP options to be configured.
+	DhcpOptions SubnetV2DhcpOptionArrayInput
+	// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+	DynamicIpAddresses SubnetV2DynamicIpAddressArrayInput
+	ExtId              pulumi.StringPtrInput
+	// Hypervisor Type
+	HypervisorType pulumi.StringPtrInput
+	// IP configuration for the subnet.
+	IpConfigs SubnetV2IpConfigArrayInput
+	// IP Prefix in CIDR format.
+	IpPrefix pulumi.StringPtrInput
+	IpUsages SubnetV2IpUsageArrayInput
+	// Indicates whether the subnet is used for advanced networking.
+	IsAdvancedNetworking pulumi.BoolPtrInput
+	// Indicates whether the subnet is used for external connectivity.
+	IsExternal pulumi.BoolPtrInput
+	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+	IsNatEnabled   pulumi.BoolPtrInput
+	Links          SubnetV2LinkArrayInput
+	Metadatas      SubnetV2MetadataArrayInput
+	MigrationState pulumi.StringPtrInput
+	// Name of the subnet.
+	Name pulumi.StringPtrInput
+	// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
 	NetworkFunctionChainReference pulumi.StringPtrInput
-	NetworkId                     pulumi.IntPtrInput
-	ReservedIpAddresses           SubnetV2ReservedIpAddressArrayInput
-	SubnetType                    pulumi.StringPtrInput
-	VirtualSwitchReference        pulumi.StringPtrInput
-	VirtualSwitches               SubnetV2VirtualSwitchArrayInput
-	VpcReference                  pulumi.StringPtrInput
-	Vpcs                          SubnetV2VpcArrayInput
+	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+	NetworkId pulumi.IntPtrInput
+	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
+	ReservedIpAddresses SubnetV2ReservedIpAddressArrayInput
+	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
+	SubnetType pulumi.StringPtrInput
+	// UUID of the virtual switch this subnet belongs to (type VLAN only).
+	VirtualSwitchReference pulumi.StringPtrInput
+	// Schema to configure a virtual switch
+	VirtualSwitches SubnetV2VirtualSwitchArrayInput
+	// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+	VpcReference pulumi.StringPtrInput
+	// Networking common base object
+	Vpcs SubnetV2VpcArrayInput
 }
 
 func (SubnetV2State) ElementType() reflect.Type {
@@ -135,56 +349,100 @@ func (SubnetV2State) ElementType() reflect.Type {
 }
 
 type subnetV2Args struct {
-	BridgeName                    *string                     `pulumi:"bridgeName"`
-	ClusterName                   *string                     `pulumi:"clusterName"`
-	ClusterReference              *string                     `pulumi:"clusterReference"`
-	Description                   *string                     `pulumi:"description"`
-	DhcpOptions                   []SubnetV2DhcpOption        `pulumi:"dhcpOptions"`
-	DynamicIpAddresses            []SubnetV2DynamicIpAddress  `pulumi:"dynamicIpAddresses"`
-	ExtId                         *string                     `pulumi:"extId"`
-	HypervisorType                *string                     `pulumi:"hypervisorType"`
-	IpConfigs                     []SubnetV2IpConfig          `pulumi:"ipConfigs"`
-	IpPrefix                      *string                     `pulumi:"ipPrefix"`
-	IpUsages                      []SubnetV2IpUsage           `pulumi:"ipUsages"`
-	IsAdvancedNetworking          *bool                       `pulumi:"isAdvancedNetworking"`
-	IsExternal                    *bool                       `pulumi:"isExternal"`
-	IsNatEnabled                  *bool                       `pulumi:"isNatEnabled"`
-	Name                          *string                     `pulumi:"name"`
-	NetworkFunctionChainReference *string                     `pulumi:"networkFunctionChainReference"`
-	NetworkId                     *int                        `pulumi:"networkId"`
-	ReservedIpAddresses           []SubnetV2ReservedIpAddress `pulumi:"reservedIpAddresses"`
-	SubnetType                    string                      `pulumi:"subnetType"`
-	VirtualSwitchReference        *string                     `pulumi:"virtualSwitchReference"`
-	VirtualSwitches               []SubnetV2VirtualSwitch     `pulumi:"virtualSwitches"`
-	VpcReference                  *string                     `pulumi:"vpcReference"`
-	Vpcs                          []SubnetV2Vpc               `pulumi:"vpcs"`
+	// Name of the bridge on the host for the subnet.
+	BridgeName *string `pulumi:"bridgeName"`
+	// Cluster Name
+	ClusterName *string `pulumi:"clusterName"`
+	// UUID of the cluster this subnet belongs to.
+	ClusterReference *string `pulumi:"clusterReference"`
+	// Description of the subnet.
+	Description *string `pulumi:"description"`
+	// List of DHCP options to be configured.
+	DhcpOptions []SubnetV2DhcpOption `pulumi:"dhcpOptions"`
+	// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+	DynamicIpAddresses []SubnetV2DynamicIpAddress `pulumi:"dynamicIpAddresses"`
+	ExtId              *string                    `pulumi:"extId"`
+	// Hypervisor Type
+	HypervisorType *string `pulumi:"hypervisorType"`
+	// IP configuration for the subnet.
+	IpConfigs []SubnetV2IpConfig `pulumi:"ipConfigs"`
+	// IP Prefix in CIDR format.
+	IpPrefix *string           `pulumi:"ipPrefix"`
+	IpUsages []SubnetV2IpUsage `pulumi:"ipUsages"`
+	// Indicates whether the subnet is used for advanced networking.
+	IsAdvancedNetworking *bool `pulumi:"isAdvancedNetworking"`
+	// Indicates whether the subnet is used for external connectivity.
+	IsExternal *bool `pulumi:"isExternal"`
+	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+	IsNatEnabled *bool              `pulumi:"isNatEnabled"`
+	Metadatas    []SubnetV2Metadata `pulumi:"metadatas"`
+	// Name of the subnet.
+	Name *string `pulumi:"name"`
+	// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+	NetworkFunctionChainReference *string `pulumi:"networkFunctionChainReference"`
+	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+	NetworkId *int `pulumi:"networkId"`
+	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
+	ReservedIpAddresses []SubnetV2ReservedIpAddress `pulumi:"reservedIpAddresses"`
+	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
+	SubnetType string `pulumi:"subnetType"`
+	// UUID of the virtual switch this subnet belongs to (type VLAN only).
+	VirtualSwitchReference *string `pulumi:"virtualSwitchReference"`
+	// Schema to configure a virtual switch
+	VirtualSwitches []SubnetV2VirtualSwitch `pulumi:"virtualSwitches"`
+	// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+	VpcReference *string `pulumi:"vpcReference"`
+	// Networking common base object
+	Vpcs []SubnetV2Vpc `pulumi:"vpcs"`
 }
 
 // The set of arguments for constructing a SubnetV2 resource.
 type SubnetV2Args struct {
-	BridgeName                    pulumi.StringPtrInput
-	ClusterName                   pulumi.StringPtrInput
-	ClusterReference              pulumi.StringPtrInput
-	Description                   pulumi.StringPtrInput
-	DhcpOptions                   SubnetV2DhcpOptionArrayInput
-	DynamicIpAddresses            SubnetV2DynamicIpAddressArrayInput
-	ExtId                         pulumi.StringPtrInput
-	HypervisorType                pulumi.StringPtrInput
-	IpConfigs                     SubnetV2IpConfigArrayInput
-	IpPrefix                      pulumi.StringPtrInput
-	IpUsages                      SubnetV2IpUsageArrayInput
-	IsAdvancedNetworking          pulumi.BoolPtrInput
-	IsExternal                    pulumi.BoolPtrInput
-	IsNatEnabled                  pulumi.BoolPtrInput
-	Name                          pulumi.StringPtrInput
+	// Name of the bridge on the host for the subnet.
+	BridgeName pulumi.StringPtrInput
+	// Cluster Name
+	ClusterName pulumi.StringPtrInput
+	// UUID of the cluster this subnet belongs to.
+	ClusterReference pulumi.StringPtrInput
+	// Description of the subnet.
+	Description pulumi.StringPtrInput
+	// List of DHCP options to be configured.
+	DhcpOptions SubnetV2DhcpOptionArrayInput
+	// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+	DynamicIpAddresses SubnetV2DynamicIpAddressArrayInput
+	ExtId              pulumi.StringPtrInput
+	// Hypervisor Type
+	HypervisorType pulumi.StringPtrInput
+	// IP configuration for the subnet.
+	IpConfigs SubnetV2IpConfigArrayInput
+	// IP Prefix in CIDR format.
+	IpPrefix pulumi.StringPtrInput
+	IpUsages SubnetV2IpUsageArrayInput
+	// Indicates whether the subnet is used for advanced networking.
+	IsAdvancedNetworking pulumi.BoolPtrInput
+	// Indicates whether the subnet is used for external connectivity.
+	IsExternal pulumi.BoolPtrInput
+	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+	IsNatEnabled pulumi.BoolPtrInput
+	Metadatas    SubnetV2MetadataArrayInput
+	// Name of the subnet.
+	Name pulumi.StringPtrInput
+	// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
 	NetworkFunctionChainReference pulumi.StringPtrInput
-	NetworkId                     pulumi.IntPtrInput
-	ReservedIpAddresses           SubnetV2ReservedIpAddressArrayInput
-	SubnetType                    pulumi.StringInput
-	VirtualSwitchReference        pulumi.StringPtrInput
-	VirtualSwitches               SubnetV2VirtualSwitchArrayInput
-	VpcReference                  pulumi.StringPtrInput
-	Vpcs                          SubnetV2VpcArrayInput
+	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+	NetworkId pulumi.IntPtrInput
+	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
+	ReservedIpAddresses SubnetV2ReservedIpAddressArrayInput
+	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
+	SubnetType pulumi.StringInput
+	// UUID of the virtual switch this subnet belongs to (type VLAN only).
+	VirtualSwitchReference pulumi.StringPtrInput
+	// Schema to configure a virtual switch
+	VirtualSwitches SubnetV2VirtualSwitchArrayInput
+	// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+	VpcReference pulumi.StringPtrInput
+	// Networking common base object
+	Vpcs SubnetV2VpcArrayInput
 }
 
 func (SubnetV2Args) ElementType() reflect.Type {
@@ -274,26 +532,32 @@ func (o SubnetV2Output) ToSubnetV2OutputWithContext(ctx context.Context) SubnetV
 	return o
 }
 
+// Name of the bridge on the host for the subnet.
 func (o SubnetV2Output) BridgeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.BridgeName }).(pulumi.StringOutput)
 }
 
+// Cluster Name
 func (o SubnetV2Output) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.ClusterName }).(pulumi.StringOutput)
 }
 
+// UUID of the cluster this subnet belongs to.
 func (o SubnetV2Output) ClusterReference() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.ClusterReference }).(pulumi.StringOutput)
 }
 
+// Description of the subnet.
 func (o SubnetV2Output) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// List of DHCP options to be configured.
 func (o SubnetV2Output) DhcpOptions() SubnetV2DhcpOptionArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2DhcpOptionArrayOutput { return v.DhcpOptions }).(SubnetV2DhcpOptionArrayOutput)
 }
 
+// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
 func (o SubnetV2Output) DynamicIpAddresses() SubnetV2DynamicIpAddressArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2DynamicIpAddressArrayOutput { return v.DynamicIpAddresses }).(SubnetV2DynamicIpAddressArrayOutput)
 }
@@ -302,14 +566,17 @@ func (o SubnetV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// Hypervisor Type
 func (o SubnetV2Output) HypervisorType() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.HypervisorType }).(pulumi.StringOutput)
 }
 
+// IP configuration for the subnet.
 func (o SubnetV2Output) IpConfigs() SubnetV2IpConfigArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2IpConfigArrayOutput { return v.IpConfigs }).(SubnetV2IpConfigArrayOutput)
 }
 
+// IP Prefix in CIDR format.
 func (o SubnetV2Output) IpPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.IpPrefix }).(pulumi.StringOutput)
 }
@@ -318,14 +585,17 @@ func (o SubnetV2Output) IpUsages() SubnetV2IpUsageArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2IpUsageArrayOutput { return v.IpUsages }).(SubnetV2IpUsageArrayOutput)
 }
 
+// Indicates whether the subnet is used for advanced networking.
 func (o SubnetV2Output) IsAdvancedNetworking() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.BoolOutput { return v.IsAdvancedNetworking }).(pulumi.BoolOutput)
 }
 
+// Indicates whether the subnet is used for external connectivity.
 func (o SubnetV2Output) IsExternal() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.BoolOutput { return v.IsExternal }).(pulumi.BoolOutput)
 }
 
+// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
 func (o SubnetV2Output) IsNatEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.BoolOutput { return v.IsNatEnabled }).(pulumi.BoolOutput)
 }
@@ -334,42 +604,55 @@ func (o SubnetV2Output) Links() SubnetV2LinkArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2LinkArrayOutput { return v.Links }).(SubnetV2LinkArrayOutput)
 }
 
+func (o SubnetV2Output) Metadatas() SubnetV2MetadataArrayOutput {
+	return o.ApplyT(func(v *SubnetV2) SubnetV2MetadataArrayOutput { return v.Metadatas }).(SubnetV2MetadataArrayOutput)
+}
+
 func (o SubnetV2Output) MigrationState() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.MigrationState }).(pulumi.StringOutput)
 }
 
+// Name of the subnet.
 func (o SubnetV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
 func (o SubnetV2Output) NetworkFunctionChainReference() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.NetworkFunctionChainReference }).(pulumi.StringOutput)
 }
 
+// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
 func (o SubnetV2Output) NetworkId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.IntPtrOutput { return v.NetworkId }).(pulumi.IntPtrOutput)
 }
 
+// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
 func (o SubnetV2Output) ReservedIpAddresses() SubnetV2ReservedIpAddressArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2ReservedIpAddressArrayOutput { return v.ReservedIpAddresses }).(SubnetV2ReservedIpAddressArrayOutput)
 }
 
+// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
 func (o SubnetV2Output) SubnetType() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.SubnetType }).(pulumi.StringOutput)
 }
 
+// UUID of the virtual switch this subnet belongs to (type VLAN only).
 func (o SubnetV2Output) VirtualSwitchReference() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.VirtualSwitchReference }).(pulumi.StringOutput)
 }
 
+// Schema to configure a virtual switch
 func (o SubnetV2Output) VirtualSwitches() SubnetV2VirtualSwitchArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2VirtualSwitchArrayOutput { return v.VirtualSwitches }).(SubnetV2VirtualSwitchArrayOutput)
 }
 
+// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
 func (o SubnetV2Output) VpcReference() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.VpcReference }).(pulumi.StringOutput)
 }
 
+// Networking common base object
 func (o SubnetV2Output) Vpcs() SubnetV2VpcArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2VpcArrayOutput { return v.Vpcs }).(SubnetV2VpcArrayOutput)
 }

@@ -43,9 +43,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string LastUpdatedTime;
         /// <summary>
+        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetUserGroupsV2UserGroupLinkResult> Links;
+        /// <summary>
         /// - Common Name of the User Group.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// </summary>
+        public readonly string TenantId;
 
         [OutputConstructor]
         private GetUserGroupsV2UserGroupResult(
@@ -63,7 +71,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string lastUpdatedTime,
 
-            string name)
+            ImmutableArray<Outputs.GetUserGroupsV2UserGroupLinkResult> links,
+
+            string name,
+
+            string tenantId)
         {
             CreatedBy = createdBy;
             CreatedTime = createdTime;
@@ -72,7 +84,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             GroupType = groupType;
             IdpId = idpId;
             LastUpdatedTime = lastUpdatedTime;
+            Links = links;
             Name = name;
+            TenantId = tenantId;
         }
     }
 }

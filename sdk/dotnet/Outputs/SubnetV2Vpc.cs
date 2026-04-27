@@ -14,17 +14,41 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2Vpc
     {
+        /// <summary>
+        /// List of DHCP options to be configured.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcCommonDhcpOption> CommonDhcpOptions;
+        /// <summary>
+        /// Description of the VPC.
+        /// </summary>
         public readonly string? Description;
+        /// <summary>
+        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         public readonly string? ExtId;
+        /// <summary>
+        /// External routing domain associated with this route table
+        /// </summary>
         public readonly string? ExternalRoutingDomainReference;
+        /// <summary>
+        /// List of external subnets that the VPC is attached to.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternalSubnet> ExternalSubnets;
+        /// <summary>
+        /// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternallyRoutablePrefix> ExternallyRoutablePrefixes;
         public readonly ImmutableArray<Outputs.SubnetV2VpcLink> Links;
         public readonly ImmutableArray<Outputs.SubnetV2VpcMetadata> Metadatas;
+        /// <summary>
+        /// Name of the VPC.
+        /// </summary>
         public readonly string? Name;
         public readonly ImmutableArray<Outputs.SubnetV2VpcSnatIp> SnatIps;
         public readonly string? TenantId;
+        /// <summary>
+        /// Type of VPC. Acceptables values are "REGULAR" , "TRANSIT".
+        /// </summary>
         public readonly string? VpcType;
 
         [OutputConstructor]

@@ -173,7 +173,9 @@ class AwaitableGetProtectionPolicyV2Result(GetProtectionPolicyV2Result):
 def get_protection_policy_v2(ext_id: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionPolicyV2Result:
     """
-    Describes the Fetches the protection policy identified by an external identifier.
+    > **Authentication:** Protection policy operations do **not** support API key authentication. Use `username` and `password` in the provider configuration.
+
+    Fetches the protection policy identified by an external identifier.
 
     ## Example Usage
 
@@ -207,7 +209,9 @@ def get_protection_policy_v2(ext_id: Optional[_builtins.str] = None,
 def get_protection_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionPolicyV2Result]:
     """
-    Describes the Fetches the protection policy identified by an external identifier.
+    > **Authentication:** Protection policy operations do **not** support API key authentication. Use `username` and `password` in the provider configuration.
+
+    Fetches the protection policy identified by an external identifier.
 
     ## Example Usage
 

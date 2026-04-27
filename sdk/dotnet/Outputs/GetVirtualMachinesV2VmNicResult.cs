@@ -16,7 +16,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmNicBackingInfoResult> BackingInfos;
         public readonly string ExtId;
+        public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmNicLinkResult> Links;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmNicNetworkInfoResult> NetworkInfos;
+        public readonly Outputs.GetVirtualMachinesV2VmNicNicBackingInfoResult NicBackingInfo;
+        public readonly Outputs.GetVirtualMachinesV2VmNicNicNetworkInfoResult NicNetworkInfo;
+        public readonly string TenantId;
 
         [OutputConstructor]
         private GetVirtualMachinesV2VmNicResult(
@@ -24,11 +28,23 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string extId,
 
-            ImmutableArray<Outputs.GetVirtualMachinesV2VmNicNetworkInfoResult> networkInfos)
+            ImmutableArray<Outputs.GetVirtualMachinesV2VmNicLinkResult> links,
+
+            ImmutableArray<Outputs.GetVirtualMachinesV2VmNicNetworkInfoResult> networkInfos,
+
+            Outputs.GetVirtualMachinesV2VmNicNicBackingInfoResult nicBackingInfo,
+
+            Outputs.GetVirtualMachinesV2VmNicNicNetworkInfoResult nicNetworkInfo,
+
+            string tenantId)
         {
             BackingInfos = backingInfos;
             ExtId = extId;
+            Links = links;
             NetworkInfos = networkInfos;
+            NicBackingInfo = nicBackingInfo;
+            NicNetworkInfo = nicNetworkInfo;
+            TenantId = tenantId;
         }
     }
 }

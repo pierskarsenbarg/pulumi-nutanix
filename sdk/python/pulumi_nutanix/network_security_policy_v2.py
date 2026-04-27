@@ -33,13 +33,13 @@ class NetworkSecurityPolicyV2Args:
         """
         The set of arguments for constructing a NetworkSecurityPolicyV2 resource.
 
-        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         :param pulumi.Input[_builtins.str] description: A user defined annotation for a policy.
         :param pulumi.Input[_builtins.bool] is_hitlog_enabled: If Hitlog is enabled.
         :param pulumi.Input[_builtins.bool] is_ipv6_traffic_allowed: If Ipv6 Traffic is allowed.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
-        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_references: A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
@@ -65,7 +65,7 @@ class NetworkSecurityPolicyV2Args:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         """
         return pulumi.get(self, "type")
 
@@ -137,7 +137,7 @@ class NetworkSecurityPolicyV2Args:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         """
         return pulumi.get(self, "scope")
 
@@ -204,11 +204,11 @@ class _NetworkSecurityPolicyV2State:
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
-        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_groups: Uuids of the secured groups in the NSP.
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity
-        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_references: A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
         if created_by is not None:
@@ -382,7 +382,7 @@ class _NetworkSecurityPolicyV2State:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         """
         return pulumi.get(self, "scope")
 
@@ -430,7 +430,7 @@ class _NetworkSecurityPolicyV2State:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         """
         return pulumi.get(self, "type")
 
@@ -492,6 +492,23 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                 }],
             }],
             is_hitlog_enabled=True)
+        # Network Security Policy with GLOBAL scope (VMs resolved by category across all VPCs)
+        global_nsp = nutanix.NetworkSecurityPolicyV2("global-nsp",
+            name="my-global-policy",
+            description="Application policy with global scope",
+            state="SAVE",
+            type="APPLICATION",
+            scope="GLOBAL",
+            rules=[{
+                "type": "APPLICATION",
+                "specs": [{
+                    "application_rule_specs": [{
+                        "secured_group_category_references": [example["id"]],
+                        "service_group_references": [example_nutanix_service_groups_v2["id"]],
+                        "src_address_group_references": [example_nutanix_address_groups_v2["id"]],
+                    }],
+                }],
+            }])
         ```
 
 
@@ -502,9 +519,9 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_ipv6_traffic_allowed: If Ipv6 Traffic is allowed.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
-        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
-        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_references: A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
         ...
@@ -538,6 +555,23 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                 }],
             }],
             is_hitlog_enabled=True)
+        # Network Security Policy with GLOBAL scope (VMs resolved by category across all VPCs)
+        global_nsp = nutanix.NetworkSecurityPolicyV2("global-nsp",
+            name="my-global-policy",
+            description="Application policy with global scope",
+            state="SAVE",
+            type="APPLICATION",
+            scope="GLOBAL",
+            rules=[{
+                "type": "APPLICATION",
+                "specs": [{
+                    "application_rule_specs": [{
+                        "secured_group_category_references": [example["id"]],
+                        "service_group_references": [example_nutanix_service_groups_v2["id"]],
+                        "src_address_group_references": [example_nutanix_address_groups_v2["id"]],
+                    }],
+                }],
+            }])
         ```
 
 
@@ -638,11 +672,11 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
-        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_groups: Uuids of the secured groups in the NSP.
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity
-        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_references: A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -760,7 +794,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[_builtins.str]:
         """
-        Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         """
         return pulumi.get(self, "scope")
 
@@ -792,7 +826,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         """
         return pulumi.get(self, "type")
 

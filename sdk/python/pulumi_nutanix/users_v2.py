@@ -39,20 +39,21 @@ class UsersV2Args:
         """
         The set of arguments for constructing a UsersV2 resource.
 
-        :param pulumi.Input[_builtins.str] user_type: - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        :param pulumi.Input[_builtins.str] user_type: -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
                Type of the User.
-        :param pulumi.Input[_builtins.str] username: - Identifier for the User in the form an email address.
-        :param pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]] additional_attributes: -  Any additional attribute for the User.
-        :param pulumi.Input[_builtins.str] description: - Description of the user.
-        :param pulumi.Input[_builtins.str] display_name: - Display name for the User.
-        :param pulumi.Input[_builtins.str] email_id: - Email Id for the User.
-        :param pulumi.Input[_builtins.str] first_name: - First name for the User.
-        :param pulumi.Input[_builtins.str] idp_id: - Identifier of the IDP for the User.
-        :param pulumi.Input[_builtins.str] last_name: - Last name for the User.
-        :param pulumi.Input[_builtins.str] locale: - Default locale for the User.
-        :param pulumi.Input[_builtins.str] middle_initial: - Middle name for the User.
-        :param pulumi.Input[_builtins.str] region: - Default Region for the User.
-        :param pulumi.Input[_builtins.str] status: - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        :param pulumi.Input[_builtins.str] username: -(Required) Identifier for the User in the form an email address.
+        :param pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]] additional_attributes: -(Optional) Any additional attribute for the User.
+        :param pulumi.Input[_builtins.str] description: -( Optional ) Description of the user.
+        :param pulumi.Input[_builtins.str] display_name: -(Optional) Display name for the User.
+        :param pulumi.Input[_builtins.str] email_id: -(Optional) Email Id for the User.
+        :param pulumi.Input[_builtins.str] first_name: -(Optional) First name for the User.
+        :param pulumi.Input[_builtins.str] idp_id: -(Optional) Identifier of the IDP for the User.
+        :param pulumi.Input[_builtins.str] last_name: -(Optional) Last name for the User.
+        :param pulumi.Input[_builtins.str] locale: -(Optional) Default locale for the User.
+        :param pulumi.Input[_builtins.str] middle_initial: -(Optional) Middle name for the User.
+        :param pulumi.Input[_builtins.str] password: -(Optional) Password for the User.
+        :param pulumi.Input[_builtins.str] region: -(Optional) Default Region for the User.
+        :param pulumi.Input[_builtins.str] status: -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
         """
         pulumi.set(__self__, "user_type", user_type)
         pulumi.set(__self__, "username", username)
@@ -87,7 +88,7 @@ class UsersV2Args:
     @pulumi.getter(name="userType")
     def user_type(self) -> pulumi.Input[_builtins.str]:
         """
-        - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
         Type of the User.
         """
         return pulumi.get(self, "user_type")
@@ -100,7 +101,7 @@ class UsersV2Args:
     @pulumi.getter
     def username(self) -> pulumi.Input[_builtins.str]:
         """
-        - Identifier for the User in the form an email address.
+        -(Required) Identifier for the User in the form an email address.
         """
         return pulumi.get(self, "username")
 
@@ -112,7 +113,7 @@ class UsersV2Args:
     @pulumi.getter(name="additionalAttributes")
     def additional_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]]]:
         """
-        -  Any additional attribute for the User.
+        -(Optional) Any additional attribute for the User.
         """
         return pulumi.get(self, "additional_attributes")
 
@@ -124,7 +125,7 @@ class UsersV2Args:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Description of the user.
+        -( Optional ) Description of the user.
         """
         return pulumi.get(self, "description")
 
@@ -136,7 +137,7 @@ class UsersV2Args:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Display name for the User.
+        -(Optional) Display name for the User.
         """
         return pulumi.get(self, "display_name")
 
@@ -148,7 +149,7 @@ class UsersV2Args:
     @pulumi.getter(name="emailId")
     def email_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Email Id for the User.
+        -(Optional) Email Id for the User.
         """
         return pulumi.get(self, "email_id")
 
@@ -160,7 +161,7 @@ class UsersV2Args:
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - First name for the User.
+        -(Optional) First name for the User.
         """
         return pulumi.get(self, "first_name")
 
@@ -181,7 +182,7 @@ class UsersV2Args:
     @pulumi.getter(name="idpId")
     def idp_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Identifier of the IDP for the User.
+        -(Optional) Identifier of the IDP for the User.
         """
         return pulumi.get(self, "idp_id")
 
@@ -193,7 +194,7 @@ class UsersV2Args:
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Last name for the User.
+        -(Optional) Last name for the User.
         """
         return pulumi.get(self, "last_name")
 
@@ -205,7 +206,7 @@ class UsersV2Args:
     @pulumi.getter
     def locale(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Default locale for the User.
+        -(Optional) Default locale for the User.
         """
         return pulumi.get(self, "locale")
 
@@ -217,7 +218,7 @@ class UsersV2Args:
     @pulumi.getter(name="middleInitial")
     def middle_initial(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Middle name for the User.
+        -(Optional) Middle name for the User.
         """
         return pulumi.get(self, "middle_initial")
 
@@ -228,6 +229,9 @@ class UsersV2Args:
     @_builtins.property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        -(Optional) Password for the User.
+        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -238,7 +242,7 @@ class UsersV2Args:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Default Region for the User.
+        -(Optional) Default Region for the User.
         """
         return pulumi.get(self, "region")
 
@@ -250,7 +254,7 @@ class UsersV2Args:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
         """
         return pulumi.get(self, "status")
 
@@ -287,27 +291,28 @@ class _UsersV2State:
         """
         Input properties used for looking up and filtering UsersV2 resources.
 
-        :param pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]] additional_attributes: -  Any additional attribute for the User.
+        :param pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]] additional_attributes: -(Optional) Any additional attribute for the User.
         :param pulumi.Input[Sequence[pulumi.Input['UsersV2BucketsAccessKeyArgs']]] buckets_access_keys: - Bucket Access Keys for the User.
         :param pulumi.Input[_builtins.str] created_by: - User or Service who created the User.
         :param pulumi.Input[_builtins.str] created_time: - Creation time for the Bucket Access Key.
-        :param pulumi.Input[_builtins.str] description: - Description of the user.
-        :param pulumi.Input[_builtins.str] display_name: - Display name for the User.
-        :param pulumi.Input[_builtins.str] email_id: - Email Id for the User.
-        :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
-        :param pulumi.Input[_builtins.str] first_name: - First name for the User.
-        :param pulumi.Input[_builtins.str] idp_id: - Identifier of the IDP for the User.
+        :param pulumi.Input[_builtins.str] description: -( Optional ) Description of the user.
+        :param pulumi.Input[_builtins.str] display_name: -(Optional) Display name for the User.
+        :param pulumi.Input[_builtins.str] email_id: -(Optional) Email Id for the User.
+        :param pulumi.Input[_builtins.str] ext_id: -(Optional) External Identifier of the User.
+        :param pulumi.Input[_builtins.str] first_name: -(Optional) First name for the User.
+        :param pulumi.Input[_builtins.str] idp_id: -(Optional) Identifier of the IDP for the User.
         :param pulumi.Input[_builtins.str] last_login_time: - Last successful logged in time for the User.
-        :param pulumi.Input[_builtins.str] last_name: - Last name for the User.
+        :param pulumi.Input[_builtins.str] last_name: -(Optional) Last name for the User.
         :param pulumi.Input[_builtins.str] last_updated_time: - Last updated time of the User.
         :param pulumi.Input[Sequence[pulumi.Input['UsersV2LinkArgs']]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        :param pulumi.Input[_builtins.str] locale: - Default locale for the User.
-        :param pulumi.Input[_builtins.str] middle_initial: - Middle name for the User.
-        :param pulumi.Input[_builtins.str] region: - Default Region for the User.
-        :param pulumi.Input[_builtins.str] status: - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
-        :param pulumi.Input[_builtins.str] user_type: - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        :param pulumi.Input[_builtins.str] locale: -(Optional) Default locale for the User.
+        :param pulumi.Input[_builtins.str] middle_initial: -(Optional) Middle name for the User.
+        :param pulumi.Input[_builtins.str] password: -(Optional) Password for the User.
+        :param pulumi.Input[_builtins.str] region: -(Optional) Default Region for the User.
+        :param pulumi.Input[_builtins.str] status: -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        :param pulumi.Input[_builtins.str] user_type: -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
                Type of the User.
-        :param pulumi.Input[_builtins.str] username: - Identifier for the User in the form an email address.
+        :param pulumi.Input[_builtins.str] username: -(Required) Identifier for the User in the form an email address.
         """
         if additional_attributes is not None:
             pulumi.set(__self__, "additional_attributes", additional_attributes)
@@ -358,7 +363,7 @@ class _UsersV2State:
     @pulumi.getter(name="additionalAttributes")
     def additional_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsersV2AdditionalAttributeArgs']]]]:
         """
-        -  Any additional attribute for the User.
+        -(Optional) Any additional attribute for the User.
         """
         return pulumi.get(self, "additional_attributes")
 
@@ -406,7 +411,7 @@ class _UsersV2State:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Description of the user.
+        -( Optional ) Description of the user.
         """
         return pulumi.get(self, "description")
 
@@ -418,7 +423,7 @@ class _UsersV2State:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Display name for the User.
+        -(Optional) Display name for the User.
         """
         return pulumi.get(self, "display_name")
 
@@ -430,7 +435,7 @@ class _UsersV2State:
     @pulumi.getter(name="emailId")
     def email_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Email Id for the User.
+        -(Optional) Email Id for the User.
         """
         return pulumi.get(self, "email_id")
 
@@ -442,7 +447,7 @@ class _UsersV2State:
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - A globally unique identifier of an instance that is suitable for external consumption.
+        -(Optional) External Identifier of the User.
         """
         return pulumi.get(self, "ext_id")
 
@@ -454,7 +459,7 @@ class _UsersV2State:
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - First name for the User.
+        -(Optional) First name for the User.
         """
         return pulumi.get(self, "first_name")
 
@@ -475,7 +480,7 @@ class _UsersV2State:
     @pulumi.getter(name="idpId")
     def idp_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Identifier of the IDP for the User.
+        -(Optional) Identifier of the IDP for the User.
         """
         return pulumi.get(self, "idp_id")
 
@@ -499,7 +504,7 @@ class _UsersV2State:
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Last name for the User.
+        -(Optional) Last name for the User.
         """
         return pulumi.get(self, "last_name")
 
@@ -535,7 +540,7 @@ class _UsersV2State:
     @pulumi.getter
     def locale(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Default locale for the User.
+        -(Optional) Default locale for the User.
         """
         return pulumi.get(self, "locale")
 
@@ -547,7 +552,7 @@ class _UsersV2State:
     @pulumi.getter(name="middleInitial")
     def middle_initial(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Middle name for the User.
+        -(Optional) Middle name for the User.
         """
         return pulumi.get(self, "middle_initial")
 
@@ -558,6 +563,9 @@ class _UsersV2State:
     @_builtins.property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        -(Optional) Password for the User.
+        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -568,7 +576,7 @@ class _UsersV2State:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Default Region for the User.
+        -(Optional) Default Region for the User.
         """
         return pulumi.get(self, "region")
 
@@ -580,7 +588,7 @@ class _UsersV2State:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
         """
         return pulumi.get(self, "status")
 
@@ -592,7 +600,7 @@ class _UsersV2State:
     @pulumi.getter(name="userType")
     def user_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
         Type of the User.
         """
         return pulumi.get(self, "user_type")
@@ -605,7 +613,7 @@ class _UsersV2State:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        - Identifier for the User in the form an email address.
+        -(Required) Identifier for the User in the form an email address.
         """
         return pulumi.get(self, "username")
 
@@ -642,20 +650,21 @@ class UsersV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -  Any additional attribute for the User.
-        :param pulumi.Input[_builtins.str] description: - Description of the user.
-        :param pulumi.Input[_builtins.str] display_name: - Display name for the User.
-        :param pulumi.Input[_builtins.str] email_id: - Email Id for the User.
-        :param pulumi.Input[_builtins.str] first_name: - First name for the User.
-        :param pulumi.Input[_builtins.str] idp_id: - Identifier of the IDP for the User.
-        :param pulumi.Input[_builtins.str] last_name: - Last name for the User.
-        :param pulumi.Input[_builtins.str] locale: - Default locale for the User.
-        :param pulumi.Input[_builtins.str] middle_initial: - Middle name for the User.
-        :param pulumi.Input[_builtins.str] region: - Default Region for the User.
-        :param pulumi.Input[_builtins.str] status: - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
-        :param pulumi.Input[_builtins.str] user_type: - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -(Optional) Any additional attribute for the User.
+        :param pulumi.Input[_builtins.str] description: -( Optional ) Description of the user.
+        :param pulumi.Input[_builtins.str] display_name: -(Optional) Display name for the User.
+        :param pulumi.Input[_builtins.str] email_id: -(Optional) Email Id for the User.
+        :param pulumi.Input[_builtins.str] first_name: -(Optional) First name for the User.
+        :param pulumi.Input[_builtins.str] idp_id: -(Optional) Identifier of the IDP for the User.
+        :param pulumi.Input[_builtins.str] last_name: -(Optional) Last name for the User.
+        :param pulumi.Input[_builtins.str] locale: -(Optional) Default locale for the User.
+        :param pulumi.Input[_builtins.str] middle_initial: -(Optional) Middle name for the User.
+        :param pulumi.Input[_builtins.str] password: -(Optional) Password for the User.
+        :param pulumi.Input[_builtins.str] region: -(Optional) Default Region for the User.
+        :param pulumi.Input[_builtins.str] status: -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        :param pulumi.Input[_builtins.str] user_type: -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
                Type of the User.
-        :param pulumi.Input[_builtins.str] username: - Identifier for the User in the form an email address.
+        :param pulumi.Input[_builtins.str] username: -(Required) Identifier for the User in the form an email address.
         """
         ...
     @overload
@@ -716,7 +725,7 @@ class UsersV2(pulumi.CustomResource):
             __props__.__dict__["last_name"] = last_name
             __props__.__dict__["locale"] = locale
             __props__.__dict__["middle_initial"] = middle_initial
-            __props__.__dict__["password"] = password
+            __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["region"] = region
             __props__.__dict__["status"] = status
             if user_type is None and not opts.urn:
@@ -732,6 +741,8 @@ class UsersV2(pulumi.CustomResource):
             __props__.__dict__["last_login_time"] = None
             __props__.__dict__["last_updated_time"] = None
             __props__.__dict__["links"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(UsersV2, __self__).__init__(
             'nutanix:index/usersV2:UsersV2',
             resource_name,
@@ -771,27 +782,28 @@ class UsersV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -  Any additional attribute for the User.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -(Optional) Any additional attribute for the User.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2BucketsAccessKeyArgs', 'UsersV2BucketsAccessKeyArgsDict']]]] buckets_access_keys: - Bucket Access Keys for the User.
         :param pulumi.Input[_builtins.str] created_by: - User or Service who created the User.
         :param pulumi.Input[_builtins.str] created_time: - Creation time for the Bucket Access Key.
-        :param pulumi.Input[_builtins.str] description: - Description of the user.
-        :param pulumi.Input[_builtins.str] display_name: - Display name for the User.
-        :param pulumi.Input[_builtins.str] email_id: - Email Id for the User.
-        :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
-        :param pulumi.Input[_builtins.str] first_name: - First name for the User.
-        :param pulumi.Input[_builtins.str] idp_id: - Identifier of the IDP for the User.
+        :param pulumi.Input[_builtins.str] description: -( Optional ) Description of the user.
+        :param pulumi.Input[_builtins.str] display_name: -(Optional) Display name for the User.
+        :param pulumi.Input[_builtins.str] email_id: -(Optional) Email Id for the User.
+        :param pulumi.Input[_builtins.str] ext_id: -(Optional) External Identifier of the User.
+        :param pulumi.Input[_builtins.str] first_name: -(Optional) First name for the User.
+        :param pulumi.Input[_builtins.str] idp_id: -(Optional) Identifier of the IDP for the User.
         :param pulumi.Input[_builtins.str] last_login_time: - Last successful logged in time for the User.
-        :param pulumi.Input[_builtins.str] last_name: - Last name for the User.
+        :param pulumi.Input[_builtins.str] last_name: -(Optional) Last name for the User.
         :param pulumi.Input[_builtins.str] last_updated_time: - Last updated time of the User.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2LinkArgs', 'UsersV2LinkArgsDict']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        :param pulumi.Input[_builtins.str] locale: - Default locale for the User.
-        :param pulumi.Input[_builtins.str] middle_initial: - Middle name for the User.
-        :param pulumi.Input[_builtins.str] region: - Default Region for the User.
-        :param pulumi.Input[_builtins.str] status: - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
-        :param pulumi.Input[_builtins.str] user_type: - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        :param pulumi.Input[_builtins.str] locale: -(Optional) Default locale for the User.
+        :param pulumi.Input[_builtins.str] middle_initial: -(Optional) Middle name for the User.
+        :param pulumi.Input[_builtins.str] password: -(Optional) Password for the User.
+        :param pulumi.Input[_builtins.str] region: -(Optional) Default Region for the User.
+        :param pulumi.Input[_builtins.str] status: -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        :param pulumi.Input[_builtins.str] user_type: -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
                Type of the User.
-        :param pulumi.Input[_builtins.str] username: - Identifier for the User in the form an email address.
+        :param pulumi.Input[_builtins.str] username: -(Required) Identifier for the User in the form an email address.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -825,7 +837,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="additionalAttributes")
     def additional_attributes(self) -> pulumi.Output[Sequence['outputs.UsersV2AdditionalAttribute']]:
         """
-        -  Any additional attribute for the User.
+        -(Optional) Any additional attribute for the User.
         """
         return pulumi.get(self, "additional_attributes")
 
@@ -857,7 +869,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:
         """
-        - Description of the user.
+        -( Optional ) Description of the user.
         """
         return pulumi.get(self, "description")
 
@@ -865,7 +877,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        - Display name for the User.
+        -(Optional) Display name for the User.
         """
         return pulumi.get(self, "display_name")
 
@@ -873,7 +885,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="emailId")
     def email_id(self) -> pulumi.Output[_builtins.str]:
         """
-        - Email Id for the User.
+        -(Optional) Email Id for the User.
         """
         return pulumi.get(self, "email_id")
 
@@ -881,7 +893,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:
         """
-        - A globally unique identifier of an instance that is suitable for external consumption.
+        -(Optional) External Identifier of the User.
         """
         return pulumi.get(self, "ext_id")
 
@@ -889,7 +901,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="firstName")
     def first_name(self) -> pulumi.Output[_builtins.str]:
         """
-        - First name for the User.
+        -(Optional) First name for the User.
         """
         return pulumi.get(self, "first_name")
 
@@ -902,7 +914,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="idpId")
     def idp_id(self) -> pulumi.Output[_builtins.str]:
         """
-        - Identifier of the IDP for the User.
+        -(Optional) Identifier of the IDP for the User.
         """
         return pulumi.get(self, "idp_id")
 
@@ -918,7 +930,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="lastName")
     def last_name(self) -> pulumi.Output[_builtins.str]:
         """
-        - Last name for the User.
+        -(Optional) Last name for the User.
         """
         return pulumi.get(self, "last_name")
 
@@ -942,7 +954,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter
     def locale(self) -> pulumi.Output[_builtins.str]:
         """
-        - Default locale for the User.
+        -(Optional) Default locale for the User.
         """
         return pulumi.get(self, "locale")
 
@@ -950,20 +962,23 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="middleInitial")
     def middle_initial(self) -> pulumi.Output[_builtins.str]:
         """
-        - Middle name for the User.
+        -(Optional) Middle name for the User.
         """
         return pulumi.get(self, "middle_initial")
 
     @_builtins.property
     @pulumi.getter
     def password(self) -> pulumi.Output[_builtins.str]:
+        """
+        -(Optional) Password for the User.
+        """
         return pulumi.get(self, "password")
 
     @_builtins.property
     @pulumi.getter
     def region(self) -> pulumi.Output[_builtins.str]:
         """
-        - Default Region for the User.
+        -(Optional) Default Region for the User.
         """
         return pulumi.get(self, "region")
 
@@ -971,7 +986,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[_builtins.str]:
         """
-        - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
         """
         return pulumi.get(self, "status")
 
@@ -979,7 +994,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter(name="userType")
     def user_type(self) -> pulumi.Output[_builtins.str]:
         """
-        - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
         Type of the User.
         """
         return pulumi.get(self, "user_type")
@@ -988,7 +1003,7 @@ class UsersV2(pulumi.CustomResource):
     @pulumi.getter
     def username(self) -> pulumi.Output[_builtins.str]:
         """
-        - Identifier for the User in the form an email address.
+        -(Required) Identifier for the User in the form an email address.
         """
         return pulumi.get(self, "username")
 

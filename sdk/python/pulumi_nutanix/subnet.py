@@ -59,7 +59,7 @@ class SubnetArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dhcp_server_address: - (Optional) Host address.
         :param pulumi.Input[_builtins.int] dhcp_server_address_port: - (Optional) Port Number.
         :param pulumi.Input[_builtins.bool] enable_nat: - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_config_pool_list_ranges: -(Optional) Range of IPs.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_config_pool_list_ranges: - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         :param pulumi.Input[_builtins.bool] is_external: - (Optional) Whether the subnet is external subnet or not.
         :param pulumi.Input[_builtins.str] name: - (Optional) Subnet name (Readonly).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] network_function_chain_reference: - (Optional) The reference to a network_function_chain.
@@ -265,7 +265,7 @@ class SubnetArgs:
     @pulumi.getter(name="ipConfigPoolListRanges")
     def ip_config_pool_list_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        -(Optional) Range of IPs.
+        - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         """
         return pulumi.get(self, "ip_config_pool_list_ranges")
 
@@ -439,7 +439,7 @@ class _SubnetState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dhcp_server_address: - (Optional) Host address.
         :param pulumi.Input[_builtins.int] dhcp_server_address_port: - (Optional) Port Number.
         :param pulumi.Input[_builtins.bool] enable_nat: - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_config_pool_list_ranges: -(Optional) Range of IPs.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_config_pool_list_ranges: - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         :param pulumi.Input[_builtins.bool] is_external: - (Optional) Whether the subnet is external subnet or not.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: - (Required) The subnet kind metadata.
         :param pulumi.Input[_builtins.str] name: - (Optional) Subnet name (Readonly).
@@ -666,7 +666,7 @@ class _SubnetState:
     @pulumi.getter(name="ipConfigPoolListRanges")
     def ip_config_pool_list_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        -(Optional) Range of IPs.
+        - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         """
         return pulumi.get(self, "ip_config_pool_list_ranges")
 
@@ -880,7 +880,7 @@ class Subnet(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dhcp_server_address: - (Optional) Host address.
         :param pulumi.Input[_builtins.int] dhcp_server_address_port: - (Optional) Port Number.
         :param pulumi.Input[_builtins.bool] enable_nat: - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_config_pool_list_ranges: -(Optional) Range of IPs.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_config_pool_list_ranges: - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         :param pulumi.Input[_builtins.bool] is_external: - (Optional) Whether the subnet is external subnet or not.
         :param pulumi.Input[_builtins.str] name: - (Optional) Subnet name (Readonly).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] network_function_chain_reference: - (Optional) The reference to a network_function_chain.
@@ -1037,7 +1037,7 @@ class Subnet(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dhcp_server_address: - (Optional) Host address.
         :param pulumi.Input[_builtins.int] dhcp_server_address_port: - (Optional) Port Number.
         :param pulumi.Input[_builtins.bool] enable_nat: - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_config_pool_list_ranges: -(Optional) Range of IPs.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_config_pool_list_ranges: - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         :param pulumi.Input[_builtins.bool] is_external: - (Optional) Whether the subnet is external subnet or not.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: - (Required) The subnet kind metadata.
         :param pulumi.Input[_builtins.str] name: - (Optional) Subnet name (Readonly).
@@ -1190,7 +1190,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="ipConfigPoolListRanges")
     def ip_config_pool_list_ranges(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        -(Optional) Range of IPs.
+        - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         """
         return pulumi.get(self, "ip_config_pool_list_ranges")
 

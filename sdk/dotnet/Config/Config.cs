@@ -32,6 +32,32 @@ namespace PiersKarsenbarg.Nutanix
 
         private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("nutanix");
 
+        private static readonly __Value<string?> _apiKey = new __Value<string?>(() => __config.Get("apiKey"));
+        /// <summary>
+        /// API key for Nutanix Prism authentication. Can be used as an
+        /// alternative to username/password. When set, the X-Ntnx-Api-Key header
+        /// will be used instead of Basic Authentication.
+        /// </summary>
+        public static string? ApiKey
+        {
+            get => _apiKey.Get();
+            set => _apiKey.Set(value);
+        }
+
+        private static readonly __Value<ImmutableDictionary<string, string>?> _customHeaders = new __Value<ImmutableDictionary<string, string>?>(() => __config.GetObject<ImmutableDictionary<string, string>>("customHeaders"));
+        /// <summary>
+        /// Custom HTTP headers to add to all API requests. Useful for
+        /// environments that require additional headers such as Cloudflare Access
+        /// service tokens. Headers can also be set via environment variables with
+        /// the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+        /// becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+        /// </summary>
+        public static ImmutableDictionary<string, string>? CustomHeaders
+        {
+            get => _customHeaders.Get();
+            set => _customHeaders.Set(value);
+        }
+
         private static readonly __Value<string?> _endpoint = new __Value<string?>(() => __config.Get("endpoint"));
         /// <summary>
         /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP

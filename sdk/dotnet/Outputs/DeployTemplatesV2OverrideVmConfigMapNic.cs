@@ -17,6 +17,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfo> BackingInfos;
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo> NetworkInfos;
+        public readonly Outputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfo? NicBackingInfo;
+        public readonly Outputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfo? NicNetworkInfo;
 
         [OutputConstructor]
         private DeployTemplatesV2OverrideVmConfigMapNic(
@@ -24,11 +26,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string? extId,
 
-            ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo> networkInfos)
+            ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo> networkInfos,
+
+            Outputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfo? nicBackingInfo,
+
+            Outputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfo? nicNetworkInfo)
         {
             BackingInfos = backingInfos;
             ExtId = extId;
             NetworkInfos = networkInfos;
+            NicBackingInfo = nicBackingInfo;
+            NicNetworkInfo = nicNetworkInfo;
         }
     }
 }

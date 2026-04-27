@@ -309,7 +309,7 @@ def get_pc_restore_points_v2(filter: Optional[_builtins.str] = None,
 
     - `value`: - The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listRestorePoints).
+    See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listRestorePoints).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
@@ -533,7 +533,7 @@ def get_pc_restore_points_v2_output(filter: Optional[pulumi.Input[Optional[_buil
 
     - `value`: - The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listRestorePoints).
+    See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listRestorePoints).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.

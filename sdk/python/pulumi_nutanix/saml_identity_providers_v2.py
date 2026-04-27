@@ -514,12 +514,12 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="emailAttribute")
-    def email_attribute(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def email_attribute(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "email_attribute")
 
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
-    def entity_issuer(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def entity_issuer(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "entity_issuer")
 
     @_builtins.property
@@ -529,12 +529,12 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="groupsAttribute")
-    def groups_attribute(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def groups_attribute(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "groups_attribute")
 
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
-    def groups_delim(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def groups_delim(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "groups_delim")
 
     @_builtins.property
@@ -554,7 +554,7 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
-    def is_signed_authn_req_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def is_signed_authn_req_enabled(self) -> pulumi.Output[_builtins.bool]:
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @_builtins.property
@@ -569,6 +569,6 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="usernameAttribute")
-    def username_attribute(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def username_attribute(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "username_attribute")
 

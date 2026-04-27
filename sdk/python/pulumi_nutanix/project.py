@@ -87,6 +87,9 @@ class ProjectArgs:
         if project_reference is not None:
             pulumi.set(__self__, "project_reference", project_reference)
         if resource_domain is not None:
+            warnings.warn("""Deprecated since v2.4.0. Prism Central no longer supports `resource_domain` for projects; remove this block from your configuration/scripts.""", DeprecationWarning)
+            pulumi.log.warn("""resource_domain is deprecated: Deprecated since v2.4.0. Prism Central no longer supports `resource_domain` for projects; remove this block from your configuration/scripts.""")
+        if resource_domain is not None:
             pulumi.set(__self__, "resource_domain", resource_domain)
         if subnet_reference_lists is not None:
             pulumi.set(__self__, "subnet_reference_lists", subnet_reference_lists)
@@ -264,6 +267,7 @@ class ProjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="resourceDomain")
+    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports `resource_domain` for projects; remove this block from your configuration/scripts.""")
     def resource_domain(self) -> Optional[pulumi.Input['ProjectResourceDomainArgs']]:
         return pulumi.get(self, "resource_domain")
 
@@ -418,6 +422,9 @@ class _ProjectState:
             pulumi.set(__self__, "owner_reference", owner_reference)
         if project_reference is not None:
             pulumi.set(__self__, "project_reference", project_reference)
+        if resource_domain is not None:
+            warnings.warn("""Deprecated since v2.4.0. Prism Central no longer supports `resource_domain` for projects; remove this block from your configuration/scripts.""", DeprecationWarning)
+            pulumi.log.warn("""resource_domain is deprecated: Deprecated since v2.4.0. Prism Central no longer supports `resource_domain` for projects; remove this block from your configuration/scripts.""")
         if resource_domain is not None:
             pulumi.set(__self__, "resource_domain", resource_domain)
         if state is not None:
@@ -616,6 +623,7 @@ class _ProjectState:
 
     @_builtins.property
     @pulumi.getter(name="resourceDomain")
+    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports `resource_domain` for projects; remove this block from your configuration/scripts.""")
     def resource_domain(self) -> Optional[pulumi.Input['ProjectResourceDomainArgs']]:
         return pulumi.get(self, "resource_domain")
 
@@ -736,6 +744,8 @@ class Project(pulumi.CustomResource):
         """
         Provides a Nutanix Project resource to Create a Project.
 
+        > **Note:** When removing the acps from the project, the ACP blocks are index-based. Removing an ACP from the middle of the list causes Terraform to shift subsequent ACPs. While the backend update succeeds without impact, the plan may show unexpected updates due to index reordering.
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -755,6 +765,8 @@ class Project(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Nutanix Project resource to Create a Project.
+
+        > **Note:** When removing the acps from the project, the ACP blocks are index-based. Removing an ACP from the middle of the list causes Terraform to shift subsequent ACPs. While the backend update succeeds without impact, the plan may show unexpected updates due to index reordering.
 
 
         :param str resource_name: The name of the resource.
@@ -928,7 +940,7 @@ class Project(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def acps(self) -> pulumi.Output[Optional[Sequence['outputs.ProjectAcp']]]:
+    def acps(self) -> pulumi.Output[Sequence['outputs.ProjectAcp']]:
         return pulumi.get(self, "acps")
 
     @_builtins.property
@@ -1028,6 +1040,7 @@ class Project(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="resourceDomain")
+    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports `resource_domain` for projects; remove this block from your configuration/scripts.""")
     def resource_domain(self) -> pulumi.Output[Optional['outputs.ProjectResourceDomain']]:
         return pulumi.get(self, "resource_domain")
 

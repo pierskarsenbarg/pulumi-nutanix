@@ -13,11 +13,23 @@ namespace PiersKarsenbarg.Nutanix
     [NutanixResourceType("nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2")]
     public partial class VmCdromInsertEjectV2 : global::Pulumi.CustomResource
     {
+        [Output("action")]
+        public Output<string?> Action { get; private set; } = null!;
+
         [Output("backingInfos")]
         public Output<ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfo>> BackingInfos { get; private set; } = null!;
 
+        [Output("cdromExtId")]
+        public Output<string> CdromExtId { get; private set; } = null!;
+
+        [Output("diskAddresses")]
+        public Output<ImmutableArray<Outputs.VmCdromInsertEjectV2DiskAddress>> DiskAddresses { get; private set; } = null!;
+
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
+
+        [Output("isoType")]
+        public Output<string> IsoType { get; private set; } = null!;
 
         [Output("vmExtId")]
         public Output<string> VmExtId { get; private set; } = null!;
@@ -69,6 +81,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class VmCdromInsertEjectV2Args : global::Pulumi.ResourceArgs
     {
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         [Input("backingInfos")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoArgs>? _backingInfos;
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoArgs> BackingInfos
@@ -91,6 +106,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class VmCdromInsertEjectV2State : global::Pulumi.ResourceArgs
     {
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         [Input("backingInfos")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoGetArgs>? _backingInfos;
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoGetArgs> BackingInfos
@@ -99,8 +117,22 @@ namespace PiersKarsenbarg.Nutanix
             set => _backingInfos = value;
         }
 
+        [Input("cdromExtId")]
+        public Input<string>? CdromExtId { get; set; }
+
+        [Input("diskAddresses")]
+        private InputList<Inputs.VmCdromInsertEjectV2DiskAddressGetArgs>? _diskAddresses;
+        public InputList<Inputs.VmCdromInsertEjectV2DiskAddressGetArgs> DiskAddresses
+        {
+            get => _diskAddresses ?? (_diskAddresses = new InputList<Inputs.VmCdromInsertEjectV2DiskAddressGetArgs>());
+            set => _diskAddresses = value;
+        }
+
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
+
+        [Input("isoType")]
+        public Input<string>? IsoType { get; set; }
 
         [Input("vmExtId")]
         public Input<string>? VmExtId { get; set; }

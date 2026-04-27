@@ -215,7 +215,7 @@ def get_volume_iscsi_clients_v2(expand: Optional[_builtins.str] = None,
     * `num_virtual_targets`: - Number of virtual targets generated for the iSCSI target. This field is immutable.
     * `iscsi_target_name`: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
 
-    See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/IscsiClients/operation/listIscsiClients).
+    See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/IscsiClients/operation/listIscsiClients).
     """
     __args__ = dict()
     __args__['expand'] = expand
@@ -335,7 +335,7 @@ def get_volume_iscsi_clients_v2_output(expand: Optional[pulumi.Input[Optional[_b
     * `num_virtual_targets`: - Number of virtual targets generated for the iSCSI target. This field is immutable.
     * `iscsi_target_name`: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
 
-    See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/IscsiClients/operation/listIscsiClients).
+    See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/IscsiClients/operation/listIscsiClients).
     """
     __args__ = dict()
     __args__['expand'] = expand

@@ -8,6 +8,34 @@ declare var exports: any;
 const __config = new pulumi.Config("nutanix");
 
 /**
+ * API key for Nutanix Prism authentication. Can be used as an
+ * alternative to username/password. When set, the X-Ntnx-Api-Key header
+ * will be used instead of Basic Authentication.
+ */
+export declare const apiKey: string | undefined;
+Object.defineProperty(exports, "apiKey", {
+    get() {
+        return __config.get("apiKey");
+    },
+    enumerable: true,
+});
+
+/**
+ * Custom HTTP headers to add to all API requests. Useful for
+ * environments that require additional headers such as Cloudflare Access
+ * service tokens. Headers can also be set via environment variables with
+ * the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+ * becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+ */
+export declare const customHeaders: {[key: string]: string} | undefined;
+Object.defineProperty(exports, "customHeaders", {
+    get() {
+        return __config.getObject<{[key: string]: string}>("customHeaders");
+    },
+    enumerable: true,
+});
+
+/**
  * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
  * note, this is never the data services VIP, and should not be an
  * individual CVM address, as this would cause calls to fail during

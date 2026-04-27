@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetProtectionPoliciesV2
     {
         /// <summary>
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use `Username` and `Password` in the provider configuration.
+        /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
         /// 
@@ -143,12 +145,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>
         public static Task<GetProtectionPoliciesV2Result> InvokeAsync(GetProtectionPoliciesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionPoliciesV2Result>("nutanix:index/getProtectionPoliciesV2:getProtectionPoliciesV2", args ?? new GetProtectionPoliciesV2Args(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use `Username` and `Password` in the provider configuration.
+        /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
         /// 
@@ -279,12 +283,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>
         public static Output<GetProtectionPoliciesV2Result> Invoke(GetProtectionPoliciesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPoliciesV2Result>("nutanix:index/getProtectionPoliciesV2:getProtectionPoliciesV2", args ?? new GetProtectionPoliciesV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use `Username` and `Password` in the provider configuration.
+        /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
         /// 
@@ -415,7 +421,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>
         public static Output<GetProtectionPoliciesV2Result> Invoke(GetProtectionPoliciesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPoliciesV2Result>("nutanix:index/getProtectionPoliciesV2:getProtectionPoliciesV2", args ?? new GetProtectionPoliciesV2InvokeArgs(), options.WithDefaults());

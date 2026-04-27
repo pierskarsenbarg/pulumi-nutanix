@@ -21,7 +21,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
-        /// See detailed information in [Nutanix List Security Policies v4](https://developers.nutanix.com/api-reference?namespace=microseg&amp;version=v4.0#tag/NetworkSecurityPolicies/operation/listNetworkSecurityPolicies).
+        /// See detailed information in [Nutanix List Security Policies v4](https://developers.nutanix.com/api-reference?namespace=microseg&amp;version=v4.2#tag/NetworkSecurityPolicies/operation/listNetworkSecurityPolicies).
         /// </summary>
         public readonly string Rel;
 

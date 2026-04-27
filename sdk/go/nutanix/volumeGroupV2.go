@@ -69,13 +69,13 @@ type VolumeGroupV2 struct {
 	// - EXTERNAL : Volume Group has an external iSCSI or NVMf attachment.
 	// - NONE : Volume Group has no attachment.
 	// - DIRECT : Volume Group has a VM attachment.
-	AttachmentType pulumi.StringPtrOutput `pulumi:"attachmentType"`
+	AttachmentType pulumi.StringOutput `pulumi:"attachmentType"`
 	// -(Required) The UUID of the cluster that will host the Volume Group.
 	ClusterReference pulumi.StringOutput `pulumi:"clusterReference"`
 	// -(Optional) Service/user who created this Volume Group.
-	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// -(Optional) Volume Group description. This is an optional field.
-	Description pulumi.StringPtrOutput `pulumi:"description"`
+	Description pulumi.StringOutput `pulumi:"description"`
 	// -(Optional) A list of Volume Disks to be attached to the Volume Group.
 	Disks VolumeGroupV2DiskArrayOutput `pulumi:"disks"`
 	// -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
@@ -83,28 +83,28 @@ type VolumeGroupV2 struct {
 	// -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
-	IsHidden pulumi.BoolPtrOutput `pulumi:"isHidden"`
+	IsHidden pulumi.BoolOutput `pulumi:"isHidden"`
 	// -(Optional) iSCSI specific settings for the Volume Group.
 	IscsiFeatures VolumeGroupV2IscsiFeatureArrayOutput `pulumi:"iscsiFeatures"`
 	// -(Required) Volume Group name. This is an optional field.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-	// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+	// - NOT_ASSIGNED : Volume Group does not use any protocol.
 	// - ISCSI : Volume Group uses iSCSI protocol.
 	// - NVMF : Volume Group uses NVMf protocol.
-	Protocol pulumi.StringPtrOutput `pulumi:"protocol"`
+	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
-	SharingStatus pulumi.StringPtrOutput `pulumi:"sharingStatus"`
+	SharingStatus pulumi.StringOutput `pulumi:"sharingStatus"`
 	// -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
-	ShouldLoadBalanceVmAttachments pulumi.BoolPtrOutput `pulumi:"shouldLoadBalanceVmAttachments"`
+	ShouldLoadBalanceVmAttachments pulumi.BoolOutput `pulumi:"shouldLoadBalanceVmAttachments"`
 	// -(Optional) Storage optimization features which must be enabled on the Volume Group.
 	StorageFeatures VolumeGroupV2StorageFeatureArrayOutput `pulumi:"storageFeatures"`
 	// -(Optional) Name of the external client target that will be visible and accessible to the client.
 	TargetName pulumi.StringOutput `pulumi:"targetName"`
 	// The specifications contain the target prefix for external clients as the value. This is an optional field.
-	TargetPrefix pulumi.StringPtrOutput `pulumi:"targetPrefix"`
-	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
-	UsageType pulumi.StringPtrOutput `pulumi:"usageType"`
+	TargetPrefix pulumi.StringOutput `pulumi:"targetPrefix"`
+	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+	UsageType pulumi.StringOutput `pulumi:"usageType"`
 }
 
 // NewVolumeGroupV2 registers a new resource with the given unique name, arguments, and options.
@@ -164,7 +164,7 @@ type volumeGroupV2State struct {
 	// -(Required) Volume Group name. This is an optional field.
 	Name *string `pulumi:"name"`
 	// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-	// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+	// - NOT_ASSIGNED : Volume Group does not use any protocol.
 	// - ISCSI : Volume Group uses iSCSI protocol.
 	// - NVMF : Volume Group uses NVMf protocol.
 	Protocol *string `pulumi:"protocol"`
@@ -178,7 +178,7 @@ type volumeGroupV2State struct {
 	TargetName *string `pulumi:"targetName"`
 	// The specifications contain the target prefix for external clients as the value. This is an optional field.
 	TargetPrefix *string `pulumi:"targetPrefix"`
-	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
 	UsageType *string `pulumi:"usageType"`
 }
 
@@ -207,7 +207,7 @@ type VolumeGroupV2State struct {
 	// -(Required) Volume Group name. This is an optional field.
 	Name pulumi.StringPtrInput
 	// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-	// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+	// - NOT_ASSIGNED : Volume Group does not use any protocol.
 	// - ISCSI : Volume Group uses iSCSI protocol.
 	// - NVMF : Volume Group uses NVMf protocol.
 	Protocol pulumi.StringPtrInput
@@ -221,7 +221,7 @@ type VolumeGroupV2State struct {
 	TargetName pulumi.StringPtrInput
 	// The specifications contain the target prefix for external clients as the value. This is an optional field.
 	TargetPrefix pulumi.StringPtrInput
-	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
 	UsageType pulumi.StringPtrInput
 }
 
@@ -252,7 +252,7 @@ type volumeGroupV2Args struct {
 	// -(Required) Volume Group name. This is an optional field.
 	Name *string `pulumi:"name"`
 	// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-	// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+	// - NOT_ASSIGNED : Volume Group does not use any protocol.
 	// - ISCSI : Volume Group uses iSCSI protocol.
 	// - NVMF : Volume Group uses NVMf protocol.
 	Protocol *string `pulumi:"protocol"`
@@ -266,7 +266,7 @@ type volumeGroupV2Args struct {
 	TargetName *string `pulumi:"targetName"`
 	// The specifications contain the target prefix for external clients as the value. This is an optional field.
 	TargetPrefix *string `pulumi:"targetPrefix"`
-	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
 	UsageType *string `pulumi:"usageType"`
 }
 
@@ -294,7 +294,7 @@ type VolumeGroupV2Args struct {
 	// -(Required) Volume Group name. This is an optional field.
 	Name pulumi.StringPtrInput
 	// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-	// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+	// - NOT_ASSIGNED : Volume Group does not use any protocol.
 	// - ISCSI : Volume Group uses iSCSI protocol.
 	// - NVMF : Volume Group uses NVMf protocol.
 	Protocol pulumi.StringPtrInput
@@ -308,7 +308,7 @@ type VolumeGroupV2Args struct {
 	TargetName pulumi.StringPtrInput
 	// The specifications contain the target prefix for external clients as the value. This is an optional field.
 	TargetPrefix pulumi.StringPtrInput
-	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+	// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
 	UsageType pulumi.StringPtrInput
 }
 
@@ -403,8 +403,8 @@ func (o VolumeGroupV2Output) ToVolumeGroupV2OutputWithContext(ctx context.Contex
 // - EXTERNAL : Volume Group has an external iSCSI or NVMf attachment.
 // - NONE : Volume Group has no attachment.
 // - DIRECT : Volume Group has a VM attachment.
-func (o VolumeGroupV2Output) AttachmentType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringPtrOutput { return v.AttachmentType }).(pulumi.StringPtrOutput)
+func (o VolumeGroupV2Output) AttachmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringOutput { return v.AttachmentType }).(pulumi.StringOutput)
 }
 
 // -(Required) The UUID of the cluster that will host the Volume Group.
@@ -413,13 +413,13 @@ func (o VolumeGroupV2Output) ClusterReference() pulumi.StringOutput {
 }
 
 // -(Optional) Service/user who created this Volume Group.
-func (o VolumeGroupV2Output) CreatedBy() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
+func (o VolumeGroupV2Output) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
 // -(Optional) Volume Group description. This is an optional field.
-func (o VolumeGroupV2Output) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+func (o VolumeGroupV2Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // -(Optional) A list of Volume Disks to be attached to the Volume Group.
@@ -438,8 +438,8 @@ func (o VolumeGroupV2Output) ExtId() pulumi.StringOutput {
 }
 
 // -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
-func (o VolumeGroupV2Output) IsHidden() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.BoolPtrOutput { return v.IsHidden }).(pulumi.BoolPtrOutput)
+func (o VolumeGroupV2Output) IsHidden() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.BoolOutput { return v.IsHidden }).(pulumi.BoolOutput)
 }
 
 // -(Optional) iSCSI specific settings for the Volume Group.
@@ -453,21 +453,21 @@ func (o VolumeGroupV2Output) Name() pulumi.StringOutput {
 }
 
 // -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+// - NOT_ASSIGNED : Volume Group does not use any protocol.
 // - ISCSI : Volume Group uses iSCSI protocol.
 // - NVMF : Volume Group uses NVMf protocol.
-func (o VolumeGroupV2Output) Protocol() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringPtrOutput { return v.Protocol }).(pulumi.StringPtrOutput)
+func (o VolumeGroupV2Output) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
 }
 
 // -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
-func (o VolumeGroupV2Output) SharingStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringPtrOutput { return v.SharingStatus }).(pulumi.StringPtrOutput)
+func (o VolumeGroupV2Output) SharingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringOutput { return v.SharingStatus }).(pulumi.StringOutput)
 }
 
 // -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
-func (o VolumeGroupV2Output) ShouldLoadBalanceVmAttachments() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.BoolPtrOutput { return v.ShouldLoadBalanceVmAttachments }).(pulumi.BoolPtrOutput)
+func (o VolumeGroupV2Output) ShouldLoadBalanceVmAttachments() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.BoolOutput { return v.ShouldLoadBalanceVmAttachments }).(pulumi.BoolOutput)
 }
 
 // -(Optional) Storage optimization features which must be enabled on the Volume Group.
@@ -481,13 +481,13 @@ func (o VolumeGroupV2Output) TargetName() pulumi.StringOutput {
 }
 
 // The specifications contain the target prefix for external clients as the value. This is an optional field.
-func (o VolumeGroupV2Output) TargetPrefix() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringPtrOutput { return v.TargetPrefix }).(pulumi.StringPtrOutput)
+func (o VolumeGroupV2Output) TargetPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringOutput { return v.TargetPrefix }).(pulumi.StringOutput)
 }
 
-// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
-func (o VolumeGroupV2Output) UsageType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringPtrOutput { return v.UsageType }).(pulumi.StringPtrOutput)
+// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+func (o VolumeGroupV2Output) UsageType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupV2) pulumi.StringOutput { return v.UsageType }).(pulumi.StringOutput)
 }
 
 type VolumeGroupV2ArrayOutput struct{ *pulumi.OutputState }

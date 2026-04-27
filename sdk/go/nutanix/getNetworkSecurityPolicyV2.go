@@ -54,7 +54,7 @@ type LookupNetworkSecurityPolicyV2Result struct {
 	Name string `pulumi:"name"`
 	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
 	Rules []GetNetworkSecurityPolicyV2Rule `pulumi:"rules"`
-	// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+	// Defines the scope of the policy. Values include "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
 	Scope string `pulumi:"scope"`
 	// Uuids of the secured groups in the NSP.
 	SecuredGroups []string `pulumi:"securedGroups"`
@@ -162,7 +162,7 @@ func (o LookupNetworkSecurityPolicyV2ResultOutput) Rules() GetNetworkSecurityPol
 	return o.ApplyT(func(v LookupNetworkSecurityPolicyV2Result) []GetNetworkSecurityPolicyV2Rule { return v.Rules }).(GetNetworkSecurityPolicyV2RuleArrayOutput)
 }
 
-// Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+// Defines the scope of the policy. Values include "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
 func (o LookupNetworkSecurityPolicyV2ResultOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkSecurityPolicyV2Result) string { return v.Scope }).(pulumi.StringOutput)
 }

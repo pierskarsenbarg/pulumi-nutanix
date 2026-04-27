@@ -70,7 +70,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - DIRECT : Volume Group has a VM attachment.
         /// </summary>
         [Output("attachmentType")]
-        public Output<string?> AttachmentType { get; private set; } = null!;
+        public Output<string> AttachmentType { get; private set; } = null!;
 
         /// <summary>
         /// -(Required) The UUID of the cluster that will host the Volume Group.
@@ -82,13 +82,13 @@ namespace PiersKarsenbarg.Nutanix
         /// -(Optional) Service/user who created this Volume Group.
         /// </summary>
         [Output("createdBy")]
-        public Output<string?> CreatedBy { get; private set; } = null!;
+        public Output<string> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// -(Optional) Volume Group description. This is an optional field.
         /// </summary>
         [Output("description")]
-        public Output<string?> Description { get; private set; } = null!;
+        public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// -(Optional) A list of Volume Disks to be attached to the Volume Group.
@@ -112,7 +112,7 @@ namespace PiersKarsenbarg.Nutanix
         /// -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
         /// </summary>
         [Output("isHidden")]
-        public Output<bool?> IsHidden { get; private set; } = null!;
+        public Output<bool> IsHidden { get; private set; } = null!;
 
         /// <summary>
         /// -(Optional) iSCSI specific settings for the Volume Group.
@@ -128,24 +128,24 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-        /// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+        /// - NOT_ASSIGNED : Volume Group does not use any protocol.
         /// - ISCSI : Volume Group uses iSCSI protocol.
         /// - NVMF : Volume Group uses NVMf protocol.
         /// </summary>
         [Output("protocol")]
-        public Output<string?> Protocol { get; private set; } = null!;
+        public Output<string> Protocol { get; private set; } = null!;
 
         /// <summary>
         /// -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
         /// </summary>
         [Output("sharingStatus")]
-        public Output<string?> SharingStatus { get; private set; } = null!;
+        public Output<string> SharingStatus { get; private set; } = null!;
 
         /// <summary>
         /// -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
         /// </summary>
         [Output("shouldLoadBalanceVmAttachments")]
-        public Output<bool?> ShouldLoadBalanceVmAttachments { get; private set; } = null!;
+        public Output<bool> ShouldLoadBalanceVmAttachments { get; private set; } = null!;
 
         /// <summary>
         /// -(Optional) Storage optimization features which must be enabled on the Volume Group.
@@ -163,13 +163,13 @@ namespace PiersKarsenbarg.Nutanix
         /// The specifications contain the target prefix for external clients as the value. This is an optional field.
         /// </summary>
         [Output("targetPrefix")]
-        public Output<string?> TargetPrefix { get; private set; } = null!;
+        public Output<string> TargetPrefix { get; private set; } = null!;
 
         /// <summary>
-        /// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        /// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         /// </summary>
         [Output("usageType")]
-        public Output<string?> UsageType { get; private set; } = null!;
+        public Output<string> UsageType { get; private set; } = null!;
 
 
         /// <summary>
@@ -289,7 +289,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-        /// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+        /// - NOT_ASSIGNED : Volume Group does not use any protocol.
         /// - ISCSI : Volume Group uses iSCSI protocol.
         /// - NVMF : Volume Group uses NVMf protocol.
         /// </summary>
@@ -333,7 +333,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TargetPrefix { get; set; }
 
         /// <summary>
-        /// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        /// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         /// </summary>
         [Input("usageType")]
         public Input<string>? UsageType { get; set; }
@@ -423,7 +423,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-        /// - NOT_ASSIGNED :  Volume Group does not use any protocol.
+        /// - NOT_ASSIGNED : Volume Group does not use any protocol.
         /// - ISCSI : Volume Group uses iSCSI protocol.
         /// - NVMF : Volume Group uses NVMf protocol.
         /// </summary>
@@ -467,7 +467,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TargetPrefix { get; set; }
 
         /// <summary>
-        /// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        /// -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         /// </summary>
         [Input("usageType")]
         public Input<string>? UsageType { get; set; }

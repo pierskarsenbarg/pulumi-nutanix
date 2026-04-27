@@ -297,8 +297,10 @@ import (
 // The `nics` attribute supports the following:
 //
 // * `extId`: A globally unique identifier of an instance that is suitable for external consumption
-// * `backingInfo`: Defines a NIC emulated by the hypervisor
-// * `networkInfo`: Network information for a NIC.
+// * `nicBackingInfo`: New NIC backing info (v2.4.1+). One of `virtualEthernetNic`, `sriovNic`, `dpOffloadNic`.
+// * `nicNetworkInfo`: New NIC network info (v2.4.1+). One of `virtualEthernetNicNetworkInfo`, `sriovNicNetworkInfo`, `dpOffloadNicNetworkInfo`.
+// * `backingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+// * `networkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 //
 // ### nics.backing_info
 // * `model`: Options for the NIC emulation.
@@ -384,7 +386,7 @@ import (
 // * `createdBy`: User or Service who created the User.
 // * `lastUpdatedBy`: Last updated by this User ID.
 //
-// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/listTemplates).
+// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/listTemplates).
 func GetTemplatesV2(ctx *pulumi.Context, args *GetTemplatesV2Args, opts ...pulumi.InvokeOption) (*GetTemplatesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTemplatesV2Result

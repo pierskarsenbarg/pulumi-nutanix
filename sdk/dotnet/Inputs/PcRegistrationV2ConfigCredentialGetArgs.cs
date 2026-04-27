@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// -(Required)  Password required for the basic auth scheme.
         /// 
-        /// See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/register).
+        /// See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/register).
         /// </summary>
         public Input<string>? Password
         {

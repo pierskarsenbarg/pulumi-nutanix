@@ -379,8 +379,10 @@ def get_templates_v2(filter: Optional[_builtins.str] = None,
     The `nics` attribute supports the following:
 
     * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption
-    * `backing_info`: Defines a NIC emulated by the hypervisor
-    * `network_info`: Network information for a NIC.
+    * `nic_backing_info`: New NIC backing info (v2.4.1+). One of `virtual_ethernet_nic`, `sriov_nic`, `dp_offload_nic`.
+    * `nic_network_info`: New NIC network info (v2.4.1+). One of `virtual_ethernet_nic_network_info`, `sriov_nic_network_info`, `dp_offload_nic_network_info`.
+    * `backing_info`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+    * `network_info`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 
     ### nics.backing_info
     * `model`: Options for the NIC emulation.
@@ -466,7 +468,7 @@ def get_templates_v2(filter: Optional[_builtins.str] = None,
     * `created_by`: User or Service who created the User.
     * `last_updated_by`: Last updated by this User ID.
 
-    See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/listTemplates).
+    See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/listTemplates).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
@@ -775,8 +777,10 @@ def get_templates_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str
     The `nics` attribute supports the following:
 
     * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption
-    * `backing_info`: Defines a NIC emulated by the hypervisor
-    * `network_info`: Network information for a NIC.
+    * `nic_backing_info`: New NIC backing info (v2.4.1+). One of `virtual_ethernet_nic`, `sriov_nic`, `dp_offload_nic`.
+    * `nic_network_info`: New NIC network info (v2.4.1+). One of `virtual_ethernet_nic_network_info`, `sriov_nic_network_info`, `dp_offload_nic_network_info`.
+    * `backing_info`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+    * `network_info`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 
     ### nics.backing_info
     * `model`: Options for the NIC emulation.
@@ -862,7 +866,7 @@ def get_templates_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str
     * `created_by`: User or Service who created the User.
     * `last_updated_by`: Last updated by this User ID.
 
-    See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/listTemplates).
+    See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/listTemplates).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:

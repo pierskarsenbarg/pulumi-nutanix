@@ -84,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `ResourceId`: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
-        /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/Categories/operation/listCategories).
+        /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/Categories/operation/listCategories).
         /// </summary>
         public static Task<GetCategoriesV2Result> InvokeAsync(GetCategoriesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCategoriesV2Result>("nutanix:index/getCategoriesV2:getCategoriesV2", args ?? new GetCategoriesV2Args(), options.WithDefaults());
@@ -161,7 +161,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `ResourceId`: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
-        /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/Categories/operation/listCategories).
+        /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/Categories/operation/listCategories).
         /// </summary>
         public static Output<GetCategoriesV2Result> Invoke(GetCategoriesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoriesV2Result>("nutanix:index/getCategoriesV2:getCategoriesV2", args ?? new GetCategoriesV2InvokeArgs(), options.WithDefaults());
@@ -238,7 +238,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `ResourceId`: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
-        /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/Categories/operation/listCategories).
+        /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/Categories/operation/listCategories).
         /// </summary>
         public static Output<GetCategoriesV2Result> Invoke(GetCategoriesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoriesV2Result>("nutanix:index/getCategoriesV2:getCategoriesV2", args ?? new GetCategoriesV2InvokeArgs(), options.WithDefaults());

@@ -55,7 +55,7 @@ export class VolumeGroupVmV2 extends pulumi.CustomResource {
      * -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
      *
      *
-     * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/attachVm).
+     * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
      */
     declare public readonly index: pulumi.Output<number | undefined>;
     /**
@@ -114,7 +114,7 @@ export interface VolumeGroupVmV2State {
      * -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
      *
      *
-     * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/attachVm).
+     * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
      */
     index?: pulumi.Input<number>;
     /**
@@ -135,7 +135,7 @@ export interface VolumeGroupVmV2Args {
      * -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
      *
      *
-     * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/attachVm).
+     * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
      */
     index?: pulumi.Input<number>;
     /**

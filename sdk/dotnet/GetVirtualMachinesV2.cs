@@ -71,6 +71,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `GenerationUuid`: Generation UUID of the VM. It should be of type UUID.
         /// - `BiosUuid`: BIOS UUID of the VM. It should be of type UUID.
         /// - `Categories`: Categories for the VM.
+        /// * `Project`: Reference to a project.
         /// - `OwnershipInfo`: Ownership information for the VM.
         /// - `Host`: Reference to the host, the VM is running on.
         /// - `Cluster`: Reference to a cluster.
@@ -113,6 +114,11 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Categories` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of a VM category of type UUID.
+        /// 
+        /// ### Project
+        /// The `Project` attribute supports the following:
+        /// 
+        /// * `ExtId`: The globally unique identifier of an instance of type UUID.
         /// 
         /// ### Ownership Info
         /// The `OwnershipInfo` attribute supports the following:
@@ -278,8 +284,10 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Nics` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption
-        /// * `BackingInfo`: Defines a NIC emulated by the hypervisor
-        /// * `NetworkInfo`: Network information for a NIC.
+        /// * `NicBackingInfo`: New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// * `NicNetworkInfo`: New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// * `BackingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+        /// * `NetworkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// 
         /// ### nics.backing_info
         /// * `Model`: Options for the NIC emulation.
@@ -346,7 +354,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/listVms).
+        /// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/listVms).
         /// </summary>
         public static Task<GetVirtualMachinesV2Result> InvokeAsync(GetVirtualMachinesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualMachinesV2Result>("nutanix:index/getVirtualMachinesV2:getVirtualMachinesV2", args ?? new GetVirtualMachinesV2Args(), options.WithDefaults());
@@ -410,6 +418,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `GenerationUuid`: Generation UUID of the VM. It should be of type UUID.
         /// - `BiosUuid`: BIOS UUID of the VM. It should be of type UUID.
         /// - `Categories`: Categories for the VM.
+        /// * `Project`: Reference to a project.
         /// - `OwnershipInfo`: Ownership information for the VM.
         /// - `Host`: Reference to the host, the VM is running on.
         /// - `Cluster`: Reference to a cluster.
@@ -452,6 +461,11 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Categories` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of a VM category of type UUID.
+        /// 
+        /// ### Project
+        /// The `Project` attribute supports the following:
+        /// 
+        /// * `ExtId`: The globally unique identifier of an instance of type UUID.
         /// 
         /// ### Ownership Info
         /// The `OwnershipInfo` attribute supports the following:
@@ -617,8 +631,10 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Nics` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption
-        /// * `BackingInfo`: Defines a NIC emulated by the hypervisor
-        /// * `NetworkInfo`: Network information for a NIC.
+        /// * `NicBackingInfo`: New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// * `NicNetworkInfo`: New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// * `BackingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+        /// * `NetworkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// 
         /// ### nics.backing_info
         /// * `Model`: Options for the NIC emulation.
@@ -685,7 +701,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/listVms).
+        /// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/listVms).
         /// </summary>
         public static Output<GetVirtualMachinesV2Result> Invoke(GetVirtualMachinesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualMachinesV2Result>("nutanix:index/getVirtualMachinesV2:getVirtualMachinesV2", args ?? new GetVirtualMachinesV2InvokeArgs(), options.WithDefaults());
@@ -749,6 +765,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `GenerationUuid`: Generation UUID of the VM. It should be of type UUID.
         /// - `BiosUuid`: BIOS UUID of the VM. It should be of type UUID.
         /// - `Categories`: Categories for the VM.
+        /// * `Project`: Reference to a project.
         /// - `OwnershipInfo`: Ownership information for the VM.
         /// - `Host`: Reference to the host, the VM is running on.
         /// - `Cluster`: Reference to a cluster.
@@ -791,6 +808,11 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Categories` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of a VM category of type UUID.
+        /// 
+        /// ### Project
+        /// The `Project` attribute supports the following:
+        /// 
+        /// * `ExtId`: The globally unique identifier of an instance of type UUID.
         /// 
         /// ### Ownership Info
         /// The `OwnershipInfo` attribute supports the following:
@@ -956,8 +978,10 @@ namespace PiersKarsenbarg.Nutanix
         /// The `Nics` attribute supports the following:
         /// 
         /// * `ExtId`: A globally unique identifier of an instance that is suitable for external consumption
-        /// * `BackingInfo`: Defines a NIC emulated by the hypervisor
-        /// * `NetworkInfo`: Network information for a NIC.
+        /// * `NicBackingInfo`: New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// * `NicNetworkInfo`: New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// * `BackingInfo`: (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+        /// * `NetworkInfo`: (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// 
         /// ### nics.backing_info
         /// * `Model`: Options for the NIC emulation.
@@ -1024,7 +1048,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/listVms).
+        /// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/listVms).
         /// </summary>
         public static Output<GetVirtualMachinesV2Result> Invoke(GetVirtualMachinesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualMachinesV2Result>("nutanix:index/getVirtualMachinesV2:getVirtualMachinesV2", args ?? new GetVirtualMachinesV2InvokeArgs(), options.WithDefaults());

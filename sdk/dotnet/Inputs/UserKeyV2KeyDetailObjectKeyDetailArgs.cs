@@ -14,10 +14,28 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class UserKeyV2KeyDetailObjectKeyDetailArgs : global::Pulumi.ResourceArgs
     {
         [Input("accessKey")]
-        public Input<string>? AccessKey { get; set; }
+        private Input<string>? _accessKey;
+        public Input<string>? AccessKey
+        {
+            get => _accessKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _accessKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("secretKey")]
-        public Input<string>? SecretKey { get; set; }
+        private Input<string>? _secretKey;
+        public Input<string>? SecretKey
+        {
+            get => _secretKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public UserKeyV2KeyDetailObjectKeyDetailArgs()
         {

@@ -96,6 +96,7 @@ export interface GetSubnetV2Result {
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     readonly links: outputs.GetSubnetV2Link[];
+    readonly metadatas: outputs.GetSubnetV2Metadata[];
     /**
      * Migration state of the subnet. This field is read-only.
      */

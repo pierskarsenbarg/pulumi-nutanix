@@ -14,7 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VpcExternallyRoutablePrefix
     {
+        /// <summary>
+        /// IP v4 subnet
+        /// - `ipv4.ip`: (Required) Reference to address configuration
+        /// - `ipv4.prefix_length`: (Required) The prefix length of the network.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternallyRoutablePrefixIpv4> Ipv4s;
+        /// <summary>
+        /// IP v6 subnet
+        /// - `ipv6.ip`: (Required) Reference to address configuration
+        /// - `ipv6.prefix_length`: (Required) The prefix length of the network.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternallyRoutablePrefixIpv6> Ipv6s;
 
         [OutputConstructor]

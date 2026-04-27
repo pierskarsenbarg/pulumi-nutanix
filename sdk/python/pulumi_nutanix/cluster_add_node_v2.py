@@ -242,6 +242,8 @@ class ClusterAddNodeV2(pulumi.CustomResource):
         """
         Add node on a cluster identified by {extId}.
 
+        > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the `ClusterV2` resource, which offers a more consistent and automated approach to managing cluster scaling operations.
+
         ## Example Usage
 
         ```python
@@ -366,6 +368,8 @@ class ClusterAddNodeV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Add node on a cluster identified by {extId}.
+
+        > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the `ClusterV2` resource, which offers a more consistent and automated approach to managing cluster scaling operations.
 
         ## Example Usage
 

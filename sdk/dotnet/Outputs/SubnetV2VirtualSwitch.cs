@@ -14,15 +14,36 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VirtualSwitch
     {
+        /// <summary>
+        /// The types of bond modes
+        /// </summary>
         public readonly bool? BondMode;
+        /// <summary>
+        /// Cluster configuration list
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchCluster> Clusters;
+        /// <summary>
+        /// Input body to configure a Virtual Switch
+        /// </summary>
         public readonly string? Description;
         public readonly string? ExtId;
+        /// <summary>
+        /// When true, the node is not put in maintenance mode during the create/update operation.
+        /// </summary>
         public readonly bool? HasDeploymentError;
+        /// <summary>
+        /// Indicates whether it is a default Virtual Switch which cannot be deleted
+        /// </summary>
         public readonly bool? IsDefault;
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchLink> Links;
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchMetadata> Metadatas;
+        /// <summary>
+        /// MTU
+        /// </summary>
         public readonly int? Mtu;
+        /// <summary>
+        /// User-visible Virtual Switch name
+        /// </summary>
         public readonly string? Name;
         public readonly string? TenantId;
 

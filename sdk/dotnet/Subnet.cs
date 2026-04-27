@@ -94,7 +94,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool> EnableNat { get; private set; } = null!;
 
         /// <summary>
-        /// -(Optional) Range of IPs.
+        /// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         /// </summary>
         [Output("ipConfigPoolListRanges")]
         public Output<ImmutableArray<string>> IpConfigPoolListRanges { get; private set; } = null!;
@@ -330,7 +330,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _ipConfigPoolListRanges;
 
         /// <summary>
-        /// -(Optional) Range of IPs.
+        /// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         /// </summary>
         public InputList<string> IpConfigPoolListRanges
         {
@@ -545,7 +545,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _ipConfigPoolListRanges;
 
         /// <summary>
-        /// -(Optional) Range of IPs.
+        /// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         /// </summary>
         public InputList<string> IpConfigPoolListRanges
         {

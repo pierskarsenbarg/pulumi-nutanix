@@ -11,6 +11,8 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// > **Authentication:** Protection policy operations do **not** support API key authentication. Use `username` and `password` in the provider configuration.
+//
 // List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
 //
 // ## Example Usage
@@ -148,7 +150,7 @@ import (
 //
 // * `frequency`: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
 //
-// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
 func GetProtectionPoliciesV2(ctx *pulumi.Context, args *GetProtectionPoliciesV2Args, opts ...pulumi.InvokeOption) (*GetProtectionPoliciesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectionPoliciesV2Result

@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingInfos")]
         private InputList<Inputs.VmCloneV2NicBackingInfoGetArgs>? _backingInfos;
+        [Obsolete(@"The `BackingInfo` attribute is deprecated. Use `NicBackingInfo` instead. This field will be removed in a future release.")]
         public InputList<Inputs.VmCloneV2NicBackingInfoGetArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.VmCloneV2NicBackingInfoGetArgs>());
@@ -26,11 +27,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("networkInfos")]
         private InputList<Inputs.VmCloneV2NicNetworkInfoGetArgs>? _networkInfos;
+        [Obsolete(@"The `NetworkInfo` attribute is deprecated. Use `NicNetworkInfo` instead. This field will be removed in a future release.")]
         public InputList<Inputs.VmCloneV2NicNetworkInfoGetArgs> NetworkInfos
         {
             get => _networkInfos ?? (_networkInfos = new InputList<Inputs.VmCloneV2NicNetworkInfoGetArgs>());
             set => _networkInfos = value;
         }
+
+        [Input("nicBackingInfo")]
+        public Input<Inputs.VmCloneV2NicNicBackingInfoGetArgs>? NicBackingInfo { get; set; }
+
+        [Input("nicNetworkInfo")]
+        public Input<Inputs.VmCloneV2NicNicNetworkInfoGetArgs>? NicNetworkInfo { get; set; }
 
         public VmCloneV2NicGetArgs()
         {

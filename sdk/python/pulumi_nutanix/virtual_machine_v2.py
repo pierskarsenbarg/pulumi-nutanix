@@ -56,6 +56,7 @@ class VirtualMachineV2Args:
                  num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
                  ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]] = None,
                  power_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 projects: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]] = None,
                  protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]] = None,
                  protection_type: Optional[pulumi.Input[_builtins.str]] = None,
                  serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]] = None,
@@ -98,6 +99,7 @@ class VirtualMachineV2Args:
         :param pulumi.Input[_builtins.int] num_sockets: Number of vCPU sockets. Value should be at least 1.
         :param pulumi.Input[_builtins.int] num_threads_per_core: Number of threads per core. Value should be at least 1.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]] ownership_infos: Ownership information for the VM.
+        :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]] projects: Reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]] protection_policy_states: Status of protection policy applied to this VM.
         :param pulumi.Input[_builtins.str] protection_type: The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]] serial_ports: Serial ports configured on the VM.
@@ -175,6 +177,8 @@ class VirtualMachineV2Args:
             pulumi.set(__self__, "ownership_infos", ownership_infos)
         if power_state is not None:
             pulumi.set(__self__, "power_state", power_state)
+        if projects is not None:
+            pulumi.set(__self__, "projects", projects)
         if protection_policy_states is not None:
             pulumi.set(__self__, "protection_policy_states", protection_policy_states)
         if protection_type is not None:
@@ -603,6 +607,18 @@ class VirtualMachineV2Args:
         pulumi.set(self, "power_state", value)
 
     @_builtins.property
+    @pulumi.getter
+    def projects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]:
+        """
+        Reference to a project.
+        """
+        return pulumi.get(self, "projects")
+
+    @projects.setter
+    def projects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]):
+        pulumi.set(self, "projects", value)
+
+    @_builtins.property
     @pulumi.getter(name="protectionPolicyStates")
     def protection_policy_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]:
         """
@@ -715,6 +731,7 @@ class _VirtualMachineV2State:
                  num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
                  ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]] = None,
                  power_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 projects: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]] = None,
                  protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]] = None,
                  protection_type: Optional[pulumi.Input[_builtins.str]] = None,
                  serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]] = None,
@@ -760,6 +777,7 @@ class _VirtualMachineV2State:
         :param pulumi.Input[_builtins.int] num_sockets: Number of vCPU sockets. Value should be at least 1.
         :param pulumi.Input[_builtins.int] num_threads_per_core: Number of threads per core. Value should be at least 1.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]] ownership_infos: Ownership information for the VM.
+        :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]] projects: Reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]] protection_policy_states: Status of protection policy applied to this VM.
         :param pulumi.Input[_builtins.str] protection_type: The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]] serial_ports: Serial ports configured on the VM.
@@ -842,6 +860,8 @@ class _VirtualMachineV2State:
             pulumi.set(__self__, "ownership_infos", ownership_infos)
         if power_state is not None:
             pulumi.set(__self__, "power_state", power_state)
+        if projects is not None:
+            pulumi.set(__self__, "projects", projects)
         if protection_policy_states is not None:
             pulumi.set(__self__, "protection_policy_states", protection_policy_states)
         if protection_type is not None:
@@ -1296,6 +1316,18 @@ class _VirtualMachineV2State:
         pulumi.set(self, "power_state", value)
 
     @_builtins.property
+    @pulumi.getter
+    def projects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]:
+        """
+        Reference to a project.
+        """
+        return pulumi.get(self, "projects")
+
+    @projects.setter
+    def projects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]):
+        pulumi.set(self, "projects", value)
+
+    @_builtins.property
     @pulumi.getter(name="protectionPolicyStates")
     def protection_policy_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]:
         """
@@ -1421,6 +1453,7 @@ class VirtualMachineV2(pulumi.CustomResource):
                  num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
                  ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
                  power_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 projects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
                  protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
                  protection_type: Optional[pulumi.Input[_builtins.str]] = None,
                  serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
@@ -1454,6 +1487,9 @@ class VirtualMachineV2(pulumi.CustomResource):
             clusters=[{
                 "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             }],
+            projects=[{
+                "ext_id": "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
+            }],
             disks=[{
                 "disk_addresses": [{
                     "bus_type": "SCSI",
@@ -1483,6 +1519,9 @@ class VirtualMachineV2(pulumi.CustomResource):
             num_sockets=1,
             clusters=[{
                 "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            }],
+            projects=[{
+                "ext_id": "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
             }],
             disks=[
                 {
@@ -1551,13 +1590,15 @@ class VirtualMachineV2(pulumi.CustomResource):
                 },
             ],
             nics=[{
-                "network_infos": [{
-                    "nic_type": "NORMAL_NIC",
-                    "subnets": [{
-                        "ext_id": "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
-                    }],
-                    "vlan_mode": "ACCESS",
-                }],
+                "nic_network_info": {
+                    "virtual_ethernet_nic_network_info": {
+                        "nic_type": "NORMAL_NIC",
+                        "subnets": [{
+                            "ext_id": "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+                        }],
+                        "vlan_mode": "ACCESS",
+                    },
+                },
             }],
             boot_configs=[{
                 "legacy_boots": [{
@@ -1570,6 +1611,21 @@ class VirtualMachineV2(pulumi.CustomResource):
             }],
             power_state="ON")
         ```
+
+        ## Lifecycle Behavior
+
+        > Important: Updates to `guest_customization` are treated as create-time only changes and will force the VM to be replaced.
+
+        Guest customization settings such as `config.cloud_init` and `config.sysprep` are consumed during the initial boot of the virtual machine and are not re-applied on later updates.
+
+        As a result, changing the `guest_customization` block causes Terraform to destroy and recreate the `VirtualMachineV2` resource instead of performing an in-place update.
+
+        This behavior applies to both:
+
+        - Sysprep-based guest customization for Windows VMs
+        - cloud-init based guest customization for Linux VMs
+
+        > Note: Replacing the VM creates a new virtual machine instance. Make sure any dependent systems, references, or post-provisioning steps are updated accordingly before applying the change.
 
 
         :param str resource_name: The name of the resource.
@@ -1607,6 +1663,7 @@ class VirtualMachineV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] num_sockets: Number of vCPU sockets. Value should be at least 1.
         :param pulumi.Input[_builtins.int] num_threads_per_core: Number of threads per core. Value should be at least 1.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]] ownership_infos: Ownership information for the VM.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]] projects: Reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]] protection_policy_states: Status of protection policy applied to this VM.
         :param pulumi.Input[_builtins.str] protection_type: The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]] serial_ports: Serial ports configured on the VM.
@@ -1646,6 +1703,9 @@ class VirtualMachineV2(pulumi.CustomResource):
             clusters=[{
                 "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             }],
+            projects=[{
+                "ext_id": "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
+            }],
             disks=[{
                 "disk_addresses": [{
                     "bus_type": "SCSI",
@@ -1675,6 +1735,9 @@ class VirtualMachineV2(pulumi.CustomResource):
             num_sockets=1,
             clusters=[{
                 "ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            }],
+            projects=[{
+                "ext_id": "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
             }],
             disks=[
                 {
@@ -1743,13 +1806,15 @@ class VirtualMachineV2(pulumi.CustomResource):
                 },
             ],
             nics=[{
-                "network_infos": [{
-                    "nic_type": "NORMAL_NIC",
-                    "subnets": [{
-                        "ext_id": "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
-                    }],
-                    "vlan_mode": "ACCESS",
-                }],
+                "nic_network_info": {
+                    "virtual_ethernet_nic_network_info": {
+                        "nic_type": "NORMAL_NIC",
+                        "subnets": [{
+                            "ext_id": "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+                        }],
+                        "vlan_mode": "ACCESS",
+                    },
+                },
             }],
             boot_configs=[{
                 "legacy_boots": [{
@@ -1762,6 +1827,21 @@ class VirtualMachineV2(pulumi.CustomResource):
             }],
             power_state="ON")
         ```
+
+        ## Lifecycle Behavior
+
+        > Important: Updates to `guest_customization` are treated as create-time only changes and will force the VM to be replaced.
+
+        Guest customization settings such as `config.cloud_init` and `config.sysprep` are consumed during the initial boot of the virtual machine and are not re-applied on later updates.
+
+        As a result, changing the `guest_customization` block causes Terraform to destroy and recreate the `VirtualMachineV2` resource instead of performing an in-place update.
+
+        This behavior applies to both:
+
+        - Sysprep-based guest customization for Windows VMs
+        - cloud-init based guest customization for Linux VMs
+
+        > Note: Replacing the VM creates a new virtual machine instance. Make sure any dependent systems, references, or post-provisioning steps are updated accordingly before applying the change.
 
 
         :param str resource_name: The name of the resource.
@@ -1814,6 +1894,7 @@ class VirtualMachineV2(pulumi.CustomResource):
                  num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
                  ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
                  power_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 projects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
                  protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
                  protection_type: Optional[pulumi.Input[_builtins.str]] = None,
                  serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
@@ -1864,6 +1945,7 @@ class VirtualMachineV2(pulumi.CustomResource):
             __props__.__dict__["num_threads_per_core"] = num_threads_per_core
             __props__.__dict__["ownership_infos"] = ownership_infos
             __props__.__dict__["power_state"] = power_state
+            __props__.__dict__["projects"] = projects
             __props__.__dict__["protection_policy_states"] = protection_policy_states
             __props__.__dict__["protection_type"] = protection_type
             __props__.__dict__["serial_ports"] = serial_ports
@@ -1920,6 +2002,7 @@ class VirtualMachineV2(pulumi.CustomResource):
             num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
             ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
             power_state: Optional[pulumi.Input[_builtins.str]] = None,
+            projects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
             protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
             protection_type: Optional[pulumi.Input[_builtins.str]] = None,
             serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
@@ -1969,6 +2052,7 @@ class VirtualMachineV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] num_sockets: Number of vCPU sockets. Value should be at least 1.
         :param pulumi.Input[_builtins.int] num_threads_per_core: Number of threads per core. Value should be at least 1.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]] ownership_infos: Ownership information for the VM.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]] projects: Reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]] protection_policy_states: Status of protection policy applied to this VM.
         :param pulumi.Input[_builtins.str] protection_type: The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]] serial_ports: Serial ports configured on the VM.
@@ -2018,6 +2102,7 @@ class VirtualMachineV2(pulumi.CustomResource):
         __props__.__dict__["num_threads_per_core"] = num_threads_per_core
         __props__.__dict__["ownership_infos"] = ownership_infos
         __props__.__dict__["power_state"] = power_state
+        __props__.__dict__["projects"] = projects
         __props__.__dict__["protection_policy_states"] = protection_policy_states
         __props__.__dict__["protection_type"] = protection_type
         __props__.__dict__["serial_ports"] = serial_ports
@@ -2316,6 +2401,14 @@ class VirtualMachineV2(pulumi.CustomResource):
     @pulumi.getter(name="powerState")
     def power_state(self) -> pulumi.Output[Optional[_builtins.str]]:
         return pulumi.get(self, "power_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> pulumi.Output[Sequence['outputs.VirtualMachineV2Project']]:
+        """
+        Reference to a project.
+        """
+        return pulumi.get(self, "projects")
 
     @_builtins.property
     @pulumi.getter(name="protectionPolicyStates")

@@ -99,7 +99,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `Value`: value of address
         /// - `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Subnets/operation/listSubnets).
+        /// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Subnets/operation/listSubnets).
         /// </summary>
         public static Task<GetSubnetsV2Result> InvokeAsync(GetSubnetsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubnetsV2Result>("nutanix:index/getSubnetsV2:getSubnetsV2", args ?? new GetSubnetsV2Args(), options.WithDefaults());
@@ -191,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `Value`: value of address
         /// - `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Subnets/operation/listSubnets).
+        /// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Subnets/operation/listSubnets).
         /// </summary>
         public static Output<GetSubnetsV2Result> Invoke(GetSubnetsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubnetsV2Result>("nutanix:index/getSubnetsV2:getSubnetsV2", args ?? new GetSubnetsV2InvokeArgs(), options.WithDefaults());
@@ -283,7 +283,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - `Value`: value of address
         /// - `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Subnets/operation/listSubnets).
+        /// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Subnets/operation/listSubnets).
         /// </summary>
         public static Output<GetSubnetsV2Result> Invoke(GetSubnetsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubnetsV2Result>("nutanix:index/getSubnetsV2:getSubnetsV2", args ?? new GetSubnetsV2InvokeArgs(), options.WithDefaults());

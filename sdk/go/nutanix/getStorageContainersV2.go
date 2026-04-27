@@ -88,7 +88,7 @@ import (
 //
 // * `value`: value of fqdn address
 //
-// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/StorageContainers/operation/listStorageContainers).
+// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/StorageContainers/operation/listStorageContainers).
 func LookupStorageContainersV2(ctx *pulumi.Context, args *LookupStorageContainersV2Args, opts ...pulumi.InvokeOption) (*LookupStorageContainersV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupStorageContainersV2Result

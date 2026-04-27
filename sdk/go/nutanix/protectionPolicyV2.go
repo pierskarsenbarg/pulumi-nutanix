@@ -12,6 +12,8 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// > **Authentication:** The `ProtectionPolicyV2` resource does **not** support API key authentication for multi-site protection policy operations. Use `username` and `password` in the provider configuration—do not use `apiKey`. Using API key will result in authorization errors (DPO-10600).
+//
 // Creates a protection policy to automate the recovery point creation and replication process.
 //
 // ## Example—Synchronous Protection Policy

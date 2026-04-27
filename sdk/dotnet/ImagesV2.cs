@@ -10,42 +10,165 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Create an image using the provided request body. Name, type and source are mandatory fields to create an image.
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var img_1 = new Nutanix.Index.ImagesV2("img-1", new()
+    ///     {
+    ///         Name = "test-image",
+    ///         Description = "img desc",
+    ///         Type = "ISO_IMAGE",
+    ///         Sources = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ImagesV2SourceArgs
+    ///             {
+    ///                 UrlSources = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ImagesV2SourceUrlSourceArgs
+    ///                     {
+    ///                         Url = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var img_2 = new Nutanix.Index.ImagesV2("img-2", new()
+    ///     {
+    ///         Name = "test-image",
+    ///         Description = "img desc",
+    ///         Type = "DISK_IMAGE",
+    ///         Sources = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ImagesV2SourceArgs
+    ///             {
+    ///                 UrlSources = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ImagesV2SourceUrlSourceArgs
+    ///                     {
+    ///                         Url = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         ClusterLocationExtIds = new[]
+    ///         {
+    ///             "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///         },
+    ///     });
+    /// 
+    ///     var object_liteStore_img = new Nutanix.Index.ImagesV2("object-liteStore-img", new()
+    ///     {
+    ///         Name = "image-object-lite-example",
+    ///         Description = "Image created from object store",
+    ///         Type = "DISK_IMAGE",
+    ///         Sources = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ImagesV2SourceArgs
+    ///             {
+    ///                 ObjectLiteSources = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ImagesV2SourceObjectLiteSourceArgs
+    ///                     {
+    ///                         Key = "img-lite-key-example",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/imagesV2:ImagesV2")]
     public partial class ImagesV2 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// List of category external identifiers for an image.
+        /// </summary>
         [Output("categoryExtIds")]
         public Output<ImmutableArray<string>> CategoryExtIds { get; private set; } = null!;
 
+        /// <summary>
+        /// The checksum of an image.
+        /// </summary>
         [Output("checksums")]
         public Output<ImmutableArray<Outputs.ImagesV2Checksum>> Checksums { get; private set; } = null!;
 
+        /// <summary>
+        /// List of cluster external identifiers where the image is located.
+        /// </summary>
         [Output("clusterLocationExtIds")]
         public Output<ImmutableArray<string>> ClusterLocationExtIds { get; private set; } = null!;
 
+        /// <summary>
+        /// Create time of an image.
+        /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
+        /// <summary>
+        /// The user defined description of an image.
+        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
+        [Output("extId")]
+        public Output<string> ExtId { get; private set; } = null!;
+
+        /// <summary>
+        /// Last update time of an image.
+        /// </summary>
         [Output("lastUpdateTime")]
         public Output<string> LastUpdateTime { get; private set; } = null!;
 
+        [Output("links")]
+        public Output<ImmutableArray<Outputs.ImagesV2Link>> Links { get; private set; } = null!;
+
+        /// <summary>
+        /// The user defined name of an image.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// External identifier of the owner of the image
+        /// </summary>
         [Output("ownerExtId")]
         public Output<string> OwnerExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// Status of an image placement policy.
+        /// </summary>
         [Output("placementPolicyStatuses")]
         public Output<ImmutableArray<Outputs.ImagesV2PlacementPolicyStatus>> PlacementPolicyStatuses { get; private set; } = null!;
 
+        /// <summary>
+        /// The size in bytes of an image file.
+        /// </summary>
         [Output("sizeBytes")]
         public Output<int> SizeBytes { get; private set; } = null!;
 
+        /// <summary>
+        /// The source of an image. It can be a VM disk or a URL.
+        /// </summary>
         [Output("sources")]
         public Output<ImmutableArray<Outputs.ImagesV2Source>> Sources { get; private set; } = null!;
 
+        [Output("tenantId")]
+        public Output<string> TenantId { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+        /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
@@ -98,6 +221,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("categoryExtIds")]
         private InputList<string>? _categoryExtIds;
+
+        /// <summary>
+        /// List of category external identifiers for an image.
+        /// </summary>
         public InputList<string> CategoryExtIds
         {
             get => _categoryExtIds ?? (_categoryExtIds = new InputList<string>());
@@ -106,6 +233,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("checksums")]
         private InputList<Inputs.ImagesV2ChecksumArgs>? _checksums;
+
+        /// <summary>
+        /// The checksum of an image.
+        /// </summary>
         public InputList<Inputs.ImagesV2ChecksumArgs> Checksums
         {
             get => _checksums ?? (_checksums = new InputList<Inputs.ImagesV2ChecksumArgs>());
@@ -114,26 +245,43 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("clusterLocationExtIds")]
         private InputList<string>? _clusterLocationExtIds;
+
+        /// <summary>
+        /// List of cluster external identifiers where the image is located.
+        /// </summary>
         public InputList<string> ClusterLocationExtIds
         {
             get => _clusterLocationExtIds ?? (_clusterLocationExtIds = new InputList<string>());
             set => _clusterLocationExtIds = value;
         }
 
+        /// <summary>
+        /// The user defined description of an image.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// The user defined name of an image.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("sources")]
         private InputList<Inputs.ImagesV2SourceArgs>? _sources;
+
+        /// <summary>
+        /// The source of an image. It can be a VM disk or a URL.
+        /// </summary>
         public InputList<Inputs.ImagesV2SourceArgs> Sources
         {
             get => _sources ?? (_sources = new InputList<Inputs.ImagesV2SourceArgs>());
             set => _sources = value;
         }
 
+        /// <summary>
+        /// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
@@ -147,6 +295,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("categoryExtIds")]
         private InputList<string>? _categoryExtIds;
+
+        /// <summary>
+        /// List of category external identifiers for an image.
+        /// </summary>
         public InputList<string> CategoryExtIds
         {
             get => _categoryExtIds ?? (_categoryExtIds = new InputList<string>());
@@ -155,6 +307,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("checksums")]
         private InputList<Inputs.ImagesV2ChecksumGetArgs>? _checksums;
+
+        /// <summary>
+        /// The checksum of an image.
+        /// </summary>
         public InputList<Inputs.ImagesV2ChecksumGetArgs> Checksums
         {
             get => _checksums ?? (_checksums = new InputList<Inputs.ImagesV2ChecksumGetArgs>());
@@ -163,46 +319,93 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("clusterLocationExtIds")]
         private InputList<string>? _clusterLocationExtIds;
+
+        /// <summary>
+        /// List of cluster external identifiers where the image is located.
+        /// </summary>
         public InputList<string> ClusterLocationExtIds
         {
             get => _clusterLocationExtIds ?? (_clusterLocationExtIds = new InputList<string>());
             set => _clusterLocationExtIds = value;
         }
 
+        /// <summary>
+        /// Create time of an image.
+        /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
+        /// <summary>
+        /// The user defined description of an image.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        [Input("extId")]
+        public Input<string>? ExtId { get; set; }
+
+        /// <summary>
+        /// Last update time of an image.
+        /// </summary>
         [Input("lastUpdateTime")]
         public Input<string>? LastUpdateTime { get; set; }
 
+        [Input("links")]
+        private InputList<Inputs.ImagesV2LinkGetArgs>? _links;
+        public InputList<Inputs.ImagesV2LinkGetArgs> Links
+        {
+            get => _links ?? (_links = new InputList<Inputs.ImagesV2LinkGetArgs>());
+            set => _links = value;
+        }
+
+        /// <summary>
+        /// The user defined name of an image.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// External identifier of the owner of the image
+        /// </summary>
         [Input("ownerExtId")]
         public Input<string>? OwnerExtId { get; set; }
 
         [Input("placementPolicyStatuses")]
         private InputList<Inputs.ImagesV2PlacementPolicyStatusGetArgs>? _placementPolicyStatuses;
+
+        /// <summary>
+        /// Status of an image placement policy.
+        /// </summary>
         public InputList<Inputs.ImagesV2PlacementPolicyStatusGetArgs> PlacementPolicyStatuses
         {
             get => _placementPolicyStatuses ?? (_placementPolicyStatuses = new InputList<Inputs.ImagesV2PlacementPolicyStatusGetArgs>());
             set => _placementPolicyStatuses = value;
         }
 
+        /// <summary>
+        /// The size in bytes of an image file.
+        /// </summary>
         [Input("sizeBytes")]
         public Input<int>? SizeBytes { get; set; }
 
         [Input("sources")]
         private InputList<Inputs.ImagesV2SourceGetArgs>? _sources;
+
+        /// <summary>
+        /// The source of an image. It can be a VM disk or a URL.
+        /// </summary>
         public InputList<Inputs.ImagesV2SourceGetArgs> Sources
         {
             get => _sources ?? (_sources = new InputList<Inputs.ImagesV2SourceGetArgs>());
             set => _sources = value;
         }
 
+        [Input("tenantId")]
+        public Input<string>? TenantId { get; set; }
+
+        /// <summary>
+        /// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

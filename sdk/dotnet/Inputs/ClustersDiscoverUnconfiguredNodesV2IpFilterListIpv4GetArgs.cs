@@ -22,8 +22,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// -(Required) The IPv4/IPv6 address of the host.
         /// </summary>
-        [Input("value")]
-        public Input<string>? Value { get; set; }
+        [Input("value", required: true)]
+        public Input<string> Value { get; set; } = null!;
 
         public ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv4GetArgs()
         {

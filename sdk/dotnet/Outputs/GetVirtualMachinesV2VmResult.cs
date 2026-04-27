@@ -51,6 +51,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly int NumThreadsPerCore;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmOwnershipInfoResult> OwnershipInfos;
         public readonly string PowerState;
+        public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmProjectResult> Projects;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmProtectionPolicyStateResult> ProtectionPolicyStates;
         public readonly string ProtectionType;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmSerialPortResult> SerialPorts;
@@ -135,6 +136,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string powerState,
 
+            ImmutableArray<Outputs.GetVirtualMachinesV2VmProjectResult> projects,
+
             ImmutableArray<Outputs.GetVirtualMachinesV2VmProtectionPolicyStateResult> protectionPolicyStates,
 
             string protectionType,
@@ -186,6 +189,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             NumThreadsPerCore = numThreadsPerCore;
             OwnershipInfos = ownershipInfos;
             PowerState = powerState;
+            Projects = projects;
             ProtectionPolicyStates = protectionPolicyStates;
             ProtectionType = protectionType;
             SerialPorts = serialPorts;

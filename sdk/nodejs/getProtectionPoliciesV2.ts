@@ -7,6 +7,8 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
+ * > **Authentication:** Protection policy operations do **not** support API key authentication. Use `username` and `password` in the provider configuration.
+ *
  * List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
  *
  * ## Example Usage
@@ -120,7 +122,7 @@ import * as utilities from "./utilities";
  *    * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
  * * `frequency`: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
  *
- * See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+ * See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
  */
 export function getProtectionPoliciesV2(args?: GetProtectionPoliciesV2Args, opts?: pulumi.InvokeOptions): Promise<GetProtectionPoliciesV2Result> {
     args = args || {};
@@ -186,6 +188,8 @@ export interface GetProtectionPoliciesV2Result {
     readonly select?: string;
 }
 /**
+ * > **Authentication:** Protection policy operations do **not** support API key authentication. Use `username` and `password` in the provider configuration.
+ *
  * List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
  *
  * ## Example Usage
@@ -299,7 +303,7 @@ export interface GetProtectionPoliciesV2Result {
  *    * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
  * * `frequency`: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
  *
- * See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+ * See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
  */
 export function getProtectionPoliciesV2Output(args?: GetProtectionPoliciesV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionPoliciesV2Result> {
     args = args || {};

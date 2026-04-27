@@ -61,7 +61,7 @@ namespace PiersKarsenbarg.Nutanix
         /// -(Optional) Identifier for the User Group in the form of a distinguished name.
         /// </summary>
         [Output("distinguishedName")]
-        public Output<string?> DistinguishedName { get; private set; } = null!;
+        public Output<string> DistinguishedName { get; private set; } = null!;
 
         /// <summary>
         /// The External Identifier of the User Group.

@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetTemplateV2TemplateVersionSpecVmSpecNicResult
     {
         /// <summary>
-        /// Defines a NIC emulated by the hypervisor
+        /// (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfoResult> BackingInfos;
         /// <summary>
@@ -27,9 +27,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicLinkResult> Links;
         /// <summary>
-        /// Network information for a NIC.
+        /// (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoResult> NetworkInfos;
+        /// <summary>
+        /// New NIC backing info (v2.4.1+). One of `VirtualEthernetNic`, `SriovNic`, `DpOffloadNic`.
+        /// </summary>
+        public readonly Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoResult NicBackingInfo;
+        /// <summary>
+        /// New NIC network info (v2.4.1+). One of `VirtualEthernetNicNetworkInfo`, `SriovNicNetworkInfo`, `DpOffloadNicNetworkInfo`.
+        /// </summary>
+        public readonly Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoResult NicNetworkInfo;
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         /// </summary>
@@ -45,12 +53,18 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoResult> networkInfos,
 
+            Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoResult nicBackingInfo,
+
+            Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoResult nicNetworkInfo,
+
             string tenantId)
         {
             BackingInfos = backingInfos;
             ExtId = extId;
             Links = links;
             NetworkInfos = networkInfos;
+            NicBackingInfo = nicBackingInfo;
+            NicNetworkInfo = nicNetworkInfo;
             TenantId = tenantId;
         }
     }

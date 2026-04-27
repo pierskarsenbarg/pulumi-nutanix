@@ -13,7 +13,9 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetProtectionPolicyV2
     {
         /// <summary>
-        /// Describes the Fetches the protection policy identified by an external identifier.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use `Username` and `Password` in the provider configuration.
+        /// 
+        /// Fetches the protection policy identified by an external identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -37,7 +39,9 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionPolicyV2Result>("nutanix:index/getProtectionPolicyV2:getProtectionPolicyV2", args ?? new GetProtectionPolicyV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Describes the Fetches the protection policy identified by an external identifier.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use `Username` and `Password` in the provider configuration.
+        /// 
+        /// Fetches the protection policy identified by an external identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -61,7 +65,9 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPolicyV2Result>("nutanix:index/getProtectionPolicyV2:getProtectionPolicyV2", args ?? new GetProtectionPolicyV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Describes the Fetches the protection policy identified by an external identifier.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use `Username` and `Password` in the provider configuration.
+        /// 
+        /// Fetches the protection policy identified by an external identifier.
         /// 
         /// ## Example Usage
         /// 

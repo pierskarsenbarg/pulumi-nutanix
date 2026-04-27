@@ -26,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// - A globally unique identifier of an instance that is suitable for external consumption.
+        /// -(Optional) External Identifier of the User.
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }

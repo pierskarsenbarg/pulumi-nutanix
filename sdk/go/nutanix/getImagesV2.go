@@ -80,7 +80,7 @@ import (
 // * `enforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
 // * `conflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
 //
-// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
+// See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Images)
 func LookupImagesV2(ctx *pulumi.Context, args *LookupImagesV2Args, opts ...pulumi.InvokeOption) (*LookupImagesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupImagesV2Result

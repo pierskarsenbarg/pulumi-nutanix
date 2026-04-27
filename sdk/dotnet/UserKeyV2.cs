@@ -35,32 +35,32 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
-    /// ## Argument Reference
     /// 
-    /// The following arguments are supported:
+    /// ## Lifecycle Behavior
     /// 
-    /// * `UserExtId`: - ( Required ) External Identifier of the User.
-    /// * `Name`: - ( Required ) Identifier for the key in the form of a name.
-    /// * `Description`: - ( Optional ) Brief description of the key.
-    /// * `KeyType`: - ( Required ) The type of key. Enum Values:
-    ///       * "API_KEY":	A key type that is used to identify a service.
-    ///       * "OBJECT_KEY":	A combination of access key and secret key to sign an API request.
-    /// * `CreationType`: - ( Optional ) The creation mechanism of this entity. Enum Values:
-    ///       * "PREDEFINED":	Predefined creator workflow type is for entity created by the system.
-    ///       * "SERVICEDEFINED":	Servicedefined creator workflow type is for entity created by the service.
-    ///       * "USERDEFINED":	Userdefined creator workflow type is for entity created by the users.
-    /// * `ExpiryTime`: - ( Optional ) The time when the key will expire.
-    /// * `Status`: - ( Optional ) The status of the key. Enum Values:
-    ///       * "REVOKED":	Key is revoked.
-    ///       * "VALID":	Key is valid.
-    ///       * "EXPIRED":	Key is expired.
-    /// * `AssignedTo`: - ( Optional ) External client to whom the given key is allocated.
+    /// &gt; Important: The nutanix.UserKeyV2 resource does not support in-place updates.
+    /// 
+    /// Changes to the following arguments will force the resource to be replaced:
+    /// 
+    /// - name
+    /// 
+    /// - description
+    /// 
+    /// - KeyType
+    /// 
+    /// - ExpiryTime
+    /// 
+    /// - AssignedTo
+    /// 
+    /// When any of these arguments are modified, Terraform will destroy the existing user key and create a new one. This results in a new key being generated.
+    /// 
+    /// &gt; Note: Replacing the resource invalidates the previously generated key. Ensure that any dependent systems are updated before applying the changes.
     /// </summary>
     [NutanixResourceType("nutanix:index/userKeyV2:UserKeyV2")]
     public partial class UserKeyV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// - External client to whom the given key is allocated.
+        /// - ( Optional ) External client to whom the given key is allocated.
         /// </summary>
         [Output("assignedTo")]
         public Output<string> AssignedTo { get; private set; } = null!;
@@ -78,19 +78,22 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// - The creation mechanism of this entity.
+        /// - ( Optional ) The creation mechanism of this entity. Enum Values:
+        /// _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+        /// _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+        /// _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         /// </summary>
         [Output("creationType")]
         public Output<string> CreationType { get; private set; } = null!;
 
         /// <summary>
-        /// - Brief description of the key.
+        /// - ( Optional ) Brief description of the key.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// - The time when the key will expire.
+        /// - ( Optional ) The time when the key will expire.
         /// </summary>
         [Output("expiryTime")]
         public Output<string> ExpiryTime { get; private set; } = null!;
@@ -108,7 +111,9 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.UserKeyV2KeyDetail>> KeyDetails { get; private set; } = null!;
 
         /// <summary>
-        /// - The type of key.
+        /// - ( Required ) The type of key. Enum Values:
+        /// _ "API_KEY": A key type that is used to identify a service.
+        /// _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         /// </summary>
         [Output("keyType")]
         public Output<string> KeyType { get; private set; } = null!;
@@ -138,13 +143,16 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.UserKeyV2Link>> Links { get; private set; } = null!;
 
         /// <summary>
-        /// - Identifier for the key in the form of a name.
+        /// - ( Required ) Identifier for the key in the form of a name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// - The status of the key.
+        /// - ( Optional ) The status of the key. Enum Values:
+        /// _ "REVOKED": Key is revoked.
+        /// _ "VALID": Key is valid.
+        /// _ "EXPIRED": Key is expired.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -155,6 +163,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("tenantId")]
         public Output<string> TenantId { get; private set; } = null!;
 
+        /// <summary>
+        /// - ( Required ) External Identifier of the User.
+        /// </summary>
         [Output("userExtId")]
         public Output<string> UserExtId { get; private set; } = null!;
 
@@ -206,7 +217,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class UserKeyV2Args : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - External client to whom the given key is allocated.
+        /// - ( Optional ) External client to whom the given key is allocated.
         /// </summary>
         [Input("assignedTo")]
         public Input<string>? AssignedTo { get; set; }
@@ -224,25 +235,30 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// - The creation mechanism of this entity.
+        /// - ( Optional ) The creation mechanism of this entity. Enum Values:
+        /// _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+        /// _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+        /// _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         /// </summary>
         [Input("creationType")]
         public Input<string>? CreationType { get; set; }
 
         /// <summary>
-        /// - Brief description of the key.
+        /// - ( Optional ) Brief description of the key.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - The time when the key will expire.
+        /// - ( Optional ) The time when the key will expire.
         /// </summary>
         [Input("expiryTime")]
         public Input<string>? ExpiryTime { get; set; }
 
         /// <summary>
-        /// - The type of key.
+        /// - ( Required ) The type of key. Enum Values:
+        /// _ "API_KEY": A key type that is used to identify a service.
+        /// _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         /// </summary>
         [Input("keyType", required: true)]
         public Input<string> KeyType { get; set; } = null!;
@@ -266,17 +282,23 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? LastUsedTime { get; set; }
 
         /// <summary>
-        /// - Identifier for the key in the form of a name.
+        /// - ( Required ) Identifier for the key in the form of a name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// - The status of the key.
+        /// - ( Optional ) The status of the key. Enum Values:
+        /// _ "REVOKED": Key is revoked.
+        /// _ "VALID": Key is valid.
+        /// _ "EXPIRED": Key is expired.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
+        /// <summary>
+        /// - ( Required ) External Identifier of the User.
+        /// </summary>
         [Input("userExtId", required: true)]
         public Input<string> UserExtId { get; set; } = null!;
 
@@ -289,7 +311,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class UserKeyV2State : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - External client to whom the given key is allocated.
+        /// - ( Optional ) External client to whom the given key is allocated.
         /// </summary>
         [Input("assignedTo")]
         public Input<string>? AssignedTo { get; set; }
@@ -307,19 +329,22 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// - The creation mechanism of this entity.
+        /// - ( Optional ) The creation mechanism of this entity. Enum Values:
+        /// _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+        /// _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+        /// _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         /// </summary>
         [Input("creationType")]
         public Input<string>? CreationType { get; set; }
 
         /// <summary>
-        /// - Brief description of the key.
+        /// - ( Optional ) Brief description of the key.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - The time when the key will expire.
+        /// - ( Optional ) The time when the key will expire.
         /// </summary>
         [Input("expiryTime")]
         public Input<string>? ExpiryTime { get; set; }
@@ -343,7 +368,9 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - The type of key.
+        /// - ( Required ) The type of key. Enum Values:
+        /// _ "API_KEY": A key type that is used to identify a service.
+        /// _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         /// </summary>
         [Input("keyType")]
         public Input<string>? KeyType { get; set; }
@@ -379,13 +406,16 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - Identifier for the key in the form of a name.
+        /// - ( Required ) Identifier for the key in the form of a name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// - The status of the key.
+        /// - ( Optional ) The status of the key. Enum Values:
+        /// _ "REVOKED": Key is revoked.
+        /// _ "VALID": Key is valid.
+        /// _ "EXPIRED": Key is expired.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -396,6 +426,9 @@ namespace PiersKarsenbarg.Nutanix
         [Input("tenantId")]
         public Input<string>? TenantId { get; set; }
 
+        /// <summary>
+        /// - ( Required ) External Identifier of the User.
+        /// </summary>
         [Input("userExtId")]
         public Input<string>? UserExtId { get; set; }
 

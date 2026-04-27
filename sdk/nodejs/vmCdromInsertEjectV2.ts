@@ -34,8 +34,12 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmCdromInsertEjectV2.__pulumiType;
     }
 
+    declare public readonly action: pulumi.Output<string | undefined>;
     declare public readonly backingInfos: pulumi.Output<outputs.VmCdromInsertEjectV2BackingInfo[] | undefined>;
+    declare public /*out*/ readonly cdromExtId: pulumi.Output<string>;
+    declare public /*out*/ readonly diskAddresses: pulumi.Output<outputs.VmCdromInsertEjectV2DiskAddress[]>;
     declare public readonly extId: pulumi.Output<string>;
+    declare public /*out*/ readonly isoType: pulumi.Output<string>;
     declare public readonly vmExtId: pulumi.Output<string>;
 
     /**
@@ -51,8 +55,12 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmCdromInsertEjectV2State | undefined;
+            resourceInputs["action"] = state?.action;
             resourceInputs["backingInfos"] = state?.backingInfos;
+            resourceInputs["cdromExtId"] = state?.cdromExtId;
+            resourceInputs["diskAddresses"] = state?.diskAddresses;
             resourceInputs["extId"] = state?.extId;
+            resourceInputs["isoType"] = state?.isoType;
             resourceInputs["vmExtId"] = state?.vmExtId;
         } else {
             const args = argsOrState as VmCdromInsertEjectV2Args | undefined;
@@ -62,9 +70,13 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
             if (args?.vmExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmExtId'");
             }
+            resourceInputs["action"] = args?.action;
             resourceInputs["backingInfos"] = args?.backingInfos;
             resourceInputs["extId"] = args?.extId;
             resourceInputs["vmExtId"] = args?.vmExtId;
+            resourceInputs["cdromExtId"] = undefined /*out*/;
+            resourceInputs["diskAddresses"] = undefined /*out*/;
+            resourceInputs["isoType"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VmCdromInsertEjectV2.__pulumiType, name, resourceInputs, opts);
@@ -75,8 +87,12 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmCdromInsertEjectV2 resources.
  */
 export interface VmCdromInsertEjectV2State {
+    action?: pulumi.Input<string>;
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[]>;
+    cdromExtId?: pulumi.Input<string>;
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2DiskAddress>[]>;
     extId?: pulumi.Input<string>;
+    isoType?: pulumi.Input<string>;
     vmExtId?: pulumi.Input<string>;
 }
 
@@ -84,6 +100,7 @@ export interface VmCdromInsertEjectV2State {
  * The set of arguments for constructing a VmCdromInsertEjectV2 resource.
  */
 export interface VmCdromInsertEjectV2Args {
+    action?: pulumi.Input<string>;
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[]>;
     extId: pulumi.Input<string>;
     vmExtId: pulumi.Input<string>;

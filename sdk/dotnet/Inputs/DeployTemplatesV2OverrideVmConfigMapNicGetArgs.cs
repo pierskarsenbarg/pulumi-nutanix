@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("backingInfos")]
         private InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfoGetArgs>? _backingInfos;
+        [Obsolete(@"The `BackingInfo` attribute is deprecated. Use `NicBackingInfo` instead. This field will be removed in a future release.")]
         public InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfoGetArgs> BackingInfos
         {
             get => _backingInfos ?? (_backingInfos = new InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfoGetArgs>());
@@ -26,11 +27,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("networkInfos")]
         private InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoGetArgs>? _networkInfos;
+        [Obsolete(@"The `NetworkInfo` attribute is deprecated. Use `NicNetworkInfo` instead. This field will be removed in a future release.")]
         public InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoGetArgs> NetworkInfos
         {
             get => _networkInfos ?? (_networkInfos = new InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoGetArgs>());
             set => _networkInfos = value;
         }
+
+        [Input("nicBackingInfo")]
+        public Input<Inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoGetArgs>? NicBackingInfo { get; set; }
+
+        [Input("nicNetworkInfo")]
+        public Input<Inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoGetArgs>? NicNetworkInfo { get; set; }
 
         public DeployTemplatesV2OverrideVmConfigMapNicGetArgs()
         {

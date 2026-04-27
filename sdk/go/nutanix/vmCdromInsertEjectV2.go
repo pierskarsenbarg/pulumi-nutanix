@@ -15,9 +15,13 @@ import (
 type VmCdromInsertEjectV2 struct {
 	pulumi.CustomResourceState
 
-	BackingInfos VmCdromInsertEjectV2BackingInfoArrayOutput `pulumi:"backingInfos"`
-	ExtId        pulumi.StringOutput                        `pulumi:"extId"`
-	VmExtId      pulumi.StringOutput                        `pulumi:"vmExtId"`
+	Action        pulumi.StringPtrOutput                     `pulumi:"action"`
+	BackingInfos  VmCdromInsertEjectV2BackingInfoArrayOutput `pulumi:"backingInfos"`
+	CdromExtId    pulumi.StringOutput                        `pulumi:"cdromExtId"`
+	DiskAddresses VmCdromInsertEjectV2DiskAddressArrayOutput `pulumi:"diskAddresses"`
+	ExtId         pulumi.StringOutput                        `pulumi:"extId"`
+	IsoType       pulumi.StringOutput                        `pulumi:"isoType"`
+	VmExtId       pulumi.StringOutput                        `pulumi:"vmExtId"`
 }
 
 // NewVmCdromInsertEjectV2 registers a new resource with the given unique name, arguments, and options.
@@ -56,15 +60,23 @@ func GetVmCdromInsertEjectV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmCdromInsertEjectV2 resources.
 type vmCdromInsertEjectV2State struct {
-	BackingInfos []VmCdromInsertEjectV2BackingInfo `pulumi:"backingInfos"`
-	ExtId        *string                           `pulumi:"extId"`
-	VmExtId      *string                           `pulumi:"vmExtId"`
+	Action        *string                           `pulumi:"action"`
+	BackingInfos  []VmCdromInsertEjectV2BackingInfo `pulumi:"backingInfos"`
+	CdromExtId    *string                           `pulumi:"cdromExtId"`
+	DiskAddresses []VmCdromInsertEjectV2DiskAddress `pulumi:"diskAddresses"`
+	ExtId         *string                           `pulumi:"extId"`
+	IsoType       *string                           `pulumi:"isoType"`
+	VmExtId       *string                           `pulumi:"vmExtId"`
 }
 
 type VmCdromInsertEjectV2State struct {
-	BackingInfos VmCdromInsertEjectV2BackingInfoArrayInput
-	ExtId        pulumi.StringPtrInput
-	VmExtId      pulumi.StringPtrInput
+	Action        pulumi.StringPtrInput
+	BackingInfos  VmCdromInsertEjectV2BackingInfoArrayInput
+	CdromExtId    pulumi.StringPtrInput
+	DiskAddresses VmCdromInsertEjectV2DiskAddressArrayInput
+	ExtId         pulumi.StringPtrInput
+	IsoType       pulumi.StringPtrInput
+	VmExtId       pulumi.StringPtrInput
 }
 
 func (VmCdromInsertEjectV2State) ElementType() reflect.Type {
@@ -72,6 +84,7 @@ func (VmCdromInsertEjectV2State) ElementType() reflect.Type {
 }
 
 type vmCdromInsertEjectV2Args struct {
+	Action       *string                           `pulumi:"action"`
 	BackingInfos []VmCdromInsertEjectV2BackingInfo `pulumi:"backingInfos"`
 	ExtId        string                            `pulumi:"extId"`
 	VmExtId      string                            `pulumi:"vmExtId"`
@@ -79,6 +92,7 @@ type vmCdromInsertEjectV2Args struct {
 
 // The set of arguments for constructing a VmCdromInsertEjectV2 resource.
 type VmCdromInsertEjectV2Args struct {
+	Action       pulumi.StringPtrInput
 	BackingInfos VmCdromInsertEjectV2BackingInfoArrayInput
 	ExtId        pulumi.StringInput
 	VmExtId      pulumi.StringInput
@@ -171,12 +185,28 @@ func (o VmCdromInsertEjectV2Output) ToVmCdromInsertEjectV2OutputWithContext(ctx 
 	return o
 }
 
+func (o VmCdromInsertEjectV2Output) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringPtrOutput { return v.Action }).(pulumi.StringPtrOutput)
+}
+
 func (o VmCdromInsertEjectV2Output) BackingInfos() VmCdromInsertEjectV2BackingInfoArrayOutput {
 	return o.ApplyT(func(v *VmCdromInsertEjectV2) VmCdromInsertEjectV2BackingInfoArrayOutput { return v.BackingInfos }).(VmCdromInsertEjectV2BackingInfoArrayOutput)
 }
 
+func (o VmCdromInsertEjectV2Output) CdromExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringOutput { return v.CdromExtId }).(pulumi.StringOutput)
+}
+
+func (o VmCdromInsertEjectV2Output) DiskAddresses() VmCdromInsertEjectV2DiskAddressArrayOutput {
+	return o.ApplyT(func(v *VmCdromInsertEjectV2) VmCdromInsertEjectV2DiskAddressArrayOutput { return v.DiskAddresses }).(VmCdromInsertEjectV2DiskAddressArrayOutput)
+}
+
 func (o VmCdromInsertEjectV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o VmCdromInsertEjectV2Output) IsoType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringOutput { return v.IsoType }).(pulumi.StringOutput)
 }
 
 func (o VmCdromInsertEjectV2Output) VmExtId() pulumi.StringOutput {

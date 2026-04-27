@@ -105,7 +105,7 @@ import (
 // - `value`: value of address
 // - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
 //
-// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Vpcs/operation/listVpcs).
+// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Vpcs/operation/listVpcs).
 func GetVpcsV2(ctx *pulumi.Context, args *GetVpcsV2Args, opts ...pulumi.InvokeOption) (*GetVpcsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVpcsV2Result

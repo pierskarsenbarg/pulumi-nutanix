@@ -58,7 +58,7 @@ import * as utilities from "./utilities";
  * * `enforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
  * * `conflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
  *
- * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
+ * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Images)
  */
 export function getImagesV2(args?: GetImagesV2Args, opts?: pulumi.InvokeOptions): Promise<GetImagesV2Result> {
     args = args || {};
@@ -189,7 +189,7 @@ export interface GetImagesV2Result {
  * * `enforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
  * * `conflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
  *
- * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
+ * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Images)
  */
 export function getImagesV2Output(args?: GetImagesV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImagesV2Result> {
     args = args || {};

@@ -53,7 +53,7 @@ class VolumeGroupV2Args:
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]] iscsi_features: -(Optional) iSCSI specific settings for the Volume Group.
         :param pulumi.Input[_builtins.str] name: -(Required) Volume Group name. This is an optional field.
         :param pulumi.Input[_builtins.str] protocol: -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-               - NOT_ASSIGNED :  Volume Group does not use any protocol.
+               - NOT_ASSIGNED : Volume Group does not use any protocol.
                - ISCSI : Volume Group uses iSCSI protocol.
                - NVMF : Volume Group uses NVMf protocol.
         :param pulumi.Input[_builtins.str] sharing_status: -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
@@ -61,7 +61,7 @@ class VolumeGroupV2Args:
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]] storage_features: -(Optional) Storage optimization features which must be enabled on the Volume Group.
         :param pulumi.Input[_builtins.str] target_name: -(Optional) Name of the external client target that will be visible and accessible to the client.
         :param pulumi.Input[_builtins.str] target_prefix: The specifications contain the target prefix for external clients as the value. This is an optional field.
-        :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         pulumi.set(__self__, "cluster_reference", cluster_reference)
         if attachment_type is not None:
@@ -211,7 +211,7 @@ class VolumeGroupV2Args:
     def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-        - NOT_ASSIGNED :  Volume Group does not use any protocol.
+        - NOT_ASSIGNED : Volume Group does not use any protocol.
         - ISCSI : Volume Group uses iSCSI protocol.
         - NVMF : Volume Group uses NVMf protocol.
         """
@@ -285,7 +285,7 @@ class VolumeGroupV2Args:
     @pulumi.getter(name="usageType")
     def usage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         return pulumi.get(self, "usage_type")
 
@@ -331,7 +331,7 @@ class _VolumeGroupV2State:
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]] iscsi_features: -(Optional) iSCSI specific settings for the Volume Group.
         :param pulumi.Input[_builtins.str] name: -(Required) Volume Group name. This is an optional field.
         :param pulumi.Input[_builtins.str] protocol: -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-               - NOT_ASSIGNED :  Volume Group does not use any protocol.
+               - NOT_ASSIGNED : Volume Group does not use any protocol.
                - ISCSI : Volume Group uses iSCSI protocol.
                - NVMF : Volume Group uses NVMf protocol.
         :param pulumi.Input[_builtins.str] sharing_status: -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
@@ -339,7 +339,7 @@ class _VolumeGroupV2State:
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]] storage_features: -(Optional) Storage optimization features which must be enabled on the Volume Group.
         :param pulumi.Input[_builtins.str] target_name: -(Optional) Name of the external client target that will be visible and accessible to the client.
         :param pulumi.Input[_builtins.str] target_prefix: The specifications contain the target prefix for external clients as the value. This is an optional field.
-        :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         if attachment_type is not None:
             pulumi.set(__self__, "attachment_type", attachment_type)
@@ -504,7 +504,7 @@ class _VolumeGroupV2State:
     def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-        - NOT_ASSIGNED :  Volume Group does not use any protocol.
+        - NOT_ASSIGNED : Volume Group does not use any protocol.
         - ISCSI : Volume Group uses iSCSI protocol.
         - NVMF : Volume Group uses NVMf protocol.
         """
@@ -578,7 +578,7 @@ class _VolumeGroupV2State:
     @pulumi.getter(name="usageType")
     def usage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         return pulumi.get(self, "usage_type")
 
@@ -656,7 +656,7 @@ class VolumeGroupV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]] iscsi_features: -(Optional) iSCSI specific settings for the Volume Group.
         :param pulumi.Input[_builtins.str] name: -(Required) Volume Group name. This is an optional field.
         :param pulumi.Input[_builtins.str] protocol: -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-               - NOT_ASSIGNED :  Volume Group does not use any protocol.
+               - NOT_ASSIGNED : Volume Group does not use any protocol.
                - ISCSI : Volume Group uses iSCSI protocol.
                - NVMF : Volume Group uses NVMf protocol.
         :param pulumi.Input[_builtins.str] sharing_status: -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
@@ -664,7 +664,7 @@ class VolumeGroupV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]] storage_features: -(Optional) Storage optimization features which must be enabled on the Volume Group.
         :param pulumi.Input[_builtins.str] target_name: -(Optional) Name of the external client target that will be visible and accessible to the client.
         :param pulumi.Input[_builtins.str] target_prefix: The specifications contain the target prefix for external clients as the value. This is an optional field.
-        :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         ...
     @overload
@@ -810,7 +810,7 @@ class VolumeGroupV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]] iscsi_features: -(Optional) iSCSI specific settings for the Volume Group.
         :param pulumi.Input[_builtins.str] name: -(Required) Volume Group name. This is an optional field.
         :param pulumi.Input[_builtins.str] protocol: -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-               - NOT_ASSIGNED :  Volume Group does not use any protocol.
+               - NOT_ASSIGNED : Volume Group does not use any protocol.
                - ISCSI : Volume Group uses iSCSI protocol.
                - NVMF : Volume Group uses NVMf protocol.
         :param pulumi.Input[_builtins.str] sharing_status: -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
@@ -818,7 +818,7 @@ class VolumeGroupV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]] storage_features: -(Optional) Storage optimization features which must be enabled on the Volume Group.
         :param pulumi.Input[_builtins.str] target_name: -(Optional) Name of the external client target that will be visible and accessible to the client.
         :param pulumi.Input[_builtins.str] target_prefix: The specifications contain the target prefix for external clients as the value. This is an optional field.
-        :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -845,7 +845,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
-    def attachment_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def attachment_type(self) -> pulumi.Output[_builtins.str]:
         """
         -(Optional) The field indicates whether a VG has a VM or an external attachment associated with it. Valid values are :
         - EXTERNAL : Volume Group has an external iSCSI or NVMf attachment.
@@ -864,7 +864,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def created_by(self) -> pulumi.Output[_builtins.str]:
         """
         -(Optional) Service/user who created this Volume Group.
         """
@@ -872,7 +872,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def description(self) -> pulumi.Output[_builtins.str]:
         """
         -(Optional) Volume Group description. This is an optional field.
         """
@@ -880,7 +880,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> pulumi.Output[Optional[Sequence['outputs.VolumeGroupV2Disk']]]:
+    def disks(self) -> pulumi.Output[Sequence['outputs.VolumeGroupV2Disk']]:
         """
         -(Optional) A list of Volume Disks to be attached to the Volume Group.
         """
@@ -904,7 +904,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="isHidden")
-    def is_hidden(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def is_hidden(self) -> pulumi.Output[_builtins.bool]:
         """
         -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
         """
@@ -928,10 +928,10 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def protocol(self) -> pulumi.Output[_builtins.str]:
         """
         -(Optional) Type of protocol to be used for Volume Group. Valid values are :
-        - NOT_ASSIGNED :  Volume Group does not use any protocol.
+        - NOT_ASSIGNED : Volume Group does not use any protocol.
         - ISCSI : Volume Group uses iSCSI protocol.
         - NVMF : Volume Group uses NVMf protocol.
         """
@@ -939,7 +939,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="sharingStatus")
-    def sharing_status(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def sharing_status(self) -> pulumi.Output[_builtins.str]:
         """
         -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
         """
@@ -947,7 +947,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="shouldLoadBalanceVmAttachments")
-    def should_load_balance_vm_attachments(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def should_load_balance_vm_attachments(self) -> pulumi.Output[_builtins.bool]:
         """
         -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
         """
@@ -955,7 +955,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="storageFeatures")
-    def storage_features(self) -> pulumi.Output[Optional[Sequence['outputs.VolumeGroupV2StorageFeature']]]:
+    def storage_features(self) -> pulumi.Output[Sequence['outputs.VolumeGroupV2StorageFeature']]:
         """
         -(Optional) Storage optimization features which must be enabled on the Volume Group.
         """
@@ -971,7 +971,7 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="targetPrefix")
-    def target_prefix(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def target_prefix(self) -> pulumi.Output[_builtins.str]:
         """
         The specifications contain the target prefix for external clients as the value. This is an optional field.
         """
@@ -979,9 +979,9 @@ class VolumeGroupV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="usageType")
-    def usage_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def usage_type(self) -> pulumi.Output[_builtins.str]:
         """
-        -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         return pulumi.get(self, "usage_type")
 

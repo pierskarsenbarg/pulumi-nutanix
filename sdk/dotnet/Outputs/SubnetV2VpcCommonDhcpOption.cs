@@ -14,6 +14,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VpcCommonDhcpOption
     {
+        /// <summary>
+        /// List of Domain Name Server addresses.
+        /// - `domain_name_servers.ipv4`: (Optional) Reference to address configuration
+        /// - `domain_name_servers.ipv6`: (Optional) Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcCommonDhcpOptionDomainNameServer> DomainNameServers;
 
         [OutputConstructor]

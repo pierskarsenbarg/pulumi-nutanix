@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class ImagesV2ChecksumGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The SHA1/SHA256 digest of an image file in hexadecimal format.
+        /// </summary>
         [Input("hexDigest", required: true)]
         public Input<string> HexDigest { get; set; } = null!;
 
+        /// <summary>
+        /// sha1 or sha256 type of image
+        /// </summary>
         [Input("objectType", required: true)]
         public Input<string> ObjectType { get; set; } = null!;
 
