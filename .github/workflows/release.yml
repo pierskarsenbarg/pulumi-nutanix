@@ -7,6 +7,10 @@ env:
   PULUMI_LOCAL_NUGET: ${{ github.workspace }}/nuget
   PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
   PYPI_USERNAME: "__token__"
+
+permissions:
+  id-token: write
+  contents: write
 jobs:
   build_sdk:
     name: build_sdk
