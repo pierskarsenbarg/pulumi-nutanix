@@ -181,7 +181,7 @@ jobs:
       - name: Set Release Version
         run: echo "GORELEASER_CURRENT_TAG=v$(pulumictl get version --language generic)" >> $GITHUB_ENV
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v7
+        uses: goreleaser/goreleaser-action@v6
         with:
           args: release --clean --timeout 60m0s
           version: latest
@@ -266,20 +266,20 @@ jobs:
       - name: Copy README to npm package
         run: cp ${{github.workspace}}/README.md ${{github.workspace}}/sdk/nodejs/bin
       - name: Publish NPM package
-        uses: JS-DevTools/npm-publish@v4
-        with:
-          access: "public"
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ${{github.workspace}}/sdk/nodejs/bin/package.json
+        run: npm publish --access public
+        working-directory: ${{github.workspace}}/sdk/nodejs/bin
       - name: Publish PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          user: ${{ env.PYPI_USERNAME }}
-          password: ${{ env.PYPI_PASSWORD }}
-          packages_dir: ${{github.workspace}}/sdk/python/bin/dist
+          packages-dir: ${{github.workspace}}/sdk/python/bin/dist
+      - name: Login to Nuget
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: pierspulumi
       - name: Publish Nuget package
         env:
-          NUGET_PUBLISH_KEY: ${{ secrets.NUGET_PUBLISH_KEY }}
+          NUGET_PUBLISH_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
         run: find "${{github.workspace}}/sdk/dotnet/bin/Debug/" -name 'PiersKarsenbarg.*.nupkg' -exec dotnet nuget push -k "${NUGET_PUBLISH_KEY}" -s https://api.nuget.org/v3/index.json {} ';'
     strategy:
       fail-fast: true
