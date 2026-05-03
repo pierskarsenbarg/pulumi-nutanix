@@ -8,7 +8,7 @@ replace (
 )
 
 require (
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.127.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.128.0
 	github.com/pulumi/pulumi/sdk/v3 v3.228.0
 	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20250821135208-4117db4b142a
 )
