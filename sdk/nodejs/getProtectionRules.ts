@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const protectionRules = nutanix.getProtectionRules({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionRules(opts?: pulumi.InvokeOptions): Promise<GetProtectionRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -46,12 +48,14 @@ export interface GetProtectionRulesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const protectionRules = nutanix.getProtectionRules({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionRulesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     slaId: "{{ sla_id }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NdbTmsCluster extends pulumi.CustomResource {
     /**
@@ -170,59 +172,59 @@ export interface NdbTmsClusterState {
     /**
      * created date of time machine associated with cluster
      */
-    dateCreated?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string | undefined>;
     /**
      * modified date of time machine associated with cluster
      */
-    dateModified?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string | undefined>;
     /**
      * description of nutanix cluster associated with time machine
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * log drive id
      */
-    logDriveId?: pulumi.Input<string>;
+    logDriveId?: pulumi.Input<string | undefined>;
     /**
      * log drive status of time machine
      */
-    logDriveStatus?: pulumi.Input<string>;
+    logDriveStatus?: pulumi.Input<string | undefined>;
     /**
      * Nutanix cluster id on the associated registered clusters.
      */
-    nxClusterId?: pulumi.Input<string>;
+    nxClusterId?: pulumi.Input<string | undefined>;
     /**
      * owner id
      */
-    ownerId?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string | undefined>;
     /**
      * schedule id of the data associated with time machine
      */
-    scheduleId?: pulumi.Input<string>;
+    scheduleId?: pulumi.Input<string | undefined>;
     /**
      * SLA id for the associated cluster.
      */
-    slaId?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string | undefined>;
     /**
      * source is present or not
      */
-    source?: pulumi.Input<boolean>;
+    source?: pulumi.Input<boolean | undefined>;
     /**
      * source clusters in time machines
      */
-    sourceClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    sourceClusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * status of the cluster associated with time machine
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * time machine id
      */
-    timeMachineId?: pulumi.Input<string>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
      * Default value is "OTHER"
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -244,5 +246,5 @@ export interface NdbTmsClusterArgs {
     /**
      * Default value is "OTHER"
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

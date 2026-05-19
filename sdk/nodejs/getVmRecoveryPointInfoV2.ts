@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,6 +22,7 @@ import * as utilities from "./utilities";
  *     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVmRecoveryPointInfoV2(args: GetVmRecoveryPointInfoV2Args, opts?: pulumi.InvokeOptions): Promise<GetVmRecoveryPointInfoV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -101,6 +103,7 @@ export interface GetVmRecoveryPointInfoV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -111,6 +114,7 @@ export interface GetVmRecoveryPointInfoV2Result {
  *     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVmRecoveryPointInfoV2Output(args: GetVmRecoveryPointInfoV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVmRecoveryPointInfoV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -128,7 +132,7 @@ export interface GetVmRecoveryPointInfoV2OutputArgs {
     /**
      * array of disk recovery points.
      */
-    diskRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.GetVmRecoveryPointInfoV2DiskRecoveryPointArgs>[]>;
+    diskRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.GetVmRecoveryPointInfoV2DiskRecoveryPointArgs>[] | undefined>;
     /**
      * The external identifier that can be used to identify a VM recovery point.
      */

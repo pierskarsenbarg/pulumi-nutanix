@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var user = new Nutanix.Index.User("user", new()
+    ///     var user = new Nutanix.User("user", new()
     ///     {
     ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
     ///         {
@@ -37,7 +38,9 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,7 +49,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var user = new Nutanix.Index.User("user", new()
+    ///     var user = new Nutanix.User("user", new()
     ///     {
     ///         IdentityProviderUser = new Nutanix.Inputs.UserIdentityProviderUserArgs
     ///         {
@@ -60,6 +63,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/user:User")]
     public partial class User : global::Pulumi.CustomResource

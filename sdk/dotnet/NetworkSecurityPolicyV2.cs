@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Network Security Policy TWO_ENV_ISOLATION Rule
-    ///     var isolation_nsp = new Nutanix.Index.NetworkSecurityPolicyV2("isolation-nsp", new()
+    ///     var isolation_nsp = new Nutanix.NetworkSecurityPolicyV2("isolation-nsp", new()
     ///     {
     ///         Name = "isolation_policy",
     ///         Description = "isolation policy example",
@@ -62,6 +63,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2")]
     public partial class NetworkSecurityPolicyV2 : global::Pulumi.CustomResource

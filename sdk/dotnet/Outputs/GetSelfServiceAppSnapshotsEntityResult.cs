@@ -43,7 +43,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// - The RecoveryPointInfoList contains information about recovery points for the snapshots. Each recovery point has the following attributes:
+        /// - The&lt;span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList "&gt; recoveryPointInfoList &lt;/span&gt;contains information about recovery points for the snapshots. Each recovery point has the following attributes:
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSelfServiceAppSnapshotsEntityRecoveryPointInfoListResult> RecoveryPointInfoLists;
         /// <summary>

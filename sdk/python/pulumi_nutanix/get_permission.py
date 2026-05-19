@@ -97,7 +97,7 @@ class GetPermissionResult:
     @pulumi.getter
     def fields(self) -> Sequence['outputs.GetPermissionFieldResult']:
         """
-        . The fields that can/cannot be accessed during the specified operation. field_name_list will be a list of fields. e.g. if field_mode = disallowed, field_name_list = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+        . The fields that can/cannot be accessed during the specified operation.<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>will be a list of fields. e.g. if<span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode "> fieldMode </span>= disallowed,<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
         """
         return pulumi.get(self, "fields")
 
@@ -113,7 +113,7 @@ class GetPermissionResult:
     @pulumi.getter
     def kind(self) -> _builtins.str:
         """
-        (Required) The kind name (Default value: `project`).
+        (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
         """
         return pulumi.get(self, "kind")
 
@@ -207,6 +207,7 @@ def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArg
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -216,11 +217,12 @@ def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArg
     #Get permission by name
     byname = nutanix.get_permission(permission_name="Access_Console_Virtual_Machine")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']] categories: The categories for this resource.
-    :param _builtins.str permission_id: The `id` of the permission.
-    :param _builtins.str permission_name: The `name` of the permission.
+    :param _builtins.str permission_id: The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the permission.
+    :param _builtins.str permission_name: The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> of the permission.
     """
     __args__ = dict()
     __args__['categories'] = categories
@@ -244,15 +246,16 @@ def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArg
         permission_name=pulumi.get(__ret__, 'permission_name'),
         project_reference=pulumi.get(__ret__, 'project_reference'),
         state=pulumi.get(__ret__, 'state'))
-def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']]]]] = None,
-                          permission_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          permission_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_permission_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']]]]] = None,
+                          permission_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          permission_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPermissionResult]:
     """
     Describe a Nutanix Permission and its values (if it has them).
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -262,11 +265,12 @@ def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
     #Get permission by name
     byname = nutanix.get_permission(permission_name="Access_Console_Virtual_Machine")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']] categories: The categories for this resource.
-    :param _builtins.str permission_id: The `id` of the permission.
-    :param _builtins.str permission_name: The `name` of the permission.
+    :param _builtins.str permission_id: The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the permission.
+    :param _builtins.str permission_name: The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> of the permission.
     """
     __args__ = dict()
     __args__['categories'] = categories

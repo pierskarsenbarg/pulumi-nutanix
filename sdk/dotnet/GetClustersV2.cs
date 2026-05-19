@@ -17,6 +17,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const cls = nutanix.getClustersV2({});
+        /// const filtered_cls = nutanix.getClustersV2({
+        ///     filter: "name eq 'cluster-1'",
+        /// });
+        /// const paged_cls = nutanix.getClustersV2({
+        ///     page: 1,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// cls = nutanix.get_clusters_v2()
+        /// filtered_cls = nutanix.get_clusters_v2(filter="name eq 'cluster-1'")
+        /// paged_cls = nutanix.get_clusters_v2(page=1,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,14 +48,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cls = Nutanix.Index.GetClustersV2.Invoke();
+        ///     var cls = Nutanix.GetClustersV2.Invoke();
         /// 
-        ///     var filtered_cls = Nutanix.Index.GetClustersV2.Invoke(new()
+        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'cluster-1'",
         ///     });
         /// 
-        ///     var paged_cls = Nutanix.Index.GetClustersV2.Invoke(new()
+        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
@@ -40,6 +63,92 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'cluster-1'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{
+        /// 			Page:  pulumi.IntRef(1),
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetClustersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filtered-cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .filter("name eq 'cluster-1'")
+        ///             .build());
+        /// 
+        ///         final var paged-cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .page(1)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments: {}
+        ///   filtered-cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments:
+        ///         filter: name eq 'cluster-1'
+        ///   paged-cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments:
+        ///         page: 1
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetClustersV2Result> InvokeAsync(GetClustersV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetClustersV2Result>("nutanix:index/getClustersV2:getClustersV2", args ?? new GetClustersV2Args(), options.WithDefaults());
@@ -49,6 +158,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const cls = nutanix.getClustersV2({});
+        /// const filtered_cls = nutanix.getClustersV2({
+        ///     filter: "name eq 'cluster-1'",
+        /// });
+        /// const paged_cls = nutanix.getClustersV2({
+        ///     page: 1,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// cls = nutanix.get_clusters_v2()
+        /// filtered_cls = nutanix.get_clusters_v2(filter="name eq 'cluster-1'")
+        /// paged_cls = nutanix.get_clusters_v2(page=1,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -57,14 +189,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cls = Nutanix.Index.GetClustersV2.Invoke();
+        ///     var cls = Nutanix.GetClustersV2.Invoke();
         /// 
-        ///     var filtered_cls = Nutanix.Index.GetClustersV2.Invoke(new()
+        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'cluster-1'",
         ///     });
         /// 
-        ///     var paged_cls = Nutanix.Index.GetClustersV2.Invoke(new()
+        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
@@ -72,6 +204,92 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'cluster-1'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{
+        /// 			Page:  pulumi.IntRef(1),
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetClustersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filtered-cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .filter("name eq 'cluster-1'")
+        ///             .build());
+        /// 
+        ///         final var paged-cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .page(1)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments: {}
+        ///   filtered-cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments:
+        ///         filter: name eq 'cluster-1'
+        ///   paged-cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments:
+        ///         page: 1
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetClustersV2Result> Invoke(GetClustersV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClustersV2Result>("nutanix:index/getClustersV2:getClustersV2", args ?? new GetClustersV2InvokeArgs(), options.WithDefaults());
@@ -81,6 +299,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const cls = nutanix.getClustersV2({});
+        /// const filtered_cls = nutanix.getClustersV2({
+        ///     filter: "name eq 'cluster-1'",
+        /// });
+        /// const paged_cls = nutanix.getClustersV2({
+        ///     page: 1,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// cls = nutanix.get_clusters_v2()
+        /// filtered_cls = nutanix.get_clusters_v2(filter="name eq 'cluster-1'")
+        /// paged_cls = nutanix.get_clusters_v2(page=1,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -89,14 +330,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var cls = Nutanix.Index.GetClustersV2.Invoke();
+        ///     var cls = Nutanix.GetClustersV2.Invoke();
         /// 
-        ///     var filtered_cls = Nutanix.Index.GetClustersV2.Invoke(new()
+        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'cluster-1'",
         ///     });
         /// 
-        ///     var paged_cls = Nutanix.Index.GetClustersV2.Invoke(new()
+        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
@@ -104,6 +345,92 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'cluster-1'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetClustersV2(ctx, &amp;nutanix.GetClustersV2Args{
+        /// 			Page:  pulumi.IntRef(1),
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetClustersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filtered-cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .filter("name eq 'cluster-1'")
+        ///             .build());
+        /// 
+        ///         final var paged-cls = NutanixFunctions.getClustersV2(GetClustersV2Args.builder()
+        ///             .page(1)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments: {}
+        ///   filtered-cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments:
+        ///         filter: name eq 'cluster-1'
+        ///   paged-cls:
+        ///     fn::invoke:
+        ///       function: nutanix:getClustersV2
+        ///       arguments:
+        ///         page: 1
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetClustersV2Result> Invoke(GetClustersV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetClustersV2Result>("nutanix:index/getClustersV2:getClustersV2", args ?? new GetClustersV2InvokeArgs(), options.WithDefaults());
@@ -123,7 +450,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-        /// The `Expand` can be applied on the following fields:
+        /// The &lt;span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`"&gt;`expand`&lt;/span&gt; can be applied on the following fields:
         /// - clusterProfile
         /// - storageSummary
         /// </summary>
@@ -210,7 +537,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-        /// The `Expand` can be applied on the following fields:
+        /// The &lt;span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`"&gt;`expand`&lt;/span&gt; can be applied on the following fields:
         /// - clusterProfile
         /// - storageSummary
         /// </summary>

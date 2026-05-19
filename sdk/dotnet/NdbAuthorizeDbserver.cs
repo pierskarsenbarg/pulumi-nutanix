@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbAuthorizeDbserver("name", new()
+    ///     var name = new Nutanix.NdbAuthorizeDbserver("name", new()
     ///     {
     ///         TimeMachineName = "test-pg-inst",
     ///         DbserversIds = new[]
@@ -34,6 +35,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver")]
     public partial class NdbAuthorizeDbserver : global::Pulumi.CustomResource
@@ -45,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> TimeMachineId { get; private set; } = null!;
 
         /// <summary>
-        /// * `DbserversId `: (Required)
+        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId "&gt;`dbserversId &lt;/span&gt;`: (Required)
         /// </summary>
         [Output("timeMachineName")]
         public Output<string?> TimeMachineName { get; private set; } = null!;
@@ -109,7 +111,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TimeMachineId { get; set; }
 
         /// <summary>
-        /// * `DbserversId `: (Required)
+        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId "&gt;`dbserversId &lt;/span&gt;`: (Required)
         /// </summary>
         [Input("timeMachineName")]
         public Input<string>? TimeMachineName { get; set; }
@@ -134,7 +136,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TimeMachineId { get; set; }
 
         /// <summary>
-        /// * `DbserversId `: (Required)
+        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId "&gt;`dbserversId &lt;/span&gt;`: (Required)
         /// </summary>
         [Input("timeMachineName")]
         public Input<string>? TimeMachineName { get; set; }

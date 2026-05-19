@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const apiKeysList = nutanix.getFoundationCentralListApiKeys({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralListApiKeys(args?: GetFoundationCentralListApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralListApiKeysResult> {
     args = args || {};
@@ -73,12 +75,14 @@ export interface GetFoundationCentralListApiKeysResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const apiKeysList = nutanix.getFoundationCentralListApiKeys({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralListApiKeysOutput(args?: GetFoundationCentralListApiKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralListApiKeysResult> {
     args = args || {};
@@ -97,13 +101,13 @@ export interface GetFoundationCentralListApiKeysOutputArgs {
     /**
      * The number of records retrieved.
      */
-    length?: pulumi.Input<number>;
+    length?: pulumi.Input<number | undefined>;
     /**
      * List metadata output for all list apis.
      */
-    metadata?: pulumi.Input<inputs.GetFoundationCentralListApiKeysMetadataArgs>;
+    metadata?: pulumi.Input<inputs.GetFoundationCentralListApiKeysMetadataArgs | undefined>;
     /**
      * Offset from the start of the object list.
      */
-    offset?: pulumi.Input<number>;
+    offset?: pulumi.Input<number | undefined>;
 }

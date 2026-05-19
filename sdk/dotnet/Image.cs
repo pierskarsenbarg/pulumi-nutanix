@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.Index.Image("test", new()
+    ///     var test = new Nutanix.Image("test", new()
     ///     {
     ///         Name = "Ubuntu",
     ///         Description = "Ubuntu",
@@ -31,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Create image with data_source_reference
-    ///     var createImageWithDataSourceReference = new Nutanix.Index.Image("create_image_with_data_source_reference", new()
+    ///     var createImageWithDataSourceReference = new Nutanix.Image("create_image_with_data_source_reference", new()
     ///     {
     ///         Name = "Sql Server Image",
     ///         Description = "Sql Server",
@@ -48,6 +49,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/image:Image")]
     public partial class Image : global::Pulumi.CustomResource

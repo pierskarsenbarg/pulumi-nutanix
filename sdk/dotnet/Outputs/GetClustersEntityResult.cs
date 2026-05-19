@@ -108,7 +108,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string MasqueradingIp;
         /// <summary>
-        /// - Port used together with MasqueradingIp to connect to the cluster.
+        /// - Port used together with&lt;span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "&gt; masqueradingIp &lt;/span&gt;to connect to the cluster.
         /// </summary>
         public readonly int MasqueradingPort;
         /// <summary>

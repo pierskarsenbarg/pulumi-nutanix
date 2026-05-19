@@ -80,27 +80,29 @@ def get_clusters(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     clusters = nutanix.get_clusters()
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Reference
 
-    The `project_reference`, `owner_reference`, `availability_zone_reference`, `cluster_reference`, attributes supports the following:
+    The <span pulumi-lang-nodejs="`projectReference`" pulumi-lang-dotnet="`ProjectReference`" pulumi-lang-go="`projectReference`" pulumi-lang-python="`project_reference`" pulumi-lang-yaml="`projectReference`" pulumi-lang-java="`projectReference`">`projectReference`</span>, <span pulumi-lang-nodejs="`ownerReference`" pulumi-lang-dotnet="`OwnerReference`" pulumi-lang-go="`ownerReference`" pulumi-lang-python="`owner_reference`" pulumi-lang-yaml="`ownerReference`" pulumi-lang-java="`ownerReference`">`ownerReference`</span>, <span pulumi-lang-nodejs="`availabilityZoneReference`" pulumi-lang-dotnet="`AvailabilityZoneReference`" pulumi-lang-go="`availabilityZoneReference`" pulumi-lang-python="`availability_zone_reference`" pulumi-lang-yaml="`availabilityZoneReference`" pulumi-lang-java="`availabilityZoneReference`">`availabilityZoneReference`</span>, <span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`">`clusterReference`</span>, attributes supports the following:
 
-    * `kind`: - The kind name (Default value: project).
-    * `name`: - the name.
+    * <span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`">`kind`</span>: - The kind name (Default value: project).
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - the name.
     * `UUID`: - the UUID.
 
     ### Version
 
     The version attribute supports the following:
 
-    * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
-    * `product_version`: - Version string for the disk image.
+    * <span pulumi-lang-nodejs="`productName`" pulumi-lang-dotnet="`ProductName`" pulumi-lang-go="`productName`" pulumi-lang-python="`product_name`" pulumi-lang-yaml="`productName`" pulumi-lang-java="`productName`">`productName`</span>: - Name of the producer/distribution of the image. For example windows or red hat.
+    * <span pulumi-lang-nodejs="`productVersion`" pulumi-lang-dotnet="`ProductVersion`" pulumi-lang-go="`productVersion`" pulumi-lang-python="`product_version`" pulumi-lang-yaml="`productVersion`" pulumi-lang-java="`productVersion`">`productVersion`</span>: - Version string for the disk image.
 
     See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
     """
@@ -118,27 +120,29 @@ def get_clusters_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.Invoke
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     clusters = nutanix.get_clusters()
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Reference
 
-    The `project_reference`, `owner_reference`, `availability_zone_reference`, `cluster_reference`, attributes supports the following:
+    The <span pulumi-lang-nodejs="`projectReference`" pulumi-lang-dotnet="`ProjectReference`" pulumi-lang-go="`projectReference`" pulumi-lang-python="`project_reference`" pulumi-lang-yaml="`projectReference`" pulumi-lang-java="`projectReference`">`projectReference`</span>, <span pulumi-lang-nodejs="`ownerReference`" pulumi-lang-dotnet="`OwnerReference`" pulumi-lang-go="`ownerReference`" pulumi-lang-python="`owner_reference`" pulumi-lang-yaml="`ownerReference`" pulumi-lang-java="`ownerReference`">`ownerReference`</span>, <span pulumi-lang-nodejs="`availabilityZoneReference`" pulumi-lang-dotnet="`AvailabilityZoneReference`" pulumi-lang-go="`availabilityZoneReference`" pulumi-lang-python="`availability_zone_reference`" pulumi-lang-yaml="`availabilityZoneReference`" pulumi-lang-java="`availabilityZoneReference`">`availabilityZoneReference`</span>, <span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`">`clusterReference`</span>, attributes supports the following:
 
-    * `kind`: - The kind name (Default value: project).
-    * `name`: - the name.
+    * <span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`">`kind`</span>: - The kind name (Default value: project).
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - the name.
     * `UUID`: - the UUID.
 
     ### Version
 
     The version attribute supports the following:
 
-    * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
-    * `product_version`: - Version string for the disk image.
+    * <span pulumi-lang-nodejs="`productName`" pulumi-lang-dotnet="`ProductName`" pulumi-lang-go="`productName`" pulumi-lang-python="`product_name`" pulumi-lang-yaml="`productName`" pulumi-lang-java="`productName`">`productName`</span>: - Name of the producer/distribution of the image. For example windows or red hat.
+    * <span pulumi-lang-nodejs="`productVersion`" pulumi-lang-dotnet="`ProductVersion`" pulumi-lang-go="`productVersion`" pulumi-lang-python="`product_version`" pulumi-lang-yaml="`productVersion`" pulumi-lang-java="`productVersion`">`productVersion`</span>: - Version string for the disk image.
 
     See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
     """

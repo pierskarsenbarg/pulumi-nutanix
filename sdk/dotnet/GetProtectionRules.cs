@@ -17,6 +17,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protectionRules = nutanix.getProtectionRules({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protection_rules = nutanix.get_protection_rules()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,10 +38,61 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRules = Nutanix.Index.GetProtectionRules.Invoke();
+        ///     var protectionRules = Nutanix.GetProtectionRules.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectionRules(ctx, map[string]interface{}{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protectionRules = NutanixFunctions.getProtectionRules(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protectionRules:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionRules
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProtectionRulesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());
@@ -38,6 +102,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protectionRules = nutanix.getProtectionRules({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protection_rules = nutanix.get_protection_rules()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -46,10 +123,61 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRules = Nutanix.Index.GetProtectionRules.Invoke();
+        ///     var protectionRules = Nutanix.GetProtectionRules.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectionRules(ctx, map[string]interface{}{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protectionRules = NutanixFunctions.getProtectionRules(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protectionRules:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionRules
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectionRulesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());
@@ -59,6 +187,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protectionRules = nutanix.getProtectionRules({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protection_rules = nutanix.get_protection_rules()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,10 +208,61 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRules = Nutanix.Index.GetProtectionRules.Invoke();
+        ///     var protectionRules = Nutanix.GetProtectionRules.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectionRules(ctx, map[string]interface{}{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protectionRules = NutanixFunctions.getProtectionRules(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protectionRules:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionRules
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectionRulesResult> Invoke(InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());

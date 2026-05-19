@@ -18,6 +18,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getNgtConfigurationV2({
+        ///     extId: "f29535e2-6bd8-4782-b879-409f17217b31",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_ngt_configuration_v2(ext_id="f29535e2-6bd8-4782-b879-409f17217b31")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,13 +41,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetNgtConfigurationV2.Invoke(new()
+        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
         ///     {
         ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNgtConfigurationV2(ctx, &amp;nutanix.GetNgtConfigurationV2Args{
+        /// 			ExtId: "f29535e2-6bd8-4782-b879-409f17217b31",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNgtConfigurationV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getNgtConfigurationV2(GetNgtConfigurationV2Args.builder()
+        ///             .extId("f29535e2-6bd8-4782-b879-409f17217b31")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getNgtConfigurationV2
+        ///       arguments:
+        ///         extId: f29535e2-6bd8-4782-b879-409f17217b31
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNgtConfigurationV2Result> InvokeAsync(GetNgtConfigurationV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNgtConfigurationV2Result>("nutanix:index/getNgtConfigurationV2:getNgtConfigurationV2", args ?? new GetNgtConfigurationV2Args(), options.WithDefaults());
@@ -43,6 +115,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getNgtConfigurationV2({
+        ///     extId: "f29535e2-6bd8-4782-b879-409f17217b31",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_ngt_configuration_v2(ext_id="f29535e2-6bd8-4782-b879-409f17217b31")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,13 +138,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetNgtConfigurationV2.Invoke(new()
+        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
         ///     {
         ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNgtConfigurationV2(ctx, &amp;nutanix.GetNgtConfigurationV2Args{
+        /// 			ExtId: "f29535e2-6bd8-4782-b879-409f17217b31",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNgtConfigurationV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getNgtConfigurationV2(GetNgtConfigurationV2Args.builder()
+        ///             .extId("f29535e2-6bd8-4782-b879-409f17217b31")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getNgtConfigurationV2
+        ///       arguments:
+        ///         extId: f29535e2-6bd8-4782-b879-409f17217b31
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNgtConfigurationV2Result> Invoke(GetNgtConfigurationV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNgtConfigurationV2Result>("nutanix:index/getNgtConfigurationV2:getNgtConfigurationV2", args ?? new GetNgtConfigurationV2InvokeArgs(), options.WithDefaults());
@@ -68,6 +212,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getNgtConfigurationV2({
+        ///     extId: "f29535e2-6bd8-4782-b879-409f17217b31",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_ngt_configuration_v2(ext_id="f29535e2-6bd8-4782-b879-409f17217b31")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,13 +235,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetNgtConfigurationV2.Invoke(new()
+        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
         ///     {
         ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNgtConfigurationV2(ctx, &amp;nutanix.GetNgtConfigurationV2Args{
+        /// 			ExtId: "f29535e2-6bd8-4782-b879-409f17217b31",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNgtConfigurationV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getNgtConfigurationV2(GetNgtConfigurationV2Args.builder()
+        ///             .extId("f29535e2-6bd8-4782-b879-409f17217b31")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getNgtConfigurationV2
+        ///       arguments:
+        ///         extId: f29535e2-6bd8-4782-b879-409f17217b31
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNgtConfigurationV2Result> Invoke(GetNgtConfigurationV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNgtConfigurationV2Result>("nutanix:index/getNgtConfigurationV2:getNgtConfigurationV2", args ?? new GetNgtConfigurationV2InvokeArgs(), options.WithDefaults());

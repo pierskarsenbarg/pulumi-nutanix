@@ -182,7 +182,7 @@ def get_authorization_policy_v2(ext_id: Optional[_builtins.str] = None,
         is_system_defined=pulumi.get(__ret__, 'is_system_defined'),
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
         role=pulumi.get(__ret__, 'role'))
-def get_authorization_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_authorization_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuthorizationPolicyV2Result]:
     """
     Use this data source to access information about an existing resource.

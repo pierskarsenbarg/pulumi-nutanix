@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.Index.SelfServiceAppRecoveryPoint("test", new()
+    ///     var test = new Nutanix.SelfServiceAppRecoveryPoint("test", new()
     ///     {
     ///         AppName = "NAME OF APPLICATION",
     ///         ActionName = "SNAPSHOT ACTION NAME",
@@ -31,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Read available recovery points in app
-    ///     var snapshots = Nutanix.Index.GetSelfServiceAppSnapshots.Invoke(new()
+    ///     var snapshots = Nutanix.GetSelfServiceAppSnapshots.Invoke(new()
     ///     {
     ///         AppName = "NAME OF APPLICATION",
     ///         Length = 250,
@@ -44,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     }).ToList()[0];
     /// 
     ///     // Restore from recovery point
-    ///     var testSelfServiceAppRestore = new Nutanix.Index.SelfServiceAppRestore("test", new()
+    ///     var testSelfServiceAppRestore = new Nutanix.SelfServiceAppRestore("test", new()
     ///     {
     ///         RestoreActionName = "RESTORE ACTION NAME",
     ///         AppName = "NAME OF APPLICATION",
@@ -53,6 +54,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/selfServiceAppRestore:SelfServiceAppRestore")]
     public partial class SelfServiceAppRestore : global::Pulumi.CustomResource
@@ -78,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Output("snapshotUuid")]
         public Output<string> SnapshotUuid { get; private set; } = null!;
@@ -157,7 +159,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Input("snapshotUuid", required: true)]
         public Input<string> SnapshotUuid { get; set; } = null!;
@@ -191,7 +193,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them should be provided for resource to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Input("snapshotUuid")]
         public Input<string>? SnapshotUuid { get; set; }

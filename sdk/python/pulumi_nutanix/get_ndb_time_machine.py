@@ -437,9 +437,9 @@ def get_ndb_time_machine(tags: Optional[Sequence[Union['GetNdbTimeMachineTagArgs
         time_machine_id=pulumi.get(__ret__, 'time_machine_id'),
         time_machine_name=pulumi.get(__ret__, 'time_machine_name'),
         type=pulumi.get(__ret__, 'type'))
-def get_ndb_time_machine_output(tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbTimeMachineTagArgs', 'GetNdbTimeMachineTagArgsDict']]]]] = None,
-                                time_machine_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                time_machine_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ndb_time_machine_output(tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbTimeMachineTagArgs', 'GetNdbTimeMachineTagArgsDict']]]]] = None,
+                                time_machine_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                time_machine_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbTimeMachineResult]:
     """
     Describes a time machine present in Nutanix Database Service

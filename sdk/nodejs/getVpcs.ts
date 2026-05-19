@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getVpcs({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVpcs(args?: GetVpcsArgs, opts?: pulumi.InvokeOptions): Promise<GetVpcsResult> {
     args = args || {};
@@ -62,12 +64,14 @@ export interface GetVpcsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getVpcs({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVpcsOutput(args?: GetVpcsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVpcsResult> {
     args = args || {};
@@ -84,5 +88,5 @@ export interface GetVpcsOutputArgs {
     /**
      * - The vpc kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetVpcsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetVpcsMetadataArgs>[] | undefined>;
 }

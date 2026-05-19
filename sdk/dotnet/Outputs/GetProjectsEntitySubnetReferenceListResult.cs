@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetProjectsEntitySubnetReferenceListResult
     {
         /// <summary>
-        /// (Required) The kind name (Default value: `Project`).
+        /// (Required) The kind name (Default value: &lt;span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`"&gt;`project`&lt;/span&gt;).
         /// </summary>
         public readonly string Kind;
         /// <summary>

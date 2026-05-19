@@ -21,20 +21,20 @@ __all__ = ['ImageArgs', 'Image']
 @pulumi.input_type
 class ImageArgs:
     def __init__(__self__, *,
-                 architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['ImageCategoryArgs']]]] = None,
-                 checksum: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 cluster_references: Optional[pulumi.Input[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]] = None,
-                 data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['ImageCategoryArgs']]]] = None,
+                 checksum: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 cluster_references: pulumi.Input[Optional[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]] = None,
+                 data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Image resource.
 
@@ -83,195 +83,195 @@ class ImageArgs:
 
     @_builtins.property
     @pulumi.getter
-    def architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The supported CPU architecture for a disk image.
         """
         return pulumi.get(self, "architecture")
 
     @architecture.setter
-    def architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "architecture", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZoneReference")
-    def availability_zone_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def availability_zone_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a availability_zone.
         """
         return pulumi.get(self, "availability_zone_reference")
 
     @availability_zone_reference.setter
-    def availability_zone_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def availability_zone_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "availability_zone_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageCategoryArgs']]]]:
         """
         - (Optional) Categories for the image.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter
-    def checksum(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def checksum(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Checksum of the image. The checksum is used for image validation if the image has a source specified. For images that do not have their source specified the checksum is generated by the image service.
         """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
-    def checksum(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def checksum(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "checksum", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterReferences")
-    def cluster_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]]:
+    def cluster_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]]:
         return pulumi.get(self, "cluster_references")
 
     @cluster_references.setter
-    def cluster_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]]):
+    def cluster_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]]):
         pulumi.set(self, "cluster_references", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceReferences")
-    def data_source_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]]:
+    def data_source_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]]:
         """
         Reference to a data source.
         """
         return pulumi.get(self, "data_source_references")
 
     @data_source_references.setter
-    def data_source_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]]):
+    def data_source_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]]):
         pulumi.set(self, "data_source_references", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) A description for image.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="imageType")
-    def image_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The type of image.
         """
         return pulumi.get(self, "image_type")
 
     @image_type.setter
-    def image_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name for the image.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def owner_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def owner_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def project_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def project_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="sourcePath")
-    def source_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) A local path to upload an image.
         """
         return pulumi.get(self, "source_path")
 
     @source_path.setter
-    def source_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_path", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceUri")
-    def source_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The source URI points at the location of the source image which is used to create/update image.
         """
         return pulumi.get(self, "source_uri")
 
     @source_uri.setter
-    def source_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_uri", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def version(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The image version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def version(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "version", value)
 
 
 @pulumi.input_type
 class _ImageState:
     def __init__(__self__, *,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['ImageCategoryArgs']]]] = None,
-                 checksum: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_references: Optional[pulumi.Input[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]] = None,
-                 cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ImageCurrentClusterReferenceListArgs']]]] = None,
-                 data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 retrieval_uri_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['ImageCategoryArgs']]]] = None,
+                 checksum: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_references: pulumi.Input[Optional[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]] = None,
+                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_cluster_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ImageCurrentClusterReferenceListArgs']]]] = None,
+                 data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 retrieval_uri_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Image resources.
 
@@ -341,254 +341,254 @@ class _ImageState:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The supported CPU architecture for a disk image.
         """
         return pulumi.get(self, "architecture")
 
     @architecture.setter
-    def architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "architecture", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZoneReference")
-    def availability_zone_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def availability_zone_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a availability_zone.
         """
         return pulumi.get(self, "availability_zone_reference")
 
     @availability_zone_reference.setter
-    def availability_zone_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def availability_zone_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "availability_zone_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageCategoryArgs']]]]:
         """
         - (Optional) Categories for the image.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter
-    def checksum(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def checksum(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Checksum of the image. The checksum is used for image validation if the image has a source specified. For images that do not have their source specified the checksum is generated by the image service.
         """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
-    def checksum(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def checksum(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "checksum", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterReferences")
-    def cluster_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]]:
+    def cluster_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]]:
         return pulumi.get(self, "cluster_references")
 
     @cluster_references.setter
-    def cluster_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]]):
+    def cluster_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageClusterReferenceArgs']]]]):
         pulumi.set(self, "cluster_references", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterUuid")
-    def cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_uuid")
 
     @cluster_uuid.setter
-    def cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="currentClusterReferenceLists")
-    def current_cluster_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageCurrentClusterReferenceListArgs']]]]:
+    def current_cluster_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageCurrentClusterReferenceListArgs']]]]:
         return pulumi.get(self, "current_cluster_reference_lists")
 
     @current_cluster_reference_lists.setter
-    def current_cluster_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageCurrentClusterReferenceListArgs']]]]):
+    def current_cluster_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageCurrentClusterReferenceListArgs']]]]):
         pulumi.set(self, "current_cluster_reference_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceReferences")
-    def data_source_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]]:
+    def data_source_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]]:
         """
         Reference to a data source.
         """
         return pulumi.get(self, "data_source_references")
 
     @data_source_references.setter
-    def data_source_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]]):
+    def data_source_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageDataSourceReferenceArgs']]]]):
         pulumi.set(self, "data_source_references", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) A description for image.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="imageType")
-    def image_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The type of image.
         """
         return pulumi.get(self, "image_type")
 
     @image_type.setter
-    def image_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - The image kind metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name for the image.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def owner_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def owner_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def project_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def project_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="retrievalUriLists")
-    def retrieval_uri_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def retrieval_uri_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - List of URIs where the raw image data can be accessed.
         """
         return pulumi.get(self, "retrieval_uri_lists")
 
     @retrieval_uri_lists.setter
-    def retrieval_uri_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def retrieval_uri_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "retrieval_uri_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeBytes")
-    def size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - The size of the image in bytes.
         """
         return pulumi.get(self, "size_bytes")
 
     @size_bytes.setter
-    def size_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="sourcePath")
-    def source_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) A local path to upload an image.
         """
         return pulumi.get(self, "source_path")
 
     @source_path.setter
-    def source_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_path", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceUri")
-    def source_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The source URI points at the location of the source image which is used to create/update image.
         """
         return pulumi.get(self, "source_uri")
 
     @source_uri.setter
-    def source_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_uri", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The state of the image.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def version(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The image version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def version(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "version", value)
 
 
@@ -598,26 +598,27 @@ class Image(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageCategoryArgs', 'ImageCategoryArgsDict']]]]] = None,
-                 checksum: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 cluster_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageClusterReferenceArgs', 'ImageClusterReferenceArgsDict']]]]] = None,
-                 data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageDataSourceReferenceArgs', 'ImageDataSourceReferenceArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageCategoryArgs', 'ImageCategoryArgsDict']]]]] = None,
+                 checksum: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 cluster_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageClusterReferenceArgs', 'ImageClusterReferenceArgsDict']]]]] = None,
+                 data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageDataSourceReferenceArgs', 'ImageDataSourceReferenceArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Provides a Nutanix Image resource to Create a image.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -636,6 +637,7 @@ class Image(pulumi.CustomResource):
                 "uuid": "<uuid of the vm disk>",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -665,6 +667,7 @@ class Image(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -683,6 +686,7 @@ class Image(pulumi.CustomResource):
                 "uuid": "<uuid of the vm disk>",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -700,20 +704,20 @@ class Image(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageCategoryArgs', 'ImageCategoryArgsDict']]]]] = None,
-                 checksum: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 cluster_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageClusterReferenceArgs', 'ImageClusterReferenceArgsDict']]]]] = None,
-                 data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageDataSourceReferenceArgs', 'ImageDataSourceReferenceArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageCategoryArgs', 'ImageCategoryArgsDict']]]]] = None,
+                 checksum: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 cluster_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageClusterReferenceArgs', 'ImageClusterReferenceArgsDict']]]]] = None,
+                 data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageDataSourceReferenceArgs', 'ImageDataSourceReferenceArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -755,28 +759,28 @@ class Image(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_version: Optional[pulumi.Input[_builtins.str]] = None,
-            architecture: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageCategoryArgs', 'ImageCategoryArgsDict']]]]] = None,
-            checksum: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageClusterReferenceArgs', 'ImageClusterReferenceArgsDict']]]]] = None,
-            cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            current_cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageCurrentClusterReferenceListArgs', 'ImageCurrentClusterReferenceListArgsDict']]]]] = None,
-            data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageDataSourceReferenceArgs', 'ImageDataSourceReferenceArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            image_type: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            retrieval_uri_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            source_path: Optional[pulumi.Input[_builtins.str]] = None,
-            source_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'Image':
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            architecture: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageCategoryArgs', 'ImageCategoryArgsDict']]]]] = None,
+            checksum: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageClusterReferenceArgs', 'ImageClusterReferenceArgsDict']]]]] = None,
+            cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            current_cluster_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageCurrentClusterReferenceListArgs', 'ImageCurrentClusterReferenceListArgsDict']]]]] = None,
+            data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageDataSourceReferenceArgs', 'ImageDataSourceReferenceArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            image_type: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            retrieval_uri_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            source_path: pulumi.Input[Optional[_builtins.str]] = None,
+            source_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'Image':
         """
         Get an existing Image resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

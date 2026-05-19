@@ -112,17 +112,17 @@ export class PcRegistrationV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PcRegistrationV2 resources.
  */
 export interface PcRegistrationV2State {
-    configs?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2Config>[]>;
-    extId?: pulumi.Input<string>;
-    hostingClusterExtId?: pulumi.Input<string>;
-    isRegisteredWithHostingCluster?: pulumi.Input<boolean>;
-    links?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2Link>[]>;
-    networks?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2Network>[]>;
-    nodeExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    configs?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2Config>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    hostingClusterExtId?: pulumi.Input<string | undefined>;
+    isRegisteredWithHostingCluster?: pulumi.Input<boolean | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2Link>[] | undefined>;
+    networks?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2Network>[] | undefined>;
+    nodeExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Required) The display name for the Role.
      */
-    pcExtId?: pulumi.Input<string>;
+    pcExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
      * The remote cluster details are different based on the object type. The object type is used to determine the type of remote cluster. The object type can be one of the following:
@@ -130,9 +130,9 @@ export interface PcRegistrationV2State {
      * * `prism.v4.management.AOSRemoteClusterSpec`
      * * `prism.v4.management.ClusterReference`
      */
-    remoteCluster?: pulumi.Input<inputs.PcRegistrationV2RemoteCluster>;
-    shouldEnableHighAvailability?: pulumi.Input<boolean>;
-    tenantId?: pulumi.Input<string>;
+    remoteCluster?: pulumi.Input<inputs.PcRegistrationV2RemoteCluster | undefined>;
+    shouldEnableHighAvailability?: pulumi.Input<boolean | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
 }
 
 /**

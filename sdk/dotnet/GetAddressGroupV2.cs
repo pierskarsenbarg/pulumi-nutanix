@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_addr_group = nutanix.getAddressGroupV2({
+        ///     extId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_addr_group = nutanix.get_address_group_v2(ext_id="0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_addr_group = Nutanix.Index.GetAddressGroupV2.Invoke(new()
+        ///     var get_addr_group = Nutanix.GetAddressGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetAddressGroupV2(ctx, &amp;nutanix.GetAddressGroupV2Args{
+        /// 			ExtId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-addr-group = NutanixFunctions.getAddressGroupV2(GetAddressGroupV2Args.builder()
+        ///             .extId("0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-addr-group:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupV2
+        ///       arguments:
+        ///         extId: 0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAddressGroupV2Result> InvokeAsync(GetAddressGroupV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAddressGroupV2Result>("nutanix:index/getAddressGroupV2:getAddressGroupV2", args ?? new GetAddressGroupV2Args(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_addr_group = nutanix.getAddressGroupV2({
+        ///     extId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_addr_group = nutanix.get_address_group_v2(ext_id="0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_addr_group = Nutanix.Index.GetAddressGroupV2.Invoke(new()
+        ///     var get_addr_group = Nutanix.GetAddressGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetAddressGroupV2(ctx, &amp;nutanix.GetAddressGroupV2Args{
+        /// 			ExtId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-addr-group = NutanixFunctions.getAddressGroupV2(GetAddressGroupV2Args.builder()
+        ///             .extId("0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-addr-group:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupV2
+        ///       arguments:
+        ///         extId: 0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAddressGroupV2Result> Invoke(GetAddressGroupV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupV2Result>("nutanix:index/getAddressGroupV2:getAddressGroupV2", args ?? new GetAddressGroupV2InvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_addr_group = nutanix.getAddressGroupV2({
+        ///     extId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_addr_group = nutanix.get_address_group_v2(ext_id="0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_addr_group = Nutanix.Index.GetAddressGroupV2.Invoke(new()
+        ///     var get_addr_group = Nutanix.GetAddressGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetAddressGroupV2(ctx, &amp;nutanix.GetAddressGroupV2Args{
+        /// 			ExtId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-addr-group = NutanixFunctions.getAddressGroupV2(GetAddressGroupV2Args.builder()
+        ///             .extId("0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-addr-group:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupV2
+        ///       arguments:
+        ///         extId: 0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAddressGroupV2Result> Invoke(GetAddressGroupV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupV2Result>("nutanix:index/getAddressGroupV2:getAddressGroupV2", args ?? new GetAddressGroupV2InvokeArgs(), options.WithDefaults());

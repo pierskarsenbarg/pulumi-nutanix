@@ -16,6 +16,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ### resource to associated maintenance window with OS_PATCHING
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbMaintenanceTask("name", new()
+    ///     var name = new Nutanix.NdbMaintenanceTask("name", new()
     ///     {
     ///         DbserverIds = new[]
     ///         {
@@ -42,8 +43,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### resource to associated maintenance window with DB_PATCHING
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -52,7 +55,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbMaintenanceTask("name", new()
+    ///     var name = new Nutanix.NdbMaintenanceTask("name", new()
     ///     {
     ///         DbserverIds = new[]
     ///         {
@@ -70,8 +73,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### resource to associated maintenance window with pre and post command on each task
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -80,7 +85,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbMaintenanceTask("name", new()
+    ///     var name = new Nutanix.NdbMaintenanceTask("name", new()
     ///     {
     ///         DbserverIds = new[]
     ///         {
@@ -106,18 +111,19 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbMaintenanceTask:NdbMaintenanceTask")]
     public partial class NdbMaintenanceTask : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// dbserver cluster ids. Conflicts with "DbserverId"
+        /// dbserver cluster ids. Conflicts with &lt;span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId""&gt;"dbserverId"&lt;/span&gt;
         /// </summary>
         [Output("dbserverClusters")]
         public Output<ImmutableArray<string>> DbserverClusters { get; private set; } = null!;
 
         /// <summary>
-        /// dbserver vm id. Conflicts with "DbserverCluster"
+        /// dbserver vm id. Conflicts with &lt;span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster""&gt;"dbserverCluster"&lt;/span&gt;
         /// </summary>
         [Output("dbserverIds")]
         public Output<ImmutableArray<string>> DbserverIds { get; private set; } = null!;
@@ -191,7 +197,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dbserverClusters;
 
         /// <summary>
-        /// dbserver cluster ids. Conflicts with "DbserverId"
+        /// dbserver cluster ids. Conflicts with &lt;span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId""&gt;"dbserverId"&lt;/span&gt;
         /// </summary>
         public InputList<string> DbserverClusters
         {
@@ -203,7 +209,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dbserverIds;
 
         /// <summary>
-        /// dbserver vm id. Conflicts with "DbserverCluster"
+        /// dbserver vm id. Conflicts with &lt;span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster""&gt;"dbserverCluster"&lt;/span&gt;
         /// </summary>
         public InputList<string> DbserverIds
         {
@@ -241,7 +247,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dbserverClusters;
 
         /// <summary>
-        /// dbserver cluster ids. Conflicts with "DbserverId"
+        /// dbserver cluster ids. Conflicts with &lt;span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId""&gt;"dbserverId"&lt;/span&gt;
         /// </summary>
         public InputList<string> DbserverClusters
         {
@@ -253,7 +259,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dbserverIds;
 
         /// <summary>
-        /// dbserver vm id. Conflicts with "DbserverCluster"
+        /// dbserver vm id. Conflicts with &lt;span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster""&gt;"dbserverCluster"&lt;/span&gt;
         /// </summary>
         public InputList<string> DbserverIds
         {

@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // revert Vm
-    ///     var example = new Nutanix.Index.VmRevertV2("example", new()
+    ///     var example = new Nutanix.VmRevertV2("example", new()
     ///     {
     ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///         VmRecoveryPointExtId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
@@ -32,6 +33,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/vmRevertV2:VmRevertV2")]
     public partial class VmRevertV2 : global::Pulumi.CustomResource

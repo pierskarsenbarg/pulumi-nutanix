@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -23,6 +24,7 @@ import * as utilities from "./utilities";
  *     statType: "SUM",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getStorageContainerStatsInfoV2(args: GetStorageContainerStatsInfoV2Args, opts?: pulumi.InvokeOptions): Promise<GetStorageContainerStatsInfoV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -230,6 +232,7 @@ export interface GetStorageContainerStatsInfoV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -242,6 +245,7 @@ export interface GetStorageContainerStatsInfoV2Result {
  *     statType: "SUM",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getStorageContainerStatsInfoV2Output(args: GetStorageContainerStatsInfoV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStorageContainerStatsInfoV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -269,7 +273,7 @@ export interface GetStorageContainerStatsInfoV2OutputArgs {
     /**
      * storage container UUID
      */
-    samplingInterval?: pulumi.Input<number>;
+    samplingInterval?: pulumi.Input<number | undefined>;
     /**
      * storage container UUID
      */
@@ -284,5 +288,5 @@ export interface GetStorageContainerStatsInfoV2OutputArgs {
      * * `SUM`: - Aggregation with sum of all values.
      * * `COUNT`: - Aggregation containing total count of values.
      */
-    statType?: pulumi.Input<string>;
+    statType?: pulumi.Input<string | undefined>;
 }

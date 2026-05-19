@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // upgrade the entity
-    ///     var upgrade = new Nutanix.Index.LcmUpgradeV2("upgrade", new()
+    ///     var upgrade = new Nutanix.LcmUpgradeV2("upgrade", new()
     ///     {
     ///         EntityUpdateSpecs = new[]
     ///         {
@@ -38,6 +39,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/lcmUpgradeV2:LcmUpgradeV2")]
     public partial class LcmUpgradeV2 : global::Pulumi.CustomResource

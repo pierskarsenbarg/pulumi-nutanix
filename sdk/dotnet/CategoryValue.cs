@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,13 +24,13 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test_category_key = new Nutanix.Index.CategoryKey("test-category-key", new()
+    ///     var test_category_key = new Nutanix.CategoryKey("test-category-key", new()
     ///     {
     ///         Name = "app-support-1",
     ///         Description = "App Support Category Key",
     ///     });
     /// 
-    ///     var test = new Nutanix.Index.CategoryValue("test", new()
+    ///     var test = new Nutanix.CategoryValue("test", new()
     ///     {
     ///         Name = test_category_key.Id,
     ///         Description = "Test Category Value",
@@ -38,6 +39,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/categoryValue:CategoryValue")]
     public partial class CategoryValue : global::Pulumi.CustomResource
@@ -55,7 +57,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The CategoryKey name for the category value.
+        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "&gt; categoryKey &lt;/span&gt;name for the category value.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -126,7 +128,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - (Required) The CategoryKey name for the category value.
+        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "&gt; categoryKey &lt;/span&gt;name for the category value.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -158,7 +160,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - (Required) The CategoryKey name for the category value.
+        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "&gt; categoryKey &lt;/span&gt;name for the category value.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

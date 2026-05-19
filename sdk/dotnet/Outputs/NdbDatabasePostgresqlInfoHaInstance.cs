@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly int? ArchiveWalExpireDays;
         /// <summary>
-        /// - (Optional) backup policy for instance. Default is "PrimaryOnly"
+        /// - (Optional) backup policy for instance. Default is &lt;span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly""&gt;"primaryOnly"&lt;/span&gt;
         /// </summary>
         public readonly string? BackupPolicy;
         public readonly string? ClusterDescription;

@@ -166,6 +166,7 @@ def get_pc_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -173,6 +174,7 @@ def get_pc_v2(ext_id: Optional[_builtins.str] = None,
     # Fetch a single PC (Domain Manager) by its external ID
     example_2 = nutanix.get_pc_v2(ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) The external identifier of the domain manager (Prism Central) entity.
@@ -195,14 +197,15 @@ def get_pc_v2(ext_id: Optional[_builtins.str] = None,
         node_ext_ids=pulumi.get(__ret__, 'node_ext_ids'),
         should_enable_high_availability=pulumi.get(__ret__, 'should_enable_high_availability'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_pc_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     should_enable_high_availability: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_pc_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     should_enable_high_availability: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcV2Result]:
     """
     Fetches the attributes associated with the domain manager (Prism Central) resource based on the provided external identifier. It includes attributes like config, network, node and other information such as size, environment and resource specifications.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -210,6 +213,7 @@ def get_pc_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
     # Fetch a single PC (Domain Manager) by its external ID
     example_2 = nutanix.get_pc_v2(ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) The external identifier of the domain manager (Prism Central) entity.

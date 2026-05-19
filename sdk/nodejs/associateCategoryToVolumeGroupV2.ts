@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -31,6 +32,7 @@ import * as utilities from "./utilities";
  *     ],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class AssociateCategoryToVolumeGroupV2 extends pulumi.CustomResource {
     /**
@@ -101,8 +103,8 @@ export interface AssociateCategoryToVolumeGroupV2State {
     /**
      * -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.AssociateCategoryToVolumeGroupV2Category>[]>;
-    extId?: pulumi.Input<string>;
+    categories?: pulumi.Input<pulumi.Input<inputs.AssociateCategoryToVolumeGroupV2Category>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -112,6 +114,6 @@ export interface AssociateCategoryToVolumeGroupV2Args {
     /**
      * -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.AssociateCategoryToVolumeGroupV2Category>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.AssociateCategoryToVolumeGroupV2Category>[] | undefined>;
     extId: pulumi.Input<string>;
 }

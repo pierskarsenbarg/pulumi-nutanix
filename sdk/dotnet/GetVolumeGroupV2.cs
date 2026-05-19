@@ -18,6 +18,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const volumeGroup = nutanix.getVolumeGroupV2({
+        ///     extId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// volume_group = nutanix.get_volume_group_v2(ext_id="d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,13 +41,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var volumeGroup = Nutanix.Index.GetVolumeGroupV2.Invoke(new()
+        ///     var volumeGroup = Nutanix.GetVolumeGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVolumeGroupV2(ctx, &amp;nutanix.LookupVolumeGroupV2Args{
+        /// 			ExtId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var volumeGroup = NutanixFunctions.getVolumeGroupV2(GetVolumeGroupV2Args.builder()
+        ///             .extId("d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   volumeGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeGroupV2
+        ///       arguments:
+        ///         extId: d09aeec9-5bb7-4bfd-9717-a051178f6e7c
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVolumeGroupV2Result> InvokeAsync(GetVolumeGroupV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupV2Result>("nutanix:index/getVolumeGroupV2:getVolumeGroupV2", args ?? new GetVolumeGroupV2Args(), options.WithDefaults());
@@ -43,6 +115,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const volumeGroup = nutanix.getVolumeGroupV2({
+        ///     extId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// volume_group = nutanix.get_volume_group_v2(ext_id="d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,13 +138,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var volumeGroup = Nutanix.Index.GetVolumeGroupV2.Invoke(new()
+        ///     var volumeGroup = Nutanix.GetVolumeGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVolumeGroupV2(ctx, &amp;nutanix.LookupVolumeGroupV2Args{
+        /// 			ExtId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var volumeGroup = NutanixFunctions.getVolumeGroupV2(GetVolumeGroupV2Args.builder()
+        ///             .extId("d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   volumeGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeGroupV2
+        ///       arguments:
+        ///         extId: d09aeec9-5bb7-4bfd-9717-a051178f6e7c
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVolumeGroupV2Result> Invoke(GetVolumeGroupV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupV2Result>("nutanix:index/getVolumeGroupV2:getVolumeGroupV2", args ?? new GetVolumeGroupV2InvokeArgs(), options.WithDefaults());
@@ -68,6 +212,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const volumeGroup = nutanix.getVolumeGroupV2({
+        ///     extId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// volume_group = nutanix.get_volume_group_v2(ext_id="d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,13 +235,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var volumeGroup = Nutanix.Index.GetVolumeGroupV2.Invoke(new()
+        ///     var volumeGroup = Nutanix.GetVolumeGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVolumeGroupV2(ctx, &amp;nutanix.LookupVolumeGroupV2Args{
+        /// 			ExtId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var volumeGroup = NutanixFunctions.getVolumeGroupV2(GetVolumeGroupV2Args.builder()
+        ///             .extId("d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   volumeGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeGroupV2
+        ///       arguments:
+        ///         extId: d09aeec9-5bb7-4bfd-9717-a051178f6e7c
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVolumeGroupV2Result> Invoke(GetVolumeGroupV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupV2Result>("nutanix:index/getVolumeGroupV2:getVolumeGroupV2", args ?? new GetVolumeGroupV2InvokeArgs(), options.WithDefaults());

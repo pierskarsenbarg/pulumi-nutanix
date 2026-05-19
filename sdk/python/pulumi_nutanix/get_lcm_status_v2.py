@@ -150,12 +150,14 @@ def get_lcm_status_v2(x_cluster_id: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     lcm_framework_status = nutanix.get_lcm_status_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
@@ -175,19 +177,21 @@ def get_lcm_status_v2(x_cluster_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         upload_task_uuid=pulumi.get(__ret__, 'upload_task_uuid'),
         x_cluster_id=pulumi.get(__ret__, 'x_cluster_id'))
-def get_lcm_status_v2_output(x_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_lcm_status_v2_output(x_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLcmStatusV2Result]:
     """
     Get the LCM framework status. Represents the Status of LCM. Status represents details about a pending or ongoing action in LCM.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     lcm_framework_status = nutanix.get_lcm_status_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.

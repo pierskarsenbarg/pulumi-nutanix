@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // create RP with Vm Rp
-    ///     var rp_example = new Nutanix.Index.RecoveryPointsV2("rp-example", new()
+    ///     var rp_example = new Nutanix.RecoveryPointsV2("rp-example", new()
     ///     {
     ///         Name = "terraform-test-recovery-point",
     ///         ExpirationTime = "2024-09-17T09:20:42Z",
@@ -41,6 +42,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/recoveryPointsV2:RecoveryPointsV2")]
     public partial class RecoveryPointsV2 : global::Pulumi.CustomResource

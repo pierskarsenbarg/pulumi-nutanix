@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var pre_checks = new Nutanix.Index.LcmPrechecksV2("pre-checks", new()
+    ///     var pre_checks = new Nutanix.LcmPrechecksV2("pre-checks", new()
     ///     {
     ///         XClusterId = "0005a104-0b0b-4b0-8005-0b0b0b0b0b0b",
     ///         EntityUpdateSpecs = new[]
@@ -38,6 +39,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/lcmPrechecksV2:LcmPrechecksV2")]
     public partial class LcmPrechecksV2 : global::Pulumi.CustomResource

@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_storage_container = nutanix.getStorageContainerV2({
+        ///     extId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_storage_container = nutanix.get_storage_container_v2(ext_id="1891fd3a-1ef7-4947-af56-9ee4b973c6fd")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_storage_container = Nutanix.Index.GetStorageContainerV2.Invoke(new()
+        ///     var get_storage_container = Nutanix.GetStorageContainerV2.Invoke(new()
         ///     {
         ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetStorageContainerV2(ctx, &amp;nutanix.GetStorageContainerV2Args{
+        /// 			ExtId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetStorageContainerV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-storage-container = NutanixFunctions.getStorageContainerV2(GetStorageContainerV2Args.builder()
+        ///             .extId("1891fd3a-1ef7-4947-af56-9ee4b973c6fd")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-storage-container:
+        ///     fn::invoke:
+        ///       function: nutanix:getStorageContainerV2
+        ///       arguments:
+        ///         extId: 1891fd3a-1ef7-4947-af56-9ee4b973c6fd
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetStorageContainerV2Result> InvokeAsync(GetStorageContainerV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStorageContainerV2Result>("nutanix:index/getStorageContainerV2:getStorageContainerV2", args ?? new GetStorageContainerV2Args(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_storage_container = nutanix.getStorageContainerV2({
+        ///     extId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_storage_container = nutanix.get_storage_container_v2(ext_id="1891fd3a-1ef7-4947-af56-9ee4b973c6fd")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_storage_container = Nutanix.Index.GetStorageContainerV2.Invoke(new()
+        ///     var get_storage_container = Nutanix.GetStorageContainerV2.Invoke(new()
         ///     {
         ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetStorageContainerV2(ctx, &amp;nutanix.GetStorageContainerV2Args{
+        /// 			ExtId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetStorageContainerV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-storage-container = NutanixFunctions.getStorageContainerV2(GetStorageContainerV2Args.builder()
+        ///             .extId("1891fd3a-1ef7-4947-af56-9ee4b973c6fd")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-storage-container:
+        ///     fn::invoke:
+        ///       function: nutanix:getStorageContainerV2
+        ///       arguments:
+        ///         extId: 1891fd3a-1ef7-4947-af56-9ee4b973c6fd
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetStorageContainerV2Result> Invoke(GetStorageContainerV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStorageContainerV2Result>("nutanix:index/getStorageContainerV2:getStorageContainerV2", args ?? new GetStorageContainerV2InvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_storage_container = nutanix.getStorageContainerV2({
+        ///     extId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_storage_container = nutanix.get_storage_container_v2(ext_id="1891fd3a-1ef7-4947-af56-9ee4b973c6fd")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_storage_container = Nutanix.Index.GetStorageContainerV2.Invoke(new()
+        ///     var get_storage_container = Nutanix.GetStorageContainerV2.Invoke(new()
         ///     {
         ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetStorageContainerV2(ctx, &amp;nutanix.GetStorageContainerV2Args{
+        /// 			ExtId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetStorageContainerV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-storage-container = NutanixFunctions.getStorageContainerV2(GetStorageContainerV2Args.builder()
+        ///             .extId("1891fd3a-1ef7-4947-af56-9ee4b973c6fd")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-storage-container:
+        ///     fn::invoke:
+        ///       function: nutanix:getStorageContainerV2
+        ///       arguments:
+        ///         extId: 1891fd3a-1ef7-4947-af56-9ee4b973c6fd
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetStorageContainerV2Result> Invoke(GetStorageContainerV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetStorageContainerV2Result>("nutanix:index/getStorageContainerV2:getStorageContainerV2", args ?? new GetStorageContainerV2InvokeArgs(), options.WithDefaults());

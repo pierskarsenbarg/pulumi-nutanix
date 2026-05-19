@@ -258,12 +258,14 @@ def get_floating_ip_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_floating_ip = nutanix.get_floating_ip_v2(ext_id="cf1a7643-605e-4622-9f2a-b3fdccdbd072")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Floating IP UUID
@@ -292,19 +294,21 @@ def get_floating_ip_v2(ext_id: Optional[_builtins.str] = None,
         vm_nics=pulumi.get(__ret__, 'vm_nics'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_floating_ip_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_floating_ip_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFloatingIpV2Result]:
     """
     Provides a datasource to retrieve the floating IP for this extId.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_floating_ip = nutanix.get_floating_ip_v2(ext_id="cf1a7643-605e-4622-9f2a-b3fdccdbd072")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Floating IP UUID

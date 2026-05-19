@@ -20,6 +20,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // This pe based module, so use pe provider alias
+        /// const restorePoints = nutanix.getPcRestorePointsV2({
+        ///     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// });
+        /// // list all the restorable pcs with select properties
+        /// const restorePointsSelect = nutanix.getPcRestorePointsV2({
+        ///     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        ///     select: "creationTime,domainManager,extId",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # This pe based module, so use pe provider alias
+        /// restore_points = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0")
+        /// # list all the restorable pcs with select properties
+        /// restore_points_select = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0",
+        ///     select="creationTime,domainManager,extId")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -29,14 +58,14 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // This pe based module, so use pe provider alias
-        ///     var restorePoints = Nutanix.Index.GetPcRestorePointsV2.Invoke(new()
+        ///     var restorePoints = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
         ///     });
         /// 
         ///     // list all the restorable pcs with select properties
-        ///     var restorePointsSelect = Nutanix.Index.GetPcRestorePointsV2.Invoke(new()
+        ///     var restorePointsSelect = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
@@ -45,161 +74,248 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// This pe based module, so use pe provider alias
+        /// 		_, err := nutanix.GetPcRestorePointsV2(ctx, &amp;nutanix.GetPcRestorePointsV2Args{
+        /// 			RestorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        /// 			RestoreSourceExtId:           "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list all the restorable pcs with select properties
+        /// 		_, err = nutanix.GetPcRestorePointsV2(ctx, &amp;nutanix.GetPcRestorePointsV2Args{
+        /// 			RestorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        /// 			RestoreSourceExtId:           "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// 			Select:                       pulumi.StringRef("creationTime,domainManager,extId"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcRestorePointsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // This pe based module, so use pe provider alias
+        ///         final var restorePoints = NutanixFunctions.getPcRestorePointsV2(GetPcRestorePointsV2Args.builder()
+        ///             .restorableDomainManagerExtId("1cf35cfe-a341-4f27-8e31-2f51b79302c4")
+        ///             .restoreSourceExtId("ec77405b-16c5-4c8d-ade1-bede241afae0")
+        ///             .build());
+        /// 
+        ///         // list all the restorable pcs with select properties
+        ///         final var restorePointsSelect = NutanixFunctions.getPcRestorePointsV2(GetPcRestorePointsV2Args.builder()
+        ///             .restorableDomainManagerExtId("1cf35cfe-a341-4f27-8e31-2f51b79302c4")
+        ///             .restoreSourceExtId("ec77405b-16c5-4c8d-ade1-bede241afae0")
+        ///             .select("creationTime,domainManager,extId")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # This pe based module, so use pe provider alias
+        ///   restorePoints:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointsV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: 1cf35cfe-a341-4f27-8e31-2f51b79302c4
+        ///         restoreSourceExtId: ec77405b-16c5-4c8d-ade1-bede241afae0
+        ///   # list all the restorable pcs with select properties
+        ///   restorePointsSelect:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointsV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: 1cf35cfe-a341-4f27-8e31-2f51b79302c4
+        ///         restoreSourceExtId: ec77405b-16c5-4c8d-ade1-bede241afae0
+        ///         select: creationTime,domainManager,extId
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Restore Points
         /// 
-        /// The RestorePoints attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" restorePoints " pulumi-lang-dotnet=" RestorePoints " pulumi-lang-go=" restorePoints " pulumi-lang-python=" restore_points " pulumi-lang-yaml=" restorePoints " pulumi-lang-java=" restorePoints "&gt; restorePoints &lt;/span&gt;attribute supports the following:
         /// 
-        /// - `ExtId`: A globally unique identifier of an instance that is suitable for external consumption.
-        /// - `TenantId`: A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// - `Links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - `CreationTime`: The UTC date and time in ISO-8601 format when the Restore point was created.
-        /// - `DomainManager`: Domain manager (Prism Central) details.
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: A globally unique identifier of an instance that is suitable for external consumption.
+        /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`creationTime`" pulumi-lang-dotnet="`CreationTime`" pulumi-lang-go="`creationTime`" pulumi-lang-python="`creation_time`" pulumi-lang-yaml="`creationTime`" pulumi-lang-java="`creationTime`"&gt;`creationTime`&lt;/span&gt;: The UTC date and time in ISO-8601 format when the Restore point was created.
+        /// - &lt;span pulumi-lang-nodejs="`domainManager`" pulumi-lang-dotnet="`DomainManager`" pulumi-lang-go="`domainManager`" pulumi-lang-python="`domain_manager`" pulumi-lang-yaml="`domainManager`" pulumi-lang-java="`domainManager`"&gt;`domainManager`&lt;/span&gt;: Domain manager (Prism Central) details.
         /// 
         /// ### Links
         /// 
         /// The links attribute supports the following:
         /// 
-        /// - `Href`: - The URL at which the entity described by the link can be accessed.
-        /// - `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// ### Domain Manager
         /// 
-        /// The DomainManager attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" domainManager " pulumi-lang-dotnet=" DomainManager " pulumi-lang-go=" domainManager " pulumi-lang-python=" domain_manager " pulumi-lang-yaml=" domainManager " pulumi-lang-java=" domainManager "&gt; domainManager &lt;/span&gt;attribute supports the following:
         /// 
-        /// - `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// - `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// - `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - `Config`: - Domain manager (Prism Central) cluster configuration details.
-        /// - `IsRegisteredWithHostingCluster`: - Boolean value indicating if the domain manager (Prism Central) is registered with the hosting cluster, that is, Prism Element.
-        /// - `Network`: - Domain manager (Prism Central) network configuration details.
-        /// - `HostingClusterExtId`: - The external identifier of the cluster hosting the domain manager (Prism Central) instance.
-        /// - `ShouldEnableHighAvailability`: - This configuration enables Prism Central to be deployed in scale-out mode.
-        /// - `NodeExtIds`: - Domain manager (Prism Central) nodes external identifier.
+        /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`"&gt;`config`&lt;/span&gt;: - Domain manager (Prism Central) cluster configuration details.
+        /// - &lt;span pulumi-lang-nodejs="`isRegisteredWithHostingCluster`" pulumi-lang-dotnet="`IsRegisteredWithHostingCluster`" pulumi-lang-go="`isRegisteredWithHostingCluster`" pulumi-lang-python="`is_registered_with_hosting_cluster`" pulumi-lang-yaml="`isRegisteredWithHostingCluster`" pulumi-lang-java="`isRegisteredWithHostingCluster`"&gt;`isRegisteredWithHostingCluster`&lt;/span&gt;: - Boolean value indicating if the domain manager (Prism Central) is registered with the hosting cluster, that is, Prism Element.
+        /// - &lt;span pulumi-lang-nodejs="`network`" pulumi-lang-dotnet="`Network`" pulumi-lang-go="`network`" pulumi-lang-python="`network`" pulumi-lang-yaml="`network`" pulumi-lang-java="`network`"&gt;`network`&lt;/span&gt;: - Domain manager (Prism Central) network configuration details.
+        /// - &lt;span pulumi-lang-nodejs="`hostingClusterExtId`" pulumi-lang-dotnet="`HostingClusterExtId`" pulumi-lang-go="`hostingClusterExtId`" pulumi-lang-python="`hosting_cluster_ext_id`" pulumi-lang-yaml="`hostingClusterExtId`" pulumi-lang-java="`hostingClusterExtId`"&gt;`hostingClusterExtId`&lt;/span&gt;: - The external identifier of the cluster hosting the domain manager (Prism Central) instance.
+        /// - &lt;span pulumi-lang-nodejs="`shouldEnableHighAvailability`" pulumi-lang-dotnet="`ShouldEnableHighAvailability`" pulumi-lang-go="`shouldEnableHighAvailability`" pulumi-lang-python="`should_enable_high_availability`" pulumi-lang-yaml="`shouldEnableHighAvailability`" pulumi-lang-java="`shouldEnableHighAvailability`"&gt;`shouldEnableHighAvailability`&lt;/span&gt;: - This configuration enables Prism Central to be deployed in scale-out mode.
+        /// - &lt;span pulumi-lang-nodejs="`nodeExtIds`" pulumi-lang-dotnet="`NodeExtIds`" pulumi-lang-go="`nodeExtIds`" pulumi-lang-python="`node_ext_ids`" pulumi-lang-yaml="`nodeExtIds`" pulumi-lang-java="`nodeExtIds`"&gt;`nodeExtIds`&lt;/span&gt;: - Domain manager (Prism Central) nodes external identifier.
         /// 
         /// ### Config
         /// 
         /// The config argument supports the following :
         /// 
-        /// - `ShouldEnableLockdownMode`: - A boolean value indicating whether to enable lockdown mode for a cluster.
-        /// - `BuildInfo`: -Currently representing the build information to be used for the cluster creation.
-        /// - `Name`: - Name of the domain manager (Prism Central).
-        /// - `Size`: - Domain manager (Prism Central) size is an enumeration of starter, small, large, or extra large starter values. possible values are:
+        /// - &lt;span pulumi-lang-nodejs="`shouldEnableLockdownMode`" pulumi-lang-dotnet="`ShouldEnableLockdownMode`" pulumi-lang-go="`shouldEnableLockdownMode`" pulumi-lang-python="`should_enable_lockdown_mode`" pulumi-lang-yaml="`shouldEnableLockdownMode`" pulumi-lang-java="`shouldEnableLockdownMode`"&gt;`shouldEnableLockdownMode`&lt;/span&gt;: - A boolean value indicating whether to enable lockdown mode for a cluster.
+        /// - &lt;span pulumi-lang-nodejs="`buildInfo`" pulumi-lang-dotnet="`BuildInfo`" pulumi-lang-go="`buildInfo`" pulumi-lang-python="`build_info`" pulumi-lang-yaml="`buildInfo`" pulumi-lang-java="`buildInfo`"&gt;`buildInfo`&lt;/span&gt;: -Currently representing the build information to be used for the cluster creation.
+        /// - &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - Name of the domain manager (Prism Central).
+        /// - &lt;span pulumi-lang-nodejs="`size`" pulumi-lang-dotnet="`Size`" pulumi-lang-go="`size`" pulumi-lang-python="`size`" pulumi-lang-yaml="`size`" pulumi-lang-java="`size`"&gt;`size`&lt;/span&gt;: - Domain manager (Prism Central) size is an enumeration of starter, small, large, or extra large starter values. possible values are:
         ///   - `SMALL` : Domain manager (Prism Central) of size small.
         ///   - `LARGE` : Domain manager (Prism Central) of size large.
         ///   - `EXTRALARGE` : Domain manager (Prism Central) of size extra large.
         ///   - `STARTER` : Domain manager (Prism Central) of size starter.
-        /// - `BootstrapConfig`: - Bootstrap configuration details for the domain manager (Prism Central).
-        /// - `ResourceConfig`: - This configuration is used to provide the resource-related details like container external identifiers, number of VCPUs, memory size, data disk size of the domain manager (Prism Central). In the case of a multi-node setup, the sum of resources like number of VCPUs, memory size and data disk size are provided.
+        /// - &lt;span pulumi-lang-nodejs="`bootstrapConfig`" pulumi-lang-dotnet="`BootstrapConfig`" pulumi-lang-go="`bootstrapConfig`" pulumi-lang-python="`bootstrap_config`" pulumi-lang-yaml="`bootstrapConfig`" pulumi-lang-java="`bootstrapConfig`"&gt;`bootstrapConfig`&lt;/span&gt;: - Bootstrap configuration details for the domain manager (Prism Central).
+        /// - &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt;: - This configuration is used to provide the resource-related details like container external identifiers, number of VCPUs, memory size, data disk size of the domain manager (Prism Central). In the case of a multi-node setup, the sum of resources like number of VCPUs, memory size and data disk size are provided.
         /// 
         /// #### Build Info
         /// 
-        /// The `BuildInfo` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`buildInfo`" pulumi-lang-dotnet="`BuildInfo`" pulumi-lang-go="`buildInfo`" pulumi-lang-python="`build_info`" pulumi-lang-yaml="`buildInfo`" pulumi-lang-java="`buildInfo`"&gt;`buildInfo`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Version`: - Software version.
+        /// - &lt;span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`"&gt;`version`&lt;/span&gt;: - Software version.
         /// 
         /// #### Bootstrap Config
         /// 
-        /// The `BootstrapConfig` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`bootstrapConfig`" pulumi-lang-dotnet="`BootstrapConfig`" pulumi-lang-go="`bootstrapConfig`" pulumi-lang-python="`bootstrap_config`" pulumi-lang-yaml="`bootstrapConfig`" pulumi-lang-java="`bootstrapConfig`"&gt;`bootstrapConfig`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `EnvironmentInfo`: - Environment information for the domain manager (Prism Central) cluster.
+        /// - &lt;span pulumi-lang-nodejs="`environmentInfo`" pulumi-lang-dotnet="`EnvironmentInfo`" pulumi-lang-go="`environmentInfo`" pulumi-lang-python="`environment_info`" pulumi-lang-yaml="`environmentInfo`" pulumi-lang-java="`environmentInfo`"&gt;`environmentInfo`&lt;/span&gt;: - Environment information for the domain manager (Prism Central) cluster.
         /// 
         /// ##### Environment Info
         /// 
-        /// The `EnvironmentInfo` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`environmentInfo`" pulumi-lang-dotnet="`EnvironmentInfo`" pulumi-lang-go="`environmentInfo`" pulumi-lang-python="`environment_info`" pulumi-lang-yaml="`environmentInfo`" pulumi-lang-java="`environmentInfo`"&gt;`environmentInfo`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Type`: - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
+        /// - &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
         ///   Following are the supported entity types:
         ///   - `ONPREM` : On-prem environment.
         ///   - `NTNX_CLOUD` : Nutanix cloud environment.
-        /// - `ProviderType`: - Enums denoting the provider type of the PC, that is, AHV or ESXi.
+        /// - &lt;span pulumi-lang-nodejs="`providerType`" pulumi-lang-dotnet="`ProviderType`" pulumi-lang-go="`providerType`" pulumi-lang-python="`provider_type`" pulumi-lang-yaml="`providerType`" pulumi-lang-java="`providerType`"&gt;`providerType`&lt;/span&gt;: - Enums denoting the provider type of the PC, that is, AHV or ESXi.
         ///   Following are the supported provider types:
         ///   - `VSPHERE` : Vsphere cloud provider.
         ///   - `AZURE` : Azure cloud provider.
         ///   - `NTNX` : Nutanix cloud provider.
         ///   - `GCP` : GCP cloud provider.
         ///   - `AWS` : AWS cloud provider.
-        /// - `ProvisioningType`: - Enums denoting the instance type of the cloud PC. It indicates whether the PC is created on bare-metal or on a cloud-provisioned VM. Hence, it supports two possible values:
+        /// - &lt;span pulumi-lang-nodejs="`provisioningType`" pulumi-lang-dotnet="`ProvisioningType`" pulumi-lang-go="`provisioningType`" pulumi-lang-python="`provisioning_type`" pulumi-lang-yaml="`provisioningType`" pulumi-lang-java="`provisioningType`"&gt;`provisioningType`&lt;/span&gt;: - Enums denoting the instance type of the cloud PC. It indicates whether the PC is created on bare-metal or on a cloud-provisioned VM. Hence, it supports two possible values:
         ///   - `NTNX` : Nutanix instance.
         ///   - `NATIVE` : Native instance.
         /// 
         /// #### Resource Config
         /// 
-        /// The `ResourceConfig` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `NumVcpus`: - This property is used for readOnly purposes to display Prism Central number of VCPUs allocation.
-        /// - `MemorySizeBytes`: - This property is used for readOnly purposes to display Prism Central RAM allocation at the cluster level.
-        /// - `DataDiskSizeBytes`: - This property is used for readOnly purposes to display Prism Central data disk size allocation at a cluster level.
-        /// - `ContainerExtIds`: - The external identifier of the container that will be used to create the domain manager (Prism Central) cluster.
+        /// - &lt;span pulumi-lang-nodejs="`numVcpus`" pulumi-lang-dotnet="`NumVcpus`" pulumi-lang-go="`numVcpus`" pulumi-lang-python="`num_vcpus`" pulumi-lang-yaml="`numVcpus`" pulumi-lang-java="`numVcpus`"&gt;`numVcpus`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central number of VCPUs allocation.
+        /// - &lt;span pulumi-lang-nodejs="`memorySizeBytes`" pulumi-lang-dotnet="`MemorySizeBytes`" pulumi-lang-go="`memorySizeBytes`" pulumi-lang-python="`memory_size_bytes`" pulumi-lang-yaml="`memorySizeBytes`" pulumi-lang-java="`memorySizeBytes`"&gt;`memorySizeBytes`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central RAM allocation at the cluster level.
+        /// - &lt;span pulumi-lang-nodejs="`dataDiskSizeBytes`" pulumi-lang-dotnet="`DataDiskSizeBytes`" pulumi-lang-go="`dataDiskSizeBytes`" pulumi-lang-python="`data_disk_size_bytes`" pulumi-lang-yaml="`dataDiskSizeBytes`" pulumi-lang-java="`dataDiskSizeBytes`"&gt;`dataDiskSizeBytes`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central data disk size allocation at a cluster level.
+        /// - &lt;span pulumi-lang-nodejs="`containerExtIds`" pulumi-lang-dotnet="`ContainerExtIds`" pulumi-lang-go="`containerExtIds`" pulumi-lang-python="`container_ext_ids`" pulumi-lang-yaml="`containerExtIds`" pulumi-lang-java="`containerExtIds`"&gt;`containerExtIds`&lt;/span&gt;: - The external identifier of the container that will be used to create the domain manager (Prism Central) cluster.
         /// 
         /// ### Network
         /// 
-        /// the `Network` argument supports the following:
+        /// the &lt;span pulumi-lang-nodejs="`network`" pulumi-lang-dotnet="`Network`" pulumi-lang-go="`network`" pulumi-lang-python="`network`" pulumi-lang-yaml="`network`" pulumi-lang-java="`network`"&gt;`network`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
-        /// - `NameServers`: - List of name servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
-        /// - `NtpServers`: - List of NTP servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
-        /// - `Fqdn`: - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
-        /// - `ExternalNetworks`: - This configuration is used to manage Prism Central.
+        /// - &lt;span pulumi-lang-nodejs="`externalAddress`" pulumi-lang-dotnet="`ExternalAddress`" pulumi-lang-go="`externalAddress`" pulumi-lang-python="`external_address`" pulumi-lang-yaml="`externalAddress`" pulumi-lang-java="`externalAddress`"&gt;`externalAddress`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`nameServers`" pulumi-lang-dotnet="`NameServers`" pulumi-lang-go="`nameServers`" pulumi-lang-python="`name_servers`" pulumi-lang-yaml="`nameServers`" pulumi-lang-java="`nameServers`"&gt;`nameServers`&lt;/span&gt;: - List of name servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+        /// - &lt;span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`"&gt;`ntpServers`&lt;/span&gt;: - List of NTP servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+        /// - &lt;span pulumi-lang-nodejs="`externalNetworks`" pulumi-lang-dotnet="`ExternalNetworks`" pulumi-lang-go="`externalNetworks`" pulumi-lang-python="`external_networks`" pulumi-lang-yaml="`externalNetworks`" pulumi-lang-java="`externalNetworks`"&gt;`externalNetworks`&lt;/span&gt;: - This configuration is used to manage Prism Central.
         /// 
         /// #### External Address
         /// 
-        /// The `ExternalAddress` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`externalAddress`" pulumi-lang-dotnet="`ExternalAddress`" pulumi-lang-go="`externalAddress`" pulumi-lang-python="`external_address`" pulumi-lang-yaml="`externalAddress`" pulumi-lang-java="`externalAddress`"&gt;`externalAddress`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
         /// #### Name Servers, NTP Servers
         /// 
-        /// The `NameServers` and `NtpServers` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`nameServers`" pulumi-lang-dotnet="`NameServers`" pulumi-lang-go="`nameServers`" pulumi-lang-python="`name_servers`" pulumi-lang-yaml="`nameServers`" pulumi-lang-java="`nameServers`"&gt;`nameServers`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`"&gt;`ntpServers`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// - `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// #### External Networks
         /// 
-        /// The `ExternalNetworks` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`externalNetworks`" pulumi-lang-dotnet="`ExternalNetworks`" pulumi-lang-go="`externalNetworks`" pulumi-lang-python="`external_networks`" pulumi-lang-yaml="`externalNetworks`" pulumi-lang-java="`externalNetworks`"&gt;`externalNetworks`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `DefaultGateway`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// - `SubnetMask`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// - `IpRanges`: - Range of IPs used for Prism Central network setup.
-        /// - `NetworkExtId`: - The network external identifier to which Domain Manager (Prism Central) is to be deployed or is already configured.
+        /// - &lt;span pulumi-lang-nodejs="`defaultGateway`" pulumi-lang-dotnet="`DefaultGateway`" pulumi-lang-go="`defaultGateway`" pulumi-lang-python="`default_gateway`" pulumi-lang-yaml="`defaultGateway`" pulumi-lang-java="`defaultGateway`"&gt;`defaultGateway`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// - &lt;span pulumi-lang-nodejs="`subnetMask`" pulumi-lang-dotnet="`SubnetMask`" pulumi-lang-go="`subnetMask`" pulumi-lang-python="`subnet_mask`" pulumi-lang-yaml="`subnetMask`" pulumi-lang-java="`subnetMask`"&gt;`subnetMask`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// - &lt;span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`"&gt;`ipRanges`&lt;/span&gt;: - Range of IPs used for Prism Central network setup.
+        /// - &lt;span pulumi-lang-nodejs="`networkExtId`" pulumi-lang-dotnet="`NetworkExtId`" pulumi-lang-go="`networkExtId`" pulumi-lang-python="`network_ext_id`" pulumi-lang-yaml="`networkExtId`" pulumi-lang-java="`networkExtId`"&gt;`networkExtId`&lt;/span&gt;: - The network external identifier to which Domain Manager (Prism Central) is to be deployed or is already configured.
         /// 
         /// #### Default Gateway, Subnet Mask
         /// 
-        /// The `DefaultGateway`and `SubnetMask` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`defaultGateway`" pulumi-lang-dotnet="`DefaultGateway`" pulumi-lang-go="`defaultGateway`" pulumi-lang-python="`default_gateway`" pulumi-lang-yaml="`defaultGateway`" pulumi-lang-java="`defaultGateway`"&gt;`defaultGateway`&lt;/span&gt;and &lt;span pulumi-lang-nodejs="`subnetMask`" pulumi-lang-dotnet="`SubnetMask`" pulumi-lang-go="`subnetMask`" pulumi-lang-python="`subnet_mask`" pulumi-lang-yaml="`subnetMask`" pulumi-lang-java="`subnetMask`"&gt;`subnetMask`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// - `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// #### IP Ranges
         /// 
-        /// The `IpRanges` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`"&gt;`ipRanges`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Begin`: - The beginning IP address of the range.
-        /// - `End`: - The ending IP address of the range.
+        /// - &lt;span pulumi-lang-nodejs="`begin`" pulumi-lang-dotnet="`Begin`" pulumi-lang-go="`begin`" pulumi-lang-python="`begin`" pulumi-lang-yaml="`begin`" pulumi-lang-java="`begin`"&gt;`begin`&lt;/span&gt;: - The beginning IP address of the range.
+        /// - &lt;span pulumi-lang-nodejs="`end`" pulumi-lang-dotnet="`End`" pulumi-lang-go="`end`" pulumi-lang-python="`end`" pulumi-lang-yaml="`end`" pulumi-lang-java="`end`"&gt;`end`&lt;/span&gt;: - The ending IP address of the range.
         /// 
         /// #### begin, end
         /// 
-        /// The `Begin` and `End` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`begin`" pulumi-lang-dotnet="`Begin`" pulumi-lang-go="`begin`" pulumi-lang-python="`begin`" pulumi-lang-yaml="`begin`" pulumi-lang-java="`begin`"&gt;`begin`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`end`" pulumi-lang-dotnet="`End`" pulumi-lang-go="`end`" pulumi-lang-python="`end`" pulumi-lang-yaml="`end`" pulumi-lang-java="`end`"&gt;`end`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
         /// #### IpV4, IpV6
         /// 
-        /// The `Ipv4` and `Ipv6` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Value`: - The IPv4/IPv6 address of the host.
-        /// - `PrefixLength`: - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The IPv4/IPv6 address of the host.
+        /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
         /// #### FQDN
         /// 
-        /// The `Fqdn` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Value`: - The fully qualified domain name of the host.
+        /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name of the host.
         /// 
         /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listRestorePoints).
         /// </summary>
@@ -214,6 +330,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // This pe based module, so use pe provider alias
+        /// const restorePoints = nutanix.getPcRestorePointsV2({
+        ///     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// });
+        /// // list all the restorable pcs with select properties
+        /// const restorePointsSelect = nutanix.getPcRestorePointsV2({
+        ///     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        ///     select: "creationTime,domainManager,extId",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # This pe based module, so use pe provider alias
+        /// restore_points = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0")
+        /// # list all the restorable pcs with select properties
+        /// restore_points_select = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0",
+        ///     select="creationTime,domainManager,extId")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -223,14 +368,14 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // This pe based module, so use pe provider alias
-        ///     var restorePoints = Nutanix.Index.GetPcRestorePointsV2.Invoke(new()
+        ///     var restorePoints = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
         ///     });
         /// 
         ///     // list all the restorable pcs with select properties
-        ///     var restorePointsSelect = Nutanix.Index.GetPcRestorePointsV2.Invoke(new()
+        ///     var restorePointsSelect = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
@@ -239,161 +384,248 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// This pe based module, so use pe provider alias
+        /// 		_, err := nutanix.GetPcRestorePointsV2(ctx, &amp;nutanix.GetPcRestorePointsV2Args{
+        /// 			RestorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        /// 			RestoreSourceExtId:           "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list all the restorable pcs with select properties
+        /// 		_, err = nutanix.GetPcRestorePointsV2(ctx, &amp;nutanix.GetPcRestorePointsV2Args{
+        /// 			RestorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        /// 			RestoreSourceExtId:           "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// 			Select:                       pulumi.StringRef("creationTime,domainManager,extId"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcRestorePointsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // This pe based module, so use pe provider alias
+        ///         final var restorePoints = NutanixFunctions.getPcRestorePointsV2(GetPcRestorePointsV2Args.builder()
+        ///             .restorableDomainManagerExtId("1cf35cfe-a341-4f27-8e31-2f51b79302c4")
+        ///             .restoreSourceExtId("ec77405b-16c5-4c8d-ade1-bede241afae0")
+        ///             .build());
+        /// 
+        ///         // list all the restorable pcs with select properties
+        ///         final var restorePointsSelect = NutanixFunctions.getPcRestorePointsV2(GetPcRestorePointsV2Args.builder()
+        ///             .restorableDomainManagerExtId("1cf35cfe-a341-4f27-8e31-2f51b79302c4")
+        ///             .restoreSourceExtId("ec77405b-16c5-4c8d-ade1-bede241afae0")
+        ///             .select("creationTime,domainManager,extId")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # This pe based module, so use pe provider alias
+        ///   restorePoints:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointsV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: 1cf35cfe-a341-4f27-8e31-2f51b79302c4
+        ///         restoreSourceExtId: ec77405b-16c5-4c8d-ade1-bede241afae0
+        ///   # list all the restorable pcs with select properties
+        ///   restorePointsSelect:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointsV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: 1cf35cfe-a341-4f27-8e31-2f51b79302c4
+        ///         restoreSourceExtId: ec77405b-16c5-4c8d-ade1-bede241afae0
+        ///         select: creationTime,domainManager,extId
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Restore Points
         /// 
-        /// The RestorePoints attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" restorePoints " pulumi-lang-dotnet=" RestorePoints " pulumi-lang-go=" restorePoints " pulumi-lang-python=" restore_points " pulumi-lang-yaml=" restorePoints " pulumi-lang-java=" restorePoints "&gt; restorePoints &lt;/span&gt;attribute supports the following:
         /// 
-        /// - `ExtId`: A globally unique identifier of an instance that is suitable for external consumption.
-        /// - `TenantId`: A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// - `Links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - `CreationTime`: The UTC date and time in ISO-8601 format when the Restore point was created.
-        /// - `DomainManager`: Domain manager (Prism Central) details.
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: A globally unique identifier of an instance that is suitable for external consumption.
+        /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`creationTime`" pulumi-lang-dotnet="`CreationTime`" pulumi-lang-go="`creationTime`" pulumi-lang-python="`creation_time`" pulumi-lang-yaml="`creationTime`" pulumi-lang-java="`creationTime`"&gt;`creationTime`&lt;/span&gt;: The UTC date and time in ISO-8601 format when the Restore point was created.
+        /// - &lt;span pulumi-lang-nodejs="`domainManager`" pulumi-lang-dotnet="`DomainManager`" pulumi-lang-go="`domainManager`" pulumi-lang-python="`domain_manager`" pulumi-lang-yaml="`domainManager`" pulumi-lang-java="`domainManager`"&gt;`domainManager`&lt;/span&gt;: Domain manager (Prism Central) details.
         /// 
         /// ### Links
         /// 
         /// The links attribute supports the following:
         /// 
-        /// - `Href`: - The URL at which the entity described by the link can be accessed.
-        /// - `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// ### Domain Manager
         /// 
-        /// The DomainManager attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" domainManager " pulumi-lang-dotnet=" DomainManager " pulumi-lang-go=" domainManager " pulumi-lang-python=" domain_manager " pulumi-lang-yaml=" domainManager " pulumi-lang-java=" domainManager "&gt; domainManager &lt;/span&gt;attribute supports the following:
         /// 
-        /// - `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// - `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// - `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - `Config`: - Domain manager (Prism Central) cluster configuration details.
-        /// - `IsRegisteredWithHostingCluster`: - Boolean value indicating if the domain manager (Prism Central) is registered with the hosting cluster, that is, Prism Element.
-        /// - `Network`: - Domain manager (Prism Central) network configuration details.
-        /// - `HostingClusterExtId`: - The external identifier of the cluster hosting the domain manager (Prism Central) instance.
-        /// - `ShouldEnableHighAvailability`: - This configuration enables Prism Central to be deployed in scale-out mode.
-        /// - `NodeExtIds`: - Domain manager (Prism Central) nodes external identifier.
+        /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`"&gt;`config`&lt;/span&gt;: - Domain manager (Prism Central) cluster configuration details.
+        /// - &lt;span pulumi-lang-nodejs="`isRegisteredWithHostingCluster`" pulumi-lang-dotnet="`IsRegisteredWithHostingCluster`" pulumi-lang-go="`isRegisteredWithHostingCluster`" pulumi-lang-python="`is_registered_with_hosting_cluster`" pulumi-lang-yaml="`isRegisteredWithHostingCluster`" pulumi-lang-java="`isRegisteredWithHostingCluster`"&gt;`isRegisteredWithHostingCluster`&lt;/span&gt;: - Boolean value indicating if the domain manager (Prism Central) is registered with the hosting cluster, that is, Prism Element.
+        /// - &lt;span pulumi-lang-nodejs="`network`" pulumi-lang-dotnet="`Network`" pulumi-lang-go="`network`" pulumi-lang-python="`network`" pulumi-lang-yaml="`network`" pulumi-lang-java="`network`"&gt;`network`&lt;/span&gt;: - Domain manager (Prism Central) network configuration details.
+        /// - &lt;span pulumi-lang-nodejs="`hostingClusterExtId`" pulumi-lang-dotnet="`HostingClusterExtId`" pulumi-lang-go="`hostingClusterExtId`" pulumi-lang-python="`hosting_cluster_ext_id`" pulumi-lang-yaml="`hostingClusterExtId`" pulumi-lang-java="`hostingClusterExtId`"&gt;`hostingClusterExtId`&lt;/span&gt;: - The external identifier of the cluster hosting the domain manager (Prism Central) instance.
+        /// - &lt;span pulumi-lang-nodejs="`shouldEnableHighAvailability`" pulumi-lang-dotnet="`ShouldEnableHighAvailability`" pulumi-lang-go="`shouldEnableHighAvailability`" pulumi-lang-python="`should_enable_high_availability`" pulumi-lang-yaml="`shouldEnableHighAvailability`" pulumi-lang-java="`shouldEnableHighAvailability`"&gt;`shouldEnableHighAvailability`&lt;/span&gt;: - This configuration enables Prism Central to be deployed in scale-out mode.
+        /// - &lt;span pulumi-lang-nodejs="`nodeExtIds`" pulumi-lang-dotnet="`NodeExtIds`" pulumi-lang-go="`nodeExtIds`" pulumi-lang-python="`node_ext_ids`" pulumi-lang-yaml="`nodeExtIds`" pulumi-lang-java="`nodeExtIds`"&gt;`nodeExtIds`&lt;/span&gt;: - Domain manager (Prism Central) nodes external identifier.
         /// 
         /// ### Config
         /// 
         /// The config argument supports the following :
         /// 
-        /// - `ShouldEnableLockdownMode`: - A boolean value indicating whether to enable lockdown mode for a cluster.
-        /// - `BuildInfo`: -Currently representing the build information to be used for the cluster creation.
-        /// - `Name`: - Name of the domain manager (Prism Central).
-        /// - `Size`: - Domain manager (Prism Central) size is an enumeration of starter, small, large, or extra large starter values. possible values are:
+        /// - &lt;span pulumi-lang-nodejs="`shouldEnableLockdownMode`" pulumi-lang-dotnet="`ShouldEnableLockdownMode`" pulumi-lang-go="`shouldEnableLockdownMode`" pulumi-lang-python="`should_enable_lockdown_mode`" pulumi-lang-yaml="`shouldEnableLockdownMode`" pulumi-lang-java="`shouldEnableLockdownMode`"&gt;`shouldEnableLockdownMode`&lt;/span&gt;: - A boolean value indicating whether to enable lockdown mode for a cluster.
+        /// - &lt;span pulumi-lang-nodejs="`buildInfo`" pulumi-lang-dotnet="`BuildInfo`" pulumi-lang-go="`buildInfo`" pulumi-lang-python="`build_info`" pulumi-lang-yaml="`buildInfo`" pulumi-lang-java="`buildInfo`"&gt;`buildInfo`&lt;/span&gt;: -Currently representing the build information to be used for the cluster creation.
+        /// - &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - Name of the domain manager (Prism Central).
+        /// - &lt;span pulumi-lang-nodejs="`size`" pulumi-lang-dotnet="`Size`" pulumi-lang-go="`size`" pulumi-lang-python="`size`" pulumi-lang-yaml="`size`" pulumi-lang-java="`size`"&gt;`size`&lt;/span&gt;: - Domain manager (Prism Central) size is an enumeration of starter, small, large, or extra large starter values. possible values are:
         ///   - `SMALL` : Domain manager (Prism Central) of size small.
         ///   - `LARGE` : Domain manager (Prism Central) of size large.
         ///   - `EXTRALARGE` : Domain manager (Prism Central) of size extra large.
         ///   - `STARTER` : Domain manager (Prism Central) of size starter.
-        /// - `BootstrapConfig`: - Bootstrap configuration details for the domain manager (Prism Central).
-        /// - `ResourceConfig`: - This configuration is used to provide the resource-related details like container external identifiers, number of VCPUs, memory size, data disk size of the domain manager (Prism Central). In the case of a multi-node setup, the sum of resources like number of VCPUs, memory size and data disk size are provided.
+        /// - &lt;span pulumi-lang-nodejs="`bootstrapConfig`" pulumi-lang-dotnet="`BootstrapConfig`" pulumi-lang-go="`bootstrapConfig`" pulumi-lang-python="`bootstrap_config`" pulumi-lang-yaml="`bootstrapConfig`" pulumi-lang-java="`bootstrapConfig`"&gt;`bootstrapConfig`&lt;/span&gt;: - Bootstrap configuration details for the domain manager (Prism Central).
+        /// - &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt;: - This configuration is used to provide the resource-related details like container external identifiers, number of VCPUs, memory size, data disk size of the domain manager (Prism Central). In the case of a multi-node setup, the sum of resources like number of VCPUs, memory size and data disk size are provided.
         /// 
         /// #### Build Info
         /// 
-        /// The `BuildInfo` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`buildInfo`" pulumi-lang-dotnet="`BuildInfo`" pulumi-lang-go="`buildInfo`" pulumi-lang-python="`build_info`" pulumi-lang-yaml="`buildInfo`" pulumi-lang-java="`buildInfo`"&gt;`buildInfo`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Version`: - Software version.
+        /// - &lt;span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`"&gt;`version`&lt;/span&gt;: - Software version.
         /// 
         /// #### Bootstrap Config
         /// 
-        /// The `BootstrapConfig` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`bootstrapConfig`" pulumi-lang-dotnet="`BootstrapConfig`" pulumi-lang-go="`bootstrapConfig`" pulumi-lang-python="`bootstrap_config`" pulumi-lang-yaml="`bootstrapConfig`" pulumi-lang-java="`bootstrapConfig`"&gt;`bootstrapConfig`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `EnvironmentInfo`: - Environment information for the domain manager (Prism Central) cluster.
+        /// - &lt;span pulumi-lang-nodejs="`environmentInfo`" pulumi-lang-dotnet="`EnvironmentInfo`" pulumi-lang-go="`environmentInfo`" pulumi-lang-python="`environment_info`" pulumi-lang-yaml="`environmentInfo`" pulumi-lang-java="`environmentInfo`"&gt;`environmentInfo`&lt;/span&gt;: - Environment information for the domain manager (Prism Central) cluster.
         /// 
         /// ##### Environment Info
         /// 
-        /// The `EnvironmentInfo` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`environmentInfo`" pulumi-lang-dotnet="`EnvironmentInfo`" pulumi-lang-go="`environmentInfo`" pulumi-lang-python="`environment_info`" pulumi-lang-yaml="`environmentInfo`" pulumi-lang-java="`environmentInfo`"&gt;`environmentInfo`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Type`: - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
+        /// - &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
         ///   Following are the supported entity types:
         ///   - `ONPREM` : On-prem environment.
         ///   - `NTNX_CLOUD` : Nutanix cloud environment.
-        /// - `ProviderType`: - Enums denoting the provider type of the PC, that is, AHV or ESXi.
+        /// - &lt;span pulumi-lang-nodejs="`providerType`" pulumi-lang-dotnet="`ProviderType`" pulumi-lang-go="`providerType`" pulumi-lang-python="`provider_type`" pulumi-lang-yaml="`providerType`" pulumi-lang-java="`providerType`"&gt;`providerType`&lt;/span&gt;: - Enums denoting the provider type of the PC, that is, AHV or ESXi.
         ///   Following are the supported provider types:
         ///   - `VSPHERE` : Vsphere cloud provider.
         ///   - `AZURE` : Azure cloud provider.
         ///   - `NTNX` : Nutanix cloud provider.
         ///   - `GCP` : GCP cloud provider.
         ///   - `AWS` : AWS cloud provider.
-        /// - `ProvisioningType`: - Enums denoting the instance type of the cloud PC. It indicates whether the PC is created on bare-metal or on a cloud-provisioned VM. Hence, it supports two possible values:
+        /// - &lt;span pulumi-lang-nodejs="`provisioningType`" pulumi-lang-dotnet="`ProvisioningType`" pulumi-lang-go="`provisioningType`" pulumi-lang-python="`provisioning_type`" pulumi-lang-yaml="`provisioningType`" pulumi-lang-java="`provisioningType`"&gt;`provisioningType`&lt;/span&gt;: - Enums denoting the instance type of the cloud PC. It indicates whether the PC is created on bare-metal or on a cloud-provisioned VM. Hence, it supports two possible values:
         ///   - `NTNX` : Nutanix instance.
         ///   - `NATIVE` : Native instance.
         /// 
         /// #### Resource Config
         /// 
-        /// The `ResourceConfig` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `NumVcpus`: - This property is used for readOnly purposes to display Prism Central number of VCPUs allocation.
-        /// - `MemorySizeBytes`: - This property is used for readOnly purposes to display Prism Central RAM allocation at the cluster level.
-        /// - `DataDiskSizeBytes`: - This property is used for readOnly purposes to display Prism Central data disk size allocation at a cluster level.
-        /// - `ContainerExtIds`: - The external identifier of the container that will be used to create the domain manager (Prism Central) cluster.
+        /// - &lt;span pulumi-lang-nodejs="`numVcpus`" pulumi-lang-dotnet="`NumVcpus`" pulumi-lang-go="`numVcpus`" pulumi-lang-python="`num_vcpus`" pulumi-lang-yaml="`numVcpus`" pulumi-lang-java="`numVcpus`"&gt;`numVcpus`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central number of VCPUs allocation.
+        /// - &lt;span pulumi-lang-nodejs="`memorySizeBytes`" pulumi-lang-dotnet="`MemorySizeBytes`" pulumi-lang-go="`memorySizeBytes`" pulumi-lang-python="`memory_size_bytes`" pulumi-lang-yaml="`memorySizeBytes`" pulumi-lang-java="`memorySizeBytes`"&gt;`memorySizeBytes`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central RAM allocation at the cluster level.
+        /// - &lt;span pulumi-lang-nodejs="`dataDiskSizeBytes`" pulumi-lang-dotnet="`DataDiskSizeBytes`" pulumi-lang-go="`dataDiskSizeBytes`" pulumi-lang-python="`data_disk_size_bytes`" pulumi-lang-yaml="`dataDiskSizeBytes`" pulumi-lang-java="`dataDiskSizeBytes`"&gt;`dataDiskSizeBytes`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central data disk size allocation at a cluster level.
+        /// - &lt;span pulumi-lang-nodejs="`containerExtIds`" pulumi-lang-dotnet="`ContainerExtIds`" pulumi-lang-go="`containerExtIds`" pulumi-lang-python="`container_ext_ids`" pulumi-lang-yaml="`containerExtIds`" pulumi-lang-java="`containerExtIds`"&gt;`containerExtIds`&lt;/span&gt;: - The external identifier of the container that will be used to create the domain manager (Prism Central) cluster.
         /// 
         /// ### Network
         /// 
-        /// the `Network` argument supports the following:
+        /// the &lt;span pulumi-lang-nodejs="`network`" pulumi-lang-dotnet="`Network`" pulumi-lang-go="`network`" pulumi-lang-python="`network`" pulumi-lang-yaml="`network`" pulumi-lang-java="`network`"&gt;`network`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
-        /// - `NameServers`: - List of name servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
-        /// - `NtpServers`: - List of NTP servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
-        /// - `Fqdn`: - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
-        /// - `ExternalNetworks`: - This configuration is used to manage Prism Central.
+        /// - &lt;span pulumi-lang-nodejs="`externalAddress`" pulumi-lang-dotnet="`ExternalAddress`" pulumi-lang-go="`externalAddress`" pulumi-lang-python="`external_address`" pulumi-lang-yaml="`externalAddress`" pulumi-lang-java="`externalAddress`"&gt;`externalAddress`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`nameServers`" pulumi-lang-dotnet="`NameServers`" pulumi-lang-go="`nameServers`" pulumi-lang-python="`name_servers`" pulumi-lang-yaml="`nameServers`" pulumi-lang-java="`nameServers`"&gt;`nameServers`&lt;/span&gt;: - List of name servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+        /// - &lt;span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`"&gt;`ntpServers`&lt;/span&gt;: - List of NTP servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+        /// - &lt;span pulumi-lang-nodejs="`externalNetworks`" pulumi-lang-dotnet="`ExternalNetworks`" pulumi-lang-go="`externalNetworks`" pulumi-lang-python="`external_networks`" pulumi-lang-yaml="`externalNetworks`" pulumi-lang-java="`externalNetworks`"&gt;`externalNetworks`&lt;/span&gt;: - This configuration is used to manage Prism Central.
         /// 
         /// #### External Address
         /// 
-        /// The `ExternalAddress` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`externalAddress`" pulumi-lang-dotnet="`ExternalAddress`" pulumi-lang-go="`externalAddress`" pulumi-lang-python="`external_address`" pulumi-lang-yaml="`externalAddress`" pulumi-lang-java="`externalAddress`"&gt;`externalAddress`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
         /// #### Name Servers, NTP Servers
         /// 
-        /// The `NameServers` and `NtpServers` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`nameServers`" pulumi-lang-dotnet="`NameServers`" pulumi-lang-go="`nameServers`" pulumi-lang-python="`name_servers`" pulumi-lang-yaml="`nameServers`" pulumi-lang-java="`nameServers`"&gt;`nameServers`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`"&gt;`ntpServers`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// - `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// #### External Networks
         /// 
-        /// The `ExternalNetworks` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`externalNetworks`" pulumi-lang-dotnet="`ExternalNetworks`" pulumi-lang-go="`externalNetworks`" pulumi-lang-python="`external_networks`" pulumi-lang-yaml="`externalNetworks`" pulumi-lang-java="`externalNetworks`"&gt;`externalNetworks`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `DefaultGateway`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// - `SubnetMask`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// - `IpRanges`: - Range of IPs used for Prism Central network setup.
-        /// - `NetworkExtId`: - The network external identifier to which Domain Manager (Prism Central) is to be deployed or is already configured.
+        /// - &lt;span pulumi-lang-nodejs="`defaultGateway`" pulumi-lang-dotnet="`DefaultGateway`" pulumi-lang-go="`defaultGateway`" pulumi-lang-python="`default_gateway`" pulumi-lang-yaml="`defaultGateway`" pulumi-lang-java="`defaultGateway`"&gt;`defaultGateway`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// - &lt;span pulumi-lang-nodejs="`subnetMask`" pulumi-lang-dotnet="`SubnetMask`" pulumi-lang-go="`subnetMask`" pulumi-lang-python="`subnet_mask`" pulumi-lang-yaml="`subnetMask`" pulumi-lang-java="`subnetMask`"&gt;`subnetMask`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// - &lt;span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`"&gt;`ipRanges`&lt;/span&gt;: - Range of IPs used for Prism Central network setup.
+        /// - &lt;span pulumi-lang-nodejs="`networkExtId`" pulumi-lang-dotnet="`NetworkExtId`" pulumi-lang-go="`networkExtId`" pulumi-lang-python="`network_ext_id`" pulumi-lang-yaml="`networkExtId`" pulumi-lang-java="`networkExtId`"&gt;`networkExtId`&lt;/span&gt;: - The network external identifier to which Domain Manager (Prism Central) is to be deployed or is already configured.
         /// 
         /// #### Default Gateway, Subnet Mask
         /// 
-        /// The `DefaultGateway`and `SubnetMask` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`defaultGateway`" pulumi-lang-dotnet="`DefaultGateway`" pulumi-lang-go="`defaultGateway`" pulumi-lang-python="`default_gateway`" pulumi-lang-yaml="`defaultGateway`" pulumi-lang-java="`defaultGateway`"&gt;`defaultGateway`&lt;/span&gt;and &lt;span pulumi-lang-nodejs="`subnetMask`" pulumi-lang-dotnet="`SubnetMask`" pulumi-lang-go="`subnetMask`" pulumi-lang-python="`subnet_mask`" pulumi-lang-yaml="`subnetMask`" pulumi-lang-java="`subnetMask`"&gt;`subnetMask`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// - `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// #### IP Ranges
         /// 
-        /// The `IpRanges` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`"&gt;`ipRanges`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Begin`: - The beginning IP address of the range.
-        /// - `End`: - The ending IP address of the range.
+        /// - &lt;span pulumi-lang-nodejs="`begin`" pulumi-lang-dotnet="`Begin`" pulumi-lang-go="`begin`" pulumi-lang-python="`begin`" pulumi-lang-yaml="`begin`" pulumi-lang-java="`begin`"&gt;`begin`&lt;/span&gt;: - The beginning IP address of the range.
+        /// - &lt;span pulumi-lang-nodejs="`end`" pulumi-lang-dotnet="`End`" pulumi-lang-go="`end`" pulumi-lang-python="`end`" pulumi-lang-yaml="`end`" pulumi-lang-java="`end`"&gt;`end`&lt;/span&gt;: - The ending IP address of the range.
         /// 
         /// #### begin, end
         /// 
-        /// The `Begin` and `End` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`begin`" pulumi-lang-dotnet="`Begin`" pulumi-lang-go="`begin`" pulumi-lang-python="`begin`" pulumi-lang-yaml="`begin`" pulumi-lang-java="`begin`"&gt;`begin`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`end`" pulumi-lang-dotnet="`End`" pulumi-lang-go="`end`" pulumi-lang-python="`end`" pulumi-lang-yaml="`end`" pulumi-lang-java="`end`"&gt;`end`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
         /// #### IpV4, IpV6
         /// 
-        /// The `Ipv4` and `Ipv6` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Value`: - The IPv4/IPv6 address of the host.
-        /// - `PrefixLength`: - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The IPv4/IPv6 address of the host.
+        /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
         /// #### FQDN
         /// 
-        /// The `Fqdn` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Value`: - The fully qualified domain name of the host.
+        /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name of the host.
         /// 
         /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listRestorePoints).
         /// </summary>
@@ -408,6 +640,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // This pe based module, so use pe provider alias
+        /// const restorePoints = nutanix.getPcRestorePointsV2({
+        ///     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// });
+        /// // list all the restorable pcs with select properties
+        /// const restorePointsSelect = nutanix.getPcRestorePointsV2({
+        ///     restorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restoreSourceExtId: "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        ///     select: "creationTime,domainManager,extId",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # This pe based module, so use pe provider alias
+        /// restore_points = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0")
+        /// # list all the restorable pcs with select properties
+        /// restore_points_select = nutanix.get_pc_restore_points_v2(restorable_domain_manager_ext_id="1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        ///     restore_source_ext_id="ec77405b-16c5-4c8d-ade1-bede241afae0",
+        ///     select="creationTime,domainManager,extId")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -417,14 +678,14 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // This pe based module, so use pe provider alias
-        ///     var restorePoints = Nutanix.Index.GetPcRestorePointsV2.Invoke(new()
+        ///     var restorePoints = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
         ///     });
         /// 
         ///     // list all the restorable pcs with select properties
-        ///     var restorePointsSelect = Nutanix.Index.GetPcRestorePointsV2.Invoke(new()
+        ///     var restorePointsSelect = Nutanix.GetPcRestorePointsV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
         ///         RestoreSourceExtId = "ec77405b-16c5-4c8d-ade1-bede241afae0",
@@ -433,161 +694,248 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// This pe based module, so use pe provider alias
+        /// 		_, err := nutanix.GetPcRestorePointsV2(ctx, &amp;nutanix.GetPcRestorePointsV2Args{
+        /// 			RestorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        /// 			RestoreSourceExtId:           "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list all the restorable pcs with select properties
+        /// 		_, err = nutanix.GetPcRestorePointsV2(ctx, &amp;nutanix.GetPcRestorePointsV2Args{
+        /// 			RestorableDomainManagerExtId: "1cf35cfe-a341-4f27-8e31-2f51b79302c4",
+        /// 			RestoreSourceExtId:           "ec77405b-16c5-4c8d-ade1-bede241afae0",
+        /// 			Select:                       pulumi.StringRef("creationTime,domainManager,extId"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcRestorePointsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // This pe based module, so use pe provider alias
+        ///         final var restorePoints = NutanixFunctions.getPcRestorePointsV2(GetPcRestorePointsV2Args.builder()
+        ///             .restorableDomainManagerExtId("1cf35cfe-a341-4f27-8e31-2f51b79302c4")
+        ///             .restoreSourceExtId("ec77405b-16c5-4c8d-ade1-bede241afae0")
+        ///             .build());
+        /// 
+        ///         // list all the restorable pcs with select properties
+        ///         final var restorePointsSelect = NutanixFunctions.getPcRestorePointsV2(GetPcRestorePointsV2Args.builder()
+        ///             .restorableDomainManagerExtId("1cf35cfe-a341-4f27-8e31-2f51b79302c4")
+        ///             .restoreSourceExtId("ec77405b-16c5-4c8d-ade1-bede241afae0")
+        ///             .select("creationTime,domainManager,extId")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # This pe based module, so use pe provider alias
+        ///   restorePoints:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointsV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: 1cf35cfe-a341-4f27-8e31-2f51b79302c4
+        ///         restoreSourceExtId: ec77405b-16c5-4c8d-ade1-bede241afae0
+        ///   # list all the restorable pcs with select properties
+        ///   restorePointsSelect:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointsV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: 1cf35cfe-a341-4f27-8e31-2f51b79302c4
+        ///         restoreSourceExtId: ec77405b-16c5-4c8d-ade1-bede241afae0
+        ///         select: creationTime,domainManager,extId
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Restore Points
         /// 
-        /// The RestorePoints attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" restorePoints " pulumi-lang-dotnet=" RestorePoints " pulumi-lang-go=" restorePoints " pulumi-lang-python=" restore_points " pulumi-lang-yaml=" restorePoints " pulumi-lang-java=" restorePoints "&gt; restorePoints &lt;/span&gt;attribute supports the following:
         /// 
-        /// - `ExtId`: A globally unique identifier of an instance that is suitable for external consumption.
-        /// - `TenantId`: A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// - `Links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - `CreationTime`: The UTC date and time in ISO-8601 format when the Restore point was created.
-        /// - `DomainManager`: Domain manager (Prism Central) details.
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: A globally unique identifier of an instance that is suitable for external consumption.
+        /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`creationTime`" pulumi-lang-dotnet="`CreationTime`" pulumi-lang-go="`creationTime`" pulumi-lang-python="`creation_time`" pulumi-lang-yaml="`creationTime`" pulumi-lang-java="`creationTime`"&gt;`creationTime`&lt;/span&gt;: The UTC date and time in ISO-8601 format when the Restore point was created.
+        /// - &lt;span pulumi-lang-nodejs="`domainManager`" pulumi-lang-dotnet="`DomainManager`" pulumi-lang-go="`domainManager`" pulumi-lang-python="`domain_manager`" pulumi-lang-yaml="`domainManager`" pulumi-lang-java="`domainManager`"&gt;`domainManager`&lt;/span&gt;: Domain manager (Prism Central) details.
         /// 
         /// ### Links
         /// 
         /// The links attribute supports the following:
         /// 
-        /// - `Href`: - The URL at which the entity described by the link can be accessed.
-        /// - `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// ### Domain Manager
         /// 
-        /// The DomainManager attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" domainManager " pulumi-lang-dotnet=" DomainManager " pulumi-lang-go=" domainManager " pulumi-lang-python=" domain_manager " pulumi-lang-yaml=" domainManager " pulumi-lang-java=" domainManager "&gt; domainManager &lt;/span&gt;attribute supports the following:
         /// 
-        /// - `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// - `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// - `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - `Config`: - Domain manager (Prism Central) cluster configuration details.
-        /// - `IsRegisteredWithHostingCluster`: - Boolean value indicating if the domain manager (Prism Central) is registered with the hosting cluster, that is, Prism Element.
-        /// - `Network`: - Domain manager (Prism Central) network configuration details.
-        /// - `HostingClusterExtId`: - The external identifier of the cluster hosting the domain manager (Prism Central) instance.
-        /// - `ShouldEnableHighAvailability`: - This configuration enables Prism Central to be deployed in scale-out mode.
-        /// - `NodeExtIds`: - Domain manager (Prism Central) nodes external identifier.
+        /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`"&gt;`config`&lt;/span&gt;: - Domain manager (Prism Central) cluster configuration details.
+        /// - &lt;span pulumi-lang-nodejs="`isRegisteredWithHostingCluster`" pulumi-lang-dotnet="`IsRegisteredWithHostingCluster`" pulumi-lang-go="`isRegisteredWithHostingCluster`" pulumi-lang-python="`is_registered_with_hosting_cluster`" pulumi-lang-yaml="`isRegisteredWithHostingCluster`" pulumi-lang-java="`isRegisteredWithHostingCluster`"&gt;`isRegisteredWithHostingCluster`&lt;/span&gt;: - Boolean value indicating if the domain manager (Prism Central) is registered with the hosting cluster, that is, Prism Element.
+        /// - &lt;span pulumi-lang-nodejs="`network`" pulumi-lang-dotnet="`Network`" pulumi-lang-go="`network`" pulumi-lang-python="`network`" pulumi-lang-yaml="`network`" pulumi-lang-java="`network`"&gt;`network`&lt;/span&gt;: - Domain manager (Prism Central) network configuration details.
+        /// - &lt;span pulumi-lang-nodejs="`hostingClusterExtId`" pulumi-lang-dotnet="`HostingClusterExtId`" pulumi-lang-go="`hostingClusterExtId`" pulumi-lang-python="`hosting_cluster_ext_id`" pulumi-lang-yaml="`hostingClusterExtId`" pulumi-lang-java="`hostingClusterExtId`"&gt;`hostingClusterExtId`&lt;/span&gt;: - The external identifier of the cluster hosting the domain manager (Prism Central) instance.
+        /// - &lt;span pulumi-lang-nodejs="`shouldEnableHighAvailability`" pulumi-lang-dotnet="`ShouldEnableHighAvailability`" pulumi-lang-go="`shouldEnableHighAvailability`" pulumi-lang-python="`should_enable_high_availability`" pulumi-lang-yaml="`shouldEnableHighAvailability`" pulumi-lang-java="`shouldEnableHighAvailability`"&gt;`shouldEnableHighAvailability`&lt;/span&gt;: - This configuration enables Prism Central to be deployed in scale-out mode.
+        /// - &lt;span pulumi-lang-nodejs="`nodeExtIds`" pulumi-lang-dotnet="`NodeExtIds`" pulumi-lang-go="`nodeExtIds`" pulumi-lang-python="`node_ext_ids`" pulumi-lang-yaml="`nodeExtIds`" pulumi-lang-java="`nodeExtIds`"&gt;`nodeExtIds`&lt;/span&gt;: - Domain manager (Prism Central) nodes external identifier.
         /// 
         /// ### Config
         /// 
         /// The config argument supports the following :
         /// 
-        /// - `ShouldEnableLockdownMode`: - A boolean value indicating whether to enable lockdown mode for a cluster.
-        /// - `BuildInfo`: -Currently representing the build information to be used for the cluster creation.
-        /// - `Name`: - Name of the domain manager (Prism Central).
-        /// - `Size`: - Domain manager (Prism Central) size is an enumeration of starter, small, large, or extra large starter values. possible values are:
+        /// - &lt;span pulumi-lang-nodejs="`shouldEnableLockdownMode`" pulumi-lang-dotnet="`ShouldEnableLockdownMode`" pulumi-lang-go="`shouldEnableLockdownMode`" pulumi-lang-python="`should_enable_lockdown_mode`" pulumi-lang-yaml="`shouldEnableLockdownMode`" pulumi-lang-java="`shouldEnableLockdownMode`"&gt;`shouldEnableLockdownMode`&lt;/span&gt;: - A boolean value indicating whether to enable lockdown mode for a cluster.
+        /// - &lt;span pulumi-lang-nodejs="`buildInfo`" pulumi-lang-dotnet="`BuildInfo`" pulumi-lang-go="`buildInfo`" pulumi-lang-python="`build_info`" pulumi-lang-yaml="`buildInfo`" pulumi-lang-java="`buildInfo`"&gt;`buildInfo`&lt;/span&gt;: -Currently representing the build information to be used for the cluster creation.
+        /// - &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - Name of the domain manager (Prism Central).
+        /// - &lt;span pulumi-lang-nodejs="`size`" pulumi-lang-dotnet="`Size`" pulumi-lang-go="`size`" pulumi-lang-python="`size`" pulumi-lang-yaml="`size`" pulumi-lang-java="`size`"&gt;`size`&lt;/span&gt;: - Domain manager (Prism Central) size is an enumeration of starter, small, large, or extra large starter values. possible values are:
         ///   - `SMALL` : Domain manager (Prism Central) of size small.
         ///   - `LARGE` : Domain manager (Prism Central) of size large.
         ///   - `EXTRALARGE` : Domain manager (Prism Central) of size extra large.
         ///   - `STARTER` : Domain manager (Prism Central) of size starter.
-        /// - `BootstrapConfig`: - Bootstrap configuration details for the domain manager (Prism Central).
-        /// - `ResourceConfig`: - This configuration is used to provide the resource-related details like container external identifiers, number of VCPUs, memory size, data disk size of the domain manager (Prism Central). In the case of a multi-node setup, the sum of resources like number of VCPUs, memory size and data disk size are provided.
+        /// - &lt;span pulumi-lang-nodejs="`bootstrapConfig`" pulumi-lang-dotnet="`BootstrapConfig`" pulumi-lang-go="`bootstrapConfig`" pulumi-lang-python="`bootstrap_config`" pulumi-lang-yaml="`bootstrapConfig`" pulumi-lang-java="`bootstrapConfig`"&gt;`bootstrapConfig`&lt;/span&gt;: - Bootstrap configuration details for the domain manager (Prism Central).
+        /// - &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt;: - This configuration is used to provide the resource-related details like container external identifiers, number of VCPUs, memory size, data disk size of the domain manager (Prism Central). In the case of a multi-node setup, the sum of resources like number of VCPUs, memory size and data disk size are provided.
         /// 
         /// #### Build Info
         /// 
-        /// The `BuildInfo` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`buildInfo`" pulumi-lang-dotnet="`BuildInfo`" pulumi-lang-go="`buildInfo`" pulumi-lang-python="`build_info`" pulumi-lang-yaml="`buildInfo`" pulumi-lang-java="`buildInfo`"&gt;`buildInfo`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Version`: - Software version.
+        /// - &lt;span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`"&gt;`version`&lt;/span&gt;: - Software version.
         /// 
         /// #### Bootstrap Config
         /// 
-        /// The `BootstrapConfig` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`bootstrapConfig`" pulumi-lang-dotnet="`BootstrapConfig`" pulumi-lang-go="`bootstrapConfig`" pulumi-lang-python="`bootstrap_config`" pulumi-lang-yaml="`bootstrapConfig`" pulumi-lang-java="`bootstrapConfig`"&gt;`bootstrapConfig`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `EnvironmentInfo`: - Environment information for the domain manager (Prism Central) cluster.
+        /// - &lt;span pulumi-lang-nodejs="`environmentInfo`" pulumi-lang-dotnet="`EnvironmentInfo`" pulumi-lang-go="`environmentInfo`" pulumi-lang-python="`environment_info`" pulumi-lang-yaml="`environmentInfo`" pulumi-lang-java="`environmentInfo`"&gt;`environmentInfo`&lt;/span&gt;: - Environment information for the domain manager (Prism Central) cluster.
         /// 
         /// ##### Environment Info
         /// 
-        /// The `EnvironmentInfo` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`environmentInfo`" pulumi-lang-dotnet="`EnvironmentInfo`" pulumi-lang-go="`environmentInfo`" pulumi-lang-python="`environment_info`" pulumi-lang-yaml="`environmentInfo`" pulumi-lang-java="`environmentInfo`"&gt;`environmentInfo`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Type`: - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
+        /// - &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
         ///   Following are the supported entity types:
         ///   - `ONPREM` : On-prem environment.
         ///   - `NTNX_CLOUD` : Nutanix cloud environment.
-        /// - `ProviderType`: - Enums denoting the provider type of the PC, that is, AHV or ESXi.
+        /// - &lt;span pulumi-lang-nodejs="`providerType`" pulumi-lang-dotnet="`ProviderType`" pulumi-lang-go="`providerType`" pulumi-lang-python="`provider_type`" pulumi-lang-yaml="`providerType`" pulumi-lang-java="`providerType`"&gt;`providerType`&lt;/span&gt;: - Enums denoting the provider type of the PC, that is, AHV or ESXi.
         ///   Following are the supported provider types:
         ///   - `VSPHERE` : Vsphere cloud provider.
         ///   - `AZURE` : Azure cloud provider.
         ///   - `NTNX` : Nutanix cloud provider.
         ///   - `GCP` : GCP cloud provider.
         ///   - `AWS` : AWS cloud provider.
-        /// - `ProvisioningType`: - Enums denoting the instance type of the cloud PC. It indicates whether the PC is created on bare-metal or on a cloud-provisioned VM. Hence, it supports two possible values:
+        /// - &lt;span pulumi-lang-nodejs="`provisioningType`" pulumi-lang-dotnet="`ProvisioningType`" pulumi-lang-go="`provisioningType`" pulumi-lang-python="`provisioning_type`" pulumi-lang-yaml="`provisioningType`" pulumi-lang-java="`provisioningType`"&gt;`provisioningType`&lt;/span&gt;: - Enums denoting the instance type of the cloud PC. It indicates whether the PC is created on bare-metal or on a cloud-provisioned VM. Hence, it supports two possible values:
         ///   - `NTNX` : Nutanix instance.
         ///   - `NATIVE` : Native instance.
         /// 
         /// #### Resource Config
         /// 
-        /// The `ResourceConfig` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `NumVcpus`: - This property is used for readOnly purposes to display Prism Central number of VCPUs allocation.
-        /// - `MemorySizeBytes`: - This property is used for readOnly purposes to display Prism Central RAM allocation at the cluster level.
-        /// - `DataDiskSizeBytes`: - This property is used for readOnly purposes to display Prism Central data disk size allocation at a cluster level.
-        /// - `ContainerExtIds`: - The external identifier of the container that will be used to create the domain manager (Prism Central) cluster.
+        /// - &lt;span pulumi-lang-nodejs="`numVcpus`" pulumi-lang-dotnet="`NumVcpus`" pulumi-lang-go="`numVcpus`" pulumi-lang-python="`num_vcpus`" pulumi-lang-yaml="`numVcpus`" pulumi-lang-java="`numVcpus`"&gt;`numVcpus`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central number of VCPUs allocation.
+        /// - &lt;span pulumi-lang-nodejs="`memorySizeBytes`" pulumi-lang-dotnet="`MemorySizeBytes`" pulumi-lang-go="`memorySizeBytes`" pulumi-lang-python="`memory_size_bytes`" pulumi-lang-yaml="`memorySizeBytes`" pulumi-lang-java="`memorySizeBytes`"&gt;`memorySizeBytes`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central RAM allocation at the cluster level.
+        /// - &lt;span pulumi-lang-nodejs="`dataDiskSizeBytes`" pulumi-lang-dotnet="`DataDiskSizeBytes`" pulumi-lang-go="`dataDiskSizeBytes`" pulumi-lang-python="`data_disk_size_bytes`" pulumi-lang-yaml="`dataDiskSizeBytes`" pulumi-lang-java="`dataDiskSizeBytes`"&gt;`dataDiskSizeBytes`&lt;/span&gt;: - This property is used for readOnly purposes to display Prism Central data disk size allocation at a cluster level.
+        /// - &lt;span pulumi-lang-nodejs="`containerExtIds`" pulumi-lang-dotnet="`ContainerExtIds`" pulumi-lang-go="`containerExtIds`" pulumi-lang-python="`container_ext_ids`" pulumi-lang-yaml="`containerExtIds`" pulumi-lang-java="`containerExtIds`"&gt;`containerExtIds`&lt;/span&gt;: - The external identifier of the container that will be used to create the domain manager (Prism Central) cluster.
         /// 
         /// ### Network
         /// 
-        /// the `Network` argument supports the following:
+        /// the &lt;span pulumi-lang-nodejs="`network`" pulumi-lang-dotnet="`Network`" pulumi-lang-go="`network`" pulumi-lang-python="`network`" pulumi-lang-yaml="`network`" pulumi-lang-java="`network`"&gt;`network`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `ExternalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
-        /// - `NameServers`: - List of name servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
-        /// - `NtpServers`: - List of NTP servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
-        /// - `Fqdn`: - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
-        /// - `ExternalNetworks`: - This configuration is used to manage Prism Central.
+        /// - &lt;span pulumi-lang-nodejs="`externalAddress`" pulumi-lang-dotnet="`ExternalAddress`" pulumi-lang-go="`externalAddress`" pulumi-lang-python="`external_address`" pulumi-lang-yaml="`externalAddress`" pulumi-lang-java="`externalAddress`"&gt;`externalAddress`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`nameServers`" pulumi-lang-dotnet="`NameServers`" pulumi-lang-go="`nameServers`" pulumi-lang-python="`name_servers`" pulumi-lang-yaml="`nameServers`" pulumi-lang-java="`nameServers`"&gt;`nameServers`&lt;/span&gt;: - List of name servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+        /// - &lt;span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`"&gt;`ntpServers`&lt;/span&gt;: - List of NTP servers on a cluster. This is part of payload for both cluster create &amp; update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+        /// - &lt;span pulumi-lang-nodejs="`externalNetworks`" pulumi-lang-dotnet="`ExternalNetworks`" pulumi-lang-go="`externalNetworks`" pulumi-lang-python="`external_networks`" pulumi-lang-yaml="`externalNetworks`" pulumi-lang-java="`externalNetworks`"&gt;`externalNetworks`&lt;/span&gt;: - This configuration is used to manage Prism Central.
         /// 
         /// #### External Address
         /// 
-        /// The `ExternalAddress` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`externalAddress`" pulumi-lang-dotnet="`ExternalAddress`" pulumi-lang-go="`externalAddress`" pulumi-lang-python="`external_address`" pulumi-lang-yaml="`externalAddress`" pulumi-lang-java="`externalAddress`"&gt;`externalAddress`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
         /// #### Name Servers, NTP Servers
         /// 
-        /// The `NameServers` and `NtpServers` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`nameServers`" pulumi-lang-dotnet="`NameServers`" pulumi-lang-go="`nameServers`" pulumi-lang-python="`name_servers`" pulumi-lang-yaml="`nameServers`" pulumi-lang-java="`nameServers`"&gt;`nameServers`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`"&gt;`ntpServers`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// - `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// #### External Networks
         /// 
-        /// The `ExternalNetworks` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`externalNetworks`" pulumi-lang-dotnet="`ExternalNetworks`" pulumi-lang-go="`externalNetworks`" pulumi-lang-python="`external_networks`" pulumi-lang-yaml="`externalNetworks`" pulumi-lang-java="`externalNetworks`"&gt;`externalNetworks`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `DefaultGateway`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// - `SubnetMask`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// - `IpRanges`: - Range of IPs used for Prism Central network setup.
-        /// - `NetworkExtId`: - The network external identifier to which Domain Manager (Prism Central) is to be deployed or is already configured.
+        /// - &lt;span pulumi-lang-nodejs="`defaultGateway`" pulumi-lang-dotnet="`DefaultGateway`" pulumi-lang-go="`defaultGateway`" pulumi-lang-python="`default_gateway`" pulumi-lang-yaml="`defaultGateway`" pulumi-lang-java="`defaultGateway`"&gt;`defaultGateway`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// - &lt;span pulumi-lang-nodejs="`subnetMask`" pulumi-lang-dotnet="`SubnetMask`" pulumi-lang-go="`subnetMask`" pulumi-lang-python="`subnet_mask`" pulumi-lang-yaml="`subnetMask`" pulumi-lang-java="`subnetMask`"&gt;`subnetMask`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// - &lt;span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`"&gt;`ipRanges`&lt;/span&gt;: - Range of IPs used for Prism Central network setup.
+        /// - &lt;span pulumi-lang-nodejs="`networkExtId`" pulumi-lang-dotnet="`NetworkExtId`" pulumi-lang-go="`networkExtId`" pulumi-lang-python="`network_ext_id`" pulumi-lang-yaml="`networkExtId`" pulumi-lang-java="`networkExtId`"&gt;`networkExtId`&lt;/span&gt;: - The network external identifier to which Domain Manager (Prism Central) is to be deployed or is already configured.
         /// 
         /// #### Default Gateway, Subnet Mask
         /// 
-        /// The `DefaultGateway`and `SubnetMask` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`defaultGateway`" pulumi-lang-dotnet="`DefaultGateway`" pulumi-lang-go="`defaultGateway`" pulumi-lang-python="`default_gateway`" pulumi-lang-yaml="`defaultGateway`" pulumi-lang-java="`defaultGateway`"&gt;`defaultGateway`&lt;/span&gt;and &lt;span pulumi-lang-nodejs="`subnetMask`" pulumi-lang-dotnet="`SubnetMask`" pulumi-lang-go="`subnetMask`" pulumi-lang-python="`subnet_mask`" pulumi-lang-yaml="`subnetMask`" pulumi-lang-java="`subnetMask`"&gt;`subnetMask`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// - `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// #### IP Ranges
         /// 
-        /// The `IpRanges` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`"&gt;`ipRanges`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Begin`: - The beginning IP address of the range.
-        /// - `End`: - The ending IP address of the range.
+        /// - &lt;span pulumi-lang-nodejs="`begin`" pulumi-lang-dotnet="`Begin`" pulumi-lang-go="`begin`" pulumi-lang-python="`begin`" pulumi-lang-yaml="`begin`" pulumi-lang-java="`begin`"&gt;`begin`&lt;/span&gt;: - The beginning IP address of the range.
+        /// - &lt;span pulumi-lang-nodejs="`end`" pulumi-lang-dotnet="`End`" pulumi-lang-go="`end`" pulumi-lang-python="`end`" pulumi-lang-yaml="`end`" pulumi-lang-java="`end`"&gt;`end`&lt;/span&gt;: - The ending IP address of the range.
         /// 
         /// #### begin, end
         /// 
-        /// The `Begin` and `End` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`begin`" pulumi-lang-dotnet="`Begin`" pulumi-lang-go="`begin`" pulumi-lang-python="`begin`" pulumi-lang-yaml="`begin`" pulumi-lang-java="`begin`"&gt;`begin`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`end`" pulumi-lang-dotnet="`End`" pulumi-lang-go="`end`" pulumi-lang-python="`end`" pulumi-lang-yaml="`end`" pulumi-lang-java="`end`"&gt;`end`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// - `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// - &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
         /// #### IpV4, IpV6
         /// 
-        /// The `Ipv4` and `Ipv6` arguments support the following:
+        /// The &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt; arguments support the following:
         /// 
-        /// - `Value`: - The IPv4/IPv6 address of the host.
-        /// - `PrefixLength`: - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The IPv4/IPv6 address of the host.
+        /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
         /// #### FQDN
         /// 
-        /// The `Fqdn` argument supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt; argument supports the following:
         /// 
-        /// - `Value`: - The fully qualified domain name of the host.
+        /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name of the host.
         /// 
         /// See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listRestorePoints).
         /// </summary>

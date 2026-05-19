@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.Index.ServiceGroup("test", new()
+    ///     var test = new Nutanix.ServiceGroup("test", new()
     ///     {
     ///         Name = "test_service_gp",
     ///         Description = "this is service group",
@@ -51,6 +52,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/serviceGroup:ServiceGroup")]
     public partial class ServiceGroup : global::Pulumi.CustomResource

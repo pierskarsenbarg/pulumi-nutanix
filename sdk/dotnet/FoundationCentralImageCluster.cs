@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var img2 = new Nutanix.Index.FoundationCentralImageCluster("img2", new()
+    ///     var img2 = new Nutanix.FoundationCentralImageCluster("img2", new()
     ///     {
     ///         ClusterName = "test-FC",
     ///         ClusterExternalIp = "&lt;CLUSTER-IP&gt;",
@@ -120,6 +121,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Error
     /// 
@@ -128,7 +130,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ## lifecycle
     /// 
     /// * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
-    /// * `Delete` : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
+    /// * &lt;span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`"&gt;`delete`&lt;/span&gt; : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
     /// 
     /// See detailed information in [Nutanix Foundation Central Create a Cluster](https://www.nutanix.dev/api_references/foundation-central/#/cba507f282927-request-to-create-a-cluster).
     /// </summary>

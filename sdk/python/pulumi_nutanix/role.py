@@ -22,11 +22,11 @@ __all__ = ['RoleArgs', 'Role']
 class RoleArgs:
     def __init__(__self__, *,
                  permission_reference_lists: pulumi.Input[Sequence[pulumi.Input['RolePermissionReferenceListArgs']]],
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['RoleCategoryArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input['RoleOwnerReferenceArgs']] = None,
-                 project_reference: Optional[pulumi.Input['RoleProjectReferenceArgs']] = None):
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['RoleCategoryArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional['RoleOwnerReferenceArgs']] = None,
+                 project_reference: pulumi.Input[Optional['RoleProjectReferenceArgs']] = None):
         """
         The set of arguments for constructing a Role resource.
 
@@ -63,77 +63,77 @@ class RoleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RoleCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RoleCategoryArgs']]]]:
         """
         - (Optional) Categories for the role.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RoleCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RoleCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The description of the role.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Name of the role.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> Optional[pulumi.Input['RoleOwnerReferenceArgs']]:
+    def owner_reference(self) -> pulumi.Input[Optional['RoleOwnerReferenceArgs']]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: Optional[pulumi.Input['RoleOwnerReferenceArgs']]):
+    def owner_reference(self, value: pulumi.Input[Optional['RoleOwnerReferenceArgs']]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> Optional[pulumi.Input['RoleProjectReferenceArgs']]:
+    def project_reference(self) -> pulumi.Input[Optional['RoleProjectReferenceArgs']]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: Optional[pulumi.Input['RoleProjectReferenceArgs']]):
+    def project_reference(self, value: pulumi.Input[Optional['RoleProjectReferenceArgs']]):
         pulumi.set(self, "project_reference", value)
 
 
 @pulumi.input_type
 class _RoleState:
     def __init__(__self__, *,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['RoleCategoryArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input['RoleOwnerReferenceArgs']] = None,
-                 permission_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['RolePermissionReferenceListArgs']]]] = None,
-                 project_reference: Optional[pulumi.Input['RoleProjectReferenceArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['RoleCategoryArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional['RoleOwnerReferenceArgs']] = None,
+                 permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RolePermissionReferenceListArgs']]]] = None,
+                 project_reference: pulumi.Input[Optional['RoleProjectReferenceArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Role resources.
 
@@ -168,110 +168,110 @@ class _RoleState:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RoleCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RoleCategoryArgs']]]]:
         """
         - (Optional) Categories for the role.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RoleCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RoleCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The description of the role.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - The role kind metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Name of the role.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> Optional[pulumi.Input['RoleOwnerReferenceArgs']]:
+    def owner_reference(self) -> pulumi.Input[Optional['RoleOwnerReferenceArgs']]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: Optional[pulumi.Input['RoleOwnerReferenceArgs']]):
+    def owner_reference(self, value: pulumi.Input[Optional['RoleOwnerReferenceArgs']]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="permissionReferenceLists")
-    def permission_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RolePermissionReferenceListArgs']]]]:
+    def permission_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RolePermissionReferenceListArgs']]]]:
         """
         - (Required) List of permission references.
         """
         return pulumi.get(self, "permission_reference_lists")
 
     @permission_reference_lists.setter
-    def permission_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RolePermissionReferenceListArgs']]]]):
+    def permission_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RolePermissionReferenceListArgs']]]]):
         pulumi.set(self, "permission_reference_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> Optional[pulumi.Input['RoleProjectReferenceArgs']]:
+    def project_reference(self) -> pulumi.Input[Optional['RoleProjectReferenceArgs']]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: Optional[pulumi.Input['RoleProjectReferenceArgs']]):
+    def project_reference(self, value: pulumi.Input[Optional['RoleProjectReferenceArgs']]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The state of the role.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -281,18 +281,19 @@ class Role(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
-                 permission_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
-                 project_reference: Optional[pulumi.Input[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
+                 permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
+                 project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
                  __props__=None):
         """
         Provides a resource to create a role based on the input parameters.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -315,6 +316,7 @@ class Role(pulumi.CustomResource):
                 },
             ])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -337,6 +339,7 @@ class Role(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -359,6 +362,7 @@ class Role(pulumi.CustomResource):
                 },
             ])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -376,12 +380,12 @@ class Role(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
-                 permission_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
-                 project_reference: Optional[pulumi.Input[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
+                 permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
+                 project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -412,15 +416,15 @@ class Role(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_version: Optional[pulumi.Input[_builtins.str]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_reference: Optional[pulumi.Input[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
-            permission_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
-            project_reference: Optional[pulumi.Input[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'Role':
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
+            permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
+            project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'Role':
         """
         Get an existing Role resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

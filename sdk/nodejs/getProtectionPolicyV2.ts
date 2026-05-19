@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "00000000-0000-0000-0000-000000000000",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionPolicyV2(args: GetProtectionPolicyV2Args, opts?: pulumi.InvokeOptions): Promise<GetProtectionPolicyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -91,6 +93,7 @@ export interface GetProtectionPolicyV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -99,6 +102,7 @@ export interface GetProtectionPolicyV2Result {
  *     extId: "00000000-0000-0000-0000-000000000000",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionPolicyV2Output(args: GetProtectionPolicyV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionPolicyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

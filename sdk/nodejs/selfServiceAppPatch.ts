@@ -13,6 +13,7 @@ import * as utilities from "./utilities";
  *
  * This will run set patch config action in application.
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -30,9 +31,11 @@ import * as utilities from "./utilities";
  *     configName: "NAME OF PATCH CONFIG",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example 2: Update VM Configuration with runtime editable
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -49,15 +52,17 @@ import * as utilities from "./utilities";
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  *     vmConfigs: [{
- *         memorySizeMib: "SIZE IN MiB",
- *         numSockets: "vCPU count",
- *         numVcpusPerSocket: "NUMBER OF CORES VCPU",
+ *         memorySizeMib: Number("SIZE IN MiB"),
+ *         numSockets: Number("vCPU count"),
+ *         numVcpusPerSocket: Number("NUMBER OF CORES VCPU"),
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example 3: Add Category
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -79,9 +84,11 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example 4: Delete Category
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -103,9 +110,11 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example 5: Add Disk
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -122,14 +131,16 @@ import * as utilities from "./utilities";
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  *     disks: [{
- *         diskSizeMib: "SIZE OF DISK IN MiB",
+ *         diskSizeMib: Number("SIZE OF DISK IN MiB"),
  *         operation: "add",
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example 6: Add Nic
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -146,12 +157,13 @@ import * as utilities from "./utilities";
  *     patchName: "NAME OF PATCH ACTION",
  *     configName: "NAME OF PATCH CONFIG",
  *     nics: [{
- *         index: "DUMMY INDEX VALUE",
+ *         index: Number("DUMMY INDEX VALUE"),
  *         operation: "add",
  *         subnetUuid: "VALID SUBNET UUID IN PROJECT ATTACHED TO APP",
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class SelfServiceAppPatch extends pulumi.CustomResource {
     /**
@@ -187,7 +199,7 @@ export class SelfServiceAppPatch extends pulumi.CustomResource {
     declare public readonly appUuid: pulumi.Output<string>;
     declare public readonly categories: pulumi.Output<outputs.SelfServiceAppPatchCategory[] | undefined>;
     /**
-     * - (Required) The name of the patch configuration. (<b>Same as patchName for SINGLE VM)</b>
+     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
      */
     declare public readonly configName: pulumi.Output<string>;
     declare public readonly disks: pulumi.Output<outputs.SelfServiceAppPatchDisk[] | undefined>;
@@ -255,23 +267,23 @@ export interface SelfServiceAppPatchState {
     /**
      * - (Required) The UUID of the application.
      */
-    appUuid?: pulumi.Input<string>;
-    categories?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchCategory>[]>;
+    appUuid?: pulumi.Input<string | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchCategory>[] | undefined>;
     /**
-     * - (Required) The name of the patch configuration. (<b>Same as patchName for SINGLE VM)</b>
+     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
      */
-    configName?: pulumi.Input<string>;
-    disks?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchDisk>[]>;
-    nics?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchNic>[]>;
+    configName?: pulumi.Input<string | undefined>;
+    disks?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchDisk>[] | undefined>;
+    nics?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchNic>[] | undefined>;
     /**
      * - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
      */
-    patchName?: pulumi.Input<string>;
+    patchName?: pulumi.Input<string | undefined>;
     /**
      * - (Computed) The UUID of the runlog that records the patch operation's execution details.
      */
-    runlogUuid?: pulumi.Input<string>;
-    vmConfigs?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchVmConfig>[]>;
+    runlogUuid?: pulumi.Input<string | undefined>;
+    vmConfigs?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchVmConfig>[] | undefined>;
 }
 
 /**
@@ -282,13 +294,13 @@ export interface SelfServiceAppPatchArgs {
      * - (Required) The UUID of the application.
      */
     appUuid: pulumi.Input<string>;
-    categories?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchCategory>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchCategory>[] | undefined>;
     /**
-     * - (Required) The name of the patch configuration. (<b>Same as patchName for SINGLE VM)</b>
+     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
      */
     configName: pulumi.Input<string>;
-    disks?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchDisk>[]>;
-    nics?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchNic>[]>;
+    disks?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchDisk>[] | undefined>;
+    nics?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchNic>[] | undefined>;
     /**
      * - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
      */
@@ -296,6 +308,6 @@ export interface SelfServiceAppPatchArgs {
     /**
      * - (Computed) The UUID of the runlog that records the patch operation's execution details.
      */
-    runlogUuid?: pulumi.Input<string>;
-    vmConfigs?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchVmConfig>[]>;
+    runlogUuid?: pulumi.Input<string | undefined>;
+    vmConfigs?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchVmConfig>[] | undefined>;
 }

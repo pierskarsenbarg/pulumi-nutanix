@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,13 +22,14 @@ import * as utilities from "./utilities";
  *     extId: "<USER_KEY_UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `userExtId`: - ( Required ) External Identifier of the User.
- * * `extId`: - ( Required ) External identifier of the key.
+ * * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - ( Required ) External identifier of the key.
  */
 export function getUserKeyV2(args: GetUserKeyV2Args, opts?: pulumi.InvokeOptions): Promise<GetUserKeyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -132,6 +134,7 @@ export interface GetUserKeyV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -142,13 +145,14 @@ export interface GetUserKeyV2Result {
  *     extId: "<USER_KEY_UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `userExtId`: - ( Required ) External Identifier of the User.
- * * `extId`: - ( Required ) External identifier of the key.
+ * * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - ( Required ) External identifier of the key.
  */
 export function getUserKeyV2Output(args: GetUserKeyV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserKeyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -166,7 +170,7 @@ export interface GetUserKeyV2OutputArgs {
     /**
      * - Brief description of the key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The External Identifier of the User Group.
      */

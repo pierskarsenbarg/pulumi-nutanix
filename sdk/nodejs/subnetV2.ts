@@ -138,58 +138,58 @@ export class SubnetV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering SubnetV2 resources.
  */
 export interface SubnetV2State {
-    bridgeName?: pulumi.Input<string>;
-    clusterName?: pulumi.Input<string>;
-    clusterReference?: pulumi.Input<string>;
-    description?: pulumi.Input<string>;
-    dhcpOptions?: pulumi.Input<pulumi.Input<inputs.SubnetV2DhcpOption>[]>;
-    dynamicIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2DynamicIpAddress>[]>;
-    extId?: pulumi.Input<string>;
-    hypervisorType?: pulumi.Input<string>;
-    ipConfigs?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfig>[]>;
-    ipPrefix?: pulumi.Input<string>;
-    ipUsages?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpUsage>[]>;
-    isAdvancedNetworking?: pulumi.Input<boolean>;
-    isExternal?: pulumi.Input<boolean>;
-    isNatEnabled?: pulumi.Input<boolean>;
-    links?: pulumi.Input<pulumi.Input<inputs.SubnetV2Link>[]>;
-    migrationState?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    networkFunctionChainReference?: pulumi.Input<string>;
-    networkId?: pulumi.Input<number>;
-    reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2ReservedIpAddress>[]>;
-    subnetType?: pulumi.Input<string>;
-    virtualSwitchReference?: pulumi.Input<string>;
-    virtualSwitches?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitch>[]>;
-    vpcReference?: pulumi.Input<string>;
-    vpcs?: pulumi.Input<pulumi.Input<inputs.SubnetV2Vpc>[]>;
+    bridgeName?: pulumi.Input<string | undefined>;
+    clusterName?: pulumi.Input<string | undefined>;
+    clusterReference?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string | undefined>;
+    dhcpOptions?: pulumi.Input<pulumi.Input<inputs.SubnetV2DhcpOption>[] | undefined>;
+    dynamicIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2DynamicIpAddress>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    hypervisorType?: pulumi.Input<string | undefined>;
+    ipConfigs?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfig>[] | undefined>;
+    ipPrefix?: pulumi.Input<string | undefined>;
+    ipUsages?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpUsage>[] | undefined>;
+    isAdvancedNetworking?: pulumi.Input<boolean | undefined>;
+    isExternal?: pulumi.Input<boolean | undefined>;
+    isNatEnabled?: pulumi.Input<boolean | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.SubnetV2Link>[] | undefined>;
+    migrationState?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    networkFunctionChainReference?: pulumi.Input<string | undefined>;
+    networkId?: pulumi.Input<number | undefined>;
+    reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2ReservedIpAddress>[] | undefined>;
+    subnetType?: pulumi.Input<string | undefined>;
+    virtualSwitchReference?: pulumi.Input<string | undefined>;
+    virtualSwitches?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitch>[] | undefined>;
+    vpcReference?: pulumi.Input<string | undefined>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.SubnetV2Vpc>[] | undefined>;
 }
 
 /**
  * The set of arguments for constructing a SubnetV2 resource.
  */
 export interface SubnetV2Args {
-    bridgeName?: pulumi.Input<string>;
-    clusterName?: pulumi.Input<string>;
-    clusterReference?: pulumi.Input<string>;
-    description?: pulumi.Input<string>;
-    dhcpOptions?: pulumi.Input<pulumi.Input<inputs.SubnetV2DhcpOption>[]>;
-    dynamicIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2DynamicIpAddress>[]>;
-    extId?: pulumi.Input<string>;
-    hypervisorType?: pulumi.Input<string>;
-    ipConfigs?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfig>[]>;
-    ipPrefix?: pulumi.Input<string>;
-    ipUsages?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpUsage>[]>;
-    isAdvancedNetworking?: pulumi.Input<boolean>;
-    isExternal?: pulumi.Input<boolean>;
-    isNatEnabled?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
-    networkFunctionChainReference?: pulumi.Input<string>;
-    networkId?: pulumi.Input<number>;
-    reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2ReservedIpAddress>[]>;
+    bridgeName?: pulumi.Input<string | undefined>;
+    clusterName?: pulumi.Input<string | undefined>;
+    clusterReference?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string | undefined>;
+    dhcpOptions?: pulumi.Input<pulumi.Input<inputs.SubnetV2DhcpOption>[] | undefined>;
+    dynamicIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2DynamicIpAddress>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    hypervisorType?: pulumi.Input<string | undefined>;
+    ipConfigs?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfig>[] | undefined>;
+    ipPrefix?: pulumi.Input<string | undefined>;
+    ipUsages?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpUsage>[] | undefined>;
+    isAdvancedNetworking?: pulumi.Input<boolean | undefined>;
+    isExternal?: pulumi.Input<boolean | undefined>;
+    isNatEnabled?: pulumi.Input<boolean | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    networkFunctionChainReference?: pulumi.Input<string | undefined>;
+    networkId?: pulumi.Input<number | undefined>;
+    reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2ReservedIpAddress>[] | undefined>;
     subnetType: pulumi.Input<string>;
-    virtualSwitchReference?: pulumi.Input<string>;
-    virtualSwitches?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitch>[]>;
-    vpcReference?: pulumi.Input<string>;
-    vpcs?: pulumi.Input<pulumi.Input<inputs.SubnetV2Vpc>[]>;
+    virtualSwitchReference?: pulumi.Input<string | undefined>;
+    virtualSwitches?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitch>[] | undefined>;
+    vpcReference?: pulumi.Input<string | undefined>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.SubnetV2Vpc>[] | undefined>;
 }

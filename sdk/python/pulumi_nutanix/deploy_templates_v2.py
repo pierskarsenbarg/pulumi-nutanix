@@ -24,8 +24,8 @@ class DeployTemplatesV2Args:
                  cluster_reference: pulumi.Input[_builtins.str],
                  ext_id: pulumi.Input[_builtins.str],
                  number_of_vms: pulumi.Input[_builtins.int],
-                 override_vm_config_maps: Optional[pulumi.Input[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 override_vm_config_maps: pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DeployTemplatesV2 resource.
 
@@ -81,37 +81,37 @@ class DeployTemplatesV2Args:
 
     @_builtins.property
     @pulumi.getter(name="overrideVmConfigMaps")
-    def override_vm_config_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]]:
+    def override_vm_config_maps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]]:
         """
         The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
         """
         return pulumi.get(self, "override_vm_config_maps")
 
     @override_vm_config_maps.setter
-    def override_vm_config_maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]]):
+    def override_vm_config_maps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]]):
         pulumi.set(self, "override_vm_config_maps", value)
 
     @_builtins.property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of a Template Version.
         """
         return pulumi.get(self, "version_id")
 
     @version_id.setter
-    def version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_id", value)
 
 
 @pulumi.input_type
 class _DeployTemplatesV2State:
     def __init__(__self__, *,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_vms: Optional[pulumi.Input[_builtins.int]] = None,
-                 override_vm_config_maps: Optional[pulumi.Input[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_vms: pulumi.Input[Optional[_builtins.int]] = None,
+                 override_vm_config_maps: pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DeployTemplatesV2 resources.
 
@@ -134,62 +134,62 @@ class _DeployTemplatesV2State:
 
     @_builtins.property
     @pulumi.getter(name="clusterReference")
-    def cluster_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of the Cluster where the VM(s) will be created using a Template.
         """
         return pulumi.get(self, "cluster_reference")
 
     @cluster_reference.setter
-    def cluster_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of a Template.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfVms")
-    def number_of_vms(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_vms(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of VMs to be deployed.
         """
         return pulumi.get(self, "number_of_vms")
 
     @number_of_vms.setter
-    def number_of_vms(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_vms(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_vms", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideVmConfigMaps")
-    def override_vm_config_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]]:
+    def override_vm_config_maps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]]:
         """
         The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
         """
         return pulumi.get(self, "override_vm_config_maps")
 
     @override_vm_config_maps.setter
-    def override_vm_config_maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]]):
+    def override_vm_config_maps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapArgs']]]]):
         pulumi.set(self, "override_vm_config_maps", value)
 
     @_builtins.property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of a Template Version.
         """
         return pulumi.get(self, "version_id")
 
     @version_id.setter
-    def version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_id", value)
 
 
@@ -199,17 +199,18 @@ class DeployTemplatesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_vms: Optional[pulumi.Input[_builtins.int]] = None,
-                 override_vm_config_maps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeployTemplatesV2OverrideVmConfigMapArgs', 'DeployTemplatesV2OverrideVmConfigMapArgsDict']]]]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_vms: pulumi.Input[Optional[_builtins.int]] = None,
+                 override_vm_config_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeployTemplatesV2OverrideVmConfigMapArgs', 'DeployTemplatesV2OverrideVmConfigMapArgsDict']]]]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Deploy one or more VMs from a Template. Number of VMs to be deployed and their corresponding VM configuration overrides can be provided.
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -220,12 +221,13 @@ class DeployTemplatesV2(pulumi.CustomResource):
             cluster_reference="0005b6b8-7b3b-4b0b-8b3b-7b3b4b0b8b3b",
             override_vm_config_maps=[{
                 "name": "example-tf-temp",
-                "memory_size_bytes": 4294967296,
+                "memory_size_bytes": int(4294967296),
                 "num_sockets": 2,
                 "num_cores_per_socket": 1,
                 "num_threads_per_core": 1,
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -247,6 +249,7 @@ class DeployTemplatesV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -257,12 +260,13 @@ class DeployTemplatesV2(pulumi.CustomResource):
             cluster_reference="0005b6b8-7b3b-4b0b-8b3b-7b3b4b0b8b3b",
             override_vm_config_maps=[{
                 "name": "example-tf-temp",
-                "memory_size_bytes": 4294967296,
+                "memory_size_bytes": int(4294967296),
                 "num_sockets": 2,
                 "num_cores_per_socket": 1,
                 "num_threads_per_core": 1,
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -280,11 +284,11 @@ class DeployTemplatesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_vms: Optional[pulumi.Input[_builtins.int]] = None,
-                 override_vm_config_maps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeployTemplatesV2OverrideVmConfigMapArgs', 'DeployTemplatesV2OverrideVmConfigMapArgsDict']]]]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_vms: pulumi.Input[Optional[_builtins.int]] = None,
+                 override_vm_config_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeployTemplatesV2OverrideVmConfigMapArgs', 'DeployTemplatesV2OverrideVmConfigMapArgsDict']]]]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -315,11 +319,11 @@ class DeployTemplatesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            number_of_vms: Optional[pulumi.Input[_builtins.int]] = None,
-            override_vm_config_maps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeployTemplatesV2OverrideVmConfigMapArgs', 'DeployTemplatesV2OverrideVmConfigMapArgsDict']]]]] = None,
-            version_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'DeployTemplatesV2':
+            cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_vms: pulumi.Input[Optional[_builtins.int]] = None,
+            override_vm_config_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeployTemplatesV2OverrideVmConfigMapArgs', 'DeployTemplatesV2OverrideVmConfigMapArgsDict']]]]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'DeployTemplatesV2':
         """
         Get an existing DeployTemplatesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

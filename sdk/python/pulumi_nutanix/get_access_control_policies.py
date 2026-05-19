@@ -94,12 +94,14 @@ def get_access_control_policies(metadatas: Optional[Sequence[Union['GetAccessCon
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     test = nutanix.get_access_control_policies()
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']] metadatas: - The Access Control Policy kind metadata.
@@ -114,19 +116,21 @@ def get_access_control_policies(metadatas: Optional[Sequence[Union['GetAccessCon
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_access_control_policies_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']]]]] = None,
+def get_access_control_policies_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessControlPoliciesResult]:
     """
     Describes a list of access control policies.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     test = nutanix.get_access_control_policies()
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']] metadatas: - The Access Control Policy kind metadata.

@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const dbs = nutanix.getNdbDatabases({});
+        /// export const dbsOutput = dbs;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// dbs = nutanix.get_ndb_databases()
+        /// pulumi.export("dbsOutput", dbs)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var dbs = Nutanix.Index.GetNdbDatabases.Invoke();
+        ///     var dbs = Nutanix.GetNdbDatabases.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
@@ -33,34 +48,97 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
         /// 
-        /// ## DatabaseInstances
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
         /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		dbs, err := nutanix.GetNdbDatabases(ctx, &amp;nutanix.GetNdbDatabasesArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("dbsOutput", dbs)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbDatabasesArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var dbs = NutanixFunctions.getNdbDatabases(GetNdbDatabasesArgs.builder()
+        ///             .build());
+        /// 
+        ///         ctx.export("dbsOutput", dbs);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   dbs:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbDatabases
+        ///       arguments: {}
+        /// outputs:
+        ///   dbsOutput: ${dbs}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// 
+        /// ##&lt;span pulumi-lang-nodejs=" databaseInstances
+        /// " pulumi-lang-dotnet=" DatabaseInstances
+        /// " pulumi-lang-go=" databaseInstances
+        /// " pulumi-lang-python=" database_instances
+        /// " pulumi-lang-yaml=" databaseInstances
+        /// " pulumi-lang-java=" databaseInstances
+        /// "&gt; databaseInstances
+        /// &lt;/span&gt;
         /// The following attributes are exported for each database_instances:
         /// 
-        /// * `Id`: - id of database instance
-        /// * `Name`: - name of database instance
-        /// * `Description`: - description
-        /// * `DateCreated`: - creation date
-        /// * `DateModified`: - date modified 
-        /// * `Properties`: - properties
-        /// * `Tags`: - tags attached
-        /// * `Clustered`: - if clustered or not
-        /// * `Clone`: - if cloned
-        /// * `DatabaseName`: - database instance name
-        /// * `Type`: - database engine type
-        /// * `Status`: - status of database instance
-        /// * `DbserverLogicalClusterId`: - NA
-        /// * `TimeMachineId`: - time machine ID
-        /// * `TimeZone`: - timezone
-        /// * `Info`: - info regarding disks, vm, storage, etc.
-        /// * `Metric`: - metrics
-        /// * `ParentDatabaseId`: - parent database ID
-        /// * `LcmConfig`: - lcm configuration
-        /// * `TimeMachine`: - time machine related config info
-        /// * `DatabaseNodes`: - nodes info
-        /// * `DbserverLogicalCluster`: - NA
-        /// * `LinkedDatabases`: - list of databases created in instance with info
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of database instance
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - name of database instance
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description
+        /// * &lt;span pulumi-lang-nodejs="`dateCreated`" pulumi-lang-dotnet="`DateCreated`" pulumi-lang-go="`dateCreated`" pulumi-lang-python="`date_created`" pulumi-lang-yaml="`dateCreated`" pulumi-lang-java="`dateCreated`"&gt;`dateCreated`&lt;/span&gt;: - creation date
+        /// * &lt;span pulumi-lang-nodejs="`dateModified`" pulumi-lang-dotnet="`DateModified`" pulumi-lang-go="`dateModified`" pulumi-lang-python="`date_modified`" pulumi-lang-yaml="`dateModified`" pulumi-lang-java="`dateModified`"&gt;`dateModified`&lt;/span&gt;: - date modified 
+        /// * &lt;span pulumi-lang-nodejs="`properties`" pulumi-lang-dotnet="`Properties`" pulumi-lang-go="`properties`" pulumi-lang-python="`properties`" pulumi-lang-yaml="`properties`" pulumi-lang-java="`properties`"&gt;`properties`&lt;/span&gt;: - properties
+        /// * &lt;span pulumi-lang-nodejs="`tags`" pulumi-lang-dotnet="`Tags`" pulumi-lang-go="`tags`" pulumi-lang-python="`tags`" pulumi-lang-yaml="`tags`" pulumi-lang-java="`tags`"&gt;`tags`&lt;/span&gt;: - tags attached
+        /// * &lt;span pulumi-lang-nodejs="`clustered`" pulumi-lang-dotnet="`Clustered`" pulumi-lang-go="`clustered`" pulumi-lang-python="`clustered`" pulumi-lang-yaml="`clustered`" pulumi-lang-java="`clustered`"&gt;`clustered`&lt;/span&gt;: - if clustered or not
+        /// * &lt;span pulumi-lang-nodejs="`clone`" pulumi-lang-dotnet="`Clone`" pulumi-lang-go="`clone`" pulumi-lang-python="`clone`" pulumi-lang-yaml="`clone`" pulumi-lang-java="`clone`"&gt;`clone`&lt;/span&gt;: - if cloned
+        /// * &lt;span pulumi-lang-nodejs="`databaseName`" pulumi-lang-dotnet="`DatabaseName`" pulumi-lang-go="`databaseName`" pulumi-lang-python="`database_name`" pulumi-lang-yaml="`databaseName`" pulumi-lang-java="`databaseName`"&gt;`databaseName`&lt;/span&gt;: - database instance name
+        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: - database engine type
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - status of database instance
+        /// * &lt;span pulumi-lang-nodejs="`dbserverLogicalClusterId`" pulumi-lang-dotnet="`DbserverLogicalClusterId`" pulumi-lang-go="`dbserverLogicalClusterId`" pulumi-lang-python="`dbserver_logical_cluster_id`" pulumi-lang-yaml="`dbserverLogicalClusterId`" pulumi-lang-java="`dbserverLogicalClusterId`"&gt;`dbserverLogicalClusterId`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`timeMachineId`" pulumi-lang-dotnet="`TimeMachineId`" pulumi-lang-go="`timeMachineId`" pulumi-lang-python="`time_machine_id`" pulumi-lang-yaml="`timeMachineId`" pulumi-lang-java="`timeMachineId`"&gt;`timeMachineId`&lt;/span&gt;: - time machine ID
+        /// * &lt;span pulumi-lang-nodejs="`timeZone`" pulumi-lang-dotnet="`TimeZone`" pulumi-lang-go="`timeZone`" pulumi-lang-python="`time_zone`" pulumi-lang-yaml="`timeZone`" pulumi-lang-java="`timeZone`"&gt;`timeZone`&lt;/span&gt;: - timezone
+        /// * &lt;span pulumi-lang-nodejs="`info`" pulumi-lang-dotnet="`Info`" pulumi-lang-go="`info`" pulumi-lang-python="`info`" pulumi-lang-yaml="`info`" pulumi-lang-java="`info`"&gt;`info`&lt;/span&gt;: - info regarding disks, vm, storage, etc.
+        /// * &lt;span pulumi-lang-nodejs="`metric`" pulumi-lang-dotnet="`Metric`" pulumi-lang-go="`metric`" pulumi-lang-python="`metric`" pulumi-lang-yaml="`metric`" pulumi-lang-java="`metric`"&gt;`metric`&lt;/span&gt;: - metrics
+        /// * &lt;span pulumi-lang-nodejs="`parentDatabaseId`" pulumi-lang-dotnet="`ParentDatabaseId`" pulumi-lang-go="`parentDatabaseId`" pulumi-lang-python="`parent_database_id`" pulumi-lang-yaml="`parentDatabaseId`" pulumi-lang-java="`parentDatabaseId`"&gt;`parentDatabaseId`&lt;/span&gt;: - parent database ID
+        /// * &lt;span pulumi-lang-nodejs="`lcmConfig`" pulumi-lang-dotnet="`LcmConfig`" pulumi-lang-go="`lcmConfig`" pulumi-lang-python="`lcm_config`" pulumi-lang-yaml="`lcmConfig`" pulumi-lang-java="`lcmConfig`"&gt;`lcmConfig`&lt;/span&gt;: - lcm configuration
+        /// * &lt;span pulumi-lang-nodejs="`timeMachine`" pulumi-lang-dotnet="`TimeMachine`" pulumi-lang-go="`timeMachine`" pulumi-lang-python="`time_machine`" pulumi-lang-yaml="`timeMachine`" pulumi-lang-java="`timeMachine`"&gt;`timeMachine`&lt;/span&gt;: - time machine related config info
+        /// * &lt;span pulumi-lang-nodejs="`databaseNodes`" pulumi-lang-dotnet="`DatabaseNodes`" pulumi-lang-go="`databaseNodes`" pulumi-lang-python="`database_nodes`" pulumi-lang-yaml="`databaseNodes`" pulumi-lang-java="`databaseNodes`"&gt;`databaseNodes`&lt;/span&gt;: - nodes info
+        /// * &lt;span pulumi-lang-nodejs="`dbserverLogicalCluster`" pulumi-lang-dotnet="`DbserverLogicalCluster`" pulumi-lang-go="`dbserverLogicalCluster`" pulumi-lang-python="`dbserver_logical_cluster`" pulumi-lang-yaml="`dbserverLogicalCluster`" pulumi-lang-java="`dbserverLogicalCluster`"&gt;`dbserverLogicalCluster`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`linkedDatabases`" pulumi-lang-dotnet="`LinkedDatabases`" pulumi-lang-go="`linkedDatabases`" pulumi-lang-python="`linked_databases`" pulumi-lang-yaml="`linkedDatabases`" pulumi-lang-java="`linkedDatabases`"&gt;`linkedDatabases`&lt;/span&gt;: - list of databases created in instance with info
         /// 
         /// 
         /// See detailed information in [List Database Instances](https://www.nutanix.dev/api_references/ndb/#/1e508756bcdcc-get-all-the-databases).
@@ -73,6 +151,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const dbs = nutanix.getNdbDatabases({});
+        /// export const dbsOutput = dbs;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// dbs = nutanix.get_ndb_databases()
+        /// pulumi.export("dbsOutput", dbs)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,7 +174,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var dbs = Nutanix.Index.GetNdbDatabases.Invoke();
+        ///     var dbs = Nutanix.GetNdbDatabases.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
@@ -89,34 +182,97 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
         /// 
-        /// ## DatabaseInstances
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
         /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		dbs, err := nutanix.GetNdbDatabases(ctx, &amp;nutanix.GetNdbDatabasesArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("dbsOutput", dbs)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbDatabasesArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var dbs = NutanixFunctions.getNdbDatabases(GetNdbDatabasesArgs.builder()
+        ///             .build());
+        /// 
+        ///         ctx.export("dbsOutput", dbs);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   dbs:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbDatabases
+        ///       arguments: {}
+        /// outputs:
+        ///   dbsOutput: ${dbs}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// 
+        /// ##&lt;span pulumi-lang-nodejs=" databaseInstances
+        /// " pulumi-lang-dotnet=" DatabaseInstances
+        /// " pulumi-lang-go=" databaseInstances
+        /// " pulumi-lang-python=" database_instances
+        /// " pulumi-lang-yaml=" databaseInstances
+        /// " pulumi-lang-java=" databaseInstances
+        /// "&gt; databaseInstances
+        /// &lt;/span&gt;
         /// The following attributes are exported for each database_instances:
         /// 
-        /// * `Id`: - id of database instance
-        /// * `Name`: - name of database instance
-        /// * `Description`: - description
-        /// * `DateCreated`: - creation date
-        /// * `DateModified`: - date modified 
-        /// * `Properties`: - properties
-        /// * `Tags`: - tags attached
-        /// * `Clustered`: - if clustered or not
-        /// * `Clone`: - if cloned
-        /// * `DatabaseName`: - database instance name
-        /// * `Type`: - database engine type
-        /// * `Status`: - status of database instance
-        /// * `DbserverLogicalClusterId`: - NA
-        /// * `TimeMachineId`: - time machine ID
-        /// * `TimeZone`: - timezone
-        /// * `Info`: - info regarding disks, vm, storage, etc.
-        /// * `Metric`: - metrics
-        /// * `ParentDatabaseId`: - parent database ID
-        /// * `LcmConfig`: - lcm configuration
-        /// * `TimeMachine`: - time machine related config info
-        /// * `DatabaseNodes`: - nodes info
-        /// * `DbserverLogicalCluster`: - NA
-        /// * `LinkedDatabases`: - list of databases created in instance with info
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of database instance
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - name of database instance
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description
+        /// * &lt;span pulumi-lang-nodejs="`dateCreated`" pulumi-lang-dotnet="`DateCreated`" pulumi-lang-go="`dateCreated`" pulumi-lang-python="`date_created`" pulumi-lang-yaml="`dateCreated`" pulumi-lang-java="`dateCreated`"&gt;`dateCreated`&lt;/span&gt;: - creation date
+        /// * &lt;span pulumi-lang-nodejs="`dateModified`" pulumi-lang-dotnet="`DateModified`" pulumi-lang-go="`dateModified`" pulumi-lang-python="`date_modified`" pulumi-lang-yaml="`dateModified`" pulumi-lang-java="`dateModified`"&gt;`dateModified`&lt;/span&gt;: - date modified 
+        /// * &lt;span pulumi-lang-nodejs="`properties`" pulumi-lang-dotnet="`Properties`" pulumi-lang-go="`properties`" pulumi-lang-python="`properties`" pulumi-lang-yaml="`properties`" pulumi-lang-java="`properties`"&gt;`properties`&lt;/span&gt;: - properties
+        /// * &lt;span pulumi-lang-nodejs="`tags`" pulumi-lang-dotnet="`Tags`" pulumi-lang-go="`tags`" pulumi-lang-python="`tags`" pulumi-lang-yaml="`tags`" pulumi-lang-java="`tags`"&gt;`tags`&lt;/span&gt;: - tags attached
+        /// * &lt;span pulumi-lang-nodejs="`clustered`" pulumi-lang-dotnet="`Clustered`" pulumi-lang-go="`clustered`" pulumi-lang-python="`clustered`" pulumi-lang-yaml="`clustered`" pulumi-lang-java="`clustered`"&gt;`clustered`&lt;/span&gt;: - if clustered or not
+        /// * &lt;span pulumi-lang-nodejs="`clone`" pulumi-lang-dotnet="`Clone`" pulumi-lang-go="`clone`" pulumi-lang-python="`clone`" pulumi-lang-yaml="`clone`" pulumi-lang-java="`clone`"&gt;`clone`&lt;/span&gt;: - if cloned
+        /// * &lt;span pulumi-lang-nodejs="`databaseName`" pulumi-lang-dotnet="`DatabaseName`" pulumi-lang-go="`databaseName`" pulumi-lang-python="`database_name`" pulumi-lang-yaml="`databaseName`" pulumi-lang-java="`databaseName`"&gt;`databaseName`&lt;/span&gt;: - database instance name
+        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: - database engine type
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - status of database instance
+        /// * &lt;span pulumi-lang-nodejs="`dbserverLogicalClusterId`" pulumi-lang-dotnet="`DbserverLogicalClusterId`" pulumi-lang-go="`dbserverLogicalClusterId`" pulumi-lang-python="`dbserver_logical_cluster_id`" pulumi-lang-yaml="`dbserverLogicalClusterId`" pulumi-lang-java="`dbserverLogicalClusterId`"&gt;`dbserverLogicalClusterId`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`timeMachineId`" pulumi-lang-dotnet="`TimeMachineId`" pulumi-lang-go="`timeMachineId`" pulumi-lang-python="`time_machine_id`" pulumi-lang-yaml="`timeMachineId`" pulumi-lang-java="`timeMachineId`"&gt;`timeMachineId`&lt;/span&gt;: - time machine ID
+        /// * &lt;span pulumi-lang-nodejs="`timeZone`" pulumi-lang-dotnet="`TimeZone`" pulumi-lang-go="`timeZone`" pulumi-lang-python="`time_zone`" pulumi-lang-yaml="`timeZone`" pulumi-lang-java="`timeZone`"&gt;`timeZone`&lt;/span&gt;: - timezone
+        /// * &lt;span pulumi-lang-nodejs="`info`" pulumi-lang-dotnet="`Info`" pulumi-lang-go="`info`" pulumi-lang-python="`info`" pulumi-lang-yaml="`info`" pulumi-lang-java="`info`"&gt;`info`&lt;/span&gt;: - info regarding disks, vm, storage, etc.
+        /// * &lt;span pulumi-lang-nodejs="`metric`" pulumi-lang-dotnet="`Metric`" pulumi-lang-go="`metric`" pulumi-lang-python="`metric`" pulumi-lang-yaml="`metric`" pulumi-lang-java="`metric`"&gt;`metric`&lt;/span&gt;: - metrics
+        /// * &lt;span pulumi-lang-nodejs="`parentDatabaseId`" pulumi-lang-dotnet="`ParentDatabaseId`" pulumi-lang-go="`parentDatabaseId`" pulumi-lang-python="`parent_database_id`" pulumi-lang-yaml="`parentDatabaseId`" pulumi-lang-java="`parentDatabaseId`"&gt;`parentDatabaseId`&lt;/span&gt;: - parent database ID
+        /// * &lt;span pulumi-lang-nodejs="`lcmConfig`" pulumi-lang-dotnet="`LcmConfig`" pulumi-lang-go="`lcmConfig`" pulumi-lang-python="`lcm_config`" pulumi-lang-yaml="`lcmConfig`" pulumi-lang-java="`lcmConfig`"&gt;`lcmConfig`&lt;/span&gt;: - lcm configuration
+        /// * &lt;span pulumi-lang-nodejs="`timeMachine`" pulumi-lang-dotnet="`TimeMachine`" pulumi-lang-go="`timeMachine`" pulumi-lang-python="`time_machine`" pulumi-lang-yaml="`timeMachine`" pulumi-lang-java="`timeMachine`"&gt;`timeMachine`&lt;/span&gt;: - time machine related config info
+        /// * &lt;span pulumi-lang-nodejs="`databaseNodes`" pulumi-lang-dotnet="`DatabaseNodes`" pulumi-lang-go="`databaseNodes`" pulumi-lang-python="`database_nodes`" pulumi-lang-yaml="`databaseNodes`" pulumi-lang-java="`databaseNodes`"&gt;`databaseNodes`&lt;/span&gt;: - nodes info
+        /// * &lt;span pulumi-lang-nodejs="`dbserverLogicalCluster`" pulumi-lang-dotnet="`DbserverLogicalCluster`" pulumi-lang-go="`dbserverLogicalCluster`" pulumi-lang-python="`dbserver_logical_cluster`" pulumi-lang-yaml="`dbserverLogicalCluster`" pulumi-lang-java="`dbserverLogicalCluster`"&gt;`dbserverLogicalCluster`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`linkedDatabases`" pulumi-lang-dotnet="`LinkedDatabases`" pulumi-lang-go="`linkedDatabases`" pulumi-lang-python="`linked_databases`" pulumi-lang-yaml="`linkedDatabases`" pulumi-lang-java="`linkedDatabases`"&gt;`linkedDatabases`&lt;/span&gt;: - list of databases created in instance with info
         /// 
         /// 
         /// See detailed information in [List Database Instances](https://www.nutanix.dev/api_references/ndb/#/1e508756bcdcc-get-all-the-databases).
@@ -129,6 +285,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const dbs = nutanix.getNdbDatabases({});
+        /// export const dbsOutput = dbs;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// dbs = nutanix.get_ndb_databases()
+        /// pulumi.export("dbsOutput", dbs)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -137,7 +308,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var dbs = Nutanix.Index.GetNdbDatabases.Invoke();
+        ///     var dbs = Nutanix.GetNdbDatabases.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
@@ -145,34 +316,97 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
         /// 
-        /// ## DatabaseInstances
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
         /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		dbs, err := nutanix.GetNdbDatabases(ctx, &amp;nutanix.GetNdbDatabasesArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("dbsOutput", dbs)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbDatabasesArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var dbs = NutanixFunctions.getNdbDatabases(GetNdbDatabasesArgs.builder()
+        ///             .build());
+        /// 
+        ///         ctx.export("dbsOutput", dbs);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   dbs:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbDatabases
+        ///       arguments: {}
+        /// outputs:
+        ///   dbsOutput: ${dbs}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// 
+        /// ##&lt;span pulumi-lang-nodejs=" databaseInstances
+        /// " pulumi-lang-dotnet=" DatabaseInstances
+        /// " pulumi-lang-go=" databaseInstances
+        /// " pulumi-lang-python=" database_instances
+        /// " pulumi-lang-yaml=" databaseInstances
+        /// " pulumi-lang-java=" databaseInstances
+        /// "&gt; databaseInstances
+        /// &lt;/span&gt;
         /// The following attributes are exported for each database_instances:
         /// 
-        /// * `Id`: - id of database instance
-        /// * `Name`: - name of database instance
-        /// * `Description`: - description
-        /// * `DateCreated`: - creation date
-        /// * `DateModified`: - date modified 
-        /// * `Properties`: - properties
-        /// * `Tags`: - tags attached
-        /// * `Clustered`: - if clustered or not
-        /// * `Clone`: - if cloned
-        /// * `DatabaseName`: - database instance name
-        /// * `Type`: - database engine type
-        /// * `Status`: - status of database instance
-        /// * `DbserverLogicalClusterId`: - NA
-        /// * `TimeMachineId`: - time machine ID
-        /// * `TimeZone`: - timezone
-        /// * `Info`: - info regarding disks, vm, storage, etc.
-        /// * `Metric`: - metrics
-        /// * `ParentDatabaseId`: - parent database ID
-        /// * `LcmConfig`: - lcm configuration
-        /// * `TimeMachine`: - time machine related config info
-        /// * `DatabaseNodes`: - nodes info
-        /// * `DbserverLogicalCluster`: - NA
-        /// * `LinkedDatabases`: - list of databases created in instance with info
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of database instance
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - name of database instance
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description
+        /// * &lt;span pulumi-lang-nodejs="`dateCreated`" pulumi-lang-dotnet="`DateCreated`" pulumi-lang-go="`dateCreated`" pulumi-lang-python="`date_created`" pulumi-lang-yaml="`dateCreated`" pulumi-lang-java="`dateCreated`"&gt;`dateCreated`&lt;/span&gt;: - creation date
+        /// * &lt;span pulumi-lang-nodejs="`dateModified`" pulumi-lang-dotnet="`DateModified`" pulumi-lang-go="`dateModified`" pulumi-lang-python="`date_modified`" pulumi-lang-yaml="`dateModified`" pulumi-lang-java="`dateModified`"&gt;`dateModified`&lt;/span&gt;: - date modified 
+        /// * &lt;span pulumi-lang-nodejs="`properties`" pulumi-lang-dotnet="`Properties`" pulumi-lang-go="`properties`" pulumi-lang-python="`properties`" pulumi-lang-yaml="`properties`" pulumi-lang-java="`properties`"&gt;`properties`&lt;/span&gt;: - properties
+        /// * &lt;span pulumi-lang-nodejs="`tags`" pulumi-lang-dotnet="`Tags`" pulumi-lang-go="`tags`" pulumi-lang-python="`tags`" pulumi-lang-yaml="`tags`" pulumi-lang-java="`tags`"&gt;`tags`&lt;/span&gt;: - tags attached
+        /// * &lt;span pulumi-lang-nodejs="`clustered`" pulumi-lang-dotnet="`Clustered`" pulumi-lang-go="`clustered`" pulumi-lang-python="`clustered`" pulumi-lang-yaml="`clustered`" pulumi-lang-java="`clustered`"&gt;`clustered`&lt;/span&gt;: - if clustered or not
+        /// * &lt;span pulumi-lang-nodejs="`clone`" pulumi-lang-dotnet="`Clone`" pulumi-lang-go="`clone`" pulumi-lang-python="`clone`" pulumi-lang-yaml="`clone`" pulumi-lang-java="`clone`"&gt;`clone`&lt;/span&gt;: - if cloned
+        /// * &lt;span pulumi-lang-nodejs="`databaseName`" pulumi-lang-dotnet="`DatabaseName`" pulumi-lang-go="`databaseName`" pulumi-lang-python="`database_name`" pulumi-lang-yaml="`databaseName`" pulumi-lang-java="`databaseName`"&gt;`databaseName`&lt;/span&gt;: - database instance name
+        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: - database engine type
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - status of database instance
+        /// * &lt;span pulumi-lang-nodejs="`dbserverLogicalClusterId`" pulumi-lang-dotnet="`DbserverLogicalClusterId`" pulumi-lang-go="`dbserverLogicalClusterId`" pulumi-lang-python="`dbserver_logical_cluster_id`" pulumi-lang-yaml="`dbserverLogicalClusterId`" pulumi-lang-java="`dbserverLogicalClusterId`"&gt;`dbserverLogicalClusterId`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`timeMachineId`" pulumi-lang-dotnet="`TimeMachineId`" pulumi-lang-go="`timeMachineId`" pulumi-lang-python="`time_machine_id`" pulumi-lang-yaml="`timeMachineId`" pulumi-lang-java="`timeMachineId`"&gt;`timeMachineId`&lt;/span&gt;: - time machine ID
+        /// * &lt;span pulumi-lang-nodejs="`timeZone`" pulumi-lang-dotnet="`TimeZone`" pulumi-lang-go="`timeZone`" pulumi-lang-python="`time_zone`" pulumi-lang-yaml="`timeZone`" pulumi-lang-java="`timeZone`"&gt;`timeZone`&lt;/span&gt;: - timezone
+        /// * &lt;span pulumi-lang-nodejs="`info`" pulumi-lang-dotnet="`Info`" pulumi-lang-go="`info`" pulumi-lang-python="`info`" pulumi-lang-yaml="`info`" pulumi-lang-java="`info`"&gt;`info`&lt;/span&gt;: - info regarding disks, vm, storage, etc.
+        /// * &lt;span pulumi-lang-nodejs="`metric`" pulumi-lang-dotnet="`Metric`" pulumi-lang-go="`metric`" pulumi-lang-python="`metric`" pulumi-lang-yaml="`metric`" pulumi-lang-java="`metric`"&gt;`metric`&lt;/span&gt;: - metrics
+        /// * &lt;span pulumi-lang-nodejs="`parentDatabaseId`" pulumi-lang-dotnet="`ParentDatabaseId`" pulumi-lang-go="`parentDatabaseId`" pulumi-lang-python="`parent_database_id`" pulumi-lang-yaml="`parentDatabaseId`" pulumi-lang-java="`parentDatabaseId`"&gt;`parentDatabaseId`&lt;/span&gt;: - parent database ID
+        /// * &lt;span pulumi-lang-nodejs="`lcmConfig`" pulumi-lang-dotnet="`LcmConfig`" pulumi-lang-go="`lcmConfig`" pulumi-lang-python="`lcm_config`" pulumi-lang-yaml="`lcmConfig`" pulumi-lang-java="`lcmConfig`"&gt;`lcmConfig`&lt;/span&gt;: - lcm configuration
+        /// * &lt;span pulumi-lang-nodejs="`timeMachine`" pulumi-lang-dotnet="`TimeMachine`" pulumi-lang-go="`timeMachine`" pulumi-lang-python="`time_machine`" pulumi-lang-yaml="`timeMachine`" pulumi-lang-java="`timeMachine`"&gt;`timeMachine`&lt;/span&gt;: - time machine related config info
+        /// * &lt;span pulumi-lang-nodejs="`databaseNodes`" pulumi-lang-dotnet="`DatabaseNodes`" pulumi-lang-go="`databaseNodes`" pulumi-lang-python="`database_nodes`" pulumi-lang-yaml="`databaseNodes`" pulumi-lang-java="`databaseNodes`"&gt;`databaseNodes`&lt;/span&gt;: - nodes info
+        /// * &lt;span pulumi-lang-nodejs="`dbserverLogicalCluster`" pulumi-lang-dotnet="`DbserverLogicalCluster`" pulumi-lang-go="`dbserverLogicalCluster`" pulumi-lang-python="`dbserver_logical_cluster`" pulumi-lang-yaml="`dbserverLogicalCluster`" pulumi-lang-java="`dbserverLogicalCluster`"&gt;`dbserverLogicalCluster`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`linkedDatabases`" pulumi-lang-dotnet="`LinkedDatabases`" pulumi-lang-go="`linkedDatabases`" pulumi-lang-python="`linked_databases`" pulumi-lang-yaml="`linkedDatabases`" pulumi-lang-java="`linkedDatabases`"&gt;`linkedDatabases`&lt;/span&gt;: - list of databases created in instance with info
         /// 
         /// 
         /// See detailed information in [List Database Instances](https://www.nutanix.dev/api_references/ndb/#/1e508756bcdcc-get-all-the-databases).

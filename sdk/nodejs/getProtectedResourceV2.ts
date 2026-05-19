@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example 1: Get Protected Virtual Machine
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,9 +20,11 @@ import * as utilities from "./utilities";
  *     extId: "d22529bb-f02d-4710-894b-d1de772d7832",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example 2: Get Protected Volume Group
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -30,6 +33,7 @@ import * as utilities from "./utilities";
  *     extId: "246c651a-1b16-4983-b5ff-204840f85e07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectedResourceV2(args: GetProtectedResourceV2Args, opts?: pulumi.InvokeOptions): Promise<GetProtectedResourceV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -102,6 +106,7 @@ export interface GetProtectedResourceV2Result {
  *
  * ## Example 1: Get Protected Virtual Machine
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -110,9 +115,11 @@ export interface GetProtectedResourceV2Result {
  *     extId: "d22529bb-f02d-4710-894b-d1de772d7832",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example 2: Get Protected Volume Group
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -121,6 +128,7 @@ export interface GetProtectedResourceV2Result {
  *     extId: "246c651a-1b16-4983-b5ff-204840f85e07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectedResourceV2Output(args: GetProtectedResourceV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectedResourceV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

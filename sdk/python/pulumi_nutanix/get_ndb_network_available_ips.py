@@ -81,12 +81,14 @@ def get_ndb_network_available_ips(profile_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     network = nutanix.get_ndb_network_available_ips(profile_id="{{ network_profile_id }}")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str profile_id: (Required) Network Profile id.
@@ -100,19 +102,21 @@ def get_ndb_network_available_ips(profile_id: Optional[_builtins.str] = None,
         available_ips=pulumi.get(__ret__, 'available_ips'),
         id=pulumi.get(__ret__, 'id'),
         profile_id=pulumi.get(__ret__, 'profile_id'))
-def get_ndb_network_available_ips_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ndb_network_available_ips_output(profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbNetworkAvailableIpsResult]:
     """
     List of available IPs in Network
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     network = nutanix.get_ndb_network_available_ips(profile_id="{{ network_profile_id }}")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str profile_id: (Required) Network Profile id.

@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
-    /// &gt; The restore source is auto-deleted after sometime, nutanix.PcRestoreSourceV2 resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
+    /// &gt; The restore source is auto-deleted after sometime,&lt;span pulumi-lang-nodejs=" nutanix.PcRestoreSourceV2 " pulumi-lang-dotnet=" nutanix.PcRestoreSourceV2 " pulumi-lang-go=" PcRestoreSourceV2 " pulumi-lang-python=" PcRestoreSourceV2 " pulumi-lang-yaml=" nutanix.PcRestoreSourceV2 " pulumi-lang-java=" nutanix.PcRestoreSourceV2 "&gt; nutanix.PcRestoreSourceV2 &lt;/span&gt;resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
     /// 
     /// Create a restore source pointing to a cluster or object store to restore the domain manager. The created restore source is intended to be deleted after use. If the restore source is not deleted using the deleteRestoreSource API, then it is auto-deleted after sometime. Also note that a restore source will not contain a backup policy. It is only used to access the backup data at the location from where the Prism Central may be restored. Credentials used to access the restore source are not validated at the time of creation of the restore source. They are validated when the restore source is used to fetch data.
     /// 
@@ -19,6 +19,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### Cluster Location
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -30,7 +31,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     // restore source is auto-deleted after sometime, nutanix_pc_restore_source_v2 resource is auto-create
     ///     // new restore source if it was deleted, so notice that the id of the restore source will be different
     ///     // after recreation
-    ///     var cluster_location = new Nutanix.Index.PcRestoreSourceV2("cluster-location", new()
+    ///     var cluster_location = new Nutanix.PcRestoreSourceV2("cluster-location", new()
     ///     {
     ///         Location = new Nutanix.Inputs.PcRestoreSourceV2LocationArgs
     ///         {
@@ -52,9 +53,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### Object Store Location
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -64,7 +67,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // using object store location
-    ///     var object_store_location = new Nutanix.Index.PcRestoreSourceV2("object-store-location", new()
+    ///     var object_store_location = new Nutanix.PcRestoreSourceV2("object-store-location", new()
     ///     {
     ///         Location = new Nutanix.Inputs.PcRestoreSourceV2LocationArgs
     ///         {
@@ -99,6 +102,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/pcRestoreSourceV2:PcRestoreSourceV2")]
     public partial class PcRestoreSourceV2 : global::Pulumi.CustomResource

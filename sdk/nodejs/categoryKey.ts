@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -18,6 +19,7 @@ import * as utilities from "./utilities";
  *     description: "App Support Category Key",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class CategoryKey extends pulumi.CustomResource {
     /**
@@ -100,19 +102,19 @@ export interface CategoryKeyState {
     /**
      * (Optional) The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) A description for category key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name for the category key.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - Specifying whether its a system defined category.
      */
-    systemDefined?: pulumi.Input<boolean>;
+    systemDefined?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -122,9 +124,9 @@ export interface CategoryKeyArgs {
     /**
      * - (Optional) A description for category key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name for the category key.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

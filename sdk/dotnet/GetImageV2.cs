@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_image = nutanix.getImageV2({
+        ///     extId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_image = nutanix.get_image_v2(ext_id="0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_image = Nutanix.Index.GetImageV2.Invoke(new()
+        ///     var get_image = Nutanix.GetImageV2.Invoke(new()
         ///     {
         ///         ExtId = "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetImageV2(ctx, &amp;nutanix.GetImageV2Args{
+        /// 			ExtId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImageV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-image = NutanixFunctions.getImageV2(GetImageV2Args.builder()
+        ///             .extId("0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-image:
+        ///     fn::invoke:
+        ///       function: nutanix:getImageV2
+        ///       arguments:
+        ///         extId: 0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetImageV2Result> InvokeAsync(GetImageV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImageV2Result>("nutanix:index/getImageV2:getImageV2", args ?? new GetImageV2Args(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_image = nutanix.getImageV2({
+        ///     extId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_image = nutanix.get_image_v2(ext_id="0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_image = Nutanix.Index.GetImageV2.Invoke(new()
+        ///     var get_image = Nutanix.GetImageV2.Invoke(new()
         ///     {
         ///         ExtId = "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetImageV2(ctx, &amp;nutanix.GetImageV2Args{
+        /// 			ExtId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImageV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-image = NutanixFunctions.getImageV2(GetImageV2Args.builder()
+        ///             .extId("0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-image:
+        ///     fn::invoke:
+        ///       function: nutanix:getImageV2
+        ///       arguments:
+        ///         extId: 0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetImageV2Result> Invoke(GetImageV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageV2Result>("nutanix:index/getImageV2:getImageV2", args ?? new GetImageV2InvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_image = nutanix.getImageV2({
+        ///     extId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_image = nutanix.get_image_v2(ext_id="0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_image = Nutanix.Index.GetImageV2.Invoke(new()
+        ///     var get_image = Nutanix.GetImageV2.Invoke(new()
         ///     {
         ///         ExtId = "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetImageV2(ctx, &amp;nutanix.GetImageV2Args{
+        /// 			ExtId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImageV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-image = NutanixFunctions.getImageV2(GetImageV2Args.builder()
+        ///             .extId("0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-image:
+        ///     fn::invoke:
+        ///       function: nutanix:getImageV2
+        ///       arguments:
+        ///         extId: 0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetImageV2Result> Invoke(GetImageV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageV2Result>("nutanix:index/getImageV2:getImageV2", args ?? new GetImageV2InvokeArgs(), options.WithDefaults());

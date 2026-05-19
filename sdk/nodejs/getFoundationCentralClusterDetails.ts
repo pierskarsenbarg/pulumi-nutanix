@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     imagedClusterUuid: "<CLUSTER-UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralClusterDetails(args: GetFoundationCentralClusterDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralClusterDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -150,6 +152,7 @@ export interface GetFoundationCentralClusterDetailsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -158,6 +161,7 @@ export interface GetFoundationCentralClusterDetailsResult {
  *     imagedClusterUuid: "<CLUSTER-UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralClusterDetailsOutput(args: GetFoundationCentralClusterDetailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralClusterDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -180,23 +184,23 @@ export interface GetFoundationCentralClusterDetailsOutputArgs {
     /**
      * External management ip of the cluster.
      */
-    clusterExternalIp?: pulumi.Input<string>;
+    clusterExternalIp?: pulumi.Input<string | undefined>;
     /**
      * Cluster name.
      */
-    clusterName?: pulumi.Input<string>;
+    clusterName?: pulumi.Input<string | undefined>;
     /**
      * Number of nodes in the cluster.
      */
-    clusterSize?: pulumi.Input<number>;
+    clusterSize?: pulumi.Input<number | undefined>;
     /**
      * Details of cluster creation process.
      */
-    clusterStatus?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusArgs>;
+    clusterStatus?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusArgs | undefined>;
     /**
      * Common network settings across the nodes in the cluster.
      */
-    commonNetworkSettings?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs>;
+    commonNetworkSettings?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs | undefined>;
     /**
      * UUID of the cluster whose details need to be fetched.
      */
@@ -204,9 +208,9 @@ export interface GetFoundationCentralClusterDetailsOutputArgs {
     /**
      * Redundancy factor of the cluster.
      */
-    redundancyFactor?: pulumi.Input<number>;
+    redundancyFactor?: pulumi.Input<number | undefined>;
     /**
      * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
      */
-    storageNodeCount?: pulumi.Input<number>;
+    storageNodeCount?: pulumi.Input<number | undefined>;
 }

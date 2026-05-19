@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## create one static route for vpc uuid with external subnet
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var scn = new Nutanix.Index.StaticRoutes("scn", new()
+    ///     var scn = new Nutanix.StaticRoutes("scn", new()
     ///     {
     ///         VpcUuid = "{{vpc_uuid}}",
     ///         StaticRoutesLists = new[]
@@ -38,9 +39,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## create one static route with default route for vpc name with external subnet
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -49,7 +52,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var scn = new Nutanix.Index.StaticRoutes("scn", new()
+    ///     var scn = new Nutanix.StaticRoutes("scn", new()
     ///     {
     ///         VpcName = "{{vpc_name}}",
     ///         StaticRoutesLists = new[]
@@ -71,6 +74,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// #### Note: destination with 0.0.0.0/0 will be default route.
     /// </summary>
@@ -90,7 +94,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.StaticRoutesDefaultRouteNexthop>> DefaultRouteNexthops { get; private set; } = null!;
 
         /// <summary>
-        /// The VpcRouteTable kind metadata.
+        /// The&lt;span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "&gt; vpcRouteTable &lt;/span&gt;kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
@@ -232,7 +236,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// The VpcRouteTable kind metadata.
+        /// The&lt;span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "&gt; vpcRouteTable &lt;/span&gt;kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {

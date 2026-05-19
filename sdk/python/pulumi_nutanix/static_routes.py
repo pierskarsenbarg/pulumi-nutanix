@@ -21,11 +21,11 @@ __all__ = ['StaticRoutesArgs', 'StaticRoutes']
 @pulumi.input_type
 class StaticRoutesArgs:
     def __init__(__self__, *,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]] = None,
-                 static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]] = None,
-                 vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_uuid: Optional[pulumi.Input[_builtins.str]] = None):
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_route_nexthops: pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]] = None,
+                 static_routes_lists: pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]] = None,
+                 vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_uuid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a StaticRoutes resource.
 
@@ -48,80 +48,80 @@ class StaticRoutesArgs:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteNexthops")
-    def default_route_nexthops(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]]:
+    def default_route_nexthops(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]]:
         """
         Default Route
         """
         return pulumi.get(self, "default_route_nexthops")
 
     @default_route_nexthops.setter
-    def default_route_nexthops(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]]):
+    def default_route_nexthops(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]]):
         pulumi.set(self, "default_route_nexthops", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRoutesLists")
-    def static_routes_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]]:
+    def static_routes_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]]:
         """
         Static Routes.
         """
         return pulumi.get(self, "static_routes_lists")
 
     @static_routes_lists.setter
-    def static_routes_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]]):
+    def static_routes_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]]):
         pulumi.set(self, "static_routes_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcName")
-    def vpc_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         vpc Name. Should not be used with vpc_uuid.
         """
         return pulumi.get(self, "vpc_name")
 
     @vpc_name.setter
-    def vpc_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcUuid")
-    def vpc_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Reference to a VPC UUID. Should not be used with vpc_name.
         """
         return pulumi.get(self, "vpc_uuid")
 
     @vpc_uuid.setter
-    def vpc_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_uuid", value)
 
 
 @pulumi.input_type
 class _StaticRoutesState:
     def __init__(__self__, *,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]] = None,
-                 vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_uuid: Optional[pulumi.Input[_builtins.str]] = None):
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_route_nexthops: pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 static_routes_lists: pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]] = None,
+                 vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_uuid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StaticRoutes resources.
 
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]] default_route_nexthops: Default Route
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The vpc_route_table kind metadata.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
         :param pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]] static_routes_lists: Static Routes.
         :param pulumi.Input[_builtins.str] vpc_name: vpc Name. Should not be used with vpc_uuid.
         :param pulumi.Input[_builtins.str] vpc_uuid: Reference to a VPC UUID. Should not be used with vpc_name.
@@ -141,74 +141,74 @@ class _StaticRoutesState:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteNexthops")
-    def default_route_nexthops(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]]:
+    def default_route_nexthops(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]]:
         """
         Default Route
         """
         return pulumi.get(self, "default_route_nexthops")
 
     @default_route_nexthops.setter
-    def default_route_nexthops(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]]):
+    def default_route_nexthops(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]]]):
         pulumi.set(self, "default_route_nexthops", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        The vpc_route_table kind metadata.
+        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRoutesLists")
-    def static_routes_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]]:
+    def static_routes_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]]:
         """
         Static Routes.
         """
         return pulumi.get(self, "static_routes_lists")
 
     @static_routes_lists.setter
-    def static_routes_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]]):
+    def static_routes_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]]]):
         pulumi.set(self, "static_routes_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcName")
-    def vpc_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         vpc Name. Should not be used with vpc_uuid.
         """
         return pulumi.get(self, "vpc_name")
 
     @vpc_name.setter
-    def vpc_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcUuid")
-    def vpc_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Reference to a VPC UUID. Should not be used with vpc_name.
         """
         return pulumi.get(self, "vpc_uuid")
 
     @vpc_uuid.setter
-    def vpc_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_uuid", value)
 
 
@@ -218,17 +218,18 @@ class StaticRoutes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
-                 static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
-                 vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_route_nexthops: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
+                 static_routes_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
+                 vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to create Static Routes within VPCs.
 
         ## create one static route for vpc uuid with external subnet
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -240,9 +241,11 @@ class StaticRoutes(pulumi.CustomResource):
                 "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## create one static route with default route for vpc name with external subnet
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -257,6 +260,7 @@ class StaticRoutes(pulumi.CustomResource):
                 "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         #### Note: destination with 0.0.0.0/0 will be default route.
 
@@ -280,6 +284,7 @@ class StaticRoutes(pulumi.CustomResource):
 
         ## create one static route for vpc uuid with external subnet
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -291,9 +296,11 @@ class StaticRoutes(pulumi.CustomResource):
                 "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## create one static route with default route for vpc name with external subnet
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -308,6 +315,7 @@ class StaticRoutes(pulumi.CustomResource):
                 "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         #### Note: destination with 0.0.0.0/0 will be default route.
 
@@ -327,11 +335,11 @@ class StaticRoutes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
-                 static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
-                 vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_route_nexthops: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
+                 static_routes_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
+                 vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -357,12 +365,12 @@ class StaticRoutes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_version: Optional[pulumi.Input[_builtins.str]] = None,
-            default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
-            vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc_uuid: Optional[pulumi.Input[_builtins.str]] = None) -> 'StaticRoutes':
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            default_route_nexthops: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            static_routes_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
+            vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_uuid: pulumi.Input[Optional[_builtins.str]] = None) -> 'StaticRoutes':
         """
         Get an existing StaticRoutes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -372,7 +380,7 @@ class StaticRoutes(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]] default_route_nexthops: Default Route
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The vpc_route_table kind metadata.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
         :param pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]] static_routes_lists: Static Routes.
         :param pulumi.Input[_builtins.str] vpc_name: vpc Name. Should not be used with vpc_uuid.
         :param pulumi.Input[_builtins.str] vpc_uuid: Reference to a VPC UUID. Should not be used with vpc_name.
@@ -409,7 +417,7 @@ class StaticRoutes(pulumi.CustomResource):
     @pulumi.getter
     def metadata(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        The vpc_route_table kind metadata.
+        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
         """
         return pulumi.get(self, "metadata")
 

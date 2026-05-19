@@ -170,7 +170,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> TimeZone { get; private set; } = null!;
 
         /// <summary>
-        /// timezone . Should be used with  `UserPitrTimestamp`
+        /// timezone . Should be used with  &lt;span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`"&gt;`userPitrTimestamp`&lt;/span&gt;
         /// </summary>
         [Output("timeZonePitr")]
         public Output<string?> TimeZonePitr { get; private set; } = null!;
@@ -271,7 +271,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// timezone . Should be used with  `UserPitrTimestamp`
+        /// timezone . Should be used with  &lt;span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`"&gt;`userPitrTimestamp`&lt;/span&gt;
         /// </summary>
         [Input("timeZonePitr")]
         public Input<string>? TimeZonePitr { get; set; }
@@ -498,7 +498,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
-        /// timezone . Should be used with  `UserPitrTimestamp`
+        /// timezone . Should be used with  &lt;span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`"&gt;`userPitrTimestamp`&lt;/span&gt;
         /// </summary>
         [Input("timeZonePitr")]
         public Input<string>? TimeZonePitr { get; set; }

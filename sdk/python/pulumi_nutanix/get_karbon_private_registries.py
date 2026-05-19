@@ -64,6 +64,9 @@ def get_karbon_private_registries(opts: Optional[pulumi.InvokeOptions] = None) -
     Describes a List of Karbon private registry entry
 
     ## Example Usage
+
+    <!--Start PulumiCodeChooser -->
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -77,6 +80,9 @@ def get_karbon_private_registries_output(opts: Optional[Union[pulumi.InvokeOptio
     Describes a List of Karbon private registry entry
 
     ## Example Usage
+
+    <!--Start PulumiCodeChooser -->
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

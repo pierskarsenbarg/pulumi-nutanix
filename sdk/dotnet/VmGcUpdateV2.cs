@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,9 +24,9 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vm_list = Nutanix.Index.GetVirtualMachinesV2.Invoke();
+    ///     var vm_list = Nutanix.GetVirtualMachinesV2.Invoke();
     /// 
-    ///     var vm_gc_update = new Nutanix.Index.VmGcUpdateV2("vm-gc-update", new()
+    ///     var vm_gc_update = new Nutanix.VmGcUpdateV2("vm-gc-update", new()
     ///     {
     ///         ExtId = vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId)),
     ///         Configs = new[]
@@ -57,6 +58,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/vmGcUpdateV2:VmGcUpdateV2")]
     public partial class VmGcUpdateV2 : global::Pulumi.CustomResource

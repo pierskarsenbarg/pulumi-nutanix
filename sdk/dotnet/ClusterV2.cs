@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var cluster = new Nutanix.Index.ClusterV2("cluster", new()
+    ///     var cluster = new Nutanix.ClusterV2("cluster", new()
     ///     {
     ///         Name = "cluster-example",
     ///         Nodes = new[]
@@ -159,6 +160,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/clusterV2:ClusterV2")]
     public partial class ClusterV2 : global::Pulumi.CustomResource

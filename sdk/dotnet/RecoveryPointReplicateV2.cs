@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // replicate RP
-    ///     var rp_replicate = new Nutanix.Index.RecoveryPointReplicateV2("rp-replicate", new()
+    ///     var rp_replicate = new Nutanix.RecoveryPointReplicateV2("rp-replicate", new()
     ///     {
     ///         ExtId = "150a7ed0-9d05-4f35-a060-16dac4c835d0",
     ///         ClusterExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
@@ -33,6 +34,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/recoveryPointReplicateV2:RecoveryPointReplicateV2")]
     public partial class RecoveryPointReplicateV2 : global::Pulumi.CustomResource

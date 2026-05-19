@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,13 +25,14 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // perform inventory
-    ///     var inventory = new Nutanix.Index.LcmPerformInventoryV2("inventory", new()
+    ///     var inventory = new Nutanix.LcmPerformInventoryV2("inventory", new()
     ///     {
     ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
     ///     });
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/lcmPerformInventoryV2:LcmPerformInventoryV2")]
     public partial class LcmPerformInventoryV2 : global::Pulumi.CustomResource

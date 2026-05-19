@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const hypervisorIsos = nutanix.getFoundationHypervisorIsos({});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Note
  *
@@ -64,12 +66,14 @@ export interface GetFoundationHypervisorIsosResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const hypervisorIsos = nutanix.getFoundationHypervisorIsos({});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Note
  *

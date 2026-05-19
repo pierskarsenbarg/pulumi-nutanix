@@ -25,23 +25,23 @@ class NdbDbserverVmArgs:
                  database_type: pulumi.Input[_builtins.str],
                  network_profile_id: pulumi.Input[_builtins.str],
                  nx_cluster_id: pulumi.Input[_builtins.str],
-                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 latest_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance_tasks: Optional[pulumi.Input['NdbDbserverVmMaintenanceTasksArgs']] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]] = None,
-                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 software_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_profile_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_password: Optional[pulumi.Input[_builtins.str]] = None):
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance_tasks: pulumi.Input[Optional['NdbDbserverVmMaintenanceTasksArgs']] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]] = None,
+                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbDbserverVm resource.
 
@@ -57,7 +57,7 @@ class NdbDbserverVmArgs:
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
         :param pulumi.Input[_builtins.str] software_profile_version_id: SOftware Profile Version Id.
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -148,235 +148,235 @@ class NdbDbserverVmArgs:
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]]:
+    def credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]]:
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]]):
+    def credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter
-    def delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the VM and associated storage. Default value is true
         """
         return pulumi.get(self, "delete")
 
     @delete.setter
-    def delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVgs")
-    def delete_vgs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_vgs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete volume grous. Default value is true
         """
         return pulumi.get(self, "delete_vgs")
 
     @delete_vgs.setter
-    def delete_vgs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_vgs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_vgs", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVmSnapshots")
-    def delete_vm_snapshots(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_vm_snapshots(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the vm snapshots. Default is true
         """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @delete_vm_snapshots.setter
-    def delete_vm_snapshots(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_vm_snapshots(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_vm_snapshots", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type a description for the database server VM.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="latestSnapshot")
-    def latest_snapshot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def latest_snapshot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "latest_snapshot")
 
     @latest_snapshot.setter
-    def latest_snapshot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def latest_snapshot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "latest_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceTasks")
-    def maintenance_tasks(self) -> Optional[pulumi.Input['NdbDbserverVmMaintenanceTasksArgs']]:
+    def maintenance_tasks(self) -> pulumi.Input[Optional['NdbDbserverVmMaintenanceTasksArgs']]:
         """
         maintenance window configured to enable automated patching.
         """
         return pulumi.get(self, "maintenance_tasks")
 
     @maintenance_tasks.setter
-    def maintenance_tasks(self, value: Optional[pulumi.Input['NdbDbserverVmMaintenanceTasksArgs']]):
+    def maintenance_tasks(self, value: pulumi.Input[Optional['NdbDbserverVmMaintenanceTasksArgs']]):
         pulumi.set(self, "maintenance_tasks", value)
 
     @_builtins.property
     @pulumi.getter(name="postgresDatabases")
-    def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]:
+    def postgres_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]:
         """
         Postgres database server vm
         """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
-    def postgres_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]):
+    def postgres_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]):
         pulumi.set(self, "postgres_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Unregister the database from NDB. Default value is false
         """
         return pulumi.get(self, "remove")
 
     @remove.setter
-    def remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotId")
-    def snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         """
         return pulumi.get(self, "snapshot_id")
 
     @snapshot_id.setter
-    def snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softRemove")
-    def soft_remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def soft_remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Soft remove. Default will be false
         """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
-    def soft_remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def soft_remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "soft_remove", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareProfileId")
-    def software_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
         """
         return pulumi.get(self, "software_profile_id")
 
     @software_profile_id.setter
-    def software_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareProfileVersionId")
-    def software_profile_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_profile_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SOftware Profile Version Id.
         """
         return pulumi.get(self, "software_profile_version_id")
 
     @software_profile_version_id.setter
-    def software_profile_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_profile_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_profile_version_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="vmPassword")
-    def vm_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         password of the NDB drive user account.
         """
         return pulumi.get(self, "vm_password")
 
     @vm_password.setter
-    def vm_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_password", value)
 
 
 @pulumi.input_type
 class _NdbDbserverVmState:
     def __init__(__self__, *,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbserver_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 era_drive_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 era_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 fqdns: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 latest_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mac_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_tasks: Optional[pulumi.Input['NdbDbserverVmMaintenanceTasksArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPropertyArgs']]]] = None,
-                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 software_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_profile_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbserver_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 era_drive_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 era_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 fqdns: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mac_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_tasks: pulumi.Input[Optional['NdbDbserverVmMaintenanceTasksArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPropertyArgs']]]] = None,
+                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbDbserverVm resources.
 
@@ -393,7 +393,7 @@ class _NdbDbserverVmState:
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
         :param pulumi.Input[_builtins.str] software_profile_version_id: SOftware Profile Version Id.
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -471,368 +471,368 @@ class _NdbDbserverVmState:
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeProfileId")
-    def compute_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compute profile id.
         """
         return pulumi.get(self, "compute_profile_id")
 
     @compute_profile_id.setter
-    def compute_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_profile_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]]:
+    def credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]]:
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]]):
+    def credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmCredentialArgs']]]]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database type. Valid values: postgres_database
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverClusterId")
-    def dbserver_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dbserver_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dbserver_cluster_id")
 
     @dbserver_cluster_id.setter
-    def dbserver_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dbserver_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dbserver_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the VM and associated storage. Default value is true
         """
         return pulumi.get(self, "delete")
 
     @delete.setter
-    def delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVgs")
-    def delete_vgs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_vgs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete volume grous. Default value is true
         """
         return pulumi.get(self, "delete_vgs")
 
     @delete_vgs.setter
-    def delete_vgs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_vgs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_vgs", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVmSnapshots")
-    def delete_vm_snapshots(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_vm_snapshots(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the vm snapshots. Default is true
         """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @delete_vm_snapshots.setter
-    def delete_vm_snapshots(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_vm_snapshots(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_vm_snapshots", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type a description for the database server VM.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="eraDriveId")
-    def era_drive_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def era_drive_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "era_drive_id")
 
     @era_drive_id.setter
-    def era_drive_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def era_drive_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "era_drive_id", value)
 
     @_builtins.property
     @pulumi.getter(name="eraVersion")
-    def era_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def era_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "era_version")
 
     @era_version.setter
-    def era_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def era_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "era_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def fqdns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fqdns(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "fqdns")
 
     @fqdns.setter
-    def fqdns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fqdns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fqdns", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="latestSnapshot")
-    def latest_snapshot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def latest_snapshot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "latest_snapshot")
 
     @latest_snapshot.setter
-    def latest_snapshot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def latest_snapshot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "latest_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddresses")
-    def mac_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def mac_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "mac_addresses")
 
     @mac_addresses.setter
-    def mac_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def mac_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "mac_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceTasks")
-    def maintenance_tasks(self) -> Optional[pulumi.Input['NdbDbserverVmMaintenanceTasksArgs']]:
+    def maintenance_tasks(self) -> pulumi.Input[Optional['NdbDbserverVmMaintenanceTasksArgs']]:
         """
         maintenance window configured to enable automated patching.
         """
         return pulumi.get(self, "maintenance_tasks")
 
     @maintenance_tasks.setter
-    def maintenance_tasks(self, value: Optional[pulumi.Input['NdbDbserverVmMaintenanceTasksArgs']]):
+    def maintenance_tasks(self, value: pulumi.Input[Optional['NdbDbserverVmMaintenanceTasksArgs']]):
         pulumi.set(self, "maintenance_tasks", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkProfileId")
-    def network_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network profile id.
         """
         return pulumi.get(self, "network_profile_id")
 
     @network_profile_id.setter
-    def network_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nxClusterId")
-    def nx_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nx_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
-    def nx_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nx_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nx_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="postgresDatabases")
-    def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]:
+    def postgres_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]:
         """
         Postgres database server vm
         """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
-    def postgres_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]):
+    def postgres_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]):
         pulumi.set(self, "postgres_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPropertyArgs']]]]:
         """
         List of all the properties
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Unregister the database from NDB. Default value is false
         """
         return pulumi.get(self, "remove")
 
     @remove.setter
-    def remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotId")
-    def snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         """
         return pulumi.get(self, "snapshot_id")
 
     @snapshot_id.setter
-    def snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softRemove")
-    def soft_remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def soft_remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Soft remove. Default will be false
         """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
-    def soft_remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def soft_remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "soft_remove", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareProfileId")
-    def software_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
         """
         return pulumi.get(self, "software_profile_id")
 
     @software_profile_id.setter
-    def software_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareProfileVersionId")
-    def software_profile_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_profile_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SOftware Profile Version Id.
         """
         return pulumi.get(self, "software_profile_version_id")
 
     @software_profile_version_id.setter
-    def software_profile_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_profile_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_profile_version_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDbserverVmTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterName")
-    def vm_cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "vm_cluster_name")
 
     @vm_cluster_name.setter
-    def vm_cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterUuid")
-    def vm_cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "vm_cluster_uuid")
 
     @vm_cluster_uuid.setter
-    def vm_cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="vmPassword")
-    def vm_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         password of the NDB drive user account.
         """
         return pulumi.get(self, "vm_password")
 
     @vm_password.setter
-    def vm_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_password", value)
 
     @_builtins.property
     @pulumi.getter(name="vmTimezone")
-    def vm_timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "vm_timezone")
 
     @vm_timezone.setter
-    def vm_timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_timezone", value)
 
 
@@ -842,27 +842,27 @@ class NdbDbserverVm(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 latest_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance_tasks: Optional[pulumi.Input[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
-                 network_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
-                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 software_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_profile_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
+                 network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
+                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to create database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
@@ -884,7 +884,7 @@ class NdbDbserverVm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
         :param pulumi.Input[_builtins.str] software_profile_version_id: SOftware Profile Version Id.
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -916,27 +916,27 @@ class NdbDbserverVm(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 latest_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance_tasks: Optional[pulumi.Input[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
-                 network_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
-                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 software_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_profile_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
+                 network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
+                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1001,41 +1001,41 @@ class NdbDbserverVm(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            client_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
-            database_type: Optional[pulumi.Input[_builtins.str]] = None,
-            dbserver_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
-            delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            era_drive_id: Optional[pulumi.Input[_builtins.str]] = None,
-            era_version: Optional[pulumi.Input[_builtins.str]] = None,
-            fqdns: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            latest_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
-            mac_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            maintenance_tasks: Optional[pulumi.Input[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPropertyArgs', 'NdbDbserverVmPropertyArgsDict']]]]] = None,
-            remove: Optional[pulumi.Input[_builtins.bool]] = None,
-            snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-            soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-            software_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            software_profile_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
-            time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-            timezone: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_password: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_timezone: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbDbserverVm':
+            client_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
+            database_type: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
+            delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            era_drive_id: pulumi.Input[Optional[_builtins.str]] = None,
+            era_version: pulumi.Input[Optional[_builtins.str]] = None,
+            fqdns: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+            mac_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPropertyArgs', 'NdbDbserverVmPropertyArgsDict']]]]] = None,
+            remove: pulumi.Input[Optional[_builtins.bool]] = None,
+            snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+            software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_password: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_timezone: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbDbserverVm':
         """
         Get an existing NdbDbserverVm resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1056,7 +1056,7 @@ class NdbDbserverVm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
         :param pulumi.Input[_builtins.str] software_profile_version_id: SOftware Profile Version Id.
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -1265,7 +1265,7 @@ class NdbDbserverVm(pulumi.CustomResource):
     @pulumi.getter(name="softwareProfileId")
     def software_profile_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
         """
         return pulumi.get(self, "software_profile_id")
 

@@ -177,12 +177,14 @@ def get_operation_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     operation = nutanix.get_operation_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: ExtId of the Operation.
@@ -204,19 +206,21 @@ def get_operation_v2(ext_id: Optional[_builtins.str] = None,
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
         operation_type=pulumi.get(__ret__, 'operation_type'),
         related_operation_lists=pulumi.get(__ret__, 'related_operation_lists'))
-def get_operation_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_operation_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationV2Result]:
     """
     Fetches an operation based on the external identifier.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     operation = nutanix.get_operation_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: ExtId of the Operation.

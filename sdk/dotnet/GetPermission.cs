@@ -17,6 +17,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //Get permission by UUID
+        /// const byuuid = nutanix.getPermission({
+        ///     permissionId: "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
+        /// });
+        /// //Get permission by name
+        /// const byname = nutanix.getPermission({
+        ///     permissionName: "Access_Console_Virtual_Machine",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #Get permission by UUID
+        /// byuuid = nutanix.get_permission(permission_id="26b81a55-2bca-48c6-9fab-4f82c6bb4284")
+        /// #Get permission by name
+        /// byname = nutanix.get_permission(permission_name="Access_Console_Virtual_Machine")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,19 +49,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //Get permission by UUID
-        ///     var byuuid = Nutanix.Index.GetPermission.Invoke(new()
+        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
         ///     {
         ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
         ///     });
         /// 
         ///     //Get permission by name
-        ///     var byname = Nutanix.Index.GetPermission.Invoke(new()
+        ///     var byname = Nutanix.GetPermission.Invoke(new()
         ///     {
         ///         PermissionName = "Access_Console_Virtual_Machine",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get permission by UUID
+        /// 		_, err := nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
+        /// 			PermissionId: pulumi.StringRef("26b81a55-2bca-48c6-9fab-4f82c6bb4284"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get permission by name
+        /// 		_, err = nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
+        /// 			PermissionName: pulumi.StringRef("Access_Console_Virtual_Machine"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPermissionArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //Get permission by UUID
+        ///         final var byuuid = NutanixFunctions.getPermission(GetPermissionArgs.builder()
+        ///             .permissionId("26b81a55-2bca-48c6-9fab-4f82c6bb4284")
+        ///             .build());
+        /// 
+        ///         //Get permission by name
+        ///         final var byname = NutanixFunctions.getPermission(GetPermissionArgs.builder()
+        ///             .permissionName("Access_Console_Virtual_Machine")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #Get permission by UUID
+        ///   byuuid:
+        ///     fn::invoke:
+        ///       function: nutanix:getPermission
+        ///       arguments:
+        ///         permissionId: 26b81a55-2bca-48c6-9fab-4f82c6bb4284
+        ///   #Get permission by name
+        ///   byname:
+        ///     fn::invoke:
+        ///       function: nutanix:getPermission
+        ///       arguments:
+        ///         permissionName: Access_Console_Virtual_Machine
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPermissionResult> InvokeAsync(GetPermissionArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionArgs(), options.WithDefaults());
@@ -48,6 +149,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //Get permission by UUID
+        /// const byuuid = nutanix.getPermission({
+        ///     permissionId: "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
+        /// });
+        /// //Get permission by name
+        /// const byname = nutanix.getPermission({
+        ///     permissionName: "Access_Console_Virtual_Machine",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #Get permission by UUID
+        /// byuuid = nutanix.get_permission(permission_id="26b81a55-2bca-48c6-9fab-4f82c6bb4284")
+        /// #Get permission by name
+        /// byname = nutanix.get_permission(permission_name="Access_Console_Virtual_Machine")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -57,19 +181,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //Get permission by UUID
-        ///     var byuuid = Nutanix.Index.GetPermission.Invoke(new()
+        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
         ///     {
         ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
         ///     });
         /// 
         ///     //Get permission by name
-        ///     var byname = Nutanix.Index.GetPermission.Invoke(new()
+        ///     var byname = Nutanix.GetPermission.Invoke(new()
         ///     {
         ///         PermissionName = "Access_Console_Virtual_Machine",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get permission by UUID
+        /// 		_, err := nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
+        /// 			PermissionId: pulumi.StringRef("26b81a55-2bca-48c6-9fab-4f82c6bb4284"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get permission by name
+        /// 		_, err = nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
+        /// 			PermissionName: pulumi.StringRef("Access_Console_Virtual_Machine"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPermissionArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //Get permission by UUID
+        ///         final var byuuid = NutanixFunctions.getPermission(GetPermissionArgs.builder()
+        ///             .permissionId("26b81a55-2bca-48c6-9fab-4f82c6bb4284")
+        ///             .build());
+        /// 
+        ///         //Get permission by name
+        ///         final var byname = NutanixFunctions.getPermission(GetPermissionArgs.builder()
+        ///             .permissionName("Access_Console_Virtual_Machine")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #Get permission by UUID
+        ///   byuuid:
+        ///     fn::invoke:
+        ///       function: nutanix:getPermission
+        ///       arguments:
+        ///         permissionId: 26b81a55-2bca-48c6-9fab-4f82c6bb4284
+        ///   #Get permission by name
+        ///   byname:
+        ///     fn::invoke:
+        ///       function: nutanix:getPermission
+        ///       arguments:
+        ///         permissionName: Access_Console_Virtual_Machine
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPermissionResult> Invoke(GetPermissionInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionInvokeArgs(), options.WithDefaults());
@@ -79,6 +281,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //Get permission by UUID
+        /// const byuuid = nutanix.getPermission({
+        ///     permissionId: "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
+        /// });
+        /// //Get permission by name
+        /// const byname = nutanix.getPermission({
+        ///     permissionName: "Access_Console_Virtual_Machine",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #Get permission by UUID
+        /// byuuid = nutanix.get_permission(permission_id="26b81a55-2bca-48c6-9fab-4f82c6bb4284")
+        /// #Get permission by name
+        /// byname = nutanix.get_permission(permission_name="Access_Console_Virtual_Machine")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -88,19 +313,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //Get permission by UUID
-        ///     var byuuid = Nutanix.Index.GetPermission.Invoke(new()
+        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
         ///     {
         ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
         ///     });
         /// 
         ///     //Get permission by name
-        ///     var byname = Nutanix.Index.GetPermission.Invoke(new()
+        ///     var byname = Nutanix.GetPermission.Invoke(new()
         ///     {
         ///         PermissionName = "Access_Console_Virtual_Machine",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get permission by UUID
+        /// 		_, err := nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
+        /// 			PermissionId: pulumi.StringRef("26b81a55-2bca-48c6-9fab-4f82c6bb4284"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get permission by name
+        /// 		_, err = nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
+        /// 			PermissionName: pulumi.StringRef("Access_Console_Virtual_Machine"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPermissionArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //Get permission by UUID
+        ///         final var byuuid = NutanixFunctions.getPermission(GetPermissionArgs.builder()
+        ///             .permissionId("26b81a55-2bca-48c6-9fab-4f82c6bb4284")
+        ///             .build());
+        /// 
+        ///         //Get permission by name
+        ///         final var byname = NutanixFunctions.getPermission(GetPermissionArgs.builder()
+        ///             .permissionName("Access_Console_Virtual_Machine")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #Get permission by UUID
+        ///   byuuid:
+        ///     fn::invoke:
+        ///       function: nutanix:getPermission
+        ///       arguments:
+        ///         permissionId: 26b81a55-2bca-48c6-9fab-4f82c6bb4284
+        ///   #Get permission by name
+        ///   byname:
+        ///     fn::invoke:
+        ///       function: nutanix:getPermission
+        ///       arguments:
+        ///         permissionName: Access_Console_Virtual_Machine
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPermissionResult> Invoke(GetPermissionInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionInvokeArgs(), options.WithDefaults());
@@ -122,13 +425,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The `Id` of the permission.
+        /// The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the permission.
         /// </summary>
         [Input("permissionId")]
         public string? PermissionId { get; set; }
 
         /// <summary>
-        /// The `Name` of the permission.
+        /// The &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt; of the permission.
         /// </summary>
         [Input("permissionName")]
         public string? PermissionName { get; set; }
@@ -154,13 +457,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The `Id` of the permission.
+        /// The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the permission.
         /// </summary>
         [Input("permissionId")]
         public Input<string>? PermissionId { get; set; }
 
         /// <summary>
-        /// The `Name` of the permission.
+        /// The &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt; of the permission.
         /// </summary>
         [Input("permissionName")]
         public Input<string>? PermissionName { get; set; }
@@ -185,7 +488,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// . The fields that can/cannot be accessed during the specified operation. FieldNameList will be a list of fields. e.g. if FieldMode = disallowed, FieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+        /// . The fields that can/cannot be accessed during the specified operation.&lt;span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "&gt; fieldNameList &lt;/span&gt;will be a list of fields. e.g. if&lt;span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode "&gt; fieldMode &lt;/span&gt;= disallowed,&lt;span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "&gt; fieldNameList &lt;/span&gt;= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionFieldResult> Fields;
         /// <summary>
@@ -193,7 +496,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// (Required) The kind name (Default value: `Project`).
+        /// (Required) The kind name (Default value: &lt;span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`"&gt;`project`&lt;/span&gt;).
         /// </summary>
         public readonly string Kind;
         /// <summary>

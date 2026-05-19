@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -17,6 +18,7 @@ import * as utilities from "./utilities";
  *     imagedNodeUuid: "<IMAGED-NODE-UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralImagedNodeDetails(args: GetFoundationCentralImagedNodeDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedNodeDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -195,6 +197,7 @@ export interface GetFoundationCentralImagedNodeDetailsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -203,6 +206,7 @@ export interface GetFoundationCentralImagedNodeDetailsResult {
  *     imagedNodeUuid: "<IMAGED-NODE-UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralImagedNodeDetailsOutput(args: GetFoundationCentralImagedNodeDetailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralImagedNodeDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -224,9 +228,9 @@ export interface GetFoundationCentralImagedNodeDetailsOutputArgs {
     /**
      * Name of the cvm interface having ipv6 address.
      */
-    ipv6Interface?: pulumi.Input<string>;
+    ipv6Interface?: pulumi.Input<string | undefined>;
     /**
      * Version of the node used for CAS.
      */
-    objectVersion?: pulumi.Input<number>;
+    objectVersion?: pulumi.Input<number | undefined>;
 }

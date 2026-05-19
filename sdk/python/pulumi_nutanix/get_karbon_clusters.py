@@ -65,12 +65,14 @@ def get_karbon_clusters(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     clusters = nutanix.get_karbon_clusters()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -85,12 +87,14 @@ def get_karbon_clusters_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     clusters = nutanix.get_karbon_clusters()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

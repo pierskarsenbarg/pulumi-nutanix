@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example 1: Provision Application
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION TO SET",
@@ -32,6 +33,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/selfServiceAppProvision:SelfServiceAppProvision")]
     public partial class SelfServiceAppProvision : global::Pulumi.CustomResource
@@ -54,7 +56,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The description of application.
         /// 
-        /// Both are `BpName` and `BpUuid` are optional but atleast one of them to be provided for this resource to work.
+        /// Both are &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt; are optional but atleast one of them to be provided for this resource to work.
         /// </summary>
         [Output("appDescription")]
         public Output<string?> AppDescription { get; private set; } = null!;
@@ -166,7 +168,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The description of application.
         /// 
-        /// Both are `BpName` and `BpUuid` are optional but atleast one of them to be provided for this resource to work.
+        /// Both are &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt; are optional but atleast one of them to be provided for this resource to work.
         /// </summary>
         [Input("appDescription")]
         public Input<string>? AppDescription { get; set; }
@@ -234,7 +236,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The description of application.
         /// 
-        /// Both are `BpName` and `BpUuid` are optional but atleast one of them to be provided for this resource to work.
+        /// Both are &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt; are optional but atleast one of them to be provided for this resource to work.
         /// </summary>
         [Input("appDescription")]
         public Input<string>? AppDescription { get; set; }

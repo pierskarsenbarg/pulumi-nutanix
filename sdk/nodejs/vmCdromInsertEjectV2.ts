@@ -12,6 +12,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -30,6 +31,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
     /**
@@ -112,15 +114,15 @@ export interface VmCdromInsertEjectV2State {
     /**
      * Storage provided by Nutanix ADSF
      */
-    backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[]>;
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[] | undefined>;
     /**
      * The globally unique identifier of a CD-ROM. It should be of type UUID.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * The globally unique identifier of a VM. It should be of type UUID
      */
-    vmExtId?: pulumi.Input<string>;
+    vmExtId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -130,7 +132,7 @@ export interface VmCdromInsertEjectV2Args {
     /**
      * Storage provided by Nutanix ADSF
      */
-    backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[]>;
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[] | undefined>;
     /**
      * The globally unique identifier of a CD-ROM. It should be of type UUID.
      */

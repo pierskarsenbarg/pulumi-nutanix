@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.Index.CategoryV2("example", new()
+    ///     var example = new Nutanix.CategoryV2("example", new()
     ///     {
     ///         Key = "category_example_key",
     ///         Value = "category_example_value",
@@ -32,6 +33,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/categoryV2:CategoryV2")]
     public partial class CategoryV2 : global::Pulumi.CustomResource

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -30,6 +31,7 @@ import * as utilities from "./utilities";
  *     userName: userUser.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUser(args?: GetUserArgs, opts?: pulumi.InvokeOptions): Promise<GetUserResult> {
     args = args || {};
@@ -127,6 +129,7 @@ export interface GetUserResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -146,6 +149,7 @@ export interface GetUserResult {
  *     userName: userUser.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUserOutput(args?: GetUserOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserResult> {
     args = args || {};
@@ -166,15 +170,15 @@ export interface GetUserOutputArgs {
     /**
      * - (Optional) Categories for the Access Control Policy.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetUserCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetUserCategoryArgs>[] | undefined>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    userId?: pulumi.Input<string>;
-    userName?: pulumi.Input<string>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    userId?: pulumi.Input<string | undefined>;
+    userName?: pulumi.Input<string | undefined>;
 }

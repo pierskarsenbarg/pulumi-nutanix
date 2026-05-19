@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     extId: "323860ca-bd10-411e-9fe0-1430b62eaf45",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPcRestoreSourceV2(args: GetPcRestoreSourceV2Args, opts?: pulumi.InvokeOptions): Promise<GetPcRestoreSourceV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -68,6 +70,7 @@ export interface GetPcRestoreSourceV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -77,6 +80,7 @@ export interface GetPcRestoreSourceV2Result {
  *     extId: "323860ca-bd10-411e-9fe0-1430b62eaf45",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPcRestoreSourceV2Output(args: GetPcRestoreSourceV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPcRestoreSourceV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

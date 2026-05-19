@@ -17,6 +17,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get key
+        /// const getKey = nutanix.getUserKeyV2({
+        ///     userExtId: "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///     extId: "&lt;USER_KEY_UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get key
+        /// get_key = nutanix.get_user_key_v2(user_ext_id="&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///     ext_id="&lt;USER_KEY_UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get key
-        ///     var getKey = Nutanix.Index.GetUserKeyV2.Invoke(new()
+        ///     var getKey = Nutanix.GetUserKeyV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///         ExtId = "&lt;USER_KEY_UUID&gt;",
@@ -34,13 +53,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get key
+        /// 		_, err := nutanix.GetUserKeyV2(ctx, &amp;nutanix.LookupUserKeyV2Args{
+        /// 			UserExtId: "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        /// 			ExtId:     "&lt;USER_KEY_UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserKeyV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get key
+        ///         final var getKey = NutanixFunctions.getUserKeyV2(GetUserKeyV2Args.builder()
+        ///             .userExtId("&lt;SERVICE_ACCOUNT_UUID&gt;")
+        ///             .extId("&lt;USER_KEY_UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get key
+        ///   getKey:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserKeyV2
+        ///       arguments:
+        ///         userExtId: &lt;SERVICE_ACCOUNT_UUID&gt;
+        ///         extId: &lt;USER_KEY_UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `UserExtId`: - ( Required ) External Identifier of the User.
-        /// * `ExtId`: - ( Required ) External identifier of the key.
+        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
         /// </summary>
         public static Task<GetUserKeyV2Result> InvokeAsync(GetUserKeyV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2Args(), options.WithDefaults());
@@ -50,6 +132,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get key
+        /// const getKey = nutanix.getUserKeyV2({
+        ///     userExtId: "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///     extId: "&lt;USER_KEY_UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get key
+        /// get_key = nutanix.get_user_key_v2(user_ext_id="&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///     ext_id="&lt;USER_KEY_UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -59,7 +160,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get key
-        ///     var getKey = Nutanix.Index.GetUserKeyV2.Invoke(new()
+        ///     var getKey = Nutanix.GetUserKeyV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///         ExtId = "&lt;USER_KEY_UUID&gt;",
@@ -67,13 +168,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get key
+        /// 		_, err := nutanix.GetUserKeyV2(ctx, &amp;nutanix.LookupUserKeyV2Args{
+        /// 			UserExtId: "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        /// 			ExtId:     "&lt;USER_KEY_UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserKeyV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get key
+        ///         final var getKey = NutanixFunctions.getUserKeyV2(GetUserKeyV2Args.builder()
+        ///             .userExtId("&lt;SERVICE_ACCOUNT_UUID&gt;")
+        ///             .extId("&lt;USER_KEY_UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get key
+        ///   getKey:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserKeyV2
+        ///       arguments:
+        ///         userExtId: &lt;SERVICE_ACCOUNT_UUID&gt;
+        ///         extId: &lt;USER_KEY_UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `UserExtId`: - ( Required ) External Identifier of the User.
-        /// * `ExtId`: - ( Required ) External identifier of the key.
+        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
         /// </summary>
         public static Output<GetUserKeyV2Result> Invoke(GetUserKeyV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2InvokeArgs(), options.WithDefaults());
@@ -83,6 +247,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get key
+        /// const getKey = nutanix.getUserKeyV2({
+        ///     userExtId: "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///     extId: "&lt;USER_KEY_UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get key
+        /// get_key = nutanix.get_user_key_v2(user_ext_id="&lt;SERVICE_ACCOUNT_UUID&gt;",
+        ///     ext_id="&lt;USER_KEY_UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -92,7 +275,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get key
-        ///     var getKey = Nutanix.Index.GetUserKeyV2.Invoke(new()
+        ///     var getKey = Nutanix.GetUserKeyV2.Invoke(new()
         ///     {
         ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
         ///         ExtId = "&lt;USER_KEY_UUID&gt;",
@@ -100,13 +283,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get key
+        /// 		_, err := nutanix.GetUserKeyV2(ctx, &amp;nutanix.LookupUserKeyV2Args{
+        /// 			UserExtId: "&lt;SERVICE_ACCOUNT_UUID&gt;",
+        /// 			ExtId:     "&lt;USER_KEY_UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserKeyV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get key
+        ///         final var getKey = NutanixFunctions.getUserKeyV2(GetUserKeyV2Args.builder()
+        ///             .userExtId("&lt;SERVICE_ACCOUNT_UUID&gt;")
+        ///             .extId("&lt;USER_KEY_UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get key
+        ///   getKey:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserKeyV2
+        ///       arguments:
+        ///         userExtId: &lt;SERVICE_ACCOUNT_UUID&gt;
+        ///         extId: &lt;USER_KEY_UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `UserExtId`: - ( Required ) External Identifier of the User.
-        /// * `ExtId`: - ( Required ) External identifier of the key.
+        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
         /// </summary>
         public static Output<GetUserKeyV2Result> Invoke(GetUserKeyV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2InvokeArgs(), options.WithDefaults());

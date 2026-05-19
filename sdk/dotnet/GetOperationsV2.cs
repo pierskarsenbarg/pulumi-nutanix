@@ -17,6 +17,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //list operations
+        /// const operation_list = nutanix.getOperationsV2({});
+        /// // filtered list operation
+        /// const operation_list_filtered = nutanix.getOperationsV2({
+        ///     filter: "displayName eq 'Create_Role'",
+        /// });
+        /// // list operations withe page and limit
+        /// const operation_list_paginated = nutanix.getOperationsV2({
+        ///     page: 1,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #list operations
+        /// operation_list = nutanix.get_operations_v2()
+        /// # filtered list operation
+        /// operation_list_filtered = nutanix.get_operations_v2(filter="displayName eq 'Create_Role'")
+        /// # list operations withe page and limit
+        /// operation_list_paginated = nutanix.get_operations_v2(page=1,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,16 +55,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //list operations
-        ///     var operation_list = Nutanix.Index.GetOperationsV2.Invoke();
+        ///     var operation_list = Nutanix.GetOperationsV2.Invoke();
         /// 
         ///     // filtered list operation
-        ///     var operation_list_filtered = Nutanix.Index.GetOperationsV2.Invoke(new()
+        ///     var operation_list_filtered = Nutanix.GetOperationsV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'Create_Role'",
         ///     });
         /// 
         ///     // list operations withe page and limit
-        ///     var operation_list_paginated = Nutanix.Index.GetOperationsV2.Invoke(new()
+        ///     var operation_list_paginated = Nutanix.GetOperationsV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
@@ -43,6 +72,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list operations
+        /// 		_, err := nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered list operation
+        /// 		_, err = nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{
+        /// 			Filter: pulumi.StringRef("displayName eq 'Create_Role'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list operations withe page and limit
+        /// 		_, err = nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{
+        /// 			Page:  pulumi.IntRef(1),
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetOperationsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //list operations
+        ///         final var operation-list = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // filtered list operation
+        ///         final var operation-list-filtered = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .filter("displayName eq 'Create_Role'")
+        ///             .build());
+        /// 
+        ///         // list operations withe page and limit
+        ///         final var operation-list-paginated = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .page(1)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #list operations
+        ///   operation-list:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments: {}
+        ///   # filtered list operation
+        ///   operation-list-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments:
+        ///         filter: displayName eq 'Create_Role'
+        ///   # list operations withe page and limit
+        ///   operation-list-paginated:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments:
+        ///         page: 1
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOperationsV2Result> InvokeAsync(GetOperationsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOperationsV2Result>("nutanix:index/getOperationsV2:getOperationsV2", args ?? new GetOperationsV2Args(), options.WithDefaults());
@@ -52,6 +176,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //list operations
+        /// const operation_list = nutanix.getOperationsV2({});
+        /// // filtered list operation
+        /// const operation_list_filtered = nutanix.getOperationsV2({
+        ///     filter: "displayName eq 'Create_Role'",
+        /// });
+        /// // list operations withe page and limit
+        /// const operation_list_paginated = nutanix.getOperationsV2({
+        ///     page: 1,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #list operations
+        /// operation_list = nutanix.get_operations_v2()
+        /// # filtered list operation
+        /// operation_list_filtered = nutanix.get_operations_v2(filter="displayName eq 'Create_Role'")
+        /// # list operations withe page and limit
+        /// operation_list_paginated = nutanix.get_operations_v2(page=1,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -61,16 +214,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //list operations
-        ///     var operation_list = Nutanix.Index.GetOperationsV2.Invoke();
+        ///     var operation_list = Nutanix.GetOperationsV2.Invoke();
         /// 
         ///     // filtered list operation
-        ///     var operation_list_filtered = Nutanix.Index.GetOperationsV2.Invoke(new()
+        ///     var operation_list_filtered = Nutanix.GetOperationsV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'Create_Role'",
         ///     });
         /// 
         ///     // list operations withe page and limit
-        ///     var operation_list_paginated = Nutanix.Index.GetOperationsV2.Invoke(new()
+        ///     var operation_list_paginated = Nutanix.GetOperationsV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
@@ -78,6 +231,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list operations
+        /// 		_, err := nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered list operation
+        /// 		_, err = nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{
+        /// 			Filter: pulumi.StringRef("displayName eq 'Create_Role'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list operations withe page and limit
+        /// 		_, err = nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{
+        /// 			Page:  pulumi.IntRef(1),
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetOperationsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //list operations
+        ///         final var operation-list = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // filtered list operation
+        ///         final var operation-list-filtered = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .filter("displayName eq 'Create_Role'")
+        ///             .build());
+        /// 
+        ///         // list operations withe page and limit
+        ///         final var operation-list-paginated = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .page(1)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #list operations
+        ///   operation-list:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments: {}
+        ///   # filtered list operation
+        ///   operation-list-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments:
+        ///         filter: displayName eq 'Create_Role'
+        ///   # list operations withe page and limit
+        ///   operation-list-paginated:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments:
+        ///         page: 1
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOperationsV2Result> Invoke(GetOperationsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsV2Result>("nutanix:index/getOperationsV2:getOperationsV2", args ?? new GetOperationsV2InvokeArgs(), options.WithDefaults());
@@ -87,6 +335,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //list operations
+        /// const operation_list = nutanix.getOperationsV2({});
+        /// // filtered list operation
+        /// const operation_list_filtered = nutanix.getOperationsV2({
+        ///     filter: "displayName eq 'Create_Role'",
+        /// });
+        /// // list operations withe page and limit
+        /// const operation_list_paginated = nutanix.getOperationsV2({
+        ///     page: 1,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #list operations
+        /// operation_list = nutanix.get_operations_v2()
+        /// # filtered list operation
+        /// operation_list_filtered = nutanix.get_operations_v2(filter="displayName eq 'Create_Role'")
+        /// # list operations withe page and limit
+        /// operation_list_paginated = nutanix.get_operations_v2(page=1,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -96,16 +373,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     //list operations
-        ///     var operation_list = Nutanix.Index.GetOperationsV2.Invoke();
+        ///     var operation_list = Nutanix.GetOperationsV2.Invoke();
         /// 
         ///     // filtered list operation
-        ///     var operation_list_filtered = Nutanix.Index.GetOperationsV2.Invoke(new()
+        ///     var operation_list_filtered = Nutanix.GetOperationsV2.Invoke(new()
         ///     {
         ///         Filter = "displayName eq 'Create_Role'",
         ///     });
         /// 
         ///     // list operations withe page and limit
-        ///     var operation_list_paginated = Nutanix.Index.GetOperationsV2.Invoke(new()
+        ///     var operation_list_paginated = Nutanix.GetOperationsV2.Invoke(new()
         ///     {
         ///         Page = 1,
         ///         Limit = 10,
@@ -113,6 +390,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list operations
+        /// 		_, err := nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered list operation
+        /// 		_, err = nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{
+        /// 			Filter: pulumi.StringRef("displayName eq 'Create_Role'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list operations withe page and limit
+        /// 		_, err = nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{
+        /// 			Page:  pulumi.IntRef(1),
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetOperationsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //list operations
+        ///         final var operation-list = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // filtered list operation
+        ///         final var operation-list-filtered = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .filter("displayName eq 'Create_Role'")
+        ///             .build());
+        /// 
+        ///         // list operations withe page and limit
+        ///         final var operation-list-paginated = NutanixFunctions.getOperationsV2(GetOperationsV2Args.builder()
+        ///             .page(1)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #list operations
+        ///   operation-list:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments: {}
+        ///   # filtered list operation
+        ///   operation-list-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments:
+        ///         filter: displayName eq 'Create_Role'
+        ///   # list operations withe page and limit
+        ///   operation-list-paginated:
+        ///     fn::invoke:
+        ///       function: nutanix:getOperationsV2
+        ///       arguments:
+        ///         page: 1
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOperationsV2Result> Invoke(GetOperationsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsV2Result>("nutanix:index/getOperationsV2:getOperationsV2", args ?? new GetOperationsV2InvokeArgs(), options.WithDefaults());

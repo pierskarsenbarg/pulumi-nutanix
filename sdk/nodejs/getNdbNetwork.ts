@@ -96,9 +96,9 @@ export interface GetNdbNetworkOutputArgs {
     /**
      * id of network
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * name of network
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

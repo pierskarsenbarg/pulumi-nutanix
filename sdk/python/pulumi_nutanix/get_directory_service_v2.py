@@ -213,6 +213,7 @@ def get_directory_service_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -220,6 +221,7 @@ def get_directory_service_v2(ext_id: Optional[_builtins.str] = None,
     # Get a Directory Service.
     get_active_directory = nutanix.get_directory_service_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) External identifier of the Directory Service.
@@ -244,13 +246,14 @@ def get_directory_service_v2(ext_id: Optional[_builtins.str] = None,
         service_accounts=pulumi.get(__ret__, 'service_accounts'),
         url=pulumi.get(__ret__, 'url'),
         white_listed_groups=pulumi.get(__ret__, 'white_listed_groups'))
-def get_directory_service_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_directory_service_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDirectoryServiceV2Result]:
     """
     Provides a datasource to retrieve all Directory Service(s).
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -258,6 +261,7 @@ def get_directory_service_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]
     # Get a Directory Service.
     get_active_directory = nutanix.get_directory_service_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) External identifier of the Directory Service.

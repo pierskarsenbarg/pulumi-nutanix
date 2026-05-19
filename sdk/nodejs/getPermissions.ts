@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const permissions = nutanix.getPermission({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPermissions(args?: GetPermissionsArgs, opts?: pulumi.InvokeOptions): Promise<GetPermissionsResult> {
     args = args || {};
@@ -62,12 +64,14 @@ export interface GetPermissionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const permissions = nutanix.getPermission({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPermissionsOutput(args?: GetPermissionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPermissionsResult> {
     args = args || {};
@@ -84,5 +88,5 @@ export interface GetPermissionsOutputArgs {
     /**
      * The permission kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetPermissionsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetPermissionsMetadataArgs>[] | undefined>;
 }

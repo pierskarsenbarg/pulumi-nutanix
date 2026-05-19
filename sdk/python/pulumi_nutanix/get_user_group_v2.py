@@ -152,12 +152,14 @@ def get_user_group_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_ug = nutanix.get_user_group_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: - (Required) The External Identifier of the User Group.
@@ -177,19 +179,21 @@ def get_user_group_v2(ext_id: Optional[_builtins.str] = None,
         idp_id=pulumi.get(__ret__, 'idp_id'),
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
         name=pulumi.get(__ret__, 'name'))
-def get_user_group_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_user_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupV2Result]:
     """
     Provides a datasource to retrieve a user group based on the External Identifier of the User Group.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_ug = nutanix.get_user_group_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: - (Required) The External Identifier of the User Group.

@@ -22,12 +22,12 @@ __all__ = ['ImagesV2Args', 'ImagesV2']
 class ImagesV2Args:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 checksums: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]] = None,
-                 cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]]] = None):
+                 category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 checksums: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]] = None,
+                 cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]] = None):
         """
         The set of arguments for constructing a ImagesV2 resource.
         """
@@ -56,74 +56,74 @@ class ImagesV2Args:
 
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
-    def category_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def category_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "category_ext_ids")
 
     @category_ext_ids.setter
-    def category_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def category_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "category_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def checksums(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]:
+    def checksums(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]:
         return pulumi.get(self, "checksums")
 
     @checksums.setter
-    def checksums(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]):
+    def checksums(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]):
         pulumi.set(self, "checksums", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtIds")
-    def cluster_location_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cluster_location_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "cluster_location_ext_ids")
 
     @cluster_location_ext_ids.setter
-    def cluster_location_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cluster_location_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cluster_location_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]:
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
 
 @pulumi.input_type
 class _ImagesV2State:
     def __init__(__self__, *,
-                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 checksums: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]] = None,
-                 cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_policy_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]] = None,
-                 size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 checksums: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]] = None,
+                 cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]] = None,
+                 size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ImagesV2 resources.
         """
@@ -154,110 +154,110 @@ class _ImagesV2State:
 
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
-    def category_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def category_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "category_ext_ids")
 
     @category_ext_ids.setter
-    def category_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def category_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "category_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def checksums(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]:
+    def checksums(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]:
         return pulumi.get(self, "checksums")
 
     @checksums.setter
-    def checksums(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]):
+    def checksums(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]):
         pulumi.set(self, "checksums", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtIds")
-    def cluster_location_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cluster_location_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "cluster_location_ext_ids")
 
     @cluster_location_ext_ids.setter
-    def cluster_location_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cluster_location_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cluster_location_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
-    def last_update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "last_update_time")
 
     @last_update_time.setter
-    def last_update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_update_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
-    def owner_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "owner_ext_id")
 
     @owner_ext_id.setter
-    def owner_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="placementPolicyStatuses")
-    def placement_policy_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]]:
+    def placement_policy_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]]:
         return pulumi.get(self, "placement_policy_statuses")
 
     @placement_policy_statuses.setter
-    def placement_policy_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]]):
+    def placement_policy_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]]):
         pulumi.set(self, "placement_policy_statuses", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeBytes")
-    def size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "size_bytes")
 
     @size_bytes.setter
-    def size_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size_bytes", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]:
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -267,13 +267,13 @@ class ImagesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 checksums: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
-                 cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
+                 cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ImagesV2 resource with the given unique name, props, and options.
@@ -305,13 +305,13 @@ class ImagesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 checksums: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
-                 cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
+                 cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -345,18 +345,18 @@ class ImagesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            checksums: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
-            cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            create_time: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            placement_policy_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict']]]]] = None,
-            size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'ImagesV2':
+            category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
+            cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict']]]]] = None,
+            size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'ImagesV2':
         """
         Get an existing ImagesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -18,6 +19,7 @@ import * as utilities from "./utilities";
  * const slas = nutanix.getNdbSlas({});
  * export const sla = slas;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbSlas(opts?: pulumi.InvokeOptions): Promise<GetNdbSlasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -43,6 +45,7 @@ export interface GetNdbSlasResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -50,6 +53,7 @@ export interface GetNdbSlasResult {
  * const slas = nutanix.getNdbSlas({});
  * export const sla = slas;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbSlasOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbSlasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

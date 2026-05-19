@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const dbservers = nutanix.getNdbDbservers({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbDbservers(opts?: pulumi.InvokeOptions): Promise<GetNdbDbserversResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -39,12 +41,14 @@ export interface GetNdbDbserversResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const dbservers = nutanix.getNdbDbservers({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbDbserversOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbDbserversResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

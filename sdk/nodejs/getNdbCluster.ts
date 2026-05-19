@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  * });
  * export const cluster = c1;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbCluster(args?: GetNdbClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbClusterResult> {
     args = args || {};
@@ -39,7 +41,7 @@ export interface GetNdbClusterArgs {
      */
     clusterId?: string;
     /**
-     * and `clusterId` are mutually exclusive.
+     * and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
      */
     clusterName?: string;
 }
@@ -152,6 +154,7 @@ export interface GetNdbClusterResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -161,6 +164,7 @@ export interface GetNdbClusterResult {
  * });
  * export const cluster = c1;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbClusterOutput(args?: GetNdbClusterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbClusterResult> {
     args = args || {};
@@ -178,9 +182,9 @@ export interface GetNdbClusterOutputArgs {
     /**
      * ID of cluster
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
-     * and `clusterId` are mutually exclusive.
+     * and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
      */
-    clusterName?: pulumi.Input<string>;
+    clusterName?: pulumi.Input<string | undefined>;
 }

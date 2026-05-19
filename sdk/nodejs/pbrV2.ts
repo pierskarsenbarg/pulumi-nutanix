@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -37,6 +38,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
@@ -173,43 +175,43 @@ export interface PbrV2State {
     /**
      * A description of the routing policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.PbrV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.PbrV2Link>[] | undefined>;
     /**
      * Metadata associated with this resource.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.PbrV2Metadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.PbrV2Metadata>[] | undefined>;
     /**
      * Name of the routing policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Routing Policies.
      */
-    policies?: pulumi.Input<pulumi.Input<inputs.PbrV2Policy>[]>;
+    policies?: pulumi.Input<pulumi.Input<inputs.PbrV2Policy>[] | undefined>;
     /**
      * Priority of the routing policy.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * ExtId of the VPC extId to which the routing policy belongs.
      */
-    vpcExtId?: pulumi.Input<string>;
+    vpcExtId?: pulumi.Input<string | undefined>;
     /**
      * VPC name for projections
      */
-    vpcs?: pulumi.Input<pulumi.Input<inputs.PbrV2Vpc>[]>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.PbrV2Vpc>[] | undefined>;
 }
 
 /**
@@ -219,15 +221,15 @@ export interface PbrV2Args {
     /**
      * A description of the routing policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Name of the routing policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Routing Policies.
      */

@@ -65,12 +65,14 @@ def get_ndb_dbservers(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     dbservers = nutanix.get_ndb_dbservers()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -85,12 +87,14 @@ def get_ndb_dbservers_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.I
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     dbservers = nutanix.get_ndb_dbservers()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

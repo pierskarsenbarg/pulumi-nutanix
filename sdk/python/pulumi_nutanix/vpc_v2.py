@@ -21,13 +21,13 @@ __all__ = ['VpcV2Args', 'VpcV2']
 @pulumi.input_type
 class VpcV2Args:
     def __init__(__self__, *,
-                 common_dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]] = None,
-                 externally_routable_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 common_dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]] = None,
+                 externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a VpcV2 resource.
 
@@ -56,104 +56,104 @@ class VpcV2Args:
 
     @_builtins.property
     @pulumi.getter(name="commonDhcpOptions")
-    def common_dhcp_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]]:
+    def common_dhcp_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]]:
         """
         List of DHCP options to be configured.
         """
         return pulumi.get(self, "common_dhcp_options")
 
     @common_dhcp_options.setter
-    def common_dhcp_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]]):
+    def common_dhcp_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]]):
         pulumi.set(self, "common_dhcp_options", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the VPC.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="externalRoutingDomainReference")
-    def external_routing_domain_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_routing_domain_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External routing domain associated with this route table
         """
         return pulumi.get(self, "external_routing_domain_reference")
 
     @external_routing_domain_reference.setter
-    def external_routing_domain_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_routing_domain_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_routing_domain_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="externalSubnets")
-    def external_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]]:
+    def external_subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]]:
         """
         List of external subnets that the VPC is attached to.
         """
         return pulumi.get(self, "external_subnets")
 
     @external_subnets.setter
-    def external_subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]]):
+    def external_subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]]):
         pulumi.set(self, "external_subnets", value)
 
     @_builtins.property
     @pulumi.getter(name="externallyRoutablePrefixes")
-    def externally_routable_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]:
+    def externally_routable_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]:
         """
         CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
         """
         return pulumi.get(self, "externally_routable_prefixes")
 
     @externally_routable_prefixes.setter
-    def externally_routable_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]):
+    def externally_routable_prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]):
         pulumi.set(self, "externally_routable_prefixes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the VPC.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcType")
-    def vpc_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """
         return pulumi.get(self, "vpc_type")
 
     @vpc_type.setter
-    def vpc_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_type", value)
 
 
 @pulumi.input_type
 class _VpcV2State:
     def __init__(__self__, *,
-                 common_dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]] = None,
-                 externally_routable_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2LinkArgs']]]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2MetadataArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 snat_ips: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 common_dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]] = None,
+                 externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2LinkArgs']]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 snat_ips: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VpcV2 resources.
 
@@ -196,143 +196,143 @@ class _VpcV2State:
 
     @_builtins.property
     @pulumi.getter(name="commonDhcpOptions")
-    def common_dhcp_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]]:
+    def common_dhcp_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]]:
         """
         List of DHCP options to be configured.
         """
         return pulumi.get(self, "common_dhcp_options")
 
     @common_dhcp_options.setter
-    def common_dhcp_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]]):
+    def common_dhcp_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2CommonDhcpOptionArgs']]]]):
         pulumi.set(self, "common_dhcp_options", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the VPC.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the vpc uuid.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalRoutingDomainReference")
-    def external_routing_domain_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_routing_domain_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External routing domain associated with this route table
         """
         return pulumi.get(self, "external_routing_domain_reference")
 
     @external_routing_domain_reference.setter
-    def external_routing_domain_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_routing_domain_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_routing_domain_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="externalSubnets")
-    def external_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]]:
+    def external_subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]]:
         """
         List of external subnets that the VPC is attached to.
         """
         return pulumi.get(self, "external_subnets")
 
     @external_subnets.setter
-    def external_subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]]):
+    def external_subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]]):
         pulumi.set(self, "external_subnets", value)
 
     @_builtins.property
     @pulumi.getter(name="externallyRoutablePrefixes")
-    def externally_routable_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]:
+    def externally_routable_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]:
         """
         CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
         """
         return pulumi.get(self, "externally_routable_prefixes")
 
     @externally_routable_prefixes.setter
-    def externally_routable_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]):
+    def externally_routable_prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]):
         pulumi.set(self, "externally_routable_prefixes", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2MetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]]:
         """
         The vpc kind metadata.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2MetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the VPC.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="snatIps")
-    def snat_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]]:
+    def snat_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]]:
         return pulumi.get(self, "snat_ips")
 
     @snat_ips.setter
-    def snat_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]]):
+    def snat_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]]):
         pulumi.set(self, "snat_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcType")
-    def vpc_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """
         return pulumi.get(self, "vpc_type")
 
     @vpc_type.setter
-    def vpc_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_type", value)
 
 
@@ -342,19 +342,20 @@ class VpcV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 common_dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]]] = None,
-                 externally_routable_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 common_dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]]] = None,
+                 externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to create VPC.
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -404,6 +405,7 @@ class VpcV2(pulumi.CustomResource):
             }],
             vpc_type="TRANSIT")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -427,6 +429,7 @@ class VpcV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -476,6 +479,7 @@ class VpcV2(pulumi.CustomResource):
             }],
             vpc_type="TRANSIT")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -493,13 +497,13 @@ class VpcV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 common_dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]]] = None,
-                 externally_routable_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 common_dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]]] = None,
+                 externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -531,18 +535,18 @@ class VpcV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            common_dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            external_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]]] = None,
-            externally_routable_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2LinkArgs', 'VpcV2LinkArgsDict']]]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            snat_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcV2SnatIpArgs', 'VpcV2SnatIpArgsDict']]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'VpcV2':
+            common_dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]]] = None,
+            externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2LinkArgs', 'VpcV2LinkArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            snat_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2SnatIpArgs', 'VpcV2SnatIpArgsDict']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'VpcV2':
         """
         Get an existing VpcV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

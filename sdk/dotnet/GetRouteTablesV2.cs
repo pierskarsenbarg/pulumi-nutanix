@@ -17,6 +17,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const all_tables = nutanix.getRouteTablesV2({});
+        /// const route_tables_with_filter = nutanix.getRouteTablesV2({
+        ///     filter: "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
+        /// });
+        /// const route_tables_with_orderby = nutanix.getRouteTablesV2({
+        ///     orderBy: "vpcReference",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// all_tables = nutanix.get_route_tables_v2()
+        /// route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
+        /// route_tables_with_orderby = nutanix.get_route_tables_v2(order_by="vpcReference")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,20 +46,103 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var all_tables = Nutanix.Index.GetRouteTablesV2.Invoke();
+        ///     var all_tables = Nutanix.GetRouteTablesV2.Invoke();
         /// 
-        ///     var route_tables_with_filter = Nutanix.Index.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
         ///     });
         /// 
-        ///     var route_tables_with_orderby = Nutanix.Index.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         OrderBy = "vpcReference",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{
+        /// 			Filter: pulumi.StringRef("vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{
+        /// 			OrderBy: pulumi.StringRef("vpcReference"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteTablesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var all-tables = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var route-tables-with-filter = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .filter("vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
+        ///             .build());
+        /// 
+        ///         final var route-tables-with-orderby = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .orderBy("vpcReference")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   all-tables:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments: {}
+        ///   route-tables-with-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments:
+        ///         filter: vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'
+        ///   route-tables-with-orderby:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments:
+        ///         orderBy: vpcReference
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRouteTablesV2Result> InvokeAsync(GetRouteTablesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRouteTablesV2Result>("nutanix:index/getRouteTablesV2:getRouteTablesV2", args ?? new GetRouteTablesV2Args(), options.WithDefaults());
@@ -48,6 +152,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const all_tables = nutanix.getRouteTablesV2({});
+        /// const route_tables_with_filter = nutanix.getRouteTablesV2({
+        ///     filter: "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
+        /// });
+        /// const route_tables_with_orderby = nutanix.getRouteTablesV2({
+        ///     orderBy: "vpcReference",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// all_tables = nutanix.get_route_tables_v2()
+        /// route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
+        /// route_tables_with_orderby = nutanix.get_route_tables_v2(order_by="vpcReference")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -56,20 +181,103 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var all_tables = Nutanix.Index.GetRouteTablesV2.Invoke();
+        ///     var all_tables = Nutanix.GetRouteTablesV2.Invoke();
         /// 
-        ///     var route_tables_with_filter = Nutanix.Index.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
         ///     });
         /// 
-        ///     var route_tables_with_orderby = Nutanix.Index.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         OrderBy = "vpcReference",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{
+        /// 			Filter: pulumi.StringRef("vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{
+        /// 			OrderBy: pulumi.StringRef("vpcReference"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteTablesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var all-tables = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var route-tables-with-filter = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .filter("vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
+        ///             .build());
+        /// 
+        ///         final var route-tables-with-orderby = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .orderBy("vpcReference")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   all-tables:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments: {}
+        ///   route-tables-with-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments:
+        ///         filter: vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'
+        ///   route-tables-with-orderby:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments:
+        ///         orderBy: vpcReference
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRouteTablesV2Result> Invoke(GetRouteTablesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRouteTablesV2Result>("nutanix:index/getRouteTablesV2:getRouteTablesV2", args ?? new GetRouteTablesV2InvokeArgs(), options.WithDefaults());
@@ -79,6 +287,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const all_tables = nutanix.getRouteTablesV2({});
+        /// const route_tables_with_filter = nutanix.getRouteTablesV2({
+        ///     filter: "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
+        /// });
+        /// const route_tables_with_orderby = nutanix.getRouteTablesV2({
+        ///     orderBy: "vpcReference",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// all_tables = nutanix.get_route_tables_v2()
+        /// route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
+        /// route_tables_with_orderby = nutanix.get_route_tables_v2(order_by="vpcReference")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,20 +316,103 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var all_tables = Nutanix.Index.GetRouteTablesV2.Invoke();
+        ///     var all_tables = Nutanix.GetRouteTablesV2.Invoke();
         /// 
-        ///     var route_tables_with_filter = Nutanix.Index.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
         ///     });
         /// 
-        ///     var route_tables_with_orderby = Nutanix.Index.GetRouteTablesV2.Invoke(new()
+        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
         ///         OrderBy = "vpcReference",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{
+        /// 			Filter: pulumi.StringRef("vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetRouteTablesV2(ctx, &amp;nutanix.GetRouteTablesV2Args{
+        /// 			OrderBy: pulumi.StringRef("vpcReference"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteTablesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var all-tables = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var route-tables-with-filter = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .filter("vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
+        ///             .build());
+        /// 
+        ///         final var route-tables-with-orderby = NutanixFunctions.getRouteTablesV2(GetRouteTablesV2Args.builder()
+        ///             .orderBy("vpcReference")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   all-tables:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments: {}
+        ///   route-tables-with-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments:
+        ///         filter: vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'
+        ///   route-tables-with-orderby:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTablesV2
+        ///       arguments:
+        ///         orderBy: vpcReference
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRouteTablesV2Result> Invoke(GetRouteTablesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRouteTablesV2Result>("nutanix:index/getRouteTablesV2:getRouteTablesV2", args ?? new GetRouteTablesV2InvokeArgs(), options.WithDefaults());

@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const vm = nutanix.getVirtualMachineV2({
+        ///     extId: "{{ ext_id of vm }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// vm = nutanix.get_virtual_machine_v2(ext_id="{{ ext_id of vm }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vm = Nutanix.Index.GetVirtualMachineV2.Invoke(new()
+        ///     var vm = Nutanix.GetVirtualMachineV2.Invoke(new()
         ///     {
         ///         ExtId = "{{ ext_id of vm }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVirtualMachineV2(ctx, &amp;nutanix.LookupVirtualMachineV2Args{
+        /// 			ExtId: "{{ ext_id of vm }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVirtualMachineV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var vm = NutanixFunctions.getVirtualMachineV2(GetVirtualMachineV2Args.builder()
+        ///             .extId("{{ ext_id of vm }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   vm:
+        ///     fn::invoke:
+        ///       function: nutanix:getVirtualMachineV2
+        ///       arguments:
+        ///         extId: '{{ ext_id of vm }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVirtualMachineV2Result> InvokeAsync(GetVirtualMachineV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualMachineV2Result>("nutanix:index/getVirtualMachineV2:getVirtualMachineV2", args ?? new GetVirtualMachineV2Args(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const vm = nutanix.getVirtualMachineV2({
+        ///     extId: "{{ ext_id of vm }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// vm = nutanix.get_virtual_machine_v2(ext_id="{{ ext_id of vm }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vm = Nutanix.Index.GetVirtualMachineV2.Invoke(new()
+        ///     var vm = Nutanix.GetVirtualMachineV2.Invoke(new()
         ///     {
         ///         ExtId = "{{ ext_id of vm }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVirtualMachineV2(ctx, &amp;nutanix.LookupVirtualMachineV2Args{
+        /// 			ExtId: "{{ ext_id of vm }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVirtualMachineV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var vm = NutanixFunctions.getVirtualMachineV2(GetVirtualMachineV2Args.builder()
+        ///             .extId("{{ ext_id of vm }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   vm:
+        ///     fn::invoke:
+        ///       function: nutanix:getVirtualMachineV2
+        ///       arguments:
+        ///         extId: '{{ ext_id of vm }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVirtualMachineV2Result> Invoke(GetVirtualMachineV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualMachineV2Result>("nutanix:index/getVirtualMachineV2:getVirtualMachineV2", args ?? new GetVirtualMachineV2InvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const vm = nutanix.getVirtualMachineV2({
+        ///     extId: "{{ ext_id of vm }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// vm = nutanix.get_virtual_machine_v2(ext_id="{{ ext_id of vm }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vm = Nutanix.Index.GetVirtualMachineV2.Invoke(new()
+        ///     var vm = Nutanix.GetVirtualMachineV2.Invoke(new()
         ///     {
         ///         ExtId = "{{ ext_id of vm }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVirtualMachineV2(ctx, &amp;nutanix.LookupVirtualMachineV2Args{
+        /// 			ExtId: "{{ ext_id of vm }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVirtualMachineV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var vm = NutanixFunctions.getVirtualMachineV2(GetVirtualMachineV2Args.builder()
+        ///             .extId("{{ ext_id of vm }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   vm:
+        ///     fn::invoke:
+        ///       function: nutanix:getVirtualMachineV2
+        ///       arguments:
+        ///         extId: '{{ ext_id of vm }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVirtualMachineV2Result> Invoke(GetVirtualMachineV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualMachineV2Result>("nutanix:index/getVirtualMachineV2:getVirtualMachineV2", args ?? new GetVirtualMachineV2InvokeArgs(), options.WithDefaults());

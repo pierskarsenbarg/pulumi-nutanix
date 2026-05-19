@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // create PBR with vpc name with any source or destination or protocol with permit action
-    ///     var any_source_destination = new Nutanix.Index.PbrV2("any-source-destination", new()
+    ///     var any_source_destination = new Nutanix.PbrV2("any-source-destination", new()
     ///     {
     ///         Name = "routing_policy_any_source_destination",
     ///         Description = "routing policy with any source and destination",
@@ -68,6 +69,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 

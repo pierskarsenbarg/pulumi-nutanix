@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example 1: Restore Virtual Machine
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,9 +21,11 @@ import * as utilities from "./utilities";
  *     clusterExtId: "0005b6b1-1b16-4983-b5ff-204840f85e07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example 2: Restore Volume Group
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -34,6 +37,7 @@ import * as utilities from "./utilities";
  *     clusterExtId: "0005b6b1-1b16-4983-b5ff-204840f85e07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class RestoreProtectedResourceV2 extends pulumi.CustomResource {
     /**
@@ -119,18 +123,18 @@ export interface RestoreProtectedResourceV2State {
     /**
      * -(Required) The external identifier of the cluster on which the entity has valid restorable time ranges. The restored entity will be created on the same cluster.
      */
-    clusterExtId?: pulumi.Input<string>;
+    clusterExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
      *
      *
      * See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
      */
-    restoreTime?: pulumi.Input<string>;
+    restoreTime?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -151,5 +155,5 @@ export interface RestoreProtectedResourceV2Args {
      *
      * See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
      */
-    restoreTime?: pulumi.Input<string>;
+    restoreTime?: pulumi.Input<string | undefined>;
 }

@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const sla1 = nutanix.getNdbSla({
+        ///     slaName: "test-sla",
+        /// });
+        /// export const sla = sla1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// sla1 = nutanix.get_ndb_sla(sla_name="test-sla")
+        /// pulumi.export("sla", sla1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +42,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var sla1 = Nutanix.Index.GetNdbSla.Invoke(new()
+        ///     var sla1 = Nutanix.GetNdbSla.Invoke(new()
         ///     {
         ///         SlaName = "test-sla",
         ///     });
@@ -36,6 +53,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		sla1, err := nutanix.GetNdbSla(ctx, &amp;nutanix.LookupNdbSlaArgs{
+        /// 			SlaName: pulumi.StringRef("test-sla"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("sla", sla1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbSlaArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var sla1 = NutanixFunctions.getNdbSla(GetNdbSlaArgs.builder()
+        ///             .slaName("test-sla")
+        ///             .build());
+        /// 
+        ///         ctx.export("sla", sla1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   sla1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbSla
+        ///       arguments:
+        ///         slaName: test-sla
+        /// outputs:
+        ///   sla: ${sla1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNdbSlaResult> InvokeAsync(GetNdbSlaArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbSlaResult>("nutanix:index/getNdbSla:getNdbSla", args ?? new GetNdbSlaArgs(), options.WithDefaults());
@@ -45,6 +123,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const sla1 = nutanix.getNdbSla({
+        ///     slaName: "test-sla",
+        /// });
+        /// export const sla = sla1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// sla1 = nutanix.get_ndb_sla(sla_name="test-sla")
+        /// pulumi.export("sla", sla1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -53,7 +148,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var sla1 = Nutanix.Index.GetNdbSla.Invoke(new()
+        ///     var sla1 = Nutanix.GetNdbSla.Invoke(new()
         ///     {
         ///         SlaName = "test-sla",
         ///     });
@@ -64,6 +159,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		sla1, err := nutanix.GetNdbSla(ctx, &amp;nutanix.LookupNdbSlaArgs{
+        /// 			SlaName: pulumi.StringRef("test-sla"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("sla", sla1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbSlaArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var sla1 = NutanixFunctions.getNdbSla(GetNdbSlaArgs.builder()
+        ///             .slaName("test-sla")
+        ///             .build());
+        /// 
+        ///         ctx.export("sla", sla1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   sla1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbSla
+        ///       arguments:
+        ///         slaName: test-sla
+        /// outputs:
+        ///   sla: ${sla1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbSlaResult> Invoke(GetNdbSlaInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbSlaResult>("nutanix:index/getNdbSla:getNdbSla", args ?? new GetNdbSlaInvokeArgs(), options.WithDefaults());
@@ -73,6 +229,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const sla1 = nutanix.getNdbSla({
+        ///     slaName: "test-sla",
+        /// });
+        /// export const sla = sla1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// sla1 = nutanix.get_ndb_sla(sla_name="test-sla")
+        /// pulumi.export("sla", sla1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,7 +254,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var sla1 = Nutanix.Index.GetNdbSla.Invoke(new()
+        ///     var sla1 = Nutanix.GetNdbSla.Invoke(new()
         ///     {
         ///         SlaName = "test-sla",
         ///     });
@@ -92,6 +265,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		sla1, err := nutanix.GetNdbSla(ctx, &amp;nutanix.LookupNdbSlaArgs{
+        /// 			SlaName: pulumi.StringRef("test-sla"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("sla", sla1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbSlaArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var sla1 = NutanixFunctions.getNdbSla(GetNdbSlaArgs.builder()
+        ///             .slaName("test-sla")
+        ///             .build());
+        /// 
+        ///         ctx.export("sla", sla1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   sla1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbSla
+        ///       arguments:
+        ///         slaName: test-sla
+        /// outputs:
+        ///   sla: ${sla1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbSlaResult> Invoke(GetNdbSlaInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbSlaResult>("nutanix:index/getNdbSla:getNdbSla", args ?? new GetNdbSlaInvokeArgs(), options.WithDefaults());
@@ -101,7 +335,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNdbSlaArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// and `SlaName` are mutually exclusive.
+        /// and &lt;span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`"&gt;`slaName`&lt;/span&gt; are mutually exclusive.
         /// </summary>
         [Input("slaId")]
         public string? SlaId { get; set; }
@@ -121,7 +355,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNdbSlaInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// and `SlaName` are mutually exclusive.
+        /// and &lt;span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`"&gt;`slaName`&lt;/span&gt; are mutually exclusive.
         /// </summary>
         [Input("slaId")]
         public Input<string>? SlaId { get; set; }

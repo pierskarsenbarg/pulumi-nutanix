@@ -17,6 +17,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testAccessControlPolicy = new nutanix.AccessControlPolicy("test", {
+        ///     name: "NAME OF ACCESS CONTROL POLICY",
+        ///     description: "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///     roleReference: {
+        ///         kind: "role",
+        ///         uuid: "UUID of role",
+        ///     },
+        /// });
+        /// const test = nutanix.getAccessControlPolicyOutput({
+        ///     accessControlPolicyId: testAccessControlPolicy.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_access_control_policy = nutanix.AccessControlPolicy("test",
+        ///     name="NAME OF ACCESS CONTROL POLICY",
+        ///     description="DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///     role_reference={
+        ///         "kind": "role",
+        ///         "uuid": "UUID of role",
+        ///     })
+        /// test = nutanix.get_access_control_policy_output(access_control_policy_id=test_access_control_policy.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +55,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAccessControlPolicy = new Nutanix.Index.AccessControlPolicy("test", new()
+        ///     var testAccessControlPolicy = new Nutanix.AccessControlPolicy("test", new()
         ///     {
         ///         Name = "NAME OF ACCESS CONTROL POLICY",
         ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
@@ -36,13 +66,100 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetAccessControlPolicy.Invoke(new()
+        ///     var test = Nutanix.GetAccessControlPolicy.Invoke(new()
         ///     {
         ///         AccessControlPolicyId = testAccessControlPolicy.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testAccessControlPolicy, err := nutanix.NewAccessControlPolicy(ctx, "test", &amp;nutanix.AccessControlPolicyArgs{
+        /// 			Name:        pulumi.String("NAME OF ACCESS CONTROL POLICY"),
+        /// 			Description: pulumi.String("DESCRIPTION OF THE ACCESS CONTROL POLICY"),
+        /// 			RoleReference: &amp;nutanix.AccessControlPolicyRoleReferenceArgs{
+        /// 				Kind: pulumi.String("role"),
+        /// 				Uuid: pulumi.String("UUID of role"),
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
+        /// 			AccessControlPolicyId: testAccessControlPolicy.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.AccessControlPolicy;
+        /// import com.pulumi.nutanix.AccessControlPolicyArgs;
+        /// import com.pulumi.nutanix.inputs.AccessControlPolicyRoleReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAccessControlPolicyArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testAccessControlPolicy = new AccessControlPolicy("testAccessControlPolicy", AccessControlPolicyArgs.builder()
+        ///             .name("NAME OF ACCESS CONTROL POLICY")
+        ///             .description("DESCRIPTION OF THE ACCESS CONTROL POLICY")
+        ///             .roleReference(AccessControlPolicyRoleReferenceArgs.builder()
+        ///                 .kind("role")
+        ///                 .uuid("UUID of role")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getAccessControlPolicy(GetAccessControlPolicyArgs.builder()
+        ///             .accessControlPolicyId(testAccessControlPolicy.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testAccessControlPolicy:
+        ///     type: nutanix:AccessControlPolicy
+        ///     name: test
+        ///     properties:
+        ///       name: NAME OF ACCESS CONTROL POLICY
+        ///       description: DESCRIPTION OF THE ACCESS CONTROL POLICY
+        ///       roleReference:
+        ///         kind: role
+        ///         uuid: UUID of role
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getAccessControlPolicy
+        ///       arguments:
+        ///         accessControlPolicyId: ${testAccessControlPolicy.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAccessControlPolicyResult> InvokeAsync(GetAccessControlPolicyArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyArgs(), options.WithDefaults());
@@ -52,6 +169,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testAccessControlPolicy = new nutanix.AccessControlPolicy("test", {
+        ///     name: "NAME OF ACCESS CONTROL POLICY",
+        ///     description: "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///     roleReference: {
+        ///         kind: "role",
+        ///         uuid: "UUID of role",
+        ///     },
+        /// });
+        /// const test = nutanix.getAccessControlPolicyOutput({
+        ///     accessControlPolicyId: testAccessControlPolicy.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_access_control_policy = nutanix.AccessControlPolicy("test",
+        ///     name="NAME OF ACCESS CONTROL POLICY",
+        ///     description="DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///     role_reference={
+        ///         "kind": "role",
+        ///         "uuid": "UUID of role",
+        ///     })
+        /// test = nutanix.get_access_control_policy_output(access_control_policy_id=test_access_control_policy.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -60,7 +207,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAccessControlPolicy = new Nutanix.Index.AccessControlPolicy("test", new()
+        ///     var testAccessControlPolicy = new Nutanix.AccessControlPolicy("test", new()
         ///     {
         ///         Name = "NAME OF ACCESS CONTROL POLICY",
         ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
@@ -71,13 +218,100 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetAccessControlPolicy.Invoke(new()
+        ///     var test = Nutanix.GetAccessControlPolicy.Invoke(new()
         ///     {
         ///         AccessControlPolicyId = testAccessControlPolicy.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testAccessControlPolicy, err := nutanix.NewAccessControlPolicy(ctx, "test", &amp;nutanix.AccessControlPolicyArgs{
+        /// 			Name:        pulumi.String("NAME OF ACCESS CONTROL POLICY"),
+        /// 			Description: pulumi.String("DESCRIPTION OF THE ACCESS CONTROL POLICY"),
+        /// 			RoleReference: &amp;nutanix.AccessControlPolicyRoleReferenceArgs{
+        /// 				Kind: pulumi.String("role"),
+        /// 				Uuid: pulumi.String("UUID of role"),
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
+        /// 			AccessControlPolicyId: testAccessControlPolicy.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.AccessControlPolicy;
+        /// import com.pulumi.nutanix.AccessControlPolicyArgs;
+        /// import com.pulumi.nutanix.inputs.AccessControlPolicyRoleReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAccessControlPolicyArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testAccessControlPolicy = new AccessControlPolicy("testAccessControlPolicy", AccessControlPolicyArgs.builder()
+        ///             .name("NAME OF ACCESS CONTROL POLICY")
+        ///             .description("DESCRIPTION OF THE ACCESS CONTROL POLICY")
+        ///             .roleReference(AccessControlPolicyRoleReferenceArgs.builder()
+        ///                 .kind("role")
+        ///                 .uuid("UUID of role")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getAccessControlPolicy(GetAccessControlPolicyArgs.builder()
+        ///             .accessControlPolicyId(testAccessControlPolicy.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testAccessControlPolicy:
+        ///     type: nutanix:AccessControlPolicy
+        ///     name: test
+        ///     properties:
+        ///       name: NAME OF ACCESS CONTROL POLICY
+        ///       description: DESCRIPTION OF THE ACCESS CONTROL POLICY
+        ///       roleReference:
+        ///         kind: role
+        ///         uuid: UUID of role
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getAccessControlPolicy
+        ///       arguments:
+        ///         accessControlPolicyId: ${testAccessControlPolicy.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAccessControlPolicyResult> Invoke(GetAccessControlPolicyInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyInvokeArgs(), options.WithDefaults());
@@ -87,6 +321,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testAccessControlPolicy = new nutanix.AccessControlPolicy("test", {
+        ///     name: "NAME OF ACCESS CONTROL POLICY",
+        ///     description: "DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///     roleReference: {
+        ///         kind: "role",
+        ///         uuid: "UUID of role",
+        ///     },
+        /// });
+        /// const test = nutanix.getAccessControlPolicyOutput({
+        ///     accessControlPolicyId: testAccessControlPolicy.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_access_control_policy = nutanix.AccessControlPolicy("test",
+        ///     name="NAME OF ACCESS CONTROL POLICY",
+        ///     description="DESCRIPTION OF THE ACCESS CONTROL POLICY",
+        ///     role_reference={
+        ///         "kind": "role",
+        ///         "uuid": "UUID of role",
+        ///     })
+        /// test = nutanix.get_access_control_policy_output(access_control_policy_id=test_access_control_policy.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -95,7 +359,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAccessControlPolicy = new Nutanix.Index.AccessControlPolicy("test", new()
+        ///     var testAccessControlPolicy = new Nutanix.AccessControlPolicy("test", new()
         ///     {
         ///         Name = "NAME OF ACCESS CONTROL POLICY",
         ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
@@ -106,13 +370,100 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetAccessControlPolicy.Invoke(new()
+        ///     var test = Nutanix.GetAccessControlPolicy.Invoke(new()
         ///     {
         ///         AccessControlPolicyId = testAccessControlPolicy.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testAccessControlPolicy, err := nutanix.NewAccessControlPolicy(ctx, "test", &amp;nutanix.AccessControlPolicyArgs{
+        /// 			Name:        pulumi.String("NAME OF ACCESS CONTROL POLICY"),
+        /// 			Description: pulumi.String("DESCRIPTION OF THE ACCESS CONTROL POLICY"),
+        /// 			RoleReference: &amp;nutanix.AccessControlPolicyRoleReferenceArgs{
+        /// 				Kind: pulumi.String("role"),
+        /// 				Uuid: pulumi.String("UUID of role"),
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
+        /// 			AccessControlPolicyId: testAccessControlPolicy.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.AccessControlPolicy;
+        /// import com.pulumi.nutanix.AccessControlPolicyArgs;
+        /// import com.pulumi.nutanix.inputs.AccessControlPolicyRoleReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAccessControlPolicyArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testAccessControlPolicy = new AccessControlPolicy("testAccessControlPolicy", AccessControlPolicyArgs.builder()
+        ///             .name("NAME OF ACCESS CONTROL POLICY")
+        ///             .description("DESCRIPTION OF THE ACCESS CONTROL POLICY")
+        ///             .roleReference(AccessControlPolicyRoleReferenceArgs.builder()
+        ///                 .kind("role")
+        ///                 .uuid("UUID of role")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getAccessControlPolicy(GetAccessControlPolicyArgs.builder()
+        ///             .accessControlPolicyId(testAccessControlPolicy.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testAccessControlPolicy:
+        ///     type: nutanix:AccessControlPolicy
+        ///     name: test
+        ///     properties:
+        ///       name: NAME OF ACCESS CONTROL POLICY
+        ///       description: DESCRIPTION OF THE ACCESS CONTROL POLICY
+        ///       roleReference:
+        ///         kind: role
+        ///         uuid: UUID of role
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getAccessControlPolicy
+        ///       arguments:
+        ///         accessControlPolicyId: ${testAccessControlPolicy.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAccessControlPolicyResult> Invoke(GetAccessControlPolicyInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyInvokeArgs(), options.WithDefaults());

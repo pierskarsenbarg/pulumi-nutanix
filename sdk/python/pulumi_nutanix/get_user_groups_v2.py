@@ -118,33 +118,35 @@ def get_user_groups_v2(filter: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     user_groups = nutanix.get_user_groups_v2()
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `page`: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-    * `limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    * `filter` :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`">`page`</span>: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+    * <span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`">`limit`</span> : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+    * <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`">`filter`</span> :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
       - createdBy
       - distinguishedName
       - extId
       - groupType
       - idpId
       - name
-    * `orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`">`orderby`</span> : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
       - createdTime
       - distinguishedName
       - groupType
       - lastUpdatedTime
       - name
-    * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.The select can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`">`select`</span> : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.The select can be applied to the following fields:
       - createdBy
       - createdTime
       - distinguishedName
@@ -173,44 +175,46 @@ def get_user_groups_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'),
         user_groups=pulumi.get(__ret__, 'user_groups'))
-def get_user_groups_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                              order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                              select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_user_groups_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                              order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                              select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupsV2Result]:
     """
     Provides a datasource to retrieve all the user groups.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     user_groups = nutanix.get_user_groups_v2()
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `page`: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-    * `limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    * `filter` :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`">`page`</span>: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+    * <span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`">`limit`</span> : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+    * <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`">`filter`</span> :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
       - createdBy
       - distinguishedName
       - extId
       - groupType
       - idpId
       - name
-    * `orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`">`orderby`</span> : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
       - createdTime
       - distinguishedName
       - groupType
       - lastUpdatedTime
       - name
-    * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.The select can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`">`select`</span> : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.The select can be applied to the following fields:
       - createdBy
       - createdTime
       - distinguishedName

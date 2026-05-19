@@ -17,6 +17,34 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testImage = new nutanix.Image("test", {
+        ///     name: "Ubuntu",
+        ///     description: "Ubuntu",
+        ///     sourceUri: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+        /// });
+        /// const test = nutanix.getImageOutput({
+        ///     imageId: testImage.id,
+        /// });
+        /// const testname = nutanix.getImageOutput({
+        ///     imageName: testImage.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_image = nutanix.Image("test",
+        ///     name="Ubuntu",
+        ///     description="Ubuntu",
+        ///     source_uri="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
+        /// test = nutanix.get_image_output(image_id=test_image.id)
+        /// testname = nutanix.get_image_output(image_name=test_image.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,25 +53,115 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testImage = new Nutanix.Index.Image("test", new()
+        ///     var testImage = new Nutanix.Image("test", new()
         ///     {
         ///         Name = "Ubuntu",
         ///         Description = "Ubuntu",
         ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetImage.Invoke(new()
+        ///     var test = Nutanix.GetImage.Invoke(new()
         ///     {
         ///         ImageId = testImage.Id,
         ///     });
         /// 
-        ///     var testname = Nutanix.Index.GetImage.Invoke(new()
+        ///     var testname = Nutanix.GetImage.Invoke(new()
         ///     {
         ///         ImageName = testImage.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testImage, err := nutanix.NewImage(ctx, "test", &amp;nutanix.ImageArgs{
+        /// 			Name:        pulumi.String("Ubuntu"),
+        /// 			Description: pulumi.String("Ubuntu"),
+        /// 			SourceUri:   pulumi.String("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
+        /// 			ImageId: testImage.ID(),
+        /// 		}, nil)
+        /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
+        /// 			ImageName: testImage.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Image;
+        /// import com.pulumi.nutanix.ImageArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImageArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testImage = new Image("testImage", ImageArgs.builder()
+        ///             .name("Ubuntu")
+        ///             .description("Ubuntu")
+        ///             .sourceUri("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getImage(GetImageArgs.builder()
+        ///             .imageId(testImage.id())
+        ///             .build());
+        /// 
+        ///         final var testname = NutanixFunctions.getImage(GetImageArgs.builder()
+        ///             .imageName(testImage.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testImage:
+        ///     type: nutanix:Image
+        ///     name: test
+        ///     properties:
+        ///       name: Ubuntu
+        ///       description: Ubuntu
+        ///       sourceUri: http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getImage
+        ///       arguments:
+        ///         imageId: ${testImage.id}
+        ///   testname:
+        ///     fn::invoke:
+        ///       function: nutanix:getImage
+        ///       arguments:
+        ///         imageName: ${testImage.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetImageResult> InvokeAsync(GetImageArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImageResult>("nutanix:index/getImage:getImage", args ?? new GetImageArgs(), options.WithDefaults());
@@ -53,6 +171,34 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testImage = new nutanix.Image("test", {
+        ///     name: "Ubuntu",
+        ///     description: "Ubuntu",
+        ///     sourceUri: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+        /// });
+        /// const test = nutanix.getImageOutput({
+        ///     imageId: testImage.id,
+        /// });
+        /// const testname = nutanix.getImageOutput({
+        ///     imageName: testImage.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_image = nutanix.Image("test",
+        ///     name="Ubuntu",
+        ///     description="Ubuntu",
+        ///     source_uri="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
+        /// test = nutanix.get_image_output(image_id=test_image.id)
+        /// testname = nutanix.get_image_output(image_name=test_image.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -61,25 +207,115 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testImage = new Nutanix.Index.Image("test", new()
+        ///     var testImage = new Nutanix.Image("test", new()
         ///     {
         ///         Name = "Ubuntu",
         ///         Description = "Ubuntu",
         ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetImage.Invoke(new()
+        ///     var test = Nutanix.GetImage.Invoke(new()
         ///     {
         ///         ImageId = testImage.Id,
         ///     });
         /// 
-        ///     var testname = Nutanix.Index.GetImage.Invoke(new()
+        ///     var testname = Nutanix.GetImage.Invoke(new()
         ///     {
         ///         ImageName = testImage.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testImage, err := nutanix.NewImage(ctx, "test", &amp;nutanix.ImageArgs{
+        /// 			Name:        pulumi.String("Ubuntu"),
+        /// 			Description: pulumi.String("Ubuntu"),
+        /// 			SourceUri:   pulumi.String("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
+        /// 			ImageId: testImage.ID(),
+        /// 		}, nil)
+        /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
+        /// 			ImageName: testImage.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Image;
+        /// import com.pulumi.nutanix.ImageArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImageArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testImage = new Image("testImage", ImageArgs.builder()
+        ///             .name("Ubuntu")
+        ///             .description("Ubuntu")
+        ///             .sourceUri("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getImage(GetImageArgs.builder()
+        ///             .imageId(testImage.id())
+        ///             .build());
+        /// 
+        ///         final var testname = NutanixFunctions.getImage(GetImageArgs.builder()
+        ///             .imageName(testImage.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testImage:
+        ///     type: nutanix:Image
+        ///     name: test
+        ///     properties:
+        ///       name: Ubuntu
+        ///       description: Ubuntu
+        ///       sourceUri: http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getImage
+        ///       arguments:
+        ///         imageId: ${testImage.id}
+        ///   testname:
+        ///     fn::invoke:
+        ///       function: nutanix:getImage
+        ///       arguments:
+        ///         imageName: ${testImage.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetImageResult> Invoke(GetImageInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageResult>("nutanix:index/getImage:getImage", args ?? new GetImageInvokeArgs(), options.WithDefaults());
@@ -89,6 +325,34 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testImage = new nutanix.Image("test", {
+        ///     name: "Ubuntu",
+        ///     description: "Ubuntu",
+        ///     sourceUri: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+        /// });
+        /// const test = nutanix.getImageOutput({
+        ///     imageId: testImage.id,
+        /// });
+        /// const testname = nutanix.getImageOutput({
+        ///     imageName: testImage.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_image = nutanix.Image("test",
+        ///     name="Ubuntu",
+        ///     description="Ubuntu",
+        ///     source_uri="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
+        /// test = nutanix.get_image_output(image_id=test_image.id)
+        /// testname = nutanix.get_image_output(image_name=test_image.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -97,25 +361,115 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testImage = new Nutanix.Index.Image("test", new()
+        ///     var testImage = new Nutanix.Image("test", new()
         ///     {
         ///         Name = "Ubuntu",
         ///         Description = "Ubuntu",
         ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetImage.Invoke(new()
+        ///     var test = Nutanix.GetImage.Invoke(new()
         ///     {
         ///         ImageId = testImage.Id,
         ///     });
         /// 
-        ///     var testname = Nutanix.Index.GetImage.Invoke(new()
+        ///     var testname = Nutanix.GetImage.Invoke(new()
         ///     {
         ///         ImageName = testImage.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testImage, err := nutanix.NewImage(ctx, "test", &amp;nutanix.ImageArgs{
+        /// 			Name:        pulumi.String("Ubuntu"),
+        /// 			Description: pulumi.String("Ubuntu"),
+        /// 			SourceUri:   pulumi.String("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
+        /// 			ImageId: testImage.ID(),
+        /// 		}, nil)
+        /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
+        /// 			ImageName: testImage.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Image;
+        /// import com.pulumi.nutanix.ImageArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImageArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testImage = new Image("testImage", ImageArgs.builder()
+        ///             .name("Ubuntu")
+        ///             .description("Ubuntu")
+        ///             .sourceUri("http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getImage(GetImageArgs.builder()
+        ///             .imageId(testImage.id())
+        ///             .build());
+        /// 
+        ///         final var testname = NutanixFunctions.getImage(GetImageArgs.builder()
+        ///             .imageName(testImage.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testImage:
+        ///     type: nutanix:Image
+        ///     name: test
+        ///     properties:
+        ///       name: Ubuntu
+        ///       description: Ubuntu
+        ///       sourceUri: http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getImage
+        ///       arguments:
+        ///         imageId: ${testImage.id}
+        ///   testname:
+        ///     fn::invoke:
+        ///       function: nutanix:getImage
+        ///       arguments:
+        ///         imageName: ${testImage.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetImageResult> Invoke(GetImageInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageResult>("nutanix:index/getImage:getImage", args ?? new GetImageInvokeArgs(), options.WithDefaults());

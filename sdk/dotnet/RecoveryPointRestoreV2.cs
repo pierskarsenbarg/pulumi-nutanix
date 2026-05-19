@@ -12,10 +12,11 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// This operation Restore a recovery point identified by {extId}.
-    /// A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys `VmExtIds` and `VolumeGroupExtIds` respectively.
+    /// A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys &lt;span pulumi-lang-nodejs="`vmExtIds`" pulumi-lang-dotnet="`VmExtIds`" pulumi-lang-go="`vmExtIds`" pulumi-lang-python="`vm_ext_ids`" pulumi-lang-yaml="`vmExtIds`" pulumi-lang-java="`vmExtIds`"&gt;`vmExtIds`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`volumeGroupExtIds`" pulumi-lang-dotnet="`VolumeGroupExtIds`" pulumi-lang-go="`volumeGroupExtIds`" pulumi-lang-python="`volume_group_ext_ids`" pulumi-lang-yaml="`volumeGroupExtIds`" pulumi-lang-java="`volumeGroupExtIds`"&gt;`volumeGroupExtIds`&lt;/span&gt; respectively.
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // restore RP
-    ///     var rp_restore = new Nutanix.Index.RecoveryPointRestoreV2("rp-restore", new()
+    ///     var rp_restore = new Nutanix.RecoveryPointRestoreV2("rp-restore", new()
     ///     {
     ///         ExtId = "150a7ed0-9d05-4f35-a060-16dac4c835d0",
     ///         ClusterExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
@@ -54,6 +55,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/recoveryPointRestoreV2:RecoveryPointRestoreV2")]
     public partial class RecoveryPointRestoreV2 : global::Pulumi.CustomResource

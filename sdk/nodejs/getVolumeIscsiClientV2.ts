@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,12 +20,13 @@ import * as utilities from "./utilities";
  *     extId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `extId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
  */
 export function getVolumeIscsiClientV2(args: GetVolumeIscsiClientV2Args, opts?: pulumi.InvokeOptions): Promise<GetVolumeIscsiClientV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -92,6 +94,7 @@ export interface GetVolumeIscsiClientV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -100,12 +103,13 @@ export interface GetVolumeIscsiClientV2Result {
  *     extId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `extId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
  */
 export function getVolumeIscsiClientV2Output(args: GetVolumeIscsiClientV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeIscsiClientV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -126,5 +130,5 @@ export interface GetVolumeIscsiClientV2OutputArgs {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
      */
-    iscsiInitiatorNetworkIds?: pulumi.Input<pulumi.Input<inputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs>[]>;
+    iscsiInitiatorNetworkIds?: pulumi.Input<pulumi.Input<inputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs>[] | undefined>;
 }

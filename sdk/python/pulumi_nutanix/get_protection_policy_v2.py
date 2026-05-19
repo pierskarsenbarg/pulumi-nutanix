@@ -177,12 +177,14 @@ def get_protection_policy_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_protection_policy_v2(ext_id="00000000-0000-0000-0000-000000000000")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) The external identifier of the protection policy.
@@ -204,19 +206,21 @@ def get_protection_policy_v2(ext_id: Optional[_builtins.str] = None,
         replication_configurations=pulumi.get(__ret__, 'replication_configurations'),
         replication_locations=pulumi.get(__ret__, 'replication_locations'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_protection_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_protection_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionPolicyV2Result]:
     """
     Describes the Fetches the protection policy identified by an external identifier.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_protection_policy_v2(ext_id="00000000-0000-0000-0000-000000000000")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) The external identifier of the protection policy.

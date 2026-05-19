@@ -16,6 +16,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var insert_cdrom = new Nutanix.Index.VmCdromInsertEjectV2("insert-cdrom", new()
+    ///     var insert_cdrom = new Nutanix.VmCdromInsertEjectV2("insert-cdrom", new()
     ///     {
     ///         VmExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///         ExtId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
@@ -57,6 +58,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2")]
     public partial class VmCdromInsertEjectV2 : global::Pulumi.CustomResource

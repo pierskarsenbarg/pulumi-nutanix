@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public string Filter { get; set; } = null!;
 
         /// <summary>
-        /// (Required) The kind name (Default value: `Project`).
+        /// (Required) The kind name (Default value: &lt;span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`"&gt;`project`&lt;/span&gt;).
         /// </summary>
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;

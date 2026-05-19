@@ -22,6 +22,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -31,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.Index.ObjectStoreV2("example", new()
+    ///     var example = new Nutanix.ObjectStoreV2("example", new()
     ///     {
     ///         Name = "tf-example-os",
     ///         Description = "terraform create object store example",
@@ -39,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         Domain = "msp.pc-idbc.nutanix.com",
     ///         NumWorkerNodes = 1,
     ///         ClusterExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-    ///         TotalCapacityGib = Std.Index.Pow.Invoke(new()
+    ///         TotalCapacityGib = Std.Pow.Invoke(new()
     ///         {
     ///             Base = 1024,
     ///             Exponent = 3,
@@ -73,7 +74,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Deploying Object Store in draft state
-    ///     var example_draft = new Nutanix.Index.ObjectStoreV2("example-draft", new()
+    ///     var example_draft = new Nutanix.ObjectStoreV2("example-draft", new()
     ///     {
     ///         Name = "tf-draft-os",
     ///         Description = "terraform deploy object store draft example",
@@ -81,7 +82,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         Domain = "msp.pc-idbc.nutanix.com",
     ///         NumWorkerNodes = 1,
     ///         ClusterExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-    ///         TotalCapacityGib = Std.Index.Pow.Invoke(new()
+    ///         TotalCapacityGib = Std.Pow.Invoke(new()
     ///         {
     ///             Base = 1024,
     ///             Exponent = 3,
@@ -117,6 +118,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/objectStoreV2:ObjectStoreV2")]
     public partial class ObjectStoreV2 : global::Pulumi.CustomResource

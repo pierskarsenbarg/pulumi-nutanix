@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const nodesList = nutanix.getFoundationCentralImagedNodesList({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralImagedNodesList(args?: GetFoundationCentralImagedNodesListArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedNodesListResult> {
     args = args || {};
@@ -71,12 +73,14 @@ export interface GetFoundationCentralImagedNodesListResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const nodesList = nutanix.getFoundationCentralImagedNodesList({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCentralImagedNodesListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralImagedNodesListResult> {
     args = args || {};
@@ -92,13 +96,13 @@ export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCe
  * A collection of arguments for invoking getFoundationCentralImagedNodesList.
  */
 export interface GetFoundationCentralImagedNodesListOutputArgs {
-    filters?: pulumi.Input<inputs.GetFoundationCentralImagedNodesListFiltersArgs>;
+    filters?: pulumi.Input<inputs.GetFoundationCentralImagedNodesListFiltersArgs | undefined>;
     /**
      * The number of records retrieved.
      */
-    length?: pulumi.Input<number>;
+    length?: pulumi.Input<number | undefined>;
     /**
      * Offset from the start of the object list.
      */
-    offset?: pulumi.Input<number>;
+    offset?: pulumi.Input<number | undefined>;
 }

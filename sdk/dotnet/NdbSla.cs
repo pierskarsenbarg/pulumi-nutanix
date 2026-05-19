@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var sla = new Nutanix.Index.NdbSla("sla", new()
+    ///     var sla = new Nutanix.NdbSla("sla", new()
     ///     {
     ///         Name = "test-sla",
     ///         Description = "here goes description",
@@ -36,6 +37,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbSla:NdbSla")]
     public partial class NdbSla : global::Pulumi.CustomResource

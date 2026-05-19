@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterV2(args: GetClusterV2Args, opts?: pulumi.InvokeOptions): Promise<GetClusterV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -126,6 +128,7 @@ export interface GetClusterV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -134,6 +137,7 @@ export interface GetClusterV2Result {
  *     extId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterV2Output(args: GetClusterV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClusterV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -153,7 +157,7 @@ export interface GetClusterV2OutputArgs {
      * - "clusterProfile".
      * - "storageSummary".
      */
-    expand?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Represents clusters uuid
      */

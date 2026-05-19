@@ -22,46 +22,46 @@ __all__ = ['VirtualMachineArgs', 'VirtualMachine']
 class VirtualMachineArgs:
     def __init__(__self__, *,
                  cluster_uuid: pulumi.Input[_builtins.str],
-                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 boot_device_disk_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 boot_device_mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_device_order_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 boot_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]] = None,
-                 cloud_init_cdrom_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]] = None,
-                 enable_cpu_passthrough: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_script_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-                 gpu_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]] = None,
-                 guest_customization_cloud_init_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_customization_cloud_init_meta_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_customization_cloud_init_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_customization_is_overridable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 guest_customization_sysprep: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_customization_sysprep_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_os_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_vcpu_hard_pinned: Optional[pulumi.Input[_builtins.bool]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_mib: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ngt_credentials: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ngt_enabled_capability_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nic_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]] = None,
-                 num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_vcpus_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_vnuma_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 nutanix_guest_tools: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parent_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 power_state_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 serial_port_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]] = None,
-                 should_fail_on_script_failure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_hot_add: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 boot_device_disk_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 boot_device_mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_device_order_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 boot_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]] = None,
+                 cloud_init_cdrom_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]] = None,
+                 enable_cpu_passthrough: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_script_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+                 gpu_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]] = None,
+                 guest_customization_cloud_init_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_customization_cloud_init_meta_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_is_overridable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 guest_customization_sysprep: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_customization_sysprep_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_os_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_vcpu_hard_pinned: pulumi.Input[Optional[_builtins.bool]] = None,
+                 machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_mib: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ngt_credentials: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ngt_enabled_capability_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nic_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]] = None,
+                 num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_vcpus_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_vnuma_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 nutanix_guest_tools: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parent_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 power_state_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 serial_port_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]] = None,
+                 should_fail_on_script_failure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_hot_add: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a VirtualMachine resource.
 
@@ -70,7 +70,7 @@ class VirtualMachineArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] boot_device_disk_address: - (Optional) Address of disk to boot from.
         :param pulumi.Input[_builtins.str] boot_device_mac_address: - (Optional) MAC address of nic to boot from.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] boot_device_order_lists: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-        :param pulumi.Input[_builtins.str] boot_type: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        :param pulumi.Input[_builtins.str] boot_type: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]] categories: - (Optional) Categories for the vm.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for vm.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]] disk_lists: Disks attached to the VM.
@@ -78,10 +78,10 @@ class VirtualMachineArgs:
         :param pulumi.Input[_builtins.bool] enable_script_exec: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]] gpu_lists: - (Optional) GPUs attached to the VM.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_cloud_init_custom_key_values: - (Optional) Generic key value pair used for custom attributes in cloud init.
-        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_meta_data: The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_user_data: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_meta_data: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_user_data: - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         :param pulumi.Input[_builtins.bool] guest_customization_is_overridable: - (Optional) Flag to allow override of customization by deployer.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep_custom_key_values: - (Optional) Generic key value pair used for custom attributes in sysprep.
         :param pulumi.Input[_builtins.str] guest_os_id: - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         :param pulumi.Input[_builtins.str] hardware_clock_timezone: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -103,7 +103,7 @@ class VirtualMachineArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
         :param pulumi.Input[_builtins.bool] should_fail_on_script_failure: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-        :param pulumi.Input[_builtins.bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        :param pulumi.Input[_builtins.bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
         :param pulumi.Input[_builtins.bool] vga_console_enabled: - (Optional) Indicates whether VGA console should be enabled or not.
         """
         pulumi.set(__self__, "cluster_uuid", cluster_uuid)
@@ -202,533 +202,533 @@ class VirtualMachineArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityZoneReference")
-    def availability_zone_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def availability_zone_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a availability_zone.
         """
         return pulumi.get(self, "availability_zone_reference")
 
     @availability_zone_reference.setter
-    def availability_zone_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def availability_zone_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "availability_zone_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="bootDeviceDiskAddress")
-    def boot_device_disk_address(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def boot_device_disk_address(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Address of disk to boot from.
         """
         return pulumi.get(self, "boot_device_disk_address")
 
     @boot_device_disk_address.setter
-    def boot_device_disk_address(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def boot_device_disk_address(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "boot_device_disk_address", value)
 
     @_builtins.property
     @pulumi.getter(name="bootDeviceMacAddress")
-    def boot_device_mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def boot_device_mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) MAC address of nic to boot from.
         """
         return pulumi.get(self, "boot_device_mac_address")
 
     @boot_device_mac_address.setter
-    def boot_device_mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def boot_device_mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "boot_device_mac_address", value)
 
     @_builtins.property
     @pulumi.getter(name="bootDeviceOrderLists")
-    def boot_device_order_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def boot_device_order_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
         """
         return pulumi.get(self, "boot_device_order_lists")
 
     @boot_device_order_lists.setter
-    def boot_device_order_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def boot_device_order_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "boot_device_order_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="bootType")
-    def boot_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def boot_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         """
         return pulumi.get(self, "boot_type")
 
     @boot_type.setter
-    def boot_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def boot_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "boot_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]]:
         """
         - (Optional) Categories for the vm.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudInitCdromUuid")
-    def cloud_init_cdrom_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_init_cdrom_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cloud_init_cdrom_uuid")
 
     @cloud_init_cdrom_uuid.setter
-    def cloud_init_cdrom_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_init_cdrom_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_init_cdrom_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) A description for vm.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="diskLists")
-    def disk_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]]:
+    def disk_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]]:
         """
         Disks attached to the VM.
         """
         return pulumi.get(self, "disk_lists")
 
     @disk_lists.setter
-    def disk_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]]):
+    def disk_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]]):
         pulumi.set(self, "disk_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="enableCpuPassthrough")
-    def enable_cpu_passthrough(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_cpu_passthrough(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Add true to enable CPU passthrough.
         """
         return pulumi.get(self, "enable_cpu_passthrough")
 
     @enable_cpu_passthrough.setter
-    def enable_cpu_passthrough(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_cpu_passthrough(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_cpu_passthrough", value)
 
     @_builtins.property
     @pulumi.getter(name="enableScriptExec")
-    def enable_script_exec(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_script_exec(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
         """
         return pulumi.get(self, "enable_script_exec")
 
     @enable_script_exec.setter
-    def enable_script_exec(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_script_exec(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_script_exec", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuLists")
-    def gpu_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]]:
+    def gpu_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]]:
         """
         - (Optional) GPUs attached to the VM.
         """
         return pulumi.get(self, "gpu_lists")
 
     @gpu_lists.setter
-    def gpu_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]]):
+    def gpu_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]]):
         pulumi.set(self, "gpu_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationCloudInitCustomKeyValues")
-    def guest_customization_cloud_init_custom_key_values(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def guest_customization_cloud_init_custom_key_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Generic key value pair used for custom attributes in cloud init.
         """
         return pulumi.get(self, "guest_customization_cloud_init_custom_key_values")
 
     @guest_customization_cloud_init_custom_key_values.setter
-    def guest_customization_cloud_init_custom_key_values(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def guest_customization_cloud_init_custom_key_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "guest_customization_cloud_init_custom_key_values", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationCloudInitMetaData")
-    def guest_customization_cloud_init_meta_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guest_customization_cloud_init_meta_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         """
         return pulumi.get(self, "guest_customization_cloud_init_meta_data")
 
     @guest_customization_cloud_init_meta_data.setter
-    def guest_customization_cloud_init_meta_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guest_customization_cloud_init_meta_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guest_customization_cloud_init_meta_data", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationCloudInitUserData")
-    def guest_customization_cloud_init_user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guest_customization_cloud_init_user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         """
         return pulumi.get(self, "guest_customization_cloud_init_user_data")
 
     @guest_customization_cloud_init_user_data.setter
-    def guest_customization_cloud_init_user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guest_customization_cloud_init_user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guest_customization_cloud_init_user_data", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationIsOverridable")
-    def guest_customization_is_overridable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def guest_customization_is_overridable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Flag to allow override of customization by deployer.
         """
         return pulumi.get(self, "guest_customization_is_overridable")
 
     @guest_customization_is_overridable.setter
-    def guest_customization_is_overridable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def guest_customization_is_overridable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "guest_customization_is_overridable", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationSysprep")
-    def guest_customization_sysprep(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def guest_customization_sysprep(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
         """
         return pulumi.get(self, "guest_customization_sysprep")
 
     @guest_customization_sysprep.setter
-    def guest_customization_sysprep(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def guest_customization_sysprep(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "guest_customization_sysprep", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationSysprepCustomKeyValues")
-    def guest_customization_sysprep_custom_key_values(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def guest_customization_sysprep_custom_key_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Generic key value pair used for custom attributes in sysprep.
         """
         return pulumi.get(self, "guest_customization_sysprep_custom_key_values")
 
     @guest_customization_sysprep_custom_key_values.setter
-    def guest_customization_sysprep_custom_key_values(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def guest_customization_sysprep_custom_key_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "guest_customization_sysprep_custom_key_values", value)
 
     @_builtins.property
     @pulumi.getter(name="guestOsId")
-    def guest_os_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guest_os_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         """
         return pulumi.get(self, "guest_os_id")
 
     @guest_os_id.setter
-    def guest_os_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guest_os_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guest_os_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hardwareClockTimezone")
-    def hardware_clock_timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hardware_clock_timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
         """
         return pulumi.get(self, "hardware_clock_timezone")
 
     @hardware_clock_timezone.setter
-    def hardware_clock_timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hardware_clock_timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hardware_clock_timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="isVcpuHardPinned")
-    def is_vcpu_hard_pinned(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vcpu_hard_pinned(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Add true to enable CPU pinning.
         """
         return pulumi.get(self, "is_vcpu_hard_pinned")
 
     @is_vcpu_hard_pinned.setter
-    def is_vcpu_hard_pinned(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vcpu_hard_pinned(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vcpu_hard_pinned", value)
 
     @_builtins.property
     @pulumi.getter(name="machineType")
-    def machine_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def machine_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
         """
         return pulumi.get(self, "machine_type")
 
     @machine_type.setter
-    def machine_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def machine_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "machine_type", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeMib")
-    def memory_size_mib(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_size_mib(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         """
         return pulumi.get(self, "memory_size_mib")
 
     @memory_size_mib.setter
-    def memory_size_mib(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_size_mib(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_mib", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name for the vm.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ngtCredentials")
-    def ngt_credentials(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def ngt_credentials(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Ooptional) Credentials to login server.
         """
         return pulumi.get(self, "ngt_credentials")
 
     @ngt_credentials.setter
-    def ngt_credentials(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def ngt_credentials(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ngt_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="ngtEnabledCapabilityLists")
-    def ngt_enabled_capability_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ngt_enabled_capability_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Application names that are enabled.
         """
         return pulumi.get(self, "ngt_enabled_capability_lists")
 
     @ngt_enabled_capability_lists.setter
-    def ngt_enabled_capability_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ngt_enabled_capability_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ngt_enabled_capability_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="nicLists")
-    def nic_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]]:
+    def nic_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]]:
         """
         - (Optional) Spec NICs attached to the VM.
         """
         return pulumi.get(self, "nic_lists")
 
     @nic_lists.setter
-    def nic_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]]):
+    def nic_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]]):
         pulumi.set(self, "nic_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="numSockets")
-    def num_sockets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_sockets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Number of vCPU sockets.
         """
         return pulumi.get(self, "num_sockets")
 
     @num_sockets.setter
-    def num_sockets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_sockets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_sockets", value)
 
     @_builtins.property
     @pulumi.getter(name="numVcpusPerSocket")
-    def num_vcpus_per_socket(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_vcpus_per_socket(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Number of vCPUs per socket.
         """
         return pulumi.get(self, "num_vcpus_per_socket")
 
     @num_vcpus_per_socket.setter
-    def num_vcpus_per_socket(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_vcpus_per_socket(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_vcpus_per_socket", value)
 
     @_builtins.property
     @pulumi.getter(name="numVnumaNodes")
-    def num_vnuma_nodes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_vnuma_nodes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
         """
         return pulumi.get(self, "num_vnuma_nodes")
 
     @num_vnuma_nodes.setter
-    def num_vnuma_nodes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_vnuma_nodes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_vnuma_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="nutanixGuestTools")
-    def nutanix_guest_tools(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def nutanix_guest_tools(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Information regarding Nutanix Guest Tools.
         """
         return pulumi.get(self, "nutanix_guest_tools")
 
     @nutanix_guest_tools.setter
-    def nutanix_guest_tools(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def nutanix_guest_tools(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nutanix_guest_tools", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def owner_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def owner_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="parentReference")
-    def parent_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def parent_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Reference to an entity that the VM cloned from.
         """
         return pulumi.get(self, "parent_reference")
 
     @parent_reference.setter
-    def parent_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def parent_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parent_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="powerState")
-    def power_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def power_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
         """
         return pulumi.get(self, "power_state")
 
     @power_state.setter
-    def power_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def power_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "power_state", value)
 
     @_builtins.property
     @pulumi.getter(name="powerStateMechanism")
-    def power_state_mechanism(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def power_state_mechanism(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \\"OFF\\" state. Power state mechanism (ACPI/GUEST/HARD).
         """
         return pulumi.get(self, "power_state_mechanism")
 
     @power_state_mechanism.setter
-    def power_state_mechanism(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def power_state_mechanism(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "power_state_mechanism", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def project_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def project_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="serialPortLists")
-    def serial_port_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]]:
+    def serial_port_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]]:
         """
         - (Optional) Serial Ports configured on the VM.
         """
         return pulumi.get(self, "serial_port_lists")
 
     @serial_port_lists.setter
-    def serial_port_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]]):
+    def serial_port_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]]):
         pulumi.set(self, "serial_port_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldFailOnScriptFailure")
-    def should_fail_on_script_failure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_fail_on_script_failure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
         """
         return pulumi.get(self, "should_fail_on_script_failure")
 
     @should_fail_on_script_failure.setter
-    def should_fail_on_script_failure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_fail_on_script_failure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_fail_on_script_failure", value)
 
     @_builtins.property
     @pulumi.getter(name="useHotAdd")
-    def use_hot_add(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_hot_add(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
         """
         return pulumi.get(self, "use_hot_add")
 
     @use_hot_add.setter
-    def use_hot_add(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_hot_add(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_hot_add", value)
 
     @_builtins.property
     @pulumi.getter(name="vgaConsoleEnabled")
-    def vga_console_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def vga_console_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Indicates whether VGA console should be enabled or not.
         """
         return pulumi.get(self, "vga_console_enabled")
 
     @vga_console_enabled.setter
-    def vga_console_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def vga_console_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "vga_console_enabled", value)
 
 
 @pulumi.input_type
 class _VirtualMachineState:
     def __init__(__self__, *,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 boot_device_disk_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 boot_device_mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_device_order_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 boot_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]] = None,
-                 cloud_init_cdrom_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]] = None,
-                 enable_cpu_passthrough: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_script_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-                 gpu_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]] = None,
-                 guest_customization_cloud_init_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_customization_cloud_init_meta_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_customization_cloud_init_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_customization_is_overridable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 guest_customization_sysprep: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_customization_sysprep_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_os_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_vcpu_hard_pinned: Optional[pulumi.Input[_builtins.bool]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_mib: Optional[pulumi.Input[_builtins.int]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ngt_credentials: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ngt_enabled_capability_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nic_list_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListStatusArgs']]]] = None,
-                 nic_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]] = None,
-                 num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_vcpus_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_vnuma_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 nutanix_guest_tools: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parent_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 power_state_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 serial_port_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]] = None,
-                 should_fail_on_script_failure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_hot_add: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 boot_device_disk_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 boot_device_mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_device_order_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 boot_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]] = None,
+                 cloud_init_cdrom_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]] = None,
+                 enable_cpu_passthrough: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_script_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+                 gpu_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]] = None,
+                 guest_customization_cloud_init_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_customization_cloud_init_meta_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_is_overridable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 guest_customization_sysprep: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_customization_sysprep_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_os_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_vcpu_hard_pinned: pulumi.Input[Optional[_builtins.bool]] = None,
+                 machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_mib: pulumi.Input[Optional[_builtins.int]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ngt_credentials: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ngt_enabled_capability_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nic_list_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListStatusArgs']]]] = None,
+                 nic_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]] = None,
+                 num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_vcpus_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_vnuma_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 nutanix_guest_tools: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parent_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 power_state_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 serial_port_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]] = None,
+                 should_fail_on_script_failure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_hot_add: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering VirtualMachine resources.
 
@@ -737,7 +737,7 @@ class _VirtualMachineState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] boot_device_disk_address: - (Optional) Address of disk to boot from.
         :param pulumi.Input[_builtins.str] boot_device_mac_address: - (Optional) MAC address of nic to boot from.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] boot_device_order_lists: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-        :param pulumi.Input[_builtins.str] boot_type: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        :param pulumi.Input[_builtins.str] boot_type: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]] categories: - (Optional) Categories for the vm.
         :param pulumi.Input[_builtins.str] cluster_name: - The name of the cluster.
         :param pulumi.Input[_builtins.str] cluster_uuid: - (Required) The UUID of the cluster.
@@ -747,10 +747,10 @@ class _VirtualMachineState:
         :param pulumi.Input[_builtins.bool] enable_script_exec: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]] gpu_lists: - (Optional) GPUs attached to the VM.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_cloud_init_custom_key_values: - (Optional) Generic key value pair used for custom attributes in cloud init.
-        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_meta_data: The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_user_data: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_meta_data: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_user_data: - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         :param pulumi.Input[_builtins.bool] guest_customization_is_overridable: - (Optional) Flag to allow override of customization by deployer.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep_custom_key_values: - (Optional) Generic key value pair used for custom attributes in sysprep.
         :param pulumi.Input[_builtins.str] guest_os_id: - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         :param pulumi.Input[_builtins.str] hardware_clock_timezone: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -777,7 +777,7 @@ class _VirtualMachineState:
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
         :param pulumi.Input[_builtins.bool] should_fail_on_script_failure: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
         :param pulumi.Input[_builtins.str] state: - The state of the vm.
-        :param pulumi.Input[_builtins.bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        :param pulumi.Input[_builtins.bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
         :param pulumi.Input[_builtins.bool] vga_console_enabled: - (Optional) Indicates whether VGA console should be enabled or not.
         """
         if api_version is not None:
@@ -879,575 +879,575 @@ class _VirtualMachineState:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZoneReference")
-    def availability_zone_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def availability_zone_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a availability_zone.
         """
         return pulumi.get(self, "availability_zone_reference")
 
     @availability_zone_reference.setter
-    def availability_zone_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def availability_zone_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "availability_zone_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="bootDeviceDiskAddress")
-    def boot_device_disk_address(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def boot_device_disk_address(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Address of disk to boot from.
         """
         return pulumi.get(self, "boot_device_disk_address")
 
     @boot_device_disk_address.setter
-    def boot_device_disk_address(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def boot_device_disk_address(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "boot_device_disk_address", value)
 
     @_builtins.property
     @pulumi.getter(name="bootDeviceMacAddress")
-    def boot_device_mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def boot_device_mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) MAC address of nic to boot from.
         """
         return pulumi.get(self, "boot_device_mac_address")
 
     @boot_device_mac_address.setter
-    def boot_device_mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def boot_device_mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "boot_device_mac_address", value)
 
     @_builtins.property
     @pulumi.getter(name="bootDeviceOrderLists")
-    def boot_device_order_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def boot_device_order_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
         """
         return pulumi.get(self, "boot_device_order_lists")
 
     @boot_device_order_lists.setter
-    def boot_device_order_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def boot_device_order_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "boot_device_order_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="bootType")
-    def boot_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def boot_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         """
         return pulumi.get(self, "boot_type")
 
     @boot_type.setter
-    def boot_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def boot_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "boot_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]]:
         """
         - (Optional) Categories for the vm.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudInitCdromUuid")
-    def cloud_init_cdrom_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_init_cdrom_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cloud_init_cdrom_uuid")
 
     @cloud_init_cdrom_uuid.setter
-    def cloud_init_cdrom_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_init_cdrom_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_init_cdrom_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The name of the cluster.
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterUuid")
-    def cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The UUID of the cluster.
         """
         return pulumi.get(self, "cluster_uuid")
 
     @cluster_uuid.setter
-    def cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) A description for vm.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="diskLists")
-    def disk_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]]:
+    def disk_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]]:
         """
         Disks attached to the VM.
         """
         return pulumi.get(self, "disk_lists")
 
     @disk_lists.setter
-    def disk_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]]):
+    def disk_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineDiskListArgs']]]]):
         pulumi.set(self, "disk_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="enableCpuPassthrough")
-    def enable_cpu_passthrough(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_cpu_passthrough(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Add true to enable CPU passthrough.
         """
         return pulumi.get(self, "enable_cpu_passthrough")
 
     @enable_cpu_passthrough.setter
-    def enable_cpu_passthrough(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_cpu_passthrough(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_cpu_passthrough", value)
 
     @_builtins.property
     @pulumi.getter(name="enableScriptExec")
-    def enable_script_exec(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_script_exec(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
         """
         return pulumi.get(self, "enable_script_exec")
 
     @enable_script_exec.setter
-    def enable_script_exec(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_script_exec(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_script_exec", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuLists")
-    def gpu_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]]:
+    def gpu_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]]:
         """
         - (Optional) GPUs attached to the VM.
         """
         return pulumi.get(self, "gpu_lists")
 
     @gpu_lists.setter
-    def gpu_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]]):
+    def gpu_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineGpuListArgs']]]]):
         pulumi.set(self, "gpu_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationCloudInitCustomKeyValues")
-    def guest_customization_cloud_init_custom_key_values(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def guest_customization_cloud_init_custom_key_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Generic key value pair used for custom attributes in cloud init.
         """
         return pulumi.get(self, "guest_customization_cloud_init_custom_key_values")
 
     @guest_customization_cloud_init_custom_key_values.setter
-    def guest_customization_cloud_init_custom_key_values(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def guest_customization_cloud_init_custom_key_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "guest_customization_cloud_init_custom_key_values", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationCloudInitMetaData")
-    def guest_customization_cloud_init_meta_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guest_customization_cloud_init_meta_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         """
         return pulumi.get(self, "guest_customization_cloud_init_meta_data")
 
     @guest_customization_cloud_init_meta_data.setter
-    def guest_customization_cloud_init_meta_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guest_customization_cloud_init_meta_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guest_customization_cloud_init_meta_data", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationCloudInitUserData")
-    def guest_customization_cloud_init_user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guest_customization_cloud_init_user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         """
         return pulumi.get(self, "guest_customization_cloud_init_user_data")
 
     @guest_customization_cloud_init_user_data.setter
-    def guest_customization_cloud_init_user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guest_customization_cloud_init_user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guest_customization_cloud_init_user_data", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationIsOverridable")
-    def guest_customization_is_overridable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def guest_customization_is_overridable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Flag to allow override of customization by deployer.
         """
         return pulumi.get(self, "guest_customization_is_overridable")
 
     @guest_customization_is_overridable.setter
-    def guest_customization_is_overridable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def guest_customization_is_overridable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "guest_customization_is_overridable", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationSysprep")
-    def guest_customization_sysprep(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def guest_customization_sysprep(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
         """
         return pulumi.get(self, "guest_customization_sysprep")
 
     @guest_customization_sysprep.setter
-    def guest_customization_sysprep(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def guest_customization_sysprep(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "guest_customization_sysprep", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizationSysprepCustomKeyValues")
-    def guest_customization_sysprep_custom_key_values(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def guest_customization_sysprep_custom_key_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Generic key value pair used for custom attributes in sysprep.
         """
         return pulumi.get(self, "guest_customization_sysprep_custom_key_values")
 
     @guest_customization_sysprep_custom_key_values.setter
-    def guest_customization_sysprep_custom_key_values(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def guest_customization_sysprep_custom_key_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "guest_customization_sysprep_custom_key_values", value)
 
     @_builtins.property
     @pulumi.getter(name="guestOsId")
-    def guest_os_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guest_os_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         """
         return pulumi.get(self, "guest_os_id")
 
     @guest_os_id.setter
-    def guest_os_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guest_os_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guest_os_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hardwareClockTimezone")
-    def hardware_clock_timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hardware_clock_timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
         """
         return pulumi.get(self, "hardware_clock_timezone")
 
     @hardware_clock_timezone.setter
-    def hardware_clock_timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hardware_clock_timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hardware_clock_timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="hostReference")
-    def host_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def host_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - Reference to a host.
         """
         return pulumi.get(self, "host_reference")
 
     @host_reference.setter
-    def host_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def host_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "host_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorType")
-    def hypervisor_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The hypervisor type for the hypervisor the VM is hosted on.
         """
         return pulumi.get(self, "hypervisor_type")
 
     @hypervisor_type.setter
-    def hypervisor_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isVcpuHardPinned")
-    def is_vcpu_hard_pinned(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vcpu_hard_pinned(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Add true to enable CPU pinning.
         """
         return pulumi.get(self, "is_vcpu_hard_pinned")
 
     @is_vcpu_hard_pinned.setter
-    def is_vcpu_hard_pinned(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vcpu_hard_pinned(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vcpu_hard_pinned", value)
 
     @_builtins.property
     @pulumi.getter(name="machineType")
-    def machine_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def machine_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
         """
         return pulumi.get(self, "machine_type")
 
     @machine_type.setter
-    def machine_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def machine_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "machine_type", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeMib")
-    def memory_size_mib(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_size_mib(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         """
         return pulumi.get(self, "memory_size_mib")
 
     @memory_size_mib.setter
-    def memory_size_mib(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_size_mib(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_mib", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - The vm kind metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name for the vm.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ngtCredentials")
-    def ngt_credentials(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def ngt_credentials(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Ooptional) Credentials to login server.
         """
         return pulumi.get(self, "ngt_credentials")
 
     @ngt_credentials.setter
-    def ngt_credentials(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def ngt_credentials(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ngt_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="ngtEnabledCapabilityLists")
-    def ngt_enabled_capability_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ngt_enabled_capability_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Application names that are enabled.
         """
         return pulumi.get(self, "ngt_enabled_capability_lists")
 
     @ngt_enabled_capability_lists.setter
-    def ngt_enabled_capability_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ngt_enabled_capability_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ngt_enabled_capability_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="nicListStatuses")
-    def nic_list_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListStatusArgs']]]]:
+    def nic_list_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListStatusArgs']]]]:
         """
         - Status NICs attached to the VM.
         """
         return pulumi.get(self, "nic_list_statuses")
 
     @nic_list_statuses.setter
-    def nic_list_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListStatusArgs']]]]):
+    def nic_list_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListStatusArgs']]]]):
         pulumi.set(self, "nic_list_statuses", value)
 
     @_builtins.property
     @pulumi.getter(name="nicLists")
-    def nic_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]]:
+    def nic_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]]:
         """
         - (Optional) Spec NICs attached to the VM.
         """
         return pulumi.get(self, "nic_lists")
 
     @nic_lists.setter
-    def nic_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]]):
+    def nic_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineNicListArgs']]]]):
         pulumi.set(self, "nic_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="numSockets")
-    def num_sockets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_sockets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Number of vCPU sockets.
         """
         return pulumi.get(self, "num_sockets")
 
     @num_sockets.setter
-    def num_sockets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_sockets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_sockets", value)
 
     @_builtins.property
     @pulumi.getter(name="numVcpusPerSocket")
-    def num_vcpus_per_socket(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_vcpus_per_socket(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Number of vCPUs per socket.
         """
         return pulumi.get(self, "num_vcpus_per_socket")
 
     @num_vcpus_per_socket.setter
-    def num_vcpus_per_socket(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_vcpus_per_socket(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_vcpus_per_socket", value)
 
     @_builtins.property
     @pulumi.getter(name="numVnumaNodes")
-    def num_vnuma_nodes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_vnuma_nodes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
         """
         return pulumi.get(self, "num_vnuma_nodes")
 
     @num_vnuma_nodes.setter
-    def num_vnuma_nodes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_vnuma_nodes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_vnuma_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="nutanixGuestTools")
-    def nutanix_guest_tools(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def nutanix_guest_tools(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Information regarding Nutanix Guest Tools.
         """
         return pulumi.get(self, "nutanix_guest_tools")
 
     @nutanix_guest_tools.setter
-    def nutanix_guest_tools(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def nutanix_guest_tools(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nutanix_guest_tools", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def owner_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def owner_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="parentReference")
-    def parent_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def parent_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Reference to an entity that the VM cloned from.
         """
         return pulumi.get(self, "parent_reference")
 
     @parent_reference.setter
-    def parent_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def parent_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parent_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="powerState")
-    def power_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def power_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
         """
         return pulumi.get(self, "power_state")
 
     @power_state.setter
-    def power_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def power_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "power_state", value)
 
     @_builtins.property
     @pulumi.getter(name="powerStateMechanism")
-    def power_state_mechanism(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def power_state_mechanism(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \\"OFF\\" state. Power state mechanism (ACPI/GUEST/HARD).
         """
         return pulumi.get(self, "power_state_mechanism")
 
     @power_state_mechanism.setter
-    def power_state_mechanism(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def power_state_mechanism(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "power_state_mechanism", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def project_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def project_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="serialPortLists")
-    def serial_port_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]]:
+    def serial_port_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]]:
         """
         - (Optional) Serial Ports configured on the VM.
         """
         return pulumi.get(self, "serial_port_lists")
 
     @serial_port_lists.setter
-    def serial_port_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]]):
+    def serial_port_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]]):
         pulumi.set(self, "serial_port_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldFailOnScriptFailure")
-    def should_fail_on_script_failure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_fail_on_script_failure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
         """
         return pulumi.get(self, "should_fail_on_script_failure")
 
     @should_fail_on_script_failure.setter
-    def should_fail_on_script_failure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_fail_on_script_failure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_fail_on_script_failure", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The state of the vm.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="useHotAdd")
-    def use_hot_add(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_hot_add(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
         """
         return pulumi.get(self, "use_hot_add")
 
     @use_hot_add.setter
-    def use_hot_add(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_hot_add(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_hot_add", value)
 
     @_builtins.property
     @pulumi.getter(name="vgaConsoleEnabled")
-    def vga_console_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def vga_console_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Indicates whether VGA console should be enabled or not.
         """
         return pulumi.get(self, "vga_console_enabled")
 
     @vga_console_enabled.setter
-    def vga_console_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def vga_console_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "vga_console_enabled", value)
 
 
@@ -1457,53 +1457,54 @@ class VirtualMachine(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 boot_device_disk_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 boot_device_mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_device_order_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 boot_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineCategoryArgs', 'VirtualMachineCategoryArgsDict']]]]] = None,
-                 cloud_init_cdrom_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineDiskListArgs', 'VirtualMachineDiskListArgsDict']]]]] = None,
-                 enable_cpu_passthrough: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_script_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-                 gpu_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineGpuListArgs', 'VirtualMachineGpuListArgsDict']]]]] = None,
-                 guest_customization_cloud_init_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_customization_cloud_init_meta_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_customization_cloud_init_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_customization_is_overridable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 guest_customization_sysprep: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_customization_sysprep_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_os_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_vcpu_hard_pinned: Optional[pulumi.Input[_builtins.bool]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_mib: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ngt_credentials: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ngt_enabled_capability_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nic_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineNicListArgs', 'VirtualMachineNicListArgsDict']]]]] = None,
-                 num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_vcpus_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_vnuma_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 nutanix_guest_tools: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parent_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 power_state_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 serial_port_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]]] = None,
-                 should_fail_on_script_failure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_hot_add: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 boot_device_disk_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 boot_device_mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_device_order_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 boot_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineCategoryArgs', 'VirtualMachineCategoryArgsDict']]]]] = None,
+                 cloud_init_cdrom_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineDiskListArgs', 'VirtualMachineDiskListArgsDict']]]]] = None,
+                 enable_cpu_passthrough: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_script_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+                 gpu_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineGpuListArgs', 'VirtualMachineGpuListArgsDict']]]]] = None,
+                 guest_customization_cloud_init_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_customization_cloud_init_meta_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_is_overridable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 guest_customization_sysprep: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_customization_sysprep_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_os_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_vcpu_hard_pinned: pulumi.Input[Optional[_builtins.bool]] = None,
+                 machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_mib: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ngt_credentials: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ngt_enabled_capability_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nic_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineNicListArgs', 'VirtualMachineNicListArgsDict']]]]] = None,
+                 num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_vcpus_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_vnuma_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 nutanix_guest_tools: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parent_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 power_state_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 serial_port_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]]] = None,
+                 should_fail_on_script_failure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_hot_add: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Provides a Nutanix Virtual Machine resource to Create a virtual machine.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -1520,8 +1521,10 @@ class VirtualMachine(pulumi.CustomResource):
             num_sockets=1,
             memory_size_mib=2048)
         ```
+        <!--End PulumiCodeChooser -->
 
         ### With Storage Config
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -1544,6 +1547,7 @@ class VirtualMachine(pulumi.CustomResource):
                 },
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1559,7 +1563,7 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] boot_device_disk_address: - (Optional) Address of disk to boot from.
         :param pulumi.Input[_builtins.str] boot_device_mac_address: - (Optional) MAC address of nic to boot from.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] boot_device_order_lists: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-        :param pulumi.Input[_builtins.str] boot_type: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        :param pulumi.Input[_builtins.str] boot_type: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineCategoryArgs', 'VirtualMachineCategoryArgsDict']]]] categories: - (Optional) Categories for the vm.
         :param pulumi.Input[_builtins.str] cluster_uuid: - (Required) The UUID of the cluster.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for vm.
@@ -1568,10 +1572,10 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_script_exec: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineGpuListArgs', 'VirtualMachineGpuListArgsDict']]]] gpu_lists: - (Optional) GPUs attached to the VM.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_cloud_init_custom_key_values: - (Optional) Generic key value pair used for custom attributes in cloud init.
-        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_meta_data: The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_user_data: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_meta_data: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_user_data: - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         :param pulumi.Input[_builtins.bool] guest_customization_is_overridable: - (Optional) Flag to allow override of customization by deployer.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep_custom_key_values: - (Optional) Generic key value pair used for custom attributes in sysprep.
         :param pulumi.Input[_builtins.str] guest_os_id: - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         :param pulumi.Input[_builtins.str] hardware_clock_timezone: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -1593,7 +1597,7 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
         :param pulumi.Input[_builtins.bool] should_fail_on_script_failure: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-        :param pulumi.Input[_builtins.bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        :param pulumi.Input[_builtins.bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
         :param pulumi.Input[_builtins.bool] vga_console_enabled: - (Optional) Indicates whether VGA console should be enabled or not.
         """
         ...
@@ -1607,6 +1611,7 @@ class VirtualMachine(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -1623,8 +1628,10 @@ class VirtualMachine(pulumi.CustomResource):
             num_sockets=1,
             memory_size_mib=2048)
         ```
+        <!--End PulumiCodeChooser -->
 
         ### With Storage Config
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -1647,6 +1654,7 @@ class VirtualMachine(pulumi.CustomResource):
                 },
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1671,47 +1679,47 @@ class VirtualMachine(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 boot_device_disk_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 boot_device_mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_device_order_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 boot_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineCategoryArgs', 'VirtualMachineCategoryArgsDict']]]]] = None,
-                 cloud_init_cdrom_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineDiskListArgs', 'VirtualMachineDiskListArgsDict']]]]] = None,
-                 enable_cpu_passthrough: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_script_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-                 gpu_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineGpuListArgs', 'VirtualMachineGpuListArgsDict']]]]] = None,
-                 guest_customization_cloud_init_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_customization_cloud_init_meta_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_customization_cloud_init_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_customization_is_overridable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 guest_customization_sysprep: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_customization_sysprep_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guest_os_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_vcpu_hard_pinned: Optional[pulumi.Input[_builtins.bool]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_mib: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ngt_credentials: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ngt_enabled_capability_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nic_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineNicListArgs', 'VirtualMachineNicListArgsDict']]]]] = None,
-                 num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_vcpus_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_vnuma_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 nutanix_guest_tools: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parent_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 power_state_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 serial_port_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]]] = None,
-                 should_fail_on_script_failure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_hot_add: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 boot_device_disk_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 boot_device_mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_device_order_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 boot_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineCategoryArgs', 'VirtualMachineCategoryArgsDict']]]]] = None,
+                 cloud_init_cdrom_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineDiskListArgs', 'VirtualMachineDiskListArgsDict']]]]] = None,
+                 enable_cpu_passthrough: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_script_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+                 gpu_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineGpuListArgs', 'VirtualMachineGpuListArgsDict']]]]] = None,
+                 guest_customization_cloud_init_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_customization_cloud_init_meta_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_is_overridable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 guest_customization_sysprep: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_customization_sysprep_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guest_os_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_vcpu_hard_pinned: pulumi.Input[Optional[_builtins.bool]] = None,
+                 machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_mib: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ngt_credentials: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ngt_enabled_capability_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nic_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineNicListArgs', 'VirtualMachineNicListArgsDict']]]]] = None,
+                 num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_vcpus_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_vnuma_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 nutanix_guest_tools: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parent_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 power_state_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 serial_port_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]]] = None,
+                 should_fail_on_script_failure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_hot_add: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1781,54 +1789,54 @@ class VirtualMachine(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_version: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            boot_device_disk_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            boot_device_mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-            boot_device_order_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            boot_type: Optional[pulumi.Input[_builtins.str]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineCategoryArgs', 'VirtualMachineCategoryArgsDict']]]]] = None,
-            cloud_init_cdrom_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            disk_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineDiskListArgs', 'VirtualMachineDiskListArgsDict']]]]] = None,
-            enable_cpu_passthrough: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_script_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-            gpu_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineGpuListArgs', 'VirtualMachineGpuListArgsDict']]]]] = None,
-            guest_customization_cloud_init_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            guest_customization_cloud_init_meta_data: Optional[pulumi.Input[_builtins.str]] = None,
-            guest_customization_cloud_init_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-            guest_customization_is_overridable: Optional[pulumi.Input[_builtins.bool]] = None,
-            guest_customization_sysprep: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            guest_customization_sysprep_custom_key_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            guest_os_id: Optional[pulumi.Input[_builtins.str]] = None,
-            hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-            host_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-            is_vcpu_hard_pinned: Optional[pulumi.Input[_builtins.bool]] = None,
-            machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-            memory_size_mib: Optional[pulumi.Input[_builtins.int]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            ngt_credentials: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ngt_enabled_capability_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            nic_list_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineNicListStatusArgs', 'VirtualMachineNicListStatusArgsDict']]]]] = None,
-            nic_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineNicListArgs', 'VirtualMachineNicListArgsDict']]]]] = None,
-            num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-            num_vcpus_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-            num_vnuma_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-            nutanix_guest_tools: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            parent_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            power_state: Optional[pulumi.Input[_builtins.str]] = None,
-            power_state_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-            project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            serial_port_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]]] = None,
-            should_fail_on_script_failure: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            use_hot_add: Optional[pulumi.Input[_builtins.bool]] = None,
-            vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None) -> 'VirtualMachine':
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            boot_device_disk_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            boot_device_mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+            boot_device_order_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            boot_type: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineCategoryArgs', 'VirtualMachineCategoryArgsDict']]]]] = None,
+            cloud_init_cdrom_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disk_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineDiskListArgs', 'VirtualMachineDiskListArgsDict']]]]] = None,
+            enable_cpu_passthrough: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_script_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+            gpu_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineGpuListArgs', 'VirtualMachineGpuListArgsDict']]]]] = None,
+            guest_customization_cloud_init_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            guest_customization_cloud_init_meta_data: pulumi.Input[Optional[_builtins.str]] = None,
+            guest_customization_cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+            guest_customization_is_overridable: pulumi.Input[Optional[_builtins.bool]] = None,
+            guest_customization_sysprep: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            guest_customization_sysprep_custom_key_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            guest_os_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            host_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_vcpu_hard_pinned: pulumi.Input[Optional[_builtins.bool]] = None,
+            machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_size_mib: pulumi.Input[Optional[_builtins.int]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ngt_credentials: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ngt_enabled_capability_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            nic_list_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineNicListStatusArgs', 'VirtualMachineNicListStatusArgsDict']]]]] = None,
+            nic_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineNicListArgs', 'VirtualMachineNicListArgsDict']]]]] = None,
+            num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+            num_vcpus_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+            num_vnuma_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+            nutanix_guest_tools: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            parent_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            power_state: pulumi.Input[Optional[_builtins.str]] = None,
+            power_state_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+            project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            serial_port_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]]] = None,
+            should_fail_on_script_failure: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            use_hot_add: pulumi.Input[Optional[_builtins.bool]] = None,
+            vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> 'VirtualMachine':
         """
         Get an existing VirtualMachine resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1841,7 +1849,7 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] boot_device_disk_address: - (Optional) Address of disk to boot from.
         :param pulumi.Input[_builtins.str] boot_device_mac_address: - (Optional) MAC address of nic to boot from.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] boot_device_order_lists: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-        :param pulumi.Input[_builtins.str] boot_type: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        :param pulumi.Input[_builtins.str] boot_type: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineCategoryArgs', 'VirtualMachineCategoryArgsDict']]]] categories: - (Optional) Categories for the vm.
         :param pulumi.Input[_builtins.str] cluster_name: - The name of the cluster.
         :param pulumi.Input[_builtins.str] cluster_uuid: - (Required) The UUID of the cluster.
@@ -1851,10 +1859,10 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_script_exec: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineGpuListArgs', 'VirtualMachineGpuListArgsDict']]]] gpu_lists: - (Optional) GPUs attached to the VM.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_cloud_init_custom_key_values: - (Optional) Generic key value pair used for custom attributes in cloud init.
-        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_meta_data: The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_user_data: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_meta_data: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        :param pulumi.Input[_builtins.str] guest_customization_cloud_init_user_data: - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         :param pulumi.Input[_builtins.bool] guest_customization_is_overridable: - (Optional) Flag to allow override of customization by deployer.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] guest_customization_sysprep_custom_key_values: - (Optional) Generic key value pair used for custom attributes in sysprep.
         :param pulumi.Input[_builtins.str] guest_os_id: - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         :param pulumi.Input[_builtins.str] hardware_clock_timezone: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -1881,7 +1889,7 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
         :param pulumi.Input[_builtins.bool] should_fail_on_script_failure: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
         :param pulumi.Input[_builtins.str] state: - The state of the vm.
-        :param pulumi.Input[_builtins.bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        :param pulumi.Input[_builtins.bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
         :param pulumi.Input[_builtins.bool] vga_console_enabled: - (Optional) Indicates whether VGA console should be enabled or not.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -1982,7 +1990,7 @@ class VirtualMachine(pulumi.CustomResource):
     @pulumi.getter(name="bootType")
     def boot_type(self) -> pulumi.Output[_builtins.str]:
         """
-        - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         """
         return pulumi.get(self, "boot_type")
 
@@ -2067,7 +2075,7 @@ class VirtualMachine(pulumi.CustomResource):
     @pulumi.getter(name="guestCustomizationCloudInitMetaData")
     def guest_customization_cloud_init_meta_data(self) -> pulumi.Output[_builtins.str]:
         """
-        The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         """
         return pulumi.get(self, "guest_customization_cloud_init_meta_data")
 
@@ -2075,7 +2083,7 @@ class VirtualMachine(pulumi.CustomResource):
     @pulumi.getter(name="guestCustomizationCloudInitUserData")
     def guest_customization_cloud_init_user_data(self) -> pulumi.Output[_builtins.str]:
         """
-        - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         """
         return pulumi.get(self, "guest_customization_cloud_init_user_data")
 
@@ -2091,7 +2099,7 @@ class VirtualMachine(pulumi.CustomResource):
     @pulumi.getter(name="guestCustomizationSysprep")
     def guest_customization_sysprep(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
         """
         return pulumi.get(self, "guest_customization_sysprep")
 
@@ -2307,7 +2315,7 @@ class VirtualMachine(pulumi.CustomResource):
     @pulumi.getter(name="useHotAdd")
     def use_hot_add(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
         """
         return pulumi.get(self, "use_hot_add")
 

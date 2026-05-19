@@ -27,12 +27,12 @@ class KarbonClusterArgs:
                  storage_class_config: pulumi.Input['KarbonClusterStorageClassConfigArgs'],
                  version: pulumi.Input[_builtins.str],
                  worker_node_pool: pulumi.Input['KarbonClusterWorkerNodePoolArgs'],
-                 active_passive_config: Optional[pulumi.Input['KarbonClusterActivePassiveConfigArgs']] = None,
-                 external_lb_config: Optional[pulumi.Input['KarbonClusterExternalLbConfigArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_registries: Optional[pulumi.Input[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]] = None,
-                 single_master_config: Optional[pulumi.Input['KarbonClusterSingleMasterConfigArgs']] = None,
-                 wait_timeout_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+                 active_passive_config: pulumi.Input[Optional['KarbonClusterActivePassiveConfigArgs']] = None,
+                 external_lb_config: pulumi.Input[Optional['KarbonClusterExternalLbConfigArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_registries: pulumi.Input[Optional[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]] = None,
+                 single_master_config: pulumi.Input[Optional['KarbonClusterSingleMasterConfigArgs']] = None,
+                 wait_timeout_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a KarbonCluster resource.
 
@@ -141,96 +141,96 @@ class KarbonClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="activePassiveConfig")
-    def active_passive_config(self) -> Optional[pulumi.Input['KarbonClusterActivePassiveConfigArgs']]:
+    def active_passive_config(self) -> pulumi.Input[Optional['KarbonClusterActivePassiveConfigArgs']]:
         """
         - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "active_passive_config")
 
     @active_passive_config.setter
-    def active_passive_config(self, value: Optional[pulumi.Input['KarbonClusterActivePassiveConfigArgs']]):
+    def active_passive_config(self, value: pulumi.Input[Optional['KarbonClusterActivePassiveConfigArgs']]):
         pulumi.set(self, "active_passive_config", value)
 
     @_builtins.property
     @pulumi.getter(name="externalLbConfig")
-    def external_lb_config(self) -> Optional[pulumi.Input['KarbonClusterExternalLbConfigArgs']]:
+    def external_lb_config(self) -> pulumi.Input[Optional['KarbonClusterExternalLbConfigArgs']]:
         """
         - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "external_lb_config")
 
     @external_lb_config.setter
-    def external_lb_config(self, value: Optional[pulumi.Input['KarbonClusterExternalLbConfigArgs']]):
+    def external_lb_config(self, value: pulumi.Input[Optional['KarbonClusterExternalLbConfigArgs']]):
         pulumi.set(self, "external_lb_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateRegistries")
-    def private_registries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]]:
+    def private_registries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]]:
         """
         - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
         """
         return pulumi.get(self, "private_registries")
 
     @private_registries.setter
-    def private_registries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]]):
+    def private_registries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]]):
         pulumi.set(self, "private_registries", value)
 
     @_builtins.property
     @pulumi.getter(name="singleMasterConfig")
-    def single_master_config(self) -> Optional[pulumi.Input['KarbonClusterSingleMasterConfigArgs']]:
+    def single_master_config(self) -> pulumi.Input[Optional['KarbonClusterSingleMasterConfigArgs']]:
         """
         - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "single_master_config")
 
     @single_master_config.setter
-    def single_master_config(self, value: Optional[pulumi.Input['KarbonClusterSingleMasterConfigArgs']]):
+    def single_master_config(self, value: pulumi.Input[Optional['KarbonClusterSingleMasterConfigArgs']]):
         pulumi.set(self, "single_master_config", value)
 
     @_builtins.property
     @pulumi.getter(name="waitTimeoutMinutes")
     @_utilities.deprecated("""use timeouts instead""")
-    def wait_timeout_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def wait_timeout_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
         return pulumi.get(self, "wait_timeout_minutes")
 
     @wait_timeout_minutes.setter
-    def wait_timeout_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def wait_timeout_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "wait_timeout_minutes", value)
 
 
 @pulumi.input_type
 class _KarbonClusterState:
     def __init__(__self__, *,
-                 active_passive_config: Optional[pulumi.Input['KarbonClusterActivePassiveConfigArgs']] = None,
-                 cni_config: Optional[pulumi.Input['KarbonClusterCniConfigArgs']] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 etcd_node_pool: Optional[pulumi.Input['KarbonClusterEtcdNodePoolArgs']] = None,
-                 external_lb_config: Optional[pulumi.Input['KarbonClusterExternalLbConfigArgs']] = None,
-                 kubeapi_server_ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 master_node_pool: Optional[pulumi.Input['KarbonClusterMasterNodePoolArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_registries: Optional[pulumi.Input[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]] = None,
-                 single_master_config: Optional[pulumi.Input['KarbonClusterSingleMasterConfigArgs']] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_class_config: Optional[pulumi.Input['KarbonClusterStorageClassConfigArgs']] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_timeout_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 worker_node_pool: Optional[pulumi.Input['KarbonClusterWorkerNodePoolArgs']] = None):
+                 active_passive_config: pulumi.Input[Optional['KarbonClusterActivePassiveConfigArgs']] = None,
+                 cni_config: pulumi.Input[Optional['KarbonClusterCniConfigArgs']] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 etcd_node_pool: pulumi.Input[Optional['KarbonClusterEtcdNodePoolArgs']] = None,
+                 external_lb_config: pulumi.Input[Optional['KarbonClusterExternalLbConfigArgs']] = None,
+                 kubeapi_server_ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_node_pool: pulumi.Input[Optional['KarbonClusterMasterNodePoolArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_registries: pulumi.Input[Optional[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]] = None,
+                 single_master_config: pulumi.Input[Optional['KarbonClusterSingleMasterConfigArgs']] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_class_config: pulumi.Input[Optional['KarbonClusterStorageClassConfigArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_timeout_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 worker_node_pool: pulumi.Input[Optional['KarbonClusterWorkerNodePoolArgs']] = None):
         """
         Input properties used for looking up and filtering KarbonCluster resources.
 
@@ -282,171 +282,171 @@ class _KarbonClusterState:
 
     @_builtins.property
     @pulumi.getter(name="activePassiveConfig")
-    def active_passive_config(self) -> Optional[pulumi.Input['KarbonClusterActivePassiveConfigArgs']]:
+    def active_passive_config(self) -> pulumi.Input[Optional['KarbonClusterActivePassiveConfigArgs']]:
         """
         - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "active_passive_config")
 
     @active_passive_config.setter
-    def active_passive_config(self, value: Optional[pulumi.Input['KarbonClusterActivePassiveConfigArgs']]):
+    def active_passive_config(self, value: pulumi.Input[Optional['KarbonClusterActivePassiveConfigArgs']]):
         pulumi.set(self, "active_passive_config", value)
 
     @_builtins.property
     @pulumi.getter(name="cniConfig")
-    def cni_config(self) -> Optional[pulumi.Input['KarbonClusterCniConfigArgs']]:
+    def cni_config(self) -> pulumi.Input[Optional['KarbonClusterCniConfigArgs']]:
         """
         - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "cni_config")
 
     @cni_config.setter
-    def cni_config(self, value: Optional[pulumi.Input['KarbonClusterCniConfigArgs']]):
+    def cni_config(self, value: pulumi.Input[Optional['KarbonClusterCniConfigArgs']]):
         pulumi.set(self, "cni_config", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="etcdNodePool")
-    def etcd_node_pool(self) -> Optional[pulumi.Input['KarbonClusterEtcdNodePoolArgs']]:
+    def etcd_node_pool(self) -> pulumi.Input[Optional['KarbonClusterEtcdNodePoolArgs']]:
         """
         - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
         """
         return pulumi.get(self, "etcd_node_pool")
 
     @etcd_node_pool.setter
-    def etcd_node_pool(self, value: Optional[pulumi.Input['KarbonClusterEtcdNodePoolArgs']]):
+    def etcd_node_pool(self, value: pulumi.Input[Optional['KarbonClusterEtcdNodePoolArgs']]):
         pulumi.set(self, "etcd_node_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="externalLbConfig")
-    def external_lb_config(self) -> Optional[pulumi.Input['KarbonClusterExternalLbConfigArgs']]:
+    def external_lb_config(self) -> pulumi.Input[Optional['KarbonClusterExternalLbConfigArgs']]:
         """
         - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "external_lb_config")
 
     @external_lb_config.setter
-    def external_lb_config(self, value: Optional[pulumi.Input['KarbonClusterExternalLbConfigArgs']]):
+    def external_lb_config(self, value: pulumi.Input[Optional['KarbonClusterExternalLbConfigArgs']]):
         pulumi.set(self, "external_lb_config", value)
 
     @_builtins.property
     @pulumi.getter(name="kubeapiServerIpv4Address")
-    def kubeapi_server_ipv4_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kubeapi_server_ipv4_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "kubeapi_server_ipv4_address")
 
     @kubeapi_server_ipv4_address.setter
-    def kubeapi_server_ipv4_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kubeapi_server_ipv4_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kubeapi_server_ipv4_address", value)
 
     @_builtins.property
     @pulumi.getter(name="masterNodePool")
-    def master_node_pool(self) -> Optional[pulumi.Input['KarbonClusterMasterNodePoolArgs']]:
+    def master_node_pool(self) -> pulumi.Input[Optional['KarbonClusterMasterNodePoolArgs']]:
         """
         - (Required) Configuration of the master node pools.
         """
         return pulumi.get(self, "master_node_pool")
 
     @master_node_pool.setter
-    def master_node_pool(self, value: Optional[pulumi.Input['KarbonClusterMasterNodePoolArgs']]):
+    def master_node_pool(self, value: pulumi.Input[Optional['KarbonClusterMasterNodePoolArgs']]):
         pulumi.set(self, "master_node_pool", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateRegistries")
-    def private_registries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]]:
+    def private_registries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]]:
         """
         - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
         """
         return pulumi.get(self, "private_registries")
 
     @private_registries.setter
-    def private_registries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]]):
+    def private_registries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KarbonClusterPrivateRegistryArgs']]]]):
         pulumi.set(self, "private_registries", value)
 
     @_builtins.property
     @pulumi.getter(name="singleMasterConfig")
-    def single_master_config(self) -> Optional[pulumi.Input['KarbonClusterSingleMasterConfigArgs']]:
+    def single_master_config(self) -> pulumi.Input[Optional['KarbonClusterSingleMasterConfigArgs']]:
         """
         - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "single_master_config")
 
     @single_master_config.setter
-    def single_master_config(self, value: Optional[pulumi.Input['KarbonClusterSingleMasterConfigArgs']]):
+    def single_master_config(self, value: pulumi.Input[Optional['KarbonClusterSingleMasterConfigArgs']]):
         pulumi.set(self, "single_master_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="storageClassConfig")
-    def storage_class_config(self) -> Optional[pulumi.Input['KarbonClusterStorageClassConfigArgs']]:
+    def storage_class_config(self) -> pulumi.Input[Optional['KarbonClusterStorageClassConfigArgs']]:
         """
         - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "storage_class_config")
 
     @storage_class_config.setter
-    def storage_class_config(self, value: Optional[pulumi.Input['KarbonClusterStorageClassConfigArgs']]):
+    def storage_class_config(self, value: pulumi.Input[Optional['KarbonClusterStorageClassConfigArgs']]):
         pulumi.set(self, "storage_class_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter(name="waitTimeoutMinutes")
     @_utilities.deprecated("""use timeouts instead""")
-    def wait_timeout_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def wait_timeout_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
         return pulumi.get(self, "wait_timeout_minutes")
 
     @wait_timeout_minutes.setter
-    def wait_timeout_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def wait_timeout_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "wait_timeout_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="workerNodePool")
-    def worker_node_pool(self) -> Optional[pulumi.Input['KarbonClusterWorkerNodePoolArgs']]:
+    def worker_node_pool(self) -> pulumi.Input[Optional['KarbonClusterWorkerNodePoolArgs']]:
         return pulumi.get(self, "worker_node_pool")
 
     @worker_node_pool.setter
-    def worker_node_pool(self, value: Optional[pulumi.Input['KarbonClusterWorkerNodePoolArgs']]):
+    def worker_node_pool(self, value: pulumi.Input[Optional['KarbonClusterWorkerNodePoolArgs']]):
         pulumi.set(self, "worker_node_pool", value)
 
 
@@ -456,18 +456,18 @@ class KarbonCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_passive_config: Optional[pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
-                 cni_config: Optional[pulumi.Input[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
-                 etcd_node_pool: Optional[pulumi.Input[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
-                 external_lb_config: Optional[pulumi.Input[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
-                 master_node_pool: Optional[pulumi.Input[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
-                 single_master_config: Optional[pulumi.Input[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
-                 storage_class_config: Optional[pulumi.Input[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_timeout_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 worker_node_pool: Optional[pulumi.Input[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None,
+                 active_passive_config: pulumi.Input[Optional[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
+                 cni_config: pulumi.Input[Optional[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
+                 etcd_node_pool: pulumi.Input[Optional[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
+                 external_lb_config: pulumi.Input[Optional[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
+                 master_node_pool: pulumi.Input[Optional[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_registries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
+                 single_master_config: pulumi.Input[Optional[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
+                 storage_class_config: pulumi.Input[Optional[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_timeout_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 worker_node_pool: pulumi.Input[Optional[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None,
                  __props__=None):
         """
         Provides a Nutanix Karbon Cluster resource to Create a k8s cluster.
@@ -478,6 +478,7 @@ class KarbonCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -526,8 +527,10 @@ class KarbonCluster(pulumi.CustomResource):
                 },
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ### resource to create karbon cluster with timeouts
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -576,6 +579,7 @@ class KarbonCluster(pulumi.CustomResource):
                 },
             })
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -607,6 +611,7 @@ class KarbonCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -655,8 +660,10 @@ class KarbonCluster(pulumi.CustomResource):
                 },
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ### resource to create karbon cluster with timeouts
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -705,6 +712,7 @@ class KarbonCluster(pulumi.CustomResource):
                 },
             })
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -722,18 +730,18 @@ class KarbonCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_passive_config: Optional[pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
-                 cni_config: Optional[pulumi.Input[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
-                 etcd_node_pool: Optional[pulumi.Input[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
-                 external_lb_config: Optional[pulumi.Input[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
-                 master_node_pool: Optional[pulumi.Input[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
-                 single_master_config: Optional[pulumi.Input[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
-                 storage_class_config: Optional[pulumi.Input[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_timeout_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 worker_node_pool: Optional[pulumi.Input[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None,
+                 active_passive_config: pulumi.Input[Optional[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
+                 cni_config: pulumi.Input[Optional[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
+                 etcd_node_pool: pulumi.Input[Optional[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
+                 external_lb_config: pulumi.Input[Optional[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
+                 master_node_pool: pulumi.Input[Optional[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_registries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
+                 single_master_config: pulumi.Input[Optional[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
+                 storage_class_config: pulumi.Input[Optional[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_timeout_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 worker_node_pool: pulumi.Input[Optional[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -780,21 +788,21 @@ class KarbonCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active_passive_config: Optional[pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
-            cni_config: Optional[pulumi.Input[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
-            deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            etcd_node_pool: Optional[pulumi.Input[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
-            external_lb_config: Optional[pulumi.Input[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
-            kubeapi_server_ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-            master_node_pool: Optional[pulumi.Input[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
-            single_master_config: Optional[pulumi.Input[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_class_config: Optional[pulumi.Input[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None,
-            wait_timeout_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-            worker_node_pool: Optional[pulumi.Input[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None) -> 'KarbonCluster':
+            active_passive_config: pulumi.Input[Optional[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
+            cni_config: pulumi.Input[Optional[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            etcd_node_pool: pulumi.Input[Optional[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
+            external_lb_config: pulumi.Input[Optional[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
+            kubeapi_server_ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+            master_node_pool: pulumi.Input[Optional[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_registries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
+            single_master_config: pulumi.Input[Optional[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_class_config: pulumi.Input[Optional[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_timeout_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            worker_node_pool: pulumi.Input[Optional[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None) -> 'KarbonCluster':
         """
         Get an existing KarbonCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

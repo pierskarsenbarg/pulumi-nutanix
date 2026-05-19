@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -17,6 +18,7 @@ import * as utilities from "./utilities";
  *     id: "{{ tag id }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbTag(args?: GetNdbTagArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbTagResult> {
     args = args || {};
@@ -88,6 +90,7 @@ export interface GetNdbTagResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -96,6 +99,7 @@ export interface GetNdbTagResult {
  *     id: "{{ tag id }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbTagOutput(args?: GetNdbTagOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbTagResult> {
     args = args || {};
@@ -113,9 +117,9 @@ export interface GetNdbTagOutputArgs {
     /**
      * tag id. Conflicts with  name.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * tag name. Conflicts with id.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

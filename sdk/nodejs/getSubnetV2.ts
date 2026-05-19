@@ -159,5 +159,5 @@ export interface GetSubnetV2OutputArgs {
     /**
      * List of IPs that are excluded while allocating IP addresses to VM ports.
      */
-    reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.GetSubnetV2ReservedIpAddressArgs>[]>;
+    reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.GetSubnetV2ReservedIpAddressArgs>[] | undefined>;
 }

@@ -177,21 +177,25 @@ def get_protected_resource_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example 1: Get Protected Virtual Machine
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     protected_vm = nutanix.get_protected_resource_v2(ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Example 2: Get Protected Volume Group
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     protected_vg = nutanix.get_protected_resource_v2(ext_id="246c651a-1b16-4983-b5ff-204840f85e07")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
@@ -213,28 +217,32 @@ def get_protected_resource_v2(ext_id: Optional[_builtins.str] = None,
         site_protection_infos=pulumi.get(__ret__, 'site_protection_infos'),
         source_site_references=pulumi.get(__ret__, 'source_site_references'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_protected_resource_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_protected_resource_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectedResourceV2Result]:
     """
     Get the details of the specified protected resource such as the restorable time ranges available on the local Prism Central and the state of replication to the targets specified in the applied protection policies. This applies only if the entity is protected in a minutely or synchronous schedule. Other protection schedules are not served by this endpoint yet, and are considered not protected.
 
     ## Example 1: Get Protected Virtual Machine
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     protected_vm = nutanix.get_protected_resource_v2(ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Example 2: Get Protected Volume Group
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     protected_vg = nutanix.get_protected_resource_v2(ext_id="246c651a-1b16-4983-b5ff-204840f85e07")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.

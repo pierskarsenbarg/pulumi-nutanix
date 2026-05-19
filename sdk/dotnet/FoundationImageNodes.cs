@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var batch1 = new Nutanix.Index.FoundationImageNodes("batch1", new()
+    ///     var batch1 = new Nutanix.FoundationImageNodes("batch1", new()
     ///     {
     ///         NosPackage = "nos_package.tar",
     ///         CvmNetmask = "10.xx.xx.xx",
@@ -152,10 +153,11 @@ namespace PiersKarsenbarg.Nutanix
     ///     };
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Defaults
     /// 
-    /// The attributes like `IpmiNetmask`, `IpmiGateway`, `IpmiUser` &amp; `IpmiPassword` can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+    /// The attributes like &lt;span pulumi-lang-nodejs="`ipmiNetmask`" pulumi-lang-dotnet="`IpmiNetmask`" pulumi-lang-go="`ipmiNetmask`" pulumi-lang-python="`ipmi_netmask`" pulumi-lang-yaml="`ipmiNetmask`" pulumi-lang-java="`ipmiNetmask`"&gt;`ipmiNetmask`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ipmiGateway`" pulumi-lang-dotnet="`IpmiGateway`" pulumi-lang-go="`ipmiGateway`" pulumi-lang-python="`ipmi_gateway`" pulumi-lang-yaml="`ipmiGateway`" pulumi-lang-java="`ipmiGateway`"&gt;`ipmiGateway`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ipmiUser`" pulumi-lang-dotnet="`IpmiUser`" pulumi-lang-go="`ipmiUser`" pulumi-lang-python="`ipmi_user`" pulumi-lang-yaml="`ipmiUser`" pulumi-lang-java="`ipmiUser`"&gt;`ipmiUser`&lt;/span&gt; &amp; &lt;span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`"&gt;`ipmiPassword`&lt;/span&gt; can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
     /// 
     /// ## Error
     /// 
@@ -164,7 +166,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ## lifecycle
     /// 
     /// * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
-    /// * `Delete` : - Delete will be a soft delete.
+    /// * &lt;span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`"&gt;`delete`&lt;/span&gt; : - Delete will be a soft delete.
     /// 
     /// See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
     /// </summary>
@@ -179,8 +181,14 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - list containing cluster name and cluster urls for created clusters in current session
-        /// * `cluster_urls.#.cluster_name` :- ClusterName
-        /// * `cluster_urls.#.cluster_url` :- url to access the cluster login
+        /// * `cluster_urls.#.cluster_name` :-&lt;span pulumi-lang-nodejs=" clusterName
+        /// " pulumi-lang-dotnet=" ClusterName
+        /// " pulumi-lang-go=" clusterName
+        /// " pulumi-lang-python=" cluster_name
+        /// " pulumi-lang-yaml=" clusterName
+        /// " pulumi-lang-java=" clusterName
+        /// "&gt; clusterName
+        /// &lt;/span&gt;* `cluster_urls.#.cluster_url` :- url to access the cluster login
         /// </summary>
         [Output("clusterUrls")]
         public Output<ImmutableArray<Outputs.FoundationImageNodesClusterUrl>> ClusterUrls { get; private set; } = null!;
@@ -309,7 +317,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> NosPackage { get; private set; } = null!;
 
         /// <summary>
-        /// - SessionId of the imaging session
+        /// -&lt;span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "&gt; sessionId &lt;/span&gt;of the imaging session
         /// </summary>
         [Output("sessionId")]
         public Output<string> SessionId { get; private set; } = null!;
@@ -321,7 +329,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool?> SkipHypervisor { get; private set; } = null!;
 
         /// <summary>
-        /// - Arguments to be passed to SvmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to&lt;span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "&gt; svmRescue &lt;/span&gt;for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         [Output("svmRescueArgs")]
         public Output<ImmutableArray<string>> SvmRescueArgs { get; private set; } = null!;
@@ -596,7 +604,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _svmRescueArgs;
 
         /// <summary>
-        /// - Arguments to be passed to SvmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to&lt;span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "&gt; svmRescue &lt;/span&gt;for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         public InputList<string> SvmRescueArgs
         {
@@ -701,8 +709,14 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - list containing cluster name and cluster urls for created clusters in current session
-        /// * `cluster_urls.#.cluster_name` :- ClusterName
-        /// * `cluster_urls.#.cluster_url` :- url to access the cluster login
+        /// * `cluster_urls.#.cluster_name` :-&lt;span pulumi-lang-nodejs=" clusterName
+        /// " pulumi-lang-dotnet=" ClusterName
+        /// " pulumi-lang-go=" clusterName
+        /// " pulumi-lang-python=" cluster_name
+        /// " pulumi-lang-yaml=" clusterName
+        /// " pulumi-lang-java=" clusterName
+        /// "&gt; clusterName
+        /// &lt;/span&gt;* `cluster_urls.#.cluster_url` :- url to access the cluster login
         /// </summary>
         public InputList<Inputs.FoundationImageNodesClusterUrlGetArgs> ClusterUrls
         {
@@ -840,7 +854,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? NosPackage { get; set; }
 
         /// <summary>
-        /// - SessionId of the imaging session
+        /// -&lt;span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "&gt; sessionId &lt;/span&gt;of the imaging session
         /// </summary>
         [Input("sessionId")]
         public Input<string>? SessionId { get; set; }
@@ -855,7 +869,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _svmRescueArgs;
 
         /// <summary>
-        /// - Arguments to be passed to SvmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to&lt;span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "&gt; svmRescue &lt;/span&gt;for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         public InputList<string> SvmRescueArgs
         {

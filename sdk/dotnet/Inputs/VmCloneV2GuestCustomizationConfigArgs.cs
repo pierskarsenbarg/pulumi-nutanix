@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitArgs>? _cloudInits;
 
         /// <summary>
-        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or CloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
         /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitArgs> CloudInits
         {
@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepArgs>? _syspreps;
 
         /// <summary>
-        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or CloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
         /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigSysprepArgs> Syspreps
         {

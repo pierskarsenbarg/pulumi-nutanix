@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example:
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,13 +26,14 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     // create a category and a protection policy on the local site
     ///     // promote the protected virtual machine on the remote site
-    ///     var promote_example = new Nutanix.Index.PromoteProtectedResourceV2("promote-example", new()
+    ///     var promote_example = new Nutanix.PromoteProtectedResourceV2("promote-example", new()
     ///     {
     ///         ExtId = "d22529bb-f02d-4710-894b-d1de772d7832",
     ///     });
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/promoteProtectedResourceV2:PromoteProtectedResourceV2")]
     public partial class PromoteProtectedResourceV2 : global::Pulumi.CustomResource

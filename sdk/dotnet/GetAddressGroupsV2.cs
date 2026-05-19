@@ -17,6 +17,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all address groups
+        /// const list_addr_groups = nutanix.getAddressGroupsV2({});
+        /// // filtered the address groups
+        /// const list_addr_group_filtered = nutanix.getAddressGroupsV2({
+        ///     filter: "name eq 'td-addr-group'",
+        /// });
+        /// // filtered and limit the number of address groups
+        /// const list_addr_groups_filter_limit = nutanix.getAddressGroupsV2({
+        ///     filter: "name eq 'td-addr-group'",
+        ///     limit: 1,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all address groups
+        /// list_addr_groups = nutanix.get_address_groups_v2()
+        /// # filtered the address groups
+        /// list_addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'")
+        /// # filtered and limit the number of address groups
+        /// list_addr_groups_filter_limit = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'",
+        ///     limit=1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,16 +55,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all address groups
-        ///     var list_addr_groups = Nutanix.Index.GetAddressGroupsV2.Invoke();
+        ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
         /// 
         ///     // filtered the address groups
-        ///     var list_addr_group_filtered = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
         ///     // filtered and limit the number of address groups
-        ///     var list_addr_groups_filter_limit = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///         Limit = 1,
@@ -43,6 +72,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all address groups
+        /// 		_, err := nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered the address groups
+        /// 		_, err = nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'td-addr-group'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered and limit the number of address groups
+        /// 		_, err = nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'td-addr-group'"),
+        /// 			Limit:  pulumi.IntRef(1),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all address groups
+        ///         final var list-addr-groups = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // filtered the address groups
+        ///         final var list-addr-group-filtered = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .filter("name eq 'td-addr-group'")
+        ///             .build());
+        /// 
+        ///         // filtered and limit the number of address groups
+        ///         final var list-addr-groups-filter-limit = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .filter("name eq 'td-addr-group'")
+        ///             .limit(1)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # list all address groups
+        ///   list-addr-groups:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments: {}
+        ///   # filtered the address groups
+        ///   list-addr-group-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'td-addr-group'
+        ///   # filtered and limit the number of address groups
+        ///   list-addr-groups-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'td-addr-group'
+        ///         limit: 1
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAddressGroupsV2Result> InvokeAsync(GetAddressGroupsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAddressGroupsV2Result>("nutanix:index/getAddressGroupsV2:getAddressGroupsV2", args ?? new GetAddressGroupsV2Args(), options.WithDefaults());
@@ -52,6 +176,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all address groups
+        /// const list_addr_groups = nutanix.getAddressGroupsV2({});
+        /// // filtered the address groups
+        /// const list_addr_group_filtered = nutanix.getAddressGroupsV2({
+        ///     filter: "name eq 'td-addr-group'",
+        /// });
+        /// // filtered and limit the number of address groups
+        /// const list_addr_groups_filter_limit = nutanix.getAddressGroupsV2({
+        ///     filter: "name eq 'td-addr-group'",
+        ///     limit: 1,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all address groups
+        /// list_addr_groups = nutanix.get_address_groups_v2()
+        /// # filtered the address groups
+        /// list_addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'")
+        /// # filtered and limit the number of address groups
+        /// list_addr_groups_filter_limit = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'",
+        ///     limit=1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -61,16 +214,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all address groups
-        ///     var list_addr_groups = Nutanix.Index.GetAddressGroupsV2.Invoke();
+        ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
         /// 
         ///     // filtered the address groups
-        ///     var list_addr_group_filtered = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
         ///     // filtered and limit the number of address groups
-        ///     var list_addr_groups_filter_limit = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///         Limit = 1,
@@ -78,6 +231,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all address groups
+        /// 		_, err := nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered the address groups
+        /// 		_, err = nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'td-addr-group'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered and limit the number of address groups
+        /// 		_, err = nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'td-addr-group'"),
+        /// 			Limit:  pulumi.IntRef(1),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all address groups
+        ///         final var list-addr-groups = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // filtered the address groups
+        ///         final var list-addr-group-filtered = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .filter("name eq 'td-addr-group'")
+        ///             .build());
+        /// 
+        ///         // filtered and limit the number of address groups
+        ///         final var list-addr-groups-filter-limit = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .filter("name eq 'td-addr-group'")
+        ///             .limit(1)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # list all address groups
+        ///   list-addr-groups:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments: {}
+        ///   # filtered the address groups
+        ///   list-addr-group-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'td-addr-group'
+        ///   # filtered and limit the number of address groups
+        ///   list-addr-groups-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'td-addr-group'
+        ///         limit: 1
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAddressGroupsV2Result> Invoke(GetAddressGroupsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupsV2Result>("nutanix:index/getAddressGroupsV2:getAddressGroupsV2", args ?? new GetAddressGroupsV2InvokeArgs(), options.WithDefaults());
@@ -87,6 +335,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all address groups
+        /// const list_addr_groups = nutanix.getAddressGroupsV2({});
+        /// // filtered the address groups
+        /// const list_addr_group_filtered = nutanix.getAddressGroupsV2({
+        ///     filter: "name eq 'td-addr-group'",
+        /// });
+        /// // filtered and limit the number of address groups
+        /// const list_addr_groups_filter_limit = nutanix.getAddressGroupsV2({
+        ///     filter: "name eq 'td-addr-group'",
+        ///     limit: 1,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all address groups
+        /// list_addr_groups = nutanix.get_address_groups_v2()
+        /// # filtered the address groups
+        /// list_addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'")
+        /// # filtered and limit the number of address groups
+        /// list_addr_groups_filter_limit = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'",
+        ///     limit=1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -96,16 +373,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all address groups
-        ///     var list_addr_groups = Nutanix.Index.GetAddressGroupsV2.Invoke();
+        ///     var list_addr_groups = Nutanix.GetAddressGroupsV2.Invoke();
         /// 
         ///     // filtered the address groups
-        ///     var list_addr_group_filtered = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_group_filtered = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///     });
         /// 
         ///     // filtered and limit the number of address groups
-        ///     var list_addr_groups_filter_limit = Nutanix.Index.GetAddressGroupsV2.Invoke(new()
+        ///     var list_addr_groups_filter_limit = Nutanix.GetAddressGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'td-addr-group'",
         ///         Limit = 1,
@@ -113,6 +390,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all address groups
+        /// 		_, err := nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered the address groups
+        /// 		_, err = nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'td-addr-group'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// filtered and limit the number of address groups
+        /// 		_, err = nutanix.GetAddressGroupsV2(ctx, &amp;nutanix.LookupAddressGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'td-addr-group'"),
+        /// 			Limit:  pulumi.IntRef(1),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all address groups
+        ///         final var list-addr-groups = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // filtered the address groups
+        ///         final var list-addr-group-filtered = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .filter("name eq 'td-addr-group'")
+        ///             .build());
+        /// 
+        ///         // filtered and limit the number of address groups
+        ///         final var list-addr-groups-filter-limit = NutanixFunctions.getAddressGroupsV2(GetAddressGroupsV2Args.builder()
+        ///             .filter("name eq 'td-addr-group'")
+        ///             .limit(1)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # list all address groups
+        ///   list-addr-groups:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments: {}
+        ///   # filtered the address groups
+        ///   list-addr-group-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'td-addr-group'
+        ///   # filtered and limit the number of address groups
+        ///   list-addr-groups-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'td-addr-group'
+        ///         limit: 1
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAddressGroupsV2Result> Invoke(GetAddressGroupsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupsV2Result>("nutanix:index/getAddressGroupsV2:getAddressGroupsV2", args ?? new GetAddressGroupsV2InvokeArgs(), options.WithDefaults());

@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const route_by_id = nutanix.getRouteV2({
+        ///     routeTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        ///     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// route_by_id = nutanix.get_route_v2(route_table_ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        ///     ext_id="7f66e20f-67f4-473f-96bb-c4fcfd487f16")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +42,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var route_by_id = Nutanix.Index.GetRouteV2.Invoke(new()
+        ///     var route_by_id = Nutanix.GetRouteV2.Invoke(new()
         ///     {
         ///         RouteTableExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///         ExtId = "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
@@ -33,6 +50,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteV2(ctx, &amp;nutanix.GetRouteV2Args{
+        /// 			RouteTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// 			ExtId:           "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var route-by-id = NutanixFunctions.getRouteV2(GetRouteV2Args.builder()
+        ///             .routeTableExtId("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        ///             .extId("7f66e20f-67f4-473f-96bb-c4fcfd487f16")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   route-by-id:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteV2
+        ///       arguments:
+        ///         routeTableExtId: a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b
+        ///         extId: 7f66e20f-67f4-473f-96bb-c4fcfd487f16
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRouteV2Result> InvokeAsync(GetRouteV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRouteV2Result>("nutanix:index/getRouteV2:getRouteV2", args ?? new GetRouteV2Args(), options.WithDefaults());
@@ -42,6 +119,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const route_by_id = nutanix.getRouteV2({
+        ///     routeTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        ///     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// route_by_id = nutanix.get_route_v2(route_table_ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        ///     ext_id="7f66e20f-67f4-473f-96bb-c4fcfd487f16")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -50,7 +144,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var route_by_id = Nutanix.Index.GetRouteV2.Invoke(new()
+        ///     var route_by_id = Nutanix.GetRouteV2.Invoke(new()
         ///     {
         ///         RouteTableExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///         ExtId = "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
@@ -58,6 +152,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteV2(ctx, &amp;nutanix.GetRouteV2Args{
+        /// 			RouteTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// 			ExtId:           "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var route-by-id = NutanixFunctions.getRouteV2(GetRouteV2Args.builder()
+        ///             .routeTableExtId("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        ///             .extId("7f66e20f-67f4-473f-96bb-c4fcfd487f16")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   route-by-id:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteV2
+        ///       arguments:
+        ///         routeTableExtId: a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b
+        ///         extId: 7f66e20f-67f4-473f-96bb-c4fcfd487f16
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRouteV2Result> Invoke(GetRouteV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRouteV2Result>("nutanix:index/getRouteV2:getRouteV2", args ?? new GetRouteV2InvokeArgs(), options.WithDefaults());
@@ -67,6 +221,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const route_by_id = nutanix.getRouteV2({
+        ///     routeTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        ///     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// route_by_id = nutanix.get_route_v2(route_table_ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        ///     ext_id="7f66e20f-67f4-473f-96bb-c4fcfd487f16")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,7 +246,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var route_by_id = Nutanix.Index.GetRouteV2.Invoke(new()
+        ///     var route_by_id = Nutanix.GetRouteV2.Invoke(new()
         ///     {
         ///         RouteTableExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///         ExtId = "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
@@ -83,6 +254,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteV2(ctx, &amp;nutanix.GetRouteV2Args{
+        /// 			RouteTableExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// 			ExtId:           "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var route-by-id = NutanixFunctions.getRouteV2(GetRouteV2Args.builder()
+        ///             .routeTableExtId("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        ///             .extId("7f66e20f-67f4-473f-96bb-c4fcfd487f16")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   route-by-id:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteV2
+        ///       arguments:
+        ///         routeTableExtId: a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b
+        ///         extId: 7f66e20f-67f4-473f-96bb-c4fcfd487f16
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRouteV2Result> Invoke(GetRouteV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRouteV2Result>("nutanix:index/getRouteV2:getRouteV2", args ?? new GetRouteV2InvokeArgs(), options.WithDefaults());

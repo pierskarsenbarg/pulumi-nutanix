@@ -114,44 +114,44 @@ export class TemplateV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering TemplateV2 resources.
  */
 export interface TemplateV2State {
-    createTime?: pulumi.Input<string>;
-    createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedBy>[]>;
-    extId?: pulumi.Input<string>;
+    createTime?: pulumi.Input<string | undefined>;
+    createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedBy>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Status of a guest update.
      */
-    guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[]>;
-    links?: pulumi.Input<pulumi.Input<inputs.TemplateV2Link>[]>;
+    guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.TemplateV2Link>[] | undefined>;
     /**
      * The user defined description of a Template.
      */
-    templateDescription?: pulumi.Input<string>;
+    templateDescription?: pulumi.Input<string | undefined>;
     /**
      * The user defined name of a Template.
      */
-    templateName?: pulumi.Input<string>;
+    templateName?: pulumi.Input<string | undefined>;
     /**
      * A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
      */
-    templateVersionSpec?: pulumi.Input<inputs.TemplateV2TemplateVersionSpec>;
-    tenantId?: pulumi.Input<string>;
-    updateTime?: pulumi.Input<string>;
-    updatedBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2UpdatedBy>[]>;
+    templateVersionSpec?: pulumi.Input<inputs.TemplateV2TemplateVersionSpec | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
+    updateTime?: pulumi.Input<string | undefined>;
+    updatedBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2UpdatedBy>[] | undefined>;
 }
 
 /**
  * The set of arguments for constructing a TemplateV2 resource.
  */
 export interface TemplateV2Args {
-    createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedBy>[]>;
+    createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2CreatedBy>[] | undefined>;
     /**
      * Status of a guest update.
      */
-    guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[]>;
+    guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[] | undefined>;
     /**
      * The user defined description of a Template.
      */
-    templateDescription?: pulumi.Input<string>;
+    templateDescription?: pulumi.Input<string | undefined>;
     /**
      * The user defined name of a Template.
      */
@@ -160,5 +160,5 @@ export interface TemplateV2Args {
      * A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
      */
     templateVersionSpec: pulumi.Input<inputs.TemplateV2TemplateVersionSpec>;
-    updatedBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2UpdatedBy>[]>;
+    updatedBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2UpdatedBy>[] | undefined>;
 }

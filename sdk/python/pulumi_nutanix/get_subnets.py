@@ -94,6 +94,7 @@ def get_subnets(metadatas: Optional[Sequence[Union['GetSubnetsMetadataArgs', 'Ge
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -103,6 +104,7 @@ def get_subnets(metadatas: Optional[Sequence[Union['GetSubnetsMetadataArgs', 'Ge
         "filter": "name==vlan0_test_2",
     }])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']] metadatas: The subnet kind metadata.
@@ -117,13 +119,14 @@ def get_subnets(metadatas: Optional[Sequence[Union['GetSubnetsMetadataArgs', 'Ge
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']]]]] = None,
+def get_subnets_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetsResult]:
     """
     Describes a list of subnets
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -133,6 +136,7 @@ def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union[
         "filter": "name==vlan0_test_2",
     }])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']] metadatas: The subnet kind metadata.

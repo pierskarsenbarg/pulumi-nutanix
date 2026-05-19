@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - Foundation Central metadata which will be transferred to the newly imaged node.
         /// * `fc_metadata.fc_ip` :- IP address of foundation central.
-        /// * `fc_metadata.api_key` :- ApiKey which the node uses to register itself with foundation central.
+        /// * `fc_metadata.api_key` :-&lt;span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey "&gt; apiKey &lt;/span&gt;which the node uses to register itself with foundation central.
         /// </summary>
         public readonly Outputs.FoundationImageNodesFcSettingsFcMetadata FcMetadata;
         /// <summary>

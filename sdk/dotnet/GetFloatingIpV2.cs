@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_floating_ip = nutanix.getFloatingIpV2({
+        ///     extId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_floating_ip = nutanix.get_floating_ip_v2(ext_id="cf1a7643-605e-4622-9f2a-b3fdccdbd072")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_floating_ip = Nutanix.Index.GetFloatingIpV2.Invoke(new()
+        ///     var get_floating_ip = Nutanix.GetFloatingIpV2.Invoke(new()
         ///     {
         ///         ExtId = "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIpV2(ctx, &amp;nutanix.LookupFloatingIpV2Args{
+        /// 			ExtId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-floating-ip = NutanixFunctions.getFloatingIpV2(GetFloatingIpV2Args.builder()
+        ///             .extId("cf1a7643-605e-4622-9f2a-b3fdccdbd072")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-floating-ip:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpV2
+        ///       arguments:
+        ///         extId: cf1a7643-605e-4622-9f2a-b3fdccdbd072
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFloatingIpV2Result> InvokeAsync(GetFloatingIpV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpV2Result>("nutanix:index/getFloatingIpV2:getFloatingIpV2", args ?? new GetFloatingIpV2Args(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_floating_ip = nutanix.getFloatingIpV2({
+        ///     extId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_floating_ip = nutanix.get_floating_ip_v2(ext_id="cf1a7643-605e-4622-9f2a-b3fdccdbd072")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_floating_ip = Nutanix.Index.GetFloatingIpV2.Invoke(new()
+        ///     var get_floating_ip = Nutanix.GetFloatingIpV2.Invoke(new()
         ///     {
         ///         ExtId = "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIpV2(ctx, &amp;nutanix.LookupFloatingIpV2Args{
+        /// 			ExtId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-floating-ip = NutanixFunctions.getFloatingIpV2(GetFloatingIpV2Args.builder()
+        ///             .extId("cf1a7643-605e-4622-9f2a-b3fdccdbd072")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-floating-ip:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpV2
+        ///       arguments:
+        ///         extId: cf1a7643-605e-4622-9f2a-b3fdccdbd072
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFloatingIpV2Result> Invoke(GetFloatingIpV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpV2Result>("nutanix:index/getFloatingIpV2:getFloatingIpV2", args ?? new GetFloatingIpV2InvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_floating_ip = nutanix.getFloatingIpV2({
+        ///     extId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_floating_ip = nutanix.get_floating_ip_v2(ext_id="cf1a7643-605e-4622-9f2a-b3fdccdbd072")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_floating_ip = Nutanix.Index.GetFloatingIpV2.Invoke(new()
+        ///     var get_floating_ip = Nutanix.GetFloatingIpV2.Invoke(new()
         ///     {
         ///         ExtId = "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIpV2(ctx, &amp;nutanix.LookupFloatingIpV2Args{
+        /// 			ExtId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-floating-ip = NutanixFunctions.getFloatingIpV2(GetFloatingIpV2Args.builder()
+        ///             .extId("cf1a7643-605e-4622-9f2a-b3fdccdbd072")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-floating-ip:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpV2
+        ///       arguments:
+        ///         extId: cf1a7643-605e-4622-9f2a-b3fdccdbd072
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFloatingIpV2Result> Invoke(GetFloatingIpV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpV2Result>("nutanix:index/getFloatingIpV2:getFloatingIpV2", args ?? new GetFloatingIpV2InvokeArgs(), options.WithDefaults());

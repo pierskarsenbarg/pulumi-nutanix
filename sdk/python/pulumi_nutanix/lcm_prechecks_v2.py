@@ -22,9 +22,9 @@ __all__ = ['LcmPrechecksV2Args', 'LcmPrechecksV2']
 class LcmPrechecksV2Args:
     def __init__(__self__, *,
                  entity_update_specs: pulumi.Input[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]],
-                 management_server: Optional[pulumi.Input['LcmPrechecksV2ManagementServerArgs']] = None,
-                 skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 management_server: pulumi.Input[Optional['LcmPrechecksV2ManagementServerArgs']] = None,
+                 skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmPrechecksV2 resource.
 
@@ -55,49 +55,49 @@ class LcmPrechecksV2Args:
 
     @_builtins.property
     @pulumi.getter(name="managementServer")
-    def management_server(self) -> Optional[pulumi.Input['LcmPrechecksV2ManagementServerArgs']]:
+    def management_server(self) -> pulumi.Input[Optional['LcmPrechecksV2ManagementServerArgs']]:
         """
         Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         """
         return pulumi.get(self, "management_server")
 
     @management_server.setter
-    def management_server(self, value: Optional[pulumi.Input['LcmPrechecksV2ManagementServerArgs']]):
+    def management_server(self, value: pulumi.Input[Optional['LcmPrechecksV2ManagementServerArgs']]):
         pulumi.set(self, "management_server", value)
 
     @_builtins.property
     @pulumi.getter(name="skippedPrecheckFlags")
-    def skipped_precheck_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def skipped_precheck_flags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         """
         return pulumi.get(self, "skipped_precheck_flags")
 
     @skipped_precheck_flags.setter
-    def skipped_precheck_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def skipped_precheck_flags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "skipped_precheck_flags", value)
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
-    def x_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
         """
         return pulumi.get(self, "x_cluster_id")
 
     @x_cluster_id.setter
-    def x_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x_cluster_id", value)
 
 
 @pulumi.input_type
 class _LcmPrechecksV2State:
     def __init__(__self__, *,
-                 entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_server: Optional[pulumi.Input['LcmPrechecksV2ManagementServerArgs']] = None,
-                 skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_server: pulumi.Input[Optional['LcmPrechecksV2ManagementServerArgs']] = None,
+                 skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmPrechecksV2 resources.
 
@@ -119,59 +119,59 @@ class _LcmPrechecksV2State:
 
     @_builtins.property
     @pulumi.getter(name="entityUpdateSpecs")
-    def entity_update_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]]]:
+    def entity_update_specs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]]]:
         """
         List of entity update objects for getting recommendations.
         """
         return pulumi.get(self, "entity_update_specs")
 
     @entity_update_specs.setter
-    def entity_update_specs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]]]):
+    def entity_update_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]]]):
         pulumi.set(self, "entity_update_specs", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementServer")
-    def management_server(self) -> Optional[pulumi.Input['LcmPrechecksV2ManagementServerArgs']]:
+    def management_server(self) -> pulumi.Input[Optional['LcmPrechecksV2ManagementServerArgs']]:
         """
         Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         """
         return pulumi.get(self, "management_server")
 
     @management_server.setter
-    def management_server(self, value: Optional[pulumi.Input['LcmPrechecksV2ManagementServerArgs']]):
+    def management_server(self, value: pulumi.Input[Optional['LcmPrechecksV2ManagementServerArgs']]):
         pulumi.set(self, "management_server", value)
 
     @_builtins.property
     @pulumi.getter(name="skippedPrecheckFlags")
-    def skipped_precheck_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def skipped_precheck_flags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         """
         return pulumi.get(self, "skipped_precheck_flags")
 
     @skipped_precheck_flags.setter
-    def skipped_precheck_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def skipped_precheck_flags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "skipped_precheck_flags", value)
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
-    def x_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
         """
         return pulumi.get(self, "x_cluster_id")
 
     @x_cluster_id.setter
-    def x_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x_cluster_id", value)
 
 
@@ -181,16 +181,17 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
-                 management_server: Optional[pulumi.Input[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
-                 skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
+                 management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
+                 skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Perform LCM prechecks for the intended update operation.
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -202,6 +203,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
                 "to_version": "4.0.0",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -222,6 +224,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -233,6 +236,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
                 "to_version": "4.0.0",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -250,10 +254,10 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
-                 management_server: Optional[pulumi.Input[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
-                 skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
+                 management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
+                 skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -280,11 +284,11 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            management_server: Optional[pulumi.Input[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
-            skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'LcmPrechecksV2':
+            entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
+            skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'LcmPrechecksV2':
         """
         Get an existing LcmPrechecksV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

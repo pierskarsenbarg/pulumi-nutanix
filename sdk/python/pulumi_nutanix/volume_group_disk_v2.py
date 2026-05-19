@@ -24,9 +24,9 @@ class VolumeGroupDiskV2Args:
                  disk_data_source_references: pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]],
                  disk_size_bytes: pulumi.Input[_builtins.int],
                  volume_group_ext_id: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_storage_features: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]] = None,
-                 index: Optional[pulumi.Input[_builtins.int]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]] = None,
+                 index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a VolumeGroupDiskV2 resource.
 
@@ -85,51 +85,51 @@ class VolumeGroupDiskV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Volume Disk description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="diskStorageFeatures")
-    def disk_storage_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]]:
+    def disk_storage_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]]:
         """
         - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         """
         return pulumi.get(self, "disk_storage_features")
 
     @disk_storage_features.setter
-    def disk_storage_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]]):
+    def disk_storage_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]]):
         pulumi.set(self, "disk_storage_features", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - Index of the disk in a Volume Group. This field is optional and immutable.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "index", value)
 
 
 @pulumi.input_type
 class _VolumeGroupDiskV2State:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]]] = None,
-                 disk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 disk_storage_features: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.int]] = None,
-                 volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]]] = None,
+                 disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.int]] = None,
+                 volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupDiskV2 resources.
 
@@ -158,86 +158,86 @@ class _VolumeGroupDiskV2State:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Volume Disk description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="diskDataSourceReferences")
-    def disk_data_source_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]]]:
+    def disk_data_source_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]]]:
         """
         -(Required) Disk Data Source Reference.
         """
         return pulumi.get(self, "disk_data_source_references")
 
     @disk_data_source_references.setter
-    def disk_data_source_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]]]):
+    def disk_data_source_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]]]):
         pulumi.set(self, "disk_data_source_references", value)
 
     @_builtins.property
     @pulumi.getter(name="diskSizeBytes")
-    def disk_size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def disk_size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         """
         return pulumi.get(self, "disk_size_bytes")
 
     @disk_size_bytes.setter
-    def disk_size_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def disk_size_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "disk_size_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="diskStorageFeatures")
-    def disk_storage_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]]:
+    def disk_storage_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]]:
         """
         - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         """
         return pulumi.get(self, "disk_storage_features")
 
     @disk_storage_features.setter
-    def disk_storage_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]]):
+    def disk_storage_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]]):
         pulumi.set(self, "disk_storage_features", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - Index of the disk in a Volume Group. This field is optional and immutable.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupExtId")
-    def volume_group_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_group_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The external identifier of the volume group.
         """
         return pulumi.get(self, "volume_group_ext_id")
 
     @volume_group_ext_id.setter
-    def volume_group_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_group_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_group_ext_id", value)
 
 
@@ -247,18 +247,19 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict']]]]] = None,
-                 disk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 disk_storage_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict']]]]] = None,
-                 index: Optional[pulumi.Input[_builtins.int]] = None,
-                 volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict']]]]] = None,
+                 disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict']]]]] = None,
+                 index: pulumi.Input[Optional[_builtins.int]] = None,
+                 volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to Creates a new Volume Disk.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -268,7 +269,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
             volume_group_ext_id="cf7de8b9-88ed-477d-a602-c34ab7174c01",
             index=1,
             description="create volume disk example",
-            disk_size_bytes=5368709120,
+            disk_size_bytes=int(5368709120),
             disk_data_source_references=[{
                 "name": "disk1",
                 "ext_id": "1d92110d-26b5-46c0-8c93-20b8171373e0",
@@ -284,6 +285,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
                 }],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -306,6 +308,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -315,7 +318,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
             volume_group_ext_id="cf7de8b9-88ed-477d-a602-c34ab7174c01",
             index=1,
             description="create volume disk example",
-            disk_size_bytes=5368709120,
+            disk_size_bytes=int(5368709120),
             disk_data_source_references=[{
                 "name": "disk1",
                 "ext_id": "1d92110d-26b5-46c0-8c93-20b8171373e0",
@@ -331,6 +334,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
                 }],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -348,12 +352,12 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict']]]]] = None,
-                 disk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 disk_storage_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict']]]]] = None,
-                 index: Optional[pulumi.Input[_builtins.int]] = None,
-                 volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict']]]]] = None,
+                 disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict']]]]] = None,
+                 index: pulumi.Input[Optional[_builtins.int]] = None,
+                 volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -386,13 +390,13 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            disk_data_source_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict']]]]] = None,
-            disk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            disk_storage_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict']]]]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            index: Optional[pulumi.Input[_builtins.int]] = None,
-            volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VolumeGroupDiskV2':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disk_data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict']]]]] = None,
+            disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.int]] = None,
+            volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeGroupDiskV2':
         """
         Get an existing VolumeGroupDiskV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

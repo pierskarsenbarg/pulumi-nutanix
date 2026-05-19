@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "07167778-266d-4052-9992-f30cbfd52e83",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getServiceGroupV2(args: GetServiceGroupV2Args, opts?: pulumi.InvokeOptions): Promise<GetServiceGroupV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -92,6 +94,7 @@ export interface GetServiceGroupV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -100,6 +103,7 @@ export interface GetServiceGroupV2Result {
  *     extId: "07167778-266d-4052-9992-f30cbfd52e83",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getServiceGroupV2Output(args: GetServiceGroupV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceGroupV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

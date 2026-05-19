@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var clsname = new Nutanix.Index.NdbClusters("clsname", new()
+    ///     var clsname = new Nutanix.NdbClusters("clsname", new()
     ///     {
     ///         Name = "{{ test-cluster }}",
     ///         Description = "test description",
@@ -66,6 +67,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbCluster:NdbCluster")]
     public partial class NdbCluster : global::Pulumi.CustomResource

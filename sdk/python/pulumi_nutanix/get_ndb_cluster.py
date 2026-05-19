@@ -352,6 +352,7 @@ def get_ndb_cluster(cluster_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -359,10 +360,11 @@ def get_ndb_cluster(cluster_id: Optional[_builtins.str] = None,
     c1 = nutanix.get_ndb_cluster(cluster_name="<era-cluster-name>")
     pulumi.export("cluster", c1)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str cluster_id: ID of cluster
-    :param _builtins.str cluster_name: and `cluster_id` are mutually exclusive.
+    :param _builtins.str cluster_name: and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -397,14 +399,15 @@ def get_ndb_cluster(cluster_id: Optional[_builtins.str] = None,
         unique_name=pulumi.get(__ret__, 'unique_name'),
         username=pulumi.get(__ret__, 'username'),
         version=pulumi.get(__ret__, 'version'))
-def get_ndb_cluster_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           cluster_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ndb_cluster_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           cluster_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbClusterResult]:
     """
     Describes a cluster in Nutanix Database Service
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -412,10 +415,11 @@ def get_ndb_cluster_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.
     c1 = nutanix.get_ndb_cluster(cluster_name="<era-cluster-name>")
     pulumi.export("cluster", c1)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str cluster_id: ID of cluster
-    :param _builtins.str cluster_name: and `cluster_id` are mutually exclusive.
+    :param _builtins.str cluster_name: and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id

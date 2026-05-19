@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getRoles({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRoles(args?: GetRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetRolesResult> {
     args = args || {};
@@ -62,12 +64,14 @@ export interface GetRolesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getRoles({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRolesOutput(args?: GetRolesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRolesResult> {
     args = args || {};
@@ -84,5 +88,5 @@ export interface GetRolesOutputArgs {
     /**
      * - The role kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetRolesMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetRolesMetadataArgs>[] | undefined>;
 }

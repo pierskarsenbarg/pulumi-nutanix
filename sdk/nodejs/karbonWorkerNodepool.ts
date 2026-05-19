@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -27,7 +28,9 @@ import * as utilities from "./utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -48,6 +51,7 @@ import * as utilities from "./utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class KarbonWorkerNodepool extends pulumi.CustomResource {
     /**
@@ -154,31 +158,31 @@ export interface KarbonWorkerNodepoolState {
     /**
      * VM configuration in AHV.
      */
-    ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig>;
+    ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig | undefined>;
     /**
      * Kubernetes cluster name
      */
-    clusterName?: pulumi.Input<string>;
+    clusterName?: pulumi.Input<string | undefined>;
     /**
      * labels of node
      */
-    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * unique worker nodepool name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The version of the node OS image
      */
-    nodeOsVersion?: pulumi.Input<string>;
+    nodeOsVersion?: pulumi.Input<string | undefined>;
     /**
      * List of node details of pool.
      */
-    nodes?: pulumi.Input<pulumi.Input<inputs.KarbonWorkerNodepoolNode>[]>;
+    nodes?: pulumi.Input<pulumi.Input<inputs.KarbonWorkerNodepoolNode>[] | undefined>;
     /**
      * number of node instances
      */
-    numInstances?: pulumi.Input<number>;
+    numInstances?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -188,7 +192,7 @@ export interface KarbonWorkerNodepoolArgs {
     /**
      * VM configuration in AHV.
      */
-    ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig>;
+    ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig | undefined>;
     /**
      * Kubernetes cluster name
      */
@@ -196,15 +200,15 @@ export interface KarbonWorkerNodepoolArgs {
     /**
      * labels of node
      */
-    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * unique worker nodepool name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The version of the node OS image
      */
-    nodeOsVersion?: pulumi.Input<string>;
+    nodeOsVersion?: pulumi.Input<string | undefined>;
     /**
      * number of node instances
      */

@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -26,6 +27,7 @@ import * as utilities from "./utilities";
  *     name: testKeyValueCategoryKey.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCategoryKey(args: GetCategoryKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoryKeyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -75,6 +77,7 @@ export interface GetCategoryKeyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -92,6 +95,7 @@ export interface GetCategoryKeyResult {
  *     name: testKeyValueCategoryKey.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCategoryKeyOutput(args: GetCategoryKeyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoryKeyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

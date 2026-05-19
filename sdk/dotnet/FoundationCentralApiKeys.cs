@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,13 +24,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var newApiKey = new Nutanix.Index.FoundationCentralApiKeys("new_api_key", new()
+    ///     var newApiKey = new Nutanix.FoundationCentralApiKeys("new_api_key", new()
     ///     {
     ///         Alias = "&lt;NAME-FOR-API-KEY&gt;",
     ///     });
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys")]
     public partial class FoundationCentralApiKeys : global::Pulumi.CustomResource

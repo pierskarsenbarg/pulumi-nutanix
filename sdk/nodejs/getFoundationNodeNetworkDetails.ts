@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -23,6 +24,7 @@ import * as utilities from "./utilities";
  *     timeout: "30",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationNodeNetworkDetails(args: GetFoundationNodeNetworkDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationNodeNetworkDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -66,6 +68,7 @@ export interface GetFoundationNodeNetworkDetailsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -78,6 +81,7 @@ export interface GetFoundationNodeNetworkDetailsResult {
  *     timeout: "30",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationNodeNetworkDetailsOutput(args: GetFoundationNodeNetworkDetailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationNodeNetworkDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -98,5 +102,5 @@ export interface GetFoundationNodeNetworkDetailsOutputArgs {
     /**
      * timeout in seconds
      */
-    timeout?: pulumi.Input<string>;
+    timeout?: pulumi.Input<string | undefined>;
 }

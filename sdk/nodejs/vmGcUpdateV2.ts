@@ -11,13 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const vm_list = nutanix.getVirtualMachinesV2({});
  * const vm_gc_update = new nutanix.VmGcUpdateV2("vm-gc-update", {
- *     extId: vm_list.then(vm_list => vm_list.vms?.[0]?.data?.extId),
+ *     extId: output(vm_list.then(vm_list => vm_list.vms?.[0]?.data?.extId)).apply(x =>String(x)),
  *     configs: [{
  *         cloudInits: [{
  *             cloudInitScripts: [{
@@ -29,6 +30,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class VmGcUpdateV2 extends pulumi.CustomResource {
     /**
@@ -102,11 +104,11 @@ export interface VmGcUpdateV2State {
     /**
      * - (Optional) The Nutanix Guest Tools customization settings.
      */
-    configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[]>;
+    configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[] | undefined>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -116,7 +118,7 @@ export interface VmGcUpdateV2Args {
     /**
      * - (Optional) The Nutanix Guest Tools customization settings.
      */
-    configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[]>;
+    configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[] | undefined>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */

@@ -161,18 +161,20 @@ def get_volume_iscsi_client_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_volume_iscsi_client_v2(ext_id="be0e4630-23da-4b9c-a76b-f24fd64b46b6")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `ext_id`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
 
 
     :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
@@ -195,26 +197,28 @@ def get_volume_iscsi_client_v2(ext_id: Optional[_builtins.str] = None,
         iscsi_initiator_network_ids=pulumi.get(__ret__, 'iscsi_initiator_network_ids'),
         links=pulumi.get(__ret__, 'links'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_volume_iscsi_client_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      iscsi_initiator_network_ids: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+def get_volume_iscsi_client_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      iscsi_initiator_network_ids: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeIscsiClientV2Result]:
     """
     Fetches the iSCSI client details identified by {extId}.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_volume_iscsi_client_v2(ext_id="be0e4630-23da-4b9c-a76b-f24fd64b46b6")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `ext_id`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
 
 
     :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.

@@ -85,6 +85,7 @@ def get_blueprint_runtime_editables(bp_name: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import json
@@ -97,11 +98,12 @@ def get_blueprint_runtime_editables(bp_name: Optional[_builtins.str] = None,
         content=json.dumps(example.runtime_editables),
         filename="runtime_value.json")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str bp_name: - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
            
-           Both (`bp_uuid` and `bp_name`) are optional but atleast one of them to be provided for this data source to work.
+           Both (<span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> and <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span>) are optional but atleast one of them to be provided for this data source to work.
     :param _builtins.str bp_uuid: - (Optional) The UUID of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
     """
     __args__ = dict()
@@ -115,14 +117,15 @@ def get_blueprint_runtime_editables(bp_name: Optional[_builtins.str] = None,
         bp_uuid=pulumi.get(__ret__, 'bp_uuid'),
         id=pulumi.get(__ret__, 'id'),
         runtime_editables=pulumi.get(__ret__, 'runtime_editables'))
-def get_blueprint_runtime_editables_output(bp_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           bp_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_blueprint_runtime_editables_output(bp_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           bp_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlueprintRuntimeEditablesResult]:
     """
     Describes runtime editables that are present in a blueprint.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import json
@@ -135,11 +138,12 @@ def get_blueprint_runtime_editables_output(bp_name: Optional[pulumi.Input[Option
         content=json.dumps(example.runtime_editables),
         filename="runtime_value.json")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str bp_name: - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
            
-           Both (`bp_uuid` and `bp_name`) are optional but atleast one of them to be provided for this data source to work.
+           Both (<span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> and <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span>) are optional but atleast one of them to be provided for this data source to work.
     :param _builtins.str bp_uuid: - (Optional) The UUID of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
     """
     __args__ = dict()

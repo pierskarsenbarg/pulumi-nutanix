@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbSoftwareVersionProfile("name", new()
+    ///     var name = new Nutanix.NdbSoftwareVersionProfile("name", new()
     ///     {
     ///         EngineType = "postgres_database",
     ///         ProfileId = nutanixNdbProfile.Name12.Id,
@@ -45,6 +46,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbSoftwareVersionProfile:NdbSoftwareVersionProfile")]
     public partial class NdbSoftwareVersionProfile : global::Pulumi.CustomResource

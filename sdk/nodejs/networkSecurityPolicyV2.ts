@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -33,6 +34,7 @@ import * as utilities from "./utilities";
  *     isHitlogEnabled: true,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
     /**
@@ -196,71 +198,71 @@ export interface NetworkSecurityPolicyV2State {
     /**
      * created by.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * creation time of NSP
      */
-    creationTime?: pulumi.Input<string>;
+    creationTime?: pulumi.Input<string | undefined>;
     /**
      * A user defined annotation for a policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * If Hitlog is enabled.
      */
-    isHitlogEnabled?: pulumi.Input<boolean>;
+    isHitlogEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * If Ipv6 Traffic is allowed.
      */
-    isIpv6TrafficAllowed?: pulumi.Input<boolean>;
+    isIpv6TrafficAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * Is system defined NSP
      */
-    isSystemDefined?: pulumi.Input<boolean>;
+    isSystemDefined?: pulumi.Input<boolean | undefined>;
     /**
      * last updated time
      */
-    lastUpdateTime?: pulumi.Input<string>;
+    lastUpdateTime?: pulumi.Input<string | undefined>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Link>[] | undefined>;
     /**
      * Name of the Flow Network Security Policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Rule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Rule>[] | undefined>;
     /**
      * Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Uuids of the secured groups in the NSP.
      */
-    securedGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securedGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
      */
-    vpcReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    vpcReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -270,31 +272,31 @@ export interface NetworkSecurityPolicyV2Args {
     /**
      * A user defined annotation for a policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * If Hitlog is enabled.
      */
-    isHitlogEnabled?: pulumi.Input<boolean>;
+    isHitlogEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * If Ipv6 Traffic is allowed.
      */
-    isIpv6TrafficAllowed?: pulumi.Input<boolean>;
+    isIpv6TrafficAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Flow Network Security Policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Rule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Rule>[] | undefined>;
     /**
      * Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
      */
@@ -302,5 +304,5 @@ export interface NetworkSecurityPolicyV2Args {
     /**
      * A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
      */
-    vpcReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    vpcReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -299,12 +299,14 @@ def get_lcm_entity_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     entity_before_upgrade = nutanix.get_lcm_entity_v2(ext_id="613no9d0-7caf-49y7-k582-1db5a5df580c")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: ExtId of the LCM entity.
@@ -336,19 +338,21 @@ def get_lcm_entity_v2(ext_id: Optional[_builtins.str] = None,
         sub_entities=pulumi.get(__ret__, 'sub_entities'),
         target_version=pulumi.get(__ret__, 'target_version'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_lcm_entity_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_lcm_entity_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLcmEntityV2Result]:
     """
     Get details about an LCM entity.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     entity_before_upgrade = nutanix.get_lcm_entity_v2(ext_id="613no9d0-7caf-49y7-k582-1db5a5df580c")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: ExtId of the LCM entity.

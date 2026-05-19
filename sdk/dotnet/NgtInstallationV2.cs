@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.Index.NgtInstallationV2("example", new()
+    ///     var example = new Nutanix.NgtInstallationV2("example", new()
     ///     {
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         Credential = new Nutanix.Inputs.NgtInstallationV2CredentialArgs
@@ -43,6 +44,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ngtInstallationV2:NgtInstallationV2")]
     public partial class NgtInstallationV2 : global::Pulumi.CustomResource

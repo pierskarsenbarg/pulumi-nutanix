@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const lcmFrameworkStatus = nutanix.getLcmStatusV2({
+        ///     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// lcm_framework_status = nutanix.get_lcm_status_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcmFrameworkStatus = Nutanix.Index.GetLcmStatusV2.Invoke(new()
+        ///     var lcmFrameworkStatus = Nutanix.GetLcmStatusV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetLcmStatusV2(ctx, &amp;nutanix.GetLcmStatusV2Args{
+        /// 			XClusterId: pulumi.StringRef("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetLcmStatusV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var lcmFrameworkStatus = NutanixFunctions.getLcmStatusV2(GetLcmStatusV2Args.builder()
+        ///             .xClusterId("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   lcmFrameworkStatus:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmStatusV2
+        ///       arguments:
+        ///         xClusterId: 0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLcmStatusV2Result> InvokeAsync(GetLcmStatusV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLcmStatusV2Result>("nutanix:index/getLcmStatusV2:getLcmStatusV2", args ?? new GetLcmStatusV2Args(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const lcmFrameworkStatus = nutanix.getLcmStatusV2({
+        ///     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// lcm_framework_status = nutanix.get_lcm_status_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcmFrameworkStatus = Nutanix.Index.GetLcmStatusV2.Invoke(new()
+        ///     var lcmFrameworkStatus = Nutanix.GetLcmStatusV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetLcmStatusV2(ctx, &amp;nutanix.GetLcmStatusV2Args{
+        /// 			XClusterId: pulumi.StringRef("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetLcmStatusV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var lcmFrameworkStatus = NutanixFunctions.getLcmStatusV2(GetLcmStatusV2Args.builder()
+        ///             .xClusterId("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   lcmFrameworkStatus:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmStatusV2
+        ///       arguments:
+        ///         xClusterId: 0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLcmStatusV2Result> Invoke(GetLcmStatusV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLcmStatusV2Result>("nutanix:index/getLcmStatusV2:getLcmStatusV2", args ?? new GetLcmStatusV2InvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const lcmFrameworkStatus = nutanix.getLcmStatusV2({
+        ///     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// lcm_framework_status = nutanix.get_lcm_status_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var lcmFrameworkStatus = Nutanix.Index.GetLcmStatusV2.Invoke(new()
+        ///     var lcmFrameworkStatus = Nutanix.GetLcmStatusV2.Invoke(new()
         ///     {
         ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetLcmStatusV2(ctx, &amp;nutanix.GetLcmStatusV2Args{
+        /// 			XClusterId: pulumi.StringRef("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetLcmStatusV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var lcmFrameworkStatus = NutanixFunctions.getLcmStatusV2(GetLcmStatusV2Args.builder()
+        ///             .xClusterId("0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   lcmFrameworkStatus:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmStatusV2
+        ///       arguments:
+        ///         xClusterId: 0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLcmStatusV2Result> Invoke(GetLcmStatusV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetLcmStatusV2Result>("nutanix:index/getLcmStatusV2:getLcmStatusV2", args ?? new GetLcmStatusV2InvokeArgs(), options.WithDefaults());

@@ -16,6 +16,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ### resource to create network for NDB
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbNetwork("name", new()
+    ///     var name = new Nutanix.NdbNetwork("name", new()
     ///     {
     ///         Name = "test-sub",
     ///         Type = "Static",
@@ -45,6 +46,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbNetwork:NdbNetwork")]
     public partial class NdbNetwork : global::Pulumi.CustomResource

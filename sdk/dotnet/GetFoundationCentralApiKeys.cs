@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const apiKeysList = nutanix.getFoundationCentralApiKeys({
+        ///     keyUuid: "&lt;KEY_UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// api_keys_list = nutanix.get_foundation_central_api_keys(key_uuid="&lt;KEY_UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var apiKeysList = Nutanix.Index.GetFoundationCentralApiKeys.Invoke(new()
+        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
         ///     {
         ///         KeyUuid = "&lt;KEY_UUID&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationCentralApiKeys(ctx, &amp;nutanix.LookupFoundationCentralApiKeysArgs{
+        /// 			KeyUuid: "&lt;KEY_UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationCentralApiKeysArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var apiKeysList = NutanixFunctions.getFoundationCentralApiKeys(GetFoundationCentralApiKeysArgs.builder()
+        ///             .keyUuid("&lt;KEY_UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   apiKeysList:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationCentralApiKeys
+        ///       arguments:
+        ///         keyUuid: &lt;KEY_UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFoundationCentralApiKeysResult> InvokeAsync(GetFoundationCentralApiKeysArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysArgs(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const apiKeysList = nutanix.getFoundationCentralApiKeys({
+        ///     keyUuid: "&lt;KEY_UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// api_keys_list = nutanix.get_foundation_central_api_keys(key_uuid="&lt;KEY_UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var apiKeysList = Nutanix.Index.GetFoundationCentralApiKeys.Invoke(new()
+        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
         ///     {
         ///         KeyUuid = "&lt;KEY_UUID&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationCentralApiKeys(ctx, &amp;nutanix.LookupFoundationCentralApiKeysArgs{
+        /// 			KeyUuid: "&lt;KEY_UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationCentralApiKeysArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var apiKeysList = NutanixFunctions.getFoundationCentralApiKeys(GetFoundationCentralApiKeysArgs.builder()
+        ///             .keyUuid("&lt;KEY_UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   apiKeysList:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationCentralApiKeys
+        ///       arguments:
+        ///         keyUuid: &lt;KEY_UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFoundationCentralApiKeysResult> Invoke(GetFoundationCentralApiKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysInvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const apiKeysList = nutanix.getFoundationCentralApiKeys({
+        ///     keyUuid: "&lt;KEY_UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// api_keys_list = nutanix.get_foundation_central_api_keys(key_uuid="&lt;KEY_UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var apiKeysList = Nutanix.Index.GetFoundationCentralApiKeys.Invoke(new()
+        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
         ///     {
         ///         KeyUuid = "&lt;KEY_UUID&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationCentralApiKeys(ctx, &amp;nutanix.LookupFoundationCentralApiKeysArgs{
+        /// 			KeyUuid: "&lt;KEY_UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationCentralApiKeysArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var apiKeysList = NutanixFunctions.getFoundationCentralApiKeys(GetFoundationCentralApiKeysArgs.builder()
+        ///             .keyUuid("&lt;KEY_UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   apiKeysList:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationCentralApiKeys
+        ///       arguments:
+        ///         keyUuid: &lt;KEY_UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFoundationCentralApiKeysResult> Invoke(GetFoundationCentralApiKeysInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysInvokeArgs(), options.WithDefaults());

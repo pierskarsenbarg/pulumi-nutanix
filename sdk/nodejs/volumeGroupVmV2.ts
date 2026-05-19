@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -18,6 +19,7 @@ import * as utilities from "./utilities";
  *     vmExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class VolumeGroupVmV2 extends pulumi.CustomResource {
     /**
@@ -109,22 +111,22 @@ export interface VolumeGroupVmV2State {
     /**
      * A globally unique identifier of a task.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
      *
      *
      * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/attachVm).
      */
-    index?: pulumi.Input<number>;
+    index?: pulumi.Input<number | undefined>;
     /**
      * -(Required) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    vmExtId?: pulumi.Input<string>;
+    vmExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The external identifier of the volume group.
      */
-    volumeGroupExtId?: pulumi.Input<string>;
+    volumeGroupExtId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -137,7 +139,7 @@ export interface VolumeGroupVmV2Args {
      *
      * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/attachVm).
      */
-    index?: pulumi.Input<number>;
+    index?: pulumi.Input<number | undefined>;
     /**
      * -(Required) A globally unique identifier of an instance that is suitable for external consumption.
      */

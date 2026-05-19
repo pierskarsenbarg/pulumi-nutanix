@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class VirtualMachineNicListStatusArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// -  The Floating IP associated with the vnic. (Only in `NicListStatus`)
+        /// -  The Floating IP associated with the vnic. (Only in &lt;span pulumi-lang-nodejs="`nicListStatus`" pulumi-lang-dotnet="`NicListStatus`" pulumi-lang-go="`nicListStatus`" pulumi-lang-python="`nic_list_status`" pulumi-lang-yaml="`nicListStatus`" pulumi-lang-java="`nicListStatus`"&gt;`nicListStatus`&lt;/span&gt;)
         /// </summary>
         [Input("floatingIp")]
         public Input<string>? FloatingIp { get; set; }
@@ -32,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// - Indicates whether the serial port connection is connected or not (`True` or `False`).
+        /// - Indicates whether the serial port connection is connected or not (&lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`"&gt;`true`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt;).
         /// </summary>
         [Input("isConnected")]
         public Input<string>? IsConnected { get; set; }

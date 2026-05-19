@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -31,6 +32,7 @@ import * as utilities from "./utilities";
  *     ],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class RolesV2 extends pulumi.CustomResource {
     /**
@@ -185,63 +187,63 @@ export interface RolesV2State {
     /**
      * - List of Accessible Clients for the Role.
      */
-    accessibleClients?: pulumi.Input<pulumi.Input<string>[]>;
+    accessibleClients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - List of Accessible Entity Types for the Role.
      */
-    accessibleEntityTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    accessibleEntityTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - Number of Users assigned to given Role.
      */
-    assignedUsersCount?: pulumi.Input<number>;
+    assignedUsersCount?: pulumi.Input<number | undefined>;
     /**
      * - Number of User Groups assigned to given Role.
      */
-    assignedUsersGroupsCount?: pulumi.Input<number>;
+    assignedUsersGroupsCount?: pulumi.Input<number | undefined>;
     /**
      * - Client that created the entity.
      */
-    clientName?: pulumi.Input<string>;
+    clientName?: pulumi.Input<string | undefined>;
     /**
      * - User or Service Name that created the Role.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * - The creation time of the Role.
      */
-    createdTime?: pulumi.Input<string>;
+    createdTime?: pulumi.Input<string | undefined>;
     /**
      * - Description of the Role.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The display name for the Role.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - Flag identifying if the Role is system defined or not.
      */
-    isSystemDefined?: pulumi.Input<boolean>;
+    isSystemDefined?: pulumi.Input<boolean | undefined>;
     /**
      * - The time when the Role was last updated.
      */
-    lastUpdatedTime?: pulumi.Input<string>;
+    lastUpdatedTime?: pulumi.Input<string | undefined>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.RolesV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.RolesV2Link>[] | undefined>;
     /**
      * -(Required) List of operations for the role.
      */
-    operations?: pulumi.Input<pulumi.Input<string>[]>;
+    operations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -251,11 +253,11 @@ export interface RolesV2Args {
     /**
      * - Client that created the entity.
      */
-    clientName?: pulumi.Input<string>;
+    clientName?: pulumi.Input<string | undefined>;
     /**
      * - Description of the Role.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The display name for the Role.
      */
@@ -263,7 +265,7 @@ export interface RolesV2Args {
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) List of operations for the role.
      */

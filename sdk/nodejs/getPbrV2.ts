@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "96a22c81-ed58-4bed-96bc-46b488626612",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbrV2(args: GetPbrV2Args, opts?: pulumi.InvokeOptions): Promise<GetPbrV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -88,6 +90,7 @@ export interface GetPbrV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -96,6 +99,7 @@ export interface GetPbrV2Result {
  *     extId: "96a22c81-ed58-4bed-96bc-46b488626612",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbrV2Output(args: GetPbrV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPbrV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const windows = nutanix.getNdbMaintenanceWindows({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbMaintenanceWindows(opts?: pulumi.InvokeOptions): Promise<GetNdbMaintenanceWindowsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -42,12 +44,14 @@ export interface GetNdbMaintenanceWindowsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const windows = nutanix.getNdbMaintenanceWindows({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbMaintenanceWindowsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbMaintenanceWindowsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

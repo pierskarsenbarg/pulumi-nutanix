@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -33,6 +34,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class ClustersUnconfiguredNodeNetworksV2 extends pulumi.CustomResource {
     /**
@@ -118,27 +120,27 @@ export class ClustersUnconfiguredNodeNetworksV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ClustersUnconfiguredNodeNetworksV2 resources.
  */
 export interface ClustersUnconfiguredNodeNetworksV2State {
-    expand?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Cluster UUID.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) List of nodes for which the network information is required.
      */
-    nodeLists?: pulumi.Input<pulumi.Input<inputs.ClustersUnconfiguredNodeNetworksV2NodeList>[]>;
-    nodesNetworkingDetails?: pulumi.Input<pulumi.Input<inputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail>[]>;
+    nodeLists?: pulumi.Input<pulumi.Input<inputs.ClustersUnconfiguredNodeNetworksV2NodeList>[] | undefined>;
+    nodesNetworkingDetails?: pulumi.Input<pulumi.Input<inputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail>[] | undefined>;
     /**
      * -(Optional) Request type
      */
-    requestType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ClustersUnconfiguredNodeNetworksV2 resource.
  */
 export interface ClustersUnconfiguredNodeNetworksV2Args {
-    expand?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Cluster UUID.
      */
@@ -150,5 +152,5 @@ export interface ClustersUnconfiguredNodeNetworksV2Args {
     /**
      * -(Optional) Request type
      */
-    requestType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string | undefined>;
 }

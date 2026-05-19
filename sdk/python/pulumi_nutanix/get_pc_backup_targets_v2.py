@@ -78,72 +78,74 @@ def get_pc_backup_targets_v2(domain_manager_ext_id: Optional[_builtins.str] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_pc_backup_targets_v2(domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Backup Targets
 
-    The `backup_targets` argument supports the following:
+    The <span pulumi-lang-nodejs="`backupTargets`" pulumi-lang-dotnet="`BackupTargets`" pulumi-lang-go="`backupTargets`" pulumi-lang-python="`backup_targets`" pulumi-lang-yaml="`backupTargets`" pulumi-lang-java="`backupTargets`">`backupTargets`</span> argument supports the following:
 
-    - `tenant_id`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-    - `ext_id`: - A globally unique identifier of an instance that is suitable for external consumption.
-    - `links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    - `location`: - Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
-    - `last_sync_time`: - Represents the time when the domain manager was last synchronized or copied its configuration data to the backup target. This field is updated every 30 minutes.
-    - `is_backup_paused`: - Whether the backup is paused on the given cluster or not.
-    - `backup_pause_reason`: - Specifies a reason why the backup might have paused. This will be empty if the isBackupPaused field is false.
+    - <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+    - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - A globally unique identifier of an instance that is suitable for external consumption.
+    - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    - <span pulumi-lang-nodejs="`location`" pulumi-lang-dotnet="`Location`" pulumi-lang-go="`location`" pulumi-lang-python="`location`" pulumi-lang-yaml="`location`" pulumi-lang-java="`location`">`location`</span>: - Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
+    - <span pulumi-lang-nodejs="`lastSyncTime`" pulumi-lang-dotnet="`LastSyncTime`" pulumi-lang-go="`lastSyncTime`" pulumi-lang-python="`last_sync_time`" pulumi-lang-yaml="`lastSyncTime`" pulumi-lang-java="`lastSyncTime`">`lastSyncTime`</span>: - Represents the time when the domain manager was last synchronized or copied its configuration data to the backup target. This field is updated every 30 minutes.
+    - <span pulumi-lang-nodejs="`isBackupPaused`" pulumi-lang-dotnet="`IsBackupPaused`" pulumi-lang-go="`isBackupPaused`" pulumi-lang-python="`is_backup_paused`" pulumi-lang-yaml="`isBackupPaused`" pulumi-lang-java="`isBackupPaused`">`isBackupPaused`</span>: - Whether the backup is paused on the given cluster or not.
+    - <span pulumi-lang-nodejs="`backupPauseReason`" pulumi-lang-dotnet="`BackupPauseReason`" pulumi-lang-go="`backupPauseReason`" pulumi-lang-python="`backup_pause_reason`" pulumi-lang-yaml="`backupPauseReason`" pulumi-lang-java="`backupPauseReason`">`backupPauseReason`</span>: - Specifies a reason why the backup might have paused. This will be empty if the isBackupPaused field is false.
 
     ### Location
 
     The location argument exports the following:
 
-    - `cluster_location`: - A boolean value indicating whether to enable lockdown mode for a cluster.
-    - `object_store_location`: - Currently representing the build information to be used for the cluster creation.
+    - <span pulumi-lang-nodejs="`clusterLocation`" pulumi-lang-dotnet="`ClusterLocation`" pulumi-lang-go="`clusterLocation`" pulumi-lang-python="`cluster_location`" pulumi-lang-yaml="`clusterLocation`" pulumi-lang-java="`clusterLocation`">`clusterLocation`</span>: - A boolean value indicating whether to enable lockdown mode for a cluster.
+    - <span pulumi-lang-nodejs="`objectStoreLocation`" pulumi-lang-dotnet="`ObjectStoreLocation`" pulumi-lang-go="`objectStoreLocation`" pulumi-lang-python="`object_store_location`" pulumi-lang-yaml="`objectStoreLocation`" pulumi-lang-java="`objectStoreLocation`">`objectStoreLocation`</span>: - Currently representing the build information to be used for the cluster creation.
 
     #### Cluster Location
 
-    The `cluster_location` argument exports the following:
+    The <span pulumi-lang-nodejs="`clusterLocation`" pulumi-lang-dotnet="`ClusterLocation`" pulumi-lang-go="`clusterLocation`" pulumi-lang-python="`cluster_location`" pulumi-lang-yaml="`clusterLocation`" pulumi-lang-java="`clusterLocation`">`clusterLocation`</span> argument exports the following:
 
-    - `config`: - Cluster reference of the remote cluster to be connected.
+    - <span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`">`config`</span>: - Cluster reference of the remote cluster to be connected.
 
     ##### Config
 
-    The `config` argument exports the following:
+    The <span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`">`config`</span> argument exports the following:
 
-    - `ext_id`: - Cluster UUID of a remote cluster.
-    - `name`: - Name of the cluster.
+    - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - Cluster UUID of a remote cluster.
+    - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - Name of the cluster.
 
     #### Object Store Location
 
-    The `object_store_location` argument exports the following:
+    The <span pulumi-lang-nodejs="`objectStoreLocation`" pulumi-lang-dotnet="`ObjectStoreLocation`" pulumi-lang-go="`objectStoreLocation`" pulumi-lang-python="`object_store_location`" pulumi-lang-yaml="`objectStoreLocation`" pulumi-lang-java="`objectStoreLocation`">`objectStoreLocation`</span> argument exports the following:
 
-    - `provider_config`: -(Required) The base model of S3 object store endpoint where domain manager is backed up.
-    - `backup_policy`: -(Optional) Backup policy for the object store provided.
+    - <span pulumi-lang-nodejs="`providerConfig`" pulumi-lang-dotnet="`ProviderConfig`" pulumi-lang-go="`providerConfig`" pulumi-lang-python="`provider_config`" pulumi-lang-yaml="`providerConfig`" pulumi-lang-java="`providerConfig`">`providerConfig`</span>: -(Required) The base model of S3 object store endpoint where domain manager is backed up.
+    - <span pulumi-lang-nodejs="`backupPolicy`" pulumi-lang-dotnet="`BackupPolicy`" pulumi-lang-go="`backupPolicy`" pulumi-lang-python="`backup_policy`" pulumi-lang-yaml="`backupPolicy`" pulumi-lang-java="`backupPolicy`">`backupPolicy`</span>: -(Optional) Backup policy for the object store provided.
 
     ##### Provider Config
 
-    The `provider_config` argument exports the following:
+    The <span pulumi-lang-nodejs="`providerConfig`" pulumi-lang-dotnet="`ProviderConfig`" pulumi-lang-go="`providerConfig`" pulumi-lang-python="`provider_config`" pulumi-lang-yaml="`providerConfig`" pulumi-lang-java="`providerConfig`">`providerConfig`</span> argument exports the following:
 
-    - `bucket_name`: - The bucket name of the object store endpoint where backup data of domain manager is to be stored.
-    - `region`: - The region name of the object store endpoint where backup data of domain manager is stored. Default is `us-east-1`.
-    - `credentials`: - Secret credentials model for the object store containing access key ID and secret access key.
+    - <span pulumi-lang-nodejs="`bucketName`" pulumi-lang-dotnet="`BucketName`" pulumi-lang-go="`bucketName`" pulumi-lang-python="`bucket_name`" pulumi-lang-yaml="`bucketName`" pulumi-lang-java="`bucketName`">`bucketName`</span>: - The bucket name of the object store endpoint where backup data of domain manager is to be stored.
+    - <span pulumi-lang-nodejs="`region`" pulumi-lang-dotnet="`Region`" pulumi-lang-go="`region`" pulumi-lang-python="`region`" pulumi-lang-yaml="`region`" pulumi-lang-java="`region`">`region`</span>: - The region name of the object store endpoint where backup data of domain manager is stored. Default is `us-east-1`.
+    - <span pulumi-lang-nodejs="`credentials`" pulumi-lang-dotnet="`Credentials`" pulumi-lang-go="`credentials`" pulumi-lang-python="`credentials`" pulumi-lang-yaml="`credentials`" pulumi-lang-java="`credentials`">`credentials`</span>: - Secret credentials model for the object store containing access key ID and secret access key.
 
     ###### Credentials
 
-    The `credentials` argument exports the following:
+    The <span pulumi-lang-nodejs="`credentials`" pulumi-lang-dotnet="`Credentials`" pulumi-lang-go="`credentials`" pulumi-lang-python="`credentials`" pulumi-lang-yaml="`credentials`" pulumi-lang-java="`credentials`">`credentials`</span> argument exports the following:
 
-    - `access_key_id`: - Access key ID for the object store provided for backup target.
-    - `secret_access_key`: - Secret access key for the object store provided for backup target.
+    - <span pulumi-lang-nodejs="`accessKeyId`" pulumi-lang-dotnet="`AccessKeyId`" pulumi-lang-go="`accessKeyId`" pulumi-lang-python="`access_key_id`" pulumi-lang-yaml="`accessKeyId`" pulumi-lang-java="`accessKeyId`">`accessKeyId`</span>: - Access key ID for the object store provided for backup target.
+    - <span pulumi-lang-nodejs="`secretAccessKey`" pulumi-lang-dotnet="`SecretAccessKey`" pulumi-lang-go="`secretAccessKey`" pulumi-lang-python="`secret_access_key`" pulumi-lang-yaml="`secretAccessKey`" pulumi-lang-java="`secretAccessKey`">`secretAccessKey`</span>: - Secret access key for the object store provided for backup target.
 
     ##### Backup Policy
 
-    The `backup_policy` argument exports the following:
+    The <span pulumi-lang-nodejs="`backupPolicy`" pulumi-lang-dotnet="`BackupPolicy`" pulumi-lang-go="`backupPolicy`" pulumi-lang-python="`backup_policy`" pulumi-lang-yaml="`backupPolicy`" pulumi-lang-java="`backupPolicy`">`backupPolicy`</span> argument exports the following:
 
-    - `rpo_in_minutes`: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
+    - <span pulumi-lang-nodejs="`rpoInMinutes`" pulumi-lang-dotnet="`RpoInMinutes`" pulumi-lang-go="`rpoInMinutes`" pulumi-lang-python="`rpo_in_minutes`" pulumi-lang-yaml="`rpoInMinutes`" pulumi-lang-java="`rpoInMinutes`">`rpoInMinutes`</span>: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
 
     See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listBackupTargets).
 
@@ -159,79 +161,81 @@ def get_pc_backup_targets_v2(domain_manager_ext_id: Optional[_builtins.str] = No
         backup_targets=pulumi.get(__ret__, 'backup_targets'),
         domain_manager_ext_id=pulumi.get(__ret__, 'domain_manager_ext_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_pc_backup_targets_v2_output(domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pc_backup_targets_v2_output(domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcBackupTargetsV2Result]:
     """
     Lists backup targets (cluster or object store) configured for a given domain manager.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_pc_backup_targets_v2(domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Backup Targets
 
-    The `backup_targets` argument supports the following:
+    The <span pulumi-lang-nodejs="`backupTargets`" pulumi-lang-dotnet="`BackupTargets`" pulumi-lang-go="`backupTargets`" pulumi-lang-python="`backup_targets`" pulumi-lang-yaml="`backupTargets`" pulumi-lang-java="`backupTargets`">`backupTargets`</span> argument supports the following:
 
-    - `tenant_id`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-    - `ext_id`: - A globally unique identifier of an instance that is suitable for external consumption.
-    - `links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    - `location`: - Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
-    - `last_sync_time`: - Represents the time when the domain manager was last synchronized or copied its configuration data to the backup target. This field is updated every 30 minutes.
-    - `is_backup_paused`: - Whether the backup is paused on the given cluster or not.
-    - `backup_pause_reason`: - Specifies a reason why the backup might have paused. This will be empty if the isBackupPaused field is false.
+    - <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+    - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - A globally unique identifier of an instance that is suitable for external consumption.
+    - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    - <span pulumi-lang-nodejs="`location`" pulumi-lang-dotnet="`Location`" pulumi-lang-go="`location`" pulumi-lang-python="`location`" pulumi-lang-yaml="`location`" pulumi-lang-java="`location`">`location`</span>: - Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
+    - <span pulumi-lang-nodejs="`lastSyncTime`" pulumi-lang-dotnet="`LastSyncTime`" pulumi-lang-go="`lastSyncTime`" pulumi-lang-python="`last_sync_time`" pulumi-lang-yaml="`lastSyncTime`" pulumi-lang-java="`lastSyncTime`">`lastSyncTime`</span>: - Represents the time when the domain manager was last synchronized or copied its configuration data to the backup target. This field is updated every 30 minutes.
+    - <span pulumi-lang-nodejs="`isBackupPaused`" pulumi-lang-dotnet="`IsBackupPaused`" pulumi-lang-go="`isBackupPaused`" pulumi-lang-python="`is_backup_paused`" pulumi-lang-yaml="`isBackupPaused`" pulumi-lang-java="`isBackupPaused`">`isBackupPaused`</span>: - Whether the backup is paused on the given cluster or not.
+    - <span pulumi-lang-nodejs="`backupPauseReason`" pulumi-lang-dotnet="`BackupPauseReason`" pulumi-lang-go="`backupPauseReason`" pulumi-lang-python="`backup_pause_reason`" pulumi-lang-yaml="`backupPauseReason`" pulumi-lang-java="`backupPauseReason`">`backupPauseReason`</span>: - Specifies a reason why the backup might have paused. This will be empty if the isBackupPaused field is false.
 
     ### Location
 
     The location argument exports the following:
 
-    - `cluster_location`: - A boolean value indicating whether to enable lockdown mode for a cluster.
-    - `object_store_location`: - Currently representing the build information to be used for the cluster creation.
+    - <span pulumi-lang-nodejs="`clusterLocation`" pulumi-lang-dotnet="`ClusterLocation`" pulumi-lang-go="`clusterLocation`" pulumi-lang-python="`cluster_location`" pulumi-lang-yaml="`clusterLocation`" pulumi-lang-java="`clusterLocation`">`clusterLocation`</span>: - A boolean value indicating whether to enable lockdown mode for a cluster.
+    - <span pulumi-lang-nodejs="`objectStoreLocation`" pulumi-lang-dotnet="`ObjectStoreLocation`" pulumi-lang-go="`objectStoreLocation`" pulumi-lang-python="`object_store_location`" pulumi-lang-yaml="`objectStoreLocation`" pulumi-lang-java="`objectStoreLocation`">`objectStoreLocation`</span>: - Currently representing the build information to be used for the cluster creation.
 
     #### Cluster Location
 
-    The `cluster_location` argument exports the following:
+    The <span pulumi-lang-nodejs="`clusterLocation`" pulumi-lang-dotnet="`ClusterLocation`" pulumi-lang-go="`clusterLocation`" pulumi-lang-python="`cluster_location`" pulumi-lang-yaml="`clusterLocation`" pulumi-lang-java="`clusterLocation`">`clusterLocation`</span> argument exports the following:
 
-    - `config`: - Cluster reference of the remote cluster to be connected.
+    - <span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`">`config`</span>: - Cluster reference of the remote cluster to be connected.
 
     ##### Config
 
-    The `config` argument exports the following:
+    The <span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`">`config`</span> argument exports the following:
 
-    - `ext_id`: - Cluster UUID of a remote cluster.
-    - `name`: - Name of the cluster.
+    - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - Cluster UUID of a remote cluster.
+    - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - Name of the cluster.
 
     #### Object Store Location
 
-    The `object_store_location` argument exports the following:
+    The <span pulumi-lang-nodejs="`objectStoreLocation`" pulumi-lang-dotnet="`ObjectStoreLocation`" pulumi-lang-go="`objectStoreLocation`" pulumi-lang-python="`object_store_location`" pulumi-lang-yaml="`objectStoreLocation`" pulumi-lang-java="`objectStoreLocation`">`objectStoreLocation`</span> argument exports the following:
 
-    - `provider_config`: -(Required) The base model of S3 object store endpoint where domain manager is backed up.
-    - `backup_policy`: -(Optional) Backup policy for the object store provided.
+    - <span pulumi-lang-nodejs="`providerConfig`" pulumi-lang-dotnet="`ProviderConfig`" pulumi-lang-go="`providerConfig`" pulumi-lang-python="`provider_config`" pulumi-lang-yaml="`providerConfig`" pulumi-lang-java="`providerConfig`">`providerConfig`</span>: -(Required) The base model of S3 object store endpoint where domain manager is backed up.
+    - <span pulumi-lang-nodejs="`backupPolicy`" pulumi-lang-dotnet="`BackupPolicy`" pulumi-lang-go="`backupPolicy`" pulumi-lang-python="`backup_policy`" pulumi-lang-yaml="`backupPolicy`" pulumi-lang-java="`backupPolicy`">`backupPolicy`</span>: -(Optional) Backup policy for the object store provided.
 
     ##### Provider Config
 
-    The `provider_config` argument exports the following:
+    The <span pulumi-lang-nodejs="`providerConfig`" pulumi-lang-dotnet="`ProviderConfig`" pulumi-lang-go="`providerConfig`" pulumi-lang-python="`provider_config`" pulumi-lang-yaml="`providerConfig`" pulumi-lang-java="`providerConfig`">`providerConfig`</span> argument exports the following:
 
-    - `bucket_name`: - The bucket name of the object store endpoint where backup data of domain manager is to be stored.
-    - `region`: - The region name of the object store endpoint where backup data of domain manager is stored. Default is `us-east-1`.
-    - `credentials`: - Secret credentials model for the object store containing access key ID and secret access key.
+    - <span pulumi-lang-nodejs="`bucketName`" pulumi-lang-dotnet="`BucketName`" pulumi-lang-go="`bucketName`" pulumi-lang-python="`bucket_name`" pulumi-lang-yaml="`bucketName`" pulumi-lang-java="`bucketName`">`bucketName`</span>: - The bucket name of the object store endpoint where backup data of domain manager is to be stored.
+    - <span pulumi-lang-nodejs="`region`" pulumi-lang-dotnet="`Region`" pulumi-lang-go="`region`" pulumi-lang-python="`region`" pulumi-lang-yaml="`region`" pulumi-lang-java="`region`">`region`</span>: - The region name of the object store endpoint where backup data of domain manager is stored. Default is `us-east-1`.
+    - <span pulumi-lang-nodejs="`credentials`" pulumi-lang-dotnet="`Credentials`" pulumi-lang-go="`credentials`" pulumi-lang-python="`credentials`" pulumi-lang-yaml="`credentials`" pulumi-lang-java="`credentials`">`credentials`</span>: - Secret credentials model for the object store containing access key ID and secret access key.
 
     ###### Credentials
 
-    The `credentials` argument exports the following:
+    The <span pulumi-lang-nodejs="`credentials`" pulumi-lang-dotnet="`Credentials`" pulumi-lang-go="`credentials`" pulumi-lang-python="`credentials`" pulumi-lang-yaml="`credentials`" pulumi-lang-java="`credentials`">`credentials`</span> argument exports the following:
 
-    - `access_key_id`: - Access key ID for the object store provided for backup target.
-    - `secret_access_key`: - Secret access key for the object store provided for backup target.
+    - <span pulumi-lang-nodejs="`accessKeyId`" pulumi-lang-dotnet="`AccessKeyId`" pulumi-lang-go="`accessKeyId`" pulumi-lang-python="`access_key_id`" pulumi-lang-yaml="`accessKeyId`" pulumi-lang-java="`accessKeyId`">`accessKeyId`</span>: - Access key ID for the object store provided for backup target.
+    - <span pulumi-lang-nodejs="`secretAccessKey`" pulumi-lang-dotnet="`SecretAccessKey`" pulumi-lang-go="`secretAccessKey`" pulumi-lang-python="`secret_access_key`" pulumi-lang-yaml="`secretAccessKey`" pulumi-lang-java="`secretAccessKey`">`secretAccessKey`</span>: - Secret access key for the object store provided for backup target.
 
     ##### Backup Policy
 
-    The `backup_policy` argument exports the following:
+    The <span pulumi-lang-nodejs="`backupPolicy`" pulumi-lang-dotnet="`BackupPolicy`" pulumi-lang-go="`backupPolicy`" pulumi-lang-python="`backup_policy`" pulumi-lang-yaml="`backupPolicy`" pulumi-lang-java="`backupPolicy`">`backupPolicy`</span> argument exports the following:
 
-    - `rpo_in_minutes`: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
+    - <span pulumi-lang-nodejs="`rpoInMinutes`" pulumi-lang-dotnet="`RpoInMinutes`" pulumi-lang-go="`rpoInMinutes`" pulumi-lang-python="`rpo_in_minutes`" pulumi-lang-yaml="`rpoInMinutes`" pulumi-lang-java="`rpoInMinutes`">`rpoInMinutes`</span>: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
 
     See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listBackupTargets).
 

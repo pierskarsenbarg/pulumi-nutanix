@@ -13,10 +13,37 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFloatingIpsV2
     {
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with FloatingIpUuid .
+        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "&gt; floatingIpUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const floating_ips = nutanix.getFloatingIpsV2({});
+        /// const floating_ips_filter = nutanix.getFloatingIpsV2({
+        ///     filter: "name eq 'floating_ip_example'",
+        /// });
+        /// const floating_ips_limit = nutanix.getFloatingIpsV2({
+        ///     limit: 10,
+        /// });
+        /// const floating_ips_filter_limit = nutanix.getFloatingIpsV2({
+        ///     filter: "name eq 'floating_ip_example'",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// floating_ips = nutanix.get_floating_ips_v2()
+        /// floating_ips_filter = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'")
+        /// floating_ips_limit = nutanix.get_floating_ips_v2(limit=10)
+        /// floating_ips_filter_limit = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,19 +52,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var floating_ips = Nutanix.Index.GetFloatingIpsV2.Invoke();
+        ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
         /// 
-        ///     var floating_ips_filter = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///     });
         /// 
-        ///     var floating_ips_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var floating_ips_filter_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///         Limit = 10,
@@ -45,15 +72,143 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'floating_ip_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'floating_ip_example'"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var floating-ips = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var floating-ips-filter = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .filter("name eq 'floating_ip_example'")
+        ///             .build());
+        /// 
+        ///         final var floating-ips-limit = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///         final var floating-ips-filter-limit = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .filter("name eq 'floating_ip_example'")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   floating-ips:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments: {}
+        ///   floating-ips-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         filter: name eq 'floating_ip_example'
+        ///   floating-ips-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         limit: 10
+        ///   floating-ips-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         filter: name eq 'floating_ip_example'
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFloatingIpsV2Result> InvokeAsync(GetFloatingIpsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpsV2Result>("nutanix:index/getFloatingIpsV2:getFloatingIpsV2", args ?? new GetFloatingIpsV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with FloatingIpUuid .
+        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "&gt; floatingIpUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const floating_ips = nutanix.getFloatingIpsV2({});
+        /// const floating_ips_filter = nutanix.getFloatingIpsV2({
+        ///     filter: "name eq 'floating_ip_example'",
+        /// });
+        /// const floating_ips_limit = nutanix.getFloatingIpsV2({
+        ///     limit: 10,
+        /// });
+        /// const floating_ips_filter_limit = nutanix.getFloatingIpsV2({
+        ///     filter: "name eq 'floating_ip_example'",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// floating_ips = nutanix.get_floating_ips_v2()
+        /// floating_ips_filter = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'")
+        /// floating_ips_limit = nutanix.get_floating_ips_v2(limit=10)
+        /// floating_ips_filter_limit = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,19 +217,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var floating_ips = Nutanix.Index.GetFloatingIpsV2.Invoke();
+        ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
         /// 
-        ///     var floating_ips_filter = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///     });
         /// 
-        ///     var floating_ips_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var floating_ips_filter_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///         Limit = 10,
@@ -82,15 +237,143 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'floating_ip_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'floating_ip_example'"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var floating-ips = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var floating-ips-filter = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .filter("name eq 'floating_ip_example'")
+        ///             .build());
+        /// 
+        ///         final var floating-ips-limit = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///         final var floating-ips-filter-limit = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .filter("name eq 'floating_ip_example'")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   floating-ips:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments: {}
+        ///   floating-ips-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         filter: name eq 'floating_ip_example'
+        ///   floating-ips-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         limit: 10
+        ///   floating-ips-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         filter: name eq 'floating_ip_example'
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFloatingIpsV2Result> Invoke(GetFloatingIpsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpsV2Result>("nutanix:index/getFloatingIpsV2:getFloatingIpsV2", args ?? new GetFloatingIpsV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with FloatingIpUuid .
+        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "&gt; floatingIpUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const floating_ips = nutanix.getFloatingIpsV2({});
+        /// const floating_ips_filter = nutanix.getFloatingIpsV2({
+        ///     filter: "name eq 'floating_ip_example'",
+        /// });
+        /// const floating_ips_limit = nutanix.getFloatingIpsV2({
+        ///     limit: 10,
+        /// });
+        /// const floating_ips_filter_limit = nutanix.getFloatingIpsV2({
+        ///     filter: "name eq 'floating_ip_example'",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// floating_ips = nutanix.get_floating_ips_v2()
+        /// floating_ips_filter = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'")
+        /// floating_ips_limit = nutanix.get_floating_ips_v2(limit=10)
+        /// floating_ips_filter_limit = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -99,19 +382,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var floating_ips = Nutanix.Index.GetFloatingIpsV2.Invoke();
+        ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
         /// 
-        ///     var floating_ips_filter = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///     });
         /// 
-        ///     var floating_ips_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var floating_ips_filter_limit = Nutanix.Index.GetFloatingIpsV2.Invoke(new()
+        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'floating_ip_example'",
         ///         Limit = 10,
@@ -119,6 +402,107 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'floating_ip_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetFloatingIpsV2(ctx, &amp;nutanix.GetFloatingIpsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'floating_ip_example'"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var floating-ips = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var floating-ips-filter = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .filter("name eq 'floating_ip_example'")
+        ///             .build());
+        /// 
+        ///         final var floating-ips-limit = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///         final var floating-ips-filter-limit = NutanixFunctions.getFloatingIpsV2(GetFloatingIpsV2Args.builder()
+        ///             .filter("name eq 'floating_ip_example'")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   floating-ips:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments: {}
+        ///   floating-ips-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         filter: name eq 'floating_ip_example'
+        ///   floating-ips-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         limit: 10
+        ///   floating-ips-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIpsV2
+        ///       arguments:
+        ///         filter: name eq 'floating_ip_example'
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFloatingIpsV2Result> Invoke(GetFloatingIpsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpsV2Result>("nutanix:index/getFloatingIpsV2:getFloatingIpsV2", args ?? new GetFloatingIpsV2InvokeArgs(), options.WithDefaults());

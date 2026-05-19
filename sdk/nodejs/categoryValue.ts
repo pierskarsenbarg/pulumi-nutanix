@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -23,6 +24,7 @@ import * as utilities from "./utilities";
  *     value: "test-value",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class CategoryValue extends pulumi.CustomResource {
     /**
@@ -61,7 +63,7 @@ export class CategoryValue extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * - (Required) The categoryKey name for the category value.
+     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
@@ -114,23 +116,23 @@ export interface CategoryValueState {
     /**
      * (Optional) The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) A description for category value.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
-     * - (Required) The categoryKey name for the category value.
+     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - Specifying whether its a system defined category.
      */
-    systemDefined?: pulumi.Input<boolean>;
+    systemDefined?: pulumi.Input<boolean | undefined>;
     /**
      * The value for the category value.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -140,11 +142,11 @@ export interface CategoryValueArgs {
     /**
      * - (Optional) A description for category value.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
-     * - (Required) The categoryKey name for the category value.
+     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The value for the category value.
      */

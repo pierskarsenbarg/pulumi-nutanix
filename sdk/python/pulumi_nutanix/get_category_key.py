@@ -113,6 +113,7 @@ def get_category_key(name: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -126,6 +127,7 @@ def get_category_key(name: Optional[_builtins.str] = None,
         description="Data Source CategoryValue Test with Values")
     test_key_value = nutanix.get_category_key_output(name=test_key_value_category_key.name)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str name: - (Required) The name for the category key.
@@ -142,13 +144,14 @@ def get_category_key(name: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         system_defined=pulumi.get(__ret__, 'system_defined'),
         values=pulumi.get(__ret__, 'values'))
-def get_category_key_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_category_key_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoryKeyResult]:
     """
     Describe a Nutanix Category Key and its values (if it has them).
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -162,6 +165,7 @@ def get_category_key_output(name: Optional[pulumi.Input[_builtins.str]] = None,
         description="Data Source CategoryValue Test with Values")
     test_key_value = nutanix.get_category_key_output(name=test_key_value_category_key.name)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str name: - (Required) The name for the category key.

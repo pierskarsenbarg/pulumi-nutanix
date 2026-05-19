@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = Nutanix.Index.GetCertificateV2.Invoke(new()
+    ///     var example = Nutanix.GetCertificateV2.Invoke(new()
     ///     {
     ///         ObjectStoreExtId = "ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
     ///         ExtId = "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
@@ -31,6 +32,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## JSON Example
     /// 

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -22,6 +23,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSubnets(args?: GetSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetsResult> {
     args = args || {};
@@ -67,6 +69,7 @@ export interface GetSubnetsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -78,6 +81,7 @@ export interface GetSubnetsResult {
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSubnetsOutput(args?: GetSubnetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubnetsResult> {
     args = args || {};
@@ -94,5 +98,5 @@ export interface GetSubnetsOutputArgs {
     /**
      * The subnet kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetSubnetsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetSubnetsMetadataArgs>[] | undefined>;
 }

@@ -62,8 +62,8 @@ class PcUnregistrationV2Args:
 @pulumi.input_type
 class _PcUnregistrationV2State:
     def __init__(__self__, *,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcUnregistrationV2 resources.
 
@@ -79,7 +79,7 @@ class _PcUnregistrationV2State:
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Cluster UUID of a remote cluster.
 
@@ -88,19 +88,19 @@ class _PcUnregistrationV2State:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pcExtId")
-    def pc_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pc_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The external identifier of the domain manager (Prism Central) resource
         """
         return pulumi.get(self, "pc_ext_id")
 
     @pc_ext_id.setter
-    def pc_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pc_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pc_ext_id", value)
 
 
@@ -110,8 +110,8 @@ class PcUnregistrationV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Unregister a registered remote cluster from the local cluster. This process is asynchronous, creating an un-registration task and returning its UUID.
@@ -149,8 +149,8 @@ class PcUnregistrationV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -176,8 +176,8 @@ class PcUnregistrationV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PcUnregistrationV2':
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcUnregistrationV2':
         """
         Get an existing PcUnregistrationV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

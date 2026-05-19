@@ -403,6 +403,9 @@ def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalF
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
+    <!--End PulumiCodeChooser -->
+
 
     :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']] additional_filters: - Additional filters to narrow down list of subnets.
     :param Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']] categories: The API Version.
@@ -450,15 +453,18 @@ def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalF
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'),
         vswitch_name=pulumi.get(__ret__, 'vswitch_name'))
-def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']]]]] = None,
-                      categories: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']]]]] = None,
-                      subnet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      subnet_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_subnet_output(additional_filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']]]]] = None,
+                      categories: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']]]]] = None,
+                      subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      subnet_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetResult]:
     """
     Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 
     ## Example Usage
+
+    <!--Start PulumiCodeChooser -->
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']] additional_filters: - Additional filters to narrow down list of subnets.

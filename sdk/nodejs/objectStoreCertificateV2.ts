@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     extId: "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## JSON Example
  *
@@ -118,23 +120,23 @@ export class ObjectStoreCertificateV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ObjectStoreCertificateV2 resources.
  */
 export interface ObjectStoreCertificateV2State {
-    alternateFqdns?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2AlternateFqdn>[]>;
-    alternateIps?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2AlternateIp>[]>;
+    alternateFqdns?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2AlternateFqdn>[] | undefined>;
+    alternateIps?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2AlternateIp>[] | undefined>;
     /**
      * -(Required) The UUID of the certificate of an Object store.
      */
-    extId?: pulumi.Input<string>;
-    links?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2Link>[]>;
-    metadatas?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2Metadata>[]>;
+    extId?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2Link>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2Metadata>[] | undefined>;
     /**
      * -(Required) The UUID of the Object store.
      */
-    objectStoreExtId?: pulumi.Input<string>;
+    objectStoreExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Path to a JSON file which contains the public certificates, private key, and CA certificate or chain, along with a list of alternate FQDNs and alternate IPs to create a certificate for the Object store.
      */
-    path?: pulumi.Input<string>;
-    tenantId?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
 }
 
 /**

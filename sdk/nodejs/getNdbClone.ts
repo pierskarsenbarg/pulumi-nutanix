@@ -183,17 +183,17 @@ export interface GetNdbCloneOutputArgs {
     /**
      * Clone id
      */
-    cloneId?: pulumi.Input<string>;
+    cloneId?: pulumi.Input<string | undefined>;
     /**
      * Clone Name
      */
-    cloneName?: pulumi.Input<string>;
+    cloneName?: pulumi.Input<string | undefined>;
     /**
      * Fetches info based on filter
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbCloneFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbCloneFilterArgs>[] | undefined>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbCloneTagArgs>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbCloneTagArgs>[] | undefined>;
 }

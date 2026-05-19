@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAddress = new Nutanix.Index.AddressGroup("test_address", new()
+    ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
     ///     {
     ///         Name = "test",
     ///         Description = "test address groups resource",
@@ -39,6 +40,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/addressGroup:AddressGroup")]
     public partial class AddressGroup : global::Pulumi.CustomResource

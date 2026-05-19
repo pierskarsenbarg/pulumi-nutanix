@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Fetch a single PC (Domain Manager) by its external ID
+        /// const example_2 = nutanix.getPcV2({
+        ///     extId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Fetch a single PC (Domain Manager) by its external ID
+        /// example_2 = nutanix.get_pc_v2(ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,13 +43,73 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Fetch a single PC (Domain Manager) by its external ID
-        ///     var example_2 = Nutanix.Index.GetPcV2.Invoke(new()
+        ///     var example_2 = Nutanix.GetPcV2.Invoke(new()
         ///     {
         ///         ExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Fetch a single PC (Domain Manager) by its external ID
+        /// 		_, err := nutanix.GetPcV2(ctx, &amp;nutanix.GetPcV2Args{
+        /// 			ExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Fetch a single PC (Domain Manager) by its external ID
+        ///         final var example-2 = NutanixFunctions.getPcV2(GetPcV2Args.builder()
+        ///             .extId("75dde184-3a0e-4f59-a185-03ca1efead17")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Fetch a single PC (Domain Manager) by its external ID
+        ///   example-2:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcV2
+        ///       arguments:
+        ///         extId: 75dde184-3a0e-4f59-a185-03ca1efead17
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPcV2Result> InvokeAsync(GetPcV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPcV2Result>("nutanix:index/getPcV2:getPcV2", args ?? new GetPcV2Args(), options.WithDefaults());
@@ -42,6 +119,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Fetch a single PC (Domain Manager) by its external ID
+        /// const example_2 = nutanix.getPcV2({
+        ///     extId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Fetch a single PC (Domain Manager) by its external ID
+        /// example_2 = nutanix.get_pc_v2(ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,13 +145,73 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Fetch a single PC (Domain Manager) by its external ID
-        ///     var example_2 = Nutanix.Index.GetPcV2.Invoke(new()
+        ///     var example_2 = Nutanix.GetPcV2.Invoke(new()
         ///     {
         ///         ExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Fetch a single PC (Domain Manager) by its external ID
+        /// 		_, err := nutanix.GetPcV2(ctx, &amp;nutanix.GetPcV2Args{
+        /// 			ExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Fetch a single PC (Domain Manager) by its external ID
+        ///         final var example-2 = NutanixFunctions.getPcV2(GetPcV2Args.builder()
+        ///             .extId("75dde184-3a0e-4f59-a185-03ca1efead17")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Fetch a single PC (Domain Manager) by its external ID
+        ///   example-2:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcV2
+        ///       arguments:
+        ///         extId: 75dde184-3a0e-4f59-a185-03ca1efead17
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPcV2Result> Invoke(GetPcV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcV2Result>("nutanix:index/getPcV2:getPcV2", args ?? new GetPcV2InvokeArgs(), options.WithDefaults());
@@ -67,6 +221,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Fetch a single PC (Domain Manager) by its external ID
+        /// const example_2 = nutanix.getPcV2({
+        ///     extId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Fetch a single PC (Domain Manager) by its external ID
+        /// example_2 = nutanix.get_pc_v2(ext_id="75dde184-3a0e-4f59-a185-03ca1efead17")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,13 +247,73 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Fetch a single PC (Domain Manager) by its external ID
-        ///     var example_2 = Nutanix.Index.GetPcV2.Invoke(new()
+        ///     var example_2 = Nutanix.GetPcV2.Invoke(new()
         ///     {
         ///         ExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Fetch a single PC (Domain Manager) by its external ID
+        /// 		_, err := nutanix.GetPcV2(ctx, &amp;nutanix.GetPcV2Args{
+        /// 			ExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Fetch a single PC (Domain Manager) by its external ID
+        ///         final var example-2 = NutanixFunctions.getPcV2(GetPcV2Args.builder()
+        ///             .extId("75dde184-3a0e-4f59-a185-03ca1efead17")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Fetch a single PC (Domain Manager) by its external ID
+        ///   example-2:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcV2
+        ///       arguments:
+        ///         extId: 75dde184-3a0e-4f59-a185-03ca1efead17
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPcV2Result> Invoke(GetPcV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcV2Result>("nutanix:index/getPcV2:getPcV2", args ?? new GetPcV2InvokeArgs(), options.WithDefaults());

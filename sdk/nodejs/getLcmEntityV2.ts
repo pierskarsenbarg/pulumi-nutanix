@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "613no9d0-7caf-49y7-k582-1db5a5df580c",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLcmEntityV2(args: GetLcmEntityV2Args, opts?: pulumi.InvokeOptions): Promise<GetLcmEntityV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -133,6 +135,7 @@ export interface GetLcmEntityV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -141,6 +144,7 @@ export interface GetLcmEntityV2Result {
  *     extId: "613no9d0-7caf-49y7-k582-1db5a5df580c",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLcmEntityV2Output(args: GetLcmEntityV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLcmEntityV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

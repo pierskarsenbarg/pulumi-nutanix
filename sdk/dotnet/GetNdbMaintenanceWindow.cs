@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const window = nutanix.getNdbMaintenanceWindow({
+        ///     id: "{{ maintenance_window_id }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// window = nutanix.get_ndb_maintenance_window(id="{{ maintenance_window_id }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var window = Nutanix.Index.GetNdbMaintenanceWindow.Invoke(new()
+        ///     var window = Nutanix.GetNdbMaintenanceWindow.Invoke(new()
         ///     {
         ///         Id = "{{ maintenance_window_id }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbMaintenanceWindow(ctx, &amp;nutanix.LookupNdbMaintenanceWindowArgs{
+        /// 			Id: "{{ maintenance_window_id }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbMaintenanceWindowArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var window = NutanixFunctions.getNdbMaintenanceWindow(GetNdbMaintenanceWindowArgs.builder()
+        ///             .id("{{ maintenance_window_id }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   window:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbMaintenanceWindow
+        ///       arguments:
+        ///         id: '{{ maintenance_window_id }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNdbMaintenanceWindowResult> InvokeAsync(GetNdbMaintenanceWindowArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbMaintenanceWindowResult>("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", args ?? new GetNdbMaintenanceWindowArgs(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const window = nutanix.getNdbMaintenanceWindow({
+        ///     id: "{{ maintenance_window_id }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// window = nutanix.get_ndb_maintenance_window(id="{{ maintenance_window_id }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var window = Nutanix.Index.GetNdbMaintenanceWindow.Invoke(new()
+        ///     var window = Nutanix.GetNdbMaintenanceWindow.Invoke(new()
         ///     {
         ///         Id = "{{ maintenance_window_id }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbMaintenanceWindow(ctx, &amp;nutanix.LookupNdbMaintenanceWindowArgs{
+        /// 			Id: "{{ maintenance_window_id }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbMaintenanceWindowArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var window = NutanixFunctions.getNdbMaintenanceWindow(GetNdbMaintenanceWindowArgs.builder()
+        ///             .id("{{ maintenance_window_id }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   window:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbMaintenanceWindow
+        ///       arguments:
+        ///         id: '{{ maintenance_window_id }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbMaintenanceWindowResult> Invoke(GetNdbMaintenanceWindowInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbMaintenanceWindowResult>("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", args ?? new GetNdbMaintenanceWindowInvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const window = nutanix.getNdbMaintenanceWindow({
+        ///     id: "{{ maintenance_window_id }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// window = nutanix.get_ndb_maintenance_window(id="{{ maintenance_window_id }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var window = Nutanix.Index.GetNdbMaintenanceWindow.Invoke(new()
+        ///     var window = Nutanix.GetNdbMaintenanceWindow.Invoke(new()
         ///     {
         ///         Id = "{{ maintenance_window_id }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbMaintenanceWindow(ctx, &amp;nutanix.LookupNdbMaintenanceWindowArgs{
+        /// 			Id: "{{ maintenance_window_id }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbMaintenanceWindowArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var window = NutanixFunctions.getNdbMaintenanceWindow(GetNdbMaintenanceWindowArgs.builder()
+        ///             .id("{{ maintenance_window_id }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   window:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbMaintenanceWindow
+        ///       arguments:
+        ///         id: '{{ maintenance_window_id }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbMaintenanceWindowResult> Invoke(GetNdbMaintenanceWindowInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbMaintenanceWindowResult>("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", args ?? new GetNdbMaintenanceWindowInvokeArgs(), options.WithDefaults());

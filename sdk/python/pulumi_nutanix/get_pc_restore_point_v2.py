@@ -137,6 +137,7 @@ def get_pc_restore_point_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -146,6 +147,7 @@ def get_pc_restore_point_v2(ext_id: Optional[_builtins.str] = None,
         restore_source_ext_id=cluster_location["id"],
         ext_id=test["restorePoints"][0]["extId"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Restore point ID for the backup created in cluster/object store.
@@ -168,15 +170,16 @@ def get_pc_restore_point_v2(ext_id: Optional[_builtins.str] = None,
         restorable_domain_manager_ext_id=pulumi.get(__ret__, 'restorable_domain_manager_ext_id'),
         restore_source_ext_id=pulumi.get(__ret__, 'restore_source_ext_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_pc_restore_point_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   restorable_domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   restore_source_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pc_restore_point_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcRestorePointV2Result]:
     """
     Retrieves detailed information about a specific recovery point and provides essential domain manager information stored in the backup, which is required for the restoration process.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -186,6 +189,7 @@ def get_pc_restore_point_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]]
         restore_source_ext_id=cluster_location["id"],
         ext_id=test["restorePoints"][0]["extId"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Restore point ID for the backup created in cluster/object store.

@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.Index.AccessControlPolicy("test", new()
+    ///     var test = new Nutanix.AccessControlPolicy("test", new()
     ///     {
     ///         Name = "NAME OF ACCESS CONTROL POLICY",
     ///         Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
@@ -110,6 +111,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/accessControlPolicy:AccessControlPolicy")]
     public partial class AccessControlPolicy : global::Pulumi.CustomResource

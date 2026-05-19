@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var storage_container = new Nutanix.Index.StorageContainersV2("storage-container", new()
+    ///     var storage_container = new Nutanix.StorageContainersV2("storage-container", new()
     ///     {
     ///         Name = "example-storage-container",
     ///         LogicalAdvertisedCapacityBytes = 1073741824000,
@@ -55,6 +56,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/storageContainersV2:StorageContainersV2")]
     public partial class StorageContainersV2 : global::Pulumi.CustomResource

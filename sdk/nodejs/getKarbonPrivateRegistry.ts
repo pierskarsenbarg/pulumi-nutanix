@@ -8,6 +8,9 @@ import * as utilities from "./utilities";
  * Describes Karbon private registry entry
  *
  * ## Example Usage
+ *
+ * <!--Start PulumiCodeChooser -->
+ * <!--End PulumiCodeChooser -->
  */
 export function getKarbonPrivateRegistry(args?: GetKarbonPrivateRegistryArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonPrivateRegistryResult> {
     args = args || {};
@@ -59,6 +62,9 @@ export interface GetKarbonPrivateRegistryResult {
  * Describes Karbon private registry entry
  *
  * ## Example Usage
+ *
+ * <!--Start PulumiCodeChooser -->
+ * <!--End PulumiCodeChooser -->
  */
 export function getKarbonPrivateRegistryOutput(args?: GetKarbonPrivateRegistryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonPrivateRegistryResult> {
     args = args || {};
@@ -76,9 +82,9 @@ export interface GetKarbonPrivateRegistryOutputArgs {
     /**
      * Represents karbon private registry uuid
      */
-    privateRegistryId?: pulumi.Input<string>;
+    privateRegistryId?: pulumi.Input<string | undefined>;
     /**
      * Represents the name of karbon private registry
      */
-    privateRegistryName?: pulumi.Input<string>;
+    privateRegistryName?: pulumi.Input<string | undefined>;
 }

@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var idp = new Nutanix.Index.SamlIdentityProvidersV2("idp", new()
+    ///     var idp = new Nutanix.SamlIdentityProvidersV2("idp", new()
     ///     {
     ///         Name = "example_idp_name",
     ///         IdpMetadatas = new[]
@@ -53,44 +54,45 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Argument Reference
     /// 
     /// The following arguments are supported:
     /// 
-    /// * `ExtId`: -(Optional) External identifier of the SAML Identity Provider.
-    /// * `IdpMetadataUrl`: -(Optional) Metadata url that provides IDP details.
-    /// * `IdpMetadataXml`: -(Optional) Base64 encoded metadata in XML format with IDP details.
-    /// * `IdpMetadata`: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
-    /// * `Name`: -(Required) Unique name of the IDP.
-    /// * `UsernameAttr`: -(Optional) SAML assertion Username attribute element.
-    /// * `EmailAttr`: -(Optional) SAML assertion email attribute element.
-    /// * `GroupsAttr`: -(Optional) SAML assertion groups attribute element.
-    /// * `GroupsDelim`: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
-    /// * `CustomAttr`: -(Optional) SAML assertions for list of custom attribute elements.
-    /// * `EntityIssuer`: -(Optional) It will be used as Issuer in SAML authnRequest.
-    /// * `IsSignedAuthnReqEnabled`: -(Optional) Flag indicating signing of SAML authnRequests.
+    /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Optional) External identifier of the SAML Identity Provider.
+    /// * &lt;span pulumi-lang-nodejs="`idpMetadataUrl`" pulumi-lang-dotnet="`IdpMetadataUrl`" pulumi-lang-go="`idpMetadataUrl`" pulumi-lang-python="`idp_metadata_url`" pulumi-lang-yaml="`idpMetadataUrl`" pulumi-lang-java="`idpMetadataUrl`"&gt;`idpMetadataUrl`&lt;/span&gt;: -(Optional) Metadata url that provides IDP details.
+    /// * &lt;span pulumi-lang-nodejs="`idpMetadataXml`" pulumi-lang-dotnet="`IdpMetadataXml`" pulumi-lang-go="`idpMetadataXml`" pulumi-lang-python="`idp_metadata_xml`" pulumi-lang-yaml="`idpMetadataXml`" pulumi-lang-java="`idpMetadataXml`"&gt;`idpMetadataXml`&lt;/span&gt;: -(Optional) Base64 encoded metadata in XML format with IDP details.
+    /// * &lt;span pulumi-lang-nodejs="`idpMetadata`" pulumi-lang-dotnet="`IdpMetadata`" pulumi-lang-go="`idpMetadata`" pulumi-lang-python="`idp_metadata`" pulumi-lang-yaml="`idpMetadata`" pulumi-lang-java="`idpMetadata`"&gt;`idpMetadata`&lt;/span&gt;: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+    /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: -(Required) Unique name of the IDP.
+    /// * &lt;span pulumi-lang-nodejs="`usernameAttr`" pulumi-lang-dotnet="`UsernameAttr`" pulumi-lang-go="`usernameAttr`" pulumi-lang-python="`username_attr`" pulumi-lang-yaml="`usernameAttr`" pulumi-lang-java="`usernameAttr`"&gt;`usernameAttr`&lt;/span&gt;: -(Optional) SAML assertion Username attribute element.
+    /// * &lt;span pulumi-lang-nodejs="`emailAttr`" pulumi-lang-dotnet="`EmailAttr`" pulumi-lang-go="`emailAttr`" pulumi-lang-python="`email_attr`" pulumi-lang-yaml="`emailAttr`" pulumi-lang-java="`emailAttr`"&gt;`emailAttr`&lt;/span&gt;: -(Optional) SAML assertion email attribute element.
+    /// * &lt;span pulumi-lang-nodejs="`groupsAttr`" pulumi-lang-dotnet="`GroupsAttr`" pulumi-lang-go="`groupsAttr`" pulumi-lang-python="`groups_attr`" pulumi-lang-yaml="`groupsAttr`" pulumi-lang-java="`groupsAttr`"&gt;`groupsAttr`&lt;/span&gt;: -(Optional) SAML assertion groups attribute element.
+    /// * &lt;span pulumi-lang-nodejs="`groupsDelim`" pulumi-lang-dotnet="`GroupsDelim`" pulumi-lang-go="`groupsDelim`" pulumi-lang-python="`groups_delim`" pulumi-lang-yaml="`groupsDelim`" pulumi-lang-java="`groupsDelim`"&gt;`groupsDelim`&lt;/span&gt;: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
+    /// * &lt;span pulumi-lang-nodejs="`customAttr`" pulumi-lang-dotnet="`CustomAttr`" pulumi-lang-go="`customAttr`" pulumi-lang-python="`custom_attr`" pulumi-lang-yaml="`customAttr`" pulumi-lang-java="`customAttr`"&gt;`customAttr`&lt;/span&gt;: -(Optional) SAML assertions for list of custom attribute elements.
+    /// * &lt;span pulumi-lang-nodejs="`entityIssuer`" pulumi-lang-dotnet="`EntityIssuer`" pulumi-lang-go="`entityIssuer`" pulumi-lang-python="`entity_issuer`" pulumi-lang-yaml="`entityIssuer`" pulumi-lang-java="`entityIssuer`"&gt;`entityIssuer`&lt;/span&gt;: -(Optional) It will be used as Issuer in SAML authnRequest.
+    /// * &lt;span pulumi-lang-nodejs="`isSignedAuthnReqEnabled`" pulumi-lang-dotnet="`IsSignedAuthnReqEnabled`" pulumi-lang-go="`isSignedAuthnReqEnabled`" pulumi-lang-python="`is_signed_authn_req_enabled`" pulumi-lang-yaml="`isSignedAuthnReqEnabled`" pulumi-lang-java="`isSignedAuthnReqEnabled`"&gt;`isSignedAuthnReqEnabled`&lt;/span&gt;: -(Optional) Flag indicating signing of SAML authnRequests.
     /// 
     /// ### Idp Metadata
     /// 
-    /// The IdpMetadata attribute supports the following:
+    /// The&lt;span pulumi-lang-nodejs=" idpMetadata " pulumi-lang-dotnet=" IdpMetadata " pulumi-lang-go=" idpMetadata " pulumi-lang-python=" idp_metadata " pulumi-lang-yaml=" idpMetadata " pulumi-lang-java=" idpMetadata "&gt; idpMetadata &lt;/span&gt;attribute supports the following:
     /// 
-    /// * `EntityId`: -(Required) Entity Identifier of Identity provider.
-    /// * `LoginUrl`: -(Required) Login URL of the Identity provider.
-    /// * `LogoutUrl`: -(Optional) Logout URL of the Identity provider.
-    /// * `ErrorUrl`: - (Optional) Error URL of the Identity provider.
-    /// * `Certificate`: -(Required) Certificate for verification.
-    /// * `NameIdPolicyFormat`: -(Optional) Name ID Policy format.
+    /// * &lt;span pulumi-lang-nodejs="`entityId`" pulumi-lang-dotnet="`EntityId`" pulumi-lang-go="`entityId`" pulumi-lang-python="`entity_id`" pulumi-lang-yaml="`entityId`" pulumi-lang-java="`entityId`"&gt;`entityId`&lt;/span&gt;: -(Required) Entity Identifier of Identity provider.
+    /// * &lt;span pulumi-lang-nodejs="`loginUrl`" pulumi-lang-dotnet="`LoginUrl`" pulumi-lang-go="`loginUrl`" pulumi-lang-python="`login_url`" pulumi-lang-yaml="`loginUrl`" pulumi-lang-java="`loginUrl`"&gt;`loginUrl`&lt;/span&gt;: -(Required) Login URL of the Identity provider.
+    /// * &lt;span pulumi-lang-nodejs="`logoutUrl`" pulumi-lang-dotnet="`LogoutUrl`" pulumi-lang-go="`logoutUrl`" pulumi-lang-python="`logout_url`" pulumi-lang-yaml="`logoutUrl`" pulumi-lang-java="`logoutUrl`"&gt;`logoutUrl`&lt;/span&gt;: -(Optional) Logout URL of the Identity provider.
+    /// * &lt;span pulumi-lang-nodejs="`errorUrl`" pulumi-lang-dotnet="`ErrorUrl`" pulumi-lang-go="`errorUrl`" pulumi-lang-python="`error_url`" pulumi-lang-yaml="`errorUrl`" pulumi-lang-java="`errorUrl`"&gt;`errorUrl`&lt;/span&gt;: - (Optional) Error URL of the Identity provider.
+    /// * &lt;span pulumi-lang-nodejs="`certificate`" pulumi-lang-dotnet="`Certificate`" pulumi-lang-go="`certificate`" pulumi-lang-python="`certificate`" pulumi-lang-yaml="`certificate`" pulumi-lang-java="`certificate`"&gt;`certificate`&lt;/span&gt;: -(Required) Certificate for verification.
+    /// * &lt;span pulumi-lang-nodejs="`nameIdPolicyFormat`" pulumi-lang-dotnet="`NameIdPolicyFormat`" pulumi-lang-go="`nameIdPolicyFormat`" pulumi-lang-python="`name_id_policy_format`" pulumi-lang-yaml="`nameIdPolicyFormat`" pulumi-lang-java="`nameIdPolicyFormat`"&gt;`nameIdPolicyFormat`&lt;/span&gt;: -(Optional) Name ID Policy format.
     ///   * supported values:
     ///     * `emailAddress`: -  Uses email address as NameID format
-    ///     * `Encrypted`: -  Uses encrypted as NameID format.
-    ///     * `Unspecified`: -  NameID format is left to individual implementations.
-    ///     * `Transient`: -  	Uses identifier with transient semantics as NameID format.
+    ///     * &lt;span pulumi-lang-nodejs="`encrypted`" pulumi-lang-dotnet="`Encrypted`" pulumi-lang-go="`encrypted`" pulumi-lang-python="`encrypted`" pulumi-lang-yaml="`encrypted`" pulumi-lang-java="`encrypted`"&gt;`encrypted`&lt;/span&gt;: -  Uses encrypted as NameID format.
+    ///     * &lt;span pulumi-lang-nodejs="`unspecified`" pulumi-lang-dotnet="`Unspecified`" pulumi-lang-go="`unspecified`" pulumi-lang-python="`unspecified`" pulumi-lang-yaml="`unspecified`" pulumi-lang-java="`unspecified`"&gt;`unspecified`&lt;/span&gt;: -  NameID format is left to individual implementations.
+    ///     * &lt;span pulumi-lang-nodejs="`transient`" pulumi-lang-dotnet="`Transient`" pulumi-lang-go="`transient`" pulumi-lang-python="`transient`" pulumi-lang-yaml="`transient`" pulumi-lang-java="`transient`"&gt;`transient`&lt;/span&gt;: -  	Uses identifier with transient semantics as NameID format.
     ///     * `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
     ///     * `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
-    ///     * `Kerberos`: -  	Uses kerberos principal name as NameID format.
-    ///     * `Persistent`: -  Uses persistent name identifier as NameID format.
-    ///     * `Entity`: -  Uses identifier of an entity as NameID format.
+    ///     * &lt;span pulumi-lang-nodejs="`kerberos`" pulumi-lang-dotnet="`Kerberos`" pulumi-lang-go="`kerberos`" pulumi-lang-python="`kerberos`" pulumi-lang-yaml="`kerberos`" pulumi-lang-java="`kerberos`"&gt;`kerberos`&lt;/span&gt;: -  	Uses kerberos principal name as NameID format.
+    ///     * &lt;span pulumi-lang-nodejs="`persistent`" pulumi-lang-dotnet="`Persistent`" pulumi-lang-go="`persistent`" pulumi-lang-python="`persistent`" pulumi-lang-yaml="`persistent`" pulumi-lang-java="`persistent`"&gt;`persistent`&lt;/span&gt;: -  Uses persistent name identifier as NameID format.
+    ///     * &lt;span pulumi-lang-nodejs="`entity`" pulumi-lang-dotnet="`Entity`" pulumi-lang-go="`entity`" pulumi-lang-python="`entity`" pulumi-lang-yaml="`entity`" pulumi-lang-java="`entity`"&gt;`entity`&lt;/span&gt;: -  Uses identifier of an entity as NameID format.
     /// </summary>
     [NutanixResourceType("nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2")]
     public partial class SamlIdentityProvidersV2 : global::Pulumi.CustomResource

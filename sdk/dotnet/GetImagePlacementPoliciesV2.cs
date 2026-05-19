@@ -17,6 +17,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // List all image placement policies
+        /// const list_ipp = nutanix.getImagePlacementPoliciesV2({});
+        /// // List image placement policies with filter, page and limit
+        /// const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
+        ///     filter: "startswith(name,'ipp_name')",
+        ///     page: 0,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # List all image placement policies
+        /// list_ipp = nutanix.get_image_placement_policies_v2()
+        /// # List image placement policies with filter, page and limit
+        /// filtered_ipp = nutanix.get_image_placement_policies_v2(filter="startswith(name,'ipp_name')",
+        ///     page=0,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,10 +51,10 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all image placement policies
-        ///     var list_ipp = Nutanix.Index.GetImagePlacementPoliciesV2.Invoke();
+        ///     var list_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke();
         /// 
         ///     // List image placement policies with filter, page and limit
-        ///     var filtered_ipp = Nutanix.Index.GetImagePlacementPoliciesV2.Invoke(new()
+        ///     var filtered_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
         ///         Page = 0,
@@ -38,6 +63,86 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// List all image placement policies
+        /// 		_, err := nutanix.GetImagePlacementPoliciesV2(ctx, &amp;nutanix.GetImagePlacementPoliciesV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// List image placement policies with filter, page and limit
+        /// 		_, err = nutanix.GetImagePlacementPoliciesV2(ctx, &amp;nutanix.GetImagePlacementPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("startswith(name,'ipp_name')"),
+        /// 			Page:   pulumi.IntRef(0),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImagePlacementPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // List all image placement policies
+        ///         final var list-ipp = NutanixFunctions.getImagePlacementPoliciesV2(GetImagePlacementPoliciesV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // List image placement policies with filter, page and limit
+        ///         final var filtered-ipp = NutanixFunctions.getImagePlacementPoliciesV2(GetImagePlacementPoliciesV2Args.builder()
+        ///             .filter("startswith(name,'ipp_name')")
+        ///             .page(0)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # List all image placement policies
+        ///   list-ipp:
+        ///     fn::invoke:
+        ///       function: nutanix:getImagePlacementPoliciesV2
+        ///       arguments: {}
+        ///   # List image placement policies with filter, page and limit
+        ///   filtered-ipp:
+        ///     fn::invoke:
+        ///       function: nutanix:getImagePlacementPoliciesV2
+        ///       arguments:
+        ///         filter: startswith(name,'ipp_name')
+        ///         page: 0
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetImagePlacementPoliciesV2Result> InvokeAsync(GetImagePlacementPoliciesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImagePlacementPoliciesV2Result>("nutanix:index/getImagePlacementPoliciesV2:getImagePlacementPoliciesV2", args ?? new GetImagePlacementPoliciesV2Args(), options.WithDefaults());
@@ -47,6 +152,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // List all image placement policies
+        /// const list_ipp = nutanix.getImagePlacementPoliciesV2({});
+        /// // List image placement policies with filter, page and limit
+        /// const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
+        ///     filter: "startswith(name,'ipp_name')",
+        ///     page: 0,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # List all image placement policies
+        /// list_ipp = nutanix.get_image_placement_policies_v2()
+        /// # List image placement policies with filter, page and limit
+        /// filtered_ipp = nutanix.get_image_placement_policies_v2(filter="startswith(name,'ipp_name')",
+        ///     page=0,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -56,10 +186,10 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all image placement policies
-        ///     var list_ipp = Nutanix.Index.GetImagePlacementPoliciesV2.Invoke();
+        ///     var list_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke();
         /// 
         ///     // List image placement policies with filter, page and limit
-        ///     var filtered_ipp = Nutanix.Index.GetImagePlacementPoliciesV2.Invoke(new()
+        ///     var filtered_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
         ///         Page = 0,
@@ -68,6 +198,86 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// List all image placement policies
+        /// 		_, err := nutanix.GetImagePlacementPoliciesV2(ctx, &amp;nutanix.GetImagePlacementPoliciesV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// List image placement policies with filter, page and limit
+        /// 		_, err = nutanix.GetImagePlacementPoliciesV2(ctx, &amp;nutanix.GetImagePlacementPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("startswith(name,'ipp_name')"),
+        /// 			Page:   pulumi.IntRef(0),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImagePlacementPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // List all image placement policies
+        ///         final var list-ipp = NutanixFunctions.getImagePlacementPoliciesV2(GetImagePlacementPoliciesV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // List image placement policies with filter, page and limit
+        ///         final var filtered-ipp = NutanixFunctions.getImagePlacementPoliciesV2(GetImagePlacementPoliciesV2Args.builder()
+        ///             .filter("startswith(name,'ipp_name')")
+        ///             .page(0)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # List all image placement policies
+        ///   list-ipp:
+        ///     fn::invoke:
+        ///       function: nutanix:getImagePlacementPoliciesV2
+        ///       arguments: {}
+        ///   # List image placement policies with filter, page and limit
+        ///   filtered-ipp:
+        ///     fn::invoke:
+        ///       function: nutanix:getImagePlacementPoliciesV2
+        ///       arguments:
+        ///         filter: startswith(name,'ipp_name')
+        ///         page: 0
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetImagePlacementPoliciesV2Result> Invoke(GetImagePlacementPoliciesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImagePlacementPoliciesV2Result>("nutanix:index/getImagePlacementPoliciesV2:getImagePlacementPoliciesV2", args ?? new GetImagePlacementPoliciesV2InvokeArgs(), options.WithDefaults());
@@ -77,6 +287,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // List all image placement policies
+        /// const list_ipp = nutanix.getImagePlacementPoliciesV2({});
+        /// // List image placement policies with filter, page and limit
+        /// const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
+        ///     filter: "startswith(name,'ipp_name')",
+        ///     page: 0,
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # List all image placement policies
+        /// list_ipp = nutanix.get_image_placement_policies_v2()
+        /// # List image placement policies with filter, page and limit
+        /// filtered_ipp = nutanix.get_image_placement_policies_v2(filter="startswith(name,'ipp_name')",
+        ///     page=0,
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -86,10 +321,10 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all image placement policies
-        ///     var list_ipp = Nutanix.Index.GetImagePlacementPoliciesV2.Invoke();
+        ///     var list_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke();
         /// 
         ///     // List image placement policies with filter, page and limit
-        ///     var filtered_ipp = Nutanix.Index.GetImagePlacementPoliciesV2.Invoke(new()
+        ///     var filtered_ipp = Nutanix.GetImagePlacementPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
         ///         Page = 0,
@@ -98,6 +333,86 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// List all image placement policies
+        /// 		_, err := nutanix.GetImagePlacementPoliciesV2(ctx, &amp;nutanix.GetImagePlacementPoliciesV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// List image placement policies with filter, page and limit
+        /// 		_, err = nutanix.GetImagePlacementPoliciesV2(ctx, &amp;nutanix.GetImagePlacementPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("startswith(name,'ipp_name')"),
+        /// 			Page:   pulumi.IntRef(0),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetImagePlacementPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // List all image placement policies
+        ///         final var list-ipp = NutanixFunctions.getImagePlacementPoliciesV2(GetImagePlacementPoliciesV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // List image placement policies with filter, page and limit
+        ///         final var filtered-ipp = NutanixFunctions.getImagePlacementPoliciesV2(GetImagePlacementPoliciesV2Args.builder()
+        ///             .filter("startswith(name,'ipp_name')")
+        ///             .page(0)
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # List all image placement policies
+        ///   list-ipp:
+        ///     fn::invoke:
+        ///       function: nutanix:getImagePlacementPoliciesV2
+        ///       arguments: {}
+        ///   # List image placement policies with filter, page and limit
+        ///   filtered-ipp:
+        ///     fn::invoke:
+        ///       function: nutanix:getImagePlacementPoliciesV2
+        ///       arguments:
+        ///         filter: startswith(name,'ipp_name')
+        ///         page: 0
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetImagePlacementPoliciesV2Result> Invoke(GetImagePlacementPoliciesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetImagePlacementPoliciesV2Result>("nutanix:index/getImagePlacementPoliciesV2:getImagePlacementPoliciesV2", args ?? new GetImagePlacementPoliciesV2InvokeArgs(), options.WithDefaults());

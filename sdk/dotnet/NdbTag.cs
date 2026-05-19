@@ -16,6 +16,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ### resource to create tag
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbTag("name", new()
+    ///     var name = new Nutanix.NdbTag("name", new()
     ///     {
     ///         Name = "testst-up",
     ///         Description = "this is desc ok",
@@ -34,8 +35,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### resource to update tag with status
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbTag("name", new()
+    ///     var name = new Nutanix.NdbTag("name", new()
     ///     {
     ///         Name = "testst-up",
     ///         Description = "this is desc ok",
@@ -55,6 +58,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbTag:NdbTag")]
     public partial class NdbTag : global::Pulumi.CustomResource

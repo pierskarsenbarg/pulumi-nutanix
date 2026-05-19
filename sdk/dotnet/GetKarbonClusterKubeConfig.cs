@@ -17,6 +17,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get kubeconfig by cluster UUID
+        /// const configbyid = nutanix.getKarbonClusterKubeConfig({
+        ///     karbonClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// // Get Kubeconfig by cluster name
+        /// const configbyname = nutanix.getKarbonClusterKubeConfig({
+        ///     karbonClusterName: "&lt;YOUR-CLUSTER-NAME&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get kubeconfig by cluster UUID
+        /// configbyid = nutanix.get_karbon_cluster_kube_config(karbon_cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// # Get Kubeconfig by cluster name
+        /// configbyname = nutanix.get_karbon_cluster_kube_config(karbon_cluster_name="&lt;YOUR-CLUSTER-NAME&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,19 +49,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get kubeconfig by cluster UUID
-        ///     var configbyid = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get Kubeconfig by cluster name
-        ///     var configbyname = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get kubeconfig by cluster UUID
+        /// 		_, err := nutanix.GetKarbonClusterKubeConfig(ctx, &amp;nutanix.GetKarbonClusterKubeConfigArgs{
+        /// 			KarbonClusterId: pulumi.StringRef("&lt;YOUR-CLUSTER-ID&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get Kubeconfig by cluster name
+        /// 		_, err = nutanix.GetKarbonClusterKubeConfig(ctx, &amp;nutanix.GetKarbonClusterKubeConfigArgs{
+        /// 			KarbonClusterName: pulumi.StringRef("&lt;YOUR-CLUSTER-NAME&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonClusterKubeConfigArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get kubeconfig by cluster UUID
+        ///         final var configbyid = NutanixFunctions.getKarbonClusterKubeConfig(GetKarbonClusterKubeConfigArgs.builder()
+        ///             .karbonClusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///         // Get Kubeconfig by cluster name
+        ///         final var configbyname = NutanixFunctions.getKarbonClusterKubeConfig(GetKarbonClusterKubeConfigArgs.builder()
+        ///             .karbonClusterName("&lt;YOUR-CLUSTER-NAME&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get kubeconfig by cluster UUID
+        ///   configbyid:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterKubeConfig
+        ///       arguments:
+        ///         karbonClusterId: &lt;YOUR-CLUSTER-ID&gt;
+        ///   # Get Kubeconfig by cluster name
+        ///   configbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterKubeConfig
+        ///       arguments:
+        ///         karbonClusterName: &lt;YOUR-CLUSTER-NAME&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetKarbonClusterKubeConfigResult> InvokeAsync(GetKarbonClusterKubeConfigArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterKubeConfigResult>("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args ?? new GetKarbonClusterKubeConfigArgs(), options.WithDefaults());
@@ -48,6 +149,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get kubeconfig by cluster UUID
+        /// const configbyid = nutanix.getKarbonClusterKubeConfig({
+        ///     karbonClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// // Get Kubeconfig by cluster name
+        /// const configbyname = nutanix.getKarbonClusterKubeConfig({
+        ///     karbonClusterName: "&lt;YOUR-CLUSTER-NAME&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get kubeconfig by cluster UUID
+        /// configbyid = nutanix.get_karbon_cluster_kube_config(karbon_cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// # Get Kubeconfig by cluster name
+        /// configbyname = nutanix.get_karbon_cluster_kube_config(karbon_cluster_name="&lt;YOUR-CLUSTER-NAME&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -57,19 +181,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get kubeconfig by cluster UUID
-        ///     var configbyid = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get Kubeconfig by cluster name
-        ///     var configbyname = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get kubeconfig by cluster UUID
+        /// 		_, err := nutanix.GetKarbonClusterKubeConfig(ctx, &amp;nutanix.GetKarbonClusterKubeConfigArgs{
+        /// 			KarbonClusterId: pulumi.StringRef("&lt;YOUR-CLUSTER-ID&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get Kubeconfig by cluster name
+        /// 		_, err = nutanix.GetKarbonClusterKubeConfig(ctx, &amp;nutanix.GetKarbonClusterKubeConfigArgs{
+        /// 			KarbonClusterName: pulumi.StringRef("&lt;YOUR-CLUSTER-NAME&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonClusterKubeConfigArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get kubeconfig by cluster UUID
+        ///         final var configbyid = NutanixFunctions.getKarbonClusterKubeConfig(GetKarbonClusterKubeConfigArgs.builder()
+        ///             .karbonClusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///         // Get Kubeconfig by cluster name
+        ///         final var configbyname = NutanixFunctions.getKarbonClusterKubeConfig(GetKarbonClusterKubeConfigArgs.builder()
+        ///             .karbonClusterName("&lt;YOUR-CLUSTER-NAME&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get kubeconfig by cluster UUID
+        ///   configbyid:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterKubeConfig
+        ///       arguments:
+        ///         karbonClusterId: &lt;YOUR-CLUSTER-ID&gt;
+        ///   # Get Kubeconfig by cluster name
+        ///   configbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterKubeConfig
+        ///       arguments:
+        ///         karbonClusterName: &lt;YOUR-CLUSTER-NAME&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetKarbonClusterKubeConfigResult> Invoke(GetKarbonClusterKubeConfigInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterKubeConfigResult>("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args ?? new GetKarbonClusterKubeConfigInvokeArgs(), options.WithDefaults());
@@ -79,6 +281,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get kubeconfig by cluster UUID
+        /// const configbyid = nutanix.getKarbonClusterKubeConfig({
+        ///     karbonClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// // Get Kubeconfig by cluster name
+        /// const configbyname = nutanix.getKarbonClusterKubeConfig({
+        ///     karbonClusterName: "&lt;YOUR-CLUSTER-NAME&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get kubeconfig by cluster UUID
+        /// configbyid = nutanix.get_karbon_cluster_kube_config(karbon_cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// # Get Kubeconfig by cluster name
+        /// configbyname = nutanix.get_karbon_cluster_kube_config(karbon_cluster_name="&lt;YOUR-CLUSTER-NAME&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -88,19 +313,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get kubeconfig by cluster UUID
-        ///     var configbyid = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get Kubeconfig by cluster name
-        ///     var configbyname = Nutanix.Index.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get kubeconfig by cluster UUID
+        /// 		_, err := nutanix.GetKarbonClusterKubeConfig(ctx, &amp;nutanix.GetKarbonClusterKubeConfigArgs{
+        /// 			KarbonClusterId: pulumi.StringRef("&lt;YOUR-CLUSTER-ID&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get Kubeconfig by cluster name
+        /// 		_, err = nutanix.GetKarbonClusterKubeConfig(ctx, &amp;nutanix.GetKarbonClusterKubeConfigArgs{
+        /// 			KarbonClusterName: pulumi.StringRef("&lt;YOUR-CLUSTER-NAME&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonClusterKubeConfigArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get kubeconfig by cluster UUID
+        ///         final var configbyid = NutanixFunctions.getKarbonClusterKubeConfig(GetKarbonClusterKubeConfigArgs.builder()
+        ///             .karbonClusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///         // Get Kubeconfig by cluster name
+        ///         final var configbyname = NutanixFunctions.getKarbonClusterKubeConfig(GetKarbonClusterKubeConfigArgs.builder()
+        ///             .karbonClusterName("&lt;YOUR-CLUSTER-NAME&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get kubeconfig by cluster UUID
+        ///   configbyid:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterKubeConfig
+        ///       arguments:
+        ///         karbonClusterId: &lt;YOUR-CLUSTER-ID&gt;
+        ///   # Get Kubeconfig by cluster name
+        ///   configbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterKubeConfig
+        ///       arguments:
+        ///         karbonClusterName: &lt;YOUR-CLUSTER-NAME&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetKarbonClusterKubeConfigResult> Invoke(GetKarbonClusterKubeConfigInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterKubeConfigResult>("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args ?? new GetKarbonClusterKubeConfigInvokeArgs(), options.WithDefaults());

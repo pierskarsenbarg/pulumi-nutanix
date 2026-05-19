@@ -17,6 +17,54 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const recoveryPlanTest = new nutanix.RecoveryPlan("recovery_plan_test", {
+        ///     name: "%s",
+        ///     description: "%s",
+        ///     stageLists: [{
+        ///         stageWork: {
+        ///             recoverEntities: {
+        ///                 entityInfoLists: [{
+        ///                     categories: [{
+        ///                         name: "Environment",
+        ///                         value: "Dev",
+        ///                     }],
+        ///                 }],
+        ///             },
+        ///         },
+        ///         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///         delayTimeSecs: 0,
+        ///     }],
+        ///     parameters: {},
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// recovery_plan_test = nutanix.RecoveryPlan("recovery_plan_test",
+        ///     name="%s",
+        ///     description="%s",
+        ///     stage_lists=[{
+        ///         "stage_work": {
+        ///             "recover_entities": {
+        ///                 "entity_info_lists": [{
+        ///                     "categories": [{
+        ///                         "name": "Environment",
+        ///                         "value": "Dev",
+        ///                     }],
+        ///                 }],
+        ///             },
+        ///         },
+        ///         "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///         "delay_time_secs": 0,
+        ///     }],
+        ///     parameters={})
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +73,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var recoveryPlanTest = new Nutanix.Index.RecoveryPlan("recovery_plan_test", new()
+        ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
         ///     {
         ///         Name = "%s",
         ///         Description = "%s",
@@ -62,6 +110,117 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.NewRecoveryPlan(ctx, "recovery_plan_test", &amp;nutanix.RecoveryPlanArgs{
+        /// 			Name:        pulumi.String("%s"),
+        /// 			Description: pulumi.String("%s"),
+        /// 			StageLists: nutanix.RecoveryPlanStageListArray{
+        /// 				&amp;nutanix.RecoveryPlanStageListArgs{
+        /// 					StageWork: &amp;nutanix.RecoveryPlanStageListStageWorkArgs{
+        /// 						RecoverEntities: &amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesArgs{
+        /// 							EntityInfoLists: nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArray{
+        /// 								&amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs{
+        /// 									Categories: nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArray{
+        /// 										&amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs{
+        /// 											Name:  pulumi.String("Environment"),
+        /// 											Value: pulumi.String("Dev"),
+        /// 										},
+        /// 									},
+        /// 								},
+        /// 							},
+        /// 						},
+        /// 					},
+        /// 					StageUuid:     pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+        /// 					DelayTimeSecs: pulumi.Int(0),
+        /// 				},
+        /// 			},
+        /// 			Parameters: &amp;nutanix.RecoveryPlanParametersArgs{},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.RecoveryPlan;
+        /// import com.pulumi.nutanix.RecoveryPlanArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanParametersArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var recoveryPlanTest = new RecoveryPlan("recoveryPlanTest", RecoveryPlanArgs.builder()
+        ///             .name("%s")
+        ///             .description("%s")
+        ///             .stageLists(RecoveryPlanStageListArgs.builder()
+        ///                 .stageWork(RecoveryPlanStageListStageWorkArgs.builder()
+        ///                     .recoverEntities(RecoveryPlanStageListStageWorkRecoverEntitiesArgs.builder()
+        ///                         .entityInfoLists(RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs.builder()
+        ///                             .categories(RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs.builder()
+        ///                                 .name("Environment")
+        ///                                 .value("Dev")
+        ///                                 .build())
+        ///                             .build())
+        ///                         .build())
+        ///                     .build())
+        ///                 .stageUuid("ab788130-0820-4d07-a1b5-b0ba4d3a42asd")
+        ///                 .delayTimeSecs(0)
+        ///                 .build())
+        ///             .parameters(RecoveryPlanParametersArgs.builder()
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   recoveryPlanTest:
+        ///     type: nutanix:RecoveryPlan
+        ///     name: recovery_plan_test
+        ///     properties:
+        ///       name: '%s'
+        ///       description: '%s'
+        ///       stageLists:
+        ///         - stageWork:
+        ///             recoverEntities:
+        ///               entityInfoLists:
+        ///                 - categories:
+        ///                     - name: Environment
+        ///                       value: Dev
+        ///           stageUuid: ab788130-0820-4d07-a1b5-b0ba4d3a42asd
+        ///           delayTimeSecs: 0
+        ///       parameters: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRecoveryPlanResult> InvokeAsync(GetRecoveryPlanArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecoveryPlanResult>("nutanix:index/getRecoveryPlan:getRecoveryPlan", args ?? new GetRecoveryPlanArgs(), options.WithDefaults());
@@ -71,6 +230,54 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const recoveryPlanTest = new nutanix.RecoveryPlan("recovery_plan_test", {
+        ///     name: "%s",
+        ///     description: "%s",
+        ///     stageLists: [{
+        ///         stageWork: {
+        ///             recoverEntities: {
+        ///                 entityInfoLists: [{
+        ///                     categories: [{
+        ///                         name: "Environment",
+        ///                         value: "Dev",
+        ///                     }],
+        ///                 }],
+        ///             },
+        ///         },
+        ///         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///         delayTimeSecs: 0,
+        ///     }],
+        ///     parameters: {},
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// recovery_plan_test = nutanix.RecoveryPlan("recovery_plan_test",
+        ///     name="%s",
+        ///     description="%s",
+        ///     stage_lists=[{
+        ///         "stage_work": {
+        ///             "recover_entities": {
+        ///                 "entity_info_lists": [{
+        ///                     "categories": [{
+        ///                         "name": "Environment",
+        ///                         "value": "Dev",
+        ///                     }],
+        ///                 }],
+        ///             },
+        ///         },
+        ///         "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///         "delay_time_secs": 0,
+        ///     }],
+        ///     parameters={})
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,7 +286,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var recoveryPlanTest = new Nutanix.Index.RecoveryPlan("recovery_plan_test", new()
+        ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
         ///     {
         ///         Name = "%s",
         ///         Description = "%s",
@@ -116,6 +323,117 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.NewRecoveryPlan(ctx, "recovery_plan_test", &amp;nutanix.RecoveryPlanArgs{
+        /// 			Name:        pulumi.String("%s"),
+        /// 			Description: pulumi.String("%s"),
+        /// 			StageLists: nutanix.RecoveryPlanStageListArray{
+        /// 				&amp;nutanix.RecoveryPlanStageListArgs{
+        /// 					StageWork: &amp;nutanix.RecoveryPlanStageListStageWorkArgs{
+        /// 						RecoverEntities: &amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesArgs{
+        /// 							EntityInfoLists: nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArray{
+        /// 								&amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs{
+        /// 									Categories: nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArray{
+        /// 										&amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs{
+        /// 											Name:  pulumi.String("Environment"),
+        /// 											Value: pulumi.String("Dev"),
+        /// 										},
+        /// 									},
+        /// 								},
+        /// 							},
+        /// 						},
+        /// 					},
+        /// 					StageUuid:     pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+        /// 					DelayTimeSecs: pulumi.Int(0),
+        /// 				},
+        /// 			},
+        /// 			Parameters: &amp;nutanix.RecoveryPlanParametersArgs{},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.RecoveryPlan;
+        /// import com.pulumi.nutanix.RecoveryPlanArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanParametersArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var recoveryPlanTest = new RecoveryPlan("recoveryPlanTest", RecoveryPlanArgs.builder()
+        ///             .name("%s")
+        ///             .description("%s")
+        ///             .stageLists(RecoveryPlanStageListArgs.builder()
+        ///                 .stageWork(RecoveryPlanStageListStageWorkArgs.builder()
+        ///                     .recoverEntities(RecoveryPlanStageListStageWorkRecoverEntitiesArgs.builder()
+        ///                         .entityInfoLists(RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs.builder()
+        ///                             .categories(RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs.builder()
+        ///                                 .name("Environment")
+        ///                                 .value("Dev")
+        ///                                 .build())
+        ///                             .build())
+        ///                         .build())
+        ///                     .build())
+        ///                 .stageUuid("ab788130-0820-4d07-a1b5-b0ba4d3a42asd")
+        ///                 .delayTimeSecs(0)
+        ///                 .build())
+        ///             .parameters(RecoveryPlanParametersArgs.builder()
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   recoveryPlanTest:
+        ///     type: nutanix:RecoveryPlan
+        ///     name: recovery_plan_test
+        ///     properties:
+        ///       name: '%s'
+        ///       description: '%s'
+        ///       stageLists:
+        ///         - stageWork:
+        ///             recoverEntities:
+        ///               entityInfoLists:
+        ///                 - categories:
+        ///                     - name: Environment
+        ///                       value: Dev
+        ///           stageUuid: ab788130-0820-4d07-a1b5-b0ba4d3a42asd
+        ///           delayTimeSecs: 0
+        ///       parameters: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRecoveryPlanResult> Invoke(GetRecoveryPlanInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlanResult>("nutanix:index/getRecoveryPlan:getRecoveryPlan", args ?? new GetRecoveryPlanInvokeArgs(), options.WithDefaults());
@@ -125,6 +443,54 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const recoveryPlanTest = new nutanix.RecoveryPlan("recovery_plan_test", {
+        ///     name: "%s",
+        ///     description: "%s",
+        ///     stageLists: [{
+        ///         stageWork: {
+        ///             recoverEntities: {
+        ///                 entityInfoLists: [{
+        ///                     categories: [{
+        ///                         name: "Environment",
+        ///                         value: "Dev",
+        ///                     }],
+        ///                 }],
+        ///             },
+        ///         },
+        ///         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///         delayTimeSecs: 0,
+        ///     }],
+        ///     parameters: {},
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// recovery_plan_test = nutanix.RecoveryPlan("recovery_plan_test",
+        ///     name="%s",
+        ///     description="%s",
+        ///     stage_lists=[{
+        ///         "stage_work": {
+        ///             "recover_entities": {
+        ///                 "entity_info_lists": [{
+        ///                     "categories": [{
+        ///                         "name": "Environment",
+        ///                         "value": "Dev",
+        ///                     }],
+        ///                 }],
+        ///             },
+        ///         },
+        ///         "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///         "delay_time_secs": 0,
+        ///     }],
+        ///     parameters={})
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -133,7 +499,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var recoveryPlanTest = new Nutanix.Index.RecoveryPlan("recovery_plan_test", new()
+        ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
         ///     {
         ///         Name = "%s",
         ///         Description = "%s",
@@ -170,6 +536,117 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.NewRecoveryPlan(ctx, "recovery_plan_test", &amp;nutanix.RecoveryPlanArgs{
+        /// 			Name:        pulumi.String("%s"),
+        /// 			Description: pulumi.String("%s"),
+        /// 			StageLists: nutanix.RecoveryPlanStageListArray{
+        /// 				&amp;nutanix.RecoveryPlanStageListArgs{
+        /// 					StageWork: &amp;nutanix.RecoveryPlanStageListStageWorkArgs{
+        /// 						RecoverEntities: &amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesArgs{
+        /// 							EntityInfoLists: nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArray{
+        /// 								&amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs{
+        /// 									Categories: nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArray{
+        /// 										&amp;nutanix.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs{
+        /// 											Name:  pulumi.String("Environment"),
+        /// 											Value: pulumi.String("Dev"),
+        /// 										},
+        /// 									},
+        /// 								},
+        /// 							},
+        /// 						},
+        /// 					},
+        /// 					StageUuid:     pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+        /// 					DelayTimeSecs: pulumi.Int(0),
+        /// 				},
+        /// 			},
+        /// 			Parameters: &amp;nutanix.RecoveryPlanParametersArgs{},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.RecoveryPlan;
+        /// import com.pulumi.nutanix.RecoveryPlanArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanParametersArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var recoveryPlanTest = new RecoveryPlan("recoveryPlanTest", RecoveryPlanArgs.builder()
+        ///             .name("%s")
+        ///             .description("%s")
+        ///             .stageLists(RecoveryPlanStageListArgs.builder()
+        ///                 .stageWork(RecoveryPlanStageListStageWorkArgs.builder()
+        ///                     .recoverEntities(RecoveryPlanStageListStageWorkRecoverEntitiesArgs.builder()
+        ///                         .entityInfoLists(RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs.builder()
+        ///                             .categories(RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs.builder()
+        ///                                 .name("Environment")
+        ///                                 .value("Dev")
+        ///                                 .build())
+        ///                             .build())
+        ///                         .build())
+        ///                     .build())
+        ///                 .stageUuid("ab788130-0820-4d07-a1b5-b0ba4d3a42asd")
+        ///                 .delayTimeSecs(0)
+        ///                 .build())
+        ///             .parameters(RecoveryPlanParametersArgs.builder()
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   recoveryPlanTest:
+        ///     type: nutanix:RecoveryPlan
+        ///     name: recovery_plan_test
+        ///     properties:
+        ///       name: '%s'
+        ///       description: '%s'
+        ///       stageLists:
+        ///         - stageWork:
+        ///             recoverEntities:
+        ///               entityInfoLists:
+        ///                 - categories:
+        ///                     - name: Environment
+        ///                       value: Dev
+        ///           stageUuid: ab788130-0820-4d07-a1b5-b0ba4d3a42asd
+        ///           delayTimeSecs: 0
+        ///       parameters: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRecoveryPlanResult> Invoke(GetRecoveryPlanInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlanResult>("nutanix:index/getRecoveryPlan:getRecoveryPlan", args ?? new GetRecoveryPlanInvokeArgs(), options.WithDefaults());
@@ -187,7 +664,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `Id` of the Recovery Plan.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the Recovery Plan.
         /// </summary>
         [Input("recoveryPlanId")]
         public string? RecoveryPlanId { get; set; }
@@ -212,7 +689,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `Id` of the Recovery Plan.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the Recovery Plan.
         /// </summary>
         [Input("recoveryPlanId")]
         public Input<string>? RecoveryPlanId { get; set; }

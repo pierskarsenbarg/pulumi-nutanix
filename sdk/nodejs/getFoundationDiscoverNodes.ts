@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const discoveredNodes = nutanix.getFoundationDiscoverNodes({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationDiscoverNodes(opts?: pulumi.InvokeOptions): Promise<GetFoundationDiscoverNodesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -42,12 +44,14 @@ export interface GetFoundationDiscoverNodesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const discoveredNodes = nutanix.getFoundationDiscoverNodes({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationDiscoverNodesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationDiscoverNodesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

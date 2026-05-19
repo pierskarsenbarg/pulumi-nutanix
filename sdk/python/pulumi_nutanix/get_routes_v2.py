@@ -140,11 +140,11 @@ def get_routes_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         route_table_ext_id=pulumi.get(__ret__, 'route_table_ext_id'),
         routes=pulumi.get(__ret__, 'routes'))
-def get_routes_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                         order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                         route_table_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_routes_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                         order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                         route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoutesV2Result]:
     """
     Provides Nutanix resource to List Routes request.

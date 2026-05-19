@@ -24,9 +24,9 @@ class PbrV2Args:
                  policies: pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyArgs']]],
                  priority: pulumi.Input[_builtins.int],
                  vpc_ext_id: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PbrV2 resource.
 
@@ -85,54 +85,54 @@ class PbrV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A description of the routing policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the routing policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _PbrV2State:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2LinkArgs']]]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2MetadataArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyArgs']]]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2VpcArgs']]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2LinkArgs']]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2MetadataArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyArgs']]]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2VpcArgs']]]] = None):
         """
         Input properties used for looking up and filtering PbrV2 resources.
 
@@ -170,122 +170,122 @@ class _PbrV2State:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A description of the routing policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2MetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2MetadataArgs']]]]:
         """
         Metadata associated with this resource.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2MetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the routing policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyArgs']]]]:
+    def policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyArgs']]]]:
         """
         Routing Policies.
         """
         return pulumi.get(self, "policies")
 
     @policies.setter
-    def policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyArgs']]]]):
+    def policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyArgs']]]]):
         pulumi.set(self, "policies", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Priority of the routing policy.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcExtId")
-    def vpc_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ExtId of the VPC extId to which the routing policy belongs.
         """
         return pulumi.get(self, "vpc_ext_id")
 
     @vpc_ext_id.setter
-    def vpc_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2VpcArgs']]]]:
+    def vpcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2VpcArgs']]]]:
         """
         VPC name for projections
         """
         return pulumi.get(self, "vpcs")
 
     @vpcs.setter
-    def vpcs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PbrV2VpcArgs']]]]):
+    def vpcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2VpcArgs']]]]):
         pulumi.set(self, "vpcs", value)
 
 
@@ -295,18 +295,19 @@ class PbrV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 vpc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 vpc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a Routing Policy.
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -332,6 +333,7 @@ class PbrV2(pulumi.CustomResource):
                 }],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -363,6 +365,7 @@ class PbrV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -388,6 +391,7 @@ class PbrV2(pulumi.CustomResource):
                 }],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -414,12 +418,12 @@ class PbrV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 vpc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 vpc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -455,16 +459,16 @@ class PbrV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PbrV2LinkArgs', 'PbrV2LinkArgsDict']]]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PbrV2MetadataArgs', 'PbrV2MetadataArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vpcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PbrV2VpcArgs', 'PbrV2VpcArgsDict']]]]] = None) -> 'PbrV2':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2LinkArgs', 'PbrV2LinkArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2MetadataArgs', 'PbrV2MetadataArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2VpcArgs', 'PbrV2VpcArgsDict']]]]] = None) -> 'PbrV2':
         """
         Get an existing PbrV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

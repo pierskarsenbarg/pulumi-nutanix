@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     id: "{{ maintenance_window_id }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbMaintenanceWindow(args: GetNdbMaintenanceWindowArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbMaintenanceWindowResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -105,6 +107,7 @@ export interface GetNdbMaintenanceWindowResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -113,6 +116,7 @@ export interface GetNdbMaintenanceWindowResult {
  *     id: "{{ maintenance_window_id }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbMaintenanceWindowOutput(args: GetNdbMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbMaintenanceWindowResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -133,5 +137,5 @@ export interface GetNdbMaintenanceWindowOutputArgs {
     /**
      * tags of maintenance window
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbMaintenanceWindowTagArgs>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbMaintenanceWindowTagArgs>[] | undefined>;
 }

@@ -17,6 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### NDB database resource with new database server VM
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var dbp = new Nutanix.Index.NdbDatabase("dbp", new()
+    ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
     ///     {
     ///         Databasetype = "postgres_database",
     ///         Name = "test-inst",
@@ -99,9 +100,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### NDB database resource to provision HA instance with new database server VM
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -110,7 +113,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var dbp = new Nutanix.Index.NdbDatabase("dbp", new()
+    ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
     ///     {
     ///         Databasetype = "postgres_database",
     ///         Name = "test-pg-inst-HA-tf",
@@ -295,9 +298,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### NDB database resource with registered database server VM
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -306,7 +311,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var dbp = new Nutanix.Index.NdbDatabase("dbp", new()
+    ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
     ///     {
     ///         Databasetype = "postgres_database",
     ///         Name = "test-inst",
@@ -383,6 +388,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## lifecycle
     /// 

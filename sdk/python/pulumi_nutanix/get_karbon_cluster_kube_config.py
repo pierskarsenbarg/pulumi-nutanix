@@ -111,6 +111,7 @@ def get_karbon_cluster_kube_config(karbon_cluster_id: Optional[_builtins.str] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -120,6 +121,7 @@ def get_karbon_cluster_kube_config(karbon_cluster_id: Optional[_builtins.str] = 
     # Get Kubeconfig by cluster name
     configbyname = nutanix.get_karbon_cluster_kube_config(karbon_cluster_name="<YOUR-CLUSTER-NAME>")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str karbon_cluster_id: Represents karbon cluster uuid
@@ -139,14 +141,15 @@ def get_karbon_cluster_kube_config(karbon_cluster_id: Optional[_builtins.str] = 
         karbon_cluster_id=pulumi.get(__ret__, 'karbon_cluster_id'),
         karbon_cluster_name=pulumi.get(__ret__, 'karbon_cluster_name'),
         name=pulumi.get(__ret__, 'name'))
-def get_karbon_cluster_kube_config_output(karbon_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          karbon_cluster_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_karbon_cluster_kube_config_output(karbon_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          karbon_cluster_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonClusterKubeConfigResult]:
     """
     Describes the SSH config from a Karbon Cluster
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -156,6 +159,7 @@ def get_karbon_cluster_kube_config_output(karbon_cluster_id: Optional[pulumi.Inp
     # Get Kubeconfig by cluster name
     configbyname = nutanix.get_karbon_cluster_kube_config(karbon_cluster_name="<YOUR-CLUSTER-NAME>")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str karbon_cluster_id: Represents karbon cluster uuid

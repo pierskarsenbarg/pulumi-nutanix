@@ -186,12 +186,14 @@ def get_service_group_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     service_group = nutanix.get_service_group_v2(ext_id="07167778-266d-4052-9992-f30cbfd52e83")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: service group UUID.
@@ -214,19 +216,21 @@ def get_service_group_v2(ext_id: Optional[_builtins.str] = None,
         tcp_services=pulumi.get(__ret__, 'tcp_services'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         udp_services=pulumi.get(__ret__, 'udp_services'))
-def get_service_group_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_service_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceGroupV2Result]:
     """
     Get an service Group by ExtID
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     service_group = nutanix.get_service_group_v2(ext_id="07167778-266d-4052-9992-f30cbfd52e83")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: service group UUID.

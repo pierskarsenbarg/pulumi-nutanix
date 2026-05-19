@@ -21,24 +21,24 @@ class TemplateGuestOsActionsV2Args:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
                  ext_id: pulumi.Input[_builtins.str],
-                 is_active_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_active_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a TemplateGuestOsActionsV2 resource.
 
         :param pulumi.Input[_builtins.str] action: Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
         :param pulumi.Input[_builtins.str] ext_id: The identifier of a Template.
-        :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
                
                
                See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
                See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
                See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
-        :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         :param pulumi.Input[_builtins.str] version_id: The identifier of a Template Version. Only applicable with `Initiate` action.
-        :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "ext_id", ext_id)
@@ -77,9 +77,9 @@ class TemplateGuestOsActionsV2Args:
 
     @_builtins.property
     @pulumi.getter(name="isActiveVersion")
-    def is_active_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def is_active_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
 
 
         See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -89,69 +89,69 @@ class TemplateGuestOsActionsV2Args:
         return pulumi.get(self, "is_active_version")
 
     @is_active_version.setter
-    def is_active_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def is_active_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "is_active_version", value)
 
     @_builtins.property
     @pulumi.getter(name="versionDescription")
-    def version_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         return pulumi.get(self, "version_description")
 
     @version_description.setter
-    def version_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_description", value)
 
     @_builtins.property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of a Template Version. Only applicable with `Initiate` action.
         """
         return pulumi.get(self, "version_id")
 
     @version_id.setter
-    def version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="versionName")
-    def version_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The user defined name of a Template Version. Only applicable with `complete` action.
+        The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         return pulumi.get(self, "version_name")
 
     @version_name.setter
-    def version_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_name", value)
 
 
 @pulumi.input_type
 class _TemplateGuestOsActionsV2State:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TemplateGuestOsActionsV2 resources.
 
         :param pulumi.Input[_builtins.str] action: Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
         :param pulumi.Input[_builtins.str] ext_id: The identifier of a Template.
-        :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
                
                
                See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
                See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
                See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
-        :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         :param pulumi.Input[_builtins.str] version_id: The identifier of a Template Version. Only applicable with `Initiate` action.
-        :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -168,33 +168,33 @@ class _TemplateGuestOsActionsV2State:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of a Template.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isActiveVersion")
-    def is_active_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def is_active_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
 
 
         See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -204,43 +204,43 @@ class _TemplateGuestOsActionsV2State:
         return pulumi.get(self, "is_active_version")
 
     @is_active_version.setter
-    def is_active_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def is_active_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "is_active_version", value)
 
     @_builtins.property
     @pulumi.getter(name="versionDescription")
-    def version_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         return pulumi.get(self, "version_description")
 
     @version_description.setter
-    def version_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_description", value)
 
     @_builtins.property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of a Template Version. Only applicable with `Initiate` action.
         """
         return pulumi.get(self, "version_id")
 
     @version_id.setter
-    def version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="versionName")
-    def version_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The user defined name of a Template Version. Only applicable with `complete` action.
+        The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         return pulumi.get(self, "version_name")
 
     @version_name.setter
-    def version_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_name", value)
 
 
@@ -250,18 +250,19 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Performs Guest OS actions on given template. It Initiates, Completes and Cancels the Guest OS operation.
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -280,21 +281,22 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
             ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             action="cancel")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
         :param pulumi.Input[_builtins.str] ext_id: The identifier of a Template.
-        :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
                
                
                See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
                See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
                See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
-        :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         :param pulumi.Input[_builtins.str] version_id: The identifier of a Template Version. Only applicable with `Initiate` action.
-        :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         ...
     @overload
@@ -307,6 +309,7 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -325,6 +328,7 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
             ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             action="cancel")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -342,12 +346,12 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -377,12 +381,12 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_active_version: Optional[pulumi.Input[_builtins.str]] = None,
-            version_description: Optional[pulumi.Input[_builtins.str]] = None,
-            version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'TemplateGuestOsActionsV2':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_active_version: pulumi.Input[Optional[_builtins.str]] = None,
+            version_description: pulumi.Input[Optional[_builtins.str]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'TemplateGuestOsActionsV2':
         """
         Get an existing TemplateGuestOsActionsV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -392,15 +396,15 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
         :param pulumi.Input[_builtins.str] ext_id: The identifier of a Template.
-        :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] is_active_version: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
                
                
                See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
                See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
                See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
-        :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         :param pulumi.Input[_builtins.str] version_id: The identifier of a Template Version. Only applicable with `Initiate` action.
-        :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Only applicable with `complete` action.
+        :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -434,7 +438,7 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
     @pulumi.getter(name="isActiveVersion")
     def is_active_version(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
+        Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
 
 
         See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -447,7 +451,7 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
     @pulumi.getter(name="versionDescription")
     def version_description(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The user defined description of a Template Version. (Required) Only applicable with `complete` action.
+        The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         return pulumi.get(self, "version_description")
 
@@ -463,7 +467,7 @@ class TemplateGuestOsActionsV2(pulumi.CustomResource):
     @pulumi.getter(name="versionName")
     def version_name(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The user defined name of a Template Version. Only applicable with `complete` action.
+        The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
         """
         return pulumi.get(self, "version_name")
 

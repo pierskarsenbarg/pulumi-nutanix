@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -27,6 +28,7 @@ import * as utilities from "./utilities";
  *     uuid: testAddress.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAddressGroup(args: GetAddressGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -79,6 +81,7 @@ export interface GetAddressGroupResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -95,6 +98,7 @@ export interface GetAddressGroupResult {
  *     uuid: testAddress.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAddressGroupOutput(args: GetAddressGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddressGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

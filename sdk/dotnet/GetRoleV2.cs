@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const role = nutanix.getRoleV2({
+        ///     extId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// role = nutanix.get_role_v2(ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var role = Nutanix.Index.GetRoleV2.Invoke(new()
+        ///     var role = Nutanix.GetRoleV2.Invoke(new()
         ///     {
         ///         ExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRoleV2(ctx, &amp;nutanix.GetRoleV2Args{
+        /// 			ExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRoleV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var role = NutanixFunctions.getRoleV2(GetRoleV2Args.builder()
+        ///             .extId("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   role:
+        ///     fn::invoke:
+        ///       function: nutanix:getRoleV2
+        ///       arguments:
+        ///         extId: a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRoleV2Result> InvokeAsync(GetRoleV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRoleV2Result>("nutanix:index/getRoleV2:getRoleV2", args ?? new GetRoleV2Args(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const role = nutanix.getRoleV2({
+        ///     extId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// role = nutanix.get_role_v2(ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var role = Nutanix.Index.GetRoleV2.Invoke(new()
+        ///     var role = Nutanix.GetRoleV2.Invoke(new()
         ///     {
         ///         ExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRoleV2(ctx, &amp;nutanix.GetRoleV2Args{
+        /// 			ExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRoleV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var role = NutanixFunctions.getRoleV2(GetRoleV2Args.builder()
+        ///             .extId("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   role:
+        ///     fn::invoke:
+        ///       function: nutanix:getRoleV2
+        ///       arguments:
+        ///         extId: a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRoleV2Result> Invoke(GetRoleV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoleV2Result>("nutanix:index/getRoleV2:getRoleV2", args ?? new GetRoleV2InvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const role = nutanix.getRoleV2({
+        ///     extId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// role = nutanix.get_role_v2(ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var role = Nutanix.Index.GetRoleV2.Invoke(new()
+        ///     var role = Nutanix.GetRoleV2.Invoke(new()
         ///     {
         ///         ExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRoleV2(ctx, &amp;nutanix.GetRoleV2Args{
+        /// 			ExtId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRoleV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var role = NutanixFunctions.getRoleV2(GetRoleV2Args.builder()
+        ///             .extId("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   role:
+        ///     fn::invoke:
+        ///       function: nutanix:getRoleV2
+        ///       arguments:
+        ///         extId: a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRoleV2Result> Invoke(GetRoleV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoleV2Result>("nutanix:index/getRoleV2:getRoleV2", args ?? new GetRoleV2InvokeArgs(), options.WithDefaults());

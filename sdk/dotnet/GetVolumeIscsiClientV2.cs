@@ -19,6 +19,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getVolumeIscsiClientV2({
+        ///     extId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_volume_iscsi_client_v2(ext_id="be0e4630-23da-4b9c-a76b-f24fd64b46b6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -27,20 +42,77 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetVolumeIscsiClientV2.Invoke(new()
+        ///     var example = Nutanix.GetVolumeIscsiClientV2.Invoke(new()
         ///     {
         ///         ExtId = "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVolumeIscsiClientV2(ctx, &amp;nutanix.GetVolumeIscsiClientV2Args{
+        /// 			ExtId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeIscsiClientV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getVolumeIscsiClientV2(GetVolumeIscsiClientV2Args.builder()
+        ///             .extId("be0e4630-23da-4b9c-a76b-f24fd64b46b6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientV2
+        ///       arguments:
+        ///         extId: be0e4630-23da-4b9c-a76b-f24fd64b46b6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
         /// 
-        /// * `ExtId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Task<GetVolumeIscsiClientV2Result> InvokeAsync(GetVolumeIscsiClientV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2Args(), options.WithDefaults());
@@ -52,6 +124,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getVolumeIscsiClientV2({
+        ///     extId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_volume_iscsi_client_v2(ext_id="be0e4630-23da-4b9c-a76b-f24fd64b46b6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -60,20 +147,77 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetVolumeIscsiClientV2.Invoke(new()
+        ///     var example = Nutanix.GetVolumeIscsiClientV2.Invoke(new()
         ///     {
         ///         ExtId = "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVolumeIscsiClientV2(ctx, &amp;nutanix.GetVolumeIscsiClientV2Args{
+        /// 			ExtId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeIscsiClientV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getVolumeIscsiClientV2(GetVolumeIscsiClientV2Args.builder()
+        ///             .extId("be0e4630-23da-4b9c-a76b-f24fd64b46b6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientV2
+        ///       arguments:
+        ///         extId: be0e4630-23da-4b9c-a76b-f24fd64b46b6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
         /// 
-        /// * `ExtId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Output<GetVolumeIscsiClientV2Result> Invoke(GetVolumeIscsiClientV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2InvokeArgs(), options.WithDefaults());
@@ -85,6 +229,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getVolumeIscsiClientV2({
+        ///     extId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_volume_iscsi_client_v2(ext_id="be0e4630-23da-4b9c-a76b-f24fd64b46b6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -93,20 +252,77 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetVolumeIscsiClientV2.Invoke(new()
+        ///     var example = Nutanix.GetVolumeIscsiClientV2.Invoke(new()
         ///     {
         ///         ExtId = "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVolumeIscsiClientV2(ctx, &amp;nutanix.GetVolumeIscsiClientV2Args{
+        /// 			ExtId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeIscsiClientV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getVolumeIscsiClientV2(GetVolumeIscsiClientV2Args.builder()
+        ///             .extId("be0e4630-23da-4b9c-a76b-f24fd64b46b6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientV2
+        ///       arguments:
+        ///         extId: be0e4630-23da-4b9c-a76b-f24fd64b46b6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
         /// 
-        /// * `ExtId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Output<GetVolumeIscsiClientV2Result> Invoke(GetVolumeIscsiClientV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2InvokeArgs(), options.WithDefaults());

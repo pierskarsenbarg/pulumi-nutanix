@@ -359,6 +359,7 @@ def get_ndb_database(database_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -366,6 +367,7 @@ def get_ndb_database(database_id: Optional[_builtins.str] = None,
     db1 = nutanix.get_ndb_database(database_id="<sample-id>")
     pulumi.export("db1Output", db1)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str database_id: ID of database instance
@@ -405,14 +407,15 @@ def get_ndb_database(database_id: Optional[_builtins.str] = None,
         time_machines=pulumi.get(__ret__, 'time_machines'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         type=pulumi.get(__ret__, 'type'))
-def get_ndb_database_output(database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']]]]] = None,
+def get_ndb_database_output(database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDatabaseResult]:
     """
     Describes a database instance in Nutanix Database Service
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -420,6 +423,7 @@ def get_ndb_database_output(database_id: Optional[pulumi.Input[_builtins.str]] =
     db1 = nutanix.get_ndb_database(database_id="<sample-id>")
     pulumi.export("db1Output", db1)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str database_id: ID of database instance

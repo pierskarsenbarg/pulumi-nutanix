@@ -17,6 +17,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getSelfServiceAppSnapshots({
+        ///     appName: "NAME OF APPLICATION",
+        ///     length: 250,
+        ///     offset: 0,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_self_service_app_snapshots(app_name="NAME OF APPLICATION",
+        ///     length=250,
+        ///     offset=0)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +44,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetSelfServiceAppSnapshots.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceAppSnapshots.Invoke(new()
         ///     {
         ///         AppName = "NAME OF APPLICATION",
         ///         Length = 250,
@@ -34,6 +53,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSelfServiceAppSnapshots(ctx, &amp;nutanix.GetSelfServiceAppSnapshotsArgs{
+        /// 			AppName: pulumi.StringRef("NAME OF APPLICATION"),
+        /// 			Length:  250,
+        /// 			Offset:  0,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceAppSnapshotsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getSelfServiceAppSnapshots(GetSelfServiceAppSnapshotsArgs.builder()
+        ///             .appName("NAME OF APPLICATION")
+        ///             .length(250)
+        ///             .offset(0)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceAppSnapshots
+        ///       arguments:
+        ///         appName: NAME OF APPLICATION
+        ///         length: 250
+        ///         offset: 0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSelfServiceAppSnapshotsResult> InvokeAsync(GetSelfServiceAppSnapshotsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSelfServiceAppSnapshotsResult>("nutanix:index/getSelfServiceAppSnapshots:getSelfServiceAppSnapshots", args ?? new GetSelfServiceAppSnapshotsArgs(), options.WithDefaults());
@@ -43,6 +125,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getSelfServiceAppSnapshots({
+        ///     appName: "NAME OF APPLICATION",
+        ///     length: 250,
+        ///     offset: 0,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_self_service_app_snapshots(app_name="NAME OF APPLICATION",
+        ///     length=250,
+        ///     offset=0)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,7 +152,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetSelfServiceAppSnapshots.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceAppSnapshots.Invoke(new()
         ///     {
         ///         AppName = "NAME OF APPLICATION",
         ///         Length = 250,
@@ -60,6 +161,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSelfServiceAppSnapshots(ctx, &amp;nutanix.GetSelfServiceAppSnapshotsArgs{
+        /// 			AppName: pulumi.StringRef("NAME OF APPLICATION"),
+        /// 			Length:  250,
+        /// 			Offset:  0,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceAppSnapshotsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getSelfServiceAppSnapshots(GetSelfServiceAppSnapshotsArgs.builder()
+        ///             .appName("NAME OF APPLICATION")
+        ///             .length(250)
+        ///             .offset(0)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceAppSnapshots
+        ///       arguments:
+        ///         appName: NAME OF APPLICATION
+        ///         length: 250
+        ///         offset: 0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSelfServiceAppSnapshotsResult> Invoke(GetSelfServiceAppSnapshotsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSelfServiceAppSnapshotsResult>("nutanix:index/getSelfServiceAppSnapshots:getSelfServiceAppSnapshots", args ?? new GetSelfServiceAppSnapshotsInvokeArgs(), options.WithDefaults());
@@ -69,6 +233,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getSelfServiceAppSnapshots({
+        ///     appName: "NAME OF APPLICATION",
+        ///     length: 250,
+        ///     offset: 0,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_self_service_app_snapshots(app_name="NAME OF APPLICATION",
+        ///     length=250,
+        ///     offset=0)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,7 +260,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetSelfServiceAppSnapshots.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceAppSnapshots.Invoke(new()
         ///     {
         ///         AppName = "NAME OF APPLICATION",
         ///         Length = 250,
@@ -86,6 +269,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSelfServiceAppSnapshots(ctx, &amp;nutanix.GetSelfServiceAppSnapshotsArgs{
+        /// 			AppName: pulumi.StringRef("NAME OF APPLICATION"),
+        /// 			Length:  250,
+        /// 			Offset:  0,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceAppSnapshotsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getSelfServiceAppSnapshots(GetSelfServiceAppSnapshotsArgs.builder()
+        ///             .appName("NAME OF APPLICATION")
+        ///             .length(250)
+        ///             .offset(0)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceAppSnapshots
+        ///       arguments:
+        ///         appName: NAME OF APPLICATION
+        ///         length: 250
+        ///         offset: 0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSelfServiceAppSnapshotsResult> Invoke(GetSelfServiceAppSnapshotsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSelfServiceAppSnapshotsResult>("nutanix:index/getSelfServiceAppSnapshots:getSelfServiceAppSnapshots", args ?? new GetSelfServiceAppSnapshotsInvokeArgs(), options.WithDefaults());
@@ -103,7 +349,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The UUID of the application.
         /// 
-        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("appUuid")]
         public string? AppUuid { get; set; }
@@ -137,7 +383,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The UUID of the application.
         /// 
-        /// Both (`AppName` and `AppUuid`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("appUuid")]
         public Input<string>? AppUuid { get; set; }

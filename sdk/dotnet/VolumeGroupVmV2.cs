@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vgVmExample = new Nutanix.Index.VolumeGroupVmV2("vg_vm_example", new()
+    ///     var vgVmExample = new Nutanix.VolumeGroupVmV2("vg_vm_example", new()
     ///     {
     ///         VolumeGroupExtId = "1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
     ///         VmExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
@@ -31,6 +32,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/volumeGroupVmV2:VolumeGroupVmV2")]
     public partial class VolumeGroupVmV2 : global::Pulumi.CustomResource

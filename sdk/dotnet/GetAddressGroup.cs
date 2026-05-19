@@ -17,6 +17,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testAddress = new nutanix.AddressGroup("test_address", {
+        ///     name: "test",
+        ///     description: "test address groups resource",
+        ///     ipAddressBlockLists: [{
+        ///         ip: "10.0.0.0",
+        ///         prefixLength: 24,
+        ///     }],
+        /// });
+        /// const addrGroup = nutanix.getAddressGroupOutput({
+        ///     uuid: testAddress.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_address = nutanix.AddressGroup("test_address",
+        ///     name="test",
+        ///     description="test address groups resource",
+        ///     ip_address_block_lists=[{
+        ///         "ip": "10.0.0.0",
+        ///         "prefix_length": 24,
+        ///     }])
+        /// addr_group = nutanix.get_address_group_output(uuid=test_address.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +55,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.Index.AddressGroup("test_address", new()
+        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test address groups resource",
@@ -39,13 +69,102 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var addrGroup = Nutanix.Index.GetAddressGroup.Invoke(new()
+        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
         ///     {
         ///         Uuid = testAddress.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testAddress, err := nutanix.NewAddressGroup(ctx, "test_address", &amp;nutanix.AddressGroupArgs{
+        /// 			Name:        pulumi.String("test"),
+        /// 			Description: pulumi.String("test address groups resource"),
+        /// 			IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
+        /// 				&amp;nutanix.AddressGroupIpAddressBlockListArgs{
+        /// 					Ip:           pulumi.String("10.0.0.0"),
+        /// 					PrefixLength: pulumi.Int(24),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
+        /// 			Uuid: testAddress.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.AddressGroup;
+        /// import com.pulumi.nutanix.AddressGroupArgs;
+        /// import com.pulumi.nutanix.inputs.AddressGroupIpAddressBlockListArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testAddress = new AddressGroup("testAddress", AddressGroupArgs.builder()
+        ///             .name("test")
+        ///             .description("test address groups resource")
+        ///             .ipAddressBlockLists(AddressGroupIpAddressBlockListArgs.builder()
+        ///                 .ip("10.0.0.0")
+        ///                 .prefixLength(24)
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var addrGroup = NutanixFunctions.getAddressGroup(GetAddressGroupArgs.builder()
+        ///             .uuid(testAddress.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testAddress:
+        ///     type: nutanix:AddressGroup
+        ///     name: test_address
+        ///     properties:
+        ///       name: test
+        ///       description: test address groups resource
+        ///       ipAddressBlockLists:
+        ///         - ip: 10.0.0.0
+        ///           prefixLength: 24
+        /// variables:
+        ///   addrGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroup
+        ///       arguments:
+        ///         uuid: ${testAddress.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAddressGroupResult> InvokeAsync(GetAddressGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupArgs(), options.WithDefaults());
@@ -55,6 +174,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testAddress = new nutanix.AddressGroup("test_address", {
+        ///     name: "test",
+        ///     description: "test address groups resource",
+        ///     ipAddressBlockLists: [{
+        ///         ip: "10.0.0.0",
+        ///         prefixLength: 24,
+        ///     }],
+        /// });
+        /// const addrGroup = nutanix.getAddressGroupOutput({
+        ///     uuid: testAddress.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_address = nutanix.AddressGroup("test_address",
+        ///     name="test",
+        ///     description="test address groups resource",
+        ///     ip_address_block_lists=[{
+        ///         "ip": "10.0.0.0",
+        ///         "prefix_length": 24,
+        ///     }])
+        /// addr_group = nutanix.get_address_group_output(uuid=test_address.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -63,7 +212,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.Index.AddressGroup("test_address", new()
+        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test address groups resource",
@@ -77,13 +226,102 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var addrGroup = Nutanix.Index.GetAddressGroup.Invoke(new()
+        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
         ///     {
         ///         Uuid = testAddress.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testAddress, err := nutanix.NewAddressGroup(ctx, "test_address", &amp;nutanix.AddressGroupArgs{
+        /// 			Name:        pulumi.String("test"),
+        /// 			Description: pulumi.String("test address groups resource"),
+        /// 			IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
+        /// 				&amp;nutanix.AddressGroupIpAddressBlockListArgs{
+        /// 					Ip:           pulumi.String("10.0.0.0"),
+        /// 					PrefixLength: pulumi.Int(24),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
+        /// 			Uuid: testAddress.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.AddressGroup;
+        /// import com.pulumi.nutanix.AddressGroupArgs;
+        /// import com.pulumi.nutanix.inputs.AddressGroupIpAddressBlockListArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testAddress = new AddressGroup("testAddress", AddressGroupArgs.builder()
+        ///             .name("test")
+        ///             .description("test address groups resource")
+        ///             .ipAddressBlockLists(AddressGroupIpAddressBlockListArgs.builder()
+        ///                 .ip("10.0.0.0")
+        ///                 .prefixLength(24)
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var addrGroup = NutanixFunctions.getAddressGroup(GetAddressGroupArgs.builder()
+        ///             .uuid(testAddress.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testAddress:
+        ///     type: nutanix:AddressGroup
+        ///     name: test_address
+        ///     properties:
+        ///       name: test
+        ///       description: test address groups resource
+        ///       ipAddressBlockLists:
+        ///         - ip: 10.0.0.0
+        ///           prefixLength: 24
+        /// variables:
+        ///   addrGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroup
+        ///       arguments:
+        ///         uuid: ${testAddress.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAddressGroupResult> Invoke(GetAddressGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupInvokeArgs(), options.WithDefaults());
@@ -93,6 +331,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testAddress = new nutanix.AddressGroup("test_address", {
+        ///     name: "test",
+        ///     description: "test address groups resource",
+        ///     ipAddressBlockLists: [{
+        ///         ip: "10.0.0.0",
+        ///         prefixLength: 24,
+        ///     }],
+        /// });
+        /// const addrGroup = nutanix.getAddressGroupOutput({
+        ///     uuid: testAddress.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_address = nutanix.AddressGroup("test_address",
+        ///     name="test",
+        ///     description="test address groups resource",
+        ///     ip_address_block_lists=[{
+        ///         "ip": "10.0.0.0",
+        ///         "prefix_length": 24,
+        ///     }])
+        /// addr_group = nutanix.get_address_group_output(uuid=test_address.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -101,7 +369,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testAddress = new Nutanix.Index.AddressGroup("test_address", new()
+        ///     var testAddress = new Nutanix.AddressGroup("test_address", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test address groups resource",
@@ -115,13 +383,102 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var addrGroup = Nutanix.Index.GetAddressGroup.Invoke(new()
+        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
         ///     {
         ///         Uuid = testAddress.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testAddress, err := nutanix.NewAddressGroup(ctx, "test_address", &amp;nutanix.AddressGroupArgs{
+        /// 			Name:        pulumi.String("test"),
+        /// 			Description: pulumi.String("test address groups resource"),
+        /// 			IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
+        /// 				&amp;nutanix.AddressGroupIpAddressBlockListArgs{
+        /// 					Ip:           pulumi.String("10.0.0.0"),
+        /// 					PrefixLength: pulumi.Int(24),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
+        /// 			Uuid: testAddress.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.AddressGroup;
+        /// import com.pulumi.nutanix.AddressGroupArgs;
+        /// import com.pulumi.nutanix.inputs.AddressGroupIpAddressBlockListArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAddressGroupArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testAddress = new AddressGroup("testAddress", AddressGroupArgs.builder()
+        ///             .name("test")
+        ///             .description("test address groups resource")
+        ///             .ipAddressBlockLists(AddressGroupIpAddressBlockListArgs.builder()
+        ///                 .ip("10.0.0.0")
+        ///                 .prefixLength(24)
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var addrGroup = NutanixFunctions.getAddressGroup(GetAddressGroupArgs.builder()
+        ///             .uuid(testAddress.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testAddress:
+        ///     type: nutanix:AddressGroup
+        ///     name: test_address
+        ///     properties:
+        ///       name: test
+        ///       description: test address groups resource
+        ///       ipAddressBlockLists:
+        ///         - ip: 10.0.0.0
+        ///           prefixLength: 24
+        /// variables:
+        ///   addrGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getAddressGroup
+        ///       arguments:
+        ///         uuid: ${testAddress.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAddressGroupResult> Invoke(GetAddressGroupInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupInvokeArgs(), options.WithDefaults());

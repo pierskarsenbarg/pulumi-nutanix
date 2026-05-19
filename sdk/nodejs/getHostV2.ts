@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     extId: "919c9488-0b50-4fc8-9159-923e56a3abca",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHostV2(args: GetHostV2Args, opts?: pulumi.InvokeOptions): Promise<GetHostV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -212,6 +214,7 @@ export interface GetHostV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -221,6 +224,7 @@ export interface GetHostV2Result {
  *     extId: "919c9488-0b50-4fc8-9159-923e56a3abca",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHostV2Output(args: GetHostV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHostV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

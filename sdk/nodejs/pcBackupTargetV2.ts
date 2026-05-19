@@ -13,6 +13,7 @@ import * as utilities from "./utilities";
  *
  * ### Cluster Location
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -28,9 +29,11 @@ import * as utilities from "./utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ### Object Store Location
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -55,6 +58,7 @@ import * as utilities from "./utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class PcBackupTargetV2 extends pulumi.CustomResource {
     /**
@@ -146,20 +150,20 @@ export class PcBackupTargetV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PcBackupTargetV2 resources.
  */
 export interface PcBackupTargetV2State {
-    backupPauseReason?: pulumi.Input<string>;
+    backupPauseReason?: pulumi.Input<string | undefined>;
     /**
      * -(Required) A unique identifier for the domain manager.
      */
-    domainManagerExtId?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
-    isBackupPaused?: pulumi.Input<boolean>;
-    lastSyncTime?: pulumi.Input<string>;
-    links?: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2Link>[]>;
+    domainManagerExtId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    isBackupPaused?: pulumi.Input<boolean | undefined>;
+    lastSyncTime?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2Link>[] | undefined>;
     /**
      * -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
      */
-    location?: pulumi.Input<inputs.PcBackupTargetV2Location>;
-    tenantId?: pulumi.Input<string>;
+    location?: pulumi.Input<inputs.PcBackupTargetV2Location | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
 }
 
 /**

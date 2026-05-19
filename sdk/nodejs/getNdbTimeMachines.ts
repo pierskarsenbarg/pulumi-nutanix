@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const tms = nutanix.getNdbTimeMachines({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbTimeMachines(opts?: pulumi.InvokeOptions): Promise<GetNdbTimeMachinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -39,12 +41,14 @@ export interface GetNdbTimeMachinesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const tms = nutanix.getNdbTimeMachines({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbTimeMachinesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbTimeMachinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -60,14 +60,14 @@ class ObjectStoreCertificateV2Args:
 @pulumi.input_type
 class _ObjectStoreCertificateV2State:
     def __init__(__self__, *,
-                 alternate_fqdns: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateFqdnArgs']]]] = None,
-                 alternate_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateIpArgs']]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2LinkArgs']]]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2MetadataArgs']]]] = None,
-                 object_store_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 alternate_fqdns: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateFqdnArgs']]]] = None,
+                 alternate_ips: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateIpArgs']]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2LinkArgs']]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2MetadataArgs']]]] = None,
+                 object_store_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ObjectStoreCertificateV2 resources.
 
@@ -94,83 +94,83 @@ class _ObjectStoreCertificateV2State:
 
     @_builtins.property
     @pulumi.getter(name="alternateFqdns")
-    def alternate_fqdns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateFqdnArgs']]]]:
+    def alternate_fqdns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateFqdnArgs']]]]:
         return pulumi.get(self, "alternate_fqdns")
 
     @alternate_fqdns.setter
-    def alternate_fqdns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateFqdnArgs']]]]):
+    def alternate_fqdns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateFqdnArgs']]]]):
         pulumi.set(self, "alternate_fqdns", value)
 
     @_builtins.property
     @pulumi.getter(name="alternateIps")
-    def alternate_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateIpArgs']]]]:
+    def alternate_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateIpArgs']]]]:
         return pulumi.get(self, "alternate_ips")
 
     @alternate_ips.setter
-    def alternate_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateIpArgs']]]]):
+    def alternate_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2AlternateIpArgs']]]]):
         pulumi.set(self, "alternate_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The UUID of the certificate of an Object store.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2MetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2MetadataArgs']]]]:
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreCertificateV2MetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreCertificateV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStoreExtId")
-    def object_store_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_store_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The UUID of the Object store.
         """
         return pulumi.get(self, "object_store_ext_id")
 
     @object_store_ext_id.setter
-    def object_store_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_store_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_store_ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Path to a JSON file which contains the public certificates, private key, and CA certificate or chain, along with a list of alternate FQDNs and alternate IPs to create a certificate for the Object store.
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -180,14 +180,15 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 object_store_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
+                 object_store_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This operation creates a new default certificate and keys. It also creates the alternate FQDNs and alternate IPs for the Object store. The certificate of an Object store can be created when it is in a OBJECT_STORE_AVAILABLE or OBJECT_STORE_CERT_CREATION_FAILED state. If the publicCert, privateKey, and ca values are provided in the request body, these values are used to create the new certificate. If these values are not provided, a new certificate will be generated if 'shouldGenerate' is set to true and if it is set to false, the existing certificate will be used as the new certificate. Optionally, a list of additional alternate FQDNs and alternate IPs can be provided. These alternateFqdns and alternateIps must be included in the CA certificate if it has been provided.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -195,6 +196,7 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
         example = nutanix.get_certificate_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
             ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## JSON Example
 
@@ -217,6 +219,7 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -224,6 +227,7 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
         example = nutanix.get_certificate_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
             ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## JSON Example
 
@@ -245,8 +249,8 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 object_store_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
+                 object_store_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -278,14 +282,14 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alternate_fqdns: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2AlternateFqdnArgs', 'ObjectStoreCertificateV2AlternateFqdnArgsDict']]]]] = None,
-            alternate_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2AlternateIpArgs', 'ObjectStoreCertificateV2AlternateIpArgsDict']]]]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2LinkArgs', 'ObjectStoreCertificateV2LinkArgsDict']]]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2MetadataArgs', 'ObjectStoreCertificateV2MetadataArgsDict']]]]] = None,
-            object_store_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            path: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ObjectStoreCertificateV2':
+            alternate_fqdns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2AlternateFqdnArgs', 'ObjectStoreCertificateV2AlternateFqdnArgsDict']]]]] = None,
+            alternate_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2AlternateIpArgs', 'ObjectStoreCertificateV2AlternateIpArgsDict']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2LinkArgs', 'ObjectStoreCertificateV2LinkArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2MetadataArgs', 'ObjectStoreCertificateV2MetadataArgsDict']]]]] = None,
+            object_store_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            path: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ObjectStoreCertificateV2':
         """
         Get an existing ObjectStoreCertificateV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

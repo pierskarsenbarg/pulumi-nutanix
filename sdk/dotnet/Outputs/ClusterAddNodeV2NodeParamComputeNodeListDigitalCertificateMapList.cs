@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapList
     {
         /// <summary>
-        /// -(Optional) Field containing DigitalCertificateBase64 and KeyManagementServerUuid for key management server.
+        /// -(Optional) Field containing&lt;span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "&gt; digitalCertificateBase64 &lt;/span&gt;and&lt;span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "&gt; keyManagementServerUuid &lt;/span&gt;for key management server.
         /// </summary>
         public readonly string? Key;
         public readonly string? Value;

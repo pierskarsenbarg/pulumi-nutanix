@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var recoveryPlanTest = new Nutanix.Index.RecoveryPlan("recovery_plan_test", new()
+    ///     var recoveryPlanTest = new Nutanix.RecoveryPlan("recovery_plan_test", new()
     ///     {
     ///         Name = "%s",
     ///         Description = "%s",
@@ -60,6 +61,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/recoveryPlan:RecoveryPlan")]
     public partial class RecoveryPlan : global::Pulumi.CustomResource

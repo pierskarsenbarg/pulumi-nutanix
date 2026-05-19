@@ -17,6 +17,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getFloatingIps({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_floating_ips()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,10 +38,63 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetFloatingIps.Invoke();
+        ///     var test = Nutanix.GetFloatingIps.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIps(ctx, &amp;nutanix.GetFloatingIpsArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getFloatingIps(GetFloatingIpsArgs.builder()
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIps
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFloatingIpsResult> InvokeAsync(GetFloatingIpsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpsResult>("nutanix:index/getFloatingIps:getFloatingIps", args ?? new GetFloatingIpsArgs(), options.WithDefaults());
@@ -38,6 +104,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getFloatingIps({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_floating_ips()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -46,10 +125,63 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetFloatingIps.Invoke();
+        ///     var test = Nutanix.GetFloatingIps.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIps(ctx, &amp;nutanix.GetFloatingIpsArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getFloatingIps(GetFloatingIpsArgs.builder()
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIps
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFloatingIpsResult> Invoke(GetFloatingIpsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpsResult>("nutanix:index/getFloatingIps:getFloatingIps", args ?? new GetFloatingIpsInvokeArgs(), options.WithDefaults());
@@ -59,6 +191,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getFloatingIps({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_floating_ips()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,10 +212,63 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetFloatingIps.Invoke();
+        ///     var test = Nutanix.GetFloatingIps.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFloatingIps(ctx, &amp;nutanix.GetFloatingIpsArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFloatingIpsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getFloatingIps(GetFloatingIpsArgs.builder()
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getFloatingIps
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFloatingIpsResult> Invoke(GetFloatingIpsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpsResult>("nutanix:index/getFloatingIps:getFloatingIps", args ?? new GetFloatingIpsInvokeArgs(), options.WithDefaults());
@@ -83,7 +281,7 @@ namespace PiersKarsenbarg.Nutanix
         private List<Inputs.GetFloatingIpsMetadataArgs>? _metadatas;
 
         /// <summary>
-        /// - The FloatingIp kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "&gt; floatingIp &lt;/span&gt;kind metadata.
         /// </summary>
         public List<Inputs.GetFloatingIpsMetadataArgs> Metadatas
         {
@@ -103,7 +301,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.GetFloatingIpsMetadataInputArgs>? _metadatas;
 
         /// <summary>
-        /// - The FloatingIp kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "&gt; floatingIp &lt;/span&gt;kind metadata.
         /// </summary>
         public InputList<Inputs.GetFloatingIpsMetadataInputArgs> Metadatas
         {
@@ -134,7 +332,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// - The FloatingIp kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "&gt; floatingIp &lt;/span&gt;kind metadata.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFloatingIpsMetadataResult> Metadatas;
 

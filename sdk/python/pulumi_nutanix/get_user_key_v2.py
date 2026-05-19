@@ -260,6 +260,7 @@ def get_user_key_v2(description: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -268,13 +269,14 @@ def get_user_key_v2(description: Optional[_builtins.str] = None,
     get_key = nutanix.get_user_key_v2(user_ext_id="<SERVICE_ACCOUNT_UUID>",
         ext_id="<USER_KEY_UUID>")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `user_ext_id`: - ( Required ) External Identifier of the User.
-    * `ext_id`: - ( Required ) External identifier of the key.
+    * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - ( Required ) External identifier of the key.
 
 
     :param _builtins.str description: - Brief description of the key.
@@ -306,15 +308,16 @@ def get_user_key_v2(description: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         user_ext_id=pulumi.get(__ret__, 'user_ext_id'))
-def get_user_key_v2_output(description: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           user_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_user_key_v2_output(description: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           user_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserKeyV2Result]:
     """
     Fetches the requested key through the provided external identifier for the user and the key.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -323,13 +326,14 @@ def get_user_key_v2_output(description: Optional[pulumi.Input[Optional[_builtins
     get_key = nutanix.get_user_key_v2(user_ext_id="<SERVICE_ACCOUNT_UUID>",
         ext_id="<USER_KEY_UUID>")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `user_ext_id`: - ( Required ) External Identifier of the User.
-    * `ext_id`: - ( Required ) External identifier of the key.
+    * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - ( Required ) External identifier of the key.
 
 
     :param _builtins.str description: - Brief description of the key.

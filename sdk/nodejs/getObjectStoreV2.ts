@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "95eb5f66-f547-4aea-9af8-b580e2060693",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getObjectStoreV2(args: GetObjectStoreV2Args, opts?: pulumi.InvokeOptions): Promise<GetObjectStoreV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -152,6 +154,7 @@ export interface GetObjectStoreV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -160,6 +163,7 @@ export interface GetObjectStoreV2Result {
  *     extId: "95eb5f66-f547-4aea-9af8-b580e2060693",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getObjectStoreV2Output(args: GetObjectStoreV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetObjectStoreV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -180,5 +184,5 @@ export interface GetObjectStoreV2OutputArgs {
     /**
      * - The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
      */
-    numWorkerNodes?: pulumi.Input<number>;
+    numWorkerNodes?: pulumi.Input<number | undefined>;
 }

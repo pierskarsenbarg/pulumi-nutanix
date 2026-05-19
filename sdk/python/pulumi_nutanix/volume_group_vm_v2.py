@@ -21,7 +21,7 @@ class VolumeGroupVmV2Args:
     def __init__(__self__, *,
                  vm_ext_id: pulumi.Input[_builtins.str],
                  volume_group_ext_id: pulumi.Input[_builtins.str],
-                 index: Optional[pulumi.Input[_builtins.int]] = None):
+                 index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a VolumeGroupVmV2 resource.
 
@@ -63,7 +63,7 @@ class VolumeGroupVmV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 
@@ -73,17 +73,17 @@ class VolumeGroupVmV2Args:
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "index", value)
 
 
 @pulumi.input_type
 class _VolumeGroupVmV2State:
     def __init__(__self__, *,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.int]] = None,
-                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.int]] = None,
+                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupVmV2 resources.
 
@@ -106,19 +106,19 @@ class _VolumeGroupVmV2State:
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier of a task.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 
@@ -128,31 +128,31 @@ class _VolumeGroupVmV2State:
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter(name="vmExtId")
-    def vm_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "vm_ext_id")
 
     @vm_ext_id.setter
-    def vm_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupExtId")
-    def volume_group_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_group_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The external identifier of the volume group.
         """
         return pulumi.get(self, "volume_group_ext_id")
 
     @volume_group_ext_id.setter
-    def volume_group_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_group_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_group_ext_id", value)
 
 
@@ -162,15 +162,16 @@ class VolumeGroupVmV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 index: Optional[pulumi.Input[_builtins.int]] = None,
-                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.int]] = None,
+                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to Create a new Volume Group.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -179,6 +180,7 @@ class VolumeGroupVmV2(pulumi.CustomResource):
             volume_group_ext_id="1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
             vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -201,6 +203,7 @@ class VolumeGroupVmV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -209,6 +212,7 @@ class VolumeGroupVmV2(pulumi.CustomResource):
             volume_group_ext_id="1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
             vm_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -226,9 +230,9 @@ class VolumeGroupVmV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 index: Optional[pulumi.Input[_builtins.int]] = None,
-                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.int]] = None,
+                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -256,10 +260,10 @@ class VolumeGroupVmV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            index: Optional[pulumi.Input[_builtins.int]] = None,
-            vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VolumeGroupVmV2':
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.int]] = None,
+            vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeGroupVmV2':
         """
         Get an existing VolumeGroupVmV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

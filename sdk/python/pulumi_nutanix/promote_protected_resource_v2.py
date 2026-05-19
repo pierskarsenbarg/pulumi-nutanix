@@ -49,7 +49,7 @@ class PromoteProtectedResourceV2Args:
 @pulumi.input_type
 class _PromoteProtectedResourceV2State:
     def __init__(__self__, *,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PromoteProtectedResourceV2 resources.
 
@@ -63,7 +63,7 @@ class _PromoteProtectedResourceV2State:
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 
@@ -73,7 +73,7 @@ class _PromoteProtectedResourceV2State:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
 
@@ -83,13 +83,14 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Promotes the specified synced entity at the target site. This is only relevant if the synced entity is protected in a synchronous schedule.
 
         ## Example:
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -98,6 +99,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
         # promote the protected virtual machine on the remote site
         promote_example = nutanix.PromoteProtectedResourceV2("promote-example", ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -118,6 +120,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
 
         ## Example:
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -126,6 +129,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
         # promote the protected virtual machine on the remote site
         promote_example = nutanix.PromoteProtectedResourceV2("promote-example", ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -143,7 +147,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -166,7 +170,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PromoteProtectedResourceV2':
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PromoteProtectedResourceV2':
         """
         Get an existing PromoteProtectedResourceV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

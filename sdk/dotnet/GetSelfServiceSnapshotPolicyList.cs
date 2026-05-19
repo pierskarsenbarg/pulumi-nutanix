@@ -17,6 +17,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getSelfServiceSnapshotPolicyList({
+        ///     bpName: "NAME OF BLUEPRINT",
+        ///     length: 250,
+        ///     offset: 0,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_self_service_snapshot_policy_list(bp_name="NAME OF BLUEPRINT",
+        ///     length=250,
+        ///     offset=0)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +44,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetSelfServiceSnapshotPolicyList.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceSnapshotPolicyList.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///         Length = 250,
@@ -34,6 +53,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSelfServiceSnapshotPolicyList(ctx, &amp;nutanix.GetSelfServiceSnapshotPolicyListArgs{
+        /// 			BpName: pulumi.StringRef("NAME OF BLUEPRINT"),
+        /// 			Length: 250,
+        /// 			Offset: 0,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceSnapshotPolicyListArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getSelfServiceSnapshotPolicyList(GetSelfServiceSnapshotPolicyListArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT")
+        ///             .length(250)
+        ///             .offset(0)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceSnapshotPolicyList
+        ///       arguments:
+        ///         bpName: NAME OF BLUEPRINT
+        ///         length: 250
+        ///         offset: 0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSelfServiceSnapshotPolicyListResult> InvokeAsync(GetSelfServiceSnapshotPolicyListArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSelfServiceSnapshotPolicyListResult>("nutanix:index/getSelfServiceSnapshotPolicyList:getSelfServiceSnapshotPolicyList", args ?? new GetSelfServiceSnapshotPolicyListArgs(), options.WithDefaults());
@@ -43,6 +125,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getSelfServiceSnapshotPolicyList({
+        ///     bpName: "NAME OF BLUEPRINT",
+        ///     length: 250,
+        ///     offset: 0,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_self_service_snapshot_policy_list(bp_name="NAME OF BLUEPRINT",
+        ///     length=250,
+        ///     offset=0)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,7 +152,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetSelfServiceSnapshotPolicyList.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceSnapshotPolicyList.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///         Length = 250,
@@ -60,6 +161,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSelfServiceSnapshotPolicyList(ctx, &amp;nutanix.GetSelfServiceSnapshotPolicyListArgs{
+        /// 			BpName: pulumi.StringRef("NAME OF BLUEPRINT"),
+        /// 			Length: 250,
+        /// 			Offset: 0,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceSnapshotPolicyListArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getSelfServiceSnapshotPolicyList(GetSelfServiceSnapshotPolicyListArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT")
+        ///             .length(250)
+        ///             .offset(0)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceSnapshotPolicyList
+        ///       arguments:
+        ///         bpName: NAME OF BLUEPRINT
+        ///         length: 250
+        ///         offset: 0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSelfServiceSnapshotPolicyListResult> Invoke(GetSelfServiceSnapshotPolicyListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSelfServiceSnapshotPolicyListResult>("nutanix:index/getSelfServiceSnapshotPolicyList:getSelfServiceSnapshotPolicyList", args ?? new GetSelfServiceSnapshotPolicyListInvokeArgs(), options.WithDefaults());
@@ -69,6 +233,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const test = nutanix.getSelfServiceSnapshotPolicyList({
+        ///     bpName: "NAME OF BLUEPRINT",
+        ///     length: 250,
+        ///     offset: 0,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test = nutanix.get_self_service_snapshot_policy_list(bp_name="NAME OF BLUEPRINT",
+        ///     length=250,
+        ///     offset=0)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,7 +260,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Nutanix.Index.GetSelfServiceSnapshotPolicyList.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceSnapshotPolicyList.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///         Length = 250,
@@ -86,6 +269,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSelfServiceSnapshotPolicyList(ctx, &amp;nutanix.GetSelfServiceSnapshotPolicyListArgs{
+        /// 			BpName: pulumi.StringRef("NAME OF BLUEPRINT"),
+        /// 			Length: 250,
+        /// 			Offset: 0,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceSnapshotPolicyListArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var test = NutanixFunctions.getSelfServiceSnapshotPolicyList(GetSelfServiceSnapshotPolicyListArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT")
+        ///             .length(250)
+        ///             .offset(0)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceSnapshotPolicyList
+        ///       arguments:
+        ///         bpName: NAME OF BLUEPRINT
+        ///         length: 250
+        ///         offset: 0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSelfServiceSnapshotPolicyListResult> Invoke(GetSelfServiceSnapshotPolicyListInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSelfServiceSnapshotPolicyListResult>("nutanix:index/getSelfServiceSnapshotPolicyList:getSelfServiceSnapshotPolicyList", args ?? new GetSelfServiceSnapshotPolicyListInvokeArgs(), options.WithDefaults());
@@ -103,7 +349,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which snapshot policies should be listed.
         /// 
-        /// Both (`BpName` and `BpUuid`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpUuid")]
         public string? BpUuid { get; set; }
@@ -137,7 +383,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which snapshot policies should be listed.
         /// 
-        /// Both (`BpName` and `BpUuid`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpUuid")]
         public Input<string>? BpUuid { get; set; }

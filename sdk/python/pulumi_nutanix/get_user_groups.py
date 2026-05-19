@@ -85,12 +85,14 @@ def get_user_groups(metadatas: Optional[Sequence[Union['GetUserGroupsMetadataArg
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     usergroups = nutanix.get_user_groups()
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']] metadatas: - The user group kind metadata.
@@ -105,19 +107,21 @@ def get_user_groups(metadatas: Optional[Sequence[Union['GetUserGroupsMetadataArg
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_user_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']]]]] = None,
+def get_user_groups_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupsResult]:
     """
     Provides a datasource to retrieve all the user groups.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     usergroups = nutanix.get_user_groups()
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']] metadatas: - The user group kind metadata.

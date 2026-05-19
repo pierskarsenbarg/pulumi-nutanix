@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,6 +22,7 @@ import * as utilities from "./utilities";
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSelfServiceSnapshotPolicyList(args: GetSelfServiceSnapshotPolicyListArgs, opts?: pulumi.InvokeOptions): Promise<GetSelfServiceSnapshotPolicyListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -43,7 +45,7 @@ export interface GetSelfServiceSnapshotPolicyListArgs {
     /**
      * - (Optional) The name of the blueprint for which snapshot policies should be listed.
      *
-     * Both (`bpName` and `bpUuid`) are optional but atleast one of them to be provided for this data source to work.
+     * Both (<span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
      */
     bpUuid?: string;
     /**
@@ -81,6 +83,7 @@ export interface GetSelfServiceSnapshotPolicyListResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -91,6 +94,7 @@ export interface GetSelfServiceSnapshotPolicyListResult {
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSelfServiceSnapshotPolicyListOutput(args: GetSelfServiceSnapshotPolicyListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSelfServiceSnapshotPolicyListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -109,13 +113,13 @@ export interface GetSelfServiceSnapshotPolicyListOutputArgs {
     /**
      * - (Optional) The UUID of the blueprint for which snapshot policies should be listed.
      */
-    bpName?: pulumi.Input<string>;
+    bpName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The name of the blueprint for which snapshot policies should be listed.
      *
-     * Both (`bpName` and `bpUuid`) are optional but atleast one of them to be provided for this data source to work.
+     * Both (<span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
      */
-    bpUuid?: pulumi.Input<string>;
+    bpUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The number of snapshot policy records to return.
      */

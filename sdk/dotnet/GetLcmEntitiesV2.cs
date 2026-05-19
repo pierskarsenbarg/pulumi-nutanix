@@ -18,6 +18,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const entities = nutanix.getLcmEntityV2({});
+        /// const lcm_entities_filtered = nutanix.getLcmEntitiesV2({
+        ///     filter: "entityModel eq 'Calm Policy Engine'",
+        /// });
+        /// const lcm_entities_limit = nutanix.getLcmEntitiesV2({
+        ///     limit: 5,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// entities = nutanix.get_lcm_entity_v2()
+        /// lcm_entities_filtered = nutanix.get_lcm_entities_v2(filter="entityModel eq 'Calm Policy Engine'")
+        /// lcm_entities_limit = nutanix.get_lcm_entities_v2(limit=5)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,20 +47,104 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var entities = Nutanix.Index.GetLcmEntityV2.Invoke();
+        ///     var entities = Nutanix.GetLcmEntityV2.Invoke();
         /// 
-        ///     var lcm_entities_filtered = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_filtered = Nutanix.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Filter = "entityModel eq 'Calm Policy Engine'",
         ///     });
         /// 
-        ///     var lcm_entities_limit = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_limit = Nutanix.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Limit = 5,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetLcmEntityV2(ctx, &amp;nutanix.GetLcmEntityV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetLcmEntitiesV2(ctx, &amp;nutanix.GetLcmEntitiesV2Args{
+        /// 			Filter: pulumi.StringRef("entityModel eq 'Calm Policy Engine'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetLcmEntitiesV2(ctx, &amp;nutanix.GetLcmEntitiesV2Args{
+        /// 			Limit: pulumi.IntRef(5),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetLcmEntityV2Args;
+        /// import com.pulumi.nutanix.inputs.GetLcmEntitiesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var entities = NutanixFunctions.getLcmEntityV2(GetLcmEntityV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var lcm-entities-filtered = NutanixFunctions.getLcmEntitiesV2(GetLcmEntitiesV2Args.builder()
+        ///             .filter("entityModel eq 'Calm Policy Engine'")
+        ///             .build());
+        /// 
+        ///         final var lcm-entities-limit = NutanixFunctions.getLcmEntitiesV2(GetLcmEntitiesV2Args.builder()
+        ///             .limit(5)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   entities:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntityV2
+        ///       arguments: {}
+        ///   lcm-entities-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntitiesV2
+        ///       arguments:
+        ///         filter: entityModel eq 'Calm Policy Engine'
+        ///   lcm-entities-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntitiesV2
+        ///       arguments:
+        ///         limit: 5
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLcmEntitiesV2Result> InvokeAsync(GetLcmEntitiesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLcmEntitiesV2Result>("nutanix:index/getLcmEntitiesV2:getLcmEntitiesV2", args ?? new GetLcmEntitiesV2Args(), options.WithDefaults());
@@ -50,6 +155,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const entities = nutanix.getLcmEntityV2({});
+        /// const lcm_entities_filtered = nutanix.getLcmEntitiesV2({
+        ///     filter: "entityModel eq 'Calm Policy Engine'",
+        /// });
+        /// const lcm_entities_limit = nutanix.getLcmEntitiesV2({
+        ///     limit: 5,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// entities = nutanix.get_lcm_entity_v2()
+        /// lcm_entities_filtered = nutanix.get_lcm_entities_v2(filter="entityModel eq 'Calm Policy Engine'")
+        /// lcm_entities_limit = nutanix.get_lcm_entities_v2(limit=5)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -58,20 +184,104 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var entities = Nutanix.Index.GetLcmEntityV2.Invoke();
+        ///     var entities = Nutanix.GetLcmEntityV2.Invoke();
         /// 
-        ///     var lcm_entities_filtered = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_filtered = Nutanix.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Filter = "entityModel eq 'Calm Policy Engine'",
         ///     });
         /// 
-        ///     var lcm_entities_limit = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_limit = Nutanix.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Limit = 5,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetLcmEntityV2(ctx, &amp;nutanix.GetLcmEntityV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetLcmEntitiesV2(ctx, &amp;nutanix.GetLcmEntitiesV2Args{
+        /// 			Filter: pulumi.StringRef("entityModel eq 'Calm Policy Engine'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetLcmEntitiesV2(ctx, &amp;nutanix.GetLcmEntitiesV2Args{
+        /// 			Limit: pulumi.IntRef(5),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetLcmEntityV2Args;
+        /// import com.pulumi.nutanix.inputs.GetLcmEntitiesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var entities = NutanixFunctions.getLcmEntityV2(GetLcmEntityV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var lcm-entities-filtered = NutanixFunctions.getLcmEntitiesV2(GetLcmEntitiesV2Args.builder()
+        ///             .filter("entityModel eq 'Calm Policy Engine'")
+        ///             .build());
+        /// 
+        ///         final var lcm-entities-limit = NutanixFunctions.getLcmEntitiesV2(GetLcmEntitiesV2Args.builder()
+        ///             .limit(5)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   entities:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntityV2
+        ///       arguments: {}
+        ///   lcm-entities-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntitiesV2
+        ///       arguments:
+        ///         filter: entityModel eq 'Calm Policy Engine'
+        ///   lcm-entities-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntitiesV2
+        ///       arguments:
+        ///         limit: 5
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLcmEntitiesV2Result> Invoke(GetLcmEntitiesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLcmEntitiesV2Result>("nutanix:index/getLcmEntitiesV2:getLcmEntitiesV2", args ?? new GetLcmEntitiesV2InvokeArgs(), options.WithDefaults());
@@ -82,6 +292,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const entities = nutanix.getLcmEntityV2({});
+        /// const lcm_entities_filtered = nutanix.getLcmEntitiesV2({
+        ///     filter: "entityModel eq 'Calm Policy Engine'",
+        /// });
+        /// const lcm_entities_limit = nutanix.getLcmEntitiesV2({
+        ///     limit: 5,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// entities = nutanix.get_lcm_entity_v2()
+        /// lcm_entities_filtered = nutanix.get_lcm_entities_v2(filter="entityModel eq 'Calm Policy Engine'")
+        /// lcm_entities_limit = nutanix.get_lcm_entities_v2(limit=5)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -90,20 +321,104 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var entities = Nutanix.Index.GetLcmEntityV2.Invoke();
+        ///     var entities = Nutanix.GetLcmEntityV2.Invoke();
         /// 
-        ///     var lcm_entities_filtered = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_filtered = Nutanix.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Filter = "entityModel eq 'Calm Policy Engine'",
         ///     });
         /// 
-        ///     var lcm_entities_limit = Nutanix.Index.GetLcmEntitiesV2.Invoke(new()
+        ///     var lcm_entities_limit = Nutanix.GetLcmEntitiesV2.Invoke(new()
         ///     {
         ///         Limit = 5,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetLcmEntityV2(ctx, &amp;nutanix.GetLcmEntityV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetLcmEntitiesV2(ctx, &amp;nutanix.GetLcmEntitiesV2Args{
+        /// 			Filter: pulumi.StringRef("entityModel eq 'Calm Policy Engine'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetLcmEntitiesV2(ctx, &amp;nutanix.GetLcmEntitiesV2Args{
+        /// 			Limit: pulumi.IntRef(5),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetLcmEntityV2Args;
+        /// import com.pulumi.nutanix.inputs.GetLcmEntitiesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var entities = NutanixFunctions.getLcmEntityV2(GetLcmEntityV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var lcm-entities-filtered = NutanixFunctions.getLcmEntitiesV2(GetLcmEntitiesV2Args.builder()
+        ///             .filter("entityModel eq 'Calm Policy Engine'")
+        ///             .build());
+        /// 
+        ///         final var lcm-entities-limit = NutanixFunctions.getLcmEntitiesV2(GetLcmEntitiesV2Args.builder()
+        ///             .limit(5)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   entities:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntityV2
+        ///       arguments: {}
+        ///   lcm-entities-filtered:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntitiesV2
+        ///       arguments:
+        ///         filter: entityModel eq 'Calm Policy Engine'
+        ///   lcm-entities-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getLcmEntitiesV2
+        ///       arguments:
+        ///         limit: 5
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLcmEntitiesV2Result> Invoke(GetLcmEntitiesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetLcmEntitiesV2Result>("nutanix:index/getLcmEntitiesV2:getLcmEntitiesV2", args ?? new GetLcmEntitiesV2InvokeArgs(), options.WithDefaults());

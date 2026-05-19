@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,10 +25,10 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     //list iscsi clients
-    ///     var list_iscsi_clients = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke();
+    ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
     /// 
     ///     // attach iscsi client to the volume group
-    ///     var vgIscsiExample = new Nutanix.Index.VolumeGroupIscsiClientsV2("vg_iscsi_example", new()
+    ///     var vgIscsiExample = new Nutanix.VolumeGroupIscsiClientsV2("vg_iscsi_example", new()
     ///     {
     ///         VgExtId = "1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
     ///         ExtId = list_iscsi_clients.Apply(getVolumeIscsiClientsV2Result =&gt; getVolumeIscsiClientsV2Result.IscsiClients[0]?.ExtId),
@@ -36,6 +37,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2")]
     public partial class VolumeGroupIscsiClientV2 : global::Pulumi.CustomResource

@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,12 +24,13 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var registries = Nutanix.Index.GetKarbonPrivateRegistry.Invoke();
+    ///     var registries = Nutanix.GetKarbonPrivateRegistry.Invoke();
     /// 
-    ///     var registry = new Nutanix.Index.KarbonPrivateRegistry("registry");
+    ///     var registry = new Nutanix.KarbonPrivateRegistry("registry");
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry")]
     public partial class KarbonPrivateRegistry : global::Pulumi.CustomResource

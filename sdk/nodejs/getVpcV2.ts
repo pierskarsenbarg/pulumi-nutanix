@@ -7,10 +7,11 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides a datasource to retrieve VPC with vpcUuid .
+ * Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>.
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVpcV2(args: GetVpcV2Args, opts?: pulumi.InvokeOptions): Promise<GetVpcV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -92,10 +94,11 @@ export interface GetVpcV2Result {
     readonly vpcType: string;
 }
 /**
- * Provides a datasource to retrieve VPC with vpcUuid .
+ * Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>.
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -104,6 +107,7 @@ export interface GetVpcV2Result {
  *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVpcV2Output(args: GetVpcV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVpcV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

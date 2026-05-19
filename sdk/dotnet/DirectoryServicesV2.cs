@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Add Directory Service .
-    ///     var active_directory = new Nutanix.Index.DirectoryServicesV2("active-directory", new()
+    ///     var active_directory = new Nutanix.DirectoryServicesV2("active-directory", new()
     ///     {
     ///         Name = "example_active_directory",
     ///         Url = "ldap://10.xx.xx.xx:xxxx",
@@ -46,6 +47,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/directoryServicesV2:DirectoryServicesV2")]
     public partial class DirectoryServicesV2 : global::Pulumi.CustomResource

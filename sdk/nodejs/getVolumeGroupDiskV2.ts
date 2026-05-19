@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,6 +22,7 @@ import * as utilities from "./utilities";
  *     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVolumeGroupDiskV2(args: GetVolumeGroupDiskV2Args, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupDiskV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -92,6 +94,7 @@ export interface GetVolumeGroupDiskV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -102,6 +105,7 @@ export interface GetVolumeGroupDiskV2Result {
  *     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVolumeGroupDiskV2Output(args: GetVolumeGroupDiskV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeGroupDiskV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -118,6 +118,7 @@ def get_protection_policies_v2(filter: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -130,96 +131,97 @@ def get_protection_policies_v2(filter: Optional[_builtins.str] = None,
     example = nutanix.get_protection_policies_v2(filter="startswith(name, 'C')",
         limit=10)
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Protection Policies
 
-    The `protection_policies` is a list of protection policies. Each protection policy supports the following attributes:
+    The <span pulumi-lang-nodejs="`protectionPolicies`" pulumi-lang-dotnet="`ProtectionPolicies`" pulumi-lang-go="`protectionPolicies`" pulumi-lang-python="`protection_policies`" pulumi-lang-yaml="`protectionPolicies`" pulumi-lang-java="`protectionPolicies`">`protectionPolicies`</span> is a list of protection policies. Each protection policy supports the following attributes:
 
-    * `tenant_id`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-    * `ext_id`: - A globally unique identifier of an instance that is suitable for external consumption.
-    * `links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `name`: - Name of the protection policy.
-    * `description`: - Description of the protection policy.
-    * `replication_locations`: - Hypervisor details.
-    * `replication_configurations`: - Cluster reference for an entity.
-    * `category_ids`: - Host entity with its attributes.
-    * `is_approval_policy_needed`: - Disks attached to host.
-    * `owner_ext_id`: - Node degraded status.
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - Name of the protection policy.
+    * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: - Description of the protection policy.
+    * <span pulumi-lang-nodejs="`replicationLocations`" pulumi-lang-dotnet="`ReplicationLocations`" pulumi-lang-go="`replicationLocations`" pulumi-lang-python="`replication_locations`" pulumi-lang-yaml="`replicationLocations`" pulumi-lang-java="`replicationLocations`">`replicationLocations`</span>: - Hypervisor details.
+    * <span pulumi-lang-nodejs="`replicationConfigurations`" pulumi-lang-dotnet="`ReplicationConfigurations`" pulumi-lang-go="`replicationConfigurations`" pulumi-lang-python="`replication_configurations`" pulumi-lang-yaml="`replicationConfigurations`" pulumi-lang-java="`replicationConfigurations`">`replicationConfigurations`</span>: - Cluster reference for an entity.
+    * <span pulumi-lang-nodejs="`categoryIds`" pulumi-lang-dotnet="`CategoryIds`" pulumi-lang-go="`categoryIds`" pulumi-lang-python="`category_ids`" pulumi-lang-yaml="`categoryIds`" pulumi-lang-java="`categoryIds`">`categoryIds`</span>: - Host entity with its attributes.
+    * <span pulumi-lang-nodejs="`isApprovalPolicyNeeded`" pulumi-lang-dotnet="`IsApprovalPolicyNeeded`" pulumi-lang-go="`isApprovalPolicyNeeded`" pulumi-lang-python="`is_approval_policy_needed`" pulumi-lang-yaml="`isApprovalPolicyNeeded`" pulumi-lang-java="`isApprovalPolicyNeeded`">`isApprovalPolicyNeeded`</span>: - Disks attached to host.
+    * <span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`">`ownerExtId`</span>: - Node degraded status.
 
     ### Links
     The links attribute supports the following:
 
-    * `href`: - The URL at which the entity described by the link can be accessed.
-    * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+    * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 
     ### Replication Locations
-    The replication_locations attribute supports the following:
+    The<span pulumi-lang-nodejs=" replicationLocations " pulumi-lang-dotnet=" ReplicationLocations " pulumi-lang-go=" replicationLocations " pulumi-lang-python=" replication_locations " pulumi-lang-yaml=" replicationLocations " pulumi-lang-java=" replicationLocations "> replicationLocations </span>attribute supports the following:
 
-    * `label`: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
-    * `domain_manager_ext_id`: - External identifier of the domain manager.
-    * `replication_sub_location`: - Specifies the replication sub-locations where recovery points can be created or replicated.
-    * `is_primary`: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
+    * <span pulumi-lang-nodejs="`label`" pulumi-lang-dotnet="`Label`" pulumi-lang-go="`label`" pulumi-lang-python="`label`" pulumi-lang-yaml="`label`" pulumi-lang-java="`label`">`label`</span>: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
+    * <span pulumi-lang-nodejs="`domainManagerExtId`" pulumi-lang-dotnet="`DomainManagerExtId`" pulumi-lang-go="`domainManagerExtId`" pulumi-lang-python="`domain_manager_ext_id`" pulumi-lang-yaml="`domainManagerExtId`" pulumi-lang-java="`domainManagerExtId`">`domainManagerExtId`</span>: - External identifier of the domain manager.
+    * <span pulumi-lang-nodejs="`replicationSubLocation`" pulumi-lang-dotnet="`ReplicationSubLocation`" pulumi-lang-go="`replicationSubLocation`" pulumi-lang-python="`replication_sub_location`" pulumi-lang-yaml="`replicationSubLocation`" pulumi-lang-java="`replicationSubLocation`">`replicationSubLocation`</span>: - Specifies the replication sub-locations where recovery points can be created or replicated.
+    * <span pulumi-lang-nodejs="`isPrimary`" pulumi-lang-dotnet="`IsPrimary`" pulumi-lang-go="`isPrimary`" pulumi-lang-python="`is_primary`" pulumi-lang-yaml="`isPrimary`" pulumi-lang-java="`isPrimary`">`isPrimary`</span>: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
 
     #### Replication Sub Location
-    The replication_sub_location attribute supports the following:
-    > One of `cluster_ext_ids` :
-    * `cluster_ext_ids` :  - External identifier of the clusters.
+    The<span pulumi-lang-nodejs=" replicationSubLocation " pulumi-lang-dotnet=" ReplicationSubLocation " pulumi-lang-go=" replicationSubLocation " pulumi-lang-python=" replication_sub_location " pulumi-lang-yaml=" replicationSubLocation " pulumi-lang-java=" replicationSubLocation "> replicationSubLocation </span>attribute supports the following:
+    > One of <span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`">`clusterExtIds`</span> :
+    * <span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`">`clusterExtIds`</span> :  - External identifier of the clusters.
 
     ##### Cluster Ext Ids
-    The cluster_ext_ids attribute supports the following:
+    The<span pulumi-lang-nodejs=" clusterExtIds " pulumi-lang-dotnet=" ClusterExtIds " pulumi-lang-go=" clusterExtIds " pulumi-lang-python=" cluster_ext_ids " pulumi-lang-yaml=" clusterExtIds " pulumi-lang-java=" clusterExtIds "> clusterExtIds </span>attribute supports the following:
 
-    * `cluster_ext_id`: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
+    * <span pulumi-lang-nodejs="`clusterExtId`" pulumi-lang-dotnet="`ClusterExtId`" pulumi-lang-go="`clusterExtId`" pulumi-lang-python="`cluster_ext_id`" pulumi-lang-yaml="`clusterExtId`" pulumi-lang-java="`clusterExtId`">`clusterExtId`</span>: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
 
     ### Replication Configurations
-    The replication_configurations attribute supports the following:
+    The<span pulumi-lang-nodejs=" replicationConfigurations " pulumi-lang-dotnet=" ReplicationConfigurations " pulumi-lang-go=" replicationConfigurations " pulumi-lang-python=" replication_configurations " pulumi-lang-yaml=" replicationConfigurations " pulumi-lang-java=" replicationConfigurations "> replicationConfigurations </span>attribute supports the following:
 
-    * `source_location_label`: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
-    * `remote_location_label`: - Label of the source location from the replication locations list, where the entity will be replicated.
-    * `schedule`: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
+    * <span pulumi-lang-nodejs="`sourceLocationLabel`" pulumi-lang-dotnet="`SourceLocationLabel`" pulumi-lang-go="`sourceLocationLabel`" pulumi-lang-python="`source_location_label`" pulumi-lang-yaml="`sourceLocationLabel`" pulumi-lang-java="`sourceLocationLabel`">`sourceLocationLabel`</span>: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
+    * <span pulumi-lang-nodejs="`remoteLocationLabel`" pulumi-lang-dotnet="`RemoteLocationLabel`" pulumi-lang-go="`remoteLocationLabel`" pulumi-lang-python="`remote_location_label`" pulumi-lang-yaml="`remoteLocationLabel`" pulumi-lang-java="`remoteLocationLabel`">`remoteLocationLabel`</span>: - Label of the source location from the replication locations list, where the entity will be replicated.
+    * <span pulumi-lang-nodejs="`schedule`" pulumi-lang-dotnet="`Schedule`" pulumi-lang-go="`schedule`" pulumi-lang-python="`schedule`" pulumi-lang-yaml="`schedule`" pulumi-lang-java="`schedule`">`schedule`</span>: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
 
     #### Schedule
     The schedule attribute supports the following:
 
-    * `recovery_point_type`: - Type of recovery point.
+    * <span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`">`recoveryPointType`</span>: - Type of recovery point.
        * `CRASH_CONSISTENT`: Crash-consistent Recovery points capture all the VM and application level details.
        * `APP_CONSISTENT`: Application-consistent Recovery points can capture all the data stored in the memory and also the in-progress transaction details.
-    * `recovery_point_objective_time_seconds`: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
+    * <span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`">`recoveryPointObjectiveTimeSeconds`</span>: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
       - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
       - Hour(s): 1, 2, 3, 4, 6, 8, 12
       - Day(s): 1
       - Week(s): 1, 2
-    * `retention`: - Specifies the retention policy for the recovery point schedule.
-    * `start_time`: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
-    * `sync_replication_auto_suspend_timeout_seconds`: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
+    * <span pulumi-lang-nodejs="`retention`" pulumi-lang-dotnet="`Retention`" pulumi-lang-go="`retention`" pulumi-lang-python="`retention`" pulumi-lang-yaml="`retention`" pulumi-lang-java="`retention`">`retention`</span>: - Specifies the retention policy for the recovery point schedule.
+    * <span pulumi-lang-nodejs="`startTime`" pulumi-lang-dotnet="`StartTime`" pulumi-lang-go="`startTime`" pulumi-lang-python="`start_time`" pulumi-lang-yaml="`startTime`" pulumi-lang-java="`startTime`">`startTime`</span>: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
+    * <span pulumi-lang-nodejs="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-dotnet="`SyncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-go="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-python="`sync_replication_auto_suspend_timeout_seconds`" pulumi-lang-yaml="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-java="`syncReplicationAutoSuspendTimeoutSeconds`">`syncReplicationAutoSuspendTimeoutSeconds`</span>: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
 
     #### Retention
-    > One of `linear_retention` or `auto_rollup_retention` :
+    > One of <span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`">`linearRetention`</span> or <span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`">`autoRollupRetention`</span> :
 
-    * `linear_retention`: - Linear retention policy.
-    * `auto_rollup_retention`: - Auto rollup retention policy.
+    * <span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`">`linearRetention`</span>: - Linear retention policy.
+    * <span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`">`autoRollupRetention`</span>: - Auto rollup retention policy.
 
     ##### Linear Retention
-    The linear_retention attribute supports the following:
+    The<span pulumi-lang-nodejs=" linearRetention " pulumi-lang-dotnet=" LinearRetention " pulumi-lang-go=" linearRetention " pulumi-lang-python=" linear_retention " pulumi-lang-yaml=" linearRetention " pulumi-lang-java=" linearRetention "> linearRetention </span>attribute supports the following:
 
-    * `local`: - Specifies the number of recovery points to retain on the local location.
-    * `remote`: - Specifies the number of recovery points to retain on the remote location.
+    * <span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`">`local`</span>: - Specifies the number of recovery points to retain on the local location.
+    * <span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`">`remote`</span>: - Specifies the number of recovery points to retain on the remote location.
 
     ##### Auto Rollup Retention
-    The auto_rollup_retention attribute supports the following:
+    The<span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "> autoRollupRetention </span>attribute supports the following:
 
-    * `local`: - Specifies the auto rollup retention details.
-    * `remote`: - Specifies the auto rollup retention details.
+    * <span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`">`local`</span>: - Specifies the auto rollup retention details.
+    * <span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`">`remote`</span>: - Specifies the auto rollup retention details.
 
     ###### Local, Remote
-    The local, remote attribute in the auto_rollup_retention supports the following:
+    The local, remote attribute in the<span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "> autoRollupRetention </span>supports the following:
 
-    * `snapshot_interval_type`: - Snapshot interval period.
+    * <span pulumi-lang-nodejs="`snapshotIntervalType`" pulumi-lang-dotnet="`SnapshotIntervalType`" pulumi-lang-go="`snapshotIntervalType`" pulumi-lang-python="`snapshot_interval_type`" pulumi-lang-yaml="`snapshotIntervalType`" pulumi-lang-java="`snapshotIntervalType`">`snapshotIntervalType`</span>: - Snapshot interval period.
        * `YEARLY`: Specifies the number of latest yearly recovery points to retain.
        * `WEEKLY`: Specifies the number of latest weekly recovery points to retain.
        * `DAILY`: Specifies the number of latest daily recovery points to retain.
        * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
        * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
-    * `frequency`: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
+    * <span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`">`frequency`</span>: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
 
     See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
 
@@ -254,17 +256,18 @@ def get_protection_policies_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         protection_policies=pulumi.get(__ret__, 'protection_policies'),
         select=pulumi.get(__ret__, 'select'))
-def get_protection_policies_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                      order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                      select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_protection_policies_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                      order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                      select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionPoliciesV2Result]:
     """
     List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -277,96 +280,97 @@ def get_protection_policies_v2_output(filter: Optional[pulumi.Input[Optional[_bu
     example = nutanix.get_protection_policies_v2(filter="startswith(name, 'C')",
         limit=10)
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Protection Policies
 
-    The `protection_policies` is a list of protection policies. Each protection policy supports the following attributes:
+    The <span pulumi-lang-nodejs="`protectionPolicies`" pulumi-lang-dotnet="`ProtectionPolicies`" pulumi-lang-go="`protectionPolicies`" pulumi-lang-python="`protection_policies`" pulumi-lang-yaml="`protectionPolicies`" pulumi-lang-java="`protectionPolicies`">`protectionPolicies`</span> is a list of protection policies. Each protection policy supports the following attributes:
 
-    * `tenant_id`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-    * `ext_id`: - A globally unique identifier of an instance that is suitable for external consumption.
-    * `links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `name`: - Name of the protection policy.
-    * `description`: - Description of the protection policy.
-    * `replication_locations`: - Hypervisor details.
-    * `replication_configurations`: - Cluster reference for an entity.
-    * `category_ids`: - Host entity with its attributes.
-    * `is_approval_policy_needed`: - Disks attached to host.
-    * `owner_ext_id`: - Node degraded status.
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - Name of the protection policy.
+    * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: - Description of the protection policy.
+    * <span pulumi-lang-nodejs="`replicationLocations`" pulumi-lang-dotnet="`ReplicationLocations`" pulumi-lang-go="`replicationLocations`" pulumi-lang-python="`replication_locations`" pulumi-lang-yaml="`replicationLocations`" pulumi-lang-java="`replicationLocations`">`replicationLocations`</span>: - Hypervisor details.
+    * <span pulumi-lang-nodejs="`replicationConfigurations`" pulumi-lang-dotnet="`ReplicationConfigurations`" pulumi-lang-go="`replicationConfigurations`" pulumi-lang-python="`replication_configurations`" pulumi-lang-yaml="`replicationConfigurations`" pulumi-lang-java="`replicationConfigurations`">`replicationConfigurations`</span>: - Cluster reference for an entity.
+    * <span pulumi-lang-nodejs="`categoryIds`" pulumi-lang-dotnet="`CategoryIds`" pulumi-lang-go="`categoryIds`" pulumi-lang-python="`category_ids`" pulumi-lang-yaml="`categoryIds`" pulumi-lang-java="`categoryIds`">`categoryIds`</span>: - Host entity with its attributes.
+    * <span pulumi-lang-nodejs="`isApprovalPolicyNeeded`" pulumi-lang-dotnet="`IsApprovalPolicyNeeded`" pulumi-lang-go="`isApprovalPolicyNeeded`" pulumi-lang-python="`is_approval_policy_needed`" pulumi-lang-yaml="`isApprovalPolicyNeeded`" pulumi-lang-java="`isApprovalPolicyNeeded`">`isApprovalPolicyNeeded`</span>: - Disks attached to host.
+    * <span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`">`ownerExtId`</span>: - Node degraded status.
 
     ### Links
     The links attribute supports the following:
 
-    * `href`: - The URL at which the entity described by the link can be accessed.
-    * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+    * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 
     ### Replication Locations
-    The replication_locations attribute supports the following:
+    The<span pulumi-lang-nodejs=" replicationLocations " pulumi-lang-dotnet=" ReplicationLocations " pulumi-lang-go=" replicationLocations " pulumi-lang-python=" replication_locations " pulumi-lang-yaml=" replicationLocations " pulumi-lang-java=" replicationLocations "> replicationLocations </span>attribute supports the following:
 
-    * `label`: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
-    * `domain_manager_ext_id`: - External identifier of the domain manager.
-    * `replication_sub_location`: - Specifies the replication sub-locations where recovery points can be created or replicated.
-    * `is_primary`: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
+    * <span pulumi-lang-nodejs="`label`" pulumi-lang-dotnet="`Label`" pulumi-lang-go="`label`" pulumi-lang-python="`label`" pulumi-lang-yaml="`label`" pulumi-lang-java="`label`">`label`</span>: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
+    * <span pulumi-lang-nodejs="`domainManagerExtId`" pulumi-lang-dotnet="`DomainManagerExtId`" pulumi-lang-go="`domainManagerExtId`" pulumi-lang-python="`domain_manager_ext_id`" pulumi-lang-yaml="`domainManagerExtId`" pulumi-lang-java="`domainManagerExtId`">`domainManagerExtId`</span>: - External identifier of the domain manager.
+    * <span pulumi-lang-nodejs="`replicationSubLocation`" pulumi-lang-dotnet="`ReplicationSubLocation`" pulumi-lang-go="`replicationSubLocation`" pulumi-lang-python="`replication_sub_location`" pulumi-lang-yaml="`replicationSubLocation`" pulumi-lang-java="`replicationSubLocation`">`replicationSubLocation`</span>: - Specifies the replication sub-locations where recovery points can be created or replicated.
+    * <span pulumi-lang-nodejs="`isPrimary`" pulumi-lang-dotnet="`IsPrimary`" pulumi-lang-go="`isPrimary`" pulumi-lang-python="`is_primary`" pulumi-lang-yaml="`isPrimary`" pulumi-lang-java="`isPrimary`">`isPrimary`</span>: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
 
     #### Replication Sub Location
-    The replication_sub_location attribute supports the following:
-    > One of `cluster_ext_ids` :
-    * `cluster_ext_ids` :  - External identifier of the clusters.
+    The<span pulumi-lang-nodejs=" replicationSubLocation " pulumi-lang-dotnet=" ReplicationSubLocation " pulumi-lang-go=" replicationSubLocation " pulumi-lang-python=" replication_sub_location " pulumi-lang-yaml=" replicationSubLocation " pulumi-lang-java=" replicationSubLocation "> replicationSubLocation </span>attribute supports the following:
+    > One of <span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`">`clusterExtIds`</span> :
+    * <span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`">`clusterExtIds`</span> :  - External identifier of the clusters.
 
     ##### Cluster Ext Ids
-    The cluster_ext_ids attribute supports the following:
+    The<span pulumi-lang-nodejs=" clusterExtIds " pulumi-lang-dotnet=" ClusterExtIds " pulumi-lang-go=" clusterExtIds " pulumi-lang-python=" cluster_ext_ids " pulumi-lang-yaml=" clusterExtIds " pulumi-lang-java=" clusterExtIds "> clusterExtIds </span>attribute supports the following:
 
-    * `cluster_ext_id`: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
+    * <span pulumi-lang-nodejs="`clusterExtId`" pulumi-lang-dotnet="`ClusterExtId`" pulumi-lang-go="`clusterExtId`" pulumi-lang-python="`cluster_ext_id`" pulumi-lang-yaml="`clusterExtId`" pulumi-lang-java="`clusterExtId`">`clusterExtId`</span>: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
 
     ### Replication Configurations
-    The replication_configurations attribute supports the following:
+    The<span pulumi-lang-nodejs=" replicationConfigurations " pulumi-lang-dotnet=" ReplicationConfigurations " pulumi-lang-go=" replicationConfigurations " pulumi-lang-python=" replication_configurations " pulumi-lang-yaml=" replicationConfigurations " pulumi-lang-java=" replicationConfigurations "> replicationConfigurations </span>attribute supports the following:
 
-    * `source_location_label`: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
-    * `remote_location_label`: - Label of the source location from the replication locations list, where the entity will be replicated.
-    * `schedule`: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
+    * <span pulumi-lang-nodejs="`sourceLocationLabel`" pulumi-lang-dotnet="`SourceLocationLabel`" pulumi-lang-go="`sourceLocationLabel`" pulumi-lang-python="`source_location_label`" pulumi-lang-yaml="`sourceLocationLabel`" pulumi-lang-java="`sourceLocationLabel`">`sourceLocationLabel`</span>: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
+    * <span pulumi-lang-nodejs="`remoteLocationLabel`" pulumi-lang-dotnet="`RemoteLocationLabel`" pulumi-lang-go="`remoteLocationLabel`" pulumi-lang-python="`remote_location_label`" pulumi-lang-yaml="`remoteLocationLabel`" pulumi-lang-java="`remoteLocationLabel`">`remoteLocationLabel`</span>: - Label of the source location from the replication locations list, where the entity will be replicated.
+    * <span pulumi-lang-nodejs="`schedule`" pulumi-lang-dotnet="`Schedule`" pulumi-lang-go="`schedule`" pulumi-lang-python="`schedule`" pulumi-lang-yaml="`schedule`" pulumi-lang-java="`schedule`">`schedule`</span>: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
 
     #### Schedule
     The schedule attribute supports the following:
 
-    * `recovery_point_type`: - Type of recovery point.
+    * <span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`">`recoveryPointType`</span>: - Type of recovery point.
        * `CRASH_CONSISTENT`: Crash-consistent Recovery points capture all the VM and application level details.
        * `APP_CONSISTENT`: Application-consistent Recovery points can capture all the data stored in the memory and also the in-progress transaction details.
-    * `recovery_point_objective_time_seconds`: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
+    * <span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`">`recoveryPointObjectiveTimeSeconds`</span>: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
       - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
       - Hour(s): 1, 2, 3, 4, 6, 8, 12
       - Day(s): 1
       - Week(s): 1, 2
-    * `retention`: - Specifies the retention policy for the recovery point schedule.
-    * `start_time`: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
-    * `sync_replication_auto_suspend_timeout_seconds`: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
+    * <span pulumi-lang-nodejs="`retention`" pulumi-lang-dotnet="`Retention`" pulumi-lang-go="`retention`" pulumi-lang-python="`retention`" pulumi-lang-yaml="`retention`" pulumi-lang-java="`retention`">`retention`</span>: - Specifies the retention policy for the recovery point schedule.
+    * <span pulumi-lang-nodejs="`startTime`" pulumi-lang-dotnet="`StartTime`" pulumi-lang-go="`startTime`" pulumi-lang-python="`start_time`" pulumi-lang-yaml="`startTime`" pulumi-lang-java="`startTime`">`startTime`</span>: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
+    * <span pulumi-lang-nodejs="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-dotnet="`SyncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-go="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-python="`sync_replication_auto_suspend_timeout_seconds`" pulumi-lang-yaml="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-java="`syncReplicationAutoSuspendTimeoutSeconds`">`syncReplicationAutoSuspendTimeoutSeconds`</span>: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
 
     #### Retention
-    > One of `linear_retention` or `auto_rollup_retention` :
+    > One of <span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`">`linearRetention`</span> or <span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`">`autoRollupRetention`</span> :
 
-    * `linear_retention`: - Linear retention policy.
-    * `auto_rollup_retention`: - Auto rollup retention policy.
+    * <span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`">`linearRetention`</span>: - Linear retention policy.
+    * <span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`">`autoRollupRetention`</span>: - Auto rollup retention policy.
 
     ##### Linear Retention
-    The linear_retention attribute supports the following:
+    The<span pulumi-lang-nodejs=" linearRetention " pulumi-lang-dotnet=" LinearRetention " pulumi-lang-go=" linearRetention " pulumi-lang-python=" linear_retention " pulumi-lang-yaml=" linearRetention " pulumi-lang-java=" linearRetention "> linearRetention </span>attribute supports the following:
 
-    * `local`: - Specifies the number of recovery points to retain on the local location.
-    * `remote`: - Specifies the number of recovery points to retain on the remote location.
+    * <span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`">`local`</span>: - Specifies the number of recovery points to retain on the local location.
+    * <span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`">`remote`</span>: - Specifies the number of recovery points to retain on the remote location.
 
     ##### Auto Rollup Retention
-    The auto_rollup_retention attribute supports the following:
+    The<span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "> autoRollupRetention </span>attribute supports the following:
 
-    * `local`: - Specifies the auto rollup retention details.
-    * `remote`: - Specifies the auto rollup retention details.
+    * <span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`">`local`</span>: - Specifies the auto rollup retention details.
+    * <span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`">`remote`</span>: - Specifies the auto rollup retention details.
 
     ###### Local, Remote
-    The local, remote attribute in the auto_rollup_retention supports the following:
+    The local, remote attribute in the<span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "> autoRollupRetention </span>supports the following:
 
-    * `snapshot_interval_type`: - Snapshot interval period.
+    * <span pulumi-lang-nodejs="`snapshotIntervalType`" pulumi-lang-dotnet="`SnapshotIntervalType`" pulumi-lang-go="`snapshotIntervalType`" pulumi-lang-python="`snapshot_interval_type`" pulumi-lang-yaml="`snapshotIntervalType`" pulumi-lang-java="`snapshotIntervalType`">`snapshotIntervalType`</span>: - Snapshot interval period.
        * `YEARLY`: Specifies the number of latest yearly recovery points to retain.
        * `WEEKLY`: Specifies the number of latest weekly recovery points to retain.
        * `DAILY`: Specifies the number of latest daily recovery points to retain.
        * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
        * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
-    * `frequency`: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
+    * <span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`">`frequency`</span>: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
 
     See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
 

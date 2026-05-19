@@ -13,12 +13,13 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Provides a Nutanix network security rule resource to Create a network security rule.
     /// 
-    /// &gt; NOTE: The use of NetworkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+    /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
     /// 
     /// ## Example Usage
     /// 
     /// ### Isolation Rule Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -27,7 +28,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var isolation = new Nutanix.Index.NetworkSecurityRule("isolation", new()
+    ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
     ///     {
     ///         Name = "example-isolation-rule",
     ///         Description = "Isolation Rule Example",
@@ -68,8 +69,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### App Rule Example with associated VMs.
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -78,7 +81,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var clusters = Nutanix.Index.GetClusters.Invoke();
+    ///     var clusters = Nutanix.GetClusters.Invoke();
     /// 
     ///     var clusterUuid = .Where(cluster =&gt; cluster.ServiceList[0] != "PRISM_CENTRAL").Select(cluster =&gt; 
     ///     {
@@ -86,40 +89,40 @@ namespace PiersKarsenbarg.Nutanix
     ///     }).ToList()[0];
     /// 
     ///     //Create categories.
-    ///     var test_category_key = new Nutanix.Index.CategoryKey("test-category-key", new()
+    ///     var test_category_key = new Nutanix.CategoryKey("test-category-key", new()
     ///     {
     ///         Name = "TIER-1",
     ///         Description = "TIER Category Key",
     ///     });
     /// 
-    ///     var USER = new Nutanix.Index.CategoryKey("USER", new()
+    ///     var USER = new Nutanix.CategoryKey("USER", new()
     ///     {
     ///         Name = "user",
     ///         Description = "user Category Key",
     ///     });
     /// 
-    ///     var WEB = new Nutanix.Index.CategoryValue("WEB", new()
+    ///     var WEB = new Nutanix.CategoryValue("WEB", new()
     ///     {
     ///         Name = test_category_key.Id,
     ///         Description = "WEB Category Value",
     ///         Value = "WEB-1",
     ///     });
     /// 
-    ///     var APP = new Nutanix.Index.CategoryValue("APP", new()
+    ///     var APP = new Nutanix.CategoryValue("APP", new()
     ///     {
     ///         Name = test_category_key.Id,
     ///         Description = "APP Category Value",
     ///         Value = "APP-1",
     ///     });
     /// 
-    ///     var DB = new Nutanix.Index.CategoryValue("DB", new()
+    ///     var DB = new Nutanix.CategoryValue("DB", new()
     ///     {
     ///         Name = test_category_key.Id,
     ///         Description = "DB Category Value",
     ///         Value = "DB-1",
     ///     });
     /// 
-    ///     var @group = new Nutanix.Index.CategoryValue("group", new()
+    ///     var @group = new Nutanix.CategoryValue("group", new()
     ///     {
     ///         Name = USER.Id,
     ///         Description = "group Category Value",
@@ -127,7 +130,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //Create a cirros image
-    ///     var cirros_034_disk = new Nutanix.Index.Image("cirros-034-disk", new()
+    ///     var cirros_034_disk = new Nutanix.Image("cirros-034-disk", new()
     ///     {
     ///         Name = "test-image-vm-create-flow",
     ///         SourceUri = "http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img",
@@ -135,7 +138,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //APP-1 VM.
-    ///     var vm_app = new Nutanix.Index.VirtualMachine("vm-app", new()
+    ///     var vm_app = new Nutanix.VirtualMachine("vm-app", new()
     ///     {
     ///         Name = "test-dou-vm-flow-APP-1",
     ///         ClusterUuid = clusterUuid,
@@ -185,7 +188,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //WEB-1 VM
-    ///     var vm_web = new Nutanix.Index.VirtualMachine("vm-web", new()
+    ///     var vm_web = new Nutanix.VirtualMachine("vm-web", new()
     ///     {
     ///         Name = "test-dou-vm-flow-WEB-1",
     ///         ClusterUuid = clusterUuid,
@@ -235,7 +238,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //DB-1 VM
-    ///     var vm_db = new Nutanix.Index.VirtualMachine("vm-db", new()
+    ///     var vm_db = new Nutanix.VirtualMachine("vm-db", new()
     ///     {
     ///         Name = "test-dou-vm-flow-DB-1",
     ///         ClusterUuid = clusterUuid,
@@ -285,7 +288,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //Create Application Network Policy.
-    ///     var TEST_TIER = new Nutanix.Index.NetworkSecurityRule("TEST-TIER", new()
+    ///     var TEST_TIER = new Nutanix.NetworkSecurityRule("TEST-TIER", new()
     ///     {
     ///         Name = "RULE-1-TIERS",
     ///         Description = "rule 1 tiers",
@@ -382,8 +385,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### Usage with service and address groups
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -392,7 +397,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var service1 = new Nutanix.Index.ServiceGroup("service1", new()
+    ///     var service1 = new Nutanix.ServiceGroup("service1", new()
     ///     {
     ///         Name = "srv-1",
     ///         Description = "test",
@@ -418,7 +423,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
-    ///     var address1 = new Nutanix.Index.AddressGroup("address1", new()
+    ///     var address1 = new Nutanix.AddressGroup("address1", new()
     ///     {
     ///         Name = "addr-1",
     ///         Description = "test",
@@ -432,14 +437,14 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
-    ///     var ad_group_user_1 = new Nutanix.Index.CategoryValue("ad-group-user-1", new()
+    ///     var ad_group_user_1 = new Nutanix.CategoryValue("ad-group-user-1", new()
     ///     {
     ///         Name = "AD",
     ///         Description = "group user category value",
     ///         Value = "AD",
     ///     });
     /// 
-    ///     var VDI = new Nutanix.Index.NetworkSecurityRule("VDI", new()
+    ///     var VDI = new Nutanix.NetworkSecurityRule("VDI", new()
     ///     {
     ///         Name = "nsr-1",
     ///         AdRuleAction = "APPLY",
@@ -505,12 +510,13 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/networkSecurityRule:NetworkSecurityRule")]
     public partial class NetworkSecurityRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Output("adRuleAction")]
         public Output<string> AdRuleAction { get; private set; } = null!;
@@ -567,7 +573,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ApiVersion { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Output("appRuleAction")]
         public Output<string> AppRuleAction { get; private set; } = null!;
@@ -672,7 +678,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> IsolationRuleSecondEntityFilterType { get; private set; } = null!;
 
         /// <summary>
-        /// - The NetworkSecurityRule kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
@@ -743,7 +749,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class NetworkSecurityRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Input("adRuleAction")]
         public Input<string>? AdRuleAction { get; set; }
@@ -818,7 +824,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? AllowIpv6Traffic { get; set; }
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Input("appRuleAction")]
         public Input<string>? AppRuleAction { get; set; }
@@ -1015,7 +1021,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class NetworkSecurityRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Input("adRuleAction")]
         public Input<string>? AdRuleAction { get; set; }
@@ -1096,7 +1102,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ApiVersion { get; set; }
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Input("appRuleAction")]
         public Input<string>? AppRuleAction { get; set; }
@@ -1258,7 +1264,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// - The NetworkSecurityRule kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {

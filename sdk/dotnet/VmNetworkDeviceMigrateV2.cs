@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var migrate = new Nutanix.Index.VmNetworkDeviceMigrateV2("migrate", new()
+    ///     var migrate = new Nutanix.VmNetworkDeviceMigrateV2("migrate", new()
     ///     {
     ///         VmExtId = "246f6e8a-ff05-4057-af6b-b1fd23a46d7d",
     ///         ExtId = "eb0157e7-4a87-4ba6-ac8f-62cfe6251b8b",
@@ -47,6 +48,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/vmNetworkDeviceMigrateV2:VmNetworkDeviceMigrateV2")]
     public partial class VmNetworkDeviceMigrateV2 : global::Pulumi.CustomResource
@@ -73,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> MigrateType { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// - (Required) Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC.
         /// </summary>
         [Output("subnets")]
         public Output<ImmutableArray<Outputs.VmNetworkDeviceMigrateV2Subnet>> Subnets { get; private set; } = null!;
@@ -162,7 +164,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.VmNetworkDeviceMigrateV2SubnetArgs>? _subnets;
 
         /// <summary>
-        /// - (Required) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// - (Required) Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC.
         /// </summary>
         public InputList<Inputs.VmNetworkDeviceMigrateV2SubnetArgs> Subnets
         {
@@ -215,7 +217,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.VmNetworkDeviceMigrateV2SubnetGetArgs>? _subnets;
 
         /// <summary>
-        /// - (Required) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// - (Required) Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC.
         /// </summary>
         public InputList<Inputs.VmNetworkDeviceMigrateV2SubnetGetArgs> Subnets
         {

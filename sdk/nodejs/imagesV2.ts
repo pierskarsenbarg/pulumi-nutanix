@@ -99,29 +99,29 @@ export class ImagesV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ImagesV2 resources.
  */
 export interface ImagesV2State {
-    categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
-    checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[]>;
-    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
-    createTime?: pulumi.Input<string>;
-    description?: pulumi.Input<string>;
-    lastUpdateTime?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    ownerExtId?: pulumi.Input<string>;
-    placementPolicyStatuses?: pulumi.Input<pulumi.Input<inputs.ImagesV2PlacementPolicyStatus>[]>;
-    sizeBytes?: pulumi.Input<number>;
-    sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[]>;
-    type?: pulumi.Input<string>;
+    categoryExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[] | undefined>;
+    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    createTime?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string | undefined>;
+    lastUpdateTime?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    ownerExtId?: pulumi.Input<string | undefined>;
+    placementPolicyStatuses?: pulumi.Input<pulumi.Input<inputs.ImagesV2PlacementPolicyStatus>[] | undefined>;
+    sizeBytes?: pulumi.Input<number | undefined>;
+    sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[] | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ImagesV2 resource.
  */
 export interface ImagesV2Args {
-    categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
-    checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[]>;
-    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
-    description?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[]>;
+    categoryExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[] | undefined>;
+    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    description?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[] | undefined>;
     type: pulumi.Input<string>;
 }

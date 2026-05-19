@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const clusters = nutanix.getNdbClusters({});
+        /// export const clustersOp = clusters;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// clusters = nutanix.get_ndb_clusters()
+        /// pulumi.export("clustersOp", clusters)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.Index.GetNdbClusters.Invoke();
+        ///     var clusters = Nutanix.GetNdbClusters.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
@@ -33,35 +48,90 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		clusters, err := nutanix.GetNdbClusters(ctx, map[string]interface{}{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("clustersOp", clusters)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var clusters = NutanixFunctions.getNdbClusters(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
+        /// 
+        ///         ctx.export("clustersOp", clusters);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   clusters:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbClusters
+        ///       arguments: {}
+        /// outputs:
+        ///   clustersOp: ${clusters}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## clusters
         /// 
         /// The following attributes are exported for each cluster:
         /// 
-        /// * `Id`: - id of cluster
-        /// * `Name`: - name of cluster
-        /// * `UniqueName`: - unique name of cluster
-        /// * `IpAddresses`: - IP address
-        /// * `Fqdns`: - fqdn
-        /// * `NxClusterUuid`: - nutanix cluster uuid
-        /// * `Description`: - description
-        /// * `CloudType`: - cloud type
-        /// * `DateCreated`: - creation date
-        /// * `DateModified`: - date modified
-        /// * `Version`: - version
-        /// * `OwnerId`: - owner UUID
-        /// * `Status`: - current status
-        /// * `HypervisorType`: - hypervisor type
-        /// * `HypervisorVersion`: - hypervisor version
-        /// * `Properties`: - list of properties
-        /// * `ReferenceCount`: - NA
-        /// * `Username`: - username 
-        /// * `Password`: - password
-        /// * `CloudInfo`: - cloud info
-        /// * `ResourceConfig`: - resource related consumption info
-        /// * `ManagementServerInfo`: - NA
-        /// * `EntityCounts`: - no. of entities related
-        /// * `Healthy`: - if healthy status
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of cluster
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - name of cluster
+        /// * &lt;span pulumi-lang-nodejs="`uniqueName`" pulumi-lang-dotnet="`UniqueName`" pulumi-lang-go="`uniqueName`" pulumi-lang-python="`unique_name`" pulumi-lang-yaml="`uniqueName`" pulumi-lang-java="`uniqueName`"&gt;`uniqueName`&lt;/span&gt;: - unique name of cluster
+        /// * &lt;span pulumi-lang-nodejs="`ipAddresses`" pulumi-lang-dotnet="`IpAddresses`" pulumi-lang-go="`ipAddresses`" pulumi-lang-python="`ip_addresses`" pulumi-lang-yaml="`ipAddresses`" pulumi-lang-java="`ipAddresses`"&gt;`ipAddresses`&lt;/span&gt;: - IP address
+        /// * &lt;span pulumi-lang-nodejs="`fqdns`" pulumi-lang-dotnet="`Fqdns`" pulumi-lang-go="`fqdns`" pulumi-lang-python="`fqdns`" pulumi-lang-yaml="`fqdns`" pulumi-lang-java="`fqdns`"&gt;`fqdns`&lt;/span&gt;: - fqdn
+        /// * &lt;span pulumi-lang-nodejs="`nxClusterUuid`" pulumi-lang-dotnet="`NxClusterUuid`" pulumi-lang-go="`nxClusterUuid`" pulumi-lang-python="`nx_cluster_uuid`" pulumi-lang-yaml="`nxClusterUuid`" pulumi-lang-java="`nxClusterUuid`"&gt;`nxClusterUuid`&lt;/span&gt;: - nutanix cluster uuid
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description
+        /// * &lt;span pulumi-lang-nodejs="`cloudType`" pulumi-lang-dotnet="`CloudType`" pulumi-lang-go="`cloudType`" pulumi-lang-python="`cloud_type`" pulumi-lang-yaml="`cloudType`" pulumi-lang-java="`cloudType`"&gt;`cloudType`&lt;/span&gt;: - cloud type
+        /// * &lt;span pulumi-lang-nodejs="`dateCreated`" pulumi-lang-dotnet="`DateCreated`" pulumi-lang-go="`dateCreated`" pulumi-lang-python="`date_created`" pulumi-lang-yaml="`dateCreated`" pulumi-lang-java="`dateCreated`"&gt;`dateCreated`&lt;/span&gt;: - creation date
+        /// * &lt;span pulumi-lang-nodejs="`dateModified`" pulumi-lang-dotnet="`DateModified`" pulumi-lang-go="`dateModified`" pulumi-lang-python="`date_modified`" pulumi-lang-yaml="`dateModified`" pulumi-lang-java="`dateModified`"&gt;`dateModified`&lt;/span&gt;: - date modified
+        /// * &lt;span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`"&gt;`version`&lt;/span&gt;: - version
+        /// * &lt;span pulumi-lang-nodejs="`ownerId`" pulumi-lang-dotnet="`OwnerId`" pulumi-lang-go="`ownerId`" pulumi-lang-python="`owner_id`" pulumi-lang-yaml="`ownerId`" pulumi-lang-java="`ownerId`"&gt;`ownerId`&lt;/span&gt;: - owner UUID
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - current status
+        /// * &lt;span pulumi-lang-nodejs="`hypervisorType`" pulumi-lang-dotnet="`HypervisorType`" pulumi-lang-go="`hypervisorType`" pulumi-lang-python="`hypervisor_type`" pulumi-lang-yaml="`hypervisorType`" pulumi-lang-java="`hypervisorType`"&gt;`hypervisorType`&lt;/span&gt;: - hypervisor type
+        /// * &lt;span pulumi-lang-nodejs="`hypervisorVersion`" pulumi-lang-dotnet="`HypervisorVersion`" pulumi-lang-go="`hypervisorVersion`" pulumi-lang-python="`hypervisor_version`" pulumi-lang-yaml="`hypervisorVersion`" pulumi-lang-java="`hypervisorVersion`"&gt;`hypervisorVersion`&lt;/span&gt;: - hypervisor version
+        /// * &lt;span pulumi-lang-nodejs="`properties`" pulumi-lang-dotnet="`Properties`" pulumi-lang-go="`properties`" pulumi-lang-python="`properties`" pulumi-lang-yaml="`properties`" pulumi-lang-java="`properties`"&gt;`properties`&lt;/span&gt;: - list of properties
+        /// * &lt;span pulumi-lang-nodejs="`referenceCount`" pulumi-lang-dotnet="`ReferenceCount`" pulumi-lang-go="`referenceCount`" pulumi-lang-python="`reference_count`" pulumi-lang-yaml="`referenceCount`" pulumi-lang-java="`referenceCount`"&gt;`referenceCount`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt;: - username 
+        /// * &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt;: - password
+        /// * &lt;span pulumi-lang-nodejs="`cloudInfo`" pulumi-lang-dotnet="`CloudInfo`" pulumi-lang-go="`cloudInfo`" pulumi-lang-python="`cloud_info`" pulumi-lang-yaml="`cloudInfo`" pulumi-lang-java="`cloudInfo`"&gt;`cloudInfo`&lt;/span&gt;: - cloud info
+        /// * &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt;: - resource related consumption info
+        /// * &lt;span pulumi-lang-nodejs="`managementServerInfo`" pulumi-lang-dotnet="`ManagementServerInfo`" pulumi-lang-go="`managementServerInfo`" pulumi-lang-python="`management_server_info`" pulumi-lang-yaml="`managementServerInfo`" pulumi-lang-java="`managementServerInfo`"&gt;`managementServerInfo`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`entityCounts`" pulumi-lang-dotnet="`EntityCounts`" pulumi-lang-go="`entityCounts`" pulumi-lang-python="`entity_counts`" pulumi-lang-yaml="`entityCounts`" pulumi-lang-java="`entityCounts`"&gt;`entityCounts`&lt;/span&gt;: - no. of entities related
+        /// * &lt;span pulumi-lang-nodejs="`healthy`" pulumi-lang-dotnet="`Healthy`" pulumi-lang-go="`healthy`" pulumi-lang-python="`healthy`" pulumi-lang-yaml="`healthy`" pulumi-lang-java="`healthy`"&gt;`healthy`&lt;/span&gt;: - if healthy status
         /// 
         /// See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
         /// </summary>
@@ -73,6 +143,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const clusters = nutanix.getNdbClusters({});
+        /// export const clustersOp = clusters;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// clusters = nutanix.get_ndb_clusters()
+        /// pulumi.export("clustersOp", clusters)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,7 +166,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.Index.GetNdbClusters.Invoke();
+        ///     var clusters = Nutanix.GetNdbClusters.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
@@ -89,35 +174,90 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		clusters, err := nutanix.GetNdbClusters(ctx, map[string]interface{}{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("clustersOp", clusters)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var clusters = NutanixFunctions.getNdbClusters(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
+        /// 
+        ///         ctx.export("clustersOp", clusters);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   clusters:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbClusters
+        ///       arguments: {}
+        /// outputs:
+        ///   clustersOp: ${clusters}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## clusters
         /// 
         /// The following attributes are exported for each cluster:
         /// 
-        /// * `Id`: - id of cluster
-        /// * `Name`: - name of cluster
-        /// * `UniqueName`: - unique name of cluster
-        /// * `IpAddresses`: - IP address
-        /// * `Fqdns`: - fqdn
-        /// * `NxClusterUuid`: - nutanix cluster uuid
-        /// * `Description`: - description
-        /// * `CloudType`: - cloud type
-        /// * `DateCreated`: - creation date
-        /// * `DateModified`: - date modified
-        /// * `Version`: - version
-        /// * `OwnerId`: - owner UUID
-        /// * `Status`: - current status
-        /// * `HypervisorType`: - hypervisor type
-        /// * `HypervisorVersion`: - hypervisor version
-        /// * `Properties`: - list of properties
-        /// * `ReferenceCount`: - NA
-        /// * `Username`: - username 
-        /// * `Password`: - password
-        /// * `CloudInfo`: - cloud info
-        /// * `ResourceConfig`: - resource related consumption info
-        /// * `ManagementServerInfo`: - NA
-        /// * `EntityCounts`: - no. of entities related
-        /// * `Healthy`: - if healthy status
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of cluster
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - name of cluster
+        /// * &lt;span pulumi-lang-nodejs="`uniqueName`" pulumi-lang-dotnet="`UniqueName`" pulumi-lang-go="`uniqueName`" pulumi-lang-python="`unique_name`" pulumi-lang-yaml="`uniqueName`" pulumi-lang-java="`uniqueName`"&gt;`uniqueName`&lt;/span&gt;: - unique name of cluster
+        /// * &lt;span pulumi-lang-nodejs="`ipAddresses`" pulumi-lang-dotnet="`IpAddresses`" pulumi-lang-go="`ipAddresses`" pulumi-lang-python="`ip_addresses`" pulumi-lang-yaml="`ipAddresses`" pulumi-lang-java="`ipAddresses`"&gt;`ipAddresses`&lt;/span&gt;: - IP address
+        /// * &lt;span pulumi-lang-nodejs="`fqdns`" pulumi-lang-dotnet="`Fqdns`" pulumi-lang-go="`fqdns`" pulumi-lang-python="`fqdns`" pulumi-lang-yaml="`fqdns`" pulumi-lang-java="`fqdns`"&gt;`fqdns`&lt;/span&gt;: - fqdn
+        /// * &lt;span pulumi-lang-nodejs="`nxClusterUuid`" pulumi-lang-dotnet="`NxClusterUuid`" pulumi-lang-go="`nxClusterUuid`" pulumi-lang-python="`nx_cluster_uuid`" pulumi-lang-yaml="`nxClusterUuid`" pulumi-lang-java="`nxClusterUuid`"&gt;`nxClusterUuid`&lt;/span&gt;: - nutanix cluster uuid
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description
+        /// * &lt;span pulumi-lang-nodejs="`cloudType`" pulumi-lang-dotnet="`CloudType`" pulumi-lang-go="`cloudType`" pulumi-lang-python="`cloud_type`" pulumi-lang-yaml="`cloudType`" pulumi-lang-java="`cloudType`"&gt;`cloudType`&lt;/span&gt;: - cloud type
+        /// * &lt;span pulumi-lang-nodejs="`dateCreated`" pulumi-lang-dotnet="`DateCreated`" pulumi-lang-go="`dateCreated`" pulumi-lang-python="`date_created`" pulumi-lang-yaml="`dateCreated`" pulumi-lang-java="`dateCreated`"&gt;`dateCreated`&lt;/span&gt;: - creation date
+        /// * &lt;span pulumi-lang-nodejs="`dateModified`" pulumi-lang-dotnet="`DateModified`" pulumi-lang-go="`dateModified`" pulumi-lang-python="`date_modified`" pulumi-lang-yaml="`dateModified`" pulumi-lang-java="`dateModified`"&gt;`dateModified`&lt;/span&gt;: - date modified
+        /// * &lt;span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`"&gt;`version`&lt;/span&gt;: - version
+        /// * &lt;span pulumi-lang-nodejs="`ownerId`" pulumi-lang-dotnet="`OwnerId`" pulumi-lang-go="`ownerId`" pulumi-lang-python="`owner_id`" pulumi-lang-yaml="`ownerId`" pulumi-lang-java="`ownerId`"&gt;`ownerId`&lt;/span&gt;: - owner UUID
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - current status
+        /// * &lt;span pulumi-lang-nodejs="`hypervisorType`" pulumi-lang-dotnet="`HypervisorType`" pulumi-lang-go="`hypervisorType`" pulumi-lang-python="`hypervisor_type`" pulumi-lang-yaml="`hypervisorType`" pulumi-lang-java="`hypervisorType`"&gt;`hypervisorType`&lt;/span&gt;: - hypervisor type
+        /// * &lt;span pulumi-lang-nodejs="`hypervisorVersion`" pulumi-lang-dotnet="`HypervisorVersion`" pulumi-lang-go="`hypervisorVersion`" pulumi-lang-python="`hypervisor_version`" pulumi-lang-yaml="`hypervisorVersion`" pulumi-lang-java="`hypervisorVersion`"&gt;`hypervisorVersion`&lt;/span&gt;: - hypervisor version
+        /// * &lt;span pulumi-lang-nodejs="`properties`" pulumi-lang-dotnet="`Properties`" pulumi-lang-go="`properties`" pulumi-lang-python="`properties`" pulumi-lang-yaml="`properties`" pulumi-lang-java="`properties`"&gt;`properties`&lt;/span&gt;: - list of properties
+        /// * &lt;span pulumi-lang-nodejs="`referenceCount`" pulumi-lang-dotnet="`ReferenceCount`" pulumi-lang-go="`referenceCount`" pulumi-lang-python="`reference_count`" pulumi-lang-yaml="`referenceCount`" pulumi-lang-java="`referenceCount`"&gt;`referenceCount`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt;: - username 
+        /// * &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt;: - password
+        /// * &lt;span pulumi-lang-nodejs="`cloudInfo`" pulumi-lang-dotnet="`CloudInfo`" pulumi-lang-go="`cloudInfo`" pulumi-lang-python="`cloud_info`" pulumi-lang-yaml="`cloudInfo`" pulumi-lang-java="`cloudInfo`"&gt;`cloudInfo`&lt;/span&gt;: - cloud info
+        /// * &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt;: - resource related consumption info
+        /// * &lt;span pulumi-lang-nodejs="`managementServerInfo`" pulumi-lang-dotnet="`ManagementServerInfo`" pulumi-lang-go="`managementServerInfo`" pulumi-lang-python="`management_server_info`" pulumi-lang-yaml="`managementServerInfo`" pulumi-lang-java="`managementServerInfo`"&gt;`managementServerInfo`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`entityCounts`" pulumi-lang-dotnet="`EntityCounts`" pulumi-lang-go="`entityCounts`" pulumi-lang-python="`entity_counts`" pulumi-lang-yaml="`entityCounts`" pulumi-lang-java="`entityCounts`"&gt;`entityCounts`&lt;/span&gt;: - no. of entities related
+        /// * &lt;span pulumi-lang-nodejs="`healthy`" pulumi-lang-dotnet="`Healthy`" pulumi-lang-go="`healthy`" pulumi-lang-python="`healthy`" pulumi-lang-yaml="`healthy`" pulumi-lang-java="`healthy`"&gt;`healthy`&lt;/span&gt;: - if healthy status
         /// 
         /// See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
         /// </summary>
@@ -129,6 +269,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const clusters = nutanix.getNdbClusters({});
+        /// export const clustersOp = clusters;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// clusters = nutanix.get_ndb_clusters()
+        /// pulumi.export("clustersOp", clusters)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -137,7 +292,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.Index.GetNdbClusters.Invoke();
+        ///     var clusters = Nutanix.GetNdbClusters.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
@@ -145,35 +300,90 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		clusters, err := nutanix.GetNdbClusters(ctx, map[string]interface{}{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("clustersOp", clusters)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var clusters = NutanixFunctions.getNdbClusters(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
+        /// 
+        ///         ctx.export("clustersOp", clusters);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   clusters:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbClusters
+        ///       arguments: {}
+        /// outputs:
+        ///   clustersOp: ${clusters}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## clusters
         /// 
         /// The following attributes are exported for each cluster:
         /// 
-        /// * `Id`: - id of cluster
-        /// * `Name`: - name of cluster
-        /// * `UniqueName`: - unique name of cluster
-        /// * `IpAddresses`: - IP address
-        /// * `Fqdns`: - fqdn
-        /// * `NxClusterUuid`: - nutanix cluster uuid
-        /// * `Description`: - description
-        /// * `CloudType`: - cloud type
-        /// * `DateCreated`: - creation date
-        /// * `DateModified`: - date modified
-        /// * `Version`: - version
-        /// * `OwnerId`: - owner UUID
-        /// * `Status`: - current status
-        /// * `HypervisorType`: - hypervisor type
-        /// * `HypervisorVersion`: - hypervisor version
-        /// * `Properties`: - list of properties
-        /// * `ReferenceCount`: - NA
-        /// * `Username`: - username 
-        /// * `Password`: - password
-        /// * `CloudInfo`: - cloud info
-        /// * `ResourceConfig`: - resource related consumption info
-        /// * `ManagementServerInfo`: - NA
-        /// * `EntityCounts`: - no. of entities related
-        /// * `Healthy`: - if healthy status
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of cluster
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - name of cluster
+        /// * &lt;span pulumi-lang-nodejs="`uniqueName`" pulumi-lang-dotnet="`UniqueName`" pulumi-lang-go="`uniqueName`" pulumi-lang-python="`unique_name`" pulumi-lang-yaml="`uniqueName`" pulumi-lang-java="`uniqueName`"&gt;`uniqueName`&lt;/span&gt;: - unique name of cluster
+        /// * &lt;span pulumi-lang-nodejs="`ipAddresses`" pulumi-lang-dotnet="`IpAddresses`" pulumi-lang-go="`ipAddresses`" pulumi-lang-python="`ip_addresses`" pulumi-lang-yaml="`ipAddresses`" pulumi-lang-java="`ipAddresses`"&gt;`ipAddresses`&lt;/span&gt;: - IP address
+        /// * &lt;span pulumi-lang-nodejs="`fqdns`" pulumi-lang-dotnet="`Fqdns`" pulumi-lang-go="`fqdns`" pulumi-lang-python="`fqdns`" pulumi-lang-yaml="`fqdns`" pulumi-lang-java="`fqdns`"&gt;`fqdns`&lt;/span&gt;: - fqdn
+        /// * &lt;span pulumi-lang-nodejs="`nxClusterUuid`" pulumi-lang-dotnet="`NxClusterUuid`" pulumi-lang-go="`nxClusterUuid`" pulumi-lang-python="`nx_cluster_uuid`" pulumi-lang-yaml="`nxClusterUuid`" pulumi-lang-java="`nxClusterUuid`"&gt;`nxClusterUuid`&lt;/span&gt;: - nutanix cluster uuid
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description
+        /// * &lt;span pulumi-lang-nodejs="`cloudType`" pulumi-lang-dotnet="`CloudType`" pulumi-lang-go="`cloudType`" pulumi-lang-python="`cloud_type`" pulumi-lang-yaml="`cloudType`" pulumi-lang-java="`cloudType`"&gt;`cloudType`&lt;/span&gt;: - cloud type
+        /// * &lt;span pulumi-lang-nodejs="`dateCreated`" pulumi-lang-dotnet="`DateCreated`" pulumi-lang-go="`dateCreated`" pulumi-lang-python="`date_created`" pulumi-lang-yaml="`dateCreated`" pulumi-lang-java="`dateCreated`"&gt;`dateCreated`&lt;/span&gt;: - creation date
+        /// * &lt;span pulumi-lang-nodejs="`dateModified`" pulumi-lang-dotnet="`DateModified`" pulumi-lang-go="`dateModified`" pulumi-lang-python="`date_modified`" pulumi-lang-yaml="`dateModified`" pulumi-lang-java="`dateModified`"&gt;`dateModified`&lt;/span&gt;: - date modified
+        /// * &lt;span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`"&gt;`version`&lt;/span&gt;: - version
+        /// * &lt;span pulumi-lang-nodejs="`ownerId`" pulumi-lang-dotnet="`OwnerId`" pulumi-lang-go="`ownerId`" pulumi-lang-python="`owner_id`" pulumi-lang-yaml="`ownerId`" pulumi-lang-java="`ownerId`"&gt;`ownerId`&lt;/span&gt;: - owner UUID
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - current status
+        /// * &lt;span pulumi-lang-nodejs="`hypervisorType`" pulumi-lang-dotnet="`HypervisorType`" pulumi-lang-go="`hypervisorType`" pulumi-lang-python="`hypervisor_type`" pulumi-lang-yaml="`hypervisorType`" pulumi-lang-java="`hypervisorType`"&gt;`hypervisorType`&lt;/span&gt;: - hypervisor type
+        /// * &lt;span pulumi-lang-nodejs="`hypervisorVersion`" pulumi-lang-dotnet="`HypervisorVersion`" pulumi-lang-go="`hypervisorVersion`" pulumi-lang-python="`hypervisor_version`" pulumi-lang-yaml="`hypervisorVersion`" pulumi-lang-java="`hypervisorVersion`"&gt;`hypervisorVersion`&lt;/span&gt;: - hypervisor version
+        /// * &lt;span pulumi-lang-nodejs="`properties`" pulumi-lang-dotnet="`Properties`" pulumi-lang-go="`properties`" pulumi-lang-python="`properties`" pulumi-lang-yaml="`properties`" pulumi-lang-java="`properties`"&gt;`properties`&lt;/span&gt;: - list of properties
+        /// * &lt;span pulumi-lang-nodejs="`referenceCount`" pulumi-lang-dotnet="`ReferenceCount`" pulumi-lang-go="`referenceCount`" pulumi-lang-python="`reference_count`" pulumi-lang-yaml="`referenceCount`" pulumi-lang-java="`referenceCount`"&gt;`referenceCount`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt;: - username 
+        /// * &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt;: - password
+        /// * &lt;span pulumi-lang-nodejs="`cloudInfo`" pulumi-lang-dotnet="`CloudInfo`" pulumi-lang-go="`cloudInfo`" pulumi-lang-python="`cloud_info`" pulumi-lang-yaml="`cloudInfo`" pulumi-lang-java="`cloudInfo`"&gt;`cloudInfo`&lt;/span&gt;: - cloud info
+        /// * &lt;span pulumi-lang-nodejs="`resourceConfig`" pulumi-lang-dotnet="`ResourceConfig`" pulumi-lang-go="`resourceConfig`" pulumi-lang-python="`resource_config`" pulumi-lang-yaml="`resourceConfig`" pulumi-lang-java="`resourceConfig`"&gt;`resourceConfig`&lt;/span&gt;: - resource related consumption info
+        /// * &lt;span pulumi-lang-nodejs="`managementServerInfo`" pulumi-lang-dotnet="`ManagementServerInfo`" pulumi-lang-go="`managementServerInfo`" pulumi-lang-python="`management_server_info`" pulumi-lang-yaml="`managementServerInfo`" pulumi-lang-java="`managementServerInfo`"&gt;`managementServerInfo`&lt;/span&gt;: - NA
+        /// * &lt;span pulumi-lang-nodejs="`entityCounts`" pulumi-lang-dotnet="`EntityCounts`" pulumi-lang-go="`entityCounts`" pulumi-lang-python="`entity_counts`" pulumi-lang-yaml="`entityCounts`" pulumi-lang-java="`entityCounts`"&gt;`entityCounts`&lt;/span&gt;: - no. of entities related
+        /// * &lt;span pulumi-lang-nodejs="`healthy`" pulumi-lang-dotnet="`Healthy`" pulumi-lang-go="`healthy`" pulumi-lang-python="`healthy`" pulumi-lang-yaml="`healthy`" pulumi-lang-java="`healthy`"&gt;`healthy`&lt;/span&gt;: - if healthy status
         /// 
         /// See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
         /// </summary>

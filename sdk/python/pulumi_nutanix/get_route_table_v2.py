@@ -129,12 +129,14 @@ def get_route_table_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_route_table = nutanix.get_route_table_v2(ext_id="ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Route UUID
@@ -152,19 +154,21 @@ def get_route_table_v2(ext_id: Optional[_builtins.str] = None,
         metadatas=pulumi.get(__ret__, 'metadatas'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'))
-def get_route_table_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_route_table_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRouteTableV2Result]:
     """
     Provides Nutanix datasource Get the route table for the specified extId.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_route_table = nutanix.get_route_table_v2(ext_id="ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Route UUID

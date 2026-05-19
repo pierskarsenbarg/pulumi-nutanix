@@ -219,6 +219,7 @@ def get_access_control_policy(access_control_policy_id: Optional[_builtins.str] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -232,6 +233,7 @@ def get_access_control_policy(access_control_policy_id: Optional[_builtins.str] 
         })
     test = nutanix.get_access_control_policy_output(access_control_policy_id=test_access_control_policy.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str access_control_policy_id: - (Required) The UUID of an access control policy.
@@ -260,15 +262,16 @@ def get_access_control_policy(access_control_policy_id: Optional[_builtins.str] 
         state=pulumi.get(__ret__, 'state'),
         user_group_reference_lists=pulumi.get(__ret__, 'user_group_reference_lists'),
         user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'))
-def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     access_control_policy_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     categories: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']]]]] = None,
+def get_access_control_policy_output(access_control_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     access_control_policy_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     categories: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessControlPolicyResult]:
     """
     Describes an Access Control Policy.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -282,6 +285,7 @@ def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.I
         })
     test = nutanix.get_access_control_policy_output(access_control_policy_id=test_access_control_policy.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str access_control_policy_id: - (Required) The UUID of an access control policy.

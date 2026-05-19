@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const network = nutanix.getNdbNetworkAvailableIps({
+        ///     profileId: "{{ network_profile_id }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// network = nutanix.get_ndb_network_available_ips(profile_id="{{ network_profile_id }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var network = Nutanix.Index.GetNdbNetworkAvailableIps.Invoke(new()
+        ///     var network = Nutanix.GetNdbNetworkAvailableIps.Invoke(new()
         ///     {
         ///         ProfileId = "{{ network_profile_id }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbNetworkAvailableIps(ctx, &amp;nutanix.GetNdbNetworkAvailableIpsArgs{
+        /// 			ProfileId: "{{ network_profile_id }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbNetworkAvailableIpsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var network = NutanixFunctions.getNdbNetworkAvailableIps(GetNdbNetworkAvailableIpsArgs.builder()
+        ///             .profileId("{{ network_profile_id }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   network:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbNetworkAvailableIps
+        ///       arguments:
+        ///         profileId: '{{ network_profile_id }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNdbNetworkAvailableIpsResult> InvokeAsync(GetNdbNetworkAvailableIpsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbNetworkAvailableIpsResult>("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args ?? new GetNdbNetworkAvailableIpsArgs(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const network = nutanix.getNdbNetworkAvailableIps({
+        ///     profileId: "{{ network_profile_id }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// network = nutanix.get_ndb_network_available_ips(profile_id="{{ network_profile_id }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var network = Nutanix.Index.GetNdbNetworkAvailableIps.Invoke(new()
+        ///     var network = Nutanix.GetNdbNetworkAvailableIps.Invoke(new()
         ///     {
         ///         ProfileId = "{{ network_profile_id }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbNetworkAvailableIps(ctx, &amp;nutanix.GetNdbNetworkAvailableIpsArgs{
+        /// 			ProfileId: "{{ network_profile_id }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbNetworkAvailableIpsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var network = NutanixFunctions.getNdbNetworkAvailableIps(GetNdbNetworkAvailableIpsArgs.builder()
+        ///             .profileId("{{ network_profile_id }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   network:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbNetworkAvailableIps
+        ///       arguments:
+        ///         profileId: '{{ network_profile_id }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbNetworkAvailableIpsResult> Invoke(GetNdbNetworkAvailableIpsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbNetworkAvailableIpsResult>("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args ?? new GetNdbNetworkAvailableIpsInvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const network = nutanix.getNdbNetworkAvailableIps({
+        ///     profileId: "{{ network_profile_id }}",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// network = nutanix.get_ndb_network_available_ips(profile_id="{{ network_profile_id }}")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var network = Nutanix.Index.GetNdbNetworkAvailableIps.Invoke(new()
+        ///     var network = Nutanix.GetNdbNetworkAvailableIps.Invoke(new()
         ///     {
         ///         ProfileId = "{{ network_profile_id }}",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbNetworkAvailableIps(ctx, &amp;nutanix.GetNdbNetworkAvailableIpsArgs{
+        /// 			ProfileId: "{{ network_profile_id }}",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbNetworkAvailableIpsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var network = NutanixFunctions.getNdbNetworkAvailableIps(GetNdbNetworkAvailableIpsArgs.builder()
+        ///             .profileId("{{ network_profile_id }}")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   network:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbNetworkAvailableIps
+        ///       arguments:
+        ///         profileId: '{{ network_profile_id }}'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbNetworkAvailableIpsResult> Invoke(GetNdbNetworkAvailableIpsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbNetworkAvailableIpsResult>("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args ?? new GetNdbNetworkAvailableIpsInvokeArgs(), options.WithDefaults());

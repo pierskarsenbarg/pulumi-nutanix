@@ -17,6 +17,64 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protectionRuleTest = new nutanix.ProtectionRule("protection_rule_test", {
+        ///     name: "test",
+        ///     description: "test",
+        ///     orderedAvailabilityZoneLists: [{
+        ///         availabilityZoneUrl: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///     }],
+        ///     availabilityZoneConnectivityLists: [{
+        ///         snapshotScheduleLists: [{
+        ///             recoveryPointObjectiveSecs: 3600,
+        ///             snapshotType: "CRASH_CONSISTENT",
+        ///             localSnapshotRetentionPolicy: {
+        ///                 numSnapshots: 1,
+        ///             },
+        ///         }],
+        ///     }],
+        ///     categoryFilter: {
+        ///         params: [{
+        ///             name: "Environment",
+        ///             values: ["Dev"],
+        ///         }],
+        ///     },
+        /// });
+        /// const test = nutanix.getProtectionRuleOutput({
+        ///     protectionRuleId: protectionRuleTest.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protection_rule_test = nutanix.ProtectionRule("protection_rule_test",
+        ///     name="test",
+        ///     description="test",
+        ///     ordered_availability_zone_lists=[{
+        ///         "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///     }],
+        ///     availability_zone_connectivity_lists=[{
+        ///         "snapshot_schedule_lists": [{
+        ///             "recovery_point_objective_secs": 3600,
+        ///             "snapshot_type": "CRASH_CONSISTENT",
+        ///             "local_snapshot_retention_policy": {
+        ///                 "num_snapshots": 1,
+        ///             },
+        ///         }],
+        ///     }],
+        ///     category_filter={
+        ///         "params": [{
+        ///             "name": "Environment",
+        ///             "values": ["Dev"],
+        ///         }],
+        ///     })
+        /// test = nutanix.get_protection_rule_output(protection_rule_id=protection_rule_test.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +83,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.Index.ProtectionRule("protection_rule_test", new()
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test",
@@ -70,13 +128,150 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetProtectionRule.Invoke(new()
+        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
         ///     {
         ///         ProtectionRuleId = protectionRuleTest.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		protectionRuleTest, err := nutanix.NewProtectionRule(ctx, "protection_rule_test", &amp;nutanix.ProtectionRuleArgs{
+        /// 			Name:        pulumi.String("test"),
+        /// 			Description: pulumi.String("test"),
+        /// 			OrderedAvailabilityZoneLists: nutanix.ProtectionRuleOrderedAvailabilityZoneListArray{
+        /// 				&amp;nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs{
+        /// 					AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+        /// 				},
+        /// 			},
+        /// 			AvailabilityZoneConnectivityLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListArray{
+        /// 				&amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs{
+        /// 					SnapshotScheduleLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArray{
+        /// 						&amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs{
+        /// 							RecoveryPointObjectiveSecs: pulumi.Int(3600),
+        /// 							SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
+        /// 							LocalSnapshotRetentionPolicy: &amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs{
+        /// 								NumSnapshots: pulumi.Int(1),
+        /// 							},
+        /// 						},
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			CategoryFilter: &amp;nutanix.ProtectionRuleCategoryFilterArgs{
+        /// 				Params: nutanix.ProtectionRuleCategoryFilterParamArray{
+        /// 					&amp;nutanix.ProtectionRuleCategoryFilterParamArgs{
+        /// 						Name: pulumi.String("Environment"),
+        /// 						Values: pulumi.StringArray{
+        /// 							pulumi.String("Dev"),
+        /// 						},
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
+        /// 			ProtectionRuleId: protectionRuleTest.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.ProtectionRule;
+        /// import com.pulumi.nutanix.ProtectionRuleArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleOrderedAvailabilityZoneListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectionRuleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var protectionRuleTest = new ProtectionRule("protectionRuleTest", ProtectionRuleArgs.builder()
+        ///             .name("test")
+        ///             .description("test")
+        ///             .orderedAvailabilityZoneLists(ProtectionRuleOrderedAvailabilityZoneListArgs.builder()
+        ///                 .availabilityZoneUrl("ab788130-0820-4d07-a1b5-b0ba4d3a42asd")
+        ///                 .build())
+        ///             .availabilityZoneConnectivityLists(ProtectionRuleAvailabilityZoneConnectivityListArgs.builder()
+        ///                 .snapshotScheduleLists(ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs.builder()
+        ///                     .recoveryPointObjectiveSecs(3600)
+        ///                     .snapshotType("CRASH_CONSISTENT")
+        ///                     .localSnapshotRetentionPolicy(ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs.builder()
+        ///                         .numSnapshots(1)
+        ///                         .build())
+        ///                     .build())
+        ///                 .build())
+        ///             .categoryFilter(ProtectionRuleCategoryFilterArgs.builder()
+        ///                 .params(ProtectionRuleCategoryFilterParamArgs.builder()
+        ///                     .name("Environment")
+        ///                     .values("Dev")
+        ///                     .build())
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
+        ///             .protectionRuleId(protectionRuleTest.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   protectionRuleTest:
+        ///     type: nutanix:ProtectionRule
+        ///     name: protection_rule_test
+        ///     properties:
+        ///       name: test
+        ///       description: test
+        ///       orderedAvailabilityZoneLists:
+        ///         - availabilityZoneUrl: ab788130-0820-4d07-a1b5-b0ba4d3a42asd
+        ///       availabilityZoneConnectivityLists:
+        ///         - snapshotScheduleLists:
+        ///             - recoveryPointObjectiveSecs: 3600
+        ///               snapshotType: CRASH_CONSISTENT
+        ///               localSnapshotRetentionPolicy:
+        ///                 numSnapshots: 1
+        ///       categoryFilter:
+        ///         params:
+        ///           - name: Environment
+        ///             values:
+        ///               - Dev
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionRule
+        ///       arguments:
+        ///         protectionRuleId: ${protectionRuleTest.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProtectionRuleResult> InvokeAsync(GetProtectionRuleArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleArgs(), options.WithDefaults());
@@ -86,6 +281,64 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protectionRuleTest = new nutanix.ProtectionRule("protection_rule_test", {
+        ///     name: "test",
+        ///     description: "test",
+        ///     orderedAvailabilityZoneLists: [{
+        ///         availabilityZoneUrl: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///     }],
+        ///     availabilityZoneConnectivityLists: [{
+        ///         snapshotScheduleLists: [{
+        ///             recoveryPointObjectiveSecs: 3600,
+        ///             snapshotType: "CRASH_CONSISTENT",
+        ///             localSnapshotRetentionPolicy: {
+        ///                 numSnapshots: 1,
+        ///             },
+        ///         }],
+        ///     }],
+        ///     categoryFilter: {
+        ///         params: [{
+        ///             name: "Environment",
+        ///             values: ["Dev"],
+        ///         }],
+        ///     },
+        /// });
+        /// const test = nutanix.getProtectionRuleOutput({
+        ///     protectionRuleId: protectionRuleTest.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protection_rule_test = nutanix.ProtectionRule("protection_rule_test",
+        ///     name="test",
+        ///     description="test",
+        ///     ordered_availability_zone_lists=[{
+        ///         "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///     }],
+        ///     availability_zone_connectivity_lists=[{
+        ///         "snapshot_schedule_lists": [{
+        ///             "recovery_point_objective_secs": 3600,
+        ///             "snapshot_type": "CRASH_CONSISTENT",
+        ///             "local_snapshot_retention_policy": {
+        ///                 "num_snapshots": 1,
+        ///             },
+        ///         }],
+        ///     }],
+        ///     category_filter={
+        ///         "params": [{
+        ///             "name": "Environment",
+        ///             "values": ["Dev"],
+        ///         }],
+        ///     })
+        /// test = nutanix.get_protection_rule_output(protection_rule_id=protection_rule_test.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -94,7 +347,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.Index.ProtectionRule("protection_rule_test", new()
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test",
@@ -139,13 +392,150 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetProtectionRule.Invoke(new()
+        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
         ///     {
         ///         ProtectionRuleId = protectionRuleTest.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		protectionRuleTest, err := nutanix.NewProtectionRule(ctx, "protection_rule_test", &amp;nutanix.ProtectionRuleArgs{
+        /// 			Name:        pulumi.String("test"),
+        /// 			Description: pulumi.String("test"),
+        /// 			OrderedAvailabilityZoneLists: nutanix.ProtectionRuleOrderedAvailabilityZoneListArray{
+        /// 				&amp;nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs{
+        /// 					AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+        /// 				},
+        /// 			},
+        /// 			AvailabilityZoneConnectivityLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListArray{
+        /// 				&amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs{
+        /// 					SnapshotScheduleLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArray{
+        /// 						&amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs{
+        /// 							RecoveryPointObjectiveSecs: pulumi.Int(3600),
+        /// 							SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
+        /// 							LocalSnapshotRetentionPolicy: &amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs{
+        /// 								NumSnapshots: pulumi.Int(1),
+        /// 							},
+        /// 						},
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			CategoryFilter: &amp;nutanix.ProtectionRuleCategoryFilterArgs{
+        /// 				Params: nutanix.ProtectionRuleCategoryFilterParamArray{
+        /// 					&amp;nutanix.ProtectionRuleCategoryFilterParamArgs{
+        /// 						Name: pulumi.String("Environment"),
+        /// 						Values: pulumi.StringArray{
+        /// 							pulumi.String("Dev"),
+        /// 						},
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
+        /// 			ProtectionRuleId: protectionRuleTest.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.ProtectionRule;
+        /// import com.pulumi.nutanix.ProtectionRuleArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleOrderedAvailabilityZoneListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectionRuleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var protectionRuleTest = new ProtectionRule("protectionRuleTest", ProtectionRuleArgs.builder()
+        ///             .name("test")
+        ///             .description("test")
+        ///             .orderedAvailabilityZoneLists(ProtectionRuleOrderedAvailabilityZoneListArgs.builder()
+        ///                 .availabilityZoneUrl("ab788130-0820-4d07-a1b5-b0ba4d3a42asd")
+        ///                 .build())
+        ///             .availabilityZoneConnectivityLists(ProtectionRuleAvailabilityZoneConnectivityListArgs.builder()
+        ///                 .snapshotScheduleLists(ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs.builder()
+        ///                     .recoveryPointObjectiveSecs(3600)
+        ///                     .snapshotType("CRASH_CONSISTENT")
+        ///                     .localSnapshotRetentionPolicy(ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs.builder()
+        ///                         .numSnapshots(1)
+        ///                         .build())
+        ///                     .build())
+        ///                 .build())
+        ///             .categoryFilter(ProtectionRuleCategoryFilterArgs.builder()
+        ///                 .params(ProtectionRuleCategoryFilterParamArgs.builder()
+        ///                     .name("Environment")
+        ///                     .values("Dev")
+        ///                     .build())
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
+        ///             .protectionRuleId(protectionRuleTest.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   protectionRuleTest:
+        ///     type: nutanix:ProtectionRule
+        ///     name: protection_rule_test
+        ///     properties:
+        ///       name: test
+        ///       description: test
+        ///       orderedAvailabilityZoneLists:
+        ///         - availabilityZoneUrl: ab788130-0820-4d07-a1b5-b0ba4d3a42asd
+        ///       availabilityZoneConnectivityLists:
+        ///         - snapshotScheduleLists:
+        ///             - recoveryPointObjectiveSecs: 3600
+        ///               snapshotType: CRASH_CONSISTENT
+        ///               localSnapshotRetentionPolicy:
+        ///                 numSnapshots: 1
+        ///       categoryFilter:
+        ///         params:
+        ///           - name: Environment
+        ///             values:
+        ///               - Dev
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionRule
+        ///       arguments:
+        ///         protectionRuleId: ${protectionRuleTest.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectionRuleResult> Invoke(GetProtectionRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleInvokeArgs(), options.WithDefaults());
@@ -155,6 +545,64 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protectionRuleTest = new nutanix.ProtectionRule("protection_rule_test", {
+        ///     name: "test",
+        ///     description: "test",
+        ///     orderedAvailabilityZoneLists: [{
+        ///         availabilityZoneUrl: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///     }],
+        ///     availabilityZoneConnectivityLists: [{
+        ///         snapshotScheduleLists: [{
+        ///             recoveryPointObjectiveSecs: 3600,
+        ///             snapshotType: "CRASH_CONSISTENT",
+        ///             localSnapshotRetentionPolicy: {
+        ///                 numSnapshots: 1,
+        ///             },
+        ///         }],
+        ///     }],
+        ///     categoryFilter: {
+        ///         params: [{
+        ///             name: "Environment",
+        ///             values: ["Dev"],
+        ///         }],
+        ///     },
+        /// });
+        /// const test = nutanix.getProtectionRuleOutput({
+        ///     protectionRuleId: protectionRuleTest.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protection_rule_test = nutanix.ProtectionRule("protection_rule_test",
+        ///     name="test",
+        ///     description="test",
+        ///     ordered_availability_zone_lists=[{
+        ///         "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///     }],
+        ///     availability_zone_connectivity_lists=[{
+        ///         "snapshot_schedule_lists": [{
+        ///             "recovery_point_objective_secs": 3600,
+        ///             "snapshot_type": "CRASH_CONSISTENT",
+        ///             "local_snapshot_retention_policy": {
+        ///                 "num_snapshots": 1,
+        ///             },
+        ///         }],
+        ///     }],
+        ///     category_filter={
+        ///         "params": [{
+        ///             "name": "Environment",
+        ///             "values": ["Dev"],
+        ///         }],
+        ///     })
+        /// test = nutanix.get_protection_rule_output(protection_rule_id=protection_rule_test.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -163,7 +611,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protectionRuleTest = new Nutanix.Index.ProtectionRule("protection_rule_test", new()
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
         ///     {
         ///         Name = "test",
         ///         Description = "test",
@@ -208,13 +656,150 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetProtectionRule.Invoke(new()
+        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
         ///     {
         ///         ProtectionRuleId = protectionRuleTest.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		protectionRuleTest, err := nutanix.NewProtectionRule(ctx, "protection_rule_test", &amp;nutanix.ProtectionRuleArgs{
+        /// 			Name:        pulumi.String("test"),
+        /// 			Description: pulumi.String("test"),
+        /// 			OrderedAvailabilityZoneLists: nutanix.ProtectionRuleOrderedAvailabilityZoneListArray{
+        /// 				&amp;nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs{
+        /// 					AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+        /// 				},
+        /// 			},
+        /// 			AvailabilityZoneConnectivityLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListArray{
+        /// 				&amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs{
+        /// 					SnapshotScheduleLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArray{
+        /// 						&amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs{
+        /// 							RecoveryPointObjectiveSecs: pulumi.Int(3600),
+        /// 							SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
+        /// 							LocalSnapshotRetentionPolicy: &amp;nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs{
+        /// 								NumSnapshots: pulumi.Int(1),
+        /// 							},
+        /// 						},
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			CategoryFilter: &amp;nutanix.ProtectionRuleCategoryFilterArgs{
+        /// 				Params: nutanix.ProtectionRuleCategoryFilterParamArray{
+        /// 					&amp;nutanix.ProtectionRuleCategoryFilterParamArgs{
+        /// 						Name: pulumi.String("Environment"),
+        /// 						Values: pulumi.StringArray{
+        /// 							pulumi.String("Dev"),
+        /// 						},
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
+        /// 			ProtectionRuleId: protectionRuleTest.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.ProtectionRule;
+        /// import com.pulumi.nutanix.ProtectionRuleArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleOrderedAvailabilityZoneListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectionRuleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var protectionRuleTest = new ProtectionRule("protectionRuleTest", ProtectionRuleArgs.builder()
+        ///             .name("test")
+        ///             .description("test")
+        ///             .orderedAvailabilityZoneLists(ProtectionRuleOrderedAvailabilityZoneListArgs.builder()
+        ///                 .availabilityZoneUrl("ab788130-0820-4d07-a1b5-b0ba4d3a42asd")
+        ///                 .build())
+        ///             .availabilityZoneConnectivityLists(ProtectionRuleAvailabilityZoneConnectivityListArgs.builder()
+        ///                 .snapshotScheduleLists(ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs.builder()
+        ///                     .recoveryPointObjectiveSecs(3600)
+        ///                     .snapshotType("CRASH_CONSISTENT")
+        ///                     .localSnapshotRetentionPolicy(ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs.builder()
+        ///                         .numSnapshots(1)
+        ///                         .build())
+        ///                     .build())
+        ///                 .build())
+        ///             .categoryFilter(ProtectionRuleCategoryFilterArgs.builder()
+        ///                 .params(ProtectionRuleCategoryFilterParamArgs.builder()
+        ///                     .name("Environment")
+        ///                     .values("Dev")
+        ///                     .build())
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
+        ///             .protectionRuleId(protectionRuleTest.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   protectionRuleTest:
+        ///     type: nutanix:ProtectionRule
+        ///     name: protection_rule_test
+        ///     properties:
+        ///       name: test
+        ///       description: test
+        ///       orderedAvailabilityZoneLists:
+        ///         - availabilityZoneUrl: ab788130-0820-4d07-a1b5-b0ba4d3a42asd
+        ///       availabilityZoneConnectivityLists:
+        ///         - snapshotScheduleLists:
+        ///             - recoveryPointObjectiveSecs: 3600
+        ///               snapshotType: CRASH_CONSISTENT
+        ///               localSnapshotRetentionPolicy:
+        ///                 numSnapshots: 1
+        ///       categoryFilter:
+        ///         params:
+        ///           - name: Environment
+        ///             values:
+        ///               - Dev
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionRule
+        ///       arguments:
+        ///         protectionRuleId: ${protectionRuleTest.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectionRuleResult> Invoke(GetProtectionRuleInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleInvokeArgs(), options.WithDefaults());
@@ -232,7 +817,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `Id` of the protection rule.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the protection rule.
         /// </summary>
         [Input("protectionRuleId")]
         public string? ProtectionRuleId { get; set; }
@@ -257,7 +842,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `Id` of the protection rule.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the protection rule.
         /// </summary>
         [Input("protectionRuleId")]
         public Input<string>? ProtectionRuleId { get; set; }

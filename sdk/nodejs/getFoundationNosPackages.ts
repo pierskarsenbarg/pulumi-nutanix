@@ -9,12 +9,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const nosPackages = nutanix.getFoundationNosPackages({});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Note
  *
@@ -46,12 +48,14 @@ export interface GetFoundationNosPackagesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const nosPackages = nutanix.getFoundationNosPackages({});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Note
  *

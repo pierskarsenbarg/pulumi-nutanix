@@ -20,9 +20,9 @@ __all__ = ['SelfServiceAppRecoveryPointArgs', 'SelfServiceAppRecoveryPoint']
 class SelfServiceAppRecoveryPointArgs:
     def __init__(__self__, *,
                  action_name: pulumi.Input[_builtins.str],
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SelfServiceAppRecoveryPoint resource.
 
@@ -30,7 +30,7 @@ class SelfServiceAppRecoveryPointArgs:
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
                
-               Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         :param pulumi.Input[_builtins.str] recovery_point_name: - (Required) The name of recovery point.
         """
         pulumi.set(__self__, "action_name", action_name)
@@ -55,50 +55,50 @@ class SelfServiceAppRecoveryPointArgs:
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the application
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The UUID of the application.
 
-        Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         """
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointName")
-    def recovery_point_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recovery_point_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of recovery point.
         """
         return pulumi.get(self, "recovery_point_name")
 
     @recovery_point_name.setter
-    def recovery_point_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recovery_point_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recovery_point_name", value)
 
 
 @pulumi.input_type
 class _SelfServiceAppRecoveryPointState:
     def __init__(__self__, *,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppRecoveryPoint resources.
 
@@ -106,7 +106,7 @@ class _SelfServiceAppRecoveryPointState:
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
                
-               Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         :param pulumi.Input[_builtins.str] recovery_point_name: - (Required) The name of recovery point.
         """
         if action_name is not None:
@@ -120,52 +120,52 @@ class _SelfServiceAppRecoveryPointState:
 
     @_builtins.property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of the snapshot action to trigger.
         """
         return pulumi.get(self, "action_name")
 
     @action_name.setter
-    def action_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the application
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The UUID of the application.
 
-        Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         """
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointName")
-    def recovery_point_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recovery_point_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of recovery point.
         """
         return pulumi.get(self, "recovery_point_name")
 
     @recovery_point_name.setter
-    def recovery_point_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recovery_point_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recovery_point_name", value)
 
 
@@ -175,16 +175,17 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Run snapshot action in application to create recovery point.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -194,6 +195,7 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
             action_name="SNAPSHOT ACTION NAME",
             recovery_point_name="RECOVERY POINT NAME")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -202,7 +204,7 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
                
-               Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         :param pulumi.Input[_builtins.str] recovery_point_name: - (Required) The name of recovery point.
         """
         ...
@@ -216,6 +218,7 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -225,6 +228,7 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
             action_name="SNAPSHOT ACTION NAME",
             recovery_point_name="RECOVERY POINT NAME")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -242,10 +246,10 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -271,10 +275,10 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_name: Optional[pulumi.Input[_builtins.str]] = None,
-            app_name: Optional[pulumi.Input[_builtins.str]] = None,
-            app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'SelfServiceAppRecoveryPoint':
+            action_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'SelfServiceAppRecoveryPoint':
         """
         Get an existing SelfServiceAppRecoveryPoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -286,7 +290,7 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
                
-               Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         :param pulumi.Input[_builtins.str] recovery_point_name: - (Required) The name of recovery point.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -321,7 +325,7 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
         """
         - (Required) The UUID of the application.
 
-        Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         """
         return pulumi.get(self, "app_uuid")
 

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,6 +22,7 @@ import * as utilities from "./utilities";
  *     description: "category example description",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class CategoryV2 extends pulumi.CustomResource {
     /**
@@ -165,7 +167,7 @@ export interface CategoryV2State {
      * This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
      * This field will not be present by default in listCategories API, unless the parameter $expand=associations is present in the URL.
      */
-    associations?: pulumi.Input<pulumi.Input<inputs.CategoryV2Association>[]>;
+    associations?: pulumi.Input<pulumi.Input<inputs.CategoryV2Association>[] | undefined>;
     /**
      * -(Optional) A string consisting of the description of the category as defined by the user.
      * Description can be optionally provided in the payload of createCategory and updateCategoryById APIs.
@@ -173,14 +175,14 @@ export interface CategoryV2State {
      * The server does not validate this value nor does it enforce the uniqueness or any other constraints.
      * It is the responsibility of the user to ensure that any semantic or syntactic constraints are retained when mutating this field.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * This field gives detailed information about the resources which are associated with the category.
      * The results present under this field contain the UUIDs of the entities and policies of various kinds associated with the category.
      * This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
      * This field will not be present by default in listCategories or getCategoryById APIs, unless the parameter $expand=detailedAssociations is present in the URL.
      */
-    detailedAssociations?: pulumi.Input<pulumi.Input<inputs.CategoryV2DetailedAssociation>[]>;
+    detailedAssociations?: pulumi.Input<pulumi.Input<inputs.CategoryV2DetailedAssociation>[] | undefined>;
     /**
      * -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
      *
@@ -191,7 +193,7 @@ export interface CategoryV2State {
      * It is a mandatory field in the payload of `createCategory` and `updateCategoryById` APIs.
      * This field can't be updated through `updateCategoryById` API.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) This field contains the UUID of a user who owns the category.
      * This field will be ignored if given in the payload of createCategory API. Hence, when a category is created, the logged-in user automatically becomes the owner of the category.
@@ -199,7 +201,7 @@ export interface CategoryV2State {
      * Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
      * It is used for enabling RBAC access to self-owned categories.
      */
-    ownerUuid?: pulumi.Input<string>;
+    ownerUuid?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Denotes the type of a category.
      * Valid values are:
@@ -207,7 +209,7 @@ export interface CategoryV2State {
      * - `INTERNAL` Predefined categories contained in the system to be used by internal services, APIs and workflows that involve categories. These categories will not be visible in the UI. However, these categories will be returned in the response of `listCategories` and `getCategoryById` APIs, and are available for filtering as well. Internal categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. Internal categories can't be updated or deleted.
      * - `USER` These categories get created by users through the invocation of `createCategory` API. User-defined categories can be updated or deleted after creation.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The value of a category when it is represented in key:value format.  Constraints applicable when field is given in the payload during create and update:
      *
@@ -219,7 +221,7 @@ export interface CategoryV2State {
      * This field can't be updated through `updateCategoryById` API.
      * Updating the value will not change the extId of the category.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -233,7 +235,7 @@ export interface CategoryV2Args {
      * The server does not validate this value nor does it enforce the uniqueness or any other constraints.
      * It is the responsibility of the user to ensure that any semantic or syntactic constraints are retained when mutating this field.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
      *
@@ -252,7 +254,7 @@ export interface CategoryV2Args {
      * Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
      * It is used for enabling RBAC access to self-owned categories.
      */
-    ownerUuid?: pulumi.Input<string>;
+    ownerUuid?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Denotes the type of a category.
      * Valid values are:
@@ -260,7 +262,7 @@ export interface CategoryV2Args {
      * - `INTERNAL` Predefined categories contained in the system to be used by internal services, APIs and workflows that involve categories. These categories will not be visible in the UI. However, these categories will be returned in the response of `listCategories` and `getCategoryById` APIs, and are available for filtering as well. Internal categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. Internal categories can't be updated or deleted.
      * - `USER` These categories get created by users through the invocation of `createCategory` API. User-defined categories can be updated or deleted after creation.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The value of a category when it is represented in key:value format.  Constraints applicable when field is given in the payload during create and update:
      *

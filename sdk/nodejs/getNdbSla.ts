@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -18,6 +19,7 @@ import * as utilities from "./utilities";
  * });
  * export const sla = sla1;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbSla(args?: GetNdbSlaArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbSlaResult> {
     args = args || {};
@@ -33,7 +35,7 @@ export function getNdbSla(args?: GetNdbSlaArgs, opts?: pulumi.InvokeOptions): Pr
  */
 export interface GetNdbSlaArgs {
     /**
-     * and `slaName` are mutually exclusive.
+     * and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`">`slaName`</span> are mutually exclusive.
      */
     slaId?: string;
     /**
@@ -122,6 +124,7 @@ export interface GetNdbSlaResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -131,6 +134,7 @@ export interface GetNdbSlaResult {
  * });
  * export const sla = sla1;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbSlaOutput(args?: GetNdbSlaOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbSlaResult> {
     args = args || {};
@@ -146,11 +150,11 @@ export function getNdbSlaOutput(args?: GetNdbSlaOutputArgs, opts?: pulumi.Invoke
  */
 export interface GetNdbSlaOutputArgs {
     /**
-     * and `slaName` are mutually exclusive.
+     * and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`">`slaName`</span> are mutually exclusive.
      */
-    slaId?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string | undefined>;
     /**
      * SLA Name for query
      */
-    slaName?: pulumi.Input<string>;
+    slaName?: pulumi.Input<string | undefined>;
 }

@@ -80,12 +80,14 @@ def get_projects(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPro
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     projects = nutanix.get_projects()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -101,12 +103,14 @@ def get_projects_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.Invoke
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     projects = nutanix.get_projects()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

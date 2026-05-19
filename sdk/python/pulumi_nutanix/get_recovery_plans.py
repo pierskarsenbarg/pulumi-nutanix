@@ -80,12 +80,14 @@ def get_recovery_plans(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitable
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     recovery_plans = nutanix.get_recovery_plans()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -101,12 +103,14 @@ def get_recovery_plans_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     recovery_plans = nutanix.get_recovery_plans()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
