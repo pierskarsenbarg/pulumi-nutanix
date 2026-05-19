@@ -15,13 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList
     {
         public readonly int? PrefixLength;
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList(
             int? prefixLength,
 
-            string value)
+            string? value)
         {
             PrefixLength = prefixLength;
             Value = value;

@@ -18,7 +18,7 @@ type PcUnregistrationV2 struct {
 
 	// -(Required) Cluster UUID of a remote cluster.
 	//
-	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// -(Required) The external identifier of the domain manager (Prism Central) resource
 	PcExtId pulumi.StringOutput `pulumi:"pcExtId"`
@@ -62,7 +62,7 @@ func GetPcUnregistrationV2(ctx *pulumi.Context,
 type pcUnregistrationV2State struct {
 	// -(Required) Cluster UUID of a remote cluster.
 	//
-	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
 	ExtId *string `pulumi:"extId"`
 	// -(Required) The external identifier of the domain manager (Prism Central) resource
 	PcExtId *string `pulumi:"pcExtId"`
@@ -71,7 +71,7 @@ type pcUnregistrationV2State struct {
 type PcUnregistrationV2State struct {
 	// -(Required) Cluster UUID of a remote cluster.
 	//
-	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
 	ExtId pulumi.StringPtrInput
 	// -(Required) The external identifier of the domain manager (Prism Central) resource
 	PcExtId pulumi.StringPtrInput
@@ -84,7 +84,7 @@ func (PcUnregistrationV2State) ElementType() reflect.Type {
 type pcUnregistrationV2Args struct {
 	// -(Required) Cluster UUID of a remote cluster.
 	//
-	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
 	ExtId string `pulumi:"extId"`
 	// -(Required) The external identifier of the domain manager (Prism Central) resource
 	PcExtId string `pulumi:"pcExtId"`
@@ -94,7 +94,7 @@ type pcUnregistrationV2Args struct {
 type PcUnregistrationV2Args struct {
 	// -(Required) Cluster UUID of a remote cluster.
 	//
-	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+	// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
 	ExtId pulumi.StringInput
 	// -(Required) The external identifier of the domain manager (Prism Central) resource
 	PcExtId pulumi.StringInput
@@ -189,7 +189,7 @@ func (o PcUnregistrationV2Output) ToPcUnregistrationV2OutputWithContext(ctx cont
 
 // -(Required) Cluster UUID of a remote cluster.
 //
-// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
 func (o PcUnregistrationV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PcUnregistrationV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }

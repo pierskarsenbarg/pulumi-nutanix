@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -74,9 +76,17 @@ export interface GetUserGroupV2Result {
      */
     readonly lastUpdatedTime: string;
     /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    readonly links: outputs.GetUserGroupV2Link[];
+    /**
      * - Common Name of the User Group.
      */
     readonly name: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    readonly tenantId: string;
 }
 /**
  * Provides a datasource to retrieve a user group based on the External Identifier of the User Group.

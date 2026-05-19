@@ -13,11 +13,20 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class SubnetV2VpcExternalSubnetActiveGatewayNodeGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Node id
+        /// </summary>
         [Input("nodeId")]
         public Input<string>? NodeId { get; set; }
 
         [Input("nodeIpAddresses")]
         private InputList<Inputs.SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressGetArgs>? _nodeIpAddresses;
+
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// - `node_ip_address.ipv4`: (Optional) Reference to address configuration
+        /// - `node_ip_address.ipv6`: (Optional) Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressGetArgs> NodeIpAddresses
         {
             get => _nodeIpAddresses ?? (_nodeIpAddresses = new InputList<Inputs.SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressGetArgs>());

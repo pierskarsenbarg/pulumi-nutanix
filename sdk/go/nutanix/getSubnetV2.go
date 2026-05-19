@@ -62,7 +62,8 @@ type LookupSubnetV2Result struct {
 	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
 	IsNatEnabled bool `pulumi:"isNatEnabled"`
 	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links []GetSubnetV2Link `pulumi:"links"`
+	Links     []GetSubnetV2Link     `pulumi:"links"`
+	Metadatas []GetSubnetV2Metadata `pulumi:"metadatas"`
 	// Migration state of the subnet. This field is read-only.
 	MigrationState string `pulumi:"migrationState"`
 	// Name of the subnet.
@@ -198,6 +199,10 @@ func (o LookupSubnetV2ResultOutput) IsNatEnabled() pulumi.BoolOutput {
 // A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o LookupSubnetV2ResultOutput) Links() GetSubnetV2LinkArrayOutput {
 	return o.ApplyT(func(v LookupSubnetV2Result) []GetSubnetV2Link { return v.Links }).(GetSubnetV2LinkArrayOutput)
+}
+
+func (o LookupSubnetV2ResultOutput) Metadatas() GetSubnetV2MetadataArrayOutput {
+	return o.ApplyT(func(v LookupSubnetV2Result) []GetSubnetV2Metadata { return v.Metadatas }).(GetSubnetV2MetadataArrayOutput)
 }
 
 // Migration state of the subnet. This field is read-only.

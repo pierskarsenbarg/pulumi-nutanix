@@ -361,7 +361,7 @@ class CategoryV2(pulumi.CustomResource):
                  value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        Fetch a category
+        Create, Update and Delete category (key - value pair).
 
         ## Example
 
@@ -376,6 +376,20 @@ class CategoryV2(pulumi.CustomResource):
             description="category example description")
         ```
         <!--End PulumiCodeChooser -->
+
+        ## Import
+
+        This helps to manage existing entities which are not created through terraform. Category (key - value pair) can be imported using the `UUID` (ext_id in v4 terms).  eg,
+
+        `terraform import nutanix_category_v2.<resource_name> <UUID>
+        `
+
+        Note:
+        We have two resources separately for category key (nutanix_category_key) and value (nutanix_category_key). Using v4 API, <span pulumi-lang-nodejs="`nutanix.CategoryV2`" pulumi-lang-dotnet="`nutanix.CategoryV2`" pulumi-lang-go="`CategoryV2`" pulumi-lang-python="`CategoryV2`" pulumi-lang-yaml="`nutanix.CategoryV2`" pulumi-lang-java="`nutanix.CategoryV2`">`nutanix.CategoryV2`</span> represents category key value pair as one entity.
+
+        Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
+
+        See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/createCategory).
 
 
         :param str resource_name: The name of the resource.
@@ -420,7 +434,7 @@ class CategoryV2(pulumi.CustomResource):
                  args: CategoryV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Fetch a category
+        Create, Update and Delete category (key - value pair).
 
         ## Example
 
@@ -435,6 +449,20 @@ class CategoryV2(pulumi.CustomResource):
             description="category example description")
         ```
         <!--End PulumiCodeChooser -->
+
+        ## Import
+
+        This helps to manage existing entities which are not created through terraform. Category (key - value pair) can be imported using the `UUID` (ext_id in v4 terms).  eg,
+
+        `terraform import nutanix_category_v2.<resource_name> <UUID>
+        `
+
+        Note:
+        We have two resources separately for category key (nutanix_category_key) and value (nutanix_category_key). Using v4 API, <span pulumi-lang-nodejs="`nutanix.CategoryV2`" pulumi-lang-dotnet="`nutanix.CategoryV2`" pulumi-lang-go="`CategoryV2`" pulumi-lang-python="`CategoryV2`" pulumi-lang-yaml="`nutanix.CategoryV2`" pulumi-lang-java="`nutanix.CategoryV2`">`nutanix.CategoryV2`</span> represents category key value pair as one entity.
+
+        Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
+
+        See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/createCategory).
 
 
         :param str resource_name: The name of the resource.

@@ -23,9 +23,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? DestAllowSpec;
         /// <summary>
+        /// Entity type for the destination category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        public readonly string? DestCategoryAssociatedEntityType;
+        /// <summary>
         /// List of categories that define a set of network endpoints as outbound.
         /// </summary>
         public readonly ImmutableArray<string> DestCategoryReferences;
+        /// <summary>
+        /// Reference to the destination entity group.
+        /// </summary>
+        public readonly string? DestEntityGroupReference;
         /// <summary>
         /// destination subnet value
         /// </summary>
@@ -43,9 +51,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? NetworkFunctionChainReference;
         /// <summary>
+        /// A reference to the network function in the rule.
+        /// </summary>
+        public readonly string? NetworkFunctionReference;
+        /// <summary>
+        /// Entity type for the secured group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        public readonly string? SecuredGroupCategoryAssociatedEntityType;
+        /// <summary>
         /// A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
         /// </summary>
         public readonly ImmutableArray<string> SecuredGroupCategoryReferences;
+        /// <summary>
+        /// Reference to the secured group entity group.
+        /// </summary>
+        public readonly string? SecuredGroupEntityGroupReference;
         /// <summary>
         /// A list of service group references.
         /// </summary>
@@ -59,9 +79,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? SrcAllowSpec;
         /// <summary>
+        /// Entity type for the source category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        public readonly string? SrcCategoryAssociatedEntityType;
+        /// <summary>
         /// List of categories that define a set of network endpoints as inbound.
         /// </summary>
         public readonly ImmutableArray<string> SrcCategoryReferences;
+        /// <summary>
+        /// Reference to the source entity group.
+        /// </summary>
+        public readonly string? SrcEntityGroupReference;
         /// <summary>
         /// source subnet value
         /// </summary>
@@ -81,7 +109,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string? destAllowSpec,
 
+            string? destCategoryAssociatedEntityType,
+
             ImmutableArray<string> destCategoryReferences,
+
+            string? destEntityGroupReference,
 
             ImmutableArray<Outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnet> destSubnets,
 
@@ -91,7 +123,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string? networkFunctionChainReference,
 
+            string? networkFunctionReference,
+
+            string? securedGroupCategoryAssociatedEntityType,
+
             ImmutableArray<string> securedGroupCategoryReferences,
+
+            string? securedGroupEntityGroupReference,
 
             ImmutableArray<string> serviceGroupReferences,
 
@@ -99,7 +137,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string? srcAllowSpec,
 
+            string? srcCategoryAssociatedEntityType,
+
             ImmutableArray<string> srcCategoryReferences,
+
+            string? srcEntityGroupReference,
 
             ImmutableArray<Outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet> srcSubnets,
 
@@ -109,16 +151,23 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         {
             DestAddressGroupReferences = destAddressGroupReferences;
             DestAllowSpec = destAllowSpec;
+            DestCategoryAssociatedEntityType = destCategoryAssociatedEntityType;
             DestCategoryReferences = destCategoryReferences;
+            DestEntityGroupReference = destEntityGroupReference;
             DestSubnets = destSubnets;
             IcmpServices = icmpServices;
             IsAllProtocolAllowed = isAllProtocolAllowed;
             NetworkFunctionChainReference = networkFunctionChainReference;
+            NetworkFunctionReference = networkFunctionReference;
+            SecuredGroupCategoryAssociatedEntityType = securedGroupCategoryAssociatedEntityType;
             SecuredGroupCategoryReferences = securedGroupCategoryReferences;
+            SecuredGroupEntityGroupReference = securedGroupEntityGroupReference;
             ServiceGroupReferences = serviceGroupReferences;
             SrcAddressGroupReferences = srcAddressGroupReferences;
             SrcAllowSpec = srcAllowSpec;
+            SrcCategoryAssociatedEntityType = srcCategoryAssociatedEntityType;
             SrcCategoryReferences = srcCategoryReferences;
+            SrcEntityGroupReference = srcEntityGroupReference;
             SrcSubnets = srcSubnets;
             TcpServices = tcpServices;
             UdpServices = udpServices;

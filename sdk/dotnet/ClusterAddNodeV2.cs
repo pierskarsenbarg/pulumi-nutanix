@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Add node on a cluster identified by {extId}.
     /// 
+    /// &gt; **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the &lt;span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`"&gt;`nutanix.ClusterV2`&lt;/span&gt; resource, which offers a more consistent and automated approach to managing cluster scaling operations.
+    /// 
     /// ## Example Usage
     /// 
     /// &lt;!--Start PulumiCodeChooser --&gt;

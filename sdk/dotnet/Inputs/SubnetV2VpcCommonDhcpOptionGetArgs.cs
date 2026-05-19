@@ -15,6 +15,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("domainNameServers")]
         private InputList<Inputs.SubnetV2VpcCommonDhcpOptionDomainNameServerGetArgs>? _domainNameServers;
+
+        /// <summary>
+        /// List of Domain Name Server addresses.
+        /// - `domain_name_servers.ipv4`: (Optional) Reference to address configuration
+        /// - `domain_name_servers.ipv6`: (Optional) Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcCommonDhcpOptionDomainNameServerGetArgs> DomainNameServers
         {
             get => _domainNameServers ?? (_domainNameServers = new InputList<Inputs.SubnetV2VpcCommonDhcpOptionDomainNameServerGetArgs>());

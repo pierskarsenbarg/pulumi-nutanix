@@ -235,7 +235,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`"&gt;`isEnabled`&lt;/span&gt;: - Indicates whether the flash mode is enabled for the Volume Group.
         /// 
-        /// See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+        /// See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
         /// </summary>
         public static Task<GetVolumeGroupsV2Result> InvokeAsync(GetVolumeGroupsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupsV2Result>("nutanix:index/getVolumeGroupsV2:getVolumeGroupsV2", args ?? new GetVolumeGroupsV2Args(), options.WithDefaults());
@@ -463,7 +463,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`"&gt;`isEnabled`&lt;/span&gt;: - Indicates whether the flash mode is enabled for the Volume Group.
         /// 
-        /// See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+        /// See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
         /// </summary>
         public static Output<GetVolumeGroupsV2Result> Invoke(GetVolumeGroupsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupsV2Result>("nutanix:index/getVolumeGroupsV2:getVolumeGroupsV2", args ?? new GetVolumeGroupsV2InvokeArgs(), options.WithDefaults());
@@ -691,7 +691,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`"&gt;`isEnabled`&lt;/span&gt;: - Indicates whether the flash mode is enabled for the Volume Group.
         /// 
-        /// See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+        /// See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
         /// </summary>
         public static Output<GetVolumeGroupsV2Result> Invoke(GetVolumeGroupsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupsV2Result>("nutanix:index/getVolumeGroupsV2:getVolumeGroupsV2", args ?? new GetVolumeGroupsV2InvokeArgs(), options.WithDefaults());

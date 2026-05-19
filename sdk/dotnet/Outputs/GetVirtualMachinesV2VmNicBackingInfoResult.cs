@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly bool IsConnected;
         public readonly string MacAddress;
         public readonly string Model;
-        public readonly int NumQueues;
+        public readonly int? NumQueues;
 
         [OutputConstructor]
         private GetVirtualMachinesV2VmNicBackingInfoResult(
@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string model,
 
-            int numQueues)
+            int? numQueues)
         {
             IsConnected = isConnected;
             MacAddress = macAddress;

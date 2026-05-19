@@ -63,14 +63,6 @@ import (
 //						Value: pulumi.String("Staging"),
 //					},
 //				},
-//				ResourceDomain: &nutanix.ProjectResourceDomainArgs{
-//					Resources: nutanix.ProjectResourceDomainResourceArray{
-//						&nutanix.ProjectResourceDomainResourceArgs{
-//							Limit:        pulumi.Int(4),
-//							ResourceType: pulumi.String("STORAGE"),
-//						},
-//					},
-//				},
 //				DefaultSubnetReference: &nutanix.ProjectDefaultSubnetReferenceArgs{
 //					Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
 //						return metadata["uuid"], nil
@@ -179,7 +171,7 @@ type LookupProjectResult struct {
 	ProjectId        *string           `pulumi:"projectId"`
 	ProjectName      *string           `pulumi:"projectName"`
 	ProjectReference map[string]string `pulumi:"projectReference"`
-	// The status for a resource domain (limits and values)
+	// (Deprecated) Not supported starting from provider version `2.4.0` and expected to be empty. Remove any usage from configuration/scripts.
 	ResourceDomains []GetProjectResourceDomain `pulumi:"resourceDomains"`
 	State           string                     `pulumi:"state"`
 	// List of subnets for the project.
@@ -367,7 +359,7 @@ func (o LookupProjectResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
-// The status for a resource domain (limits and values)
+// (Deprecated) Not supported starting from provider version `2.4.0` and expected to be empty. Remove any usage from configuration/scripts.
 func (o LookupProjectResultOutput) ResourceDomains() GetProjectResourceDomainArrayOutput {
 	return o.ApplyT(func(v LookupProjectResult) []GetProjectResourceDomain { return v.ResourceDomains }).(GetProjectResourceDomainArrayOutput)
 }

@@ -14,8 +14,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ImagesV2SourceUrlSource
     {
+        /// <summary>
+        /// Basic authentication credentials for image source HTTP/S URL
+        /// - `basic_auth.username`: (Required) Username for basic authentication
+        /// - `basic_auth.password`: (Required) Password for basic authentication.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ImagesV2SourceUrlSourceBasicAuth> BasicAuths;
+        /// <summary>
+        /// Ignore the certificate errors, if the value is true. Default is false.
+        /// </summary>
         public readonly bool? ShouldAllowInsecureUrl;
+        /// <summary>
+        /// The URL for creating an image.
+        /// </summary>
         public readonly string Url;
 
         [OutputConstructor]

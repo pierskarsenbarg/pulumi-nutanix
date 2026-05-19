@@ -97,7 +97,7 @@ import * as utilities from "./utilities";
  *
  * * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`">`isEnabled`</span>: - Indicates whether the flash mode is enabled for the Volume Group.
  *
- * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+ * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
  */
 export function getVolumeGroupsV2(args?: GetVolumeGroupsV2Args, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupsV2Result> {
     args = args || {};
@@ -231,7 +231,7 @@ export interface GetVolumeGroupsV2Result {
  *
  * * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`">`isEnabled`</span>: - Indicates whether the flash mode is enabled for the Volume Group.
  *
- * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+ * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
  */
 export function getVolumeGroupsV2Output(args?: GetVolumeGroupsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeGroupsV2Result> {
     args = args || {};

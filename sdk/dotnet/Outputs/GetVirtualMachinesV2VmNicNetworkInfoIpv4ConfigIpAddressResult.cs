@@ -14,12 +14,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachinesV2VmNicNetworkInfoIpv4ConfigIpAddressResult
     {
-        public readonly int PrefixLength;
+        public readonly int? PrefixLength;
         public readonly string Value;
 
         [OutputConstructor]
         private GetVirtualMachinesV2VmNicNetworkInfoIpv4ConfigIpAddressResult(
-            int prefixLength,
+            int? prefixLength,
 
             string value)
         {

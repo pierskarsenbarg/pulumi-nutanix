@@ -14,10 +14,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class PbrV2MetadataGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("categoryIds")]
-        private InputList<ImmutableArray<object>>? _categoryIds;
-        public InputList<ImmutableArray<object>> CategoryIds
+        private InputList<string>? _categoryIds;
+        public InputList<string> CategoryIds
         {
-            get => _categoryIds ?? (_categoryIds = new InputList<ImmutableArray<object>>());
+            get => _categoryIds ?? (_categoryIds = new InputList<string>());
             set => _categoryIds = value;
         }
 

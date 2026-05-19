@@ -20,16 +20,20 @@ __all__ = ['NgtInsertIsoV2Args', 'NgtInsertIsoV2']
 class NgtInsertIsoV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
                  capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  is_config_only: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a NgtInsertIsoV2 resource.
 
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
+        :param pulumi.Input[_builtins.str] action: Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input[_builtins.bool] is_config_only: Indicates that the Nutanix Guest Tools are already installed on the guest VM, and the ISO is being inserted to update the configuration of these tools.
         """
         pulumi.set(__self__, "ext_id", ext_id)
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if capablities is not None:
             pulumi.set(__self__, "capablities", capablities)
         if is_config_only is not None:
@@ -46,6 +50,18 @@ class NgtInsertIsoV2Args:
     @ext_id.setter
     def ext_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
@@ -75,8 +91,10 @@ class NgtInsertIsoV2Args:
 @pulumi.input_type
 class _NgtInsertIsoV2State:
     def __init__(__self__, *,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
                  available_version: pulumi.Input[Optional[_builtins.str]] = None,
                  capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cdrom_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  guest_os_version: pulumi.Input[Optional[_builtins.str]] = None,
                  is_config_only: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -86,10 +104,12 @@ class _NgtInsertIsoV2State:
                  is_reachable: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_vm_mobility_drivers_installed: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_vss_snapshot_capable: pulumi.Input[Optional[_builtins.bool]] = None,
-                 version: pulumi.Input[Optional[_builtins.str]] = None):
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NgtInsertIsoV2 resources.
 
+        :param pulumi.Input[_builtins.str] action: Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
         :param pulumi.Input[_builtins.str] available_version: Version of Nutanix Guest Tools available on the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
@@ -103,10 +123,14 @@ class _NgtInsertIsoV2State:
         :param pulumi.Input[_builtins.bool] is_vss_snapshot_capable: Indicates whether the VM is configured to take VSS snapshots through NGT or not.
         :param pulumi.Input[_builtins.str] version: Version of Nutanix Guest Tools installed on the VM.
         """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if available_version is not None:
             pulumi.set(__self__, "available_version", available_version)
         if capablities is not None:
             pulumi.set(__self__, "capablities", capablities)
+        if cdrom_ext_id is not None:
+            pulumi.set(__self__, "cdrom_ext_id", cdrom_ext_id)
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
         if guest_os_version is not None:
@@ -127,6 +151,20 @@ class _NgtInsertIsoV2State:
             pulumi.set(__self__, "is_vss_snapshot_capable", is_vss_snapshot_capable)
         if version is not None:
             pulumi.set(__self__, "version", version)
+        if vm_ext_id is not None:
+            pulumi.set(__self__, "vm_ext_id", vm_ext_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="availableVersion")
@@ -151,6 +189,15 @@ class _NgtInsertIsoV2State:
     @capablities.setter
     def capablities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "capablities", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cdromExtId")
+    def cdrom_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "cdrom_ext_id")
+
+    @cdrom_ext_id.setter
+    def cdrom_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cdrom_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
@@ -272,6 +319,15 @@ class _NgtInsertIsoV2State:
     def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
+    @_builtins.property
+    @pulumi.getter(name="vmExtId")
+    def vm_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "vm_ext_id")
+
+    @vm_ext_id.setter
+    def vm_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vm_ext_id", value)
+
 
 @pulumi.type_token("nutanix:index/ngtInsertIsoV2:NgtInsertIsoV2")
 class NgtInsertIsoV2(pulumi.CustomResource):
@@ -279,6 +335,7 @@ class NgtInsertIsoV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
                  capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_config_only: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -293,6 +350,16 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
+        ##############################################
+        # ------------------------------------------------
+        # This resource allows inserting a NGT ISO into
+        # a VM’s CD-ROM device.
+        #
+        # You can manage both:
+        # 1. **Insertion** — via `apply`
+        # 2. **Ejection** — automatically on `delete`
+        #  You can also eject the NGT ISO by setting `action = "eject"` → triggers eject operation explicitly.
+        ##############################################
         example = nutanix.NgtInsertIsoV2("example",
             ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             capablities=["VSS_SNAPSHOT"],
@@ -303,6 +370,7 @@ class NgtInsertIsoV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] action: Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
         :param pulumi.Input[_builtins.bool] is_config_only: Indicates that the Nutanix Guest Tools are already installed on the guest VM, and the ISO is being inserted to update the configuration of these tools.
@@ -323,6 +391,16 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
+        ##############################################
+        # ------------------------------------------------
+        # This resource allows inserting a NGT ISO into
+        # a VM’s CD-ROM device.
+        #
+        # You can manage both:
+        # 1. **Insertion** — via `apply`
+        # 2. **Ejection** — automatically on `delete`
+        #  You can also eject the NGT ISO by setting `action = "eject"` → triggers eject operation explicitly.
+        ##############################################
         example = nutanix.NgtInsertIsoV2("example",
             ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             capablities=["VSS_SNAPSHOT"],
@@ -346,6 +424,7 @@ class NgtInsertIsoV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
                  capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_config_only: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -358,12 +437,14 @@ class NgtInsertIsoV2(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NgtInsertIsoV2Args.__new__(NgtInsertIsoV2Args)
 
+            __props__.__dict__["action"] = action
             __props__.__dict__["capablities"] = capablities
             if ext_id is None and not opts.urn:
                 raise TypeError("Missing required property 'ext_id'")
             __props__.__dict__["ext_id"] = ext_id
             __props__.__dict__["is_config_only"] = is_config_only
             __props__.__dict__["available_version"] = None
+            __props__.__dict__["cdrom_ext_id"] = None
             __props__.__dict__["guest_os_version"] = None
             __props__.__dict__["is_enabled"] = None
             __props__.__dict__["is_installed"] = None
@@ -372,6 +453,7 @@ class NgtInsertIsoV2(pulumi.CustomResource):
             __props__.__dict__["is_vm_mobility_drivers_installed"] = None
             __props__.__dict__["is_vss_snapshot_capable"] = None
             __props__.__dict__["version"] = None
+            __props__.__dict__["vm_ext_id"] = None
         super(NgtInsertIsoV2, __self__).__init__(
             'nutanix:index/ngtInsertIsoV2:NgtInsertIsoV2',
             resource_name,
@@ -382,8 +464,10 @@ class NgtInsertIsoV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
             available_version: pulumi.Input[Optional[_builtins.str]] = None,
             capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cdrom_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             guest_os_version: pulumi.Input[Optional[_builtins.str]] = None,
             is_config_only: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -393,7 +477,8 @@ class NgtInsertIsoV2(pulumi.CustomResource):
             is_reachable: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vm_mobility_drivers_installed: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vss_snapshot_capable: pulumi.Input[Optional[_builtins.bool]] = None,
-            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'NgtInsertIsoV2':
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'NgtInsertIsoV2':
         """
         Get an existing NgtInsertIsoV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -401,6 +486,7 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] action: Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
         :param pulumi.Input[_builtins.str] available_version: Version of Nutanix Guest Tools available on the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
@@ -418,8 +504,10 @@ class NgtInsertIsoV2(pulumi.CustomResource):
 
         __props__ = _NgtInsertIsoV2State.__new__(_NgtInsertIsoV2State)
 
+        __props__.__dict__["action"] = action
         __props__.__dict__["available_version"] = available_version
         __props__.__dict__["capablities"] = capablities
+        __props__.__dict__["cdrom_ext_id"] = cdrom_ext_id
         __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["guest_os_version"] = guest_os_version
         __props__.__dict__["is_config_only"] = is_config_only
@@ -430,7 +518,16 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         __props__.__dict__["is_vm_mobility_drivers_installed"] = is_vm_mobility_drivers_installed
         __props__.__dict__["is_vss_snapshot_capable"] = is_vss_snapshot_capable
         __props__.__dict__["version"] = version
+        __props__.__dict__["vm_ext_id"] = vm_ext_id
         return NgtInsertIsoV2(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        """
+        return pulumi.get(self, "action")
 
     @_builtins.property
     @pulumi.getter(name="availableVersion")
@@ -447,6 +544,11 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         """
         return pulumi.get(self, "capablities")
+
+    @_builtins.property
+    @pulumi.getter(name="cdromExtId")
+    def cdrom_ext_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "cdrom_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="extId")
@@ -527,4 +629,9 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         Version of Nutanix Guest Tools installed on the VM.
         """
         return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="vmExtId")
+    def vm_ext_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "vm_ext_id")
 

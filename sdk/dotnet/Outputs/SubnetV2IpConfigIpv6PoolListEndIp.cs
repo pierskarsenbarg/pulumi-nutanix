@@ -15,6 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class SubnetV2IpConfigIpv6PoolListEndIp
     {
         public readonly int? PrefixLength;
+        /// <summary>
+        /// value of address
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

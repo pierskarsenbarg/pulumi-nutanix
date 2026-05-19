@@ -15,15 +15,23 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class TemplateV2TemplateVersionSpecVmSpecNic
     {
         /// <summary>
-        /// Defines a NIC emulated by the hypervisor
+        /// Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfo> BackingInfos;
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicLink> Links;
         /// <summary>
-        /// Network information for a NIC.
+        /// Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo> NetworkInfos;
+        /// <summary>
+        /// New NIC backing info (v2.4.1+). One of &lt;span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`"&gt;`virtualEthernetNic`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`"&gt;`sriovNic`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`"&gt;`dpOffloadNic`&lt;/span&gt;.
+        /// </summary>
+        public readonly Outputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo? NicBackingInfo;
+        /// <summary>
+        /// New NIC network info (v2.4.1+). One of &lt;span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`"&gt;`virtualEthernetNicNetworkInfo`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`"&gt;`sriovNicNetworkInfo`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`"&gt;`dpOffloadNicNetworkInfo`&lt;/span&gt;.
+        /// </summary>
+        public readonly Outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo? NicNetworkInfo;
         public readonly string? TenantId;
 
         [OutputConstructor]
@@ -36,12 +44,18 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo> networkInfos,
 
+            Outputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo? nicBackingInfo,
+
+            Outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo? nicNetworkInfo,
+
             string? tenantId)
         {
             BackingInfos = backingInfos;
             ExtId = extId;
             Links = links;
             NetworkInfos = networkInfos;
+            NicBackingInfo = nicBackingInfo;
+            NicNetworkInfo = nicNetworkInfo;
             TenantId = tenantId;
         }
     }

@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ImagesV2Source
     {
+        /// <summary>
+        /// The URL for creating an image.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ImagesV2SourceObjectLiteSource> ObjectLiteSources;
+        /// <summary>
+        /// The URL for creating an image.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ImagesV2SourceUrlSource> UrlSources;
+        /// <summary>
+        /// The URL for creating an image.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ImagesV2SourceVmDiskSource> VmDiskSources;
 
         [OutputConstructor]

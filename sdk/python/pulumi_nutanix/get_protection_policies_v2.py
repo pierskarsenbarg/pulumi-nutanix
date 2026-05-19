@@ -114,6 +114,8 @@ def get_protection_policies_v2(filter: Optional[_builtins.str] = None,
                                select: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionPoliciesV2Result:
     """
+    > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration.
+
     List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
 
     ## Example Usage
@@ -223,7 +225,7 @@ def get_protection_policies_v2(filter: Optional[_builtins.str] = None,
        * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
     * <span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`">`frequency`</span>: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
 
-    See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+    See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
 
 
     :param _builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions. For example, filter '$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
@@ -263,6 +265,8 @@ def get_protection_policies_v2_output(filter: pulumi.Input[Optional[Optional[_bu
                                       select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionPoliciesV2Result]:
     """
+    > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration.
+
     List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
 
     ## Example Usage
@@ -372,7 +376,7 @@ def get_protection_policies_v2_output(filter: pulumi.Input[Optional[Optional[_bu
        * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
     * <span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`">`frequency`</span>: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
 
-    See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+    See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
 
 
     :param _builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions. For example, filter '$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:

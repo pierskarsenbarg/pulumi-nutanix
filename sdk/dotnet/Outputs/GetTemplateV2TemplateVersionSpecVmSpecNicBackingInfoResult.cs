@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// Indicates whether the serial port is connected or not.
         /// </summary>
-        public readonly bool? IsConnected;
+        public readonly bool IsConnected;
         /// <summary>
         /// MAC address of the emulated NIC.
         /// </summary>
@@ -33,7 +33,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfoResult(
-            bool? isConnected,
+            bool isConnected,
 
             string macAddress,
 

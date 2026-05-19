@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
         /// * "CATEGORY".
         /// 
-        /// See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/associateCategory).
+        /// See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/associateCategory).
         /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }

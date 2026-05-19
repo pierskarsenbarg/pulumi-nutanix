@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VpcExternallyRoutablePrefixIpv6
     {
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternallyRoutablePrefixIpv6Ip> Ips;
         public readonly int? PrefixLength;
 

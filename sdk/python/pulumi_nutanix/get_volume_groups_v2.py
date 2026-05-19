@@ -207,7 +207,7 @@ def get_volume_groups_v2(expand: Optional[_builtins.str] = None,
 
     * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`">`isEnabled`</span>: - Indicates whether the flash mode is enabled for the Volume Group.
 
-    See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+    See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
     """
     __args__ = dict()
     __args__['expand'] = expand
@@ -322,7 +322,7 @@ def get_volume_groups_v2_output(expand: pulumi.Input[Optional[Optional[_builtins
 
     * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`">`isEnabled`</span>: - Indicates whether the flash mode is enabled for the Volume Group.
 
-    See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
+    See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
     """
     __args__ = dict()
     __args__['expand'] = expand

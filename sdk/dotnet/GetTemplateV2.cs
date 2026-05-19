@@ -334,6 +334,7 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetTemplateV2Result
     {
+        public readonly ImmutableArray<string> CategoryExtIds;
         /// <summary>
         /// VM creation time
         /// </summary>
@@ -385,6 +386,8 @@ namespace PiersKarsenbarg.Nutanix
 
         [OutputConstructor]
         private GetTemplateV2Result(
+            ImmutableArray<string> categoryExtIds,
+
             string createTime,
 
             ImmutableArray<Outputs.GetTemplateV2CreatedByResult> createdBies,
@@ -409,6 +412,7 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableArray<Outputs.GetTemplateV2UpdatedByResult> updatedBies)
         {
+            CategoryExtIds = categoryExtIds;
             CreateTime = createTime;
             CreatedBies = createdBies;
             ExtId = extId;

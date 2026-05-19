@@ -13,11 +13,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class ImagesV2PlacementPolicyStatusGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Compliance status for a placement policy.
+        /// </summary>
         [Input("complianceStatus")]
         public Input<string>? ComplianceStatus { get; set; }
 
         [Input("conflictingPolicyExtIds")]
         private InputList<string>? _conflictingPolicyExtIds;
+
+        /// <summary>
+        /// List of image placement policy external identifier that conflict with the current one.
+        /// </summary>
         public InputList<string> ConflictingPolicyExtIds
         {
             get => _conflictingPolicyExtIds ?? (_conflictingPolicyExtIds = new InputList<string>());
@@ -26,20 +33,34 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("enforcedClusterExtIds")]
         private InputList<string>? _enforcedClusterExtIds;
+
+        /// <summary>
+        /// List of cluster external identifiers for the enforced placement policy.
+        /// </summary>
         public InputList<string> EnforcedClusterExtIds
         {
             get => _enforcedClusterExtIds ?? (_enforcedClusterExtIds = new InputList<string>());
             set => _enforcedClusterExtIds = value;
         }
 
+        /// <summary>
+        /// Indicates whether the placement policy enforcement is ongoing or has failed.
+        /// </summary>
         [Input("enforcementMode")]
         public Input<string>? EnforcementMode { get; set; }
 
+        /// <summary>
+        /// Image placement policy external identifier.
+        /// </summary>
         [Input("placementPolicyExtId")]
         public Input<string>? PlacementPolicyExtId { get; set; }
 
         [Input("policyClusterExtIds")]
         private InputList<string>? _policyClusterExtIds;
+
+        /// <summary>
+        /// List of cluster external identifiers of the image location for the enforced placement policy.
+        /// </summary>
         public InputList<string> PolicyClusterExtIds
         {
             get => _policyClusterExtIds ?? (_policyClusterExtIds = new InputList<string>());

@@ -52,12 +52,6 @@ namespace PiersKarsenbarg.Nutanix
         ///         name: "Environment",
         ///         value: "Staging",
         ///     }],
-        ///     resourceDomain: {
-        ///         resources: [{
-        ///             limit: 4,
-        ///             resourceType: "STORAGE",
-        ///         }],
-        ///     },
         ///     defaultSubnetReference: {
         ///         uuid: subnet.metadata.uuid,
         ///     },
@@ -100,12 +94,6 @@ namespace PiersKarsenbarg.Nutanix
         ///         "name": "Environment",
         ///         "value": "Staging",
         ///     }],
-        ///     resource_domain={
-        ///         "resources": [{
-        ///             "limit": 4,
-        ///             "resource_type": "STORAGE",
-        ///         }],
-        ///     },
         ///     default_subnet_reference={
         ///         "uuid": subnet.metadata["uuid"],
         ///     },
@@ -158,17 +146,6 @@ namespace PiersKarsenbarg.Nutanix
         ///             {
         ///                 Name = "Environment",
         ///                 Value = "Staging",
-        ///             },
-        ///         },
-        ///         ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
-        ///         {
-        ///             Resources = new[]
-        ///             {
-        ///                 new Nutanix.Inputs.ProjectResourceDomainResourceArgs
-        ///                 {
-        ///                     Limit = 4,
-        ///                     ResourceType = "STORAGE",
-        ///                 },
         ///             },
         ///         },
         ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
@@ -230,14 +207,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 					Value: pulumi.String("Staging"),
         /// 				},
         /// 			},
-        /// 			ResourceDomain: &amp;nutanix.ProjectResourceDomainArgs{
-        /// 				Resources: nutanix.ProjectResourceDomainResourceArray{
-        /// 					&amp;nutanix.ProjectResourceDomainResourceArgs{
-        /// 						Limit:        pulumi.Int(4),
-        /// 						ResourceType: pulumi.String("STORAGE"),
-        /// 					},
-        /// 				},
-        /// 			},
         /// 			DefaultSubnetReference: &amp;nutanix.ProjectDefaultSubnetReferenceArgs{
         /// 				Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
         /// 					return metadata["uuid"], nil
@@ -266,7 +235,6 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.Project;
         /// import com.pulumi.nutanix.ProjectArgs;
         /// import com.pulumi.nutanix.inputs.ProjectCategoryArgs;
-        /// import com.pulumi.nutanix.inputs.ProjectResourceDomainArgs;
         /// import com.pulumi.nutanix.inputs.ProjectDefaultSubnetReferenceArgs;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetProjectArgs;
@@ -311,12 +279,6 @@ namespace PiersKarsenbarg.Nutanix
         ///             .categories(ProjectCategoryArgs.builder()
         ///                 .name("Environment")
         ///                 .value("Staging")
-        ///                 .build())
-        ///             .resourceDomain(ProjectResourceDomainArgs.builder()
-        ///                 .resources(ProjectResourceDomainResourceArgs.builder()
-        ///                     .limit(4)
-        ///                     .resourceType("STORAGE")
-        ///                     .build())
         ///                 .build())
         ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
         ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
@@ -363,10 +325,6 @@ namespace PiersKarsenbarg.Nutanix
         ///       categories:
         ///         - name: Environment
         ///           value: Staging
-        ///       resourceDomain:
-        ///         resources:
-        ///           - limit: 4
-        ///             resourceType: STORAGE
         ///       defaultSubnetReference:
         ///         uuid: ${subnet.metadata.uuid}
         ///       apiVersion: '3.1'
@@ -422,12 +380,6 @@ namespace PiersKarsenbarg.Nutanix
         ///         name: "Environment",
         ///         value: "Staging",
         ///     }],
-        ///     resourceDomain: {
-        ///         resources: [{
-        ///             limit: 4,
-        ///             resourceType: "STORAGE",
-        ///         }],
-        ///     },
         ///     defaultSubnetReference: {
         ///         uuid: subnet.metadata.uuid,
         ///     },
@@ -470,12 +422,6 @@ namespace PiersKarsenbarg.Nutanix
         ///         "name": "Environment",
         ///         "value": "Staging",
         ///     }],
-        ///     resource_domain={
-        ///         "resources": [{
-        ///             "limit": 4,
-        ///             "resource_type": "STORAGE",
-        ///         }],
-        ///     },
         ///     default_subnet_reference={
         ///         "uuid": subnet.metadata["uuid"],
         ///     },
@@ -528,17 +474,6 @@ namespace PiersKarsenbarg.Nutanix
         ///             {
         ///                 Name = "Environment",
         ///                 Value = "Staging",
-        ///             },
-        ///         },
-        ///         ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
-        ///         {
-        ///             Resources = new[]
-        ///             {
-        ///                 new Nutanix.Inputs.ProjectResourceDomainResourceArgs
-        ///                 {
-        ///                     Limit = 4,
-        ///                     ResourceType = "STORAGE",
-        ///                 },
         ///             },
         ///         },
         ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
@@ -600,14 +535,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 					Value: pulumi.String("Staging"),
         /// 				},
         /// 			},
-        /// 			ResourceDomain: &amp;nutanix.ProjectResourceDomainArgs{
-        /// 				Resources: nutanix.ProjectResourceDomainResourceArray{
-        /// 					&amp;nutanix.ProjectResourceDomainResourceArgs{
-        /// 						Limit:        pulumi.Int(4),
-        /// 						ResourceType: pulumi.String("STORAGE"),
-        /// 					},
-        /// 				},
-        /// 			},
         /// 			DefaultSubnetReference: &amp;nutanix.ProjectDefaultSubnetReferenceArgs{
         /// 				Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
         /// 					return metadata["uuid"], nil
@@ -636,7 +563,6 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.Project;
         /// import com.pulumi.nutanix.ProjectArgs;
         /// import com.pulumi.nutanix.inputs.ProjectCategoryArgs;
-        /// import com.pulumi.nutanix.inputs.ProjectResourceDomainArgs;
         /// import com.pulumi.nutanix.inputs.ProjectDefaultSubnetReferenceArgs;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetProjectArgs;
@@ -681,12 +607,6 @@ namespace PiersKarsenbarg.Nutanix
         ///             .categories(ProjectCategoryArgs.builder()
         ///                 .name("Environment")
         ///                 .value("Staging")
-        ///                 .build())
-        ///             .resourceDomain(ProjectResourceDomainArgs.builder()
-        ///                 .resources(ProjectResourceDomainResourceArgs.builder()
-        ///                     .limit(4)
-        ///                     .resourceType("STORAGE")
-        ///                     .build())
         ///                 .build())
         ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
         ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
@@ -733,10 +653,6 @@ namespace PiersKarsenbarg.Nutanix
         ///       categories:
         ///         - name: Environment
         ///           value: Staging
-        ///       resourceDomain:
-        ///         resources:
-        ///           - limit: 4
-        ///             resourceType: STORAGE
         ///       defaultSubnetReference:
         ///         uuid: ${subnet.metadata.uuid}
         ///       apiVersion: '3.1'
@@ -792,12 +708,6 @@ namespace PiersKarsenbarg.Nutanix
         ///         name: "Environment",
         ///         value: "Staging",
         ///     }],
-        ///     resourceDomain: {
-        ///         resources: [{
-        ///             limit: 4,
-        ///             resourceType: "STORAGE",
-        ///         }],
-        ///     },
         ///     defaultSubnetReference: {
         ///         uuid: subnet.metadata.uuid,
         ///     },
@@ -840,12 +750,6 @@ namespace PiersKarsenbarg.Nutanix
         ///         "name": "Environment",
         ///         "value": "Staging",
         ///     }],
-        ///     resource_domain={
-        ///         "resources": [{
-        ///             "limit": 4,
-        ///             "resource_type": "STORAGE",
-        ///         }],
-        ///     },
         ///     default_subnet_reference={
         ///         "uuid": subnet.metadata["uuid"],
         ///     },
@@ -898,17 +802,6 @@ namespace PiersKarsenbarg.Nutanix
         ///             {
         ///                 Name = "Environment",
         ///                 Value = "Staging",
-        ///             },
-        ///         },
-        ///         ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
-        ///         {
-        ///             Resources = new[]
-        ///             {
-        ///                 new Nutanix.Inputs.ProjectResourceDomainResourceArgs
-        ///                 {
-        ///                     Limit = 4,
-        ///                     ResourceType = "STORAGE",
-        ///                 },
         ///             },
         ///         },
         ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
@@ -970,14 +863,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 					Value: pulumi.String("Staging"),
         /// 				},
         /// 			},
-        /// 			ResourceDomain: &amp;nutanix.ProjectResourceDomainArgs{
-        /// 				Resources: nutanix.ProjectResourceDomainResourceArray{
-        /// 					&amp;nutanix.ProjectResourceDomainResourceArgs{
-        /// 						Limit:        pulumi.Int(4),
-        /// 						ResourceType: pulumi.String("STORAGE"),
-        /// 					},
-        /// 				},
-        /// 			},
         /// 			DefaultSubnetReference: &amp;nutanix.ProjectDefaultSubnetReferenceArgs{
         /// 				Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
         /// 					return metadata["uuid"], nil
@@ -1006,7 +891,6 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.Project;
         /// import com.pulumi.nutanix.ProjectArgs;
         /// import com.pulumi.nutanix.inputs.ProjectCategoryArgs;
-        /// import com.pulumi.nutanix.inputs.ProjectResourceDomainArgs;
         /// import com.pulumi.nutanix.inputs.ProjectDefaultSubnetReferenceArgs;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetProjectArgs;
@@ -1051,12 +935,6 @@ namespace PiersKarsenbarg.Nutanix
         ///             .categories(ProjectCategoryArgs.builder()
         ///                 .name("Environment")
         ///                 .value("Staging")
-        ///                 .build())
-        ///             .resourceDomain(ProjectResourceDomainArgs.builder()
-        ///                 .resources(ProjectResourceDomainResourceArgs.builder()
-        ///                     .limit(4)
-        ///                     .resourceType("STORAGE")
-        ///                     .build())
         ///                 .build())
         ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
         ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
@@ -1103,10 +981,6 @@ namespace PiersKarsenbarg.Nutanix
         ///       categories:
         ///         - name: Environment
         ///           value: Staging
-        ///       resourceDomain:
-        ///         resources:
-        ///           - limit: 4
-        ///             resourceType: STORAGE
         ///       defaultSubnetReference:
         ///         uuid: ${subnet.metadata.uuid}
         ///       apiVersion: '3.1'
@@ -1355,7 +1229,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string? ProjectName;
         public readonly ImmutableDictionary<string, string> ProjectReference;
         /// <summary>
-        /// The status for a resource domain (limits and values)
+        /// (Deprecated) Not supported starting from provider version `2.4.0` and expected to be empty. Remove any usage from configuration/scripts.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectResourceDomainResult> ResourceDomains;
         public readonly string State;

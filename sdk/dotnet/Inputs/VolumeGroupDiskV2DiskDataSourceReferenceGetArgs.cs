@@ -30,7 +30,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string> ExtId { get; set; } = null!;
 
         /// <summary>
-        /// - The name of the Data Source Reference.bled for the Volume Group.
+        /// - The name of the Data Source Reference for the Volume Group.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

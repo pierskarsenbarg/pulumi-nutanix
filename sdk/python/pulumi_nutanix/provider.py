@@ -19,6 +19,8 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
+                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
@@ -35,6 +37,14 @@ class ProviderArgs:
         """
         The set of arguments for constructing a Provider resource.
 
+        :param pulumi.Input[_builtins.str] api_key: API key for Nutanix Prism authentication. Can be used as an
+               alternative to username/password. When set, the X-Ntnx-Api-Key header
+               will be used instead of Basic Authentication.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] custom_headers: Custom HTTP headers to add to all API requests. Useful for
+               environments that require additional headers such as Cloudflare Access
+               service tokens. Headers can also be set via environment variables with
+               the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+               becomes Cf-Access-Client-Id). Config values take precedence over env vars.
         :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
                note, this is never the data services VIP, and should not be an
                individual CVM address, as this would cause calls to fail during
@@ -50,6 +60,10 @@ class ProviderArgs:
                local cluster auth (e.g. 'admin') or directory auth.
         :param pulumi.Input[_builtins.int] wait_timeout: Set if you know that the creation o update of a resource may take long time (minutes)
         """
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+        if custom_headers is not None:
+            pulumi.set(__self__, "custom_headers", custom_headers)
         if endpoint is not None:
             pulumi.set(__self__, "endpoint", endpoint)
         if foundation_endpoint is not None:
@@ -76,6 +90,36 @@ class ProviderArgs:
             pulumi.set(__self__, "username", username)
         if wait_timeout is not None:
             pulumi.set(__self__, "wait_timeout", wait_timeout)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        API key for Nutanix Prism authentication. Can be used as an
+        alternative to username/password. When set, the X-Ntnx-Api-Key header
+        will be used instead of Basic Authentication.
+        """
+        return pulumi.get(self, "api_key")
+
+    @api_key.setter
+    def api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customHeaders")
+    def custom_headers(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Custom HTTP headers to add to all API requests. Useful for
+        environments that require additional headers such as Cloudflare Access
+        service tokens. Headers can also be set via environment variables with
+        the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+        becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+        """
+        return pulumi.get(self, "custom_headers")
+
+    @custom_headers.setter
+    def custom_headers(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "custom_headers", value)
 
     @_builtins.property
     @pulumi.getter
@@ -235,6 +279,8 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
@@ -258,6 +304,14 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] api_key: API key for Nutanix Prism authentication. Can be used as an
+               alternative to username/password. When set, the X-Ntnx-Api-Key header
+               will be used instead of Basic Authentication.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] custom_headers: Custom HTTP headers to add to all API requests. Useful for
+               environments that require additional headers such as Cloudflare Access
+               service tokens. Headers can also be set via environment variables with
+               the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+               becomes Cf-Access-Client-Id). Config values take precedence over env vars.
         :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
                note, this is never the data services VIP, and should not be an
                individual CVM address, as this would cause calls to fail during
@@ -301,6 +355,8 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
@@ -323,6 +379,8 @@ class Provider(pulumi.ProviderResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
+            __props__.__dict__["api_key"] = None if api_key is None else pulumi.Output.secret(api_key)
+            __props__.__dict__["custom_headers"] = pulumi.Output.secret(custom_headers).apply(pulumi.runtime.to_json) if custom_headers is not None else None
             __props__.__dict__["endpoint"] = endpoint
             __props__.__dict__["foundation_endpoint"] = foundation_endpoint
             __props__.__dict__["foundation_port"] = foundation_port
@@ -336,11 +394,23 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["session_auth"] = pulumi.Output.from_input(session_auth).apply(pulumi.runtime.to_json) if session_auth is not None else None
             __props__.__dict__["username"] = username
             __props__.__dict__["wait_timeout"] = pulumi.Output.from_input(wait_timeout).apply(pulumi.runtime.to_json) if wait_timeout is not None else None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["apiKey"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'nutanix',
             resource_name,
             __props__,
             opts)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        API key for Nutanix Prism authentication. Can be used as an
+        alternative to username/password. When set, the X-Ntnx-Api-Key header
+        will be used instead of Basic Authentication.
+        """
+        return pulumi.get(self, "api_key")
 
     @_builtins.property
     @pulumi.getter

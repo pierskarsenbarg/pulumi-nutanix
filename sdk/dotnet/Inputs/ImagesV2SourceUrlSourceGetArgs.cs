@@ -15,15 +15,27 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("basicAuths")]
         private InputList<Inputs.ImagesV2SourceUrlSourceBasicAuthGetArgs>? _basicAuths;
+
+        /// <summary>
+        /// Basic authentication credentials for image source HTTP/S URL
+        /// - `basic_auth.username`: (Required) Username for basic authentication
+        /// - `basic_auth.password`: (Required) Password for basic authentication.
+        /// </summary>
         public InputList<Inputs.ImagesV2SourceUrlSourceBasicAuthGetArgs> BasicAuths
         {
             get => _basicAuths ?? (_basicAuths = new InputList<Inputs.ImagesV2SourceUrlSourceBasicAuthGetArgs>());
             set => _basicAuths = value;
         }
 
+        /// <summary>
+        /// Ignore the certificate errors, if the value is true. Default is false.
+        /// </summary>
         [Input("shouldAllowInsecureUrl")]
         public Input<bool>? ShouldAllowInsecureUrl { get; set; }
 
+        /// <summary>
+        /// The URL for creating an image.
+        /// </summary>
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;
 

@@ -13,26 +13,42 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class SubnetV2VirtualSwitchGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The types of bond modes
+        /// </summary>
         [Input("bondMode")]
         public Input<bool>? BondMode { get; set; }
 
         [Input("clusters")]
         private InputList<Inputs.SubnetV2VirtualSwitchClusterGetArgs>? _clusters;
+
+        /// <summary>
+        /// Cluster configuration list
+        /// </summary>
         public InputList<Inputs.SubnetV2VirtualSwitchClusterGetArgs> Clusters
         {
             get => _clusters ?? (_clusters = new InputList<Inputs.SubnetV2VirtualSwitchClusterGetArgs>());
             set => _clusters = value;
         }
 
+        /// <summary>
+        /// Input body to configure a Virtual Switch
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// When true, the node is not put in maintenance mode during the create/update operation.
+        /// </summary>
         [Input("hasDeploymentError")]
         public Input<bool>? HasDeploymentError { get; set; }
 
+        /// <summary>
+        /// Indicates whether it is a default Virtual Switch which cannot be deleted
+        /// </summary>
         [Input("isDefault")]
         public Input<bool>? IsDefault { get; set; }
 
@@ -52,9 +68,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _metadatas = value;
         }
 
+        /// <summary>
+        /// MTU
+        /// </summary>
         [Input("mtu")]
         public Input<int>? Mtu { get; set; }
 
+        /// <summary>
+        /// User-visible Virtual Switch name
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

@@ -26,6 +26,7 @@ class VpcV2Args:
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]] = None,
                  externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -36,6 +37,7 @@ class VpcV2Args:
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]] external_subnets: List of external subnets that the VPC is attached to.
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]] externally_routable_prefixes: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        :param pulumi.Input[Sequence[pulumi.Input['VpcV2MetadataArgs']]] metadatas: The vpc kind metadata.
         :param pulumi.Input[_builtins.str] name: Name of the VPC.
         :param pulumi.Input[_builtins.str] vpc_type: Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """
@@ -49,6 +51,8 @@ class VpcV2Args:
             pulumi.set(__self__, "external_subnets", external_subnets)
         if externally_routable_prefixes is not None:
             pulumi.set(__self__, "externally_routable_prefixes", externally_routable_prefixes)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if vpc_type is not None:
@@ -113,6 +117,18 @@ class VpcV2Args:
     @externally_routable_prefixes.setter
     def externally_routable_prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]]):
         pulumi.set(self, "externally_routable_prefixes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]]:
+        """
+        The vpc kind metadata.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
@@ -347,6 +363,7 @@ class VpcV2(pulumi.CustomResource):
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]]] = None,
                  externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -415,6 +432,7 @@ class VpcV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]] external_subnets: List of external subnets that the VPC is attached to.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]] externally_routable_prefixes: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict']]]] metadatas: The vpc kind metadata.
         :param pulumi.Input[_builtins.str] name: Name of the VPC.
         :param pulumi.Input[_builtins.str] vpc_type: Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """
@@ -502,6 +520,7 @@ class VpcV2(pulumi.CustomResource):
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict']]]]] = None,
                  externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict']]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -518,11 +537,11 @@ class VpcV2(pulumi.CustomResource):
             __props__.__dict__["external_routing_domain_reference"] = external_routing_domain_reference
             __props__.__dict__["external_subnets"] = external_subnets
             __props__.__dict__["externally_routable_prefixes"] = externally_routable_prefixes
+            __props__.__dict__["metadatas"] = metadatas
             __props__.__dict__["name"] = name
             __props__.__dict__["vpc_type"] = vpc_type
             __props__.__dict__["ext_id"] = None
             __props__.__dict__["links"] = None
-            __props__.__dict__["metadatas"] = None
             __props__.__dict__["snat_ips"] = None
             __props__.__dict__["tenant_id"] = None
         super(VpcV2, __self__).__init__(
@@ -594,7 +613,7 @@ class VpcV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def description(self) -> pulumi.Output[_builtins.str]:
         """
         Description of the VPC.
         """
@@ -671,7 +690,7 @@ class VpcV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="vpcType")
-    def vpc_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def vpc_type(self) -> pulumi.Output[_builtins.str]:
         """
         Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """

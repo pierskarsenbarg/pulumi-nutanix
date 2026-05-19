@@ -115,20 +115,20 @@ export class SamlIdentityProvidersV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     declare public readonly customAttributes: pulumi.Output<string[]>;
-    declare public readonly emailAttribute: pulumi.Output<string | undefined>;
+    declare public readonly emailAttribute: pulumi.Output<string>;
     /**
      * - It will be used as Issuer in SAML authnRequest.
      */
-    declare public readonly entityIssuer: pulumi.Output<string | undefined>;
+    declare public readonly entityIssuer: pulumi.Output<string>;
     /**
      * The External Identifier of the User Group.
      */
     declare public readonly extId: pulumi.Output<string>;
-    declare public readonly groupsAttribute: pulumi.Output<string | undefined>;
+    declare public readonly groupsAttribute: pulumi.Output<string>;
     /**
      * - Delimiter is used to split the value of attribute into multiple groups.
      */
-    declare public readonly groupsDelim: pulumi.Output<string | undefined>;
+    declare public readonly groupsDelim: pulumi.Output<string>;
     declare public readonly idpMetadataUrl: pulumi.Output<string>;
     declare public readonly idpMetadataXml: pulumi.Output<string>;
     /**
@@ -138,7 +138,7 @@ export class SamlIdentityProvidersV2 extends pulumi.CustomResource {
     /**
      * - Flag indicating signing of SAML authnRequests.
      */
-    declare public readonly isSignedAuthnReqEnabled: pulumi.Output<boolean | undefined>;
+    declare public readonly isSignedAuthnReqEnabled: pulumi.Output<boolean>;
     /**
      * - Last updated time of the SAML Identity Provider.
      */
@@ -147,7 +147,7 @@ export class SamlIdentityProvidersV2 extends pulumi.CustomResource {
      * - Unique name of the IDP.
      */
     declare public readonly name: pulumi.Output<string>;
-    declare public readonly usernameAttribute: pulumi.Output<string | undefined>;
+    declare public readonly usernameAttribute: pulumi.Output<string>;
 
     /**
      * Create a SamlIdentityProvidersV2 resource with the given unique name, arguments, and options.

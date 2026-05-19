@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ipv4s")]
         private InputList<Inputs.SubnetV2DhcpOptionDomainNameServerIpv4GetArgs>? _ipv4s;
+
+        /// <summary>
+        /// IPv4 Object. Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2DhcpOptionDomainNameServerIpv4GetArgs> Ipv4s
         {
             get => _ipv4s ?? (_ipv4s = new InputList<Inputs.SubnetV2DhcpOptionDomainNameServerIpv4GetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("ipv6s")]
         private InputList<Inputs.SubnetV2DhcpOptionDomainNameServerIpv6GetArgs>? _ipv6s;
+
+        /// <summary>
+        /// IPv6 Object. Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2DhcpOptionDomainNameServerIpv6GetArgs> Ipv6s
         {
             get => _ipv6s ?? (_ipv6s = new InputList<Inputs.SubnetV2DhcpOptionDomainNameServerIpv6GetArgs>());

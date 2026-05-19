@@ -26,6 +26,12 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
+     * API key for Nutanix Prism authentication. Can be used as an
+     * alternative to username/password. When set, the X-Ntnx-Api-Key header
+     * will be used instead of Basic Authentication.
+     */
+    declare public readonly apiKey: pulumi.Output<string | undefined>;
+    /**
      * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
      * note, this is never the data services VIP, and should not be an
      * individual CVM address, as this would cause calls to fail during
@@ -72,6 +78,8 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
+            resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
+            resourceInputs["customHeaders"] = pulumi.output(args?.customHeaders ? pulumi.secret(args.customHeaders) : undefined).apply(JSON.stringify);
             resourceInputs["endpoint"] = args?.endpoint;
             resourceInputs["foundationEndpoint"] = args?.foundationEndpoint;
             resourceInputs["foundationPort"] = args?.foundationPort;
@@ -87,6 +95,8 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["waitTimeout"] = pulumi.output(args?.waitTimeout).apply(JSON.stringify);
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["apiKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 
@@ -104,6 +114,20 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
+    /**
+     * API key for Nutanix Prism authentication. Can be used as an
+     * alternative to username/password. When set, the X-Ntnx-Api-Key header
+     * will be used instead of Basic Authentication.
+     */
+    apiKey?: pulumi.Input<string | undefined>;
+    /**
+     * Custom HTTP headers to add to all API requests. Useful for
+     * environments that require additional headers such as Cloudflare Access
+     * service tokens. Headers can also be set via environment variables with
+     * the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+     * becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+     */
+    customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
      * note, this is never the data services VIP, and should not be an

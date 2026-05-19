@@ -192,7 +192,7 @@ import (
 // * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: - An unique address that identifies a device on the internet or a local network in IPv6 format.
 // * <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: - The prefix length of the network to which this host IPv6 address belongs.
 //
-// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/listHostsByClusterId).
 func GetHostsV2(ctx *pulumi.Context, args *GetHostsV2Args, opts ...pulumi.InvokeOption) (*GetHostsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostsV2Result

@@ -14,13 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class UsersV2AdditionalAttributeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - The URL at which the entity described by the link can be accessed.
+        /// -(Optional) The URL at which the entity described by the link can be accessed.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// -(Optional) A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// </summary>
         [Input("value")]
         public Input<int>? Value { get; set; }

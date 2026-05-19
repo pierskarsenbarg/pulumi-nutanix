@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VirtualSwitchClusterHostIpAddress
     {
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchClusterHostIpAddressIp> Ips;
         public readonly int? PrefixLength;
 

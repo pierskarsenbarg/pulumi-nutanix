@@ -13,7 +13,9 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetProtectionPolicyV2
     {
         /// <summary>
-        /// Describes the Fetches the protection policy identified by an external identifier.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// 
+        /// Fetches the protection policy identified by an external identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -109,7 +111,9 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionPolicyV2Result>("nutanix:index/getProtectionPolicyV2:getProtectionPolicyV2", args ?? new GetProtectionPolicyV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Describes the Fetches the protection policy identified by an external identifier.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// 
+        /// Fetches the protection policy identified by an external identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -205,7 +209,9 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPolicyV2Result>("nutanix:index/getProtectionPolicyV2:getProtectionPolicyV2", args ?? new GetProtectionPolicyV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Describes the Fetches the protection policy identified by an external identifier.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// 
+        /// Fetches the protection policy identified by an external identifier.
         /// 
         /// ## Example Usage
         /// 

@@ -71,19 +71,19 @@ export class VolumeGroupDiskV2 extends pulumi.CustomResource {
     /**
      * - Volume Disk description.
      */
-    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * -(Required) Disk Data Source Reference.
      */
     declare public readonly diskDataSourceReferences: pulumi.Output<outputs.VolumeGroupDiskV2DiskDataSourceReference[]>;
     /**
-     * - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+     * - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
      */
     declare public readonly diskSizeBytes: pulumi.Output<number>;
     /**
      * - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
      */
-    declare public readonly diskStorageFeatures: pulumi.Output<outputs.VolumeGroupDiskV2DiskStorageFeature[] | undefined>;
+    declare public readonly diskStorageFeatures: pulumi.Output<outputs.VolumeGroupDiskV2DiskStorageFeature[]>;
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
@@ -154,7 +154,7 @@ export interface VolumeGroupDiskV2State {
      */
     diskDataSourceReferences?: pulumi.Input<pulumi.Input<inputs.VolumeGroupDiskV2DiskDataSourceReference>[] | undefined>;
     /**
-     * - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+     * - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     /**
@@ -188,7 +188,7 @@ export interface VolumeGroupDiskV2Args {
      */
     diskDataSourceReferences: pulumi.Input<pulumi.Input<inputs.VolumeGroupDiskV2DiskDataSourceReference>[]>;
     /**
-     * - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+     * - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
      */
     diskSizeBytes: pulumi.Input<number>;
     /**

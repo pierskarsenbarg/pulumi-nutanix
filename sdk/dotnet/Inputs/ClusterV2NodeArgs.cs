@@ -28,6 +28,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("numberOfNodes")]
         public Input<int>? NumberOfNodes { get; set; }
 
+        [Input("removeNodeParams")]
+        private InputList<Inputs.ClusterV2NodeRemoveNodeParamArgs>? _removeNodeParams;
+
+        /// <summary>
+        /// - (Optional) Parameters for removing nodes. Supports:
+        /// </summary>
+        public InputList<Inputs.ClusterV2NodeRemoveNodeParamArgs> RemoveNodeParams
+        {
+            get => _removeNodeParams ?? (_removeNodeParams = new InputList<Inputs.ClusterV2NodeRemoveNodeParamArgs>());
+            set => _removeNodeParams = value;
+        }
+
         public ClusterV2NodeArgs()
         {
         }

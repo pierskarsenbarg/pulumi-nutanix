@@ -16,7 +16,7 @@ import (
 type UsersV2 struct {
 	pulumi.CustomResourceState
 
-	// -  Any additional attribute for the User.
+	// -(Optional) Any additional attribute for the User.
 	AdditionalAttributes UsersV2AdditionalAttributeArrayOutput `pulumi:"additionalAttributes"`
 	// - Bucket Access Keys for the User.
 	BucketsAccessKeys UsersV2BucketsAccessKeyArrayOutput `pulumi:"bucketsAccessKeys"`
@@ -24,40 +24,41 @@ type UsersV2 struct {
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// - Creation time for the Bucket Access Key.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// - Description of the user.
+	// -( Optional ) Description of the user.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// - Display name for the User.
+	// -(Optional) Display name for the User.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// - Email Id for the User.
+	// -(Optional) Email Id for the User.
 	EmailId pulumi.StringOutput `pulumi:"emailId"`
-	// - A globally unique identifier of an instance that is suitable for external consumption.
+	// -(Optional) External Identifier of the User.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
-	// - First name for the User.
+	// -(Optional) First name for the User.
 	FirstName          pulumi.StringOutput `pulumi:"firstName"`
 	ForceResetPassword pulumi.BoolOutput   `pulumi:"forceResetPassword"`
-	// - Identifier of the IDP for the User.
+	// -(Optional) Identifier of the IDP for the User.
 	IdpId pulumi.StringOutput `pulumi:"idpId"`
 	// - Last successful logged in time for the User.
 	LastLoginTime pulumi.StringOutput `pulumi:"lastLoginTime"`
-	// - Last name for the User.
+	// -(Optional) Last name for the User.
 	LastName pulumi.StringOutput `pulumi:"lastName"`
 	// - Last updated time of the User.
 	LastUpdatedTime pulumi.StringOutput `pulumi:"lastUpdatedTime"`
 	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links UsersV2LinkArrayOutput `pulumi:"links"`
-	// - Default locale for the User.
+	// -(Optional) Default locale for the User.
 	Locale pulumi.StringOutput `pulumi:"locale"`
-	// - Middle name for the User.
+	// -(Optional) Middle name for the User.
 	MiddleInitial pulumi.StringOutput `pulumi:"middleInitial"`
-	Password      pulumi.StringOutput `pulumi:"password"`
-	// - Default Region for the User.
+	// -(Optional) Password for the User.
+	Password pulumi.StringOutput `pulumi:"password"`
+	// -(Optional) Default Region for the User.
 	Region pulumi.StringOutput `pulumi:"region"`
-	// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+	// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
 	Status pulumi.StringOutput `pulumi:"status"`
-	// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-	//   Type of the User.
+	// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
+	// Type of the User.
 	UserType pulumi.StringOutput `pulumi:"userType"`
-	// - Identifier for the User in the form an email address.
+	// -(Required) Identifier for the User in the form an email address.
 	Username pulumi.StringOutput `pulumi:"username"`
 }
 
@@ -74,6 +75,13 @@ func NewUsersV2(ctx *pulumi.Context,
 	if args.Username == nil {
 		return nil, errors.New("invalid value for required argument 'Username'")
 	}
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource UsersV2
 	err := ctx.RegisterResource("nutanix:index/usersV2:UsersV2", name, args, &resource, opts...)
@@ -97,7 +105,7 @@ func GetUsersV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering UsersV2 resources.
 type usersV2State struct {
-	// -  Any additional attribute for the User.
+	// -(Optional) Any additional attribute for the User.
 	AdditionalAttributes []UsersV2AdditionalAttribute `pulumi:"additionalAttributes"`
 	// - Bucket Access Keys for the User.
 	BucketsAccessKeys []UsersV2BucketsAccessKey `pulumi:"bucketsAccessKeys"`
@@ -105,45 +113,46 @@ type usersV2State struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// - Creation time for the Bucket Access Key.
 	CreatedTime *string `pulumi:"createdTime"`
-	// - Description of the user.
+	// -( Optional ) Description of the user.
 	Description *string `pulumi:"description"`
-	// - Display name for the User.
+	// -(Optional) Display name for the User.
 	DisplayName *string `pulumi:"displayName"`
-	// - Email Id for the User.
+	// -(Optional) Email Id for the User.
 	EmailId *string `pulumi:"emailId"`
-	// - A globally unique identifier of an instance that is suitable for external consumption.
+	// -(Optional) External Identifier of the User.
 	ExtId *string `pulumi:"extId"`
-	// - First name for the User.
+	// -(Optional) First name for the User.
 	FirstName          *string `pulumi:"firstName"`
 	ForceResetPassword *bool   `pulumi:"forceResetPassword"`
-	// - Identifier of the IDP for the User.
+	// -(Optional) Identifier of the IDP for the User.
 	IdpId *string `pulumi:"idpId"`
 	// - Last successful logged in time for the User.
 	LastLoginTime *string `pulumi:"lastLoginTime"`
-	// - Last name for the User.
+	// -(Optional) Last name for the User.
 	LastName *string `pulumi:"lastName"`
 	// - Last updated time of the User.
 	LastUpdatedTime *string `pulumi:"lastUpdatedTime"`
 	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links []UsersV2Link `pulumi:"links"`
-	// - Default locale for the User.
+	// -(Optional) Default locale for the User.
 	Locale *string `pulumi:"locale"`
-	// - Middle name for the User.
+	// -(Optional) Middle name for the User.
 	MiddleInitial *string `pulumi:"middleInitial"`
-	Password      *string `pulumi:"password"`
-	// - Default Region for the User.
+	// -(Optional) Password for the User.
+	Password *string `pulumi:"password"`
+	// -(Optional) Default Region for the User.
 	Region *string `pulumi:"region"`
-	// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+	// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
 	Status *string `pulumi:"status"`
-	// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-	//   Type of the User.
+	// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
+	// Type of the User.
 	UserType *string `pulumi:"userType"`
-	// - Identifier for the User in the form an email address.
+	// -(Required) Identifier for the User in the form an email address.
 	Username *string `pulumi:"username"`
 }
 
 type UsersV2State struct {
-	// -  Any additional attribute for the User.
+	// -(Optional) Any additional attribute for the User.
 	AdditionalAttributes UsersV2AdditionalAttributeArrayInput
 	// - Bucket Access Keys for the User.
 	BucketsAccessKeys UsersV2BucketsAccessKeyArrayInput
@@ -151,40 +160,41 @@ type UsersV2State struct {
 	CreatedBy pulumi.StringPtrInput
 	// - Creation time for the Bucket Access Key.
 	CreatedTime pulumi.StringPtrInput
-	// - Description of the user.
+	// -( Optional ) Description of the user.
 	Description pulumi.StringPtrInput
-	// - Display name for the User.
+	// -(Optional) Display name for the User.
 	DisplayName pulumi.StringPtrInput
-	// - Email Id for the User.
+	// -(Optional) Email Id for the User.
 	EmailId pulumi.StringPtrInput
-	// - A globally unique identifier of an instance that is suitable for external consumption.
+	// -(Optional) External Identifier of the User.
 	ExtId pulumi.StringPtrInput
-	// - First name for the User.
+	// -(Optional) First name for the User.
 	FirstName          pulumi.StringPtrInput
 	ForceResetPassword pulumi.BoolPtrInput
-	// - Identifier of the IDP for the User.
+	// -(Optional) Identifier of the IDP for the User.
 	IdpId pulumi.StringPtrInput
 	// - Last successful logged in time for the User.
 	LastLoginTime pulumi.StringPtrInput
-	// - Last name for the User.
+	// -(Optional) Last name for the User.
 	LastName pulumi.StringPtrInput
 	// - Last updated time of the User.
 	LastUpdatedTime pulumi.StringPtrInput
 	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links UsersV2LinkArrayInput
-	// - Default locale for the User.
+	// -(Optional) Default locale for the User.
 	Locale pulumi.StringPtrInput
-	// - Middle name for the User.
+	// -(Optional) Middle name for the User.
 	MiddleInitial pulumi.StringPtrInput
-	Password      pulumi.StringPtrInput
-	// - Default Region for the User.
+	// -(Optional) Password for the User.
+	Password pulumi.StringPtrInput
+	// -(Optional) Default Region for the User.
 	Region pulumi.StringPtrInput
-	// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+	// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
 	Status pulumi.StringPtrInput
-	// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-	//   Type of the User.
+	// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
+	// Type of the User.
 	UserType pulumi.StringPtrInput
-	// - Identifier for the User in the form an email address.
+	// -(Required) Identifier for the User in the form an email address.
 	Username pulumi.StringPtrInput
 }
 
@@ -193,67 +203,69 @@ func (UsersV2State) ElementType() reflect.Type {
 }
 
 type usersV2Args struct {
-	// -  Any additional attribute for the User.
+	// -(Optional) Any additional attribute for the User.
 	AdditionalAttributes []UsersV2AdditionalAttribute `pulumi:"additionalAttributes"`
-	// - Description of the user.
+	// -( Optional ) Description of the user.
 	Description *string `pulumi:"description"`
-	// - Display name for the User.
+	// -(Optional) Display name for the User.
 	DisplayName *string `pulumi:"displayName"`
-	// - Email Id for the User.
+	// -(Optional) Email Id for the User.
 	EmailId *string `pulumi:"emailId"`
-	// - First name for the User.
+	// -(Optional) First name for the User.
 	FirstName          *string `pulumi:"firstName"`
 	ForceResetPassword *bool   `pulumi:"forceResetPassword"`
-	// - Identifier of the IDP for the User.
+	// -(Optional) Identifier of the IDP for the User.
 	IdpId *string `pulumi:"idpId"`
-	// - Last name for the User.
+	// -(Optional) Last name for the User.
 	LastName *string `pulumi:"lastName"`
-	// - Default locale for the User.
+	// -(Optional) Default locale for the User.
 	Locale *string `pulumi:"locale"`
-	// - Middle name for the User.
+	// -(Optional) Middle name for the User.
 	MiddleInitial *string `pulumi:"middleInitial"`
-	Password      *string `pulumi:"password"`
-	// - Default Region for the User.
+	// -(Optional) Password for the User.
+	Password *string `pulumi:"password"`
+	// -(Optional) Default Region for the User.
 	Region *string `pulumi:"region"`
-	// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+	// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
 	Status *string `pulumi:"status"`
-	// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-	//   Type of the User.
+	// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
+	// Type of the User.
 	UserType string `pulumi:"userType"`
-	// - Identifier for the User in the form an email address.
+	// -(Required) Identifier for the User in the form an email address.
 	Username string `pulumi:"username"`
 }
 
 // The set of arguments for constructing a UsersV2 resource.
 type UsersV2Args struct {
-	// -  Any additional attribute for the User.
+	// -(Optional) Any additional attribute for the User.
 	AdditionalAttributes UsersV2AdditionalAttributeArrayInput
-	// - Description of the user.
+	// -( Optional ) Description of the user.
 	Description pulumi.StringPtrInput
-	// - Display name for the User.
+	// -(Optional) Display name for the User.
 	DisplayName pulumi.StringPtrInput
-	// - Email Id for the User.
+	// -(Optional) Email Id for the User.
 	EmailId pulumi.StringPtrInput
-	// - First name for the User.
+	// -(Optional) First name for the User.
 	FirstName          pulumi.StringPtrInput
 	ForceResetPassword pulumi.BoolPtrInput
-	// - Identifier of the IDP for the User.
+	// -(Optional) Identifier of the IDP for the User.
 	IdpId pulumi.StringPtrInput
-	// - Last name for the User.
+	// -(Optional) Last name for the User.
 	LastName pulumi.StringPtrInput
-	// - Default locale for the User.
+	// -(Optional) Default locale for the User.
 	Locale pulumi.StringPtrInput
-	// - Middle name for the User.
+	// -(Optional) Middle name for the User.
 	MiddleInitial pulumi.StringPtrInput
-	Password      pulumi.StringPtrInput
-	// - Default Region for the User.
+	// -(Optional) Password for the User.
+	Password pulumi.StringPtrInput
+	// -(Optional) Default Region for the User.
 	Region pulumi.StringPtrInput
-	// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+	// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
 	Status pulumi.StringPtrInput
-	// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-	//   Type of the User.
+	// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
+	// Type of the User.
 	UserType pulumi.StringInput
-	// - Identifier for the User in the form an email address.
+	// -(Required) Identifier for the User in the form an email address.
 	Username pulumi.StringInput
 }
 
@@ -344,7 +356,7 @@ func (o UsersV2Output) ToUsersV2OutputWithContext(ctx context.Context) UsersV2Ou
 	return o
 }
 
-// -  Any additional attribute for the User.
+// -(Optional) Any additional attribute for the User.
 func (o UsersV2Output) AdditionalAttributes() UsersV2AdditionalAttributeArrayOutput {
 	return o.ApplyT(func(v *UsersV2) UsersV2AdditionalAttributeArrayOutput { return v.AdditionalAttributes }).(UsersV2AdditionalAttributeArrayOutput)
 }
@@ -364,27 +376,27 @@ func (o UsersV2Output) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// - Description of the user.
+// -( Optional ) Description of the user.
 func (o UsersV2Output) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// - Display name for the User.
+// -(Optional) Display name for the User.
 func (o UsersV2Output) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// - Email Id for the User.
+// -(Optional) Email Id for the User.
 func (o UsersV2Output) EmailId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.EmailId }).(pulumi.StringOutput)
 }
 
-// - A globally unique identifier of an instance that is suitable for external consumption.
+// -(Optional) External Identifier of the User.
 func (o UsersV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
-// - First name for the User.
+// -(Optional) First name for the User.
 func (o UsersV2Output) FirstName() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.FirstName }).(pulumi.StringOutput)
 }
@@ -393,7 +405,7 @@ func (o UsersV2Output) ForceResetPassword() pulumi.BoolOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.BoolOutput { return v.ForceResetPassword }).(pulumi.BoolOutput)
 }
 
-// - Identifier of the IDP for the User.
+// -(Optional) Identifier of the IDP for the User.
 func (o UsersV2Output) IdpId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.IdpId }).(pulumi.StringOutput)
 }
@@ -403,7 +415,7 @@ func (o UsersV2Output) LastLoginTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.LastLoginTime }).(pulumi.StringOutput)
 }
 
-// - Last name for the User.
+// -(Optional) Last name for the User.
 func (o UsersV2Output) LastName() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.LastName }).(pulumi.StringOutput)
 }
@@ -418,37 +430,38 @@ func (o UsersV2Output) Links() UsersV2LinkArrayOutput {
 	return o.ApplyT(func(v *UsersV2) UsersV2LinkArrayOutput { return v.Links }).(UsersV2LinkArrayOutput)
 }
 
-// - Default locale for the User.
+// -(Optional) Default locale for the User.
 func (o UsersV2Output) Locale() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.Locale }).(pulumi.StringOutput)
 }
 
-// - Middle name for the User.
+// -(Optional) Middle name for the User.
 func (o UsersV2Output) MiddleInitial() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.MiddleInitial }).(pulumi.StringOutput)
 }
 
+// -(Optional) Password for the User.
 func (o UsersV2Output) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
 }
 
-// - Default Region for the User.
+// -(Optional) Default Region for the User.
 func (o UsersV2Output) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
 }
 
-// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
 func (o UsersV2Output) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-//   - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-//     Type of the User.
+// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
+// Type of the User.
 func (o UsersV2Output) UserType() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.UserType }).(pulumi.StringOutput)
 }
 
-// - Identifier for the User in the form an email address.
+// -(Required) Identifier for the User in the form an email address.
 func (o UsersV2Output) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsersV2) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
 }

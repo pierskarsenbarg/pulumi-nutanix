@@ -29,6 +29,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly bool IsExternal;
         public readonly bool IsNatEnabled;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetLinkResult> Links;
+        public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetMetadataResult> Metadatas;
         public readonly string MigrationState;
         public readonly string Name;
         public readonly string NetworkFunctionChainReference;
@@ -72,6 +73,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetSubnetsV2SubnetLinkResult> links,
 
+            ImmutableArray<Outputs.GetSubnetsV2SubnetMetadataResult> metadatas,
+
             string migrationState,
 
             string name,
@@ -107,6 +110,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             IsExternal = isExternal;
             IsNatEnabled = isNatEnabled;
             Links = links;
+            Metadatas = metadatas;
             MigrationState = migrationState;
             Name = name;
             NetworkFunctionChainReference = networkFunctionChainReference;

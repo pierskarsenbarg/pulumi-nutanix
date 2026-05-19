@@ -14,11 +14,29 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ImagesV2PlacementPolicyStatus
     {
+        /// <summary>
+        /// Compliance status for a placement policy.
+        /// </summary>
         public readonly string? ComplianceStatus;
+        /// <summary>
+        /// List of image placement policy external identifier that conflict with the current one.
+        /// </summary>
         public readonly ImmutableArray<string> ConflictingPolicyExtIds;
+        /// <summary>
+        /// List of cluster external identifiers for the enforced placement policy.
+        /// </summary>
         public readonly ImmutableArray<string> EnforcedClusterExtIds;
+        /// <summary>
+        /// Indicates whether the placement policy enforcement is ongoing or has failed.
+        /// </summary>
         public readonly string? EnforcementMode;
+        /// <summary>
+        /// Image placement policy external identifier.
+        /// </summary>
         public readonly string? PlacementPolicyExtId;
+        /// <summary>
+        /// List of cluster external identifiers of the image location for the enforced placement policy.
+        /// </summary>
         public readonly ImmutableArray<string> PolicyClusterExtIds;
 
         [OutputConstructor]

@@ -37,8 +37,50 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _hostIps = value;
         }
 
+        [Input("hypervisorHostname")]
+        public Input<string>? HypervisorHostname { get; set; }
+
+        [Input("isComputeOnly")]
+        public Input<bool>? IsComputeOnly { get; set; }
+
+        [Input("isLightCompute")]
+        public Input<bool>? IsLightCompute { get; set; }
+
+        [Input("isNeverScheduleable")]
+        public Input<bool>? IsNeverScheduleable { get; set; }
+
+        [Input("isNosCompatible")]
+        public Input<bool>? IsNosCompatible { get; set; }
+
         [Input("nodeUuid")]
         public Input<string>? NodeUuid { get; set; }
+
+        /// <summary>
+        /// - (Optional, default false) Flag to indicate if add node operation needs to be skipped during node addition.
+        /// </summary>
+        [Input("shouldSkipAddNode")]
+        public Input<bool>? ShouldSkipAddNode { get; set; }
+
+        [Input("shouldSkipDiscovery")]
+        public Input<bool>? ShouldSkipDiscovery { get; set; }
+
+        /// <summary>
+        /// - (Optional, default false) Flag to indicate if host networking needs to be skipped during node addition.
+        /// </summary>
+        [Input("shouldSkipHostNetworking")]
+        public Input<bool>? ShouldSkipHostNetworking { get; set; }
+
+        [Input("shouldSkipImaging")]
+        public Input<bool>? ShouldSkipImaging { get; set; }
+
+        /// <summary>
+        /// - (Optional, default false) Flag to indicate if pre expand checks needs to be skipped during node addition.
+        /// </summary>
+        [Input("shouldSkipPreExpandChecks")]
+        public Input<bool>? ShouldSkipPreExpandChecks { get; set; }
+
+        [Input("shouldValidateRackAwareness")]
+        public Input<bool>? ShouldValidateRackAwareness { get; set; }
 
         public ClusterV2NodeNodeListArgs()
         {

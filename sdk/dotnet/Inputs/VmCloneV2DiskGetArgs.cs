@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VmCloneV2DiskBackingInfoGetArgs>? _backingInfos;
 
         /// <summary>
-        /// - (Optional) Defines a NIC emulated by the hypervisor
+        /// - (Optional, Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
         public InputList<Inputs.VmCloneV2DiskBackingInfoGetArgs> BackingInfos
         {

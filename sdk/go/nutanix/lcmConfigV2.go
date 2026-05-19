@@ -63,7 +63,7 @@ type LcmConfigV2 struct {
 	ExtId            pulumi.StringOutput    `pulumi:"extId"`
 	// Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 	//
-	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
 	HasModuleAutoUpgradeEnabled pulumi.BoolPtrOutput `pulumi:"hasModuleAutoUpgradeEnabled"`
 	// Indicates if the auto inventory operation is enabled. The default value is set to False.
 	IsAutoInventoryEnabled pulumi.BoolPtrOutput `pulumi:"isAutoInventoryEnabled"`
@@ -112,7 +112,7 @@ type lcmConfigV2State struct {
 	ExtId            *string `pulumi:"extId"`
 	// Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 	//
-	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
 	HasModuleAutoUpgradeEnabled *bool `pulumi:"hasModuleAutoUpgradeEnabled"`
 	// Indicates if the auto inventory operation is enabled. The default value is set to False.
 	IsAutoInventoryEnabled *bool `pulumi:"isAutoInventoryEnabled"`
@@ -132,7 +132,7 @@ type LcmConfigV2State struct {
 	ExtId            pulumi.StringPtrInput
 	// Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 	//
-	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
 	HasModuleAutoUpgradeEnabled pulumi.BoolPtrInput
 	// Indicates if the auto inventory operation is enabled. The default value is set to False.
 	IsAutoInventoryEnabled pulumi.BoolPtrInput
@@ -155,7 +155,7 @@ type lcmConfigV2Args struct {
 	ConnectivityType *string `pulumi:"connectivityType"`
 	// Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 	//
-	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
 	HasModuleAutoUpgradeEnabled *bool `pulumi:"hasModuleAutoUpgradeEnabled"`
 	// Indicates if the auto inventory operation is enabled. The default value is set to False.
 	IsAutoInventoryEnabled *bool `pulumi:"isAutoInventoryEnabled"`
@@ -175,7 +175,7 @@ type LcmConfigV2Args struct {
 	ConnectivityType pulumi.StringPtrInput
 	// Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 	//
-	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+	// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
 	HasModuleAutoUpgradeEnabled pulumi.BoolPtrInput
 	// Indicates if the auto inventory operation is enabled. The default value is set to False.
 	IsAutoInventoryEnabled pulumi.BoolPtrInput
@@ -290,7 +290,7 @@ func (o LcmConfigV2Output) ExtId() pulumi.StringOutput {
 
 // Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 //
-// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+// See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
 func (o LcmConfigV2Output) HasModuleAutoUpgradeEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *LcmConfigV2) pulumi.BoolPtrOutput { return v.HasModuleAutoUpgradeEnabled }).(pulumi.BoolPtrOutput)
 }

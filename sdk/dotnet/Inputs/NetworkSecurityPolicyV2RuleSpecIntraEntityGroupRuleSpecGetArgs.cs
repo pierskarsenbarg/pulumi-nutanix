@@ -13,22 +13,82 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("icmpServices")]
+        private InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecIcmpServiceGetArgs>? _icmpServices;
+
         /// <summary>
-        /// List of secured group action.
+        /// ICMP type/code for the rule.
         /// </summary>
-        [Input("securedGroupAction")]
-        public Input<string>? SecuredGroupAction { get; set; }
+        public InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecIcmpServiceGetArgs> IcmpServices
+        {
+            get => _icmpServices ?? (_icmpServices = new InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecIcmpServiceGetArgs>());
+            set => _icmpServices = value;
+        }
+
+        /// <summary>
+        /// Whether traffic between intra secured group entities should be allowed or denied. Acceptable values are "ALLOW", "DENY".
+        /// </summary>
+        [Input("securedGroupAction", required: true)]
+        public Input<string> SecuredGroupAction { get; set; } = null!;
+
+        /// <summary>
+        /// Entity type for the secured group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        [Input("securedGroupCategoryAssociatedEntityType")]
+        public Input<string>? SecuredGroupCategoryAssociatedEntityType { get; set; }
 
         [Input("securedGroupCategoryReferences")]
         private InputList<string>? _securedGroupCategoryReferences;
 
         /// <summary>
-        /// A specification to whether traffic between intra secured group entities should be allowed or denied.
+        /// List of category references for the secured group.
         /// </summary>
         public InputList<string> SecuredGroupCategoryReferences
         {
             get => _securedGroupCategoryReferences ?? (_securedGroupCategoryReferences = new InputList<string>());
             set => _securedGroupCategoryReferences = value;
+        }
+
+        /// <summary>
+        /// Reference to the secured group entity group.
+        /// </summary>
+        [Input("securedGroupEntityGroupReference")]
+        public Input<string>? SecuredGroupEntityGroupReference { get; set; }
+
+        [Input("securedGroupServiceReferences")]
+        private InputList<string>? _securedGroupServiceReferences;
+
+        /// <summary>
+        /// List of service group references for the secured group.
+        /// </summary>
+        public InputList<string> SecuredGroupServiceReferences
+        {
+            get => _securedGroupServiceReferences ?? (_securedGroupServiceReferences = new InputList<string>());
+            set => _securedGroupServiceReferences = value;
+        }
+
+        [Input("tcpServices")]
+        private InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecTcpServiceGetArgs>? _tcpServices;
+
+        /// <summary>
+        /// TCP port ranges for the rule.
+        /// </summary>
+        public InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecTcpServiceGetArgs> TcpServices
+        {
+            get => _tcpServices ?? (_tcpServices = new InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecTcpServiceGetArgs>());
+            set => _tcpServices = value;
+        }
+
+        [Input("udpServices")]
+        private InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecUdpServiceGetArgs>? _udpServices;
+
+        /// <summary>
+        /// UDP port ranges for the rule.
+        /// </summary>
+        public InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecUdpServiceGetArgs> UdpServices
+        {
+            get => _udpServices ?? (_udpServices = new InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecUdpServiceGetArgs>());
+            set => _udpServices = value;
         }
 
         public NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecGetArgs()

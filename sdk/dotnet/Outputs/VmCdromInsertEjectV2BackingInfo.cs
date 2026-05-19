@@ -18,10 +18,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// A reference to a disk or image that contains the contents of a disk.
         /// </summary>
         public readonly ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoDataSource> DataSources;
+        public readonly string? DiskExtId;
         /// <summary>
         /// Size of the disk in Bytes
         /// </summary>
         public readonly int? DiskSizeBytes;
+        public readonly bool? IsMigrationInProgress;
         /// <summary>
         /// Storage configuration for VM disks
         /// * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -36,14 +38,20 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private VmCdromInsertEjectV2BackingInfo(
             ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoDataSource> dataSources,
 
+            string? diskExtId,
+
             int? diskSizeBytes,
+
+            bool? isMigrationInProgress,
 
             ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoStorageConfig> storageConfigs,
 
             ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfoStorageContainer> storageContainers)
         {
             DataSources = dataSources;
+            DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
+            IsMigrationInProgress = isMigrationInProgress;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

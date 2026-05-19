@@ -17,6 +17,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //#############################################
+ * // ------------------------------------------------
+ * // This resource allows inserting a custom ISO into
+ * // a VM’s CD-ROM device.
+ * //
+ * // You can manage both:
+ * // 1. **Insertion** — via `apply`
+ * // 2. **Ejection** — automatically on `delete`
+ * //  You can also eject the ISO by setting `action = "eject"` → triggers eject operation explicitly.
+ * //#############################################
  * const insert_cdrom = new nutanix.VmCdromInsertEjectV2("insert-cdrom", {
  *     vmExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
  *     extId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
@@ -62,13 +72,20 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
     }
 
     /**
+     * Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+     */
+    declare public readonly action: pulumi.Output<string | undefined>;
+    /**
      * Storage provided by Nutanix ADSF
      */
     declare public readonly backingInfos: pulumi.Output<outputs.VmCdromInsertEjectV2BackingInfo[] | undefined>;
+    declare public /*out*/ readonly cdromExtId: pulumi.Output<string>;
+    declare public /*out*/ readonly diskAddresses: pulumi.Output<outputs.VmCdromInsertEjectV2DiskAddress[]>;
     /**
      * The globally unique identifier of a CD-ROM. It should be of type UUID.
      */
     declare public readonly extId: pulumi.Output<string>;
+    declare public /*out*/ readonly isoType: pulumi.Output<string>;
     /**
      * The globally unique identifier of a VM. It should be of type UUID
      */
@@ -87,8 +104,12 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmCdromInsertEjectV2State | undefined;
+            resourceInputs["action"] = state?.action;
             resourceInputs["backingInfos"] = state?.backingInfos;
+            resourceInputs["cdromExtId"] = state?.cdromExtId;
+            resourceInputs["diskAddresses"] = state?.diskAddresses;
             resourceInputs["extId"] = state?.extId;
+            resourceInputs["isoType"] = state?.isoType;
             resourceInputs["vmExtId"] = state?.vmExtId;
         } else {
             const args = argsOrState as VmCdromInsertEjectV2Args | undefined;
@@ -98,9 +119,13 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
             if (args?.vmExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmExtId'");
             }
+            resourceInputs["action"] = args?.action;
             resourceInputs["backingInfos"] = args?.backingInfos;
             resourceInputs["extId"] = args?.extId;
             resourceInputs["vmExtId"] = args?.vmExtId;
+            resourceInputs["cdromExtId"] = undefined /*out*/;
+            resourceInputs["diskAddresses"] = undefined /*out*/;
+            resourceInputs["isoType"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VmCdromInsertEjectV2.__pulumiType, name, resourceInputs, opts);
@@ -112,13 +137,20 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
  */
 export interface VmCdromInsertEjectV2State {
     /**
+     * Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+     */
+    action?: pulumi.Input<string | undefined>;
+    /**
      * Storage provided by Nutanix ADSF
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[] | undefined>;
+    cdromExtId?: pulumi.Input<string | undefined>;
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2DiskAddress>[] | undefined>;
     /**
      * The globally unique identifier of a CD-ROM. It should be of type UUID.
      */
     extId?: pulumi.Input<string | undefined>;
+    isoType?: pulumi.Input<string | undefined>;
     /**
      * The globally unique identifier of a VM. It should be of type UUID
      */
@@ -129,6 +161,10 @@ export interface VmCdromInsertEjectV2State {
  * The set of arguments for constructing a VmCdromInsertEjectV2 resource.
  */
 export interface VmCdromInsertEjectV2Args {
+    /**
+     * Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+     */
+    action?: pulumi.Input<string | undefined>;
     /**
      * Storage provided by Nutanix ADSF
      */

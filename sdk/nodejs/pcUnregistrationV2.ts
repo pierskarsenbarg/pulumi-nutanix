@@ -38,7 +38,7 @@ export class PcUnregistrationV2 extends pulumi.CustomResource {
     /**
      * -(Required) Cluster UUID of a remote cluster.
      *
-     * See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+     * See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
      */
     declare public readonly extId: pulumi.Output<string>;
     /**
@@ -84,7 +84,7 @@ export interface PcUnregistrationV2State {
     /**
      * -(Required) Cluster UUID of a remote cluster.
      *
-     * See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+     * See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
      */
     extId?: pulumi.Input<string | undefined>;
     /**
@@ -100,7 +100,7 @@ export interface PcUnregistrationV2Args {
     /**
      * -(Required) Cluster UUID of a remote cluster.
      *
-     * See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+     * See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
      */
     extId: pulumi.Input<string>;
     /**

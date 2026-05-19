@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ips")]
         private InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixIpv6IpArgs>? _ips;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixIpv6IpArgs> Ips
         {
             get => _ips ?? (_ips = new InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixIpv6IpArgs>());

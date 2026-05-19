@@ -214,7 +214,7 @@ export interface AssociateCategoryToVolumeGroupV2Category {
      * -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
      * * "CATEGORY".
      *
-     * See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/associateCategory).
+     * See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/associateCategory).
      */
     entityType?: pulumi.Input<string | undefined>;
     /**
@@ -757,7 +757,7 @@ export interface ClusterAddNodeV2RemoveNodeParamExtraParam {
      *
      *
      *
-     * See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/expandCluster).
+     * See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
      */
     shouldSkipAddCheck?: pulumi.Input<boolean | undefined>;
     /**
@@ -768,6 +768,493 @@ export interface ClusterAddNodeV2RemoveNodeParamExtraParam {
      * -(Optional) Indicates if space check needs to be skipped or not.
      */
     skipSpaceCheck?: pulumi.Input<boolean | undefined>;
+}
+
+export interface ClusterProfileV2Cluster {
+    configDrifts?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    isCompliant?: pulumi.Input<boolean | undefined>;
+    lastSyncedTime?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2NameServerIpList {
+    /**
+     * - (Optional) ip v4 address params.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NameServerIpListIpv4>[] | undefined>;
+    /**
+     * - (Optional) ip v6 address params.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NameServerIpListIpv6>[] | undefined>;
+}
+
+export interface ClusterProfileV2NameServerIpListIpv4 {
+    /**
+     * - (Optional, default 32) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip V4 address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2NameServerIpListIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip V6 address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2NtpServerIpList {
+    /**
+     * - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpListFqdn>[] | undefined>;
+    /**
+     * - (Optional) ip address params.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpListIpv4>[] | undefined>;
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpListIpv6>[] | undefined>;
+}
+
+export interface ClusterProfileV2NtpServerIpListFqdn {
+    /**
+     * - (Required) FQDN value.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2NtpServerIpListIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2NtpServerIpListIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2PulseStatus {
+    /**
+     * - (Optional) Flag to indicate if pulse is enabled or not.
+     */
+    isEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional) PII scrubbing level.
+     *
+     * | Enum     | Description                                                                                    |
+     * |----------|------------------------------------------------------------------------------------------------|
+     * | ALL      | Scrub All PII Information from Pulse including data like entity names and IP addresses        |
+     * | DEFAULT  | Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse |
+     */
+    piiScrubbingLevel?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2RsyslogServerList {
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * IP address of the RSYSLOG server.
+     */
+    ipAddress: pulumi.Input<inputs.ClusterProfileV2RsyslogServerListIpAddress>;
+    links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2RsyslogServerListLink>[] | undefined>;
+    /**
+     * List of modules for the RSYSLOG server. Each module object supports:
+     */
+    modules?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2RsyslogServerListModule>[] | undefined>;
+    /**
+     * Network protocol for the RSYSLOG server. Allowed values:
+     *
+     * | Enum      | Description        |
+     * |-----------|--------------------|
+     * | UDP       | UDP protocol       |
+     * | TCP       | TCP protocol       |
+     * | RELP      | RELP protocol      |
+     */
+    networkProtocol: pulumi.Input<string>;
+    /**
+     * Port number for the RSYSLOG server.
+     */
+    port: pulumi.Input<number>;
+    /**
+     * Name of the RSYSLOG server.
+     */
+    serverName: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2RsyslogServerListIpAddress {
+    /**
+     * - (Optional) ip address params.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2RsyslogServerListIpAddressIpv4>[] | undefined>;
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2RsyslogServerListIpAddressIpv6>[] | undefined>;
+}
+
+export interface ClusterProfileV2RsyslogServerListIpAddressIpv4 {
+    /**
+     * - (Optional, default 32) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2RsyslogServerListIpAddressIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2RsyslogServerListLink {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2RsyslogServerListModule {
+    /**
+     * Log severity level for the module. Allowed values:
+     *
+     * | Enum      | Description        |
+     * |-----------|--------------------|
+     * | EMERGENCY     | Emergency level       |
+     * | NOTICE      | Notice level       |
+     * | ERROR      | Error level       |
+     * | ALERT      | Alert level       |
+     * | INFO      | Info level       |
+     * | WARNING      | Warning level       |
+     * | DEBUG      | Debug level       |
+     * | CRITICAL      | Critical level       |
+     */
+    logSeverityLevel: pulumi.Input<string>;
+    /**
+     * Name of the module. Allowed values:
+     *
+     * | Enum      | Description        |
+     * |-----------|--------------------|
+     * | AUDIT     | Audit module       |
+     * | CALM      | Calm module       |
+     * | MINERVA_CVM      | Minerva CVM module       |
+     * | STARGATE      | Stargate module       |
+     * | FLOW_SERVICE_LOGS      | Flow service logs module       |
+     * | SYSLOG_MODULE      | Syslog module       |
+     * | CEREBRO      | Cerebro module       |
+     * | API_AUDIT      | API audit module       |
+     * | GENESIS      | Genesis module       |
+     * | PRISM      | Prism module       |
+     * | ZOOKEEPER      | Zookeeper module       |
+     * | FLOW      | Flow module       |
+     * | EPSILON      | Epsilon module       |
+     * | ACROPOLIS      | Acropolis module       |
+     * | UHARA      | Uhara module       |
+     * | LCM      | LCM module       |
+     * | APLOS      | Aplos module       |
+     * | NCM_AIOPS      | NCM AIOPS module       |
+     * | CURATOR      | Curator module       |
+     * | CASSANDRA      | Cassandra module       |
+     * | LAZAN      | Lazan module       |
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Boolean flag to indicate if log monitor files should be logged.
+     */
+    shouldLogMonitorFiles?: pulumi.Input<boolean | undefined>;
+}
+
+export interface ClusterProfileV2SmtpServer {
+    /**
+     * SMTP email address.
+     */
+    emailAddress: pulumi.Input<string>;
+    /**
+     * SMTP network details.
+     */
+    server: pulumi.Input<inputs.ClusterProfileV2SmtpServerServer>;
+    /**
+     * Type of SMTP server.
+     *
+     * | Enum      | Description                |
+     * |-----------|----------------------------|
+     * | PLAIN     | Plain type SMTP server     |
+     * | STARTTLS  | Start TLS type SMTP server |
+     * | SSL       | SSL type SMTP server       |
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2SmtpServerServer {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    ipAddress: pulumi.Input<inputs.ClusterProfileV2SmtpServerServerIpAddress>;
+    /**
+     * SMTP server password.
+     */
+    password?: pulumi.Input<string | undefined>;
+    /**
+     * SMTP port.
+     */
+    port?: pulumi.Input<number | undefined>;
+    /**
+     * SMTP server user name.
+     */
+    username?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2SmtpServerServerIpAddress {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SmtpServerServerIpAddressFqdn>[] | undefined>;
+    /**
+     * - ip address params.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SmtpServerServerIpAddressIpv4>[] | undefined>;
+    /**
+     * - Ip address params.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SmtpServerServerIpAddressIpv6>[] | undefined>;
+}
+
+export interface ClusterProfileV2SmtpServerServerIpAddressFqdn {
+    /**
+     * - (Required) FQDN value.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2SmtpServerServerIpAddressIpv4 {
+    /**
+     * - (Optional, default 32) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2SmtpServerServerIpAddressIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2SnmpConfig {
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP status. Whether SNMP is enabled.
+     */
+    isEnabled?: pulumi.Input<boolean | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigLink>[] | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP transport details. Each transport object supports:
+     */
+    transports?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigTransport>[] | undefined>;
+    /**
+     * SNMP trap details. Each trap object supports:
+     */
+    traps?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigTrap>[] | undefined>;
+    /**
+     * SNMP user information. Each user object supports:
+     */
+    users?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigUser>[] | undefined>;
+}
+
+export interface ClusterProfileV2SnmpConfigLink {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2SnmpConfigTransport {
+    /**
+     * SNMP port.
+     */
+    port: pulumi.Input<number>;
+    /**
+     * SNMP protocol type. Allowed values:
+     *
+     * | Enum      | Description        |
+     * |-----------|--------------------|
+     * | UDP       | UDP protocol       |
+     * | TCP       | TCP protocol       |
+     * | UDP6      | UDP6 protocol      |
+     * | TCP6      | TCP6 protocol      |
+     */
+    protocol: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2SnmpConfigTrap {
+    /**
+     * An unique address block that supports:
+     */
+    address: pulumi.Input<inputs.ClusterProfileV2SnmpConfigTrapAddress>;
+    /**
+     * Community string (plaintext) for SNMP version 2.0.
+     */
+    communityString?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP engine ID (hexadecimal string, e.g. 0x12345678).
+     */
+    engineId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigTrapLink>[] | undefined>;
+    /**
+     * SNMP port.
+     */
+    port?: pulumi.Input<number | undefined>;
+    /**
+     * SNMP protocol type. Allowed values:
+     *
+     * | Enum      | Description        |
+     * |-----------|--------------------|
+     * | UDP       | UDP protocol       |
+     * | TCP       | TCP protocol       |
+     * | UDP6      | UDP6 protocol      |
+     * | TCP6      | TCP6 protocol      |
+     */
+    protocol?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP receiver name.
+     */
+    receiverName?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP inform mode status.
+     */
+    shouldInform?: pulumi.Input<boolean | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP username. Required for SNMP trap v3 version.
+     */
+    username?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP version. Allowed values:
+     *
+     * | Enum      | Description        |
+     * |-----------|--------------------|
+     * | V2        | V2 SNMP version    |
+     * | V3        | V3 SNMP version    |
+     */
+    version: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2SnmpConfigTrapAddress {
+    /**
+     * - ip address params.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigTrapAddressIpv4>[] | undefined>;
+    /**
+     * - Ip address params.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigTrapAddressIpv6>[] | undefined>;
+}
+
+export interface ClusterProfileV2SnmpConfigTrapAddressIpv4 {
+    /**
+     * - (Optional, default 32) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2SnmpConfigTrapAddressIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) Ip address.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2SnmpConfigTrapLink {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2SnmpConfigUser {
+    /**
+     * SNMP user authentication key (must not contain single quotes).
+     */
+    authKey: pulumi.Input<string>;
+    /**
+     * SNMP user authentication type. Allowed values:
+     *
+     * | Enum      | Description                  |
+     * |-----------|------------------------------|
+     * | SHA       | SHA SNMP authentication      |
+     * | MD5       | MD5 SNMP authentication      |
+     */
+    authType: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigUserLink>[] | undefined>;
+    /**
+     * SNMP user encryption key (must not contain single quotes).
+     */
+    privKey?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP user encryption type. Allowed values:
+     *
+     * | Enum      | Description        |
+     * |-----------|--------------------|
+     * | DES       | DES SNMP key       |
+     * | AES       | AES SNMP key       |
+     */
+    privType?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
+    /**
+     * SNMP username. Required for SNMP trap v3 version.
+     */
+    username: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2SnmpConfigUserLink {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface ClusterV2Config {
@@ -1416,6 +1903,10 @@ export interface ClusterV2Node {
      */
     nodeLists?: pulumi.Input<pulumi.Input<inputs.ClusterV2NodeNodeList>[] | undefined>;
     numberOfNodes?: pulumi.Input<number | undefined>;
+    /**
+     * - (Optional) Parameters for removing nodes. Supports:
+     */
+    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterV2NodeRemoveNodeParam>[] | undefined>;
 }
 
 export interface ClusterV2NodeNodeList {
@@ -1427,7 +1918,27 @@ export interface ClusterV2NodeNodeList {
      * - (Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
      */
     hostIps?: pulumi.Input<pulumi.Input<inputs.ClusterV2NodeNodeListHostIp>[] | undefined>;
+    hypervisorHostname?: pulumi.Input<string | undefined>;
+    isComputeOnly?: pulumi.Input<boolean | undefined>;
+    isLightCompute?: pulumi.Input<boolean | undefined>;
+    isNeverScheduleable?: pulumi.Input<boolean | undefined>;
+    isNosCompatible?: pulumi.Input<boolean | undefined>;
     nodeUuid?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional, default false) Flag to indicate if add node operation needs to be skipped during node addition.
+     */
+    shouldSkipAddNode?: pulumi.Input<boolean | undefined>;
+    shouldSkipDiscovery?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional, default false) Flag to indicate if host networking needs to be skipped during node addition.
+     */
+    shouldSkipHostNetworking?: pulumi.Input<boolean | undefined>;
+    shouldSkipImaging?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional, default false) Flag to indicate if pre expand checks needs to be skipped during node addition.
+     */
+    shouldSkipPreExpandChecks?: pulumi.Input<boolean | undefined>;
+    shouldValidateRackAwareness?: pulumi.Input<boolean | undefined>;
 }
 
 export interface ClusterV2NodeNodeListControllerVmIp {
@@ -1496,6 +2007,36 @@ export interface ClusterV2NodeNodeListHostIpIpv6 {
     value: pulumi.Input<string>;
 }
 
+export interface ClusterV2NodeRemoveNodeParam {
+    /**
+     * - (Optional) Extra parameters for removing nodes. Supports:
+     */
+    extraParams?: pulumi.Input<pulumi.Input<inputs.ClusterV2NodeRemoveNodeParamExtraParam>[] | undefined>;
+    /**
+     * - (Optional, default false) Skip remove prechecks.
+     */
+    shouldSkipPrechecks?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional, default false) Skip remove operation for the node.
+     */
+    shouldSkipRemove?: pulumi.Input<boolean | undefined>;
+}
+
+export interface ClusterV2NodeRemoveNodeParamExtraParam {
+    /**
+     * - (Optional, default false) Skip add check during node removal.
+     */
+    shouldSkipAddCheck?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional, default false) Skip upgrade check during node removal.
+     */
+    shouldSkipUpgradeCheck?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional, default false) Skip space check during node removal.
+     */
+    skipSpaceCheck?: pulumi.Input<boolean | undefined>;
+}
+
 export interface ClustersDiscoverUnconfiguredNodesV2IpFilterList {
     /**
      * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
@@ -1515,7 +2056,7 @@ export interface ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv4 {
     /**
      * -(Required) The IPv4/IPv6 address of the host.
      */
-    value?: pulumi.Input<string | undefined>;
+    value: pulumi.Input<string>;
 }
 
 export interface ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv6 {
@@ -1526,7 +2067,7 @@ export interface ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv6 {
     /**
      * -(Required) The IPv4/IPv6 address of the host.
      */
-    value?: pulumi.Input<string | undefined>;
+    value: pulumi.Input<string>;
 }
 
 export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode {
@@ -1658,7 +2199,7 @@ export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIpIpv4 {
     /**
      * -(Required) The IPv4/IPv6 address of the host.
      */
-    value?: pulumi.Input<string | undefined>;
+    value: pulumi.Input<string>;
 }
 
 export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIpIpv6 {
@@ -1669,7 +2210,7 @@ export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIpIpv6 {
     /**
      * -(Required) The IPv4/IPv6 address of the host.
      */
-    value?: pulumi.Input<string | undefined>;
+    value: pulumi.Input<string>;
 }
 
 export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeHypervisorIp {
@@ -2070,7 +2611,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
      *
      *
      *
-     * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/deployTemplate).
+     * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
      */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript>[] | undefined>;
     /**
@@ -2168,7 +2709,9 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSys
 
 export interface DeployTemplatesV2OverrideVmConfigMapNic {
     /**
-     * Defines a NIC emulated by the hypervisor
+     * Use `nic_backing_info.virtual_ethernet_nic` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfo>[] | undefined>;
     /**
@@ -2176,9 +2719,19 @@ export interface DeployTemplatesV2OverrideVmConfigMapNic {
      */
     extId?: pulumi.Input<string | undefined>;
     /**
-     * Network information for a NIC.
+     * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo>[] | undefined>;
+    /**
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     */
+    nicBackingInfo?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfo | undefined>;
+    /**
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     */
+    nicNetworkInfo?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfo | undefined>;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNicBackingInfo {
@@ -2275,6 +2828,246 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet {
     extId?: pulumi.Input<string | undefined>;
 }
 
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfo {
+    dpOffloadNic?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoDpOffloadNic | undefined>;
+    sriovNic?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoSriovNic | undefined>;
+    virtualEthernetNic?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoVirtualEthernetNic | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoDpOffloadNic {
+    dpOffloadProfileReference: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoDpOffloadNicDpOffloadProfileReference>;
+    hostPcieDeviceReference?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoDpOffloadNicHostPcieDeviceReference | undefined>;
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoSriovNic {
+    hostPcieDeviceReference?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoSriovNicHostPcieDeviceReference | undefined>;
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    sriovProfileReference: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoSriovNicSriovProfileReference>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoSriovNicHostPcieDeviceReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoSriovNicSriovProfileReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfoVirtualEthernetNic {
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfo {
+    dpOffloadNicNetworkInfo?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfo | undefined>;
+    sriovNicNetworkInfo?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoSriovNicNetworkInfo | undefined>;
+    virtualEthernetNicNetworkInfo?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfo | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    /**
+     * The identifier of a Template.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoSriovNicNetworkInfo {
+    vlanId?: pulumi.Input<number | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    /**
+     * The identifier of a Template.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
+    /**
+     * The identifier of a Template.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
 export interface DirectoryServicesV2OpenLdapConfiguration {
     /**
      * -(Required) this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
@@ -2329,6 +3122,135 @@ export interface DirectoryServicesV2ServiceAccount {
      * -(Required) Username to connect to the Directory Service.
      */
     username: pulumi.Input<string>;
+}
+
+export interface EntityGroupV2AllowedConfig {
+    /**
+     * List of allowed entities. Each entity may contain:
+     */
+    entities?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2AllowedConfigEntity>[] | undefined>;
+}
+
+export interface EntityGroupV2AllowedConfigEntity {
+    /**
+     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> block(s):
+     */
+    addresses?: pulumi.Input<inputs.EntityGroupV2AllowedConfigEntityAddresses | undefined>;
+    /**
+     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> block(s):
+     */
+    ipRanges?: pulumi.Input<inputs.EntityGroupV2AllowedConfigEntityIpRanges | undefined>;
+    /**
+     * List of kube entity identifiers. Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
+     */
+    kubeEntities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> is `EXT_ID`.
+     */
+    referenceExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+     */
+    selectedBy?: pulumi.Input<string | undefined>;
+    /**
+     * The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface EntityGroupV2AllowedConfigEntityAddresses {
+    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2AllowedConfigEntityAddressesIpv4Address>[] | undefined>;
+}
+
+export interface EntityGroupV2AllowedConfigEntityAddressesIpv4Address {
+    /**
+     * Prefix length.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * IPv4 address value.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface EntityGroupV2AllowedConfigEntityIpRanges {
+    ipv4Ranges?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2AllowedConfigEntityIpRangesIpv4Range>[] | undefined>;
+}
+
+export interface EntityGroupV2AllowedConfigEntityIpRangesIpv4Range {
+    /**
+     * End IP of the range.
+     */
+    endIp: pulumi.Input<string>;
+    /**
+     * Start IP of the range.
+     */
+    startIp: pulumi.Input<string>;
+}
+
+export interface EntityGroupV2ExceptConfig {
+    /**
+     * List of except entities. Each entity may contain:
+     */
+    entities?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2ExceptConfigEntity>[] | undefined>;
+}
+
+export interface EntityGroupV2ExceptConfigEntity {
+    /**
+     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> block(s).
+     */
+    addresses?: pulumi.Input<inputs.EntityGroupV2ExceptConfigEntityAddresses | undefined>;
+    /**
+     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> block(s).
+     */
+    ipRanges?: pulumi.Input<inputs.EntityGroupV2ExceptConfigEntityIpRanges | undefined>;
+    /**
+     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> is `EXT_ID`.
+     */
+    referenceExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+     */
+    selectedBy?: pulumi.Input<string | undefined>;
+    /**
+     * The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface EntityGroupV2ExceptConfigEntityAddresses {
+    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2ExceptConfigEntityAddressesIpv4Address>[] | undefined>;
+}
+
+export interface EntityGroupV2ExceptConfigEntityAddressesIpv4Address {
+    /**
+     * Prefix length.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * IPv4 address value.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface EntityGroupV2ExceptConfigEntityIpRanges {
+    ipv4Ranges?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2ExceptConfigEntityIpRangesIpv4Range>[] | undefined>;
+}
+
+export interface EntityGroupV2ExceptConfigEntityIpRangesIpv4Range {
+    /**
+     * End IP of the range.
+     */
+    endIp: pulumi.Input<string>;
+    /**
+     * Start IP of the range.
+     */
+    startIp: pulumi.Input<string>;
+}
+
+export interface EntityGroupV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface FloatingIpV2Association {
@@ -2420,6 +3342,10 @@ export interface FloatingIpV2ExternalSubnet {
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     links?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnetLink>[] | undefined>;
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnetMetadata>[] | undefined>;
     migrationState?: pulumi.Input<string | undefined>;
     /**
      * Name of the floating IP.
@@ -2755,6 +3681,14 @@ export interface FloatingIpV2ExternalSubnetLink {
     rel?: pulumi.Input<string | undefined>;
 }
 
+export interface FloatingIpV2ExternalSubnetMetadata {
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ownerReferenceId?: pulumi.Input<string | undefined>;
+    ownerUserName?: pulumi.Input<string | undefined>;
+    projectName?: pulumi.Input<string | undefined>;
+    projectReferenceId?: pulumi.Input<string | undefined>;
+}
+
 export interface FloatingIpV2ExternalSubnetReservedIpAddress {
     /**
      * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
@@ -2845,7 +3779,7 @@ export interface FloatingIpV2ExternalSubnetVirtualSwitchLink {
 }
 
 export interface FloatingIpV2ExternalSubnetVirtualSwitchMetadata {
-    categoryIds?: pulumi.Input<pulumi.Input<any[]>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     ownerReferenceId?: pulumi.Input<string | undefined>;
     ownerUserName?: pulumi.Input<string | undefined>;
     projectName?: pulumi.Input<string | undefined>;
@@ -3053,7 +3987,7 @@ export interface FloatingIpV2ExternalSubnetVpcLink {
 }
 
 export interface FloatingIpV2ExternalSubnetVpcMetadata {
-    categoryIds?: pulumi.Input<pulumi.Input<any[]>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     ownerReferenceId?: pulumi.Input<string | undefined>;
     ownerUserName?: pulumi.Input<string | undefined>;
     projectName?: pulumi.Input<string | undefined>;
@@ -3132,7 +4066,7 @@ export interface FloatingIpV2Link {
 }
 
 export interface FloatingIpV2Metadata {
-    categoryIds?: pulumi.Input<pulumi.Input<any[]>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     ownerReferenceId?: pulumi.Input<string | undefined>;
     ownerUserName?: pulumi.Input<string | undefined>;
     projectName?: pulumi.Input<string | undefined>;
@@ -3344,7 +4278,7 @@ export interface FloatingIpV2VpcLink {
 }
 
 export interface FloatingIpV2VpcMetadata {
-    categoryIds?: pulumi.Input<pulumi.Input<any[]>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     ownerReferenceId?: pulumi.Input<string | undefined>;
     ownerUserName?: pulumi.Input<string | undefined>;
     projectName?: pulumi.Input<string | undefined>;
@@ -3679,6 +4613,17 @@ export interface FoundationCentralImageClusterNodeList {
      * Passthrough RDMA nic to CVM if possible, default to false.
      */
     rdmaPassthrough?: pulumi.Input<boolean | undefined>;
+    /**
+     * JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+     * ```
+     * server_configuration_data = jsonencode({
+     * intersight_data = {
+     * organization = "default"
+     * }
+     * })
+     * ```
+     */
+    serverConfigurationData?: pulumi.Input<string | undefined>;
     /**
      * Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
      */
@@ -5459,9 +6404,6 @@ export interface ImageDataSourceReference {
 export interface ImagePlacementPolicyV2ClusterEntityFilter {
     /**
      * Array of strings
-     *
-     *
-     * See detailed information in [Nutanix Create Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/ImagePlacementPolicies/operation/createPlacementPolicy)
      */
     categoryExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -5482,32 +6424,84 @@ export interface ImagePlacementPolicyV2ImageEntityFilter {
 }
 
 export interface ImagesV2Checksum {
+    /**
+     * The SHA1/SHA256 digest of an image file in hexadecimal format.
+     */
     hexDigest: pulumi.Input<string>;
+    /**
+     * sha1 or sha256 type of image
+     */
     objectType: pulumi.Input<string>;
 }
 
+export interface ImagesV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
 export interface ImagesV2PlacementPolicyStatus {
+    /**
+     * Compliance status for a placement policy.
+     */
     complianceStatus?: pulumi.Input<string | undefined>;
+    /**
+     * List of image placement policy external identifier that conflict with the current one.
+     */
     conflictingPolicyExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * List of cluster external identifiers for the enforced placement policy.
+     */
     enforcedClusterExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Indicates whether the placement policy enforcement is ongoing or has failed.
+     */
     enforcementMode?: pulumi.Input<string | undefined>;
+    /**
+     * Image placement policy external identifier.
+     */
     placementPolicyExtId?: pulumi.Input<string | undefined>;
+    /**
+     * List of cluster external identifiers of the image location for the enforced placement policy.
+     */
     policyClusterExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface ImagesV2Source {
+    /**
+     * The URL for creating an image.
+     */
     objectLiteSources?: pulumi.Input<pulumi.Input<inputs.ImagesV2SourceObjectLiteSource>[] | undefined>;
+    /**
+     * The URL for creating an image.
+     */
     urlSources?: pulumi.Input<pulumi.Input<inputs.ImagesV2SourceUrlSource>[] | undefined>;
+    /**
+     * The URL for creating an image.
+     */
     vmDiskSources?: pulumi.Input<pulumi.Input<inputs.ImagesV2SourceVmDiskSource>[] | undefined>;
 }
 
 export interface ImagesV2SourceObjectLiteSource {
+    /**
+     * Key that identifies the source object in the bucket. The resource implies the bucket, 'vmm-images' for Image and 'vmm-ovas' for OVA.
+     */
     key: pulumi.Input<string>;
 }
 
 export interface ImagesV2SourceUrlSource {
+    /**
+     * Basic authentication credentials for image source HTTP/S URL
+     * - `basic_auth.username`: (Required) Username for basic authentication
+     * - `basic_auth.password`: (Required) Password for basic authentication.
+     */
     basicAuths?: pulumi.Input<pulumi.Input<inputs.ImagesV2SourceUrlSourceBasicAuth>[] | undefined>;
+    /**
+     * Ignore the certificate errors, if the value is true. Default is false.
+     */
     shouldAllowInsecureUrl?: pulumi.Input<boolean | undefined>;
+    /**
+     * The URL for creating an image.
+     */
     url: pulumi.Input<string>;
 }
 
@@ -5517,6 +6511,9 @@ export interface ImagesV2SourceUrlSourceBasicAuth {
 }
 
 export interface ImagesV2SourceVmDiskSource {
+    /**
+     * The external identifier of VM Disk.
+     */
     extId: pulumi.Input<string>;
 }
 
@@ -5773,6 +6770,113 @@ export interface KarbonWorkerNodepoolNode {
     ipv4Address?: pulumi.Input<string | undefined>;
 }
 
+export interface KeyManagementServerV2AccessInformation {
+    /**
+     * - (Optional) Azure Key Vault access information.
+     */
+    azureKeyVault?: pulumi.Input<inputs.KeyManagementServerV2AccessInformationAzureKeyVault | undefined>;
+    /**
+     * - (Optional) KMIP based External Key Manager Access Information.
+     */
+    kmipKeyVault?: pulumi.Input<inputs.KeyManagementServerV2AccessInformationKmipKeyVault | undefined>;
+}
+
+export interface KeyManagementServerV2AccessInformationAzureKeyVault {
+    /**
+     * - (Required) Client identifier for the Azure Key Vault.
+     */
+    clientId: pulumi.Input<string>;
+    /**
+     * - (Required) Client secret for the Azure Key Vault.
+     */
+    clientSecret: pulumi.Input<string>;
+    /**
+     * - (Required) When the client secret is going to expire.
+     */
+    credentialExpiryDate: pulumi.Input<string>;
+    /**
+     * - (Required) Endpoint URL for the Azure Key Vault.
+     */
+    endpointUrl: pulumi.Input<string>;
+    /**
+     * - (Required) Master key identifier for the Azure Key Vault.
+     */
+    keyId: pulumi.Input<string>;
+    /**
+     * - (Required) Tetant identifier for the Azure Key Vault.
+     */
+    tenantId: pulumi.Input<string>;
+    truncatedClientSecret?: pulumi.Input<string | undefined>;
+}
+
+export interface KeyManagementServerV2AccessInformationKmipKeyVault {
+    /**
+     * - (Required) Name of the CA.
+     */
+    caName: pulumi.Input<string>;
+    /**
+     * - (Required) CA PEM.
+     */
+    caPem: pulumi.Input<string>;
+    /**
+     * - (Required) Cert PEM.
+     */
+    certPem: pulumi.Input<string>;
+    /**
+     * - (Required) Endpoint URL for the Azure Key Vault.
+     */
+    endpointUrls: pulumi.Input<pulumi.Input<inputs.KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrl>[]>;
+    /**
+     * - (Required) Private key.
+     */
+    privateKey: pulumi.Input<string>;
+}
+
+export interface KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrl {
+    /**
+     * - (Required) IP address of the External Key Manager server.
+     */
+    ipAddress: pulumi.Input<inputs.KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlIpAddress>;
+    /**
+     * - (Required) Port of the External Key Manager server.
+     */
+    port: pulumi.Input<number>;
+}
+
+export interface KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlIpAddress {
+    /**
+     * - (Optional) FQDN of the External Key Manager server.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlIpAddressFqdn>[] | undefined>;
+    /**
+     * - (Optional) IPv4 address of the External Key Manager server.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlIpAddressIpv4>[] | undefined>;
+    /**
+     * - (Optional) IPv6 address of the External Key Manager server.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlIpAddressIpv6>[] | undefined>;
+}
+
+export interface KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlIpAddressFqdn {
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlIpAddressIpv4 {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlIpAddressIpv6 {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface KeyManagementServerV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
 export interface LcmPrechecksV2EntityUpdateSpec {
     /**
      * UUID of the LCM entity.
@@ -5781,7 +6885,7 @@ export interface LcmPrechecksV2EntityUpdateSpec {
     /**
      * Version to upgrade to.
      *
-     * See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Prechecks/operation/performPrechecks)
+     * See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Prechecks/operation/performPrechecks)
      */
     toVersion: pulumi.Input<string>;
 }
@@ -5817,7 +6921,7 @@ export interface LcmUpgradeV2EntityUpdateSpec {
      * Version to upgrade to.
      *
      *
-     * See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Upgrades/operation/performUpgrade).
+     * See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
      */
     toVersion: pulumi.Input<string>;
 }
@@ -10300,6 +11404,97 @@ export interface NdbStretchedVlanVlansListProperty {
     value?: pulumi.Input<string | undefined>;
 }
 
+export interface NetworkFunctionV2DataPlaneHealthCheckConfig {
+    /**
+     * `Default: 3`. The number of failure checks after which the target is considered unhealthy.
+     */
+    failureThreshold?: pulumi.Input<number | undefined>;
+    /**
+     * `Default: 5`. Interval in seconds between health checks.
+     */
+    intervalSecs?: pulumi.Input<number | undefined>;
+    /**
+     * `Default: 3`. The number of successful checks after which the target is considered healthy.
+     */
+    successThreshold?: pulumi.Input<number | undefined>;
+    /**
+     * `Default: 1`. The time, in seconds, after which a health check times out.
+     */
+    timeoutSecs?: pulumi.Input<number | undefined>;
+}
+
+export interface NetworkFunctionV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface NetworkFunctionV2Metadata {
+    /**
+     * A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId?: pulumi.Input<string | undefined>;
+    /**
+     * The userName of the owner of this resource.
+     */
+    ownerUserName?: pulumi.Input<string | undefined>;
+    /**
+     * The name of the project this resource belongs to.
+     */
+    projectName?: pulumi.Input<string | undefined>;
+    /**
+     * A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId?: pulumi.Input<string | undefined>;
+}
+
+export interface NetworkFunctionV2NicPair {
+    /**
+     * Data plane health status of the NIC pair. Values:
+     */
+    dataPlaneHealthStatus?: pulumi.Input<string | undefined>;
+    /**
+     * UUID of NIC which will be used as egress NIC.
+     * - The optional UUID of the virtual NIC from which traffic exits the NFVM.
+     * - Specify the UUID of another Network Function NIC on the same VM.
+     * - In an inline model, traffic enters the ingressNic, is processed by the NFVM, and then sent out through the egressNic to its final destination.
+     * - This is not used in VTAP mode.
+     */
+    egressNicReference?: pulumi.Input<string | undefined>;
+    /**
+     * High availability state of the NIC pair. Values:
+     */
+    highAvailabilityState?: pulumi.Input<string | undefined>;
+    /**
+     * UUID of NIC which will be used as ingress NIC.
+     * - The required UUID of the virtual NIC on the NFVM where traffic enters.
+     * - You must create a VM with a special "Network Function NIC" type and provide the UUID of that NIC here.
+     * - This tells the Nutanix platform which vNIC on your firewall VM to send the redirected traffic to.
+     */
+    ingressNicReference: pulumi.Input<string>;
+    /**
+     * Administrative state of the NIC pair.
+     * - A boolean flag to control the administrative state of the NIC pair.
+     * - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
+     * - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
+     * - This provides a way to gracefully take a specific NFVM out of service without deleting the configuration.
+     */
+    isEnabled: pulumi.Input<boolean>;
+    /**
+     * VM UUID which both ingress/egress NICs are part of.
+     */
+    vmReference?: pulumi.Input<string | undefined>;
+}
+
 export interface NetworkSecurityPolicyV2Link {
     href?: pulumi.Input<string | undefined>;
     rel?: pulumi.Input<string | undefined>;
@@ -10323,7 +11518,7 @@ export interface NetworkSecurityPolicyV2Rule {
      */
     specs: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpec>[]>;
     /**
-     * The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP".
+     * The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE".
      */
     type: pulumi.Input<string>;
 }
@@ -10362,9 +11557,17 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     destAllowSpec?: pulumi.Input<string | undefined>;
     /**
+     * Entity type for the destination category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+     */
+    destCategoryAssociatedEntityType?: pulumi.Input<string | undefined>;
+    /**
      * List of categories that define a set of network endpoints as outbound.
      */
     destCategoryReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Reference to the destination entity group.
+     */
+    destEntityGroupReference?: pulumi.Input<string | undefined>;
     /**
      * destination subnet value
      */
@@ -10382,9 +11585,21 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     networkFunctionChainReference?: pulumi.Input<string | undefined>;
     /**
+     * A reference to the network function in the rule.
+     */
+    networkFunctionReference?: pulumi.Input<string | undefined>;
+    /**
+     * Entity type for the secured group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+     */
+    securedGroupCategoryAssociatedEntityType?: pulumi.Input<string | undefined>;
+    /**
      * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
      */
     securedGroupCategoryReferences: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Reference to the secured group entity group.
+     */
+    securedGroupEntityGroupReference?: pulumi.Input<string | undefined>;
     /**
      * A list of service group references.
      */
@@ -10398,9 +11613,17 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     srcAllowSpec?: pulumi.Input<string | undefined>;
     /**
+     * Entity type for the source category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+     */
+    srcCategoryAssociatedEntityType?: pulumi.Input<string | undefined>;
+    /**
      * List of categories that define a set of network endpoints as inbound.
      */
     srcCategoryReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Reference to the source entity group.
+     */
+    srcEntityGroupReference?: pulumi.Input<string | undefined>;
     /**
      * source subnet value
      */
@@ -10464,13 +11687,74 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService {
 
 export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
     /**
-     * List of secured group action.
+     * ICMP type/code for the rule.
      */
-    securedGroupAction?: pulumi.Input<string | undefined>;
+    icmpServices?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecIcmpService>[] | undefined>;
     /**
-     * A specification to whether traffic between intra secured group entities should be allowed or denied.
+     * Whether traffic between intra secured group entities should be allowed or denied. Acceptable values are "ALLOW", "DENY".
+     */
+    securedGroupAction: pulumi.Input<string>;
+    /**
+     * Entity type for the secured group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+     */
+    securedGroupCategoryAssociatedEntityType?: pulumi.Input<string | undefined>;
+    /**
+     * List of category references for the secured group.
      */
     securedGroupCategoryReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Reference to the secured group entity group.
+     */
+    securedGroupEntityGroupReference?: pulumi.Input<string | undefined>;
+    /**
+     * List of service group references for the secured group.
+     */
+    securedGroupServiceReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * TCP port ranges for the rule.
+     */
+    tcpServices?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecTcpService>[] | undefined>;
+    /**
+     * UDP port ranges for the rule.
+     */
+    udpServices?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecUdpService>[] | undefined>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code?: pulumi.Input<number | undefined>;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed?: pulumi.Input<boolean | undefined>;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type?: pulumi.Input<number | undefined>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecTcpService {
+    /**
+     * end port
+     */
+    endPort: pulumi.Input<number>;
+    /**
+     * start port
+     */
+    startPort: pulumi.Input<number>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecUdpService {
+    /**
+     * end port
+     */
+    endPort: pulumi.Input<number>;
+    /**
+     * start port
+     */
+    startPort: pulumi.Input<number>;
 }
 
 export interface NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpec {
@@ -10496,9 +11780,17 @@ export interface NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAll
 
 export interface NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup {
     /**
+     * Entity type for the group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+     */
+    groupCategoryAssociatedEntityType?: pulumi.Input<string | undefined>;
+    /**
      * External identifiers of categories belonging to the isolation group.
      */
     groupCategoryReferences: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Reference to the entity group for the isolation group.
+     */
+    groupEntityGroupReference?: pulumi.Input<string | undefined>;
 }
 
 export interface NetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpec {
@@ -11050,6 +12342,2144 @@ export interface ObjectStoreV2StorageNetworkVipIpv6 {
     value: pulumi.Input<string>;
 }
 
+export interface OvaV2Checksum {
+    /**
+     * -(Optional) The SHA1 checksum of the OVA file.
+     */
+    ovaSha1Checksums?: pulumi.Input<pulumi.Input<inputs.OvaV2ChecksumOvaSha1Checksum>[] | undefined>;
+    /**
+     * -(Optional) The SHA256 checksum of the OVA file.
+     */
+    ovaSha256Checksums?: pulumi.Input<pulumi.Input<inputs.OvaV2ChecksumOvaSha256Checksum>[] | undefined>;
+}
+
+export interface OvaV2ChecksumOvaSha1Checksum {
+    /**
+     * -(Required) The hexadecimal representation of the checksum.
+     */
+    hexDigest: pulumi.Input<string>;
+}
+
+export interface OvaV2ChecksumOvaSha256Checksum {
+    /**
+     * -(Required) The hexadecimal representation of the checksum.
+     */
+    hexDigest: pulumi.Input<string>;
+}
+
+export interface OvaV2CreatedBy {
+    /**
+     * -(Optional) Any additional attribute for the User.
+     */
+    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.OvaV2CreatedByAdditionalAttribute>[] | undefined>;
+    /**
+     * -(Optional) Creation type of the User.
+     * |ENUM |Description |
+     * |---|---|
+     * | PREDEFINED | Predefined creator workflow type is for entity created by the system. |
+     * | SERVICEDEFINED | Service defined creator workflow type is for entity created by the service. |
+     * | USERDEFINED | User defined creator workflow type is for entity created by the users. |
+     */
+    creationType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Description of the User.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Display name for the User.
+     */
+    displayName?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Email Id for the User.
+     */
+    emailId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) First name for the User.
+     */
+    firstName?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Identifier of the IDP for the User.
+     */
+    idpId?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Flag to force the User to reset password.
+     */
+    isForceResetPasswordEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Last name for the User.
+     */
+    lastName?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.OvaV2CreatedByLink>[] | undefined>;
+    /**
+     * -(Optional) Default locale for the User.
+     */
+    locale?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Middle name for the User.
+     */
+    middleInitial?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Password of the user.
+     */
+    password?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Default Region for the User.
+     */
+    region?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Status of the User.
+     */
+    status?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
+    /**
+     * -(Required) Type of the User.
+     */
+    userType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Required) Identifier for the User in the form an email address.
+     */
+    username?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2CreatedByAdditionalAttribute {
+    /**
+     * -(Optional) The URL at which the entity described by the link can be accessed.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    values?: pulumi.Input<pulumi.Input<inputs.OvaV2CreatedByAdditionalAttributeValue>[] | undefined>;
+}
+
+export interface OvaV2CreatedByAdditionalAttributeValue {
+    boolean?: pulumi.Input<boolean | undefined>;
+    integer?: pulumi.Input<number | undefined>;
+    integerLists?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    mapOfStrings?: pulumi.Input<pulumi.Input<inputs.OvaV2CreatedByAdditionalAttributeValueMapOfString>[] | undefined>;
+    object?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    string?: pulumi.Input<string | undefined>;
+    stringLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface OvaV2CreatedByAdditionalAttributeValueMapOfString {
+    map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface OvaV2CreatedByLink {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2Source {
+    /**
+     * -(Optional) The source of the OVA file when it is being created from an object lite upload.
+     */
+    objectLiteSources?: pulumi.Input<pulumi.Input<inputs.OvaV2SourceObjectLiteSource>[] | undefined>;
+    /**
+     * -(Optional) The source of the OVA file when it is being created from a URL.
+     */
+    ovaUrlSources?: pulumi.Input<pulumi.Input<inputs.OvaV2SourceOvaUrlSource>[] | undefined>;
+    /**
+     * -(Optional) The source of the OVA file when it is being created from a VM.
+     */
+    ovaVmSources?: pulumi.Input<pulumi.Input<inputs.OvaV2SourceOvaVmSource>[] | undefined>;
+}
+
+export interface OvaV2SourceObjectLiteSource {
+    /**
+     * -(Required) The identifier of the object from which the OVA file is being created.
+     */
+    key: pulumi.Input<string>;
+}
+
+export interface OvaV2SourceOvaUrlSource {
+    /**
+     * -(Optional) Basic authentication credentials for accessing the OVA file.
+     */
+    basicAuths?: pulumi.Input<pulumi.Input<inputs.OvaV2SourceOvaUrlSourceBasicAuth>[] | undefined>;
+    /**
+     * -(Optional) Flag to allow insecure URLs.
+     */
+    shouldAllowInsecureUrl?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Required) The URL from which the OVA file can be downloaded.
+     */
+    url: pulumi.Input<string>;
+}
+
+export interface OvaV2SourceOvaUrlSourceBasicAuth {
+    /**
+     * -(Required) The password for basic authentication.
+     */
+    password: pulumi.Input<string>;
+    /**
+     * -(Required) The username for basic authentication.
+     */
+    username: pulumi.Input<string>;
+}
+
+export interface OvaV2SourceOvaVmSource {
+    /**
+     * -(Required) The disk file format of the VM.
+     */
+    diskFileFormat: pulumi.Input<string>;
+    /**
+     * -(Required) The external identifier of the VM from which the OVA file is being created.
+     */
+    vmExtId: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfig {
+    /**
+     * -(Optional) Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+     */
+    apcConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigApcConfig>[] | undefined>;
+    /**
+     * -(Optional) Reference to an availability zone.
+     */
+    availabilityZones?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigAvailabilityZone>[] | undefined>;
+    /**
+     * -(Optional) BIOS UUID of the VM. It should be of type UUID.
+     */
+    biosUuid?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfig>[] | undefined>;
+    /**
+     * -(Optional) Categories for the VM.
+     */
+    categories?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCategory>[] | undefined>;
+    /**
+     * -(Optional) CD-ROMs attached to the VM.
+     */
+    cdRoms?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRom>[] | undefined>;
+    /**
+     * -(Optional) Reference to a cluster.
+     */
+    clusters?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCluster>[] | undefined>;
+    /**
+     * -(Optional) VM creation time
+     */
+    createTime?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) VM description
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Disks attached to the VM.
+     */
+    disks?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDisk>[] | undefined>;
+    /**
+     * -(Optional) The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+     */
+    enabledCpuFeatures?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Generation UUID of the VM. It should be of type UUID.
+     */
+    generationUuid?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) GPUs attached to the VM.
+     */
+    gpuses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGpus>[] | undefined>;
+    /**
+     * -(Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
+    guestCustomizations?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomization>[] | undefined>;
+    /**
+     * -(Optional) The details about Nutanix Guest Tools for a VM.
+     */
+    guestTools?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestTool>[] | undefined>;
+    /**
+     * -(Optional) VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
+    hardwareClockTimezone?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Reference to the host, the VM is running on.
+     */
+    hosts?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigHost>[] | undefined>;
+    /**
+     * -(Optional) Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+     */
+    isAgentVm?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Indicates whether to remove AHV branding from VM firmware tables or not.
+     */
+    isBrandingEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Indicates whether the VM CPU hotplug is enabled.
+     */
+    isCpuHotplugEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+     */
+    isCpuPassthroughEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Indicates whether the vGPU console is enabled or not.
+     */
+    isGpuConsoleEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+     */
+    isMemoryOvercommitEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Indicates whether the VM SCSI controller is enabled.
+     */
+    isScsiControllerEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+     */
+    isVcpuHardPinningEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Indicates whether the VGA console should be disabled or not.
+     */
+    isVgaConsoleEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+     */
+    machineType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Memory size in bytes.
+     */
+    memorySizeBytes?: pulumi.Input<number | undefined>;
+    /**
+     * -(Optional) VM name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) NICs attached to the VM.
+     */
+    nics?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNic>[] | undefined>;
+    /**
+     * -(Optional) Number of cores per socket.
+     */
+    numCoresPerSocket?: pulumi.Input<number | undefined>;
+    /**
+     * -(Optional) Number of NUMA nodes. 0 means NUMA is disabled.
+     */
+    numNumaNodes?: pulumi.Input<number | undefined>;
+    /**
+     * -(Optional) Number of vCPU sockets.
+     */
+    numSockets?: pulumi.Input<number | undefined>;
+    /**
+     * -(Optional) Number of threads per core
+     */
+    numThreadsPerCore?: pulumi.Input<number | undefined>;
+    /**
+     * -(Optional) Ownership information for the VM.
+     */
+    ownershipInfos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigOwnershipInfo>[] | undefined>;
+    powerState?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Reference to a project.
+     */
+    projects?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigProject>[] | undefined>;
+    /**
+     * -(Optional) Status of protection policy applied to this VM.
+     */
+    protectionPolicyStates?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigProtectionPolicyState>[] | undefined>;
+    /**
+     * -(Optional) The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+     */
+    protectionType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Serial ports configured on the VM.
+     */
+    serialPorts?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigSerialPort>[] | undefined>;
+    /**
+     * -(Optional) Reference to an entity that the VM should be cloned or created from
+     */
+    sources?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigSource>[] | undefined>;
+    /**
+     * -(Optional) Storage configuration for VM.
+     */
+    storageConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigStorageConfig>[] | undefined>;
+    /**
+     * -(Optional) VM last updated time.
+     */
+    updateTime?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Indicates how the vTPM for the VM should be configured.
+     */
+    vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigVtpmConfig>[] | undefined>;
+}
+
+export interface OvaV2VmConfigApcConfig {
+    /**
+     * CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+     * - `cpu_model.name`: (Required) Name of the CPU model associated with the VM.
+     */
+    cpuModels?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigApcConfigCpuModel>[] | undefined>;
+    /**
+     * If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+     */
+    isApcEnabled?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaV2VmConfigApcConfigCpuModel {
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * -(Required) Name of the OVA.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigAvailabilityZone {
+    /**
+     * -(Optional) The globally unique identifier of an availability zone type UUID.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfig {
+    /**
+     * LegacyBoot config Object
+     */
+    legacyBoots?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigLegacyBoot>[] | undefined>;
+    /**
+     * UefiBoot config Object
+     */
+    uefiBoots?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBoot>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigLegacyBoot {
+    /**
+     * Boot Device object
+     * - `boot_device.boot_device_disk`: (Optional) Disk address.
+     * - `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+     * - `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * - `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+     * - `boot_device.boot_device_nic.mac_address`: (Required) mac address
+     */
+    bootDevices?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigLegacyBootBootDevice>[] | undefined>;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+     */
+    bootOrders?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigLegacyBootBootDevice {
+    bootDeviceDisks?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk>[] | undefined>;
+    bootDeviceNics?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Index of the serial port.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBoot {
+    /**
+     * Boot Device object
+     * - `boot_device.boot_device_disk`: (Optional) Disk address.
+     * - `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+     * - `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * - `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+     * - `boot_device.boot_device_nic.mac_address`: (Required) mac address
+     */
+    bootDevices?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootBootDevice>[] | undefined>;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+     */
+    bootOrders?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Indicate whether to enable secure boot or not
+     */
+    isSecureBootEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * Configuration for NVRAM to be presented to the VM.
+     * - `nvram_device.backing_storage_info`: (Required) Storage provided by Nutanix ADSF
+     */
+    nvramDevices?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDevice>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootBootDevice {
+    bootDeviceDisks?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk>[] | undefined>;
+    bootDeviceNics?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Index of the serial port.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDevice {
+    backingStorageInfos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo {
+    dataSources?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    diskSizeBytes?: pulumi.Input<number | undefined>;
+    isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    storageConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig>[] | undefined>;
+    storageContainers?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * Image Reference
+     * - `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference>[] | undefined>;
+    /**
+     * Vm Disk Reference
+     * - `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * - `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * - `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
+    vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    imageExtId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    vmReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Index of the serial port.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigCategory {
+    /**
+     * -(Optional) A globally unique identifier of a VM category of type UUID.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigCdRom {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfo>[] | undefined>;
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomDiskAddress>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+     */
+    isoType?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     * container.
+     */
+    dataSources?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfoDataSource>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes?: pulumi.Input<number | undefined>;
+    isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    /**
+     * Storage configuration for VM disks
+     * - `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    storageConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfoStorageConfig>[] | undefined>;
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfoStorageContainer>[] | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfoDataSourceReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     * - `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfoDataSourceReferenceImageReference>[] | undefined>;
+    /**
+     * Vm Disk Reference
+     * - `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * - `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * - `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
+    vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfoDataSourceReferenceVmDiskReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfoDataSourceReferenceImageReference {
+    imageExtId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfoDataSourceReferenceVmDiskReference {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    vmReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Index of the serial port.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomBackingInfoStorageContainer {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigCdRomDiskAddress {
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Index of the serial port.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigCluster {
+    /**
+     * -(Optional) The globally unique identifier of a cluster type UUID.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigDisk {
+    /**
+     * Supporting storage to create virtual disk on.
+     * - `backing_info.vm_disk`:(Optional) backing Info for vmDisk
+     * - `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
+     * - `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     */
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfo>[] | undefined>;
+    /**
+     * Disk address.
+     * - `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * - `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskDiskAddress>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfo {
+    adfsVolumeGroupReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoAdfsVolumeGroupReference>[] | undefined>;
+    vmDisks?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDisk>[] | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoAdfsVolumeGroupReference {
+    volumeGroupExtId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDisk {
+    dataSources?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskDataSource>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    diskSizeBytes?: pulumi.Input<number | undefined>;
+    isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    storageConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskStorageConfig>[] | undefined>;
+    storageContainers?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskStorageContainer>[] | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDiskDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * Image Reference
+     * - `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReferenceImageReference>[] | undefined>;
+    /**
+     * Vm Disk Reference
+     * - `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * - `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * - `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
+    vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    imageExtId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    vmReferences?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference>[] | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Index of the serial port.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDiskStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaV2VmConfigDiskBackingInfoVmDiskStorageContainer {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigDiskDiskAddress {
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Index of the serial port.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigGpus {
+    /**
+     * The device Id of the GPU.
+     */
+    deviceId?: pulumi.Input<number | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    fraction?: pulumi.Input<number | undefined>;
+    frameBufferSizeBytes?: pulumi.Input<number | undefined>;
+    guestDriverVersion?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGpusLink>[] | undefined>;
+    /**
+     * ) The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+     */
+    mode?: pulumi.Input<string | undefined>;
+    /**
+     * -(Required) Name of the OVA.
+     */
+    name?: pulumi.Input<string | undefined>;
+    numVirtualDisplayHeads?: pulumi.Input<number | undefined>;
+    /**
+     * The (S)egment:(B)us:(D)evice.(F)unction hardware address.
+     */
+    pciAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGpusPciAddress>[] | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
+    /**
+     * The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
+     */
+    vendor?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigGpusLink {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigGpusPciAddress {
+    bus?: pulumi.Input<number | undefined>;
+    device?: pulumi.Input<number | undefined>;
+    func?: pulumi.Input<number | undefined>;
+    segment?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomization {
+    /**
+     * -(Optional) The Nutanix Guest Tools customization settings.
+     *
+     * - `config.sysprep`: -(Optional) Sysprep config
+     * - `config.cloud_init`: -(Optional) CloudInit Config
+     */
+    configs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfig>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfig {
+    cloudInits?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigCloudInit>[] | undefined>;
+    syspreps?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigSysprep>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigCloudInit {
+    /**
+     * -(Optional) The script to use for cloud-init.
+     * - `cloud_init_script.user_data`: -(Optional) user data object
+     * - `cloud_init_script.custom_keys`: -(Optional) The list of the individual KeyValuePair elements.
+     */
+    cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScript>[] | undefined>;
+    /**
+     * -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
+    metadata?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue>[] | undefined>;
+    userDatas?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptUserData>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * -(Required) Name of the OVA.
+     */
+    name?: pulumi.Input<string | undefined>;
+    values?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean?: pulumi.Input<boolean | undefined>;
+    integer?: pulumi.Input<number | undefined>;
+    integerLists?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    mapOfStrings?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString>[] | undefined>;
+    object?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    string?: pulumi.Input<string | undefined>;
+    stringLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigSysprep {
+    /**
+     * -(Optional) Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+     */
+    installType?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Object either UnattendXml or CustomKeyValues
+     * - `sysprep_script.unattend_xml`: -(Optional) xml object
+     * - `sysprep_script.custom_key_values`: -(Optional) The list of the individual KeyValuePair elements.
+     */
+    sysprepScripts?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScript>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue>[] | undefined>;
+    unattendXmls?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptUnattendXml>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * -(Required) Name of the OVA.
+     */
+    name?: pulumi.Input<string | undefined>;
+    values?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean?: pulumi.Input<boolean | undefined>;
+    integer?: pulumi.Input<number | undefined>;
+    integerLists?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    mapOfStrings?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString>[] | undefined>;
+    object?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    string?: pulumi.Input<string | undefined>;
+    stringLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface OvaV2VmConfigGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfigGuestTool {
+    availableVersion?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) The list of the application names that are enabled on the guest VM.
+     */
+    capabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    guestOsVersion?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Indicates whether Nutanix Guest Tools is enabled or not.
+     */
+    isEnabled?: pulumi.Input<boolean | undefined>;
+    isInstalled?: pulumi.Input<boolean | undefined>;
+    isIsoInserted?: pulumi.Input<boolean | undefined>;
+    isReachable?: pulumi.Input<boolean | undefined>;
+    isVmMobilityDriversInstalled?: pulumi.Input<boolean | undefined>;
+    isVssSnapshotCapable?: pulumi.Input<boolean | undefined>;
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigHost {
+    /**
+     * -(Optional) A globally unique identifier of a host of type UUID.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNic {
+    /**
+     * Use `nic_backing_info.virtual_ethernet_nic` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     */
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicBackingInfo>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     */
+    networkInfos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNetworkInfo>[] | undefined>;
+    /**
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     */
+    nicBackingInfo?: pulumi.Input<inputs.OvaV2VmConfigNicNicBackingInfo | undefined>;
+    /**
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     */
+    nicNetworkInfo?: pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfo | undefined>;
+}
+
+export interface OvaV2VmConfigNicBackingInfo {
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNetworkInfoIpv4Info>[] | undefined>;
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC", "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaV2VmConfigNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface OvaV2VmConfigNicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfigNicNetworkInfoNetworkFunctionChain {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNetworkInfoSubnet {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicBackingInfo {
+    dpOffloadNic?: pulumi.Input<inputs.OvaV2VmConfigNicNicBackingInfoDpOffloadNic | undefined>;
+    sriovNic?: pulumi.Input<inputs.OvaV2VmConfigNicNicBackingInfoSriovNic | undefined>;
+    virtualEthernetNic?: pulumi.Input<inputs.OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicBackingInfoDpOffloadNic {
+    dpOffloadProfileReference: pulumi.Input<inputs.OvaV2VmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference>;
+    hostPcieDeviceReference?: pulumi.Input<inputs.OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    extId: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicBackingInfoSriovNic {
+    hostPcieDeviceReference?: pulumi.Input<inputs.OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    sriovProfileReference: pulumi.Input<inputs.OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference>;
+}
+
+export interface OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference {
+    extId: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic {
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfo {
+    dpOffloadNicNetworkInfo?: pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo | undefined>;
+    sriovNicNetworkInfo?: pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfo | undefined>;
+    virtualEthernetNicNetworkInfo?: pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfo {
+    vlanId?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC", "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigOwnershipInfo {
+    /**
+     * Reference to the owner.
+     * - `owner.ext_id`: -(Optional) A globally unique identifier of a VM owner type UUID.
+     */
+    owners?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigOwnershipInfoOwner>[] | undefined>;
+}
+
+export interface OvaV2VmConfigOwnershipInfoOwner {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigProject {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigProtectionPolicyState {
+    /**
+     * Reference to the policy object in use.
+     * - `policy.ext_id`: (Optional) Reference to the policy object in use.
+     */
+    policies?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigProtectionPolicyStatePolicy>[] | undefined>;
+}
+
+export interface OvaV2VmConfigProtectionPolicyStatePolicy {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigSerialPort {
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Index of the serial port.
+     */
+    index?: pulumi.Input<number | undefined>;
+    /**
+     * -(Optional) Indicates whether the serial port is connected or not.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaV2VmConfigSource {
+    /**
+     * -(Optional) Reference to an entity from which the VM should be cloned or created. Values are:
+     * - VM_RECOVERY_POINT: Reference to the recovery point entity from which the VM should be cloned or created.
+     * - VM: Reference to an entity from which the VM should be cloned or created.
+     */
+    entityType?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaV2VmConfigStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * QoS parameters to be enforced.
+     * - `qos_config.throttled_iops`: (Optional) Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+     */
+    qosConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigStorageConfigQosConfig>[] | undefined>;
+}
+
+export interface OvaV2VmConfigStorageConfigQosConfig {
+    throttledIops?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaV2VmConfigVtpmConfig {
+    /**
+     * Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+     */
+    isVtpmEnabled?: pulumi.Input<boolean | undefined>;
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfig {
+    /**
+     * Categories for the VM.
+     */
+    categories?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCategory>[] | undefined>;
+    /**
+     * CD-ROMs attached to the VM.
+     */
+    cdRoms?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRom>[] | undefined>;
+    /**
+     * Additional disks to attach to the VM.
+     */
+    disks?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDisk>[] | undefined>;
+    /**
+     * Memory size in bytes.
+     */
+    memorySizeBytes?: pulumi.Input<number | undefined>;
+    /**
+     * VM name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * NICs attached to the VM.
+     */
+    nics: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNic>[]>;
+    /**
+     * Number of cores per socket. Value should be at least 1.
+     */
+    numCoresPerSocket?: pulumi.Input<number | undefined>;
+    /**
+     * Number of vCPU sockets. Value should be at least 1.
+     */
+    numSockets?: pulumi.Input<number | undefined>;
+    /**
+     * Number of threads per core. Value should be at least 1.
+     */
+    numThreadsPerCore?: pulumi.Input<number | undefined>;
+    /**
+     * Power state of the VM (ON or OFF). Default is "ON".
+     */
+    powerState?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCategory {
+    /**
+     * A globally unique identifier of a VM category of type UUID.
+     *
+     *
+     * See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRom {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfo>[] | undefined>;
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomDiskAddress>[] | undefined>;
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+     */
+    isoType?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfo {
+    dataSources?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSource>[] | undefined>;
+    /**
+     * Disk size in bytes.
+     */
+    diskSizeBytes?: pulumi.Input<number | undefined>;
+    /**
+     * Storage configuration options.
+     */
+    storageConfigs?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfoStorageConfig>[] | undefined>;
+    /**
+     * Storage container for the disk.
+     */
+    storageContainers?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfoStorageContainer>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSource {
+    references?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReference>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReference {
+    imageReferences?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReferenceImageReference>[] | undefined>;
+    vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReferenceVmDiskReference>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReferenceImageReference {
+    imageExtId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReferenceVmDiskReference {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    vmReferences?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * Bus type for the disk. Valid values "SCSI", "SPAPR", "PCI", "IDE", "SATA".
+     */
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * Device index on the bus.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfoStorageConfig {
+    isFlashModeEnabled?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomBackingInfoStorageContainer {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigCdRomDiskAddress {
+    /**
+     * Bus type for the disk. Valid values "SCSI", "SPAPR", "PCI", "IDE", "SATA".
+     */
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * Device index on the bus.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDisk {
+    /**
+     * Storage configuration for the disk.
+     */
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfo>[] | undefined>;
+    /**
+     * Disk address configuration.
+     */
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskDiskAddress>[] | undefined>;
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfo {
+    adfsVolumeGroupReferences?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoAdfsVolumeGroupReference>[] | undefined>;
+    /**
+     * VM disk configuration.
+     */
+    vmDisks?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDisk>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoAdfsVolumeGroupReference {
+    volumeGroupExtId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDisk {
+    dataSources?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSource>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    /**
+     * Disk size in bytes.
+     */
+    diskSizeBytes?: pulumi.Input<number | undefined>;
+    isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    /**
+     * Storage configuration options.
+     */
+    storageConfigs?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageConfig>[] | undefined>;
+    /**
+     * Storage container for the disk.
+     */
+    storageContainers?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageContainer>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSource {
+    references?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReference>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReference {
+    imageReferences?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReferenceImageReference>[] | undefined>;
+    vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    imageExtId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
+    vmReferences?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * Bus type for the disk. Valid values "SCSI", "SPAPR", "PCI", "IDE", "SATA".
+     */
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * Device index on the bus.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageConfig {
+    isFlashModeEnabled?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageContainer {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigDiskDiskAddress {
+    /**
+     * Bus type for the disk. Valid values "SCSI", "SPAPR", "PCI", "IDE", "SATA".
+     */
+    busType?: pulumi.Input<string | undefined>;
+    /**
+     * Device index on the bus.
+     */
+    index?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNic {
+    /**
+     * Use `nic_backing_info.virtual_ethernet_nic` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     */
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicBackingInfo>[] | undefined>;
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     */
+    networkInfos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfo>[] | undefined>;
+    /**
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     */
+    nicBackingInfo?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfo | undefined>;
+    /**
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     */
+    nicNetworkInfo?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfo | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicBackingInfo {
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4Info>[] | undefined>;
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfoNetworkFunctionChain {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfoSubnet {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicBackingInfo {
+    dpOffloadNic?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfoDpOffloadNic | undefined>;
+    sriovNic?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfoSriovNic | undefined>;
+    virtualEthernetNic?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfoVirtualEthernetNic | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicBackingInfoDpOffloadNic {
+    dpOffloadProfileReference: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference>;
+    hostPcieDeviceReference?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference | undefined>;
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId: pulumi.Input<string>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicBackingInfoSriovNic {
+    hostPcieDeviceReference?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference | undefined>;
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    sriovProfileReference: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfoSriovNicSriovProfileReference>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicBackingInfoSriovNicSriovProfileReference {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId: pulumi.Input<string>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicBackingInfoVirtualEthernetNic {
+    /**
+     * Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfo {
+    dpOffloadNicNetworkInfo?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo | undefined>;
+    sriovNicNetworkInfo?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoSriovNicNetworkInfo | undefined>;
+    virtualEthernetNicNetworkInfo?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoSriovNicNetworkInfo {
+    vlanId?: pulumi.Input<number | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
+    /**
+     * -(Required) The external identifier for an OVA.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
 export interface PbrDestination {
     addressType?: pulumi.Input<string | undefined>;
     prefixLength?: pulumi.Input<number | undefined>;
@@ -11110,7 +14540,7 @@ export interface PbrV2Link {
 }
 
 export interface PbrV2Metadata {
-    categoryIds?: pulumi.Input<pulumi.Input<any[]>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     ownerReferenceId?: pulumi.Input<string | undefined>;
     ownerUserName?: pulumi.Input<string | undefined>;
     projectName?: pulumi.Input<string | undefined>;
@@ -11537,8 +14967,6 @@ export interface PcBackupTargetV2LocationObjectStoreLocation {
 export interface PcBackupTargetV2LocationObjectStoreLocationBackupPolicy {
     /**
      * -(Required) RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
-     *
-     * See detailed information in [Nutanix Create Backup Target V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createBackupTarget).
      */
     rpoInMinutes: pulumi.Input<number>;
 }
@@ -11816,7 +15244,7 @@ export interface PcDeployV2NetworkExternalNetworkDefaultGatewayFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -11939,7 +15367,7 @@ export interface PcDeployV2NetworkExternalNetworkSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -12000,7 +15428,7 @@ export interface PcDeployV2NetworkInternalNetworksDefaultGatewayFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -12123,7 +15551,7 @@ export interface PcDeployV2NetworkInternalNetworksSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -12169,7 +15597,7 @@ export interface PcDeployV2NetworkNameServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -12215,7 +15643,7 @@ export interface PcDeployV2NetworkNtpServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -12312,7 +15740,7 @@ export interface PcRegistrationV2ConfigCredential {
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
      */
     password: pulumi.Input<string>;
     /**
@@ -12849,7 +16277,7 @@ export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterC
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
      */
     password: pulumi.Input<string>;
     /**
@@ -12941,7 +16369,7 @@ export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemo
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
      */
     password: pulumi.Input<string>;
     /**
@@ -12995,8 +16423,6 @@ export interface PcRestoreSourceV2LocationObjectStoreLocation {
 export interface PcRestoreSourceV2LocationObjectStoreLocationBackupPolicy {
     /**
      * -(Required) RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
-     *
-     * See detailed information in [Nutanix Restore Source V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createRestoreSource).
      */
     rpoInMinutes: pulumi.Input<number>;
 }
@@ -13292,7 +16718,7 @@ export interface PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayFqd
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -13415,7 +16841,7 @@ export interface PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -13476,7 +16902,7 @@ export interface PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayFq
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -13599,7 +17025,7 @@ export interface PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -13645,7 +17071,7 @@ export interface PcRestoreV2DomainManagerNetworkNameServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -13691,7 +17117,7 @@ export interface PcRestoreV2DomainManagerNetworkNtpServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -14214,10 +17640,6 @@ export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAuto
 export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionLocal {
     /**
      * -(Required) Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
-     *
-     *
-     *
-     * See detailed information in [Nutanix Protection Policy v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/createProtectionPolicy).
      */
     frequency: pulumi.Input<number>;
     /**
@@ -14234,10 +17656,6 @@ export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAuto
 export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionRemote {
     /**
      * -(Required) Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
-     *
-     *
-     *
-     * See detailed information in [Nutanix Protection Policy v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/createProtectionPolicy).
      */
     frequency: pulumi.Input<number>;
     /**
@@ -14960,18 +18378,18 @@ export interface RolesV2Link {
 export interface RoutesV2Destination {
     /**
      * IPv4 Subnet Object
-     * * `ipv4.ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 format.
-     * * `ipv4.ip.value`: (Required) The IPv4 address of the host.
-     * * `ipv4.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv4 address belongs.
-     * * `ipv4.prefix_length`: (Required) The prefix length of the network to which this host IPv4 address belongs.
+     * - `ipv4.ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     * - `ipv4.ip.value`: (Required) The IPv4 address of the host.
+     * - `ipv4.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     * - `ipv4.prefix_length`: (Required) The prefix length of the network to which this host IPv4 address belongs.
      */
     ipv4?: pulumi.Input<inputs.RoutesV2DestinationIpv4 | undefined>;
     /**
      * IPv6 Subnet Object
-     * * `ipv6.ip`: (Required) IP address format
-     * * `ipv6.ip.value`: (Required) The IPv6 address of the host.
-     * * `ipv6.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv6 address belongs.
-     * * `ipv6.prefix_length`: (Required) The prefix length of the network to which this host IPv6 address belongs.
+     * - `ipv6.ip`: (Required) IP address format
+     * - `ipv6.ip.value`: (Required) The IPv6 address of the host.
+     * - `ipv6.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv6 address belongs.
+     * - `ipv6.prefix_length`: (Required) The prefix length of the network to which this host IPv6 address belongs.
      */
     ipv6?: pulumi.Input<inputs.RoutesV2DestinationIpv6 | undefined>;
 }
@@ -15788,6 +19206,53 @@ export interface StorageContainersV2NfsWhitelistAddressIpv6 {
     value?: pulumi.Input<string | undefined>;
 }
 
+export interface StoragePolicyV2CompressionSpec {
+    /**
+     * - (Required) Controls enabling or disabling compression. If no explicit preference is set, the system chooses a value.
+     * Valid values:
+     * * `"DISABLED"`:- User wants data not compressed.
+     * * `"POSTPROCESS"`:- User wants data compressed later.
+     * * `"INLINE"`:- User wants data compressed inline.
+     * * `"SYSTEM_DERIVED"`:- User is not interested in compression; system decides.
+     */
+    compressionState: pulumi.Input<string>;
+}
+
+export interface StoragePolicyV2EncryptionSpec {
+    /**
+     * - (Required) Controls enabling encryption. Once enabled, it cannot be disabled. If no explicit preference is set, the system decides.
+     * Valid values:
+     * * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
+     * * `"ENABLED"`:- User wants data encrypted.
+     *
+     * > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+     */
+    encryptionState: pulumi.Input<string>;
+}
+
+export interface StoragePolicyV2FaultToleranceSpec {
+    /**
+     * - (Required) Specifies the number of data copies for entities governed by the Storage Policy.
+     * Valid values:
+     * * `"SYSTEM_DERIVED"`:- User has not provided the number of copies; system decides.
+     * * `"TWO"`:- Two data copies (Original + 1 copy).
+     * * `"THREE"`:- Three data copies (Original + 2 copies).
+     */
+    replicationFactor: pulumi.Input<string>;
+}
+
+export interface StoragePolicyV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface StoragePolicyV2QosSpec {
+    /**
+     * - (Required) Specifies throttled IOPS for governed entities. The block size for IO is 32kB. Valid range: 100 to 2147483647.
+     */
+    throttledIops: pulumi.Input<number>;
+}
+
 export interface SubnetCategory {
     /**
      * - (Optional) Subnet name (Readonly).
@@ -15800,26 +19265,59 @@ export interface SubnetCategory {
 }
 
 export interface SubnetV2DhcpOption {
+    /**
+     * Boot file name
+     */
     bootFileName?: pulumi.Input<string | undefined>;
+    /**
+     * The DNS domain name of the client.
+     */
     domainName?: pulumi.Input<string | undefined>;
+    /**
+     * List of Domain Name Server addresses.
+     */
     domainNameServers?: pulumi.Input<pulumi.Input<inputs.SubnetV2DhcpOptionDomainNameServer>[] | undefined>;
+    /**
+     * List of NTP server addresses
+     */
     ntpServers?: pulumi.Input<pulumi.Input<inputs.SubnetV2DhcpOptionNtpServer>[] | undefined>;
+    /**
+     * The DNS domain search list.
+     */
     searchDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * TFTP server name
+     */
     tftpServerName?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2DhcpOptionDomainNameServer {
+    /**
+     * IPv4 Object. Reference to address configuration
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.SubnetV2DhcpOptionDomainNameServerIpv4>[] | undefined>;
+    /**
+     * IPv6 Object. Reference to address configuration
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.SubnetV2DhcpOptionDomainNameServerIpv6>[] | undefined>;
 }
 
 export interface SubnetV2DhcpOptionDomainNameServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2DhcpOptionDomainNameServerIpv6 {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
@@ -15829,12 +19327,21 @@ export interface SubnetV2DhcpOptionNtpServer {
 }
 
 export interface SubnetV2DhcpOptionNtpServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2DhcpOptionNtpServerIpv6 {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
@@ -15844,101 +19351,194 @@ export interface SubnetV2DynamicIpAddress {
 }
 
 export interface SubnetV2DynamicIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2DynamicIpAddressIpv6 {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfig {
+    /**
+     * IP V4 configuration.
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv4>[] | undefined>;
+    /**
+     * IP V6 configuration
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv6>[] | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv4 {
+    /**
+     * Reference to address configuration
+     */
     defaultGatewayIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv4DefaultGatewayIp>[] | undefined>;
+    /**
+     * Reference to address configuration
+     */
     dhcpServerAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv4DhcpServerAddress>[] | undefined>;
+    /**
+     * subnet ip
+     */
     ipSubnets?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv4IpSubnet>[] | undefined>;
+    /**
+     * Pool of IP addresses from where IPs are allocated.
+     */
     poolLists?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv4PoolList>[] | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv4DefaultGatewayIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv4DhcpServerAddress {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv4IpSubnet {
+    /**
+     * Reference to address configuration
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv4IpSubnetIp>[] | undefined>;
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv4IpSubnetIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv4PoolList {
+    /**
+     * Reference to address configuration
+     */
     endIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv4PoolListEndIp>[] | undefined>;
+    /**
+     * Reference to address configuration
+     */
     startIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv4PoolListStartIp>[] | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv4PoolListEndIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv4PoolListStartIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv6 {
+    /**
+     * Reference to address configuration
+     */
     defaultGatewayIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv6DefaultGatewayIp>[] | undefined>;
+    /**
+     * Reference to address configuration
+     */
     dhcpServerAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv6DhcpServerAddress>[] | undefined>;
+    /**
+     * subnet ip
+     */
     ipSubnets?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv6IpSubnet>[] | undefined>;
+    /**
+     * Pool of IP addresses from where IPs are allocated.
+     */
     poolLists?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv6PoolList>[] | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv6DefaultGatewayIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv6DhcpServerAddress {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv6IpSubnet {
+    /**
+     * Reference to address configuration
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv6IpSubnetIp>[] | undefined>;
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv6IpSubnetIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv6PoolList {
+    /**
+     * Reference to address configuration
+     */
     endIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv6PoolListEndIp>[] | undefined>;
+    /**
+     * Reference to address configuration
+     */
     startIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpConfigIpv6PoolListStartIp>[] | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv6PoolListEndIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpConfigIpv6PoolListStartIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
@@ -15956,17 +19556,29 @@ export interface SubnetV2IpUsageIpPoolUsage {
 }
 
 export interface SubnetV2IpUsageIpPoolUsageRange {
+    /**
+     * Reference to address configuration
+     */
     endIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpUsageIpPoolUsageRangeEndIp>[] | undefined>;
+    /**
+     * Reference to address configuration
+     */
     startIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2IpUsageIpPoolUsageRangeStartIp>[] | undefined>;
 }
 
 export interface SubnetV2IpUsageIpPoolUsageRangeEndIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2IpUsageIpPoolUsageRangeStartIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
@@ -15975,51 +19587,112 @@ export interface SubnetV2Link {
     rel?: pulumi.Input<string | undefined>;
 }
 
+export interface SubnetV2Metadata {
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ownerReferenceId?: pulumi.Input<string | undefined>;
+    ownerUserName?: pulumi.Input<string | undefined>;
+    projectName?: pulumi.Input<string | undefined>;
+    projectReferenceId?: pulumi.Input<string | undefined>;
+}
+
 export interface SubnetV2ReservedIpAddress {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VirtualSwitch {
+    /**
+     * The types of bond modes
+     */
     bondMode?: pulumi.Input<boolean | undefined>;
+    /**
+     * Cluster configuration list
+     */
     clusters?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchCluster>[] | undefined>;
+    /**
+     * Input body to configure a Virtual Switch
+     */
     description?: pulumi.Input<string | undefined>;
     extId?: pulumi.Input<string | undefined>;
+    /**
+     * When true, the node is not put in maintenance mode during the create/update operation.
+     */
     hasDeploymentError?: pulumi.Input<boolean | undefined>;
+    /**
+     * Indicates whether it is a default Virtual Switch which cannot be deleted
+     */
     isDefault?: pulumi.Input<boolean | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchLink>[] | undefined>;
     metadatas?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchMetadata>[] | undefined>;
+    /**
+     * MTU
+     */
     mtu?: pulumi.Input<number | undefined>;
+    /**
+     * User-visible Virtual Switch name
+     */
     name?: pulumi.Input<string | undefined>;
     tenantId?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VirtualSwitchCluster {
+    /**
+     * Reference ExtId for the cluster. This is a required parameter on Prism Element ; and is optional on Prism Central
+     */
     extId?: pulumi.Input<string | undefined>;
+    /**
+     * Reference to address configuration
+     */
     gatewayIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchClusterGatewayIpAddress>[] | undefined>;
+    /**
+     * Host configuration array
+     */
     hosts?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchClusterHost>[] | undefined>;
 }
 
 export interface SubnetV2VirtualSwitchClusterGatewayIpAddress {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VirtualSwitchClusterHost {
+    /**
+     * Reference to the host
+     */
     extId?: pulumi.Input<string | undefined>;
+    /**
+     * Host NIC array
+     */
     hostNics?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     internalBridgeName?: pulumi.Input<string | undefined>;
+    /**
+     * Ip Address config.
+     * - `ip_address.ip`: (Required) Reference to address configuration
+     * - `ip_address.prefix_length`: (Required) prefix length of address.
+     */
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchClusterHostIpAddress>[] | undefined>;
     routeTable?: pulumi.Input<number | undefined>;
 }
 
 export interface SubnetV2VirtualSwitchClusterHostIpAddress {
+    /**
+     * Reference to address configuration
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchClusterHostIpAddressIp>[] | undefined>;
     prefixLength?: pulumi.Input<number | undefined>;
 }
 
 export interface SubnetV2VirtualSwitchClusterHostIpAddressIp {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
@@ -16029,7 +19702,7 @@ export interface SubnetV2VirtualSwitchLink {
 }
 
 export interface SubnetV2VirtualSwitchMetadata {
-    categoryIds?: pulumi.Input<pulumi.Input<any[]>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     ownerReferenceId?: pulumi.Input<string | undefined>;
     ownerUserName?: pulumi.Input<string | undefined>;
     projectName?: pulumi.Input<string | undefined>;
@@ -16037,49 +19710,113 @@ export interface SubnetV2VirtualSwitchMetadata {
 }
 
 export interface SubnetV2Vpc {
+    /**
+     * List of DHCP options to be configured.
+     */
     commonDhcpOptions?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcCommonDhcpOption>[] | undefined>;
+    /**
+     * Description of the VPC.
+     */
     description?: pulumi.Input<string | undefined>;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
     extId?: pulumi.Input<string | undefined>;
+    /**
+     * External routing domain associated with this route table
+     */
     externalRoutingDomainReference?: pulumi.Input<string | undefined>;
+    /**
+     * List of external subnets that the VPC is attached to.
+     */
     externalSubnets?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternalSubnet>[] | undefined>;
+    /**
+     * CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+     */
     externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternallyRoutablePrefix>[] | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcLink>[] | undefined>;
     metadatas?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcMetadata>[] | undefined>;
+    /**
+     * Name of the VPC.
+     */
     name?: pulumi.Input<string | undefined>;
     snatIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcSnatIp>[] | undefined>;
     tenantId?: pulumi.Input<string | undefined>;
+    /**
+     * Type of VPC. Acceptables values are "REGULAR" , "TRANSIT".
+     */
     vpcType?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcCommonDhcpOption {
+    /**
+     * List of Domain Name Server addresses.
+     * - `domain_name_servers.ipv4`: (Optional) Reference to address configuration
+     * - `domain_name_servers.ipv6`: (Optional) Reference to address configuration
+     */
     domainNameServers?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcCommonDhcpOptionDomainNameServer>[] | undefined>;
 }
 
 export interface SubnetV2VpcCommonDhcpOptionDomainNameServer {
+    /**
+     * IPv4 Object. Reference to address configuration
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcCommonDhcpOptionDomainNameServerIpv4>[] | undefined>;
+    /**
+     * IPv6 Object. Reference to address configuration
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcCommonDhcpOptionDomainNameServerIpv6>[] | undefined>;
 }
 
 export interface SubnetV2VpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcCommonDhcpOptionDomainNameServerIpv6 {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcExternalSubnet {
     activeGatewayCount?: pulumi.Input<number | undefined>;
+    /**
+     * Reference of gateway nodes
+     */
     activeGatewayNodes?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternalSubnetActiveGatewayNode>[] | undefined>;
+    /**
+     * List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+     */
     externalIps?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternalSubnetExternalIp>[] | undefined>;
+    /**
+     * List of gateway nodes that can be used for external connectivity.
+     */
     gatewayNodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * External subnet reference.
+     */
     subnetReference?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcExternalSubnetActiveGatewayNode {
+    /**
+     * Node id
+     */
     nodeId?: pulumi.Input<string | undefined>;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     * - `node_ip_address.ipv4`: (Optional) Reference to address configuration
+     * - `node_ip_address.ipv6`: (Optional) Reference to address configuration
+     */
     nodeIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress>[] | undefined>;
 }
 
@@ -16089,52 +19826,101 @@ export interface SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress {
 }
 
 export interface SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcExternalSubnetExternalIp {
+    /**
+     * Reference to address configuration
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternalSubnetExternalIpIpv4>[] | undefined>;
+    /**
+     * Reference to address configuration
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternalSubnetExternalIpIpv6>[] | undefined>;
 }
 
 export interface SubnetV2VpcExternalSubnetExternalIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcExternalSubnetExternalIpIpv6 {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcExternallyRoutablePrefix {
+    /**
+     * IP v4 subnet
+     * - `ipv4.ip`: (Required) Reference to address configuration
+     * - `ipv4.prefix_length`: (Required) The prefix length of the network.
+     */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternallyRoutablePrefixIpv4>[] | undefined>;
+    /**
+     * IP v6 subnet
+     * - `ipv6.ip`: (Required) Reference to address configuration
+     * - `ipv6.prefix_length`: (Required) The prefix length of the network.
+     */
     ipv6s?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternallyRoutablePrefixIpv6>[] | undefined>;
 }
 
 export interface SubnetV2VpcExternallyRoutablePrefixIpv4 {
+    /**
+     * Reference to address configuration
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternallyRoutablePrefixIpv4Ip>[] | undefined>;
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
 }
 
 export interface SubnetV2VpcExternallyRoutablePrefixIpv4Ip {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcExternallyRoutablePrefixIpv6 {
+    /**
+     * Reference to address configuration
+     */
     ips?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternallyRoutablePrefixIpv6Ip>[] | undefined>;
     prefixLength?: pulumi.Input<number | undefined>;
 }
 
 export interface SubnetV2VpcExternallyRoutablePrefixIpv6Ip {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
@@ -16144,7 +19930,7 @@ export interface SubnetV2VpcLink {
 }
 
 export interface SubnetV2VpcMetadata {
-    categoryIds?: pulumi.Input<pulumi.Input<any[]>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     ownerReferenceId?: pulumi.Input<string | undefined>;
     ownerUserName?: pulumi.Input<string | undefined>;
     projectName?: pulumi.Input<string | undefined>;
@@ -16157,12 +19943,21 @@ export interface SubnetV2VpcSnatIp {
 }
 
 export interface SubnetV2VpcSnatIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+     */
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface SubnetV2VpcSnatIpIpv6 {
     prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * value of address
+     */
     value?: pulumi.Input<string | undefined>;
 }
 
@@ -16369,10 +20164,6 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
      * The script to use for cloud-init.
      * * `cloud_init_script.user_data`: (Optional) user data object
      * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
-     *
-     *
-     *
-     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
      */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript>[] | undefined>;
     /**
@@ -16464,15 +20255,27 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic {
     /**
-     * Defines a NIC emulated by the hypervisor
+     * Use `nic_backing_info.virtual_ethernet_nic` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo>[] | undefined>;
     extId?: pulumi.Input<string | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink>[] | undefined>;
     /**
-     * Network information for a NIC.
+     * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo>[] | undefined>;
+    /**
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     */
+    nicBackingInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfo | undefined>;
+    /**
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     */
+    nicNetworkInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfo | undefined>;
     tenantId?: pulumi.Input<string | undefined>;
 }
 
@@ -16541,12 +20344,12 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress {
     prefixLength?: pulumi.Input<number | undefined>;
-    value: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
     prefixLength?: pulumi.Input<number | undefined>;
-    value: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info {
@@ -16563,6 +20366,216 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 }
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfo {
+    dpOffloadNic?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNic | undefined>;
+    sriovNic?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNic | undefined>;
+    virtualEthernetNic?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoVirtualEthernetNic | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNic {
+    dpOffloadProfileReference: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference>;
+    hostPcieDeviceReference?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    extId: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNic {
+    hostPcieDeviceReference?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    sriovProfileReference: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicSriovProfileReference>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicSriovProfileReference {
+    extId: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoVirtualEthernetNic {
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfo {
+    dpOffloadNicNetworkInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo | undefined>;
+    sriovNicNetworkInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoSriovNicNetworkInfo | undefined>;
+    virtualEthernetNicNetworkInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoSriovNicNetworkInfo {
+    vlanId?: pulumi.Input<number | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
     extId?: pulumi.Input<string | undefined>;
 }
 
@@ -16591,10 +20604,6 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
      * The script to use for cloud-init.
      * * `cloud_init_script.user_data`: (Optional) user data object
      * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
-     *
-     *
-     *
-     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
      */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript>[] | undefined>;
     /**
@@ -17327,10 +21336,6 @@ export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigClou
      * The script to use for cloud-init.
      * * `cloud_init_script.user_data`: (Optional) user data object
      * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
-     *
-     *
-     *
-     * See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/createTemplate).
      */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript>[] | undefined>;
     /**
@@ -17450,15 +21455,27 @@ export interface TemplateV2TemplateVersionSpecVmSpecLink {
 
 export interface TemplateV2TemplateVersionSpecVmSpecNic {
     /**
-     * Defines a NIC emulated by the hypervisor
+     * Use `nic_backing_info.virtual_ethernet_nic` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfo>[] | undefined>;
     extId?: pulumi.Input<string | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicLink>[] | undefined>;
     /**
-     * Network information for a NIC.
+     * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo>[] | undefined>;
+    /**
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     */
+    nicBackingInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo | undefined>;
+    /**
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     */
+    nicNetworkInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo | undefined>;
     tenantId?: pulumi.Input<string | undefined>;
 }
 
@@ -17527,12 +21544,12 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config {
 
 export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress {
     prefixLength?: pulumi.Input<number | undefined>;
-    value: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
     prefixLength?: pulumi.Input<number | undefined>;
-    value: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info {
@@ -17549,6 +21566,216 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctio
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo {
+    dpOffloadNic?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoDpOffloadNic | undefined>;
+    sriovNic?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoSriovNic | undefined>;
+    virtualEthernetNic?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoVirtualEthernetNic | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoDpOffloadNic {
+    dpOffloadProfileReference: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoDpOffloadNicDpOffloadProfileReference>;
+    hostPcieDeviceReference?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoDpOffloadNicHostPcieDeviceReference | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    extId: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoSriovNic {
+    hostPcieDeviceReference?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoSriovNicHostPcieDeviceReference | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    sriovProfileReference: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoSriovNicSriovProfileReference>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoSriovNicHostPcieDeviceReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoSriovNicSriovProfileReference {
+    extId: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoVirtualEthernetNic {
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo {
+    dpOffloadNicNetworkInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfo | undefined>;
+    sriovNicNetworkInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoSriovNicNetworkInfo | undefined>;
+    virtualEthernetNicNetworkInfo?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfo | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoSriovNicNetworkInfo {
+    vlanId?: pulumi.Input<number | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
     extId?: pulumi.Input<string | undefined>;
 }
 
@@ -17857,11 +22084,11 @@ export interface UserProjectReferenceList {
 
 export interface UsersV2AdditionalAttribute {
     /**
-     * - The URL at which the entity described by the link can be accessed.
+     * -(Optional) The URL at which the entity described by the link can be accessed.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     * -(Optional) A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
      */
     value?: pulumi.Input<number | undefined>;
 }
@@ -17876,7 +22103,7 @@ export interface UsersV2BucketsAccessKey {
      */
     createdTime?: pulumi.Input<string | undefined>;
     /**
-     * - A globally unique identifier of an instance that is suitable for external consumption.
+     * -(Optional) External Identifier of the User.
      */
     extId?: pulumi.Input<string | undefined>;
     /**
@@ -18802,7 +23029,9 @@ export interface VirtualMachineV2Host {
 
 export interface VirtualMachineV2Nic {
     /**
-     * Defines a NIC emulated by the hypervisor
+     * Use `nic_backing_info.virtual_ethernet_nic` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicBackingInfo>[] | undefined>;
     /**
@@ -18810,9 +23039,19 @@ export interface VirtualMachineV2Nic {
      */
     extId?: pulumi.Input<string | undefined>;
     /**
-     * Network information for a NIC.
+     * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNetworkInfo>[] | undefined>;
+    /**
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     */
+    nicBackingInfo?: pulumi.Input<inputs.VirtualMachineV2NicNicBackingInfo | undefined>;
+    /**
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     */
+    nicNetworkInfo?: pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfo | undefined>;
 }
 
 export interface VirtualMachineV2NicBackingInfo {
@@ -18928,6 +23167,302 @@ export interface VirtualMachineV2NicNetworkInfoSubnet {
     extId?: pulumi.Input<string | undefined>;
 }
 
+export interface VirtualMachineV2NicNicBackingInfo {
+    dpOffloadNic?: pulumi.Input<inputs.VirtualMachineV2NicNicBackingInfoDpOffloadNic | undefined>;
+    sriovNic?: pulumi.Input<inputs.VirtualMachineV2NicNicBackingInfoSriovNic | undefined>;
+    virtualEthernetNic?: pulumi.Input<inputs.VirtualMachineV2NicNicBackingInfoVirtualEthernetNic | undefined>;
+}
+
+export interface VirtualMachineV2NicNicBackingInfoDpOffloadNic {
+    /**
+     * DP offload profile reference.
+     */
+    dpOffloadProfileReference: pulumi.Input<inputs.VirtualMachineV2NicNicBackingInfoDpOffloadNicDpOffloadProfileReference>;
+    /**
+     * Host PCIe device reference.
+     */
+    hostPcieDeviceReference?: pulumi.Input<inputs.VirtualMachineV2NicNicBackingInfoDpOffloadNicHostPcieDeviceReference | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: pulumi.Input<string>;
+}
+
+export interface VirtualMachineV2NicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicBackingInfoSriovNic {
+    /**
+     * Host PCIe device reference.
+     */
+    hostPcieDeviceReference?: pulumi.Input<inputs.VirtualMachineV2NicNicBackingInfoSriovNicHostPcieDeviceReference | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * SR-IOV profile reference.
+     */
+    sriovProfileReference: pulumi.Input<inputs.VirtualMachineV2NicNicBackingInfoSriovNicSriovProfileReference>;
+}
+
+export interface VirtualMachineV2NicNicBackingInfoSriovNicHostPcieDeviceReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicBackingInfoSriovNicSriovProfileReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: pulumi.Input<string>;
+}
+
+export interface VirtualMachineV2NicNicBackingInfoVirtualEthernetNic {
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfo {
+    dpOffloadNicNetworkInfo?: pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfo | undefined>;
+    sriovNicNetworkInfo?: pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoSriovNicNetworkInfo | undefined>;
+    virtualEthernetNicNetworkInfo?: pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoSriovNicNetworkInfo {
+    /**
+     * VLAN ID for the SR-IOV NIC.
+     */
+    vlanId?: pulumi.Input<number | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    /**
+     * The prefix length of the IP address.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
 export interface VirtualMachineV2OwnershipInfo {
     /**
      * Reference to the owner.
@@ -18939,6 +23474,13 @@ export interface VirtualMachineV2OwnershipInfo {
 export interface VirtualMachineV2OwnershipInfoOwner {
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualMachineV2Project {
+    /**
+     * The globally unique identifier of an instance of type UUID.
      */
     extId?: pulumi.Input<string | undefined>;
 }
@@ -19015,10 +23557,12 @@ export interface VmCdromInsertEjectV2BackingInfo {
      * A reference to a disk or image that contains the contents of a disk.
      */
     dataSources?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfoDataSource>[] | undefined>;
+    diskExtId?: pulumi.Input<string | undefined>;
     /**
      * Size of the disk in Bytes
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
+    isMigrationInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * Storage configuration for VM disks
      * * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -19047,9 +23591,6 @@ export interface VmCdromInsertEjectV2BackingInfoDataSourceReference {
      * Vm Disk Reference
      * * `vm_disk_reference.disk_address`: (Required) Disk address.
      * * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
-     *
-     *
-     * See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/insertCdRomById).
      */
     vmDiskReferences?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference>[] | undefined>;
 }
@@ -19085,6 +23626,11 @@ export interface VmCdromInsertEjectV2BackingInfoStorageContainer {
      * The globally unique identifier of a CD-ROM. It should be of type UUID.
      */
     extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCdromInsertEjectV2DiskAddress {
+    busType?: pulumi.Input<string | undefined>;
+    index?: pulumi.Input<number | undefined>;
 }
 
 export interface VmCloneV2ApcConfig {
@@ -19334,7 +23880,7 @@ export interface VmCloneV2Category {
 
 export interface VmCloneV2CdRom {
     /**
-     * - (Optional) Defines a NIC emulated by the hypervisor
+     * - (Optional, Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomBackingInfo>[] | undefined>;
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2CdRomDiskAddress>[] | undefined>;
@@ -19467,7 +24013,7 @@ export interface VmCloneV2Cluster {
 
 export interface VmCloneV2Disk {
     /**
-     * - (Optional) Defines a NIC emulated by the hypervisor
+     * - (Optional, Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskBackingInfo>[] | undefined>;
     diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2DiskDiskAddress>[] | undefined>;
@@ -19684,7 +24230,7 @@ export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustom
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -19733,7 +24279,7 @@ export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyV
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/cloneVm).
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -19766,7 +24312,9 @@ export interface VmCloneV2Link {
 
 export interface VmCloneV2Nic {
     /**
-     * - (Optional) Defines a NIC emulated by the hypervisor
+     * - (Optional, Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicBackingInfo>[] | undefined>;
     /**
@@ -19774,9 +24322,19 @@ export interface VmCloneV2Nic {
      */
     extId?: pulumi.Input<string | undefined>;
     /**
-     * - (Optional) Network information for a NIC.
+     * - (Optional, Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfo>[] | undefined>;
+    /**
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     */
+    nicBackingInfo?: pulumi.Input<inputs.VmCloneV2NicNicBackingInfo | undefined>;
+    /**
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     */
+    nicNetworkInfo?: pulumi.Input<inputs.VmCloneV2NicNicNetworkInfo | undefined>;
 }
 
 export interface VmCloneV2NicBackingInfo {
@@ -19806,6 +24364,7 @@ export interface VmCloneV2NicNetworkInfo {
      * - (Optional) The IP address configurations.
      */
     ipv4Configs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfoIpv4Info>[] | undefined>;
     /**
      * - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
      */
@@ -19883,6 +24442,15 @@ export interface VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList {
     value?: pulumi.Input<string | undefined>;
 }
 
+export interface VmCloneV2NicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface VmCloneV2NicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
 export interface VmCloneV2NicNetworkInfoNetworkFunctionChain {
     /**
      * - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
@@ -19891,6 +24459,279 @@ export interface VmCloneV2NicNetworkInfoNetworkFunctionChain {
 }
 
 export interface VmCloneV2NicNetworkInfoSubnet {
+    /**
+     * - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicBackingInfo {
+    dpOffloadNic?: pulumi.Input<inputs.VmCloneV2NicNicBackingInfoDpOffloadNic | undefined>;
+    sriovNic?: pulumi.Input<inputs.VmCloneV2NicNicBackingInfoSriovNic | undefined>;
+    virtualEthernetNic?: pulumi.Input<inputs.VmCloneV2NicNicBackingInfoVirtualEthernetNic | undefined>;
+}
+
+export interface VmCloneV2NicNicBackingInfoDpOffloadNic {
+    dpOffloadProfileReference: pulumi.Input<inputs.VmCloneV2NicNicBackingInfoDpOffloadNicDpOffloadProfileReference>;
+    hostPcieDeviceReference?: pulumi.Input<inputs.VmCloneV2NicNicBackingInfoDpOffloadNicHostPcieDeviceReference | undefined>;
+    /**
+     * - (Optional) Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    macAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    extId: pulumi.Input<string>;
+}
+
+export interface VmCloneV2NicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicBackingInfoSriovNic {
+    hostPcieDeviceReference?: pulumi.Input<inputs.VmCloneV2NicNicBackingInfoSriovNicHostPcieDeviceReference | undefined>;
+    /**
+     * - (Optional) Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    macAddress?: pulumi.Input<string | undefined>;
+    sriovProfileReference: pulumi.Input<inputs.VmCloneV2NicNicBackingInfoSriovNicSriovProfileReference>;
+}
+
+export interface VmCloneV2NicNicBackingInfoSriovNicHostPcieDeviceReference {
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicBackingInfoSriovNicSriovProfileReference {
+    extId: pulumi.Input<string>;
+}
+
+export interface VmCloneV2NicNicBackingInfoVirtualEthernetNic {
+    /**
+     * - (Optional) Indicates whether the NIC is connected or not. Default is True.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    macAddress?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) Options for the NIC emulation.
+     * Valid values are:
+     * - `VIRTIO` The NIC emulation model is Virtio.
+     * - `E1000` The NIC emulation model is E1000.
+     */
+    model?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) The number of Tx/Rx queue pairs for this NIC.
+     */
+    numQueues?: pulumi.Input<number | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfo {
+    dpOffloadNicNetworkInfo?: pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfo | undefined>;
+    sriovNicNetworkInfo?: pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoSriovNicNetworkInfo | undefined>;
+    virtualEthernetNicNetworkInfo?: pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfo {
+    /**
+     * - (Optional) The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     * Valid values are:
+     * - `TRUNK` The virtual NIC is created in TRUNKED mode.
+     * - `ACCESS` The virtual NIC is created in ACCESS mode.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: - (Optional) Ip config settings.
+     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - Ip address.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - Ip address.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    /**
+     * - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoSriovNicNetworkInfo {
+    vlanId?: pulumi.Input<number | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    /**
+     * - (Optional) The IP address configurations.
+     */
+    ipv4Configs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config>[] | undefined>;
+    ipv4Infos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info>[] | undefined>;
+    ipv6Infos?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info>[] | undefined>;
+    /**
+     * - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain>[] | undefined>;
+    /**
+     * - (Optional) The type of this Network function NIC.
+     * Defaults to INGRESS.
+     * Valid values are:
+     * - `TAP` The type of Network-Function NIC is Tap.
+     * - `EGRESS` The type of Network-Function NIC is Egress.
+     * - `INGRESS` The type of Network-Function NIC is Ingress.
+     */
+    networkFunctionNicType?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) NIC type.
+     * Defaults to NORMAL_NIC.
+     * Valid values are:
+     * - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
+     * - `NORMAL_NIC` The type of NIC is Normal.
+     * - `DIRECT_NIC` The type of NIC is Direct.
+     * - `NETWORK_FUNCTION_NIC` The type of NIC is Network-Function.
+     */
+    nicType?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     */
+    subnets?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet>[] | undefined>;
+    /**
+     * - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    /**
+     * - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     * Valid values are:
+     * - `TRUNK` The virtual NIC is created in TRUNKED mode.
+     * - `ACCESS` The virtual NIC is created in ACCESS mode.
+     */
+    vlanMode?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress>[] | undefined>;
+    secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList>[] | undefined>;
+    /**
+     * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: - (Optional) Ip config settings.
+     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+     */
+    shouldAssignIp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - Ip address.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - Ip address.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress>[] | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address>[] | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    /**
+     * - (Optional) The globally unique identifier of a network function chain. It should be of type UUID.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
     /**
      * - (Optional) The globally unique identifier of a subnet. It should be of type UUID.
      */
@@ -19999,7 +24840,7 @@ export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -20048,7 +24889,7 @@ export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePai
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/customizeGuestVm).
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -20065,7 +24906,7 @@ export interface VmNetworkDeviceAssignIpV2IpAddress {
     /**
      * - Ip address.
      *
-     * See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/assignIpById).
+     * See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/assignIpById).
      */
     value: pulumi.Input<string>;
 }
@@ -20078,7 +24919,7 @@ export interface VmNetworkDeviceMigrateV2IpAddress {
     /**
      * - Ip address.
      *
-     * See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/migrateNicById).
+     * See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/migrateNicById).
      */
     value: pulumi.Input<string>;
 }
@@ -20099,10 +24940,10 @@ export interface VmShutdownActionV2GuestPowerStateTransitionConfig {
      * Indicates whether to abort VM shutdown/restart if the script fails.
      *
      *
-     * See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/shutdownVm).
-     * See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/shutdownGuestVm).
-     * See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/rebootVm).
-     * See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/rebootGuestVm).
+     * See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
+     * See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
+     * See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
+     * See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootGuestVm).
      */
     shouldFailOnScriptFailure?: pulumi.Input<boolean | undefined>;
 }
@@ -20121,7 +24962,7 @@ export interface VolumeGroupDiskV2DiskDataSourceReference {
      */
     extId: pulumi.Input<string>;
     /**
-     * - The name of the Data Source Reference.bled for the Volume Group.
+     * - The name of the Data Source Reference for the Volume Group.
      */
     name?: pulumi.Input<string | undefined>;
     /**
@@ -20140,8 +24981,6 @@ export interface VolumeGroupDiskV2DiskStorageFeature {
 export interface VolumeGroupDiskV2DiskStorageFeatureFlashMode {
     /**
      * - Indicates whether the flash mode is enabled for the Volume Group Disk.
-     *
-     * See detailed information in [Nutanix Create Volume Disk V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeDisk).
      */
     isEnabled?: pulumi.Input<boolean | undefined>;
 }
@@ -20166,7 +25005,7 @@ export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn {
      * - The fully qualified domain name.
      *
      *
-     * See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/attachIscsiClient).
+     * See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -20203,7 +25042,7 @@ export interface VolumeGroupV2Disk {
      */
     diskDataSourceReferences: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2DiskDiskDataSourceReference>[]>;
     /**
-     * - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+     * - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
      */
     diskSizeBytes: pulumi.Input<number>;
     /**
@@ -20226,7 +25065,7 @@ export interface VolumeGroupV2DiskDiskDataSourceReference {
      */
     extId: pulumi.Input<string>;
     /**
-     * - The name of the Data Source Reference.bled for the Volume Group.
+     * - The name of the Data Source Reference. for the Volume Group.
      */
     name?: pulumi.Input<string | undefined>;
     /**
@@ -20245,8 +25084,6 @@ export interface VolumeGroupV2DiskDiskStorageFeature {
 export interface VolumeGroupV2DiskDiskStorageFeatureFlashMode {
     /**
      * - Indicates whether the flash mode is enabled for the Volume Group Disk.
-     *
-     * See detailed information in [Nutanix Create Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeGroup).
      */
     isEnabled?: pulumi.Input<boolean | undefined>;
 }
@@ -20272,8 +25109,6 @@ export interface VolumeGroupV2StorageFeature {
 export interface VolumeGroupV2StorageFeatureFlashMode {
     /**
      * - Indicates whether the flash mode is enabled for the Volume Group Disk.
-     *
-     * See detailed information in [Nutanix Create Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeGroup).
      */
     isEnabled?: pulumi.Input<boolean | undefined>;
 }
@@ -20333,11 +25168,17 @@ export interface VpcV2CommonDhcpOptionDomainNameServerIpv6 {
 
 export interface VpcV2ExternalSubnet {
     activeGatewayCount?: pulumi.Input<number | undefined>;
+    /**
+     * Maximum number of active gateway nodes for the VPC external subnet association.
+     */
     activeGatewayNodes?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternalSubnetActiveGatewayNode>[] | undefined>;
     /**
      * List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
      */
     externalIps?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternalSubnetExternalIp>[] | undefined>;
+    /**
+     * List of gateway nodes that can be used for external connectivity.
+     */
     gatewayNodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * External subnet reference.
@@ -20427,7 +25268,7 @@ export interface VpcV2Link {
 }
 
 export interface VpcV2Metadata {
-    categoryIds?: pulumi.Input<pulumi.Input<any[]>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     ownerReferenceId?: pulumi.Input<string | undefined>;
     ownerUserName?: pulumi.Input<string | undefined>;
     projectName?: pulumi.Input<string | undefined>;

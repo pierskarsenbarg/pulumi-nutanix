@@ -69,10 +69,10 @@ type VolumeGroupDiskV2 struct {
 	pulumi.CustomResourceState
 
 	// - Volume Disk description.
-	Description pulumi.StringPtrOutput `pulumi:"description"`
+	Description pulumi.StringOutput `pulumi:"description"`
 	// -(Required) Disk Data Source Reference.
 	DiskDataSourceReferences VolumeGroupDiskV2DiskDataSourceReferenceArrayOutput `pulumi:"diskDataSourceReferences"`
-	// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+	// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
 	DiskSizeBytes pulumi.IntOutput `pulumi:"diskSizeBytes"`
 	// - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
 	DiskStorageFeatures VolumeGroupDiskV2DiskStorageFeatureArrayOutput `pulumi:"diskStorageFeatures"`
@@ -127,7 +127,7 @@ type volumeGroupDiskV2State struct {
 	Description *string `pulumi:"description"`
 	// -(Required) Disk Data Source Reference.
 	DiskDataSourceReferences []VolumeGroupDiskV2DiskDataSourceReference `pulumi:"diskDataSourceReferences"`
-	// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+	// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
 	DiskSizeBytes *int `pulumi:"diskSizeBytes"`
 	// - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
 	DiskStorageFeatures []VolumeGroupDiskV2DiskStorageFeature `pulumi:"diskStorageFeatures"`
@@ -144,7 +144,7 @@ type VolumeGroupDiskV2State struct {
 	Description pulumi.StringPtrInput
 	// -(Required) Disk Data Source Reference.
 	DiskDataSourceReferences VolumeGroupDiskV2DiskDataSourceReferenceArrayInput
-	// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+	// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
 	DiskSizeBytes pulumi.IntPtrInput
 	// - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
 	DiskStorageFeatures VolumeGroupDiskV2DiskStorageFeatureArrayInput
@@ -165,7 +165,7 @@ type volumeGroupDiskV2Args struct {
 	Description *string `pulumi:"description"`
 	// -(Required) Disk Data Source Reference.
 	DiskDataSourceReferences []VolumeGroupDiskV2DiskDataSourceReference `pulumi:"diskDataSourceReferences"`
-	// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+	// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
 	DiskSizeBytes int `pulumi:"diskSizeBytes"`
 	// - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
 	DiskStorageFeatures []VolumeGroupDiskV2DiskStorageFeature `pulumi:"diskStorageFeatures"`
@@ -181,7 +181,7 @@ type VolumeGroupDiskV2Args struct {
 	Description pulumi.StringPtrInput
 	// -(Required) Disk Data Source Reference.
 	DiskDataSourceReferences VolumeGroupDiskV2DiskDataSourceReferenceArrayInput
-	// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+	// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
 	DiskSizeBytes pulumi.IntInput
 	// - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
 	DiskStorageFeatures VolumeGroupDiskV2DiskStorageFeatureArrayInput
@@ -279,8 +279,8 @@ func (o VolumeGroupDiskV2Output) ToVolumeGroupDiskV2OutputWithContext(ctx contex
 }
 
 // - Volume Disk description.
-func (o VolumeGroupDiskV2Output) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VolumeGroupDiskV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+func (o VolumeGroupDiskV2Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupDiskV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // -(Required) Disk Data Source Reference.
@@ -290,7 +290,7 @@ func (o VolumeGroupDiskV2Output) DiskDataSourceReferences() VolumeGroupDiskV2Dis
 	}).(VolumeGroupDiskV2DiskDataSourceReferenceArrayOutput)
 }
 
-// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
 func (o VolumeGroupDiskV2Output) DiskSizeBytes() pulumi.IntOutput {
 	return o.ApplyT(func(v *VolumeGroupDiskV2) pulumi.IntOutput { return v.DiskSizeBytes }).(pulumi.IntOutput)
 }

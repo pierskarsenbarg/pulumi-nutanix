@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVirtualMachineV2CdRomResult
     {
         /// <summary>
-        /// Defines a NIC emulated by the hypervisor
+        /// (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2CdRomBackingInfoResult> BackingInfos;
         /// <summary>

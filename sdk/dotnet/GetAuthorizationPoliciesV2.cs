@@ -12,12 +12,513 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetAuthorizationPoliciesV2
     {
+        /// <summary>
+        /// Provides a datasource to retrieve the list of existing Authorization Policies.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //list of authorization policies, with limit and filter
+        /// const filtered_ap = nutanix.getAuthorizationPoliciesV2({
+        ///     filter: "displayName eq 'auth_policy_example'",
+        ///     limit: 2,
+        /// });
+        /// // list of authorization policies, with select
+        /// const select_ap = nutanix.getAuthorizationPoliciesV2({
+        ///     select: "extId,displayName,description,authorizationPolicyType",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #list of authorization policies, with limit and filter
+        /// filtered_ap = nutanix.get_authorization_policies_v2(filter="displayName eq 'auth_policy_example'",
+        ///     limit=2)
+        /// # list of authorization policies, with select
+        /// select_ap = nutanix.get_authorization_policies_v2(select="extId,displayName,description,authorizationPolicyType")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     //list of authorization policies, with limit and filter
+        ///     var filtered_ap = Nutanix.GetAuthorizationPoliciesV2.Invoke(new()
+        ///     {
+        ///         Filter = "displayName eq 'auth_policy_example'",
+        ///         Limit = 2,
+        ///     });
+        /// 
+        ///     // list of authorization policies, with select
+        ///     var select_ap = Nutanix.GetAuthorizationPoliciesV2.Invoke(new()
+        ///     {
+        ///         Select = "extId,displayName,description,authorizationPolicyType",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list of authorization policies, with limit and filter
+        /// 		_, err := nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("displayName eq 'auth_policy_example'"),
+        /// 			Limit:  pulumi.IntRef(2),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list of authorization policies, with select
+        /// 		_, err = nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
+        /// 			Select: pulumi.StringRef("extId,displayName,description,authorizationPolicyType"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAuthorizationPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //list of authorization policies, with limit and filter
+        ///         final var filtered-ap = NutanixFunctions.getAuthorizationPoliciesV2(GetAuthorizationPoliciesV2Args.builder()
+        ///             .filter("displayName eq 'auth_policy_example'")
+        ///             .limit(2)
+        ///             .build());
+        /// 
+        ///         // list of authorization policies, with select
+        ///         final var select-ap = NutanixFunctions.getAuthorizationPoliciesV2(GetAuthorizationPoliciesV2Args.builder()
+        ///             .select("extId,displayName,description,authorizationPolicyType")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #list of authorization policies, with limit and filter
+        ///   filtered-ap:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPoliciesV2
+        ///       arguments:
+        ///         filter: displayName eq 'auth_policy_example'
+        ///         limit: 2
+        ///   # list of authorization policies, with select
+        ///   select-ap:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPoliciesV2
+        ///       arguments:
+        ///         select: extId,displayName,description,authorizationPolicyType
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// 
+        /// ## Authorization Policies
+        /// 
+        /// The following attributes are exported for each Authorization Policy:
+        /// 
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId "&gt; extId &lt;/span&gt;of Authorization policy.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
+        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
+        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
+        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
+        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
+        ///   - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+        ///   - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+        ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+        ///   - `SERVICE_DEFINED` : ACP defined by a service.
+        ///   - `USER_DEFINED` : ACP defined by an User.
+        /// 
+        /// ### Links
+        /// 
+        /// The links attribute supports the following:
+        /// 
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
+        /// 
+        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
+        /// </summary>
         public static Task<GetAuthorizationPoliciesV2Result> InvokeAsync(GetAuthorizationPoliciesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuthorizationPoliciesV2Result>("nutanix:index/getAuthorizationPoliciesV2:getAuthorizationPoliciesV2", args ?? new GetAuthorizationPoliciesV2Args(), options.WithDefaults());
 
+        /// <summary>
+        /// Provides a datasource to retrieve the list of existing Authorization Policies.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //list of authorization policies, with limit and filter
+        /// const filtered_ap = nutanix.getAuthorizationPoliciesV2({
+        ///     filter: "displayName eq 'auth_policy_example'",
+        ///     limit: 2,
+        /// });
+        /// // list of authorization policies, with select
+        /// const select_ap = nutanix.getAuthorizationPoliciesV2({
+        ///     select: "extId,displayName,description,authorizationPolicyType",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #list of authorization policies, with limit and filter
+        /// filtered_ap = nutanix.get_authorization_policies_v2(filter="displayName eq 'auth_policy_example'",
+        ///     limit=2)
+        /// # list of authorization policies, with select
+        /// select_ap = nutanix.get_authorization_policies_v2(select="extId,displayName,description,authorizationPolicyType")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     //list of authorization policies, with limit and filter
+        ///     var filtered_ap = Nutanix.GetAuthorizationPoliciesV2.Invoke(new()
+        ///     {
+        ///         Filter = "displayName eq 'auth_policy_example'",
+        ///         Limit = 2,
+        ///     });
+        /// 
+        ///     // list of authorization policies, with select
+        ///     var select_ap = Nutanix.GetAuthorizationPoliciesV2.Invoke(new()
+        ///     {
+        ///         Select = "extId,displayName,description,authorizationPolicyType",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list of authorization policies, with limit and filter
+        /// 		_, err := nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("displayName eq 'auth_policy_example'"),
+        /// 			Limit:  pulumi.IntRef(2),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list of authorization policies, with select
+        /// 		_, err = nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
+        /// 			Select: pulumi.StringRef("extId,displayName,description,authorizationPolicyType"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAuthorizationPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //list of authorization policies, with limit and filter
+        ///         final var filtered-ap = NutanixFunctions.getAuthorizationPoliciesV2(GetAuthorizationPoliciesV2Args.builder()
+        ///             .filter("displayName eq 'auth_policy_example'")
+        ///             .limit(2)
+        ///             .build());
+        /// 
+        ///         // list of authorization policies, with select
+        ///         final var select-ap = NutanixFunctions.getAuthorizationPoliciesV2(GetAuthorizationPoliciesV2Args.builder()
+        ///             .select("extId,displayName,description,authorizationPolicyType")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #list of authorization policies, with limit and filter
+        ///   filtered-ap:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPoliciesV2
+        ///       arguments:
+        ///         filter: displayName eq 'auth_policy_example'
+        ///         limit: 2
+        ///   # list of authorization policies, with select
+        ///   select-ap:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPoliciesV2
+        ///       arguments:
+        ///         select: extId,displayName,description,authorizationPolicyType
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// 
+        /// ## Authorization Policies
+        /// 
+        /// The following attributes are exported for each Authorization Policy:
+        /// 
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId "&gt; extId &lt;/span&gt;of Authorization policy.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
+        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
+        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
+        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
+        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
+        ///   - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+        ///   - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+        ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+        ///   - `SERVICE_DEFINED` : ACP defined by a service.
+        ///   - `USER_DEFINED` : ACP defined by an User.
+        /// 
+        /// ### Links
+        /// 
+        /// The links attribute supports the following:
+        /// 
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
+        /// 
+        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
+        /// </summary>
         public static Output<GetAuthorizationPoliciesV2Result> Invoke(GetAuthorizationPoliciesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthorizationPoliciesV2Result>("nutanix:index/getAuthorizationPoliciesV2:getAuthorizationPoliciesV2", args ?? new GetAuthorizationPoliciesV2InvokeArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Provides a datasource to retrieve the list of existing Authorization Policies.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// //list of authorization policies, with limit and filter
+        /// const filtered_ap = nutanix.getAuthorizationPoliciesV2({
+        ///     filter: "displayName eq 'auth_policy_example'",
+        ///     limit: 2,
+        /// });
+        /// // list of authorization policies, with select
+        /// const select_ap = nutanix.getAuthorizationPoliciesV2({
+        ///     select: "extId,displayName,description,authorizationPolicyType",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// #list of authorization policies, with limit and filter
+        /// filtered_ap = nutanix.get_authorization_policies_v2(filter="displayName eq 'auth_policy_example'",
+        ///     limit=2)
+        /// # list of authorization policies, with select
+        /// select_ap = nutanix.get_authorization_policies_v2(select="extId,displayName,description,authorizationPolicyType")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     //list of authorization policies, with limit and filter
+        ///     var filtered_ap = Nutanix.GetAuthorizationPoliciesV2.Invoke(new()
+        ///     {
+        ///         Filter = "displayName eq 'auth_policy_example'",
+        ///         Limit = 2,
+        ///     });
+        /// 
+        ///     // list of authorization policies, with select
+        ///     var select_ap = Nutanix.GetAuthorizationPoliciesV2.Invoke(new()
+        ///     {
+        ///         Select = "extId,displayName,description,authorizationPolicyType",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list of authorization policies, with limit and filter
+        /// 		_, err := nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("displayName eq 'auth_policy_example'"),
+        /// 			Limit:  pulumi.IntRef(2),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list of authorization policies, with select
+        /// 		_, err = nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
+        /// 			Select: pulumi.StringRef("extId,displayName,description,authorizationPolicyType"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAuthorizationPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         //list of authorization policies, with limit and filter
+        ///         final var filtered-ap = NutanixFunctions.getAuthorizationPoliciesV2(GetAuthorizationPoliciesV2Args.builder()
+        ///             .filter("displayName eq 'auth_policy_example'")
+        ///             .limit(2)
+        ///             .build());
+        /// 
+        ///         // list of authorization policies, with select
+        ///         final var select-ap = NutanixFunctions.getAuthorizationPoliciesV2(GetAuthorizationPoliciesV2Args.builder()
+        ///             .select("extId,displayName,description,authorizationPolicyType")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   #list of authorization policies, with limit and filter
+        ///   filtered-ap:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPoliciesV2
+        ///       arguments:
+        ///         filter: displayName eq 'auth_policy_example'
+        ///         limit: 2
+        ///   # list of authorization policies, with select
+        ///   select-ap:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPoliciesV2
+        ///       arguments:
+        ///         select: extId,displayName,description,authorizationPolicyType
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// 
+        /// ## Authorization Policies
+        /// 
+        /// The following attributes are exported for each Authorization Policy:
+        /// 
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId "&gt; extId &lt;/span&gt;of Authorization policy.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
+        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
+        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
+        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
+        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
+        ///   - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+        ///   - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+        ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+        ///   - `SERVICE_DEFINED` : ACP defined by a service.
+        ///   - `USER_DEFINED` : ACP defined by an User.
+        /// 
+        /// ### Links
+        /// 
+        /// The links attribute supports the following:
+        /// 
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
+        /// 
+        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
+        /// </summary>
         public static Output<GetAuthorizationPoliciesV2Result> Invoke(GetAuthorizationPoliciesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthorizationPoliciesV2Result>("nutanix:index/getAuthorizationPoliciesV2:getAuthorizationPoliciesV2", args ?? new GetAuthorizationPoliciesV2InvokeArgs(), options.WithDefaults());
     }
@@ -25,21 +526,69 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetAuthorizationPoliciesV2Args : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+        /// - role
+        /// </summary>
         [Input("expand")]
         public string? Expand { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - authorizationPolicyType
+        /// - clientName
+        /// - createdBy
+        /// - createdTime
+        /// - displayName
+        /// - extId
+        /// - isSystemDefined
+        /// - lastUpdatedTime
+        /// - role
+        /// </summary>
         [Input("filter")]
         public string? Filter { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+        /// </summary>
         [Input("limit")]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+        /// - createdTime
+        /// - displayName
+        /// - extId
+        /// - lastUpdatedTime
+        /// - role
+        /// </summary>
         [Input("orderBy")]
         public string? OrderBy { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+        /// </summary>
         [Input("page")]
         public int? Page { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+        /// - authorizationPolicyType
+        /// - authorizationPolicyType
+        /// - clientName
+        /// - createdBy
+        /// - createdTime
+        /// - description
+        /// - displayName
+        /// - entities
+        /// - extId
+        /// - identities
+        /// - isSystemDefined
+        /// - lastUpdatedTime
+        /// - links
+        /// - role
+        /// - tenantId
+        /// </summary>
         [Input("select")]
         public string? Select { get; set; }
 
@@ -51,21 +600,69 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetAuthorizationPoliciesV2InvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+        /// - role
+        /// </summary>
         [Input("expand")]
         public Input<string>? Expand { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - authorizationPolicyType
+        /// - clientName
+        /// - createdBy
+        /// - createdTime
+        /// - displayName
+        /// - extId
+        /// - isSystemDefined
+        /// - lastUpdatedTime
+        /// - role
+        /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+        /// </summary>
         [Input("limit")]
         public Input<int>? Limit { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+        /// - createdTime
+        /// - displayName
+        /// - extId
+        /// - lastUpdatedTime
+        /// - role
+        /// </summary>
         [Input("orderBy")]
         public Input<string>? OrderBy { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+        /// </summary>
         [Input("page")]
         public Input<int>? Page { get; set; }
 
+        /// <summary>
+        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+        /// - authorizationPolicyType
+        /// - authorizationPolicyType
+        /// - clientName
+        /// - createdBy
+        /// - createdTime
+        /// - description
+        /// - displayName
+        /// - entities
+        /// - extId
+        /// - identities
+        /// - isSystemDefined
+        /// - lastUpdatedTime
+        /// - links
+        /// - role
+        /// - tenantId
+        /// </summary>
         [Input("select")]
         public Input<string>? Select { get; set; }
 
@@ -79,6 +676,9 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetAuthorizationPoliciesV2Result
     {
+        /// <summary>
+        /// List of all existing Authorization Policies.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAuthorizationPoliciesV2AuthPolicyResult> AuthPolicies;
         public readonly string? Expand;
         public readonly string? Filter;

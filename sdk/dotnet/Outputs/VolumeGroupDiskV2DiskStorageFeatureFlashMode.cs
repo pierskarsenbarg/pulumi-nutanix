@@ -16,8 +16,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// - Indicates whether the flash mode is enabled for the Volume Group Disk.
-        /// 
-        /// See detailed information in [Nutanix Create Volume Disk V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/createVolumeDisk).
         /// </summary>
         public readonly bool? IsEnabled;
 

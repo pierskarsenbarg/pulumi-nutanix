@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// A list of globally unique identifiers that represent all the categories the resource is associated with.
         /// </summary>
-        public readonly ImmutableArray<ImmutableArray<object>> CategoryIds;
+        public readonly ImmutableArray<string> CategoryIds;
         /// <summary>
         /// A globally unique identifier that represents the owner of this resource.
         /// </summary>
@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetFloatingIpV2ExternalSubnetVirtualSwitchMetadataResult(
-            ImmutableArray<ImmutableArray<object>> categoryIds,
+            ImmutableArray<string> categoryIds,
 
             string ownerReferenceId,
 

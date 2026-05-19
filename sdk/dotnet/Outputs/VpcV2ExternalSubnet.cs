@@ -15,11 +15,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VpcV2ExternalSubnet
     {
         public readonly int? ActiveGatewayCount;
+        /// <summary>
+        /// Maximum number of active gateway nodes for the VPC external subnet association.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VpcV2ExternalSubnetActiveGatewayNode> ActiveGatewayNodes;
         /// <summary>
         /// List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
         /// </summary>
         public readonly ImmutableArray<Outputs.VpcV2ExternalSubnetExternalIp> ExternalIps;
+        /// <summary>
+        /// List of gateway nodes that can be used for external connectivity.
+        /// </summary>
         public readonly ImmutableArray<string> GatewayNodes;
         /// <summary>
         /// External subnet reference.

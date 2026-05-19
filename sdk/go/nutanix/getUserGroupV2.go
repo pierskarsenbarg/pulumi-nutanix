@@ -74,8 +74,12 @@ type GetUserGroupV2Result struct {
 	IdpId string `pulumi:"idpId"`
 	// - Last updated time of the User Group.
 	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetUserGroupV2Link `pulumi:"links"`
 	// - Common Name of the User Group.
 	Name string `pulumi:"name"`
+	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId string `pulumi:"tenantId"`
 }
 
 func GetUserGroupV2Output(ctx *pulumi.Context, args GetUserGroupV2OutputArgs, opts ...pulumi.InvokeOption) GetUserGroupV2ResultOutput {
@@ -152,9 +156,19 @@ func (o GetUserGroupV2ResultOutput) LastUpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupV2Result) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
+// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+func (o GetUserGroupV2ResultOutput) Links() GetUserGroupV2LinkArrayOutput {
+	return o.ApplyT(func(v GetUserGroupV2Result) []GetUserGroupV2Link { return v.Links }).(GetUserGroupV2LinkArrayOutput)
+}
+
 // - Common Name of the User Group.
 func (o GetUserGroupV2ResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupV2Result) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+func (o GetUserGroupV2ResultOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserGroupV2Result) string { return v.TenantId }).(pulumi.StringOutput)
 }
 
 func init() {

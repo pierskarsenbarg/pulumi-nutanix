@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ImagesV2Checksum
     {
+        /// <summary>
+        /// The SHA1/SHA256 digest of an image file in hexadecimal format.
+        /// </summary>
         public readonly string HexDigest;
+        /// <summary>
+        /// sha1 or sha256 type of image
+        /// </summary>
         public readonly string ObjectType;
 
         [OutputConstructor]

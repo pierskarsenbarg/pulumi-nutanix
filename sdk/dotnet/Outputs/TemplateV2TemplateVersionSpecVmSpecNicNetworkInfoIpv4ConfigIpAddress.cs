@@ -15,13 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress
     {
         public readonly int? PrefixLength;
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress(
             int? prefixLength,
 
-            string value)
+            string? value)
         {
             PrefixLength = prefixLength;
             Value = value;

@@ -82,7 +82,7 @@ import * as utilities from "./utilities";
  *
  * - <span pulumi-lang-nodejs="`rpoInMinutes`" pulumi-lang-dotnet="`RpoInMinutes`" pulumi-lang-go="`rpoInMinutes`" pulumi-lang-python="`rpo_in_minutes`" pulumi-lang-yaml="`rpoInMinutes`" pulumi-lang-java="`rpoInMinutes`">`rpoInMinutes`</span>: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
  *
- * See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listBackupTargets).
+ * See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listBackupTargets).
  */
 export function getPcBackupTargetsV2(args: GetPcBackupTargetsV2Args, opts?: pulumi.InvokeOptions): Promise<GetPcBackupTargetsV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -191,7 +191,7 @@ export interface GetPcBackupTargetsV2Result {
  *
  * - <span pulumi-lang-nodejs="`rpoInMinutes`" pulumi-lang-dotnet="`RpoInMinutes`" pulumi-lang-go="`rpoInMinutes`" pulumi-lang-python="`rpo_in_minutes`" pulumi-lang-yaml="`rpoInMinutes`" pulumi-lang-java="`rpoInMinutes`">`rpoInMinutes`</span>: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
  *
- * See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listBackupTargets).
+ * See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listBackupTargets).
  */
 export function getPcBackupTargetsV2Output(args: GetPcBackupTargetsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPcBackupTargetsV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

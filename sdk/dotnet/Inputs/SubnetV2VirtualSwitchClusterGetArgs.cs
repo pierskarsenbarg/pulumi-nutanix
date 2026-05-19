@@ -13,11 +13,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class SubnetV2VirtualSwitchClusterGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Reference ExtId for the cluster. This is a required parameter on Prism Element ; and is optional on Prism Central
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("gatewayIpAddresses")]
         private InputList<Inputs.SubnetV2VirtualSwitchClusterGatewayIpAddressGetArgs>? _gatewayIpAddresses;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2VirtualSwitchClusterGatewayIpAddressGetArgs> GatewayIpAddresses
         {
             get => _gatewayIpAddresses ?? (_gatewayIpAddresses = new InputList<Inputs.SubnetV2VirtualSwitchClusterGatewayIpAddressGetArgs>());
@@ -26,6 +33,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("hosts")]
         private InputList<Inputs.SubnetV2VirtualSwitchClusterHostGetArgs>? _hosts;
+
+        /// <summary>
+        /// Host configuration array
+        /// </summary>
         public InputList<Inputs.SubnetV2VirtualSwitchClusterHostGetArgs> Hosts
         {
             get => _hosts ?? (_hosts = new InputList<Inputs.SubnetV2VirtualSwitchClusterHostGetArgs>());

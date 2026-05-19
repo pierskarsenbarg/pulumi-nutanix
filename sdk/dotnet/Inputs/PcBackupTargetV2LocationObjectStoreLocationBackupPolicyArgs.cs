@@ -15,8 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         /// <summary>
         /// -(Required) RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
-        /// 
-        /// See detailed information in [Nutanix Create Backup Target V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/createBackupTarget).
         /// </summary>
         [Input("rpoInMinutes", required: true)]
         public Input<int> RpoInMinutes { get; set; } = null!;

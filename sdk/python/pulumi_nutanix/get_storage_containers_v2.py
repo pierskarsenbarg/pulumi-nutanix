@@ -194,7 +194,7 @@ def get_storage_containers_v2(apply: Optional[_builtins.str] = None,
 
     * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of fqdn address
 
-    See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/StorageContainers/operation/listStorageContainers).
+    See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/StorageContainers/operation/listStorageContainers).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
@@ -300,7 +300,7 @@ def get_storage_containers_v2_output(apply: pulumi.Input[Optional[Optional[_buil
 
     * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of fqdn address
 
-    See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/StorageContainers/operation/listStorageContainers).
+    See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/StorageContainers/operation/listStorageContainers).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.

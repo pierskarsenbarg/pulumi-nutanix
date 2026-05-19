@@ -50,7 +50,7 @@ export class LcmPerformInventoryV2 extends pulumi.CustomResource {
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      *
-     * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+     * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
      */
     declare public readonly xClusterId: pulumi.Output<string | undefined>;
 
@@ -84,7 +84,7 @@ export interface LcmPerformInventoryV2State {
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      *
-     * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+     * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
      */
     xClusterId?: pulumi.Input<string | undefined>;
 }
@@ -96,7 +96,7 @@ export interface LcmPerformInventoryV2Args {
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      *
-     * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+     * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
      */
     xClusterId?: pulumi.Input<string | undefined>;
 }

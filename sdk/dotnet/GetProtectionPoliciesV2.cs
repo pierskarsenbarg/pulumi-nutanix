@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetProtectionPoliciesV2
     {
         /// <summary>
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
         /// 
@@ -273,12 +275,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>
         public static Task<GetProtectionPoliciesV2Result> InvokeAsync(GetProtectionPoliciesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionPoliciesV2Result>("nutanix:index/getProtectionPoliciesV2:getProtectionPoliciesV2", args ?? new GetProtectionPoliciesV2Args(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
         /// 
@@ -539,12 +543,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>
         public static Output<GetProtectionPoliciesV2Result> Invoke(GetProtectionPoliciesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPoliciesV2Result>("nutanix:index/getProtectionPoliciesV2:getProtectionPoliciesV2", args ?? new GetProtectionPoliciesV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
         /// 
@@ -805,7 +811,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.0#tag/ProtectionPolicies/operation/listProtectionPolicies).
+        /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>
         public static Output<GetProtectionPoliciesV2Result> Invoke(GetProtectionPoliciesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPoliciesV2Result>("nutanix:index/getProtectionPoliciesV2:getProtectionPoliciesV2", args ?? new GetProtectionPoliciesV2InvokeArgs(), options.WithDefaults());

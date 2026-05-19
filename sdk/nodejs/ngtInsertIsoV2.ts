@@ -14,6 +14,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
+ * //#############################################
+ * // ------------------------------------------------
+ * // This resource allows inserting a NGT ISO into
+ * // a VM’s CD-ROM device.
+ * //
+ * // You can manage both:
+ * // 1. **Insertion** — via `apply`
+ * // 2. **Ejection** — automatically on `delete`
+ * //  You can also eject the NGT ISO by setting `action = "eject"` → triggers eject operation explicitly.
+ * //#############################################
  * const example = new nutanix.NgtInsertIsoV2("example", {
  *     extId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
  *     capablities: ["VSS_SNAPSHOT"],
@@ -51,6 +61,10 @@ export class NgtInsertIsoV2 extends pulumi.CustomResource {
     }
 
     /**
+     * Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+     */
+    declare public readonly action: pulumi.Output<string | undefined>;
+    /**
      * Version of Nutanix Guest Tools available on the cluster.
      */
     declare public /*out*/ readonly availableVersion: pulumi.Output<string>;
@@ -58,6 +72,7 @@ export class NgtInsertIsoV2 extends pulumi.CustomResource {
      * The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
      */
     declare public readonly capablities: pulumi.Output<string[]>;
+    declare public /*out*/ readonly cdromExtId: pulumi.Output<string>;
     /**
      * uuid of the Virtual Machine.
      */
@@ -98,6 +113,7 @@ export class NgtInsertIsoV2 extends pulumi.CustomResource {
      * Version of Nutanix Guest Tools installed on the VM.
      */
     declare public /*out*/ readonly version: pulumi.Output<string>;
+    declare public /*out*/ readonly vmExtId: pulumi.Output<string>;
 
     /**
      * Create a NgtInsertIsoV2 resource with the given unique name, arguments, and options.
@@ -112,8 +128,10 @@ export class NgtInsertIsoV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NgtInsertIsoV2State | undefined;
+            resourceInputs["action"] = state?.action;
             resourceInputs["availableVersion"] = state?.availableVersion;
             resourceInputs["capablities"] = state?.capablities;
+            resourceInputs["cdromExtId"] = state?.cdromExtId;
             resourceInputs["extId"] = state?.extId;
             resourceInputs["guestOsVersion"] = state?.guestOsVersion;
             resourceInputs["isConfigOnly"] = state?.isConfigOnly;
@@ -124,15 +142,18 @@ export class NgtInsertIsoV2 extends pulumi.CustomResource {
             resourceInputs["isVmMobilityDriversInstalled"] = state?.isVmMobilityDriversInstalled;
             resourceInputs["isVssSnapshotCapable"] = state?.isVssSnapshotCapable;
             resourceInputs["version"] = state?.version;
+            resourceInputs["vmExtId"] = state?.vmExtId;
         } else {
             const args = argsOrState as NgtInsertIsoV2Args | undefined;
             if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
+            resourceInputs["action"] = args?.action;
             resourceInputs["capablities"] = args?.capablities;
             resourceInputs["extId"] = args?.extId;
             resourceInputs["isConfigOnly"] = args?.isConfigOnly;
             resourceInputs["availableVersion"] = undefined /*out*/;
+            resourceInputs["cdromExtId"] = undefined /*out*/;
             resourceInputs["guestOsVersion"] = undefined /*out*/;
             resourceInputs["isEnabled"] = undefined /*out*/;
             resourceInputs["isInstalled"] = undefined /*out*/;
@@ -141,6 +162,7 @@ export class NgtInsertIsoV2 extends pulumi.CustomResource {
             resourceInputs["isVmMobilityDriversInstalled"] = undefined /*out*/;
             resourceInputs["isVssSnapshotCapable"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
+            resourceInputs["vmExtId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NgtInsertIsoV2.__pulumiType, name, resourceInputs, opts);
@@ -152,6 +174,10 @@ export class NgtInsertIsoV2 extends pulumi.CustomResource {
  */
 export interface NgtInsertIsoV2State {
     /**
+     * Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+     */
+    action?: pulumi.Input<string | undefined>;
+    /**
      * Version of Nutanix Guest Tools available on the cluster.
      */
     availableVersion?: pulumi.Input<string | undefined>;
@@ -159,6 +185,7 @@ export interface NgtInsertIsoV2State {
      * The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
      */
     capablities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    cdromExtId?: pulumi.Input<string | undefined>;
     /**
      * uuid of the Virtual Machine.
      */
@@ -199,12 +226,17 @@ export interface NgtInsertIsoV2State {
      * Version of Nutanix Guest Tools installed on the VM.
      */
     version?: pulumi.Input<string | undefined>;
+    vmExtId?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a NgtInsertIsoV2 resource.
  */
 export interface NgtInsertIsoV2Args {
+    /**
+     * Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+     */
+    action?: pulumi.Input<string | undefined>;
     /**
      * The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
      */

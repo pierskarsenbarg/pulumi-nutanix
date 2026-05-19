@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix
     /// &gt; ⚠️ **Warning:** Before deleting the Object Store, make sure to delete all buckets inside it manually.
     /// Currently, the Terraform provider does not support the Delete Bucket API.
     /// 
-    /// &gt; ⚠️ **Warning:** The Object Store **update** operation is intended **only** to resume a failed deployment.
+    /// &gt; ⚠️ **Warning:** The Object Store **update** operation does **not** allow modification of any configuration parameters (including &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;). As per the API design, the update operation is supported exclusively for retrying a failed deployment. No other changes can be performed through update.
     /// It should be used when the Object Store is in the `OBJECT_STORE_DEPLOYMENT_FAILED` state.
     /// Triggering an update in this state will attempt to resume the deployment process.
     /// 
@@ -215,18 +215,18 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) Enum for the state of the Object store.
-        /// | Enum                                   | Description                                                     |
+        /// | Enum | Description |
         /// |----------------------------------------|-----------------------------------------------------------------|
-        /// | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-        /// | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-        /// | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-        /// | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-        /// | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-        /// | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-        /// | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-        /// | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-        /// | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-        /// | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+        /// | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+        /// | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+        /// | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+        /// | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+        /// | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+        /// | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+        /// | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+        /// | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+        /// | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+        /// | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -394,18 +394,18 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) Enum for the state of the Object store.
-        /// | Enum                                   | Description                                                     |
+        /// | Enum | Description |
         /// |----------------------------------------|-----------------------------------------------------------------|
-        /// | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-        /// | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-        /// | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-        /// | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-        /// | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-        /// | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-        /// | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-        /// | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-        /// | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-        /// | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+        /// | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+        /// | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+        /// | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+        /// | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+        /// | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+        /// | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+        /// | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+        /// | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+        /// | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+        /// | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -558,18 +558,18 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) Enum for the state of the Object store.
-        /// | Enum                                   | Description                                                     |
+        /// | Enum | Description |
         /// |----------------------------------------|-----------------------------------------------------------------|
-        /// | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-        /// | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-        /// | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-        /// | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-        /// | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-        /// | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-        /// | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-        /// | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-        /// | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-        /// | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+        /// | `DEPLOYING_OBJECT_STORE` | The Object store is being deployed. |
+        /// | `OBJECT_STORE_DEPLOYMENT_FAILED` | The Object store deployment has failed. |
+        /// | `DELETING_OBJECT_STORE` | A deployed Object store is being deleted. |
+        /// | `OBJECT_STORE_OPERATION_FAILED` | There was an error while performing an operation on the Object store. |
+        /// | `UNDEPLOYED_OBJECT_STORE` | The Object store is not deployed. |
+        /// | `OBJECT_STORE_OPERATION_PENDING` | There is an ongoing operation on the Object store. |
+        /// | `OBJECT_STORE_AVAILABLE` | There are no ongoing operations on the deployed Object store. |
+        /// | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
+        /// | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
+        /// | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

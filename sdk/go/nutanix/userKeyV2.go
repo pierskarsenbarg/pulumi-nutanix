@@ -46,49 +46,69 @@ import (
 //
 // ```
 // <!--End PulumiCodeChooser -->
-// ## Argument Reference
 //
-// The following arguments are supported:
+// ## Lifecycle Behavior
 //
-// * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
-// * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - ( Required ) Identifier for the key in the form of a name.
-// * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: - ( Optional ) Brief description of the key.
-// * <span pulumi-lang-nodejs="`keyType`" pulumi-lang-dotnet="`KeyType`" pulumi-lang-go="`keyType`" pulumi-lang-python="`key_type`" pulumi-lang-yaml="`keyType`" pulumi-lang-java="`keyType`">`keyType`</span>: - ( Required ) The type of key. Enum Values:
-//   - "API_KEY":	A key type that is used to identify a service.
-//   - "OBJECT_KEY":	A combination of access key and secret key to sign an API request.
+// > Important: The<span pulumi-lang-nodejs=" nutanix.UserKeyV2 " pulumi-lang-dotnet=" nutanix.UserKeyV2 " pulumi-lang-go=" UserKeyV2 " pulumi-lang-python=" UserKeyV2 " pulumi-lang-yaml=" nutanix.UserKeyV2 " pulumi-lang-java=" nutanix.UserKeyV2 "> nutanix.UserKeyV2 </span>resource does not support in-place updates.
 //
-// * <span pulumi-lang-nodejs="`creationType`" pulumi-lang-dotnet="`CreationType`" pulumi-lang-go="`creationType`" pulumi-lang-python="`creation_type`" pulumi-lang-yaml="`creationType`" pulumi-lang-java="`creationType`">`creationType`</span>: - ( Optional ) The creation mechanism of this entity. Enum Values:
-//   - "PREDEFINED":	Predefined creator workflow type is for entity created by the system.
-//   - "SERVICEDEFINED":	Servicedefined creator workflow type is for entity created by the service.
-//   - "USERDEFINED":	Userdefined creator workflow type is for entity created by the users.
+// Changes to the following arguments will force the resource to be replaced:
 //
-// * <span pulumi-lang-nodejs="`expiryTime`" pulumi-lang-dotnet="`ExpiryTime`" pulumi-lang-go="`expiryTime`" pulumi-lang-python="`expiry_time`" pulumi-lang-yaml="`expiryTime`" pulumi-lang-java="`expiryTime`">`expiryTime`</span>: - ( Optional ) The time when the key will expire.
-// * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: - ( Optional ) The status of the key. Enum Values:
-//   - "REVOKED":	Key is revoked.
-//   - "VALID":	Key is valid.
-//   - "EXPIRED":	Key is expired.
+// - name
 //
-// * <span pulumi-lang-nodejs="`assignedTo`" pulumi-lang-dotnet="`AssignedTo`" pulumi-lang-go="`assignedTo`" pulumi-lang-python="`assigned_to`" pulumi-lang-yaml="`assignedTo`" pulumi-lang-java="`assignedTo`">`assignedTo`</span>: - ( Optional ) External client to whom the given key is allocated.
+// - description
+//
+// -<span pulumi-lang-nodejs=" keyType
+// " pulumi-lang-dotnet=" KeyType
+// " pulumi-lang-go=" keyType
+// " pulumi-lang-python=" key_type
+// " pulumi-lang-yaml=" keyType
+// " pulumi-lang-java=" keyType
+// "> keyType
+// </span>
+// -<span pulumi-lang-nodejs=" expiryTime
+// " pulumi-lang-dotnet=" ExpiryTime
+// " pulumi-lang-go=" expiryTime
+// " pulumi-lang-python=" expiry_time
+// " pulumi-lang-yaml=" expiryTime
+// " pulumi-lang-java=" expiryTime
+// "> expiryTime
+// </span>
+// -<span pulumi-lang-nodejs=" assignedTo
+// " pulumi-lang-dotnet=" AssignedTo
+// " pulumi-lang-go=" assignedTo
+// " pulumi-lang-python=" assigned_to
+// " pulumi-lang-yaml=" assignedTo
+// " pulumi-lang-java=" assignedTo
+// "> assignedTo
+// </span>
+// When any of these arguments are modified, Terraform will destroy the existing user key and create a new one. This results in a new key being generated.
+//
+// > Note: Replacing the resource invalidates the previously generated key. Ensure that any dependent systems are updated before applying the changes.
 type UserKeyV2 struct {
 	pulumi.CustomResourceState
 
-	// - External client to whom the given key is allocated.
+	// - ( Optional ) External client to whom the given key is allocated.
 	AssignedTo pulumi.StringOutput `pulumi:"assignedTo"`
 	// - User or service who created the key.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// - The creation time of the key.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// - The creation mechanism of this entity.
+	// - ( Optional ) The creation mechanism of this entity. Enum Values:
+	//   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+	//   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+	//   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
 	CreationType pulumi.StringOutput `pulumi:"creationType"`
-	// - Brief description of the key.
+	// - ( Optional ) Brief description of the key.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// - The time when the key will expire.
+	// - ( Optional ) The time when the key will expire.
 	ExpiryTime pulumi.StringOutput `pulumi:"expiryTime"`
 	// - The External Identifier of the User Group.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// - Details specific to type of the key.
 	KeyDetails UserKeyV2KeyDetailArrayOutput `pulumi:"keyDetails"`
-	// - The type of key.
+	// - ( Required ) The type of key. Enum Values:
+	//   _ "API_KEY": A key type that is used to identify a service.
+	//   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
 	KeyType pulumi.StringOutput `pulumi:"keyType"`
 	// - User who updated the key.
 	LastUpdatedBy pulumi.StringOutput `pulumi:"lastUpdatedBy"`
@@ -98,12 +118,16 @@ type UserKeyV2 struct {
 	LastUsedTime pulumi.StringOutput `pulumi:"lastUsedTime"`
 	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links UserKeyV2LinkArrayOutput `pulumi:"links"`
-	// - Identifier for the key in the form of a name.
+	// - ( Required ) Identifier for the key in the form of a name.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// - The status of the key.
+	// - ( Optional ) The status of the key. Enum Values:
+	//   _ "REVOKED": Key is revoked.
+	//   _ "VALID": Key is valid.
+	//   _ "EXPIRED": Key is expired.
 	Status pulumi.StringOutput `pulumi:"status"`
 	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId  pulumi.StringOutput `pulumi:"tenantId"`
+	TenantId pulumi.StringOutput `pulumi:"tenantId"`
+	// - ( Required ) External Identifier of the User.
 	UserExtId pulumi.StringOutput `pulumi:"userExtId"`
 }
 
@@ -143,23 +167,28 @@ func GetUserKeyV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering UserKeyV2 resources.
 type userKeyV2State struct {
-	// - External client to whom the given key is allocated.
+	// - ( Optional ) External client to whom the given key is allocated.
 	AssignedTo *string `pulumi:"assignedTo"`
 	// - User or service who created the key.
 	CreatedBy *string `pulumi:"createdBy"`
 	// - The creation time of the key.
 	CreatedTime *string `pulumi:"createdTime"`
-	// - The creation mechanism of this entity.
+	// - ( Optional ) The creation mechanism of this entity. Enum Values:
+	//   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+	//   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+	//   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
 	CreationType *string `pulumi:"creationType"`
-	// - Brief description of the key.
+	// - ( Optional ) Brief description of the key.
 	Description *string `pulumi:"description"`
-	// - The time when the key will expire.
+	// - ( Optional ) The time when the key will expire.
 	ExpiryTime *string `pulumi:"expiryTime"`
 	// - The External Identifier of the User Group.
 	ExtId *string `pulumi:"extId"`
 	// - Details specific to type of the key.
 	KeyDetails []UserKeyV2KeyDetail `pulumi:"keyDetails"`
-	// - The type of key.
+	// - ( Required ) The type of key. Enum Values:
+	//   _ "API_KEY": A key type that is used to identify a service.
+	//   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
 	KeyType *string `pulumi:"keyType"`
 	// - User who updated the key.
 	LastUpdatedBy *string `pulumi:"lastUpdatedBy"`
@@ -169,33 +198,42 @@ type userKeyV2State struct {
 	LastUsedTime *string `pulumi:"lastUsedTime"`
 	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links []UserKeyV2Link `pulumi:"links"`
-	// - Identifier for the key in the form of a name.
+	// - ( Required ) Identifier for the key in the form of a name.
 	Name *string `pulumi:"name"`
-	// - The status of the key.
+	// - ( Optional ) The status of the key. Enum Values:
+	//   _ "REVOKED": Key is revoked.
+	//   _ "VALID": Key is valid.
+	//   _ "EXPIRED": Key is expired.
 	Status *string `pulumi:"status"`
 	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId  *string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
+	// - ( Required ) External Identifier of the User.
 	UserExtId *string `pulumi:"userExtId"`
 }
 
 type UserKeyV2State struct {
-	// - External client to whom the given key is allocated.
+	// - ( Optional ) External client to whom the given key is allocated.
 	AssignedTo pulumi.StringPtrInput
 	// - User or service who created the key.
 	CreatedBy pulumi.StringPtrInput
 	// - The creation time of the key.
 	CreatedTime pulumi.StringPtrInput
-	// - The creation mechanism of this entity.
+	// - ( Optional ) The creation mechanism of this entity. Enum Values:
+	//   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+	//   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+	//   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
 	CreationType pulumi.StringPtrInput
-	// - Brief description of the key.
+	// - ( Optional ) Brief description of the key.
 	Description pulumi.StringPtrInput
-	// - The time when the key will expire.
+	// - ( Optional ) The time when the key will expire.
 	ExpiryTime pulumi.StringPtrInput
 	// - The External Identifier of the User Group.
 	ExtId pulumi.StringPtrInput
 	// - Details specific to type of the key.
 	KeyDetails UserKeyV2KeyDetailArrayInput
-	// - The type of key.
+	// - ( Required ) The type of key. Enum Values:
+	//   _ "API_KEY": A key type that is used to identify a service.
+	//   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
 	KeyType pulumi.StringPtrInput
 	// - User who updated the key.
 	LastUpdatedBy pulumi.StringPtrInput
@@ -205,12 +243,16 @@ type UserKeyV2State struct {
 	LastUsedTime pulumi.StringPtrInput
 	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links UserKeyV2LinkArrayInput
-	// - Identifier for the key in the form of a name.
+	// - ( Required ) Identifier for the key in the form of a name.
 	Name pulumi.StringPtrInput
-	// - The status of the key.
+	// - ( Optional ) The status of the key. Enum Values:
+	//   _ "REVOKED": Key is revoked.
+	//   _ "VALID": Key is valid.
+	//   _ "EXPIRED": Key is expired.
 	Status pulumi.StringPtrInput
 	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId  pulumi.StringPtrInput
+	TenantId pulumi.StringPtrInput
+	// - ( Required ) External Identifier of the User.
 	UserExtId pulumi.StringPtrInput
 }
 
@@ -219,19 +261,24 @@ func (UserKeyV2State) ElementType() reflect.Type {
 }
 
 type userKeyV2Args struct {
-	// - External client to whom the given key is allocated.
+	// - ( Optional ) External client to whom the given key is allocated.
 	AssignedTo *string `pulumi:"assignedTo"`
 	// - User or service who created the key.
 	CreatedBy *string `pulumi:"createdBy"`
 	// - The creation time of the key.
 	CreatedTime *string `pulumi:"createdTime"`
-	// - The creation mechanism of this entity.
+	// - ( Optional ) The creation mechanism of this entity. Enum Values:
+	//   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+	//   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+	//   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
 	CreationType *string `pulumi:"creationType"`
-	// - Brief description of the key.
+	// - ( Optional ) Brief description of the key.
 	Description *string `pulumi:"description"`
-	// - The time when the key will expire.
+	// - ( Optional ) The time when the key will expire.
 	ExpiryTime *string `pulumi:"expiryTime"`
-	// - The type of key.
+	// - ( Required ) The type of key. Enum Values:
+	//   _ "API_KEY": A key type that is used to identify a service.
+	//   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
 	KeyType string `pulumi:"keyType"`
 	// - User who updated the key.
 	LastUpdatedBy *string `pulumi:"lastUpdatedBy"`
@@ -239,28 +286,37 @@ type userKeyV2Args struct {
 	LastUpdatedTime *string `pulumi:"lastUpdatedTime"`
 	// - The time when the key was last used.
 	LastUsedTime *string `pulumi:"lastUsedTime"`
-	// - Identifier for the key in the form of a name.
+	// - ( Required ) Identifier for the key in the form of a name.
 	Name *string `pulumi:"name"`
-	// - The status of the key.
-	Status    *string `pulumi:"status"`
-	UserExtId string  `pulumi:"userExtId"`
+	// - ( Optional ) The status of the key. Enum Values:
+	//   _ "REVOKED": Key is revoked.
+	//   _ "VALID": Key is valid.
+	//   _ "EXPIRED": Key is expired.
+	Status *string `pulumi:"status"`
+	// - ( Required ) External Identifier of the User.
+	UserExtId string `pulumi:"userExtId"`
 }
 
 // The set of arguments for constructing a UserKeyV2 resource.
 type UserKeyV2Args struct {
-	// - External client to whom the given key is allocated.
+	// - ( Optional ) External client to whom the given key is allocated.
 	AssignedTo pulumi.StringPtrInput
 	// - User or service who created the key.
 	CreatedBy pulumi.StringPtrInput
 	// - The creation time of the key.
 	CreatedTime pulumi.StringPtrInput
-	// - The creation mechanism of this entity.
+	// - ( Optional ) The creation mechanism of this entity. Enum Values:
+	//   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+	//   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+	//   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
 	CreationType pulumi.StringPtrInput
-	// - Brief description of the key.
+	// - ( Optional ) Brief description of the key.
 	Description pulumi.StringPtrInput
-	// - The time when the key will expire.
+	// - ( Optional ) The time when the key will expire.
 	ExpiryTime pulumi.StringPtrInput
-	// - The type of key.
+	// - ( Required ) The type of key. Enum Values:
+	//   _ "API_KEY": A key type that is used to identify a service.
+	//   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
 	KeyType pulumi.StringInput
 	// - User who updated the key.
 	LastUpdatedBy pulumi.StringPtrInput
@@ -268,10 +324,14 @@ type UserKeyV2Args struct {
 	LastUpdatedTime pulumi.StringPtrInput
 	// - The time when the key was last used.
 	LastUsedTime pulumi.StringPtrInput
-	// - Identifier for the key in the form of a name.
+	// - ( Required ) Identifier for the key in the form of a name.
 	Name pulumi.StringPtrInput
-	// - The status of the key.
-	Status    pulumi.StringPtrInput
+	// - ( Optional ) The status of the key. Enum Values:
+	//   _ "REVOKED": Key is revoked.
+	//   _ "VALID": Key is valid.
+	//   _ "EXPIRED": Key is expired.
+	Status pulumi.StringPtrInput
+	// - ( Required ) External Identifier of the User.
 	UserExtId pulumi.StringInput
 }
 
@@ -362,7 +422,7 @@ func (o UserKeyV2Output) ToUserKeyV2OutputWithContext(ctx context.Context) UserK
 	return o
 }
 
-// - External client to whom the given key is allocated.
+// - ( Optional ) External client to whom the given key is allocated.
 func (o UserKeyV2Output) AssignedTo() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.AssignedTo }).(pulumi.StringOutput)
 }
@@ -377,17 +437,20 @@ func (o UserKeyV2Output) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// - The creation mechanism of this entity.
+//   - ( Optional ) The creation mechanism of this entity. Enum Values:
+//     _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+//     _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+//     _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
 func (o UserKeyV2Output) CreationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.CreationType }).(pulumi.StringOutput)
 }
 
-// - Brief description of the key.
+// - ( Optional ) Brief description of the key.
 func (o UserKeyV2Output) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// - The time when the key will expire.
+// - ( Optional ) The time when the key will expire.
 func (o UserKeyV2Output) ExpiryTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.ExpiryTime }).(pulumi.StringOutput)
 }
@@ -402,7 +465,9 @@ func (o UserKeyV2Output) KeyDetails() UserKeyV2KeyDetailArrayOutput {
 	return o.ApplyT(func(v *UserKeyV2) UserKeyV2KeyDetailArrayOutput { return v.KeyDetails }).(UserKeyV2KeyDetailArrayOutput)
 }
 
-// - The type of key.
+//   - ( Required ) The type of key. Enum Values:
+//     _ "API_KEY": A key type that is used to identify a service.
+//     _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
 func (o UserKeyV2Output) KeyType() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.KeyType }).(pulumi.StringOutput)
 }
@@ -427,12 +492,15 @@ func (o UserKeyV2Output) Links() UserKeyV2LinkArrayOutput {
 	return o.ApplyT(func(v *UserKeyV2) UserKeyV2LinkArrayOutput { return v.Links }).(UserKeyV2LinkArrayOutput)
 }
 
-// - Identifier for the key in the form of a name.
+// - ( Required ) Identifier for the key in the form of a name.
 func (o UserKeyV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// - The status of the key.
+//   - ( Optional ) The status of the key. Enum Values:
+//     _ "REVOKED": Key is revoked.
+//     _ "VALID": Key is valid.
+//     _ "EXPIRED": Key is expired.
 func (o UserKeyV2Output) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -442,6 +510,7 @@ func (o UserKeyV2Output) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
+// - ( Required ) External Identifier of the User.
 func (o UserKeyV2Output) UserExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserKeyV2) pulumi.StringOutput { return v.UserExtId }).(pulumi.StringOutput)
 }

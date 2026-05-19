@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVirtualMachineV2NicResult
     {
         /// <summary>
-        /// Defines a NIC emulated by the hypervisor
+        /// (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2NicBackingInfoResult> BackingInfos;
         /// <summary>
@@ -23,9 +23,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string ExtId;
         /// <summary>
-        /// Network information for a NIC.
+        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVirtualMachineV2NicLinkResult> Links;
+        /// <summary>
+        /// (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2NicNetworkInfoResult> NetworkInfos;
+        /// <summary>
+        /// New NIC backing info (v2.4.1+). One of &lt;span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`"&gt;`virtualEthernetNic`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`"&gt;`sriovNic`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`"&gt;`dpOffloadNic`&lt;/span&gt;.
+        /// </summary>
+        public readonly Outputs.GetVirtualMachineV2NicNicBackingInfoResult NicBackingInfo;
+        /// <summary>
+        /// New NIC network info (v2.4.1+). One of &lt;span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`"&gt;`virtualEthernetNicNetworkInfo`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`"&gt;`sriovNicNetworkInfo`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`"&gt;`dpOffloadNicNetworkInfo`&lt;/span&gt;.
+        /// </summary>
+        public readonly Outputs.GetVirtualMachineV2NicNicNetworkInfoResult NicNetworkInfo;
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// </summary>
+        public readonly string TenantId;
 
         [OutputConstructor]
         private GetVirtualMachineV2NicResult(
@@ -33,11 +49,23 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string extId,
 
-            ImmutableArray<Outputs.GetVirtualMachineV2NicNetworkInfoResult> networkInfos)
+            ImmutableArray<Outputs.GetVirtualMachineV2NicLinkResult> links,
+
+            ImmutableArray<Outputs.GetVirtualMachineV2NicNetworkInfoResult> networkInfos,
+
+            Outputs.GetVirtualMachineV2NicNicBackingInfoResult nicBackingInfo,
+
+            Outputs.GetVirtualMachineV2NicNicNetworkInfoResult nicNetworkInfo,
+
+            string tenantId)
         {
             BackingInfos = backingInfos;
             ExtId = extId;
+            Links = links;
             NetworkInfos = networkInfos;
+            NicBackingInfo = nicBackingInfo;
+            NicNetworkInfo = nicNetworkInfo;
+            TenantId = tenantId;
         }
     }
 }

@@ -36,11 +36,11 @@ class AuthorizationPolicyV2Args:
         :param pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]] identities: The identities for which the Authorization Policy is created.
         :param pulumi.Input[_builtins.str] role: The Role associated with the Authorization Policy.
         :param pulumi.Input[_builtins.str] authorization_policy_type: Type of Authorization Policy.
-               * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-               * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-               * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-               * `SERVICE_DEFINED` : ACP defined by a service.
-               * `USER_DEFINED` : ACP defined by an User.
+               - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+               - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+               - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+               - `SERVICE_DEFINED` : ACP defined by a service.
+               - `USER_DEFINED` : ACP defined by an User.
         :param pulumi.Input[_builtins.str] description: Description of the Authorization Policy.
         :param pulumi.Input[_builtins.str] ext_id: ext_id of Authorization policy.
         """
@@ -108,11 +108,11 @@ class AuthorizationPolicyV2Args:
     def authorization_policy_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of Authorization Policy.
-        * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-        * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-        * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-        * `SERVICE_DEFINED` : ACP defined by a service.
-        * `USER_DEFINED` : ACP defined by an User.
+        - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+        - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+        - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+        - `SERVICE_DEFINED` : ACP defined by a service.
+        - `USER_DEFINED` : ACP defined by an User.
         """
         return pulumi.get(self, "authorization_policy_type")
 
@@ -164,11 +164,11 @@ class _AuthorizationPolicyV2State:
         Input properties used for looking up and filtering AuthorizationPolicyV2 resources.
 
         :param pulumi.Input[_builtins.str] authorization_policy_type: Type of Authorization Policy.
-               * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-               * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-               * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-               * `SERVICE_DEFINED` : ACP defined by a service.
-               * `USER_DEFINED` : ACP defined by an User.
+               - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+               - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+               - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+               - `SERVICE_DEFINED` : ACP defined by a service.
+               - `USER_DEFINED` : ACP defined by an User.
         :param pulumi.Input[_builtins.str] client_name: Client that created the entity.
         :param pulumi.Input[_builtins.str] created_by: User or Service Name that created the Authorization Policy.
         :param pulumi.Input[_builtins.str] created_time: The creation time of the Authorization Policy.
@@ -211,11 +211,11 @@ class _AuthorizationPolicyV2State:
     def authorization_policy_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of Authorization Policy.
-        * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-        * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-        * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-        * `SERVICE_DEFINED` : ACP defined by a service.
-        * `USER_DEFINED` : ACP defined by an User.
+        - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+        - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+        - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+        - `SERVICE_DEFINED` : ACP defined by a service.
+        - `USER_DEFINED` : ACP defined by an User.
         """
         return pulumi.get(self, "authorization_policy_type")
 
@@ -403,11 +403,11 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authorization_policy_type: Type of Authorization Policy.
-               * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-               * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-               * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-               * `SERVICE_DEFINED` : ACP defined by a service.
-               * `USER_DEFINED` : ACP defined by an User.
+               - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+               - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+               - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+               - `SERVICE_DEFINED` : ACP defined by a service.
+               - `USER_DEFINED` : ACP defined by an User.
         :param pulumi.Input[_builtins.str] description: Description of the Authorization Policy.
         :param pulumi.Input[_builtins.str] display_name: Name of the Authorization Policy.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]] entities: The entities being qualified by the Authorization Policy.
@@ -532,11 +532,11 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authorization_policy_type: Type of Authorization Policy.
-               * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-               * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-               * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-               * `SERVICE_DEFINED` : ACP defined by a service.
-               * `USER_DEFINED` : ACP defined by an User.
+               - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+               - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+               - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+               - `SERVICE_DEFINED` : ACP defined by a service.
+               - `USER_DEFINED` : ACP defined by an User.
         :param pulumi.Input[_builtins.str] client_name: Client that created the entity.
         :param pulumi.Input[_builtins.str] created_by: User or Service Name that created the Authorization Policy.
         :param pulumi.Input[_builtins.str] created_time: The creation time of the Authorization Policy.
@@ -569,14 +569,14 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="authorizationPolicyType")
-    def authorization_policy_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def authorization_policy_type(self) -> pulumi.Output[_builtins.str]:
         """
         Type of Authorization Policy.
-        * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
-        * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
-        * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
-        * `SERVICE_DEFINED` : ACP defined by a service.
-        * `USER_DEFINED` : ACP defined by an User.
+        - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+        - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+        - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+        - `SERVICE_DEFINED` : ACP defined by a service.
+        - `USER_DEFINED` : ACP defined by an User.
         """
         return pulumi.get(self, "authorization_policy_type")
 
@@ -606,7 +606,7 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def description(self) -> pulumi.Output[_builtins.str]:
         """
         Description of the Authorization Policy.
         """

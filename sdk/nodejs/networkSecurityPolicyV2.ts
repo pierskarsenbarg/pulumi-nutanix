@@ -33,6 +33,24 @@ import * as utilities from "./utilities";
  *     }],
  *     isHitlogEnabled: true,
  * });
+ * // Network Security Policy with GLOBAL scope (VMs resolved by category across all VPCs)
+ * const global_nsp = new nutanix.NetworkSecurityPolicyV2("global-nsp", {
+ *     name: "my-global-policy",
+ *     description: "Application policy with global scope",
+ *     state: "SAVE",
+ *     type: "APPLICATION",
+ *     scope: "GLOBAL",
+ *     rules: [{
+ *         type: "APPLICATION",
+ *         specs: [{
+ *             applicationRuleSpecs: [{
+ *                 securedGroupCategoryReferences: [example.id],
+ *                 serviceGroupReferences: [exampleNutanixServiceGroupsV2.id],
+ *                 srcAddressGroupReferences: [exampleNutanixAddressGroupsV2.id],
+ *             }],
+ *         }],
+ *     }],
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  */
@@ -109,7 +127,7 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
      */
     declare public readonly rules: pulumi.Output<outputs.NetworkSecurityPolicyV2Rule[] | undefined>;
     /**
-     * Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
      */
     declare public readonly scope: pulumi.Output<string>;
     /**
@@ -125,7 +143,7 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
-     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
      */
     declare public readonly type: pulumi.Output<string>;
     /**
@@ -240,7 +258,7 @@ export interface NetworkSecurityPolicyV2State {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Rule>[] | undefined>;
     /**
-     * Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
      */
     scope?: pulumi.Input<string | undefined>;
     /**
@@ -256,7 +274,7 @@ export interface NetworkSecurityPolicyV2State {
      */
     tenantId?: pulumi.Input<string | undefined>;
     /**
-     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
      */
     type?: pulumi.Input<string | undefined>;
     /**
@@ -290,7 +308,7 @@ export interface NetworkSecurityPolicyV2Args {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Rule>[] | undefined>;
     /**
-     * Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
      */
     scope?: pulumi.Input<string | undefined>;
     /**
@@ -298,7 +316,7 @@ export interface NetworkSecurityPolicyV2Args {
      */
     state?: pulumi.Input<string | undefined>;
     /**
-     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
+     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
      */
     type: pulumi.Input<string>;
     /**

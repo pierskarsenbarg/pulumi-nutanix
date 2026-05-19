@@ -165,7 +165,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// - &lt;span pulumi-lang-nodejs="`rpoInMinutes`" pulumi-lang-dotnet="`RpoInMinutes`" pulumi-lang-go="`rpoInMinutes`" pulumi-lang-python="`rpo_in_minutes`" pulumi-lang-yaml="`rpoInMinutes`" pulumi-lang-java="`rpoInMinutes`"&gt;`rpoInMinutes`&lt;/span&gt;: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
         /// 
-        /// See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listBackupTargets).
+        /// See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listBackupTargets).
         /// </summary>
         public static Task<GetPcBackupTargetsV2Result> InvokeAsync(GetPcBackupTargetsV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPcBackupTargetsV2Result>("nutanix:index/getPcBackupTargetsV2:getPcBackupTargetsV2", args ?? new GetPcBackupTargetsV2Args(), options.WithDefaults());
@@ -323,7 +323,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// - &lt;span pulumi-lang-nodejs="`rpoInMinutes`" pulumi-lang-dotnet="`RpoInMinutes`" pulumi-lang-go="`rpoInMinutes`" pulumi-lang-python="`rpo_in_minutes`" pulumi-lang-yaml="`rpoInMinutes`" pulumi-lang-java="`rpoInMinutes`"&gt;`rpoInMinutes`&lt;/span&gt;: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
         /// 
-        /// See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listBackupTargets).
+        /// See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listBackupTargets).
         /// </summary>
         public static Output<GetPcBackupTargetsV2Result> Invoke(GetPcBackupTargetsV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcBackupTargetsV2Result>("nutanix:index/getPcBackupTargetsV2:getPcBackupTargetsV2", args ?? new GetPcBackupTargetsV2InvokeArgs(), options.WithDefaults());
@@ -481,7 +481,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// - &lt;span pulumi-lang-nodejs="`rpoInMinutes`" pulumi-lang-dotnet="`RpoInMinutes`" pulumi-lang-go="`rpoInMinutes`" pulumi-lang-python="`rpo_in_minutes`" pulumi-lang-yaml="`rpoInMinutes`" pulumi-lang-java="`rpoInMinutes`"&gt;`rpoInMinutes`&lt;/span&gt;: - RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
         /// 
-        /// See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listBackupTargets).
+        /// See detailed information in [Nutanix List Backup Targets ](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listBackupTargets).
         /// </summary>
         public static Output<GetPcBackupTargetsV2Result> Invoke(GetPcBackupTargetsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcBackupTargetsV2Result>("nutanix:index/getPcBackupTargetsV2:getPcBackupTargetsV2", args ?? new GetPcBackupTargetsV2InvokeArgs(), options.WithDefaults());

@@ -77,7 +77,7 @@ import * as utilities from "./utilities";
  *
  * * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of fqdn address
  *
- * See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/StorageContainers/operation/listStorageContainers).
+ * See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/StorageContainers/operation/listStorageContainers).
  */
 export function getStorageContainersV2(args?: GetStorageContainersV2Args, opts?: pulumi.InvokeOptions): Promise<GetStorageContainersV2Result> {
     args = args || {};
@@ -209,7 +209,7 @@ export interface GetStorageContainersV2Result {
  *
  * * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of fqdn address
  *
- * See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/StorageContainers/operation/listStorageContainers).
+ * See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/StorageContainers/operation/listStorageContainers).
  */
 export function getStorageContainersV2Output(args?: GetStorageContainersV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStorageContainersV2Result> {
     args = args || {};

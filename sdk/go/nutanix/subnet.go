@@ -46,7 +46,7 @@ type Subnet struct {
 	DhcpServerAddressPort pulumi.IntOutput `pulumi:"dhcpServerAddressPort"`
 	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
 	EnableNat pulumi.BoolOutput `pulumi:"enableNat"`
-	// -(Optional) Range of IPs.
+	// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
 	IpConfigPoolListRanges pulumi.StringArrayOutput `pulumi:"ipConfigPoolListRanges"`
 	// - (Optional) Whether the subnet is external subnet or not.
 	IsExternal pulumi.BoolOutput `pulumi:"isExternal"`
@@ -134,7 +134,7 @@ type subnetState struct {
 	DhcpServerAddressPort *int `pulumi:"dhcpServerAddressPort"`
 	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
 	EnableNat *bool `pulumi:"enableNat"`
-	// -(Optional) Range of IPs.
+	// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
 	IpConfigPoolListRanges []string `pulumi:"ipConfigPoolListRanges"`
 	// - (Optional) Whether the subnet is external subnet or not.
 	IsExternal *bool `pulumi:"isExternal"`
@@ -190,7 +190,7 @@ type SubnetState struct {
 	DhcpServerAddressPort pulumi.IntPtrInput
 	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
 	EnableNat pulumi.BoolPtrInput
-	// -(Optional) Range of IPs.
+	// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
 	IpConfigPoolListRanges pulumi.StringArrayInput
 	// - (Optional) Whether the subnet is external subnet or not.
 	IsExternal pulumi.BoolPtrInput
@@ -247,7 +247,7 @@ type subnetArgs struct {
 	DhcpServerAddressPort *int `pulumi:"dhcpServerAddressPort"`
 	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
 	EnableNat *bool `pulumi:"enableNat"`
-	// -(Optional) Range of IPs.
+	// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
 	IpConfigPoolListRanges []string `pulumi:"ipConfigPoolListRanges"`
 	// - (Optional) Whether the subnet is external subnet or not.
 	IsExternal *bool `pulumi:"isExternal"`
@@ -297,7 +297,7 @@ type SubnetArgs struct {
 	DhcpServerAddressPort pulumi.IntPtrInput
 	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
 	EnableNat pulumi.BoolPtrInput
-	// -(Optional) Range of IPs.
+	// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
 	IpConfigPoolListRanges pulumi.StringArrayInput
 	// - (Optional) Whether the subnet is external subnet or not.
 	IsExternal pulumi.BoolPtrInput
@@ -474,7 +474,7 @@ func (o SubnetOutput) EnableNat() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.BoolOutput { return v.EnableNat }).(pulumi.BoolOutput)
 }
 
-// -(Optional) Range of IPs.
+// - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
 func (o SubnetOutput) IpConfigPoolListRanges() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringArrayOutput { return v.IpConfigPoolListRanges }).(pulumi.StringArrayOutput)
 }

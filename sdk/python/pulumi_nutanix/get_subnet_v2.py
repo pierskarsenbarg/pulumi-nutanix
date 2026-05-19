@@ -28,7 +28,7 @@ class GetSubnetV2Result:
     """
     A collection of values returned by getSubnetV2.
     """
-    def __init__(__self__, bridge_name=None, cluster_name=None, cluster_reference=None, description=None, dhcp_options=None, dynamic_ip_addresses=None, ext_id=None, hypervisor_type=None, id=None, ip_configs=None, ip_prefix=None, ip_usages=None, is_advanced_networking=None, is_external=None, is_nat_enabled=None, links=None, migration_state=None, name=None, network_function_chain_reference=None, network_id=None, reserved_ip_addresses=None, subnet_type=None, virtual_switch_reference=None, virtual_switches=None, vpc_reference=None, vpcs=None):
+    def __init__(__self__, bridge_name=None, cluster_name=None, cluster_reference=None, description=None, dhcp_options=None, dynamic_ip_addresses=None, ext_id=None, hypervisor_type=None, id=None, ip_configs=None, ip_prefix=None, ip_usages=None, is_advanced_networking=None, is_external=None, is_nat_enabled=None, links=None, metadatas=None, migration_state=None, name=None, network_function_chain_reference=None, network_id=None, reserved_ip_addresses=None, subnet_type=None, virtual_switch_reference=None, virtual_switches=None, vpc_reference=None, vpcs=None):
         if bridge_name and not isinstance(bridge_name, str):
             raise TypeError("Expected argument 'bridge_name' to be a str")
         pulumi.set(__self__, "bridge_name", bridge_name)
@@ -77,6 +77,9 @@ class GetSubnetV2Result:
         if links and not isinstance(links, list):
             raise TypeError("Expected argument 'links' to be a list")
         pulumi.set(__self__, "links", links)
+        if metadatas and not isinstance(metadatas, list):
+            raise TypeError("Expected argument 'metadatas' to be a list")
+        pulumi.set(__self__, "metadatas", metadatas)
         if migration_state and not isinstance(migration_state, str):
             raise TypeError("Expected argument 'migration_state' to be a str")
         pulumi.set(__self__, "migration_state", migration_state)
@@ -234,6 +237,11 @@ class GetSubnetV2Result:
         return pulumi.get(self, "links")
 
     @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetSubnetV2MetadataResult']:
+        return pulumi.get(self, "metadatas")
+
+    @_builtins.property
     @pulumi.getter(name="migrationState")
     def migration_state(self) -> _builtins.str:
         """
@@ -336,6 +344,7 @@ class AwaitableGetSubnetV2Result(GetSubnetV2Result):
             is_external=self.is_external,
             is_nat_enabled=self.is_nat_enabled,
             links=self.links,
+            metadatas=self.metadatas,
             migration_state=self.migration_state,
             name=self.name,
             network_function_chain_reference=self.network_function_chain_reference,
@@ -381,6 +390,7 @@ def get_subnet_v2(ext_id: Optional[_builtins.str] = None,
         is_external=pulumi.get(__ret__, 'is_external'),
         is_nat_enabled=pulumi.get(__ret__, 'is_nat_enabled'),
         links=pulumi.get(__ret__, 'links'),
+        metadatas=pulumi.get(__ret__, 'metadatas'),
         migration_state=pulumi.get(__ret__, 'migration_state'),
         name=pulumi.get(__ret__, 'name'),
         network_function_chain_reference=pulumi.get(__ret__, 'network_function_chain_reference'),
@@ -423,6 +433,7 @@ def get_subnet_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         is_external=pulumi.get(__response__, 'is_external'),
         is_nat_enabled=pulumi.get(__response__, 'is_nat_enabled'),
         links=pulumi.get(__response__, 'links'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
         migration_state=pulumi.get(__response__, 'migration_state'),
         name=pulumi.get(__response__, 'name'),
         network_function_chain_reference=pulumi.get(__response__, 'network_function_chain_reference'),

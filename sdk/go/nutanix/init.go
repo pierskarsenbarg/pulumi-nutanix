@@ -39,6 +39,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CategoryValue{}
 	case "nutanix:index/clusterAddNodeV2:ClusterAddNodeV2":
 		r = &ClusterAddNodeV2{}
+	case "nutanix:index/clusterProfileV2:ClusterProfileV2":
+		r = &ClusterProfileV2{}
 	case "nutanix:index/clusterV2:ClusterV2":
 		r = &ClusterV2{}
 	case "nutanix:index/clustersDiscoverUnconfiguredNodesV2:ClustersDiscoverUnconfiguredNodesV2":
@@ -49,6 +51,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DeployTemplatesV2{}
 	case "nutanix:index/directoryServicesV2:DirectoryServicesV2":
 		r = &DirectoryServicesV2{}
+	case "nutanix:index/entityGroupV2:EntityGroupV2":
+		r = &EntityGroupV2{}
 	case "nutanix:index/floatingIp:FloatingIp":
 		r = &FloatingIp{}
 	case "nutanix:index/floatingIpV2:FloatingIpV2":
@@ -57,6 +61,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &FoundationCentralApiKeys{}
 	case "nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster":
 		r = &FoundationCentralImageCluster{}
+	case "nutanix:index/foundationCentralOnboardNodes:FoundationCentralOnboardNodes":
+		r = &FoundationCentralOnboardNodes{}
 	case "nutanix:index/foundationImage:FoundationImage":
 		r = &FoundationImage{}
 	case "nutanix:index/foundationImageNodes:FoundationImageNodes":
@@ -75,6 +81,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &KarbonPrivateRegistry{}
 	case "nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool":
 		r = &KarbonWorkerNodepool{}
+	case "nutanix:index/keyManagementServerV2:KeyManagementServerV2":
+		r = &KeyManagementServerV2{}
 	case "nutanix:index/lcmConfigV2:LcmConfigV2":
 		r = &LcmConfigV2{}
 	case "nutanix:index/lcmPerformInventoryV2:LcmPerformInventoryV2":
@@ -129,6 +137,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NdbTag{}
 	case "nutanix:index/ndbTmsCluster:NdbTmsCluster":
 		r = &NdbTmsCluster{}
+	case "nutanix:index/networkFunctionV2:NetworkFunctionV2":
+		r = &NetworkFunctionV2{}
 	case "nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2":
 		r = &NetworkSecurityPolicyV2{}
 	case "nutanix:index/networkSecurityRule:NetworkSecurityRule":
@@ -143,6 +153,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ObjectStoreCertificateV2{}
 	case "nutanix:index/objectStoreV2:ObjectStoreV2":
 		r = &ObjectStoreV2{}
+	case "nutanix:index/ovaDownloadV2:OvaDownloadV2":
+		r = &OvaDownloadV2{}
+	case "nutanix:index/ovaV2:OvaV2":
+		r = &OvaV2{}
+	case "nutanix:index/ovaVmDeployV2:OvaVmDeployV2":
+		r = &OvaVmDeployV2{}
+	case "nutanix:index/passwordChangeRequestV2:PasswordChangeRequestV2":
+		r = &PasswordChangeRequestV2{}
 	case "nutanix:index/pbr:Pbr":
 		r = &Pbr{}
 	case "nutanix:index/pbrV2:PbrV2":
@@ -199,10 +217,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ServiceGroup{}
 	case "nutanix:index/serviceGroupsV2:ServiceGroupsV2":
 		r = &ServiceGroupsV2{}
+	case "nutanix:index/sslCertificateV2:SslCertificateV2":
+		r = &SslCertificateV2{}
 	case "nutanix:index/staticRoutes:StaticRoutes":
 		r = &StaticRoutes{}
 	case "nutanix:index/storageContainersV2:StorageContainersV2":
 		r = &StorageContainersV2{}
+	case "nutanix:index/storagePolicyV2:StoragePolicyV2":
+		r = &StoragePolicyV2{}
 	case "nutanix:index/subnet:Subnet":
 		r = &Subnet{}
 	case "nutanix:index/subnetV2:SubnetV2":
@@ -227,12 +249,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &VirtualMachine{}
 	case "nutanix:index/virtualMachineV2:VirtualMachineV2":
 		r = &VirtualMachineV2{}
+	case "nutanix:index/vmAntiAffinityPolicyV2:VmAntiAffinityPolicyV2":
+		r = &VmAntiAffinityPolicyV2{}
 	case "nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2":
 		r = &VmCdromInsertEjectV2{}
 	case "nutanix:index/vmCloneV2:VmCloneV2":
 		r = &VmCloneV2{}
 	case "nutanix:index/vmGcUpdateV2:VmGcUpdateV2":
 		r = &VmGcUpdateV2{}
+	case "nutanix:index/vmHostAffinityPolicyV2:VmHostAffinityPolicyV2":
+		r = &VmHostAffinityPolicyV2{}
 	case "nutanix:index/vmNetworkDeviceAssignIpV2:VmNetworkDeviceAssignIpV2":
 		r = &VmNetworkDeviceAssignIpV2{}
 	case "nutanix:index/vmNetworkDeviceMigrateV2:VmNetworkDeviceMigrateV2":
@@ -331,6 +357,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/clusterProfileV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/clusterV2",
 		&module{version},
 	)
@@ -356,6 +387,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/entityGroupV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/floatingIp",
 		&module{version},
 	)
@@ -372,6 +408,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/foundationCentralImageCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/foundationCentralOnboardNodes",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -417,6 +458,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/karbonWorkerNodepool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/keyManagementServerV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -556,6 +602,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/networkFunctionV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/networkSecurityPolicyV2",
 		&module{version},
 	)
@@ -587,6 +638,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/objectStoreV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ovaDownloadV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ovaV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ovaVmDeployV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/passwordChangeRequestV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -731,12 +802,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/sslCertificateV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/staticRoutes",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/storageContainersV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/storagePolicyV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -801,6 +882,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/vmAntiAffinityPolicyV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/vmCdromInsertEjectV2",
 		&module{version},
 	)
@@ -812,6 +898,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/vmGcUpdateV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmHostAffinityPolicyV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -149,7 +149,7 @@ import * as utilities from "./utilities";
  *
  * * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: - The fully qualified domain name of the host.
  *
- * See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listDomainManagers).
+ * See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listDomainManagers).
  */
 export function getPcsV2(args?: GetPcsV2Args, opts?: pulumi.InvokeOptions): Promise<GetPcsV2Result> {
     args = args || {};
@@ -326,7 +326,7 @@ export interface GetPcsV2Result {
  *
  * * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: - The fully qualified domain name of the host.
  *
- * See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listDomainManagers).
+ * See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listDomainManagers).
  */
 export function getPcsV2Output(args?: GetPcsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPcsV2Result> {
     args = args || {};

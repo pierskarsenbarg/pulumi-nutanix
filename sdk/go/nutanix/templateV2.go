@@ -16,9 +16,10 @@ import (
 type TemplateV2 struct {
 	pulumi.CustomResourceState
 
-	CreateTime  pulumi.StringOutput            `pulumi:"createTime"`
-	CreatedBies TemplateV2CreatedByArrayOutput `pulumi:"createdBies"`
-	ExtId       pulumi.StringOutput            `pulumi:"extId"`
+	CategoryExtIds pulumi.StringArrayOutput       `pulumi:"categoryExtIds"`
+	CreateTime     pulumi.StringOutput            `pulumi:"createTime"`
+	CreatedBies    TemplateV2CreatedByArrayOutput `pulumi:"createdBies"`
+	ExtId          pulumi.StringOutput            `pulumi:"extId"`
 	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayOutput `pulumi:"guestUpdateStatuses"`
 	Links               TemplateV2LinkArrayOutput              `pulumi:"links"`
@@ -69,9 +70,10 @@ func GetTemplateV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering TemplateV2 resources.
 type templateV2State struct {
-	CreateTime  *string               `pulumi:"createTime"`
-	CreatedBies []TemplateV2CreatedBy `pulumi:"createdBies"`
-	ExtId       *string               `pulumi:"extId"`
+	CategoryExtIds []string              `pulumi:"categoryExtIds"`
+	CreateTime     *string               `pulumi:"createTime"`
+	CreatedBies    []TemplateV2CreatedBy `pulumi:"createdBies"`
+	ExtId          *string               `pulumi:"extId"`
 	// Status of a guest update.
 	GuestUpdateStatuses []TemplateV2GuestUpdateStatus `pulumi:"guestUpdateStatuses"`
 	Links               []TemplateV2Link              `pulumi:"links"`
@@ -87,9 +89,10 @@ type templateV2State struct {
 }
 
 type TemplateV2State struct {
-	CreateTime  pulumi.StringPtrInput
-	CreatedBies TemplateV2CreatedByArrayInput
-	ExtId       pulumi.StringPtrInput
+	CategoryExtIds pulumi.StringArrayInput
+	CreateTime     pulumi.StringPtrInput
+	CreatedBies    TemplateV2CreatedByArrayInput
+	ExtId          pulumi.StringPtrInput
 	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayInput
 	Links               TemplateV2LinkArrayInput
@@ -109,7 +112,8 @@ func (TemplateV2State) ElementType() reflect.Type {
 }
 
 type templateV2Args struct {
-	CreatedBies []TemplateV2CreatedBy `pulumi:"createdBies"`
+	CategoryExtIds []string              `pulumi:"categoryExtIds"`
+	CreatedBies    []TemplateV2CreatedBy `pulumi:"createdBies"`
 	// Status of a guest update.
 	GuestUpdateStatuses []TemplateV2GuestUpdateStatus `pulumi:"guestUpdateStatuses"`
 	// The user defined description of a Template.
@@ -123,7 +127,8 @@ type templateV2Args struct {
 
 // The set of arguments for constructing a TemplateV2 resource.
 type TemplateV2Args struct {
-	CreatedBies TemplateV2CreatedByArrayInput
+	CategoryExtIds pulumi.StringArrayInput
+	CreatedBies    TemplateV2CreatedByArrayInput
 	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayInput
 	// The user defined description of a Template.
@@ -220,6 +225,10 @@ func (o TemplateV2Output) ToTemplateV2Output() TemplateV2Output {
 
 func (o TemplateV2Output) ToTemplateV2OutputWithContext(ctx context.Context) TemplateV2Output {
 	return o
+}
+
+func (o TemplateV2Output) CategoryExtIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TemplateV2) pulumi.StringArrayOutput { return v.CategoryExtIds }).(pulumi.StringArrayOutput)
 }
 
 func (o TemplateV2Output) CreateTime() pulumi.StringOutput {

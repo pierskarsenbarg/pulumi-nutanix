@@ -25,6 +25,16 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
+    ///     //#############################################
+    ///     // ------------------------------------------------
+    ///     // This resource allows inserting a custom ISO into
+    ///     // a VM’s CD-ROM device.
+    ///     //
+    ///     // You can manage both:
+    ///     // 1. **Insertion** — via `apply`
+    ///     // 2. **Ejection** — automatically on `delete`
+    ///     //  You can also eject the ISO by setting `action = "eject"` → triggers eject operation explicitly.
+    ///     //#############################################
     ///     var insert_cdrom = new Nutanix.VmCdromInsertEjectV2("insert-cdrom", new()
     ///     {
     ///         VmExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
@@ -64,16 +74,31 @@ namespace PiersKarsenbarg.Nutanix
     public partial class VmCdromInsertEjectV2 : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        /// </summary>
+        [Output("action")]
+        public Output<string?> Action { get; private set; } = null!;
+
+        /// <summary>
         /// Storage provided by Nutanix ADSF
         /// </summary>
         [Output("backingInfos")]
         public Output<ImmutableArray<Outputs.VmCdromInsertEjectV2BackingInfo>> BackingInfos { get; private set; } = null!;
+
+        [Output("cdromExtId")]
+        public Output<string> CdromExtId { get; private set; } = null!;
+
+        [Output("diskAddresses")]
+        public Output<ImmutableArray<Outputs.VmCdromInsertEjectV2DiskAddress>> DiskAddresses { get; private set; } = null!;
 
         /// <summary>
         /// The globally unique identifier of a CD-ROM. It should be of type UUID.
         /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
+
+        [Output("isoType")]
+        public Output<string> IsoType { get; private set; } = null!;
 
         /// <summary>
         /// The globally unique identifier of a VM. It should be of type UUID
@@ -128,6 +153,12 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class VmCdromInsertEjectV2Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        /// </summary>
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         [Input("backingInfos")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoArgs>? _backingInfos;
 
@@ -160,6 +191,12 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class VmCdromInsertEjectV2State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+        /// </summary>
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         [Input("backingInfos")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoGetArgs>? _backingInfos;
 
@@ -172,11 +209,25 @@ namespace PiersKarsenbarg.Nutanix
             set => _backingInfos = value;
         }
 
+        [Input("cdromExtId")]
+        public Input<string>? CdromExtId { get; set; }
+
+        [Input("diskAddresses")]
+        private InputList<Inputs.VmCdromInsertEjectV2DiskAddressGetArgs>? _diskAddresses;
+        public InputList<Inputs.VmCdromInsertEjectV2DiskAddressGetArgs> DiskAddresses
+        {
+            get => _diskAddresses ?? (_diskAddresses = new InputList<Inputs.VmCdromInsertEjectV2DiskAddressGetArgs>());
+            set => _diskAddresses = value;
+        }
+
         /// <summary>
         /// The globally unique identifier of a CD-ROM. It should be of type UUID.
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
+
+        [Input("isoType")]
+        public Input<string>? IsoType { get; set; }
 
         /// <summary>
         /// The globally unique identifier of a VM. It should be of type UUID

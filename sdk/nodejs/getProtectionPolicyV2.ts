@@ -7,7 +7,9 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Describes the Fetches the protection policy identified by an external identifier.
+ * > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration.
+ *
+ * Fetches the protection policy identified by an external identifier.
  *
  * ## Example Usage
  *
@@ -89,7 +91,9 @@ export interface GetProtectionPolicyV2Result {
     readonly tenantId: string;
 }
 /**
- * Describes the Fetches the protection policy identified by an external identifier.
+ * > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration.
+ *
+ * Fetches the protection policy identified by an external identifier.
  *
  * ## Example Usage
  *

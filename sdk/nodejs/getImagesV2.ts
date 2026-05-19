@@ -66,7 +66,7 @@ import * as utilities from "./utilities";
  * * <span pulumi-lang-nodejs="`enforcedClusterExtIds`" pulumi-lang-dotnet="`EnforcedClusterExtIds`" pulumi-lang-go="`enforcedClusterExtIds`" pulumi-lang-python="`enforced_cluster_ext_ids`" pulumi-lang-yaml="`enforcedClusterExtIds`" pulumi-lang-java="`enforcedClusterExtIds`">`enforcedClusterExtIds`</span>: List of cluster external identifiers for the enforced placement policy.
  * * <span pulumi-lang-nodejs="`conflictingPolicyExtIds`" pulumi-lang-dotnet="`ConflictingPolicyExtIds`" pulumi-lang-go="`conflictingPolicyExtIds`" pulumi-lang-python="`conflicting_policy_ext_ids`" pulumi-lang-yaml="`conflictingPolicyExtIds`" pulumi-lang-java="`conflictingPolicyExtIds`">`conflictingPolicyExtIds`</span>: List of image placement policy external identifier that conflict with the current one.
  *
- * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
+ * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Images)
  */
 export function getImagesV2(args?: GetImagesV2Args, opts?: pulumi.InvokeOptions): Promise<GetImagesV2Result> {
     args = args || {};
@@ -205,7 +205,7 @@ export interface GetImagesV2Result {
  * * <span pulumi-lang-nodejs="`enforcedClusterExtIds`" pulumi-lang-dotnet="`EnforcedClusterExtIds`" pulumi-lang-go="`enforcedClusterExtIds`" pulumi-lang-python="`enforced_cluster_ext_ids`" pulumi-lang-yaml="`enforcedClusterExtIds`" pulumi-lang-java="`enforcedClusterExtIds`">`enforcedClusterExtIds`</span>: List of cluster external identifiers for the enforced placement policy.
  * * <span pulumi-lang-nodejs="`conflictingPolicyExtIds`" pulumi-lang-dotnet="`ConflictingPolicyExtIds`" pulumi-lang-go="`conflictingPolicyExtIds`" pulumi-lang-python="`conflicting_policy_ext_ids`" pulumi-lang-yaml="`conflictingPolicyExtIds`" pulumi-lang-java="`conflictingPolicyExtIds`">`conflictingPolicyExtIds`</span>: List of image placement policy external identifier that conflict with the current one.
  *
- * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
+ * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Images)
  */
 export function getImagesV2Output(args?: GetImagesV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImagesV2Result> {
     args = args || {};
