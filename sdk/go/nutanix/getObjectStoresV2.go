@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetObjectStoresV2(ctx *pulumi.Context, args *GetObjectStoresV2Args, opts ...pulumi.InvokeOption) (*GetObjectStoresV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetObjectStoresV2Result

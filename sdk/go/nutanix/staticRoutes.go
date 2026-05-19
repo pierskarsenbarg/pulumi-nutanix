@@ -15,6 +15,7 @@ import (
 //
 // ## create one static route for vpc uuid with external subnet
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,9 +45,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## create one static route with default route for vpc name with external subnet
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -81,6 +84,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // #### Note: destination with 0.0.0.0/0 will be default route.
 type StaticRoutes struct {
@@ -90,7 +94,7 @@ type StaticRoutes struct {
 	ApiVersion pulumi.StringOutput `pulumi:"apiVersion"`
 	// Default Route
 	DefaultRouteNexthops StaticRoutesDefaultRouteNexthopArrayOutput `pulumi:"defaultRouteNexthops"`
-	// The vpcRouteTable kind metadata.
+	// The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
 	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
 	// Static Routes.
 	StaticRoutesLists StaticRoutesStaticRoutesListArrayOutput `pulumi:"staticRoutesLists"`
@@ -134,7 +138,7 @@ type staticRoutesState struct {
 	ApiVersion *string `pulumi:"apiVersion"`
 	// Default Route
 	DefaultRouteNexthops []StaticRoutesDefaultRouteNexthop `pulumi:"defaultRouteNexthops"`
-	// The vpcRouteTable kind metadata.
+	// The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	// Static Routes.
 	StaticRoutesLists []StaticRoutesStaticRoutesList `pulumi:"staticRoutesLists"`
@@ -149,7 +153,7 @@ type StaticRoutesState struct {
 	ApiVersion pulumi.StringPtrInput
 	// Default Route
 	DefaultRouteNexthops StaticRoutesDefaultRouteNexthopArrayInput
-	// The vpcRouteTable kind metadata.
+	// The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
 	Metadata pulumi.StringMapInput
 	// Static Routes.
 	StaticRoutesLists StaticRoutesStaticRoutesListArrayInput
@@ -287,7 +291,7 @@ func (o StaticRoutesOutput) DefaultRouteNexthops() StaticRoutesDefaultRouteNexth
 	return o.ApplyT(func(v *StaticRoutes) StaticRoutesDefaultRouteNexthopArrayOutput { return v.DefaultRouteNexthops }).(StaticRoutesDefaultRouteNexthopArrayOutput)
 }
 
-// The vpcRouteTable kind metadata.
+// The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
 func (o StaticRoutesOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *StaticRoutes) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }

@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVmRecoveryPointInfoV2(ctx *pulumi.Context, args *GetVmRecoveryPointInfoV2Args, opts ...pulumi.InvokeOption) (*GetVmRecoveryPointInfoV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVmRecoveryPointInfoV2Result

@@ -18,6 +18,7 @@ import (
 //
 // ### pbr creation with vpc name with any source or destination or protocol with permit action
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,6 +52,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type Pbr struct {
 	pulumi.CustomResourceState
 

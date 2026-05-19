@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// > The restore source is auto-deleted after sometime, PcRestoreSourceV2 resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
+// > The restore source is auto-deleted after sometime,<span pulumi-lang-nodejs=" nutanix.PcRestoreSourceV2 " pulumi-lang-dotnet=" nutanix.PcRestoreSourceV2 " pulumi-lang-go=" PcRestoreSourceV2 " pulumi-lang-python=" PcRestoreSourceV2 " pulumi-lang-yaml=" nutanix.PcRestoreSourceV2 " pulumi-lang-java=" nutanix.PcRestoreSourceV2 "> nutanix.PcRestoreSourceV2 </span>resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
 //
 // Create a restore source pointing to a cluster or object store to restore the domain manager. The created restore source is intended to be deleted after use. If the restore source is not deleted using the deleteRestoreSource API, then it is auto-deleted after sometime. Also note that a restore source will not contain a backup policy. It is only used to access the backup data at the location from where the Prism Central may be restored. Credentials used to access the restore source are not validated at the time of creation of the restore source. They are validated when the restore source is used to fetch data.
 //
@@ -20,6 +20,7 @@ import (
 //
 // ### Cluster Location
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,9 +57,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### Object Store Location
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -103,6 +106,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type PcRestoreSourceV2 struct {
 	pulumi.CustomResourceState
 

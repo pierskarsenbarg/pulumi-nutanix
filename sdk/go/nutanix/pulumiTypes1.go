@@ -8307,7 +8307,7 @@ func (o NdbProfileComputeProfileArrayOutput) Index(i pulumi.IntInput) NdbProfile
 type NdbProfileDatabaseParameterProfile struct {
 	// Database parameters suuported for postgress.
 	// * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
-	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. walLevel must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
 	// * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
 	// * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
 	// * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
@@ -8317,7 +8317,7 @@ type NdbProfileDatabaseParameterProfile struct {
 	// * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
 	// * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
 	// * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
-	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, trackCounts must also be enabled for autovacuum to work.
+	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts "> trackCounts </span>must also be enabled for autovacuum to work.
 	// * `postgres_database.checkpoint_completion_target`: (Optional)
 	//   Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
 	// * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
@@ -8330,7 +8330,7 @@ type NdbProfileDatabaseParameterProfile struct {
 	//   Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
 	// * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
 	// * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
-	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pgWal directory. Default is 700 .
+	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal "> pgWal </span>directory. Default is 700 .
 	PostgresDatabases []NdbProfileDatabaseParameterProfilePostgresDatabase `pulumi:"postgresDatabases"`
 }
 
@@ -8348,7 +8348,7 @@ type NdbProfileDatabaseParameterProfileInput interface {
 type NdbProfileDatabaseParameterProfileArgs struct {
 	// Database parameters suuported for postgress.
 	// * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
-	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. walLevel must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
 	// * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
 	// * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
 	// * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
@@ -8358,7 +8358,7 @@ type NdbProfileDatabaseParameterProfileArgs struct {
 	// * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
 	// * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
 	// * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
-	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, trackCounts must also be enabled for autovacuum to work.
+	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts "> trackCounts </span>must also be enabled for autovacuum to work.
 	// * `postgres_database.checkpoint_completion_target`: (Optional)
 	//   Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
 	// * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
@@ -8371,7 +8371,7 @@ type NdbProfileDatabaseParameterProfileArgs struct {
 	//   Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
 	// * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
 	// * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
-	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pgWal directory. Default is 700 .
+	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal "> pgWal </span>directory. Default is 700 .
 	PostgresDatabases NdbProfileDatabaseParameterProfilePostgresDatabaseArrayInput `pulumi:"postgresDatabases"`
 }
 
@@ -8428,7 +8428,7 @@ func (o NdbProfileDatabaseParameterProfileOutput) ToNdbProfileDatabaseParameterP
 
 // Database parameters suuported for postgress.
 //   - `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
-//   - `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. walLevel must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+//   - `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
 //   - `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
 //   - `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
 //   - `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
@@ -8438,7 +8438,7 @@ func (o NdbProfileDatabaseParameterProfileOutput) ToNdbProfileDatabaseParameterP
 //   - `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
 //   - `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
 //   - `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
-//   - `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, trackCounts must also be enabled for autovacuum to work.
+//   - `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts "> trackCounts </span>must also be enabled for autovacuum to work.
 //   - `postgres_database.checkpoint_completion_target`: (Optional)
 //     Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
 //   - `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
@@ -8451,7 +8451,7 @@ func (o NdbProfileDatabaseParameterProfileOutput) ToNdbProfileDatabaseParameterP
 //     Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
 //   - `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
 //   - `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
-//   - `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pgWal directory. Default is 700 .
+//   - `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal "> pgWal </span>directory. Default is 700 .
 func (o NdbProfileDatabaseParameterProfileOutput) PostgresDatabases() NdbProfileDatabaseParameterProfilePostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v NdbProfileDatabaseParameterProfile) []NdbProfileDatabaseParameterProfilePostgresDatabase {
 		return v.PostgresDatabases
@@ -38255,7 +38255,7 @@ type PcDeployV2ConfigBootstrapConfigCloudInitConfig struct {
 	CloudInitScripts []PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScript `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// -(Optional)The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -38277,7 +38277,7 @@ type PcDeployV2ConfigBootstrapConfigCloudInitConfigArgs struct {
 	CloudInitScripts PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// -(Optional)The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -38346,7 +38346,7 @@ func (o PcDeployV2ConfigBootstrapConfigCloudInitConfigOutput) DatasourceType() p
 	return o.ApplyT(func(v PcDeployV2ConfigBootstrapConfigCloudInitConfig) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// -(Optional)The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o PcDeployV2ConfigBootstrapConfigCloudInitConfigOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PcDeployV2ConfigBootstrapConfigCloudInitConfig) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -54843,7 +54843,7 @@ type PcRestoreV2DomainManager struct {
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Networks   []PcRestoreV2DomainManagerNetwork `pulumi:"networks"`
 	NodeExtIds []string                          `pulumi:"nodeExtIds"`
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 	ShouldEnableHighAvailability *bool `pulumi:"shouldEnableHighAvailability"`
 }
 
@@ -54866,7 +54866,7 @@ type PcRestoreV2DomainManagerArgs struct {
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Networks   PcRestoreV2DomainManagerNetworkArrayInput `pulumi:"networks"`
 	NodeExtIds pulumi.StringArrayInput                   `pulumi:"nodeExtIds"`
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 	ShouldEnableHighAvailability pulumi.BoolPtrInput `pulumi:"shouldEnableHighAvailability"`
 }
 
@@ -54969,7 +54969,7 @@ func (o PcRestoreV2DomainManagerOutput) NodeExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v PcRestoreV2DomainManager) []string { return v.NodeExtIds }).(pulumi.StringArrayOutput)
 }
 
-// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 func (o PcRestoreV2DomainManagerOutput) ShouldEnableHighAvailability() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v PcRestoreV2DomainManager) *bool { return v.ShouldEnableHighAvailability }).(pulumi.BoolPtrOutput)
 }
@@ -55045,7 +55045,7 @@ func (o PcRestoreV2DomainManagerPtrOutput) NodeExtIds() pulumi.StringArrayOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 func (o PcRestoreV2DomainManagerPtrOutput) ShouldEnableHighAvailability() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PcRestoreV2DomainManager) *bool {
 		if v == nil {
@@ -55391,7 +55391,7 @@ type PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig struct {
 	CloudInitScripts []PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// -(Optional)The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -55413,7 +55413,7 @@ type PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigArgs struct {
 	CloudInitScripts PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// -(Optional)The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -55482,7 +55482,7 @@ func (o PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigOutput) Data
 	return o.ApplyT(func(v PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// -(Optional)The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -61831,7 +61831,7 @@ func (o PcRestoreV2DomainManagerNetworkNtpServerIpv6ArrayOutput) Index(i pulumi.
 }
 
 type ProjectAccountReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -61851,7 +61851,7 @@ type ProjectAccountReferenceListInput interface {
 }
 
 type ProjectAccountReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -61910,7 +61910,7 @@ func (o ProjectAccountReferenceListOutput) ToProjectAccountReferenceListOutputWi
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectAccountReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectAccountReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }

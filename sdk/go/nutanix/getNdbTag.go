@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupNdbTag(ctx *pulumi.Context, args *LookupNdbTagArgs, opts ...pulumi.InvokeOption) (*LookupNdbTagResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNdbTagResult

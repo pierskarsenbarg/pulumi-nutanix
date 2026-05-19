@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -119,6 +120,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type PcDeployV2 struct {
 	pulumi.CustomResourceState
 
@@ -126,7 +128,7 @@ type PcDeployV2 struct {
 	Config PcDeployV2ConfigOutput `pulumi:"config"`
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Network PcDeployV2NetworkOutput `pulumi:"network"`
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 	ShouldEnableHighAvailability pulumi.BoolPtrOutput `pulumi:"shouldEnableHighAvailability"`
 }
 
@@ -170,7 +172,7 @@ type pcDeployV2State struct {
 	Config *PcDeployV2Config `pulumi:"config"`
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Network *PcDeployV2Network `pulumi:"network"`
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 	ShouldEnableHighAvailability *bool `pulumi:"shouldEnableHighAvailability"`
 }
 
@@ -179,7 +181,7 @@ type PcDeployV2State struct {
 	Config PcDeployV2ConfigPtrInput
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Network PcDeployV2NetworkPtrInput
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 	ShouldEnableHighAvailability pulumi.BoolPtrInput
 }
 
@@ -192,7 +194,7 @@ type pcDeployV2Args struct {
 	Config PcDeployV2Config `pulumi:"config"`
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Network PcDeployV2Network `pulumi:"network"`
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 	ShouldEnableHighAvailability *bool `pulumi:"shouldEnableHighAvailability"`
 }
 
@@ -202,7 +204,7 @@ type PcDeployV2Args struct {
 	Config PcDeployV2ConfigInput
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Network PcDeployV2NetworkInput
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 	ShouldEnableHighAvailability pulumi.BoolPtrInput
 }
 
@@ -303,7 +305,7 @@ func (o PcDeployV2Output) Network() PcDeployV2NetworkOutput {
 	return o.ApplyT(func(v *PcDeployV2) PcDeployV2NetworkOutput { return v.Network }).(PcDeployV2NetworkOutput)
 }
 
-// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
 func (o PcDeployV2Output) ShouldEnableHighAvailability() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PcDeployV2) pulumi.BoolPtrOutput { return v.ShouldEnableHighAvailability }).(pulumi.BoolPtrOutput)
 }

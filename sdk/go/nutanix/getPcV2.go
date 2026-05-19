@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPcV2(ctx *pulumi.Context, args *GetPcV2Args, opts ...pulumi.InvokeOption) (*GetPcV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPcV2Result

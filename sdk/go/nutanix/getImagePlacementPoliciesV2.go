@@ -15,6 +15,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetImagePlacementPoliciesV2(ctx *pulumi.Context, args *GetImagePlacementPoliciesV2Args, opts ...pulumi.InvokeOption) (*GetImagePlacementPoliciesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetImagePlacementPoliciesV2Result

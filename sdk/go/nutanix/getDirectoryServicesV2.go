@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -36,6 +37,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDirectoryServicesV2(ctx *pulumi.Context, args *LookupDirectoryServicesV2Args, opts ...pulumi.InvokeOption) (*LookupDirectoryServicesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDirectoryServicesV2Result

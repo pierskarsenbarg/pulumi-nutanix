@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetUserGroupV2(ctx *pulumi.Context, args *GetUserGroupV2Args, opts ...pulumi.InvokeOption) (*GetUserGroupV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserGroupV2Result

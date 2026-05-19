@@ -16,6 +16,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,6 +51,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type DeployTemplatesV2 struct {
 	pulumi.CustomResourceState
 

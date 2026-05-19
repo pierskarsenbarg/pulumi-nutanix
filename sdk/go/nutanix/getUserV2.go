@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,12 +39,13 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Argument Reference
 //
 // The following arguments are supported:
 //
-// * `extId`: -(Required) External Identifier of the User.
+// * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) External Identifier of the User.
 func GetUserV2(ctx *pulumi.Context, args *GetUserV2Args, opts ...pulumi.InvokeOption) (*GetUserV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserV2Result

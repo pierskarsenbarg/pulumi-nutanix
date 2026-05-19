@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAccessControlPolicy(ctx *pulumi.Context, args *LookupAccessControlPolicyArgs, opts ...pulumi.InvokeOption) (*LookupAccessControlPolicyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAccessControlPolicyResult

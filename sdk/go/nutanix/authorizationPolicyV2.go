@@ -16,6 +16,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,6 +56,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type AuthorizationPolicyV2 struct {
 	pulumi.CustomResourceState
 

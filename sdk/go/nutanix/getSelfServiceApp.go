@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSelfServiceApp(ctx *pulumi.Context, args *GetSelfServiceAppArgs, opts ...pulumi.InvokeOption) (*GetSelfServiceAppResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSelfServiceAppResult

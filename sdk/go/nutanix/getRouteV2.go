@@ -15,6 +15,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetRouteV2(ctx *pulumi.Context, args *GetRouteV2Args, opts ...pulumi.InvokeOption) (*GetRouteV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRouteV2Result

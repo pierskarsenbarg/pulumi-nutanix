@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -36,6 +37,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFoundationCentralListApiKeys(ctx *pulumi.Context, args *GetFoundationCentralListApiKeysArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralListApiKeysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationCentralListApiKeysResult

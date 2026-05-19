@@ -523,7 +523,7 @@ func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategor
 }
 
 type ProjectAcpRoleReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -543,7 +543,7 @@ type ProjectAcpRoleReferenceInput interface {
 }
 
 type ProjectAcpRoleReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -577,7 +577,7 @@ func (o ProjectAcpRoleReferenceOutput) ToProjectAcpRoleReferenceOutputWithContex
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectAcpRoleReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v ProjectAcpRoleReference) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -593,7 +593,7 @@ func (o ProjectAcpRoleReferenceOutput) Uuid() pulumi.StringOutput {
 }
 
 type ProjectAcpUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -613,7 +613,7 @@ type ProjectAcpUserGroupReferenceListInput interface {
 }
 
 type ProjectAcpUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -672,7 +672,7 @@ func (o ProjectAcpUserGroupReferenceListOutput) ToProjectAcpUserGroupReferenceLi
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectAcpUserGroupReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectAcpUserGroupReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -708,7 +708,7 @@ func (o ProjectAcpUserGroupReferenceListArrayOutput) Index(i pulumi.IntInput) Pr
 }
 
 type ProjectAcpUserReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -728,7 +728,7 @@ type ProjectAcpUserReferenceListInput interface {
 }
 
 type ProjectAcpUserReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -787,7 +787,7 @@ func (o ProjectAcpUserReferenceListOutput) ToProjectAcpUserReferenceListOutputWi
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectAcpUserReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectAcpUserReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -929,7 +929,7 @@ func (o ProjectCategoryArrayOutput) Index(i pulumi.IntInput) ProjectCategoryOutp
 }
 
 type ProjectClusterReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -949,7 +949,7 @@ type ProjectClusterReferenceListInput interface {
 }
 
 type ProjectClusterReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -1008,7 +1008,7 @@ func (o ProjectClusterReferenceListOutput) ToProjectClusterReferenceListOutputWi
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectClusterReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectClusterReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -1044,7 +1044,7 @@ func (o ProjectClusterReferenceListArrayOutput) Index(i pulumi.IntInput) Project
 }
 
 type ProjectDefaultEnvironmentReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -1064,7 +1064,7 @@ type ProjectDefaultEnvironmentReferenceInput interface {
 }
 
 type ProjectDefaultEnvironmentReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -1149,7 +1149,7 @@ func (o ProjectDefaultEnvironmentReferenceOutput) ToProjectDefaultEnvironmentRef
 	}).(ProjectDefaultEnvironmentReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectDefaultEnvironmentReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectDefaultEnvironmentReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -1188,7 +1188,7 @@ func (o ProjectDefaultEnvironmentReferencePtrOutput) Elem() ProjectDefaultEnviro
 	}).(ProjectDefaultEnvironmentReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectDefaultEnvironmentReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectDefaultEnvironmentReference) *string {
 		if v == nil {
@@ -1219,7 +1219,7 @@ func (o ProjectDefaultEnvironmentReferencePtrOutput) Uuid() pulumi.StringPtrOutp
 }
 
 type ProjectDefaultSubnetReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -1239,7 +1239,7 @@ type ProjectDefaultSubnetReferenceInput interface {
 }
 
 type ProjectDefaultSubnetReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -1324,7 +1324,7 @@ func (o ProjectDefaultSubnetReferenceOutput) ToProjectDefaultSubnetReferencePtrO
 	}).(ProjectDefaultSubnetReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectDefaultSubnetReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectDefaultSubnetReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -1363,7 +1363,7 @@ func (o ProjectDefaultSubnetReferencePtrOutput) Elem() ProjectDefaultSubnetRefer
 	}).(ProjectDefaultSubnetReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectDefaultSubnetReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectDefaultSubnetReference) *string {
 		if v == nil {
@@ -1394,7 +1394,7 @@ func (o ProjectDefaultSubnetReferencePtrOutput) Uuid() pulumi.StringPtrOutput {
 }
 
 type ProjectEnvironmentReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -1414,7 +1414,7 @@ type ProjectEnvironmentReferenceListInput interface {
 }
 
 type ProjectEnvironmentReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -1473,7 +1473,7 @@ func (o ProjectEnvironmentReferenceListOutput) ToProjectEnvironmentReferenceList
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectEnvironmentReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectEnvironmentReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -1615,7 +1615,7 @@ func (o ProjectExternalNetworkListArrayOutput) Index(i pulumi.IntInput) ProjectE
 }
 
 type ProjectExternalUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -1635,7 +1635,7 @@ type ProjectExternalUserGroupReferenceListInput interface {
 }
 
 type ProjectExternalUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -1694,7 +1694,7 @@ func (o ProjectExternalUserGroupReferenceListOutput) ToProjectExternalUserGroupR
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectExternalUserGroupReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectExternalUserGroupReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -1978,7 +1978,7 @@ func (o ProjectResourceDomainResourceArrayOutput) Index(i pulumi.IntInput) Proje
 }
 
 type ProjectSubnetReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -1998,7 +1998,7 @@ type ProjectSubnetReferenceListInput interface {
 }
 
 type ProjectSubnetReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -2057,7 +2057,7 @@ func (o ProjectSubnetReferenceListOutput) ToProjectSubnetReferenceListOutputWith
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectSubnetReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectSubnetReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -2093,7 +2093,7 @@ func (o ProjectSubnetReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectS
 }
 
 type ProjectTunnelReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -2113,7 +2113,7 @@ type ProjectTunnelReferenceListInput interface {
 }
 
 type ProjectTunnelReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -2172,7 +2172,7 @@ func (o ProjectTunnelReferenceListOutput) ToProjectTunnelReferenceListOutputWith
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectTunnelReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectTunnelReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -2884,7 +2884,7 @@ func (o ProjectUserListDirectoryServiceUserPtrOutput) UserPrincipalName() pulumi
 }
 
 type ProjectUserListDirectoryServiceUserDirectoryServiceReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -2904,7 +2904,7 @@ type ProjectUserListDirectoryServiceUserDirectoryServiceReferenceInput interface
 }
 
 type ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -2989,7 +2989,7 @@ func (o ProjectUserListDirectoryServiceUserDirectoryServiceReferenceOutput) ToPr
 	}).(ProjectUserListDirectoryServiceUserDirectoryServiceReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectUserListDirectoryServiceUserDirectoryServiceReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectUserListDirectoryServiceUserDirectoryServiceReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -3028,7 +3028,7 @@ func (o ProjectUserListDirectoryServiceUserDirectoryServiceReferencePtrOutput) E
 	}).(ProjectUserListDirectoryServiceUserDirectoryServiceReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectUserListDirectoryServiceUserDirectoryServiceReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectUserListDirectoryServiceUserDirectoryServiceReference) *string {
 		if v == nil {
@@ -3209,7 +3209,7 @@ func (o ProjectUserListIdentityProviderUserPtrOutput) Username() pulumi.StringPt
 }
 
 type ProjectUserListIdentityProviderUserIdentityProviderReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -3229,7 +3229,7 @@ type ProjectUserListIdentityProviderUserIdentityProviderReferenceInput interface
 }
 
 type ProjectUserListIdentityProviderUserIdentityProviderReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -3314,7 +3314,7 @@ func (o ProjectUserListIdentityProviderUserIdentityProviderReferenceOutput) ToPr
 	}).(ProjectUserListIdentityProviderUserIdentityProviderReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectUserListIdentityProviderUserIdentityProviderReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectUserListIdentityProviderUserIdentityProviderReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -3353,7 +3353,7 @@ func (o ProjectUserListIdentityProviderUserIdentityProviderReferencePtrOutput) E
 	}).(ProjectUserListIdentityProviderUserIdentityProviderReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectUserListIdentityProviderUserIdentityProviderReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectUserListIdentityProviderUserIdentityProviderReference) *string {
 		if v == nil {
@@ -3384,7 +3384,7 @@ func (o ProjectUserListIdentityProviderUserIdentityProviderReferencePtrOutput) U
 }
 
 type ProjectUserReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -3404,7 +3404,7 @@ type ProjectUserReferenceListInput interface {
 }
 
 type ProjectUserReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -3463,7 +3463,7 @@ func (o ProjectUserReferenceListOutput) ToProjectUserReferenceListOutputWithCont
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectUserReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectUserReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -3499,7 +3499,7 @@ func (o ProjectUserReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectUse
 }
 
 type ProjectVpcReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -3519,7 +3519,7 @@ type ProjectVpcReferenceListInput interface {
 }
 
 type ProjectVpcReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -3578,7 +3578,7 @@ func (o ProjectVpcReferenceListOutput) ToProjectVpcReferenceListOutputWithContex
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProjectVpcReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectVpcReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -6247,7 +6247,7 @@ func (o ProtectionRuleOrderedAvailabilityZoneListArrayOutput) Index(i pulumi.Int
 }
 
 type ProtectionRuleOwnerReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the protection rule.
 	Name *string `pulumi:"name"`
@@ -6267,7 +6267,7 @@ type ProtectionRuleOwnerReferenceInput interface {
 }
 
 type ProtectionRuleOwnerReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the protection rule.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -6352,7 +6352,7 @@ func (o ProtectionRuleOwnerReferenceOutput) ToProtectionRuleOwnerReferencePtrOut
 	}).(ProtectionRuleOwnerReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProtectionRuleOwnerReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProtectionRuleOwnerReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -6391,7 +6391,7 @@ func (o ProtectionRuleOwnerReferencePtrOutput) Elem() ProtectionRuleOwnerReferen
 	}).(ProtectionRuleOwnerReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProtectionRuleOwnerReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProtectionRuleOwnerReference) *string {
 		if v == nil {
@@ -6422,7 +6422,7 @@ func (o ProtectionRuleOwnerReferencePtrOutput) Uuid() pulumi.StringPtrOutput {
 }
 
 type ProtectionRuleProjectReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the protection rule.
 	Name *string `pulumi:"name"`
@@ -6442,7 +6442,7 @@ type ProtectionRuleProjectReferenceInput interface {
 }
 
 type ProtectionRuleProjectReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the protection rule.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -6527,7 +6527,7 @@ func (o ProtectionRuleProjectReferenceOutput) ToProtectionRuleProjectReferencePt
 	}).(ProtectionRuleProjectReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProtectionRuleProjectReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProtectionRuleProjectReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -6566,7 +6566,7 @@ func (o ProtectionRuleProjectReferencePtrOutput) Elem() ProtectionRuleProjectRef
 	}).(ProtectionRuleProjectReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o ProtectionRuleProjectReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProtectionRuleProjectReference) *string {
 		if v == nil {
@@ -6703,7 +6703,7 @@ func (o RecoveryPlanCategoryArrayOutput) Index(i pulumi.IntInput) RecoveryPlanCa
 }
 
 type RecoveryPlanOwnerReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -6723,7 +6723,7 @@ type RecoveryPlanOwnerReferenceInput interface {
 }
 
 type RecoveryPlanOwnerReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -6808,7 +6808,7 @@ func (o RecoveryPlanOwnerReferenceOutput) ToRecoveryPlanOwnerReferencePtrOutputW
 	}).(RecoveryPlanOwnerReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanOwnerReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanOwnerReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -6847,7 +6847,7 @@ func (o RecoveryPlanOwnerReferencePtrOutput) Elem() RecoveryPlanOwnerReferenceOu
 	}).(RecoveryPlanOwnerReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanOwnerReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanOwnerReference) *string {
 		if v == nil {
@@ -7618,7 +7618,7 @@ func (o RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInf
 }
 
 type RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -7638,7 +7638,7 @@ type RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReference
 }
 
 type RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -7672,7 +7672,7 @@ func (o RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmRefere
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReference) string {
 		return v.Kind
@@ -7932,7 +7932,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -7952,7 +7952,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListC
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -8011,7 +8011,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList) string {
 		return v.Kind
@@ -8253,7 +8253,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -8273,7 +8273,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListR
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -8307,7 +8307,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference) string {
 		return v.Kind
@@ -8648,7 +8648,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -8668,7 +8668,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListR
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -8753,7 +8753,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference) *string {
 		return v.Kind
@@ -8798,7 +8798,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference) *string {
 		if v == nil {
@@ -8829,7 +8829,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -8849,7 +8849,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListR
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -8934,7 +8934,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference) *string {
 		return v.Kind
@@ -8979,7 +8979,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference) *string {
 		if v == nil {
@@ -9210,7 +9210,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -9230,7 +9230,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListT
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -9264,7 +9264,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	return o
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference) string {
 		return v.Kind
@@ -9605,7 +9605,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -9625,7 +9625,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListT
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -9710,7 +9710,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference) *string {
 		return v.Kind
@@ -9755,7 +9755,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference) *string {
 		if v == nil {
@@ -9786,7 +9786,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -9806,7 +9806,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListT
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -9891,7 +9891,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference) *string {
 		return v.Kind
@@ -9936,7 +9936,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference) *string {
 		if v == nil {
@@ -9967,7 +9967,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanProjectReference struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -9987,7 +9987,7 @@ type RecoveryPlanProjectReferenceInput interface {
 }
 
 type RecoveryPlanProjectReferenceArgs struct {
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -10072,7 +10072,7 @@ func (o RecoveryPlanProjectReferenceOutput) ToRecoveryPlanProjectReferencePtrOut
 	}).(RecoveryPlanProjectReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanProjectReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanProjectReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -10111,7 +10111,7 @@ func (o RecoveryPlanProjectReferencePtrOutput) Elem() RecoveryPlanProjectReferen
 	}).(RecoveryPlanProjectReferenceOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o RecoveryPlanProjectReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanProjectReference) *string {
 		if v == nil {
@@ -26859,7 +26859,7 @@ type TemplateV2TemplateVersionSpec struct {
 	CreateTime  *string                                  `pulumi:"createTime"`
 	CreatedBies []TemplateV2TemplateVersionSpecCreatedBy `pulumi:"createdBies"`
 	ExtId       *string                                  `pulumi:"extId"`
-	// Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+	// Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
 	IsActiveVersion *bool `pulumi:"isActiveVersion"`
 	// Allow or disallow overriding guest customization during template deployment.
 	// * `version_source.template_vm_reference`: (Optional) Template VM Reference
@@ -26871,7 +26871,7 @@ type TemplateV2TemplateVersionSpec struct {
 	VersionDescription *string `pulumi:"versionDescription"`
 	// The user defined name of a Template Version. Version name `Required` when updating a Template Version.
 	VersionName *string `pulumi:"versionName"`
-	// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
+	// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`">`templateVersionReference`</span> .
 	VersionSource TemplateV2TemplateVersionSpecVersionSource `pulumi:"versionSource"`
 	// Source type of the template version created. It can be either a VM or a template version.
 	VersionSourceDiscriminator *string `pulumi:"versionSourceDiscriminator"`
@@ -26894,7 +26894,7 @@ type TemplateV2TemplateVersionSpecArgs struct {
 	CreateTime  pulumi.StringPtrInput                            `pulumi:"createTime"`
 	CreatedBies TemplateV2TemplateVersionSpecCreatedByArrayInput `pulumi:"createdBies"`
 	ExtId       pulumi.StringPtrInput                            `pulumi:"extId"`
-	// Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+	// Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
 	IsActiveVersion pulumi.BoolPtrInput `pulumi:"isActiveVersion"`
 	// Allow or disallow overriding guest customization during template deployment.
 	// * `version_source.template_vm_reference`: (Optional) Template VM Reference
@@ -26906,7 +26906,7 @@ type TemplateV2TemplateVersionSpecArgs struct {
 	VersionDescription pulumi.StringPtrInput `pulumi:"versionDescription"`
 	// The user defined name of a Template Version. Version name `Required` when updating a Template Version.
 	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
-	// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
+	// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`">`templateVersionReference`</span> .
 	VersionSource TemplateV2TemplateVersionSpecVersionSourceInput `pulumi:"versionSource"`
 	// Source type of the template version created. It can be either a VM or a template version.
 	VersionSourceDiscriminator pulumi.StringPtrInput `pulumi:"versionSourceDiscriminator"`
@@ -27003,7 +27003,7 @@ func (o TemplateV2TemplateVersionSpecOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
-// Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+// Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
 func (o TemplateV2TemplateVersionSpecOutput) IsActiveVersion() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *bool { return v.IsActiveVersion }).(pulumi.BoolPtrOutput)
 }
@@ -27033,7 +27033,7 @@ func (o TemplateV2TemplateVersionSpecOutput) VersionName() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
-// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
+// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`">`templateVersionReference`</span> .
 func (o TemplateV2TemplateVersionSpecOutput) VersionSource() TemplateV2TemplateVersionSpecVersionSourceOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpec) TemplateV2TemplateVersionSpecVersionSource {
 		return v.VersionSource
@@ -27101,7 +27101,7 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) ExtId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Default: `true`  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+// Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
 func (o TemplateV2TemplateVersionSpecPtrOutput) IsActiveVersion() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) *bool {
 		if v == nil {
@@ -27161,7 +27161,7 @@ func (o TemplateV2TemplateVersionSpecPtrOutput) VersionName() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either `templateVmReference` or `templateVersionReference` .
+// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`">`templateVersionReference`</span> .
 func (o TemplateV2TemplateVersionSpecPtrOutput) VersionSource() TemplateV2TemplateVersionSpecVersionSourcePtrOutput {
 	return o.ApplyT(func(v *TemplateV2TemplateVersionSpec) *TemplateV2TemplateVersionSpecVersionSource {
 		if v == nil {
@@ -28514,7 +28514,7 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 	CloudInitScripts []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -28538,7 +28538,7 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 	CloudInitScripts TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -28611,7 +28611,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	}).(pulumi.StringPtrOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit) *string {
 		return v.Metadata
@@ -30405,7 +30405,7 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 	// The IP address configurations.
 	Ipv4Configs []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
@@ -30413,7 +30413,7 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 	NicType *string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -30436,7 +30436,7 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 	// The IP address configurations.
 	Ipv4Configs TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
@@ -30444,7 +30444,7 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideV
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -30516,7 +30516,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	}).(TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) NetworkFunctionChains() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -30544,7 +30544,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverri
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoOutput) Subnets() TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo) []TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet {
 		return v.Subnets
@@ -31668,7 +31668,7 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomiza
 	CloudInitScripts []TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -31692,7 +31692,7 @@ type TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomiza
 	CloudInitScripts TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -31765,7 +31765,7 @@ func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustom
 	}).(pulumi.StringPtrOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit) *string {
 		return v.Metadata
@@ -39895,7 +39895,7 @@ type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit struct
 	CloudInitScripts []TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -39919,7 +39919,7 @@ type TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitArgs st
 	CloudInitScripts TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -39992,7 +39992,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit) *string {
 		return v.Metadata
@@ -42118,7 +42118,7 @@ type TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo struct {
 	// The IP address configurations.
 	Ipv4Configs []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
@@ -42126,7 +42126,7 @@ type TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo struct {
 	NicType *string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -42149,7 +42149,7 @@ type TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs struct {
 	// The IP address configurations.
 	Ipv4Configs TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
@@ -42157,7 +42157,7 @@ type TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs struct {
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -42229,7 +42229,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Ipv4Infos() Tem
 	}).(TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) NetworkFunctionChains() TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -42251,7 +42251,7 @@ func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) ShouldAllowUnkn
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 func (o TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Subnets() TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet {
 		return v.Subnets
@@ -47630,7 +47630,7 @@ func (o VirtualMachineCategoryArrayOutput) Index(i pulumi.IntInput) VirtualMachi
 type VirtualMachineDiskList struct {
 	// Reference to a data source.
 	//
-	// The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
+	// The<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize "> diskSize </span>(the disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib "> sizeMib </span>and the<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes "> diskSizeBytes </span>attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib "> sizeMib </span>or<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes "> diskSizeBytes </span>when you set<span pulumi-lang-nodejs=" dataSourceReference " pulumi-lang-dotnet=" DataSourceReference " pulumi-lang-go=" dataSourceReference " pulumi-lang-python=" data_source_reference " pulumi-lang-yaml=" dataSourceReference " pulumi-lang-java=" dataSourceReference "> dataSourceReference </span>but, you can update the<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize "> diskSize </span>after creation (second apply).
 	DataSourceReference map[string]string `pulumi:"dataSourceReference"`
 	// Properties to a device.
 	DeviceProperties *VirtualMachineDiskListDeviceProperties `pulumi:"deviceProperties"`
@@ -47658,7 +47658,7 @@ type VirtualMachineDiskListInput interface {
 type VirtualMachineDiskListArgs struct {
 	// Reference to a data source.
 	//
-	// The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
+	// The<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize "> diskSize </span>(the disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib "> sizeMib </span>and the<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes "> diskSizeBytes </span>attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib "> sizeMib </span>or<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes "> diskSizeBytes </span>when you set<span pulumi-lang-nodejs=" dataSourceReference " pulumi-lang-dotnet=" DataSourceReference " pulumi-lang-go=" dataSourceReference " pulumi-lang-python=" data_source_reference " pulumi-lang-yaml=" dataSourceReference " pulumi-lang-java=" dataSourceReference "> dataSourceReference </span>but, you can update the<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize "> diskSize </span>after creation (second apply).
 	DataSourceReference pulumi.StringMapInput `pulumi:"dataSourceReference"`
 	// Properties to a device.
 	DeviceProperties VirtualMachineDiskListDevicePropertiesPtrInput `pulumi:"deviceProperties"`
@@ -47725,7 +47725,7 @@ func (o VirtualMachineDiskListOutput) ToVirtualMachineDiskListOutputWithContext(
 
 // Reference to a data source.
 //
-// The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
+// The<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize "> diskSize </span>(the disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib "> sizeMib </span>and the<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes "> diskSizeBytes </span>attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib "> sizeMib </span>or<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes "> diskSizeBytes </span>when you set<span pulumi-lang-nodejs=" dataSourceReference " pulumi-lang-dotnet=" DataSourceReference " pulumi-lang-go=" dataSourceReference " pulumi-lang-python=" data_source_reference " pulumi-lang-yaml=" dataSourceReference " pulumi-lang-java=" dataSourceReference "> dataSourceReference </span>but, you can update the<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize "> diskSize </span>after creation (second apply).
 func (o VirtualMachineDiskListOutput) DataSourceReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v VirtualMachineDiskList) map[string]string { return v.DataSourceReference }).(pulumi.StringMapOutput)
 }
@@ -48410,7 +48410,7 @@ func (o VirtualMachineGpuListArrayOutput) Index(i pulumi.IntInput) VirtualMachin
 type VirtualMachineNicList struct {
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists []VirtualMachineNicListIpEndpointList `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected *string `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress *string `pulumi:"macAddress"`
@@ -48446,7 +48446,7 @@ type VirtualMachineNicListInput interface {
 type VirtualMachineNicListArgs struct {
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists VirtualMachineNicListIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected pulumi.StringPtrInput `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
@@ -48524,7 +48524,7 @@ func (o VirtualMachineNicListOutput) IpEndpointLists() VirtualMachineNicListIpEn
 	return o.ApplyT(func(v VirtualMachineNicList) []VirtualMachineNicListIpEndpointList { return v.IpEndpointLists }).(VirtualMachineNicListIpEndpointListArrayOutput)
 }
 
-// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 func (o VirtualMachineNicListOutput) IsConnected() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicList) *string { return v.IsConnected }).(pulumi.StringPtrOutput)
 }
@@ -48701,11 +48701,11 @@ func (o VirtualMachineNicListIpEndpointListArrayOutput) Index(i pulumi.IntInput)
 }
 
 type VirtualMachineNicListStatus struct {
-	// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
+	// -  The Floating IP associated with the vnic. (Only in <span pulumi-lang-nodejs="`nicListStatus`" pulumi-lang-dotnet="`NicListStatus`" pulumi-lang-go="`nicListStatus`" pulumi-lang-python="`nic_list_status`" pulumi-lang-yaml="`nicListStatus`" pulumi-lang-java="`nicListStatus`">`nicListStatus`</span>)
 	FloatingIp *string `pulumi:"floatingIp"`
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists []VirtualMachineNicListStatusIpEndpointList `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected *string `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress *string `pulumi:"macAddress"`
@@ -48739,11 +48739,11 @@ type VirtualMachineNicListStatusInput interface {
 }
 
 type VirtualMachineNicListStatusArgs struct {
-	// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
+	// -  The Floating IP associated with the vnic. (Only in <span pulumi-lang-nodejs="`nicListStatus`" pulumi-lang-dotnet="`NicListStatus`" pulumi-lang-go="`nicListStatus`" pulumi-lang-python="`nic_list_status`" pulumi-lang-yaml="`nicListStatus`" pulumi-lang-java="`nicListStatus`">`nicListStatus`</span>)
 	FloatingIp pulumi.StringPtrInput `pulumi:"floatingIp"`
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists VirtualMachineNicListStatusIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected pulumi.StringPtrInput `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
@@ -48816,7 +48816,7 @@ func (o VirtualMachineNicListStatusOutput) ToVirtualMachineNicListStatusOutputWi
 	return o
 }
 
-// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
+// -  The Floating IP associated with the vnic. (Only in <span pulumi-lang-nodejs="`nicListStatus`" pulumi-lang-dotnet="`NicListStatus`" pulumi-lang-go="`nicListStatus`" pulumi-lang-python="`nic_list_status`" pulumi-lang-yaml="`nicListStatus`" pulumi-lang-java="`nicListStatus`">`nicListStatus`</span>)
 func (o VirtualMachineNicListStatusOutput) FloatingIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.FloatingIp }).(pulumi.StringPtrOutput)
 }
@@ -48828,7 +48828,7 @@ func (o VirtualMachineNicListStatusOutput) IpEndpointLists() VirtualMachineNicLi
 	}).(VirtualMachineNicListStatusIpEndpointListArrayOutput)
 }
 
-// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 func (o VirtualMachineNicListStatusOutput) IsConnected() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.IsConnected }).(pulumi.StringPtrOutput)
 }
@@ -49007,7 +49007,7 @@ func (o VirtualMachineNicListStatusIpEndpointListArrayOutput) Index(i pulumi.Int
 type VirtualMachineSerialPortList struct {
 	// - Index of the serial port (int).
 	Index *int `pulumi:"index"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected *bool `pulumi:"isConnected"`
 }
 
@@ -49025,7 +49025,7 @@ type VirtualMachineSerialPortListInput interface {
 type VirtualMachineSerialPortListArgs struct {
 	// - Index of the serial port (int).
 	Index pulumi.IntPtrInput `pulumi:"index"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected pulumi.BoolPtrInput `pulumi:"isConnected"`
 }
 
@@ -49085,7 +49085,7 @@ func (o VirtualMachineSerialPortListOutput) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VirtualMachineSerialPortList) *int { return v.Index }).(pulumi.IntPtrOutput)
 }
 
-// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 func (o VirtualMachineSerialPortListOutput) IsConnected() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VirtualMachineSerialPortList) *bool { return v.IsConnected }).(pulumi.BoolPtrOutput)
 }
@@ -55063,7 +55063,7 @@ type VirtualMachineV2GuestCustomizationConfigCloudInit struct {
 	CloudInitScripts []VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -55086,7 +55086,7 @@ type VirtualMachineV2GuestCustomizationConfigCloudInitArgs struct {
 	CloudInitScripts VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -55156,7 +55156,7 @@ func (o VirtualMachineV2GuestCustomizationConfigCloudInitOutput) DatasourceType(
 	return o.ApplyT(func(v VirtualMachineV2GuestCustomizationConfigCloudInit) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o VirtualMachineV2GuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineV2GuestCustomizationConfigCloudInit) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -57073,7 +57073,7 @@ type VirtualMachineV2NicNetworkInfo struct {
 	// The IP address configurations.
 	Ipv4Configs []VirtualMachineV2NicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []VirtualMachineV2NicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []VirtualMachineV2NicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
@@ -57081,7 +57081,7 @@ type VirtualMachineV2NicNetworkInfo struct {
 	NicType *string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets []VirtualMachineV2NicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -57105,7 +57105,7 @@ type VirtualMachineV2NicNetworkInfoArgs struct {
 	// The IP address configurations.
 	Ipv4Configs VirtualMachineV2NicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   VirtualMachineV2NicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains VirtualMachineV2NicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
@@ -57113,7 +57113,7 @@ type VirtualMachineV2NicNetworkInfoArgs struct {
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets VirtualMachineV2NicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -57184,7 +57184,7 @@ func (o VirtualMachineV2NicNetworkInfoOutput) Ipv4Infos() VirtualMachineV2NicNet
 	return o.ApplyT(func(v VirtualMachineV2NicNetworkInfo) []VirtualMachineV2NicNetworkInfoIpv4Info { return v.Ipv4Infos }).(VirtualMachineV2NicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 func (o VirtualMachineV2NicNetworkInfoOutput) NetworkFunctionChains() VirtualMachineV2NicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v VirtualMachineV2NicNetworkInfo) []VirtualMachineV2NicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -57206,7 +57206,7 @@ func (o VirtualMachineV2NicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.Bo
 	return o.ApplyT(func(v VirtualMachineV2NicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o VirtualMachineV2NicNetworkInfoOutput) Subnets() VirtualMachineV2NicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v VirtualMachineV2NicNetworkInfo) []VirtualMachineV2NicNetworkInfoSubnet { return v.Subnets }).(VirtualMachineV2NicNetworkInfoSubnetArrayOutput)

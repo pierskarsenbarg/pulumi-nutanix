@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupNdbSla(ctx *pulumi.Context, args *LookupNdbSlaArgs, opts ...pulumi.InvokeOption) (*LookupNdbSlaResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNdbSlaResult
@@ -51,7 +53,7 @@ func LookupNdbSla(ctx *pulumi.Context, args *LookupNdbSlaArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getNdbSla.
 type LookupNdbSlaArgs struct {
-	// and `slaName` are mutually exclusive.
+	// and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`">`slaName`</span> are mutually exclusive.
 	SlaId *string `pulumi:"slaId"`
 	// SLA Name for query
 	SlaName *string `pulumi:"slaName"`
@@ -108,7 +110,7 @@ func LookupNdbSlaOutput(ctx *pulumi.Context, args LookupNdbSlaOutputArgs, opts .
 
 // A collection of arguments for invoking getNdbSla.
 type LookupNdbSlaOutputArgs struct {
-	// and `slaName` are mutually exclusive.
+	// and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`">`slaName`</span> are mutually exclusive.
 	SlaId pulumi.StringPtrInput `pulumi:"slaId"`
 	// SLA Name for query
 	SlaName pulumi.StringPtrInput `pulumi:"slaName"`

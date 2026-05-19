@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupProtectionPolicyV2(ctx *pulumi.Context, args *LookupProtectionPolicyV2Args, opts ...pulumi.InvokeOption) (*LookupProtectionPolicyV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProtectionPolicyV2Result

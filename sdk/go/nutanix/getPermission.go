@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPermission(ctx *pulumi.Context, args *GetPermissionArgs, opts ...pulumi.InvokeOption) (*GetPermissionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPermissionResult
@@ -60,9 +62,9 @@ func GetPermission(ctx *pulumi.Context, args *GetPermissionArgs, opts ...pulumi.
 type GetPermissionArgs struct {
 	// The categories for this resource.
 	Categories []GetPermissionCategory `pulumi:"categories"`
-	// The `id` of the permission.
+	// The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the permission.
 	PermissionId *string `pulumi:"permissionId"`
-	// The `name` of the permission.
+	// The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> of the permission.
 	PermissionName *string `pulumi:"permissionName"`
 }
 
@@ -73,11 +75,11 @@ type GetPermissionResult struct {
 	Categories []GetPermissionCategory `pulumi:"categories"`
 	// A description for the permission.
 	Description string `pulumi:"description"`
-	// . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+	// . The fields that can/cannot be accessed during the specified operation.<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>will be a list of fields. e.g. if<span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode "> fieldMode </span>= disallowed,<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
 	Fields []GetPermissionField `pulumi:"fields"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// (Required) The kind name (Default value: `project`).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The permission kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
@@ -108,9 +110,9 @@ func GetPermissionOutput(ctx *pulumi.Context, args GetPermissionOutputArgs, opts
 type GetPermissionOutputArgs struct {
 	// The categories for this resource.
 	Categories GetPermissionCategoryArrayInput `pulumi:"categories"`
-	// The `id` of the permission.
+	// The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the permission.
 	PermissionId pulumi.StringPtrInput `pulumi:"permissionId"`
-	// The `name` of the permission.
+	// The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> of the permission.
 	PermissionName pulumi.StringPtrInput `pulumi:"permissionName"`
 }
 
@@ -147,7 +149,7 @@ func (o GetPermissionResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+// . The fields that can/cannot be accessed during the specified operation.<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>will be a list of fields. e.g. if<span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode "> fieldMode </span>= disallowed,<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
 func (o GetPermissionResultOutput) Fields() GetPermissionFieldArrayOutput {
 	return o.ApplyT(func(v GetPermissionResult) []GetPermissionField { return v.Fields }).(GetPermissionFieldArrayOutput)
 }
@@ -157,7 +159,7 @@ func (o GetPermissionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// (Required) The kind name (Default value: `project`).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
 func (o GetPermissionResultOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.Kind }).(pulumi.StringOutput)
 }

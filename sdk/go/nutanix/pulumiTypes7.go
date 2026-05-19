@@ -9006,7 +9006,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit str
 	CloudInitScripts []GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata string `pulumi:"metadata"`
 }
 
@@ -9026,7 +9026,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitArgs
 	CloudInitScripts GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata pulumi.StringInput `pulumi:"metadata"`
 }
 
@@ -9095,7 +9095,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitO
 	}).(pulumi.StringOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit) string {
 		return v.Metadata
@@ -11281,7 +11281,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo struct {
 	// The IP address configurations.
 	Ipv4Configs []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType string `pulumi:"networkFunctionNicType"`
@@ -11289,7 +11289,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo struct {
 	NicType string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -11312,7 +11312,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs struct {
 	// The IP address configurations.
 	Ipv4Configs GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringInput `pulumi:"networkFunctionNicType"`
@@ -11320,7 +11320,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs struct {
 	NicType pulumi.StringInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -11392,7 +11392,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Ipv4Infos() 
 	}).(GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) NetworkFunctionChains() GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -11414,7 +11414,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) ShouldAllowU
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolOutput)
 }
 
-// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Subnets() GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet {
 		return v.Subnets
@@ -29142,7 +29142,7 @@ type GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReference struc
 	Name string `pulumi:"name"`
 	// - the UUID(Required).
 	//
-	// For `accessControlPolicyReferenceList` and `projectReferenceList` are the same as reference but used as list.
+	// For <span pulumi-lang-nodejs="`accessControlPolicyReferenceList`" pulumi-lang-dotnet="`AccessControlPolicyReferenceList`" pulumi-lang-go="`accessControlPolicyReferenceList`" pulumi-lang-python="`access_control_policy_reference_list`" pulumi-lang-yaml="`accessControlPolicyReferenceList`" pulumi-lang-java="`accessControlPolicyReferenceList`">`accessControlPolicyReferenceList`</span> and <span pulumi-lang-nodejs="`projectReferenceList`" pulumi-lang-dotnet="`ProjectReferenceList`" pulumi-lang-go="`projectReferenceList`" pulumi-lang-python="`project_reference_list`" pulumi-lang-yaml="`projectReferenceList`" pulumi-lang-java="`projectReferenceList`">`projectReferenceList`</span> are the same as reference but used as list.
 	//
 	// See detailed information in [Nutanix Users](https://www.nutanix.dev/api_references/prism-central-v3/#/6016c890e9122-get-a-list-of-existing-user-groups).
 	Uuid string `pulumi:"uuid"`
@@ -29166,7 +29166,7 @@ type GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceArgs s
 	Name pulumi.StringInput `pulumi:"name"`
 	// - the UUID(Required).
 	//
-	// For `accessControlPolicyReferenceList` and `projectReferenceList` are the same as reference but used as list.
+	// For <span pulumi-lang-nodejs="`accessControlPolicyReferenceList`" pulumi-lang-dotnet="`AccessControlPolicyReferenceList`" pulumi-lang-go="`accessControlPolicyReferenceList`" pulumi-lang-python="`access_control_policy_reference_list`" pulumi-lang-yaml="`accessControlPolicyReferenceList`" pulumi-lang-java="`accessControlPolicyReferenceList`">`accessControlPolicyReferenceList`</span> and <span pulumi-lang-nodejs="`projectReferenceList`" pulumi-lang-dotnet="`ProjectReferenceList`" pulumi-lang-go="`projectReferenceList`" pulumi-lang-python="`project_reference_list`" pulumi-lang-yaml="`projectReferenceList`" pulumi-lang-java="`projectReferenceList`">`projectReferenceList`</span> are the same as reference but used as list.
 	//
 	// See detailed information in [Nutanix Users](https://www.nutanix.dev/api_references/prism-central-v3/#/6016c890e9122-get-a-list-of-existing-user-groups).
 	Uuid pulumi.StringInput `pulumi:"uuid"`
@@ -29235,7 +29235,7 @@ func (o GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceOut
 
 // - the UUID(Required).
 //
-// For `accessControlPolicyReferenceList` and `projectReferenceList` are the same as reference but used as list.
+// For <span pulumi-lang-nodejs="`accessControlPolicyReferenceList`" pulumi-lang-dotnet="`AccessControlPolicyReferenceList`" pulumi-lang-go="`accessControlPolicyReferenceList`" pulumi-lang-python="`access_control_policy_reference_list`" pulumi-lang-yaml="`accessControlPolicyReferenceList`" pulumi-lang-java="`accessControlPolicyReferenceList`">`accessControlPolicyReferenceList`</span> and <span pulumi-lang-nodejs="`projectReferenceList`" pulumi-lang-dotnet="`ProjectReferenceList`" pulumi-lang-go="`projectReferenceList`" pulumi-lang-python="`project_reference_list`" pulumi-lang-yaml="`projectReferenceList`" pulumi-lang-java="`projectReferenceList`">`projectReferenceList`</span> are the same as reference but used as list.
 //
 // See detailed information in [Nutanix Users](https://www.nutanix.dev/api_references/prism-central-v3/#/6016c890e9122-get-a-list-of-existing-user-groups).
 func (o GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceOutput) Uuid() pulumi.StringOutput {
@@ -34251,7 +34251,7 @@ type GetVirtualMachineNicList struct {
 	FloatingIp string `pulumi:"floatingIp"`
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists []GetVirtualMachineNicListIpEndpointList `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected string `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress string `pulumi:"macAddress"`
@@ -34289,7 +34289,7 @@ type GetVirtualMachineNicListArgs struct {
 	FloatingIp pulumi.StringInput `pulumi:"floatingIp"`
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists GetVirtualMachineNicListIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected pulumi.StringInput `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress pulumi.StringInput `pulumi:"macAddress"`
@@ -34372,7 +34372,7 @@ func (o GetVirtualMachineNicListOutput) IpEndpointLists() GetVirtualMachineNicLi
 	return o.ApplyT(func(v GetVirtualMachineNicList) []GetVirtualMachineNicListIpEndpointList { return v.IpEndpointLists }).(GetVirtualMachineNicListIpEndpointListArrayOutput)
 }
 
-// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 func (o GetVirtualMachineNicListOutput) IsConnected() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualMachineNicList) string { return v.IsConnected }).(pulumi.StringOutput)
 }
@@ -34551,7 +34551,7 @@ func (o GetVirtualMachineNicListIpEndpointListArrayOutput) Index(i pulumi.IntInp
 type GetVirtualMachineSerialPortList struct {
 	// - Index of the serial port (int).
 	Index int `pulumi:"index"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected bool `pulumi:"isConnected"`
 }
 
@@ -34569,7 +34569,7 @@ type GetVirtualMachineSerialPortListInput interface {
 type GetVirtualMachineSerialPortListArgs struct {
 	// - Index of the serial port (int).
 	Index pulumi.IntInput `pulumi:"index"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 	IsConnected pulumi.BoolInput `pulumi:"isConnected"`
 }
 
@@ -34629,7 +34629,7 @@ func (o GetVirtualMachineSerialPortListOutput) Index() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVirtualMachineSerialPortList) int { return v.Index }).(pulumi.IntOutput)
 }
 
-// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+// - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
 func (o GetVirtualMachineSerialPortListOutput) IsConnected() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVirtualMachineSerialPortList) bool { return v.IsConnected }).(pulumi.BoolOutput)
 }
@@ -40658,7 +40658,7 @@ type GetVirtualMachineV2GuestCustomizationConfigCloudInit struct {
 	CloudInitScripts []GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata string `pulumi:"metadata"`
 }
 
@@ -40678,7 +40678,7 @@ type GetVirtualMachineV2GuestCustomizationConfigCloudInitArgs struct {
 	CloudInitScripts GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata pulumi.StringInput `pulumi:"metadata"`
 }
 
@@ -40745,7 +40745,7 @@ func (o GetVirtualMachineV2GuestCustomizationConfigCloudInitOutput) DatasourceTy
 	return o.ApplyT(func(v GetVirtualMachineV2GuestCustomizationConfigCloudInit) string { return v.DatasourceType }).(pulumi.StringOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o GetVirtualMachineV2GuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualMachineV2GuestCustomizationConfigCloudInit) string { return v.Metadata }).(pulumi.StringOutput)
 }
@@ -42227,7 +42227,7 @@ type GetVirtualMachineV2NicNetworkInfo struct {
 	Ipv4Configs []GetVirtualMachineV2NicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	// The runtime IP address information of the NIC.
 	Ipv4Infos []GetVirtualMachineV2NicNetworkInfoIpv4Info `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []GetVirtualMachineV2NicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
 	NetworkFunctionNicType string `pulumi:"networkFunctionNicType"`
@@ -42235,7 +42235,7 @@ type GetVirtualMachineV2NicNetworkInfo struct {
 	NicType string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets []GetVirtualMachineV2NicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -42259,7 +42259,7 @@ type GetVirtualMachineV2NicNetworkInfoArgs struct {
 	Ipv4Configs GetVirtualMachineV2NicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	// The runtime IP address information of the NIC.
 	Ipv4Infos GetVirtualMachineV2NicNetworkInfoIpv4InfoArrayInput `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains GetVirtualMachineV2NicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
 	NetworkFunctionNicType pulumi.StringInput `pulumi:"networkFunctionNicType"`
@@ -42267,7 +42267,7 @@ type GetVirtualMachineV2NicNetworkInfoArgs struct {
 	NicType pulumi.StringInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets GetVirtualMachineV2NicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -42340,7 +42340,7 @@ func (o GetVirtualMachineV2NicNetworkInfoOutput) Ipv4Infos() GetVirtualMachineV2
 	}).(GetVirtualMachineV2NicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 func (o GetVirtualMachineV2NicNetworkInfoOutput) NetworkFunctionChains() GetVirtualMachineV2NicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v GetVirtualMachineV2NicNetworkInfo) []GetVirtualMachineV2NicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -42362,7 +42362,7 @@ func (o GetVirtualMachineV2NicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi
 	return o.ApplyT(func(v GetVirtualMachineV2NicNetworkInfo) bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolOutput)
 }
 
-// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 func (o GetVirtualMachineV2NicNetworkInfoOutput) Subnets() GetVirtualMachineV2NicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v GetVirtualMachineV2NicNetworkInfo) []GetVirtualMachineV2NicNetworkInfoSubnet { return v.Subnets }).(GetVirtualMachineV2NicNetworkInfoSubnetArrayOutput)
 }

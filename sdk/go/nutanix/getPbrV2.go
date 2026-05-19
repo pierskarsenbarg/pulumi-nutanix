@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupPbrV2(ctx *pulumi.Context, args *LookupPbrV2Args, opts ...pulumi.InvokeOption) (*LookupPbrV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPbrV2Result

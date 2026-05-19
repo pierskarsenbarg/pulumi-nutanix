@@ -18,6 +18,7 @@ import (
 //
 // ### Cluster Location
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,9 +53,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### Object Store Location
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -100,6 +103,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type PcBackupTargetV2 struct {
 	pulumi.CustomResourceState
 

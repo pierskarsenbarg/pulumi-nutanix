@@ -15,6 +15,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -266,6 +267,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type VirtualMachineV2 struct {
 	pulumi.CustomResourceState
 

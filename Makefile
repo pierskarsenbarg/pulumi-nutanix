@@ -70,7 +70,7 @@ build_dotnet:: install_plugins tfgen # build the dotnet sdk
         dotnet build /p:Version=${DOTNET_VERSION}
 
 build_go:: install_plugins tfgen # build the go sdk
-	$(WORKING_DIR)/bin/$(TFGEN) go --overlays provider/overlays/go --out sdk/go/
+	pulumi package gen-sdk $(WORKING_DIR)/bin/${PROVIDER} --language go --out sdk
 
 lint_provider:: provider # lint the provider code
 	cd provider && golangci-lint run -c ../.golangci.yml

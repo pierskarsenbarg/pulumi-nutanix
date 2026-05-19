@@ -3698,7 +3698,7 @@ func (o ClusterAddNodeV2NodeParamComputeNodeListArrayOutput) Index(i pulumi.IntI
 }
 
 type ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapList struct {
-	// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+	// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 	Key   *string `pulumi:"key"`
 	Value *string `pulumi:"value"`
 }
@@ -3715,7 +3715,7 @@ type ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapListInput inte
 }
 
 type ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapListArgs struct {
-	// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+	// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 	Key   pulumi.StringPtrInput `pulumi:"key"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -3771,7 +3771,7 @@ func (o ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapListOutput)
 	return o
 }
 
-// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 func (o ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapList) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -4548,7 +4548,7 @@ type ClusterAddNodeV2NodeParamNodeList struct {
 	CurrentNetworkInterface *string `pulumi:"currentNetworkInterface"`
 	// -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
 	CvmIps []ClusterAddNodeV2NodeParamNodeListCvmIp `pulumi:"cvmIps"`
-	// -(Optional) List of objects containing digitalCertificateBase64 and keyManagementServerUuid fields for key management server.
+	// -(Optional) List of objects containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>fields for key management server.
 	DigitalCertificateMapLists []ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapList `pulumi:"digitalCertificateMapLists"`
 	// -(Optional) Name of the host.
 	HypervisorHostname *string `pulumi:"hypervisorHostname"`
@@ -4599,7 +4599,7 @@ type ClusterAddNodeV2NodeParamNodeListArgs struct {
 	CurrentNetworkInterface pulumi.StringPtrInput `pulumi:"currentNetworkInterface"`
 	// -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
 	CvmIps ClusterAddNodeV2NodeParamNodeListCvmIpArrayInput `pulumi:"cvmIps"`
-	// -(Optional) List of objects containing digitalCertificateBase64 and keyManagementServerUuid fields for key management server.
+	// -(Optional) List of objects containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>fields for key management server.
 	DigitalCertificateMapLists ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapListArrayInput `pulumi:"digitalCertificateMapLists"`
 	// -(Optional) Name of the host.
 	HypervisorHostname pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
@@ -4698,7 +4698,7 @@ func (o ClusterAddNodeV2NodeParamNodeListOutput) CvmIps() ClusterAddNodeV2NodePa
 	return o.ApplyT(func(v ClusterAddNodeV2NodeParamNodeList) []ClusterAddNodeV2NodeParamNodeListCvmIp { return v.CvmIps }).(ClusterAddNodeV2NodeParamNodeListCvmIpArrayOutput)
 }
 
-// -(Optional) List of objects containing digitalCertificateBase64 and keyManagementServerUuid fields for key management server.
+// -(Optional) List of objects containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>fields for key management server.
 func (o ClusterAddNodeV2NodeParamNodeListOutput) DigitalCertificateMapLists() ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapListArrayOutput {
 	return o.ApplyT(func(v ClusterAddNodeV2NodeParamNodeList) []ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapList {
 		return v.DigitalCertificateMapLists
@@ -5105,7 +5105,7 @@ func (o ClusterAddNodeV2NodeParamNodeListCvmIpIpv6ArrayOutput) Index(i pulumi.In
 }
 
 type ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapList struct {
-	// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+	// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 	Key   *string `pulumi:"key"`
 	Value *string `pulumi:"value"`
 }
@@ -5122,7 +5122,7 @@ type ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapListInput interface {
 }
 
 type ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapListArgs struct {
-	// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+	// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 	Key   pulumi.StringPtrInput `pulumi:"key"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -5178,7 +5178,7 @@ func (o ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapListOutput) ToClus
 	return o
 }
 
-// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 func (o ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapList) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -14818,7 +14818,7 @@ func (o ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv6ArrayOutput) Index(i 
 }
 
 type ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapList struct {
-	// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+	// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 	Key   *string `pulumi:"key"`
 	Value *string `pulumi:"value"`
 }
@@ -14835,7 +14835,7 @@ type ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapListInput in
 }
 
 type ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapListArgs struct {
-	// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+	// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 	Key   pulumi.StringPtrInput `pulumi:"key"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -14891,7 +14891,7 @@ func (o ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapListOutpu
 	return o
 }
 
-// -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+// -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
 func (o ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapList) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -16947,7 +16947,7 @@ type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit struc
 	CloudInitScripts []DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -16971,7 +16971,7 @@ type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgs s
 	CloudInitScripts DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -17044,7 +17044,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit) *string {
 		return v.Metadata
@@ -18720,7 +18720,7 @@ type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo struct {
 	// The IP address configurations.
 	Ipv4Configs []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
@@ -18728,7 +18728,7 @@ type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo struct {
 	NicType *string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -18751,7 +18751,7 @@ type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoArgs struct {
 	// The IP address configurations.
 	Ipv4Configs DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
@@ -18759,7 +18759,7 @@ type DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoArgs struct {
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -18831,7 +18831,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) Ipv4Infos() De
 	}).(DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) NetworkFunctionChains() DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -18853,7 +18853,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) ShouldAllowUnk
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 func (o DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoOutput) Subnets() DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo) []DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet {
 		return v.Subnets
@@ -31969,7 +31969,7 @@ type FoundationCentralImageClusterFoundationInitConfig struct {
 	DnsServers *string `pulumi:"dnsServers"`
 	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey *string `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 	HypervSku *string `pulumi:"hypervSku"`
 	// Gateway of the hypervisor.
 	HypervisorGateway *string           `pulumi:"hypervisorGateway"`
@@ -32006,7 +32006,7 @@ type FoundationCentralImageClusterFoundationInitConfigArgs struct {
 	DnsServers pulumi.StringPtrInput `pulumi:"dnsServers"`
 	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey pulumi.StringPtrInput `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 	HypervSku pulumi.StringPtrInput `pulumi:"hypervSku"`
 	// Gateway of the hypervisor.
 	HypervisorGateway pulumi.StringPtrInput `pulumi:"hypervisorGateway"`
@@ -32104,7 +32104,7 @@ func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervProductKe
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervProductKey }).(pulumi.StringPtrOutput)
 }
 
-// SKU of hyperv to be installed if hypervisorType is hyperv.
+// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervSku }).(pulumi.StringPtrOutput)
 }
@@ -32836,7 +32836,7 @@ func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayOutpu
 type FoundationCentralImageClusterHypervisorIsoDetails struct {
 	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey *string `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 	HypervSku *string `pulumi:"hypervSku"`
 	// sha256sum of the hypervisor iso.
 	Sha256sum *string `pulumi:"sha256sum"`
@@ -32858,7 +32858,7 @@ type FoundationCentralImageClusterHypervisorIsoDetailsInput interface {
 type FoundationCentralImageClusterHypervisorIsoDetailsArgs struct {
 	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey pulumi.StringPtrInput `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 	HypervSku pulumi.StringPtrInput `pulumi:"hypervSku"`
 	// sha256sum of the hypervisor iso.
 	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
@@ -32948,7 +32948,7 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) HypervProductKe
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.HypervProductKey }).(pulumi.StringPtrOutput)
 }
 
-// SKU of hyperv to be installed if hypervisorType is hyperv.
+// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.HypervSku }).(pulumi.StringPtrOutput)
 }
@@ -32997,7 +32997,7 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervProduc
 	}).(pulumi.StringPtrOutput)
 }
 
-// SKU of hyperv to be installed if hypervisorType is hyperv.
+// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -33030,7 +33030,7 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Url() pulumi
 type FoundationCentralImageClusterHypervisorIsos struct {
 	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey *string `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 	HypervSku      *string `pulumi:"hypervSku"`
 	HypervisorType *string `pulumi:"hypervisorType"`
 	// sha256sum of the hypervisor iso.
@@ -33053,7 +33053,7 @@ type FoundationCentralImageClusterHypervisorIsosInput interface {
 type FoundationCentralImageClusterHypervisorIsosArgs struct {
 	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey pulumi.StringPtrInput `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 	HypervSku      pulumi.StringPtrInput `pulumi:"hypervSku"`
 	HypervisorType pulumi.StringPtrInput `pulumi:"hypervisorType"`
 	// sha256sum of the hypervisor iso.
@@ -33144,7 +33144,7 @@ func (o FoundationCentralImageClusterHypervisorIsosOutput) HypervProductKey() pu
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsos) *string { return v.HypervProductKey }).(pulumi.StringPtrOutput)
 }
 
-// SKU of hyperv to be installed if hypervisorType is hyperv.
+// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 func (o FoundationCentralImageClusterHypervisorIsosOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsos) *string { return v.HypervSku }).(pulumi.StringPtrOutput)
 }
@@ -33197,7 +33197,7 @@ func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) HypervProductKey()
 	}).(pulumi.StringPtrOutput)
 }
 
-// SKU of hyperv to be installed if hypervisorType is hyperv.
+// SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
 func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsos) *string {
 		if v == nil {
@@ -33607,7 +33607,7 @@ type FoundationImageNodesBlockNode struct {
 	CvmIp    *string `pulumi:"cvmIp"`
 	// - Number of CVM vcpus.
 	CvmNumVcpus *int `pulumi:"cvmNumVcpus"`
-	// - use "vmInstaller" to enable CVM imaging from standalone.
+	// - use <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> to enable CVM imaging from standalone.
 	DeviceHint *string `pulumi:"deviceHint"`
 	// - serial of boot device to be excluded (used by NX G6 platforms)
 	ExludeBootSerial *string `pulumi:"exludeBootSerial"`
@@ -33635,9 +33635,9 @@ type FoundationImageNodesBlockNode struct {
 	IpmiPassword *string `pulumi:"ipmiPassword"`
 	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
 	IpmiUser *string `pulumi:"ipmiUser"`
-	// - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) IPV6 address.
+	// - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
 	Ipv6Address *string `pulumi:"ipv6Address"`
-	// - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) ipv6 interface.
+	// - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) ipv6 interface.
 	Ipv6Interface *string `pulumi:"ipv6Interface"`
 	// - relocate bootbank files to make space for phoenix files.
 	MitigateLowBootSpace *bool `pulumi:"mitigateLowBootSpace"`
@@ -33661,7 +33661,7 @@ type FoundationImageNodesBlockNode struct {
 	UcsmParams *FoundationImageNodesBlockNodeUcsmParams `pulumi:"ucsmParams"`
 	// - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
 	// * `vswitches.lacp` :- Status of LACP.
-	// * `vswitches.bond_mode` :- bondMode such as balance-tcp, active-backup, etc.
+	// * `vswitches.bond_mode` :-<span pulumi-lang-nodejs=" bondMode " pulumi-lang-dotnet=" BondMode " pulumi-lang-go=" bondMode " pulumi-lang-python=" bond_mode " pulumi-lang-yaml=" bondMode " pulumi-lang-java=" bondMode "> bondMode </span>such as balance-tcp, active-backup, etc.
 	// * `vswitches.name` :- Name of the vswitch.
 	// * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
 	// * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
@@ -33698,7 +33698,7 @@ type FoundationImageNodesBlockNodeArgs struct {
 	CvmIp    pulumi.StringPtrInput `pulumi:"cvmIp"`
 	// - Number of CVM vcpus.
 	CvmNumVcpus pulumi.IntPtrInput `pulumi:"cvmNumVcpus"`
-	// - use "vmInstaller" to enable CVM imaging from standalone.
+	// - use <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> to enable CVM imaging from standalone.
 	DeviceHint pulumi.StringPtrInput `pulumi:"deviceHint"`
 	// - serial of boot device to be excluded (used by NX G6 platforms)
 	ExludeBootSerial pulumi.StringPtrInput `pulumi:"exludeBootSerial"`
@@ -33726,9 +33726,9 @@ type FoundationImageNodesBlockNodeArgs struct {
 	IpmiPassword pulumi.StringPtrInput `pulumi:"ipmiPassword"`
 	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
 	IpmiUser pulumi.StringPtrInput `pulumi:"ipmiUser"`
-	// - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) IPV6 address.
+	// - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
 	Ipv6Address pulumi.StringPtrInput `pulumi:"ipv6Address"`
-	// - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) ipv6 interface.
+	// - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) ipv6 interface.
 	Ipv6Interface pulumi.StringPtrInput `pulumi:"ipv6Interface"`
 	// - relocate bootbank files to make space for phoenix files.
 	MitigateLowBootSpace pulumi.BoolPtrInput `pulumi:"mitigateLowBootSpace"`
@@ -33752,7 +33752,7 @@ type FoundationImageNodesBlockNodeArgs struct {
 	UcsmParams FoundationImageNodesBlockNodeUcsmParamsPtrInput `pulumi:"ucsmParams"`
 	// - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
 	// * `vswitches.lacp` :- Status of LACP.
-	// * `vswitches.bond_mode` :- bondMode such as balance-tcp, active-backup, etc.
+	// * `vswitches.bond_mode` :-<span pulumi-lang-nodejs=" bondMode " pulumi-lang-dotnet=" BondMode " pulumi-lang-go=" bondMode " pulumi-lang-python=" bond_mode " pulumi-lang-yaml=" bondMode " pulumi-lang-java=" bondMode "> bondMode </span>such as balance-tcp, active-backup, etc.
 	// * `vswitches.name` :- Name of the vswitch.
 	// * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
 	// * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
@@ -33855,7 +33855,7 @@ func (o FoundationImageNodesBlockNodeOutput) CvmNumVcpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *int { return v.CvmNumVcpus }).(pulumi.IntPtrOutput)
 }
 
-// - use "vmInstaller" to enable CVM imaging from standalone.
+// - use <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> to enable CVM imaging from standalone.
 func (o FoundationImageNodesBlockNodeOutput) DeviceHint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *string { return v.DeviceHint }).(pulumi.StringPtrOutput)
 }
@@ -33928,12 +33928,12 @@ func (o FoundationImageNodesBlockNodeOutput) IpmiUser() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *string { return v.IpmiUser }).(pulumi.StringPtrOutput)
 }
 
-// - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) IPV6 address.
+// - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
 func (o FoundationImageNodesBlockNodeOutput) Ipv6Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *string { return v.Ipv6Address }).(pulumi.StringPtrOutput)
 }
 
-// - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) ipv6 interface.
+// - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) ipv6 interface.
 func (o FoundationImageNodesBlockNodeOutput) Ipv6Interface() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *string { return v.Ipv6Interface }).(pulumi.StringPtrOutput)
 }
@@ -33984,7 +33984,7 @@ func (o FoundationImageNodesBlockNodeOutput) UcsmParams() FoundationImageNodesBl
 
 // - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
 // * `vswitches.lacp` :- Status of LACP.
-// * `vswitches.bond_mode` :- bondMode such as balance-tcp, active-backup, etc.
+// * `vswitches.bond_mode` :-<span pulumi-lang-nodejs=" bondMode " pulumi-lang-dotnet=" BondMode " pulumi-lang-go=" bondMode " pulumi-lang-python=" bond_mode " pulumi-lang-yaml=" bondMode " pulumi-lang-java=" bondMode "> bondMode </span>such as balance-tcp, active-backup, etc.
 // * `vswitches.name` :- Name of the vswitch.
 // * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
 // * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
@@ -34822,7 +34822,7 @@ func (o FoundationImageNodesEosMetadataPtrOutput) Email() pulumi.StringPtrOutput
 type FoundationImageNodesFcSettings struct {
 	// - Foundation Central metadata which will be transferred to the newly imaged node.
 	// * `fc_metadata.fc_ip` :- IP address of foundation central.
-	// * `fc_metadata.api_key` :- apiKey which the node uses to register itself with foundation central.
+	// * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey "> apiKey </span>which the node uses to register itself with foundation central.
 	FcMetadata FoundationImageNodesFcSettingsFcMetadata `pulumi:"fcMetadata"`
 	// - If this attribute is set to True, FC workflow will be invoked.
 	FoundationCentral bool `pulumi:"foundationCentral"`
@@ -34842,7 +34842,7 @@ type FoundationImageNodesFcSettingsInput interface {
 type FoundationImageNodesFcSettingsArgs struct {
 	// - Foundation Central metadata which will be transferred to the newly imaged node.
 	// * `fc_metadata.fc_ip` :- IP address of foundation central.
-	// * `fc_metadata.api_key` :- apiKey which the node uses to register itself with foundation central.
+	// * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey "> apiKey </span>which the node uses to register itself with foundation central.
 	FcMetadata FoundationImageNodesFcSettingsFcMetadataInput `pulumi:"fcMetadata"`
 	// - If this attribute is set to True, FC workflow will be invoked.
 	FoundationCentral pulumi.BoolInput `pulumi:"foundationCentral"`
@@ -34927,7 +34927,7 @@ func (o FoundationImageNodesFcSettingsOutput) ToFoundationImageNodesFcSettingsPt
 
 // - Foundation Central metadata which will be transferred to the newly imaged node.
 // * `fc_metadata.fc_ip` :- IP address of foundation central.
-// * `fc_metadata.api_key` :- apiKey which the node uses to register itself with foundation central.
+// * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey "> apiKey </span>which the node uses to register itself with foundation central.
 func (o FoundationImageNodesFcSettingsOutput) FcMetadata() FoundationImageNodesFcSettingsFcMetadataOutput {
 	return o.ApplyT(func(v FoundationImageNodesFcSettings) FoundationImageNodesFcSettingsFcMetadata { return v.FcMetadata }).(FoundationImageNodesFcSettingsFcMetadataOutput)
 }
@@ -34963,7 +34963,7 @@ func (o FoundationImageNodesFcSettingsPtrOutput) Elem() FoundationImageNodesFcSe
 
 // - Foundation Central metadata which will be transferred to the newly imaged node.
 // * `fc_metadata.fc_ip` :- IP address of foundation central.
-// * `fc_metadata.api_key` :- apiKey which the node uses to register itself with foundation central.
+// * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey "> apiKey </span>which the node uses to register itself with foundation central.
 func (o FoundationImageNodesFcSettingsPtrOutput) FcMetadata() FoundationImageNodesFcSettingsFcMetadataPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesFcSettings) *FoundationImageNodesFcSettingsFcMetadata {
 		if v == nil {
@@ -37865,7 +37865,7 @@ type KarbonClusterCniConfig struct {
 	CalicoConfig *KarbonClusterCniConfigCalicoConfig `pulumi:"calicoConfig"`
 	// - (Optional) Configuration of the flannel container network interface (CNI) provider.
 	FlannelConfigs []KarbonClusterCniConfigFlannelConfig `pulumi:"flannelConfigs"`
-	// - (Optional) The size of the subnet from the podIpv4Cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+	// - (Optional) The size of the subnet from the<span pulumi-lang-nodejs=" podIpv4Cidr " pulumi-lang-dotnet=" PodIpv4Cidr " pulumi-lang-go=" podIpv4Cidr " pulumi-lang-python=" pod_ipv4_cidr " pulumi-lang-yaml=" podIpv4Cidr " pulumi-lang-java=" podIpv4Cidr "> podIpv4Cidr </span>assigned to each host. A value of 24 would allow up to 255 pods per node.
 	NodeCidrMaskSize *int `pulumi:"nodeCidrMaskSize"`
 	// - (Optional) CIDR for pods in the cluster.
 	PodIpv4Cidr *string `pulumi:"podIpv4Cidr"`
@@ -37891,7 +37891,7 @@ type KarbonClusterCniConfigArgs struct {
 	CalicoConfig KarbonClusterCniConfigCalicoConfigPtrInput `pulumi:"calicoConfig"`
 	// - (Optional) Configuration of the flannel container network interface (CNI) provider.
 	FlannelConfigs KarbonClusterCniConfigFlannelConfigArrayInput `pulumi:"flannelConfigs"`
-	// - (Optional) The size of the subnet from the podIpv4Cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+	// - (Optional) The size of the subnet from the<span pulumi-lang-nodejs=" podIpv4Cidr " pulumi-lang-dotnet=" PodIpv4Cidr " pulumi-lang-go=" podIpv4Cidr " pulumi-lang-python=" pod_ipv4_cidr " pulumi-lang-yaml=" podIpv4Cidr " pulumi-lang-java=" podIpv4Cidr "> podIpv4Cidr </span>assigned to each host. A value of 24 would allow up to 255 pods per node.
 	NodeCidrMaskSize pulumi.IntPtrInput `pulumi:"nodeCidrMaskSize"`
 	// - (Optional) CIDR for pods in the cluster.
 	PodIpv4Cidr pulumi.StringPtrInput `pulumi:"podIpv4Cidr"`
@@ -37988,7 +37988,7 @@ func (o KarbonClusterCniConfigOutput) FlannelConfigs() KarbonClusterCniConfigFla
 	return o.ApplyT(func(v KarbonClusterCniConfig) []KarbonClusterCniConfigFlannelConfig { return v.FlannelConfigs }).(KarbonClusterCniConfigFlannelConfigArrayOutput)
 }
 
-// - (Optional) The size of the subnet from the podIpv4Cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+// - (Optional) The size of the subnet from the<span pulumi-lang-nodejs=" podIpv4Cidr " pulumi-lang-dotnet=" PodIpv4Cidr " pulumi-lang-go=" podIpv4Cidr " pulumi-lang-python=" pod_ipv4_cidr " pulumi-lang-yaml=" podIpv4Cidr " pulumi-lang-java=" podIpv4Cidr "> podIpv4Cidr </span>assigned to each host. A value of 24 would allow up to 255 pods per node.
 func (o KarbonClusterCniConfigOutput) NodeCidrMaskSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v KarbonClusterCniConfig) *int { return v.NodeCidrMaskSize }).(pulumi.IntPtrOutput)
 }
@@ -38049,7 +38049,7 @@ func (o KarbonClusterCniConfigPtrOutput) FlannelConfigs() KarbonClusterCniConfig
 	}).(KarbonClusterCniConfigFlannelConfigArrayOutput)
 }
 
-// - (Optional) The size of the subnet from the podIpv4Cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+// - (Optional) The size of the subnet from the<span pulumi-lang-nodejs=" podIpv4Cidr " pulumi-lang-dotnet=" PodIpv4Cidr " pulumi-lang-go=" podIpv4Cidr " pulumi-lang-python=" pod_ipv4_cidr " pulumi-lang-yaml=" podIpv4Cidr " pulumi-lang-java=" podIpv4Cidr "> podIpv4Cidr </span>assigned to each host. A value of 24 would allow up to 255 pods per node.
 func (o KarbonClusterCniConfigPtrOutput) NodeCidrMaskSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *KarbonClusterCniConfig) *int {
 		if v == nil {
@@ -39931,7 +39931,7 @@ type KarbonClusterStorageClassConfig struct {
 	Name *string `pulumi:"name"`
 	// Reclaim policy for persistent volumes provisioned using the specified storage class.
 	// * `volumes_config.#.file_system` - (Optional) Karbon uses either the ext4 or xfs file-system on the volume disk.
-	// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a `true` value.
+	// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> value.
 	// * `volumes_config.#.password` - (Required) The password of the Prism Element user that the API calls use to provision volumes.
 	// * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
 	// * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
@@ -39958,7 +39958,7 @@ type KarbonClusterStorageClassConfigArgs struct {
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Reclaim policy for persistent volumes provisioned using the specified storage class.
 	// * `volumes_config.#.file_system` - (Optional) Karbon uses either the ext4 or xfs file-system on the volume disk.
-	// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a `true` value.
+	// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> value.
 	// * `volumes_config.#.password` - (Required) The password of the Prism Element user that the API calls use to provision volumes.
 	// * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
 	// * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
@@ -40053,7 +40053,7 @@ func (o KarbonClusterStorageClassConfigOutput) Name() pulumi.StringPtrOutput {
 
 // Reclaim policy for persistent volumes provisioned using the specified storage class.
 // * `volumes_config.#.file_system` - (Optional) Karbon uses either the ext4 or xfs file-system on the volume disk.
-// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a `true` value.
+// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> value.
 // * `volumes_config.#.password` - (Required) The password of the Prism Element user that the API calls use to provision volumes.
 // * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
 // * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
@@ -40106,7 +40106,7 @@ func (o KarbonClusterStorageClassConfigPtrOutput) Name() pulumi.StringPtrOutput 
 
 // Reclaim policy for persistent volumes provisioned using the specified storage class.
 // * `volumes_config.#.file_system` - (Optional) Karbon uses either the ext4 or xfs file-system on the volume disk.
-// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a `true` value.
+// * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> value.
 // * `volumes_config.#.password` - (Required) The password of the Prism Element user that the API calls use to provision volumes.
 // * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
 // * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
@@ -53044,7 +53044,7 @@ func (o NdbDatabasePostgresqlInfoPtrOutput) PreCreateScript() pulumi.StringPtrOu
 type NdbDatabasePostgresqlInfoHaInstance struct {
 	// - (Optional) archive wal expire days. Default is set to -1
 	ArchiveWalExpireDays *int `pulumi:"archiveWalExpireDays"`
-	// - (Optional) backup policy for instance. Default is "primaryOnly"
+	// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
 	BackupPolicy       *string `pulumi:"backupPolicy"`
 	ClusterDescription *string `pulumi:"clusterDescription"`
 	// - (Required) cluster name
@@ -53083,7 +53083,7 @@ type NdbDatabasePostgresqlInfoHaInstanceInput interface {
 type NdbDatabasePostgresqlInfoHaInstanceArgs struct {
 	// - (Optional) archive wal expire days. Default is set to -1
 	ArchiveWalExpireDays pulumi.IntPtrInput `pulumi:"archiveWalExpireDays"`
-	// - (Optional) backup policy for instance. Default is "primaryOnly"
+	// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
 	BackupPolicy       pulumi.StringPtrInput `pulumi:"backupPolicy"`
 	ClusterDescription pulumi.StringPtrInput `pulumi:"clusterDescription"`
 	// - (Required) cluster name
@@ -53190,7 +53190,7 @@ func (o NdbDatabasePostgresqlInfoHaInstanceOutput) ArchiveWalExpireDays() pulumi
 	return o.ApplyT(func(v NdbDatabasePostgresqlInfoHaInstance) *int { return v.ArchiveWalExpireDays }).(pulumi.IntPtrOutput)
 }
 
-// - (Optional) backup policy for instance. Default is "primaryOnly"
+// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
 func (o NdbDatabasePostgresqlInfoHaInstanceOutput) BackupPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabasePostgresqlInfoHaInstance) *string { return v.BackupPolicy }).(pulumi.StringPtrOutput)
 }
@@ -53283,7 +53283,7 @@ func (o NdbDatabasePostgresqlInfoHaInstancePtrOutput) ArchiveWalExpireDays() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// - (Optional) backup policy for instance. Default is "primaryOnly"
+// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
 func (o NdbDatabasePostgresqlInfoHaInstancePtrOutput) BackupPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDatabasePostgresqlInfoHaInstance) *string {
 		if v == nil {

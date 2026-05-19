@@ -17,6 +17,7 @@ import (
 // ## Example Usage
 //
 // ### resource to create tag
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,8 +44,10 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### resource to update tag with status
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -72,6 +75,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type NdbTag struct {
 	pulumi.CustomResourceState
 

@@ -11,10 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a datasource to retrieve VPC with vpcUuid .
+// Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>.
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupVpcV2(ctx *pulumi.Context, args *LookupVpcV2Args, opts ...pulumi.InvokeOption) (*LookupVpcV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVpcV2Result

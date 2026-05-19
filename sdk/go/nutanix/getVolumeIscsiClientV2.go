@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,12 +39,13 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Argument Reference
 //
 // The following arguments are supported:
 //
-// * `extId`: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+// * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
 func GetVolumeIscsiClientV2(ctx *pulumi.Context, args *GetVolumeIscsiClientV2Args, opts ...pulumi.InvokeOption) (*GetVolumeIscsiClientV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumeIscsiClientV2Result

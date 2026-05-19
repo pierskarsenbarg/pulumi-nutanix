@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupVolumeGroupV2(ctx *pulumi.Context, args *LookupVolumeGroupV2Args, opts ...pulumi.InvokeOption) (*LookupVolumeGroupV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVolumeGroupV2Result

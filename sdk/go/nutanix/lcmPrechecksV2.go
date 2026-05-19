@@ -16,6 +16,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type LcmPrechecksV2 struct {
 	pulumi.CustomResourceState
 

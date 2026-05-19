@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupNdbMaintenanceWindow(ctx *pulumi.Context, args *LookupNdbMaintenanceWindowArgs, opts ...pulumi.InvokeOption) (*LookupNdbMaintenanceWindowResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNdbMaintenanceWindowResult

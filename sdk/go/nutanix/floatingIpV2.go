@@ -15,6 +15,7 @@ import (
 //
 // ## Example1 :  create Floating IP with External Subnet
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,9 +42,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Example2 :  create Floating IP with External Subnet with vm association
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -78,6 +81,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type FloatingIpV2 struct {
 	pulumi.CustomResourceState
 

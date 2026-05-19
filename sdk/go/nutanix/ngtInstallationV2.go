@@ -16,6 +16,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,6 +50,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type NgtInstallationV2 struct {
 	pulumi.CustomResourceState
 

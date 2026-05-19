@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupPcBackupTargetV2(ctx *pulumi.Context, args *LookupPcBackupTargetV2Args, opts ...pulumi.InvokeOption) (*LookupPcBackupTargetV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPcBackupTargetV2Result

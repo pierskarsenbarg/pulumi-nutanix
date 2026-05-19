@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,6 +56,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPbrsV2(ctx *pulumi.Context, args *GetPbrsV2Args, opts ...pulumi.InvokeOption) (*GetPbrsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPbrsV2Result

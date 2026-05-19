@@ -35,11 +35,11 @@ type LookupStaticRoutesResult struct {
 	ApiVersion string `pulumi:"apiVersion"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The vpcRouteTable kind metadata
+	// The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata
 	Metadata map[string]string `pulumi:"metadata"`
-	// An intentful representation of a vpcRouteTable spec
+	// An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>spec
 	Specs []GetStaticRoutesSpec `pulumi:"specs"`
-	// An intentful representation of a vpcRouteTable status
+	// An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>status
 	Statuses         []GetStaticRoutesStatus `pulumi:"statuses"`
 	VpcName          *string                 `pulumi:"vpcName"`
 	VpcReferenceUuid *string                 `pulumi:"vpcReferenceUuid"`
@@ -90,17 +90,17 @@ func (o LookupStaticRoutesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupStaticRoutesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The vpcRouteTable kind metadata
+// The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata
 func (o LookupStaticRoutesResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupStaticRoutesResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
-// An intentful representation of a vpcRouteTable spec
+// An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>spec
 func (o LookupStaticRoutesResultOutput) Specs() GetStaticRoutesSpecArrayOutput {
 	return o.ApplyT(func(v LookupStaticRoutesResult) []GetStaticRoutesSpec { return v.Specs }).(GetStaticRoutesSpecArrayOutput)
 }
 
-// An intentful representation of a vpcRouteTable status
+// An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>status
 func (o LookupStaticRoutesResultOutput) Statuses() GetStaticRoutesStatusArrayOutput {
 	return o.ApplyT(func(v LookupStaticRoutesResult) []GetStaticRoutesStatus { return v.Statuses }).(GetStaticRoutesStatusArrayOutput)
 }
