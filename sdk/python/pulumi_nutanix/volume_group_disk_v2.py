@@ -283,7 +283,11 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
                 "flash_modes": [{
                     "is_enabled": False,
                 }],
-            }])
+            }],
+            opts = pulumi.ResourceOptions(ignore_changes=[
+                    "diskDataSourceReferences",
+                    links,
+                ]))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -332,7 +336,11 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
                 "flash_modes": [{
                     "is_enabled": False,
                 }],
-            }])
+            }],
+            opts = pulumi.ResourceOptions(ignore_changes=[
+                    "diskDataSourceReferences",
+                    links,
+                ]))
         ```
         <!--End PulumiCodeChooser -->
 
