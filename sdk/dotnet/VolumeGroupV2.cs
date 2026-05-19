@@ -56,12 +56,6 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///         UsageType = "USER",
     ///         IsHidden = false,
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         IgnoreChanges =
-    ///         {
-    ///             "iscsiFeatures[0].targetSecret",
-    ///         },
     ///     });
     /// 
     /// });

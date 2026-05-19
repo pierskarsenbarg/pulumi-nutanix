@@ -55,10 +55,7 @@ import (
 //						},
 //					},
 //				},
-//			}, pulumi.IgnoreChanges([]string{
-//				"diskDataSourceReferences",
-//				links,
-//			}))
+//			})
 //			if err != nil {
 //				return err
 //			}

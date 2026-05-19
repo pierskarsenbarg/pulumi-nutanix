@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 	"encoding/json"
         /// 
         /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-        /// 	"github.com/pulumi/pulumi-terraform-provider/sdks/go/local/v2/local"
+        /// 	"github.com/pulumi/pulumi-local/sdk/go/local"
         /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
         /// )
         /// 
@@ -227,7 +227,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 	"encoding/json"
         /// 
         /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-        /// 	"github.com/pulumi/pulumi-terraform-provider/sdks/go/local/v2/local"
+        /// 	"github.com/pulumi/pulumi-local/sdk/go/local"
         /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
         /// )
         /// 
@@ -379,7 +379,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 	"encoding/json"
         /// 
         /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-        /// 	"github.com/pulumi/pulumi-terraform-provider/sdks/go/local/v2/local"
+        /// 	"github.com/pulumi/pulumi-local/sdk/go/local"
         /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
         /// )
         /// 
