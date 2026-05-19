@@ -9,7 +9,19 @@ import * as utilities from "./utilities";
 /**
  * Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
  *
+ * > **Recommendations:** It is recommended to create and register the cluster with Prism Central as part of the same workflow. Cluster updates, importing, and destruction through Terraform are supported only when the cluster is registered with Prism Central. To register a cluster with Prism Central use Terraform resource nutanix_pc_registration_v2.
+ *
+ * > **Note:**: Cluster resource supports add/remove node operations. However, these operations require cluster to be registered with Prism Central.
+ *
+ * > **Note:**: TThe cluster resource supports both associating and disassociating categories, allowing you to attach or detach categories on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+ *
+ * **Note:**: The cluster resource supports both associating and disassociating cluster profile, allowing you to attach or detach cluster profile on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+ *
  * ## Example Usage
+ *
+ * ### 
+ *
+ * ### Example 1: 1 Node Cluster Creation Example
  *
  * <!--Start PulumiCodeChooser -->
  * ```typescript
@@ -76,6 +88,124 @@ import * as utilities from "./utilities";
  * });
  * ```
  * <!--End PulumiCodeChooser -->
+ *
+ * ### Example 2: 3 Node Cluster Creation Example and Adding Nodes Example
+ *
+ * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const cluster_3nodes = new nutanix.ClusterV2("cluster-3nodes", {
+ *     name: "tf-cluster-3nodes",
+ *     dryrun: false,
+ *     nodes: [{
+ *         nodeLists: [
+ *             {
+ *                 controllerVmIps: [{
+ *                     ipv4s: [{
+ *                         value: "10.00.00.1",
+ *                     }],
+ *                 }],
+ *             },
+ *             {
+ *                 controllerVmIps: [{
+ *                     ipv4s: [{
+ *                         value: "10.00.00.2",
+ *                     }],
+ *                 }],
+ *             },
+ *             {
+ *                 controllerVmIps: [{
+ *                     ipv4s: [{
+ *                         value: "10.00.00.3",
+ *                     }],
+ *                 }],
+ *             },
+ *         ],
+ *     }],
+ *     configs: [{
+ *         clusterFunctions: clusters.config.clusterFunctions,
+ *         clusterArch: clusters.config.clusterArch,
+ *         faultToleranceStates: [{
+ *             domainAwarenessLevel: "NODE",
+ *         }],
+ *     }],
+ * });
+ * ```
+ * <!--End PulumiCodeChooser -->
+ *
+ * ### Example 3: Creating a cluster with categories
+ *
+ * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const cluster_with_categories = new nutanix.ClusterV2("cluster-with-categories", {
+ *     name: "cluster-example",
+ *     nodes: [{
+ *         nodeLists: [{
+ *             controllerVmIps: [{
+ *                 ipv4s: [{
+ *                     value: "10.xx.xx.xx",
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ *     configs: [{
+ *         clusterFunctions: ["AOS"],
+ *         redundancyFactor: 1,
+ *         clusterArch: "X86_64",
+ *         faultToleranceStates: [{
+ *             domainAwarenessLevel: "DISK",
+ *         }],
+ *     }],
+ *     networks: [{
+ *         externalAddresses: [{
+ *             ipv4s: [{
+ *                 value: "10.xx.xx.xx",
+ *             }],
+ *         }],
+ *         externalDataServicesIps: [{
+ *             ipv4s: [{
+ *                 value: "10.xx.xx.xx",
+ *             }],
+ *         }],
+ *         ntpServerIpLists: [
+ *             {
+ *                 fqdns: [{
+ *                     value: "ntp.server.nutanix.com",
+ *                 }],
+ *             },
+ *             {
+ *                 fqdns: [{
+ *                     value: "ntp.server_1.nutanix.com",
+ *                 }],
+ *             },
+ *         ],
+ *         smtpServers: [{
+ *             emailAddress: "example.ex@exmple.com",
+ *             servers: [{
+ *                 ipAddresses: [{
+ *                     ipv4s: [{
+ *                         value: "10.xx.xx.xx",
+ *                     }],
+ *                 }],
+ *                 port: 123,
+ *                 username: "example",
+ *                 password: "example!2134",
+ *             }],
+ *             type: "PLAIN",
+ *         }],
+ *     }],
+ * });
+ * ```
+ * <!--End PulumiCodeChooser -->
+ *
+ * ## What happens when you do terraform destroy for nutanix_clusters_v2?  First thing, inorder to destroy the cluster from Terraform it need to be registered.
+ *
+ * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/createCluster).
  */
 export class ClusterV2 extends pulumi.CustomResource {
     /**
@@ -110,7 +240,10 @@ export class ClusterV2 extends pulumi.CustomResource {
      * - (Optional) The reference to a project.
      */
     declare public readonly categories: pulumi.Output<string[]>;
-    declare public /*out*/ readonly clusterProfileExtId: pulumi.Output<string>;
+    /**
+     * - (Optional) The reference to a cluster profile.
+     */
+    declare public readonly clusterProfileExtId: pulumi.Output<string>;
     /**
      * - (Optional) Cluster configuration details.
      */
@@ -136,12 +269,12 @@ export class ClusterV2 extends pulumi.CustomResource {
      */
     declare public readonly networks: pulumi.Output<outputs.ClusterV2Network[]>;
     /**
-     * - (Optional) The reference to a node.
+     * - (Optional) The reference to a node and remove node parameters.
      */
     declare public readonly nodes: pulumi.Output<outputs.ClusterV2Node[]>;
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
-     * - (Optional) The reference to a project.
+     * - (Optional) Upgrade status of a cluster.
      * Valid values are:
      * - "CANCELLED"	The cluster upgrade is cancelled.
      * - "FAILED"	The cluster upgrade failed.
@@ -188,6 +321,7 @@ export class ClusterV2 extends pulumi.CustomResource {
         } else {
             const args = argsOrState as ClusterV2Args | undefined;
             resourceInputs["categories"] = args?.categories;
+            resourceInputs["clusterProfileExtId"] = args?.clusterProfileExtId;
             resourceInputs["configs"] = args?.configs;
             resourceInputs["containerName"] = args?.containerName;
             resourceInputs["dryrun"] = args?.dryrun;
@@ -197,7 +331,6 @@ export class ClusterV2 extends pulumi.CustomResource {
             resourceInputs["networks"] = args?.networks;
             resourceInputs["nodes"] = args?.nodes;
             resourceInputs["backupEligibilityScore"] = undefined /*out*/;
-            resourceInputs["clusterProfileExtId"] = undefined /*out*/;
             resourceInputs["inefficientVmCount"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
             resourceInputs["tenantId"] = undefined /*out*/;
@@ -218,6 +351,9 @@ export interface ClusterV2State {
      * - (Optional) The reference to a project.
      */
     categories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * - (Optional) The reference to a cluster profile.
+     */
     clusterProfileExtId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Cluster configuration details.
@@ -244,12 +380,12 @@ export interface ClusterV2State {
      */
     networks?: pulumi.Input<pulumi.Input<inputs.ClusterV2Network>[] | undefined>;
     /**
-     * - (Optional) The reference to a node.
+     * - (Optional) The reference to a node and remove node parameters.
      */
     nodes?: pulumi.Input<pulumi.Input<inputs.ClusterV2Node>[] | undefined>;
     tenantId?: pulumi.Input<string | undefined>;
     /**
-     * - (Optional) The reference to a project.
+     * - (Optional) Upgrade status of a cluster.
      * Valid values are:
      * - "CANCELLED"	The cluster upgrade is cancelled.
      * - "FAILED"	The cluster upgrade failed.
@@ -274,6 +410,10 @@ export interface ClusterV2Args {
      */
     categories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * - (Optional) The reference to a cluster profile.
+     */
+    clusterProfileExtId?: pulumi.Input<string | undefined>;
+    /**
      * - (Optional) Cluster configuration details.
      */
     configs?: pulumi.Input<pulumi.Input<inputs.ClusterV2Config>[] | undefined>;
@@ -296,7 +436,7 @@ export interface ClusterV2Args {
      */
     networks?: pulumi.Input<pulumi.Input<inputs.ClusterV2Network>[] | undefined>;
     /**
-     * - (Optional) The reference to a node.
+     * - (Optional) The reference to a node and remove node parameters.
      */
     nodes?: pulumi.Input<pulumi.Input<inputs.ClusterV2Node>[] | undefined>;
 }

@@ -21,7 +21,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - (Optional) The value associated with the key for this key-value pair.
         /// 
-        /// See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/customizeGuestVm).
+        /// See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/customizeGuestVm).
         /// </summary>
         public readonly string? Value;
 

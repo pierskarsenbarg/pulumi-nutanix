@@ -16,6 +16,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
+        /// <summary>
+        /// value of address
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

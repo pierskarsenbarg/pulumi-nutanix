@@ -46,7 +46,7 @@ type LcmPerformInventoryV2 struct {
 
 	// Cluster uuid on which the resource is present or operation is being performed.
 	//
-	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
 	XClusterId pulumi.StringPtrOutput `pulumi:"xClusterId"`
 }
 
@@ -82,14 +82,14 @@ func GetLcmPerformInventoryV2(ctx *pulumi.Context,
 type lcmPerformInventoryV2State struct {
 	// Cluster uuid on which the resource is present or operation is being performed.
 	//
-	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
 	XClusterId *string `pulumi:"xClusterId"`
 }
 
 type LcmPerformInventoryV2State struct {
 	// Cluster uuid on which the resource is present or operation is being performed.
 	//
-	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
 	XClusterId pulumi.StringPtrInput
 }
 
@@ -100,7 +100,7 @@ func (LcmPerformInventoryV2State) ElementType() reflect.Type {
 type lcmPerformInventoryV2Args struct {
 	// Cluster uuid on which the resource is present or operation is being performed.
 	//
-	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
 	XClusterId *string `pulumi:"xClusterId"`
 }
 
@@ -108,7 +108,7 @@ type lcmPerformInventoryV2Args struct {
 type LcmPerformInventoryV2Args struct {
 	// Cluster uuid on which the resource is present or operation is being performed.
 	//
-	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+	// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
 	XClusterId pulumi.StringPtrInput
 }
 
@@ -201,7 +201,7 @@ func (o LcmPerformInventoryV2Output) ToLcmPerformInventoryV2OutputWithContext(ct
 
 // Cluster uuid on which the resource is present or operation is being performed.
 //
-// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
+// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
 func (o LcmPerformInventoryV2Output) XClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LcmPerformInventoryV2) pulumi.StringPtrOutput { return v.XClusterId }).(pulumi.StringPtrOutput)
 }

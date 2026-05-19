@@ -15,22 +15,64 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecResult
     {
         /// <summary>
-        /// List of secured group action.
+        /// ICMP type/code for the rule.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecIcmpServiceResult> IcmpServices;
+        /// <summary>
+        /// Whether traffic between intra secured group entities should be allowed or denied.
         /// </summary>
         public readonly string SecuredGroupAction;
+        /// <summary>
+        /// Entity type for the secured group category (SUBNET, VM, VPC).
+        /// </summary>
+        public readonly string SecuredGroupCategoryAssociatedEntityType;
         /// <summary>
         /// A specification to whether traffic between intra secured group entities should be allowed or denied.
         /// </summary>
         public readonly ImmutableArray<string> SecuredGroupCategoryReferences;
+        /// <summary>
+        /// Reference to the secured group entity group.
+        /// </summary>
+        public readonly string SecuredGroupEntityGroupReference;
+        /// <summary>
+        /// List of service group references for the secured group.
+        /// </summary>
+        public readonly ImmutableArray<string> SecuredGroupServiceReferences;
+        /// <summary>
+        /// TCP port ranges for the rule.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecTcpServiceResult> TcpServices;
+        /// <summary>
+        /// UDP port ranges for the rule.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecUdpServiceResult> UdpServices;
 
         [OutputConstructor]
         private GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecResult(
+            ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecIcmpServiceResult> icmpServices,
+
             string securedGroupAction,
 
-            ImmutableArray<string> securedGroupCategoryReferences)
+            string securedGroupCategoryAssociatedEntityType,
+
+            ImmutableArray<string> securedGroupCategoryReferences,
+
+            string securedGroupEntityGroupReference,
+
+            ImmutableArray<string> securedGroupServiceReferences,
+
+            ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecTcpServiceResult> tcpServices,
+
+            ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecUdpServiceResult> udpServices)
         {
+            IcmpServices = icmpServices;
             SecuredGroupAction = securedGroupAction;
+            SecuredGroupCategoryAssociatedEntityType = securedGroupCategoryAssociatedEntityType;
             SecuredGroupCategoryReferences = securedGroupCategoryReferences;
+            SecuredGroupEntityGroupReference = securedGroupEntityGroupReference;
+            SecuredGroupServiceReferences = securedGroupServiceReferences;
+            TcpServices = tcpServices;
+            UdpServices = udpServices;
         }
     }
 }

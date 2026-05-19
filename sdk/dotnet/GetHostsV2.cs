@@ -217,7 +217,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Task<GetHostsV2Result> InvokeAsync(GetHostsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2Args(), options.WithDefaults());
@@ -427,7 +427,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Output<GetHostsV2Result> Invoke(GetHostsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2InvokeArgs(), options.WithDefaults());
@@ -637,7 +637,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/listHostsByClusterId).
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Output<GetHostsV2Result> Invoke(GetHostsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2InvokeArgs(), options.WithDefaults());

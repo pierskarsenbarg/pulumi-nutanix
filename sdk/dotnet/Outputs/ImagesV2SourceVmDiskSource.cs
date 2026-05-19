@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ImagesV2SourceVmDiskSource
     {
+        /// <summary>
+        /// The external identifier of VM Disk.
+        /// </summary>
         public readonly string ExtId;
 
         [OutputConstructor]

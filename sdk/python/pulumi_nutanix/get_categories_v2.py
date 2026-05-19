@@ -178,7 +178,7 @@ def get_categories_v2(expand: Optional[_builtins.str] = None,
       Resources can be organized into either an entity or a policy.
     * <span pulumi-lang-nodejs="`resourceId`" pulumi-lang-dotnet="`ResourceId`" pulumi-lang-go="`resourceId`" pulumi-lang-python="`resource_id`" pulumi-lang-yaml="`resourceId`" pulumi-lang-java="`resourceId`">`resourceId`</span>: The UUID of the entity or policy associated with the particular category.
 
-    See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/Categories/operation/listCategories).
+    See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/listCategories).
 
 
     :param _builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported:
@@ -284,7 +284,7 @@ def get_categories_v2_output(expand: pulumi.Input[Optional[Optional[_builtins.st
       Resources can be organized into either an entity or a policy.
     * <span pulumi-lang-nodejs="`resourceId`" pulumi-lang-dotnet="`ResourceId`" pulumi-lang-go="`resourceId`" pulumi-lang-python="`resource_id`" pulumi-lang-yaml="`resourceId`" pulumi-lang-java="`resourceId`">`resourceId`</span>: The UUID of the entity or policy associated with the particular category.
 
-    See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/Categories/operation/listCategories).
+    See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/listCategories).
 
 
     :param _builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported:

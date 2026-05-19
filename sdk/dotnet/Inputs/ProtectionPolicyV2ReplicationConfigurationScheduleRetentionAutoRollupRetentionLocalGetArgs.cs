@@ -15,10 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         /// <summary>
         /// -(Required) Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
-        /// 
-        /// 
-        /// 
-        /// See detailed information in [Nutanix Protection Policy v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.0#tag/ProtectionPolicies/operation/createProtectionPolicy).
         /// </summary>
         [Input("frequency", required: true)]
         public Input<int> Frequency { get; set; } = null!;

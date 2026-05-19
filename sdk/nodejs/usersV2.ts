@@ -38,7 +38,7 @@ export class UsersV2 extends pulumi.CustomResource {
     }
 
     /**
-     * -  Any additional attribute for the User.
+     * -(Optional) Any additional attribute for the User.
      */
     declare public readonly additionalAttributes: pulumi.Output<outputs.UsersV2AdditionalAttribute[]>;
     /**
@@ -54,28 +54,28 @@ export class UsersV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     /**
-     * - Description of the user.
+     * -( Optional ) Description of the user.
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * - Display name for the User.
+     * -(Optional) Display name for the User.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * - Email Id for the User.
+     * -(Optional) Email Id for the User.
      */
     declare public readonly emailId: pulumi.Output<string>;
     /**
-     * - A globally unique identifier of an instance that is suitable for external consumption.
+     * -(Optional) External Identifier of the User.
      */
     declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
-     * - First name for the User.
+     * -(Optional) First name for the User.
      */
     declare public readonly firstName: pulumi.Output<string>;
     declare public readonly forceResetPassword: pulumi.Output<boolean>;
     /**
-     * - Identifier of the IDP for the User.
+     * -(Optional) Identifier of the IDP for the User.
      */
     declare public readonly idpId: pulumi.Output<string>;
     /**
@@ -83,7 +83,7 @@ export class UsersV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lastLoginTime: pulumi.Output<string>;
     /**
-     * - Last name for the User.
+     * -(Optional) Last name for the User.
      */
     declare public readonly lastName: pulumi.Output<string>;
     /**
@@ -95,29 +95,32 @@ export class UsersV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly links: pulumi.Output<outputs.UsersV2Link[]>;
     /**
-     * - Default locale for the User.
+     * -(Optional) Default locale for the User.
      */
     declare public readonly locale: pulumi.Output<string>;
     /**
-     * - Middle name for the User.
+     * -(Optional) Middle name for the User.
      */
     declare public readonly middleInitial: pulumi.Output<string>;
+    /**
+     * -(Optional) Password for the User.
+     */
     declare public readonly password: pulumi.Output<string>;
     /**
-     * - Default Region for the User.
+     * -(Optional) Default Region for the User.
      */
     declare public readonly region: pulumi.Output<string>;
     /**
-     * - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+     * -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
      */
     declare public readonly status: pulumi.Output<string>;
     /**
-     * - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+     * -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
      * Type of the User.
      */
     declare public readonly userType: pulumi.Output<string>;
     /**
-     * - Identifier for the User in the form an email address.
+     * -(Required) Identifier for the User in the form an email address.
      */
     declare public readonly username: pulumi.Output<string>;
 
@@ -174,7 +177,7 @@ export class UsersV2 extends pulumi.CustomResource {
             resourceInputs["lastName"] = args?.lastName;
             resourceInputs["locale"] = args?.locale;
             resourceInputs["middleInitial"] = args?.middleInitial;
-            resourceInputs["password"] = args?.password;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["region"] = args?.region;
             resourceInputs["status"] = args?.status;
             resourceInputs["userType"] = args?.userType;
@@ -188,6 +191,8 @@ export class UsersV2 extends pulumi.CustomResource {
             resourceInputs["links"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(UsersV2.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -197,7 +202,7 @@ export class UsersV2 extends pulumi.CustomResource {
  */
 export interface UsersV2State {
     /**
-     * -  Any additional attribute for the User.
+     * -(Optional) Any additional attribute for the User.
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.UsersV2AdditionalAttribute>[] | undefined>;
     /**
@@ -213,28 +218,28 @@ export interface UsersV2State {
      */
     createdTime?: pulumi.Input<string | undefined>;
     /**
-     * - Description of the user.
+     * -( Optional ) Description of the user.
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * - Display name for the User.
+     * -(Optional) Display name for the User.
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * - Email Id for the User.
+     * -(Optional) Email Id for the User.
      */
     emailId?: pulumi.Input<string | undefined>;
     /**
-     * - A globally unique identifier of an instance that is suitable for external consumption.
+     * -(Optional) External Identifier of the User.
      */
     extId?: pulumi.Input<string | undefined>;
     /**
-     * - First name for the User.
+     * -(Optional) First name for the User.
      */
     firstName?: pulumi.Input<string | undefined>;
     forceResetPassword?: pulumi.Input<boolean | undefined>;
     /**
-     * - Identifier of the IDP for the User.
+     * -(Optional) Identifier of the IDP for the User.
      */
     idpId?: pulumi.Input<string | undefined>;
     /**
@@ -242,7 +247,7 @@ export interface UsersV2State {
      */
     lastLoginTime?: pulumi.Input<string | undefined>;
     /**
-     * - Last name for the User.
+     * -(Optional) Last name for the User.
      */
     lastName?: pulumi.Input<string | undefined>;
     /**
@@ -254,29 +259,32 @@ export interface UsersV2State {
      */
     links?: pulumi.Input<pulumi.Input<inputs.UsersV2Link>[] | undefined>;
     /**
-     * - Default locale for the User.
+     * -(Optional) Default locale for the User.
      */
     locale?: pulumi.Input<string | undefined>;
     /**
-     * - Middle name for the User.
+     * -(Optional) Middle name for the User.
      */
     middleInitial?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Password for the User.
+     */
     password?: pulumi.Input<string | undefined>;
     /**
-     * - Default Region for the User.
+     * -(Optional) Default Region for the User.
      */
     region?: pulumi.Input<string | undefined>;
     /**
-     * - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+     * -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
      */
     status?: pulumi.Input<string | undefined>;
     /**
-     * - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+     * -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
      * Type of the User.
      */
     userType?: pulumi.Input<string | undefined>;
     /**
-     * - Identifier for the User in the form an email address.
+     * -(Required) Identifier for the User in the form an email address.
      */
     username?: pulumi.Input<string | undefined>;
 }
@@ -286,58 +294,61 @@ export interface UsersV2State {
  */
 export interface UsersV2Args {
     /**
-     * -  Any additional attribute for the User.
+     * -(Optional) Any additional attribute for the User.
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.UsersV2AdditionalAttribute>[] | undefined>;
     /**
-     * - Description of the user.
+     * -( Optional ) Description of the user.
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * - Display name for the User.
+     * -(Optional) Display name for the User.
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * - Email Id for the User.
+     * -(Optional) Email Id for the User.
      */
     emailId?: pulumi.Input<string | undefined>;
     /**
-     * - First name for the User.
+     * -(Optional) First name for the User.
      */
     firstName?: pulumi.Input<string | undefined>;
     forceResetPassword?: pulumi.Input<boolean | undefined>;
     /**
-     * - Identifier of the IDP for the User.
+     * -(Optional) Identifier of the IDP for the User.
      */
     idpId?: pulumi.Input<string | undefined>;
     /**
-     * - Last name for the User.
+     * -(Optional) Last name for the User.
      */
     lastName?: pulumi.Input<string | undefined>;
     /**
-     * - Default locale for the User.
+     * -(Optional) Default locale for the User.
      */
     locale?: pulumi.Input<string | undefined>;
     /**
-     * - Middle name for the User.
+     * -(Optional) Middle name for the User.
      */
     middleInitial?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Password for the User.
+     */
     password?: pulumi.Input<string | undefined>;
     /**
-     * - Default Region for the User.
+     * -(Optional) Default Region for the User.
      */
     region?: pulumi.Input<string | undefined>;
     /**
-     * - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+     * -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
      */
     status?: pulumi.Input<string | undefined>;
     /**
-     * - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+     * -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
      * Type of the User.
      */
     userType: pulumi.Input<string>;
     /**
-     * - Identifier for the User in the form an email address.
+     * -(Required) Identifier for the User in the form an email address.
      */
     username: pulumi.Input<string>;
 }

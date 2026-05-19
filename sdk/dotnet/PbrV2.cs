@@ -78,7 +78,7 @@ namespace PiersKarsenbarg.Nutanix
     /// `terraform import nutanix_pbr_v2.pbr_import &lt;UUID&gt;
     /// `
     /// 
-    /// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0).
+    /// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/RoutingPolicies/operation/createRoutingPolicy).
     /// </summary>
     [NutanixResourceType("nutanix:index/pbrV2:PbrV2")]
     public partial class PbrV2 : global::Pulumi.CustomResource

@@ -38,6 +38,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFloatingIpV2ExternalSubnetLinkResult> Links;
+        /// <summary>
+        /// Metadata associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFloatingIpV2ExternalSubnetMetadataResult> Metadatas;
         public readonly string MigrationState;
         /// <summary>
         /// Name of the floating IP.
@@ -90,6 +94,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetFloatingIpV2ExternalSubnetLinkResult> links,
 
+            ImmutableArray<Outputs.GetFloatingIpV2ExternalSubnetMetadataResult> metadatas,
+
             string migrationState,
 
             string name,
@@ -125,6 +131,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             IsExternal = isExternal;
             IsNatEnabled = isNatEnabled;
             Links = links;
+            Metadatas = metadatas;
             MigrationState = migrationState;
             Name = name;
             NetworkFunctionChainReference = networkFunctionChainReference;

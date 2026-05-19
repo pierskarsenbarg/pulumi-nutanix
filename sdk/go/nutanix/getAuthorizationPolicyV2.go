@@ -11,6 +11,35 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a datasource to retrieve authorization policy with  authorization policy uuid .
+//
+// ## Example Usage
+//
+// <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetAuthorizationPolicyV2(ctx, &nutanix.LookupAuthorizationPolicyV2Args{
+//				ExtId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// <!--End PulumiCodeChooser -->
 func LookupAuthorizationPolicyV2(ctx *pulumi.Context, args *LookupAuthorizationPolicyV2Args, opts ...pulumi.InvokeOption) (*LookupAuthorizationPolicyV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAuthorizationPolicyV2Result
@@ -23,25 +52,43 @@ func LookupAuthorizationPolicyV2(ctx *pulumi.Context, args *LookupAuthorizationP
 
 // A collection of arguments for invoking getAuthorizationPolicyV2.
 type LookupAuthorizationPolicyV2Args struct {
+	// Authorization Policy UUID
 	ExtId string `pulumi:"extId"`
 }
 
 // A collection of values returned by getAuthorizationPolicyV2.
 type LookupAuthorizationPolicyV2Result struct {
-	AuthorizationPolicyType string                           `pulumi:"authorizationPolicyType"`
-	ClientName              string                           `pulumi:"clientName"`
-	CreatedBy               string                           `pulumi:"createdBy"`
-	CreatedTime             string                           `pulumi:"createdTime"`
-	Description             string                           `pulumi:"description"`
-	DisplayName             string                           `pulumi:"displayName"`
-	Entities                []GetAuthorizationPolicyV2Entity `pulumi:"entities"`
-	ExtId                   string                           `pulumi:"extId"`
+	// Type of Authorization Policy.
+	// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+	// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+	// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+	// * `SERVICE_DEFINED` : ACP defined by a service.
+	// * `USER_DEFINED` : ACP defined by an User.
+	AuthorizationPolicyType string `pulumi:"authorizationPolicyType"`
+	// Client that created the entity.
+	ClientName string `pulumi:"clientName"`
+	// User or Service Name that created the Authorization Policy.
+	CreatedBy string `pulumi:"createdBy"`
+	// The creation time of the Authorization Policy.
+	CreatedTime string `pulumi:"createdTime"`
+	// Description of the Authorization Policy.
+	Description string `pulumi:"description"`
+	// Name of the Authorization Policy.
+	DisplayName string `pulumi:"displayName"`
+	// The entities being qualified by the Authorization Policy.
+	Entities []GetAuthorizationPolicyV2Entity `pulumi:"entities"`
+	// ext_id of Authorization policy.
+	ExtId string `pulumi:"extId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string                             `pulumi:"id"`
-	Identities      []GetAuthorizationPolicyV2Identity `pulumi:"identities"`
-	IsSystemDefined bool                               `pulumi:"isSystemDefined"`
-	LastUpdatedTime string                             `pulumi:"lastUpdatedTime"`
-	Role            string                             `pulumi:"role"`
+	Id string `pulumi:"id"`
+	// The identities for which the Authorization Policy is created.
+	Identities []GetAuthorizationPolicyV2Identity `pulumi:"identities"`
+	// Flag identifying if the Authorization Policy is system defined or not.
+	IsSystemDefined bool `pulumi:"isSystemDefined"`
+	// The time when the Authorization Policy was last updated.
+	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
+	// The Role associated with the Authorization Policy.
+	Role string `pulumi:"role"`
 }
 
 func LookupAuthorizationPolicyV2Output(ctx *pulumi.Context, args LookupAuthorizationPolicyV2OutputArgs, opts ...pulumi.InvokeOption) LookupAuthorizationPolicyV2ResultOutput {
@@ -55,6 +102,7 @@ func LookupAuthorizationPolicyV2Output(ctx *pulumi.Context, args LookupAuthoriza
 
 // A collection of arguments for invoking getAuthorizationPolicyV2.
 type LookupAuthorizationPolicyV2OutputArgs struct {
+	// Authorization Policy UUID
 	ExtId pulumi.StringInput `pulumi:"extId"`
 }
 
@@ -77,34 +125,47 @@ func (o LookupAuthorizationPolicyV2ResultOutput) ToLookupAuthorizationPolicyV2Re
 	return o
 }
 
+// Type of Authorization Policy.
+// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+// * `SERVICE_DEFINED` : ACP defined by a service.
+// * `USER_DEFINED` : ACP defined by an User.
 func (o LookupAuthorizationPolicyV2ResultOutput) AuthorizationPolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.AuthorizationPolicyType }).(pulumi.StringOutput)
 }
 
+// Client that created the entity.
 func (o LookupAuthorizationPolicyV2ResultOutput) ClientName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.ClientName }).(pulumi.StringOutput)
 }
 
+// User or Service Name that created the Authorization Policy.
 func (o LookupAuthorizationPolicyV2ResultOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// The creation time of the Authorization Policy.
 func (o LookupAuthorizationPolicyV2ResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
+// Description of the Authorization Policy.
 func (o LookupAuthorizationPolicyV2ResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// Name of the Authorization Policy.
 func (o LookupAuthorizationPolicyV2ResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// The entities being qualified by the Authorization Policy.
 func (o LookupAuthorizationPolicyV2ResultOutput) Entities() GetAuthorizationPolicyV2EntityArrayOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) []GetAuthorizationPolicyV2Entity { return v.Entities }).(GetAuthorizationPolicyV2EntityArrayOutput)
 }
 
+// ext_id of Authorization policy.
 func (o LookupAuthorizationPolicyV2ResultOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.ExtId }).(pulumi.StringOutput)
 }
@@ -114,18 +175,22 @@ func (o LookupAuthorizationPolicyV2ResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The identities for which the Authorization Policy is created.
 func (o LookupAuthorizationPolicyV2ResultOutput) Identities() GetAuthorizationPolicyV2IdentityArrayOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) []GetAuthorizationPolicyV2Identity { return v.Identities }).(GetAuthorizationPolicyV2IdentityArrayOutput)
 }
 
+// Flag identifying if the Authorization Policy is system defined or not.
 func (o LookupAuthorizationPolicyV2ResultOutput) IsSystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) bool { return v.IsSystemDefined }).(pulumi.BoolOutput)
 }
 
+// The time when the Authorization Policy was last updated.
 func (o LookupAuthorizationPolicyV2ResultOutput) LastUpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
+// The Role associated with the Authorization Policy.
 func (o LookupAuthorizationPolicyV2ResultOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.Role }).(pulumi.StringOutput)
 }

@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// -(Optional) The fully qualified domain name of the host.
         /// 
-        /// See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/createDomainManager).
+        /// See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/createDomainManager).
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

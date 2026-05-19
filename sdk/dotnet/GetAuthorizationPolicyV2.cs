@@ -12,12 +12,291 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetAuthorizationPolicyV2
     {
+        /// <summary>
+        /// Provides a datasource to retrieve authorization policy with  authorization policy uuid .
+        /// 
+        /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_acp = nutanix.getAuthorizationPolicyV2({
+        ///     extId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_acp = nutanix.get_authorization_policy_v2(ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_acp = Nutanix.GetAuthorizationPolicyV2.Invoke(new()
+        ///     {
+        ///         ExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetAuthorizationPolicyV2(ctx, &amp;nutanix.LookupAuthorizationPolicyV2Args{
+        /// 			ExtId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAuthorizationPolicyV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-acp = NutanixFunctions.getAuthorizationPolicyV2(GetAuthorizationPolicyV2Args.builder()
+        ///             .extId("ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-acp:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPolicyV2
+        ///       arguments:
+        ///         extId: ba250e3e-1db1-4950-917f-a9e2ea35b8e3
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// </summary>
         public static Task<GetAuthorizationPolicyV2Result> InvokeAsync(GetAuthorizationPolicyV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuthorizationPolicyV2Result>("nutanix:index/getAuthorizationPolicyV2:getAuthorizationPolicyV2", args ?? new GetAuthorizationPolicyV2Args(), options.WithDefaults());
 
+        /// <summary>
+        /// Provides a datasource to retrieve authorization policy with  authorization policy uuid .
+        /// 
+        /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_acp = nutanix.getAuthorizationPolicyV2({
+        ///     extId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_acp = nutanix.get_authorization_policy_v2(ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_acp = Nutanix.GetAuthorizationPolicyV2.Invoke(new()
+        ///     {
+        ///         ExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetAuthorizationPolicyV2(ctx, &amp;nutanix.LookupAuthorizationPolicyV2Args{
+        /// 			ExtId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAuthorizationPolicyV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-acp = NutanixFunctions.getAuthorizationPolicyV2(GetAuthorizationPolicyV2Args.builder()
+        ///             .extId("ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-acp:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPolicyV2
+        ///       arguments:
+        ///         extId: ba250e3e-1db1-4950-917f-a9e2ea35b8e3
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// </summary>
         public static Output<GetAuthorizationPolicyV2Result> Invoke(GetAuthorizationPolicyV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthorizationPolicyV2Result>("nutanix:index/getAuthorizationPolicyV2:getAuthorizationPolicyV2", args ?? new GetAuthorizationPolicyV2InvokeArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Provides a datasource to retrieve authorization policy with  authorization policy uuid .
+        /// 
+        /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_acp = nutanix.getAuthorizationPolicyV2({
+        ///     extId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_acp = nutanix.get_authorization_policy_v2(ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_acp = Nutanix.GetAuthorizationPolicyV2.Invoke(new()
+        ///     {
+        ///         ExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetAuthorizationPolicyV2(ctx, &amp;nutanix.LookupAuthorizationPolicyV2Args{
+        /// 			ExtId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetAuthorizationPolicyV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-acp = NutanixFunctions.getAuthorizationPolicyV2(GetAuthorizationPolicyV2Args.builder()
+        ///             .extId("ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-acp:
+        ///     fn::invoke:
+        ///       function: nutanix:getAuthorizationPolicyV2
+        ///       arguments:
+        ///         extId: ba250e3e-1db1-4950-917f-a9e2ea35b8e3
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// </summary>
         public static Output<GetAuthorizationPolicyV2Result> Invoke(GetAuthorizationPolicyV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthorizationPolicyV2Result>("nutanix:index/getAuthorizationPolicyV2:getAuthorizationPolicyV2", args ?? new GetAuthorizationPolicyV2InvokeArgs(), options.WithDefaults());
     }
@@ -25,6 +304,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetAuthorizationPolicyV2Args : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Authorization Policy UUID
+        /// </summary>
         [Input("extId", required: true)]
         public string ExtId { get; set; } = null!;
 
@@ -36,6 +318,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetAuthorizationPolicyV2InvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Authorization Policy UUID
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
@@ -49,21 +334,62 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetAuthorizationPolicyV2Result
     {
+        /// <summary>
+        /// Type of Authorization Policy.
+        /// * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+        /// * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+        /// * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+        /// * `SERVICE_DEFINED` : ACP defined by a service.
+        /// * `USER_DEFINED` : ACP defined by an User.
+        /// </summary>
         public readonly string AuthorizationPolicyType;
+        /// <summary>
+        /// Client that created the entity.
+        /// </summary>
         public readonly string ClientName;
+        /// <summary>
+        /// User or Service Name that created the Authorization Policy.
+        /// </summary>
         public readonly string CreatedBy;
+        /// <summary>
+        /// The creation time of the Authorization Policy.
+        /// </summary>
         public readonly string CreatedTime;
+        /// <summary>
+        /// Description of the Authorization Policy.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// Name of the Authorization Policy.
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The entities being qualified by the Authorization Policy.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAuthorizationPolicyV2EntityResult> Entities;
+        /// <summary>
+        /// ext_id of Authorization policy.
+        /// </summary>
         public readonly string ExtId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The identities for which the Authorization Policy is created.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAuthorizationPolicyV2IdentityResult> Identities;
+        /// <summary>
+        /// Flag identifying if the Authorization Policy is system defined or not.
+        /// </summary>
         public readonly bool IsSystemDefined;
+        /// <summary>
+        /// The time when the Authorization Policy was last updated.
+        /// </summary>
         public readonly string LastUpdatedTime;
+        /// <summary>
+        /// The Role associated with the Authorization Policy.
+        /// </summary>
         public readonly string Role;
 
         [OutputConstructor]

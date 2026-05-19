@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// -(Optional) The fully qualified domain name of the host.
         /// 
-        /// See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/restore).
+        /// See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/restore).
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

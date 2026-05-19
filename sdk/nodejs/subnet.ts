@@ -92,7 +92,7 @@ export class Subnet extends pulumi.CustomResource {
      */
     declare public readonly enableNat: pulumi.Output<boolean>;
     /**
-     * -(Optional) Range of IPs.
+     * - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
      */
     declare public readonly ipConfigPoolListRanges: pulumi.Output<string[]>;
     /**
@@ -280,7 +280,7 @@ export interface SubnetState {
      */
     enableNat?: pulumi.Input<boolean | undefined>;
     /**
-     * -(Optional) Range of IPs.
+     * - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
      */
     ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -386,7 +386,7 @@ export interface SubnetArgs {
      */
     enableNat?: pulumi.Input<boolean | undefined>;
     /**
-     * -(Optional) Range of IPs.
+     * - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
      */
     ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**

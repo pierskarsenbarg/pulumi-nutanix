@@ -26,7 +26,7 @@ class PcUnregistrationV2Args:
 
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID of a remote cluster.
                
-               See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+               See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The external identifier of the domain manager (Prism Central) resource
         """
         pulumi.set(__self__, "ext_id", ext_id)
@@ -38,7 +38,7 @@ class PcUnregistrationV2Args:
         """
         -(Required) Cluster UUID of a remote cluster.
 
-        See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+        See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
         """
         return pulumi.get(self, "ext_id")
 
@@ -69,7 +69,7 @@ class _PcUnregistrationV2State:
 
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID of a remote cluster.
                
-               See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+               See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The external identifier of the domain manager (Prism Central) resource
         """
         if ext_id is not None:
@@ -83,7 +83,7 @@ class _PcUnregistrationV2State:
         """
         -(Required) Cluster UUID of a remote cluster.
 
-        See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+        See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
         """
         return pulumi.get(self, "ext_id")
 
@@ -121,7 +121,7 @@ class PcUnregistrationV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID of a remote cluster.
                
-               See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+               See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The external identifier of the domain manager (Prism Central) resource
         """
         ...
@@ -187,7 +187,7 @@ class PcUnregistrationV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID of a remote cluster.
                
-               See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+               See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The external identifier of the domain manager (Prism Central) resource
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -204,7 +204,7 @@ class PcUnregistrationV2(pulumi.CustomResource):
         """
         -(Required) Cluster UUID of a remote cluster.
 
-        See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
+        See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
         """
         return pulumi.get(self, "ext_id")
 

@@ -242,6 +242,8 @@ class ClusterAddNodeV2(pulumi.CustomResource):
         """
         Add node on a cluster identified by {extId}.
 
+        > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`">`nutanix.ClusterV2`</span> resource, which offers a more consistent and automated approach to managing cluster scaling operations.
+
         ## Example Usage
 
         <!--Start PulumiCodeChooser -->
@@ -368,6 +370,8 @@ class ClusterAddNodeV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Add node on a cluster identified by {extId}.
+
+        > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`">`nutanix.ClusterV2`</span> resource, which offers a more consistent and automated approach to managing cluster scaling operations.
 
         ## Example Usage
 

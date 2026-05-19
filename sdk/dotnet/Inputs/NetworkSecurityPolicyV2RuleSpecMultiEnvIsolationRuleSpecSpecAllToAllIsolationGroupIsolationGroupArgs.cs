@@ -13,6 +13,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroupArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Entity type for the group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        [Input("groupCategoryAssociatedEntityType")]
+        public Input<string>? GroupCategoryAssociatedEntityType { get; set; }
+
         [Input("groupCategoryReferences", required: true)]
         private InputList<string>? _groupCategoryReferences;
 
@@ -24,6 +30,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             get => _groupCategoryReferences ?? (_groupCategoryReferences = new InputList<string>());
             set => _groupCategoryReferences = value;
         }
+
+        /// <summary>
+        /// Reference to the entity group for the isolation group.
+        /// </summary>
+        [Input("groupEntityGroupReference")]
+        public Input<string>? GroupEntityGroupReference { get; set; }
 
         public NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroupArgs()
         {

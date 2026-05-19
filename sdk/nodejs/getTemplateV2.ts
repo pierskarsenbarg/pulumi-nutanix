@@ -43,6 +43,7 @@ export interface GetTemplateV2Args {
  * A collection of values returned by getTemplateV2.
  */
 export interface GetTemplateV2Result {
+    readonly categoryExtIds: string[];
     /**
      * VM creation time
      */

@@ -21,13 +21,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// -(Required) The IPv4/IPv6 address of the host.
         /// </summary>
-        public readonly string? Value;
+        public readonly string Value;
 
         [OutputConstructor]
         private ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv4(
             int? prefixLength,
 
-            string? value)
+            string value)
         {
             PrefixLength = prefixLength;
             Value = value;

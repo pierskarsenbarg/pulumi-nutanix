@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoResult> AssignedDeviceInfos;
         /// <summary>
-        /// Defines a NIC emulated by the hypervisor
+        /// (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoResult> BackingInfos;
         /// <summary>

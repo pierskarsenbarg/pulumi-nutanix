@@ -8,6 +8,8 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a Nutanix Project resource to Create a Project.
+ *
+ * > **Note:** When removing the acps from the project, the ACP blocks are index-based. Removing an ACP from the middle of the list causes Terraform to shift subsequent ACPs. While the backend update succeeds without impact, the plan may show unexpected updates due to index reordering.
  */
 export class Project extends pulumi.CustomResource {
     /**
@@ -38,7 +40,7 @@ export class Project extends pulumi.CustomResource {
     }
 
     declare public readonly accountReferenceLists: pulumi.Output<outputs.ProjectAccountReferenceList[]>;
-    declare public readonly acps: pulumi.Output<outputs.ProjectAcp[] | undefined>;
+    declare public readonly acps: pulumi.Output<outputs.ProjectAcp[]>;
     declare public readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) The category values represented as a dictionary of key > list of values.
@@ -70,6 +72,9 @@ export class Project extends pulumi.CustomResource {
     declare public readonly name: pulumi.Output<string>;
     declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
     declare public readonly projectReference: pulumi.Output<{[key: string]: string}>;
+    /**
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     */
     declare public readonly resourceDomain: pulumi.Output<outputs.ProjectResourceDomain | undefined>;
     declare public /*out*/ readonly state: pulumi.Output<string>;
     declare public readonly subnetReferenceLists: pulumi.Output<outputs.ProjectSubnetReferenceList[]>;
@@ -204,6 +209,9 @@ export interface ProjectState {
     name?: pulumi.Input<string | undefined>;
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     */
     resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain | undefined>;
     state?: pulumi.Input<string | undefined>;
     subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[] | undefined>;
@@ -256,6 +264,9 @@ export interface ProjectArgs {
     name?: pulumi.Input<string | undefined>;
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     */
     resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain | undefined>;
     subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[] | undefined>;
     tunnelReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectTunnelReferenceList>[] | undefined>;

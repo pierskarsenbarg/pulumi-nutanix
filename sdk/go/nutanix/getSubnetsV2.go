@@ -139,7 +139,7 @@ import (
 // - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of address
 // - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
 //
-// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Subnets/operation/listSubnets).
+// See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Subnets/operation/listSubnets).
 func GetSubnetsV2(ctx *pulumi.Context, args *GetSubnetsV2Args, opts ...pulumi.InvokeOption) (*GetSubnetsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSubnetsV2Result

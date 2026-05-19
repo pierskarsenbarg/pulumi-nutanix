@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("defaultGatewayIps")]
         private InputList<Inputs.SubnetV2IpConfigIpv6DefaultGatewayIpArgs>? _defaultGatewayIps;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2IpConfigIpv6DefaultGatewayIpArgs> DefaultGatewayIps
         {
             get => _defaultGatewayIps ?? (_defaultGatewayIps = new InputList<Inputs.SubnetV2IpConfigIpv6DefaultGatewayIpArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("dhcpServerAddresses")]
         private InputList<Inputs.SubnetV2IpConfigIpv6DhcpServerAddressArgs>? _dhcpServerAddresses;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2IpConfigIpv6DhcpServerAddressArgs> DhcpServerAddresses
         {
             get => _dhcpServerAddresses ?? (_dhcpServerAddresses = new InputList<Inputs.SubnetV2IpConfigIpv6DhcpServerAddressArgs>());
@@ -31,6 +39,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("ipSubnets")]
         private InputList<Inputs.SubnetV2IpConfigIpv6IpSubnetArgs>? _ipSubnets;
+
+        /// <summary>
+        /// subnet ip
+        /// </summary>
         public InputList<Inputs.SubnetV2IpConfigIpv6IpSubnetArgs> IpSubnets
         {
             get => _ipSubnets ?? (_ipSubnets = new InputList<Inputs.SubnetV2IpConfigIpv6IpSubnetArgs>());
@@ -39,6 +51,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("poolLists")]
         private InputList<Inputs.SubnetV2IpConfigIpv6PoolListArgs>? _poolLists;
+
+        /// <summary>
+        /// Pool of IP addresses from where IPs are allocated.
+        /// </summary>
         public InputList<Inputs.SubnetV2IpConfigIpv6PoolListArgs> PoolLists
         {
             get => _poolLists ?? (_poolLists = new InputList<Inputs.SubnetV2IpConfigIpv6PoolListArgs>());

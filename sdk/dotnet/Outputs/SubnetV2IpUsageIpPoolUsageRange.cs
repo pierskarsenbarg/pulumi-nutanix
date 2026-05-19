@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2IpUsageIpPoolUsageRange
     {
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpUsageIpPoolUsageRangeEndIp> EndIps;
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpUsageIpPoolUsageRangeStartIp> StartIps;
 
         [OutputConstructor]

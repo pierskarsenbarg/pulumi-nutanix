@@ -18,6 +18,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - (Optional) The IP address configurations.
         /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Config> Ipv4Configs;
+        public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Info> Ipv4Infos;
         /// <summary>
         /// - (Optional)The network function chain associates with the NIC. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC.
         /// </summary>
@@ -65,6 +66,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private VmCloneV2NicNetworkInfo(
             ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Config> ipv4Configs,
 
+            ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Info> ipv4Infos,
+
             ImmutableArray<Outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain> networkFunctionChains,
 
             string? networkFunctionNicType,
@@ -80,6 +83,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             string? vlanMode)
         {
             Ipv4Configs = ipv4Configs;
+            Ipv4Infos = ipv4Infos;
             NetworkFunctionChains = networkFunctionChains;
             NetworkFunctionNicType = networkFunctionNicType;
             NicType = nicType;

@@ -14,9 +14,20 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VirtualSwitchClusterHost
     {
+        /// <summary>
+        /// Reference to the host
+        /// </summary>
         public readonly string? ExtId;
+        /// <summary>
+        /// Host NIC array
+        /// </summary>
         public readonly ImmutableArray<string> HostNics;
         public readonly string? InternalBridgeName;
+        /// <summary>
+        /// Ip Address config.
+        /// - `ip_address.ip`: (Required) Reference to address configuration
+        /// - `ip_address.prefix_length`: (Required) prefix length of address.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchClusterHostIpAddress> IpAddresses;
         public readonly int? RouteTable;
 

@@ -21,7 +21,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - Ip address.
         /// 
-        /// See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/migrateNicById).
+        /// See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/migrateNicById).
         /// </summary>
         public readonly string Value;
 

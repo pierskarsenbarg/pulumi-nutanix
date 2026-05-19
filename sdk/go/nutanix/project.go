@@ -13,6 +13,8 @@ import (
 )
 
 // Provides a Nutanix Project resource to Create a Project.
+//
+// > **Note:** When removing the acps from the project, the ACP blocks are index-based. Removing an ACP from the middle of the list causes Terraform to shift subsequent ACPs. While the backend update succeeds without impact, the plan may show unexpected updates due to index reordering.
 type Project struct {
 	pulumi.CustomResourceState
 
@@ -36,9 +38,10 @@ type Project struct {
 	IsDefault                       pulumi.BoolOutput                                `pulumi:"isDefault"`
 	Metadata                        pulumi.StringMapOutput                           `pulumi:"metadata"`
 	// The name for the project.
-	Name                 pulumi.StringOutput                   `pulumi:"name"`
-	OwnerReference       pulumi.StringMapOutput                `pulumi:"ownerReference"`
-	ProjectReference     pulumi.StringMapOutput                `pulumi:"projectReference"`
+	Name             pulumi.StringOutput    `pulumi:"name"`
+	OwnerReference   pulumi.StringMapOutput `pulumi:"ownerReference"`
+	ProjectReference pulumi.StringMapOutput `pulumi:"projectReference"`
+	// Deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
 	ResourceDomain       ProjectResourceDomainPtrOutput        `pulumi:"resourceDomain"`
 	State                pulumi.StringOutput                   `pulumi:"state"`
 	SubnetReferenceLists ProjectSubnetReferenceListArrayOutput `pulumi:"subnetReferenceLists"`
@@ -108,9 +111,10 @@ type projectState struct {
 	IsDefault                       *bool                                   `pulumi:"isDefault"`
 	Metadata                        map[string]string                       `pulumi:"metadata"`
 	// The name for the project.
-	Name                 *string                      `pulumi:"name"`
-	OwnerReference       map[string]string            `pulumi:"ownerReference"`
-	ProjectReference     map[string]string            `pulumi:"projectReference"`
+	Name             *string           `pulumi:"name"`
+	OwnerReference   map[string]string `pulumi:"ownerReference"`
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// Deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
 	ResourceDomain       *ProjectResourceDomain       `pulumi:"resourceDomain"`
 	State                *string                      `pulumi:"state"`
 	SubnetReferenceLists []ProjectSubnetReferenceList `pulumi:"subnetReferenceLists"`
@@ -145,9 +149,10 @@ type ProjectState struct {
 	IsDefault                       pulumi.BoolPtrInput
 	Metadata                        pulumi.StringMapInput
 	// The name for the project.
-	Name                 pulumi.StringPtrInput
-	OwnerReference       pulumi.StringMapInput
-	ProjectReference     pulumi.StringMapInput
+	Name             pulumi.StringPtrInput
+	OwnerReference   pulumi.StringMapInput
+	ProjectReference pulumi.StringMapInput
+	// Deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
 	ResourceDomain       ProjectResourceDomainPtrInput
 	State                pulumi.StringPtrInput
 	SubnetReferenceLists ProjectSubnetReferenceListArrayInput
@@ -184,9 +189,10 @@ type projectArgs struct {
 	ExternalNetworkLists            []ProjectExternalNetworkList            `pulumi:"externalNetworkLists"`
 	ExternalUserGroupReferenceLists []ProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
 	// The name for the project.
-	Name                 *string                      `pulumi:"name"`
-	OwnerReference       map[string]string            `pulumi:"ownerReference"`
-	ProjectReference     map[string]string            `pulumi:"projectReference"`
+	Name             *string           `pulumi:"name"`
+	OwnerReference   map[string]string `pulumi:"ownerReference"`
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// Deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
 	ResourceDomain       *ProjectResourceDomain       `pulumi:"resourceDomain"`
 	SubnetReferenceLists []ProjectSubnetReferenceList `pulumi:"subnetReferenceLists"`
 	TunnelReferenceLists []ProjectTunnelReferenceList `pulumi:"tunnelReferenceLists"`
@@ -219,9 +225,10 @@ type ProjectArgs struct {
 	ExternalNetworkLists            ProjectExternalNetworkListArrayInput
 	ExternalUserGroupReferenceLists ProjectExternalUserGroupReferenceListArrayInput
 	// The name for the project.
-	Name                 pulumi.StringPtrInput
-	OwnerReference       pulumi.StringMapInput
-	ProjectReference     pulumi.StringMapInput
+	Name             pulumi.StringPtrInput
+	OwnerReference   pulumi.StringMapInput
+	ProjectReference pulumi.StringMapInput
+	// Deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
 	ResourceDomain       ProjectResourceDomainPtrInput
 	SubnetReferenceLists ProjectSubnetReferenceListArrayInput
 	TunnelReferenceLists ProjectTunnelReferenceListArrayInput
@@ -400,6 +407,7 @@ func (o ProjectOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringMapOutput { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// Deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
 func (o ProjectOutput) ResourceDomain() ProjectResourceDomainPtrOutput {
 	return o.ApplyT(func(v *Project) ProjectResourceDomainPtrOutput { return v.ResourceDomain }).(ProjectResourceDomainPtrOutput)
 }

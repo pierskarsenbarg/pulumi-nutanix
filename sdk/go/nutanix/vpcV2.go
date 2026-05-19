@@ -112,7 +112,7 @@ type VpcV2 struct {
 	// List of DHCP options to be configured.
 	CommonDhcpOptions VpcV2CommonDhcpOptionArrayOutput `pulumi:"commonDhcpOptions"`
 	// Description of the VPC.
-	Description pulumi.StringPtrOutput `pulumi:"description"`
+	Description pulumi.StringOutput `pulumi:"description"`
 	// the vpc uuid.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// External routing domain associated with this route table
@@ -131,7 +131,7 @@ type VpcV2 struct {
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
-	VpcType pulumi.StringPtrOutput `pulumi:"vpcType"`
+	VpcType pulumi.StringOutput `pulumi:"vpcType"`
 }
 
 // NewVpcV2 registers a new resource with the given unique name, arguments, and options.
@@ -230,6 +230,8 @@ type vpcV2Args struct {
 	ExternalSubnets []VpcV2ExternalSubnet `pulumi:"externalSubnets"`
 	// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
 	ExternallyRoutablePrefixes []VpcV2ExternallyRoutablePrefix `pulumi:"externallyRoutablePrefixes"`
+	// The vpc kind metadata.
+	Metadatas []VpcV2Metadata `pulumi:"metadatas"`
 	// Name of the VPC.
 	Name *string `pulumi:"name"`
 	// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
@@ -248,6 +250,8 @@ type VpcV2Args struct {
 	ExternalSubnets VpcV2ExternalSubnetArrayInput
 	// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
 	ExternallyRoutablePrefixes VpcV2ExternallyRoutablePrefixArrayInput
+	// The vpc kind metadata.
+	Metadatas VpcV2MetadataArrayInput
 	// Name of the VPC.
 	Name pulumi.StringPtrInput
 	// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
@@ -347,8 +351,8 @@ func (o VpcV2Output) CommonDhcpOptions() VpcV2CommonDhcpOptionArrayOutput {
 }
 
 // Description of the VPC.
-func (o VpcV2Output) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VpcV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+func (o VpcV2Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *VpcV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // the vpc uuid.
@@ -396,8 +400,8 @@ func (o VpcV2Output) TenantId() pulumi.StringOutput {
 }
 
 // Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
-func (o VpcV2Output) VpcType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VpcV2) pulumi.StringPtrOutput { return v.VpcType }).(pulumi.StringPtrOutput)
+func (o VpcV2Output) VpcType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VpcV2) pulumi.StringOutput { return v.VpcType }).(pulumi.StringOutput)
 }
 
 type VpcV2ArrayOutput struct{ *pulumi.OutputState }

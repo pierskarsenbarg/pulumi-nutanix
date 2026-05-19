@@ -13,11 +13,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class SubnetV2VirtualSwitchClusterHostGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Reference to the host
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         [Input("hostNics")]
         private InputList<string>? _hostNics;
+
+        /// <summary>
+        /// Host NIC array
+        /// </summary>
         public InputList<string> HostNics
         {
             get => _hostNics ?? (_hostNics = new InputList<string>());
@@ -29,6 +36,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("ipAddresses")]
         private InputList<Inputs.SubnetV2VirtualSwitchClusterHostIpAddressGetArgs>? _ipAddresses;
+
+        /// <summary>
+        /// Ip Address config.
+        /// - `ip_address.ip`: (Required) Reference to address configuration
+        /// - `ip_address.prefix_length`: (Required) prefix length of address.
+        /// </summary>
         public InputList<Inputs.SubnetV2VirtualSwitchClusterHostIpAddressGetArgs> IpAddresses
         {
             get => _ipAddresses ?? (_ipAddresses = new InputList<Inputs.SubnetV2VirtualSwitchClusterHostIpAddressGetArgs>());

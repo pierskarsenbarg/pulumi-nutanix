@@ -53,6 +53,11 @@ import (
 //						ExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
 //					},
 //				},
+//				Projects: nutanix.VirtualMachineV2ProjectArray{
+//					&nutanix.VirtualMachineV2ProjectArgs{
+//						ExtId: pulumi.String("2defe0f5-6e48-4c9b-b07c-bdd2dc004225"),
+//					},
+//				},
 //				Disks: nutanix.VirtualMachineV2DiskArray{
 //					&nutanix.VirtualMachineV2DiskArgs{
 //						DiskAddresses: nutanix.VirtualMachineV2DiskDiskAddressArray{
@@ -129,6 +134,11 @@ import (
 //				Clusters: nutanix.VirtualMachineV2ClusterArray{
 //					&nutanix.VirtualMachineV2ClusterArgs{
 //						ExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
+//					},
+//				},
+//				Projects: nutanix.VirtualMachineV2ProjectArray{
+//					&nutanix.VirtualMachineV2ProjectArgs{
+//						ExtId: pulumi.String("2defe0f5-6e48-4c9b-b07c-bdd2dc004225"),
 //					},
 //				},
 //				Disks: nutanix.VirtualMachineV2DiskArray{
@@ -231,11 +241,11 @@ import (
 //				},
 //				Nics: nutanix.VirtualMachineV2NicArray{
 //					&nutanix.VirtualMachineV2NicArgs{
-//						NetworkInfos: nutanix.VirtualMachineV2NicNetworkInfoArray{
-//							&nutanix.VirtualMachineV2NicNetworkInfoArgs{
+//						NicNetworkInfo: &nutanix.VirtualMachineV2NicNicNetworkInfoArgs{
+//							VirtualEthernetNicNetworkInfo: &nutanix.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs{
 //								NicType: pulumi.String("NORMAL_NIC"),
-//								Subnets: nutanix.VirtualMachineV2NicNetworkInfoSubnetArray{
-//									&nutanix.VirtualMachineV2NicNetworkInfoSubnetArgs{
+//								Subnets: nutanix.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArray{
+//									&nutanix.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArgs{
 //										ExtId: pulumi.String("7f66e20f-67f4-473f-96bb-c4fcfd487f16"),
 //									},
 //								},
@@ -268,6 +278,21 @@ import (
 //
 // ```
 // <!--End PulumiCodeChooser -->
+//
+// ## Lifecycle Behavior
+//
+// > Important: Updates to <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`">`guestCustomization`</span> are treated as create-time only changes and will force the VM to be replaced.
+//
+// Guest customization settings such as `config.cloud_init` and `config.sysprep` are consumed during the initial boot of the virtual machine and are not re-applied on later updates.
+//
+// As a result, changing the <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`">`guestCustomization`</span> block causes Terraform to destroy and recreate the <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`">`nutanix.VirtualMachineV2`</span> resource instead of performing an in-place update.
+//
+// This behavior applies to both:
+//
+// - Sysprep-based guest customization for Windows VMs
+// - cloud-init based guest customization for Linux VMs
+//
+// > Note: Replacing the VM creates a new virtual machine instance. Make sure any dependent systems, references, or post-provisioning steps are updated accordingly before applying the change.
 type VirtualMachineV2 struct {
 	pulumi.CustomResourceState
 
@@ -343,6 +368,8 @@ type VirtualMachineV2 struct {
 	// Ownership information for the VM.
 	OwnershipInfos VirtualMachineV2OwnershipInfoArrayOutput `pulumi:"ownershipInfos"`
 	PowerState     pulumi.StringPtrOutput                   `pulumi:"powerState"`
+	// Reference to a project.
+	Projects VirtualMachineV2ProjectArrayOutput `pulumi:"projects"`
 	// Status of protection policy applied to this VM.
 	ProtectionPolicyStates VirtualMachineV2ProtectionPolicyStateArrayOutput `pulumi:"protectionPolicyStates"`
 	// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
@@ -461,6 +488,8 @@ type virtualMachineV2State struct {
 	// Ownership information for the VM.
 	OwnershipInfos []VirtualMachineV2OwnershipInfo `pulumi:"ownershipInfos"`
 	PowerState     *string                         `pulumi:"powerState"`
+	// Reference to a project.
+	Projects []VirtualMachineV2Project `pulumi:"projects"`
 	// Status of protection policy applied to this VM.
 	ProtectionPolicyStates []VirtualMachineV2ProtectionPolicyState `pulumi:"protectionPolicyStates"`
 	// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
@@ -550,6 +579,8 @@ type VirtualMachineV2State struct {
 	// Ownership information for the VM.
 	OwnershipInfos VirtualMachineV2OwnershipInfoArrayInput
 	PowerState     pulumi.StringPtrInput
+	// Reference to a project.
+	Projects VirtualMachineV2ProjectArrayInput
 	// Status of protection policy applied to this VM.
 	ProtectionPolicyStates VirtualMachineV2ProtectionPolicyStateArrayInput
 	// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
@@ -639,6 +670,8 @@ type virtualMachineV2Args struct {
 	// Ownership information for the VM.
 	OwnershipInfos []VirtualMachineV2OwnershipInfo `pulumi:"ownershipInfos"`
 	PowerState     *string                         `pulumi:"powerState"`
+	// Reference to a project.
+	Projects []VirtualMachineV2Project `pulumi:"projects"`
 	// Status of protection policy applied to this VM.
 	ProtectionPolicyStates []VirtualMachineV2ProtectionPolicyState `pulumi:"protectionPolicyStates"`
 	// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
@@ -723,6 +756,8 @@ type VirtualMachineV2Args struct {
 	// Ownership information for the VM.
 	OwnershipInfos VirtualMachineV2OwnershipInfoArrayInput
 	PowerState     pulumi.StringPtrInput
+	// Reference to a project.
+	Projects VirtualMachineV2ProjectArrayInput
 	// Status of protection policy applied to this VM.
 	ProtectionPolicyStates VirtualMachineV2ProtectionPolicyStateArrayInput
 	// The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
@@ -1005,6 +1040,11 @@ func (o VirtualMachineV2Output) OwnershipInfos() VirtualMachineV2OwnershipInfoAr
 
 func (o VirtualMachineV2Output) PowerState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VirtualMachineV2) pulumi.StringPtrOutput { return v.PowerState }).(pulumi.StringPtrOutput)
+}
+
+// Reference to a project.
+func (o VirtualMachineV2Output) Projects() VirtualMachineV2ProjectArrayOutput {
+	return o.ApplyT(func(v *VirtualMachineV2) VirtualMachineV2ProjectArrayOutput { return v.Projects }).(VirtualMachineV2ProjectArrayOutput)
 }
 
 // Status of protection policy applied to this VM.

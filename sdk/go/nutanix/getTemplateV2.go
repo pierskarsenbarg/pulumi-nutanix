@@ -58,6 +58,7 @@ type LookupTemplateV2Args struct {
 
 // A collection of values returned by getTemplateV2.
 type LookupTemplateV2Result struct {
+	CategoryExtIds []string `pulumi:"categoryExtIds"`
 	// VM creation time
 	CreateTime string `pulumi:"createTime"`
 	// User or Service who created the User.
@@ -116,6 +117,10 @@ func (o LookupTemplateV2ResultOutput) ToLookupTemplateV2ResultOutput() LookupTem
 
 func (o LookupTemplateV2ResultOutput) ToLookupTemplateV2ResultOutputWithContext(ctx context.Context) LookupTemplateV2ResultOutput {
 	return o
+}
+
+func (o LookupTemplateV2ResultOutput) CategoryExtIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupTemplateV2Result) []string { return v.CategoryExtIds }).(pulumi.StringArrayOutput)
 }
 
 // VM creation time

@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// The number of Tx/Rx queue pairs for this NIC
         /// </summary>
-        public readonly int NumQueues;
+        public readonly int? NumQueues;
 
         [OutputConstructor]
         private GetVirtualMachineV2NicBackingInfoResult(
@@ -39,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string model,
 
-            int numQueues)
+            int? numQueues)
         {
             IsConnected = isConnected;
             MacAddress = macAddress;

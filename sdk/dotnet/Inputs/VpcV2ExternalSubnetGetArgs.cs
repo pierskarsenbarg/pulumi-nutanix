@@ -18,6 +18,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("activeGatewayNodes")]
         private InputList<Inputs.VpcV2ExternalSubnetActiveGatewayNodeGetArgs>? _activeGatewayNodes;
+
+        /// <summary>
+        /// Maximum number of active gateway nodes for the VPC external subnet association.
+        /// </summary>
         public InputList<Inputs.VpcV2ExternalSubnetActiveGatewayNodeGetArgs> ActiveGatewayNodes
         {
             get => _activeGatewayNodes ?? (_activeGatewayNodes = new InputList<Inputs.VpcV2ExternalSubnetActiveGatewayNodeGetArgs>());
@@ -38,6 +42,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("gatewayNodes")]
         private InputList<string>? _gatewayNodes;
+
+        /// <summary>
+        /// List of gateway nodes that can be used for external connectivity.
+        /// </summary>
         public InputList<string> GatewayNodes
         {
             get => _gatewayNodes ?? (_gatewayNodes = new InputList<string>());

@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? CreatedTime;
         /// <summary>
-        /// - A globally unique identifier of an instance that is suitable for external consumption.
+        /// -(Optional) External Identifier of the User.
         /// </summary>
         public readonly string? ExtId;
         /// <summary>

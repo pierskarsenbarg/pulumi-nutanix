@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2IpConfigIpv6
     {
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpConfigIpv6DefaultGatewayIp> DefaultGatewayIps;
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpConfigIpv6DhcpServerAddress> DhcpServerAddresses;
+        /// <summary>
+        /// subnet ip
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpConfigIpv6IpSubnet> IpSubnets;
+        /// <summary>
+        /// Pool of IP addresses from where IPs are allocated.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpConfigIpv6PoolList> PoolLists;
 
         [OutputConstructor]

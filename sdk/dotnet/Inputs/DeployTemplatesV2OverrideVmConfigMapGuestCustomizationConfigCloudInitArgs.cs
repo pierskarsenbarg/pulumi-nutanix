@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/deployTemplate).
+        /// See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/deployTemplate).
         /// </summary>
         public InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptArgs> CloudInitScripts
         {

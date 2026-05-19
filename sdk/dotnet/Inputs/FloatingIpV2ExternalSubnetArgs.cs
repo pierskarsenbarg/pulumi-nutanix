@@ -90,6 +90,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _links = value;
         }
 
+        [Input("metadatas")]
+        private InputList<Inputs.FloatingIpV2ExternalSubnetMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// Metadata associated with this resource.
+        /// </summary>
+        public InputList<Inputs.FloatingIpV2ExternalSubnetMetadataArgs> Metadatas
+        {
+            get => _metadatas ?? (_metadatas = new InputList<Inputs.FloatingIpV2ExternalSubnetMetadataArgs>());
+            set => _metadatas = value;
+        }
+
         [Input("migrationState")]
         public Input<string>? MigrationState { get; set; }
 

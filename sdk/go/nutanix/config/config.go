@@ -11,6 +11,22 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+// API key for Nutanix Prism authentication. Can be used as an
+// alternative to username/password. When set, the X-Ntnx-Api-Key header
+// will be used instead of Basic Authentication.
+func GetApiKey(ctx *pulumi.Context) string {
+	return config.Get(ctx, "nutanix:apiKey")
+}
+
+// Custom HTTP headers to add to all API requests. Useful for
+// environments that require additional headers such as Cloudflare Access
+// service tokens. Headers can also be set via environment variables with
+// the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+// becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+func GetCustomHeaders(ctx *pulumi.Context) string {
+	return config.Get(ctx, "nutanix:customHeaders")
+}
+
 // URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 // note, this is never the data services VIP, and should not be an
 // individual CVM address, as this would cause calls to fail during

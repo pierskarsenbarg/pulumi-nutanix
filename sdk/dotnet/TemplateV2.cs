@@ -16,6 +16,9 @@ namespace PiersKarsenbarg.Nutanix
     [NutanixResourceType("nutanix:index/templateV2:TemplateV2")]
     public partial class TemplateV2 : global::Pulumi.CustomResource
     {
+        [Output("categoryExtIds")]
+        public Output<ImmutableArray<string>> CategoryExtIds { get; private set; } = null!;
+
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
@@ -108,6 +111,14 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class TemplateV2Args : global::Pulumi.ResourceArgs
     {
+        [Input("categoryExtIds")]
+        private InputList<string>? _categoryExtIds;
+        public InputList<string> CategoryExtIds
+        {
+            get => _categoryExtIds ?? (_categoryExtIds = new InputList<string>());
+            set => _categoryExtIds = value;
+        }
+
         [Input("createdBies")]
         private InputList<Inputs.TemplateV2CreatedByArgs>? _createdBies;
         public InputList<Inputs.TemplateV2CreatedByArgs> CreatedBies
@@ -162,6 +173,14 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class TemplateV2State : global::Pulumi.ResourceArgs
     {
+        [Input("categoryExtIds")]
+        private InputList<string>? _categoryExtIds;
+        public InputList<string> CategoryExtIds
+        {
+            get => _categoryExtIds ?? (_categoryExtIds = new InputList<string>());
+            set => _categoryExtIds = value;
+        }
+
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 

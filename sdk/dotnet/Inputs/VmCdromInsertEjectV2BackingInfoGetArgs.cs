@@ -25,11 +25,17 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _dataSources = value;
         }
 
+        [Input("diskExtId")]
+        public Input<string>? DiskExtId { get; set; }
+
         /// <summary>
         /// Size of the disk in Bytes
         /// </summary>
         [Input("diskSizeBytes")]
         public Input<int>? DiskSizeBytes { get; set; }
+
+        [Input("isMigrationInProgress")]
+        public Input<bool>? IsMigrationInProgress { get; set; }
 
         [Input("storageConfigs")]
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoStorageConfigGetArgs>? _storageConfigs;

@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVpcV2MetadataResult
     {
-        public readonly ImmutableArray<ImmutableArray<object>> CategoryIds;
+        public readonly ImmutableArray<string> CategoryIds;
         public readonly string OwnerReferenceId;
         public readonly string OwnerUserName;
         public readonly string ProjectName;
@@ -22,7 +22,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetVpcV2MetadataResult(
-            ImmutableArray<ImmutableArray<object>> categoryIds,
+            ImmutableArray<string> categoryIds,
 
             string ownerReferenceId,
 

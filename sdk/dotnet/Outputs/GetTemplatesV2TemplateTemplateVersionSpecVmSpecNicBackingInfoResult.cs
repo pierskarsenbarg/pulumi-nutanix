@@ -14,14 +14,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicBackingInfoResult
     {
-        public readonly bool? IsConnected;
+        public readonly bool IsConnected;
         public readonly string MacAddress;
         public readonly string Model;
         public readonly int? NumQueues;
 
         [OutputConstructor]
         private GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicBackingInfoResult(
-            bool? isConnected,
+            bool isConnected,
 
             string macAddress,
 

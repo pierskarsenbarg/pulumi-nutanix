@@ -71,41 +71,70 @@ class GetAuthorizationPolicyV2Result:
     @_builtins.property
     @pulumi.getter(name="authorizationPolicyType")
     def authorization_policy_type(self) -> _builtins.str:
+        """
+        Type of Authorization Policy.
+        * `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
+        * `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
+        * `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
+        * `SERVICE_DEFINED` : ACP defined by a service.
+        * `USER_DEFINED` : ACP defined by an User.
+        """
         return pulumi.get(self, "authorization_policy_type")
 
     @_builtins.property
     @pulumi.getter(name="clientName")
     def client_name(self) -> _builtins.str:
+        """
+        Client that created the entity.
+        """
         return pulumi.get(self, "client_name")
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> _builtins.str:
+        """
+        User or Service Name that created the Authorization Policy.
+        """
         return pulumi.get(self, "created_by")
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
     def created_time(self) -> _builtins.str:
+        """
+        The creation time of the Authorization Policy.
+        """
         return pulumi.get(self, "created_time")
 
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        Description of the Authorization Policy.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
+        """
+        Name of the Authorization Policy.
+        """
         return pulumi.get(self, "display_name")
 
     @_builtins.property
     @pulumi.getter
     def entities(self) -> Sequence['outputs.GetAuthorizationPolicyV2EntityResult']:
+        """
+        The entities being qualified by the Authorization Policy.
+        """
         return pulumi.get(self, "entities")
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> _builtins.str:
+        """
+        ext_id of Authorization policy.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -119,21 +148,33 @@ class GetAuthorizationPolicyV2Result:
     @_builtins.property
     @pulumi.getter
     def identities(self) -> Sequence['outputs.GetAuthorizationPolicyV2IdentityResult']:
+        """
+        The identities for which the Authorization Policy is created.
+        """
         return pulumi.get(self, "identities")
 
     @_builtins.property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> _builtins.bool:
+        """
+        Flag identifying if the Authorization Policy is system defined or not.
+        """
         return pulumi.get(self, "is_system_defined")
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
     def last_updated_time(self) -> _builtins.str:
+        """
+        The time when the Authorization Policy was last updated.
+        """
         return pulumi.get(self, "last_updated_time")
 
     @_builtins.property
     @pulumi.getter
     def role(self) -> _builtins.str:
+        """
+        The Role associated with the Authorization Policy.
+        """
         return pulumi.get(self, "role")
 
 
@@ -161,7 +202,21 @@ class AwaitableGetAuthorizationPolicyV2Result(GetAuthorizationPolicyV2Result):
 def get_authorization_policy_v2(ext_id: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthorizationPolicyV2Result:
     """
-    Use this data source to access information about an existing resource.
+    Provides a datasource to retrieve authorization policy with  authorization policy uuid .
+
+    ## Example Usage
+
+    <!--Start PulumiCodeChooser -->
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    get_acp = nutanix.get_authorization_policy_v2(ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+    ```
+    <!--End PulumiCodeChooser -->
+
+
+    :param _builtins.str ext_id: Authorization Policy UUID
     """
     __args__ = dict()
     __args__['extId'] = ext_id
@@ -185,7 +240,21 @@ def get_authorization_policy_v2(ext_id: Optional[_builtins.str] = None,
 def get_authorization_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuthorizationPolicyV2Result]:
     """
-    Use this data source to access information about an existing resource.
+    Provides a datasource to retrieve authorization policy with  authorization policy uuid .
+
+    ## Example Usage
+
+    <!--Start PulumiCodeChooser -->
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    get_acp = nutanix.get_authorization_policy_v2(ext_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+    ```
+    <!--End PulumiCodeChooser -->
+
+
+    :param _builtins.str ext_id: Authorization Policy UUID
     """
     __args__ = dict()
     __args__['extId'] = ext_id

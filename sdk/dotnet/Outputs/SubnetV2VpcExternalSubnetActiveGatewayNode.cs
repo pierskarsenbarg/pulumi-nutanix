@@ -14,7 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VpcExternalSubnetActiveGatewayNode
     {
+        /// <summary>
+        /// Node id
+        /// </summary>
         public readonly string? NodeId;
+        /// <summary>
+        /// An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        /// - `node_ip_address.ipv4`: (Optional) Reference to address configuration
+        /// - `node_ip_address.ipv6`: (Optional) Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress> NodeIpAddresses;
 
         [OutputConstructor]

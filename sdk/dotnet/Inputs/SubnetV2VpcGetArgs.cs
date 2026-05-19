@@ -15,23 +15,40 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("commonDhcpOptions")]
         private InputList<Inputs.SubnetV2VpcCommonDhcpOptionGetArgs>? _commonDhcpOptions;
+
+        /// <summary>
+        /// List of DHCP options to be configured.
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcCommonDhcpOptionGetArgs> CommonDhcpOptions
         {
             get => _commonDhcpOptions ?? (_commonDhcpOptions = new InputList<Inputs.SubnetV2VpcCommonDhcpOptionGetArgs>());
             set => _commonDhcpOptions = value;
         }
 
+        /// <summary>
+        /// Description of the VPC.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// External routing domain associated with this route table
+        /// </summary>
         [Input("externalRoutingDomainReference")]
         public Input<string>? ExternalRoutingDomainReference { get; set; }
 
         [Input("externalSubnets")]
         private InputList<Inputs.SubnetV2VpcExternalSubnetGetArgs>? _externalSubnets;
+
+        /// <summary>
+        /// List of external subnets that the VPC is attached to.
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternalSubnetGetArgs> ExternalSubnets
         {
             get => _externalSubnets ?? (_externalSubnets = new InputList<Inputs.SubnetV2VpcExternalSubnetGetArgs>());
@@ -40,6 +57,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("externallyRoutablePrefixes")]
         private InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixGetArgs>? _externallyRoutablePrefixes;
+
+        /// <summary>
+        /// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixGetArgs> ExternallyRoutablePrefixes
         {
             get => _externallyRoutablePrefixes ?? (_externallyRoutablePrefixes = new InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixGetArgs>());
@@ -62,6 +83,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _metadatas = value;
         }
 
+        /// <summary>
+        /// Name of the VPC.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -76,6 +100,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("tenantId")]
         public Input<string>? TenantId { get; set; }
 
+        /// <summary>
+        /// Type of VPC. Acceptables values are "REGULAR" , "TRANSIT".
+        /// </summary>
         [Input("vpcType")]
         public Input<string>? VpcType { get; set; }
 

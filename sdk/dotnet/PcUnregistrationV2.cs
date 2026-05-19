@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) Cluster UUID of a remote cluster.
         /// 
-        /// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/unregister).
+        /// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/unregister).
         /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
@@ -80,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) Cluster UUID of a remote cluster.
         /// 
-        /// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/unregister).
+        /// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/unregister).
         /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
@@ -102,7 +102,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) Cluster UUID of a remote cluster.
         /// 
-        /// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/unregister).
+        /// See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/unregister).
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }

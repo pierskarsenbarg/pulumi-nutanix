@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides Nutanix resource to create VPC.
+ * Provides Nutanix resource to create Storage Containers
  *
  * ## Example
  *
@@ -159,7 +159,7 @@ export class StorageContainersV2 extends pulumi.CustomResource {
     /**
      * -(Optional) List of NFS addresses which need to be whitelisted.
      */
-    declare public readonly nfsWhitelistAddresses: pulumi.Output<outputs.StorageContainersV2NfsWhitelistAddress[] | undefined>;
+    declare public readonly nfsWhitelistAddresses: pulumi.Output<outputs.StorageContainersV2NfsWhitelistAddress[]>;
     /**
      * - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
      */

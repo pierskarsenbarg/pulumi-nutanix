@@ -29,6 +29,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// #############################################
+//			// ------------------------------------------------
+//			// This resource allows inserting a NGT ISO into
+//			// a VM’s CD-ROM device.
+//			//
+//			// You can manage both:
+//			//  1. **Insertion** — via `apply`
+//			//  2. **Ejection** — automatically on `delete`
+//			//     You can also eject the NGT ISO by setting `action = "eject"` → triggers eject operation explicitly.
+//			//
+//			// #############################################
 //			_, err := nutanix.NewNgtInsertIsoV2(ctx, "example", &nutanix.NgtInsertIsoV2Args{
 //				ExtId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
 //				Capablities: pulumi.StringArray{
@@ -48,10 +59,13 @@ import (
 type NgtInsertIsoV2 struct {
 	pulumi.CustomResourceState
 
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action pulumi.StringPtrOutput `pulumi:"action"`
 	// Version of Nutanix Guest Tools available on the cluster.
 	AvailableVersion pulumi.StringOutput `pulumi:"availableVersion"`
 	// The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
 	Capablities pulumi.StringArrayOutput `pulumi:"capablities"`
+	CdromExtId  pulumi.StringOutput      `pulumi:"cdromExtId"`
 	// uuid of the Virtual Machine.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// Version of the operating system on the VM.
@@ -72,6 +86,7 @@ type NgtInsertIsoV2 struct {
 	IsVssSnapshotCapable pulumi.BoolOutput `pulumi:"isVssSnapshotCapable"`
 	// Version of Nutanix Guest Tools installed on the VM.
 	Version pulumi.StringOutput `pulumi:"version"`
+	VmExtId pulumi.StringOutput `pulumi:"vmExtId"`
 }
 
 // NewNgtInsertIsoV2 registers a new resource with the given unique name, arguments, and options.
@@ -107,10 +122,13 @@ func GetNgtInsertIsoV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NgtInsertIsoV2 resources.
 type ngtInsertIsoV2State struct {
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action *string `pulumi:"action"`
 	// Version of Nutanix Guest Tools available on the cluster.
 	AvailableVersion *string `pulumi:"availableVersion"`
 	// The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
 	Capablities []string `pulumi:"capablities"`
+	CdromExtId  *string  `pulumi:"cdromExtId"`
 	// uuid of the Virtual Machine.
 	ExtId *string `pulumi:"extId"`
 	// Version of the operating system on the VM.
@@ -131,13 +149,17 @@ type ngtInsertIsoV2State struct {
 	IsVssSnapshotCapable *bool `pulumi:"isVssSnapshotCapable"`
 	// Version of Nutanix Guest Tools installed on the VM.
 	Version *string `pulumi:"version"`
+	VmExtId *string `pulumi:"vmExtId"`
 }
 
 type NgtInsertIsoV2State struct {
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action pulumi.StringPtrInput
 	// Version of Nutanix Guest Tools available on the cluster.
 	AvailableVersion pulumi.StringPtrInput
 	// The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
 	Capablities pulumi.StringArrayInput
+	CdromExtId  pulumi.StringPtrInput
 	// uuid of the Virtual Machine.
 	ExtId pulumi.StringPtrInput
 	// Version of the operating system on the VM.
@@ -158,6 +180,7 @@ type NgtInsertIsoV2State struct {
 	IsVssSnapshotCapable pulumi.BoolPtrInput
 	// Version of Nutanix Guest Tools installed on the VM.
 	Version pulumi.StringPtrInput
+	VmExtId pulumi.StringPtrInput
 }
 
 func (NgtInsertIsoV2State) ElementType() reflect.Type {
@@ -165,6 +188,8 @@ func (NgtInsertIsoV2State) ElementType() reflect.Type {
 }
 
 type ngtInsertIsoV2Args struct {
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action *string `pulumi:"action"`
 	// The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
 	Capablities []string `pulumi:"capablities"`
 	// uuid of the Virtual Machine.
@@ -175,6 +200,8 @@ type ngtInsertIsoV2Args struct {
 
 // The set of arguments for constructing a NgtInsertIsoV2 resource.
 type NgtInsertIsoV2Args struct {
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action pulumi.StringPtrInput
 	// The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
 	Capablities pulumi.StringArrayInput
 	// uuid of the Virtual Machine.
@@ -270,6 +297,11 @@ func (o NgtInsertIsoV2Output) ToNgtInsertIsoV2OutputWithContext(ctx context.Cont
 	return o
 }
 
+// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+func (o NgtInsertIsoV2Output) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NgtInsertIsoV2) pulumi.StringPtrOutput { return v.Action }).(pulumi.StringPtrOutput)
+}
+
 // Version of Nutanix Guest Tools available on the cluster.
 func (o NgtInsertIsoV2Output) AvailableVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *NgtInsertIsoV2) pulumi.StringOutput { return v.AvailableVersion }).(pulumi.StringOutput)
@@ -278,6 +310,10 @@ func (o NgtInsertIsoV2Output) AvailableVersion() pulumi.StringOutput {
 // The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
 func (o NgtInsertIsoV2Output) Capablities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NgtInsertIsoV2) pulumi.StringArrayOutput { return v.Capablities }).(pulumi.StringArrayOutput)
+}
+
+func (o NgtInsertIsoV2Output) CdromExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *NgtInsertIsoV2) pulumi.StringOutput { return v.CdromExtId }).(pulumi.StringOutput)
 }
 
 // uuid of the Virtual Machine.
@@ -328,6 +364,10 @@ func (o NgtInsertIsoV2Output) IsVssSnapshotCapable() pulumi.BoolOutput {
 // Version of Nutanix Guest Tools installed on the VM.
 func (o NgtInsertIsoV2Output) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *NgtInsertIsoV2) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+}
+
+func (o NgtInsertIsoV2Output) VmExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *NgtInsertIsoV2) pulumi.StringOutput { return v.VmExtId }).(pulumi.StringOutput)
 }
 
 type NgtInsertIsoV2ArrayOutput struct{ *pulumi.OutputState }

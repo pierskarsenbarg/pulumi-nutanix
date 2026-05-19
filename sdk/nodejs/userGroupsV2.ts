@@ -68,7 +68,7 @@ export class UserGroupsV2 extends pulumi.CustomResource {
     /**
      * -(Optional) Identifier for the User Group in the form of a distinguished name.
      */
-    declare public readonly distinguishedName: pulumi.Output<string | undefined>;
+    declare public readonly distinguishedName: pulumi.Output<string>;
     /**
      * The External Identifier of the User Group.
      */

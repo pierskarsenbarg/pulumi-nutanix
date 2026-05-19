@@ -33,7 +33,7 @@ class LcmConfigV2Args:
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
                
-               See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+               See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
         :param pulumi.Input[_builtins.bool] is_auto_inventory_enabled: Indicates if the auto inventory operation is enabled. The default value is set to False.
         :param pulumi.Input[_builtins.bool] is_https_enabled: Indicates if the LCM URL has HTTPS enabled. The default value is True.
         :param pulumi.Input[_builtins.str] url: URL of the LCM repository.
@@ -84,7 +84,7 @@ class LcmConfigV2Args:
         """
         Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 
-        See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+        See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
         """
         return pulumi.get(self, "has_module_auto_upgrade_enabled")
 
@@ -159,7 +159,7 @@ class _LcmConfigV2State:
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
                
-               See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+               See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
         :param pulumi.Input[_builtins.bool] is_auto_inventory_enabled: Indicates if the auto inventory operation is enabled. The default value is set to False.
         :param pulumi.Input[_builtins.bool] is_https_enabled: Indicates if the LCM URL has HTTPS enabled. The default value is True.
         :param pulumi.Input[_builtins.str] url: URL of the LCM repository.
@@ -221,7 +221,7 @@ class _LcmConfigV2State:
         """
         Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 
-        See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+        See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
         """
         return pulumi.get(self, "has_module_auto_upgrade_enabled")
 
@@ -323,7 +323,7 @@ class LcmConfigV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
                
-               See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+               See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
         :param pulumi.Input[_builtins.bool] is_auto_inventory_enabled: Indicates if the auto inventory operation is enabled. The default value is set to False.
         :param pulumi.Input[_builtins.bool] is_https_enabled: Indicates if the LCM URL has HTTPS enabled. The default value is True.
         :param pulumi.Input[_builtins.str] url: URL of the LCM repository.
@@ -428,7 +428,7 @@ class LcmConfigV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
                
-               See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+               See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
         :param pulumi.Input[_builtins.bool] is_auto_inventory_enabled: Indicates if the auto inventory operation is enabled. The default value is set to False.
         :param pulumi.Input[_builtins.bool] is_https_enabled: Indicates if the LCM URL has HTTPS enabled. The default value is True.
         :param pulumi.Input[_builtins.str] url: URL of the LCM repository.
@@ -475,7 +475,7 @@ class LcmConfigV2(pulumi.CustomResource):
         """
         Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 
-        See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
+        See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
         """
         return pulumi.get(self, "has_module_auto_upgrade_enabled")
 

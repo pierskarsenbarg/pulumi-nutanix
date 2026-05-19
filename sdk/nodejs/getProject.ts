@@ -46,12 +46,6 @@ import * as utilities from "./utilities";
  *         name: "Environment",
  *         value: "Staging",
  *     }],
- *     resourceDomain: {
- *         resources: [{
- *             limit: 4,
- *             resourceType: "STORAGE",
- *         }],
- *     },
  *     defaultSubnetReference: {
  *         uuid: subnet.metadata.uuid,
  *     },
@@ -192,7 +186,7 @@ export interface GetProjectResult {
     readonly projectName?: string;
     readonly projectReference: {[key: string]: string};
     /**
-     * The status for a resource domain (limits and values)
+     * (Deprecated) Not supported starting from provider version `2.4.0` and expected to be empty. Remove any usage from configuration/scripts.
      */
     readonly resourceDomains: outputs.GetProjectResourceDomain[];
     readonly state: string;
@@ -262,12 +256,6 @@ export interface GetProjectResult {
  *         name: "Environment",
  *         value: "Staging",
  *     }],
- *     resourceDomain: {
- *         resources: [{
- *             limit: 4,
- *             resourceType: "STORAGE",
- *         }],
- *     },
  *     defaultSubnetReference: {
  *         uuid: subnet.metadata.uuid,
  *     },

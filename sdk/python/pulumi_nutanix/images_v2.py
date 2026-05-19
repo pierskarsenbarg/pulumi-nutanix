@@ -30,6 +30,14 @@ class ImagesV2Args:
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]] = None):
         """
         The set of arguments for constructing a ImagesV2 resource.
+
+        :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: List of category external identifiers for an image.
+        :param pulumi.Input[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]] checksums: The checksum of an image.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: List of cluster external identifiers where the image is located.
+        :param pulumi.Input[_builtins.str] description: The user defined description of an image.
+        :param pulumi.Input[_builtins.str] name: The user defined name of an image.
+        :param pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]] sources: The source of an image. It can be a VM disk or a URL.
         """
         pulumi.set(__self__, "type", type)
         if category_ext_ids is not None:
@@ -48,6 +56,9 @@ class ImagesV2Args:
     @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -57,6 +68,9 @@ class ImagesV2Args:
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
     def category_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of category external identifiers for an image.
+        """
         return pulumi.get(self, "category_ext_ids")
 
     @category_ext_ids.setter
@@ -66,6 +80,9 @@ class ImagesV2Args:
     @_builtins.property
     @pulumi.getter
     def checksums(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]:
+        """
+        The checksum of an image.
+        """
         return pulumi.get(self, "checksums")
 
     @checksums.setter
@@ -75,6 +92,9 @@ class ImagesV2Args:
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtIds")
     def cluster_location_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of cluster external identifiers where the image is located.
+        """
         return pulumi.get(self, "cluster_location_ext_ids")
 
     @cluster_location_ext_ids.setter
@@ -84,6 +104,9 @@ class ImagesV2Args:
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The user defined description of an image.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -93,6 +116,9 @@ class ImagesV2Args:
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The user defined name of an image.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -102,6 +128,9 @@ class ImagesV2Args:
     @_builtins.property
     @pulumi.getter
     def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]:
+        """
+        The source of an image. It can be a VM disk or a URL.
+        """
         return pulumi.get(self, "sources")
 
     @sources.setter
@@ -117,15 +146,31 @@ class _ImagesV2State:
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  create_time: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2LinkArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]] = None,
                  size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ImagesV2 resources.
+
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: List of category external identifiers for an image.
+        :param pulumi.Input[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]] checksums: The checksum of an image.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: List of cluster external identifiers where the image is located.
+        :param pulumi.Input[_builtins.str] create_time: Create time of an image.
+        :param pulumi.Input[_builtins.str] description: The user defined description of an image.
+        :param pulumi.Input[_builtins.str] last_update_time: Last update time of an image.
+        :param pulumi.Input[_builtins.str] name: The user defined name of an image.
+        :param pulumi.Input[_builtins.str] owner_ext_id: External identifier of the owner of the image
+        :param pulumi.Input[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]] placement_policy_statuses: Status of an image placement policy.
+        :param pulumi.Input[_builtins.int] size_bytes: The size in bytes of an image file.
+        :param pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]] sources: The source of an image. It can be a VM disk or a URL.
+        :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
         """
         if category_ext_ids is not None:
             pulumi.set(__self__, "category_ext_ids", category_ext_ids)
@@ -137,8 +182,12 @@ class _ImagesV2State:
             pulumi.set(__self__, "create_time", create_time)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
         if last_update_time is not None:
             pulumi.set(__self__, "last_update_time", last_update_time)
+        if links is not None:
+            pulumi.set(__self__, "links", links)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if owner_ext_id is not None:
@@ -149,12 +198,17 @@ class _ImagesV2State:
             pulumi.set(__self__, "size_bytes", size_bytes)
         if sources is not None:
             pulumi.set(__self__, "sources", sources)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
     def category_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of category external identifiers for an image.
+        """
         return pulumi.get(self, "category_ext_ids")
 
     @category_ext_ids.setter
@@ -164,6 +218,9 @@ class _ImagesV2State:
     @_builtins.property
     @pulumi.getter
     def checksums(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2ChecksumArgs']]]]:
+        """
+        The checksum of an image.
+        """
         return pulumi.get(self, "checksums")
 
     @checksums.setter
@@ -173,6 +230,9 @@ class _ImagesV2State:
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtIds")
     def cluster_location_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of cluster external identifiers where the image is located.
+        """
         return pulumi.get(self, "cluster_location_ext_ids")
 
     @cluster_location_ext_ids.setter
@@ -182,6 +242,9 @@ class _ImagesV2State:
     @_builtins.property
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Create time of an image.
+        """
         return pulumi.get(self, "create_time")
 
     @create_time.setter
@@ -191,6 +254,9 @@ class _ImagesV2State:
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The user defined description of an image.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -198,8 +264,20 @@ class _ImagesV2State:
         pulumi.set(self, "description", value)
 
     @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
     def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Last update time of an image.
+        """
         return pulumi.get(self, "last_update_time")
 
     @last_update_time.setter
@@ -208,7 +286,19 @@ class _ImagesV2State:
 
     @_builtins.property
     @pulumi.getter
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2LinkArgs']]]]:
+        return pulumi.get(self, "links")
+
+    @links.setter
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2LinkArgs']]]]):
+        pulumi.set(self, "links", value)
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The user defined name of an image.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -218,6 +308,9 @@ class _ImagesV2State:
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
     def owner_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the owner of the image
+        """
         return pulumi.get(self, "owner_ext_id")
 
     @owner_ext_id.setter
@@ -227,6 +320,9 @@ class _ImagesV2State:
     @_builtins.property
     @pulumi.getter(name="placementPolicyStatuses")
     def placement_policy_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]]:
+        """
+        Status of an image placement policy.
+        """
         return pulumi.get(self, "placement_policy_statuses")
 
     @placement_policy_statuses.setter
@@ -236,6 +332,9 @@ class _ImagesV2State:
     @_builtins.property
     @pulumi.getter(name="sizeBytes")
     def size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The size in bytes of an image file.
+        """
         return pulumi.get(self, "size_bytes")
 
     @size_bytes.setter
@@ -245,6 +344,9 @@ class _ImagesV2State:
     @_builtins.property
     @pulumi.getter
     def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]:
+        """
+        The source of an image. It can be a VM disk or a URL.
+        """
         return pulumi.get(self, "sources")
 
     @sources.setter
@@ -252,8 +354,20 @@ class _ImagesV2State:
         pulumi.set(self, "sources", value)
 
     @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "tenant_id")
+
+    @tenant_id.setter
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tenant_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -276,10 +390,54 @@ class ImagesV2(pulumi.CustomResource):
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ImagesV2 resource with the given unique name, props, and options.
+        Create an image using the provided request body. Name, type and source are mandatory fields to create an image.
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        img_1 = nutanix.ImagesV2("img-1",
+            name="test-image",
+            description="img desc",
+            type="ISO_IMAGE",
+            sources=[{
+                "url_sources": [{
+                    "url": "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+                }],
+            }])
+        img_2 = nutanix.ImagesV2("img-2",
+            name="test-image",
+            description="img desc",
+            type="DISK_IMAGE",
+            sources=[{
+                "url_sources": [{
+                    "url": "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+                }],
+            }],
+            cluster_location_ext_ids=["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"])
+        object_lite_store_img = nutanix.ImagesV2("object-liteStore-img",
+            name="image-object-lite-example",
+            description="Image created from object store",
+            type="DISK_IMAGE",
+            sources=[{
+                "object_lite_sources": [{
+                    "key": "img-lite-key-example",
+                }],
+            }])
+        ```
+        <!--End PulumiCodeChooser -->
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: List of category external identifiers for an image.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]] checksums: The checksum of an image.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: List of cluster external identifiers where the image is located.
+        :param pulumi.Input[_builtins.str] description: The user defined description of an image.
+        :param pulumi.Input[_builtins.str] name: The user defined name of an image.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]] sources: The source of an image. It can be a VM disk or a URL.
+        :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
         """
         ...
     @overload
@@ -288,7 +446,44 @@ class ImagesV2(pulumi.CustomResource):
                  args: ImagesV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ImagesV2 resource with the given unique name, props, and options.
+        Create an image using the provided request body. Name, type and source are mandatory fields to create an image.
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        img_1 = nutanix.ImagesV2("img-1",
+            name="test-image",
+            description="img desc",
+            type="ISO_IMAGE",
+            sources=[{
+                "url_sources": [{
+                    "url": "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+                }],
+            }])
+        img_2 = nutanix.ImagesV2("img-2",
+            name="test-image",
+            description="img desc",
+            type="DISK_IMAGE",
+            sources=[{
+                "url_sources": [{
+                    "url": "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
+                }],
+            }],
+            cluster_location_ext_ids=["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"])
+        object_lite_store_img = nutanix.ImagesV2("object-liteStore-img",
+            name="image-object-lite-example",
+            description="Image created from object store",
+            type="DISK_IMAGE",
+            sources=[{
+                "object_lite_sources": [{
+                    "key": "img-lite-key-example",
+                }],
+            }])
+        ```
+        <!--End PulumiCodeChooser -->
+
 
         :param str resource_name: The name of the resource.
         :param ImagesV2Args args: The arguments to use to populate this resource's properties.
@@ -331,10 +526,13 @@ class ImagesV2(pulumi.CustomResource):
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
             __props__.__dict__["create_time"] = None
+            __props__.__dict__["ext_id"] = None
             __props__.__dict__["last_update_time"] = None
+            __props__.__dict__["links"] = None
             __props__.__dict__["owner_ext_id"] = None
             __props__.__dict__["placement_policy_statuses"] = None
             __props__.__dict__["size_bytes"] = None
+            __props__.__dict__["tenant_id"] = None
         super(ImagesV2, __self__).__init__(
             'nutanix:index/imagesV2:ImagesV2',
             resource_name,
@@ -350,12 +548,15 @@ class ImagesV2(pulumi.CustomResource):
             cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             create_time: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2LinkArgs', 'ImagesV2LinkArgsDict']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict']]]]] = None,
             size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'ImagesV2':
         """
         Get an existing ImagesV2 resource's state with the given name, id, and optional extra
@@ -364,6 +565,18 @@ class ImagesV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: List of category external identifiers for an image.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]] checksums: The checksum of an image.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: List of cluster external identifiers where the image is located.
+        :param pulumi.Input[_builtins.str] create_time: Create time of an image.
+        :param pulumi.Input[_builtins.str] description: The user defined description of an image.
+        :param pulumi.Input[_builtins.str] last_update_time: Last update time of an image.
+        :param pulumi.Input[_builtins.str] name: The user defined name of an image.
+        :param pulumi.Input[_builtins.str] owner_ext_id: External identifier of the owner of the image
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict']]]] placement_policy_statuses: Status of an image placement policy.
+        :param pulumi.Input[_builtins.int] size_bytes: The size in bytes of an image file.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]] sources: The source of an image. It can be a VM disk or a URL.
+        :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -374,72 +587,126 @@ class ImagesV2(pulumi.CustomResource):
         __props__.__dict__["cluster_location_ext_ids"] = cluster_location_ext_ids
         __props__.__dict__["create_time"] = create_time
         __props__.__dict__["description"] = description
+        __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["last_update_time"] = last_update_time
+        __props__.__dict__["links"] = links
         __props__.__dict__["name"] = name
         __props__.__dict__["owner_ext_id"] = owner_ext_id
         __props__.__dict__["placement_policy_statuses"] = placement_policy_statuses
         __props__.__dict__["size_bytes"] = size_bytes
         __props__.__dict__["sources"] = sources
+        __props__.__dict__["tenant_id"] = tenant_id
         __props__.__dict__["type"] = type
         return ImagesV2(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
     def category_ext_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of category external identifiers for an image.
+        """
         return pulumi.get(self, "category_ext_ids")
 
     @_builtins.property
     @pulumi.getter
     def checksums(self) -> pulumi.Output[Optional[Sequence['outputs.ImagesV2Checksum']]]:
+        """
+        The checksum of an image.
+        """
         return pulumi.get(self, "checksums")
 
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtIds")
     def cluster_location_ext_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of cluster external identifiers where the image is located.
+        """
         return pulumi.get(self, "cluster_location_ext_ids")
 
     @_builtins.property
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[_builtins.str]:
+        """
+        Create time of an image.
+        """
         return pulumi.get(self, "create_time")
 
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The user defined description of an image.
+        """
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "ext_id")
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
     def last_update_time(self) -> pulumi.Output[_builtins.str]:
+        """
+        Last update time of an image.
+        """
         return pulumi.get(self, "last_update_time")
 
     @_builtins.property
     @pulumi.getter
+    def links(self) -> pulumi.Output[Sequence['outputs.ImagesV2Link']]:
+        return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The user defined name of an image.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
     def owner_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        External identifier of the owner of the image
+        """
         return pulumi.get(self, "owner_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="placementPolicyStatuses")
     def placement_policy_statuses(self) -> pulumi.Output[Sequence['outputs.ImagesV2PlacementPolicyStatus']]:
+        """
+        Status of an image placement policy.
+        """
         return pulumi.get(self, "placement_policy_statuses")
 
     @_builtins.property
     @pulumi.getter(name="sizeBytes")
     def size_bytes(self) -> pulumi.Output[_builtins.int]:
+        """
+        The size in bytes of an image file.
+        """
         return pulumi.get(self, "size_bytes")
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> pulumi.Output[Optional[Sequence['outputs.ImagesV2Source']]]:
+    def sources(self) -> pulumi.Output[Sequence['outputs.ImagesV2Source']]:
+        """
+        The source of an image. It can be a VM disk or a URL.
+        """
         return pulumi.get(self, "sources")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "tenant_id")
 
     @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
+        """
         return pulumi.get(self, "type")
 

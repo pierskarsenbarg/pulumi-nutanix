@@ -30,6 +30,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// #############################################
+//			// ------------------------------------------------
+//			// This resource allows inserting a custom ISO into
+//			// a VM’s CD-ROM device.
+//			//
+//			// You can manage both:
+//			//  1. **Insertion** — via `apply`
+//			//  2. **Ejection** — automatically on `delete`
+//			//     You can also eject the ISO by setting `action = "eject"` → triggers eject operation explicitly.
+//			//
+//			// #############################################
 //			_, err := nutanix.NewVmCdromInsertEjectV2(ctx, "insert-cdrom", &nutanix.VmCdromInsertEjectV2Args{
 //				VmExtId: pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
 //				ExtId:   pulumi.String("c2c249b0-98a0-43fa-9ff6-dcde578d3936"),
@@ -63,10 +74,15 @@ import (
 type VmCdromInsertEjectV2 struct {
 	pulumi.CustomResourceState
 
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action pulumi.StringPtrOutput `pulumi:"action"`
 	// Storage provided by Nutanix ADSF
-	BackingInfos VmCdromInsertEjectV2BackingInfoArrayOutput `pulumi:"backingInfos"`
+	BackingInfos  VmCdromInsertEjectV2BackingInfoArrayOutput `pulumi:"backingInfos"`
+	CdromExtId    pulumi.StringOutput                        `pulumi:"cdromExtId"`
+	DiskAddresses VmCdromInsertEjectV2DiskAddressArrayOutput `pulumi:"diskAddresses"`
 	// The globally unique identifier of a CD-ROM. It should be of type UUID.
-	ExtId pulumi.StringOutput `pulumi:"extId"`
+	ExtId   pulumi.StringOutput `pulumi:"extId"`
+	IsoType pulumi.StringOutput `pulumi:"isoType"`
 	// The globally unique identifier of a VM. It should be of type UUID
 	VmExtId pulumi.StringOutput `pulumi:"vmExtId"`
 }
@@ -107,19 +123,29 @@ func GetVmCdromInsertEjectV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmCdromInsertEjectV2 resources.
 type vmCdromInsertEjectV2State struct {
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action *string `pulumi:"action"`
 	// Storage provided by Nutanix ADSF
-	BackingInfos []VmCdromInsertEjectV2BackingInfo `pulumi:"backingInfos"`
+	BackingInfos  []VmCdromInsertEjectV2BackingInfo `pulumi:"backingInfos"`
+	CdromExtId    *string                           `pulumi:"cdromExtId"`
+	DiskAddresses []VmCdromInsertEjectV2DiskAddress `pulumi:"diskAddresses"`
 	// The globally unique identifier of a CD-ROM. It should be of type UUID.
-	ExtId *string `pulumi:"extId"`
+	ExtId   *string `pulumi:"extId"`
+	IsoType *string `pulumi:"isoType"`
 	// The globally unique identifier of a VM. It should be of type UUID
 	VmExtId *string `pulumi:"vmExtId"`
 }
 
 type VmCdromInsertEjectV2State struct {
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action pulumi.StringPtrInput
 	// Storage provided by Nutanix ADSF
-	BackingInfos VmCdromInsertEjectV2BackingInfoArrayInput
+	BackingInfos  VmCdromInsertEjectV2BackingInfoArrayInput
+	CdromExtId    pulumi.StringPtrInput
+	DiskAddresses VmCdromInsertEjectV2DiskAddressArrayInput
 	// The globally unique identifier of a CD-ROM. It should be of type UUID.
-	ExtId pulumi.StringPtrInput
+	ExtId   pulumi.StringPtrInput
+	IsoType pulumi.StringPtrInput
 	// The globally unique identifier of a VM. It should be of type UUID
 	VmExtId pulumi.StringPtrInput
 }
@@ -129,6 +155,8 @@ func (VmCdromInsertEjectV2State) ElementType() reflect.Type {
 }
 
 type vmCdromInsertEjectV2Args struct {
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action *string `pulumi:"action"`
 	// Storage provided by Nutanix ADSF
 	BackingInfos []VmCdromInsertEjectV2BackingInfo `pulumi:"backingInfos"`
 	// The globally unique identifier of a CD-ROM. It should be of type UUID.
@@ -139,6 +167,8 @@ type vmCdromInsertEjectV2Args struct {
 
 // The set of arguments for constructing a VmCdromInsertEjectV2 resource.
 type VmCdromInsertEjectV2Args struct {
+	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+	Action pulumi.StringPtrInput
 	// Storage provided by Nutanix ADSF
 	BackingInfos VmCdromInsertEjectV2BackingInfoArrayInput
 	// The globally unique identifier of a CD-ROM. It should be of type UUID.
@@ -234,14 +264,31 @@ func (o VmCdromInsertEjectV2Output) ToVmCdromInsertEjectV2OutputWithContext(ctx 
 	return o
 }
 
+// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
+func (o VmCdromInsertEjectV2Output) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringPtrOutput { return v.Action }).(pulumi.StringPtrOutput)
+}
+
 // Storage provided by Nutanix ADSF
 func (o VmCdromInsertEjectV2Output) BackingInfos() VmCdromInsertEjectV2BackingInfoArrayOutput {
 	return o.ApplyT(func(v *VmCdromInsertEjectV2) VmCdromInsertEjectV2BackingInfoArrayOutput { return v.BackingInfos }).(VmCdromInsertEjectV2BackingInfoArrayOutput)
 }
 
+func (o VmCdromInsertEjectV2Output) CdromExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringOutput { return v.CdromExtId }).(pulumi.StringOutput)
+}
+
+func (o VmCdromInsertEjectV2Output) DiskAddresses() VmCdromInsertEjectV2DiskAddressArrayOutput {
+	return o.ApplyT(func(v *VmCdromInsertEjectV2) VmCdromInsertEjectV2DiskAddressArrayOutput { return v.DiskAddresses }).(VmCdromInsertEjectV2DiskAddressArrayOutput)
+}
+
 // The globally unique identifier of a CD-ROM. It should be of type UUID.
 func (o VmCdromInsertEjectV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o VmCdromInsertEjectV2Output) IsoType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCdromInsertEjectV2) pulumi.StringOutput { return v.IsoType }).(pulumi.StringOutput)
 }
 
 // The globally unique identifier of a VM. It should be of type UUID

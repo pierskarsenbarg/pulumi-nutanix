@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("endIps")]
         private InputList<Inputs.SubnetV2IpConfigIpv6PoolListEndIpArgs>? _endIps;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2IpConfigIpv6PoolListEndIpArgs> EndIps
         {
             get => _endIps ?? (_endIps = new InputList<Inputs.SubnetV2IpConfigIpv6PoolListEndIpArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("startIps")]
         private InputList<Inputs.SubnetV2IpConfigIpv6PoolListStartIpArgs>? _startIps;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2IpConfigIpv6PoolListStartIpArgs> StartIps
         {
             get => _startIps ?? (_startIps = new InputList<Inputs.SubnetV2IpConfigIpv6PoolListStartIpArgs>());

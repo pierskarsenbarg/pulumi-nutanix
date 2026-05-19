@@ -101,7 +101,7 @@ export class VpcV2 extends pulumi.CustomResource {
     /**
      * Description of the VPC.
      */
-    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * the vpc uuid.
      */
@@ -125,7 +125,7 @@ export class VpcV2 extends pulumi.CustomResource {
     /**
      * The vpc kind metadata.
      */
-    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.VpcV2Metadata[]>;
+    declare public readonly metadatas: pulumi.Output<outputs.VpcV2Metadata[]>;
     /**
      * Name of the VPC.
      */
@@ -138,7 +138,7 @@ export class VpcV2 extends pulumi.CustomResource {
     /**
      * Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
      */
-    declare public readonly vpcType: pulumi.Output<string | undefined>;
+    declare public readonly vpcType: pulumi.Output<string>;
 
     /**
      * Create a VpcV2 resource with the given unique name, arguments, and options.
@@ -172,11 +172,11 @@ export class VpcV2 extends pulumi.CustomResource {
             resourceInputs["externalRoutingDomainReference"] = args?.externalRoutingDomainReference;
             resourceInputs["externalSubnets"] = args?.externalSubnets;
             resourceInputs["externallyRoutablePrefixes"] = args?.externallyRoutablePrefixes;
+            resourceInputs["metadatas"] = args?.metadatas;
             resourceInputs["name"] = args?.name;
             resourceInputs["vpcType"] = args?.vpcType;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
-            resourceInputs["metadatas"] = undefined /*out*/;
             resourceInputs["snatIps"] = undefined /*out*/;
             resourceInputs["tenantId"] = undefined /*out*/;
         }
@@ -260,6 +260,10 @@ export interface VpcV2Args {
      * CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
      */
     externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternallyRoutablePrefix>[] | undefined>;
+    /**
+     * The vpc kind metadata.
+     */
+    metadatas?: pulumi.Input<pulumi.Input<inputs.VpcV2Metadata>[] | undefined>;
     /**
      * Name of the VPC.
      */

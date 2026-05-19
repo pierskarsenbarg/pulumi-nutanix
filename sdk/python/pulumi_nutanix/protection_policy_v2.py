@@ -266,6 +266,8 @@ class ProtectionPolicyV2(pulumi.CustomResource):
                  replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
                  __props__=None):
         """
+        > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.ProtectionPolicyV2`" pulumi-lang-dotnet="`nutanix.ProtectionPolicyV2`" pulumi-lang-go="`ProtectionPolicyV2`" pulumi-lang-python="`ProtectionPolicyV2`" pulumi-lang-yaml="`nutanix.ProtectionPolicyV2`" pulumi-lang-java="`nutanix.ProtectionPolicyV2`">`nutanix.ProtectionPolicyV2`</span> resource does **not** support API key authentication for multi-site protection policy operations. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`">`apiKey`</span>. Using API key will result in authorization errors (DPO-10600).
+
         Creates a protection policy to automate the recovery point creation and replication process.
 
         ## Example—Synchronous Protection Policy
@@ -461,6 +463,8 @@ class ProtectionPolicyV2(pulumi.CustomResource):
                  args: ProtectionPolicyV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.ProtectionPolicyV2`" pulumi-lang-dotnet="`nutanix.ProtectionPolicyV2`" pulumi-lang-go="`ProtectionPolicyV2`" pulumi-lang-python="`ProtectionPolicyV2`" pulumi-lang-yaml="`nutanix.ProtectionPolicyV2`" pulumi-lang-java="`nutanix.ProtectionPolicyV2`">`nutanix.ProtectionPolicyV2`</span> resource does **not** support API key authentication for multi-site protection policy operations. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`">`apiKey`</span>. Using API key will result in authorization errors (DPO-10600).
+
         Creates a protection policy to automate the recovery point creation and replication process.
 
         ## Example—Synchronous Protection Policy

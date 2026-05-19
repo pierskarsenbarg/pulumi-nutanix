@@ -32,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        /// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         /// </summary>
         [Input("diskSizeBytes", required: true)]
         public Input<int> DiskSizeBytes { get; set; } = null!;

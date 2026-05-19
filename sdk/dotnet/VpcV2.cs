@@ -129,7 +129,7 @@ namespace PiersKarsenbarg.Nutanix
         /// Description of the VPC.
         /// </summary>
         [Output("description")]
-        public Output<string?> Description { get; private set; } = null!;
+        public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// the vpc uuid.
@@ -186,7 +186,7 @@ namespace PiersKarsenbarg.Nutanix
         /// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         /// </summary>
         [Output("vpcType")]
-        public Output<string?> VpcType { get; private set; } = null!;
+        public Output<string> VpcType { get; private set; } = null!;
 
 
         /// <summary>
@@ -281,6 +281,18 @@ namespace PiersKarsenbarg.Nutanix
         {
             get => _externallyRoutablePrefixes ?? (_externallyRoutablePrefixes = new InputList<Inputs.VpcV2ExternallyRoutablePrefixArgs>());
             set => _externallyRoutablePrefixes = value;
+        }
+
+        [Input("metadatas")]
+        private InputList<Inputs.VpcV2MetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// The vpc kind metadata.
+        /// </summary>
+        public InputList<Inputs.VpcV2MetadataArgs> Metadatas
+        {
+            get => _metadatas ?? (_metadatas = new InputList<Inputs.VpcV2MetadataArgs>());
+            set => _metadatas = value;
         }
 
         /// <summary>

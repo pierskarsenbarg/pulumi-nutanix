@@ -13,7 +13,19 @@ import (
 
 // Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
 //
+// > **Recommendations:** It is recommended to create and register the cluster with Prism Central as part of the same workflow. Cluster updates, importing, and destruction through Terraform are supported only when the cluster is registered with Prism Central. To register a cluster with Prism Central use Terraform resource nutanix_pc_registration_v2.
+//
+// > **Note:**: Cluster resource supports add/remove node operations. However, these operations require cluster to be registered with Prism Central.
+//
+// > **Note:**: TThe cluster resource supports both associating and disassociating categories, allowing you to attach or detach categories on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+//
+// **Note:**: The cluster resource supports both associating and disassociating cluster profile, allowing you to attach or detach cluster profile on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+//
 // ## Example Usage
+//
+// ###
+//
+// ### Example 1: 1 Node Cluster Creation Example
 //
 // <!--Start PulumiCodeChooser -->
 // ```go
@@ -131,13 +143,216 @@ import (
 //
 // ```
 // <!--End PulumiCodeChooser -->
+//
+// ### Example 2: 3 Node Cluster Creation Example and Adding Nodes Example
+//
+// <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewClusterV2(ctx, "cluster-3nodes", &nutanix.ClusterV2Args{
+//				Name:   pulumi.String("tf-cluster-3nodes"),
+//				Dryrun: pulumi.Bool(false),
+//				Nodes: nutanix.ClusterV2NodeArray{
+//					&nutanix.ClusterV2NodeArgs{
+//						NodeLists: nutanix.ClusterV2NodeNodeListArray{
+//							&nutanix.ClusterV2NodeNodeListArgs{
+//								ControllerVmIps: nutanix.ClusterV2NodeNodeListControllerVmIpArray{
+//									&nutanix.ClusterV2NodeNodeListControllerVmIpArgs{
+//										Ipv4s: nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Array{
+//											&nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Args{
+//												Value: pulumi.String("10.00.00.1"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//							&nutanix.ClusterV2NodeNodeListArgs{
+//								ControllerVmIps: nutanix.ClusterV2NodeNodeListControllerVmIpArray{
+//									&nutanix.ClusterV2NodeNodeListControllerVmIpArgs{
+//										Ipv4s: nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Array{
+//											&nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Args{
+//												Value: pulumi.String("10.00.00.2"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//							&nutanix.ClusterV2NodeNodeListArgs{
+//								ControllerVmIps: nutanix.ClusterV2NodeNodeListControllerVmIpArray{
+//									&nutanix.ClusterV2NodeNodeListControllerVmIpArgs{
+//										Ipv4s: nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Array{
+//											&nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Args{
+//												Value: pulumi.String("10.00.00.3"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Configs: nutanix.ClusterV2ConfigArray{
+//					&nutanix.ClusterV2ConfigArgs{
+//						ClusterFunctions: pulumi.Any(clusters.Config.ClusterFunctions),
+//						ClusterArch:      pulumi.Any(clusters.Config.ClusterArch),
+//						FaultToleranceStates: nutanix.ClusterV2ConfigFaultToleranceStateArray{
+//							&nutanix.ClusterV2ConfigFaultToleranceStateArgs{
+//								DomainAwarenessLevel: pulumi.String("NODE"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// <!--End PulumiCodeChooser -->
+//
+// ### Example 3: Creating a cluster with categories
+//
+// <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewClusterV2(ctx, "cluster-with-categories", &nutanix.ClusterV2Args{
+//				Name: pulumi.String("cluster-example"),
+//				Nodes: nutanix.ClusterV2NodeArray{
+//					&nutanix.ClusterV2NodeArgs{
+//						NodeLists: nutanix.ClusterV2NodeNodeListArray{
+//							&nutanix.ClusterV2NodeNodeListArgs{
+//								ControllerVmIps: nutanix.ClusterV2NodeNodeListControllerVmIpArray{
+//									&nutanix.ClusterV2NodeNodeListControllerVmIpArgs{
+//										Ipv4s: nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Array{
+//											&nutanix.ClusterV2NodeNodeListControllerVmIpIpv4Args{
+//												Value: pulumi.String("10.xx.xx.xx"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Configs: nutanix.ClusterV2ConfigArray{
+//					&nutanix.ClusterV2ConfigArgs{
+//						ClusterFunctions: pulumi.StringArray{
+//							pulumi.String("AOS"),
+//						},
+//						RedundancyFactor: pulumi.Int(1),
+//						ClusterArch:      pulumi.String("X86_64"),
+//						FaultToleranceStates: nutanix.ClusterV2ConfigFaultToleranceStateArray{
+//							&nutanix.ClusterV2ConfigFaultToleranceStateArgs{
+//								DomainAwarenessLevel: pulumi.String("DISK"),
+//							},
+//						},
+//					},
+//				},
+//				Networks: nutanix.ClusterV2NetworkArray{
+//					&nutanix.ClusterV2NetworkArgs{
+//						ExternalAddresses: nutanix.ClusterV2NetworkExternalAddressArray{
+//							&nutanix.ClusterV2NetworkExternalAddressArgs{
+//								Ipv4s: nutanix.ClusterV2NetworkExternalAddressIpv4Array{
+//									&nutanix.ClusterV2NetworkExternalAddressIpv4Args{
+//										Value: pulumi.String("10.xx.xx.xx"),
+//									},
+//								},
+//							},
+//						},
+//						ExternalDataServicesIps: nutanix.ClusterV2NetworkExternalDataServicesIpArray{
+//							&nutanix.ClusterV2NetworkExternalDataServicesIpArgs{
+//								Ipv4s: nutanix.ClusterV2NetworkExternalDataServicesIpIpv4Array{
+//									&nutanix.ClusterV2NetworkExternalDataServicesIpIpv4Args{
+//										Value: pulumi.String("10.xx.xx.xx"),
+//									},
+//								},
+//							},
+//						},
+//						NtpServerIpLists: nutanix.ClusterV2NetworkNtpServerIpListArray{
+//							&nutanix.ClusterV2NetworkNtpServerIpListArgs{
+//								Fqdns: nutanix.ClusterV2NetworkNtpServerIpListFqdnArray{
+//									&nutanix.ClusterV2NetworkNtpServerIpListFqdnArgs{
+//										Value: pulumi.String("ntp.server.nutanix.com"),
+//									},
+//								},
+//							},
+//							&nutanix.ClusterV2NetworkNtpServerIpListArgs{
+//								Fqdns: nutanix.ClusterV2NetworkNtpServerIpListFqdnArray{
+//									&nutanix.ClusterV2NetworkNtpServerIpListFqdnArgs{
+//										Value: pulumi.String("ntp.server_1.nutanix.com"),
+//									},
+//								},
+//							},
+//						},
+//						SmtpServers: nutanix.ClusterV2NetworkSmtpServerArray{
+//							&nutanix.ClusterV2NetworkSmtpServerArgs{
+//								EmailAddress: pulumi.String("example.ex@exmple.com"),
+//								Servers: nutanix.ClusterV2NetworkSmtpServerServerArray{
+//									&nutanix.ClusterV2NetworkSmtpServerServerArgs{
+//										IpAddresses: nutanix.ClusterV2NetworkSmtpServerServerIpAddressArray{
+//											&nutanix.ClusterV2NetworkSmtpServerServerIpAddressArgs{
+//												Ipv4s: nutanix.ClusterV2NetworkSmtpServerServerIpAddressIpv4Array{
+//													&nutanix.ClusterV2NetworkSmtpServerServerIpAddressIpv4Args{
+//														Value: pulumi.String("10.xx.xx.xx"),
+//													},
+//												},
+//											},
+//										},
+//										Port:     pulumi.Int(123),
+//										Username: pulumi.String("example"),
+//										Password: pulumi.String("example!2134"),
+//									},
+//								},
+//								Type: pulumi.String("PLAIN"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// <!--End PulumiCodeChooser -->
+//
+// ## What happens when you do terraform destroy for nutanix_clusters_v2?  First thing, inorder to destroy the cluster from Terraform it need to be registered.
+//
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/createCluster).
 type ClusterV2 struct {
 	pulumi.CustomResourceState
 
 	BackupEligibilityScore pulumi.IntOutput `pulumi:"backupEligibilityScore"`
 	// - (Optional) The reference to a project.
-	Categories          pulumi.StringArrayOutput `pulumi:"categories"`
-	ClusterProfileExtId pulumi.StringOutput      `pulumi:"clusterProfileExtId"`
+	Categories pulumi.StringArrayOutput `pulumi:"categories"`
+	// - (Optional) The reference to a cluster profile.
+	ClusterProfileExtId pulumi.StringOutput `pulumi:"clusterProfileExtId"`
 	// - (Optional) Cluster configuration details.
 	Configs ClusterV2ConfigArrayOutput `pulumi:"configs"`
 	// - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
@@ -152,10 +367,10 @@ type ClusterV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// - (Optional) Network details of a cluster.
 	Networks ClusterV2NetworkArrayOutput `pulumi:"networks"`
-	// - (Optional) The reference to a node.
+	// - (Optional) The reference to a node and remove node parameters.
 	Nodes    ClusterV2NodeArrayOutput `pulumi:"nodes"`
 	TenantId pulumi.StringOutput      `pulumi:"tenantId"`
-	// - (Optional) The reference to a project.
+	// - (Optional) Upgrade status of a cluster.
 	//   Valid values are:
 	// - "CANCELLED"	The cluster upgrade is cancelled.
 	// - "FAILED"	The cluster upgrade failed.
@@ -202,8 +417,9 @@ func GetClusterV2(ctx *pulumi.Context,
 type clusterV2State struct {
 	BackupEligibilityScore *int `pulumi:"backupEligibilityScore"`
 	// - (Optional) The reference to a project.
-	Categories          []string `pulumi:"categories"`
-	ClusterProfileExtId *string  `pulumi:"clusterProfileExtId"`
+	Categories []string `pulumi:"categories"`
+	// - (Optional) The reference to a cluster profile.
+	ClusterProfileExtId *string `pulumi:"clusterProfileExtId"`
 	// - (Optional) Cluster configuration details.
 	Configs []ClusterV2Config `pulumi:"configs"`
 	// - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
@@ -218,10 +434,10 @@ type clusterV2State struct {
 	Name *string `pulumi:"name"`
 	// - (Optional) Network details of a cluster.
 	Networks []ClusterV2Network `pulumi:"networks"`
-	// - (Optional) The reference to a node.
+	// - (Optional) The reference to a node and remove node parameters.
 	Nodes    []ClusterV2Node `pulumi:"nodes"`
 	TenantId *string         `pulumi:"tenantId"`
-	// - (Optional) The reference to a project.
+	// - (Optional) Upgrade status of a cluster.
 	//   Valid values are:
 	// - "CANCELLED"	The cluster upgrade is cancelled.
 	// - "FAILED"	The cluster upgrade failed.
@@ -239,7 +455,8 @@ type clusterV2State struct {
 type ClusterV2State struct {
 	BackupEligibilityScore pulumi.IntPtrInput
 	// - (Optional) The reference to a project.
-	Categories          pulumi.StringArrayInput
+	Categories pulumi.StringArrayInput
+	// - (Optional) The reference to a cluster profile.
 	ClusterProfileExtId pulumi.StringPtrInput
 	// - (Optional) Cluster configuration details.
 	Configs ClusterV2ConfigArrayInput
@@ -255,10 +472,10 @@ type ClusterV2State struct {
 	Name pulumi.StringPtrInput
 	// - (Optional) Network details of a cluster.
 	Networks ClusterV2NetworkArrayInput
-	// - (Optional) The reference to a node.
+	// - (Optional) The reference to a node and remove node parameters.
 	Nodes    ClusterV2NodeArrayInput
 	TenantId pulumi.StringPtrInput
-	// - (Optional) The reference to a project.
+	// - (Optional) Upgrade status of a cluster.
 	//   Valid values are:
 	// - "CANCELLED"	The cluster upgrade is cancelled.
 	// - "FAILED"	The cluster upgrade failed.
@@ -280,6 +497,8 @@ func (ClusterV2State) ElementType() reflect.Type {
 type clusterV2Args struct {
 	// - (Optional) The reference to a project.
 	Categories []string `pulumi:"categories"`
+	// - (Optional) The reference to a cluster profile.
+	ClusterProfileExtId *string `pulumi:"clusterProfileExtId"`
 	// - (Optional) Cluster configuration details.
 	Configs []ClusterV2Config `pulumi:"configs"`
 	// - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
@@ -292,7 +511,7 @@ type clusterV2Args struct {
 	Name *string `pulumi:"name"`
 	// - (Optional) Network details of a cluster.
 	Networks []ClusterV2Network `pulumi:"networks"`
-	// - (Optional) The reference to a node.
+	// - (Optional) The reference to a node and remove node parameters.
 	Nodes []ClusterV2Node `pulumi:"nodes"`
 }
 
@@ -300,6 +519,8 @@ type clusterV2Args struct {
 type ClusterV2Args struct {
 	// - (Optional) The reference to a project.
 	Categories pulumi.StringArrayInput
+	// - (Optional) The reference to a cluster profile.
+	ClusterProfileExtId pulumi.StringPtrInput
 	// - (Optional) Cluster configuration details.
 	Configs ClusterV2ConfigArrayInput
 	// - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
@@ -312,7 +533,7 @@ type ClusterV2Args struct {
 	Name pulumi.StringPtrInput
 	// - (Optional) Network details of a cluster.
 	Networks ClusterV2NetworkArrayInput
-	// - (Optional) The reference to a node.
+	// - (Optional) The reference to a node and remove node parameters.
 	Nodes ClusterV2NodeArrayInput
 }
 
@@ -412,6 +633,7 @@ func (o ClusterV2Output) Categories() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterV2) pulumi.StringArrayOutput { return v.Categories }).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) The reference to a cluster profile.
 func (o ClusterV2Output) ClusterProfileExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterV2) pulumi.StringOutput { return v.ClusterProfileExtId }).(pulumi.StringOutput)
 }
@@ -457,7 +679,7 @@ func (o ClusterV2Output) Networks() ClusterV2NetworkArrayOutput {
 	return o.ApplyT(func(v *ClusterV2) ClusterV2NetworkArrayOutput { return v.Networks }).(ClusterV2NetworkArrayOutput)
 }
 
-// - (Optional) The reference to a node.
+// - (Optional) The reference to a node and remove node parameters.
 func (o ClusterV2Output) Nodes() ClusterV2NodeArrayOutput {
 	return o.ApplyT(func(v *ClusterV2) ClusterV2NodeArrayOutput { return v.Nodes }).(ClusterV2NodeArrayOutput)
 }
@@ -466,7 +688,7 @@ func (o ClusterV2Output) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterV2) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
-//   - (Optional) The reference to a project.
+//   - (Optional) Upgrade status of a cluster.
 //     Valid values are:
 //   - "CANCELLED"	The cluster upgrade is cancelled.
 //   - "FAILED"	The cluster upgrade failed.

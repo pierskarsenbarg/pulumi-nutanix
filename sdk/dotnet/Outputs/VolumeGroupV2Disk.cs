@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.VolumeGroupV2DiskDiskDataSourceReference> DiskDataSourceReferences;
         /// <summary>
-        /// - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+        /// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         /// </summary>
         public readonly int DiskSizeBytes;
         /// <summary>

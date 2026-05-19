@@ -256,7 +256,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name of the host.
         /// 
-        /// See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listDomainManagers).
+        /// See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listDomainManagers).
         /// </summary>
         public static Task<GetPcsV2Result> InvokeAsync(GetPcsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPcsV2Result>("nutanix:index/getPcsV2:getPcsV2", args ?? new GetPcsV2Args(), options.WithDefaults());
@@ -505,7 +505,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name of the host.
         /// 
-        /// See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listDomainManagers).
+        /// See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listDomainManagers).
         /// </summary>
         public static Output<GetPcsV2Result> Invoke(GetPcsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcsV2Result>("nutanix:index/getPcsV2:getPcsV2", args ?? new GetPcsV2InvokeArgs(), options.WithDefaults());
@@ -754,7 +754,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name of the host.
         /// 
-        /// See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0#tag/DomainManager/operation/listDomainManagers).
+        /// See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/DomainManager/operation/listDomainManagers).
         /// </summary>
         public static Output<GetPcsV2Result> Invoke(GetPcsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcsV2Result>("nutanix:index/getPcsV2:getPcsV2", args ?? new GetPcsV2InvokeArgs(), options.WithDefaults());

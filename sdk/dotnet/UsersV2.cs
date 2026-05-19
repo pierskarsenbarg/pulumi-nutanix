@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     public partial class UsersV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// -  Any additional attribute for the User.
+        /// -(Optional) Any additional attribute for the User.
         /// </summary>
         [Output("additionalAttributes")]
         public Output<ImmutableArray<Outputs.UsersV2AdditionalAttribute>> AdditionalAttributes { get; private set; } = null!;
@@ -41,31 +41,31 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// - Description of the user.
+        /// -( Optional ) Description of the user.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// - Display name for the User.
+        /// -(Optional) Display name for the User.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// - Email Id for the User.
+        /// -(Optional) Email Id for the User.
         /// </summary>
         [Output("emailId")]
         public Output<string> EmailId { get; private set; } = null!;
 
         /// <summary>
-        /// - A globally unique identifier of an instance that is suitable for external consumption.
+        /// -(Optional) External Identifier of the User.
         /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
-        /// - First name for the User.
+        /// -(Optional) First name for the User.
         /// </summary>
         [Output("firstName")]
         public Output<string> FirstName { get; private set; } = null!;
@@ -74,7 +74,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool> ForceResetPassword { get; private set; } = null!;
 
         /// <summary>
-        /// - Identifier of the IDP for the User.
+        /// -(Optional) Identifier of the IDP for the User.
         /// </summary>
         [Output("idpId")]
         public Output<string> IdpId { get; private set; } = null!;
@@ -86,7 +86,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> LastLoginTime { get; private set; } = null!;
 
         /// <summary>
-        /// - Last name for the User.
+        /// -(Optional) Last name for the User.
         /// </summary>
         [Output("lastName")]
         public Output<string> LastName { get; private set; } = null!;
@@ -104,41 +104,44 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.UsersV2Link>> Links { get; private set; } = null!;
 
         /// <summary>
-        /// - Default locale for the User.
+        /// -(Optional) Default locale for the User.
         /// </summary>
         [Output("locale")]
         public Output<string> Locale { get; private set; } = null!;
 
         /// <summary>
-        /// - Middle name for the User.
+        /// -(Optional) Middle name for the User.
         /// </summary>
         [Output("middleInitial")]
         public Output<string> MiddleInitial { get; private set; } = null!;
 
+        /// <summary>
+        /// -(Optional) Password for the User.
+        /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
-        /// - Default Region for the User.
+        /// -(Optional) Default Region for the User.
         /// </summary>
         [Output("region")]
         public Output<string> Region { get; private set; } = null!;
 
         /// <summary>
-        /// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        /// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        /// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
         /// Type of the User.
         /// </summary>
         [Output("userType")]
         public Output<string> UserType { get; private set; } = null!;
 
         /// <summary>
-        /// - Identifier for the User in the form an email address.
+        /// -(Required) Identifier for the User in the form an email address.
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
@@ -167,6 +170,10 @@ namespace PiersKarsenbarg.Nutanix
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-nutanix",
+                AdditionalSecretOutputs =
+                {
+                    "password",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -194,7 +201,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.UsersV2AdditionalAttributeArgs>? _additionalAttributes;
 
         /// <summary>
-        /// -  Any additional attribute for the User.
+        /// -(Optional) Any additional attribute for the User.
         /// </summary>
         public InputList<Inputs.UsersV2AdditionalAttributeArgs> AdditionalAttributes
         {
@@ -203,25 +210,25 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - Description of the user.
+        /// -( Optional ) Description of the user.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - Display name for the User.
+        /// -(Optional) Display name for the User.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// - Email Id for the User.
+        /// -(Optional) Email Id for the User.
         /// </summary>
         [Input("emailId")]
         public Input<string>? EmailId { get; set; }
 
         /// <summary>
-        /// - First name for the User.
+        /// -(Optional) First name for the User.
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
@@ -230,53 +237,66 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? ForceResetPassword { get; set; }
 
         /// <summary>
-        /// - Identifier of the IDP for the User.
+        /// -(Optional) Identifier of the IDP for the User.
         /// </summary>
         [Input("idpId")]
         public Input<string>? IdpId { get; set; }
 
         /// <summary>
-        /// - Last name for the User.
+        /// -(Optional) Last name for the User.
         /// </summary>
         [Input("lastName")]
         public Input<string>? LastName { get; set; }
 
         /// <summary>
-        /// - Default locale for the User.
+        /// -(Optional) Default locale for the User.
         /// </summary>
         [Input("locale")]
         public Input<string>? Locale { get; set; }
 
         /// <summary>
-        /// - Middle name for the User.
+        /// -(Optional) Middle name for the User.
         /// </summary>
         [Input("middleInitial")]
         public Input<string>? MiddleInitial { get; set; }
 
         [Input("password")]
-        public Input<string>? Password { get; set; }
+        private Input<string>? _password;
 
         /// <summary>
-        /// - Default Region for the User.
+        /// -(Optional) Password for the User.
+        /// </summary>
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// -(Optional) Default Region for the User.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        /// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        /// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
         /// Type of the User.
         /// </summary>
         [Input("userType", required: true)]
         public Input<string> UserType { get; set; } = null!;
 
         /// <summary>
-        /// - Identifier for the User in the form an email address.
+        /// -(Required) Identifier for the User in the form an email address.
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;
@@ -293,7 +313,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.UsersV2AdditionalAttributeGetArgs>? _additionalAttributes;
 
         /// <summary>
-        /// -  Any additional attribute for the User.
+        /// -(Optional) Any additional attribute for the User.
         /// </summary>
         public InputList<Inputs.UsersV2AdditionalAttributeGetArgs> AdditionalAttributes
         {
@@ -326,31 +346,31 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// - Description of the user.
+        /// -( Optional ) Description of the user.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - Display name for the User.
+        /// -(Optional) Display name for the User.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// - Email Id for the User.
+        /// -(Optional) Email Id for the User.
         /// </summary>
         [Input("emailId")]
         public Input<string>? EmailId { get; set; }
 
         /// <summary>
-        /// - A globally unique identifier of an instance that is suitable for external consumption.
+        /// -(Optional) External Identifier of the User.
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
         /// <summary>
-        /// - First name for the User.
+        /// -(Optional) First name for the User.
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
@@ -359,7 +379,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? ForceResetPassword { get; set; }
 
         /// <summary>
-        /// - Identifier of the IDP for the User.
+        /// -(Optional) Identifier of the IDP for the User.
         /// </summary>
         [Input("idpId")]
         public Input<string>? IdpId { get; set; }
@@ -371,7 +391,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? LastLoginTime { get; set; }
 
         /// <summary>
-        /// - Last name for the User.
+        /// -(Optional) Last name for the User.
         /// </summary>
         [Input("lastName")]
         public Input<string>? LastName { get; set; }
@@ -395,41 +415,54 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - Default locale for the User.
+        /// -(Optional) Default locale for the User.
         /// </summary>
         [Input("locale")]
         public Input<string>? Locale { get; set; }
 
         /// <summary>
-        /// - Middle name for the User.
+        /// -(Optional) Middle name for the User.
         /// </summary>
         [Input("middleInitial")]
         public Input<string>? MiddleInitial { get; set; }
 
         [Input("password")]
-        public Input<string>? Password { get; set; }
+        private Input<string>? _password;
 
         /// <summary>
-        /// - Default Region for the User.
+        /// -(Optional) Password for the User.
+        /// </summary>
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// -(Optional) Default Region for the User.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+        /// -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+        /// -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
         /// Type of the User.
         /// </summary>
         [Input("userType")]
         public Input<string>? UserType { get; set; }
 
         /// <summary>
-        /// - Identifier for the User in the form an email address.
+        /// -(Required) Identifier for the User in the form an email address.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

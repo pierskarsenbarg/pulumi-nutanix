@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
+from . import outputs
 
 __all__ = [
     'GetUserGroupV2Result',
@@ -26,7 +27,7 @@ class GetUserGroupV2Result:
     """
     A collection of values returned by getUserGroupV2.
     """
-    def __init__(__self__, created_by=None, created_time=None, distinguished_name=None, ext_id=None, group_type=None, id=None, idp_id=None, last_updated_time=None, name=None):
+    def __init__(__self__, created_by=None, created_time=None, distinguished_name=None, ext_id=None, group_type=None, id=None, idp_id=None, last_updated_time=None, links=None, name=None, tenant_id=None):
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -51,9 +52,15 @@ class GetUserGroupV2Result:
         if last_updated_time and not isinstance(last_updated_time, str):
             raise TypeError("Expected argument 'last_updated_time' to be a str")
         pulumi.set(__self__, "last_updated_time", last_updated_time)
+        if links and not isinstance(links, list):
+            raise TypeError("Expected argument 'links' to be a list")
+        pulumi.set(__self__, "links", links)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if tenant_id and not isinstance(tenant_id, str):
+            raise TypeError("Expected argument 'tenant_id' to be a str")
+        pulumi.set(__self__, "tenant_id", tenant_id)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
@@ -121,11 +128,27 @@ class GetUserGroupV2Result:
 
     @_builtins.property
     @pulumi.getter
+    def links(self) -> Sequence['outputs.GetUserGroupV2LinkResult']:
+        """
+        - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        """
+        return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> _builtins.str:
         """
         - Common Name of the User Group.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        """
+        A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        """
+        return pulumi.get(self, "tenant_id")
 
 
 class AwaitableGetUserGroupV2Result(GetUserGroupV2Result):
@@ -142,7 +165,9 @@ class AwaitableGetUserGroupV2Result(GetUserGroupV2Result):
             id=self.id,
             idp_id=self.idp_id,
             last_updated_time=self.last_updated_time,
-            name=self.name)
+            links=self.links,
+            name=self.name,
+            tenant_id=self.tenant_id)
 
 
 def get_user_group_v2(ext_id: Optional[_builtins.str] = None,
@@ -178,7 +203,9 @@ def get_user_group_v2(ext_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         idp_id=pulumi.get(__ret__, 'idp_id'),
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
-        name=pulumi.get(__ret__, 'name'))
+        links=pulumi.get(__ret__, 'links'),
+        name=pulumi.get(__ret__, 'name'),
+        tenant_id=pulumi.get(__ret__, 'tenant_id'))
 def get_user_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupV2Result]:
     """
@@ -211,4 +238,6 @@ def get_user_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = Non
         id=pulumi.get(__response__, 'id'),
         idp_id=pulumi.get(__response__, 'idp_id'),
         last_updated_time=pulumi.get(__response__, 'last_updated_time'),
-        name=pulumi.get(__response__, 'name')))
+        links=pulumi.get(__response__, 'links'),
+        name=pulumi.get(__response__, 'name'),
+        tenant_id=pulumi.get(__response__, 'tenant_id')))

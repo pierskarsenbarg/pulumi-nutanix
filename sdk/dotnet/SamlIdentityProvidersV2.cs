@@ -113,13 +113,13 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<string>> CustomAttributes { get; private set; } = null!;
 
         [Output("emailAttribute")]
-        public Output<string?> EmailAttribute { get; private set; } = null!;
+        public Output<string> EmailAttribute { get; private set; } = null!;
 
         /// <summary>
         /// - It will be used as Issuer in SAML authnRequest.
         /// </summary>
         [Output("entityIssuer")]
-        public Output<string?> EntityIssuer { get; private set; } = null!;
+        public Output<string> EntityIssuer { get; private set; } = null!;
 
         /// <summary>
         /// The External Identifier of the User Group.
@@ -128,13 +128,13 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         [Output("groupsAttribute")]
-        public Output<string?> GroupsAttribute { get; private set; } = null!;
+        public Output<string> GroupsAttribute { get; private set; } = null!;
 
         /// <summary>
         /// - Delimiter is used to split the value of attribute into multiple groups.
         /// </summary>
         [Output("groupsDelim")]
-        public Output<string?> GroupsDelim { get; private set; } = null!;
+        public Output<string> GroupsDelim { get; private set; } = null!;
 
         [Output("idpMetadataUrl")]
         public Output<string> IdpMetadataUrl { get; private set; } = null!;
@@ -152,7 +152,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - Flag indicating signing of SAML authnRequests.
         /// </summary>
         [Output("isSignedAuthnReqEnabled")]
-        public Output<bool?> IsSignedAuthnReqEnabled { get; private set; } = null!;
+        public Output<bool> IsSignedAuthnReqEnabled { get; private set; } = null!;
 
         /// <summary>
         /// - Last updated time of the SAML Identity Provider.
@@ -167,7 +167,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> Name { get; private set; } = null!;
 
         [Output("usernameAttribute")]
-        public Output<string?> UsernameAttribute { get; private set; } = null!;
+        public Output<string> UsernameAttribute { get; private set; } = null!;
 
 
         /// <summary>

@@ -15,15 +15,18 @@ from .category_key import *
 from .category_v2 import *
 from .category_value import *
 from .cluster_add_node_v2 import *
+from .cluster_profile_v2 import *
 from .cluster_v2 import *
 from .clusters_discover_unconfigured_nodes_v2 import *
 from .clusters_unconfigured_node_networks_v2 import *
 from .deploy_templates_v2 import *
 from .directory_services_v2 import *
+from .entity_group_v2 import *
 from .floating_ip import *
 from .floating_ip_v2 import *
 from .foundation_central_api_keys import *
 from .foundation_central_image_cluster import *
+from .foundation_central_onboard_nodes import *
 from .foundation_image import *
 from .foundation_image_nodes import *
 from .foundation_ipmi_config import *
@@ -43,11 +46,15 @@ from .get_category_v2 import *
 from .get_certificate_v2 import *
 from .get_certificates_v2 import *
 from .get_cluster import *
+from .get_cluster_profile_v2 import *
+from .get_cluster_profiles_v2 import *
 from .get_cluster_v2 import *
 from .get_clusters import *
 from .get_clusters_v2 import *
 from .get_directory_service_v2 import *
 from .get_directory_services_v2 import *
+from .get_entity_group_v2 import *
+from .get_entity_groups_v2 import *
 from .get_floating_ip import *
 from .get_floating_ip_v2 import *
 from .get_floating_ips import *
@@ -66,6 +73,8 @@ from .get_host import *
 from .get_host_v2 import *
 from .get_hosts import *
 from .get_hosts_v2 import *
+from .get_iam_entities_v2 import *
+from .get_iam_entity_v2 import *
 from .get_image import *
 from .get_image_placement_policies_v2 import *
 from .get_image_placement_policy_v2 import *
@@ -77,6 +86,8 @@ from .get_karbon_cluster_ssh import *
 from .get_karbon_clusters import *
 from .get_karbon_private_registries import *
 from .get_karbon_private_registry import *
+from .get_key_management_server_v2 import *
+from .get_key_management_servers_v2 import *
 from .get_lcm_config_v2 import *
 from .get_lcm_entities_v2 import *
 from .get_lcm_entity_v2 import *
@@ -105,7 +116,10 @@ from .get_ndb_tags import *
 from .get_ndb_time_machine import *
 from .get_ndb_time_machines import *
 from .get_ndb_tms_capability import *
+from .get_network_function_v2 import *
+from .get_network_functions_v2 import *
 from .get_network_security_policies_v2 import *
+from .get_network_security_policy_rules_v2 import *
 from .get_network_security_policy_v2 import *
 from .get_network_security_rule import *
 from .get_ngt_configuration_v2 import *
@@ -113,6 +127,8 @@ from .get_object_store_v2 import *
 from .get_object_stores_v2 import *
 from .get_operation_v2 import *
 from .get_operations_v2 import *
+from .get_ova_v2 import *
+from .get_ovas_v2 import *
 from .get_pbr import *
 from .get_pbr_v2 import *
 from .get_pbrs import *
@@ -155,14 +171,19 @@ from .get_service_group import *
 from .get_service_group_v2 import *
 from .get_service_groups import *
 from .get_service_groups_v2 import *
+from .get_ssl_certificate_v2 import *
 from .get_static_routes import *
+from .get_stigs_v2 import *
 from .get_storage_container_stats_info_v2 import *
 from .get_storage_container_v2 import *
 from .get_storage_containers_v2 import *
+from .get_storage_policies_v2 import *
+from .get_storage_policy_v2 import *
 from .get_subnet import *
 from .get_subnet_v2 import *
 from .get_subnets import *
 from .get_subnets_v2 import *
+from .get_system_user_passwords_v2 import *
 from .get_template_v2 import *
 from .get_templates_v2 import *
 from .get_user import *
@@ -178,6 +199,10 @@ from .get_users_v2 import *
 from .get_virtual_machine import *
 from .get_virtual_machine_v2 import *
 from .get_virtual_machines_v2 import *
+from .get_vm_anti_affinity_policies_v2 import *
+from .get_vm_anti_affinity_policy_v2 import *
+from .get_vm_host_affinity_policies_v2 import *
+from .get_vm_host_affinity_policy_v2 import *
 from .get_vm_recovery_point_info_v2 import *
 from .get_volume_group_disk_v2 import *
 from .get_volume_group_disks_v2 import *
@@ -195,6 +220,7 @@ from .images_v2 import *
 from .karbon_cluster import *
 from .karbon_private_registry import *
 from .karbon_worker_nodepool import *
+from .key_management_server_v2 import *
 from .lcm_config_v2 import *
 from .lcm_perform_inventory_v2 import *
 from .lcm_prechecks_v2 import *
@@ -222,6 +248,7 @@ from .ndb_software_version_profile import *
 from .ndb_stretched_vlan import *
 from .ndb_tag import *
 from .ndb_tms_cluster import *
+from .network_function_v2 import *
 from .network_security_policy_v2 import *
 from .network_security_rule import *
 from .ngt_insert_iso_v2 import *
@@ -229,6 +256,10 @@ from .ngt_installation_v2 import *
 from .ngt_upgrade_v2 import *
 from .object_store_certificate_v2 import *
 from .object_store_v2 import *
+from .ova_download_v2 import *
+from .ova_v2 import *
+from .ova_vm_deploy_v2 import *
+from .password_change_request_v2 import *
 from .pbr import *
 from .pbr_v2 import *
 from .pc_backup_target_v2 import *
@@ -258,8 +289,10 @@ from .self_service_app_recovery_point import *
 from .self_service_app_restore import *
 from .service_group import *
 from .service_groups_v2 import *
+from .ssl_certificate_v2 import *
 from .static_routes import *
 from .storage_containers_v2 import *
+from .storage_policy_v2 import *
 from .subnet import *
 from .subnet_v2 import *
 from .template_guest_os_actions_v2 import *
@@ -272,9 +305,11 @@ from .user_key_v2 import *
 from .users_v2 import *
 from .virtual_machine import *
 from .virtual_machine_v2 import *
+from .vm_anti_affinity_policy_v2 import *
 from .vm_cdrom_insert_eject_v2 import *
 from .vm_clone_v2 import *
 from .vm_gc_update_v2 import *
+from .vm_host_affinity_policy_v2 import *
 from .vm_network_device_assign_ip_v2 import *
 from .vm_network_device_migrate_v2 import *
 from .vm_revert_v2 import *
@@ -372,6 +407,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/clusterProfileV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/clusterProfileV2:ClusterProfileV2": "ClusterProfileV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/clusterV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -412,6 +455,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/entityGroupV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/entityGroupV2:EntityGroupV2": "EntityGroupV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/floatingIp",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -440,6 +491,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster": "FoundationCentralImageCluster"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/foundationCentralOnboardNodes",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/foundationCentralOnboardNodes:FoundationCentralOnboardNodes": "FoundationCentralOnboardNodes"
   }
  },
  {
@@ -512,6 +571,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool": "KarbonWorkerNodepool"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/keyManagementServerV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/keyManagementServerV2:KeyManagementServerV2": "KeyManagementServerV2"
   }
  },
  {
@@ -732,6 +799,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/networkFunctionV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/networkFunctionV2:NetworkFunctionV2": "NetworkFunctionV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/networkSecurityPolicyV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -784,6 +859,38 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/objectStoreV2:ObjectStoreV2": "ObjectStoreV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ovaDownloadV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ovaDownloadV2:OvaDownloadV2": "OvaDownloadV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ovaV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ovaV2:OvaV2": "OvaV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ovaVmDeployV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ovaVmDeployV2:OvaVmDeployV2": "OvaVmDeployV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/passwordChangeRequestV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/passwordChangeRequestV2:PasswordChangeRequestV2": "PasswordChangeRequestV2"
   }
  },
  {
@@ -1012,6 +1119,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/sslCertificateV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/sslCertificateV2:SslCertificateV2": "SslCertificateV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/staticRoutes",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -1024,6 +1139,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/storageContainersV2:StorageContainersV2": "StorageContainersV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/storagePolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/storagePolicyV2:StoragePolicyV2": "StoragePolicyV2"
   }
  },
  {
@@ -1124,6 +1247,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/vmAntiAffinityPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmAntiAffinityPolicyV2:VmAntiAffinityPolicyV2": "VmAntiAffinityPolicyV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/vmCdromInsertEjectV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -1144,6 +1275,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/vmGcUpdateV2:VmGcUpdateV2": "VmGcUpdateV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmHostAffinityPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmHostAffinityPolicyV2:VmHostAffinityPolicyV2": "VmHostAffinityPolicyV2"
   }
  },
  {

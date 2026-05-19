@@ -14,7 +14,16 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class UserKeyV2KeyDetailApiKeyDetailArgs : global::Pulumi.ResourceArgs
     {
         [Input("apiKey")]
-        public Input<string>? ApiKey { get; set; }
+        private Input<string>? _apiKey;
+        public Input<string>? ApiKey
+        {
+            get => _apiKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _apiKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public UserKeyV2KeyDetailApiKeyDetailArgs()
         {

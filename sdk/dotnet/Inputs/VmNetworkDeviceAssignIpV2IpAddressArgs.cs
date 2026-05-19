@@ -22,7 +22,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// - Ip address.
         /// 
-        /// See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/assignIpById).
+        /// See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/assignIpById).
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

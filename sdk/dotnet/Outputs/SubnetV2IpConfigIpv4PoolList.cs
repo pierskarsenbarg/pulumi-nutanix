@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2IpConfigIpv4PoolList
     {
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpConfigIpv4PoolListEndIp> EndIps;
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpConfigIpv4PoolListStartIp> StartIps;
 
         [OutputConstructor]

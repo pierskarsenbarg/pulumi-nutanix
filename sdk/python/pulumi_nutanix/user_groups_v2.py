@@ -421,7 +421,7 @@ class UserGroupsV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="distinguishedName")
-    def distinguished_name(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def distinguished_name(self) -> pulumi.Output[_builtins.str]:
         """
         -(Optional) Identifier for the User Group in the form of a distinguished name.
         """

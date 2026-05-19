@@ -79,7 +79,7 @@ export interface GetNetworkSecurityPolicyV2Result {
      */
     readonly rules: outputs.GetNetworkSecurityPolicyV2Rule[];
     /**
-     * Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+     * Defines the scope of the policy. Values include "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
      */
     readonly scope: string;
     /**

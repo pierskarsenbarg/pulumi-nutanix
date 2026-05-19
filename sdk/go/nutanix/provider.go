@@ -18,6 +18,10 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
+	// API key for Nutanix Prism authentication. Can be used as an
+	// alternative to username/password. When set, the X-Ntnx-Api-Key header
+	// will be used instead of Basic Authentication.
+	ApiKey pulumi.StringPtrOutput `pulumi:"apiKey"`
 	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 	// note, this is never the data services VIP, and should not be an
 	// individual CVM address, as this would cause calls to fail during
@@ -48,6 +52,16 @@ func NewProvider(ctx *pulumi.Context,
 		args = &ProviderArgs{}
 	}
 
+	if args.ApiKey != nil {
+		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringPtrInput)
+	}
+	if args.CustomHeaders != nil {
+		args.CustomHeaders = pulumi.ToSecret(args.CustomHeaders).(pulumi.StringMapInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"apiKey",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Provider
 	err := ctx.RegisterResource("pulumi:providers:nutanix", name, args, &resource, opts...)
@@ -58,6 +72,16 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
+	// API key for Nutanix Prism authentication. Can be used as an
+	// alternative to username/password. When set, the X-Ntnx-Api-Key header
+	// will be used instead of Basic Authentication.
+	ApiKey *string `pulumi:"apiKey"`
+	// Custom HTTP headers to add to all API requests. Useful for
+	// environments that require additional headers such as Cloudflare Access
+	// service tokens. Headers can also be set via environment variables with
+	// the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+	// becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+	CustomHeaders map[string]string `pulumi:"customHeaders"`
 	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 	// note, this is never the data services VIP, and should not be an
 	// individual CVM address, as this would cause calls to fail during
@@ -89,6 +113,16 @@ type providerArgs struct {
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
+	// API key for Nutanix Prism authentication. Can be used as an
+	// alternative to username/password. When set, the X-Ntnx-Api-Key header
+	// will be used instead of Basic Authentication.
+	ApiKey pulumi.StringPtrInput
+	// Custom HTTP headers to add to all API requests. Useful for
+	// environments that require additional headers such as Cloudflare Access
+	// service tokens. Headers can also be set via environment variables with
+	// the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
+	// becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+	CustomHeaders pulumi.StringMapInput
 	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 	// note, this is never the data services VIP, and should not be an
 	// individual CVM address, as this would cause calls to fail during
@@ -176,6 +210,13 @@ func (o ProviderOutput) ToProviderOutput() ProviderOutput {
 
 func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) ProviderOutput {
 	return o
+}
+
+// API key for Nutanix Prism authentication. Can be used as an
+// alternative to username/password. When set, the X-Ntnx-Api-Key header
+// will be used instead of Basic Authentication.
+func (o ProviderOutput) ApiKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ApiKey }).(pulumi.StringPtrOutput)
 }
 
 // URL for Nutanix Prism (e.g IP or FQDN for cluster VIP

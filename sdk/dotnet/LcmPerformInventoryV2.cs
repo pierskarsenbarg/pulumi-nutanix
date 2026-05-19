@@ -40,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Cluster uuid on which the resource is present or operation is being performed.
         /// 
-        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.0#tag/Inventory/operation/performInventory)
+        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Inventory/operation/performInventory)
         /// </summary>
         [Output("xClusterId")]
         public Output<string?> XClusterId { get; private set; } = null!;
@@ -95,7 +95,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Cluster uuid on which the resource is present or operation is being performed.
         /// 
-        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.0#tag/Inventory/operation/performInventory)
+        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Inventory/operation/performInventory)
         /// </summary>
         [Input("xClusterId")]
         public Input<string>? XClusterId { get; set; }
@@ -111,7 +111,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Cluster uuid on which the resource is present or operation is being performed.
         /// 
-        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.0#tag/Inventory/operation/performInventory)
+        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Inventory/operation/performInventory)
         /// </summary>
         [Input("xClusterId")]
         public Input<string>? XClusterId { get; set; }

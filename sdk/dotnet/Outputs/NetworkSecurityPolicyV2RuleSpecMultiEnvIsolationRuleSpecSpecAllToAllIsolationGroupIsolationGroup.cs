@@ -15,14 +15,29 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup
     {
         /// <summary>
+        /// Entity type for the group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
+        /// </summary>
+        public readonly string? GroupCategoryAssociatedEntityType;
+        /// <summary>
         /// External identifiers of categories belonging to the isolation group.
         /// </summary>
         public readonly ImmutableArray<string> GroupCategoryReferences;
+        /// <summary>
+        /// Reference to the entity group for the isolation group.
+        /// </summary>
+        public readonly string? GroupEntityGroupReference;
 
         [OutputConstructor]
-        private NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup(ImmutableArray<string> groupCategoryReferences)
+        private NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup(
+            string? groupCategoryAssociatedEntityType,
+
+            ImmutableArray<string> groupCategoryReferences,
+
+            string? groupEntityGroupReference)
         {
+            GroupCategoryAssociatedEntityType = groupCategoryAssociatedEntityType;
             GroupCategoryReferences = groupCategoryReferences;
+            GroupEntityGroupReference = groupEntityGroupReference;
         }
     }
 }

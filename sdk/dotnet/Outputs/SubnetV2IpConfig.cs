@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2IpConfig
     {
+        /// <summary>
+        /// IP V4 configuration.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpConfigIpv4> Ipv4s;
+        /// <summary>
+        /// IP V6 configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2IpConfigIpv6> Ipv6s;
 
         [OutputConstructor]

@@ -247,7 +247,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/IscsiClients/operation/listIscsiClients).
+        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>
         public static Task<GetVolumeIscsiClientsV2Result> InvokeAsync(GetVolumeIscsiClientsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeIscsiClientsV2Result>("nutanix:index/getVolumeIscsiClientsV2:getVolumeIscsiClientsV2", args ?? new GetVolumeIscsiClientsV2Args(), options.WithDefaults());
@@ -487,7 +487,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/IscsiClients/operation/listIscsiClients).
+        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>
         public static Output<GetVolumeIscsiClientsV2Result> Invoke(GetVolumeIscsiClientsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientsV2Result>("nutanix:index/getVolumeIscsiClientsV2:getVolumeIscsiClientsV2", args ?? new GetVolumeIscsiClientsV2InvokeArgs(), options.WithDefaults());
@@ -727,7 +727,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// 
         /// 
-        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/IscsiClients/operation/listIscsiClients).
+        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>
         public static Output<GetVolumeIscsiClientsV2Result> Invoke(GetVolumeIscsiClientsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientsV2Result>("nutanix:index/getVolumeIscsiClientsV2:getVolumeIscsiClientsV2", args ?? new GetVolumeIscsiClientsV2InvokeArgs(), options.WithDefaults());

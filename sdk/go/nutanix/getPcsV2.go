@@ -172,7 +172,7 @@ import (
 //
 // * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: - The fully qualified domain name of the host.
 //
-// See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listDomainManagers).
+// See detailed information in [Nutanix List PCs V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listDomainManagers).
 func GetPcsV2(ctx *pulumi.Context, args *GetPcsV2Args, opts ...pulumi.InvokeOption) (*GetPcsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPcsV2Result

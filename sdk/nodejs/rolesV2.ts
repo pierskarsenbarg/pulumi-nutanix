@@ -93,7 +93,7 @@ export class RolesV2 extends pulumi.CustomResource {
     /**
      * - Description of the Role.
      */
-    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * -(Required) The display name for the Role.
      */

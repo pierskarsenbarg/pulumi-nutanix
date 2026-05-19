@@ -249,7 +249,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of address
         /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Task<GetVpcsV2Result> InvokeAsync(GetVpcsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2Args(), options.WithDefaults());
@@ -491,7 +491,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of address
         /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Output<GetVpcsV2Result> Invoke(GetVpcsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2InvokeArgs(), options.WithDefaults());
@@ -733,7 +733,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of address
         /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Output<GetVpcsV2Result> Invoke(GetVpcsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2InvokeArgs(), options.WithDefaults());

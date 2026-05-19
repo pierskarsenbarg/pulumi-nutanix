@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VirtualSwitchCluster
     {
+        /// <summary>
+        /// Reference ExtId for the cluster. This is a required parameter on Prism Element ; and is optional on Prism Central
+        /// </summary>
         public readonly string? ExtId;
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchClusterGatewayIpAddress> GatewayIpAddresses;
+        /// <summary>
+        /// Host configuration array
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchClusterHost> Hosts;
 
         [OutputConstructor]

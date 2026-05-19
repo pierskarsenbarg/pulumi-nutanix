@@ -74,7 +74,7 @@ type RolesV2 struct {
 	// - The creation time of the Role.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
 	// - Description of the Role.
-	Description pulumi.StringPtrOutput `pulumi:"description"`
+	Description pulumi.StringOutput `pulumi:"description"`
 	// -(Required) The display name for the Role.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// - A globally unique identifier of an instance that is suitable for external consumption.
@@ -346,8 +346,8 @@ func (o RolesV2Output) CreatedTime() pulumi.StringOutput {
 }
 
 // - Description of the Role.
-func (o RolesV2Output) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *RolesV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+func (o RolesV2Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *RolesV2) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // -(Required) The display name for the Role.

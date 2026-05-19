@@ -18,10 +18,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// The script to use for cloud-init.
         /// * `cloud_init_script.user_data`: (Optional) user data object
         /// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
-        /// 
-        /// 
-        /// 
-        /// See detailed information in [Nutanix Create Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/createTemplate).
         /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript> CloudInitScripts;
         /// <summary>

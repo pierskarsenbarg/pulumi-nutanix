@@ -22,7 +22,27 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - (Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         /// </summary>
         public readonly ImmutableArray<Outputs.ClusterV2NodeNodeListHostIp> HostIps;
+        public readonly string? HypervisorHostname;
+        public readonly bool? IsComputeOnly;
+        public readonly bool? IsLightCompute;
+        public readonly bool? IsNeverScheduleable;
+        public readonly bool? IsNosCompatible;
         public readonly string? NodeUuid;
+        /// <summary>
+        /// - (Optional, default false) Flag to indicate if add node operation needs to be skipped during node addition.
+        /// </summary>
+        public readonly bool? ShouldSkipAddNode;
+        public readonly bool? ShouldSkipDiscovery;
+        /// <summary>
+        /// - (Optional, default false) Flag to indicate if host networking needs to be skipped during node addition.
+        /// </summary>
+        public readonly bool? ShouldSkipHostNetworking;
+        public readonly bool? ShouldSkipImaging;
+        /// <summary>
+        /// - (Optional, default false) Flag to indicate if pre expand checks needs to be skipped during node addition.
+        /// </summary>
+        public readonly bool? ShouldSkipPreExpandChecks;
+        public readonly bool? ShouldValidateRackAwareness;
 
         [OutputConstructor]
         private ClusterV2NodeNodeList(
@@ -30,11 +50,44 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.ClusterV2NodeNodeListHostIp> hostIps,
 
-            string? nodeUuid)
+            string? hypervisorHostname,
+
+            bool? isComputeOnly,
+
+            bool? isLightCompute,
+
+            bool? isNeverScheduleable,
+
+            bool? isNosCompatible,
+
+            string? nodeUuid,
+
+            bool? shouldSkipAddNode,
+
+            bool? shouldSkipDiscovery,
+
+            bool? shouldSkipHostNetworking,
+
+            bool? shouldSkipImaging,
+
+            bool? shouldSkipPreExpandChecks,
+
+            bool? shouldValidateRackAwareness)
         {
             ControllerVmIps = controllerVmIps;
             HostIps = hostIps;
+            HypervisorHostname = hypervisorHostname;
+            IsComputeOnly = isComputeOnly;
+            IsLightCompute = isLightCompute;
+            IsNeverScheduleable = isNeverScheduleable;
+            IsNosCompatible = isNosCompatible;
             NodeUuid = nodeUuid;
+            ShouldSkipAddNode = shouldSkipAddNode;
+            ShouldSkipDiscovery = shouldSkipDiscovery;
+            ShouldSkipHostNetworking = shouldSkipHostNetworking;
+            ShouldSkipImaging = shouldSkipImaging;
+            ShouldSkipPreExpandChecks = shouldSkipPreExpandChecks;
+            ShouldValidateRackAwareness = shouldValidateRackAwareness;
         }
     }
 }

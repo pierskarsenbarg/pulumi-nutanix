@@ -119,6 +119,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<bool>? RdmaPassthrough { get; set; }
 
         /// <summary>
+        /// JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
+        /// ```
+        /// server_configuration_data = jsonencode({
+        /// intersight_data = {
+        /// organization = "default"
+        /// }
+        /// })
+        /// ```
+        /// </summary>
+        [Input("serverConfigurationData")]
+        public Input<string>? ServerConfigurationData { get; set; }
+
+        /// <summary>
         /// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
         /// </summary>
         [Input("useExistingNetworkSettings")]

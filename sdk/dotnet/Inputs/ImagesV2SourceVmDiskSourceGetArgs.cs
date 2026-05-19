@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class ImagesV2SourceVmDiskSourceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The external identifier of VM Disk.
+        /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 

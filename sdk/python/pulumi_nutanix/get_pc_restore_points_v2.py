@@ -311,7 +311,7 @@ def get_pc_restore_points_v2(filter: Optional[_builtins.str] = None,
 
     - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: - The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listRestorePoints).
+    See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listRestorePoints).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
@@ -537,7 +537,7 @@ def get_pc_restore_points_v2_output(filter: pulumi.Input[Optional[Optional[_buil
 
     - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: - The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/listRestorePoints).
+    See detailed information in [Nutanix List Restore Points V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/listRestorePoints).
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.

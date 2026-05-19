@@ -27,7 +27,7 @@ class GetVirtualMachineV2Result:
     """
     A collection of values returned by getVirtualMachineV2.
     """
-    def __init__(__self__, apc_configs=None, availability_zones=None, bios_uuid=None, boot_configs=None, categories=None, cd_roms=None, clusters=None, create_time=None, description=None, disks=None, enabled_cpu_features=None, ext_id=None, generation_uuid=None, gpuses=None, guest_customizations=None, guest_tools=None, hardware_clock_timezone=None, hosts=None, id=None, is_agent_vm=None, is_branding_enabled=None, is_cpu_hotplug_enabled=None, is_cpu_passthrough_enabled=None, is_gpu_console_enabled=None, is_memory_overcommit_enabled=None, is_scsi_controller_enabled=None, is_vcpu_hard_pinning_enabled=None, is_vga_console_enabled=None, machine_type=None, memory_size_bytes=None, name=None, nics=None, num_cores_per_socket=None, num_numa_nodes=None, num_sockets=None, num_threads_per_core=None, ownership_infos=None, power_state=None, protection_policy_states=None, protection_type=None, serial_ports=None, sources=None, storage_configs=None, update_time=None, vtpm_configs=None):
+    def __init__(__self__, apc_configs=None, availability_zones=None, bios_uuid=None, boot_configs=None, categories=None, cd_roms=None, clusters=None, create_time=None, description=None, disks=None, enabled_cpu_features=None, ext_id=None, generation_uuid=None, gpuses=None, guest_customizations=None, guest_tools=None, hardware_clock_timezone=None, hosts=None, id=None, is_agent_vm=None, is_branding_enabled=None, is_cpu_hotplug_enabled=None, is_cpu_passthrough_enabled=None, is_gpu_console_enabled=None, is_memory_overcommit_enabled=None, is_scsi_controller_enabled=None, is_vcpu_hard_pinning_enabled=None, is_vga_console_enabled=None, machine_type=None, memory_size_bytes=None, name=None, nics=None, num_cores_per_socket=None, num_numa_nodes=None, num_sockets=None, num_threads_per_core=None, ownership_infos=None, power_state=None, projects=None, protection_policy_states=None, protection_type=None, serial_ports=None, sources=None, storage_configs=None, update_time=None, vtpm_configs=None):
         if apc_configs and not isinstance(apc_configs, list):
             raise TypeError("Expected argument 'apc_configs' to be a list")
         pulumi.set(__self__, "apc_configs", apc_configs)
@@ -142,6 +142,9 @@ class GetVirtualMachineV2Result:
         if power_state and not isinstance(power_state, str):
             raise TypeError("Expected argument 'power_state' to be a str")
         pulumi.set(__self__, "power_state", power_state)
+        if projects and not isinstance(projects, list):
+            raise TypeError("Expected argument 'projects' to be a list")
+        pulumi.set(__self__, "projects", projects)
         if protection_policy_states and not isinstance(protection_policy_states, list):
             raise TypeError("Expected argument 'protection_policy_states' to be a list")
         pulumi.set(__self__, "protection_policy_states", protection_policy_states)
@@ -463,6 +466,14 @@ class GetVirtualMachineV2Result:
         return pulumi.get(self, "power_state")
 
     @_builtins.property
+    @pulumi.getter
+    def projects(self) -> Sequence['outputs.GetVirtualMachineV2ProjectResult']:
+        """
+        Reference to a project.
+        """
+        return pulumi.get(self, "projects")
+
+    @_builtins.property
     @pulumi.getter(name="protectionPolicyStates")
     def protection_policy_states(self) -> Sequence['outputs.GetVirtualMachineV2ProtectionPolicyStateResult']:
         """
@@ -563,6 +574,7 @@ class AwaitableGetVirtualMachineV2Result(GetVirtualMachineV2Result):
             num_threads_per_core=self.num_threads_per_core,
             ownership_infos=self.ownership_infos,
             power_state=self.power_state,
+            projects=self.projects,
             protection_policy_states=self.protection_policy_states,
             protection_type=self.protection_type,
             serial_ports=self.serial_ports,
@@ -635,6 +647,7 @@ def get_virtual_machine_v2(ext_id: Optional[_builtins.str] = None,
         num_threads_per_core=pulumi.get(__ret__, 'num_threads_per_core'),
         ownership_infos=pulumi.get(__ret__, 'ownership_infos'),
         power_state=pulumi.get(__ret__, 'power_state'),
+        projects=pulumi.get(__ret__, 'projects'),
         protection_policy_states=pulumi.get(__ret__, 'protection_policy_states'),
         protection_type=pulumi.get(__ret__, 'protection_type'),
         serial_ports=pulumi.get(__ret__, 'serial_ports'),
@@ -704,6 +717,7 @@ def get_virtual_machine_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] 
         num_threads_per_core=pulumi.get(__response__, 'num_threads_per_core'),
         ownership_infos=pulumi.get(__response__, 'ownership_infos'),
         power_state=pulumi.get(__response__, 'power_state'),
+        projects=pulumi.get(__response__, 'projects'),
         protection_policy_states=pulumi.get(__response__, 'protection_policy_states'),
         protection_type=pulumi.get(__response__, 'protection_type'),
         serial_ports=pulumi.get(__response__, 'serial_ports'),

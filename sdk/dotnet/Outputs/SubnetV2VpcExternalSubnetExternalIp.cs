@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VpcExternalSubnetExternalIp
     {
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternalSubnetExternalIpIpv4> Ipv4s;
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternalSubnetExternalIpIpv6> Ipv6s;
 
         [OutputConstructor]

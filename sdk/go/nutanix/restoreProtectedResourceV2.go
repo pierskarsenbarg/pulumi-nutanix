@@ -84,7 +84,7 @@ type RestoreProtectedResourceV2 struct {
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 	//
-	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
 	RestoreTime pulumi.StringPtrOutput `pulumi:"restoreTime"`
 }
 
@@ -130,7 +130,7 @@ type restoreProtectedResourceV2State struct {
 	ExtId *string `pulumi:"extId"`
 	// -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 	//
-	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
 	RestoreTime *string `pulumi:"restoreTime"`
 }
 
@@ -141,7 +141,7 @@ type RestoreProtectedResourceV2State struct {
 	ExtId pulumi.StringPtrInput
 	// -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 	//
-	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
 	RestoreTime pulumi.StringPtrInput
 }
 
@@ -156,7 +156,7 @@ type restoreProtectedResourceV2Args struct {
 	ExtId string `pulumi:"extId"`
 	// -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 	//
-	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
 	RestoreTime *string `pulumi:"restoreTime"`
 }
 
@@ -168,7 +168,7 @@ type RestoreProtectedResourceV2Args struct {
 	ExtId pulumi.StringInput
 	// -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 	//
-	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+	// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
 	RestoreTime pulumi.StringPtrInput
 }
 
@@ -271,7 +271,7 @@ func (o RestoreProtectedResourceV2Output) ExtId() pulumi.StringOutput {
 
 // -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 //
-// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
+// See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
 func (o RestoreProtectedResourceV2Output) RestoreTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RestoreProtectedResourceV2) pulumi.StringPtrOutput { return v.RestoreTime }).(pulumi.StringPtrOutput)
 }

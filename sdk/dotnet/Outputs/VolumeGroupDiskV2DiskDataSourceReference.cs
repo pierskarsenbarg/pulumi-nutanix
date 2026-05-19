@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string ExtId;
         /// <summary>
-        /// - The name of the Data Source Reference.bled for the Volume Group.
+        /// - The name of the Data Source Reference for the Volume Group.
         /// </summary>
         public readonly string? Name;
         /// <summary>

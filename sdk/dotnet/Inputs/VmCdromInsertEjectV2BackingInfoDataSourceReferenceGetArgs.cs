@@ -33,9 +33,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// Vm Disk Reference
         /// * `vm_disk_reference.disk_address`: (Required) Disk address.
         /// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
-        /// 
-        /// 
-        /// See detailed information in [Nutanix VMs CDROM Insert V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/insertCdRomById).
         /// </summary>
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceGetArgs> VmDiskReferences
         {

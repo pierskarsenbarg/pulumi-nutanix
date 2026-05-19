@@ -15,12 +15,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ips")]
         private InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixIpv4IpGetArgs>? _ips;
+
+        /// <summary>
+        /// Reference to address configuration
+        /// </summary>
         public InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixIpv4IpGetArgs> Ips
         {
             get => _ips ?? (_ips = new InputList<Inputs.SubnetV2VpcExternallyRoutablePrefixIpv4IpGetArgs>());
             set => _ips = value;
         }
 
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4/IPv6 address belongs. Default value is 32.
+        /// </summary>
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 

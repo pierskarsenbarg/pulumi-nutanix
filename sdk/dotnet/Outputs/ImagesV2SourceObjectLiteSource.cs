@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ImagesV2SourceObjectLiteSource
     {
+        /// <summary>
+        /// Key that identifies the source object in the bucket. The resource implies the bucket, 'vmm-images' for Image and 'vmm-ovas' for OVA.
+        /// </summary>
         public readonly string Key;
 
         [OutputConstructor]
