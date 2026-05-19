@@ -55,16 +55,16 @@ import * as utilities from "./utilities";
  *     restorableDomainManagerExtId: restorablePcExtId,
  *     domainManager: {
  *         networks: [{
- *             nameServers: .map(entry => ({
+ *             nameServers: restorePoint.apply(restorePoint => .map(entry => ({
  *                 ipv4s: [{
- *                     value: entry.value.ipv4[0].value,
+ *                     value: entry.ipv4[0].value,
  *                 }],
- *             })),
- *             ntpServers: .map(entry2 => ({
+ *             }))),
+ *             ntpServers: restorePoint.apply(restorePoint => .map(entry2 => ({
  *                 fqdns: [{
- *                     value: entry2.value.fqdn[0].value,
+ *                     value: entry2.fqdn[0].value,
  *                 }],
- *             })),
+ *             }))),
  *             externalAddress: {
  *                 ipv4s: [{
  *                     value: restorePoint.domainManager[0].network[0].externalAddress[0].ipv4[0].value,
