@@ -90,7 +90,7 @@ clean::
 install_plugins::
 	[ -x $(shell which pulumi) ] || curl -fsSL https://get.pulumi.com | sh
 	pulumi plugin install resource std 2.3.2
-	pulumi plugin install converter terraform 1.3.0
+	pulumi plugin install converter terraform 1.2.4
 
 
 install_dotnet_sdk::
