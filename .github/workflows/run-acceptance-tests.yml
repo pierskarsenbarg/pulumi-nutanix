@@ -36,7 +36,7 @@ jobs:
         with:
           repo: pulumi/pulumictl
       - name: Install Pulumi CLI
-        uses: pulumi/actions@v6
+        uses: pulumi/actions@v7
         with:
           pulumi-version: latest
       - name: Check Pulumi version
@@ -144,7 +144,7 @@ jobs:
         with:
           repo: pulumi/pulumictl
       - name: Install Pulumi CLI
-        uses: pulumi/actions@v6
+        uses: pulumi/actions@v7
         with:
           pulumi-version: latest
       - name: Check Pulumi version
@@ -220,7 +220,7 @@ jobs:
   #     with:
   #       repo: pulumi/pulumictl
   #   - name: Install Pulumi CLI
-  #     uses: pulumi/actions@v6
+  #     uses: pulumi/actions@v7
         # with:
         #   pulumi-version: latest
   #   - name: Setup Node
