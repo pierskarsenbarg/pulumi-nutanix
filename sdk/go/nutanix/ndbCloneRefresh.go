@@ -18,6 +18,7 @@ import (
 //
 // ### resource to refresh clone with snapshot id
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,9 +44,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### resource to refresh clone with user pitr timestamp
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -71,6 +74,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type NdbCloneRefresh struct {
 	pulumi.CustomResourceState
 

@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -36,6 +37,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFloatingIps(ctx *pulumi.Context, args *GetFloatingIpsArgs, opts ...pulumi.InvokeOption) (*GetFloatingIpsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFloatingIpsResult
@@ -48,7 +50,7 @@ func GetFloatingIps(ctx *pulumi.Context, args *GetFloatingIpsArgs, opts ...pulum
 
 // A collection of arguments for invoking getFloatingIps.
 type GetFloatingIpsArgs struct {
-	// - The floatingIp kind metadata.
+	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
 	Metadatas []GetFloatingIpsMetadata `pulumi:"metadatas"`
 }
 
@@ -60,7 +62,7 @@ type GetFloatingIpsResult struct {
 	Entities []GetFloatingIpsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// - The floatingIp kind metadata.
+	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
 	Metadatas []GetFloatingIpsMetadata `pulumi:"metadatas"`
 }
 
@@ -75,7 +77,7 @@ func GetFloatingIpsOutput(ctx *pulumi.Context, args GetFloatingIpsOutputArgs, op
 
 // A collection of arguments for invoking getFloatingIps.
 type GetFloatingIpsOutputArgs struct {
-	// - The floatingIp kind metadata.
+	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
 	Metadatas GetFloatingIpsMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -113,7 +115,7 @@ func (o GetFloatingIpsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFloatingIpsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// - The floatingIp kind metadata.
+// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
 func (o GetFloatingIpsResultOutput) Metadatas() GetFloatingIpsMetadataArrayOutput {
 	return o.ApplyT(func(v GetFloatingIpsResult) []GetFloatingIpsMetadata { return v.Metadatas }).(GetFloatingIpsMetadataArrayOutput)
 }

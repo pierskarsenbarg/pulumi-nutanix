@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -70,6 +71,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupProtectionRule(ctx *pulumi.Context, args *LookupProtectionRuleArgs, opts ...pulumi.InvokeOption) (*LookupProtectionRuleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProtectionRuleResult
@@ -83,7 +85,7 @@ func LookupProtectionRule(ctx *pulumi.Context, args *LookupProtectionRuleArgs, o
 // A collection of arguments for invoking getProtectionRule.
 type LookupProtectionRuleArgs struct {
 	Categories []GetProtectionRuleCategory `pulumi:"categories"`
-	// - (Required) The `id` of the protection rule.
+	// - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
 	ProtectionRuleId   *string `pulumi:"protectionRuleId"`
 	ProtectionRuleName *string `pulumi:"protectionRuleName"`
 }
@@ -127,7 +129,7 @@ func LookupProtectionRuleOutput(ctx *pulumi.Context, args LookupProtectionRuleOu
 // A collection of arguments for invoking getProtectionRule.
 type LookupProtectionRuleOutputArgs struct {
 	Categories GetProtectionRuleCategoryArrayInput `pulumi:"categories"`
-	// - (Required) The `id` of the protection rule.
+	// - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
 	ProtectionRuleId   pulumi.StringPtrInput `pulumi:"protectionRuleId"`
 	ProtectionRuleName pulumi.StringPtrInput `pulumi:"protectionRuleName"`
 }

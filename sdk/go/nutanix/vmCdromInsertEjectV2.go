@@ -17,6 +17,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,6 +59,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type VmCdromInsertEjectV2 struct {
 	pulumi.CustomResourceState
 

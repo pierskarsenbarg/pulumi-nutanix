@@ -17,6 +17,7 @@ import (
 // ## Example Usage
 //
 // ### resource to create weekly maintenance window
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,8 +46,10 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### resource to create monthly maintenance window
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -76,6 +79,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type NdbMaintenanceWindow struct {
 	pulumi.CustomResourceState
 

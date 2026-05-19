@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +43,9 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -71,6 +74,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type UserGroups struct {
 	pulumi.CustomResourceState
 
@@ -79,7 +83,7 @@ type UserGroups struct {
 	DirectoryServiceOus UserGroupsDirectoryServiceOusArrayOutput `pulumi:"directoryServiceOus"`
 	// - (Optional) A Directory Service user group.
 	DirectoryServiceUserGroups UserGroupsDirectoryServiceUserGroupArrayOutput `pulumi:"directoryServiceUserGroups"`
-	// The userGroup kind metadata.
+	// The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
 	Metadata         pulumi.StringMapOutput `pulumi:"metadata"`
 	OwnerReference   pulumi.StringMapOutput `pulumi:"ownerReference"`
 	ProjectReference pulumi.StringMapOutput `pulumi:"projectReference"`
@@ -122,7 +126,7 @@ type userGroupsState struct {
 	DirectoryServiceOus []UserGroupsDirectoryServiceOus `pulumi:"directoryServiceOus"`
 	// - (Optional) A Directory Service user group.
 	DirectoryServiceUserGroups []UserGroupsDirectoryServiceUserGroup `pulumi:"directoryServiceUserGroups"`
-	// The userGroup kind metadata.
+	// The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
 	Metadata         map[string]string `pulumi:"metadata"`
 	OwnerReference   map[string]string `pulumi:"ownerReference"`
 	ProjectReference map[string]string `pulumi:"projectReference"`
@@ -136,7 +140,7 @@ type UserGroupsState struct {
 	DirectoryServiceOus UserGroupsDirectoryServiceOusArrayInput
 	// - (Optional) A Directory Service user group.
 	DirectoryServiceUserGroups UserGroupsDirectoryServiceUserGroupArrayInput
-	// The userGroup kind metadata.
+	// The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
 	Metadata         pulumi.StringMapInput
 	OwnerReference   pulumi.StringMapInput
 	ProjectReference pulumi.StringMapInput
@@ -276,7 +280,7 @@ func (o UserGroupsOutput) DirectoryServiceUserGroups() UserGroupsDirectoryServic
 	}).(UserGroupsDirectoryServiceUserGroupArrayOutput)
 }
 
-// The userGroup kind metadata.
+// The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
 func (o UserGroupsOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *UserGroups) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }

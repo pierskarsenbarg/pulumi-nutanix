@@ -15,6 +15,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNgtConfigurationV2(ctx *pulumi.Context, args *GetNgtConfigurationV2Args, opts ...pulumi.InvokeOption) (*GetNgtConfigurationV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNgtConfigurationV2Result

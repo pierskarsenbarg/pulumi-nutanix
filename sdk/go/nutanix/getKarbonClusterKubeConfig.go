@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetKarbonClusterKubeConfig(ctx *pulumi.Context, args *GetKarbonClusterKubeConfigArgs, opts ...pulumi.InvokeOption) (*GetKarbonClusterKubeConfigResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKarbonClusterKubeConfigResult

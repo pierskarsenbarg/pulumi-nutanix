@@ -17,6 +17,7 @@ import (
 //
 // ### vpc creation with external subnet name
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,9 +59,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### vpc creation with external subnet uuid
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -102,6 +105,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type Vpc struct {
 	pulumi.CustomResourceState
 

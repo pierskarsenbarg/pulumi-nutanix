@@ -13,12 +13,13 @@ import (
 
 // Describes a Network security rule
 //
-// > NOTE: The use of networkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+// > NOTE: The use of<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "> networkSecurityRule </span>is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
 //
 // ## Example Usage
 //
 // ### Isolate Development VMs From Production VMs And Get Its Information)
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -71,6 +72,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupNetworkSecurityRule(ctx *pulumi.Context, args *LookupNetworkSecurityRuleArgs, opts ...pulumi.InvokeOption) (*LookupNetworkSecurityRuleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkSecurityRuleResult
@@ -91,7 +93,7 @@ type LookupNetworkSecurityRuleArgs struct {
 
 // A collection of values returned by getNetworkSecurityRule.
 type LookupNetworkSecurityRuleResult struct {
-	// - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	// - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
 	AdRuleAction string `pulumi:"adRuleAction"`
 	// The set of categories that matching VMs need to have.
 	AdRuleInboundAllowLists  []GetNetworkSecurityRuleAdRuleInboundAllowList  `pulumi:"adRuleInboundAllowLists"`
@@ -108,7 +110,7 @@ type LookupNetworkSecurityRuleResult struct {
 	AdRuleTargetGroupPeerSpecificationType string `pulumi:"adRuleTargetGroupPeerSpecificationType"`
 	AllowIpv6Traffic                       bool   `pulumi:"allowIpv6Traffic"`
 	ApiVersion                             string `pulumi:"apiVersion"`
-	// - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	// - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
 	AppRuleAction             string                                           `pulumi:"appRuleAction"`
 	AppRuleInboundAllowLists  []GetNetworkSecurityRuleAppRuleInboundAllowList  `pulumi:"appRuleInboundAllowLists"`
 	AppRuleOutboundAllowLists []GetNetworkSecurityRuleAppRuleOutboundAllowList `pulumi:"appRuleOutboundAllowLists"`
@@ -152,7 +154,7 @@ type LookupNetworkSecurityRuleResult struct {
 	OwnerReference map[string]string `pulumi:"ownerReference"`
 	// The reference to a project.
 	ProjectReference map[string]string `pulumi:"projectReference"`
-	// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inboundAllowList will not allow anything into target group. Empty outboundAllowList will allow everything from target group.
+	// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not allow anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
 	QuarantineRuleAction             string                                                  `pulumi:"quarantineRuleAction"`
 	QuarantineRuleInboundAllowLists  []GetNetworkSecurityRuleQuarantineRuleInboundAllowList  `pulumi:"quarantineRuleInboundAllowLists"`
 	QuarantineRuleOutboundAllowLists []GetNetworkSecurityRuleQuarantineRuleOutboundAllowList `pulumi:"quarantineRuleOutboundAllowLists"`
@@ -204,7 +206,7 @@ func (o LookupNetworkSecurityRuleResultOutput) ToLookupNetworkSecurityRuleResult
 	return o
 }
 
-// - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+// - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
 func (o LookupNetworkSecurityRuleResultOutput) AdRuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkSecurityRuleResult) string { return v.AdRuleAction }).(pulumi.StringOutput)
 }
@@ -257,7 +259,7 @@ func (o LookupNetworkSecurityRuleResultOutput) ApiVersion() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupNetworkSecurityRuleResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
-// - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+// - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
 func (o LookupNetworkSecurityRuleResultOutput) AppRuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkSecurityRuleResult) string { return v.AppRuleAction }).(pulumi.StringOutput)
 }
@@ -383,7 +385,7 @@ func (o LookupNetworkSecurityRuleResultOutput) ProjectReference() pulumi.StringM
 	return o.ApplyT(func(v LookupNetworkSecurityRuleResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
-// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inboundAllowList will not allow anything into target group. Empty outboundAllowList will allow everything from target group.
+// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not allow anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
 func (o LookupNetworkSecurityRuleResultOutput) QuarantineRuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkSecurityRuleResult) string { return v.QuarantineRuleAction }).(pulumi.StringOutput)
 }

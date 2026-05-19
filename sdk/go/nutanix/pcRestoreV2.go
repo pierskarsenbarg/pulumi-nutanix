@@ -18,6 +18,9 @@ import (
 // The restore domain manager is a task-driven operation to restore a domain manager from a cluster or object store backup location based on the selected restore point.
 //
 // ## Example Usage
+//
+// <!--Start PulumiCodeChooser -->
+// <!--End PulumiCodeChooser -->
 type PcRestoreV2 struct {
 	pulumi.CustomResourceState
 

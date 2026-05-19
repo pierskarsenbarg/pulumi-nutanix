@@ -16,6 +16,7 @@ import (
 //
 // ## Example 1: Restore Virtual Machine
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,9 +43,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Example 2: Restore Volume Group
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -71,6 +74,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type RestoreProtectedResourceV2 struct {
 	pulumi.CustomResourceState
 

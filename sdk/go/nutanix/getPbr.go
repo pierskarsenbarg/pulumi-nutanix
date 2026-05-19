@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a datasource to retrieve PBR with pbrUuid .
+// Provides a datasource to retrieve PBR with<span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid "> pbrUuid </span>.
 func LookupPbr(ctx *pulumi.Context, args *LookupPbrArgs, opts ...pulumi.InvokeOption) (*LookupPbrResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPbrResult

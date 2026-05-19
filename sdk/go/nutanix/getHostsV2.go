@@ -15,49 +15,52 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
+// <!--End PulumiCodeChooser -->
+//
 // ## Host Entities
 //
-// The hostEntities attribute supports the following:
+// The<span pulumi-lang-nodejs=" hostEntities " pulumi-lang-dotnet=" HostEntities " pulumi-lang-go=" hostEntities " pulumi-lang-python=" host_entities " pulumi-lang-yaml=" hostEntities " pulumi-lang-java=" hostEntities "> hostEntities </span>attribute supports the following:
 //
-// * `extId`: - A globally unique identifier of an instance that is suitable for external consumption.
-// * `tenantId`: - image uuid.
-// * `links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-// * `hostName`: - Name of the host.
-// * `hostType`: - Type of the host.
+// * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - A globally unique identifier of an instance that is suitable for external consumption.
+// * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: - image uuid.
+// * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+// * <span pulumi-lang-nodejs="`hostName`" pulumi-lang-dotnet="`HostName`" pulumi-lang-go="`hostName`" pulumi-lang-python="`host_name`" pulumi-lang-yaml="`hostName`" pulumi-lang-java="`hostName`">`hostName`</span>: - Name of the host.
+// * <span pulumi-lang-nodejs="`hostType`" pulumi-lang-dotnet="`HostType`" pulumi-lang-go="`hostType`" pulumi-lang-python="`host_type`" pulumi-lang-yaml="`hostType`" pulumi-lang-java="`hostType`">`hostType`</span>: - Type of the host.
 //   - `HYPER_CONVERGED`: Hyper-converged node.
 //   - `COMPUTE_ONLY`: Compute only node.
 //   - `STORAGE_ONLY`: Storage only node.
 //
-// * `hypervisor`: - Hypervisor details.
-// * `cluster`: - Cluster reference for an entity.
-// * `controllerVm`: - Host entity with its attributes.
-// * `disk`: - Disks attached to host.
-// * `isDegraded`: - Node degraded status.
-// * `isSecureBooted`: - Secure boot status.
-// * `isHardwareVirtualized`: - Indicates whether the hardware is virtualized or not.
-// * `hasCsr`: - Certificate signing request status.
-// * `keyManagementDeviceToCertStatus`: - Mapping of key management device to certificate status list.
-// * `numberOfCpuCores`: - Number of CPU cores.
-// * `numberOfCpuThreads`: - Number of CPU threads.
-// * `numberOfCpuSockets`: - Number of CPU sockets.
-// * `cpuCapacityHz`: - CPU capacity in Hz.
-// * `cpuFrequencyHz`: - CPU frequency in Hz.
-// * `cpuModel`: - CPU model name.
-// * `gpuDriverVersion`: - GPU driver version.
-// * `gpuList`: - GPU attached list.
-// * `defaultVhdLocation`: - Default VHD location.
-// * `defaultVhdContainerUuid`: - Default VHD container UUID.
-// * `defaultVmLocation`: - Default VM location.
-// * `defaultVmContainerUuid`: - Default VM container UUID.
-// * `rebootPending`: - Reboot pending status.
-// * `failoverClusterFqdn`: - Failover cluster FQDN.
-// * `failoverClusterNodeStatus`: - Failover cluster node status.
-// * `bootTimeUsecs`: - Boot time in secs.
-// * `memorySizeBytes`: - Memory size in bytes.
-// * `blockSerial`: - Rackable unit serial name.
-// * `blockModel`: - Rackable unit model name.
-// * `maintenanceState`: - Host Maintenance State.
-// * `nodeStatus`: - Node status.
+// * <span pulumi-lang-nodejs="`hypervisor`" pulumi-lang-dotnet="`Hypervisor`" pulumi-lang-go="`hypervisor`" pulumi-lang-python="`hypervisor`" pulumi-lang-yaml="`hypervisor`" pulumi-lang-java="`hypervisor`">`hypervisor`</span>: - Hypervisor details.
+// * <span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`">`cluster`</span>: - Cluster reference for an entity.
+// * <span pulumi-lang-nodejs="`controllerVm`" pulumi-lang-dotnet="`ControllerVm`" pulumi-lang-go="`controllerVm`" pulumi-lang-python="`controller_vm`" pulumi-lang-yaml="`controllerVm`" pulumi-lang-java="`controllerVm`">`controllerVm`</span>: - Host entity with its attributes.
+// * <span pulumi-lang-nodejs="`disk`" pulumi-lang-dotnet="`Disk`" pulumi-lang-go="`disk`" pulumi-lang-python="`disk`" pulumi-lang-yaml="`disk`" pulumi-lang-java="`disk`">`disk`</span>: - Disks attached to host.
+// * <span pulumi-lang-nodejs="`isDegraded`" pulumi-lang-dotnet="`IsDegraded`" pulumi-lang-go="`isDegraded`" pulumi-lang-python="`is_degraded`" pulumi-lang-yaml="`isDegraded`" pulumi-lang-java="`isDegraded`">`isDegraded`</span>: - Node degraded status.
+// * <span pulumi-lang-nodejs="`isSecureBooted`" pulumi-lang-dotnet="`IsSecureBooted`" pulumi-lang-go="`isSecureBooted`" pulumi-lang-python="`is_secure_booted`" pulumi-lang-yaml="`isSecureBooted`" pulumi-lang-java="`isSecureBooted`">`isSecureBooted`</span>: - Secure boot status.
+// * <span pulumi-lang-nodejs="`isHardwareVirtualized`" pulumi-lang-dotnet="`IsHardwareVirtualized`" pulumi-lang-go="`isHardwareVirtualized`" pulumi-lang-python="`is_hardware_virtualized`" pulumi-lang-yaml="`isHardwareVirtualized`" pulumi-lang-java="`isHardwareVirtualized`">`isHardwareVirtualized`</span>: - Indicates whether the hardware is virtualized or not.
+// * <span pulumi-lang-nodejs="`hasCsr`" pulumi-lang-dotnet="`HasCsr`" pulumi-lang-go="`hasCsr`" pulumi-lang-python="`has_csr`" pulumi-lang-yaml="`hasCsr`" pulumi-lang-java="`hasCsr`">`hasCsr`</span>: - Certificate signing request status.
+// * <span pulumi-lang-nodejs="`keyManagementDeviceToCertStatus`" pulumi-lang-dotnet="`KeyManagementDeviceToCertStatus`" pulumi-lang-go="`keyManagementDeviceToCertStatus`" pulumi-lang-python="`key_management_device_to_cert_status`" pulumi-lang-yaml="`keyManagementDeviceToCertStatus`" pulumi-lang-java="`keyManagementDeviceToCertStatus`">`keyManagementDeviceToCertStatus`</span>: - Mapping of key management device to certificate status list.
+// * <span pulumi-lang-nodejs="`numberOfCpuCores`" pulumi-lang-dotnet="`NumberOfCpuCores`" pulumi-lang-go="`numberOfCpuCores`" pulumi-lang-python="`number_of_cpu_cores`" pulumi-lang-yaml="`numberOfCpuCores`" pulumi-lang-java="`numberOfCpuCores`">`numberOfCpuCores`</span>: - Number of CPU cores.
+// * <span pulumi-lang-nodejs="`numberOfCpuThreads`" pulumi-lang-dotnet="`NumberOfCpuThreads`" pulumi-lang-go="`numberOfCpuThreads`" pulumi-lang-python="`number_of_cpu_threads`" pulumi-lang-yaml="`numberOfCpuThreads`" pulumi-lang-java="`numberOfCpuThreads`">`numberOfCpuThreads`</span>: - Number of CPU threads.
+// * <span pulumi-lang-nodejs="`numberOfCpuSockets`" pulumi-lang-dotnet="`NumberOfCpuSockets`" pulumi-lang-go="`numberOfCpuSockets`" pulumi-lang-python="`number_of_cpu_sockets`" pulumi-lang-yaml="`numberOfCpuSockets`" pulumi-lang-java="`numberOfCpuSockets`">`numberOfCpuSockets`</span>: - Number of CPU sockets.
+// * <span pulumi-lang-nodejs="`cpuCapacityHz`" pulumi-lang-dotnet="`CpuCapacityHz`" pulumi-lang-go="`cpuCapacityHz`" pulumi-lang-python="`cpu_capacity_hz`" pulumi-lang-yaml="`cpuCapacityHz`" pulumi-lang-java="`cpuCapacityHz`">`cpuCapacityHz`</span>: - CPU capacity in Hz.
+// * <span pulumi-lang-nodejs="`cpuFrequencyHz`" pulumi-lang-dotnet="`CpuFrequencyHz`" pulumi-lang-go="`cpuFrequencyHz`" pulumi-lang-python="`cpu_frequency_hz`" pulumi-lang-yaml="`cpuFrequencyHz`" pulumi-lang-java="`cpuFrequencyHz`">`cpuFrequencyHz`</span>: - CPU frequency in Hz.
+// * <span pulumi-lang-nodejs="`cpuModel`" pulumi-lang-dotnet="`CpuModel`" pulumi-lang-go="`cpuModel`" pulumi-lang-python="`cpu_model`" pulumi-lang-yaml="`cpuModel`" pulumi-lang-java="`cpuModel`">`cpuModel`</span>: - CPU model name.
+// * <span pulumi-lang-nodejs="`gpuDriverVersion`" pulumi-lang-dotnet="`GpuDriverVersion`" pulumi-lang-go="`gpuDriverVersion`" pulumi-lang-python="`gpu_driver_version`" pulumi-lang-yaml="`gpuDriverVersion`" pulumi-lang-java="`gpuDriverVersion`">`gpuDriverVersion`</span>: - GPU driver version.
+// * <span pulumi-lang-nodejs="`gpuList`" pulumi-lang-dotnet="`GpuList`" pulumi-lang-go="`gpuList`" pulumi-lang-python="`gpu_list`" pulumi-lang-yaml="`gpuList`" pulumi-lang-java="`gpuList`">`gpuList`</span>: - GPU attached list.
+// * <span pulumi-lang-nodejs="`defaultVhdLocation`" pulumi-lang-dotnet="`DefaultVhdLocation`" pulumi-lang-go="`defaultVhdLocation`" pulumi-lang-python="`default_vhd_location`" pulumi-lang-yaml="`defaultVhdLocation`" pulumi-lang-java="`defaultVhdLocation`">`defaultVhdLocation`</span>: - Default VHD location.
+// * <span pulumi-lang-nodejs="`defaultVhdContainerUuid`" pulumi-lang-dotnet="`DefaultVhdContainerUuid`" pulumi-lang-go="`defaultVhdContainerUuid`" pulumi-lang-python="`default_vhd_container_uuid`" pulumi-lang-yaml="`defaultVhdContainerUuid`" pulumi-lang-java="`defaultVhdContainerUuid`">`defaultVhdContainerUuid`</span>: - Default VHD container UUID.
+// * <span pulumi-lang-nodejs="`defaultVmLocation`" pulumi-lang-dotnet="`DefaultVmLocation`" pulumi-lang-go="`defaultVmLocation`" pulumi-lang-python="`default_vm_location`" pulumi-lang-yaml="`defaultVmLocation`" pulumi-lang-java="`defaultVmLocation`">`defaultVmLocation`</span>: - Default VM location.
+// * <span pulumi-lang-nodejs="`defaultVmContainerUuid`" pulumi-lang-dotnet="`DefaultVmContainerUuid`" pulumi-lang-go="`defaultVmContainerUuid`" pulumi-lang-python="`default_vm_container_uuid`" pulumi-lang-yaml="`defaultVmContainerUuid`" pulumi-lang-java="`defaultVmContainerUuid`">`defaultVmContainerUuid`</span>: - Default VM container UUID.
+// * <span pulumi-lang-nodejs="`rebootPending`" pulumi-lang-dotnet="`RebootPending`" pulumi-lang-go="`rebootPending`" pulumi-lang-python="`reboot_pending`" pulumi-lang-yaml="`rebootPending`" pulumi-lang-java="`rebootPending`">`rebootPending`</span>: - Reboot pending status.
+// * <span pulumi-lang-nodejs="`failoverClusterFqdn`" pulumi-lang-dotnet="`FailoverClusterFqdn`" pulumi-lang-go="`failoverClusterFqdn`" pulumi-lang-python="`failover_cluster_fqdn`" pulumi-lang-yaml="`failoverClusterFqdn`" pulumi-lang-java="`failoverClusterFqdn`">`failoverClusterFqdn`</span>: - Failover cluster FQDN.
+// * <span pulumi-lang-nodejs="`failoverClusterNodeStatus`" pulumi-lang-dotnet="`FailoverClusterNodeStatus`" pulumi-lang-go="`failoverClusterNodeStatus`" pulumi-lang-python="`failover_cluster_node_status`" pulumi-lang-yaml="`failoverClusterNodeStatus`" pulumi-lang-java="`failoverClusterNodeStatus`">`failoverClusterNodeStatus`</span>: - Failover cluster node status.
+// * <span pulumi-lang-nodejs="`bootTimeUsecs`" pulumi-lang-dotnet="`BootTimeUsecs`" pulumi-lang-go="`bootTimeUsecs`" pulumi-lang-python="`boot_time_usecs`" pulumi-lang-yaml="`bootTimeUsecs`" pulumi-lang-java="`bootTimeUsecs`">`bootTimeUsecs`</span>: - Boot time in secs.
+// * <span pulumi-lang-nodejs="`memorySizeBytes`" pulumi-lang-dotnet="`MemorySizeBytes`" pulumi-lang-go="`memorySizeBytes`" pulumi-lang-python="`memory_size_bytes`" pulumi-lang-yaml="`memorySizeBytes`" pulumi-lang-java="`memorySizeBytes`">`memorySizeBytes`</span>: - Memory size in bytes.
+// * <span pulumi-lang-nodejs="`blockSerial`" pulumi-lang-dotnet="`BlockSerial`" pulumi-lang-go="`blockSerial`" pulumi-lang-python="`block_serial`" pulumi-lang-yaml="`blockSerial`" pulumi-lang-java="`blockSerial`">`blockSerial`</span>: - Rackable unit serial name.
+// * <span pulumi-lang-nodejs="`blockModel`" pulumi-lang-dotnet="`BlockModel`" pulumi-lang-go="`blockModel`" pulumi-lang-python="`block_model`" pulumi-lang-yaml="`blockModel`" pulumi-lang-java="`blockModel`">`blockModel`</span>: - Rackable unit model name.
+// * <span pulumi-lang-nodejs="`maintenanceState`" pulumi-lang-dotnet="`MaintenanceState`" pulumi-lang-go="`maintenanceState`" pulumi-lang-python="`maintenance_state`" pulumi-lang-yaml="`maintenanceState`" pulumi-lang-java="`maintenanceState`">`maintenanceState`</span>: - Host Maintenance State.
+// * <span pulumi-lang-nodejs="`nodeStatus`" pulumi-lang-dotnet="`NodeStatus`" pulumi-lang-go="`nodeStatus`" pulumi-lang-python="`node_status`" pulumi-lang-yaml="`nodeStatus`" pulumi-lang-java="`nodeStatus`">`nodeStatus`</span>: - Node status.
 //   - `TO_BE_PREPROTECTED`: Node to be preprotected.
 //   - `TO_BE_REMOVED`: Node to be removed.
 //   - `PREPROTECTED`: Node is preprotected.
@@ -69,23 +72,23 @@ import (
 //
 // The links attribute supports the following:
 //
-// * `href`: - The URL at which the entity described by the link can be accessed.
-// * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+// * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+// * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 //
 // ### Hypervisor
 // The hypervisor attribute supports the following:
 //
-// * `externalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
-// * `userName`: - Hypervisor user name.
-// * `fullName`: - Hypervisor full name.
-// * `type`: - Hypervisor type.
+// * <span pulumi-lang-nodejs="`externalAddress`" pulumi-lang-dotnet="`ExternalAddress`" pulumi-lang-go="`externalAddress`" pulumi-lang-python="`external_address`" pulumi-lang-yaml="`externalAddress`" pulumi-lang-java="`externalAddress`">`externalAddress`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+// * <span pulumi-lang-nodejs="`userName`" pulumi-lang-dotnet="`UserName`" pulumi-lang-go="`userName`" pulumi-lang-python="`user_name`" pulumi-lang-yaml="`userName`" pulumi-lang-java="`userName`">`userName`</span>: - Hypervisor user name.
+// * <span pulumi-lang-nodejs="`fullName`" pulumi-lang-dotnet="`FullName`" pulumi-lang-go="`fullName`" pulumi-lang-python="`full_name`" pulumi-lang-yaml="`fullName`" pulumi-lang-java="`fullName`">`fullName`</span>: - Hypervisor full name.
+// * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span>: - Hypervisor type.
 //   - `XEN`: Xen hypervisor.
 //   - `HYPERV`: HyperV hypervisor.
 //   - `ESX`: ESX hypervisor.
 //   - `AHV`: AHV hypervisor.
 //
-// * `numberOfVms`: - Number of VMs.
-// * `state`: - Hypervisor state.
+// * <span pulumi-lang-nodejs="`numberOfVms`" pulumi-lang-dotnet="`NumberOfVms`" pulumi-lang-go="`numberOfVms`" pulumi-lang-python="`number_of_vms`" pulumi-lang-yaml="`numberOfVms`" pulumi-lang-java="`numberOfVms`">`numberOfVms`</span>: - Number of VMs.
+// * <span pulumi-lang-nodejs="`state`" pulumi-lang-dotnet="`State`" pulumi-lang-go="`state`" pulumi-lang-python="`state`" pulumi-lang-yaml="`state`" pulumi-lang-java="`state`">`state`</span>: - Hypervisor state.
 //   - `HA_HEALING_TARGET`: Hypervisor in HA healing target state.
 //   - `ENTERING_MAINTENANCE_MODE`: Hypervisor entering maintenance mode.
 //   - `RESERVED_FOR_HA_FAILOVER`: Hypervisor reserved for HA failover.
@@ -97,97 +100,97 @@ import (
 //   - `ENTERING_MAINTENANCE_MODE_FROM_HA_FAILOVER`: Hypervisor entering maintenance mode from HA failover.
 //   - `HA_FAILOVER_TARGET`: Hypervisor in HA failover target state.
 //
-// * `acropolisConnectionState`: - Status of Acropolis connection to hypervisor.
+// * <span pulumi-lang-nodejs="`acropolisConnectionState`" pulumi-lang-dotnet="`AcropolisConnectionState`" pulumi-lang-go="`acropolisConnectionState`" pulumi-lang-python="`acropolis_connection_state`" pulumi-lang-yaml="`acropolisConnectionState`" pulumi-lang-java="`acropolisConnectionState`">`acropolisConnectionState`</span>: - Status of Acropolis connection to hypervisor.
 //   - `DISCONNECTED`: Acropolis disconnected.
 //   - `CONNECTED`: Acropolis connected.
 //
 // ### Cluster
 // The cluster attribute supports the following:
 //
-// * `uuid`: - Cluster UUID.
-// * `name`: - Cluster name. This is part of payload for both cluster create & update operations.
+// * <span pulumi-lang-nodejs="`uuid`" pulumi-lang-dotnet="`Uuid`" pulumi-lang-go="`uuid`" pulumi-lang-python="`uuid`" pulumi-lang-yaml="`uuid`" pulumi-lang-java="`uuid`">`uuid`</span>: - Cluster UUID.
+// * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - Cluster name. This is part of payload for both cluster create & update operations.
 //
 // ### Controller VM
-// The controllerVm attribute supports the following:
+// The<span pulumi-lang-nodejs=" controllerVm " pulumi-lang-dotnet=" ControllerVm " pulumi-lang-go=" controllerVm " pulumi-lang-python=" controller_vm " pulumi-lang-yaml=" controllerVm " pulumi-lang-java=" controllerVm "> controllerVm </span>attribute supports the following:
 //
-// * `id`: - Controller VM Id.
-// * `externalAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
-// * `backplaneAddress`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
-// * `rdmaBackplaneAddress`: - RDMA backplane address.
-// * `ipmi`: - IPMI reference.
-// * `natIp`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
-// * `natPort`: - NAT port.
-// * `maintenanceMode`: - Maintenance mode status.
-// * `rackableUnitUuid`: - Rackable unit UUID.
+// * <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span>: - Controller VM Id.
+// * <span pulumi-lang-nodejs="`externalAddress`" pulumi-lang-dotnet="`ExternalAddress`" pulumi-lang-go="`externalAddress`" pulumi-lang-python="`external_address`" pulumi-lang-yaml="`externalAddress`" pulumi-lang-java="`externalAddress`">`externalAddress`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+// * <span pulumi-lang-nodejs="`backplaneAddress`" pulumi-lang-dotnet="`BackplaneAddress`" pulumi-lang-go="`backplaneAddress`" pulumi-lang-python="`backplane_address`" pulumi-lang-yaml="`backplaneAddress`" pulumi-lang-java="`backplaneAddress`">`backplaneAddress`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+// * <span pulumi-lang-nodejs="`rdmaBackplaneAddress`" pulumi-lang-dotnet="`RdmaBackplaneAddress`" pulumi-lang-go="`rdmaBackplaneAddress`" pulumi-lang-python="`rdma_backplane_address`" pulumi-lang-yaml="`rdmaBackplaneAddress`" pulumi-lang-java="`rdmaBackplaneAddress`">`rdmaBackplaneAddress`</span>: - RDMA backplane address.
+// * <span pulumi-lang-nodejs="`ipmi`" pulumi-lang-dotnet="`Ipmi`" pulumi-lang-go="`ipmi`" pulumi-lang-python="`ipmi`" pulumi-lang-yaml="`ipmi`" pulumi-lang-java="`ipmi`">`ipmi`</span>: - IPMI reference.
+// * <span pulumi-lang-nodejs="`natIp`" pulumi-lang-dotnet="`NatIp`" pulumi-lang-go="`natIp`" pulumi-lang-python="`nat_ip`" pulumi-lang-yaml="`natIp`" pulumi-lang-java="`natIp`">`natIp`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+// * <span pulumi-lang-nodejs="`natPort`" pulumi-lang-dotnet="`NatPort`" pulumi-lang-go="`natPort`" pulumi-lang-python="`nat_port`" pulumi-lang-yaml="`natPort`" pulumi-lang-java="`natPort`">`natPort`</span>: - NAT port.
+// * <span pulumi-lang-nodejs="`maintenanceMode`" pulumi-lang-dotnet="`MaintenanceMode`" pulumi-lang-go="`maintenanceMode`" pulumi-lang-python="`maintenance_mode`" pulumi-lang-yaml="`maintenanceMode`" pulumi-lang-java="`maintenanceMode`">`maintenanceMode`</span>: - Maintenance mode status.
+// * <span pulumi-lang-nodejs="`rackableUnitUuid`" pulumi-lang-dotnet="`RackableUnitUuid`" pulumi-lang-go="`rackableUnitUuid`" pulumi-lang-python="`rackable_unit_uuid`" pulumi-lang-yaml="`rackableUnitUuid`" pulumi-lang-java="`rackableUnitUuid`">`rackableUnitUuid`</span>: - Rackable unit UUID.
 //
 // ### Disk
 // The disk attribute supports the following:
 //
-// * `uuid`: - Disk UUID.
-// * `mountPath`: - Disk mount path.
-// * `sizeInBytes`: - Disk size.
-// * `serialId`: - Disk serial Id.
-// * `storageTier`: - Disk storage Tier type.
+// * <span pulumi-lang-nodejs="`uuid`" pulumi-lang-dotnet="`Uuid`" pulumi-lang-go="`uuid`" pulumi-lang-python="`uuid`" pulumi-lang-yaml="`uuid`" pulumi-lang-java="`uuid`">`uuid`</span>: - Disk UUID.
+// * <span pulumi-lang-nodejs="`mountPath`" pulumi-lang-dotnet="`MountPath`" pulumi-lang-go="`mountPath`" pulumi-lang-python="`mount_path`" pulumi-lang-yaml="`mountPath`" pulumi-lang-java="`mountPath`">`mountPath`</span>: - Disk mount path.
+// * <span pulumi-lang-nodejs="`sizeInBytes`" pulumi-lang-dotnet="`SizeInBytes`" pulumi-lang-go="`sizeInBytes`" pulumi-lang-python="`size_in_bytes`" pulumi-lang-yaml="`sizeInBytes`" pulumi-lang-java="`sizeInBytes`">`sizeInBytes`</span>: - Disk size.
+// * <span pulumi-lang-nodejs="`serialId`" pulumi-lang-dotnet="`SerialId`" pulumi-lang-go="`serialId`" pulumi-lang-python="`serial_id`" pulumi-lang-yaml="`serialId`" pulumi-lang-java="`serialId`">`serialId`</span>: - Disk serial Id.
+// * <span pulumi-lang-nodejs="`storageTier`" pulumi-lang-dotnet="`StorageTier`" pulumi-lang-go="`storageTier`" pulumi-lang-python="`storage_tier`" pulumi-lang-yaml="`storageTier`" pulumi-lang-java="`storageTier`">`storageTier`</span>: - Disk storage Tier type.
 //   - `HDD`: HDD storage tier.
 //   - `PCIE_SSD`: PCIE SSD storage tier.
 //   - `SATA_SSD`: SATA SSD storage tier.
 //
 // ### key Management Device To Cert Status
-// The keyManagementDeviceToCertStatus attribute supports the following:
+// The<span pulumi-lang-nodejs=" keyManagementDeviceToCertStatus " pulumi-lang-dotnet=" KeyManagementDeviceToCertStatus " pulumi-lang-go=" keyManagementDeviceToCertStatus " pulumi-lang-python=" key_management_device_to_cert_status " pulumi-lang-yaml=" keyManagementDeviceToCertStatus " pulumi-lang-java=" keyManagementDeviceToCertStatus "> keyManagementDeviceToCertStatus </span>attribute supports the following:
 //
-// * `keyManagementServerName`: - Key management server name.
-// * `status`: - Certificate status.
+// * <span pulumi-lang-nodejs="`keyManagementServerName`" pulumi-lang-dotnet="`KeyManagementServerName`" pulumi-lang-go="`keyManagementServerName`" pulumi-lang-python="`key_management_server_name`" pulumi-lang-yaml="`keyManagementServerName`" pulumi-lang-java="`keyManagementServerName`">`keyManagementServerName`</span>: - Key management server name.
+// * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: - Certificate status.
 //
 // #### external Address
-// The externalAddress attribute supports the following:
+// The<span pulumi-lang-nodejs=" externalAddress " pulumi-lang-dotnet=" ExternalAddress " pulumi-lang-go=" externalAddress " pulumi-lang-python=" external_address " pulumi-lang-yaml=" externalAddress " pulumi-lang-java=" externalAddress "> externalAddress </span>attribute supports the following:
 //
-// * `ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-// * `ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+// * <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+// * <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: - An unique address that identifies a device on the internet or a local network in IPv6 format.
 //
 // #### Backplane Address
-// The backplaneAddress attribute supports the following:
+// The<span pulumi-lang-nodejs=" backplaneAddress " pulumi-lang-dotnet=" BackplaneAddress " pulumi-lang-go=" backplaneAddress " pulumi-lang-python=" backplane_address " pulumi-lang-yaml=" backplaneAddress " pulumi-lang-java=" backplaneAddress "> backplaneAddress </span>attribute supports the following:
 //
-// * `ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-// * `ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+// * <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+// * <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: - An unique address that identifies a device on the internet or a local network in IPv6 format.
 //
 // #### Rdma Backplane Address
-// The rdmaBackplaneAddress attribute supports the following:
+// The<span pulumi-lang-nodejs=" rdmaBackplaneAddress " pulumi-lang-dotnet=" RdmaBackplaneAddress " pulumi-lang-go=" rdmaBackplaneAddress " pulumi-lang-python=" rdma_backplane_address " pulumi-lang-yaml=" rdmaBackplaneAddress " pulumi-lang-java=" rdmaBackplaneAddress "> rdmaBackplaneAddress </span>attribute supports the following:
 //
-// * `ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-// * `ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+// * <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+// * <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: - An unique address that identifies a device on the internet or a local network in IPv6 format.
 //
 // #### ipmi
 // The ipmi attribute supports the following:
 //
-// * `ip`: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
-// * `username`: - IPMI username.
+// * <span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`">`ip`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+// * <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span>: - IPMI username.
 //
 // #### Nat Ip
-// The natIp attribute supports the following:
+// The<span pulumi-lang-nodejs=" natIp " pulumi-lang-dotnet=" NatIp " pulumi-lang-go=" natIp " pulumi-lang-python=" nat_ip " pulumi-lang-yaml=" natIp " pulumi-lang-java=" natIp "> natIp </span>attribute supports the following:
 //
-// * `ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-// * `ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+// * <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+// * <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: - An unique address that identifies a device on the internet or a local network in IPv6 format.
 //
 // ##### ip
 //
 // The ip attribute supports the following:
 //
-// * `ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-// * `ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+// * <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+// * <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: - An unique address that identifies a device on the internet or a local network in IPv6 format.
 //
 // ###### IPV4
 //
 // The ipv4 attribute supports the following:
 //
-// * `value`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-// * `prefixLength`: - The prefix length of the network to which this host IPv4 address belongs.
+// * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+// * <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: - The prefix length of the network to which this host IPv4 address belongs.
 //
 // ###### IPV6
 //
 // The ipv6 attribute supports the following:
 //
-// * `value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-// * `prefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
+// * <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+// * <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: - The prefix length of the network to which this host IPv6 address belongs.
 //
 // See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/listHostsByClusterId).
 func GetHostsV2(ctx *pulumi.Context, args *GetHostsV2Args, opts ...pulumi.InvokeOption) (*GetHostsV2Result, error) {

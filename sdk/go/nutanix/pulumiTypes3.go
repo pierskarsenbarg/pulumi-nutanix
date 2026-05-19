@@ -250,7 +250,7 @@ func (o VmCdromInsertEjectV2BackingInfoArrayOutput) Index(i pulumi.IntInput) VmC
 }
 
 type VmCdromInsertEjectV2BackingInfoDataSource struct {
-	// Reference to image or vm disk. Either `imageReference` or `vmDiskReference`.
+	// Reference to image or vm disk. Either <span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`">`imageReference`</span> or <span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`">`vmDiskReference`</span>.
 	References []VmCdromInsertEjectV2BackingInfoDataSourceReference `pulumi:"references"`
 }
 
@@ -266,7 +266,7 @@ type VmCdromInsertEjectV2BackingInfoDataSourceInput interface {
 }
 
 type VmCdromInsertEjectV2BackingInfoDataSourceArgs struct {
-	// Reference to image or vm disk. Either `imageReference` or `vmDiskReference`.
+	// Reference to image or vm disk. Either <span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`">`imageReference`</span> or <span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`">`vmDiskReference`</span>.
 	References VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput `pulumi:"references"`
 }
 
@@ -321,7 +321,7 @@ func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) ToVmCdromInsertEjectV2B
 	return o
 }
 
-// Reference to image or vm disk. Either `imageReference` or `vmDiskReference`.
+// Reference to image or vm disk. Either <span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`">`imageReference`</span> or <span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`">`vmDiskReference`</span>.
 func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) References() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
 	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSource) []VmCdromInsertEjectV2BackingInfoDataSourceReference {
 		return v.References
@@ -6753,9 +6753,9 @@ func (o VmCloneV2GuestCustomizationArrayOutput) Index(i pulumi.IntInput) VmClone
 }
 
 type VmCloneV2GuestCustomizationConfig struct {
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits []VmCloneV2GuestCustomizationConfigCloudInit `pulumi:"cloudInits"`
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	Syspreps []VmCloneV2GuestCustomizationConfigSysprep `pulumi:"syspreps"`
 }
 
@@ -6771,9 +6771,9 @@ type VmCloneV2GuestCustomizationConfigInput interface {
 }
 
 type VmCloneV2GuestCustomizationConfigArgs struct {
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits VmCloneV2GuestCustomizationConfigCloudInitArrayInput `pulumi:"cloudInits"`
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	Syspreps VmCloneV2GuestCustomizationConfigSysprepArrayInput `pulumi:"syspreps"`
 }
 
@@ -6828,14 +6828,14 @@ func (o VmCloneV2GuestCustomizationConfigOutput) ToVmCloneV2GuestCustomizationCo
 	return o
 }
 
-// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmCloneV2GuestCustomizationConfigOutput) CloudInits() VmCloneV2GuestCustomizationConfigCloudInitArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfig) []VmCloneV2GuestCustomizationConfigCloudInit {
 		return v.CloudInits
 	}).(VmCloneV2GuestCustomizationConfigCloudInitArrayOutput)
 }
 
-// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmCloneV2GuestCustomizationConfigOutput) Syspreps() VmCloneV2GuestCustomizationConfigSysprepArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfig) []VmCloneV2GuestCustomizationConfigSysprep {
 		return v.Syspreps
@@ -6870,7 +6870,7 @@ type VmCloneV2GuestCustomizationConfigCloudInit struct {
 	//   Valid values are:
 	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -6893,7 +6893,7 @@ type VmCloneV2GuestCustomizationConfigCloudInitArgs struct {
 	//   Valid values are:
 	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -6963,7 +6963,7 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitOutput) DatasourceType() pulum
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInit) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o VmCloneV2GuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInit) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -6990,7 +6990,7 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitArrayOutput) Index(i pulumi.In
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript struct {
 	CustomKeys []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey `pulumi:"customKeys"`
-	// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 	UserDatas []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData `pulumi:"userDatas"`
 }
 
@@ -7007,7 +7007,7 @@ type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptInput interface {
 
 type VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs struct {
 	CustomKeys VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyArrayInput `pulumi:"customKeys"`
-	// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 	UserDatas VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArrayInput `pulumi:"userDatas"`
 }
 
@@ -7068,7 +7068,7 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptOutput) CustomK
 	}).(VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyArrayOutput)
 }
 
-// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptOutput) UserDatas() VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArrayOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript) []VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData {
 		return v.UserDatas
@@ -7410,8 +7410,8 @@ func (o VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArrayOu
 type VmCloneV2GuestCustomizationConfigSysprep struct {
 	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 	//   Valid values are:
-	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
-	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
 	InstallType    *string                                                 `pulumi:"installType"`
 	SysprepScripts []VmCloneV2GuestCustomizationConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
@@ -7430,8 +7430,8 @@ type VmCloneV2GuestCustomizationConfigSysprepInput interface {
 type VmCloneV2GuestCustomizationConfigSysprepArgs struct {
 	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 	//   Valid values are:
-	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
-	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
 	InstallType    pulumi.StringPtrInput                                           `pulumi:"installType"`
 	SysprepScripts VmCloneV2GuestCustomizationConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
@@ -7489,8 +7489,8 @@ func (o VmCloneV2GuestCustomizationConfigSysprepOutput) ToVmCloneV2GuestCustomiz
 
 //   - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 //     Valid values are:
-//   - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
-//   - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+//   - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+//   - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
 func (o VmCloneV2GuestCustomizationConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmCloneV2GuestCustomizationConfigSysprep) *string { return v.InstallType }).(pulumi.StringPtrOutput)
 }
@@ -8533,7 +8533,7 @@ func (o VmCloneV2NicBackingInfoArrayOutput) Index(i pulumi.IntInput) VmCloneV2Ni
 type VmCloneV2NicNetworkInfo struct {
 	// - (Optional) The IP address configurations.
 	Ipv4Configs []VmCloneV2NicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
-	// - (Optional)The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []VmCloneV2NicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// - (Optional) The type of this Network function NIC.
 	//   Defaults to INGRESS.
@@ -8552,7 +8552,7 @@ type VmCloneV2NicNetworkInfo struct {
 	NicType *string `pulumi:"nicType"`
 	// - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// - (Optional) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	// - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets []VmCloneV2NicNetworkInfoSubnet `pulumi:"subnets"`
 	// - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -8577,7 +8577,7 @@ type VmCloneV2NicNetworkInfoInput interface {
 type VmCloneV2NicNetworkInfoArgs struct {
 	// - (Optional) The IP address configurations.
 	Ipv4Configs VmCloneV2NicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
-	// - (Optional)The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+	// - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains VmCloneV2NicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// - (Optional) The type of this Network function NIC.
 	//   Defaults to INGRESS.
@@ -8596,7 +8596,7 @@ type VmCloneV2NicNetworkInfoArgs struct {
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// - (Optional) Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// - (Optional) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+	// - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets VmCloneV2NicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -8663,7 +8663,7 @@ func (o VmCloneV2NicNetworkInfoOutput) Ipv4Configs() VmCloneV2NicNetworkInfoIpv4
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) []VmCloneV2NicNetworkInfoIpv4Config { return v.Ipv4Configs }).(VmCloneV2NicNetworkInfoIpv4ConfigArrayOutput)
 }
 
-// - (Optional)The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+// - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
 func (o VmCloneV2NicNetworkInfoOutput) NetworkFunctionChains() VmCloneV2NicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) []VmCloneV2NicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -8696,7 +8696,7 @@ func (o VmCloneV2NicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.BoolPtrOu
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
-// - (Optional) Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+// - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 func (o VmCloneV2NicNetworkInfoOutput) Subnets() VmCloneV2NicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfo) []VmCloneV2NicNetworkInfoSubnet { return v.Subnets }).(VmCloneV2NicNetworkInfoSubnetArrayOutput)
 }
@@ -8738,8 +8738,8 @@ type VmCloneV2NicNetworkInfoIpv4Config struct {
 	IpAddresses             []VmCloneV2NicNetworkInfoIpv4ConfigIpAddress              `pulumi:"ipAddresses"`
 	SecondaryIpAddressLists []VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList `pulumi:"secondaryIpAddressLists"`
 	// - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-	//   `ipAddress`: - (Optional) Ip config settings.
-	//   `secondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
+	//   <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: - (Optional) Ip config settings.
+	//   <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
 	ShouldAssignIp *bool `pulumi:"shouldAssignIp"`
 }
 
@@ -8758,8 +8758,8 @@ type VmCloneV2NicNetworkInfoIpv4ConfigArgs struct {
 	IpAddresses             VmCloneV2NicNetworkInfoIpv4ConfigIpAddressArrayInput              `pulumi:"ipAddresses"`
 	SecondaryIpAddressLists VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArrayInput `pulumi:"secondaryIpAddressLists"`
 	// - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-	//   `ipAddress`: - (Optional) Ip config settings.
-	//   `secondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
+	//   <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: - (Optional) Ip config settings.
+	//   <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
 	ShouldAssignIp pulumi.BoolPtrInput `pulumi:"shouldAssignIp"`
 }
 
@@ -8827,8 +8827,8 @@ func (o VmCloneV2NicNetworkInfoIpv4ConfigOutput) SecondaryIpAddressLists() VmClo
 }
 
 //   - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-//     `ipAddress`: - (Optional) Ip config settings.
-//     `secondaryIpAddressList`: - (Optional) Secondary IP addresses for the NIC.
+//     <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: - (Optional) Ip config settings.
+//     <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
 func (o VmCloneV2NicNetworkInfoIpv4ConfigOutput) ShouldAssignIp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VmCloneV2NicNetworkInfoIpv4Config) *bool { return v.ShouldAssignIp }).(pulumi.BoolPtrOutput)
 }
@@ -10145,9 +10145,9 @@ func (o VmCloneV2VtpmConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2VtpmCo
 }
 
 type VmGcUpdateV2Config struct {
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits []VmGcUpdateV2ConfigCloudInit `pulumi:"cloudInits"`
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	Syspreps []VmGcUpdateV2ConfigSysprep `pulumi:"syspreps"`
 }
 
@@ -10163,9 +10163,9 @@ type VmGcUpdateV2ConfigInput interface {
 }
 
 type VmGcUpdateV2ConfigArgs struct {
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits VmGcUpdateV2ConfigCloudInitArrayInput `pulumi:"cloudInits"`
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	Syspreps VmGcUpdateV2ConfigSysprepArrayInput `pulumi:"syspreps"`
 }
 
@@ -10220,12 +10220,12 @@ func (o VmGcUpdateV2ConfigOutput) ToVmGcUpdateV2ConfigOutputWithContext(ctx cont
 	return o
 }
 
-// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmGcUpdateV2ConfigOutput) CloudInits() VmGcUpdateV2ConfigCloudInitArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2Config) []VmGcUpdateV2ConfigCloudInit { return v.CloudInits }).(VmGcUpdateV2ConfigCloudInitArrayOutput)
 }
 
-// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmGcUpdateV2ConfigOutput) Syspreps() VmGcUpdateV2ConfigSysprepArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2Config) []VmGcUpdateV2ConfigSysprep { return v.Syspreps }).(VmGcUpdateV2ConfigSysprepArrayOutput)
 }
@@ -10258,7 +10258,7 @@ type VmGcUpdateV2ConfigCloudInit struct {
 	//   Valid values are:
 	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -10281,7 +10281,7 @@ type VmGcUpdateV2ConfigCloudInitArgs struct {
 	//   Valid values are:
 	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -10351,7 +10351,7 @@ func (o VmGcUpdateV2ConfigCloudInitOutput) DatasourceType() pulumi.StringPtrOutp
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInit) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o VmGcUpdateV2ConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInit) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -10378,7 +10378,7 @@ func (o VmGcUpdateV2ConfigCloudInitArrayOutput) Index(i pulumi.IntInput) VmGcUpd
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScript struct {
 	CustomKeys []VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey `pulumi:"customKeys"`
-	// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 	UserDatas []VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData `pulumi:"userDatas"`
 }
 
@@ -10395,7 +10395,7 @@ type VmGcUpdateV2ConfigCloudInitCloudInitScriptInput interface {
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs struct {
 	CustomKeys VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyArrayInput `pulumi:"customKeys"`
-	// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 	UserDatas VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayInput `pulumi:"userDatas"`
 }
 
@@ -10456,7 +10456,7 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptOutput) CustomKeys() VmGcUpdat
 	}).(VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyArrayOutput)
 }
 
-// - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptOutput) UserDatas() VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInitCloudInitScript) []VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData {
 		return v.UserDatas
@@ -10794,8 +10794,8 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayOutput) Index(i p
 type VmGcUpdateV2ConfigSysprep struct {
 	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 	//   Valid values are:
-	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
-	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
 	InstallType    *string                                  `pulumi:"installType"`
 	SysprepScripts []VmGcUpdateV2ConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
@@ -10814,8 +10814,8 @@ type VmGcUpdateV2ConfigSysprepInput interface {
 type VmGcUpdateV2ConfigSysprepArgs struct {
 	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 	//   Valid values are:
-	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
-	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
 	InstallType    pulumi.StringPtrInput                            `pulumi:"installType"`
 	SysprepScripts VmGcUpdateV2ConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
@@ -10873,8 +10873,8 @@ func (o VmGcUpdateV2ConfigSysprepOutput) ToVmGcUpdateV2ConfigSysprepOutputWithCo
 
 //   - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 //     Valid values are:
-//   - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `unattendXml` parameter
-//   - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `unattendXml` parameter
+//   - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+//   - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
 func (o VmGcUpdateV2ConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigSysprep) *string { return v.InstallType }).(pulumi.StringPtrOutput)
 }
@@ -31908,7 +31908,7 @@ type GetClustersEntity struct {
 	ManagementServerLists []GetClustersEntityManagementServerList `pulumi:"managementServerLists"`
 	// - The cluster NAT'd or proxy IP which maps to the cluster local IP.
 	MasqueradingIp string `pulumi:"masqueradingIp"`
-	// - Port used together with masqueradingIp to connect to the cluster.
+	// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
 	MasqueradingPort int `pulumi:"masqueradingPort"`
 	// - The image kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
@@ -32017,7 +32017,7 @@ type GetClustersEntityArgs struct {
 	ManagementServerLists GetClustersEntityManagementServerListArrayInput `pulumi:"managementServerLists"`
 	// - The cluster NAT'd or proxy IP which maps to the cluster local IP.
 	MasqueradingIp pulumi.StringInput `pulumi:"masqueradingIp"`
-	// - Port used together with masqueradingIp to connect to the cluster.
+	// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
 	MasqueradingPort pulumi.IntInput `pulumi:"masqueradingPort"`
 	// - The image kind metadata.
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
@@ -32239,7 +32239,7 @@ func (o GetClustersEntityOutput) MasqueradingIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersEntity) string { return v.MasqueradingIp }).(pulumi.StringOutput)
 }
 
-// - Port used together with masqueradingIp to connect to the cluster.
+// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
 func (o GetClustersEntityOutput) MasqueradingPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClustersEntity) int { return v.MasqueradingPort }).(pulumi.IntOutput)
 }
@@ -33127,7 +33127,7 @@ type GetClustersV2ClusterEntity struct {
 	// -  The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
 	ContainerName string `pulumi:"containerName"`
 	// -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-	// The `expand` can be applied on the following fields:
+	// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> can be applied on the following fields:
 	// - clusterProfile
 	// - storageSummary
 	Expand *string `pulumi:"expand"`
@@ -33184,7 +33184,7 @@ type GetClustersV2ClusterEntityArgs struct {
 	// -  The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
 	ContainerName pulumi.StringInput `pulumi:"containerName"`
 	// -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-	// The `expand` can be applied on the following fields:
+	// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> can be applied on the following fields:
 	// - clusterProfile
 	// - storageSummary
 	Expand pulumi.StringPtrInput `pulumi:"expand"`
@@ -33295,7 +33295,7 @@ func (o GetClustersV2ClusterEntityOutput) ContainerName() pulumi.StringOutput {
 }
 
 // -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-// The `expand` can be applied on the following fields:
+// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> can be applied on the following fields:
 // - clusterProfile
 // - storageSummary
 func (o GetClustersV2ClusterEntityOutput) Expand() pulumi.StringPtrOutput {
@@ -52680,7 +52680,7 @@ func (o GetFloatingIpV2VpcSnatIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetFlo
 }
 
 type GetFloatingIpsEntity struct {
-	// - The floatingIp kind metadata.
+	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	// Floating IP spec
 	Specs []GetFloatingIpsEntitySpec `pulumi:"specs"`
@@ -52700,7 +52700,7 @@ type GetFloatingIpsEntityInput interface {
 }
 
 type GetFloatingIpsEntityArgs struct {
-	// - The floatingIp kind metadata.
+	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Floating IP spec
 	Specs GetFloatingIpsEntitySpecArrayInput `pulumi:"specs"`
@@ -52759,7 +52759,7 @@ func (o GetFloatingIpsEntityOutput) ToGetFloatingIpsEntityOutputWithContext(ctx 
 	return o
 }
 
-// - The floatingIp kind metadata.
+// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
 func (o GetFloatingIpsEntityOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetFloatingIpsEntity) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }

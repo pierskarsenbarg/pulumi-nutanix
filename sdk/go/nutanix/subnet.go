@@ -15,6 +15,9 @@ import (
 // Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 //
 // ## Example Usage
+//
+// <!--Start PulumiCodeChooser -->
+// <!--End PulumiCodeChooser -->
 type Subnet struct {
 	pulumi.CustomResourceState
 

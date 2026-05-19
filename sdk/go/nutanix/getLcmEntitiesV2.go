@@ -15,6 +15,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLcmEntitiesV2(ctx *pulumi.Context, args *GetLcmEntitiesV2Args, opts ...pulumi.InvokeOption) (*GetLcmEntitiesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLcmEntitiesV2Result

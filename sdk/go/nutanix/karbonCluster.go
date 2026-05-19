@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -84,8 +85,10 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### resource to create karbon cluster with timeouts
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -150,6 +153,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type KarbonCluster struct {
 	pulumi.CustomResourceState
 

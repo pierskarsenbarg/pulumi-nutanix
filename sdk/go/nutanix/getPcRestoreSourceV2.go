@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupPcRestoreSourceV2(ctx *pulumi.Context, args *LookupPcRestoreSourceV2Args, opts ...pulumi.InvokeOption) (*LookupPcRestoreSourceV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPcRestoreSourceV2Result

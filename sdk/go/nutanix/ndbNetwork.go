@@ -17,6 +17,7 @@ import (
 // ## Example Usage
 //
 // ### resource to create network for NDB
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,6 +53,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type NdbNetwork struct {
 	pulumi.CustomResourceState
 

@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFoundationCentralImagedNodeDetails(ctx *pulumi.Context, args *GetFoundationCentralImagedNodeDetailsArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralImagedNodeDetailsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationCentralImagedNodeDetailsResult

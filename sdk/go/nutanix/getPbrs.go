@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -36,6 +37,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPbrs(ctx *pulumi.Context, args *GetPbrsArgs, opts ...pulumi.InvokeOption) (*GetPbrsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPbrsResult

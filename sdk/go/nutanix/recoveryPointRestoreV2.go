@@ -13,10 +13,11 @@ import (
 )
 
 // This operation Restore a recovery point identified by {extId}.
-// A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys `vmExtIds` and `volumeGroupExtIds` respectively.
+// A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys <span pulumi-lang-nodejs="`vmExtIds`" pulumi-lang-dotnet="`VmExtIds`" pulumi-lang-go="`vmExtIds`" pulumi-lang-python="`vm_ext_ids`" pulumi-lang-yaml="`vmExtIds`" pulumi-lang-java="`vmExtIds`">`vmExtIds`</span> and <span pulumi-lang-nodejs="`volumeGroupExtIds`" pulumi-lang-dotnet="`VolumeGroupExtIds`" pulumi-lang-go="`volumeGroupExtIds`" pulumi-lang-python="`volume_group_ext_ids`" pulumi-lang-yaml="`volumeGroupExtIds`" pulumi-lang-java="`volumeGroupExtIds`">`volumeGroupExtIds`</span> respectively.
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,6 +58,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type RecoveryPointRestoreV2 struct {
 	pulumi.CustomResourceState
 

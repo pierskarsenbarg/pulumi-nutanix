@@ -15,6 +15,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupVirtualMachineV2(ctx *pulumi.Context, args *LookupVirtualMachineV2Args, opts ...pulumi.InvokeOption) (*LookupVirtualMachineV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVirtualMachineV2Result

@@ -16,6 +16,7 @@ import (
 //
 // ## Example—Synchronous Protection Policy
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -74,9 +75,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Example—Linear Retention Protection Policy
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -152,9 +155,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Example—Auto Rollup Retention Protection Policy
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -240,6 +245,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type ProtectionPolicyV2 struct {
 	pulumi.CustomResourceState
 

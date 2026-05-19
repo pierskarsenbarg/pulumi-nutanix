@@ -17,6 +17,7 @@ import (
 //
 // ### NDB database resource with new database server VM
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -96,9 +97,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### NDB database resource to provision HA instance with new database server VM
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -266,9 +269,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### NDB database resource with registered database server VM
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -349,6 +354,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## lifecycle
 //

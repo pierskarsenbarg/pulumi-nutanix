@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetHostV2(ctx *pulumi.Context, args *GetHostV2Args, opts ...pulumi.InvokeOption) (*GetHostV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostV2Result

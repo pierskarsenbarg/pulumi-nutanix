@@ -16,6 +16,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -60,6 +61,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type RoutesV2 struct {
 	pulumi.CustomResourceState
 

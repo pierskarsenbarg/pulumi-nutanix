@@ -84,7 +84,7 @@ type GetClusterResult struct {
 	ManagementServerLists []GetClusterManagementServerList `pulumi:"managementServerLists"`
 	// - The cluster NAT'd or proxy IP which maps to the cluster local IP.
 	MasqueradingIp string `pulumi:"masqueradingIp"`
-	// - Port used together with masqueradingIp to connect to the cluster.
+	// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
 	MasqueradingPort int `pulumi:"masqueradingPort"`
 	// - The image kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
@@ -300,7 +300,7 @@ func (o GetClusterResultOutput) MasqueradingIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.MasqueradingIp }).(pulumi.StringOutput)
 }
 
-// - Port used together with masqueradingIp to connect to the cluster.
+// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
 func (o GetClusterResultOutput) MasqueradingPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterResult) int { return v.MasqueradingPort }).(pulumi.IntOutput)
 }

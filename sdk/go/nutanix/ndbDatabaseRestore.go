@@ -67,7 +67,7 @@ type NdbDatabaseRestore struct {
 	TimeMachines NdbDatabaseRestoreTimeMachineArrayOutput `pulumi:"timeMachines"`
 	// timezone on which instance is created xw
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
-	// timezone . Should be used with  `userPitrTimestamp`
+	// timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
 	TimeZonePitr pulumi.StringPtrOutput `pulumi:"timeZonePitr"`
 	// type of database
 	Type pulumi.StringOutput `pulumi:"type"`
@@ -159,7 +159,7 @@ type ndbDatabaseRestoreState struct {
 	TimeMachines []NdbDatabaseRestoreTimeMachine `pulumi:"timeMachines"`
 	// timezone on which instance is created xw
 	TimeZone *string `pulumi:"timeZone"`
-	// timezone . Should be used with  `userPitrTimestamp`
+	// timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
 	TimeZonePitr *string `pulumi:"timeZonePitr"`
 	// type of database
 	Type *string `pulumi:"type"`
@@ -219,7 +219,7 @@ type NdbDatabaseRestoreState struct {
 	TimeMachines NdbDatabaseRestoreTimeMachineArrayInput
 	// timezone on which instance is created xw
 	TimeZone pulumi.StringPtrInput
-	// timezone . Should be used with  `userPitrTimestamp`
+	// timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
 	TimeZonePitr pulumi.StringPtrInput
 	// type of database
 	Type pulumi.StringPtrInput
@@ -242,7 +242,7 @@ type ndbDatabaseRestoreArgs struct {
 	SnapshotId *string `pulumi:"snapshotId"`
 	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
 	Tags []NdbDatabaseRestoreTag `pulumi:"tags"`
-	// timezone . Should be used with  `userPitrTimestamp`
+	// timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
 	TimeZonePitr *string `pulumi:"timeZonePitr"`
 	// the time to which you want to restore your instance.
 	UserPitrTimestamp *string `pulumi:"userPitrTimestamp"`
@@ -260,7 +260,7 @@ type NdbDatabaseRestoreArgs struct {
 	SnapshotId pulumi.StringPtrInput
 	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
 	Tags NdbDatabaseRestoreTagArrayInput
-	// timezone . Should be used with  `userPitrTimestamp`
+	// timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
 	TimeZonePitr pulumi.StringPtrInput
 	// the time to which you want to restore your instance.
 	UserPitrTimestamp pulumi.StringPtrInput
@@ -482,7 +482,7 @@ func (o NdbDatabaseRestoreOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDatabaseRestore) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }
 
-// timezone . Should be used with  `userPitrTimestamp`
+// timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
 func (o NdbDatabaseRestoreOutput) TimeZonePitr() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDatabaseRestore) pulumi.StringPtrOutput { return v.TimeZonePitr }).(pulumi.StringPtrOutput)
 }

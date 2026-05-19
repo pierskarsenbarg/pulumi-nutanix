@@ -12,8 +12,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Create an image placement policy using the provided request body. Name, placement_type, imageEntityFilter and source are mandatory fields to create an policy.
+// Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,6 +56,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type ImagePlacementPolicyV2 struct {
 	pulumi.CustomResourceState
 

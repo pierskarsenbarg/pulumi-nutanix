@@ -17,6 +17,7 @@ import (
 // ## Example Usage
 //
 // ### resource to add stretched vlan in NDB
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,8 +47,10 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ### resource to update the strteched vlan with new gateway and subnet mask
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -81,6 +84,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type NdbStretchedVlan struct {
 	pulumi.CustomResourceState
 
@@ -88,7 +92,7 @@ type NdbStretchedVlan struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Update the stretched VLAN Gateway and Subnet Mask IP address
 	// * `metadata.gateway`: Update the gateway of stretched vlan
-	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	// * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
 	Metadata NdbStretchedVlanMetadataOutput `pulumi:"metadata"`
 	// name for the stretched VLAN
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -140,7 +144,7 @@ type ndbStretchedVlanState struct {
 	Description *string `pulumi:"description"`
 	// Update the stretched VLAN Gateway and Subnet Mask IP address
 	// * `metadata.gateway`: Update the gateway of stretched vlan
-	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	// * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
 	Metadata *NdbStretchedVlanMetadata `pulumi:"metadata"`
 	// name for the stretched VLAN
 	Name *string `pulumi:"name"`
@@ -157,7 +161,7 @@ type NdbStretchedVlanState struct {
 	Description pulumi.StringPtrInput
 	// Update the stretched VLAN Gateway and Subnet Mask IP address
 	// * `metadata.gateway`: Update the gateway of stretched vlan
-	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	// * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
 	Metadata NdbStretchedVlanMetadataPtrInput
 	// name for the stretched VLAN
 	Name pulumi.StringPtrInput
@@ -178,7 +182,7 @@ type ndbStretchedVlanArgs struct {
 	Description *string `pulumi:"description"`
 	// Update the stretched VLAN Gateway and Subnet Mask IP address
 	// * `metadata.gateway`: Update the gateway of stretched vlan
-	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	// * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
 	Metadata *NdbStretchedVlanMetadata `pulumi:"metadata"`
 	// name for the stretched VLAN
 	Name *string `pulumi:"name"`
@@ -194,7 +198,7 @@ type NdbStretchedVlanArgs struct {
 	Description pulumi.StringPtrInput
 	// Update the stretched VLAN Gateway and Subnet Mask IP address
 	// * `metadata.gateway`: Update the gateway of stretched vlan
-	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	// * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
 	Metadata NdbStretchedVlanMetadataPtrInput
 	// name for the stretched VLAN
 	Name pulumi.StringPtrInput
@@ -298,7 +302,7 @@ func (o NdbStretchedVlanOutput) Description() pulumi.StringPtrOutput {
 
 // Update the stretched VLAN Gateway and Subnet Mask IP address
 // * `metadata.gateway`: Update the gateway of stretched vlan
-// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+// * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
 func (o NdbStretchedVlanOutput) Metadata() NdbStretchedVlanMetadataOutput {
 	return o.ApplyT(func(v *NdbStretchedVlan) NdbStretchedVlanMetadataOutput { return v.Metadata }).(NdbStretchedVlanMetadataOutput)
 }

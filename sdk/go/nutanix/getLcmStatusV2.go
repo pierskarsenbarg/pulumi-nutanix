@@ -15,6 +15,7 @@ import (
 //
 // ## Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLcmStatusV2(ctx *pulumi.Context, args *GetLcmStatusV2Args, opts ...pulumi.InvokeOption) (*GetLcmStatusV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLcmStatusV2Result

@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetRouteTablesV2(ctx *pulumi.Context, args *GetRouteTablesV2Args, opts ...pulumi.InvokeOption) (*GetRouteTablesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRouteTablesV2Result

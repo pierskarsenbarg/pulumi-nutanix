@@ -67,7 +67,7 @@ type providerArgs struct {
 	FoundationEndpoint *string `pulumi:"foundationEndpoint"`
 	// Port for foundation VM
 	FoundationPort *string `pulumi:"foundationPort"`
-	// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
+	// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
 	Insecure *bool `pulumi:"insecure"`
 	// endpoint for Era VM (era ip)
 	NdbEndpoint *string `pulumi:"ndbEndpoint"`
@@ -98,7 +98,7 @@ type ProviderArgs struct {
 	FoundationEndpoint pulumi.StringPtrInput
 	// Port for foundation VM
 	FoundationPort pulumi.StringPtrInput
-	// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
+	// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
 	Insecure pulumi.BoolPtrInput
 	// endpoint for Era VM (era ip)
 	NdbEndpoint pulumi.StringPtrInput

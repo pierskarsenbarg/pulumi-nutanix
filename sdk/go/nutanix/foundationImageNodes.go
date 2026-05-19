@@ -16,6 +16,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -142,10 +143,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Defaults
 //
-// The attributes like `ipmiNetmask`, `ipmiGateway`, `ipmiUser` & `ipmiPassword` can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+// The attributes like <span pulumi-lang-nodejs="`ipmiNetmask`" pulumi-lang-dotnet="`IpmiNetmask`" pulumi-lang-go="`ipmiNetmask`" pulumi-lang-python="`ipmi_netmask`" pulumi-lang-yaml="`ipmiNetmask`" pulumi-lang-java="`ipmiNetmask`">`ipmiNetmask`</span>, <span pulumi-lang-nodejs="`ipmiGateway`" pulumi-lang-dotnet="`IpmiGateway`" pulumi-lang-go="`ipmiGateway`" pulumi-lang-python="`ipmi_gateway`" pulumi-lang-yaml="`ipmiGateway`" pulumi-lang-java="`ipmiGateway`">`ipmiGateway`</span>, <span pulumi-lang-nodejs="`ipmiUser`" pulumi-lang-dotnet="`IpmiUser`" pulumi-lang-go="`ipmiUser`" pulumi-lang-python="`ipmi_user`" pulumi-lang-yaml="`ipmiUser`" pulumi-lang-java="`ipmiUser`">`ipmiUser`</span> & <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`">`ipmiPassword`</span> can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
 //
 // ## Error
 //
@@ -154,7 +156,7 @@ import (
 // ## lifecycle
 //
 // * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
-// * `delete` : - Delete will be a soft delete.
+// * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Delete will be a soft delete.
 //
 // See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
 type FoundationImageNodes struct {
@@ -163,8 +165,14 @@ type FoundationImageNodes struct {
 	// - (Required) Terraform blocks of Block level parameters.
 	Blocks FoundationImageNodesBlockArrayOutput `pulumi:"blocks"`
 	// - list containing cluster name and cluster urls for created clusters in current session
-	// * `cluster_urls.#.cluster_name` :- clusterName
-	// * `cluster_urls.#.cluster_url` :- url to access the cluster login
+	// * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
+	//   " pulumi-lang-dotnet=" ClusterName
+	//   " pulumi-lang-go=" clusterName
+	//   " pulumi-lang-python=" cluster_name
+	//   " pulumi-lang-yaml=" clusterName
+	//   " pulumi-lang-java=" clusterName
+	//   "> clusterName
+	//   </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
 	ClusterUrls FoundationImageNodesClusterUrlArrayOutput `pulumi:"clusterUrls"`
 	// - Terraform blocks of clusters config
 	Clusters FoundationImageNodesClusterArrayOutput `pulumi:"clusters"`
@@ -207,11 +215,11 @@ type FoundationImageNodes struct {
 	LayoutEggUuid pulumi.StringPtrOutput `pulumi:"layoutEggUuid"`
 	// - (Required) NOS package.
 	NosPackage pulumi.StringOutput `pulumi:"nosPackage"`
-	// - sessionId of the imaging session
+	// -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "> sessionId </span>of the imaging session
 	SessionId pulumi.StringOutput `pulumi:"sessionId"`
 	// - If hypervisor installation should be skipped.
 	SkipHypervisor pulumi.BoolPtrOutput `pulumi:"skipHypervisor"`
-	// - Arguments to be passed to svmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+	// - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
 	SvmRescueArgs pulumi.StringArrayOutput `pulumi:"svmRescueArgs"`
 	// - Types of tests to be performed.
 	Tests FoundationImageNodesTestsPtrOutput `pulumi:"tests"`
@@ -290,8 +298,14 @@ type foundationImageNodesState struct {
 	// - (Required) Terraform blocks of Block level parameters.
 	Blocks []FoundationImageNodesBlock `pulumi:"blocks"`
 	// - list containing cluster name and cluster urls for created clusters in current session
-	// * `cluster_urls.#.cluster_name` :- clusterName
-	// * `cluster_urls.#.cluster_url` :- url to access the cluster login
+	// * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
+	//   " pulumi-lang-dotnet=" ClusterName
+	//   " pulumi-lang-go=" clusterName
+	//   " pulumi-lang-python=" cluster_name
+	//   " pulumi-lang-yaml=" clusterName
+	//   " pulumi-lang-java=" clusterName
+	//   "> clusterName
+	//   </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
 	ClusterUrls []FoundationImageNodesClusterUrl `pulumi:"clusterUrls"`
 	// - Terraform blocks of clusters config
 	Clusters []FoundationImageNodesCluster `pulumi:"clusters"`
@@ -334,11 +348,11 @@ type foundationImageNodesState struct {
 	LayoutEggUuid *string `pulumi:"layoutEggUuid"`
 	// - (Required) NOS package.
 	NosPackage *string `pulumi:"nosPackage"`
-	// - sessionId of the imaging session
+	// -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "> sessionId </span>of the imaging session
 	SessionId *string `pulumi:"sessionId"`
 	// - If hypervisor installation should be skipped.
 	SkipHypervisor *bool `pulumi:"skipHypervisor"`
-	// - Arguments to be passed to svmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+	// - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
 	SvmRescueArgs []string `pulumi:"svmRescueArgs"`
 	// - Types of tests to be performed.
 	Tests *FoundationImageNodesTests `pulumi:"tests"`
@@ -370,8 +384,14 @@ type FoundationImageNodesState struct {
 	// - (Required) Terraform blocks of Block level parameters.
 	Blocks FoundationImageNodesBlockArrayInput
 	// - list containing cluster name and cluster urls for created clusters in current session
-	// * `cluster_urls.#.cluster_name` :- clusterName
-	// * `cluster_urls.#.cluster_url` :- url to access the cluster login
+	// * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
+	//   " pulumi-lang-dotnet=" ClusterName
+	//   " pulumi-lang-go=" clusterName
+	//   " pulumi-lang-python=" cluster_name
+	//   " pulumi-lang-yaml=" clusterName
+	//   " pulumi-lang-java=" clusterName
+	//   "> clusterName
+	//   </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
 	ClusterUrls FoundationImageNodesClusterUrlArrayInput
 	// - Terraform blocks of clusters config
 	Clusters FoundationImageNodesClusterArrayInput
@@ -414,11 +434,11 @@ type FoundationImageNodesState struct {
 	LayoutEggUuid pulumi.StringPtrInput
 	// - (Required) NOS package.
 	NosPackage pulumi.StringPtrInput
-	// - sessionId of the imaging session
+	// -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "> sessionId </span>of the imaging session
 	SessionId pulumi.StringPtrInput
 	// - If hypervisor installation should be skipped.
 	SkipHypervisor pulumi.BoolPtrInput
-	// - Arguments to be passed to svmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+	// - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
 	SvmRescueArgs pulumi.StringArrayInput
 	// - Types of tests to be performed.
 	Tests FoundationImageNodesTestsPtrInput
@@ -496,7 +516,7 @@ type foundationImageNodesArgs struct {
 	NosPackage string `pulumi:"nosPackage"`
 	// - If hypervisor installation should be skipped.
 	SkipHypervisor *bool `pulumi:"skipHypervisor"`
-	// - Arguments to be passed to svmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+	// - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
 	SvmRescueArgs []string `pulumi:"svmRescueArgs"`
 	// - Types of tests to be performed.
 	Tests *FoundationImageNodesTests `pulumi:"tests"`
@@ -571,7 +591,7 @@ type FoundationImageNodesArgs struct {
 	NosPackage pulumi.StringInput
 	// - If hypervisor installation should be skipped.
 	SkipHypervisor pulumi.BoolPtrInput
-	// - Arguments to be passed to svmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+	// - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
 	SvmRescueArgs pulumi.StringArrayInput
 	// - Types of tests to be performed.
 	Tests FoundationImageNodesTestsPtrInput
@@ -691,9 +711,15 @@ func (o FoundationImageNodesOutput) Blocks() FoundationImageNodesBlockArrayOutpu
 	return o.ApplyT(func(v *FoundationImageNodes) FoundationImageNodesBlockArrayOutput { return v.Blocks }).(FoundationImageNodesBlockArrayOutput)
 }
 
-// - list containing cluster name and cluster urls for created clusters in current session
-// * `cluster_urls.#.cluster_name` :- clusterName
-// * `cluster_urls.#.cluster_url` :- url to access the cluster login
+//   - list containing cluster name and cluster urls for created clusters in current session
+//   - `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
+//     " pulumi-lang-dotnet=" ClusterName
+//     " pulumi-lang-go=" clusterName
+//     " pulumi-lang-python=" cluster_name
+//     " pulumi-lang-yaml=" clusterName
+//     " pulumi-lang-java=" clusterName
+//     "> clusterName
+//     </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
 func (o FoundationImageNodesOutput) ClusterUrls() FoundationImageNodesClusterUrlArrayOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) FoundationImageNodesClusterUrlArrayOutput { return v.ClusterUrls }).(FoundationImageNodesClusterUrlArrayOutput)
 }
@@ -802,7 +828,7 @@ func (o FoundationImageNodesOutput) NosPackage() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringOutput { return v.NosPackage }).(pulumi.StringOutput)
 }
 
-// - sessionId of the imaging session
+// -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "> sessionId </span>of the imaging session
 func (o FoundationImageNodesOutput) SessionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringOutput { return v.SessionId }).(pulumi.StringOutput)
 }
@@ -812,7 +838,7 @@ func (o FoundationImageNodesOutput) SkipHypervisor() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.BoolPtrOutput { return v.SkipHypervisor }).(pulumi.BoolPtrOutput)
 }
 
-// - Arguments to be passed to svmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+// - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
 func (o FoundationImageNodesOutput) SvmRescueArgs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringArrayOutput { return v.SvmRescueArgs }).(pulumi.StringArrayOutput)
 }

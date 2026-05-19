@@ -16,6 +16,7 @@ import (
 //
 // ## Example 1: Provision Application
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type SelfServiceAppProvision struct {
 	pulumi.CustomResourceState
 
@@ -51,7 +53,7 @@ type SelfServiceAppProvision struct {
 	ApiVersion pulumi.StringOutput `pulumi:"apiVersion"`
 	// - (Optional) The description of application.
 	//
-	// Both are `bpName` and `bpUuid` are optional but atleast one of them to be provided for this resource to work.
+	// Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
 	AppDescription pulumi.StringPtrOutput `pulumi:"appDescription"`
 	// - (Required) The name of the application you want to set.
 	AppName      pulumi.StringOutput                          `pulumi:"appName"`
@@ -112,7 +114,7 @@ type selfServiceAppProvisionState struct {
 	ApiVersion *string `pulumi:"apiVersion"`
 	// - (Optional) The description of application.
 	//
-	// Both are `bpName` and `bpUuid` are optional but atleast one of them to be provided for this resource to work.
+	// Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
 	AppDescription *string `pulumi:"appDescription"`
 	// - (Required) The name of the application you want to set.
 	AppName      *string                             `pulumi:"appName"`
@@ -141,7 +143,7 @@ type SelfServiceAppProvisionState struct {
 	ApiVersion pulumi.StringPtrInput
 	// - (Optional) The description of application.
 	//
-	// Both are `bpName` and `bpUuid` are optional but atleast one of them to be provided for this resource to work.
+	// Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
 	AppDescription pulumi.StringPtrInput
 	// - (Required) The name of the application you want to set.
 	AppName      pulumi.StringPtrInput
@@ -171,7 +173,7 @@ type selfServiceAppProvisionArgs struct {
 	Action *string `pulumi:"action"`
 	// - (Optional) The description of application.
 	//
-	// Both are `bpName` and `bpUuid` are optional but atleast one of them to be provided for this resource to work.
+	// Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
 	AppDescription *string `pulumi:"appDescription"`
 	// - (Required) The name of the application you want to set.
 	AppName string `pulumi:"appName"`
@@ -190,7 +192,7 @@ type SelfServiceAppProvisionArgs struct {
 	Action pulumi.StringPtrInput
 	// - (Optional) The description of application.
 	//
-	// Both are `bpName` and `bpUuid` are optional but atleast one of them to be provided for this resource to work.
+	// Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
 	AppDescription pulumi.StringPtrInput
 	// - (Required) The name of the application you want to set.
 	AppName pulumi.StringInput
@@ -306,7 +308,7 @@ func (o SelfServiceAppProvisionOutput) ApiVersion() pulumi.StringOutput {
 
 // - (Optional) The description of application.
 //
-// Both are `bpName` and `bpUuid` are optional but atleast one of them to be provided for this resource to work.
+// Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
 func (o SelfServiceAppProvisionOutput) AppDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SelfServiceAppProvision) pulumi.StringPtrOutput { return v.AppDescription }).(pulumi.StringPtrOutput)
 }

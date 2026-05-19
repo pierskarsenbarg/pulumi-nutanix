@@ -15,6 +15,7 @@ import (
 //
 // ## Example 1: Get Protected Virtual Machine
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,9 +39,11 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Example 2: Get Protected Volume Group
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -64,6 +67,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetProtectedResourceV2(ctx *pulumi.Context, args *GetProtectedResourceV2Args, opts ...pulumi.InvokeOption) (*GetProtectedResourceV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectedResourceV2Result

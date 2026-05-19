@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupVolumeGroupDiskV2(ctx *pulumi.Context, args *LookupVolumeGroupDiskV2Args, opts ...pulumi.InvokeOption) (*LookupVolumeGroupDiskV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVolumeGroupDiskV2Result
